@@ -1,0 +1,22 @@
+
+
+# NewScheduleRotationActiveDayData
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**type** | [**TypeEnum**](#TypeEnum) |  |  |
+|**attributes** | [**NewScheduleRotationActiveDayDataAttributes**](NewScheduleRotationActiveDayDataAttributes.md) |  |  |
+
+
+
+## Enum: TypeEnum
+
+| Name | Value |
+|---- | -----|
+| SCHEDULE_ROTATION_ACTIVE_DAYS | &quot;schedule_rotation_active_days&quot; |
+
+
+

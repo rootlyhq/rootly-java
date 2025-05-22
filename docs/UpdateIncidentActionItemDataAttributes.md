@@ -1,0 +1,52 @@
+
+
+# UpdateIncidentActionItemDataAttributes
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**summary** | **String** | The summary of the action item |  [optional] |
+|**description** | **String** | The description of the action item |  [optional] |
+|**kind** | [**KindEnum**](#KindEnum) | The kind of the action item |  [optional] |
+|**assignedToUserId** | **Integer** | ID of user you wish to assign this action item |  [optional] |
+|**assignedToGroupIds** | **List&lt;String&gt;** | IDs of groups you wish to assign this action item |  [optional] |
+|**priority** | [**PriorityEnum**](#PriorityEnum) | The priority of the action item |  [optional] |
+|**status** | [**StatusEnum**](#StatusEnum) | The status of the action item |  [optional] |
+|**dueDate** | **String** | The due date of the action item |  [optional] |
+|**jiraIssueId** | **String** | The Jira issue ID. |  [optional] |
+|**jiraIssueUrl** | **String** | The Jira issue URL. |  [optional] |
+
+
+
+## Enum: KindEnum
+
+| Name | Value |
+|---- | -----|
+| TASK | &quot;task&quot; |
+| FOLLOW_UP | &quot;follow_up&quot; |
+
+
+
+## Enum: PriorityEnum
+
+| Name | Value |
+|---- | -----|
+| HIGH | &quot;high&quot; |
+| MEDIUM | &quot;medium&quot; |
+| LOW | &quot;low&quot; |
+
+
+
+## Enum: StatusEnum
+
+| Name | Value |
+|---- | -----|
+| OPEN | &quot;open&quot; |
+| IN_PROGRESS | &quot;in_progress&quot; |
+| CANCELLED | &quot;cancelled&quot; |
+| DONE | &quot;done&quot; |
+
+
+
