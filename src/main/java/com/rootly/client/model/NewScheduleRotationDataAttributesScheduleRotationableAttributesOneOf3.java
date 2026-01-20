@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * NewScheduleRotationDataAttributesScheduleRotationableAttributesOneOf3
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewScheduleRotationDataAttributesScheduleRotationableAttributesOneOf3 {
   public static final String SERIALIZED_NAME_SHIFT_LENGTH = "shift_length";
   @SerializedName(SERIALIZED_NAME_SHIFT_LENGTH)
