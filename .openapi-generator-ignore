@@ -24,6 +24,7 @@
 
 # Protect custom files from regeneration
 build.gradle
+pom.xml
 LICENSE
 README.md
 CLAUDE.md
