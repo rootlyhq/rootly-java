@@ -9,6 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**data** | [**List&lt;WorkflowTaskResponseData&gt;**](WorkflowTaskResponseData.md) |  |  |
 |**links** | [**Links**](Links.md) |  |  |
+|**meta** | [**Meta**](Meta.md) |  |  |
 
 
 

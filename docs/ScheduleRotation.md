@@ -17,6 +17,8 @@
 |**activeTimeAttributes** | [**List&lt;NewScheduleRotationDataAttributesActiveTimeAttributesInner&gt;**](NewScheduleRotationDataAttributesActiveTimeAttributesInner.md) | Schedule rotation&#39;s active times |  [optional] |
 |**timeZone** | **String** | A valid IANA time zone name. |  [optional] |
 |**scheduleRotationableAttributes** | [**NewScheduleRotationDataAttributesScheduleRotationableAttributes**](NewScheduleRotationDataAttributesScheduleRotationableAttributes.md) |  |  |
+|**startTime** | **LocalDate** | ISO8601 date and time when rotation starts. Shifts will only be created after this time. |  [optional] |
+|**endTime** | **LocalDate** | ISO8601 date and time when rotation ends. Shifts will only be created before this time. |  [optional] |
 
 
 

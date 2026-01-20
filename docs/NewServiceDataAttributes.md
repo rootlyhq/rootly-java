@@ -28,12 +28,18 @@
 |**gitlabRepositoryBranch** | **String** | The GitLab repository branch associated to this service. eg: main |  [optional] |
 |**environmentIds** | **List&lt;String&gt;** | Environments associated with this service |  [optional] |
 |**serviceIds** | **List&lt;String&gt;** | Services dependent on this service |  [optional] |
-|**ownersGroupIds** | **List&lt;String&gt;** | Owner Teams associated with this service |  [optional] |
-|**ownersUserIds** | **List&lt;Integer&gt;** | Owner Users associated with this service |  [optional] |
+|**ownerGroupIds** | **List&lt;String&gt;** | Owner Teams associated with this service |  [optional] |
+|**ownerUserIds** | **List&lt;Integer&gt;** | Owner Users associated with this service |  [optional] |
+|**kubernetesDeploymentName** | **String** | The Kubernetes deployment name associated to this service. eg: namespace/deployment-name |  [optional] |
 |**alertsEmailEnabled** | **Boolean** | Enable alerts through email |  [optional] |
 |**alertUrgencyId** | **String** | The alert urgency id of the service |  [optional] |
+|**escalationPolicyId** | **String** | The escalation policy id of the service |  [optional] |
 |**slackChannels** | [**List&lt;NewEnvironmentDataAttributesSlackChannelsInner&gt;**](NewEnvironmentDataAttributesSlackChannelsInner.md) | Slack Channels associated with this service |  [optional] |
 |**slackAliases** | [**List&lt;NewEnvironmentDataAttributesSlackAliasesInner&gt;**](NewEnvironmentDataAttributesSlackAliasesInner.md) | Slack Aliases associated with this service |  [optional] |
+|**alertBroadcastEnabled** | **Boolean** | Enable alerts to be broadcasted to a specific channel |  [optional] |
+|**alertBroadcastChannel** | [**NewServiceDataAttributesAlertBroadcastChannel**](NewServiceDataAttributesAlertBroadcastChannel.md) |  |  [optional] |
+|**incidentBroadcastEnabled** | **Boolean** | Enable incidents to be broadcasted to a specific channel |  [optional] |
+|**incidentBroadcastChannel** | [**NewServiceDataAttributesIncidentBroadcastChannel**](NewServiceDataAttributesIncidentBroadcastChannel.md) |  |  [optional] |
 
 
 

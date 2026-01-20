@@ -76,7 +76,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | admins can set &#39;locked&#39; while creating a workflow |  -  |
+| **201** | ignores alert field conditions in create request |  -  |
 | **401** | responds with unauthorized for invalid token |  -  |
 | **403** | non-admins can&#39;t set &#39;locked&#39; while creating a workflow |  -  |
 
@@ -108,7 +108,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     WorkflowsApi apiInstance = new WorkflowsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       WorkflowResponse result = apiInstance.deleteWorkflow(id);
       System.out.println(result);
@@ -127,7 +127,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -176,8 +176,8 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     WorkflowsApi apiInstance = new WorkflowsApi(defaultClient);
-    String id = "id_example"; // String | 
-    String include = "form_field_conditions"; // String | comma separated if needed. eg: form_field_conditions,genius_tasks
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
+    String include = "form_field_conditions"; // String | comma separated if needed. eg: form_field_conditions,alert_field_conditions
     try {
       WorkflowResponse result = apiInstance.getWorkflow(id, include);
       System.out.println(result);
@@ -196,8 +196,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
-| **include** | **String**| comma separated if needed. eg: form_field_conditions,genius_tasks | [optional] [enum: form_field_conditions, genius_tasks, genius_workflow_runs] |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
+| **include** | **String**| comma separated if needed. eg: form_field_conditions,alert_field_conditions | [optional] [enum: form_field_conditions, alert_field_conditions, genius_tasks, genius_workflow_runs] |
 
 ### Return type
 
@@ -215,7 +215,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | workflow found |  -  |
+| **200** | does not serialize alert field conditions |  -  |
 | **404** | resource not found |  -  |
 
 <a id="listWorkflows"></a>
@@ -246,7 +246,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     WorkflowsApi apiInstance = new WorkflowsApi(defaultClient);
-    String include = "form_field_conditions"; // String | comma separated if needed. eg: form_field_conditions,genius_tasks
+    String include = "form_field_conditions"; // String | comma separated if needed. eg: form_field_conditions,alert_field_conditions
     String sort = "created_at"; // String | comma separated if needed. eg: created_at,updated_at
     Integer pageNumber = 56; // Integer | 
     Integer pageSize = 56; // Integer | 
@@ -275,7 +275,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **include** | **String**| comma separated if needed. eg: form_field_conditions,genius_tasks | [optional] [enum: form_field_conditions, genius_tasks, genius_workflow_runs] |
+| **include** | **String**| comma separated if needed. eg: form_field_conditions,alert_field_conditions | [optional] [enum: form_field_conditions, alert_field_conditions, genius_tasks, genius_workflow_runs] |
 | **sort** | **String**| comma separated if needed. eg: created_at,updated_at | [optional] [enum: created_at, -created_at, updated_at, -updated_at, position, -position] |
 | **pageNumber** | **Integer**|  | [optional] |
 | **pageSize** | **Integer**|  | [optional] |
@@ -333,7 +333,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     WorkflowsApi apiInstance = new WorkflowsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     UpdateWorkflow updateWorkflow = new UpdateWorkflow(); // UpdateWorkflow | 
     try {
       WorkflowResponse result = apiInstance.updateWorkflow(id, updateWorkflow);
@@ -353,7 +353,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **updateWorkflow** | [**UpdateWorkflow**](UpdateWorkflow.md)|  | |
 
 ### Return type
@@ -372,7 +372,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | admin can update &#39;locked&#39; attribute |  -  |
+| **200** | can set and clear alert workflow status conditions |  -  |
 | **404** | non-admin can&#39;t update locked workflow |  -  |
 | **403** | non-admin can&#39;t update &#39;locked&#39; attribute |  -  |
 

@@ -11,9 +11,9 @@
 |**source** | [**SourceEnum**](#SourceEnum) | The source of the alert |  [optional] |
 |**summary** | **String** | The summary of the alert |  [optional] |
 |**description** | **String** | The description of the alert |  [optional] |
-|**serviceIds** | **List&lt;String&gt;** | The Service ID&#39;s to attach to the alert |  [optional] |
-|**groupIds** | **List&lt;String&gt;** | The Group ID&#39;s to attach to the alert |  [optional] |
-|**environmentIds** | **List&lt;String&gt;** | The Environment ID&#39;s to attach to the alert |  [optional] |
+|**serviceIds** | **List&lt;String&gt;** | The Service IDs to attach to the alert |  [optional] |
+|**groupIds** | **List&lt;String&gt;** | The Group IDs to attach to the alert |  [optional] |
+|**environmentIds** | **List&lt;String&gt;** | The Environment IDs to attach to the alert |  [optional] |
 |**startedAt** | **OffsetDateTime** | Alert start datetime |  [optional] |
 |**endedAt** | **OffsetDateTime** | Alert end datetime |  [optional] |
 |**externalId** | **String** | External ID |  [optional] |
@@ -21,6 +21,8 @@
 |**alertUrgencyId** | **String** | The ID of the alert urgency |  [optional] |
 |**labels** | [**List&lt;NewAlertDataAttributesLabelsInner&gt;**](NewAlertDataAttributesLabelsInner.md) |  |  [optional] |
 |**data** | **Object** | Additional data |  [optional] |
+|**deduplicationKey** | **String** | Alerts sharing the same deduplication key are treated as a single alert. |  [optional] |
+|**alertFieldValuesAttributes** | [**List&lt;NewAlertDataAttributesAlertFieldValuesAttributesInner&gt;**](NewAlertDataAttributesAlertFieldValuesAttributesInner.md) | Custom alert field values to create with the alert |  [optional] |
 
 
 
@@ -40,11 +42,13 @@
 | ROOTLY | &quot;rootly&quot; |
 | MANUAL | &quot;manual&quot; |
 | API | &quot;api&quot; |
+| HEARTBEAT | &quot;heartbeat&quot; |
 | WEB | &quot;web&quot; |
 | SLACK | &quot;slack&quot; |
 | EMAIL | &quot;email&quot; |
 | WORKFLOW | &quot;workflow&quot; |
 | LIVE_CALL_ROUTING | &quot;live_call_routing&quot; |
+| MOBILE | &quot;mobile&quot; |
 | PAGERDUTY | &quot;pagerduty&quot; |
 | OPSGENIE | &quot;opsgenie&quot; |
 | VICTOROPS | &quot;victorops&quot; |

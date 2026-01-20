@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -37,10 +37,13 @@ import com.rootly.client.model.AutoAssignRoleVictorOpsTaskParams;
 import com.rootly.client.model.CallPeopleTaskParams;
 import com.rootly.client.model.ChangeSlackChannelPrivacyTaskParams;
 import com.rootly.client.model.CreateAirtableTableRecordTaskParams;
+import com.rootly.client.model.CreateAnthropicChatCompletionTaskParams;
+import com.rootly.client.model.CreateAnthropicChatCompletionTaskParamsModel;
 import com.rootly.client.model.CreateAsanaSubtaskTaskParams;
 import com.rootly.client.model.CreateAsanaTaskTaskParams;
 import com.rootly.client.model.CreateClickupTaskTaskParams;
 import com.rootly.client.model.CreateCodaPageTaskParams;
+import com.rootly.client.model.CreateCodaPageTaskParamsDoc;
 import com.rootly.client.model.CreateConfluencePageTaskParams;
 import com.rootly.client.model.CreateDatadogNotebookTaskParams;
 import com.rootly.client.model.CreateDropboxPaperPageTaskParams;
@@ -50,9 +53,9 @@ import com.rootly.client.model.CreateGoToMeetingTaskParams;
 import com.rootly.client.model.CreateGoogleCalendarEventTaskParams;
 import com.rootly.client.model.CreateGoogleDocsPageTaskParams;
 import com.rootly.client.model.CreateGoogleDocsPermissionsTaskParams;
+import com.rootly.client.model.CreateGoogleGeminiChatCompletionTaskParams;
 import com.rootly.client.model.CreateGoogleMeetingTaskParams;
 import com.rootly.client.model.CreateIncidentPostmortemTaskParams;
-import com.rootly.client.model.CreateIncidentPostmortemTaskParamsTemplate;
 import com.rootly.client.model.CreateIncidentTaskParams;
 import com.rootly.client.model.CreateJiraIssueTaskParams;
 import com.rootly.client.model.CreateJiraIssueTaskParamsIntegration;
@@ -62,13 +65,16 @@ import com.rootly.client.model.CreateJiraSubtaskTaskParams;
 import com.rootly.client.model.CreateLinearIssueCommentTaskParams;
 import com.rootly.client.model.CreateLinearIssueTaskParams;
 import com.rootly.client.model.CreateLinearIssueTaskParamsProject;
-import com.rootly.client.model.CreateLinearIssueTaskParamsState;
 import com.rootly.client.model.CreateLinearSubtaskIssueTaskParams;
 import com.rootly.client.model.CreateMicrosoftTeamsChannelTaskParams;
+import com.rootly.client.model.CreateMicrosoftTeamsChatTaskParams;
+import com.rootly.client.model.CreateMicrosoftTeamsChatTaskParamsMembersInner;
 import com.rootly.client.model.CreateMicrosoftTeamsMeetingTaskParams;
+import com.rootly.client.model.CreateMistralChatCompletionTaskParams;
 import com.rootly.client.model.CreateMotionTaskTaskParams;
 import com.rootly.client.model.CreateNotionPageTaskParams;
 import com.rootly.client.model.CreateNotionPageTaskParamsParentPage;
+import com.rootly.client.model.CreateOpenaiChatCompletionTaskParams;
 import com.rootly.client.model.CreateOpsgenieAlertTaskParams;
 import com.rootly.client.model.CreateOutlookEventTaskParams;
 import com.rootly.client.model.CreatePagerdutyStatusUpdateTaskParams;
@@ -80,17 +86,16 @@ import com.rootly.client.model.CreateSharepointPageTaskParams;
 import com.rootly.client.model.CreateShortcutStoryTaskParams;
 import com.rootly.client.model.CreateShortcutTaskTaskParams;
 import com.rootly.client.model.CreateSlackChannelTaskParams;
+import com.rootly.client.model.CreateSubIncidentTaskParams;
 import com.rootly.client.model.CreateTrelloCardTaskParams;
 import com.rootly.client.model.CreateTrelloCardTaskParamsArchivation;
 import com.rootly.client.model.CreateTrelloCardTaskParamsBoard;
 import com.rootly.client.model.CreateTrelloCardTaskParamsList;
+import com.rootly.client.model.CreateWatsonxChatCompletionTaskParams;
 import com.rootly.client.model.CreateWebexMeetingTaskParams;
 import com.rootly.client.model.CreateZendeskJiraLinkTaskParams;
 import com.rootly.client.model.CreateZendeskTicketTaskParams;
 import com.rootly.client.model.CreateZoomMeetingTaskParams;
-import com.rootly.client.model.GeniusCreateOpenaiChatCompletionTaskParams;
-import com.rootly.client.model.GeniusCreateWatsonxChatCompletionTaskParams;
-import com.rootly.client.model.GeniusCreateWatsonxChatCompletionTaskParamsModel;
 import com.rootly.client.model.GetAlertsTaskParams;
 import com.rootly.client.model.GetGithubCommitsTaskParams;
 import com.rootly.client.model.GetGitlabCommitsTaskParams;
@@ -133,6 +138,10 @@ import com.rootly.client.model.UpdateAsanaTaskTaskParams;
 import com.rootly.client.model.UpdateAttachedAlertsTaskParams;
 import com.rootly.client.model.UpdateClickupTaskTaskParams;
 import com.rootly.client.model.UpdateCodaPageTaskParams;
+import com.rootly.client.model.UpdateConfluencePageTaskParams;
+import com.rootly.client.model.UpdateDatadogNotebookTaskParams;
+import com.rootly.client.model.UpdateDatadogNotebookTaskParamsTemplate;
+import com.rootly.client.model.UpdateDropboxPaperPageTaskParams;
 import com.rootly.client.model.UpdateGithubIssueTaskParams;
 import com.rootly.client.model.UpdateGitlabIssueTaskParams;
 import com.rootly.client.model.UpdateGoogleCalendarEventTaskParams;
@@ -142,13 +151,16 @@ import com.rootly.client.model.UpdateIncidentStatusTimestampTaskParams;
 import com.rootly.client.model.UpdateIncidentTaskParams;
 import com.rootly.client.model.UpdateJiraIssueTaskParams;
 import com.rootly.client.model.UpdateLinearIssueTaskParams;
+import com.rootly.client.model.UpdateLinearIssueTaskParamsState;
 import com.rootly.client.model.UpdateMotionTaskTaskParams;
 import com.rootly.client.model.UpdateNotionPageTaskParams;
 import com.rootly.client.model.UpdateOpsgenieAlertTaskParams;
 import com.rootly.client.model.UpdateOpsgenieIncidentTaskParams;
 import com.rootly.client.model.UpdatePagerdutyIncidentTaskParams;
 import com.rootly.client.model.UpdatePagertreeAlertTaskParams;
+import com.rootly.client.model.UpdateQuipPageTaskParams;
 import com.rootly.client.model.UpdateServiceNowIncidentTaskParams;
+import com.rootly.client.model.UpdateSharepointPageTaskParams;
 import com.rootly.client.model.UpdateShortcutStoryTaskParams;
 import com.rootly.client.model.UpdateShortcutTaskTaskParams;
 import com.rootly.client.model.UpdateSlackChannelTopicTaskParams;
@@ -157,6 +169,7 @@ import com.rootly.client.model.UpdateTrelloCardTaskParams;
 import com.rootly.client.model.UpdateVictorOpsIncidentTaskParams;
 import com.rootly.client.model.UpdateZendeskTicketTaskParams;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -197,7 +210,7 @@ import com.google.gson.JsonParseException;
 
 import com.rootly.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T17:46:55.918190357Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateWorkflowTaskDataAttributesTaskParams extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(UpdateWorkflowTaskDataAttributesTaskParams.class.getName());
 
@@ -248,6 +261,7 @@ public class UpdateWorkflowTaskDataAttributesTaskParams extends AbstractOpenApiS
             final TypeAdapter<CreateGoogleMeetingTaskParams> adapterCreateGoogleMeetingTaskParams = gson.getDelegateAdapter(this, TypeToken.get(CreateGoogleMeetingTaskParams.class));
             final TypeAdapter<CreateGoToMeetingTaskParams> adapterCreateGoToMeetingTaskParams = gson.getDelegateAdapter(this, TypeToken.get(CreateGoToMeetingTaskParams.class));
             final TypeAdapter<CreateIncidentTaskParams> adapterCreateIncidentTaskParams = gson.getDelegateAdapter(this, TypeToken.get(CreateIncidentTaskParams.class));
+            final TypeAdapter<CreateSubIncidentTaskParams> adapterCreateSubIncidentTaskParams = gson.getDelegateAdapter(this, TypeToken.get(CreateSubIncidentTaskParams.class));
             final TypeAdapter<CreateIncidentPostmortemTaskParams> adapterCreateIncidentPostmortemTaskParams = gson.getDelegateAdapter(this, TypeToken.get(CreateIncidentPostmortemTaskParams.class));
             final TypeAdapter<CreateJiraIssueTaskParams> adapterCreateJiraIssueTaskParams = gson.getDelegateAdapter(this, TypeToken.get(CreateJiraIssueTaskParams.class));
             final TypeAdapter<CreateJiraSubtaskTaskParams> adapterCreateJiraSubtaskTaskParams = gson.getDelegateAdapter(this, TypeToken.get(CreateJiraSubtaskTaskParams.class));
@@ -256,6 +270,7 @@ public class UpdateWorkflowTaskDataAttributesTaskParams extends AbstractOpenApiS
             final TypeAdapter<CreateLinearIssueCommentTaskParams> adapterCreateLinearIssueCommentTaskParams = gson.getDelegateAdapter(this, TypeToken.get(CreateLinearIssueCommentTaskParams.class));
             final TypeAdapter<CreateMicrosoftTeamsMeetingTaskParams> adapterCreateMicrosoftTeamsMeetingTaskParams = gson.getDelegateAdapter(this, TypeToken.get(CreateMicrosoftTeamsMeetingTaskParams.class));
             final TypeAdapter<CreateMicrosoftTeamsChannelTaskParams> adapterCreateMicrosoftTeamsChannelTaskParams = gson.getDelegateAdapter(this, TypeToken.get(CreateMicrosoftTeamsChannelTaskParams.class));
+            final TypeAdapter<CreateMicrosoftTeamsChatTaskParams> adapterCreateMicrosoftTeamsChatTaskParams = gson.getDelegateAdapter(this, TypeToken.get(CreateMicrosoftTeamsChatTaskParams.class));
             final TypeAdapter<AddMicrosoftTeamsTabTaskParams> adapterAddMicrosoftTeamsTabTaskParams = gson.getDelegateAdapter(this, TypeToken.get(AddMicrosoftTeamsTabTaskParams.class));
             final TypeAdapter<ArchiveMicrosoftTeamsChannelsTaskParams> adapterArchiveMicrosoftTeamsChannelsTaskParams = gson.getDelegateAdapter(this, TypeToken.get(ArchiveMicrosoftTeamsChannelsTaskParams.class));
             final TypeAdapter<RenameMicrosoftTeamsChannelTaskParams> adapterRenameMicrosoftTeamsChannelTaskParams = gson.getDelegateAdapter(this, TypeToken.get(RenameMicrosoftTeamsChannelTaskParams.class));
@@ -264,6 +279,11 @@ public class UpdateWorkflowTaskDataAttributesTaskParams extends AbstractOpenApiS
             final TypeAdapter<SendMicrosoftTeamsMessageTaskParams> adapterSendMicrosoftTeamsMessageTaskParams = gson.getDelegateAdapter(this, TypeToken.get(SendMicrosoftTeamsMessageTaskParams.class));
             final TypeAdapter<SendMicrosoftTeamsBlocksTaskParams> adapterSendMicrosoftTeamsBlocksTaskParams = gson.getDelegateAdapter(this, TypeToken.get(SendMicrosoftTeamsBlocksTaskParams.class));
             final TypeAdapter<UpdateNotionPageTaskParams> adapterUpdateNotionPageTaskParams = gson.getDelegateAdapter(this, TypeToken.get(UpdateNotionPageTaskParams.class));
+            final TypeAdapter<UpdateQuipPageTaskParams> adapterUpdateQuipPageTaskParams = gson.getDelegateAdapter(this, TypeToken.get(UpdateQuipPageTaskParams.class));
+            final TypeAdapter<UpdateConfluencePageTaskParams> adapterUpdateConfluencePageTaskParams = gson.getDelegateAdapter(this, TypeToken.get(UpdateConfluencePageTaskParams.class));
+            final TypeAdapter<UpdateSharepointPageTaskParams> adapterUpdateSharepointPageTaskParams = gson.getDelegateAdapter(this, TypeToken.get(UpdateSharepointPageTaskParams.class));
+            final TypeAdapter<UpdateDropboxPaperPageTaskParams> adapterUpdateDropboxPaperPageTaskParams = gson.getDelegateAdapter(this, TypeToken.get(UpdateDropboxPaperPageTaskParams.class));
+            final TypeAdapter<UpdateDatadogNotebookTaskParams> adapterUpdateDatadogNotebookTaskParams = gson.getDelegateAdapter(this, TypeToken.get(UpdateDatadogNotebookTaskParams.class));
             final TypeAdapter<CreateServiceNowIncidentTaskParams> adapterCreateServiceNowIncidentTaskParams = gson.getDelegateAdapter(this, TypeToken.get(CreateServiceNowIncidentTaskParams.class));
             final TypeAdapter<CreateShortcutStoryTaskParams> adapterCreateShortcutStoryTaskParams = gson.getDelegateAdapter(this, TypeToken.get(CreateShortcutStoryTaskParams.class));
             final TypeAdapter<CreateShortcutTaskTaskParams> adapterCreateShortcutTaskTaskParams = gson.getDelegateAdapter(this, TypeToken.get(CreateShortcutTaskTaskParams.class));
@@ -330,8 +350,11 @@ public class UpdateWorkflowTaskDataAttributesTaskParams extends AbstractOpenApiS
             final TypeAdapter<UpdateAttachedAlertsTaskParams> adapterUpdateAttachedAlertsTaskParams = gson.getDelegateAdapter(this, TypeToken.get(UpdateAttachedAlertsTaskParams.class));
             final TypeAdapter<TriggerWorkflowTaskParams> adapterTriggerWorkflowTaskParams = gson.getDelegateAdapter(this, TypeToken.get(TriggerWorkflowTaskParams.class));
             final TypeAdapter<SendSlackBlocksTaskParams> adapterSendSlackBlocksTaskParams = gson.getDelegateAdapter(this, TypeToken.get(SendSlackBlocksTaskParams.class));
-            final TypeAdapter<GeniusCreateOpenaiChatCompletionTaskParams> adapterGeniusCreateOpenaiChatCompletionTaskParams = gson.getDelegateAdapter(this, TypeToken.get(GeniusCreateOpenaiChatCompletionTaskParams.class));
-            final TypeAdapter<GeniusCreateWatsonxChatCompletionTaskParams> adapterGeniusCreateWatsonxChatCompletionTaskParams = gson.getDelegateAdapter(this, TypeToken.get(GeniusCreateWatsonxChatCompletionTaskParams.class));
+            final TypeAdapter<CreateOpenaiChatCompletionTaskParams> adapterCreateOpenaiChatCompletionTaskParams = gson.getDelegateAdapter(this, TypeToken.get(CreateOpenaiChatCompletionTaskParams.class));
+            final TypeAdapter<CreateWatsonxChatCompletionTaskParams> adapterCreateWatsonxChatCompletionTaskParams = gson.getDelegateAdapter(this, TypeToken.get(CreateWatsonxChatCompletionTaskParams.class));
+            final TypeAdapter<CreateGoogleGeminiChatCompletionTaskParams> adapterCreateGoogleGeminiChatCompletionTaskParams = gson.getDelegateAdapter(this, TypeToken.get(CreateGoogleGeminiChatCompletionTaskParams.class));
+            final TypeAdapter<CreateMistralChatCompletionTaskParams> adapterCreateMistralChatCompletionTaskParams = gson.getDelegateAdapter(this, TypeToken.get(CreateMistralChatCompletionTaskParams.class));
+            final TypeAdapter<CreateAnthropicChatCompletionTaskParams> adapterCreateAnthropicChatCompletionTaskParams = gson.getDelegateAdapter(this, TypeToken.get(CreateAnthropicChatCompletionTaskParams.class));
 
             return (TypeAdapter<T>) new TypeAdapter<UpdateWorkflowTaskDataAttributesTaskParams>() {
                 @Override
@@ -575,6 +598,12 @@ public class UpdateWorkflowTaskDataAttributesTaskParams extends AbstractOpenApiS
                         elementAdapter.write(out, element);
                         return;
                     }
+                    // check if the actual instance is of the type `CreateSubIncidentTaskParams`
+                    if (value.getActualInstance() instanceof CreateSubIncidentTaskParams) {
+                        JsonElement element = adapterCreateSubIncidentTaskParams.toJsonTree((CreateSubIncidentTaskParams)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
                     // check if the actual instance is of the type `CreateIncidentPostmortemTaskParams`
                     if (value.getActualInstance() instanceof CreateIncidentPostmortemTaskParams) {
                         JsonElement element = adapterCreateIncidentPostmortemTaskParams.toJsonTree((CreateIncidentPostmortemTaskParams)value.getActualInstance());
@@ -623,6 +652,12 @@ public class UpdateWorkflowTaskDataAttributesTaskParams extends AbstractOpenApiS
                         elementAdapter.write(out, element);
                         return;
                     }
+                    // check if the actual instance is of the type `CreateMicrosoftTeamsChatTaskParams`
+                    if (value.getActualInstance() instanceof CreateMicrosoftTeamsChatTaskParams) {
+                        JsonElement element = adapterCreateMicrosoftTeamsChatTaskParams.toJsonTree((CreateMicrosoftTeamsChatTaskParams)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
                     // check if the actual instance is of the type `AddMicrosoftTeamsTabTaskParams`
                     if (value.getActualInstance() instanceof AddMicrosoftTeamsTabTaskParams) {
                         JsonElement element = adapterAddMicrosoftTeamsTabTaskParams.toJsonTree((AddMicrosoftTeamsTabTaskParams)value.getActualInstance());
@@ -668,6 +703,36 @@ public class UpdateWorkflowTaskDataAttributesTaskParams extends AbstractOpenApiS
                     // check if the actual instance is of the type `UpdateNotionPageTaskParams`
                     if (value.getActualInstance() instanceof UpdateNotionPageTaskParams) {
                         JsonElement element = adapterUpdateNotionPageTaskParams.toJsonTree((UpdateNotionPageTaskParams)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `UpdateQuipPageTaskParams`
+                    if (value.getActualInstance() instanceof UpdateQuipPageTaskParams) {
+                        JsonElement element = adapterUpdateQuipPageTaskParams.toJsonTree((UpdateQuipPageTaskParams)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `UpdateConfluencePageTaskParams`
+                    if (value.getActualInstance() instanceof UpdateConfluencePageTaskParams) {
+                        JsonElement element = adapterUpdateConfluencePageTaskParams.toJsonTree((UpdateConfluencePageTaskParams)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `UpdateSharepointPageTaskParams`
+                    if (value.getActualInstance() instanceof UpdateSharepointPageTaskParams) {
+                        JsonElement element = adapterUpdateSharepointPageTaskParams.toJsonTree((UpdateSharepointPageTaskParams)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `UpdateDropboxPaperPageTaskParams`
+                    if (value.getActualInstance() instanceof UpdateDropboxPaperPageTaskParams) {
+                        JsonElement element = adapterUpdateDropboxPaperPageTaskParams.toJsonTree((UpdateDropboxPaperPageTaskParams)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `UpdateDatadogNotebookTaskParams`
+                    if (value.getActualInstance() instanceof UpdateDatadogNotebookTaskParams) {
+                        JsonElement element = adapterUpdateDatadogNotebookTaskParams.toJsonTree((UpdateDatadogNotebookTaskParams)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
@@ -1067,19 +1132,37 @@ public class UpdateWorkflowTaskDataAttributesTaskParams extends AbstractOpenApiS
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `GeniusCreateOpenaiChatCompletionTaskParams`
-                    if (value.getActualInstance() instanceof GeniusCreateOpenaiChatCompletionTaskParams) {
-                        JsonElement element = adapterGeniusCreateOpenaiChatCompletionTaskParams.toJsonTree((GeniusCreateOpenaiChatCompletionTaskParams)value.getActualInstance());
+                    // check if the actual instance is of the type `CreateOpenaiChatCompletionTaskParams`
+                    if (value.getActualInstance() instanceof CreateOpenaiChatCompletionTaskParams) {
+                        JsonElement element = adapterCreateOpenaiChatCompletionTaskParams.toJsonTree((CreateOpenaiChatCompletionTaskParams)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `GeniusCreateWatsonxChatCompletionTaskParams`
-                    if (value.getActualInstance() instanceof GeniusCreateWatsonxChatCompletionTaskParams) {
-                        JsonElement element = adapterGeniusCreateWatsonxChatCompletionTaskParams.toJsonTree((GeniusCreateWatsonxChatCompletionTaskParams)value.getActualInstance());
+                    // check if the actual instance is of the type `CreateWatsonxChatCompletionTaskParams`
+                    if (value.getActualInstance() instanceof CreateWatsonxChatCompletionTaskParams) {
+                        JsonElement element = adapterCreateWatsonxChatCompletionTaskParams.toJsonTree((CreateWatsonxChatCompletionTaskParams)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
-                    throw new IOException("Failed to serialize as the type doesn't match anyOf schemas: AddActionItemTaskParams, AddMicrosoftTeamsTabTaskParams, AddRoleTaskParams, AddSlackBookmarkTaskParams, AddTeamTaskParams, AddToTimelineTaskParams, ArchiveMicrosoftTeamsChannelsTaskParams, ArchiveSlackChannelsTaskParams, AttachDatadogDashboardsTaskParams, AutoAssignRoleOpsgenieTaskParams, AutoAssignRolePagerdutyTaskParams, AutoAssignRoleRootlyTaskParams, AutoAssignRoleVictorOpsTaskParams, CallPeopleTaskParams, ChangeSlackChannelPrivacyTaskParams, CreateAirtableTableRecordTaskParams, CreateAsanaSubtaskTaskParams, CreateAsanaTaskTaskParams, CreateClickupTaskTaskParams, CreateCodaPageTaskParams, CreateConfluencePageTaskParams, CreateDatadogNotebookTaskParams, CreateDropboxPaperPageTaskParams, CreateGithubIssueTaskParams, CreateGitlabIssueTaskParams, CreateGoToMeetingTaskParams, CreateGoogleCalendarEventTaskParams, CreateGoogleDocsPageTaskParams, CreateGoogleDocsPermissionsTaskParams, CreateGoogleMeetingTaskParams, CreateIncidentPostmortemTaskParams, CreateIncidentTaskParams, CreateJiraIssueTaskParams, CreateJiraSubtaskTaskParams, CreateLinearIssueCommentTaskParams, CreateLinearIssueTaskParams, CreateLinearSubtaskIssueTaskParams, CreateMicrosoftTeamsChannelTaskParams, CreateMicrosoftTeamsMeetingTaskParams, CreateMotionTaskTaskParams, CreateNotionPageTaskParams, CreateOpsgenieAlertTaskParams, CreateOutlookEventTaskParams, CreatePagerdutyStatusUpdateTaskParams, CreatePagertreeAlertTaskParams, CreateQuipPageTaskParams, CreateServiceNowIncidentTaskParams, CreateSharepointPageTaskParams, CreateShortcutStoryTaskParams, CreateShortcutTaskTaskParams, CreateSlackChannelTaskParams, CreateTrelloCardTaskParams, CreateWebexMeetingTaskParams, CreateZendeskJiraLinkTaskParams, CreateZendeskTicketTaskParams, CreateZoomMeetingTaskParams, GeniusCreateOpenaiChatCompletionTaskParams, GeniusCreateWatsonxChatCompletionTaskParams, GetAlertsTaskParams, GetGithubCommitsTaskParams, GetGitlabCommitsTaskParams, GetPulsesTaskParams, HttpClientTaskParams, InviteToMicrosoftTeamsChannelTaskParams, InviteToSlackChannelOpsgenieTaskParams, InviteToSlackChannelPagerdutyTaskParams, InviteToSlackChannelRootlyTaskParams, InviteToSlackChannelTaskParams, InviteToSlackChannelVictorOpsTaskParams, PageOpsgenieOnCallRespondersTaskParams, PagePagerdutyOnCallRespondersTaskParams, PageRootlyOnCallRespondersTaskParams, PageVictorOpsOnCallRespondersTaskParams, PrintTaskParams, PublishIncidentTaskParams, RedisClientTaskParams, RemoveGoogleDocsPermissionsTaskParams, RenameMicrosoftTeamsChannelTaskParams, RenameSlackChannelTaskParams, RunCommandHerokuTaskParams, SendDashboardReportTaskParams, SendEmailTaskParams, SendMicrosoftTeamsBlocksTaskParams, SendMicrosoftTeamsMessageTaskParams, SendSlackBlocksTaskParams, SendSlackMessageTaskParams, SendSmsTaskParams, SendWhatsappMessageTaskParams, SnapshotDatadogGraphTaskParams, SnapshotGrafanaDashboardTaskParams, SnapshotLookerLookTaskParams, SnapshotNewRelicGraphTaskParams, TriggerWorkflowTaskParams, TweetTwitterMessageTaskParams, UpdateActionItemTaskParams, UpdateAirtableTableRecordTaskParams, UpdateAsanaTaskTaskParams, UpdateAttachedAlertsTaskParams, UpdateClickupTaskTaskParams, UpdateCodaPageTaskParams, UpdateGithubIssueTaskParams, UpdateGitlabIssueTaskParams, UpdateGoogleCalendarEventTaskParams, UpdateGoogleDocsPageTaskParams, UpdateIncidentPostmortemTaskParams, UpdateIncidentStatusTimestampTaskParams, UpdateIncidentTaskParams, UpdateJiraIssueTaskParams, UpdateLinearIssueTaskParams, UpdateMotionTaskTaskParams, UpdateNotionPageTaskParams, UpdateOpsgenieAlertTaskParams, UpdateOpsgenieIncidentTaskParams, UpdatePagerdutyIncidentTaskParams, UpdatePagertreeAlertTaskParams, UpdateServiceNowIncidentTaskParams, UpdateShortcutStoryTaskParams, UpdateShortcutTaskTaskParams, UpdateSlackChannelTopicTaskParams, UpdateStatusTaskParams, UpdateTrelloCardTaskParams, UpdateVictorOpsIncidentTaskParams, UpdateZendeskTicketTaskParams");
+                    // check if the actual instance is of the type `CreateGoogleGeminiChatCompletionTaskParams`
+                    if (value.getActualInstance() instanceof CreateGoogleGeminiChatCompletionTaskParams) {
+                        JsonElement element = adapterCreateGoogleGeminiChatCompletionTaskParams.toJsonTree((CreateGoogleGeminiChatCompletionTaskParams)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `CreateMistralChatCompletionTaskParams`
+                    if (value.getActualInstance() instanceof CreateMistralChatCompletionTaskParams) {
+                        JsonElement element = adapterCreateMistralChatCompletionTaskParams.toJsonTree((CreateMistralChatCompletionTaskParams)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `CreateAnthropicChatCompletionTaskParams`
+                    if (value.getActualInstance() instanceof CreateAnthropicChatCompletionTaskParams) {
+                        JsonElement element = adapterCreateAnthropicChatCompletionTaskParams.toJsonTree((CreateAnthropicChatCompletionTaskParams)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    throw new IOException("Failed to serialize as the type doesn't match anyOf schemas: AddActionItemTaskParams, AddMicrosoftTeamsTabTaskParams, AddRoleTaskParams, AddSlackBookmarkTaskParams, AddTeamTaskParams, AddToTimelineTaskParams, ArchiveMicrosoftTeamsChannelsTaskParams, ArchiveSlackChannelsTaskParams, AttachDatadogDashboardsTaskParams, AutoAssignRoleOpsgenieTaskParams, AutoAssignRolePagerdutyTaskParams, AutoAssignRoleRootlyTaskParams, AutoAssignRoleVictorOpsTaskParams, CallPeopleTaskParams, ChangeSlackChannelPrivacyTaskParams, CreateAirtableTableRecordTaskParams, CreateAnthropicChatCompletionTaskParams, CreateAsanaSubtaskTaskParams, CreateAsanaTaskTaskParams, CreateClickupTaskTaskParams, CreateCodaPageTaskParams, CreateConfluencePageTaskParams, CreateDatadogNotebookTaskParams, CreateDropboxPaperPageTaskParams, CreateGithubIssueTaskParams, CreateGitlabIssueTaskParams, CreateGoToMeetingTaskParams, CreateGoogleCalendarEventTaskParams, CreateGoogleDocsPageTaskParams, CreateGoogleDocsPermissionsTaskParams, CreateGoogleGeminiChatCompletionTaskParams, CreateGoogleMeetingTaskParams, CreateIncidentPostmortemTaskParams, CreateIncidentTaskParams, CreateJiraIssueTaskParams, CreateJiraSubtaskTaskParams, CreateLinearIssueCommentTaskParams, CreateLinearIssueTaskParams, CreateLinearSubtaskIssueTaskParams, CreateMicrosoftTeamsChannelTaskParams, CreateMicrosoftTeamsChatTaskParams, CreateMicrosoftTeamsMeetingTaskParams, CreateMistralChatCompletionTaskParams, CreateMotionTaskTaskParams, CreateNotionPageTaskParams, CreateOpenaiChatCompletionTaskParams, CreateOpsgenieAlertTaskParams, CreateOutlookEventTaskParams, CreatePagerdutyStatusUpdateTaskParams, CreatePagertreeAlertTaskParams, CreateQuipPageTaskParams, CreateServiceNowIncidentTaskParams, CreateSharepointPageTaskParams, CreateShortcutStoryTaskParams, CreateShortcutTaskTaskParams, CreateSlackChannelTaskParams, CreateSubIncidentTaskParams, CreateTrelloCardTaskParams, CreateWatsonxChatCompletionTaskParams, CreateWebexMeetingTaskParams, CreateZendeskJiraLinkTaskParams, CreateZendeskTicketTaskParams, CreateZoomMeetingTaskParams, GetAlertsTaskParams, GetGithubCommitsTaskParams, GetGitlabCommitsTaskParams, GetPulsesTaskParams, HttpClientTaskParams, InviteToMicrosoftTeamsChannelTaskParams, InviteToSlackChannelOpsgenieTaskParams, InviteToSlackChannelPagerdutyTaskParams, InviteToSlackChannelRootlyTaskParams, InviteToSlackChannelTaskParams, InviteToSlackChannelVictorOpsTaskParams, PageOpsgenieOnCallRespondersTaskParams, PagePagerdutyOnCallRespondersTaskParams, PageRootlyOnCallRespondersTaskParams, PageVictorOpsOnCallRespondersTaskParams, PrintTaskParams, PublishIncidentTaskParams, RedisClientTaskParams, RemoveGoogleDocsPermissionsTaskParams, RenameMicrosoftTeamsChannelTaskParams, RenameSlackChannelTaskParams, RunCommandHerokuTaskParams, SendDashboardReportTaskParams, SendEmailTaskParams, SendMicrosoftTeamsBlocksTaskParams, SendMicrosoftTeamsMessageTaskParams, SendSlackBlocksTaskParams, SendSlackMessageTaskParams, SendSmsTaskParams, SendWhatsappMessageTaskParams, SnapshotDatadogGraphTaskParams, SnapshotGrafanaDashboardTaskParams, SnapshotLookerLookTaskParams, SnapshotNewRelicGraphTaskParams, TriggerWorkflowTaskParams, TweetTwitterMessageTaskParams, UpdateActionItemTaskParams, UpdateAirtableTableRecordTaskParams, UpdateAsanaTaskTaskParams, UpdateAttachedAlertsTaskParams, UpdateClickupTaskTaskParams, UpdateCodaPageTaskParams, UpdateConfluencePageTaskParams, UpdateDatadogNotebookTaskParams, UpdateDropboxPaperPageTaskParams, UpdateGithubIssueTaskParams, UpdateGitlabIssueTaskParams, UpdateGoogleCalendarEventTaskParams, UpdateGoogleDocsPageTaskParams, UpdateIncidentPostmortemTaskParams, UpdateIncidentStatusTimestampTaskParams, UpdateIncidentTaskParams, UpdateJiraIssueTaskParams, UpdateLinearIssueTaskParams, UpdateMotionTaskTaskParams, UpdateNotionPageTaskParams, UpdateOpsgenieAlertTaskParams, UpdateOpsgenieIncidentTaskParams, UpdatePagerdutyIncidentTaskParams, UpdatePagertreeAlertTaskParams, UpdateQuipPageTaskParams, UpdateServiceNowIncidentTaskParams, UpdateSharepointPageTaskParams, UpdateShortcutStoryTaskParams, UpdateShortcutTaskTaskParams, UpdateSlackChannelTopicTaskParams, UpdateStatusTaskParams, UpdateTrelloCardTaskParams, UpdateVictorOpsIncidentTaskParams, UpdateZendeskTicketTaskParams");
                 }
 
                 @Override
@@ -1597,6 +1680,19 @@ public class UpdateWorkflowTaskDataAttributesTaskParams extends AbstractOpenApiS
                         errorMessages.add(String.format("Deserialization for CreateIncidentTaskParams failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'CreateIncidentTaskParams'", e);
                     }
+                    // deserialize CreateSubIncidentTaskParams
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        CreateSubIncidentTaskParams.validateJsonElement(jsonElement);
+                        actualAdapter = adapterCreateSubIncidentTaskParams;
+                        UpdateWorkflowTaskDataAttributesTaskParams ret = new UpdateWorkflowTaskDataAttributesTaskParams();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
+                        return ret;
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for CreateSubIncidentTaskParams failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'CreateSubIncidentTaskParams'", e);
+                    }
                     // deserialize CreateIncidentPostmortemTaskParams
                     try {
                         // validate the JSON object to see if any exception is thrown
@@ -1701,6 +1797,19 @@ public class UpdateWorkflowTaskDataAttributesTaskParams extends AbstractOpenApiS
                         errorMessages.add(String.format("Deserialization for CreateMicrosoftTeamsChannelTaskParams failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'CreateMicrosoftTeamsChannelTaskParams'", e);
                     }
+                    // deserialize CreateMicrosoftTeamsChatTaskParams
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        CreateMicrosoftTeamsChatTaskParams.validateJsonElement(jsonElement);
+                        actualAdapter = adapterCreateMicrosoftTeamsChatTaskParams;
+                        UpdateWorkflowTaskDataAttributesTaskParams ret = new UpdateWorkflowTaskDataAttributesTaskParams();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
+                        return ret;
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for CreateMicrosoftTeamsChatTaskParams failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'CreateMicrosoftTeamsChatTaskParams'", e);
+                    }
                     // deserialize AddMicrosoftTeamsTabTaskParams
                     try {
                         // validate the JSON object to see if any exception is thrown
@@ -1804,6 +1913,71 @@ public class UpdateWorkflowTaskDataAttributesTaskParams extends AbstractOpenApiS
                         // deserialization failed, continue
                         errorMessages.add(String.format("Deserialization for UpdateNotionPageTaskParams failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'UpdateNotionPageTaskParams'", e);
+                    }
+                    // deserialize UpdateQuipPageTaskParams
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        UpdateQuipPageTaskParams.validateJsonElement(jsonElement);
+                        actualAdapter = adapterUpdateQuipPageTaskParams;
+                        UpdateWorkflowTaskDataAttributesTaskParams ret = new UpdateWorkflowTaskDataAttributesTaskParams();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
+                        return ret;
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for UpdateQuipPageTaskParams failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'UpdateQuipPageTaskParams'", e);
+                    }
+                    // deserialize UpdateConfluencePageTaskParams
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        UpdateConfluencePageTaskParams.validateJsonElement(jsonElement);
+                        actualAdapter = adapterUpdateConfluencePageTaskParams;
+                        UpdateWorkflowTaskDataAttributesTaskParams ret = new UpdateWorkflowTaskDataAttributesTaskParams();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
+                        return ret;
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for UpdateConfluencePageTaskParams failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'UpdateConfluencePageTaskParams'", e);
+                    }
+                    // deserialize UpdateSharepointPageTaskParams
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        UpdateSharepointPageTaskParams.validateJsonElement(jsonElement);
+                        actualAdapter = adapterUpdateSharepointPageTaskParams;
+                        UpdateWorkflowTaskDataAttributesTaskParams ret = new UpdateWorkflowTaskDataAttributesTaskParams();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
+                        return ret;
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for UpdateSharepointPageTaskParams failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'UpdateSharepointPageTaskParams'", e);
+                    }
+                    // deserialize UpdateDropboxPaperPageTaskParams
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        UpdateDropboxPaperPageTaskParams.validateJsonElement(jsonElement);
+                        actualAdapter = adapterUpdateDropboxPaperPageTaskParams;
+                        UpdateWorkflowTaskDataAttributesTaskParams ret = new UpdateWorkflowTaskDataAttributesTaskParams();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
+                        return ret;
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for UpdateDropboxPaperPageTaskParams failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'UpdateDropboxPaperPageTaskParams'", e);
+                    }
+                    // deserialize UpdateDatadogNotebookTaskParams
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        UpdateDatadogNotebookTaskParams.validateJsonElement(jsonElement);
+                        actualAdapter = adapterUpdateDatadogNotebookTaskParams;
+                        UpdateWorkflowTaskDataAttributesTaskParams ret = new UpdateWorkflowTaskDataAttributesTaskParams();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
+                        return ret;
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for UpdateDatadogNotebookTaskParams failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'UpdateDatadogNotebookTaskParams'", e);
                     }
                     // deserialize CreateServiceNowIncidentTaskParams
                     try {
@@ -2663,31 +2837,70 @@ public class UpdateWorkflowTaskDataAttributesTaskParams extends AbstractOpenApiS
                         errorMessages.add(String.format("Deserialization for SendSlackBlocksTaskParams failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'SendSlackBlocksTaskParams'", e);
                     }
-                    // deserialize GeniusCreateOpenaiChatCompletionTaskParams
+                    // deserialize CreateOpenaiChatCompletionTaskParams
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        GeniusCreateOpenaiChatCompletionTaskParams.validateJsonElement(jsonElement);
-                        actualAdapter = adapterGeniusCreateOpenaiChatCompletionTaskParams;
+                        CreateOpenaiChatCompletionTaskParams.validateJsonElement(jsonElement);
+                        actualAdapter = adapterCreateOpenaiChatCompletionTaskParams;
                         UpdateWorkflowTaskDataAttributesTaskParams ret = new UpdateWorkflowTaskDataAttributesTaskParams();
                         ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
                         return ret;
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for GeniusCreateOpenaiChatCompletionTaskParams failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'GeniusCreateOpenaiChatCompletionTaskParams'", e);
+                        errorMessages.add(String.format("Deserialization for CreateOpenaiChatCompletionTaskParams failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'CreateOpenaiChatCompletionTaskParams'", e);
                     }
-                    // deserialize GeniusCreateWatsonxChatCompletionTaskParams
+                    // deserialize CreateWatsonxChatCompletionTaskParams
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        GeniusCreateWatsonxChatCompletionTaskParams.validateJsonElement(jsonElement);
-                        actualAdapter = adapterGeniusCreateWatsonxChatCompletionTaskParams;
+                        CreateWatsonxChatCompletionTaskParams.validateJsonElement(jsonElement);
+                        actualAdapter = adapterCreateWatsonxChatCompletionTaskParams;
                         UpdateWorkflowTaskDataAttributesTaskParams ret = new UpdateWorkflowTaskDataAttributesTaskParams();
                         ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
                         return ret;
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for GeniusCreateWatsonxChatCompletionTaskParams failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'GeniusCreateWatsonxChatCompletionTaskParams'", e);
+                        errorMessages.add(String.format("Deserialization for CreateWatsonxChatCompletionTaskParams failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'CreateWatsonxChatCompletionTaskParams'", e);
+                    }
+                    // deserialize CreateGoogleGeminiChatCompletionTaskParams
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        CreateGoogleGeminiChatCompletionTaskParams.validateJsonElement(jsonElement);
+                        actualAdapter = adapterCreateGoogleGeminiChatCompletionTaskParams;
+                        UpdateWorkflowTaskDataAttributesTaskParams ret = new UpdateWorkflowTaskDataAttributesTaskParams();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
+                        return ret;
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for CreateGoogleGeminiChatCompletionTaskParams failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'CreateGoogleGeminiChatCompletionTaskParams'", e);
+                    }
+                    // deserialize CreateMistralChatCompletionTaskParams
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        CreateMistralChatCompletionTaskParams.validateJsonElement(jsonElement);
+                        actualAdapter = adapterCreateMistralChatCompletionTaskParams;
+                        UpdateWorkflowTaskDataAttributesTaskParams ret = new UpdateWorkflowTaskDataAttributesTaskParams();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
+                        return ret;
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for CreateMistralChatCompletionTaskParams failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'CreateMistralChatCompletionTaskParams'", e);
+                    }
+                    // deserialize CreateAnthropicChatCompletionTaskParams
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        CreateAnthropicChatCompletionTaskParams.validateJsonElement(jsonElement);
+                        actualAdapter = adapterCreateAnthropicChatCompletionTaskParams;
+                        UpdateWorkflowTaskDataAttributesTaskParams ret = new UpdateWorkflowTaskDataAttributesTaskParams();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
+                        return ret;
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for CreateAnthropicChatCompletionTaskParams failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'CreateAnthropicChatCompletionTaskParams'", e);
                     }
 
                     throw new IOException(String.format("Failed deserialization for UpdateWorkflowTaskDataAttributesTaskParams: no class matches result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
@@ -2748,6 +2961,7 @@ public class UpdateWorkflowTaskDataAttributesTaskParams extends AbstractOpenApiS
         schemas.put("CreateGoogleMeetingTaskParams", CreateGoogleMeetingTaskParams.class);
         schemas.put("CreateGoToMeetingTaskParams", CreateGoToMeetingTaskParams.class);
         schemas.put("CreateIncidentTaskParams", CreateIncidentTaskParams.class);
+        schemas.put("CreateSubIncidentTaskParams", CreateSubIncidentTaskParams.class);
         schemas.put("CreateIncidentPostmortemTaskParams", CreateIncidentPostmortemTaskParams.class);
         schemas.put("CreateJiraIssueTaskParams", CreateJiraIssueTaskParams.class);
         schemas.put("CreateJiraSubtaskTaskParams", CreateJiraSubtaskTaskParams.class);
@@ -2756,6 +2970,7 @@ public class UpdateWorkflowTaskDataAttributesTaskParams extends AbstractOpenApiS
         schemas.put("CreateLinearIssueCommentTaskParams", CreateLinearIssueCommentTaskParams.class);
         schemas.put("CreateMicrosoftTeamsMeetingTaskParams", CreateMicrosoftTeamsMeetingTaskParams.class);
         schemas.put("CreateMicrosoftTeamsChannelTaskParams", CreateMicrosoftTeamsChannelTaskParams.class);
+        schemas.put("CreateMicrosoftTeamsChatTaskParams", CreateMicrosoftTeamsChatTaskParams.class);
         schemas.put("AddMicrosoftTeamsTabTaskParams", AddMicrosoftTeamsTabTaskParams.class);
         schemas.put("ArchiveMicrosoftTeamsChannelsTaskParams", ArchiveMicrosoftTeamsChannelsTaskParams.class);
         schemas.put("RenameMicrosoftTeamsChannelTaskParams", RenameMicrosoftTeamsChannelTaskParams.class);
@@ -2764,6 +2979,11 @@ public class UpdateWorkflowTaskDataAttributesTaskParams extends AbstractOpenApiS
         schemas.put("SendMicrosoftTeamsMessageTaskParams", SendMicrosoftTeamsMessageTaskParams.class);
         schemas.put("SendMicrosoftTeamsBlocksTaskParams", SendMicrosoftTeamsBlocksTaskParams.class);
         schemas.put("UpdateNotionPageTaskParams", UpdateNotionPageTaskParams.class);
+        schemas.put("UpdateQuipPageTaskParams", UpdateQuipPageTaskParams.class);
+        schemas.put("UpdateConfluencePageTaskParams", UpdateConfluencePageTaskParams.class);
+        schemas.put("UpdateSharepointPageTaskParams", UpdateSharepointPageTaskParams.class);
+        schemas.put("UpdateDropboxPaperPageTaskParams", UpdateDropboxPaperPageTaskParams.class);
+        schemas.put("UpdateDatadogNotebookTaskParams", UpdateDatadogNotebookTaskParams.class);
         schemas.put("CreateServiceNowIncidentTaskParams", CreateServiceNowIncidentTaskParams.class);
         schemas.put("CreateShortcutStoryTaskParams", CreateShortcutStoryTaskParams.class);
         schemas.put("CreateShortcutTaskTaskParams", CreateShortcutTaskTaskParams.class);
@@ -2830,8 +3050,11 @@ public class UpdateWorkflowTaskDataAttributesTaskParams extends AbstractOpenApiS
         schemas.put("UpdateAttachedAlertsTaskParams", UpdateAttachedAlertsTaskParams.class);
         schemas.put("TriggerWorkflowTaskParams", TriggerWorkflowTaskParams.class);
         schemas.put("SendSlackBlocksTaskParams", SendSlackBlocksTaskParams.class);
-        schemas.put("GeniusCreateOpenaiChatCompletionTaskParams", GeniusCreateOpenaiChatCompletionTaskParams.class);
-        schemas.put("GeniusCreateWatsonxChatCompletionTaskParams", GeniusCreateWatsonxChatCompletionTaskParams.class);
+        schemas.put("CreateOpenaiChatCompletionTaskParams", CreateOpenaiChatCompletionTaskParams.class);
+        schemas.put("CreateWatsonxChatCompletionTaskParams", CreateWatsonxChatCompletionTaskParams.class);
+        schemas.put("CreateGoogleGeminiChatCompletionTaskParams", CreateGoogleGeminiChatCompletionTaskParams.class);
+        schemas.put("CreateMistralChatCompletionTaskParams", CreateMistralChatCompletionTaskParams.class);
+        schemas.put("CreateAnthropicChatCompletionTaskParams", CreateAnthropicChatCompletionTaskParams.class);
     }
 
     @Override
@@ -2842,7 +3065,7 @@ public class UpdateWorkflowTaskDataAttributesTaskParams extends AbstractOpenApiS
     /**
      * Set the instance that matches the anyOf child schema, check
      * the instance parameter is valid against the anyOf child schemas:
-     * AddActionItemTaskParams, AddMicrosoftTeamsTabTaskParams, AddRoleTaskParams, AddSlackBookmarkTaskParams, AddTeamTaskParams, AddToTimelineTaskParams, ArchiveMicrosoftTeamsChannelsTaskParams, ArchiveSlackChannelsTaskParams, AttachDatadogDashboardsTaskParams, AutoAssignRoleOpsgenieTaskParams, AutoAssignRolePagerdutyTaskParams, AutoAssignRoleRootlyTaskParams, AutoAssignRoleVictorOpsTaskParams, CallPeopleTaskParams, ChangeSlackChannelPrivacyTaskParams, CreateAirtableTableRecordTaskParams, CreateAsanaSubtaskTaskParams, CreateAsanaTaskTaskParams, CreateClickupTaskTaskParams, CreateCodaPageTaskParams, CreateConfluencePageTaskParams, CreateDatadogNotebookTaskParams, CreateDropboxPaperPageTaskParams, CreateGithubIssueTaskParams, CreateGitlabIssueTaskParams, CreateGoToMeetingTaskParams, CreateGoogleCalendarEventTaskParams, CreateGoogleDocsPageTaskParams, CreateGoogleDocsPermissionsTaskParams, CreateGoogleMeetingTaskParams, CreateIncidentPostmortemTaskParams, CreateIncidentTaskParams, CreateJiraIssueTaskParams, CreateJiraSubtaskTaskParams, CreateLinearIssueCommentTaskParams, CreateLinearIssueTaskParams, CreateLinearSubtaskIssueTaskParams, CreateMicrosoftTeamsChannelTaskParams, CreateMicrosoftTeamsMeetingTaskParams, CreateMotionTaskTaskParams, CreateNotionPageTaskParams, CreateOpsgenieAlertTaskParams, CreateOutlookEventTaskParams, CreatePagerdutyStatusUpdateTaskParams, CreatePagertreeAlertTaskParams, CreateQuipPageTaskParams, CreateServiceNowIncidentTaskParams, CreateSharepointPageTaskParams, CreateShortcutStoryTaskParams, CreateShortcutTaskTaskParams, CreateSlackChannelTaskParams, CreateTrelloCardTaskParams, CreateWebexMeetingTaskParams, CreateZendeskJiraLinkTaskParams, CreateZendeskTicketTaskParams, CreateZoomMeetingTaskParams, GeniusCreateOpenaiChatCompletionTaskParams, GeniusCreateWatsonxChatCompletionTaskParams, GetAlertsTaskParams, GetGithubCommitsTaskParams, GetGitlabCommitsTaskParams, GetPulsesTaskParams, HttpClientTaskParams, InviteToMicrosoftTeamsChannelTaskParams, InviteToSlackChannelOpsgenieTaskParams, InviteToSlackChannelPagerdutyTaskParams, InviteToSlackChannelRootlyTaskParams, InviteToSlackChannelTaskParams, InviteToSlackChannelVictorOpsTaskParams, PageOpsgenieOnCallRespondersTaskParams, PagePagerdutyOnCallRespondersTaskParams, PageRootlyOnCallRespondersTaskParams, PageVictorOpsOnCallRespondersTaskParams, PrintTaskParams, PublishIncidentTaskParams, RedisClientTaskParams, RemoveGoogleDocsPermissionsTaskParams, RenameMicrosoftTeamsChannelTaskParams, RenameSlackChannelTaskParams, RunCommandHerokuTaskParams, SendDashboardReportTaskParams, SendEmailTaskParams, SendMicrosoftTeamsBlocksTaskParams, SendMicrosoftTeamsMessageTaskParams, SendSlackBlocksTaskParams, SendSlackMessageTaskParams, SendSmsTaskParams, SendWhatsappMessageTaskParams, SnapshotDatadogGraphTaskParams, SnapshotGrafanaDashboardTaskParams, SnapshotLookerLookTaskParams, SnapshotNewRelicGraphTaskParams, TriggerWorkflowTaskParams, TweetTwitterMessageTaskParams, UpdateActionItemTaskParams, UpdateAirtableTableRecordTaskParams, UpdateAsanaTaskTaskParams, UpdateAttachedAlertsTaskParams, UpdateClickupTaskTaskParams, UpdateCodaPageTaskParams, UpdateGithubIssueTaskParams, UpdateGitlabIssueTaskParams, UpdateGoogleCalendarEventTaskParams, UpdateGoogleDocsPageTaskParams, UpdateIncidentPostmortemTaskParams, UpdateIncidentStatusTimestampTaskParams, UpdateIncidentTaskParams, UpdateJiraIssueTaskParams, UpdateLinearIssueTaskParams, UpdateMotionTaskTaskParams, UpdateNotionPageTaskParams, UpdateOpsgenieAlertTaskParams, UpdateOpsgenieIncidentTaskParams, UpdatePagerdutyIncidentTaskParams, UpdatePagertreeAlertTaskParams, UpdateServiceNowIncidentTaskParams, UpdateShortcutStoryTaskParams, UpdateShortcutTaskTaskParams, UpdateSlackChannelTopicTaskParams, UpdateStatusTaskParams, UpdateTrelloCardTaskParams, UpdateVictorOpsIncidentTaskParams, UpdateZendeskTicketTaskParams
+     * AddActionItemTaskParams, AddMicrosoftTeamsTabTaskParams, AddRoleTaskParams, AddSlackBookmarkTaskParams, AddTeamTaskParams, AddToTimelineTaskParams, ArchiveMicrosoftTeamsChannelsTaskParams, ArchiveSlackChannelsTaskParams, AttachDatadogDashboardsTaskParams, AutoAssignRoleOpsgenieTaskParams, AutoAssignRolePagerdutyTaskParams, AutoAssignRoleRootlyTaskParams, AutoAssignRoleVictorOpsTaskParams, CallPeopleTaskParams, ChangeSlackChannelPrivacyTaskParams, CreateAirtableTableRecordTaskParams, CreateAnthropicChatCompletionTaskParams, CreateAsanaSubtaskTaskParams, CreateAsanaTaskTaskParams, CreateClickupTaskTaskParams, CreateCodaPageTaskParams, CreateConfluencePageTaskParams, CreateDatadogNotebookTaskParams, CreateDropboxPaperPageTaskParams, CreateGithubIssueTaskParams, CreateGitlabIssueTaskParams, CreateGoToMeetingTaskParams, CreateGoogleCalendarEventTaskParams, CreateGoogleDocsPageTaskParams, CreateGoogleDocsPermissionsTaskParams, CreateGoogleGeminiChatCompletionTaskParams, CreateGoogleMeetingTaskParams, CreateIncidentPostmortemTaskParams, CreateIncidentTaskParams, CreateJiraIssueTaskParams, CreateJiraSubtaskTaskParams, CreateLinearIssueCommentTaskParams, CreateLinearIssueTaskParams, CreateLinearSubtaskIssueTaskParams, CreateMicrosoftTeamsChannelTaskParams, CreateMicrosoftTeamsChatTaskParams, CreateMicrosoftTeamsMeetingTaskParams, CreateMistralChatCompletionTaskParams, CreateMotionTaskTaskParams, CreateNotionPageTaskParams, CreateOpenaiChatCompletionTaskParams, CreateOpsgenieAlertTaskParams, CreateOutlookEventTaskParams, CreatePagerdutyStatusUpdateTaskParams, CreatePagertreeAlertTaskParams, CreateQuipPageTaskParams, CreateServiceNowIncidentTaskParams, CreateSharepointPageTaskParams, CreateShortcutStoryTaskParams, CreateShortcutTaskTaskParams, CreateSlackChannelTaskParams, CreateSubIncidentTaskParams, CreateTrelloCardTaskParams, CreateWatsonxChatCompletionTaskParams, CreateWebexMeetingTaskParams, CreateZendeskJiraLinkTaskParams, CreateZendeskTicketTaskParams, CreateZoomMeetingTaskParams, GetAlertsTaskParams, GetGithubCommitsTaskParams, GetGitlabCommitsTaskParams, GetPulsesTaskParams, HttpClientTaskParams, InviteToMicrosoftTeamsChannelTaskParams, InviteToSlackChannelOpsgenieTaskParams, InviteToSlackChannelPagerdutyTaskParams, InviteToSlackChannelRootlyTaskParams, InviteToSlackChannelTaskParams, InviteToSlackChannelVictorOpsTaskParams, PageOpsgenieOnCallRespondersTaskParams, PagePagerdutyOnCallRespondersTaskParams, PageRootlyOnCallRespondersTaskParams, PageVictorOpsOnCallRespondersTaskParams, PrintTaskParams, PublishIncidentTaskParams, RedisClientTaskParams, RemoveGoogleDocsPermissionsTaskParams, RenameMicrosoftTeamsChannelTaskParams, RenameSlackChannelTaskParams, RunCommandHerokuTaskParams, SendDashboardReportTaskParams, SendEmailTaskParams, SendMicrosoftTeamsBlocksTaskParams, SendMicrosoftTeamsMessageTaskParams, SendSlackBlocksTaskParams, SendSlackMessageTaskParams, SendSmsTaskParams, SendWhatsappMessageTaskParams, SnapshotDatadogGraphTaskParams, SnapshotGrafanaDashboardTaskParams, SnapshotLookerLookTaskParams, SnapshotNewRelicGraphTaskParams, TriggerWorkflowTaskParams, TweetTwitterMessageTaskParams, UpdateActionItemTaskParams, UpdateAirtableTableRecordTaskParams, UpdateAsanaTaskTaskParams, UpdateAttachedAlertsTaskParams, UpdateClickupTaskTaskParams, UpdateCodaPageTaskParams, UpdateConfluencePageTaskParams, UpdateDatadogNotebookTaskParams, UpdateDropboxPaperPageTaskParams, UpdateGithubIssueTaskParams, UpdateGitlabIssueTaskParams, UpdateGoogleCalendarEventTaskParams, UpdateGoogleDocsPageTaskParams, UpdateIncidentPostmortemTaskParams, UpdateIncidentStatusTimestampTaskParams, UpdateIncidentTaskParams, UpdateJiraIssueTaskParams, UpdateLinearIssueTaskParams, UpdateMotionTaskTaskParams, UpdateNotionPageTaskParams, UpdateOpsgenieAlertTaskParams, UpdateOpsgenieIncidentTaskParams, UpdatePagerdutyIncidentTaskParams, UpdatePagertreeAlertTaskParams, UpdateQuipPageTaskParams, UpdateServiceNowIncidentTaskParams, UpdateSharepointPageTaskParams, UpdateShortcutStoryTaskParams, UpdateShortcutTaskTaskParams, UpdateSlackChannelTopicTaskParams, UpdateStatusTaskParams, UpdateTrelloCardTaskParams, UpdateVictorOpsIncidentTaskParams, UpdateZendeskTicketTaskParams
      *
      * It could be an instance of the 'anyOf' schemas.
      */
@@ -3043,6 +3266,11 @@ public class UpdateWorkflowTaskDataAttributesTaskParams extends AbstractOpenApiS
             return;
         }
 
+        if (instance instanceof CreateSubIncidentTaskParams) {
+            super.setActualInstance(instance);
+            return;
+        }
+
         if (instance instanceof CreateIncidentPostmortemTaskParams) {
             super.setActualInstance(instance);
             return;
@@ -3083,6 +3311,11 @@ public class UpdateWorkflowTaskDataAttributesTaskParams extends AbstractOpenApiS
             return;
         }
 
+        if (instance instanceof CreateMicrosoftTeamsChatTaskParams) {
+            super.setActualInstance(instance);
+            return;
+        }
+
         if (instance instanceof AddMicrosoftTeamsTabTaskParams) {
             super.setActualInstance(instance);
             return;
@@ -3119,6 +3352,31 @@ public class UpdateWorkflowTaskDataAttributesTaskParams extends AbstractOpenApiS
         }
 
         if (instance instanceof UpdateNotionPageTaskParams) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof UpdateQuipPageTaskParams) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof UpdateConfluencePageTaskParams) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof UpdateSharepointPageTaskParams) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof UpdateDropboxPaperPageTaskParams) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof UpdateDatadogNotebookTaskParams) {
             super.setActualInstance(instance);
             return;
         }
@@ -3453,24 +3711,39 @@ public class UpdateWorkflowTaskDataAttributesTaskParams extends AbstractOpenApiS
             return;
         }
 
-        if (instance instanceof GeniusCreateOpenaiChatCompletionTaskParams) {
+        if (instance instanceof CreateOpenaiChatCompletionTaskParams) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (instance instanceof GeniusCreateWatsonxChatCompletionTaskParams) {
+        if (instance instanceof CreateWatsonxChatCompletionTaskParams) {
             super.setActualInstance(instance);
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be AddActionItemTaskParams, AddMicrosoftTeamsTabTaskParams, AddRoleTaskParams, AddSlackBookmarkTaskParams, AddTeamTaskParams, AddToTimelineTaskParams, ArchiveMicrosoftTeamsChannelsTaskParams, ArchiveSlackChannelsTaskParams, AttachDatadogDashboardsTaskParams, AutoAssignRoleOpsgenieTaskParams, AutoAssignRolePagerdutyTaskParams, AutoAssignRoleRootlyTaskParams, AutoAssignRoleVictorOpsTaskParams, CallPeopleTaskParams, ChangeSlackChannelPrivacyTaskParams, CreateAirtableTableRecordTaskParams, CreateAsanaSubtaskTaskParams, CreateAsanaTaskTaskParams, CreateClickupTaskTaskParams, CreateCodaPageTaskParams, CreateConfluencePageTaskParams, CreateDatadogNotebookTaskParams, CreateDropboxPaperPageTaskParams, CreateGithubIssueTaskParams, CreateGitlabIssueTaskParams, CreateGoToMeetingTaskParams, CreateGoogleCalendarEventTaskParams, CreateGoogleDocsPageTaskParams, CreateGoogleDocsPermissionsTaskParams, CreateGoogleMeetingTaskParams, CreateIncidentPostmortemTaskParams, CreateIncidentTaskParams, CreateJiraIssueTaskParams, CreateJiraSubtaskTaskParams, CreateLinearIssueCommentTaskParams, CreateLinearIssueTaskParams, CreateLinearSubtaskIssueTaskParams, CreateMicrosoftTeamsChannelTaskParams, CreateMicrosoftTeamsMeetingTaskParams, CreateMotionTaskTaskParams, CreateNotionPageTaskParams, CreateOpsgenieAlertTaskParams, CreateOutlookEventTaskParams, CreatePagerdutyStatusUpdateTaskParams, CreatePagertreeAlertTaskParams, CreateQuipPageTaskParams, CreateServiceNowIncidentTaskParams, CreateSharepointPageTaskParams, CreateShortcutStoryTaskParams, CreateShortcutTaskTaskParams, CreateSlackChannelTaskParams, CreateTrelloCardTaskParams, CreateWebexMeetingTaskParams, CreateZendeskJiraLinkTaskParams, CreateZendeskTicketTaskParams, CreateZoomMeetingTaskParams, GeniusCreateOpenaiChatCompletionTaskParams, GeniusCreateWatsonxChatCompletionTaskParams, GetAlertsTaskParams, GetGithubCommitsTaskParams, GetGitlabCommitsTaskParams, GetPulsesTaskParams, HttpClientTaskParams, InviteToMicrosoftTeamsChannelTaskParams, InviteToSlackChannelOpsgenieTaskParams, InviteToSlackChannelPagerdutyTaskParams, InviteToSlackChannelRootlyTaskParams, InviteToSlackChannelTaskParams, InviteToSlackChannelVictorOpsTaskParams, PageOpsgenieOnCallRespondersTaskParams, PagePagerdutyOnCallRespondersTaskParams, PageRootlyOnCallRespondersTaskParams, PageVictorOpsOnCallRespondersTaskParams, PrintTaskParams, PublishIncidentTaskParams, RedisClientTaskParams, RemoveGoogleDocsPermissionsTaskParams, RenameMicrosoftTeamsChannelTaskParams, RenameSlackChannelTaskParams, RunCommandHerokuTaskParams, SendDashboardReportTaskParams, SendEmailTaskParams, SendMicrosoftTeamsBlocksTaskParams, SendMicrosoftTeamsMessageTaskParams, SendSlackBlocksTaskParams, SendSlackMessageTaskParams, SendSmsTaskParams, SendWhatsappMessageTaskParams, SnapshotDatadogGraphTaskParams, SnapshotGrafanaDashboardTaskParams, SnapshotLookerLookTaskParams, SnapshotNewRelicGraphTaskParams, TriggerWorkflowTaskParams, TweetTwitterMessageTaskParams, UpdateActionItemTaskParams, UpdateAirtableTableRecordTaskParams, UpdateAsanaTaskTaskParams, UpdateAttachedAlertsTaskParams, UpdateClickupTaskTaskParams, UpdateCodaPageTaskParams, UpdateGithubIssueTaskParams, UpdateGitlabIssueTaskParams, UpdateGoogleCalendarEventTaskParams, UpdateGoogleDocsPageTaskParams, UpdateIncidentPostmortemTaskParams, UpdateIncidentStatusTimestampTaskParams, UpdateIncidentTaskParams, UpdateJiraIssueTaskParams, UpdateLinearIssueTaskParams, UpdateMotionTaskTaskParams, UpdateNotionPageTaskParams, UpdateOpsgenieAlertTaskParams, UpdateOpsgenieIncidentTaskParams, UpdatePagerdutyIncidentTaskParams, UpdatePagertreeAlertTaskParams, UpdateServiceNowIncidentTaskParams, UpdateShortcutStoryTaskParams, UpdateShortcutTaskTaskParams, UpdateSlackChannelTopicTaskParams, UpdateStatusTaskParams, UpdateTrelloCardTaskParams, UpdateVictorOpsIncidentTaskParams, UpdateZendeskTicketTaskParams");
+        if (instance instanceof CreateGoogleGeminiChatCompletionTaskParams) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof CreateMistralChatCompletionTaskParams) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof CreateAnthropicChatCompletionTaskParams) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        throw new RuntimeException("Invalid instance type. Must be AddActionItemTaskParams, AddMicrosoftTeamsTabTaskParams, AddRoleTaskParams, AddSlackBookmarkTaskParams, AddTeamTaskParams, AddToTimelineTaskParams, ArchiveMicrosoftTeamsChannelsTaskParams, ArchiveSlackChannelsTaskParams, AttachDatadogDashboardsTaskParams, AutoAssignRoleOpsgenieTaskParams, AutoAssignRolePagerdutyTaskParams, AutoAssignRoleRootlyTaskParams, AutoAssignRoleVictorOpsTaskParams, CallPeopleTaskParams, ChangeSlackChannelPrivacyTaskParams, CreateAirtableTableRecordTaskParams, CreateAnthropicChatCompletionTaskParams, CreateAsanaSubtaskTaskParams, CreateAsanaTaskTaskParams, CreateClickupTaskTaskParams, CreateCodaPageTaskParams, CreateConfluencePageTaskParams, CreateDatadogNotebookTaskParams, CreateDropboxPaperPageTaskParams, CreateGithubIssueTaskParams, CreateGitlabIssueTaskParams, CreateGoToMeetingTaskParams, CreateGoogleCalendarEventTaskParams, CreateGoogleDocsPageTaskParams, CreateGoogleDocsPermissionsTaskParams, CreateGoogleGeminiChatCompletionTaskParams, CreateGoogleMeetingTaskParams, CreateIncidentPostmortemTaskParams, CreateIncidentTaskParams, CreateJiraIssueTaskParams, CreateJiraSubtaskTaskParams, CreateLinearIssueCommentTaskParams, CreateLinearIssueTaskParams, CreateLinearSubtaskIssueTaskParams, CreateMicrosoftTeamsChannelTaskParams, CreateMicrosoftTeamsChatTaskParams, CreateMicrosoftTeamsMeetingTaskParams, CreateMistralChatCompletionTaskParams, CreateMotionTaskTaskParams, CreateNotionPageTaskParams, CreateOpenaiChatCompletionTaskParams, CreateOpsgenieAlertTaskParams, CreateOutlookEventTaskParams, CreatePagerdutyStatusUpdateTaskParams, CreatePagertreeAlertTaskParams, CreateQuipPageTaskParams, CreateServiceNowIncidentTaskParams, CreateSharepointPageTaskParams, CreateShortcutStoryTaskParams, CreateShortcutTaskTaskParams, CreateSlackChannelTaskParams, CreateSubIncidentTaskParams, CreateTrelloCardTaskParams, CreateWatsonxChatCompletionTaskParams, CreateWebexMeetingTaskParams, CreateZendeskJiraLinkTaskParams, CreateZendeskTicketTaskParams, CreateZoomMeetingTaskParams, GetAlertsTaskParams, GetGithubCommitsTaskParams, GetGitlabCommitsTaskParams, GetPulsesTaskParams, HttpClientTaskParams, InviteToMicrosoftTeamsChannelTaskParams, InviteToSlackChannelOpsgenieTaskParams, InviteToSlackChannelPagerdutyTaskParams, InviteToSlackChannelRootlyTaskParams, InviteToSlackChannelTaskParams, InviteToSlackChannelVictorOpsTaskParams, PageOpsgenieOnCallRespondersTaskParams, PagePagerdutyOnCallRespondersTaskParams, PageRootlyOnCallRespondersTaskParams, PageVictorOpsOnCallRespondersTaskParams, PrintTaskParams, PublishIncidentTaskParams, RedisClientTaskParams, RemoveGoogleDocsPermissionsTaskParams, RenameMicrosoftTeamsChannelTaskParams, RenameSlackChannelTaskParams, RunCommandHerokuTaskParams, SendDashboardReportTaskParams, SendEmailTaskParams, SendMicrosoftTeamsBlocksTaskParams, SendMicrosoftTeamsMessageTaskParams, SendSlackBlocksTaskParams, SendSlackMessageTaskParams, SendSmsTaskParams, SendWhatsappMessageTaskParams, SnapshotDatadogGraphTaskParams, SnapshotGrafanaDashboardTaskParams, SnapshotLookerLookTaskParams, SnapshotNewRelicGraphTaskParams, TriggerWorkflowTaskParams, TweetTwitterMessageTaskParams, UpdateActionItemTaskParams, UpdateAirtableTableRecordTaskParams, UpdateAsanaTaskTaskParams, UpdateAttachedAlertsTaskParams, UpdateClickupTaskTaskParams, UpdateCodaPageTaskParams, UpdateConfluencePageTaskParams, UpdateDatadogNotebookTaskParams, UpdateDropboxPaperPageTaskParams, UpdateGithubIssueTaskParams, UpdateGitlabIssueTaskParams, UpdateGoogleCalendarEventTaskParams, UpdateGoogleDocsPageTaskParams, UpdateIncidentPostmortemTaskParams, UpdateIncidentStatusTimestampTaskParams, UpdateIncidentTaskParams, UpdateJiraIssueTaskParams, UpdateLinearIssueTaskParams, UpdateMotionTaskTaskParams, UpdateNotionPageTaskParams, UpdateOpsgenieAlertTaskParams, UpdateOpsgenieIncidentTaskParams, UpdatePagerdutyIncidentTaskParams, UpdatePagertreeAlertTaskParams, UpdateQuipPageTaskParams, UpdateServiceNowIncidentTaskParams, UpdateSharepointPageTaskParams, UpdateShortcutStoryTaskParams, UpdateShortcutTaskTaskParams, UpdateSlackChannelTopicTaskParams, UpdateStatusTaskParams, UpdateTrelloCardTaskParams, UpdateVictorOpsIncidentTaskParams, UpdateZendeskTicketTaskParams");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * AddActionItemTaskParams, AddMicrosoftTeamsTabTaskParams, AddRoleTaskParams, AddSlackBookmarkTaskParams, AddTeamTaskParams, AddToTimelineTaskParams, ArchiveMicrosoftTeamsChannelsTaskParams, ArchiveSlackChannelsTaskParams, AttachDatadogDashboardsTaskParams, AutoAssignRoleOpsgenieTaskParams, AutoAssignRolePagerdutyTaskParams, AutoAssignRoleRootlyTaskParams, AutoAssignRoleVictorOpsTaskParams, CallPeopleTaskParams, ChangeSlackChannelPrivacyTaskParams, CreateAirtableTableRecordTaskParams, CreateAsanaSubtaskTaskParams, CreateAsanaTaskTaskParams, CreateClickupTaskTaskParams, CreateCodaPageTaskParams, CreateConfluencePageTaskParams, CreateDatadogNotebookTaskParams, CreateDropboxPaperPageTaskParams, CreateGithubIssueTaskParams, CreateGitlabIssueTaskParams, CreateGoToMeetingTaskParams, CreateGoogleCalendarEventTaskParams, CreateGoogleDocsPageTaskParams, CreateGoogleDocsPermissionsTaskParams, CreateGoogleMeetingTaskParams, CreateIncidentPostmortemTaskParams, CreateIncidentTaskParams, CreateJiraIssueTaskParams, CreateJiraSubtaskTaskParams, CreateLinearIssueCommentTaskParams, CreateLinearIssueTaskParams, CreateLinearSubtaskIssueTaskParams, CreateMicrosoftTeamsChannelTaskParams, CreateMicrosoftTeamsMeetingTaskParams, CreateMotionTaskTaskParams, CreateNotionPageTaskParams, CreateOpsgenieAlertTaskParams, CreateOutlookEventTaskParams, CreatePagerdutyStatusUpdateTaskParams, CreatePagertreeAlertTaskParams, CreateQuipPageTaskParams, CreateServiceNowIncidentTaskParams, CreateSharepointPageTaskParams, CreateShortcutStoryTaskParams, CreateShortcutTaskTaskParams, CreateSlackChannelTaskParams, CreateTrelloCardTaskParams, CreateWebexMeetingTaskParams, CreateZendeskJiraLinkTaskParams, CreateZendeskTicketTaskParams, CreateZoomMeetingTaskParams, GeniusCreateOpenaiChatCompletionTaskParams, GeniusCreateWatsonxChatCompletionTaskParams, GetAlertsTaskParams, GetGithubCommitsTaskParams, GetGitlabCommitsTaskParams, GetPulsesTaskParams, HttpClientTaskParams, InviteToMicrosoftTeamsChannelTaskParams, InviteToSlackChannelOpsgenieTaskParams, InviteToSlackChannelPagerdutyTaskParams, InviteToSlackChannelRootlyTaskParams, InviteToSlackChannelTaskParams, InviteToSlackChannelVictorOpsTaskParams, PageOpsgenieOnCallRespondersTaskParams, PagePagerdutyOnCallRespondersTaskParams, PageRootlyOnCallRespondersTaskParams, PageVictorOpsOnCallRespondersTaskParams, PrintTaskParams, PublishIncidentTaskParams, RedisClientTaskParams, RemoveGoogleDocsPermissionsTaskParams, RenameMicrosoftTeamsChannelTaskParams, RenameSlackChannelTaskParams, RunCommandHerokuTaskParams, SendDashboardReportTaskParams, SendEmailTaskParams, SendMicrosoftTeamsBlocksTaskParams, SendMicrosoftTeamsMessageTaskParams, SendSlackBlocksTaskParams, SendSlackMessageTaskParams, SendSmsTaskParams, SendWhatsappMessageTaskParams, SnapshotDatadogGraphTaskParams, SnapshotGrafanaDashboardTaskParams, SnapshotLookerLookTaskParams, SnapshotNewRelicGraphTaskParams, TriggerWorkflowTaskParams, TweetTwitterMessageTaskParams, UpdateActionItemTaskParams, UpdateAirtableTableRecordTaskParams, UpdateAsanaTaskTaskParams, UpdateAttachedAlertsTaskParams, UpdateClickupTaskTaskParams, UpdateCodaPageTaskParams, UpdateGithubIssueTaskParams, UpdateGitlabIssueTaskParams, UpdateGoogleCalendarEventTaskParams, UpdateGoogleDocsPageTaskParams, UpdateIncidentPostmortemTaskParams, UpdateIncidentStatusTimestampTaskParams, UpdateIncidentTaskParams, UpdateJiraIssueTaskParams, UpdateLinearIssueTaskParams, UpdateMotionTaskTaskParams, UpdateNotionPageTaskParams, UpdateOpsgenieAlertTaskParams, UpdateOpsgenieIncidentTaskParams, UpdatePagerdutyIncidentTaskParams, UpdatePagertreeAlertTaskParams, UpdateServiceNowIncidentTaskParams, UpdateShortcutStoryTaskParams, UpdateShortcutTaskTaskParams, UpdateSlackChannelTopicTaskParams, UpdateStatusTaskParams, UpdateTrelloCardTaskParams, UpdateVictorOpsIncidentTaskParams, UpdateZendeskTicketTaskParams
+     * AddActionItemTaskParams, AddMicrosoftTeamsTabTaskParams, AddRoleTaskParams, AddSlackBookmarkTaskParams, AddTeamTaskParams, AddToTimelineTaskParams, ArchiveMicrosoftTeamsChannelsTaskParams, ArchiveSlackChannelsTaskParams, AttachDatadogDashboardsTaskParams, AutoAssignRoleOpsgenieTaskParams, AutoAssignRolePagerdutyTaskParams, AutoAssignRoleRootlyTaskParams, AutoAssignRoleVictorOpsTaskParams, CallPeopleTaskParams, ChangeSlackChannelPrivacyTaskParams, CreateAirtableTableRecordTaskParams, CreateAnthropicChatCompletionTaskParams, CreateAsanaSubtaskTaskParams, CreateAsanaTaskTaskParams, CreateClickupTaskTaskParams, CreateCodaPageTaskParams, CreateConfluencePageTaskParams, CreateDatadogNotebookTaskParams, CreateDropboxPaperPageTaskParams, CreateGithubIssueTaskParams, CreateGitlabIssueTaskParams, CreateGoToMeetingTaskParams, CreateGoogleCalendarEventTaskParams, CreateGoogleDocsPageTaskParams, CreateGoogleDocsPermissionsTaskParams, CreateGoogleGeminiChatCompletionTaskParams, CreateGoogleMeetingTaskParams, CreateIncidentPostmortemTaskParams, CreateIncidentTaskParams, CreateJiraIssueTaskParams, CreateJiraSubtaskTaskParams, CreateLinearIssueCommentTaskParams, CreateLinearIssueTaskParams, CreateLinearSubtaskIssueTaskParams, CreateMicrosoftTeamsChannelTaskParams, CreateMicrosoftTeamsChatTaskParams, CreateMicrosoftTeamsMeetingTaskParams, CreateMistralChatCompletionTaskParams, CreateMotionTaskTaskParams, CreateNotionPageTaskParams, CreateOpenaiChatCompletionTaskParams, CreateOpsgenieAlertTaskParams, CreateOutlookEventTaskParams, CreatePagerdutyStatusUpdateTaskParams, CreatePagertreeAlertTaskParams, CreateQuipPageTaskParams, CreateServiceNowIncidentTaskParams, CreateSharepointPageTaskParams, CreateShortcutStoryTaskParams, CreateShortcutTaskTaskParams, CreateSlackChannelTaskParams, CreateSubIncidentTaskParams, CreateTrelloCardTaskParams, CreateWatsonxChatCompletionTaskParams, CreateWebexMeetingTaskParams, CreateZendeskJiraLinkTaskParams, CreateZendeskTicketTaskParams, CreateZoomMeetingTaskParams, GetAlertsTaskParams, GetGithubCommitsTaskParams, GetGitlabCommitsTaskParams, GetPulsesTaskParams, HttpClientTaskParams, InviteToMicrosoftTeamsChannelTaskParams, InviteToSlackChannelOpsgenieTaskParams, InviteToSlackChannelPagerdutyTaskParams, InviteToSlackChannelRootlyTaskParams, InviteToSlackChannelTaskParams, InviteToSlackChannelVictorOpsTaskParams, PageOpsgenieOnCallRespondersTaskParams, PagePagerdutyOnCallRespondersTaskParams, PageRootlyOnCallRespondersTaskParams, PageVictorOpsOnCallRespondersTaskParams, PrintTaskParams, PublishIncidentTaskParams, RedisClientTaskParams, RemoveGoogleDocsPermissionsTaskParams, RenameMicrosoftTeamsChannelTaskParams, RenameSlackChannelTaskParams, RunCommandHerokuTaskParams, SendDashboardReportTaskParams, SendEmailTaskParams, SendMicrosoftTeamsBlocksTaskParams, SendMicrosoftTeamsMessageTaskParams, SendSlackBlocksTaskParams, SendSlackMessageTaskParams, SendSmsTaskParams, SendWhatsappMessageTaskParams, SnapshotDatadogGraphTaskParams, SnapshotGrafanaDashboardTaskParams, SnapshotLookerLookTaskParams, SnapshotNewRelicGraphTaskParams, TriggerWorkflowTaskParams, TweetTwitterMessageTaskParams, UpdateActionItemTaskParams, UpdateAirtableTableRecordTaskParams, UpdateAsanaTaskTaskParams, UpdateAttachedAlertsTaskParams, UpdateClickupTaskTaskParams, UpdateCodaPageTaskParams, UpdateConfluencePageTaskParams, UpdateDatadogNotebookTaskParams, UpdateDropboxPaperPageTaskParams, UpdateGithubIssueTaskParams, UpdateGitlabIssueTaskParams, UpdateGoogleCalendarEventTaskParams, UpdateGoogleDocsPageTaskParams, UpdateIncidentPostmortemTaskParams, UpdateIncidentStatusTimestampTaskParams, UpdateIncidentTaskParams, UpdateJiraIssueTaskParams, UpdateLinearIssueTaskParams, UpdateMotionTaskTaskParams, UpdateNotionPageTaskParams, UpdateOpsgenieAlertTaskParams, UpdateOpsgenieIncidentTaskParams, UpdatePagerdutyIncidentTaskParams, UpdatePagertreeAlertTaskParams, UpdateQuipPageTaskParams, UpdateServiceNowIncidentTaskParams, UpdateSharepointPageTaskParams, UpdateShortcutStoryTaskParams, UpdateShortcutTaskTaskParams, UpdateSlackChannelTopicTaskParams, UpdateStatusTaskParams, UpdateTrelloCardTaskParams, UpdateVictorOpsIncidentTaskParams, UpdateZendeskTicketTaskParams
      *
-     * @return The actual instance (AddActionItemTaskParams, AddMicrosoftTeamsTabTaskParams, AddRoleTaskParams, AddSlackBookmarkTaskParams, AddTeamTaskParams, AddToTimelineTaskParams, ArchiveMicrosoftTeamsChannelsTaskParams, ArchiveSlackChannelsTaskParams, AttachDatadogDashboardsTaskParams, AutoAssignRoleOpsgenieTaskParams, AutoAssignRolePagerdutyTaskParams, AutoAssignRoleRootlyTaskParams, AutoAssignRoleVictorOpsTaskParams, CallPeopleTaskParams, ChangeSlackChannelPrivacyTaskParams, CreateAirtableTableRecordTaskParams, CreateAsanaSubtaskTaskParams, CreateAsanaTaskTaskParams, CreateClickupTaskTaskParams, CreateCodaPageTaskParams, CreateConfluencePageTaskParams, CreateDatadogNotebookTaskParams, CreateDropboxPaperPageTaskParams, CreateGithubIssueTaskParams, CreateGitlabIssueTaskParams, CreateGoToMeetingTaskParams, CreateGoogleCalendarEventTaskParams, CreateGoogleDocsPageTaskParams, CreateGoogleDocsPermissionsTaskParams, CreateGoogleMeetingTaskParams, CreateIncidentPostmortemTaskParams, CreateIncidentTaskParams, CreateJiraIssueTaskParams, CreateJiraSubtaskTaskParams, CreateLinearIssueCommentTaskParams, CreateLinearIssueTaskParams, CreateLinearSubtaskIssueTaskParams, CreateMicrosoftTeamsChannelTaskParams, CreateMicrosoftTeamsMeetingTaskParams, CreateMotionTaskTaskParams, CreateNotionPageTaskParams, CreateOpsgenieAlertTaskParams, CreateOutlookEventTaskParams, CreatePagerdutyStatusUpdateTaskParams, CreatePagertreeAlertTaskParams, CreateQuipPageTaskParams, CreateServiceNowIncidentTaskParams, CreateSharepointPageTaskParams, CreateShortcutStoryTaskParams, CreateShortcutTaskTaskParams, CreateSlackChannelTaskParams, CreateTrelloCardTaskParams, CreateWebexMeetingTaskParams, CreateZendeskJiraLinkTaskParams, CreateZendeskTicketTaskParams, CreateZoomMeetingTaskParams, GeniusCreateOpenaiChatCompletionTaskParams, GeniusCreateWatsonxChatCompletionTaskParams, GetAlertsTaskParams, GetGithubCommitsTaskParams, GetGitlabCommitsTaskParams, GetPulsesTaskParams, HttpClientTaskParams, InviteToMicrosoftTeamsChannelTaskParams, InviteToSlackChannelOpsgenieTaskParams, InviteToSlackChannelPagerdutyTaskParams, InviteToSlackChannelRootlyTaskParams, InviteToSlackChannelTaskParams, InviteToSlackChannelVictorOpsTaskParams, PageOpsgenieOnCallRespondersTaskParams, PagePagerdutyOnCallRespondersTaskParams, PageRootlyOnCallRespondersTaskParams, PageVictorOpsOnCallRespondersTaskParams, PrintTaskParams, PublishIncidentTaskParams, RedisClientTaskParams, RemoveGoogleDocsPermissionsTaskParams, RenameMicrosoftTeamsChannelTaskParams, RenameSlackChannelTaskParams, RunCommandHerokuTaskParams, SendDashboardReportTaskParams, SendEmailTaskParams, SendMicrosoftTeamsBlocksTaskParams, SendMicrosoftTeamsMessageTaskParams, SendSlackBlocksTaskParams, SendSlackMessageTaskParams, SendSmsTaskParams, SendWhatsappMessageTaskParams, SnapshotDatadogGraphTaskParams, SnapshotGrafanaDashboardTaskParams, SnapshotLookerLookTaskParams, SnapshotNewRelicGraphTaskParams, TriggerWorkflowTaskParams, TweetTwitterMessageTaskParams, UpdateActionItemTaskParams, UpdateAirtableTableRecordTaskParams, UpdateAsanaTaskTaskParams, UpdateAttachedAlertsTaskParams, UpdateClickupTaskTaskParams, UpdateCodaPageTaskParams, UpdateGithubIssueTaskParams, UpdateGitlabIssueTaskParams, UpdateGoogleCalendarEventTaskParams, UpdateGoogleDocsPageTaskParams, UpdateIncidentPostmortemTaskParams, UpdateIncidentStatusTimestampTaskParams, UpdateIncidentTaskParams, UpdateJiraIssueTaskParams, UpdateLinearIssueTaskParams, UpdateMotionTaskTaskParams, UpdateNotionPageTaskParams, UpdateOpsgenieAlertTaskParams, UpdateOpsgenieIncidentTaskParams, UpdatePagerdutyIncidentTaskParams, UpdatePagertreeAlertTaskParams, UpdateServiceNowIncidentTaskParams, UpdateShortcutStoryTaskParams, UpdateShortcutTaskTaskParams, UpdateSlackChannelTopicTaskParams, UpdateStatusTaskParams, UpdateTrelloCardTaskParams, UpdateVictorOpsIncidentTaskParams, UpdateZendeskTicketTaskParams)
+     * @return The actual instance (AddActionItemTaskParams, AddMicrosoftTeamsTabTaskParams, AddRoleTaskParams, AddSlackBookmarkTaskParams, AddTeamTaskParams, AddToTimelineTaskParams, ArchiveMicrosoftTeamsChannelsTaskParams, ArchiveSlackChannelsTaskParams, AttachDatadogDashboardsTaskParams, AutoAssignRoleOpsgenieTaskParams, AutoAssignRolePagerdutyTaskParams, AutoAssignRoleRootlyTaskParams, AutoAssignRoleVictorOpsTaskParams, CallPeopleTaskParams, ChangeSlackChannelPrivacyTaskParams, CreateAirtableTableRecordTaskParams, CreateAnthropicChatCompletionTaskParams, CreateAsanaSubtaskTaskParams, CreateAsanaTaskTaskParams, CreateClickupTaskTaskParams, CreateCodaPageTaskParams, CreateConfluencePageTaskParams, CreateDatadogNotebookTaskParams, CreateDropboxPaperPageTaskParams, CreateGithubIssueTaskParams, CreateGitlabIssueTaskParams, CreateGoToMeetingTaskParams, CreateGoogleCalendarEventTaskParams, CreateGoogleDocsPageTaskParams, CreateGoogleDocsPermissionsTaskParams, CreateGoogleGeminiChatCompletionTaskParams, CreateGoogleMeetingTaskParams, CreateIncidentPostmortemTaskParams, CreateIncidentTaskParams, CreateJiraIssueTaskParams, CreateJiraSubtaskTaskParams, CreateLinearIssueCommentTaskParams, CreateLinearIssueTaskParams, CreateLinearSubtaskIssueTaskParams, CreateMicrosoftTeamsChannelTaskParams, CreateMicrosoftTeamsChatTaskParams, CreateMicrosoftTeamsMeetingTaskParams, CreateMistralChatCompletionTaskParams, CreateMotionTaskTaskParams, CreateNotionPageTaskParams, CreateOpenaiChatCompletionTaskParams, CreateOpsgenieAlertTaskParams, CreateOutlookEventTaskParams, CreatePagerdutyStatusUpdateTaskParams, CreatePagertreeAlertTaskParams, CreateQuipPageTaskParams, CreateServiceNowIncidentTaskParams, CreateSharepointPageTaskParams, CreateShortcutStoryTaskParams, CreateShortcutTaskTaskParams, CreateSlackChannelTaskParams, CreateSubIncidentTaskParams, CreateTrelloCardTaskParams, CreateWatsonxChatCompletionTaskParams, CreateWebexMeetingTaskParams, CreateZendeskJiraLinkTaskParams, CreateZendeskTicketTaskParams, CreateZoomMeetingTaskParams, GetAlertsTaskParams, GetGithubCommitsTaskParams, GetGitlabCommitsTaskParams, GetPulsesTaskParams, HttpClientTaskParams, InviteToMicrosoftTeamsChannelTaskParams, InviteToSlackChannelOpsgenieTaskParams, InviteToSlackChannelPagerdutyTaskParams, InviteToSlackChannelRootlyTaskParams, InviteToSlackChannelTaskParams, InviteToSlackChannelVictorOpsTaskParams, PageOpsgenieOnCallRespondersTaskParams, PagePagerdutyOnCallRespondersTaskParams, PageRootlyOnCallRespondersTaskParams, PageVictorOpsOnCallRespondersTaskParams, PrintTaskParams, PublishIncidentTaskParams, RedisClientTaskParams, RemoveGoogleDocsPermissionsTaskParams, RenameMicrosoftTeamsChannelTaskParams, RenameSlackChannelTaskParams, RunCommandHerokuTaskParams, SendDashboardReportTaskParams, SendEmailTaskParams, SendMicrosoftTeamsBlocksTaskParams, SendMicrosoftTeamsMessageTaskParams, SendSlackBlocksTaskParams, SendSlackMessageTaskParams, SendSmsTaskParams, SendWhatsappMessageTaskParams, SnapshotDatadogGraphTaskParams, SnapshotGrafanaDashboardTaskParams, SnapshotLookerLookTaskParams, SnapshotNewRelicGraphTaskParams, TriggerWorkflowTaskParams, TweetTwitterMessageTaskParams, UpdateActionItemTaskParams, UpdateAirtableTableRecordTaskParams, UpdateAsanaTaskTaskParams, UpdateAttachedAlertsTaskParams, UpdateClickupTaskTaskParams, UpdateCodaPageTaskParams, UpdateConfluencePageTaskParams, UpdateDatadogNotebookTaskParams, UpdateDropboxPaperPageTaskParams, UpdateGithubIssueTaskParams, UpdateGitlabIssueTaskParams, UpdateGoogleCalendarEventTaskParams, UpdateGoogleDocsPageTaskParams, UpdateIncidentPostmortemTaskParams, UpdateIncidentStatusTimestampTaskParams, UpdateIncidentTaskParams, UpdateJiraIssueTaskParams, UpdateLinearIssueTaskParams, UpdateMotionTaskTaskParams, UpdateNotionPageTaskParams, UpdateOpsgenieAlertTaskParams, UpdateOpsgenieIncidentTaskParams, UpdatePagerdutyIncidentTaskParams, UpdatePagertreeAlertTaskParams, UpdateQuipPageTaskParams, UpdateServiceNowIncidentTaskParams, UpdateSharepointPageTaskParams, UpdateShortcutStoryTaskParams, UpdateShortcutTaskTaskParams, UpdateSlackChannelTopicTaskParams, UpdateStatusTaskParams, UpdateTrelloCardTaskParams, UpdateVictorOpsIncidentTaskParams, UpdateZendeskTicketTaskParams)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -3908,6 +4181,17 @@ public class UpdateWorkflowTaskDataAttributesTaskParams extends AbstractOpenApiS
     }
 
     /**
+     * Get the actual instance of `CreateSubIncidentTaskParams`. If the actual instance is not `CreateSubIncidentTaskParams`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `CreateSubIncidentTaskParams`
+     * @throws ClassCastException if the instance is not `CreateSubIncidentTaskParams`
+     */
+    public CreateSubIncidentTaskParams getCreateSubIncidentTaskParams() throws ClassCastException {
+        return (CreateSubIncidentTaskParams)super.getActualInstance();
+    }
+
+    /**
      * Get the actual instance of `CreateIncidentPostmortemTaskParams`. If the actual instance is not `CreateIncidentPostmortemTaskParams`,
      * the ClassCastException will be thrown.
      *
@@ -3996,6 +4280,17 @@ public class UpdateWorkflowTaskDataAttributesTaskParams extends AbstractOpenApiS
     }
 
     /**
+     * Get the actual instance of `CreateMicrosoftTeamsChatTaskParams`. If the actual instance is not `CreateMicrosoftTeamsChatTaskParams`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `CreateMicrosoftTeamsChatTaskParams`
+     * @throws ClassCastException if the instance is not `CreateMicrosoftTeamsChatTaskParams`
+     */
+    public CreateMicrosoftTeamsChatTaskParams getCreateMicrosoftTeamsChatTaskParams() throws ClassCastException {
+        return (CreateMicrosoftTeamsChatTaskParams)super.getActualInstance();
+    }
+
+    /**
      * Get the actual instance of `AddMicrosoftTeamsTabTaskParams`. If the actual instance is not `AddMicrosoftTeamsTabTaskParams`,
      * the ClassCastException will be thrown.
      *
@@ -4081,6 +4376,61 @@ public class UpdateWorkflowTaskDataAttributesTaskParams extends AbstractOpenApiS
      */
     public UpdateNotionPageTaskParams getUpdateNotionPageTaskParams() throws ClassCastException {
         return (UpdateNotionPageTaskParams)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `UpdateQuipPageTaskParams`. If the actual instance is not `UpdateQuipPageTaskParams`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `UpdateQuipPageTaskParams`
+     * @throws ClassCastException if the instance is not `UpdateQuipPageTaskParams`
+     */
+    public UpdateQuipPageTaskParams getUpdateQuipPageTaskParams() throws ClassCastException {
+        return (UpdateQuipPageTaskParams)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `UpdateConfluencePageTaskParams`. If the actual instance is not `UpdateConfluencePageTaskParams`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `UpdateConfluencePageTaskParams`
+     * @throws ClassCastException if the instance is not `UpdateConfluencePageTaskParams`
+     */
+    public UpdateConfluencePageTaskParams getUpdateConfluencePageTaskParams() throws ClassCastException {
+        return (UpdateConfluencePageTaskParams)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `UpdateSharepointPageTaskParams`. If the actual instance is not `UpdateSharepointPageTaskParams`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `UpdateSharepointPageTaskParams`
+     * @throws ClassCastException if the instance is not `UpdateSharepointPageTaskParams`
+     */
+    public UpdateSharepointPageTaskParams getUpdateSharepointPageTaskParams() throws ClassCastException {
+        return (UpdateSharepointPageTaskParams)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `UpdateDropboxPaperPageTaskParams`. If the actual instance is not `UpdateDropboxPaperPageTaskParams`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `UpdateDropboxPaperPageTaskParams`
+     * @throws ClassCastException if the instance is not `UpdateDropboxPaperPageTaskParams`
+     */
+    public UpdateDropboxPaperPageTaskParams getUpdateDropboxPaperPageTaskParams() throws ClassCastException {
+        return (UpdateDropboxPaperPageTaskParams)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `UpdateDatadogNotebookTaskParams`. If the actual instance is not `UpdateDatadogNotebookTaskParams`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `UpdateDatadogNotebookTaskParams`
+     * @throws ClassCastException if the instance is not `UpdateDatadogNotebookTaskParams`
+     */
+    public UpdateDatadogNotebookTaskParams getUpdateDatadogNotebookTaskParams() throws ClassCastException {
+        return (UpdateDatadogNotebookTaskParams)super.getActualInstance();
     }
 
     /**
@@ -4810,25 +5160,58 @@ public class UpdateWorkflowTaskDataAttributesTaskParams extends AbstractOpenApiS
     }
 
     /**
-     * Get the actual instance of `GeniusCreateOpenaiChatCompletionTaskParams`. If the actual instance is not `GeniusCreateOpenaiChatCompletionTaskParams`,
+     * Get the actual instance of `CreateOpenaiChatCompletionTaskParams`. If the actual instance is not `CreateOpenaiChatCompletionTaskParams`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `GeniusCreateOpenaiChatCompletionTaskParams`
-     * @throws ClassCastException if the instance is not `GeniusCreateOpenaiChatCompletionTaskParams`
+     * @return The actual instance of `CreateOpenaiChatCompletionTaskParams`
+     * @throws ClassCastException if the instance is not `CreateOpenaiChatCompletionTaskParams`
      */
-    public GeniusCreateOpenaiChatCompletionTaskParams getGeniusCreateOpenaiChatCompletionTaskParams() throws ClassCastException {
-        return (GeniusCreateOpenaiChatCompletionTaskParams)super.getActualInstance();
+    public CreateOpenaiChatCompletionTaskParams getCreateOpenaiChatCompletionTaskParams() throws ClassCastException {
+        return (CreateOpenaiChatCompletionTaskParams)super.getActualInstance();
     }
 
     /**
-     * Get the actual instance of `GeniusCreateWatsonxChatCompletionTaskParams`. If the actual instance is not `GeniusCreateWatsonxChatCompletionTaskParams`,
+     * Get the actual instance of `CreateWatsonxChatCompletionTaskParams`. If the actual instance is not `CreateWatsonxChatCompletionTaskParams`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `GeniusCreateWatsonxChatCompletionTaskParams`
-     * @throws ClassCastException if the instance is not `GeniusCreateWatsonxChatCompletionTaskParams`
+     * @return The actual instance of `CreateWatsonxChatCompletionTaskParams`
+     * @throws ClassCastException if the instance is not `CreateWatsonxChatCompletionTaskParams`
      */
-    public GeniusCreateWatsonxChatCompletionTaskParams getGeniusCreateWatsonxChatCompletionTaskParams() throws ClassCastException {
-        return (GeniusCreateWatsonxChatCompletionTaskParams)super.getActualInstance();
+    public CreateWatsonxChatCompletionTaskParams getCreateWatsonxChatCompletionTaskParams() throws ClassCastException {
+        return (CreateWatsonxChatCompletionTaskParams)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `CreateGoogleGeminiChatCompletionTaskParams`. If the actual instance is not `CreateGoogleGeminiChatCompletionTaskParams`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `CreateGoogleGeminiChatCompletionTaskParams`
+     * @throws ClassCastException if the instance is not `CreateGoogleGeminiChatCompletionTaskParams`
+     */
+    public CreateGoogleGeminiChatCompletionTaskParams getCreateGoogleGeminiChatCompletionTaskParams() throws ClassCastException {
+        return (CreateGoogleGeminiChatCompletionTaskParams)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `CreateMistralChatCompletionTaskParams`. If the actual instance is not `CreateMistralChatCompletionTaskParams`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `CreateMistralChatCompletionTaskParams`
+     * @throws ClassCastException if the instance is not `CreateMistralChatCompletionTaskParams`
+     */
+    public CreateMistralChatCompletionTaskParams getCreateMistralChatCompletionTaskParams() throws ClassCastException {
+        return (CreateMistralChatCompletionTaskParams)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `CreateAnthropicChatCompletionTaskParams`. If the actual instance is not `CreateAnthropicChatCompletionTaskParams`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `CreateAnthropicChatCompletionTaskParams`
+     * @throws ClassCastException if the instance is not `CreateAnthropicChatCompletionTaskParams`
+     */
+    public CreateAnthropicChatCompletionTaskParams getCreateAnthropicChatCompletionTaskParams() throws ClassCastException {
+        return (CreateAnthropicChatCompletionTaskParams)super.getActualInstance();
     }
 
     /**
@@ -5152,6 +5535,14 @@ public class UpdateWorkflowTaskDataAttributesTaskParams extends AbstractOpenApiS
             errorMessages.add(String.format("Deserialization for CreateIncidentTaskParams failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
+        // validate the json string with CreateSubIncidentTaskParams
+        try {
+            CreateSubIncidentTaskParams.validateJsonElement(jsonElement);
+            return;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for CreateSubIncidentTaskParams failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
         // validate the json string with CreateIncidentPostmortemTaskParams
         try {
             CreateIncidentPostmortemTaskParams.validateJsonElement(jsonElement);
@@ -5216,6 +5607,14 @@ public class UpdateWorkflowTaskDataAttributesTaskParams extends AbstractOpenApiS
             errorMessages.add(String.format("Deserialization for CreateMicrosoftTeamsChannelTaskParams failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
+        // validate the json string with CreateMicrosoftTeamsChatTaskParams
+        try {
+            CreateMicrosoftTeamsChatTaskParams.validateJsonElement(jsonElement);
+            return;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for CreateMicrosoftTeamsChatTaskParams failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
         // validate the json string with AddMicrosoftTeamsTabTaskParams
         try {
             AddMicrosoftTeamsTabTaskParams.validateJsonElement(jsonElement);
@@ -5278,6 +5677,46 @@ public class UpdateWorkflowTaskDataAttributesTaskParams extends AbstractOpenApiS
             return;
         } catch (Exception e) {
             errorMessages.add(String.format("Deserialization for UpdateNotionPageTaskParams failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with UpdateQuipPageTaskParams
+        try {
+            UpdateQuipPageTaskParams.validateJsonElement(jsonElement);
+            return;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for UpdateQuipPageTaskParams failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with UpdateConfluencePageTaskParams
+        try {
+            UpdateConfluencePageTaskParams.validateJsonElement(jsonElement);
+            return;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for UpdateConfluencePageTaskParams failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with UpdateSharepointPageTaskParams
+        try {
+            UpdateSharepointPageTaskParams.validateJsonElement(jsonElement);
+            return;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for UpdateSharepointPageTaskParams failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with UpdateDropboxPaperPageTaskParams
+        try {
+            UpdateDropboxPaperPageTaskParams.validateJsonElement(jsonElement);
+            return;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for UpdateDropboxPaperPageTaskParams failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with UpdateDatadogNotebookTaskParams
+        try {
+            UpdateDatadogNotebookTaskParams.validateJsonElement(jsonElement);
+            return;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for UpdateDatadogNotebookTaskParams failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with CreateServiceNowIncidentTaskParams
@@ -5808,23 +6247,47 @@ public class UpdateWorkflowTaskDataAttributesTaskParams extends AbstractOpenApiS
             errorMessages.add(String.format("Deserialization for SendSlackBlocksTaskParams failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with GeniusCreateOpenaiChatCompletionTaskParams
+        // validate the json string with CreateOpenaiChatCompletionTaskParams
         try {
-            GeniusCreateOpenaiChatCompletionTaskParams.validateJsonElement(jsonElement);
+            CreateOpenaiChatCompletionTaskParams.validateJsonElement(jsonElement);
             return;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for GeniusCreateOpenaiChatCompletionTaskParams failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format("Deserialization for CreateOpenaiChatCompletionTaskParams failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with GeniusCreateWatsonxChatCompletionTaskParams
+        // validate the json string with CreateWatsonxChatCompletionTaskParams
         try {
-            GeniusCreateWatsonxChatCompletionTaskParams.validateJsonElement(jsonElement);
+            CreateWatsonxChatCompletionTaskParams.validateJsonElement(jsonElement);
             return;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for GeniusCreateWatsonxChatCompletionTaskParams failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format("Deserialization for CreateWatsonxChatCompletionTaskParams failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        throw new IOException(String.format("The JSON string is invalid for UpdateWorkflowTaskDataAttributesTaskParams with anyOf schemas: AddActionItemTaskParams, AddMicrosoftTeamsTabTaskParams, AddRoleTaskParams, AddSlackBookmarkTaskParams, AddTeamTaskParams, AddToTimelineTaskParams, ArchiveMicrosoftTeamsChannelsTaskParams, ArchiveSlackChannelsTaskParams, AttachDatadogDashboardsTaskParams, AutoAssignRoleOpsgenieTaskParams, AutoAssignRolePagerdutyTaskParams, AutoAssignRoleRootlyTaskParams, AutoAssignRoleVictorOpsTaskParams, CallPeopleTaskParams, ChangeSlackChannelPrivacyTaskParams, CreateAirtableTableRecordTaskParams, CreateAsanaSubtaskTaskParams, CreateAsanaTaskTaskParams, CreateClickupTaskTaskParams, CreateCodaPageTaskParams, CreateConfluencePageTaskParams, CreateDatadogNotebookTaskParams, CreateDropboxPaperPageTaskParams, CreateGithubIssueTaskParams, CreateGitlabIssueTaskParams, CreateGoToMeetingTaskParams, CreateGoogleCalendarEventTaskParams, CreateGoogleDocsPageTaskParams, CreateGoogleDocsPermissionsTaskParams, CreateGoogleMeetingTaskParams, CreateIncidentPostmortemTaskParams, CreateIncidentTaskParams, CreateJiraIssueTaskParams, CreateJiraSubtaskTaskParams, CreateLinearIssueCommentTaskParams, CreateLinearIssueTaskParams, CreateLinearSubtaskIssueTaskParams, CreateMicrosoftTeamsChannelTaskParams, CreateMicrosoftTeamsMeetingTaskParams, CreateMotionTaskTaskParams, CreateNotionPageTaskParams, CreateOpsgenieAlertTaskParams, CreateOutlookEventTaskParams, CreatePagerdutyStatusUpdateTaskParams, CreatePagertreeAlertTaskParams, CreateQuipPageTaskParams, CreateServiceNowIncidentTaskParams, CreateSharepointPageTaskParams, CreateShortcutStoryTaskParams, CreateShortcutTaskTaskParams, CreateSlackChannelTaskParams, CreateTrelloCardTaskParams, CreateWebexMeetingTaskParams, CreateZendeskJiraLinkTaskParams, CreateZendeskTicketTaskParams, CreateZoomMeetingTaskParams, GeniusCreateOpenaiChatCompletionTaskParams, GeniusCreateWatsonxChatCompletionTaskParams, GetAlertsTaskParams, GetGithubCommitsTaskParams, GetGitlabCommitsTaskParams, GetPulsesTaskParams, HttpClientTaskParams, InviteToMicrosoftTeamsChannelTaskParams, InviteToSlackChannelOpsgenieTaskParams, InviteToSlackChannelPagerdutyTaskParams, InviteToSlackChannelRootlyTaskParams, InviteToSlackChannelTaskParams, InviteToSlackChannelVictorOpsTaskParams, PageOpsgenieOnCallRespondersTaskParams, PagePagerdutyOnCallRespondersTaskParams, PageRootlyOnCallRespondersTaskParams, PageVictorOpsOnCallRespondersTaskParams, PrintTaskParams, PublishIncidentTaskParams, RedisClientTaskParams, RemoveGoogleDocsPermissionsTaskParams, RenameMicrosoftTeamsChannelTaskParams, RenameSlackChannelTaskParams, RunCommandHerokuTaskParams, SendDashboardReportTaskParams, SendEmailTaskParams, SendMicrosoftTeamsBlocksTaskParams, SendMicrosoftTeamsMessageTaskParams, SendSlackBlocksTaskParams, SendSlackMessageTaskParams, SendSmsTaskParams, SendWhatsappMessageTaskParams, SnapshotDatadogGraphTaskParams, SnapshotGrafanaDashboardTaskParams, SnapshotLookerLookTaskParams, SnapshotNewRelicGraphTaskParams, TriggerWorkflowTaskParams, TweetTwitterMessageTaskParams, UpdateActionItemTaskParams, UpdateAirtableTableRecordTaskParams, UpdateAsanaTaskTaskParams, UpdateAttachedAlertsTaskParams, UpdateClickupTaskTaskParams, UpdateCodaPageTaskParams, UpdateGithubIssueTaskParams, UpdateGitlabIssueTaskParams, UpdateGoogleCalendarEventTaskParams, UpdateGoogleDocsPageTaskParams, UpdateIncidentPostmortemTaskParams, UpdateIncidentStatusTimestampTaskParams, UpdateIncidentTaskParams, UpdateJiraIssueTaskParams, UpdateLinearIssueTaskParams, UpdateMotionTaskTaskParams, UpdateNotionPageTaskParams, UpdateOpsgenieAlertTaskParams, UpdateOpsgenieIncidentTaskParams, UpdatePagerdutyIncidentTaskParams, UpdatePagertreeAlertTaskParams, UpdateServiceNowIncidentTaskParams, UpdateShortcutStoryTaskParams, UpdateShortcutTaskTaskParams, UpdateSlackChannelTopicTaskParams, UpdateStatusTaskParams, UpdateTrelloCardTaskParams, UpdateVictorOpsIncidentTaskParams, UpdateZendeskTicketTaskParams. no class match the result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
+        // validate the json string with CreateGoogleGeminiChatCompletionTaskParams
+        try {
+            CreateGoogleGeminiChatCompletionTaskParams.validateJsonElement(jsonElement);
+            return;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for CreateGoogleGeminiChatCompletionTaskParams failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with CreateMistralChatCompletionTaskParams
+        try {
+            CreateMistralChatCompletionTaskParams.validateJsonElement(jsonElement);
+            return;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for CreateMistralChatCompletionTaskParams failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with CreateAnthropicChatCompletionTaskParams
+        try {
+            CreateAnthropicChatCompletionTaskParams.validateJsonElement(jsonElement);
+            return;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for CreateAnthropicChatCompletionTaskParams failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        throw new IOException(String.format("The JSON string is invalid for UpdateWorkflowTaskDataAttributesTaskParams with anyOf schemas: AddActionItemTaskParams, AddMicrosoftTeamsTabTaskParams, AddRoleTaskParams, AddSlackBookmarkTaskParams, AddTeamTaskParams, AddToTimelineTaskParams, ArchiveMicrosoftTeamsChannelsTaskParams, ArchiveSlackChannelsTaskParams, AttachDatadogDashboardsTaskParams, AutoAssignRoleOpsgenieTaskParams, AutoAssignRolePagerdutyTaskParams, AutoAssignRoleRootlyTaskParams, AutoAssignRoleVictorOpsTaskParams, CallPeopleTaskParams, ChangeSlackChannelPrivacyTaskParams, CreateAirtableTableRecordTaskParams, CreateAnthropicChatCompletionTaskParams, CreateAsanaSubtaskTaskParams, CreateAsanaTaskTaskParams, CreateClickupTaskTaskParams, CreateCodaPageTaskParams, CreateConfluencePageTaskParams, CreateDatadogNotebookTaskParams, CreateDropboxPaperPageTaskParams, CreateGithubIssueTaskParams, CreateGitlabIssueTaskParams, CreateGoToMeetingTaskParams, CreateGoogleCalendarEventTaskParams, CreateGoogleDocsPageTaskParams, CreateGoogleDocsPermissionsTaskParams, CreateGoogleGeminiChatCompletionTaskParams, CreateGoogleMeetingTaskParams, CreateIncidentPostmortemTaskParams, CreateIncidentTaskParams, CreateJiraIssueTaskParams, CreateJiraSubtaskTaskParams, CreateLinearIssueCommentTaskParams, CreateLinearIssueTaskParams, CreateLinearSubtaskIssueTaskParams, CreateMicrosoftTeamsChannelTaskParams, CreateMicrosoftTeamsChatTaskParams, CreateMicrosoftTeamsMeetingTaskParams, CreateMistralChatCompletionTaskParams, CreateMotionTaskTaskParams, CreateNotionPageTaskParams, CreateOpenaiChatCompletionTaskParams, CreateOpsgenieAlertTaskParams, CreateOutlookEventTaskParams, CreatePagerdutyStatusUpdateTaskParams, CreatePagertreeAlertTaskParams, CreateQuipPageTaskParams, CreateServiceNowIncidentTaskParams, CreateSharepointPageTaskParams, CreateShortcutStoryTaskParams, CreateShortcutTaskTaskParams, CreateSlackChannelTaskParams, CreateSubIncidentTaskParams, CreateTrelloCardTaskParams, CreateWatsonxChatCompletionTaskParams, CreateWebexMeetingTaskParams, CreateZendeskJiraLinkTaskParams, CreateZendeskTicketTaskParams, CreateZoomMeetingTaskParams, GetAlertsTaskParams, GetGithubCommitsTaskParams, GetGitlabCommitsTaskParams, GetPulsesTaskParams, HttpClientTaskParams, InviteToMicrosoftTeamsChannelTaskParams, InviteToSlackChannelOpsgenieTaskParams, InviteToSlackChannelPagerdutyTaskParams, InviteToSlackChannelRootlyTaskParams, InviteToSlackChannelTaskParams, InviteToSlackChannelVictorOpsTaskParams, PageOpsgenieOnCallRespondersTaskParams, PagePagerdutyOnCallRespondersTaskParams, PageRootlyOnCallRespondersTaskParams, PageVictorOpsOnCallRespondersTaskParams, PrintTaskParams, PublishIncidentTaskParams, RedisClientTaskParams, RemoveGoogleDocsPermissionsTaskParams, RenameMicrosoftTeamsChannelTaskParams, RenameSlackChannelTaskParams, RunCommandHerokuTaskParams, SendDashboardReportTaskParams, SendEmailTaskParams, SendMicrosoftTeamsBlocksTaskParams, SendMicrosoftTeamsMessageTaskParams, SendSlackBlocksTaskParams, SendSlackMessageTaskParams, SendSmsTaskParams, SendWhatsappMessageTaskParams, SnapshotDatadogGraphTaskParams, SnapshotGrafanaDashboardTaskParams, SnapshotLookerLookTaskParams, SnapshotNewRelicGraphTaskParams, TriggerWorkflowTaskParams, TweetTwitterMessageTaskParams, UpdateActionItemTaskParams, UpdateAirtableTableRecordTaskParams, UpdateAsanaTaskTaskParams, UpdateAttachedAlertsTaskParams, UpdateClickupTaskTaskParams, UpdateCodaPageTaskParams, UpdateConfluencePageTaskParams, UpdateDatadogNotebookTaskParams, UpdateDropboxPaperPageTaskParams, UpdateGithubIssueTaskParams, UpdateGitlabIssueTaskParams, UpdateGoogleCalendarEventTaskParams, UpdateGoogleDocsPageTaskParams, UpdateIncidentPostmortemTaskParams, UpdateIncidentStatusTimestampTaskParams, UpdateIncidentTaskParams, UpdateJiraIssueTaskParams, UpdateLinearIssueTaskParams, UpdateMotionTaskTaskParams, UpdateNotionPageTaskParams, UpdateOpsgenieAlertTaskParams, UpdateOpsgenieIncidentTaskParams, UpdatePagerdutyIncidentTaskParams, UpdatePagertreeAlertTaskParams, UpdateQuipPageTaskParams, UpdateServiceNowIncidentTaskParams, UpdateSharepointPageTaskParams, UpdateShortcutStoryTaskParams, UpdateShortcutTaskTaskParams, UpdateSlackChannelTopicTaskParams, UpdateStatusTaskParams, UpdateTrelloCardTaskParams, UpdateVictorOpsIncidentTaskParams, UpdateZendeskTicketTaskParams. no class match the result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
     }
 
     /**

@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewAlertDataAttributesAlertFieldValuesAttributesInner;
 import com.rootly.client.model.NewAlertDataAttributesLabelsInner;
 import java.io.IOException;
 import java.time.OffsetDateTime;
@@ -53,7 +54,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateAlertDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T17:46:55.918190357Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateAlertDataAttributes {
   /**
    * Whether the alert is marked as noise
@@ -123,6 +124,8 @@ public class UpdateAlertDataAttributes {
     
     API("api"),
     
+    HEARTBEAT("heartbeat"),
+    
     WEB("web"),
     
     SLACK("slack"),
@@ -132,6 +135,8 @@ public class UpdateAlertDataAttributes {
     WORKFLOW("workflow"),
     
     LIVE_CALL_ROUTING("live_call_routing"),
+    
+    MOBILE("mobile"),
     
     PAGERDUTY("pagerduty"),
     
@@ -307,6 +312,16 @@ public class UpdateAlertDataAttributes {
   @javax.annotation.Nullable
   private Object data;
 
+  public static final String SERIALIZED_NAME_DEDUPLICATION_KEY = "deduplication_key";
+  @SerializedName(SERIALIZED_NAME_DEDUPLICATION_KEY)
+  @javax.annotation.Nullable
+  private String deduplicationKey;
+
+  public static final String SERIALIZED_NAME_ALERT_FIELD_VALUES_ATTRIBUTES = "alert_field_values_attributes";
+  @SerializedName(SERIALIZED_NAME_ALERT_FIELD_VALUES_ATTRIBUTES)
+  @javax.annotation.Nullable
+  private List<NewAlertDataAttributesAlertFieldValuesAttributesInner> alertFieldValuesAttributes = new ArrayList<>();
+
   public UpdateAlertDataAttributes() {
   }
 
@@ -400,7 +415,7 @@ public class UpdateAlertDataAttributes {
   }
 
   /**
-   * The Service ID&#39;s to attach to the alert
+   * The Service IDs to attach to the alert
    * @return serviceIds
    */
   @javax.annotation.Nullable
@@ -427,7 +442,7 @@ public class UpdateAlertDataAttributes {
   }
 
   /**
-   * The Group ID&#39;s to attach to the alert
+   * The Group IDs to attach to the alert
    * @return groupIds
    */
   @javax.annotation.Nullable
@@ -454,7 +469,7 @@ public class UpdateAlertDataAttributes {
   }
 
   /**
-   * The Environment ID&#39;s to attach to the alert
+   * The Environment IDs to attach to the alert
    * @return environmentIds
    */
   @javax.annotation.Nullable
@@ -608,6 +623,52 @@ public class UpdateAlertDataAttributes {
   }
 
 
+  public UpdateAlertDataAttributes deduplicationKey(@javax.annotation.Nullable String deduplicationKey) {
+    this.deduplicationKey = deduplicationKey;
+    return this;
+  }
+
+  /**
+   * Alerts sharing the same deduplication key are treated as a single alert.
+   * @return deduplicationKey
+   */
+  @javax.annotation.Nullable
+  public String getDeduplicationKey() {
+    return deduplicationKey;
+  }
+
+  public void setDeduplicationKey(@javax.annotation.Nullable String deduplicationKey) {
+    this.deduplicationKey = deduplicationKey;
+  }
+
+
+  public UpdateAlertDataAttributes alertFieldValuesAttributes(@javax.annotation.Nullable List<NewAlertDataAttributesAlertFieldValuesAttributesInner> alertFieldValuesAttributes) {
+    this.alertFieldValuesAttributes = alertFieldValuesAttributes;
+    return this;
+  }
+
+  public UpdateAlertDataAttributes addAlertFieldValuesAttributesItem(NewAlertDataAttributesAlertFieldValuesAttributesInner alertFieldValuesAttributesItem) {
+    if (this.alertFieldValuesAttributes == null) {
+      this.alertFieldValuesAttributes = new ArrayList<>();
+    }
+    this.alertFieldValuesAttributes.add(alertFieldValuesAttributesItem);
+    return this;
+  }
+
+  /**
+   * Custom alert field values to create with the alert
+   * @return alertFieldValuesAttributes
+   */
+  @javax.annotation.Nullable
+  public List<NewAlertDataAttributesAlertFieldValuesAttributesInner> getAlertFieldValuesAttributes() {
+    return alertFieldValuesAttributes;
+  }
+
+  public void setAlertFieldValuesAttributes(@javax.annotation.Nullable List<NewAlertDataAttributesAlertFieldValuesAttributesInner> alertFieldValuesAttributes) {
+    this.alertFieldValuesAttributes = alertFieldValuesAttributes;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -631,7 +692,9 @@ public class UpdateAlertDataAttributes {
         Objects.equals(this.externalUrl, updateAlertDataAttributes.externalUrl) &&
         Objects.equals(this.alertUrgencyId, updateAlertDataAttributes.alertUrgencyId) &&
         Objects.equals(this.labels, updateAlertDataAttributes.labels) &&
-        Objects.equals(this.data, updateAlertDataAttributes.data);
+        Objects.equals(this.data, updateAlertDataAttributes.data) &&
+        Objects.equals(this.deduplicationKey, updateAlertDataAttributes.deduplicationKey) &&
+        Objects.equals(this.alertFieldValuesAttributes, updateAlertDataAttributes.alertFieldValuesAttributes);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -640,7 +703,7 @@ public class UpdateAlertDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(noise, source, summary, description, serviceIds, groupIds, environmentIds, startedAt, endedAt, externalId, externalUrl, alertUrgencyId, labels, data);
+    return Objects.hash(noise, source, summary, description, serviceIds, groupIds, environmentIds, startedAt, endedAt, externalId, externalUrl, alertUrgencyId, labels, data, deduplicationKey, alertFieldValuesAttributes);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -668,6 +731,8 @@ public class UpdateAlertDataAttributes {
     sb.append("    alertUrgencyId: ").append(toIndentedString(alertUrgencyId)).append("\n");
     sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
+    sb.append("    deduplicationKey: ").append(toIndentedString(deduplicationKey)).append("\n");
+    sb.append("    alertFieldValuesAttributes: ").append(toIndentedString(alertFieldValuesAttributes)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -704,6 +769,8 @@ public class UpdateAlertDataAttributes {
     openapiFields.add("alert_urgency_id");
     openapiFields.add("labels");
     openapiFields.add("data");
+    openapiFields.add("deduplication_key");
+    openapiFields.add("alert_field_values_attributes");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -782,6 +849,23 @@ public class UpdateAlertDataAttributes {
           // validate the optional field `labels` (array)
           for (int i = 0; i < jsonArraylabels.size(); i++) {
             NewAlertDataAttributesLabelsInner.validateJsonElement(jsonArraylabels.get(i));
+          };
+        }
+      }
+      if ((jsonObj.get("deduplication_key") != null && !jsonObj.get("deduplication_key").isJsonNull()) && !jsonObj.get("deduplication_key").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `deduplication_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("deduplication_key").toString()));
+      }
+      if (jsonObj.get("alert_field_values_attributes") != null && !jsonObj.get("alert_field_values_attributes").isJsonNull()) {
+        JsonArray jsonArrayalertFieldValuesAttributes = jsonObj.getAsJsonArray("alert_field_values_attributes");
+        if (jsonArrayalertFieldValuesAttributes != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("alert_field_values_attributes").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `alert_field_values_attributes` to be an array in the JSON string but got `%s`", jsonObj.get("alert_field_values_attributes").toString()));
+          }
+
+          // validate the optional field `alert_field_values_attributes` (array)
+          for (int i = 0; i < jsonArrayalertFieldValuesAttributes.size(); i++) {
+            NewAlertDataAttributesAlertFieldValuesAttributesInner.validateJsonElement(jsonArrayalertFieldValuesAttributes.get(i));
           };
         }
       }

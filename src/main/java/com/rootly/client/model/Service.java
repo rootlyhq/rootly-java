@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -21,6 +21,8 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.rootly.client.model.NewEnvironmentDataAttributesSlackAliasesInner;
 import com.rootly.client.model.NewEnvironmentDataAttributesSlackChannelsInner;
+import com.rootly.client.model.ServiceAlertBroadcastChannel;
+import com.rootly.client.model.ServiceIncidentBroadcastChannel;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -53,7 +55,7 @@ import com.rootly.client.JSON;
 /**
  * Service
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T17:46:55.918190357Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Service {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -140,6 +142,11 @@ public class Service {
   @javax.annotation.Nullable
   private String gitlabRepositoryBranch;
 
+  public static final String SERIALIZED_NAME_KUBERNETES_DEPLOYMENT_NAME = "kubernetes_deployment_name";
+  @SerializedName(SERIALIZED_NAME_KUBERNETES_DEPLOYMENT_NAME)
+  @javax.annotation.Nullable
+  private String kubernetesDeploymentName;
+
   public static final String SERIALIZED_NAME_ENVIRONMENT_IDS = "environment_ids";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_IDS)
   @javax.annotation.Nullable
@@ -150,20 +157,25 @@ public class Service {
   @javax.annotation.Nullable
   private List<String> serviceIds;
 
-  public static final String SERIALIZED_NAME_OWNERS_GROUP_IDS = "owners_group_ids";
-  @SerializedName(SERIALIZED_NAME_OWNERS_GROUP_IDS)
+  public static final String SERIALIZED_NAME_OWNER_GROUP_IDS = "owner_group_ids";
+  @SerializedName(SERIALIZED_NAME_OWNER_GROUP_IDS)
   @javax.annotation.Nullable
-  private List<String> ownersGroupIds;
+  private List<String> ownerGroupIds;
 
-  public static final String SERIALIZED_NAME_OWNERS_USER_IDS = "owners_user_ids";
-  @SerializedName(SERIALIZED_NAME_OWNERS_USER_IDS)
+  public static final String SERIALIZED_NAME_OWNER_USER_IDS = "owner_user_ids";
+  @SerializedName(SERIALIZED_NAME_OWNER_USER_IDS)
   @javax.annotation.Nullable
-  private List<Integer> ownersUserIds;
+  private List<Integer> ownerUserIds;
 
   public static final String SERIALIZED_NAME_ALERT_URGENCY_ID = "alert_urgency_id";
   @SerializedName(SERIALIZED_NAME_ALERT_URGENCY_ID)
   @javax.annotation.Nullable
   private String alertUrgencyId;
+
+  public static final String SERIALIZED_NAME_ESCALATION_POLICY_ID = "escalation_policy_id";
+  @SerializedName(SERIALIZED_NAME_ESCALATION_POLICY_ID)
+  @javax.annotation.Nullable
+  private String escalationPolicyId;
 
   public static final String SERIALIZED_NAME_ALERTS_EMAIL_ENABLED = "alerts_email_enabled";
   @SerializedName(SERIALIZED_NAME_ALERTS_EMAIL_ENABLED)
@@ -184,6 +196,26 @@ public class Service {
   @SerializedName(SERIALIZED_NAME_SLACK_ALIASES)
   @javax.annotation.Nullable
   private List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases;
+
+  public static final String SERIALIZED_NAME_ALERT_BROADCAST_ENABLED = "alert_broadcast_enabled";
+  @SerializedName(SERIALIZED_NAME_ALERT_BROADCAST_ENABLED)
+  @javax.annotation.Nullable
+  private Boolean alertBroadcastEnabled;
+
+  public static final String SERIALIZED_NAME_ALERT_BROADCAST_CHANNEL = "alert_broadcast_channel";
+  @SerializedName(SERIALIZED_NAME_ALERT_BROADCAST_CHANNEL)
+  @javax.annotation.Nullable
+  private ServiceAlertBroadcastChannel alertBroadcastChannel;
+
+  public static final String SERIALIZED_NAME_INCIDENT_BROADCAST_ENABLED = "incident_broadcast_enabled";
+  @SerializedName(SERIALIZED_NAME_INCIDENT_BROADCAST_ENABLED)
+  @javax.annotation.Nullable
+  private Boolean incidentBroadcastEnabled;
+
+  public static final String SERIALIZED_NAME_INCIDENT_BROADCAST_CHANNEL = "incident_broadcast_channel";
+  @SerializedName(SERIALIZED_NAME_INCIDENT_BROADCAST_CHANNEL)
+  @javax.annotation.Nullable
+  private ServiceIncidentBroadcastChannel incidentBroadcastChannel;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -529,6 +561,25 @@ public class Service {
   }
 
 
+  public Service kubernetesDeploymentName(@javax.annotation.Nullable String kubernetesDeploymentName) {
+    this.kubernetesDeploymentName = kubernetesDeploymentName;
+    return this;
+  }
+
+  /**
+   * The Kubernetes deployment name associated to this service. eg: namespace/deployment-name
+   * @return kubernetesDeploymentName
+   */
+  @javax.annotation.Nullable
+  public String getKubernetesDeploymentName() {
+    return kubernetesDeploymentName;
+  }
+
+  public void setKubernetesDeploymentName(@javax.annotation.Nullable String kubernetesDeploymentName) {
+    this.kubernetesDeploymentName = kubernetesDeploymentName;
+  }
+
+
   public Service environmentIds(@javax.annotation.Nullable List<String> environmentIds) {
     this.environmentIds = environmentIds;
     return this;
@@ -583,57 +634,57 @@ public class Service {
   }
 
 
-  public Service ownersGroupIds(@javax.annotation.Nullable List<String> ownersGroupIds) {
-    this.ownersGroupIds = ownersGroupIds;
+  public Service ownerGroupIds(@javax.annotation.Nullable List<String> ownerGroupIds) {
+    this.ownerGroupIds = ownerGroupIds;
     return this;
   }
 
-  public Service addOwnersGroupIdsItem(String ownersGroupIdsItem) {
-    if (this.ownersGroupIds == null) {
-      this.ownersGroupIds = new ArrayList<>();
+  public Service addOwnerGroupIdsItem(String ownerGroupIdsItem) {
+    if (this.ownerGroupIds == null) {
+      this.ownerGroupIds = new ArrayList<>();
     }
-    this.ownersGroupIds.add(ownersGroupIdsItem);
+    this.ownerGroupIds.add(ownerGroupIdsItem);
     return this;
   }
 
   /**
    * Owner Teams associated with this service
-   * @return ownersGroupIds
+   * @return ownerGroupIds
    */
   @javax.annotation.Nullable
-  public List<String> getOwnersGroupIds() {
-    return ownersGroupIds;
+  public List<String> getOwnerGroupIds() {
+    return ownerGroupIds;
   }
 
-  public void setOwnersGroupIds(@javax.annotation.Nullable List<String> ownersGroupIds) {
-    this.ownersGroupIds = ownersGroupIds;
+  public void setOwnerGroupIds(@javax.annotation.Nullable List<String> ownerGroupIds) {
+    this.ownerGroupIds = ownerGroupIds;
   }
 
 
-  public Service ownersUserIds(@javax.annotation.Nullable List<Integer> ownersUserIds) {
-    this.ownersUserIds = ownersUserIds;
+  public Service ownerUserIds(@javax.annotation.Nullable List<Integer> ownerUserIds) {
+    this.ownerUserIds = ownerUserIds;
     return this;
   }
 
-  public Service addOwnersUserIdsItem(Integer ownersUserIdsItem) {
-    if (this.ownersUserIds == null) {
-      this.ownersUserIds = new ArrayList<>();
+  public Service addOwnerUserIdsItem(Integer ownerUserIdsItem) {
+    if (this.ownerUserIds == null) {
+      this.ownerUserIds = new ArrayList<>();
     }
-    this.ownersUserIds.add(ownersUserIdsItem);
+    this.ownerUserIds.add(ownerUserIdsItem);
     return this;
   }
 
   /**
    * Owner Users associated with this service
-   * @return ownersUserIds
+   * @return ownerUserIds
    */
   @javax.annotation.Nullable
-  public List<Integer> getOwnersUserIds() {
-    return ownersUserIds;
+  public List<Integer> getOwnerUserIds() {
+    return ownerUserIds;
   }
 
-  public void setOwnersUserIds(@javax.annotation.Nullable List<Integer> ownersUserIds) {
-    this.ownersUserIds = ownersUserIds;
+  public void setOwnerUserIds(@javax.annotation.Nullable List<Integer> ownerUserIds) {
+    this.ownerUserIds = ownerUserIds;
   }
 
 
@@ -653,6 +704,25 @@ public class Service {
 
   public void setAlertUrgencyId(@javax.annotation.Nullable String alertUrgencyId) {
     this.alertUrgencyId = alertUrgencyId;
+  }
+
+
+  public Service escalationPolicyId(@javax.annotation.Nullable String escalationPolicyId) {
+    this.escalationPolicyId = escalationPolicyId;
+    return this;
+  }
+
+  /**
+   * The escalation policy id of the service
+   * @return escalationPolicyId
+   */
+  @javax.annotation.Nullable
+  public String getEscalationPolicyId() {
+    return escalationPolicyId;
+  }
+
+  public void setEscalationPolicyId(@javax.annotation.Nullable String escalationPolicyId) {
+    this.escalationPolicyId = escalationPolicyId;
   }
 
 
@@ -748,6 +818,82 @@ public class Service {
   }
 
 
+  public Service alertBroadcastEnabled(@javax.annotation.Nullable Boolean alertBroadcastEnabled) {
+    this.alertBroadcastEnabled = alertBroadcastEnabled;
+    return this;
+  }
+
+  /**
+   * Enable alerts to be broadcasted to a specific channel
+   * @return alertBroadcastEnabled
+   */
+  @javax.annotation.Nullable
+  public Boolean getAlertBroadcastEnabled() {
+    return alertBroadcastEnabled;
+  }
+
+  public void setAlertBroadcastEnabled(@javax.annotation.Nullable Boolean alertBroadcastEnabled) {
+    this.alertBroadcastEnabled = alertBroadcastEnabled;
+  }
+
+
+  public Service alertBroadcastChannel(@javax.annotation.Nullable ServiceAlertBroadcastChannel alertBroadcastChannel) {
+    this.alertBroadcastChannel = alertBroadcastChannel;
+    return this;
+  }
+
+  /**
+   * Get alertBroadcastChannel
+   * @return alertBroadcastChannel
+   */
+  @javax.annotation.Nullable
+  public ServiceAlertBroadcastChannel getAlertBroadcastChannel() {
+    return alertBroadcastChannel;
+  }
+
+  public void setAlertBroadcastChannel(@javax.annotation.Nullable ServiceAlertBroadcastChannel alertBroadcastChannel) {
+    this.alertBroadcastChannel = alertBroadcastChannel;
+  }
+
+
+  public Service incidentBroadcastEnabled(@javax.annotation.Nullable Boolean incidentBroadcastEnabled) {
+    this.incidentBroadcastEnabled = incidentBroadcastEnabled;
+    return this;
+  }
+
+  /**
+   * Enable incidents to be broadcasted to a specific channel
+   * @return incidentBroadcastEnabled
+   */
+  @javax.annotation.Nullable
+  public Boolean getIncidentBroadcastEnabled() {
+    return incidentBroadcastEnabled;
+  }
+
+  public void setIncidentBroadcastEnabled(@javax.annotation.Nullable Boolean incidentBroadcastEnabled) {
+    this.incidentBroadcastEnabled = incidentBroadcastEnabled;
+  }
+
+
+  public Service incidentBroadcastChannel(@javax.annotation.Nullable ServiceIncidentBroadcastChannel incidentBroadcastChannel) {
+    this.incidentBroadcastChannel = incidentBroadcastChannel;
+    return this;
+  }
+
+  /**
+   * Get incidentBroadcastChannel
+   * @return incidentBroadcastChannel
+   */
+  @javax.annotation.Nullable
+  public ServiceIncidentBroadcastChannel getIncidentBroadcastChannel() {
+    return incidentBroadcastChannel;
+  }
+
+  public void setIncidentBroadcastChannel(@javax.annotation.Nullable ServiceIncidentBroadcastChannel incidentBroadcastChannel) {
+    this.incidentBroadcastChannel = incidentBroadcastChannel;
+  }
+
+
   public Service createdAt(@javax.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
@@ -813,15 +959,21 @@ public class Service {
         Objects.equals(this.githubRepositoryBranch, service.githubRepositoryBranch) &&
         Objects.equals(this.gitlabRepositoryName, service.gitlabRepositoryName) &&
         Objects.equals(this.gitlabRepositoryBranch, service.gitlabRepositoryBranch) &&
+        Objects.equals(this.kubernetesDeploymentName, service.kubernetesDeploymentName) &&
         Objects.equals(this.environmentIds, service.environmentIds) &&
         Objects.equals(this.serviceIds, service.serviceIds) &&
-        Objects.equals(this.ownersGroupIds, service.ownersGroupIds) &&
-        Objects.equals(this.ownersUserIds, service.ownersUserIds) &&
+        Objects.equals(this.ownerGroupIds, service.ownerGroupIds) &&
+        Objects.equals(this.ownerUserIds, service.ownerUserIds) &&
         Objects.equals(this.alertUrgencyId, service.alertUrgencyId) &&
+        Objects.equals(this.escalationPolicyId, service.escalationPolicyId) &&
         Objects.equals(this.alertsEmailEnabled, service.alertsEmailEnabled) &&
         Objects.equals(this.alertsEmailAddress, service.alertsEmailAddress) &&
         Objects.equals(this.slackChannels, service.slackChannels) &&
         Objects.equals(this.slackAliases, service.slackAliases) &&
+        Objects.equals(this.alertBroadcastEnabled, service.alertBroadcastEnabled) &&
+        Objects.equals(this.alertBroadcastChannel, service.alertBroadcastChannel) &&
+        Objects.equals(this.incidentBroadcastEnabled, service.incidentBroadcastEnabled) &&
+        Objects.equals(this.incidentBroadcastChannel, service.incidentBroadcastChannel) &&
         Objects.equals(this.createdAt, service.createdAt) &&
         Objects.equals(this.updatedAt, service.updatedAt);
   }
@@ -832,7 +984,7 @@ public class Service {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, slug, description, publicDescription, notifyEmails, color, position, backstageId, externalId, pagerdutyId, opsgenieId, cortexId, serviceNowCiSysId, githubRepositoryName, githubRepositoryBranch, gitlabRepositoryName, gitlabRepositoryBranch, environmentIds, serviceIds, ownersGroupIds, ownersUserIds, alertUrgencyId, alertsEmailEnabled, alertsEmailAddress, slackChannels, slackAliases, createdAt, updatedAt);
+    return Objects.hash(name, slug, description, publicDescription, notifyEmails, color, position, backstageId, externalId, pagerdutyId, opsgenieId, cortexId, serviceNowCiSysId, githubRepositoryName, githubRepositoryBranch, gitlabRepositoryName, gitlabRepositoryBranch, kubernetesDeploymentName, environmentIds, serviceIds, ownerGroupIds, ownerUserIds, alertUrgencyId, escalationPolicyId, alertsEmailEnabled, alertsEmailAddress, slackChannels, slackAliases, alertBroadcastEnabled, alertBroadcastChannel, incidentBroadcastEnabled, incidentBroadcastChannel, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -863,15 +1015,21 @@ public class Service {
     sb.append("    githubRepositoryBranch: ").append(toIndentedString(githubRepositoryBranch)).append("\n");
     sb.append("    gitlabRepositoryName: ").append(toIndentedString(gitlabRepositoryName)).append("\n");
     sb.append("    gitlabRepositoryBranch: ").append(toIndentedString(gitlabRepositoryBranch)).append("\n");
+    sb.append("    kubernetesDeploymentName: ").append(toIndentedString(kubernetesDeploymentName)).append("\n");
     sb.append("    environmentIds: ").append(toIndentedString(environmentIds)).append("\n");
     sb.append("    serviceIds: ").append(toIndentedString(serviceIds)).append("\n");
-    sb.append("    ownersGroupIds: ").append(toIndentedString(ownersGroupIds)).append("\n");
-    sb.append("    ownersUserIds: ").append(toIndentedString(ownersUserIds)).append("\n");
+    sb.append("    ownerGroupIds: ").append(toIndentedString(ownerGroupIds)).append("\n");
+    sb.append("    ownerUserIds: ").append(toIndentedString(ownerUserIds)).append("\n");
     sb.append("    alertUrgencyId: ").append(toIndentedString(alertUrgencyId)).append("\n");
+    sb.append("    escalationPolicyId: ").append(toIndentedString(escalationPolicyId)).append("\n");
     sb.append("    alertsEmailEnabled: ").append(toIndentedString(alertsEmailEnabled)).append("\n");
     sb.append("    alertsEmailAddress: ").append(toIndentedString(alertsEmailAddress)).append("\n");
     sb.append("    slackChannels: ").append(toIndentedString(slackChannels)).append("\n");
     sb.append("    slackAliases: ").append(toIndentedString(slackAliases)).append("\n");
+    sb.append("    alertBroadcastEnabled: ").append(toIndentedString(alertBroadcastEnabled)).append("\n");
+    sb.append("    alertBroadcastChannel: ").append(toIndentedString(alertBroadcastChannel)).append("\n");
+    sb.append("    incidentBroadcastEnabled: ").append(toIndentedString(incidentBroadcastEnabled)).append("\n");
+    sb.append("    incidentBroadcastChannel: ").append(toIndentedString(incidentBroadcastChannel)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -913,15 +1071,21 @@ public class Service {
     openapiFields.add("github_repository_branch");
     openapiFields.add("gitlab_repository_name");
     openapiFields.add("gitlab_repository_branch");
+    openapiFields.add("kubernetes_deployment_name");
     openapiFields.add("environment_ids");
     openapiFields.add("service_ids");
-    openapiFields.add("owners_group_ids");
-    openapiFields.add("owners_user_ids");
+    openapiFields.add("owner_group_ids");
+    openapiFields.add("owner_user_ids");
     openapiFields.add("alert_urgency_id");
+    openapiFields.add("escalation_policy_id");
     openapiFields.add("alerts_email_enabled");
     openapiFields.add("alerts_email_address");
     openapiFields.add("slack_channels");
     openapiFields.add("slack_aliases");
+    openapiFields.add("alert_broadcast_enabled");
+    openapiFields.add("alert_broadcast_channel");
+    openapiFields.add("incident_broadcast_enabled");
+    openapiFields.add("incident_broadcast_channel");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
 
@@ -1009,6 +1173,9 @@ public class Service {
       if ((jsonObj.get("gitlab_repository_branch") != null && !jsonObj.get("gitlab_repository_branch").isJsonNull()) && !jsonObj.get("gitlab_repository_branch").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `gitlab_repository_branch` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gitlab_repository_branch").toString()));
       }
+      if ((jsonObj.get("kubernetes_deployment_name") != null && !jsonObj.get("kubernetes_deployment_name").isJsonNull()) && !jsonObj.get("kubernetes_deployment_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `kubernetes_deployment_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kubernetes_deployment_name").toString()));
+      }
       // ensure the optional json data is an array if present
       if (jsonObj.get("environment_ids") != null && !jsonObj.get("environment_ids").isJsonNull() && !jsonObj.get("environment_ids").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `environment_ids` to be an array in the JSON string but got `%s`", jsonObj.get("environment_ids").toString()));
@@ -1018,15 +1185,18 @@ public class Service {
         throw new IllegalArgumentException(String.format("Expected the field `service_ids` to be an array in the JSON string but got `%s`", jsonObj.get("service_ids").toString()));
       }
       // ensure the optional json data is an array if present
-      if (jsonObj.get("owners_group_ids") != null && !jsonObj.get("owners_group_ids").isJsonNull() && !jsonObj.get("owners_group_ids").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `owners_group_ids` to be an array in the JSON string but got `%s`", jsonObj.get("owners_group_ids").toString()));
+      if (jsonObj.get("owner_group_ids") != null && !jsonObj.get("owner_group_ids").isJsonNull() && !jsonObj.get("owner_group_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `owner_group_ids` to be an array in the JSON string but got `%s`", jsonObj.get("owner_group_ids").toString()));
       }
       // ensure the optional json data is an array if present
-      if (jsonObj.get("owners_user_ids") != null && !jsonObj.get("owners_user_ids").isJsonNull() && !jsonObj.get("owners_user_ids").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `owners_user_ids` to be an array in the JSON string but got `%s`", jsonObj.get("owners_user_ids").toString()));
+      if (jsonObj.get("owner_user_ids") != null && !jsonObj.get("owner_user_ids").isJsonNull() && !jsonObj.get("owner_user_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `owner_user_ids` to be an array in the JSON string but got `%s`", jsonObj.get("owner_user_ids").toString()));
       }
       if ((jsonObj.get("alert_urgency_id") != null && !jsonObj.get("alert_urgency_id").isJsonNull()) && !jsonObj.get("alert_urgency_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `alert_urgency_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("alert_urgency_id").toString()));
+      }
+      if ((jsonObj.get("escalation_policy_id") != null && !jsonObj.get("escalation_policy_id").isJsonNull()) && !jsonObj.get("escalation_policy_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `escalation_policy_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("escalation_policy_id").toString()));
       }
       if ((jsonObj.get("alerts_email_address") != null && !jsonObj.get("alerts_email_address").isJsonNull()) && !jsonObj.get("alerts_email_address").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `alerts_email_address` to be a primitive type in the JSON string but got `%s`", jsonObj.get("alerts_email_address").toString()));
@@ -1058,6 +1228,14 @@ public class Service {
             NewEnvironmentDataAttributesSlackAliasesInner.validateJsonElement(jsonArrayslackAliases.get(i));
           };
         }
+      }
+      // validate the optional field `alert_broadcast_channel`
+      if (jsonObj.get("alert_broadcast_channel") != null && !jsonObj.get("alert_broadcast_channel").isJsonNull()) {
+        ServiceAlertBroadcastChannel.validateJsonElement(jsonObj.get("alert_broadcast_channel"));
+      }
+      // validate the optional field `incident_broadcast_channel`
+      if (jsonObj.get("incident_broadcast_channel") != null && !jsonObj.get("incident_broadcast_channel").isJsonNull()) {
+        ServiceIncidentBroadcastChannel.validateJsonElement(jsonObj.get("incident_broadcast_channel"));
       }
       if (!jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));

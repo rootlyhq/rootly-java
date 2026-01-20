@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -19,6 +19,11 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner;
+import com.rootly.client.model.NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner;
+import com.rootly.client.model.NewAlertsSourceDataAttributesAlertTemplateAttributes;
+import com.rootly.client.model.NewAlertsSourceDataAttributesResolutionRuleAttributes;
+import com.rootly.client.model.NewAlertsSourceDataAttributesSourceableAttributes;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -51,47 +56,286 @@ import com.rootly.client.JSON;
 /**
  * AlertsSource
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T17:46:55.918190357Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AlertsSource {
-  public static final String SERIALIZED_NAME_ALERT_URGENCY_ID = "alert_urgency_id";
-  @SerializedName(SERIALIZED_NAME_ALERT_URGENCY_ID)
-  @javax.annotation.Nullable
-  private String alertUrgencyId;
-
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @javax.annotation.Nonnull
   private String name;
 
+  /**
+   * The alert source type
+   */
+  @JsonAdapter(SourceTypeEnum.Adapter.class)
+  public enum SourceTypeEnum {
+    EMAIL("email"),
+    
+    APP_DYNAMICS("app_dynamics"),
+    
+    CATCHPOINT("catchpoint"),
+    
+    DATADOG("datadog"),
+    
+    ALERTMANAGER("alertmanager"),
+    
+    GOOGLE_CLOUD("google_cloud"),
+    
+    GRAFANA("grafana"),
+    
+    SENTRY("sentry"),
+    
+    GENERIC_WEBHOOK("generic_webhook"),
+    
+    CLOUD_WATCH("cloud_watch"),
+    
+    CHECKLY("checkly"),
+    
+    AZURE("azure"),
+    
+    NEW_RELIC("new_relic"),
+    
+    SPLUNK("splunk"),
+    
+    CHRONOSPHERE("chronosphere"),
+    
+    APP_OPTICS("app_optics"),
+    
+    BUG_SNAG("bug_snag"),
+    
+    HONEYCOMB("honeycomb"),
+    
+    MONTE_CARLO("monte_carlo"),
+    
+    NAGIOS("nagios"),
+    
+    PRTG("prtg");
+
+    private String value;
+
+    SourceTypeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static SourceTypeEnum fromValue(String value) {
+      for (SourceTypeEnum b : SourceTypeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<SourceTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final SourceTypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public SourceTypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return SourceTypeEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      SourceTypeEnum.fromValue(value);
+    }
+  }
+
   public static final String SERIALIZED_NAME_SOURCE_TYPE = "source_type";
   @SerializedName(SERIALIZED_NAME_SOURCE_TYPE)
   @javax.annotation.Nullable
-  private String sourceType;
+  private SourceTypeEnum sourceType;
+
+  public static final String SERIALIZED_NAME_ALERT_URGENCY_ID = "alert_urgency_id";
+  @SerializedName(SERIALIZED_NAME_ALERT_URGENCY_ID)
+  @javax.annotation.Nullable
+  private String alertUrgencyId;
+
+  public static final String SERIALIZED_NAME_DEDUPLICATE_ALERTS_BY_KEY = "deduplicate_alerts_by_key";
+  @SerializedName(SERIALIZED_NAME_DEDUPLICATE_ALERTS_BY_KEY)
+  @javax.annotation.Nullable
+  private Boolean deduplicateAlertsByKey;
+
+  /**
+   * Kind of deduplication key.
+   */
+  @JsonAdapter(DeduplicationKeyKindEnum.Adapter.class)
+  public enum DeduplicationKeyKindEnum {
+    PAYLOAD("payload");
+
+    private String value;
+
+    DeduplicationKeyKindEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static DeduplicationKeyKindEnum fromValue(String value) {
+      for (DeduplicationKeyKindEnum b : DeduplicationKeyKindEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<DeduplicationKeyKindEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final DeduplicationKeyKindEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public DeduplicationKeyKindEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return DeduplicationKeyKindEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      DeduplicationKeyKindEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_DEDUPLICATION_KEY_KIND = "deduplication_key_kind";
+  @SerializedName(SERIALIZED_NAME_DEDUPLICATION_KEY_KIND)
+  @javax.annotation.Nullable
+  private DeduplicationKeyKindEnum deduplicationKeyKind;
+
+  public static final String SERIALIZED_NAME_DEDUPLICATION_KEY_PATH = "deduplication_key_path";
+  @SerializedName(SERIALIZED_NAME_DEDUPLICATION_KEY_PATH)
+  @javax.annotation.Nullable
+  private String deduplicationKeyPath;
+
+  public static final String SERIALIZED_NAME_DEDUPLICATION_KEY_REGEXP = "deduplication_key_regexp";
+  @SerializedName(SERIALIZED_NAME_DEDUPLICATION_KEY_REGEXP)
+  @javax.annotation.Nullable
+  private String deduplicationKeyRegexp;
+
+  public static final String SERIALIZED_NAME_OWNER_GROUP_IDS = "owner_group_ids";
+  @SerializedName(SERIALIZED_NAME_OWNER_GROUP_IDS)
+  @javax.annotation.Nullable
+  private List<String> ownerGroupIds = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_ALERT_TEMPLATE_ATTRIBUTES = "alert_template_attributes";
+  @SerializedName(SERIALIZED_NAME_ALERT_TEMPLATE_ATTRIBUTES)
+  @javax.annotation.Nullable
+  private NewAlertsSourceDataAttributesAlertTemplateAttributes alertTemplateAttributes;
+
+  public static final String SERIALIZED_NAME_ALERT_SOURCE_URGENCY_RULES_ATTRIBUTES = "alert_source_urgency_rules_attributes";
+  @SerializedName(SERIALIZED_NAME_ALERT_SOURCE_URGENCY_RULES_ATTRIBUTES)
+  @javax.annotation.Nullable
+  private List<NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner> alertSourceUrgencyRulesAttributes = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_SOURCEABLE_ATTRIBUTES = "sourceable_attributes";
+  @SerializedName(SERIALIZED_NAME_SOURCEABLE_ATTRIBUTES)
+  @javax.annotation.Nullable
+  private NewAlertsSourceDataAttributesSourceableAttributes sourceableAttributes;
+
+  public static final String SERIALIZED_NAME_RESOLUTION_RULE_ATTRIBUTES = "resolution_rule_attributes";
+  @SerializedName(SERIALIZED_NAME_RESOLUTION_RULE_ATTRIBUTES)
+  @javax.annotation.Nullable
+  private NewAlertsSourceDataAttributesResolutionRuleAttributes resolutionRuleAttributes;
+
+  public static final String SERIALIZED_NAME_ALERT_SOURCE_FIELDS_ATTRIBUTES = "alert_source_fields_attributes";
+  @SerializedName(SERIALIZED_NAME_ALERT_SOURCE_FIELDS_ATTRIBUTES)
+  @javax.annotation.Nullable
+  private List<NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner> alertSourceFieldsAttributes = new ArrayList<>();
+
+  /**
+   * The status of the alert source
+   */
+  @JsonAdapter(StatusEnum.Adapter.class)
+  public enum StatusEnum {
+    CONNECTED("connected"),
+    
+    SETUP_COMPLETE("setup_complete"),
+    
+    SETUP_INCOMPLETE("setup_incomplete");
+
+    private String value;
+
+    StatusEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static StatusEnum fromValue(String value) {
+      for (StatusEnum b : StatusEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<StatusEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final StatusEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public StatusEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return StatusEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      StatusEnum.fromValue(value);
+    }
+  }
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
   @javax.annotation.Nonnull
-  private String status;
+  private StatusEnum status;
 
   public static final String SERIALIZED_NAME_SECRET = "secret";
   @SerializedName(SERIALIZED_NAME_SECRET)
   @javax.annotation.Nonnull
   private String secret;
 
-  public static final String SERIALIZED_NAME_WEBHOOK_ENDPOINT = "webhook_endpoint";
-  @SerializedName(SERIALIZED_NAME_WEBHOOK_ENDPOINT)
-  @javax.annotation.Nullable
-  private String webhookEndpoint;
-
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
   @javax.annotation.Nullable
   private String email;
 
-  public static final String SERIALIZED_NAME_OWNER_GROUP_IDS = "owner_group_ids";
-  @SerializedName(SERIALIZED_NAME_OWNER_GROUP_IDS)
+  public static final String SERIALIZED_NAME_WEBHOOK_ENDPOINT = "webhook_endpoint";
+  @SerializedName(SERIALIZED_NAME_WEBHOOK_ENDPOINT)
   @javax.annotation.Nullable
-  private List<String> ownerGroupIds = new ArrayList<>();
+  private String webhookEndpoint;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -103,37 +347,8 @@ public class AlertsSource {
   @javax.annotation.Nonnull
   private String updatedAt;
 
-  public static final String SERIALIZED_NAME_SOURCEABLE_ATTRIBUTES = "sourceable_attributes";
-  @SerializedName(SERIALIZED_NAME_SOURCEABLE_ATTRIBUTES)
-  @javax.annotation.Nullable
-  private Object sourceableAttributes;
-
-  public static final String SERIALIZED_NAME_RESOLUTION_RULE_ATTRIBUTES = "resolution_rule_attributes";
-  @SerializedName(SERIALIZED_NAME_RESOLUTION_RULE_ATTRIBUTES)
-  @javax.annotation.Nullable
-  private Object resolutionRuleAttributes;
-
   public AlertsSource() {
   }
-
-  public AlertsSource alertUrgencyId(@javax.annotation.Nullable String alertUrgencyId) {
-    this.alertUrgencyId = alertUrgencyId;
-    return this;
-  }
-
-  /**
-   * ID for the default alert urgency assigned to this alert source
-   * @return alertUrgencyId
-   */
-  @javax.annotation.Nullable
-  public String getAlertUrgencyId() {
-    return alertUrgencyId;
-  }
-
-  public void setAlertUrgencyId(@javax.annotation.Nullable String alertUrgencyId) {
-    this.alertUrgencyId = alertUrgencyId;
-  }
-
 
   public AlertsSource name(@javax.annotation.Nonnull String name) {
     this.name = name;
@@ -154,7 +369,7 @@ public class AlertsSource {
   }
 
 
-  public AlertsSource sourceType(@javax.annotation.Nullable String sourceType) {
+  public AlertsSource sourceType(@javax.annotation.Nullable SourceTypeEnum sourceType) {
     this.sourceType = sourceType;
     return this;
   }
@@ -164,88 +379,107 @@ public class AlertsSource {
    * @return sourceType
    */
   @javax.annotation.Nullable
-  public String getSourceType() {
+  public SourceTypeEnum getSourceType() {
     return sourceType;
   }
 
-  public void setSourceType(@javax.annotation.Nullable String sourceType) {
+  public void setSourceType(@javax.annotation.Nullable SourceTypeEnum sourceType) {
     this.sourceType = sourceType;
   }
 
 
-  public AlertsSource status(@javax.annotation.Nonnull String status) {
-    this.status = status;
+  public AlertsSource alertUrgencyId(@javax.annotation.Nullable String alertUrgencyId) {
+    this.alertUrgencyId = alertUrgencyId;
     return this;
   }
 
   /**
-   * The current status of the alert source
-   * @return status
-   */
-  @javax.annotation.Nonnull
-  public String getStatus() {
-    return status;
-  }
-
-  public void setStatus(@javax.annotation.Nonnull String status) {
-    this.status = status;
-  }
-
-
-  public AlertsSource secret(@javax.annotation.Nonnull String secret) {
-    this.secret = secret;
-    return this;
-  }
-
-  /**
-   * A secret key used to authenticate incoming requests to this alerts source
-   * @return secret
-   */
-  @javax.annotation.Nonnull
-  public String getSecret() {
-    return secret;
-  }
-
-  public void setSecret(@javax.annotation.Nonnull String secret) {
-    this.secret = secret;
-  }
-
-
-  public AlertsSource webhookEndpoint(@javax.annotation.Nullable String webhookEndpoint) {
-    this.webhookEndpoint = webhookEndpoint;
-    return this;
-  }
-
-  /**
-   * The URL endpoint of the alert source
-   * @return webhookEndpoint
+   * ID for the default alert urgency assigned to this alert source
+   * @return alertUrgencyId
    */
   @javax.annotation.Nullable
-  public String getWebhookEndpoint() {
-    return webhookEndpoint;
+  public String getAlertUrgencyId() {
+    return alertUrgencyId;
   }
 
-  public void setWebhookEndpoint(@javax.annotation.Nullable String webhookEndpoint) {
-    this.webhookEndpoint = webhookEndpoint;
+  public void setAlertUrgencyId(@javax.annotation.Nullable String alertUrgencyId) {
+    this.alertUrgencyId = alertUrgencyId;
   }
 
 
-  public AlertsSource email(@javax.annotation.Nullable String email) {
-    this.email = email;
+  public AlertsSource deduplicateAlertsByKey(@javax.annotation.Nullable Boolean deduplicateAlertsByKey) {
+    this.deduplicateAlertsByKey = deduplicateAlertsByKey;
     return this;
   }
 
   /**
-   * The email address of the alert source
-   * @return email
+   * Toggle alert deduplication using deduplication key. If enabled, deduplication_key_kind and deduplication_key_path are required.
+   * @return deduplicateAlertsByKey
    */
   @javax.annotation.Nullable
-  public String getEmail() {
-    return email;
+  public Boolean getDeduplicateAlertsByKey() {
+    return deduplicateAlertsByKey;
   }
 
-  public void setEmail(@javax.annotation.Nullable String email) {
-    this.email = email;
+  public void setDeduplicateAlertsByKey(@javax.annotation.Nullable Boolean deduplicateAlertsByKey) {
+    this.deduplicateAlertsByKey = deduplicateAlertsByKey;
+  }
+
+
+  public AlertsSource deduplicationKeyKind(@javax.annotation.Nullable DeduplicationKeyKindEnum deduplicationKeyKind) {
+    this.deduplicationKeyKind = deduplicationKeyKind;
+    return this;
+  }
+
+  /**
+   * Kind of deduplication key.
+   * @return deduplicationKeyKind
+   */
+  @javax.annotation.Nullable
+  public DeduplicationKeyKindEnum getDeduplicationKeyKind() {
+    return deduplicationKeyKind;
+  }
+
+  public void setDeduplicationKeyKind(@javax.annotation.Nullable DeduplicationKeyKindEnum deduplicationKeyKind) {
+    this.deduplicationKeyKind = deduplicationKeyKind;
+  }
+
+
+  public AlertsSource deduplicationKeyPath(@javax.annotation.Nullable String deduplicationKeyPath) {
+    this.deduplicationKeyPath = deduplicationKeyPath;
+    return this;
+  }
+
+  /**
+   * Path to deduplication key. This is a JSON Path to extract the deduplication key from the request body.
+   * @return deduplicationKeyPath
+   */
+  @javax.annotation.Nullable
+  public String getDeduplicationKeyPath() {
+    return deduplicationKeyPath;
+  }
+
+  public void setDeduplicationKeyPath(@javax.annotation.Nullable String deduplicationKeyPath) {
+    this.deduplicationKeyPath = deduplicationKeyPath;
+  }
+
+
+  public AlertsSource deduplicationKeyRegexp(@javax.annotation.Nullable String deduplicationKeyRegexp) {
+    this.deduplicationKeyRegexp = deduplicationKeyRegexp;
+    return this;
+  }
+
+  /**
+   * Regular expression to extract key from value found at key path.
+   * @return deduplicationKeyRegexp
+   */
+  @javax.annotation.Nullable
+  public String getDeduplicationKeyRegexp() {
+    return deduplicationKeyRegexp;
+  }
+
+  public void setDeduplicationKeyRegexp(@javax.annotation.Nullable String deduplicationKeyRegexp) {
+    this.deduplicationKeyRegexp = deduplicationKeyRegexp;
   }
 
 
@@ -273,6 +507,193 @@ public class AlertsSource {
 
   public void setOwnerGroupIds(@javax.annotation.Nullable List<String> ownerGroupIds) {
     this.ownerGroupIds = ownerGroupIds;
+  }
+
+
+  public AlertsSource alertTemplateAttributes(@javax.annotation.Nullable NewAlertsSourceDataAttributesAlertTemplateAttributes alertTemplateAttributes) {
+    this.alertTemplateAttributes = alertTemplateAttributes;
+    return this;
+  }
+
+  /**
+   * Get alertTemplateAttributes
+   * @return alertTemplateAttributes
+   */
+  @javax.annotation.Nullable
+  public NewAlertsSourceDataAttributesAlertTemplateAttributes getAlertTemplateAttributes() {
+    return alertTemplateAttributes;
+  }
+
+  public void setAlertTemplateAttributes(@javax.annotation.Nullable NewAlertsSourceDataAttributesAlertTemplateAttributes alertTemplateAttributes) {
+    this.alertTemplateAttributes = alertTemplateAttributes;
+  }
+
+
+  public AlertsSource alertSourceUrgencyRulesAttributes(@javax.annotation.Nullable List<NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner> alertSourceUrgencyRulesAttributes) {
+    this.alertSourceUrgencyRulesAttributes = alertSourceUrgencyRulesAttributes;
+    return this;
+  }
+
+  public AlertsSource addAlertSourceUrgencyRulesAttributesItem(NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner alertSourceUrgencyRulesAttributesItem) {
+    if (this.alertSourceUrgencyRulesAttributes == null) {
+      this.alertSourceUrgencyRulesAttributes = new ArrayList<>();
+    }
+    this.alertSourceUrgencyRulesAttributes.add(alertSourceUrgencyRulesAttributesItem);
+    return this;
+  }
+
+  /**
+   * List of rules that define the conditions under which the alert urgency will be set automatically based on the alert payload
+   * @return alertSourceUrgencyRulesAttributes
+   */
+  @javax.annotation.Nullable
+  public List<NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner> getAlertSourceUrgencyRulesAttributes() {
+    return alertSourceUrgencyRulesAttributes;
+  }
+
+  public void setAlertSourceUrgencyRulesAttributes(@javax.annotation.Nullable List<NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner> alertSourceUrgencyRulesAttributes) {
+    this.alertSourceUrgencyRulesAttributes = alertSourceUrgencyRulesAttributes;
+  }
+
+
+  public AlertsSource sourceableAttributes(@javax.annotation.Nullable NewAlertsSourceDataAttributesSourceableAttributes sourceableAttributes) {
+    this.sourceableAttributes = sourceableAttributes;
+    return this;
+  }
+
+  /**
+   * Get sourceableAttributes
+   * @return sourceableAttributes
+   */
+  @javax.annotation.Nullable
+  public NewAlertsSourceDataAttributesSourceableAttributes getSourceableAttributes() {
+    return sourceableAttributes;
+  }
+
+  public void setSourceableAttributes(@javax.annotation.Nullable NewAlertsSourceDataAttributesSourceableAttributes sourceableAttributes) {
+    this.sourceableAttributes = sourceableAttributes;
+  }
+
+
+  public AlertsSource resolutionRuleAttributes(@javax.annotation.Nullable NewAlertsSourceDataAttributesResolutionRuleAttributes resolutionRuleAttributes) {
+    this.resolutionRuleAttributes = resolutionRuleAttributes;
+    return this;
+  }
+
+  /**
+   * Get resolutionRuleAttributes
+   * @return resolutionRuleAttributes
+   */
+  @javax.annotation.Nullable
+  public NewAlertsSourceDataAttributesResolutionRuleAttributes getResolutionRuleAttributes() {
+    return resolutionRuleAttributes;
+  }
+
+  public void setResolutionRuleAttributes(@javax.annotation.Nullable NewAlertsSourceDataAttributesResolutionRuleAttributes resolutionRuleAttributes) {
+    this.resolutionRuleAttributes = resolutionRuleAttributes;
+  }
+
+
+  public AlertsSource alertSourceFieldsAttributes(@javax.annotation.Nullable List<NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner> alertSourceFieldsAttributes) {
+    this.alertSourceFieldsAttributes = alertSourceFieldsAttributes;
+    return this;
+  }
+
+  public AlertsSource addAlertSourceFieldsAttributesItem(NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner alertSourceFieldsAttributesItem) {
+    if (this.alertSourceFieldsAttributes == null) {
+      this.alertSourceFieldsAttributes = new ArrayList<>();
+    }
+    this.alertSourceFieldsAttributes.add(alertSourceFieldsAttributesItem);
+    return this;
+  }
+
+  /**
+   * List of alert fields to be added to the alert source. Note: This attribute requires the alert field feature to be enabled on your account. Contact Rootly customer support if you need assistance with this feature.
+   * @return alertSourceFieldsAttributes
+   */
+  @javax.annotation.Nullable
+  public List<NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner> getAlertSourceFieldsAttributes() {
+    return alertSourceFieldsAttributes;
+  }
+
+  public void setAlertSourceFieldsAttributes(@javax.annotation.Nullable List<NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner> alertSourceFieldsAttributes) {
+    this.alertSourceFieldsAttributes = alertSourceFieldsAttributes;
+  }
+
+
+  public AlertsSource status(@javax.annotation.Nonnull StatusEnum status) {
+    this.status = status;
+    return this;
+  }
+
+  /**
+   * The status of the alert source
+   * @return status
+   */
+  @javax.annotation.Nonnull
+  public StatusEnum getStatus() {
+    return status;
+  }
+
+  public void setStatus(@javax.annotation.Nonnull StatusEnum status) {
+    this.status = status;
+  }
+
+
+  public AlertsSource secret(@javax.annotation.Nonnull String secret) {
+    this.secret = secret;
+    return this;
+  }
+
+  /**
+   * The secret used to authenticate non-email alert sources
+   * @return secret
+   */
+  @javax.annotation.Nonnull
+  public String getSecret() {
+    return secret;
+  }
+
+  public void setSecret(@javax.annotation.Nonnull String secret) {
+    this.secret = secret;
+  }
+
+
+  public AlertsSource email(@javax.annotation.Nullable String email) {
+    this.email = email;
+    return this;
+  }
+
+  /**
+   * The email generated for email alert sources
+   * @return email
+   */
+  @javax.annotation.Nullable
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(@javax.annotation.Nullable String email) {
+    this.email = email;
+  }
+
+
+  public AlertsSource webhookEndpoint(@javax.annotation.Nullable String webhookEndpoint) {
+    this.webhookEndpoint = webhookEndpoint;
+    return this;
+  }
+
+  /**
+   * The webhook URL generated for non-email alert sources
+   * @return webhookEndpoint
+   */
+  @javax.annotation.Nullable
+  public String getWebhookEndpoint() {
+    return webhookEndpoint;
+  }
+
+  public void setWebhookEndpoint(@javax.annotation.Nullable String webhookEndpoint) {
+    this.webhookEndpoint = webhookEndpoint;
   }
 
 
@@ -314,44 +735,6 @@ public class AlertsSource {
   }
 
 
-  public AlertsSource sourceableAttributes(@javax.annotation.Nullable Object sourceableAttributes) {
-    this.sourceableAttributes = sourceableAttributes;
-    return this;
-  }
-
-  /**
-   * Additional attributes specific to certain alert sources (e.g., generic_webhook), encapsulating source-specific configurations or details
-   * @return sourceableAttributes
-   */
-  @javax.annotation.Nullable
-  public Object getSourceableAttributes() {
-    return sourceableAttributes;
-  }
-
-  public void setSourceableAttributes(@javax.annotation.Nullable Object sourceableAttributes) {
-    this.sourceableAttributes = sourceableAttributes;
-  }
-
-
-  public AlertsSource resolutionRuleAttributes(@javax.annotation.Nullable Object resolutionRuleAttributes) {
-    this.resolutionRuleAttributes = resolutionRuleAttributes;
-    return this;
-  }
-
-  /**
-   * Additional attributes for email alerts source
-   * @return resolutionRuleAttributes
-   */
-  @javax.annotation.Nullable
-  public Object getResolutionRuleAttributes() {
-    return resolutionRuleAttributes;
-  }
-
-  public void setResolutionRuleAttributes(@javax.annotation.Nullable Object resolutionRuleAttributes) {
-    this.resolutionRuleAttributes = resolutionRuleAttributes;
-  }
-
-
 
   @Override
   public boolean equals(Object o) {
@@ -362,18 +745,25 @@ public class AlertsSource {
       return false;
     }
     AlertsSource alertsSource = (AlertsSource) o;
-    return Objects.equals(this.alertUrgencyId, alertsSource.alertUrgencyId) &&
-        Objects.equals(this.name, alertsSource.name) &&
+    return Objects.equals(this.name, alertsSource.name) &&
         Objects.equals(this.sourceType, alertsSource.sourceType) &&
+        Objects.equals(this.alertUrgencyId, alertsSource.alertUrgencyId) &&
+        Objects.equals(this.deduplicateAlertsByKey, alertsSource.deduplicateAlertsByKey) &&
+        Objects.equals(this.deduplicationKeyKind, alertsSource.deduplicationKeyKind) &&
+        Objects.equals(this.deduplicationKeyPath, alertsSource.deduplicationKeyPath) &&
+        Objects.equals(this.deduplicationKeyRegexp, alertsSource.deduplicationKeyRegexp) &&
+        Objects.equals(this.ownerGroupIds, alertsSource.ownerGroupIds) &&
+        Objects.equals(this.alertTemplateAttributes, alertsSource.alertTemplateAttributes) &&
+        Objects.equals(this.alertSourceUrgencyRulesAttributes, alertsSource.alertSourceUrgencyRulesAttributes) &&
+        Objects.equals(this.sourceableAttributes, alertsSource.sourceableAttributes) &&
+        Objects.equals(this.resolutionRuleAttributes, alertsSource.resolutionRuleAttributes) &&
+        Objects.equals(this.alertSourceFieldsAttributes, alertsSource.alertSourceFieldsAttributes) &&
         Objects.equals(this.status, alertsSource.status) &&
         Objects.equals(this.secret, alertsSource.secret) &&
-        Objects.equals(this.webhookEndpoint, alertsSource.webhookEndpoint) &&
         Objects.equals(this.email, alertsSource.email) &&
-        Objects.equals(this.ownerGroupIds, alertsSource.ownerGroupIds) &&
+        Objects.equals(this.webhookEndpoint, alertsSource.webhookEndpoint) &&
         Objects.equals(this.createdAt, alertsSource.createdAt) &&
-        Objects.equals(this.updatedAt, alertsSource.updatedAt) &&
-        Objects.equals(this.sourceableAttributes, alertsSource.sourceableAttributes) &&
-        Objects.equals(this.resolutionRuleAttributes, alertsSource.resolutionRuleAttributes);
+        Objects.equals(this.updatedAt, alertsSource.updatedAt);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -382,7 +772,7 @@ public class AlertsSource {
 
   @Override
   public int hashCode() {
-    return Objects.hash(alertUrgencyId, name, sourceType, status, secret, webhookEndpoint, email, ownerGroupIds, createdAt, updatedAt, sourceableAttributes, resolutionRuleAttributes);
+    return Objects.hash(name, sourceType, alertUrgencyId, deduplicateAlertsByKey, deduplicationKeyKind, deduplicationKeyPath, deduplicationKeyRegexp, ownerGroupIds, alertTemplateAttributes, alertSourceUrgencyRulesAttributes, sourceableAttributes, resolutionRuleAttributes, alertSourceFieldsAttributes, status, secret, email, webhookEndpoint, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -396,18 +786,25 @@ public class AlertsSource {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AlertsSource {\n");
-    sb.append("    alertUrgencyId: ").append(toIndentedString(alertUrgencyId)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    sourceType: ").append(toIndentedString(sourceType)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    secret: ").append(toIndentedString(secret)).append("\n");
-    sb.append("    webhookEndpoint: ").append(toIndentedString(webhookEndpoint)).append("\n");
-    sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    alertUrgencyId: ").append(toIndentedString(alertUrgencyId)).append("\n");
+    sb.append("    deduplicateAlertsByKey: ").append(toIndentedString(deduplicateAlertsByKey)).append("\n");
+    sb.append("    deduplicationKeyKind: ").append(toIndentedString(deduplicationKeyKind)).append("\n");
+    sb.append("    deduplicationKeyPath: ").append(toIndentedString(deduplicationKeyPath)).append("\n");
+    sb.append("    deduplicationKeyRegexp: ").append(toIndentedString(deduplicationKeyRegexp)).append("\n");
     sb.append("    ownerGroupIds: ").append(toIndentedString(ownerGroupIds)).append("\n");
-    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-    sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+    sb.append("    alertTemplateAttributes: ").append(toIndentedString(alertTemplateAttributes)).append("\n");
+    sb.append("    alertSourceUrgencyRulesAttributes: ").append(toIndentedString(alertSourceUrgencyRulesAttributes)).append("\n");
     sb.append("    sourceableAttributes: ").append(toIndentedString(sourceableAttributes)).append("\n");
     sb.append("    resolutionRuleAttributes: ").append(toIndentedString(resolutionRuleAttributes)).append("\n");
+    sb.append("    alertSourceFieldsAttributes: ").append(toIndentedString(alertSourceFieldsAttributes)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    secret: ").append(toIndentedString(secret)).append("\n");
+    sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    webhookEndpoint: ").append(toIndentedString(webhookEndpoint)).append("\n");
+    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -430,18 +827,25 @@ public class AlertsSource {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("alert_urgency_id");
     openapiFields.add("name");
     openapiFields.add("source_type");
-    openapiFields.add("status");
-    openapiFields.add("secret");
-    openapiFields.add("webhook_endpoint");
-    openapiFields.add("email");
+    openapiFields.add("alert_urgency_id");
+    openapiFields.add("deduplicate_alerts_by_key");
+    openapiFields.add("deduplication_key_kind");
+    openapiFields.add("deduplication_key_path");
+    openapiFields.add("deduplication_key_regexp");
     openapiFields.add("owner_group_ids");
-    openapiFields.add("created_at");
-    openapiFields.add("updated_at");
+    openapiFields.add("alert_template_attributes");
+    openapiFields.add("alert_source_urgency_rules_attributes");
     openapiFields.add("sourceable_attributes");
     openapiFields.add("resolution_rule_attributes");
+    openapiFields.add("alert_source_fields_attributes");
+    openapiFields.add("status");
+    openapiFields.add("secret");
+    openapiFields.add("email");
+    openapiFields.add("webhook_endpoint");
+    openapiFields.add("created_at");
+    openapiFields.add("updated_at");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -480,30 +884,89 @@ public class AlertsSource {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("alert_urgency_id") != null && !jsonObj.get("alert_urgency_id").isJsonNull()) && !jsonObj.get("alert_urgency_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `alert_urgency_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("alert_urgency_id").toString()));
-      }
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("source_type") != null && !jsonObj.get("source_type").isJsonNull()) && !jsonObj.get("source_type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `source_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("source_type").toString()));
       }
-      if (!jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+      // validate the optional field `source_type`
+      if (jsonObj.get("source_type") != null && !jsonObj.get("source_type").isJsonNull()) {
+        SourceTypeEnum.validateJsonElement(jsonObj.get("source_type"));
       }
-      if (!jsonObj.get("secret").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `secret` to be a primitive type in the JSON string but got `%s`", jsonObj.get("secret").toString()));
+      if ((jsonObj.get("alert_urgency_id") != null && !jsonObj.get("alert_urgency_id").isJsonNull()) && !jsonObj.get("alert_urgency_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `alert_urgency_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("alert_urgency_id").toString()));
       }
-      if ((jsonObj.get("webhook_endpoint") != null && !jsonObj.get("webhook_endpoint").isJsonNull()) && !jsonObj.get("webhook_endpoint").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `webhook_endpoint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("webhook_endpoint").toString()));
+      if ((jsonObj.get("deduplication_key_kind") != null && !jsonObj.get("deduplication_key_kind").isJsonNull()) && !jsonObj.get("deduplication_key_kind").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `deduplication_key_kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("deduplication_key_kind").toString()));
       }
-      if ((jsonObj.get("email") != null && !jsonObj.get("email").isJsonNull()) && !jsonObj.get("email").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
+      // validate the optional field `deduplication_key_kind`
+      if (jsonObj.get("deduplication_key_kind") != null && !jsonObj.get("deduplication_key_kind").isJsonNull()) {
+        DeduplicationKeyKindEnum.validateJsonElement(jsonObj.get("deduplication_key_kind"));
+      }
+      if ((jsonObj.get("deduplication_key_path") != null && !jsonObj.get("deduplication_key_path").isJsonNull()) && !jsonObj.get("deduplication_key_path").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `deduplication_key_path` to be a primitive type in the JSON string but got `%s`", jsonObj.get("deduplication_key_path").toString()));
+      }
+      if ((jsonObj.get("deduplication_key_regexp") != null && !jsonObj.get("deduplication_key_regexp").isJsonNull()) && !jsonObj.get("deduplication_key_regexp").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `deduplication_key_regexp` to be a primitive type in the JSON string but got `%s`", jsonObj.get("deduplication_key_regexp").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("owner_group_ids") != null && !jsonObj.get("owner_group_ids").isJsonNull() && !jsonObj.get("owner_group_ids").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `owner_group_ids` to be an array in the JSON string but got `%s`", jsonObj.get("owner_group_ids").toString()));
+      }
+      // validate the optional field `alert_template_attributes`
+      if (jsonObj.get("alert_template_attributes") != null && !jsonObj.get("alert_template_attributes").isJsonNull()) {
+        NewAlertsSourceDataAttributesAlertTemplateAttributes.validateJsonElement(jsonObj.get("alert_template_attributes"));
+      }
+      if (jsonObj.get("alert_source_urgency_rules_attributes") != null && !jsonObj.get("alert_source_urgency_rules_attributes").isJsonNull()) {
+        JsonArray jsonArrayalertSourceUrgencyRulesAttributes = jsonObj.getAsJsonArray("alert_source_urgency_rules_attributes");
+        if (jsonArrayalertSourceUrgencyRulesAttributes != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("alert_source_urgency_rules_attributes").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `alert_source_urgency_rules_attributes` to be an array in the JSON string but got `%s`", jsonObj.get("alert_source_urgency_rules_attributes").toString()));
+          }
+
+          // validate the optional field `alert_source_urgency_rules_attributes` (array)
+          for (int i = 0; i < jsonArrayalertSourceUrgencyRulesAttributes.size(); i++) {
+            NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner.validateJsonElement(jsonArrayalertSourceUrgencyRulesAttributes.get(i));
+          };
+        }
+      }
+      // validate the optional field `sourceable_attributes`
+      if (jsonObj.get("sourceable_attributes") != null && !jsonObj.get("sourceable_attributes").isJsonNull()) {
+        NewAlertsSourceDataAttributesSourceableAttributes.validateJsonElement(jsonObj.get("sourceable_attributes"));
+      }
+      // validate the optional field `resolution_rule_attributes`
+      if (jsonObj.get("resolution_rule_attributes") != null && !jsonObj.get("resolution_rule_attributes").isJsonNull()) {
+        NewAlertsSourceDataAttributesResolutionRuleAttributes.validateJsonElement(jsonObj.get("resolution_rule_attributes"));
+      }
+      if (jsonObj.get("alert_source_fields_attributes") != null && !jsonObj.get("alert_source_fields_attributes").isJsonNull()) {
+        JsonArray jsonArrayalertSourceFieldsAttributes = jsonObj.getAsJsonArray("alert_source_fields_attributes");
+        if (jsonArrayalertSourceFieldsAttributes != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("alert_source_fields_attributes").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `alert_source_fields_attributes` to be an array in the JSON string but got `%s`", jsonObj.get("alert_source_fields_attributes").toString()));
+          }
+
+          // validate the optional field `alert_source_fields_attributes` (array)
+          for (int i = 0; i < jsonArrayalertSourceFieldsAttributes.size(); i++) {
+            NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner.validateJsonElement(jsonArrayalertSourceFieldsAttributes.get(i));
+          };
+        }
+      }
+      if (!jsonObj.get("status").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+      }
+      // validate the required field `status`
+      StatusEnum.validateJsonElement(jsonObj.get("status"));
+      if (!jsonObj.get("secret").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `secret` to be a primitive type in the JSON string but got `%s`", jsonObj.get("secret").toString()));
+      }
+      if ((jsonObj.get("email") != null && !jsonObj.get("email").isJsonNull()) && !jsonObj.get("email").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
+      }
+      if ((jsonObj.get("webhook_endpoint") != null && !jsonObj.get("webhook_endpoint").isJsonNull()) && !jsonObj.get("webhook_endpoint").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `webhook_endpoint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("webhook_endpoint").toString()));
       }
       if (!jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));

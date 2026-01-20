@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -28,6 +28,7 @@ import java.io.IOException;
 
 
 import com.rootly.client.model.ErrorsList;
+import com.rootly.client.model.GetAlertFieldIdParameter;
 import com.rootly.client.model.HeartbeatList;
 import com.rootly.client.model.HeartbeatResponse;
 import com.rootly.client.model.NewHeartbeat;
@@ -87,7 +88,7 @@ public class HeartbeatsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> heartbeat created </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> interval less than 60 seconds </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
@@ -158,7 +159,7 @@ public class HeartbeatsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> heartbeat created </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> interval less than 60 seconds </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
@@ -178,7 +179,7 @@ public class HeartbeatsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> heartbeat created </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> interval less than 60 seconds </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
@@ -200,7 +201,7 @@ public class HeartbeatsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> heartbeat created </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> interval less than 60 seconds </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
@@ -225,7 +226,7 @@ public class HeartbeatsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteHeartbeatCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteHeartbeatCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -271,7 +272,7 @@ public class HeartbeatsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteHeartbeatValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteHeartbeatValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteHeartbeat(Async)");
@@ -295,7 +296,7 @@ public class HeartbeatsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public HeartbeatResponse deleteHeartbeat(@javax.annotation.Nonnull String id) throws ApiException {
+    public HeartbeatResponse deleteHeartbeat(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<HeartbeatResponse> localVarResp = deleteHeartbeatWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -314,7 +315,7 @@ public class HeartbeatsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<HeartbeatResponse> deleteHeartbeatWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<HeartbeatResponse> deleteHeartbeatWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = deleteHeartbeatValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<HeartbeatResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -335,7 +336,7 @@ public class HeartbeatsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteHeartbeatAsync(@javax.annotation.Nonnull String id, final ApiCallback<HeartbeatResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteHeartbeatAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<HeartbeatResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteHeartbeatValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<HeartbeatResponse>(){}.getType();
@@ -352,11 +353,11 @@ public class HeartbeatsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> heartbeat found </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> heartbeat found by slug </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getHeartbeatCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getHeartbeatCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -402,7 +403,7 @@ public class HeartbeatsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getHeartbeatValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getHeartbeatValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getHeartbeat(Async)");
@@ -422,11 +423,11 @@ public class HeartbeatsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> heartbeat found </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> heartbeat found by slug </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public HeartbeatResponse getHeartbeat(@javax.annotation.Nonnull String id) throws ApiException {
+    public HeartbeatResponse getHeartbeat(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<HeartbeatResponse> localVarResp = getHeartbeatWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -441,11 +442,11 @@ public class HeartbeatsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> heartbeat found </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> heartbeat found by slug </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<HeartbeatResponse> getHeartbeatWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<HeartbeatResponse> getHeartbeatWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = getHeartbeatValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<HeartbeatResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -462,11 +463,11 @@ public class HeartbeatsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> heartbeat found </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> heartbeat found by slug </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getHeartbeatAsync(@javax.annotation.Nonnull String id, final ApiCallback<HeartbeatResponse> _callback) throws ApiException {
+    public okhttp3.Call getHeartbeatAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<HeartbeatResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getHeartbeatValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<HeartbeatResponse>(){}.getType();
@@ -492,7 +493,7 @@ public class HeartbeatsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> filter by name </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call listHeartbeatsCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
@@ -604,7 +605,7 @@ public class HeartbeatsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> filter by name </td><td>  -  </td></tr>
      </table>
      */
     public HeartbeatList listHeartbeats(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte) throws ApiException {
@@ -631,7 +632,7 @@ public class HeartbeatsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> filter by name </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<HeartbeatList> listHeartbeatsWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte) throws ApiException {
@@ -660,7 +661,7 @@ public class HeartbeatsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> filter by name </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call listHeartbeatsAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback<HeartbeatList> _callback) throws ApiException {
@@ -810,9 +811,10 @@ public class HeartbeatsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> heartbeat updated </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> invalid enum value </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateHeartbeatCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateHeartbeat updateHeartbeat, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateHeartbeatCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateHeartbeat updateHeartbeat, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -859,7 +861,7 @@ public class HeartbeatsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateHeartbeatValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateHeartbeat updateHeartbeat, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateHeartbeatValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateHeartbeat updateHeartbeat, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateHeartbeat(Async)");
@@ -887,9 +889,10 @@ public class HeartbeatsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> heartbeat updated </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> invalid enum value </td><td>  -  </td></tr>
      </table>
      */
-    public HeartbeatResponse updateHeartbeat(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateHeartbeat updateHeartbeat) throws ApiException {
+    public HeartbeatResponse updateHeartbeat(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateHeartbeat updateHeartbeat) throws ApiException {
         ApiResponse<HeartbeatResponse> localVarResp = updateHeartbeatWithHttpInfo(id, updateHeartbeat);
         return localVarResp.getData();
     }
@@ -907,9 +910,10 @@ public class HeartbeatsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> heartbeat updated </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> invalid enum value </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<HeartbeatResponse> updateHeartbeatWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateHeartbeat updateHeartbeat) throws ApiException {
+    public ApiResponse<HeartbeatResponse> updateHeartbeatWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateHeartbeat updateHeartbeat) throws ApiException {
         okhttp3.Call localVarCall = updateHeartbeatValidateBeforeCall(id, updateHeartbeat, null);
         Type localVarReturnType = new TypeToken<HeartbeatResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -929,9 +933,10 @@ public class HeartbeatsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> heartbeat updated </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> invalid enum value </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateHeartbeatAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateHeartbeat updateHeartbeat, final ApiCallback<HeartbeatResponse> _callback) throws ApiException {
+    public okhttp3.Call updateHeartbeatAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateHeartbeat updateHeartbeat, final ApiCallback<HeartbeatResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateHeartbeatValidateBeforeCall(id, updateHeartbeat, _callback);
         Type localVarReturnType = new TypeToken<HeartbeatResponse>(){}.getType();

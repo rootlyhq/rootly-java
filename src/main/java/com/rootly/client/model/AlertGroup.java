@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.AlertGroupConditionsInner;
 import com.rootly.client.model.NewAlertGroupDataAttributesAttributesInner;
 import com.rootly.client.model.NewAlertGroupDataAttributesTargetsInner;
 import java.io.IOException;
@@ -52,7 +53,7 @@ import com.rootly.client.JSON;
 /**
  * AlertGroup
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T17:46:55.918190357Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AlertGroup {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -80,13 +81,15 @@ public class AlertGroup {
   private Integer timeWindow;
 
   public static final String SERIALIZED_NAME_GROUP_BY_ALERT_TITLE = "group_by_alert_title";
+  @Deprecated
   @SerializedName(SERIALIZED_NAME_GROUP_BY_ALERT_TITLE)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Boolean groupByAlertTitle;
 
   public static final String SERIALIZED_NAME_GROUP_BY_ALERT_URGENCY = "group_by_alert_urgency";
+  @Deprecated
   @SerializedName(SERIALIZED_NAME_GROUP_BY_ALERT_URGENCY)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Boolean groupByAlertUrgency;
 
   public static final String SERIALIZED_NAME_TARGETS = "targets";
@@ -95,9 +98,15 @@ public class AlertGroup {
   private List<NewAlertGroupDataAttributesTargetsInner> targets = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
+  @Deprecated
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
   @javax.annotation.Nullable
   private List<NewAlertGroupDataAttributesAttributesInner> attributes = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_CONDITIONS = "conditions";
+  @SerializedName(SERIALIZED_NAME_CONDITIONS)
+  @javax.annotation.Nullable
+  private List<AlertGroupConditionsInner> conditions = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -212,40 +221,48 @@ public class AlertGroup {
   }
 
 
-  public AlertGroup groupByAlertTitle(@javax.annotation.Nonnull Boolean groupByAlertTitle) {
+  @Deprecated
+  public AlertGroup groupByAlertTitle(@javax.annotation.Nullable Boolean groupByAlertTitle) {
     this.groupByAlertTitle = groupByAlertTitle;
     return this;
   }
 
   /**
-   * Whether the alerts are grouped by title or not
+   * [DEPRECATED] Whether the alerts are grouped by title or not. This field is deprecated. Please use the &#x60;conditions&#x60; field with advanced alert grouping instead.
    * @return groupByAlertTitle
+   * @deprecated
    */
-  @javax.annotation.Nonnull
+  @Deprecated
+  @javax.annotation.Nullable
   public Boolean getGroupByAlertTitle() {
     return groupByAlertTitle;
   }
 
-  public void setGroupByAlertTitle(@javax.annotation.Nonnull Boolean groupByAlertTitle) {
+  @Deprecated
+  public void setGroupByAlertTitle(@javax.annotation.Nullable Boolean groupByAlertTitle) {
     this.groupByAlertTitle = groupByAlertTitle;
   }
 
 
-  public AlertGroup groupByAlertUrgency(@javax.annotation.Nonnull Boolean groupByAlertUrgency) {
+  @Deprecated
+  public AlertGroup groupByAlertUrgency(@javax.annotation.Nullable Boolean groupByAlertUrgency) {
     this.groupByAlertUrgency = groupByAlertUrgency;
     return this;
   }
 
   /**
-   * Whether the alerts are grouped by urgency or not
+   * [DEPRECATED] Whether the alerts are grouped by urgency or not. This field is deprecated. Please use the &#x60;conditions&#x60; field with advanced alert grouping instead.
    * @return groupByAlertUrgency
+   * @deprecated
    */
-  @javax.annotation.Nonnull
+  @Deprecated
+  @javax.annotation.Nullable
   public Boolean getGroupByAlertUrgency() {
     return groupByAlertUrgency;
   }
 
-  public void setGroupByAlertUrgency(@javax.annotation.Nonnull Boolean groupByAlertUrgency) {
+  @Deprecated
+  public void setGroupByAlertUrgency(@javax.annotation.Nullable Boolean groupByAlertUrgency) {
     this.groupByAlertUrgency = groupByAlertUrgency;
   }
 
@@ -277,6 +294,7 @@ public class AlertGroup {
   }
 
 
+  @Deprecated
   public AlertGroup attributes(@javax.annotation.Nullable List<NewAlertGroupDataAttributesAttributesInner> attributes) {
     this.attributes = attributes;
     return this;
@@ -291,16 +309,46 @@ public class AlertGroup {
   }
 
   /**
-   * Get attributes
+   * This field is deprecated. Please use the &#x60;conditions&#x60; field instead, &#x60;attributes&#x60; will be removed in the future.
    * @return attributes
+   * @deprecated
    */
+  @Deprecated
   @javax.annotation.Nullable
   public List<NewAlertGroupDataAttributesAttributesInner> getAttributes() {
     return attributes;
   }
 
+  @Deprecated
   public void setAttributes(@javax.annotation.Nullable List<NewAlertGroupDataAttributesAttributesInner> attributes) {
     this.attributes = attributes;
+  }
+
+
+  public AlertGroup conditions(@javax.annotation.Nullable List<AlertGroupConditionsInner> conditions) {
+    this.conditions = conditions;
+    return this;
+  }
+
+  public AlertGroup addConditionsItem(AlertGroupConditionsInner conditionsItem) {
+    if (this.conditions == null) {
+      this.conditions = new ArrayList<>();
+    }
+    this.conditions.add(conditionsItem);
+    return this;
+  }
+
+  /**
+   * The conditions for the alert group
+   * @return conditions
+   */
+  @javax.annotation.Nullable
+  public List<AlertGroupConditionsInner> getConditions() {
+    return conditions;
+  }
+
+  public void setConditions(@javax.annotation.Nullable List<AlertGroupConditionsInner> conditions) {
+    this.conditions = conditions;
   }
 
 
@@ -380,6 +428,7 @@ public class AlertGroup {
         Objects.equals(this.groupByAlertUrgency, alertGroup.groupByAlertUrgency) &&
         Objects.equals(this.targets, alertGroup.targets) &&
         Objects.equals(this.attributes, alertGroup.attributes) &&
+        Objects.equals(this.conditions, alertGroup.conditions) &&
         Objects.equals(this.createdAt, alertGroup.createdAt) &&
         Objects.equals(this.updatedAt, alertGroup.updatedAt) &&
         Objects.equals(this.deletedAt, alertGroup.deletedAt);
@@ -387,7 +436,7 @@ public class AlertGroup {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, slug, conditionType, timeWindow, groupByAlertTitle, groupByAlertUrgency, targets, attributes, createdAt, updatedAt, deletedAt);
+    return Objects.hash(name, description, slug, conditionType, timeWindow, groupByAlertTitle, groupByAlertUrgency, targets, attributes, conditions, createdAt, updatedAt, deletedAt);
   }
 
   @Override
@@ -403,6 +452,7 @@ public class AlertGroup {
     sb.append("    groupByAlertUrgency: ").append(toIndentedString(groupByAlertUrgency)).append("\n");
     sb.append("    targets: ").append(toIndentedString(targets)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
+    sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    deletedAt: ").append(toIndentedString(deletedAt)).append("\n");
@@ -437,6 +487,7 @@ public class AlertGroup {
     openapiFields.add("group_by_alert_urgency");
     openapiFields.add("targets");
     openapiFields.add("attributes");
+    openapiFields.add("conditions");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
     openapiFields.add("deleted_at");
@@ -448,8 +499,6 @@ public class AlertGroup {
     openapiRequiredFields.add("slug");
     openapiRequiredFields.add("condition_type");
     openapiRequiredFields.add("time_window");
-    openapiRequiredFields.add("group_by_alert_title");
-    openapiRequiredFields.add("group_by_alert_urgency");
     openapiRequiredFields.add("created_at");
     openapiRequiredFields.add("updated_at");
     openapiRequiredFields.add("deleted_at");
@@ -520,6 +569,20 @@ public class AlertGroup {
           // validate the optional field `attributes` (array)
           for (int i = 0; i < jsonArrayattributes.size(); i++) {
             NewAlertGroupDataAttributesAttributesInner.validateJsonElement(jsonArrayattributes.get(i));
+          };
+        }
+      }
+      if (jsonObj.get("conditions") != null && !jsonObj.get("conditions").isJsonNull()) {
+        JsonArray jsonArrayconditions = jsonObj.getAsJsonArray("conditions");
+        if (jsonArrayconditions != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("conditions").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `conditions` to be an array in the JSON string but got `%s`", jsonObj.get("conditions").toString()));
+          }
+
+          // validate the optional field `conditions` (array)
+          for (int i = 0; i < jsonArrayconditions.size(); i++) {
+            AlertGroupConditionsInner.validateJsonElement(jsonArrayconditions.get(i));
           };
         }
       }

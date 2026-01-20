@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -20,10 +20,12 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.rootly.client.model.Environment;
+import com.rootly.client.model.NewAlertDataAttributesAlertFieldValuesAttributesInner;
 import com.rootly.client.model.NewAlertDataAttributesLabelsInner;
 import com.rootly.client.model.Service;
 import com.rootly.client.model.Team;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -55,8 +57,13 @@ import com.rootly.client.JSON;
 /**
  * Alert
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T17:46:55.918190357Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Alert {
+  public static final String SERIALIZED_NAME_SHORT_ID = "short_id";
+  @SerializedName(SERIALIZED_NAME_SHORT_ID)
+  @javax.annotation.Nonnull
+  private String shortId;
+
   /**
    * Whether the alert is marked as noise
    */
@@ -125,6 +132,8 @@ public class Alert {
     
     API("api"),
     
+    HEARTBEAT("heartbeat"),
+    
     WEB("web"),
     
     SLACK("slack"),
@@ -134,6 +143,8 @@ public class Alert {
     WORKFLOW("workflow"),
     
     LIVE_CALL_ROUTING("live_call_routing"),
+    
+    MOBILE("mobile"),
     
     PAGERDUTY("pagerduty"),
     
@@ -365,6 +376,16 @@ public class Alert {
   @javax.annotation.Nullable
   private String alertUrgencyId;
 
+  public static final String SERIALIZED_NAME_GROUP_LEADER_ALERT_ID = "group_leader_alert_id";
+  @SerializedName(SERIALIZED_NAME_GROUP_LEADER_ALERT_ID)
+  @javax.annotation.Nullable
+  private String groupLeaderAlertId;
+
+  public static final String SERIALIZED_NAME_IS_GROUP_LEADER_ALERT = "is_group_leader_alert";
+  @SerializedName(SERIALIZED_NAME_IS_GROUP_LEADER_ALERT)
+  @javax.annotation.Nullable
+  private Boolean isGroupLeaderAlert;
+
   public static final String SERIALIZED_NAME_LABELS = "labels";
   @SerializedName(SERIALIZED_NAME_LABELS)
   @javax.annotation.Nullable
@@ -374,6 +395,26 @@ public class Alert {
   @SerializedName(SERIALIZED_NAME_DATA)
   @javax.annotation.Nullable
   private Object data;
+
+  public static final String SERIALIZED_NAME_DEDUPLICATION_KEY = "deduplication_key";
+  @SerializedName(SERIALIZED_NAME_DEDUPLICATION_KEY)
+  @javax.annotation.Nullable
+  private String deduplicationKey;
+
+  public static final String SERIALIZED_NAME_ALERT_FIELD_VALUES_ATTRIBUTES = "alert_field_values_attributes";
+  @SerializedName(SERIALIZED_NAME_ALERT_FIELD_VALUES_ATTRIBUTES)
+  @javax.annotation.Nullable
+  private List<NewAlertDataAttributesAlertFieldValuesAttributesInner> alertFieldValuesAttributes = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_STARTED_AT = "started_at";
+  @SerializedName(SERIALIZED_NAME_STARTED_AT)
+  @javax.annotation.Nullable
+  private OffsetDateTime startedAt;
+
+  public static final String SERIALIZED_NAME_ENDED_AT = "ended_at";
+  @SerializedName(SERIALIZED_NAME_ENDED_AT)
+  @javax.annotation.Nullable
+  private OffsetDateTime endedAt;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -387,6 +428,25 @@ public class Alert {
 
   public Alert() {
   }
+
+  public Alert shortId(@javax.annotation.Nonnull String shortId) {
+    this.shortId = shortId;
+    return this;
+  }
+
+  /**
+   * Human-readable short identifier for the alert
+   * @return shortId
+   */
+  @javax.annotation.Nonnull
+  public String getShortId() {
+    return shortId;
+  }
+
+  public void setShortId(@javax.annotation.Nonnull String shortId) {
+    this.shortId = shortId;
+  }
+
 
   public Alert noise(@javax.annotation.Nullable NoiseEnum noise) {
     this.noise = noise;
@@ -578,7 +638,7 @@ public class Alert {
   }
 
   /**
-   * The Service ID&#39;s to attach to the alert. If your organization has On-Call enabled and your notification target is a Service. This field will be automatically set for you.
+   * The Service IDs to attach to the alert. If your organization has On-Call enabled and your notification target is a Service. This field will be automatically set for you.
    * @return serviceIds
    */
   @javax.annotation.Nullable
@@ -605,7 +665,7 @@ public class Alert {
   }
 
   /**
-   * The Group ID&#39;s to attach to the alert. If your organization has On-Call enabled and your notification target is a Group. This field will be automatically set for you.
+   * The Group IDs to attach to the alert. If your organization has On-Call enabled and your notification target is a Group. This field will be automatically set for you.
    * @return groupIds
    */
   @javax.annotation.Nullable
@@ -632,7 +692,7 @@ public class Alert {
   }
 
   /**
-   * The Environment ID&#39;s to attach to the alert
+   * The Environment IDs to attach to the alert
    * @return environmentIds
    */
   @javax.annotation.Nullable
@@ -702,6 +762,44 @@ public class Alert {
   }
 
 
+  public Alert groupLeaderAlertId(@javax.annotation.Nullable String groupLeaderAlertId) {
+    this.groupLeaderAlertId = groupLeaderAlertId;
+    return this;
+  }
+
+  /**
+   * The ID of the group leader alert
+   * @return groupLeaderAlertId
+   */
+  @javax.annotation.Nullable
+  public String getGroupLeaderAlertId() {
+    return groupLeaderAlertId;
+  }
+
+  public void setGroupLeaderAlertId(@javax.annotation.Nullable String groupLeaderAlertId) {
+    this.groupLeaderAlertId = groupLeaderAlertId;
+  }
+
+
+  public Alert isGroupLeaderAlert(@javax.annotation.Nullable Boolean isGroupLeaderAlert) {
+    this.isGroupLeaderAlert = isGroupLeaderAlert;
+    return this;
+  }
+
+  /**
+   * Whether the alert is a group leader alert
+   * @return isGroupLeaderAlert
+   */
+  @javax.annotation.Nullable
+  public Boolean getIsGroupLeaderAlert() {
+    return isGroupLeaderAlert;
+  }
+
+  public void setIsGroupLeaderAlert(@javax.annotation.Nullable Boolean isGroupLeaderAlert) {
+    this.isGroupLeaderAlert = isGroupLeaderAlert;
+  }
+
+
   public Alert labels(@javax.annotation.Nullable List<NewAlertDataAttributesLabelsInner> labels) {
     this.labels = labels;
     return this;
@@ -745,6 +843,90 @@ public class Alert {
 
   public void setData(@javax.annotation.Nullable Object data) {
     this.data = data;
+  }
+
+
+  public Alert deduplicationKey(@javax.annotation.Nullable String deduplicationKey) {
+    this.deduplicationKey = deduplicationKey;
+    return this;
+  }
+
+  /**
+   * Alerts sharing the same deduplication key are treated as a single alert.
+   * @return deduplicationKey
+   */
+  @javax.annotation.Nullable
+  public String getDeduplicationKey() {
+    return deduplicationKey;
+  }
+
+  public void setDeduplicationKey(@javax.annotation.Nullable String deduplicationKey) {
+    this.deduplicationKey = deduplicationKey;
+  }
+
+
+  public Alert alertFieldValuesAttributes(@javax.annotation.Nullable List<NewAlertDataAttributesAlertFieldValuesAttributesInner> alertFieldValuesAttributes) {
+    this.alertFieldValuesAttributes = alertFieldValuesAttributes;
+    return this;
+  }
+
+  public Alert addAlertFieldValuesAttributesItem(NewAlertDataAttributesAlertFieldValuesAttributesInner alertFieldValuesAttributesItem) {
+    if (this.alertFieldValuesAttributes == null) {
+      this.alertFieldValuesAttributes = new ArrayList<>();
+    }
+    this.alertFieldValuesAttributes.add(alertFieldValuesAttributesItem);
+    return this;
+  }
+
+  /**
+   * Custom alert field values to create with the alert
+   * @return alertFieldValuesAttributes
+   */
+  @javax.annotation.Nullable
+  public List<NewAlertDataAttributesAlertFieldValuesAttributesInner> getAlertFieldValuesAttributes() {
+    return alertFieldValuesAttributes;
+  }
+
+  public void setAlertFieldValuesAttributes(@javax.annotation.Nullable List<NewAlertDataAttributesAlertFieldValuesAttributesInner> alertFieldValuesAttributes) {
+    this.alertFieldValuesAttributes = alertFieldValuesAttributes;
+  }
+
+
+  public Alert startedAt(@javax.annotation.Nullable OffsetDateTime startedAt) {
+    this.startedAt = startedAt;
+    return this;
+  }
+
+  /**
+   * When the alert started
+   * @return startedAt
+   */
+  @javax.annotation.Nullable
+  public OffsetDateTime getStartedAt() {
+    return startedAt;
+  }
+
+  public void setStartedAt(@javax.annotation.Nullable OffsetDateTime startedAt) {
+    this.startedAt = startedAt;
+  }
+
+
+  public Alert endedAt(@javax.annotation.Nullable OffsetDateTime endedAt) {
+    this.endedAt = endedAt;
+    return this;
+  }
+
+  /**
+   * When the alert ended
+   * @return endedAt
+   */
+  @javax.annotation.Nullable
+  public OffsetDateTime getEndedAt() {
+    return endedAt;
+  }
+
+  public void setEndedAt(@javax.annotation.Nullable OffsetDateTime endedAt) {
+    this.endedAt = endedAt;
   }
 
 
@@ -796,7 +978,8 @@ public class Alert {
       return false;
     }
     Alert alert = (Alert) o;
-    return Objects.equals(this.noise, alert.noise) &&
+    return Objects.equals(this.shortId, alert.shortId) &&
+        Objects.equals(this.noise, alert.noise) &&
         Objects.equals(this.source, alert.source) &&
         Objects.equals(this.status, alert.status) &&
         Objects.equals(this.summary, alert.summary) &&
@@ -810,8 +993,14 @@ public class Alert {
         Objects.equals(this.externalId, alert.externalId) &&
         Objects.equals(this.externalUrl, alert.externalUrl) &&
         Objects.equals(this.alertUrgencyId, alert.alertUrgencyId) &&
+        Objects.equals(this.groupLeaderAlertId, alert.groupLeaderAlertId) &&
+        Objects.equals(this.isGroupLeaderAlert, alert.isGroupLeaderAlert) &&
         Objects.equals(this.labels, alert.labels) &&
         Objects.equals(this.data, alert.data) &&
+        Objects.equals(this.deduplicationKey, alert.deduplicationKey) &&
+        Objects.equals(this.alertFieldValuesAttributes, alert.alertFieldValuesAttributes) &&
+        Objects.equals(this.startedAt, alert.startedAt) &&
+        Objects.equals(this.endedAt, alert.endedAt) &&
         Objects.equals(this.createdAt, alert.createdAt) &&
         Objects.equals(this.updatedAt, alert.updatedAt);
   }
@@ -822,7 +1011,7 @@ public class Alert {
 
   @Override
   public int hashCode() {
-    return Objects.hash(noise, source, status, summary, description, services, groups, environments, serviceIds, groupIds, environmentIds, externalId, externalUrl, alertUrgencyId, labels, data, createdAt, updatedAt);
+    return Objects.hash(shortId, noise, source, status, summary, description, services, groups, environments, serviceIds, groupIds, environmentIds, externalId, externalUrl, alertUrgencyId, groupLeaderAlertId, isGroupLeaderAlert, labels, data, deduplicationKey, alertFieldValuesAttributes, startedAt, endedAt, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -836,6 +1025,7 @@ public class Alert {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Alert {\n");
+    sb.append("    shortId: ").append(toIndentedString(shortId)).append("\n");
     sb.append("    noise: ").append(toIndentedString(noise)).append("\n");
     sb.append("    source: ").append(toIndentedString(source)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
@@ -850,8 +1040,14 @@ public class Alert {
     sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("    externalUrl: ").append(toIndentedString(externalUrl)).append("\n");
     sb.append("    alertUrgencyId: ").append(toIndentedString(alertUrgencyId)).append("\n");
+    sb.append("    groupLeaderAlertId: ").append(toIndentedString(groupLeaderAlertId)).append("\n");
+    sb.append("    isGroupLeaderAlert: ").append(toIndentedString(isGroupLeaderAlert)).append("\n");
     sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
+    sb.append("    deduplicationKey: ").append(toIndentedString(deduplicationKey)).append("\n");
+    sb.append("    alertFieldValuesAttributes: ").append(toIndentedString(alertFieldValuesAttributes)).append("\n");
+    sb.append("    startedAt: ").append(toIndentedString(startedAt)).append("\n");
+    sb.append("    endedAt: ").append(toIndentedString(endedAt)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -876,6 +1072,7 @@ public class Alert {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("short_id");
     openapiFields.add("noise");
     openapiFields.add("source");
     openapiFields.add("status");
@@ -890,13 +1087,20 @@ public class Alert {
     openapiFields.add("external_id");
     openapiFields.add("external_url");
     openapiFields.add("alert_urgency_id");
+    openapiFields.add("group_leader_alert_id");
+    openapiFields.add("is_group_leader_alert");
     openapiFields.add("labels");
     openapiFields.add("data");
+    openapiFields.add("deduplication_key");
+    openapiFields.add("alert_field_values_attributes");
+    openapiFields.add("started_at");
+    openapiFields.add("ended_at");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("short_id");
     openapiRequiredFields.add("source");
     openapiRequiredFields.add("summary");
     openapiRequiredFields.add("created_at");
@@ -931,6 +1135,9 @@ public class Alert {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if (!jsonObj.get("short_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `short_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("short_id").toString()));
+      }
       if ((jsonObj.get("noise") != null && !jsonObj.get("noise").isJsonNull()) && !jsonObj.get("noise").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `noise` to be a primitive type in the JSON string but got `%s`", jsonObj.get("noise").toString()));
       }
@@ -1019,6 +1226,9 @@ public class Alert {
       if ((jsonObj.get("alert_urgency_id") != null && !jsonObj.get("alert_urgency_id").isJsonNull()) && !jsonObj.get("alert_urgency_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `alert_urgency_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("alert_urgency_id").toString()));
       }
+      if ((jsonObj.get("group_leader_alert_id") != null && !jsonObj.get("group_leader_alert_id").isJsonNull()) && !jsonObj.get("group_leader_alert_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `group_leader_alert_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("group_leader_alert_id").toString()));
+      }
       if (jsonObj.get("labels") != null && !jsonObj.get("labels").isJsonNull()) {
         JsonArray jsonArraylabels = jsonObj.getAsJsonArray("labels");
         if (jsonArraylabels != null) {
@@ -1030,6 +1240,23 @@ public class Alert {
           // validate the optional field `labels` (array)
           for (int i = 0; i < jsonArraylabels.size(); i++) {
             NewAlertDataAttributesLabelsInner.validateJsonElement(jsonArraylabels.get(i));
+          };
+        }
+      }
+      if ((jsonObj.get("deduplication_key") != null && !jsonObj.get("deduplication_key").isJsonNull()) && !jsonObj.get("deduplication_key").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `deduplication_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("deduplication_key").toString()));
+      }
+      if (jsonObj.get("alert_field_values_attributes") != null && !jsonObj.get("alert_field_values_attributes").isJsonNull()) {
+        JsonArray jsonArrayalertFieldValuesAttributes = jsonObj.getAsJsonArray("alert_field_values_attributes");
+        if (jsonArrayalertFieldValuesAttributes != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("alert_field_values_attributes").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `alert_field_values_attributes` to be an array in the JSON string but got `%s`", jsonObj.get("alert_field_values_attributes").toString()));
+          }
+
+          // validate the optional field `alert_field_values_attributes` (array)
+          for (int i = 0; i < jsonArrayalertFieldValuesAttributes.size(); i++) {
+            NewAlertDataAttributesAlertFieldValuesAttributesInner.validateJsonElement(jsonArrayalertFieldValuesAttributes.get(i));
           };
         }
       }

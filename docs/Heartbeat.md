@@ -10,6 +10,7 @@
 |**name** | **String** | The name of the heartbeat |  |
 |**description** | **String** | The description of the heartbeat |  [optional] |
 |**alertSummary** | **String** | Summary of alerts triggered when heartbeat expires. |  |
+|**alertDescription** | **String** | Description of alerts triggered when heartbeat expires. |  [optional] |
 |**alertUrgencyId** | **String** | Urgency of alerts triggered when heartbeat expires. |  [optional] |
 |**interval** | **Integer** |  |  |
 |**intervalUnit** | [**IntervalUnitEnum**](#IntervalUnitEnum) |  |  |
@@ -19,6 +20,7 @@
 |**status** | [**StatusEnum**](#StatusEnum) |  |  |
 |**pingUrl** | **String** | URL to receive heartbeat pings. |  [optional] |
 |**secret** | **String** | Secret used as bearer token when pinging heartbeat. |  [optional] |
+|**emailAddress** | **String** | Email address to receive heartbeat pings. |  |
 |**lastPingedAt** | **String** | When the heartbeat was last pinged. |  [optional] |
 |**expiresAt** | **String** | When heartbeat expires |  [optional] |
 |**createdAt** | **String** | Date of creation |  |
@@ -30,9 +32,9 @@
 
 | Name | Value |
 |---- | -----|
-| SECONDS | &quot;seconds&quot; |
 | MINUTES | &quot;minutes&quot; |
 | HOURS | &quot;hours&quot; |
+| DAYS | &quot;days&quot; |
 
 
 

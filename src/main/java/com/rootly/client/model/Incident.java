@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -57,8 +57,18 @@ import com.rootly.client.JSON;
 /**
  * Incident
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T17:46:55.918190357Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Incident {
+  public static final String SERIALIZED_NAME_ID = "id";
+  @SerializedName(SERIALIZED_NAME_ID)
+  @javax.annotation.Nullable
+  private String id;
+
+  public static final String SERIALIZED_NAME_SEQUENTIAL_ID = "sequential_id";
+  @SerializedName(SERIALIZED_NAME_SEQUENTIAL_ID)
+  @javax.annotation.Nullable
+  private Integer sequentialId;
+
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
   @javax.annotation.Nonnull
@@ -93,6 +103,36 @@ public class Incident {
   @SerializedName(SERIALIZED_NAME_PRIVATE)
   @javax.annotation.Nullable
   private Boolean _private = false;
+
+  public static final String SERIALIZED_NAME_SOURCE = "source";
+  @SerializedName(SERIALIZED_NAME_SOURCE)
+  @javax.annotation.Nullable
+  private String source;
+
+  public static final String SERIALIZED_NAME_STATUS = "status";
+  @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
+  private String status;
+
+  public static final String SERIALIZED_NAME_URL = "url";
+  @SerializedName(SERIALIZED_NAME_URL)
+  @javax.annotation.Nullable
+  private String url;
+
+  public static final String SERIALIZED_NAME_SHORT_URL = "short_url";
+  @SerializedName(SERIALIZED_NAME_SHORT_URL)
+  @javax.annotation.Nullable
+  private String shortUrl;
+
+  public static final String SERIALIZED_NAME_PUBLIC_TITLE = "public_title";
+  @SerializedName(SERIALIZED_NAME_PUBLIC_TITLE)
+  @javax.annotation.Nullable
+  private String publicTitle;
+
+  public static final String SERIALIZED_NAME_USER = "user";
+  @SerializedName(SERIALIZED_NAME_USER)
+  @javax.annotation.Nullable
+  private Object user;
 
   public static final String SERIALIZED_NAME_SEVERITY = "severity";
   @SerializedName(SERIALIZED_NAME_SEVERITY)
@@ -144,6 +184,356 @@ public class Incident {
   @javax.annotation.Nullable
   private String slackChannelUrl;
 
+  public static final String SERIALIZED_NAME_SLACK_CHANNEL_SHORT_URL = "slack_channel_short_url";
+  @SerializedName(SERIALIZED_NAME_SLACK_CHANNEL_SHORT_URL)
+  @javax.annotation.Nullable
+  private String slackChannelShortUrl;
+
+  public static final String SERIALIZED_NAME_SLACK_CHANNEL_DEEP_LINK = "slack_channel_deep_link";
+  @SerializedName(SERIALIZED_NAME_SLACK_CHANNEL_DEEP_LINK)
+  @javax.annotation.Nullable
+  private String slackChannelDeepLink;
+
+  public static final String SERIALIZED_NAME_SLACK_CHANNEL_ARCHIVED = "slack_channel_archived";
+  @SerializedName(SERIALIZED_NAME_SLACK_CHANNEL_ARCHIVED)
+  @javax.annotation.Nullable
+  private Boolean slackChannelArchived;
+
+  public static final String SERIALIZED_NAME_SLACK_LAST_MESSAGE_TS = "slack_last_message_ts";
+  @SerializedName(SERIALIZED_NAME_SLACK_LAST_MESSAGE_TS)
+  @javax.annotation.Nullable
+  private String slackLastMessageTs;
+
+  public static final String SERIALIZED_NAME_ZOOM_MEETING_ID = "zoom_meeting_id";
+  @SerializedName(SERIALIZED_NAME_ZOOM_MEETING_ID)
+  @javax.annotation.Nullable
+  private String zoomMeetingId;
+
+  public static final String SERIALIZED_NAME_ZOOM_MEETING_START_URL = "zoom_meeting_start_url";
+  @SerializedName(SERIALIZED_NAME_ZOOM_MEETING_START_URL)
+  @javax.annotation.Nullable
+  private String zoomMeetingStartUrl;
+
+  public static final String SERIALIZED_NAME_ZOOM_MEETING_JOIN_URL = "zoom_meeting_join_url";
+  @SerializedName(SERIALIZED_NAME_ZOOM_MEETING_JOIN_URL)
+  @javax.annotation.Nullable
+  private String zoomMeetingJoinUrl;
+
+  public static final String SERIALIZED_NAME_ZOOM_MEETING_PASSWORD = "zoom_meeting_password";
+  @SerializedName(SERIALIZED_NAME_ZOOM_MEETING_PASSWORD)
+  @javax.annotation.Nullable
+  private String zoomMeetingPassword;
+
+  public static final String SERIALIZED_NAME_ZOOM_MEETING_PSTN_PASSWORD = "zoom_meeting_pstn_password";
+  @SerializedName(SERIALIZED_NAME_ZOOM_MEETING_PSTN_PASSWORD)
+  @javax.annotation.Nullable
+  private String zoomMeetingPstnPassword;
+
+  public static final String SERIALIZED_NAME_ZOOM_MEETING_H323_PASSWORD = "zoom_meeting_h323_password";
+  @SerializedName(SERIALIZED_NAME_ZOOM_MEETING_H323_PASSWORD)
+  @javax.annotation.Nullable
+  private String zoomMeetingH323Password;
+
+  public static final String SERIALIZED_NAME_ZOOM_MEETING_GLOBAL_DIAL_IN_NUMBERS = "zoom_meeting_global_dial_in_numbers";
+  @SerializedName(SERIALIZED_NAME_ZOOM_MEETING_GLOBAL_DIAL_IN_NUMBERS)
+  @javax.annotation.Nullable
+  private List<String> zoomMeetingGlobalDialInNumbers;
+
+  public static final String SERIALIZED_NAME_GOOGLE_DRIVE_ID = "google_drive_id";
+  @SerializedName(SERIALIZED_NAME_GOOGLE_DRIVE_ID)
+  @javax.annotation.Nullable
+  private String googleDriveId;
+
+  public static final String SERIALIZED_NAME_GOOGLE_DRIVE_PARENT_ID = "google_drive_parent_id";
+  @SerializedName(SERIALIZED_NAME_GOOGLE_DRIVE_PARENT_ID)
+  @javax.annotation.Nullable
+  private String googleDriveParentId;
+
+  public static final String SERIALIZED_NAME_GOOGLE_DRIVE_URL = "google_drive_url";
+  @SerializedName(SERIALIZED_NAME_GOOGLE_DRIVE_URL)
+  @javax.annotation.Nullable
+  private String googleDriveUrl;
+
+  public static final String SERIALIZED_NAME_GOOGLE_MEETING_ID = "google_meeting_id";
+  @SerializedName(SERIALIZED_NAME_GOOGLE_MEETING_ID)
+  @javax.annotation.Nullable
+  private String googleMeetingId;
+
+  public static final String SERIALIZED_NAME_GOOGLE_MEETING_URL = "google_meeting_url";
+  @SerializedName(SERIALIZED_NAME_GOOGLE_MEETING_URL)
+  @javax.annotation.Nullable
+  private String googleMeetingUrl;
+
+  public static final String SERIALIZED_NAME_JIRA_ISSUE_KEY = "jira_issue_key";
+  @SerializedName(SERIALIZED_NAME_JIRA_ISSUE_KEY)
+  @javax.annotation.Nullable
+  private String jiraIssueKey;
+
+  public static final String SERIALIZED_NAME_JIRA_ISSUE_ID = "jira_issue_id";
+  @SerializedName(SERIALIZED_NAME_JIRA_ISSUE_ID)
+  @javax.annotation.Nullable
+  private String jiraIssueId;
+
+  public static final String SERIALIZED_NAME_JIRA_ISSUE_URL = "jira_issue_url";
+  @SerializedName(SERIALIZED_NAME_JIRA_ISSUE_URL)
+  @javax.annotation.Nullable
+  private String jiraIssueUrl;
+
+  public static final String SERIALIZED_NAME_GITHUB_ISSUE_ID = "github_issue_id";
+  @SerializedName(SERIALIZED_NAME_GITHUB_ISSUE_ID)
+  @javax.annotation.Nullable
+  private String githubIssueId;
+
+  public static final String SERIALIZED_NAME_GITHUB_ISSUE_URL = "github_issue_url";
+  @SerializedName(SERIALIZED_NAME_GITHUB_ISSUE_URL)
+  @javax.annotation.Nullable
+  private String githubIssueUrl;
+
+  public static final String SERIALIZED_NAME_GITLAB_ISSUE_ID = "gitlab_issue_id";
+  @SerializedName(SERIALIZED_NAME_GITLAB_ISSUE_ID)
+  @javax.annotation.Nullable
+  private String gitlabIssueId;
+
+  public static final String SERIALIZED_NAME_GITLAB_ISSUE_URL = "gitlab_issue_url";
+  @SerializedName(SERIALIZED_NAME_GITLAB_ISSUE_URL)
+  @javax.annotation.Nullable
+  private String gitlabIssueUrl;
+
+  public static final String SERIALIZED_NAME_ASANA_TASK_ID = "asana_task_id";
+  @SerializedName(SERIALIZED_NAME_ASANA_TASK_ID)
+  @javax.annotation.Nullable
+  private String asanaTaskId;
+
+  public static final String SERIALIZED_NAME_ASANA_TASK_URL = "asana_task_url";
+  @SerializedName(SERIALIZED_NAME_ASANA_TASK_URL)
+  @javax.annotation.Nullable
+  private String asanaTaskUrl;
+
+  public static final String SERIALIZED_NAME_LINEAR_ISSUE_ID = "linear_issue_id";
+  @SerializedName(SERIALIZED_NAME_LINEAR_ISSUE_ID)
+  @javax.annotation.Nullable
+  private String linearIssueId;
+
+  public static final String SERIALIZED_NAME_LINEAR_ISSUE_URL = "linear_issue_url";
+  @SerializedName(SERIALIZED_NAME_LINEAR_ISSUE_URL)
+  @javax.annotation.Nullable
+  private String linearIssueUrl;
+
+  public static final String SERIALIZED_NAME_TRELLO_CARD_ID = "trello_card_id";
+  @SerializedName(SERIALIZED_NAME_TRELLO_CARD_ID)
+  @javax.annotation.Nullable
+  private String trelloCardId;
+
+  public static final String SERIALIZED_NAME_TRELLO_CARD_URL = "trello_card_url";
+  @SerializedName(SERIALIZED_NAME_TRELLO_CARD_URL)
+  @javax.annotation.Nullable
+  private String trelloCardUrl;
+
+  public static final String SERIALIZED_NAME_ZENDESK_TICKET_ID = "zendesk_ticket_id";
+  @SerializedName(SERIALIZED_NAME_ZENDESK_TICKET_ID)
+  @javax.annotation.Nullable
+  private String zendeskTicketId;
+
+  public static final String SERIALIZED_NAME_ZENDESK_TICKET_URL = "zendesk_ticket_url";
+  @SerializedName(SERIALIZED_NAME_ZENDESK_TICKET_URL)
+  @javax.annotation.Nullable
+  private String zendeskTicketUrl;
+
+  public static final String SERIALIZED_NAME_PAGERDUTY_INCIDENT_ID = "pagerduty_incident_id";
+  @SerializedName(SERIALIZED_NAME_PAGERDUTY_INCIDENT_ID)
+  @javax.annotation.Nullable
+  private String pagerdutyIncidentId;
+
+  public static final String SERIALIZED_NAME_PAGERDUTY_INCIDENT_NUMBER = "pagerduty_incident_number";
+  @SerializedName(SERIALIZED_NAME_PAGERDUTY_INCIDENT_NUMBER)
+  @javax.annotation.Nullable
+  private String pagerdutyIncidentNumber;
+
+  public static final String SERIALIZED_NAME_PAGERDUTY_INCIDENT_URL = "pagerduty_incident_url";
+  @SerializedName(SERIALIZED_NAME_PAGERDUTY_INCIDENT_URL)
+  @javax.annotation.Nullable
+  private String pagerdutyIncidentUrl;
+
+  public static final String SERIALIZED_NAME_OPSGENIE_INCIDENT_ID = "opsgenie_incident_id";
+  @SerializedName(SERIALIZED_NAME_OPSGENIE_INCIDENT_ID)
+  @javax.annotation.Nullable
+  private String opsgenieIncidentId;
+
+  public static final String SERIALIZED_NAME_OPSGENIE_INCIDENT_URL = "opsgenie_incident_url";
+  @SerializedName(SERIALIZED_NAME_OPSGENIE_INCIDENT_URL)
+  @javax.annotation.Nullable
+  private String opsgenieIncidentUrl;
+
+  public static final String SERIALIZED_NAME_OPSGENIE_ALERT_ID = "opsgenie_alert_id";
+  @SerializedName(SERIALIZED_NAME_OPSGENIE_ALERT_ID)
+  @javax.annotation.Nullable
+  private String opsgenieAlertId;
+
+  public static final String SERIALIZED_NAME_OPSGENIE_ALERT_URL = "opsgenie_alert_url";
+  @SerializedName(SERIALIZED_NAME_OPSGENIE_ALERT_URL)
+  @javax.annotation.Nullable
+  private String opsgenieAlertUrl;
+
+  public static final String SERIALIZED_NAME_SERVICE_NOW_INCIDENT_ID = "service_now_incident_id";
+  @SerializedName(SERIALIZED_NAME_SERVICE_NOW_INCIDENT_ID)
+  @javax.annotation.Nullable
+  private String serviceNowIncidentId;
+
+  public static final String SERIALIZED_NAME_SERVICE_NOW_INCIDENT_KEY = "service_now_incident_key";
+  @SerializedName(SERIALIZED_NAME_SERVICE_NOW_INCIDENT_KEY)
+  @javax.annotation.Nullable
+  private String serviceNowIncidentKey;
+
+  public static final String SERIALIZED_NAME_SERVICE_NOW_INCIDENT_URL = "service_now_incident_url";
+  @SerializedName(SERIALIZED_NAME_SERVICE_NOW_INCIDENT_URL)
+  @javax.annotation.Nullable
+  private String serviceNowIncidentUrl;
+
+  public static final String SERIALIZED_NAME_MATTERMOST_CHANNEL_ID = "mattermost_channel_id";
+  @SerializedName(SERIALIZED_NAME_MATTERMOST_CHANNEL_ID)
+  @javax.annotation.Nullable
+  private String mattermostChannelId;
+
+  public static final String SERIALIZED_NAME_MATTERMOST_CHANNEL_NAME = "mattermost_channel_name";
+  @SerializedName(SERIALIZED_NAME_MATTERMOST_CHANNEL_NAME)
+  @javax.annotation.Nullable
+  private String mattermostChannelName;
+
+  public static final String SERIALIZED_NAME_MATTERMOST_CHANNEL_URL = "mattermost_channel_url";
+  @SerializedName(SERIALIZED_NAME_MATTERMOST_CHANNEL_URL)
+  @javax.annotation.Nullable
+  private String mattermostChannelUrl;
+
+  public static final String SERIALIZED_NAME_CONFLUENCE_PAGE_ID = "confluence_page_id";
+  @SerializedName(SERIALIZED_NAME_CONFLUENCE_PAGE_ID)
+  @javax.annotation.Nullable
+  private String confluencePageId;
+
+  public static final String SERIALIZED_NAME_CONFLUENCE_PAGE_URL = "confluence_page_url";
+  @SerializedName(SERIALIZED_NAME_CONFLUENCE_PAGE_URL)
+  @javax.annotation.Nullable
+  private String confluencePageUrl;
+
+  public static final String SERIALIZED_NAME_DATADOG_NOTEBOOK_ID = "datadog_notebook_id";
+  @SerializedName(SERIALIZED_NAME_DATADOG_NOTEBOOK_ID)
+  @javax.annotation.Nullable
+  private String datadogNotebookId;
+
+  public static final String SERIALIZED_NAME_DATADOG_NOTEBOOK_URL = "datadog_notebook_url";
+  @SerializedName(SERIALIZED_NAME_DATADOG_NOTEBOOK_URL)
+  @javax.annotation.Nullable
+  private String datadogNotebookUrl;
+
+  public static final String SERIALIZED_NAME_SHORTCUT_STORY_ID = "shortcut_story_id";
+  @SerializedName(SERIALIZED_NAME_SHORTCUT_STORY_ID)
+  @javax.annotation.Nullable
+  private String shortcutStoryId;
+
+  public static final String SERIALIZED_NAME_SHORTCUT_STORY_URL = "shortcut_story_url";
+  @SerializedName(SERIALIZED_NAME_SHORTCUT_STORY_URL)
+  @javax.annotation.Nullable
+  private String shortcutStoryUrl;
+
+  public static final String SERIALIZED_NAME_SHORTCUT_TASK_ID = "shortcut_task_id";
+  @SerializedName(SERIALIZED_NAME_SHORTCUT_TASK_ID)
+  @javax.annotation.Nullable
+  private String shortcutTaskId;
+
+  public static final String SERIALIZED_NAME_SHORTCUT_TASK_URL = "shortcut_task_url";
+  @SerializedName(SERIALIZED_NAME_SHORTCUT_TASK_URL)
+  @javax.annotation.Nullable
+  private String shortcutTaskUrl;
+
+  public static final String SERIALIZED_NAME_MOTION_TASK_ID = "motion_task_id";
+  @SerializedName(SERIALIZED_NAME_MOTION_TASK_ID)
+  @javax.annotation.Nullable
+  private String motionTaskId;
+
+  public static final String SERIALIZED_NAME_MOTION_TASK_URL = "motion_task_url";
+  @SerializedName(SERIALIZED_NAME_MOTION_TASK_URL)
+  @javax.annotation.Nullable
+  private String motionTaskUrl;
+
+  public static final String SERIALIZED_NAME_CLICKUP_TASK_ID = "clickup_task_id";
+  @SerializedName(SERIALIZED_NAME_CLICKUP_TASK_ID)
+  @javax.annotation.Nullable
+  private String clickupTaskId;
+
+  public static final String SERIALIZED_NAME_CLICKUP_TASK_URL = "clickup_task_url";
+  @SerializedName(SERIALIZED_NAME_CLICKUP_TASK_URL)
+  @javax.annotation.Nullable
+  private String clickupTaskUrl;
+
+  public static final String SERIALIZED_NAME_VICTOR_OPS_INCIDENT_ID = "victor_ops_incident_id";
+  @SerializedName(SERIALIZED_NAME_VICTOR_OPS_INCIDENT_ID)
+  @javax.annotation.Nullable
+  private String victorOpsIncidentId;
+
+  public static final String SERIALIZED_NAME_VICTOR_OPS_INCIDENT_URL = "victor_ops_incident_url";
+  @SerializedName(SERIALIZED_NAME_VICTOR_OPS_INCIDENT_URL)
+  @javax.annotation.Nullable
+  private String victorOpsIncidentUrl;
+
+  public static final String SERIALIZED_NAME_QUIP_PAGE_ID = "quip_page_id";
+  @SerializedName(SERIALIZED_NAME_QUIP_PAGE_ID)
+  @javax.annotation.Nullable
+  private String quipPageId;
+
+  public static final String SERIALIZED_NAME_QUIP_PAGE_URL = "quip_page_url";
+  @SerializedName(SERIALIZED_NAME_QUIP_PAGE_URL)
+  @javax.annotation.Nullable
+  private String quipPageUrl;
+
+  public static final String SERIALIZED_NAME_SHAREPOINT_PAGE_ID = "sharepoint_page_id";
+  @SerializedName(SERIALIZED_NAME_SHAREPOINT_PAGE_ID)
+  @javax.annotation.Nullable
+  private String sharepointPageId;
+
+  public static final String SERIALIZED_NAME_SHAREPOINT_PAGE_URL = "sharepoint_page_url";
+  @SerializedName(SERIALIZED_NAME_SHAREPOINT_PAGE_URL)
+  @javax.annotation.Nullable
+  private String sharepointPageUrl;
+
+  public static final String SERIALIZED_NAME_AIRTABLE_BASE_KEY = "airtable_base_key";
+  @SerializedName(SERIALIZED_NAME_AIRTABLE_BASE_KEY)
+  @javax.annotation.Nullable
+  private String airtableBaseKey;
+
+  public static final String SERIALIZED_NAME_AIRTABLE_TABLE_NAME = "airtable_table_name";
+  @SerializedName(SERIALIZED_NAME_AIRTABLE_TABLE_NAME)
+  @javax.annotation.Nullable
+  private String airtableTableName;
+
+  public static final String SERIALIZED_NAME_AIRTABLE_RECORD_ID = "airtable_record_id";
+  @SerializedName(SERIALIZED_NAME_AIRTABLE_RECORD_ID)
+  @javax.annotation.Nullable
+  private String airtableRecordId;
+
+  public static final String SERIALIZED_NAME_AIRTABLE_RECORD_URL = "airtable_record_url";
+  @SerializedName(SERIALIZED_NAME_AIRTABLE_RECORD_URL)
+  @javax.annotation.Nullable
+  private String airtableRecordUrl;
+
+  public static final String SERIALIZED_NAME_FRESHSERVICE_TICKET_ID = "freshservice_ticket_id";
+  @SerializedName(SERIALIZED_NAME_FRESHSERVICE_TICKET_ID)
+  @javax.annotation.Nullable
+  private String freshserviceTicketId;
+
+  public static final String SERIALIZED_NAME_FRESHSERVICE_TICKET_URL = "freshservice_ticket_url";
+  @SerializedName(SERIALIZED_NAME_FRESHSERVICE_TICKET_URL)
+  @javax.annotation.Nullable
+  private String freshserviceTicketUrl;
+
+  public static final String SERIALIZED_NAME_FRESHSERVICE_TASK_ID = "freshservice_task_id";
+  @SerializedName(SERIALIZED_NAME_FRESHSERVICE_TASK_ID)
+  @javax.annotation.Nullable
+  private String freshserviceTaskId;
+
+  public static final String SERIALIZED_NAME_FRESHSERVICE_TASK_URL = "freshservice_task_url";
+  @SerializedName(SERIALIZED_NAME_FRESHSERVICE_TASK_URL)
+  @javax.annotation.Nullable
+  private String freshserviceTaskUrl;
+
   public static final String SERIALIZED_NAME_MITIGATION_MESSAGE = "mitigation_message";
   @SerializedName(SERIALIZED_NAME_MITIGATION_MESSAGE)
   @javax.annotation.Nullable
@@ -168,6 +558,11 @@ public class Incident {
   @SerializedName(SERIALIZED_NAME_SCHEDULED_UNTIL)
   @javax.annotation.Nullable
   private String scheduledUntil;
+
+  public static final String SERIALIZED_NAME_MUTED_SERVICE_IDS = "muted_service_ids";
+  @SerializedName(SERIALIZED_NAME_MUTED_SERVICE_IDS)
+  @javax.annotation.Nullable
+  private List<String> mutedServiceIds;
 
   /**
    * The status of the retrospective progress
@@ -230,6 +625,36 @@ public class Incident {
   @javax.annotation.Nullable
   private RetrospectiveProgressStatusEnum retrospectiveProgressStatus;
 
+  public static final String SERIALIZED_NAME_IN_TRIAGE_BY = "in_triage_by";
+  @SerializedName(SERIALIZED_NAME_IN_TRIAGE_BY)
+  @javax.annotation.Nullable
+  private Object inTriageBy;
+
+  public static final String SERIALIZED_NAME_STARTED_BY = "started_by";
+  @SerializedName(SERIALIZED_NAME_STARTED_BY)
+  @javax.annotation.Nullable
+  private Object startedBy;
+
+  public static final String SERIALIZED_NAME_MITIGATED_BY = "mitigated_by";
+  @SerializedName(SERIALIZED_NAME_MITIGATED_BY)
+  @javax.annotation.Nullable
+  private Object mitigatedBy;
+
+  public static final String SERIALIZED_NAME_RESOLVED_BY = "resolved_by";
+  @SerializedName(SERIALIZED_NAME_RESOLVED_BY)
+  @javax.annotation.Nullable
+  private Object resolvedBy;
+
+  public static final String SERIALIZED_NAME_CLOSED_BY = "closed_by";
+  @SerializedName(SERIALIZED_NAME_CLOSED_BY)
+  @javax.annotation.Nullable
+  private Object closedBy;
+
+  public static final String SERIALIZED_NAME_CANCELLED_BY = "cancelled_by";
+  @SerializedName(SERIALIZED_NAME_CANCELLED_BY)
+  @javax.annotation.Nullable
+  private Object cancelledBy;
+
   public static final String SERIALIZED_NAME_IN_TRIAGE_AT = "in_triage_at";
   @SerializedName(SERIALIZED_NAME_IN_TRIAGE_AT)
   @javax.annotation.Nullable
@@ -260,6 +685,11 @@ public class Incident {
   @javax.annotation.Nullable
   private String resolvedAt;
 
+  public static final String SERIALIZED_NAME_CLOSED_AT = "closed_at";
+  @SerializedName(SERIALIZED_NAME_CLOSED_AT)
+  @javax.annotation.Nullable
+  private String closedAt;
+
   public static final String SERIALIZED_NAME_CANCELLED_AT = "cancelled_at";
   @SerializedName(SERIALIZED_NAME_CANCELLED_AT)
   @javax.annotation.Nullable
@@ -277,6 +707,44 @@ public class Incident {
 
   public Incident() {
   }
+
+  public Incident id(@javax.annotation.Nullable String id) {
+    this.id = id;
+    return this;
+  }
+
+  /**
+   * Unique ID of the incident
+   * @return id
+   */
+  @javax.annotation.Nullable
+  public String getId() {
+    return id;
+  }
+
+  public void setId(@javax.annotation.Nullable String id) {
+    this.id = id;
+  }
+
+
+  public Incident sequentialId(@javax.annotation.Nullable Integer sequentialId) {
+    this.sequentialId = sequentialId;
+    return this;
+  }
+
+  /**
+   * Sequential ID of the incident
+   * @return sequentialId
+   */
+  @javax.annotation.Nullable
+  public Integer getSequentialId() {
+    return sequentialId;
+  }
+
+  public void setSequentialId(@javax.annotation.Nullable Integer sequentialId) {
+    this.sequentialId = sequentialId;
+  }
+
 
   public Incident title(@javax.annotation.Nonnull String title) {
     this.title = title;
@@ -398,7 +866,7 @@ public class Incident {
   }
 
   /**
-   * Create an incident as private
+   * The visibility of the incident
    * @return _private
    */
   @javax.annotation.Nullable
@@ -408,6 +876,120 @@ public class Incident {
 
   public void setPrivate(@javax.annotation.Nullable Boolean _private) {
     this._private = _private;
+  }
+
+
+  public Incident source(@javax.annotation.Nullable String source) {
+    this.source = source;
+    return this;
+  }
+
+  /**
+   * The source of the incident
+   * @return source
+   */
+  @javax.annotation.Nullable
+  public String getSource() {
+    return source;
+  }
+
+  public void setSource(@javax.annotation.Nullable String source) {
+    this.source = source;
+  }
+
+
+  public Incident status(@javax.annotation.Nullable String status) {
+    this.status = status;
+    return this;
+  }
+
+  /**
+   * The status of the incident
+   * @return status
+   */
+  @javax.annotation.Nullable
+  public String getStatus() {
+    return status;
+  }
+
+  public void setStatus(@javax.annotation.Nullable String status) {
+    this.status = status;
+  }
+
+
+  public Incident url(@javax.annotation.Nullable String url) {
+    this.url = url;
+    return this;
+  }
+
+  /**
+   * The url to the incident
+   * @return url
+   */
+  @javax.annotation.Nullable
+  public String getUrl() {
+    return url;
+  }
+
+  public void setUrl(@javax.annotation.Nullable String url) {
+    this.url = url;
+  }
+
+
+  public Incident shortUrl(@javax.annotation.Nullable String shortUrl) {
+    this.shortUrl = shortUrl;
+    return this;
+  }
+
+  /**
+   * The short url to the incident
+   * @return shortUrl
+   */
+  @javax.annotation.Nullable
+  public String getShortUrl() {
+    return shortUrl;
+  }
+
+  public void setShortUrl(@javax.annotation.Nullable String shortUrl) {
+    this.shortUrl = shortUrl;
+  }
+
+
+  public Incident publicTitle(@javax.annotation.Nullable String publicTitle) {
+    this.publicTitle = publicTitle;
+    return this;
+  }
+
+  /**
+   * The public title of the incident
+   * @return publicTitle
+   */
+  @javax.annotation.Nullable
+  public String getPublicTitle() {
+    return publicTitle;
+  }
+
+  public void setPublicTitle(@javax.annotation.Nullable String publicTitle) {
+    this.publicTitle = publicTitle;
+  }
+
+
+  public Incident user(@javax.annotation.Nullable Object user) {
+    this.user = user;
+    return this;
+  }
+
+  /**
+   * The user who created the incident
+   * @return user
+   */
+  @javax.annotation.Nullable
+  public Object getUser() {
+    return user;
+  }
+
+  public void setUser(@javax.annotation.Nullable Object user) {
+    this.user = user;
   }
 
 
@@ -641,6 +1223,1344 @@ public class Incident {
   }
 
 
+  public Incident slackChannelShortUrl(@javax.annotation.Nullable String slackChannelShortUrl) {
+    this.slackChannelShortUrl = slackChannelShortUrl;
+    return this;
+  }
+
+  /**
+   * Slack channel short url
+   * @return slackChannelShortUrl
+   */
+  @javax.annotation.Nullable
+  public String getSlackChannelShortUrl() {
+    return slackChannelShortUrl;
+  }
+
+  public void setSlackChannelShortUrl(@javax.annotation.Nullable String slackChannelShortUrl) {
+    this.slackChannelShortUrl = slackChannelShortUrl;
+  }
+
+
+  public Incident slackChannelDeepLink(@javax.annotation.Nullable String slackChannelDeepLink) {
+    this.slackChannelDeepLink = slackChannelDeepLink;
+    return this;
+  }
+
+  /**
+   * Slack channel deep link
+   * @return slackChannelDeepLink
+   */
+  @javax.annotation.Nullable
+  public String getSlackChannelDeepLink() {
+    return slackChannelDeepLink;
+  }
+
+  public void setSlackChannelDeepLink(@javax.annotation.Nullable String slackChannelDeepLink) {
+    this.slackChannelDeepLink = slackChannelDeepLink;
+  }
+
+
+  public Incident slackChannelArchived(@javax.annotation.Nullable Boolean slackChannelArchived) {
+    this.slackChannelArchived = slackChannelArchived;
+    return this;
+  }
+
+  /**
+   * Whether the Slack channel is archived
+   * @return slackChannelArchived
+   */
+  @javax.annotation.Nullable
+  public Boolean getSlackChannelArchived() {
+    return slackChannelArchived;
+  }
+
+  public void setSlackChannelArchived(@javax.annotation.Nullable Boolean slackChannelArchived) {
+    this.slackChannelArchived = slackChannelArchived;
+  }
+
+
+  public Incident slackLastMessageTs(@javax.annotation.Nullable String slackLastMessageTs) {
+    this.slackLastMessageTs = slackLastMessageTs;
+    return this;
+  }
+
+  /**
+   * Timestamp of last Slack message
+   * @return slackLastMessageTs
+   */
+  @javax.annotation.Nullable
+  public String getSlackLastMessageTs() {
+    return slackLastMessageTs;
+  }
+
+  public void setSlackLastMessageTs(@javax.annotation.Nullable String slackLastMessageTs) {
+    this.slackLastMessageTs = slackLastMessageTs;
+  }
+
+
+  public Incident zoomMeetingId(@javax.annotation.Nullable String zoomMeetingId) {
+    this.zoomMeetingId = zoomMeetingId;
+    return this;
+  }
+
+  /**
+   * Zoom meeting ID
+   * @return zoomMeetingId
+   */
+  @javax.annotation.Nullable
+  public String getZoomMeetingId() {
+    return zoomMeetingId;
+  }
+
+  public void setZoomMeetingId(@javax.annotation.Nullable String zoomMeetingId) {
+    this.zoomMeetingId = zoomMeetingId;
+  }
+
+
+  public Incident zoomMeetingStartUrl(@javax.annotation.Nullable String zoomMeetingStartUrl) {
+    this.zoomMeetingStartUrl = zoomMeetingStartUrl;
+    return this;
+  }
+
+  /**
+   * Zoom meeting start URL
+   * @return zoomMeetingStartUrl
+   */
+  @javax.annotation.Nullable
+  public String getZoomMeetingStartUrl() {
+    return zoomMeetingStartUrl;
+  }
+
+  public void setZoomMeetingStartUrl(@javax.annotation.Nullable String zoomMeetingStartUrl) {
+    this.zoomMeetingStartUrl = zoomMeetingStartUrl;
+  }
+
+
+  public Incident zoomMeetingJoinUrl(@javax.annotation.Nullable String zoomMeetingJoinUrl) {
+    this.zoomMeetingJoinUrl = zoomMeetingJoinUrl;
+    return this;
+  }
+
+  /**
+   * Zoom meeting join URL
+   * @return zoomMeetingJoinUrl
+   */
+  @javax.annotation.Nullable
+  public String getZoomMeetingJoinUrl() {
+    return zoomMeetingJoinUrl;
+  }
+
+  public void setZoomMeetingJoinUrl(@javax.annotation.Nullable String zoomMeetingJoinUrl) {
+    this.zoomMeetingJoinUrl = zoomMeetingJoinUrl;
+  }
+
+
+  public Incident zoomMeetingPassword(@javax.annotation.Nullable String zoomMeetingPassword) {
+    this.zoomMeetingPassword = zoomMeetingPassword;
+    return this;
+  }
+
+  /**
+   * Zoom meeting password
+   * @return zoomMeetingPassword
+   */
+  @javax.annotation.Nullable
+  public String getZoomMeetingPassword() {
+    return zoomMeetingPassword;
+  }
+
+  public void setZoomMeetingPassword(@javax.annotation.Nullable String zoomMeetingPassword) {
+    this.zoomMeetingPassword = zoomMeetingPassword;
+  }
+
+
+  public Incident zoomMeetingPstnPassword(@javax.annotation.Nullable String zoomMeetingPstnPassword) {
+    this.zoomMeetingPstnPassword = zoomMeetingPstnPassword;
+    return this;
+  }
+
+  /**
+   * Zoom meeting PSTN password
+   * @return zoomMeetingPstnPassword
+   */
+  @javax.annotation.Nullable
+  public String getZoomMeetingPstnPassword() {
+    return zoomMeetingPstnPassword;
+  }
+
+  public void setZoomMeetingPstnPassword(@javax.annotation.Nullable String zoomMeetingPstnPassword) {
+    this.zoomMeetingPstnPassword = zoomMeetingPstnPassword;
+  }
+
+
+  public Incident zoomMeetingH323Password(@javax.annotation.Nullable String zoomMeetingH323Password) {
+    this.zoomMeetingH323Password = zoomMeetingH323Password;
+    return this;
+  }
+
+  /**
+   * Zoom meeting H323 password
+   * @return zoomMeetingH323Password
+   */
+  @javax.annotation.Nullable
+  public String getZoomMeetingH323Password() {
+    return zoomMeetingH323Password;
+  }
+
+  public void setZoomMeetingH323Password(@javax.annotation.Nullable String zoomMeetingH323Password) {
+    this.zoomMeetingH323Password = zoomMeetingH323Password;
+  }
+
+
+  public Incident zoomMeetingGlobalDialInNumbers(@javax.annotation.Nullable List<String> zoomMeetingGlobalDialInNumbers) {
+    this.zoomMeetingGlobalDialInNumbers = zoomMeetingGlobalDialInNumbers;
+    return this;
+  }
+
+  public Incident addZoomMeetingGlobalDialInNumbersItem(String zoomMeetingGlobalDialInNumbersItem) {
+    if (this.zoomMeetingGlobalDialInNumbers == null) {
+      this.zoomMeetingGlobalDialInNumbers = new ArrayList<>();
+    }
+    this.zoomMeetingGlobalDialInNumbers.add(zoomMeetingGlobalDialInNumbersItem);
+    return this;
+  }
+
+  /**
+   * Zoom meeting global dial-in numbers
+   * @return zoomMeetingGlobalDialInNumbers
+   */
+  @javax.annotation.Nullable
+  public List<String> getZoomMeetingGlobalDialInNumbers() {
+    return zoomMeetingGlobalDialInNumbers;
+  }
+
+  public void setZoomMeetingGlobalDialInNumbers(@javax.annotation.Nullable List<String> zoomMeetingGlobalDialInNumbers) {
+    this.zoomMeetingGlobalDialInNumbers = zoomMeetingGlobalDialInNumbers;
+  }
+
+
+  public Incident googleDriveId(@javax.annotation.Nullable String googleDriveId) {
+    this.googleDriveId = googleDriveId;
+    return this;
+  }
+
+  /**
+   * Google Drive document ID
+   * @return googleDriveId
+   */
+  @javax.annotation.Nullable
+  public String getGoogleDriveId() {
+    return googleDriveId;
+  }
+
+  public void setGoogleDriveId(@javax.annotation.Nullable String googleDriveId) {
+    this.googleDriveId = googleDriveId;
+  }
+
+
+  public Incident googleDriveParentId(@javax.annotation.Nullable String googleDriveParentId) {
+    this.googleDriveParentId = googleDriveParentId;
+    return this;
+  }
+
+  /**
+   * Google Drive parent folder ID
+   * @return googleDriveParentId
+   */
+  @javax.annotation.Nullable
+  public String getGoogleDriveParentId() {
+    return googleDriveParentId;
+  }
+
+  public void setGoogleDriveParentId(@javax.annotation.Nullable String googleDriveParentId) {
+    this.googleDriveParentId = googleDriveParentId;
+  }
+
+
+  public Incident googleDriveUrl(@javax.annotation.Nullable String googleDriveUrl) {
+    this.googleDriveUrl = googleDriveUrl;
+    return this;
+  }
+
+  /**
+   * Google Drive URL
+   * @return googleDriveUrl
+   */
+  @javax.annotation.Nullable
+  public String getGoogleDriveUrl() {
+    return googleDriveUrl;
+  }
+
+  public void setGoogleDriveUrl(@javax.annotation.Nullable String googleDriveUrl) {
+    this.googleDriveUrl = googleDriveUrl;
+  }
+
+
+  public Incident googleMeetingId(@javax.annotation.Nullable String googleMeetingId) {
+    this.googleMeetingId = googleMeetingId;
+    return this;
+  }
+
+  /**
+   * Google meeting ID
+   * @return googleMeetingId
+   */
+  @javax.annotation.Nullable
+  public String getGoogleMeetingId() {
+    return googleMeetingId;
+  }
+
+  public void setGoogleMeetingId(@javax.annotation.Nullable String googleMeetingId) {
+    this.googleMeetingId = googleMeetingId;
+  }
+
+
+  public Incident googleMeetingUrl(@javax.annotation.Nullable String googleMeetingUrl) {
+    this.googleMeetingUrl = googleMeetingUrl;
+    return this;
+  }
+
+  /**
+   * Google meeting URL
+   * @return googleMeetingUrl
+   */
+  @javax.annotation.Nullable
+  public String getGoogleMeetingUrl() {
+    return googleMeetingUrl;
+  }
+
+  public void setGoogleMeetingUrl(@javax.annotation.Nullable String googleMeetingUrl) {
+    this.googleMeetingUrl = googleMeetingUrl;
+  }
+
+
+  public Incident jiraIssueKey(@javax.annotation.Nullable String jiraIssueKey) {
+    this.jiraIssueKey = jiraIssueKey;
+    return this;
+  }
+
+  /**
+   * Jira issue key
+   * @return jiraIssueKey
+   */
+  @javax.annotation.Nullable
+  public String getJiraIssueKey() {
+    return jiraIssueKey;
+  }
+
+  public void setJiraIssueKey(@javax.annotation.Nullable String jiraIssueKey) {
+    this.jiraIssueKey = jiraIssueKey;
+  }
+
+
+  public Incident jiraIssueId(@javax.annotation.Nullable String jiraIssueId) {
+    this.jiraIssueId = jiraIssueId;
+    return this;
+  }
+
+  /**
+   * Jira issue ID
+   * @return jiraIssueId
+   */
+  @javax.annotation.Nullable
+  public String getJiraIssueId() {
+    return jiraIssueId;
+  }
+
+  public void setJiraIssueId(@javax.annotation.Nullable String jiraIssueId) {
+    this.jiraIssueId = jiraIssueId;
+  }
+
+
+  public Incident jiraIssueUrl(@javax.annotation.Nullable String jiraIssueUrl) {
+    this.jiraIssueUrl = jiraIssueUrl;
+    return this;
+  }
+
+  /**
+   * Jira issue URL
+   * @return jiraIssueUrl
+   */
+  @javax.annotation.Nullable
+  public String getJiraIssueUrl() {
+    return jiraIssueUrl;
+  }
+
+  public void setJiraIssueUrl(@javax.annotation.Nullable String jiraIssueUrl) {
+    this.jiraIssueUrl = jiraIssueUrl;
+  }
+
+
+  public Incident githubIssueId(@javax.annotation.Nullable String githubIssueId) {
+    this.githubIssueId = githubIssueId;
+    return this;
+  }
+
+  /**
+   * GitHub issue ID
+   * @return githubIssueId
+   */
+  @javax.annotation.Nullable
+  public String getGithubIssueId() {
+    return githubIssueId;
+  }
+
+  public void setGithubIssueId(@javax.annotation.Nullable String githubIssueId) {
+    this.githubIssueId = githubIssueId;
+  }
+
+
+  public Incident githubIssueUrl(@javax.annotation.Nullable String githubIssueUrl) {
+    this.githubIssueUrl = githubIssueUrl;
+    return this;
+  }
+
+  /**
+   * GitHub issue URL
+   * @return githubIssueUrl
+   */
+  @javax.annotation.Nullable
+  public String getGithubIssueUrl() {
+    return githubIssueUrl;
+  }
+
+  public void setGithubIssueUrl(@javax.annotation.Nullable String githubIssueUrl) {
+    this.githubIssueUrl = githubIssueUrl;
+  }
+
+
+  public Incident gitlabIssueId(@javax.annotation.Nullable String gitlabIssueId) {
+    this.gitlabIssueId = gitlabIssueId;
+    return this;
+  }
+
+  /**
+   * GitLab issue ID
+   * @return gitlabIssueId
+   */
+  @javax.annotation.Nullable
+  public String getGitlabIssueId() {
+    return gitlabIssueId;
+  }
+
+  public void setGitlabIssueId(@javax.annotation.Nullable String gitlabIssueId) {
+    this.gitlabIssueId = gitlabIssueId;
+  }
+
+
+  public Incident gitlabIssueUrl(@javax.annotation.Nullable String gitlabIssueUrl) {
+    this.gitlabIssueUrl = gitlabIssueUrl;
+    return this;
+  }
+
+  /**
+   * GitLab issue URL
+   * @return gitlabIssueUrl
+   */
+  @javax.annotation.Nullable
+  public String getGitlabIssueUrl() {
+    return gitlabIssueUrl;
+  }
+
+  public void setGitlabIssueUrl(@javax.annotation.Nullable String gitlabIssueUrl) {
+    this.gitlabIssueUrl = gitlabIssueUrl;
+  }
+
+
+  public Incident asanaTaskId(@javax.annotation.Nullable String asanaTaskId) {
+    this.asanaTaskId = asanaTaskId;
+    return this;
+  }
+
+  /**
+   * Asana task ID
+   * @return asanaTaskId
+   */
+  @javax.annotation.Nullable
+  public String getAsanaTaskId() {
+    return asanaTaskId;
+  }
+
+  public void setAsanaTaskId(@javax.annotation.Nullable String asanaTaskId) {
+    this.asanaTaskId = asanaTaskId;
+  }
+
+
+  public Incident asanaTaskUrl(@javax.annotation.Nullable String asanaTaskUrl) {
+    this.asanaTaskUrl = asanaTaskUrl;
+    return this;
+  }
+
+  /**
+   * Asana task URL
+   * @return asanaTaskUrl
+   */
+  @javax.annotation.Nullable
+  public String getAsanaTaskUrl() {
+    return asanaTaskUrl;
+  }
+
+  public void setAsanaTaskUrl(@javax.annotation.Nullable String asanaTaskUrl) {
+    this.asanaTaskUrl = asanaTaskUrl;
+  }
+
+
+  public Incident linearIssueId(@javax.annotation.Nullable String linearIssueId) {
+    this.linearIssueId = linearIssueId;
+    return this;
+  }
+
+  /**
+   * Linear issue ID
+   * @return linearIssueId
+   */
+  @javax.annotation.Nullable
+  public String getLinearIssueId() {
+    return linearIssueId;
+  }
+
+  public void setLinearIssueId(@javax.annotation.Nullable String linearIssueId) {
+    this.linearIssueId = linearIssueId;
+  }
+
+
+  public Incident linearIssueUrl(@javax.annotation.Nullable String linearIssueUrl) {
+    this.linearIssueUrl = linearIssueUrl;
+    return this;
+  }
+
+  /**
+   * Linear issue URL
+   * @return linearIssueUrl
+   */
+  @javax.annotation.Nullable
+  public String getLinearIssueUrl() {
+    return linearIssueUrl;
+  }
+
+  public void setLinearIssueUrl(@javax.annotation.Nullable String linearIssueUrl) {
+    this.linearIssueUrl = linearIssueUrl;
+  }
+
+
+  public Incident trelloCardId(@javax.annotation.Nullable String trelloCardId) {
+    this.trelloCardId = trelloCardId;
+    return this;
+  }
+
+  /**
+   * Trello card ID
+   * @return trelloCardId
+   */
+  @javax.annotation.Nullable
+  public String getTrelloCardId() {
+    return trelloCardId;
+  }
+
+  public void setTrelloCardId(@javax.annotation.Nullable String trelloCardId) {
+    this.trelloCardId = trelloCardId;
+  }
+
+
+  public Incident trelloCardUrl(@javax.annotation.Nullable String trelloCardUrl) {
+    this.trelloCardUrl = trelloCardUrl;
+    return this;
+  }
+
+  /**
+   * Trello card URL
+   * @return trelloCardUrl
+   */
+  @javax.annotation.Nullable
+  public String getTrelloCardUrl() {
+    return trelloCardUrl;
+  }
+
+  public void setTrelloCardUrl(@javax.annotation.Nullable String trelloCardUrl) {
+    this.trelloCardUrl = trelloCardUrl;
+  }
+
+
+  public Incident zendeskTicketId(@javax.annotation.Nullable String zendeskTicketId) {
+    this.zendeskTicketId = zendeskTicketId;
+    return this;
+  }
+
+  /**
+   * Zendesk ticket ID
+   * @return zendeskTicketId
+   */
+  @javax.annotation.Nullable
+  public String getZendeskTicketId() {
+    return zendeskTicketId;
+  }
+
+  public void setZendeskTicketId(@javax.annotation.Nullable String zendeskTicketId) {
+    this.zendeskTicketId = zendeskTicketId;
+  }
+
+
+  public Incident zendeskTicketUrl(@javax.annotation.Nullable String zendeskTicketUrl) {
+    this.zendeskTicketUrl = zendeskTicketUrl;
+    return this;
+  }
+
+  /**
+   * Zendesk ticket URL
+   * @return zendeskTicketUrl
+   */
+  @javax.annotation.Nullable
+  public String getZendeskTicketUrl() {
+    return zendeskTicketUrl;
+  }
+
+  public void setZendeskTicketUrl(@javax.annotation.Nullable String zendeskTicketUrl) {
+    this.zendeskTicketUrl = zendeskTicketUrl;
+  }
+
+
+  public Incident pagerdutyIncidentId(@javax.annotation.Nullable String pagerdutyIncidentId) {
+    this.pagerdutyIncidentId = pagerdutyIncidentId;
+    return this;
+  }
+
+  /**
+   * PagerDuty incident ID
+   * @return pagerdutyIncidentId
+   */
+  @javax.annotation.Nullable
+  public String getPagerdutyIncidentId() {
+    return pagerdutyIncidentId;
+  }
+
+  public void setPagerdutyIncidentId(@javax.annotation.Nullable String pagerdutyIncidentId) {
+    this.pagerdutyIncidentId = pagerdutyIncidentId;
+  }
+
+
+  public Incident pagerdutyIncidentNumber(@javax.annotation.Nullable String pagerdutyIncidentNumber) {
+    this.pagerdutyIncidentNumber = pagerdutyIncidentNumber;
+    return this;
+  }
+
+  /**
+   * PagerDuty incident number
+   * @return pagerdutyIncidentNumber
+   */
+  @javax.annotation.Nullable
+  public String getPagerdutyIncidentNumber() {
+    return pagerdutyIncidentNumber;
+  }
+
+  public void setPagerdutyIncidentNumber(@javax.annotation.Nullable String pagerdutyIncidentNumber) {
+    this.pagerdutyIncidentNumber = pagerdutyIncidentNumber;
+  }
+
+
+  public Incident pagerdutyIncidentUrl(@javax.annotation.Nullable String pagerdutyIncidentUrl) {
+    this.pagerdutyIncidentUrl = pagerdutyIncidentUrl;
+    return this;
+  }
+
+  /**
+   * PagerDuty incident URL
+   * @return pagerdutyIncidentUrl
+   */
+  @javax.annotation.Nullable
+  public String getPagerdutyIncidentUrl() {
+    return pagerdutyIncidentUrl;
+  }
+
+  public void setPagerdutyIncidentUrl(@javax.annotation.Nullable String pagerdutyIncidentUrl) {
+    this.pagerdutyIncidentUrl = pagerdutyIncidentUrl;
+  }
+
+
+  public Incident opsgenieIncidentId(@javax.annotation.Nullable String opsgenieIncidentId) {
+    this.opsgenieIncidentId = opsgenieIncidentId;
+    return this;
+  }
+
+  /**
+   * Opsgenie incident ID
+   * @return opsgenieIncidentId
+   */
+  @javax.annotation.Nullable
+  public String getOpsgenieIncidentId() {
+    return opsgenieIncidentId;
+  }
+
+  public void setOpsgenieIncidentId(@javax.annotation.Nullable String opsgenieIncidentId) {
+    this.opsgenieIncidentId = opsgenieIncidentId;
+  }
+
+
+  public Incident opsgenieIncidentUrl(@javax.annotation.Nullable String opsgenieIncidentUrl) {
+    this.opsgenieIncidentUrl = opsgenieIncidentUrl;
+    return this;
+  }
+
+  /**
+   * Opsgenie incident URL
+   * @return opsgenieIncidentUrl
+   */
+  @javax.annotation.Nullable
+  public String getOpsgenieIncidentUrl() {
+    return opsgenieIncidentUrl;
+  }
+
+  public void setOpsgenieIncidentUrl(@javax.annotation.Nullable String opsgenieIncidentUrl) {
+    this.opsgenieIncidentUrl = opsgenieIncidentUrl;
+  }
+
+
+  public Incident opsgenieAlertId(@javax.annotation.Nullable String opsgenieAlertId) {
+    this.opsgenieAlertId = opsgenieAlertId;
+    return this;
+  }
+
+  /**
+   * Opsgenie alert ID
+   * @return opsgenieAlertId
+   */
+  @javax.annotation.Nullable
+  public String getOpsgenieAlertId() {
+    return opsgenieAlertId;
+  }
+
+  public void setOpsgenieAlertId(@javax.annotation.Nullable String opsgenieAlertId) {
+    this.opsgenieAlertId = opsgenieAlertId;
+  }
+
+
+  public Incident opsgenieAlertUrl(@javax.annotation.Nullable String opsgenieAlertUrl) {
+    this.opsgenieAlertUrl = opsgenieAlertUrl;
+    return this;
+  }
+
+  /**
+   * Opsgenie alert URL
+   * @return opsgenieAlertUrl
+   */
+  @javax.annotation.Nullable
+  public String getOpsgenieAlertUrl() {
+    return opsgenieAlertUrl;
+  }
+
+  public void setOpsgenieAlertUrl(@javax.annotation.Nullable String opsgenieAlertUrl) {
+    this.opsgenieAlertUrl = opsgenieAlertUrl;
+  }
+
+
+  public Incident serviceNowIncidentId(@javax.annotation.Nullable String serviceNowIncidentId) {
+    this.serviceNowIncidentId = serviceNowIncidentId;
+    return this;
+  }
+
+  /**
+   * ServiceNow incident ID
+   * @return serviceNowIncidentId
+   */
+  @javax.annotation.Nullable
+  public String getServiceNowIncidentId() {
+    return serviceNowIncidentId;
+  }
+
+  public void setServiceNowIncidentId(@javax.annotation.Nullable String serviceNowIncidentId) {
+    this.serviceNowIncidentId = serviceNowIncidentId;
+  }
+
+
+  public Incident serviceNowIncidentKey(@javax.annotation.Nullable String serviceNowIncidentKey) {
+    this.serviceNowIncidentKey = serviceNowIncidentKey;
+    return this;
+  }
+
+  /**
+   * ServiceNow incident key
+   * @return serviceNowIncidentKey
+   */
+  @javax.annotation.Nullable
+  public String getServiceNowIncidentKey() {
+    return serviceNowIncidentKey;
+  }
+
+  public void setServiceNowIncidentKey(@javax.annotation.Nullable String serviceNowIncidentKey) {
+    this.serviceNowIncidentKey = serviceNowIncidentKey;
+  }
+
+
+  public Incident serviceNowIncidentUrl(@javax.annotation.Nullable String serviceNowIncidentUrl) {
+    this.serviceNowIncidentUrl = serviceNowIncidentUrl;
+    return this;
+  }
+
+  /**
+   * ServiceNow incident URL
+   * @return serviceNowIncidentUrl
+   */
+  @javax.annotation.Nullable
+  public String getServiceNowIncidentUrl() {
+    return serviceNowIncidentUrl;
+  }
+
+  public void setServiceNowIncidentUrl(@javax.annotation.Nullable String serviceNowIncidentUrl) {
+    this.serviceNowIncidentUrl = serviceNowIncidentUrl;
+  }
+
+
+  public Incident mattermostChannelId(@javax.annotation.Nullable String mattermostChannelId) {
+    this.mattermostChannelId = mattermostChannelId;
+    return this;
+  }
+
+  /**
+   * Mattermost channel ID
+   * @return mattermostChannelId
+   */
+  @javax.annotation.Nullable
+  public String getMattermostChannelId() {
+    return mattermostChannelId;
+  }
+
+  public void setMattermostChannelId(@javax.annotation.Nullable String mattermostChannelId) {
+    this.mattermostChannelId = mattermostChannelId;
+  }
+
+
+  public Incident mattermostChannelName(@javax.annotation.Nullable String mattermostChannelName) {
+    this.mattermostChannelName = mattermostChannelName;
+    return this;
+  }
+
+  /**
+   * Mattermost channel name
+   * @return mattermostChannelName
+   */
+  @javax.annotation.Nullable
+  public String getMattermostChannelName() {
+    return mattermostChannelName;
+  }
+
+  public void setMattermostChannelName(@javax.annotation.Nullable String mattermostChannelName) {
+    this.mattermostChannelName = mattermostChannelName;
+  }
+
+
+  public Incident mattermostChannelUrl(@javax.annotation.Nullable String mattermostChannelUrl) {
+    this.mattermostChannelUrl = mattermostChannelUrl;
+    return this;
+  }
+
+  /**
+   * Mattermost channel URL
+   * @return mattermostChannelUrl
+   */
+  @javax.annotation.Nullable
+  public String getMattermostChannelUrl() {
+    return mattermostChannelUrl;
+  }
+
+  public void setMattermostChannelUrl(@javax.annotation.Nullable String mattermostChannelUrl) {
+    this.mattermostChannelUrl = mattermostChannelUrl;
+  }
+
+
+  public Incident confluencePageId(@javax.annotation.Nullable String confluencePageId) {
+    this.confluencePageId = confluencePageId;
+    return this;
+  }
+
+  /**
+   * Confluence page ID
+   * @return confluencePageId
+   */
+  @javax.annotation.Nullable
+  public String getConfluencePageId() {
+    return confluencePageId;
+  }
+
+  public void setConfluencePageId(@javax.annotation.Nullable String confluencePageId) {
+    this.confluencePageId = confluencePageId;
+  }
+
+
+  public Incident confluencePageUrl(@javax.annotation.Nullable String confluencePageUrl) {
+    this.confluencePageUrl = confluencePageUrl;
+    return this;
+  }
+
+  /**
+   * Confluence page URL
+   * @return confluencePageUrl
+   */
+  @javax.annotation.Nullable
+  public String getConfluencePageUrl() {
+    return confluencePageUrl;
+  }
+
+  public void setConfluencePageUrl(@javax.annotation.Nullable String confluencePageUrl) {
+    this.confluencePageUrl = confluencePageUrl;
+  }
+
+
+  public Incident datadogNotebookId(@javax.annotation.Nullable String datadogNotebookId) {
+    this.datadogNotebookId = datadogNotebookId;
+    return this;
+  }
+
+  /**
+   * Datadog notebook ID
+   * @return datadogNotebookId
+   */
+  @javax.annotation.Nullable
+  public String getDatadogNotebookId() {
+    return datadogNotebookId;
+  }
+
+  public void setDatadogNotebookId(@javax.annotation.Nullable String datadogNotebookId) {
+    this.datadogNotebookId = datadogNotebookId;
+  }
+
+
+  public Incident datadogNotebookUrl(@javax.annotation.Nullable String datadogNotebookUrl) {
+    this.datadogNotebookUrl = datadogNotebookUrl;
+    return this;
+  }
+
+  /**
+   * Datadog notebook URL
+   * @return datadogNotebookUrl
+   */
+  @javax.annotation.Nullable
+  public String getDatadogNotebookUrl() {
+    return datadogNotebookUrl;
+  }
+
+  public void setDatadogNotebookUrl(@javax.annotation.Nullable String datadogNotebookUrl) {
+    this.datadogNotebookUrl = datadogNotebookUrl;
+  }
+
+
+  public Incident shortcutStoryId(@javax.annotation.Nullable String shortcutStoryId) {
+    this.shortcutStoryId = shortcutStoryId;
+    return this;
+  }
+
+  /**
+   * Shortcut story ID
+   * @return shortcutStoryId
+   */
+  @javax.annotation.Nullable
+  public String getShortcutStoryId() {
+    return shortcutStoryId;
+  }
+
+  public void setShortcutStoryId(@javax.annotation.Nullable String shortcutStoryId) {
+    this.shortcutStoryId = shortcutStoryId;
+  }
+
+
+  public Incident shortcutStoryUrl(@javax.annotation.Nullable String shortcutStoryUrl) {
+    this.shortcutStoryUrl = shortcutStoryUrl;
+    return this;
+  }
+
+  /**
+   * Shortcut story URL
+   * @return shortcutStoryUrl
+   */
+  @javax.annotation.Nullable
+  public String getShortcutStoryUrl() {
+    return shortcutStoryUrl;
+  }
+
+  public void setShortcutStoryUrl(@javax.annotation.Nullable String shortcutStoryUrl) {
+    this.shortcutStoryUrl = shortcutStoryUrl;
+  }
+
+
+  public Incident shortcutTaskId(@javax.annotation.Nullable String shortcutTaskId) {
+    this.shortcutTaskId = shortcutTaskId;
+    return this;
+  }
+
+  /**
+   * Shortcut task ID
+   * @return shortcutTaskId
+   */
+  @javax.annotation.Nullable
+  public String getShortcutTaskId() {
+    return shortcutTaskId;
+  }
+
+  public void setShortcutTaskId(@javax.annotation.Nullable String shortcutTaskId) {
+    this.shortcutTaskId = shortcutTaskId;
+  }
+
+
+  public Incident shortcutTaskUrl(@javax.annotation.Nullable String shortcutTaskUrl) {
+    this.shortcutTaskUrl = shortcutTaskUrl;
+    return this;
+  }
+
+  /**
+   * Shortcut task URL
+   * @return shortcutTaskUrl
+   */
+  @javax.annotation.Nullable
+  public String getShortcutTaskUrl() {
+    return shortcutTaskUrl;
+  }
+
+  public void setShortcutTaskUrl(@javax.annotation.Nullable String shortcutTaskUrl) {
+    this.shortcutTaskUrl = shortcutTaskUrl;
+  }
+
+
+  public Incident motionTaskId(@javax.annotation.Nullable String motionTaskId) {
+    this.motionTaskId = motionTaskId;
+    return this;
+  }
+
+  /**
+   * Motion task ID
+   * @return motionTaskId
+   */
+  @javax.annotation.Nullable
+  public String getMotionTaskId() {
+    return motionTaskId;
+  }
+
+  public void setMotionTaskId(@javax.annotation.Nullable String motionTaskId) {
+    this.motionTaskId = motionTaskId;
+  }
+
+
+  public Incident motionTaskUrl(@javax.annotation.Nullable String motionTaskUrl) {
+    this.motionTaskUrl = motionTaskUrl;
+    return this;
+  }
+
+  /**
+   * Motion task URL
+   * @return motionTaskUrl
+   */
+  @javax.annotation.Nullable
+  public String getMotionTaskUrl() {
+    return motionTaskUrl;
+  }
+
+  public void setMotionTaskUrl(@javax.annotation.Nullable String motionTaskUrl) {
+    this.motionTaskUrl = motionTaskUrl;
+  }
+
+
+  public Incident clickupTaskId(@javax.annotation.Nullable String clickupTaskId) {
+    this.clickupTaskId = clickupTaskId;
+    return this;
+  }
+
+  /**
+   * ClickUp task ID
+   * @return clickupTaskId
+   */
+  @javax.annotation.Nullable
+  public String getClickupTaskId() {
+    return clickupTaskId;
+  }
+
+  public void setClickupTaskId(@javax.annotation.Nullable String clickupTaskId) {
+    this.clickupTaskId = clickupTaskId;
+  }
+
+
+  public Incident clickupTaskUrl(@javax.annotation.Nullable String clickupTaskUrl) {
+    this.clickupTaskUrl = clickupTaskUrl;
+    return this;
+  }
+
+  /**
+   * ClickUp task URL
+   * @return clickupTaskUrl
+   */
+  @javax.annotation.Nullable
+  public String getClickupTaskUrl() {
+    return clickupTaskUrl;
+  }
+
+  public void setClickupTaskUrl(@javax.annotation.Nullable String clickupTaskUrl) {
+    this.clickupTaskUrl = clickupTaskUrl;
+  }
+
+
+  public Incident victorOpsIncidentId(@javax.annotation.Nullable String victorOpsIncidentId) {
+    this.victorOpsIncidentId = victorOpsIncidentId;
+    return this;
+  }
+
+  /**
+   * VictorOps incident ID
+   * @return victorOpsIncidentId
+   */
+  @javax.annotation.Nullable
+  public String getVictorOpsIncidentId() {
+    return victorOpsIncidentId;
+  }
+
+  public void setVictorOpsIncidentId(@javax.annotation.Nullable String victorOpsIncidentId) {
+    this.victorOpsIncidentId = victorOpsIncidentId;
+  }
+
+
+  public Incident victorOpsIncidentUrl(@javax.annotation.Nullable String victorOpsIncidentUrl) {
+    this.victorOpsIncidentUrl = victorOpsIncidentUrl;
+    return this;
+  }
+
+  /**
+   * VictorOps incident URL
+   * @return victorOpsIncidentUrl
+   */
+  @javax.annotation.Nullable
+  public String getVictorOpsIncidentUrl() {
+    return victorOpsIncidentUrl;
+  }
+
+  public void setVictorOpsIncidentUrl(@javax.annotation.Nullable String victorOpsIncidentUrl) {
+    this.victorOpsIncidentUrl = victorOpsIncidentUrl;
+  }
+
+
+  public Incident quipPageId(@javax.annotation.Nullable String quipPageId) {
+    this.quipPageId = quipPageId;
+    return this;
+  }
+
+  /**
+   * Quip page ID
+   * @return quipPageId
+   */
+  @javax.annotation.Nullable
+  public String getQuipPageId() {
+    return quipPageId;
+  }
+
+  public void setQuipPageId(@javax.annotation.Nullable String quipPageId) {
+    this.quipPageId = quipPageId;
+  }
+
+
+  public Incident quipPageUrl(@javax.annotation.Nullable String quipPageUrl) {
+    this.quipPageUrl = quipPageUrl;
+    return this;
+  }
+
+  /**
+   * Quip page URL
+   * @return quipPageUrl
+   */
+  @javax.annotation.Nullable
+  public String getQuipPageUrl() {
+    return quipPageUrl;
+  }
+
+  public void setQuipPageUrl(@javax.annotation.Nullable String quipPageUrl) {
+    this.quipPageUrl = quipPageUrl;
+  }
+
+
+  public Incident sharepointPageId(@javax.annotation.Nullable String sharepointPageId) {
+    this.sharepointPageId = sharepointPageId;
+    return this;
+  }
+
+  /**
+   * SharePoint page ID
+   * @return sharepointPageId
+   */
+  @javax.annotation.Nullable
+  public String getSharepointPageId() {
+    return sharepointPageId;
+  }
+
+  public void setSharepointPageId(@javax.annotation.Nullable String sharepointPageId) {
+    this.sharepointPageId = sharepointPageId;
+  }
+
+
+  public Incident sharepointPageUrl(@javax.annotation.Nullable String sharepointPageUrl) {
+    this.sharepointPageUrl = sharepointPageUrl;
+    return this;
+  }
+
+  /**
+   * SharePoint page URL
+   * @return sharepointPageUrl
+   */
+  @javax.annotation.Nullable
+  public String getSharepointPageUrl() {
+    return sharepointPageUrl;
+  }
+
+  public void setSharepointPageUrl(@javax.annotation.Nullable String sharepointPageUrl) {
+    this.sharepointPageUrl = sharepointPageUrl;
+  }
+
+
+  public Incident airtableBaseKey(@javax.annotation.Nullable String airtableBaseKey) {
+    this.airtableBaseKey = airtableBaseKey;
+    return this;
+  }
+
+  /**
+   * Airtable base key
+   * @return airtableBaseKey
+   */
+  @javax.annotation.Nullable
+  public String getAirtableBaseKey() {
+    return airtableBaseKey;
+  }
+
+  public void setAirtableBaseKey(@javax.annotation.Nullable String airtableBaseKey) {
+    this.airtableBaseKey = airtableBaseKey;
+  }
+
+
+  public Incident airtableTableName(@javax.annotation.Nullable String airtableTableName) {
+    this.airtableTableName = airtableTableName;
+    return this;
+  }
+
+  /**
+   * Airtable table name
+   * @return airtableTableName
+   */
+  @javax.annotation.Nullable
+  public String getAirtableTableName() {
+    return airtableTableName;
+  }
+
+  public void setAirtableTableName(@javax.annotation.Nullable String airtableTableName) {
+    this.airtableTableName = airtableTableName;
+  }
+
+
+  public Incident airtableRecordId(@javax.annotation.Nullable String airtableRecordId) {
+    this.airtableRecordId = airtableRecordId;
+    return this;
+  }
+
+  /**
+   * Airtable record ID
+   * @return airtableRecordId
+   */
+  @javax.annotation.Nullable
+  public String getAirtableRecordId() {
+    return airtableRecordId;
+  }
+
+  public void setAirtableRecordId(@javax.annotation.Nullable String airtableRecordId) {
+    this.airtableRecordId = airtableRecordId;
+  }
+
+
+  public Incident airtableRecordUrl(@javax.annotation.Nullable String airtableRecordUrl) {
+    this.airtableRecordUrl = airtableRecordUrl;
+    return this;
+  }
+
+  /**
+   * Airtable record URL
+   * @return airtableRecordUrl
+   */
+  @javax.annotation.Nullable
+  public String getAirtableRecordUrl() {
+    return airtableRecordUrl;
+  }
+
+  public void setAirtableRecordUrl(@javax.annotation.Nullable String airtableRecordUrl) {
+    this.airtableRecordUrl = airtableRecordUrl;
+  }
+
+
+  public Incident freshserviceTicketId(@javax.annotation.Nullable String freshserviceTicketId) {
+    this.freshserviceTicketId = freshserviceTicketId;
+    return this;
+  }
+
+  /**
+   * Freshservice ticket ID
+   * @return freshserviceTicketId
+   */
+  @javax.annotation.Nullable
+  public String getFreshserviceTicketId() {
+    return freshserviceTicketId;
+  }
+
+  public void setFreshserviceTicketId(@javax.annotation.Nullable String freshserviceTicketId) {
+    this.freshserviceTicketId = freshserviceTicketId;
+  }
+
+
+  public Incident freshserviceTicketUrl(@javax.annotation.Nullable String freshserviceTicketUrl) {
+    this.freshserviceTicketUrl = freshserviceTicketUrl;
+    return this;
+  }
+
+  /**
+   * Freshservice ticket URL
+   * @return freshserviceTicketUrl
+   */
+  @javax.annotation.Nullable
+  public String getFreshserviceTicketUrl() {
+    return freshserviceTicketUrl;
+  }
+
+  public void setFreshserviceTicketUrl(@javax.annotation.Nullable String freshserviceTicketUrl) {
+    this.freshserviceTicketUrl = freshserviceTicketUrl;
+  }
+
+
+  public Incident freshserviceTaskId(@javax.annotation.Nullable String freshserviceTaskId) {
+    this.freshserviceTaskId = freshserviceTaskId;
+    return this;
+  }
+
+  /**
+   * Freshservice task ID
+   * @return freshserviceTaskId
+   */
+  @javax.annotation.Nullable
+  public String getFreshserviceTaskId() {
+    return freshserviceTaskId;
+  }
+
+  public void setFreshserviceTaskId(@javax.annotation.Nullable String freshserviceTaskId) {
+    this.freshserviceTaskId = freshserviceTaskId;
+  }
+
+
+  public Incident freshserviceTaskUrl(@javax.annotation.Nullable String freshserviceTaskUrl) {
+    this.freshserviceTaskUrl = freshserviceTaskUrl;
+    return this;
+  }
+
+  /**
+   * Freshservice task URL
+   * @return freshserviceTaskUrl
+   */
+  @javax.annotation.Nullable
+  public String getFreshserviceTaskUrl() {
+    return freshserviceTaskUrl;
+  }
+
+  public void setFreshserviceTaskUrl(@javax.annotation.Nullable String freshserviceTaskUrl) {
+    this.freshserviceTaskUrl = freshserviceTaskUrl;
+  }
+
+
   public Incident mitigationMessage(@javax.annotation.Nullable String mitigationMessage) {
     this.mitigationMessage = mitigationMessage;
     return this;
@@ -736,6 +2656,33 @@ public class Incident {
   }
 
 
+  public Incident mutedServiceIds(@javax.annotation.Nullable List<String> mutedServiceIds) {
+    this.mutedServiceIds = mutedServiceIds;
+    return this;
+  }
+
+  public Incident addMutedServiceIdsItem(String mutedServiceIdsItem) {
+    if (this.mutedServiceIds == null) {
+      this.mutedServiceIds = new ArrayList<>();
+    }
+    this.mutedServiceIds.add(mutedServiceIdsItem);
+    return this;
+  }
+
+  /**
+   * The Service IDs to mute alerts for during maintenance. Alerts for these services will still be triggered and attached to the incident, but won&#39;t page responders.
+   * @return mutedServiceIds
+   */
+  @javax.annotation.Nullable
+  public List<String> getMutedServiceIds() {
+    return mutedServiceIds;
+  }
+
+  public void setMutedServiceIds(@javax.annotation.Nullable List<String> mutedServiceIds) {
+    this.mutedServiceIds = mutedServiceIds;
+  }
+
+
   public Incident retrospectiveProgressStatus(@javax.annotation.Nullable RetrospectiveProgressStatusEnum retrospectiveProgressStatus) {
     this.retrospectiveProgressStatus = retrospectiveProgressStatus;
     return this;
@@ -752,6 +2699,120 @@ public class Incident {
 
   public void setRetrospectiveProgressStatus(@javax.annotation.Nullable RetrospectiveProgressStatusEnum retrospectiveProgressStatus) {
     this.retrospectiveProgressStatus = retrospectiveProgressStatus;
+  }
+
+
+  public Incident inTriageBy(@javax.annotation.Nullable Object inTriageBy) {
+    this.inTriageBy = inTriageBy;
+    return this;
+  }
+
+  /**
+   * The user who triaged the incident
+   * @return inTriageBy
+   */
+  @javax.annotation.Nullable
+  public Object getInTriageBy() {
+    return inTriageBy;
+  }
+
+  public void setInTriageBy(@javax.annotation.Nullable Object inTriageBy) {
+    this.inTriageBy = inTriageBy;
+  }
+
+
+  public Incident startedBy(@javax.annotation.Nullable Object startedBy) {
+    this.startedBy = startedBy;
+    return this;
+  }
+
+  /**
+   * The user who started the incident
+   * @return startedBy
+   */
+  @javax.annotation.Nullable
+  public Object getStartedBy() {
+    return startedBy;
+  }
+
+  public void setStartedBy(@javax.annotation.Nullable Object startedBy) {
+    this.startedBy = startedBy;
+  }
+
+
+  public Incident mitigatedBy(@javax.annotation.Nullable Object mitigatedBy) {
+    this.mitigatedBy = mitigatedBy;
+    return this;
+  }
+
+  /**
+   * The user who mitigated the incident
+   * @return mitigatedBy
+   */
+  @javax.annotation.Nullable
+  public Object getMitigatedBy() {
+    return mitigatedBy;
+  }
+
+  public void setMitigatedBy(@javax.annotation.Nullable Object mitigatedBy) {
+    this.mitigatedBy = mitigatedBy;
+  }
+
+
+  public Incident resolvedBy(@javax.annotation.Nullable Object resolvedBy) {
+    this.resolvedBy = resolvedBy;
+    return this;
+  }
+
+  /**
+   * The user who resolved the incident
+   * @return resolvedBy
+   */
+  @javax.annotation.Nullable
+  public Object getResolvedBy() {
+    return resolvedBy;
+  }
+
+  public void setResolvedBy(@javax.annotation.Nullable Object resolvedBy) {
+    this.resolvedBy = resolvedBy;
+  }
+
+
+  public Incident closedBy(@javax.annotation.Nullable Object closedBy) {
+    this.closedBy = closedBy;
+    return this;
+  }
+
+  /**
+   * The user who closed the incident
+   * @return closedBy
+   */
+  @javax.annotation.Nullable
+  public Object getClosedBy() {
+    return closedBy;
+  }
+
+  public void setClosedBy(@javax.annotation.Nullable Object closedBy) {
+    this.closedBy = closedBy;
+  }
+
+
+  public Incident cancelledBy(@javax.annotation.Nullable Object cancelledBy) {
+    this.cancelledBy = cancelledBy;
+    return this;
+  }
+
+  /**
+   * The user who cancelled the incident
+   * @return cancelledBy
+   */
+  @javax.annotation.Nullable
+  public Object getCancelledBy() {
+    return cancelledBy;
+  }
+
+  public void setCancelledBy(@javax.annotation.Nullable Object cancelledBy) {
+    this.cancelledBy = cancelledBy;
   }
 
 
@@ -869,6 +2930,25 @@ public class Incident {
   }
 
 
+  public Incident closedAt(@javax.annotation.Nullable String closedAt) {
+    this.closedAt = closedAt;
+    return this;
+  }
+
+  /**
+   * Date of closure
+   * @return closedAt
+   */
+  @javax.annotation.Nullable
+  public String getClosedAt() {
+    return closedAt;
+  }
+
+  public void setClosedAt(@javax.annotation.Nullable String closedAt) {
+    this.closedAt = closedAt;
+  }
+
+
   public Incident cancelledAt(@javax.annotation.Nullable String cancelledAt) {
     this.cancelledAt = cancelledAt;
     return this;
@@ -936,13 +3016,21 @@ public class Incident {
       return false;
     }
     Incident incident = (Incident) o;
-    return Objects.equals(this.title, incident.title) &&
+    return Objects.equals(this.id, incident.id) &&
+        Objects.equals(this.sequentialId, incident.sequentialId) &&
+        Objects.equals(this.title, incident.title) &&
         Objects.equals(this.kind, incident.kind) &&
         Objects.equals(this.slug, incident.slug) &&
         Objects.equals(this.parentIncidentId, incident.parentIncidentId) &&
         Objects.equals(this.duplicateIncidentId, incident.duplicateIncidentId) &&
         Objects.equals(this.summary, incident.summary) &&
         Objects.equals(this._private, incident._private) &&
+        Objects.equals(this.source, incident.source) &&
+        Objects.equals(this.status, incident.status) &&
+        Objects.equals(this.url, incident.url) &&
+        Objects.equals(this.shortUrl, incident.shortUrl) &&
+        Objects.equals(this.publicTitle, incident.publicTitle) &&
+        Objects.equals(this.user, incident.user) &&
         Objects.equals(this.severity, incident.severity) &&
         Objects.equals(this.environments, incident.environments) &&
         Objects.equals(this.incidentTypes, incident.incidentTypes) &&
@@ -953,18 +3041,96 @@ public class Incident {
         Objects.equals(this.slackChannelId, incident.slackChannelId) &&
         Objects.equals(this.slackChannelName, incident.slackChannelName) &&
         Objects.equals(this.slackChannelUrl, incident.slackChannelUrl) &&
+        Objects.equals(this.slackChannelShortUrl, incident.slackChannelShortUrl) &&
+        Objects.equals(this.slackChannelDeepLink, incident.slackChannelDeepLink) &&
+        Objects.equals(this.slackChannelArchived, incident.slackChannelArchived) &&
+        Objects.equals(this.slackLastMessageTs, incident.slackLastMessageTs) &&
+        Objects.equals(this.zoomMeetingId, incident.zoomMeetingId) &&
+        Objects.equals(this.zoomMeetingStartUrl, incident.zoomMeetingStartUrl) &&
+        Objects.equals(this.zoomMeetingJoinUrl, incident.zoomMeetingJoinUrl) &&
+        Objects.equals(this.zoomMeetingPassword, incident.zoomMeetingPassword) &&
+        Objects.equals(this.zoomMeetingPstnPassword, incident.zoomMeetingPstnPassword) &&
+        Objects.equals(this.zoomMeetingH323Password, incident.zoomMeetingH323Password) &&
+        Objects.equals(this.zoomMeetingGlobalDialInNumbers, incident.zoomMeetingGlobalDialInNumbers) &&
+        Objects.equals(this.googleDriveId, incident.googleDriveId) &&
+        Objects.equals(this.googleDriveParentId, incident.googleDriveParentId) &&
+        Objects.equals(this.googleDriveUrl, incident.googleDriveUrl) &&
+        Objects.equals(this.googleMeetingId, incident.googleMeetingId) &&
+        Objects.equals(this.googleMeetingUrl, incident.googleMeetingUrl) &&
+        Objects.equals(this.jiraIssueKey, incident.jiraIssueKey) &&
+        Objects.equals(this.jiraIssueId, incident.jiraIssueId) &&
+        Objects.equals(this.jiraIssueUrl, incident.jiraIssueUrl) &&
+        Objects.equals(this.githubIssueId, incident.githubIssueId) &&
+        Objects.equals(this.githubIssueUrl, incident.githubIssueUrl) &&
+        Objects.equals(this.gitlabIssueId, incident.gitlabIssueId) &&
+        Objects.equals(this.gitlabIssueUrl, incident.gitlabIssueUrl) &&
+        Objects.equals(this.asanaTaskId, incident.asanaTaskId) &&
+        Objects.equals(this.asanaTaskUrl, incident.asanaTaskUrl) &&
+        Objects.equals(this.linearIssueId, incident.linearIssueId) &&
+        Objects.equals(this.linearIssueUrl, incident.linearIssueUrl) &&
+        Objects.equals(this.trelloCardId, incident.trelloCardId) &&
+        Objects.equals(this.trelloCardUrl, incident.trelloCardUrl) &&
+        Objects.equals(this.zendeskTicketId, incident.zendeskTicketId) &&
+        Objects.equals(this.zendeskTicketUrl, incident.zendeskTicketUrl) &&
+        Objects.equals(this.pagerdutyIncidentId, incident.pagerdutyIncidentId) &&
+        Objects.equals(this.pagerdutyIncidentNumber, incident.pagerdutyIncidentNumber) &&
+        Objects.equals(this.pagerdutyIncidentUrl, incident.pagerdutyIncidentUrl) &&
+        Objects.equals(this.opsgenieIncidentId, incident.opsgenieIncidentId) &&
+        Objects.equals(this.opsgenieIncidentUrl, incident.opsgenieIncidentUrl) &&
+        Objects.equals(this.opsgenieAlertId, incident.opsgenieAlertId) &&
+        Objects.equals(this.opsgenieAlertUrl, incident.opsgenieAlertUrl) &&
+        Objects.equals(this.serviceNowIncidentId, incident.serviceNowIncidentId) &&
+        Objects.equals(this.serviceNowIncidentKey, incident.serviceNowIncidentKey) &&
+        Objects.equals(this.serviceNowIncidentUrl, incident.serviceNowIncidentUrl) &&
+        Objects.equals(this.mattermostChannelId, incident.mattermostChannelId) &&
+        Objects.equals(this.mattermostChannelName, incident.mattermostChannelName) &&
+        Objects.equals(this.mattermostChannelUrl, incident.mattermostChannelUrl) &&
+        Objects.equals(this.confluencePageId, incident.confluencePageId) &&
+        Objects.equals(this.confluencePageUrl, incident.confluencePageUrl) &&
+        Objects.equals(this.datadogNotebookId, incident.datadogNotebookId) &&
+        Objects.equals(this.datadogNotebookUrl, incident.datadogNotebookUrl) &&
+        Objects.equals(this.shortcutStoryId, incident.shortcutStoryId) &&
+        Objects.equals(this.shortcutStoryUrl, incident.shortcutStoryUrl) &&
+        Objects.equals(this.shortcutTaskId, incident.shortcutTaskId) &&
+        Objects.equals(this.shortcutTaskUrl, incident.shortcutTaskUrl) &&
+        Objects.equals(this.motionTaskId, incident.motionTaskId) &&
+        Objects.equals(this.motionTaskUrl, incident.motionTaskUrl) &&
+        Objects.equals(this.clickupTaskId, incident.clickupTaskId) &&
+        Objects.equals(this.clickupTaskUrl, incident.clickupTaskUrl) &&
+        Objects.equals(this.victorOpsIncidentId, incident.victorOpsIncidentId) &&
+        Objects.equals(this.victorOpsIncidentUrl, incident.victorOpsIncidentUrl) &&
+        Objects.equals(this.quipPageId, incident.quipPageId) &&
+        Objects.equals(this.quipPageUrl, incident.quipPageUrl) &&
+        Objects.equals(this.sharepointPageId, incident.sharepointPageId) &&
+        Objects.equals(this.sharepointPageUrl, incident.sharepointPageUrl) &&
+        Objects.equals(this.airtableBaseKey, incident.airtableBaseKey) &&
+        Objects.equals(this.airtableTableName, incident.airtableTableName) &&
+        Objects.equals(this.airtableRecordId, incident.airtableRecordId) &&
+        Objects.equals(this.airtableRecordUrl, incident.airtableRecordUrl) &&
+        Objects.equals(this.freshserviceTicketId, incident.freshserviceTicketId) &&
+        Objects.equals(this.freshserviceTicketUrl, incident.freshserviceTicketUrl) &&
+        Objects.equals(this.freshserviceTaskId, incident.freshserviceTaskId) &&
+        Objects.equals(this.freshserviceTaskUrl, incident.freshserviceTaskUrl) &&
         Objects.equals(this.mitigationMessage, incident.mitigationMessage) &&
         Objects.equals(this.resolutionMessage, incident.resolutionMessage) &&
         Objects.equals(this.cancellationMessage, incident.cancellationMessage) &&
         Objects.equals(this.scheduledFor, incident.scheduledFor) &&
         Objects.equals(this.scheduledUntil, incident.scheduledUntil) &&
+        Objects.equals(this.mutedServiceIds, incident.mutedServiceIds) &&
         Objects.equals(this.retrospectiveProgressStatus, incident.retrospectiveProgressStatus) &&
+        Objects.equals(this.inTriageBy, incident.inTriageBy) &&
+        Objects.equals(this.startedBy, incident.startedBy) &&
+        Objects.equals(this.mitigatedBy, incident.mitigatedBy) &&
+        Objects.equals(this.resolvedBy, incident.resolvedBy) &&
+        Objects.equals(this.closedBy, incident.closedBy) &&
+        Objects.equals(this.cancelledBy, incident.cancelledBy) &&
         Objects.equals(this.inTriageAt, incident.inTriageAt) &&
         Objects.equals(this.startedAt, incident.startedAt) &&
         Objects.equals(this.detectedAt, incident.detectedAt) &&
         Objects.equals(this.acknowledgedAt, incident.acknowledgedAt) &&
         Objects.equals(this.mitigatedAt, incident.mitigatedAt) &&
         Objects.equals(this.resolvedAt, incident.resolvedAt) &&
+        Objects.equals(this.closedAt, incident.closedAt) &&
         Objects.equals(this.cancelledAt, incident.cancelledAt) &&
         Objects.equals(this.createdAt, incident.createdAt) &&
         Objects.equals(this.updatedAt, incident.updatedAt);
@@ -976,7 +3142,7 @@ public class Incident {
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, kind, slug, parentIncidentId, duplicateIncidentId, summary, _private, severity, environments, incidentTypes, services, functionalities, groups, labels, slackChannelId, slackChannelName, slackChannelUrl, mitigationMessage, resolutionMessage, cancellationMessage, scheduledFor, scheduledUntil, retrospectiveProgressStatus, inTriageAt, startedAt, detectedAt, acknowledgedAt, mitigatedAt, resolvedAt, cancelledAt, createdAt, updatedAt);
+    return Objects.hash(id, sequentialId, title, kind, slug, parentIncidentId, duplicateIncidentId, summary, _private, source, status, url, shortUrl, publicTitle, user, severity, environments, incidentTypes, services, functionalities, groups, labels, slackChannelId, slackChannelName, slackChannelUrl, slackChannelShortUrl, slackChannelDeepLink, slackChannelArchived, slackLastMessageTs, zoomMeetingId, zoomMeetingStartUrl, zoomMeetingJoinUrl, zoomMeetingPassword, zoomMeetingPstnPassword, zoomMeetingH323Password, zoomMeetingGlobalDialInNumbers, googleDriveId, googleDriveParentId, googleDriveUrl, googleMeetingId, googleMeetingUrl, jiraIssueKey, jiraIssueId, jiraIssueUrl, githubIssueId, githubIssueUrl, gitlabIssueId, gitlabIssueUrl, asanaTaskId, asanaTaskUrl, linearIssueId, linearIssueUrl, trelloCardId, trelloCardUrl, zendeskTicketId, zendeskTicketUrl, pagerdutyIncidentId, pagerdutyIncidentNumber, pagerdutyIncidentUrl, opsgenieIncidentId, opsgenieIncidentUrl, opsgenieAlertId, opsgenieAlertUrl, serviceNowIncidentId, serviceNowIncidentKey, serviceNowIncidentUrl, mattermostChannelId, mattermostChannelName, mattermostChannelUrl, confluencePageId, confluencePageUrl, datadogNotebookId, datadogNotebookUrl, shortcutStoryId, shortcutStoryUrl, shortcutTaskId, shortcutTaskUrl, motionTaskId, motionTaskUrl, clickupTaskId, clickupTaskUrl, victorOpsIncidentId, victorOpsIncidentUrl, quipPageId, quipPageUrl, sharepointPageId, sharepointPageUrl, airtableBaseKey, airtableTableName, airtableRecordId, airtableRecordUrl, freshserviceTicketId, freshserviceTicketUrl, freshserviceTaskId, freshserviceTaskUrl, mitigationMessage, resolutionMessage, cancellationMessage, scheduledFor, scheduledUntil, mutedServiceIds, retrospectiveProgressStatus, inTriageBy, startedBy, mitigatedBy, resolvedBy, closedBy, cancelledBy, inTriageAt, startedAt, detectedAt, acknowledgedAt, mitigatedAt, resolvedAt, closedAt, cancelledAt, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -990,6 +3156,8 @@ public class Incident {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Incident {\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    sequentialId: ").append(toIndentedString(sequentialId)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
     sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
@@ -997,6 +3165,12 @@ public class Incident {
     sb.append("    duplicateIncidentId: ").append(toIndentedString(duplicateIncidentId)).append("\n");
     sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
     sb.append("    _private: ").append(toIndentedString(_private)).append("\n");
+    sb.append("    source: ").append(toIndentedString(source)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    url: ").append(toIndentedString(url)).append("\n");
+    sb.append("    shortUrl: ").append(toIndentedString(shortUrl)).append("\n");
+    sb.append("    publicTitle: ").append(toIndentedString(publicTitle)).append("\n");
+    sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
     sb.append("    environments: ").append(toIndentedString(environments)).append("\n");
     sb.append("    incidentTypes: ").append(toIndentedString(incidentTypes)).append("\n");
@@ -1007,18 +3181,96 @@ public class Incident {
     sb.append("    slackChannelId: ").append(toIndentedString(slackChannelId)).append("\n");
     sb.append("    slackChannelName: ").append(toIndentedString(slackChannelName)).append("\n");
     sb.append("    slackChannelUrl: ").append(toIndentedString(slackChannelUrl)).append("\n");
+    sb.append("    slackChannelShortUrl: ").append(toIndentedString(slackChannelShortUrl)).append("\n");
+    sb.append("    slackChannelDeepLink: ").append(toIndentedString(slackChannelDeepLink)).append("\n");
+    sb.append("    slackChannelArchived: ").append(toIndentedString(slackChannelArchived)).append("\n");
+    sb.append("    slackLastMessageTs: ").append(toIndentedString(slackLastMessageTs)).append("\n");
+    sb.append("    zoomMeetingId: ").append(toIndentedString(zoomMeetingId)).append("\n");
+    sb.append("    zoomMeetingStartUrl: ").append(toIndentedString(zoomMeetingStartUrl)).append("\n");
+    sb.append("    zoomMeetingJoinUrl: ").append(toIndentedString(zoomMeetingJoinUrl)).append("\n");
+    sb.append("    zoomMeetingPassword: ").append(toIndentedString(zoomMeetingPassword)).append("\n");
+    sb.append("    zoomMeetingPstnPassword: ").append(toIndentedString(zoomMeetingPstnPassword)).append("\n");
+    sb.append("    zoomMeetingH323Password: ").append(toIndentedString(zoomMeetingH323Password)).append("\n");
+    sb.append("    zoomMeetingGlobalDialInNumbers: ").append(toIndentedString(zoomMeetingGlobalDialInNumbers)).append("\n");
+    sb.append("    googleDriveId: ").append(toIndentedString(googleDriveId)).append("\n");
+    sb.append("    googleDriveParentId: ").append(toIndentedString(googleDriveParentId)).append("\n");
+    sb.append("    googleDriveUrl: ").append(toIndentedString(googleDriveUrl)).append("\n");
+    sb.append("    googleMeetingId: ").append(toIndentedString(googleMeetingId)).append("\n");
+    sb.append("    googleMeetingUrl: ").append(toIndentedString(googleMeetingUrl)).append("\n");
+    sb.append("    jiraIssueKey: ").append(toIndentedString(jiraIssueKey)).append("\n");
+    sb.append("    jiraIssueId: ").append(toIndentedString(jiraIssueId)).append("\n");
+    sb.append("    jiraIssueUrl: ").append(toIndentedString(jiraIssueUrl)).append("\n");
+    sb.append("    githubIssueId: ").append(toIndentedString(githubIssueId)).append("\n");
+    sb.append("    githubIssueUrl: ").append(toIndentedString(githubIssueUrl)).append("\n");
+    sb.append("    gitlabIssueId: ").append(toIndentedString(gitlabIssueId)).append("\n");
+    sb.append("    gitlabIssueUrl: ").append(toIndentedString(gitlabIssueUrl)).append("\n");
+    sb.append("    asanaTaskId: ").append(toIndentedString(asanaTaskId)).append("\n");
+    sb.append("    asanaTaskUrl: ").append(toIndentedString(asanaTaskUrl)).append("\n");
+    sb.append("    linearIssueId: ").append(toIndentedString(linearIssueId)).append("\n");
+    sb.append("    linearIssueUrl: ").append(toIndentedString(linearIssueUrl)).append("\n");
+    sb.append("    trelloCardId: ").append(toIndentedString(trelloCardId)).append("\n");
+    sb.append("    trelloCardUrl: ").append(toIndentedString(trelloCardUrl)).append("\n");
+    sb.append("    zendeskTicketId: ").append(toIndentedString(zendeskTicketId)).append("\n");
+    sb.append("    zendeskTicketUrl: ").append(toIndentedString(zendeskTicketUrl)).append("\n");
+    sb.append("    pagerdutyIncidentId: ").append(toIndentedString(pagerdutyIncidentId)).append("\n");
+    sb.append("    pagerdutyIncidentNumber: ").append(toIndentedString(pagerdutyIncidentNumber)).append("\n");
+    sb.append("    pagerdutyIncidentUrl: ").append(toIndentedString(pagerdutyIncidentUrl)).append("\n");
+    sb.append("    opsgenieIncidentId: ").append(toIndentedString(opsgenieIncidentId)).append("\n");
+    sb.append("    opsgenieIncidentUrl: ").append(toIndentedString(opsgenieIncidentUrl)).append("\n");
+    sb.append("    opsgenieAlertId: ").append(toIndentedString(opsgenieAlertId)).append("\n");
+    sb.append("    opsgenieAlertUrl: ").append(toIndentedString(opsgenieAlertUrl)).append("\n");
+    sb.append("    serviceNowIncidentId: ").append(toIndentedString(serviceNowIncidentId)).append("\n");
+    sb.append("    serviceNowIncidentKey: ").append(toIndentedString(serviceNowIncidentKey)).append("\n");
+    sb.append("    serviceNowIncidentUrl: ").append(toIndentedString(serviceNowIncidentUrl)).append("\n");
+    sb.append("    mattermostChannelId: ").append(toIndentedString(mattermostChannelId)).append("\n");
+    sb.append("    mattermostChannelName: ").append(toIndentedString(mattermostChannelName)).append("\n");
+    sb.append("    mattermostChannelUrl: ").append(toIndentedString(mattermostChannelUrl)).append("\n");
+    sb.append("    confluencePageId: ").append(toIndentedString(confluencePageId)).append("\n");
+    sb.append("    confluencePageUrl: ").append(toIndentedString(confluencePageUrl)).append("\n");
+    sb.append("    datadogNotebookId: ").append(toIndentedString(datadogNotebookId)).append("\n");
+    sb.append("    datadogNotebookUrl: ").append(toIndentedString(datadogNotebookUrl)).append("\n");
+    sb.append("    shortcutStoryId: ").append(toIndentedString(shortcutStoryId)).append("\n");
+    sb.append("    shortcutStoryUrl: ").append(toIndentedString(shortcutStoryUrl)).append("\n");
+    sb.append("    shortcutTaskId: ").append(toIndentedString(shortcutTaskId)).append("\n");
+    sb.append("    shortcutTaskUrl: ").append(toIndentedString(shortcutTaskUrl)).append("\n");
+    sb.append("    motionTaskId: ").append(toIndentedString(motionTaskId)).append("\n");
+    sb.append("    motionTaskUrl: ").append(toIndentedString(motionTaskUrl)).append("\n");
+    sb.append("    clickupTaskId: ").append(toIndentedString(clickupTaskId)).append("\n");
+    sb.append("    clickupTaskUrl: ").append(toIndentedString(clickupTaskUrl)).append("\n");
+    sb.append("    victorOpsIncidentId: ").append(toIndentedString(victorOpsIncidentId)).append("\n");
+    sb.append("    victorOpsIncidentUrl: ").append(toIndentedString(victorOpsIncidentUrl)).append("\n");
+    sb.append("    quipPageId: ").append(toIndentedString(quipPageId)).append("\n");
+    sb.append("    quipPageUrl: ").append(toIndentedString(quipPageUrl)).append("\n");
+    sb.append("    sharepointPageId: ").append(toIndentedString(sharepointPageId)).append("\n");
+    sb.append("    sharepointPageUrl: ").append(toIndentedString(sharepointPageUrl)).append("\n");
+    sb.append("    airtableBaseKey: ").append(toIndentedString(airtableBaseKey)).append("\n");
+    sb.append("    airtableTableName: ").append(toIndentedString(airtableTableName)).append("\n");
+    sb.append("    airtableRecordId: ").append(toIndentedString(airtableRecordId)).append("\n");
+    sb.append("    airtableRecordUrl: ").append(toIndentedString(airtableRecordUrl)).append("\n");
+    sb.append("    freshserviceTicketId: ").append(toIndentedString(freshserviceTicketId)).append("\n");
+    sb.append("    freshserviceTicketUrl: ").append(toIndentedString(freshserviceTicketUrl)).append("\n");
+    sb.append("    freshserviceTaskId: ").append(toIndentedString(freshserviceTaskId)).append("\n");
+    sb.append("    freshserviceTaskUrl: ").append(toIndentedString(freshserviceTaskUrl)).append("\n");
     sb.append("    mitigationMessage: ").append(toIndentedString(mitigationMessage)).append("\n");
     sb.append("    resolutionMessage: ").append(toIndentedString(resolutionMessage)).append("\n");
     sb.append("    cancellationMessage: ").append(toIndentedString(cancellationMessage)).append("\n");
     sb.append("    scheduledFor: ").append(toIndentedString(scheduledFor)).append("\n");
     sb.append("    scheduledUntil: ").append(toIndentedString(scheduledUntil)).append("\n");
+    sb.append("    mutedServiceIds: ").append(toIndentedString(mutedServiceIds)).append("\n");
     sb.append("    retrospectiveProgressStatus: ").append(toIndentedString(retrospectiveProgressStatus)).append("\n");
+    sb.append("    inTriageBy: ").append(toIndentedString(inTriageBy)).append("\n");
+    sb.append("    startedBy: ").append(toIndentedString(startedBy)).append("\n");
+    sb.append("    mitigatedBy: ").append(toIndentedString(mitigatedBy)).append("\n");
+    sb.append("    resolvedBy: ").append(toIndentedString(resolvedBy)).append("\n");
+    sb.append("    closedBy: ").append(toIndentedString(closedBy)).append("\n");
+    sb.append("    cancelledBy: ").append(toIndentedString(cancelledBy)).append("\n");
     sb.append("    inTriageAt: ").append(toIndentedString(inTriageAt)).append("\n");
     sb.append("    startedAt: ").append(toIndentedString(startedAt)).append("\n");
     sb.append("    detectedAt: ").append(toIndentedString(detectedAt)).append("\n");
     sb.append("    acknowledgedAt: ").append(toIndentedString(acknowledgedAt)).append("\n");
     sb.append("    mitigatedAt: ").append(toIndentedString(mitigatedAt)).append("\n");
     sb.append("    resolvedAt: ").append(toIndentedString(resolvedAt)).append("\n");
+    sb.append("    closedAt: ").append(toIndentedString(closedAt)).append("\n");
     sb.append("    cancelledAt: ").append(toIndentedString(cancelledAt)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
@@ -1044,6 +3296,8 @@ public class Incident {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("id");
+    openapiFields.add("sequential_id");
     openapiFields.add("title");
     openapiFields.add("kind");
     openapiFields.add("slug");
@@ -1051,6 +3305,12 @@ public class Incident {
     openapiFields.add("duplicate_incident_id");
     openapiFields.add("summary");
     openapiFields.add("private");
+    openapiFields.add("source");
+    openapiFields.add("status");
+    openapiFields.add("url");
+    openapiFields.add("short_url");
+    openapiFields.add("public_title");
+    openapiFields.add("user");
     openapiFields.add("severity");
     openapiFields.add("environments");
     openapiFields.add("incident_types");
@@ -1061,18 +3321,96 @@ public class Incident {
     openapiFields.add("slack_channel_id");
     openapiFields.add("slack_channel_name");
     openapiFields.add("slack_channel_url");
+    openapiFields.add("slack_channel_short_url");
+    openapiFields.add("slack_channel_deep_link");
+    openapiFields.add("slack_channel_archived");
+    openapiFields.add("slack_last_message_ts");
+    openapiFields.add("zoom_meeting_id");
+    openapiFields.add("zoom_meeting_start_url");
+    openapiFields.add("zoom_meeting_join_url");
+    openapiFields.add("zoom_meeting_password");
+    openapiFields.add("zoom_meeting_pstn_password");
+    openapiFields.add("zoom_meeting_h323_password");
+    openapiFields.add("zoom_meeting_global_dial_in_numbers");
+    openapiFields.add("google_drive_id");
+    openapiFields.add("google_drive_parent_id");
+    openapiFields.add("google_drive_url");
+    openapiFields.add("google_meeting_id");
+    openapiFields.add("google_meeting_url");
+    openapiFields.add("jira_issue_key");
+    openapiFields.add("jira_issue_id");
+    openapiFields.add("jira_issue_url");
+    openapiFields.add("github_issue_id");
+    openapiFields.add("github_issue_url");
+    openapiFields.add("gitlab_issue_id");
+    openapiFields.add("gitlab_issue_url");
+    openapiFields.add("asana_task_id");
+    openapiFields.add("asana_task_url");
+    openapiFields.add("linear_issue_id");
+    openapiFields.add("linear_issue_url");
+    openapiFields.add("trello_card_id");
+    openapiFields.add("trello_card_url");
+    openapiFields.add("zendesk_ticket_id");
+    openapiFields.add("zendesk_ticket_url");
+    openapiFields.add("pagerduty_incident_id");
+    openapiFields.add("pagerduty_incident_number");
+    openapiFields.add("pagerduty_incident_url");
+    openapiFields.add("opsgenie_incident_id");
+    openapiFields.add("opsgenie_incident_url");
+    openapiFields.add("opsgenie_alert_id");
+    openapiFields.add("opsgenie_alert_url");
+    openapiFields.add("service_now_incident_id");
+    openapiFields.add("service_now_incident_key");
+    openapiFields.add("service_now_incident_url");
+    openapiFields.add("mattermost_channel_id");
+    openapiFields.add("mattermost_channel_name");
+    openapiFields.add("mattermost_channel_url");
+    openapiFields.add("confluence_page_id");
+    openapiFields.add("confluence_page_url");
+    openapiFields.add("datadog_notebook_id");
+    openapiFields.add("datadog_notebook_url");
+    openapiFields.add("shortcut_story_id");
+    openapiFields.add("shortcut_story_url");
+    openapiFields.add("shortcut_task_id");
+    openapiFields.add("shortcut_task_url");
+    openapiFields.add("motion_task_id");
+    openapiFields.add("motion_task_url");
+    openapiFields.add("clickup_task_id");
+    openapiFields.add("clickup_task_url");
+    openapiFields.add("victor_ops_incident_id");
+    openapiFields.add("victor_ops_incident_url");
+    openapiFields.add("quip_page_id");
+    openapiFields.add("quip_page_url");
+    openapiFields.add("sharepoint_page_id");
+    openapiFields.add("sharepoint_page_url");
+    openapiFields.add("airtable_base_key");
+    openapiFields.add("airtable_table_name");
+    openapiFields.add("airtable_record_id");
+    openapiFields.add("airtable_record_url");
+    openapiFields.add("freshservice_ticket_id");
+    openapiFields.add("freshservice_ticket_url");
+    openapiFields.add("freshservice_task_id");
+    openapiFields.add("freshservice_task_url");
     openapiFields.add("mitigation_message");
     openapiFields.add("resolution_message");
     openapiFields.add("cancellation_message");
     openapiFields.add("scheduled_for");
     openapiFields.add("scheduled_until");
+    openapiFields.add("muted_service_ids");
     openapiFields.add("retrospective_progress_status");
+    openapiFields.add("in_triage_by");
+    openapiFields.add("started_by");
+    openapiFields.add("mitigated_by");
+    openapiFields.add("resolved_by");
+    openapiFields.add("closed_by");
+    openapiFields.add("cancelled_by");
     openapiFields.add("in_triage_at");
     openapiFields.add("started_at");
     openapiFields.add("detected_at");
     openapiFields.add("acknowledged_at");
     openapiFields.add("mitigated_at");
     openapiFields.add("resolved_at");
+    openapiFields.add("closed_at");
     openapiFields.add("cancelled_at");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
@@ -1113,6 +3451,9 @@ public class Incident {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+      }
       if (!jsonObj.get("title").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
       }
@@ -1130,6 +3471,21 @@ public class Incident {
       }
       if ((jsonObj.get("summary") != null && !jsonObj.get("summary").isJsonNull()) && !jsonObj.get("summary").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `summary` to be a primitive type in the JSON string but got `%s`", jsonObj.get("summary").toString()));
+      }
+      if ((jsonObj.get("source") != null && !jsonObj.get("source").isJsonNull()) && !jsonObj.get("source").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `source` to be a primitive type in the JSON string but got `%s`", jsonObj.get("source").toString()));
+      }
+      if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+      }
+      if ((jsonObj.get("url") != null && !jsonObj.get("url").isJsonNull()) && !jsonObj.get("url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
+      }
+      if ((jsonObj.get("short_url") != null && !jsonObj.get("short_url").isJsonNull()) && !jsonObj.get("short_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `short_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("short_url").toString()));
+      }
+      if ((jsonObj.get("public_title") != null && !jsonObj.get("public_title").isJsonNull()) && !jsonObj.get("public_title").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `public_title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("public_title").toString()));
       }
       // validate the optional field `severity`
       if (jsonObj.get("severity") != null && !jsonObj.get("severity").isJsonNull()) {
@@ -1214,6 +3570,214 @@ public class Incident {
       if ((jsonObj.get("slack_channel_url") != null && !jsonObj.get("slack_channel_url").isJsonNull()) && !jsonObj.get("slack_channel_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `slack_channel_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slack_channel_url").toString()));
       }
+      if ((jsonObj.get("slack_channel_short_url") != null && !jsonObj.get("slack_channel_short_url").isJsonNull()) && !jsonObj.get("slack_channel_short_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `slack_channel_short_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slack_channel_short_url").toString()));
+      }
+      if ((jsonObj.get("slack_channel_deep_link") != null && !jsonObj.get("slack_channel_deep_link").isJsonNull()) && !jsonObj.get("slack_channel_deep_link").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `slack_channel_deep_link` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slack_channel_deep_link").toString()));
+      }
+      if ((jsonObj.get("slack_last_message_ts") != null && !jsonObj.get("slack_last_message_ts").isJsonNull()) && !jsonObj.get("slack_last_message_ts").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `slack_last_message_ts` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slack_last_message_ts").toString()));
+      }
+      if ((jsonObj.get("zoom_meeting_id") != null && !jsonObj.get("zoom_meeting_id").isJsonNull()) && !jsonObj.get("zoom_meeting_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `zoom_meeting_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("zoom_meeting_id").toString()));
+      }
+      if ((jsonObj.get("zoom_meeting_start_url") != null && !jsonObj.get("zoom_meeting_start_url").isJsonNull()) && !jsonObj.get("zoom_meeting_start_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `zoom_meeting_start_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("zoom_meeting_start_url").toString()));
+      }
+      if ((jsonObj.get("zoom_meeting_join_url") != null && !jsonObj.get("zoom_meeting_join_url").isJsonNull()) && !jsonObj.get("zoom_meeting_join_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `zoom_meeting_join_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("zoom_meeting_join_url").toString()));
+      }
+      if ((jsonObj.get("zoom_meeting_password") != null && !jsonObj.get("zoom_meeting_password").isJsonNull()) && !jsonObj.get("zoom_meeting_password").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `zoom_meeting_password` to be a primitive type in the JSON string but got `%s`", jsonObj.get("zoom_meeting_password").toString()));
+      }
+      if ((jsonObj.get("zoom_meeting_pstn_password") != null && !jsonObj.get("zoom_meeting_pstn_password").isJsonNull()) && !jsonObj.get("zoom_meeting_pstn_password").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `zoom_meeting_pstn_password` to be a primitive type in the JSON string but got `%s`", jsonObj.get("zoom_meeting_pstn_password").toString()));
+      }
+      if ((jsonObj.get("zoom_meeting_h323_password") != null && !jsonObj.get("zoom_meeting_h323_password").isJsonNull()) && !jsonObj.get("zoom_meeting_h323_password").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `zoom_meeting_h323_password` to be a primitive type in the JSON string but got `%s`", jsonObj.get("zoom_meeting_h323_password").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("zoom_meeting_global_dial_in_numbers") != null && !jsonObj.get("zoom_meeting_global_dial_in_numbers").isJsonNull() && !jsonObj.get("zoom_meeting_global_dial_in_numbers").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `zoom_meeting_global_dial_in_numbers` to be an array in the JSON string but got `%s`", jsonObj.get("zoom_meeting_global_dial_in_numbers").toString()));
+      }
+      if ((jsonObj.get("google_drive_id") != null && !jsonObj.get("google_drive_id").isJsonNull()) && !jsonObj.get("google_drive_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `google_drive_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("google_drive_id").toString()));
+      }
+      if ((jsonObj.get("google_drive_parent_id") != null && !jsonObj.get("google_drive_parent_id").isJsonNull()) && !jsonObj.get("google_drive_parent_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `google_drive_parent_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("google_drive_parent_id").toString()));
+      }
+      if ((jsonObj.get("google_drive_url") != null && !jsonObj.get("google_drive_url").isJsonNull()) && !jsonObj.get("google_drive_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `google_drive_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("google_drive_url").toString()));
+      }
+      if ((jsonObj.get("google_meeting_id") != null && !jsonObj.get("google_meeting_id").isJsonNull()) && !jsonObj.get("google_meeting_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `google_meeting_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("google_meeting_id").toString()));
+      }
+      if ((jsonObj.get("google_meeting_url") != null && !jsonObj.get("google_meeting_url").isJsonNull()) && !jsonObj.get("google_meeting_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `google_meeting_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("google_meeting_url").toString()));
+      }
+      if ((jsonObj.get("jira_issue_key") != null && !jsonObj.get("jira_issue_key").isJsonNull()) && !jsonObj.get("jira_issue_key").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `jira_issue_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("jira_issue_key").toString()));
+      }
+      if ((jsonObj.get("jira_issue_id") != null && !jsonObj.get("jira_issue_id").isJsonNull()) && !jsonObj.get("jira_issue_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `jira_issue_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("jira_issue_id").toString()));
+      }
+      if ((jsonObj.get("jira_issue_url") != null && !jsonObj.get("jira_issue_url").isJsonNull()) && !jsonObj.get("jira_issue_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `jira_issue_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("jira_issue_url").toString()));
+      }
+      if ((jsonObj.get("github_issue_id") != null && !jsonObj.get("github_issue_id").isJsonNull()) && !jsonObj.get("github_issue_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `github_issue_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("github_issue_id").toString()));
+      }
+      if ((jsonObj.get("github_issue_url") != null && !jsonObj.get("github_issue_url").isJsonNull()) && !jsonObj.get("github_issue_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `github_issue_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("github_issue_url").toString()));
+      }
+      if ((jsonObj.get("gitlab_issue_id") != null && !jsonObj.get("gitlab_issue_id").isJsonNull()) && !jsonObj.get("gitlab_issue_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `gitlab_issue_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gitlab_issue_id").toString()));
+      }
+      if ((jsonObj.get("gitlab_issue_url") != null && !jsonObj.get("gitlab_issue_url").isJsonNull()) && !jsonObj.get("gitlab_issue_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `gitlab_issue_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gitlab_issue_url").toString()));
+      }
+      if ((jsonObj.get("asana_task_id") != null && !jsonObj.get("asana_task_id").isJsonNull()) && !jsonObj.get("asana_task_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `asana_task_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("asana_task_id").toString()));
+      }
+      if ((jsonObj.get("asana_task_url") != null && !jsonObj.get("asana_task_url").isJsonNull()) && !jsonObj.get("asana_task_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `asana_task_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("asana_task_url").toString()));
+      }
+      if ((jsonObj.get("linear_issue_id") != null && !jsonObj.get("linear_issue_id").isJsonNull()) && !jsonObj.get("linear_issue_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `linear_issue_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("linear_issue_id").toString()));
+      }
+      if ((jsonObj.get("linear_issue_url") != null && !jsonObj.get("linear_issue_url").isJsonNull()) && !jsonObj.get("linear_issue_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `linear_issue_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("linear_issue_url").toString()));
+      }
+      if ((jsonObj.get("trello_card_id") != null && !jsonObj.get("trello_card_id").isJsonNull()) && !jsonObj.get("trello_card_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `trello_card_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("trello_card_id").toString()));
+      }
+      if ((jsonObj.get("trello_card_url") != null && !jsonObj.get("trello_card_url").isJsonNull()) && !jsonObj.get("trello_card_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `trello_card_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("trello_card_url").toString()));
+      }
+      if ((jsonObj.get("zendesk_ticket_id") != null && !jsonObj.get("zendesk_ticket_id").isJsonNull()) && !jsonObj.get("zendesk_ticket_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `zendesk_ticket_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("zendesk_ticket_id").toString()));
+      }
+      if ((jsonObj.get("zendesk_ticket_url") != null && !jsonObj.get("zendesk_ticket_url").isJsonNull()) && !jsonObj.get("zendesk_ticket_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `zendesk_ticket_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("zendesk_ticket_url").toString()));
+      }
+      if ((jsonObj.get("pagerduty_incident_id") != null && !jsonObj.get("pagerduty_incident_id").isJsonNull()) && !jsonObj.get("pagerduty_incident_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `pagerduty_incident_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pagerduty_incident_id").toString()));
+      }
+      if ((jsonObj.get("pagerduty_incident_number") != null && !jsonObj.get("pagerduty_incident_number").isJsonNull()) && !jsonObj.get("pagerduty_incident_number").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `pagerduty_incident_number` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pagerduty_incident_number").toString()));
+      }
+      if ((jsonObj.get("pagerduty_incident_url") != null && !jsonObj.get("pagerduty_incident_url").isJsonNull()) && !jsonObj.get("pagerduty_incident_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `pagerduty_incident_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pagerduty_incident_url").toString()));
+      }
+      if ((jsonObj.get("opsgenie_incident_id") != null && !jsonObj.get("opsgenie_incident_id").isJsonNull()) && !jsonObj.get("opsgenie_incident_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `opsgenie_incident_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("opsgenie_incident_id").toString()));
+      }
+      if ((jsonObj.get("opsgenie_incident_url") != null && !jsonObj.get("opsgenie_incident_url").isJsonNull()) && !jsonObj.get("opsgenie_incident_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `opsgenie_incident_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("opsgenie_incident_url").toString()));
+      }
+      if ((jsonObj.get("opsgenie_alert_id") != null && !jsonObj.get("opsgenie_alert_id").isJsonNull()) && !jsonObj.get("opsgenie_alert_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `opsgenie_alert_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("opsgenie_alert_id").toString()));
+      }
+      if ((jsonObj.get("opsgenie_alert_url") != null && !jsonObj.get("opsgenie_alert_url").isJsonNull()) && !jsonObj.get("opsgenie_alert_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `opsgenie_alert_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("opsgenie_alert_url").toString()));
+      }
+      if ((jsonObj.get("service_now_incident_id") != null && !jsonObj.get("service_now_incident_id").isJsonNull()) && !jsonObj.get("service_now_incident_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `service_now_incident_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("service_now_incident_id").toString()));
+      }
+      if ((jsonObj.get("service_now_incident_key") != null && !jsonObj.get("service_now_incident_key").isJsonNull()) && !jsonObj.get("service_now_incident_key").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `service_now_incident_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("service_now_incident_key").toString()));
+      }
+      if ((jsonObj.get("service_now_incident_url") != null && !jsonObj.get("service_now_incident_url").isJsonNull()) && !jsonObj.get("service_now_incident_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `service_now_incident_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("service_now_incident_url").toString()));
+      }
+      if ((jsonObj.get("mattermost_channel_id") != null && !jsonObj.get("mattermost_channel_id").isJsonNull()) && !jsonObj.get("mattermost_channel_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `mattermost_channel_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mattermost_channel_id").toString()));
+      }
+      if ((jsonObj.get("mattermost_channel_name") != null && !jsonObj.get("mattermost_channel_name").isJsonNull()) && !jsonObj.get("mattermost_channel_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `mattermost_channel_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mattermost_channel_name").toString()));
+      }
+      if ((jsonObj.get("mattermost_channel_url") != null && !jsonObj.get("mattermost_channel_url").isJsonNull()) && !jsonObj.get("mattermost_channel_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `mattermost_channel_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mattermost_channel_url").toString()));
+      }
+      if ((jsonObj.get("confluence_page_id") != null && !jsonObj.get("confluence_page_id").isJsonNull()) && !jsonObj.get("confluence_page_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `confluence_page_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("confluence_page_id").toString()));
+      }
+      if ((jsonObj.get("confluence_page_url") != null && !jsonObj.get("confluence_page_url").isJsonNull()) && !jsonObj.get("confluence_page_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `confluence_page_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("confluence_page_url").toString()));
+      }
+      if ((jsonObj.get("datadog_notebook_id") != null && !jsonObj.get("datadog_notebook_id").isJsonNull()) && !jsonObj.get("datadog_notebook_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `datadog_notebook_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("datadog_notebook_id").toString()));
+      }
+      if ((jsonObj.get("datadog_notebook_url") != null && !jsonObj.get("datadog_notebook_url").isJsonNull()) && !jsonObj.get("datadog_notebook_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `datadog_notebook_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("datadog_notebook_url").toString()));
+      }
+      if ((jsonObj.get("shortcut_story_id") != null && !jsonObj.get("shortcut_story_id").isJsonNull()) && !jsonObj.get("shortcut_story_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `shortcut_story_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("shortcut_story_id").toString()));
+      }
+      if ((jsonObj.get("shortcut_story_url") != null && !jsonObj.get("shortcut_story_url").isJsonNull()) && !jsonObj.get("shortcut_story_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `shortcut_story_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("shortcut_story_url").toString()));
+      }
+      if ((jsonObj.get("shortcut_task_id") != null && !jsonObj.get("shortcut_task_id").isJsonNull()) && !jsonObj.get("shortcut_task_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `shortcut_task_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("shortcut_task_id").toString()));
+      }
+      if ((jsonObj.get("shortcut_task_url") != null && !jsonObj.get("shortcut_task_url").isJsonNull()) && !jsonObj.get("shortcut_task_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `shortcut_task_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("shortcut_task_url").toString()));
+      }
+      if ((jsonObj.get("motion_task_id") != null && !jsonObj.get("motion_task_id").isJsonNull()) && !jsonObj.get("motion_task_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `motion_task_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("motion_task_id").toString()));
+      }
+      if ((jsonObj.get("motion_task_url") != null && !jsonObj.get("motion_task_url").isJsonNull()) && !jsonObj.get("motion_task_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `motion_task_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("motion_task_url").toString()));
+      }
+      if ((jsonObj.get("clickup_task_id") != null && !jsonObj.get("clickup_task_id").isJsonNull()) && !jsonObj.get("clickup_task_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `clickup_task_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("clickup_task_id").toString()));
+      }
+      if ((jsonObj.get("clickup_task_url") != null && !jsonObj.get("clickup_task_url").isJsonNull()) && !jsonObj.get("clickup_task_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `clickup_task_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("clickup_task_url").toString()));
+      }
+      if ((jsonObj.get("victor_ops_incident_id") != null && !jsonObj.get("victor_ops_incident_id").isJsonNull()) && !jsonObj.get("victor_ops_incident_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `victor_ops_incident_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("victor_ops_incident_id").toString()));
+      }
+      if ((jsonObj.get("victor_ops_incident_url") != null && !jsonObj.get("victor_ops_incident_url").isJsonNull()) && !jsonObj.get("victor_ops_incident_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `victor_ops_incident_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("victor_ops_incident_url").toString()));
+      }
+      if ((jsonObj.get("quip_page_id") != null && !jsonObj.get("quip_page_id").isJsonNull()) && !jsonObj.get("quip_page_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `quip_page_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("quip_page_id").toString()));
+      }
+      if ((jsonObj.get("quip_page_url") != null && !jsonObj.get("quip_page_url").isJsonNull()) && !jsonObj.get("quip_page_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `quip_page_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("quip_page_url").toString()));
+      }
+      if ((jsonObj.get("sharepoint_page_id") != null && !jsonObj.get("sharepoint_page_id").isJsonNull()) && !jsonObj.get("sharepoint_page_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `sharepoint_page_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sharepoint_page_id").toString()));
+      }
+      if ((jsonObj.get("sharepoint_page_url") != null && !jsonObj.get("sharepoint_page_url").isJsonNull()) && !jsonObj.get("sharepoint_page_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `sharepoint_page_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sharepoint_page_url").toString()));
+      }
+      if ((jsonObj.get("airtable_base_key") != null && !jsonObj.get("airtable_base_key").isJsonNull()) && !jsonObj.get("airtable_base_key").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `airtable_base_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("airtable_base_key").toString()));
+      }
+      if ((jsonObj.get("airtable_table_name") != null && !jsonObj.get("airtable_table_name").isJsonNull()) && !jsonObj.get("airtable_table_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `airtable_table_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("airtable_table_name").toString()));
+      }
+      if ((jsonObj.get("airtable_record_id") != null && !jsonObj.get("airtable_record_id").isJsonNull()) && !jsonObj.get("airtable_record_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `airtable_record_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("airtable_record_id").toString()));
+      }
+      if ((jsonObj.get("airtable_record_url") != null && !jsonObj.get("airtable_record_url").isJsonNull()) && !jsonObj.get("airtable_record_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `airtable_record_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("airtable_record_url").toString()));
+      }
+      if ((jsonObj.get("freshservice_ticket_id") != null && !jsonObj.get("freshservice_ticket_id").isJsonNull()) && !jsonObj.get("freshservice_ticket_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `freshservice_ticket_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("freshservice_ticket_id").toString()));
+      }
+      if ((jsonObj.get("freshservice_ticket_url") != null && !jsonObj.get("freshservice_ticket_url").isJsonNull()) && !jsonObj.get("freshservice_ticket_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `freshservice_ticket_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("freshservice_ticket_url").toString()));
+      }
+      if ((jsonObj.get("freshservice_task_id") != null && !jsonObj.get("freshservice_task_id").isJsonNull()) && !jsonObj.get("freshservice_task_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `freshservice_task_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("freshservice_task_id").toString()));
+      }
+      if ((jsonObj.get("freshservice_task_url") != null && !jsonObj.get("freshservice_task_url").isJsonNull()) && !jsonObj.get("freshservice_task_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `freshservice_task_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("freshservice_task_url").toString()));
+      }
       if ((jsonObj.get("mitigation_message") != null && !jsonObj.get("mitigation_message").isJsonNull()) && !jsonObj.get("mitigation_message").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `mitigation_message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mitigation_message").toString()));
       }
@@ -1228,6 +3792,10 @@ public class Incident {
       }
       if ((jsonObj.get("scheduled_until") != null && !jsonObj.get("scheduled_until").isJsonNull()) && !jsonObj.get("scheduled_until").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `scheduled_until` to be a primitive type in the JSON string but got `%s`", jsonObj.get("scheduled_until").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("muted_service_ids") != null && !jsonObj.get("muted_service_ids").isJsonNull() && !jsonObj.get("muted_service_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `muted_service_ids` to be an array in the JSON string but got `%s`", jsonObj.get("muted_service_ids").toString()));
       }
       if ((jsonObj.get("retrospective_progress_status") != null && !jsonObj.get("retrospective_progress_status").isJsonNull()) && !jsonObj.get("retrospective_progress_status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `retrospective_progress_status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("retrospective_progress_status").toString()));
@@ -1253,6 +3821,9 @@ public class Incident {
       }
       if ((jsonObj.get("resolved_at") != null && !jsonObj.get("resolved_at").isJsonNull()) && !jsonObj.get("resolved_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `resolved_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resolved_at").toString()));
+      }
+      if ((jsonObj.get("closed_at") != null && !jsonObj.get("closed_at").isJsonNull()) && !jsonObj.get("closed_at").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `closed_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("closed_at").toString()));
       }
       if ((jsonObj.get("cancelled_at") != null && !jsonObj.get("cancelled_at").isJsonNull()) && !jsonObj.get("cancelled_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `cancelled_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cancelled_at").toString()));

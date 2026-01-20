@@ -21,11 +21,13 @@
 | ROOTLY | &quot;rootly&quot; |
 | MANUAL | &quot;manual&quot; |
 | API | &quot;api&quot; |
+| HEARTBEAT | &quot;heartbeat&quot; |
 | WEB | &quot;web&quot; |
 | SLACK | &quot;slack&quot; |
 | EMAIL | &quot;email&quot; |
 | WORKFLOW | &quot;workflow&quot; |
 | LIVE_CALL_ROUTING | &quot;live_call_routing&quot; |
+| MOBILE | &quot;mobile&quot; |
 | PAGERDUTY | &quot;pagerduty&quot; |
 | OPSGENIE | &quot;opsgenie&quot; |
 | VICTOROPS | &quot;victorops&quot; |

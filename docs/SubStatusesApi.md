@@ -108,7 +108,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     SubStatusesApi apiInstance = new SubStatusesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       SubStatusResponse result = apiInstance.deleteSubStatus(id);
       System.out.println(result);
@@ -127,7 +127,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -176,7 +176,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     SubStatusesApi apiInstance = new SubStatusesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       SubStatusResponse result = apiInstance.getSubStatus(id);
       System.out.println(result);
@@ -195,7 +195,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -213,7 +213,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | sub_status found |  -  |
+| **200** | sub_status found by slug |  -  |
 | **404** | resource not found |  -  |
 
 <a id="listSubStatuses"></a>
@@ -329,7 +329,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     SubStatusesApi apiInstance = new SubStatusesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     UpdateSubStatus updateSubStatus = new UpdateSubStatus(); // UpdateSubStatus | 
     try {
       SubStatusResponse result = apiInstance.updateSubStatus(id, updateSubStatus);
@@ -349,7 +349,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **updateSubStatus** | [**UpdateSubStatus**](UpdateSubStatus.md)|  | |
 
 ### Return type

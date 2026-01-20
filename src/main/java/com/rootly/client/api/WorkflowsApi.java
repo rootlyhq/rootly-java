@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -28,6 +28,7 @@ import java.io.IOException;
 
 
 import com.rootly.client.model.ErrorsList;
+import com.rootly.client.model.GetAlertFieldIdParameter;
 import com.rootly.client.model.NewWorkflow;
 import com.rootly.client.model.UpdateWorkflow;
 import com.rootly.client.model.WorkflowList;
@@ -86,7 +87,7 @@ public class WorkflowsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> admins can set &#39;locked&#39; while creating a workflow </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> ignores alert field conditions in create request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> non-admins can&#39;t set &#39;locked&#39; while creating a workflow </td><td>  -  </td></tr>
      </table>
@@ -157,7 +158,7 @@ public class WorkflowsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> admins can set &#39;locked&#39; while creating a workflow </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> ignores alert field conditions in create request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> non-admins can&#39;t set &#39;locked&#39; while creating a workflow </td><td>  -  </td></tr>
      </table>
@@ -177,7 +178,7 @@ public class WorkflowsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> admins can set &#39;locked&#39; while creating a workflow </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> ignores alert field conditions in create request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> non-admins can&#39;t set &#39;locked&#39; while creating a workflow </td><td>  -  </td></tr>
      </table>
@@ -199,7 +200,7 @@ public class WorkflowsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> admins can set &#39;locked&#39; while creating a workflow </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> ignores alert field conditions in create request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> non-admins can&#39;t set &#39;locked&#39; while creating a workflow </td><td>  -  </td></tr>
      </table>
@@ -225,7 +226,7 @@ public class WorkflowsApi {
         <tr><td> 404 </td><td> non-admin can&#39;t destroy locked workflow </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteWorkflowCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteWorkflowCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -271,7 +272,7 @@ public class WorkflowsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteWorkflowValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteWorkflowValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteWorkflow(Async)");
@@ -295,7 +296,7 @@ public class WorkflowsApi {
         <tr><td> 404 </td><td> non-admin can&#39;t destroy locked workflow </td><td>  -  </td></tr>
      </table>
      */
-    public WorkflowResponse deleteWorkflow(@javax.annotation.Nonnull String id) throws ApiException {
+    public WorkflowResponse deleteWorkflow(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<WorkflowResponse> localVarResp = deleteWorkflowWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -314,7 +315,7 @@ public class WorkflowsApi {
         <tr><td> 404 </td><td> non-admin can&#39;t destroy locked workflow </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WorkflowResponse> deleteWorkflowWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<WorkflowResponse> deleteWorkflowWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = deleteWorkflowValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<WorkflowResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -335,7 +336,7 @@ public class WorkflowsApi {
         <tr><td> 404 </td><td> non-admin can&#39;t destroy locked workflow </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteWorkflowAsync(@javax.annotation.Nonnull String id, final ApiCallback<WorkflowResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteWorkflowAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<WorkflowResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteWorkflowValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<WorkflowResponse>(){}.getType();
@@ -345,7 +346,7 @@ public class WorkflowsApi {
     /**
      * Build call for getWorkflow
      * @param id  (required)
-     * @param include comma separated if needed. eg: form_field_conditions,genius_tasks (optional)
+     * @param include comma separated if needed. eg: form_field_conditions,alert_field_conditions (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -353,11 +354,11 @@ public class WorkflowsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> workflow found </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> does not serialize alert field conditions </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWorkflowCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getWorkflowCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -407,7 +408,7 @@ public class WorkflowsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getWorkflowValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getWorkflowValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getWorkflow(Async)");
@@ -421,18 +422,18 @@ public class WorkflowsApi {
      * Retrieves a workflow
      * Retrieves a specific workflow by id
      * @param id  (required)
-     * @param include comma separated if needed. eg: form_field_conditions,genius_tasks (optional)
+     * @param include comma separated if needed. eg: form_field_conditions,alert_field_conditions (optional)
      * @return WorkflowResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> workflow found </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> does not serialize alert field conditions </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public WorkflowResponse getWorkflow(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include) throws ApiException {
+    public WorkflowResponse getWorkflow(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nullable String include) throws ApiException {
         ApiResponse<WorkflowResponse> localVarResp = getWorkflowWithHttpInfo(id, include);
         return localVarResp.getData();
     }
@@ -441,18 +442,18 @@ public class WorkflowsApi {
      * Retrieves a workflow
      * Retrieves a specific workflow by id
      * @param id  (required)
-     * @param include comma separated if needed. eg: form_field_conditions,genius_tasks (optional)
+     * @param include comma separated if needed. eg: form_field_conditions,alert_field_conditions (optional)
      * @return ApiResponse&lt;WorkflowResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> workflow found </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> does not serialize alert field conditions </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WorkflowResponse> getWorkflowWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include) throws ApiException {
+    public ApiResponse<WorkflowResponse> getWorkflowWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nullable String include) throws ApiException {
         okhttp3.Call localVarCall = getWorkflowValidateBeforeCall(id, include, null);
         Type localVarReturnType = new TypeToken<WorkflowResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -462,7 +463,7 @@ public class WorkflowsApi {
      * Retrieves a workflow (asynchronously)
      * Retrieves a specific workflow by id
      * @param id  (required)
-     * @param include comma separated if needed. eg: form_field_conditions,genius_tasks (optional)
+     * @param include comma separated if needed. eg: form_field_conditions,alert_field_conditions (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -470,11 +471,11 @@ public class WorkflowsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> workflow found </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> does not serialize alert field conditions </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWorkflowAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include, final ApiCallback<WorkflowResponse> _callback) throws ApiException {
+    public okhttp3.Call getWorkflowAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nullable String include, final ApiCallback<WorkflowResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getWorkflowValidateBeforeCall(id, include, _callback);
         Type localVarReturnType = new TypeToken<WorkflowResponse>(){}.getType();
@@ -483,7 +484,7 @@ public class WorkflowsApi {
     }
     /**
      * Build call for listWorkflows
-     * @param include comma separated if needed. eg: form_field_conditions,genius_tasks (optional)
+     * @param include comma separated if needed. eg: form_field_conditions,alert_field_conditions (optional)
      * @param sort comma separated if needed. eg: created_at,updated_at (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
@@ -601,7 +602,7 @@ public class WorkflowsApi {
     /**
      * List workflows
      * List workflows
-     * @param include comma separated if needed. eg: form_field_conditions,genius_tasks (optional)
+     * @param include comma separated if needed. eg: form_field_conditions,alert_field_conditions (optional)
      * @param sort comma separated if needed. eg: created_at,updated_at (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
@@ -629,7 +630,7 @@ public class WorkflowsApi {
     /**
      * List workflows
      * List workflows
-     * @param include comma separated if needed. eg: form_field_conditions,genius_tasks (optional)
+     * @param include comma separated if needed. eg: form_field_conditions,alert_field_conditions (optional)
      * @param sort comma separated if needed. eg: created_at,updated_at (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
@@ -658,7 +659,7 @@ public class WorkflowsApi {
     /**
      * List workflows (asynchronously)
      * List workflows
-     * @param include comma separated if needed. eg: form_field_conditions,genius_tasks (optional)
+     * @param include comma separated if needed. eg: form_field_conditions,alert_field_conditions (optional)
      * @param sort comma separated if needed. eg: created_at,updated_at (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
@@ -697,12 +698,12 @@ public class WorkflowsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> admin can update &#39;locked&#39; attribute </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> can set and clear alert workflow status conditions </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> non-admin can&#39;t update locked workflow </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> non-admin can&#39;t update &#39;locked&#39; attribute </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateWorkflowCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateWorkflow updateWorkflow, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateWorkflowCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateWorkflow updateWorkflow, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -749,7 +750,7 @@ public class WorkflowsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateWorkflowValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateWorkflow updateWorkflow, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateWorkflowValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateWorkflow updateWorkflow, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateWorkflow(Async)");
@@ -775,12 +776,12 @@ public class WorkflowsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> admin can update &#39;locked&#39; attribute </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> can set and clear alert workflow status conditions </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> non-admin can&#39;t update locked workflow </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> non-admin can&#39;t update &#39;locked&#39; attribute </td><td>  -  </td></tr>
      </table>
      */
-    public WorkflowResponse updateWorkflow(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateWorkflow updateWorkflow) throws ApiException {
+    public WorkflowResponse updateWorkflow(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateWorkflow updateWorkflow) throws ApiException {
         ApiResponse<WorkflowResponse> localVarResp = updateWorkflowWithHttpInfo(id, updateWorkflow);
         return localVarResp.getData();
     }
@@ -796,12 +797,12 @@ public class WorkflowsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> admin can update &#39;locked&#39; attribute </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> can set and clear alert workflow status conditions </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> non-admin can&#39;t update locked workflow </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> non-admin can&#39;t update &#39;locked&#39; attribute </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WorkflowResponse> updateWorkflowWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateWorkflow updateWorkflow) throws ApiException {
+    public ApiResponse<WorkflowResponse> updateWorkflowWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateWorkflow updateWorkflow) throws ApiException {
         okhttp3.Call localVarCall = updateWorkflowValidateBeforeCall(id, updateWorkflow, null);
         Type localVarReturnType = new TypeToken<WorkflowResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -819,12 +820,12 @@ public class WorkflowsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> admin can update &#39;locked&#39; attribute </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> can set and clear alert workflow status conditions </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> non-admin can&#39;t update locked workflow </td><td>  -  </td></tr>
         <tr><td> 403 </td><td> non-admin can&#39;t update &#39;locked&#39; attribute </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateWorkflowAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateWorkflow updateWorkflow, final ApiCallback<WorkflowResponse> _callback) throws ApiException {
+    public okhttp3.Call updateWorkflowAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateWorkflow updateWorkflow, final ApiCallback<WorkflowResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateWorkflowValidateBeforeCall(id, updateWorkflow, _callback);
         Type localVarReturnType = new TypeToken<WorkflowResponse>(){}.getType();

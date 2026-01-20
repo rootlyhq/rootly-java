@@ -76,7 +76,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | post_mortem_template created |  -  |
+| **201** | post_mortem_template created with TipTap blocks |  -  |
 | **422** | invalid request |  -  |
 | **401** | responds with unauthorized for invalid token |  -  |
 
@@ -108,7 +108,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     RetrospectiveTemplatesApi apiInstance = new RetrospectiveTemplatesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       PostMortemTemplateResponse result = apiInstance.deletePostmortemTemplate(id);
       System.out.println(result);
@@ -127,7 +127,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -176,7 +176,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     RetrospectiveTemplatesApi apiInstance = new RetrospectiveTemplatesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       PostMortemTemplateResponse result = apiInstance.getPostmortemTemplate(id);
       System.out.println(result);
@@ -195,7 +195,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -315,7 +315,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     RetrospectiveTemplatesApi apiInstance = new RetrospectiveTemplatesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     UpdatePostMortemTemplate updatePostMortemTemplate = new UpdatePostMortemTemplate(); // UpdatePostMortemTemplate | 
     try {
       PostMortemTemplateResponse result = apiInstance.updatePostmortemTemplate(id, updatePostMortemTemplate);
@@ -335,7 +335,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **updatePostMortemTemplate** | [**UpdatePostMortemTemplate**](UpdatePostMortemTemplate.md)|  | |
 
 ### Return type
@@ -354,6 +354,6 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Retrospective Template updated |  -  |
+| **200** | Retrospective Template updated with sanitized content |  -  |
 | **404** | resource not found |  -  |
 

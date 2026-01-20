@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * Provide additional attributes for email alerts source
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T17:46:55.918190357Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewAlertsSourceDataAttributesResolutionRuleAttributes {
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
@@ -115,6 +116,123 @@ public class NewAlertsSourceDataAttributesResolutionRuleAttributes {
   @javax.annotation.Nullable
   private ConditionTypeEnum conditionType;
 
+  /**
+   * The type of the identifier matchable
+   */
+  @JsonAdapter(IdentifierMatchableTypeEnum.Adapter.class)
+  public enum IdentifierMatchableTypeEnum {
+    ALERT_FIELD("AlertField");
+
+    private String value;
+
+    IdentifierMatchableTypeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static IdentifierMatchableTypeEnum fromValue(String value) {
+      for (IdentifierMatchableTypeEnum b : IdentifierMatchableTypeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<IdentifierMatchableTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final IdentifierMatchableTypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public IdentifierMatchableTypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return IdentifierMatchableTypeEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      IdentifierMatchableTypeEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_IDENTIFIER_MATCHABLE_TYPE = "identifier_matchable_type";
+  @SerializedName(SERIALIZED_NAME_IDENTIFIER_MATCHABLE_TYPE)
+  @javax.annotation.Nullable
+  private IdentifierMatchableTypeEnum identifierMatchableType;
+
+  public static final String SERIALIZED_NAME_IDENTIFIER_MATCHABLE_ID = "identifier_matchable_id";
+  @SerializedName(SERIALIZED_NAME_IDENTIFIER_MATCHABLE_ID)
+  @javax.annotation.Nullable
+  private String identifierMatchableId;
+
+  /**
+   * The kind of the identifier reference
+   */
+  @JsonAdapter(IdentifierReferenceKindEnum.Adapter.class)
+  public enum IdentifierReferenceKindEnum {
+    PAYLOAD("payload"),
+    
+    ALERT_FIELD("alert_field");
+
+    private String value;
+
+    IdentifierReferenceKindEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static IdentifierReferenceKindEnum fromValue(String value) {
+      for (IdentifierReferenceKindEnum b : IdentifierReferenceKindEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<IdentifierReferenceKindEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final IdentifierReferenceKindEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public IdentifierReferenceKindEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return IdentifierReferenceKindEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      IdentifierReferenceKindEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_IDENTIFIER_REFERENCE_KIND = "identifier_reference_kind";
+  @SerializedName(SERIALIZED_NAME_IDENTIFIER_REFERENCE_KIND)
+  @javax.annotation.Nullable
+  private IdentifierReferenceKindEnum identifierReferenceKind;
+
   public static final String SERIALIZED_NAME_IDENTIFIER_JSON_PATH = "identifier_json_path";
   @SerializedName(SERIALIZED_NAME_IDENTIFIER_JSON_PATH)
   @javax.annotation.Nullable
@@ -168,6 +286,63 @@ public class NewAlertsSourceDataAttributesResolutionRuleAttributes {
 
   public void setConditionType(@javax.annotation.Nullable ConditionTypeEnum conditionType) {
     this.conditionType = conditionType;
+  }
+
+
+  public NewAlertsSourceDataAttributesResolutionRuleAttributes identifierMatchableType(@javax.annotation.Nullable IdentifierMatchableTypeEnum identifierMatchableType) {
+    this.identifierMatchableType = identifierMatchableType;
+    return this;
+  }
+
+  /**
+   * The type of the identifier matchable
+   * @return identifierMatchableType
+   */
+  @javax.annotation.Nullable
+  public IdentifierMatchableTypeEnum getIdentifierMatchableType() {
+    return identifierMatchableType;
+  }
+
+  public void setIdentifierMatchableType(@javax.annotation.Nullable IdentifierMatchableTypeEnum identifierMatchableType) {
+    this.identifierMatchableType = identifierMatchableType;
+  }
+
+
+  public NewAlertsSourceDataAttributesResolutionRuleAttributes identifierMatchableId(@javax.annotation.Nullable String identifierMatchableId) {
+    this.identifierMatchableId = identifierMatchableId;
+    return this;
+  }
+
+  /**
+   * The ID of the identifier matchable. If identifier_matchable_type is AlertField, this is the ID of the alert field.
+   * @return identifierMatchableId
+   */
+  @javax.annotation.Nullable
+  public String getIdentifierMatchableId() {
+    return identifierMatchableId;
+  }
+
+  public void setIdentifierMatchableId(@javax.annotation.Nullable String identifierMatchableId) {
+    this.identifierMatchableId = identifierMatchableId;
+  }
+
+
+  public NewAlertsSourceDataAttributesResolutionRuleAttributes identifierReferenceKind(@javax.annotation.Nullable IdentifierReferenceKindEnum identifierReferenceKind) {
+    this.identifierReferenceKind = identifierReferenceKind;
+    return this;
+  }
+
+  /**
+   * The kind of the identifier reference
+   * @return identifierReferenceKind
+   */
+  @javax.annotation.Nullable
+  public IdentifierReferenceKindEnum getIdentifierReferenceKind() {
+    return identifierReferenceKind;
+  }
+
+  public void setIdentifierReferenceKind(@javax.annotation.Nullable IdentifierReferenceKindEnum identifierReferenceKind) {
+    this.identifierReferenceKind = identifierReferenceKind;
   }
 
 
@@ -248,14 +423,28 @@ public class NewAlertsSourceDataAttributesResolutionRuleAttributes {
     NewAlertsSourceDataAttributesResolutionRuleAttributes newAlertsSourceDataAttributesResolutionRuleAttributes = (NewAlertsSourceDataAttributesResolutionRuleAttributes) o;
     return Objects.equals(this.enabled, newAlertsSourceDataAttributesResolutionRuleAttributes.enabled) &&
         Objects.equals(this.conditionType, newAlertsSourceDataAttributesResolutionRuleAttributes.conditionType) &&
+        Objects.equals(this.identifierMatchableType, newAlertsSourceDataAttributesResolutionRuleAttributes.identifierMatchableType) &&
+        Objects.equals(this.identifierMatchableId, newAlertsSourceDataAttributesResolutionRuleAttributes.identifierMatchableId) &&
+        Objects.equals(this.identifierReferenceKind, newAlertsSourceDataAttributesResolutionRuleAttributes.identifierReferenceKind) &&
         Objects.equals(this.identifierJsonPath, newAlertsSourceDataAttributesResolutionRuleAttributes.identifierJsonPath) &&
         Objects.equals(this.identifierValueRegex, newAlertsSourceDataAttributesResolutionRuleAttributes.identifierValueRegex) &&
         Objects.equals(this.conditionsAttributes, newAlertsSourceDataAttributesResolutionRuleAttributes.conditionsAttributes);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, conditionType, identifierJsonPath, identifierValueRegex, conditionsAttributes);
+    return Objects.hash(enabled, conditionType, identifierMatchableType, identifierMatchableId, identifierReferenceKind, identifierJsonPath, identifierValueRegex, conditionsAttributes);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -264,6 +453,9 @@ public class NewAlertsSourceDataAttributesResolutionRuleAttributes {
     sb.append("class NewAlertsSourceDataAttributesResolutionRuleAttributes {\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    conditionType: ").append(toIndentedString(conditionType)).append("\n");
+    sb.append("    identifierMatchableType: ").append(toIndentedString(identifierMatchableType)).append("\n");
+    sb.append("    identifierMatchableId: ").append(toIndentedString(identifierMatchableId)).append("\n");
+    sb.append("    identifierReferenceKind: ").append(toIndentedString(identifierReferenceKind)).append("\n");
     sb.append("    identifierJsonPath: ").append(toIndentedString(identifierJsonPath)).append("\n");
     sb.append("    identifierValueRegex: ").append(toIndentedString(identifierValueRegex)).append("\n");
     sb.append("    conditionsAttributes: ").append(toIndentedString(conditionsAttributes)).append("\n");
@@ -291,6 +483,9 @@ public class NewAlertsSourceDataAttributesResolutionRuleAttributes {
     openapiFields = new HashSet<String>();
     openapiFields.add("enabled");
     openapiFields.add("condition_type");
+    openapiFields.add("identifier_matchable_type");
+    openapiFields.add("identifier_matchable_id");
+    openapiFields.add("identifier_reference_kind");
     openapiFields.add("identifier_json_path");
     openapiFields.add("identifier_value_regex");
     openapiFields.add("conditions_attributes");
@@ -326,6 +521,23 @@ public class NewAlertsSourceDataAttributesResolutionRuleAttributes {
       // validate the optional field `condition_type`
       if (jsonObj.get("condition_type") != null && !jsonObj.get("condition_type").isJsonNull()) {
         ConditionTypeEnum.validateJsonElement(jsonObj.get("condition_type"));
+      }
+      if ((jsonObj.get("identifier_matchable_type") != null && !jsonObj.get("identifier_matchable_type").isJsonNull()) && !jsonObj.get("identifier_matchable_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `identifier_matchable_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("identifier_matchable_type").toString()));
+      }
+      // validate the optional field `identifier_matchable_type`
+      if (jsonObj.get("identifier_matchable_type") != null && !jsonObj.get("identifier_matchable_type").isJsonNull()) {
+        IdentifierMatchableTypeEnum.validateJsonElement(jsonObj.get("identifier_matchable_type"));
+      }
+      if ((jsonObj.get("identifier_matchable_id") != null && !jsonObj.get("identifier_matchable_id").isJsonNull()) && !jsonObj.get("identifier_matchable_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `identifier_matchable_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("identifier_matchable_id").toString()));
+      }
+      if ((jsonObj.get("identifier_reference_kind") != null && !jsonObj.get("identifier_reference_kind").isJsonNull()) && !jsonObj.get("identifier_reference_kind").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `identifier_reference_kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("identifier_reference_kind").toString()));
+      }
+      // validate the optional field `identifier_reference_kind`
+      if (jsonObj.get("identifier_reference_kind") != null && !jsonObj.get("identifier_reference_kind").isJsonNull()) {
+        IdentifierReferenceKindEnum.validateJsonElement(jsonObj.get("identifier_reference_kind"));
       }
       if ((jsonObj.get("identifier_json_path") != null && !jsonObj.get("identifier_json_path").isJsonNull()) && !jsonObj.get("identifier_json_path").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `identifier_json_path` to be a primitive type in the JSON string but got `%s`", jsonObj.get("identifier_json_path").toString()));

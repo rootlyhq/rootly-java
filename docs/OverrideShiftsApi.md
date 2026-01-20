@@ -18,7 +18,7 @@ All URIs are relative to *https://api.rootly.com*
 
 creates an override shift
 
-Creates a new override shift from provided data
+Creates a new override shift from provided data. If any existing override shifts overlap with the specified time range, they will be automatically deleted and replaced by the new override.
 
 ### Example
 ```java
@@ -79,8 +79,8 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | override_shift created |  -  |
-| **422** | invalid request |  -  |
+| **201** | returns assignee relationship when schedule nesting enabled |  -  |
+| **422** | cannot create schedule-based override shift |  -  |
 | **401** | responds with unauthorized for invalid token |  -  |
 
 <a id="deleteOnCallShadow"></a>

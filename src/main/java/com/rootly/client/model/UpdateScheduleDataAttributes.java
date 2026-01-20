@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewScheduleDataAttributesSlackChannel;
 import com.rootly.client.model.NewScheduleDataAttributesSlackUserGroup;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -52,7 +53,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateScheduleDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T17:46:55.918190357Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateScheduleDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -73,6 +74,11 @@ public class UpdateScheduleDataAttributes {
   @SerializedName(SERIALIZED_NAME_SLACK_USER_GROUP)
   @javax.annotation.Nullable
   private NewScheduleDataAttributesSlackUserGroup slackUserGroup;
+
+  public static final String SERIALIZED_NAME_SLACK_CHANNEL = "slack_channel";
+  @SerializedName(SERIALIZED_NAME_SLACK_CHANNEL)
+  @javax.annotation.Nullable
+  private NewScheduleDataAttributesSlackChannel slackChannel;
 
   public static final String SERIALIZED_NAME_OWNER_GROUP_IDS = "owner_group_ids";
   @SerializedName(SERIALIZED_NAME_OWNER_GROUP_IDS)
@@ -163,6 +169,25 @@ public class UpdateScheduleDataAttributes {
   }
 
 
+  public UpdateScheduleDataAttributes slackChannel(@javax.annotation.Nullable NewScheduleDataAttributesSlackChannel slackChannel) {
+    this.slackChannel = slackChannel;
+    return this;
+  }
+
+  /**
+   * Get slackChannel
+   * @return slackChannel
+   */
+  @javax.annotation.Nullable
+  public NewScheduleDataAttributesSlackChannel getSlackChannel() {
+    return slackChannel;
+  }
+
+  public void setSlackChannel(@javax.annotation.Nullable NewScheduleDataAttributesSlackChannel slackChannel) {
+    this.slackChannel = slackChannel;
+  }
+
+
   public UpdateScheduleDataAttributes ownerGroupIds(@javax.annotation.Nullable List<String> ownerGroupIds) {
     this.ownerGroupIds = ownerGroupIds;
     return this;
@@ -223,6 +248,7 @@ public class UpdateScheduleDataAttributes {
         Objects.equals(this.description, updateScheduleDataAttributes.description) &&
         Objects.equals(this.allTimeCoverage, updateScheduleDataAttributes.allTimeCoverage) &&
         Objects.equals(this.slackUserGroup, updateScheduleDataAttributes.slackUserGroup) &&
+        Objects.equals(this.slackChannel, updateScheduleDataAttributes.slackChannel) &&
         Objects.equals(this.ownerGroupIds, updateScheduleDataAttributes.ownerGroupIds) &&
         Objects.equals(this.ownerUserId, updateScheduleDataAttributes.ownerUserId);
   }
@@ -233,7 +259,7 @@ public class UpdateScheduleDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, allTimeCoverage, slackUserGroup, ownerGroupIds, ownerUserId);
+    return Objects.hash(name, description, allTimeCoverage, slackUserGroup, slackChannel, ownerGroupIds, ownerUserId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -251,6 +277,7 @@ public class UpdateScheduleDataAttributes {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    allTimeCoverage: ").append(toIndentedString(allTimeCoverage)).append("\n");
     sb.append("    slackUserGroup: ").append(toIndentedString(slackUserGroup)).append("\n");
+    sb.append("    slackChannel: ").append(toIndentedString(slackChannel)).append("\n");
     sb.append("    ownerGroupIds: ").append(toIndentedString(ownerGroupIds)).append("\n");
     sb.append("    ownerUserId: ").append(toIndentedString(ownerUserId)).append("\n");
     sb.append("}");
@@ -279,6 +306,7 @@ public class UpdateScheduleDataAttributes {
     openapiFields.add("description");
     openapiFields.add("all_time_coverage");
     openapiFields.add("slack_user_group");
+    openapiFields.add("slack_channel");
     openapiFields.add("owner_group_ids");
     openapiFields.add("owner_user_id");
 
@@ -316,6 +344,10 @@ public class UpdateScheduleDataAttributes {
       // validate the optional field `slack_user_group`
       if (jsonObj.get("slack_user_group") != null && !jsonObj.get("slack_user_group").isJsonNull()) {
         NewScheduleDataAttributesSlackUserGroup.validateJsonElement(jsonObj.get("slack_user_group"));
+      }
+      // validate the optional field `slack_channel`
+      if (jsonObj.get("slack_channel") != null && !jsonObj.get("slack_channel").isJsonNull()) {
+        NewScheduleDataAttributesSlackChannel.validateJsonElement(jsonObj.get("slack_channel"));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("owner_group_ids") != null && !jsonObj.get("owner_group_ids").isJsonNull() && !jsonObj.get("owner_group_ids").isJsonArray()) {

@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * CreateNotionPageTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T17:46:55.918190357Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateNotionPageTaskParams {
   /**
    * Gets or Sets taskType
@@ -120,6 +120,11 @@ public class CreateNotionPageTaskParams {
   @SerializedName(SERIALIZED_NAME_POST_MORTEM_TEMPLATE_ID)
   @javax.annotation.Nullable
   private String postMortemTemplateId;
+
+  public static final String SERIALIZED_NAME_CONTENT = "content";
+  @SerializedName(SERIALIZED_NAME_CONTENT)
+  @javax.annotation.Nullable
+  private String content;
 
   public static final String SERIALIZED_NAME_MARK_POST_MORTEM_AS_PUBLISHED = "mark_post_mortem_as_published";
   @SerializedName(SERIALIZED_NAME_MARK_POST_MORTEM_AS_PUBLISHED)
@@ -215,6 +220,25 @@ public class CreateNotionPageTaskParams {
   }
 
 
+  public CreateNotionPageTaskParams content(@javax.annotation.Nullable String content) {
+    this.content = content;
+    return this;
+  }
+
+  /**
+   * Custom page content with liquid templating support. When provided, only this content will be rendered (no default sections)
+   * @return content
+   */
+  @javax.annotation.Nullable
+  public String getContent() {
+    return content;
+  }
+
+  public void setContent(@javax.annotation.Nullable String content) {
+    this.content = content;
+  }
+
+
   public CreateNotionPageTaskParams markPostMortemAsPublished(@javax.annotation.Nullable Boolean markPostMortemAsPublished) {
     this.markPostMortemAsPublished = markPostMortemAsPublished;
     return this;
@@ -286,6 +310,7 @@ public class CreateNotionPageTaskParams {
         Objects.equals(this.title, createNotionPageTaskParams.title) &&
         Objects.equals(this.parentPage, createNotionPageTaskParams.parentPage) &&
         Objects.equals(this.postMortemTemplateId, createNotionPageTaskParams.postMortemTemplateId) &&
+        Objects.equals(this.content, createNotionPageTaskParams.content) &&
         Objects.equals(this.markPostMortemAsPublished, createNotionPageTaskParams.markPostMortemAsPublished) &&
         Objects.equals(this.showTimelineAsTable, createNotionPageTaskParams.showTimelineAsTable) &&
         Objects.equals(this.showActionItemsAsTable, createNotionPageTaskParams.showActionItemsAsTable);
@@ -293,7 +318,7 @@ public class CreateNotionPageTaskParams {
 
   @Override
   public int hashCode() {
-    return Objects.hash(taskType, title, parentPage, postMortemTemplateId, markPostMortemAsPublished, showTimelineAsTable, showActionItemsAsTable);
+    return Objects.hash(taskType, title, parentPage, postMortemTemplateId, content, markPostMortemAsPublished, showTimelineAsTable, showActionItemsAsTable);
   }
 
   @Override
@@ -304,6 +329,7 @@ public class CreateNotionPageTaskParams {
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    parentPage: ").append(toIndentedString(parentPage)).append("\n");
     sb.append("    postMortemTemplateId: ").append(toIndentedString(postMortemTemplateId)).append("\n");
+    sb.append("    content: ").append(toIndentedString(content)).append("\n");
     sb.append("    markPostMortemAsPublished: ").append(toIndentedString(markPostMortemAsPublished)).append("\n");
     sb.append("    showTimelineAsTable: ").append(toIndentedString(showTimelineAsTable)).append("\n");
     sb.append("    showActionItemsAsTable: ").append(toIndentedString(showActionItemsAsTable)).append("\n");
@@ -333,6 +359,7 @@ public class CreateNotionPageTaskParams {
     openapiFields.add("title");
     openapiFields.add("parent_page");
     openapiFields.add("post_mortem_template_id");
+    openapiFields.add("content");
     openapiFields.add("mark_post_mortem_as_published");
     openapiFields.add("show_timeline_as_table");
     openapiFields.add("show_action_items_as_table");
@@ -385,6 +412,9 @@ public class CreateNotionPageTaskParams {
       CreateNotionPageTaskParamsParentPage.validateJsonElement(jsonObj.get("parent_page"));
       if ((jsonObj.get("post_mortem_template_id") != null && !jsonObj.get("post_mortem_template_id").isJsonNull()) && !jsonObj.get("post_mortem_template_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `post_mortem_template_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("post_mortem_template_id").toString()));
+      }
+      if ((jsonObj.get("content") != null && !jsonObj.get("content").isJsonNull()) && !jsonObj.get("content").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `content` to be a primitive type in the JSON string but got `%s`", jsonObj.get("content").toString()));
       }
   }
 

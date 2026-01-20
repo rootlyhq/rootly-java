@@ -15,6 +15,7 @@
 |**content** | **String** | The Coda page content |  [optional] |
 |**template** | [**CreateCodaPageTaskParamsTemplate**](CreateCodaPageTaskParamsTemplate.md) |  |  [optional] |
 |**folderId** | **String** | The Coda folder id |  [optional] |
+|**doc** | [**CreateCodaPageTaskParamsDoc**](CreateCodaPageTaskParamsDoc.md) |  |  [optional] |
 
 
 

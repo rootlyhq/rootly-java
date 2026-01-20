@@ -8,6 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**title** | **String** | The title of the status page |  |
+|**slug** | **String** | The slug of the status page |  [optional] |
 |**publicTitle** | **String** | The public title of the status page |  [optional] |
 |**description** | **String** | The description of the status page |  [optional] |
 |**publicDescription** | **String** | The public description of the status page |  [optional] |
@@ -18,8 +19,14 @@
 |**showUptimeLastDays** | [**ShowUptimeLastDaysEnum**](#ShowUptimeLastDaysEnum) | Show uptime over x days |  [optional] |
 |**successMessage** | **String** | Message showing when all components are operational |  [optional] |
 |**failureMessage** | **String** | Message showing when at least one component is not operational |  [optional] |
-|**authenticationEnabled** | **Boolean** | Enable authentication |  [optional] |
+|**authenticationMethod** | [**AuthenticationMethodEnum**](#AuthenticationMethodEnum) | Authentication method |  [optional] |
+|**authenticationEnabled** | **Boolean** | Enable authentication (deprecated - use authentication_method instead) |  [optional] |
 |**authenticationPassword** | **String** | Authentication password |  [optional] |
+|**samlIdpSsoServiceUrl** | **String** | SAML IdP SSO service URL |  [optional] |
+|**samlIdpSloServiceUrl** | **String** | SAML IdP SLO service URL |  [optional] |
+|**samlIdpCert** | **String** | SAML IdP certificate |  [optional] |
+|**samlIdpCertFingerprint** | **String** | SAML IdP certificate fingerprint |  [optional] |
+|**samlNameIdentifierFormat** | [**SamlNameIdentifierFormatEnum**](#SamlNameIdentifierFormatEnum) | SAML name identifier format |  [optional] |
 |**websiteUrl** | **String** | Website URL |  [optional] |
 |**websitePrivacyUrl** | **String** | Website Privacy URL |  [optional] |
 |**websiteSupportUrl** | **String** | Website Support URL |  [optional] |
@@ -42,8 +49,27 @@
 | NUMBER_30 | 30 |
 | NUMBER_60 | 60 |
 | NUMBER_90 | 90 |
-| NUMBER_180 | 180 |
-| NUMBER_360 | 360 |
+
+
+
+## Enum: AuthenticationMethodEnum
+
+| Name | Value |
+|---- | -----|
+| NONE | &quot;none&quot; |
+| PASSWORD | &quot;password&quot; |
+| SAML | &quot;saml&quot; |
+
+
+
+## Enum: SamlNameIdentifierFormatEnum
+
+| Name | Value |
+|---- | -----|
+| URN_OASIS_NAMES_TC_SAML_1_1_NAMEID_FORMAT_EMAIL_ADDRESS | &quot;urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress&quot; |
+| URN_OASIS_NAMES_TC_SAML_2_0_NAMEID_FORMAT_PERSISTENT | &quot;urn:oasis:names:tc:SAML:2.0:nameid-format:persistent&quot; |
+| URN_OASIS_NAMES_TC_SAML_2_0_NAMEID_FORMAT_TRANSIENT | &quot;urn:oasis:names:tc:SAML:2.0:nameid-format:transient&quot; |
+| URN_OASIS_NAMES_TC_SAML_1_1_NAMEID_FORMAT_UNSPECIFIED | &quot;urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified&quot; |
 
 
 

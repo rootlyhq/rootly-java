@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**groupIds** | **List&lt;String&gt;** | Team ID&#39;s for retrospective process matching criteria |  |
+|**groupIds** | **List&lt;String&gt;** | Team IDs for retrospective process matching criteria |  |
 
 
 

@@ -108,7 +108,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     EnvironmentsApi apiInstance = new EnvironmentsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       EnvironmentResponse result = apiInstance.deleteEnvironment(id);
       System.out.println(result);
@@ -127,7 +127,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -176,7 +176,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     EnvironmentsApi apiInstance = new EnvironmentsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       EnvironmentResponse result = apiInstance.getEnvironment(id);
       System.out.println(result);
@@ -195,7 +195,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -213,7 +213,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | environment found |  -  |
+| **200** | environment found by slug |  -  |
 | **404** | resource not found |  -  |
 
 <a id="listEnvironments"></a>
@@ -333,7 +333,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     EnvironmentsApi apiInstance = new EnvironmentsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     UpdateEnvironment updateEnvironment = new UpdateEnvironment(); // UpdateEnvironment | 
     try {
       EnvironmentResponse result = apiInstance.updateEnvironment(id, updateEnvironment);
@@ -353,7 +353,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **updateEnvironment** | [**UpdateEnvironment**](UpdateEnvironment.md)|  | |
 
 ### Return type

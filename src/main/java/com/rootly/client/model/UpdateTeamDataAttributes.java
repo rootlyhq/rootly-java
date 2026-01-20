@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -21,6 +21,8 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.rootly.client.model.NewEnvironmentDataAttributesSlackAliasesInner;
 import com.rootly.client.model.NewEnvironmentDataAttributesSlackChannelsInner;
+import com.rootly.client.model.NewServiceDataAttributesAlertBroadcastChannel;
+import com.rootly.client.model.NewServiceDataAttributesIncidentBroadcastChannel;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -53,7 +55,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateTeamDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T17:46:55.918190357Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateTeamDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -154,6 +156,31 @@ public class UpdateTeamDataAttributes {
   @SerializedName(SERIALIZED_NAME_SLACK_ALIASES)
   @javax.annotation.Nullable
   private List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases;
+
+  public static final String SERIALIZED_NAME_ALERT_BROADCAST_ENABLED = "alert_broadcast_enabled";
+  @SerializedName(SERIALIZED_NAME_ALERT_BROADCAST_ENABLED)
+  @javax.annotation.Nullable
+  private Boolean alertBroadcastEnabled;
+
+  public static final String SERIALIZED_NAME_ALERT_BROADCAST_CHANNEL = "alert_broadcast_channel";
+  @SerializedName(SERIALIZED_NAME_ALERT_BROADCAST_CHANNEL)
+  @javax.annotation.Nullable
+  private NewServiceDataAttributesAlertBroadcastChannel alertBroadcastChannel;
+
+  public static final String SERIALIZED_NAME_INCIDENT_BROADCAST_ENABLED = "incident_broadcast_enabled";
+  @SerializedName(SERIALIZED_NAME_INCIDENT_BROADCAST_ENABLED)
+  @javax.annotation.Nullable
+  private Boolean incidentBroadcastEnabled;
+
+  public static final String SERIALIZED_NAME_INCIDENT_BROADCAST_CHANNEL = "incident_broadcast_channel";
+  @SerializedName(SERIALIZED_NAME_INCIDENT_BROADCAST_CHANNEL)
+  @javax.annotation.Nullable
+  private NewServiceDataAttributesIncidentBroadcastChannel incidentBroadcastChannel;
+
+  public static final String SERIALIZED_NAME_AUTO_ADD_MEMBERS_WHEN_ATTACHED = "auto_add_members_when_attached";
+  @SerializedName(SERIALIZED_NAME_AUTO_ADD_MEMBERS_WHEN_ATTACHED)
+  @javax.annotation.Nullable
+  private Boolean autoAddMembersWhenAttached;
 
   public UpdateTeamDataAttributes() {
   }
@@ -578,6 +605,101 @@ public class UpdateTeamDataAttributes {
   }
 
 
+  public UpdateTeamDataAttributes alertBroadcastEnabled(@javax.annotation.Nullable Boolean alertBroadcastEnabled) {
+    this.alertBroadcastEnabled = alertBroadcastEnabled;
+    return this;
+  }
+
+  /**
+   * Enable alerts to be broadcasted to a specific channel
+   * @return alertBroadcastEnabled
+   */
+  @javax.annotation.Nullable
+  public Boolean getAlertBroadcastEnabled() {
+    return alertBroadcastEnabled;
+  }
+
+  public void setAlertBroadcastEnabled(@javax.annotation.Nullable Boolean alertBroadcastEnabled) {
+    this.alertBroadcastEnabled = alertBroadcastEnabled;
+  }
+
+
+  public UpdateTeamDataAttributes alertBroadcastChannel(@javax.annotation.Nullable NewServiceDataAttributesAlertBroadcastChannel alertBroadcastChannel) {
+    this.alertBroadcastChannel = alertBroadcastChannel;
+    return this;
+  }
+
+  /**
+   * Get alertBroadcastChannel
+   * @return alertBroadcastChannel
+   */
+  @javax.annotation.Nullable
+  public NewServiceDataAttributesAlertBroadcastChannel getAlertBroadcastChannel() {
+    return alertBroadcastChannel;
+  }
+
+  public void setAlertBroadcastChannel(@javax.annotation.Nullable NewServiceDataAttributesAlertBroadcastChannel alertBroadcastChannel) {
+    this.alertBroadcastChannel = alertBroadcastChannel;
+  }
+
+
+  public UpdateTeamDataAttributes incidentBroadcastEnabled(@javax.annotation.Nullable Boolean incidentBroadcastEnabled) {
+    this.incidentBroadcastEnabled = incidentBroadcastEnabled;
+    return this;
+  }
+
+  /**
+   * Enable incidents to be broadcasted to a specific channel
+   * @return incidentBroadcastEnabled
+   */
+  @javax.annotation.Nullable
+  public Boolean getIncidentBroadcastEnabled() {
+    return incidentBroadcastEnabled;
+  }
+
+  public void setIncidentBroadcastEnabled(@javax.annotation.Nullable Boolean incidentBroadcastEnabled) {
+    this.incidentBroadcastEnabled = incidentBroadcastEnabled;
+  }
+
+
+  public UpdateTeamDataAttributes incidentBroadcastChannel(@javax.annotation.Nullable NewServiceDataAttributesIncidentBroadcastChannel incidentBroadcastChannel) {
+    this.incidentBroadcastChannel = incidentBroadcastChannel;
+    return this;
+  }
+
+  /**
+   * Get incidentBroadcastChannel
+   * @return incidentBroadcastChannel
+   */
+  @javax.annotation.Nullable
+  public NewServiceDataAttributesIncidentBroadcastChannel getIncidentBroadcastChannel() {
+    return incidentBroadcastChannel;
+  }
+
+  public void setIncidentBroadcastChannel(@javax.annotation.Nullable NewServiceDataAttributesIncidentBroadcastChannel incidentBroadcastChannel) {
+    this.incidentBroadcastChannel = incidentBroadcastChannel;
+  }
+
+
+  public UpdateTeamDataAttributes autoAddMembersWhenAttached(@javax.annotation.Nullable Boolean autoAddMembersWhenAttached) {
+    this.autoAddMembersWhenAttached = autoAddMembersWhenAttached;
+    return this;
+  }
+
+  /**
+   * Auto add members to incident channel when team is attached
+   * @return autoAddMembersWhenAttached
+   */
+  @javax.annotation.Nullable
+  public Boolean getAutoAddMembersWhenAttached() {
+    return autoAddMembersWhenAttached;
+  }
+
+  public void setAutoAddMembersWhenAttached(@javax.annotation.Nullable Boolean autoAddMembersWhenAttached) {
+    this.autoAddMembersWhenAttached = autoAddMembersWhenAttached;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -607,7 +729,12 @@ public class UpdateTeamDataAttributes {
         Objects.equals(this.alertsEmailEnabled, updateTeamDataAttributes.alertsEmailEnabled) &&
         Objects.equals(this.alertUrgencyId, updateTeamDataAttributes.alertUrgencyId) &&
         Objects.equals(this.slackChannels, updateTeamDataAttributes.slackChannels) &&
-        Objects.equals(this.slackAliases, updateTeamDataAttributes.slackAliases);
+        Objects.equals(this.slackAliases, updateTeamDataAttributes.slackAliases) &&
+        Objects.equals(this.alertBroadcastEnabled, updateTeamDataAttributes.alertBroadcastEnabled) &&
+        Objects.equals(this.alertBroadcastChannel, updateTeamDataAttributes.alertBroadcastChannel) &&
+        Objects.equals(this.incidentBroadcastEnabled, updateTeamDataAttributes.incidentBroadcastEnabled) &&
+        Objects.equals(this.incidentBroadcastChannel, updateTeamDataAttributes.incidentBroadcastChannel) &&
+        Objects.equals(this.autoAddMembersWhenAttached, updateTeamDataAttributes.autoAddMembersWhenAttached);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -616,7 +743,7 @@ public class UpdateTeamDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, notifyEmails, color, position, backstageId, externalId, pagerdutyId, pagerdutyServiceId, opsgenieId, victorOpsId, pagertreeId, cortexId, serviceNowCiSysId, userIds, adminIds, alertsEmailEnabled, alertUrgencyId, slackChannels, slackAliases);
+    return Objects.hash(name, description, notifyEmails, color, position, backstageId, externalId, pagerdutyId, pagerdutyServiceId, opsgenieId, victorOpsId, pagertreeId, cortexId, serviceNowCiSysId, userIds, adminIds, alertsEmailEnabled, alertUrgencyId, slackChannels, slackAliases, alertBroadcastEnabled, alertBroadcastChannel, incidentBroadcastEnabled, incidentBroadcastChannel, autoAddMembersWhenAttached);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -650,6 +777,11 @@ public class UpdateTeamDataAttributes {
     sb.append("    alertUrgencyId: ").append(toIndentedString(alertUrgencyId)).append("\n");
     sb.append("    slackChannels: ").append(toIndentedString(slackChannels)).append("\n");
     sb.append("    slackAliases: ").append(toIndentedString(slackAliases)).append("\n");
+    sb.append("    alertBroadcastEnabled: ").append(toIndentedString(alertBroadcastEnabled)).append("\n");
+    sb.append("    alertBroadcastChannel: ").append(toIndentedString(alertBroadcastChannel)).append("\n");
+    sb.append("    incidentBroadcastEnabled: ").append(toIndentedString(incidentBroadcastEnabled)).append("\n");
+    sb.append("    incidentBroadcastChannel: ").append(toIndentedString(incidentBroadcastChannel)).append("\n");
+    sb.append("    autoAddMembersWhenAttached: ").append(toIndentedString(autoAddMembersWhenAttached)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -692,6 +824,11 @@ public class UpdateTeamDataAttributes {
     openapiFields.add("alert_urgency_id");
     openapiFields.add("slack_channels");
     openapiFields.add("slack_aliases");
+    openapiFields.add("alert_broadcast_enabled");
+    openapiFields.add("alert_broadcast_channel");
+    openapiFields.add("incident_broadcast_enabled");
+    openapiFields.add("incident_broadcast_channel");
+    openapiFields.add("auto_add_members_when_attached");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -796,6 +933,14 @@ public class UpdateTeamDataAttributes {
             NewEnvironmentDataAttributesSlackAliasesInner.validateJsonElement(jsonArrayslackAliases.get(i));
           };
         }
+      }
+      // validate the optional field `alert_broadcast_channel`
+      if (jsonObj.get("alert_broadcast_channel") != null && !jsonObj.get("alert_broadcast_channel").isJsonNull()) {
+        NewServiceDataAttributesAlertBroadcastChannel.validateJsonElement(jsonObj.get("alert_broadcast_channel"));
+      }
+      // validate the optional field `incident_broadcast_channel`
+      if (jsonObj.get("incident_broadcast_channel") != null && !jsonObj.get("incident_broadcast_channel").isJsonNull()) {
+        NewServiceDataAttributesIncidentBroadcastChannel.validateJsonElement(jsonObj.get("incident_broadcast_channel"));
       }
   }
 

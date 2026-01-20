@@ -82,7 +82,7 @@ public class Example {
 
 <a id="listShifts"></a>
 # **listShifts**
-> ShiftList listShifts(include, to, from, userIds, scheduleIds)
+> ShiftList listShifts(include, from, to, userIds, scheduleIds)
 
 List shifts
 
@@ -108,13 +108,13 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     ShiftsApi apiInstance = new ShiftsApi(defaultClient);
-    String include = "shift_override"; // String | comma separated if needed. eg: shift_override,user
-    String to = "to_example"; // String | Start range for shifts
-    String from = "from_example"; // String | End range for shifts
+    String include = "shift_override"; // String | comma separated if needed. eg: shift_override,user. Note: `user` is deprecated, use `assignee` instead.
+    String from = "from_example"; // String | Start range for shifts in ISO-8601 format (e.g., 2025-01-01T00:00:00Z or 2025-01-01T00:00:00+00:00)
+    String to = "to_example"; // String | End range for shifts in ISO-8601 format (e.g., 2025-01-01T00:00:00Z or 2025-01-01T00:00:00+00:00)
     List<Integer> userIds = Arrays.asList(); // List<Integer> | 
     List<String> scheduleIds = Arrays.asList(); // List<String> | 
     try {
-      ShiftList result = apiInstance.listShifts(include, to, from, userIds, scheduleIds);
+      ShiftList result = apiInstance.listShifts(include, from, to, userIds, scheduleIds);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ShiftsApi#listShifts");
@@ -131,9 +131,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **include** | **String**| comma separated if needed. eg: shift_override,user | [optional] [enum: shift_override, user] |
-| **to** | **String**| Start range for shifts | [optional] |
-| **from** | **String**| End range for shifts | [optional] |
+| **include** | **String**| comma separated if needed. eg: shift_override,user. Note: &#x60;user&#x60; is deprecated, use &#x60;assignee&#x60; instead. | [optional] [enum: shift_override, user, assignee] |
+| **from** | **String**| Start range for shifts in ISO-8601 format (e.g., 2025-01-01T00:00:00Z or 2025-01-01T00:00:00+00:00) | [optional] |
+| **to** | **String**| End range for shifts in ISO-8601 format (e.g., 2025-01-01T00:00:00Z or 2025-01-01T00:00:00+00:00) | [optional] |
 | **userIds** | [**List&lt;Integer&gt;**](Integer.md)|  | [optional] |
 | **scheduleIds** | [**List&lt;String&gt;**](String.md)|  | [optional] |
 

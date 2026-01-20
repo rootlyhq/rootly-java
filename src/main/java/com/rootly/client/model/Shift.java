@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -19,8 +19,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.rootly.client.model.ShiftOverrideResponse;
-import com.rootly.client.model.UserResponse;
 import java.io.IOException;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -51,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * Shift
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T17:46:55.918190357Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Shift {
   public static final String SERIALIZED_NAME_SCHEDULE_ID = "schedule_id";
   @SerializedName(SERIALIZED_NAME_SCHEDULE_ID)
@@ -78,15 +76,10 @@ public class Shift {
   @javax.annotation.Nonnull
   private Boolean isOverride;
 
-  public static final String SERIALIZED_NAME_SHIFT_OVERRIDE = "shift_override";
-  @SerializedName(SERIALIZED_NAME_SHIFT_OVERRIDE)
+  public static final String SERIALIZED_NAME_USER_ID = "user_id";
+  @SerializedName(SERIALIZED_NAME_USER_ID)
   @javax.annotation.Nullable
-  private ShiftOverrideResponse shiftOverride;
-
-  public static final String SERIALIZED_NAME_USER = "user";
-  @SerializedName(SERIALIZED_NAME_USER)
-  @javax.annotation.Nullable
-  private UserResponse user;
+  private Integer userId;
 
   public Shift() {
   }
@@ -186,41 +179,22 @@ public class Shift {
   }
 
 
-  public Shift shiftOverride(@javax.annotation.Nullable ShiftOverrideResponse shiftOverride) {
-    this.shiftOverride = shiftOverride;
+  public Shift userId(@javax.annotation.Nullable Integer userId) {
+    this.userId = userId;
     return this;
   }
 
   /**
-   * Override metadata
-   * @return shiftOverride
+   * ID of user on shift
+   * @return userId
    */
   @javax.annotation.Nullable
-  public ShiftOverrideResponse getShiftOverride() {
-    return shiftOverride;
+  public Integer getUserId() {
+    return userId;
   }
 
-  public void setShiftOverride(@javax.annotation.Nullable ShiftOverrideResponse shiftOverride) {
-    this.shiftOverride = shiftOverride;
-  }
-
-
-  public Shift user(@javax.annotation.Nullable UserResponse user) {
-    this.user = user;
-    return this;
-  }
-
-  /**
-   * User metadata
-   * @return user
-   */
-  @javax.annotation.Nullable
-  public UserResponse getUser() {
-    return user;
-  }
-
-  public void setUser(@javax.annotation.Nullable UserResponse user) {
-    this.user = user;
+  public void setUserId(@javax.annotation.Nullable Integer userId) {
+    this.userId = userId;
   }
 
 
@@ -239,8 +213,7 @@ public class Shift {
         Objects.equals(this.startsAt, shift.startsAt) &&
         Objects.equals(this.endsAt, shift.endsAt) &&
         Objects.equals(this.isOverride, shift.isOverride) &&
-        Objects.equals(this.shiftOverride, shift.shiftOverride) &&
-        Objects.equals(this.user, shift.user);
+        Objects.equals(this.userId, shift.userId);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -249,7 +222,7 @@ public class Shift {
 
   @Override
   public int hashCode() {
-    return Objects.hash(scheduleId, rotationId, startsAt, endsAt, isOverride, shiftOverride, user);
+    return Objects.hash(scheduleId, rotationId, startsAt, endsAt, isOverride, userId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -268,8 +241,7 @@ public class Shift {
     sb.append("    startsAt: ").append(toIndentedString(startsAt)).append("\n");
     sb.append("    endsAt: ").append(toIndentedString(endsAt)).append("\n");
     sb.append("    isOverride: ").append(toIndentedString(isOverride)).append("\n");
-    sb.append("    shiftOverride: ").append(toIndentedString(shiftOverride)).append("\n");
-    sb.append("    user: ").append(toIndentedString(user)).append("\n");
+    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -297,8 +269,7 @@ public class Shift {
     openapiFields.add("starts_at");
     openapiFields.add("ends_at");
     openapiFields.add("is_override");
-    openapiFields.add("shift_override");
-    openapiFields.add("user");
+    openapiFields.add("user_id");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -348,14 +319,6 @@ public class Shift {
       }
       if (!jsonObj.get("ends_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `ends_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ends_at").toString()));
-      }
-      // validate the optional field `shift_override`
-      if (jsonObj.get("shift_override") != null && !jsonObj.get("shift_override").isJsonNull()) {
-        ShiftOverrideResponse.validateJsonElement(jsonObj.get("shift_override"));
-      }
-      // validate the optional field `user`
-      if (jsonObj.get("user") != null && !jsonObj.get("user").isJsonNull()) {
-        UserResponse.validateJsonElement(jsonObj.get("user"));
       }
   }
 

@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateIncidentDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T17:46:55.918190357Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateIncidentDataAttributes {
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
@@ -77,7 +77,9 @@ public class UpdateIncidentDataAttributes {
     
     BACKFILLED("backfilled"),
     
-    SCHEDULED("scheduled");
+    SCHEDULED("scheduled"),
+    
+    SCHEDULED_SUB("scheduled_sub");
 
     private String value;
 
@@ -227,6 +229,16 @@ public class UpdateIncidentDataAttributes {
   @javax.annotation.Nullable
   private String severityId;
 
+  public static final String SERIALIZED_NAME_PUBLIC_TITLE = "public_title";
+  @SerializedName(SERIALIZED_NAME_PUBLIC_TITLE)
+  @javax.annotation.Nullable
+  private String publicTitle;
+
+  public static final String SERIALIZED_NAME_ALERT_IDS = "alert_ids";
+  @SerializedName(SERIALIZED_NAME_ALERT_IDS)
+  @javax.annotation.Nullable
+  private List<String> alertIds;
+
   public static final String SERIALIZED_NAME_ENVIRONMENT_IDS = "environment_ids";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_IDS)
   @javax.annotation.Nullable
@@ -246,6 +258,11 @@ public class UpdateIncidentDataAttributes {
   @SerializedName(SERIALIZED_NAME_FUNCTIONALITY_IDS)
   @javax.annotation.Nullable
   private List<String> functionalityIds;
+
+  public static final String SERIALIZED_NAME_MUTED_SERVICE_IDS = "muted_service_ids";
+  @SerializedName(SERIALIZED_NAME_MUTED_SERVICE_IDS)
+  @javax.annotation.Nullable
+  private List<String> mutedServiceIds;
 
   public static final String SERIALIZED_NAME_GROUP_IDS = "group_ids";
   @SerializedName(SERIALIZED_NAME_GROUP_IDS)
@@ -276,6 +293,36 @@ public class UpdateIncidentDataAttributes {
   @SerializedName(SERIALIZED_NAME_SLACK_CHANNEL_URL)
   @javax.annotation.Nullable
   private String slackChannelUrl;
+
+  public static final String SERIALIZED_NAME_SLACK_CHANNEL_ARCHIVED = "slack_channel_archived";
+  @SerializedName(SERIALIZED_NAME_SLACK_CHANNEL_ARCHIVED)
+  @javax.annotation.Nullable
+  private Boolean slackChannelArchived;
+
+  public static final String SERIALIZED_NAME_GOOGLE_DRIVE_PARENT_ID = "google_drive_parent_id";
+  @SerializedName(SERIALIZED_NAME_GOOGLE_DRIVE_PARENT_ID)
+  @javax.annotation.Nullable
+  private String googleDriveParentId;
+
+  public static final String SERIALIZED_NAME_GOOGLE_DRIVE_URL = "google_drive_url";
+  @SerializedName(SERIALIZED_NAME_GOOGLE_DRIVE_URL)
+  @javax.annotation.Nullable
+  private String googleDriveUrl;
+
+  public static final String SERIALIZED_NAME_JIRA_ISSUE_KEY = "jira_issue_key";
+  @SerializedName(SERIALIZED_NAME_JIRA_ISSUE_KEY)
+  @javax.annotation.Nullable
+  private String jiraIssueKey;
+
+  public static final String SERIALIZED_NAME_JIRA_ISSUE_ID = "jira_issue_id";
+  @SerializedName(SERIALIZED_NAME_JIRA_ISSUE_ID)
+  @javax.annotation.Nullable
+  private String jiraIssueId;
+
+  public static final String SERIALIZED_NAME_JIRA_ISSUE_URL = "jira_issue_url";
+  @SerializedName(SERIALIZED_NAME_JIRA_ISSUE_URL)
+  @javax.annotation.Nullable
+  private String jiraIssueUrl;
 
   public static final String SERIALIZED_NAME_SCHEDULED_FOR = "scheduled_for";
   @SerializedName(SERIALIZED_NAME_SCHEDULED_FOR)
@@ -317,10 +364,30 @@ public class UpdateIncidentDataAttributes {
   @javax.annotation.Nullable
   private String resolvedAt;
 
+  public static final String SERIALIZED_NAME_CLOSED_AT = "closed_at";
+  @SerializedName(SERIALIZED_NAME_CLOSED_AT)
+  @javax.annotation.Nullable
+  private String closedAt;
+
   public static final String SERIALIZED_NAME_CANCELLED_AT = "cancelled_at";
   @SerializedName(SERIALIZED_NAME_CANCELLED_AT)
   @javax.annotation.Nullable
   private String cancelledAt;
+
+  public static final String SERIALIZED_NAME_MITIGATION_MESSAGE = "mitigation_message";
+  @SerializedName(SERIALIZED_NAME_MITIGATION_MESSAGE)
+  @javax.annotation.Nullable
+  private String mitigationMessage;
+
+  public static final String SERIALIZED_NAME_RESOLUTION_MESSAGE = "resolution_message";
+  @SerializedName(SERIALIZED_NAME_RESOLUTION_MESSAGE)
+  @javax.annotation.Nullable
+  private String resolutionMessage;
+
+  public static final String SERIALIZED_NAME_CANCELLATION_MESSAGE = "cancellation_message";
+  @SerializedName(SERIALIZED_NAME_CANCELLATION_MESSAGE)
+  @javax.annotation.Nullable
+  private String cancellationMessage;
 
   public UpdateIncidentDataAttributes() {
   }
@@ -477,6 +544,52 @@ public class UpdateIncidentDataAttributes {
   }
 
 
+  public UpdateIncidentDataAttributes publicTitle(@javax.annotation.Nullable String publicTitle) {
+    this.publicTitle = publicTitle;
+    return this;
+  }
+
+  /**
+   * The public title of the incident
+   * @return publicTitle
+   */
+  @javax.annotation.Nullable
+  public String getPublicTitle() {
+    return publicTitle;
+  }
+
+  public void setPublicTitle(@javax.annotation.Nullable String publicTitle) {
+    this.publicTitle = publicTitle;
+  }
+
+
+  public UpdateIncidentDataAttributes alertIds(@javax.annotation.Nullable List<String> alertIds) {
+    this.alertIds = alertIds;
+    return this;
+  }
+
+  public UpdateIncidentDataAttributes addAlertIdsItem(String alertIdsItem) {
+    if (this.alertIds == null) {
+      this.alertIds = new ArrayList<>();
+    }
+    this.alertIds.add(alertIdsItem);
+    return this;
+  }
+
+  /**
+   * The Alert IDs to attach to the incident
+   * @return alertIds
+   */
+  @javax.annotation.Nullable
+  public List<String> getAlertIds() {
+    return alertIds;
+  }
+
+  public void setAlertIds(@javax.annotation.Nullable List<String> alertIds) {
+    this.alertIds = alertIds;
+  }
+
+
   public UpdateIncidentDataAttributes environmentIds(@javax.annotation.Nullable List<String> environmentIds) {
     this.environmentIds = environmentIds;
     return this;
@@ -491,7 +604,7 @@ public class UpdateIncidentDataAttributes {
   }
 
   /**
-   * The Environment ID&#39;s to attach to the incident
+   * The Environment IDs to attach to the incident
    * @return environmentIds
    */
   @javax.annotation.Nullable
@@ -518,7 +631,7 @@ public class UpdateIncidentDataAttributes {
   }
 
   /**
-   * The Incident Type ID&#39;s to attach to the incident
+   * The Incident Type IDs to attach to the incident
    * @return incidentTypeIds
    */
   @javax.annotation.Nullable
@@ -545,7 +658,7 @@ public class UpdateIncidentDataAttributes {
   }
 
   /**
-   * The Service ID&#39;s to attach to the incident
+   * The Service IDs to attach to the incident
    * @return serviceIds
    */
   @javax.annotation.Nullable
@@ -572,7 +685,7 @@ public class UpdateIncidentDataAttributes {
   }
 
   /**
-   * The Functionality ID&#39;s to attach to the incident
+   * The Functionality IDs to attach to the incident
    * @return functionalityIds
    */
   @javax.annotation.Nullable
@@ -582,6 +695,33 @@ public class UpdateIncidentDataAttributes {
 
   public void setFunctionalityIds(@javax.annotation.Nullable List<String> functionalityIds) {
     this.functionalityIds = functionalityIds;
+  }
+
+
+  public UpdateIncidentDataAttributes mutedServiceIds(@javax.annotation.Nullable List<String> mutedServiceIds) {
+    this.mutedServiceIds = mutedServiceIds;
+    return this;
+  }
+
+  public UpdateIncidentDataAttributes addMutedServiceIdsItem(String mutedServiceIdsItem) {
+    if (this.mutedServiceIds == null) {
+      this.mutedServiceIds = new ArrayList<>();
+    }
+    this.mutedServiceIds.add(mutedServiceIdsItem);
+    return this;
+  }
+
+  /**
+   * The Service IDs to mute alerts for during maintenance. Alerts for these services will still be triggered and attached to the incident, but won&#39;t page responders.
+   * @return mutedServiceIds
+   */
+  @javax.annotation.Nullable
+  public List<String> getMutedServiceIds() {
+    return mutedServiceIds;
+  }
+
+  public void setMutedServiceIds(@javax.annotation.Nullable List<String> mutedServiceIds) {
+    this.mutedServiceIds = mutedServiceIds;
   }
 
 
@@ -599,7 +739,7 @@ public class UpdateIncidentDataAttributes {
   }
 
   /**
-   * The Team ID&#39;s to attach to the incident
+   * The Team IDs to attach to the incident
    * @return groupIds
    */
   @javax.annotation.Nullable
@@ -626,7 +766,7 @@ public class UpdateIncidentDataAttributes {
   }
 
   /**
-   * The Cause ID&#39;s to attach to the incident
+   * The Cause IDs to attach to the incident
    * @return causeIds
    */
   @javax.annotation.Nullable
@@ -712,6 +852,120 @@ public class UpdateIncidentDataAttributes {
 
   public void setSlackChannelUrl(@javax.annotation.Nullable String slackChannelUrl) {
     this.slackChannelUrl = slackChannelUrl;
+  }
+
+
+  public UpdateIncidentDataAttributes slackChannelArchived(@javax.annotation.Nullable Boolean slackChannelArchived) {
+    this.slackChannelArchived = slackChannelArchived;
+    return this;
+  }
+
+  /**
+   * Whether the Slack channel is archived
+   * @return slackChannelArchived
+   */
+  @javax.annotation.Nullable
+  public Boolean getSlackChannelArchived() {
+    return slackChannelArchived;
+  }
+
+  public void setSlackChannelArchived(@javax.annotation.Nullable Boolean slackChannelArchived) {
+    this.slackChannelArchived = slackChannelArchived;
+  }
+
+
+  public UpdateIncidentDataAttributes googleDriveParentId(@javax.annotation.Nullable String googleDriveParentId) {
+    this.googleDriveParentId = googleDriveParentId;
+    return this;
+  }
+
+  /**
+   * Google Drive parent folder ID
+   * @return googleDriveParentId
+   */
+  @javax.annotation.Nullable
+  public String getGoogleDriveParentId() {
+    return googleDriveParentId;
+  }
+
+  public void setGoogleDriveParentId(@javax.annotation.Nullable String googleDriveParentId) {
+    this.googleDriveParentId = googleDriveParentId;
+  }
+
+
+  public UpdateIncidentDataAttributes googleDriveUrl(@javax.annotation.Nullable String googleDriveUrl) {
+    this.googleDriveUrl = googleDriveUrl;
+    return this;
+  }
+
+  /**
+   * Google Drive URL
+   * @return googleDriveUrl
+   */
+  @javax.annotation.Nullable
+  public String getGoogleDriveUrl() {
+    return googleDriveUrl;
+  }
+
+  public void setGoogleDriveUrl(@javax.annotation.Nullable String googleDriveUrl) {
+    this.googleDriveUrl = googleDriveUrl;
+  }
+
+
+  public UpdateIncidentDataAttributes jiraIssueKey(@javax.annotation.Nullable String jiraIssueKey) {
+    this.jiraIssueKey = jiraIssueKey;
+    return this;
+  }
+
+  /**
+   * Jira issue key
+   * @return jiraIssueKey
+   */
+  @javax.annotation.Nullable
+  public String getJiraIssueKey() {
+    return jiraIssueKey;
+  }
+
+  public void setJiraIssueKey(@javax.annotation.Nullable String jiraIssueKey) {
+    this.jiraIssueKey = jiraIssueKey;
+  }
+
+
+  public UpdateIncidentDataAttributes jiraIssueId(@javax.annotation.Nullable String jiraIssueId) {
+    this.jiraIssueId = jiraIssueId;
+    return this;
+  }
+
+  /**
+   * Jira issue ID
+   * @return jiraIssueId
+   */
+  @javax.annotation.Nullable
+  public String getJiraIssueId() {
+    return jiraIssueId;
+  }
+
+  public void setJiraIssueId(@javax.annotation.Nullable String jiraIssueId) {
+    this.jiraIssueId = jiraIssueId;
+  }
+
+
+  public UpdateIncidentDataAttributes jiraIssueUrl(@javax.annotation.Nullable String jiraIssueUrl) {
+    this.jiraIssueUrl = jiraIssueUrl;
+    return this;
+  }
+
+  /**
+   * Jira issue URL
+   * @return jiraIssueUrl
+   */
+  @javax.annotation.Nullable
+  public String getJiraIssueUrl() {
+    return jiraIssueUrl;
+  }
+
+  public void setJiraIssueUrl(@javax.annotation.Nullable String jiraIssueUrl) {
+    this.jiraIssueUrl = jiraIssueUrl;
   }
 
 
@@ -867,6 +1121,25 @@ public class UpdateIncidentDataAttributes {
   }
 
 
+  public UpdateIncidentDataAttributes closedAt(@javax.annotation.Nullable String closedAt) {
+    this.closedAt = closedAt;
+    return this;
+  }
+
+  /**
+   * Date of closure
+   * @return closedAt
+   */
+  @javax.annotation.Nullable
+  public String getClosedAt() {
+    return closedAt;
+  }
+
+  public void setClosedAt(@javax.annotation.Nullable String closedAt) {
+    this.closedAt = closedAt;
+  }
+
+
   public UpdateIncidentDataAttributes cancelledAt(@javax.annotation.Nullable String cancelledAt) {
     this.cancelledAt = cancelledAt;
     return this;
@@ -883,6 +1156,63 @@ public class UpdateIncidentDataAttributes {
 
   public void setCancelledAt(@javax.annotation.Nullable String cancelledAt) {
     this.cancelledAt = cancelledAt;
+  }
+
+
+  public UpdateIncidentDataAttributes mitigationMessage(@javax.annotation.Nullable String mitigationMessage) {
+    this.mitigationMessage = mitigationMessage;
+    return this;
+  }
+
+  /**
+   * How was the incident mitigated?
+   * @return mitigationMessage
+   */
+  @javax.annotation.Nullable
+  public String getMitigationMessage() {
+    return mitigationMessage;
+  }
+
+  public void setMitigationMessage(@javax.annotation.Nullable String mitigationMessage) {
+    this.mitigationMessage = mitigationMessage;
+  }
+
+
+  public UpdateIncidentDataAttributes resolutionMessage(@javax.annotation.Nullable String resolutionMessage) {
+    this.resolutionMessage = resolutionMessage;
+    return this;
+  }
+
+  /**
+   * How was the incident resolved?
+   * @return resolutionMessage
+   */
+  @javax.annotation.Nullable
+  public String getResolutionMessage() {
+    return resolutionMessage;
+  }
+
+  public void setResolutionMessage(@javax.annotation.Nullable String resolutionMessage) {
+    this.resolutionMessage = resolutionMessage;
+  }
+
+
+  public UpdateIncidentDataAttributes cancellationMessage(@javax.annotation.Nullable String cancellationMessage) {
+    this.cancellationMessage = cancellationMessage;
+    return this;
+  }
+
+  /**
+   * Why was the incident cancelled?
+   * @return cancellationMessage
+   */
+  @javax.annotation.Nullable
+  public String getCancellationMessage() {
+    return cancellationMessage;
+  }
+
+  public void setCancellationMessage(@javax.annotation.Nullable String cancellationMessage) {
+    this.cancellationMessage = cancellationMessage;
   }
 
 
@@ -904,16 +1234,25 @@ public class UpdateIncidentDataAttributes {
         Objects.equals(this.status, updateIncidentDataAttributes.status) &&
         Objects.equals(this._private, updateIncidentDataAttributes._private) &&
         Objects.equals(this.severityId, updateIncidentDataAttributes.severityId) &&
+        Objects.equals(this.publicTitle, updateIncidentDataAttributes.publicTitle) &&
+        Objects.equals(this.alertIds, updateIncidentDataAttributes.alertIds) &&
         Objects.equals(this.environmentIds, updateIncidentDataAttributes.environmentIds) &&
         Objects.equals(this.incidentTypeIds, updateIncidentDataAttributes.incidentTypeIds) &&
         Objects.equals(this.serviceIds, updateIncidentDataAttributes.serviceIds) &&
         Objects.equals(this.functionalityIds, updateIncidentDataAttributes.functionalityIds) &&
+        Objects.equals(this.mutedServiceIds, updateIncidentDataAttributes.mutedServiceIds) &&
         Objects.equals(this.groupIds, updateIncidentDataAttributes.groupIds) &&
         Objects.equals(this.causeIds, updateIncidentDataAttributes.causeIds) &&
         Objects.equals(this.labels, updateIncidentDataAttributes.labels) &&
         Objects.equals(this.slackChannelId, updateIncidentDataAttributes.slackChannelId) &&
         Objects.equals(this.slackChannelName, updateIncidentDataAttributes.slackChannelName) &&
         Objects.equals(this.slackChannelUrl, updateIncidentDataAttributes.slackChannelUrl) &&
+        Objects.equals(this.slackChannelArchived, updateIncidentDataAttributes.slackChannelArchived) &&
+        Objects.equals(this.googleDriveParentId, updateIncidentDataAttributes.googleDriveParentId) &&
+        Objects.equals(this.googleDriveUrl, updateIncidentDataAttributes.googleDriveUrl) &&
+        Objects.equals(this.jiraIssueKey, updateIncidentDataAttributes.jiraIssueKey) &&
+        Objects.equals(this.jiraIssueId, updateIncidentDataAttributes.jiraIssueId) &&
+        Objects.equals(this.jiraIssueUrl, updateIncidentDataAttributes.jiraIssueUrl) &&
         Objects.equals(this.scheduledFor, updateIncidentDataAttributes.scheduledFor) &&
         Objects.equals(this.scheduledUntil, updateIncidentDataAttributes.scheduledUntil) &&
         Objects.equals(this.inTriageAt, updateIncidentDataAttributes.inTriageAt) &&
@@ -922,7 +1261,11 @@ public class UpdateIncidentDataAttributes {
         Objects.equals(this.acknowledgedAt, updateIncidentDataAttributes.acknowledgedAt) &&
         Objects.equals(this.mitigatedAt, updateIncidentDataAttributes.mitigatedAt) &&
         Objects.equals(this.resolvedAt, updateIncidentDataAttributes.resolvedAt) &&
-        Objects.equals(this.cancelledAt, updateIncidentDataAttributes.cancelledAt);
+        Objects.equals(this.closedAt, updateIncidentDataAttributes.closedAt) &&
+        Objects.equals(this.cancelledAt, updateIncidentDataAttributes.cancelledAt) &&
+        Objects.equals(this.mitigationMessage, updateIncidentDataAttributes.mitigationMessage) &&
+        Objects.equals(this.resolutionMessage, updateIncidentDataAttributes.resolutionMessage) &&
+        Objects.equals(this.cancellationMessage, updateIncidentDataAttributes.cancellationMessage);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -931,7 +1274,7 @@ public class UpdateIncidentDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, kind, parentIncidentId, duplicateIncidentId, summary, status, _private, severityId, environmentIds, incidentTypeIds, serviceIds, functionalityIds, groupIds, causeIds, labels, slackChannelId, slackChannelName, slackChannelUrl, scheduledFor, scheduledUntil, inTriageAt, startedAt, detectedAt, acknowledgedAt, mitigatedAt, resolvedAt, cancelledAt);
+    return Objects.hash(title, kind, parentIncidentId, duplicateIncidentId, summary, status, _private, severityId, publicTitle, alertIds, environmentIds, incidentTypeIds, serviceIds, functionalityIds, mutedServiceIds, groupIds, causeIds, labels, slackChannelId, slackChannelName, slackChannelUrl, slackChannelArchived, googleDriveParentId, googleDriveUrl, jiraIssueKey, jiraIssueId, jiraIssueUrl, scheduledFor, scheduledUntil, inTriageAt, startedAt, detectedAt, acknowledgedAt, mitigatedAt, resolvedAt, closedAt, cancelledAt, mitigationMessage, resolutionMessage, cancellationMessage);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -953,16 +1296,25 @@ public class UpdateIncidentDataAttributes {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    _private: ").append(toIndentedString(_private)).append("\n");
     sb.append("    severityId: ").append(toIndentedString(severityId)).append("\n");
+    sb.append("    publicTitle: ").append(toIndentedString(publicTitle)).append("\n");
+    sb.append("    alertIds: ").append(toIndentedString(alertIds)).append("\n");
     sb.append("    environmentIds: ").append(toIndentedString(environmentIds)).append("\n");
     sb.append("    incidentTypeIds: ").append(toIndentedString(incidentTypeIds)).append("\n");
     sb.append("    serviceIds: ").append(toIndentedString(serviceIds)).append("\n");
     sb.append("    functionalityIds: ").append(toIndentedString(functionalityIds)).append("\n");
+    sb.append("    mutedServiceIds: ").append(toIndentedString(mutedServiceIds)).append("\n");
     sb.append("    groupIds: ").append(toIndentedString(groupIds)).append("\n");
     sb.append("    causeIds: ").append(toIndentedString(causeIds)).append("\n");
     sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
     sb.append("    slackChannelId: ").append(toIndentedString(slackChannelId)).append("\n");
     sb.append("    slackChannelName: ").append(toIndentedString(slackChannelName)).append("\n");
     sb.append("    slackChannelUrl: ").append(toIndentedString(slackChannelUrl)).append("\n");
+    sb.append("    slackChannelArchived: ").append(toIndentedString(slackChannelArchived)).append("\n");
+    sb.append("    googleDriveParentId: ").append(toIndentedString(googleDriveParentId)).append("\n");
+    sb.append("    googleDriveUrl: ").append(toIndentedString(googleDriveUrl)).append("\n");
+    sb.append("    jiraIssueKey: ").append(toIndentedString(jiraIssueKey)).append("\n");
+    sb.append("    jiraIssueId: ").append(toIndentedString(jiraIssueId)).append("\n");
+    sb.append("    jiraIssueUrl: ").append(toIndentedString(jiraIssueUrl)).append("\n");
     sb.append("    scheduledFor: ").append(toIndentedString(scheduledFor)).append("\n");
     sb.append("    scheduledUntil: ").append(toIndentedString(scheduledUntil)).append("\n");
     sb.append("    inTriageAt: ").append(toIndentedString(inTriageAt)).append("\n");
@@ -971,7 +1323,11 @@ public class UpdateIncidentDataAttributes {
     sb.append("    acknowledgedAt: ").append(toIndentedString(acknowledgedAt)).append("\n");
     sb.append("    mitigatedAt: ").append(toIndentedString(mitigatedAt)).append("\n");
     sb.append("    resolvedAt: ").append(toIndentedString(resolvedAt)).append("\n");
+    sb.append("    closedAt: ").append(toIndentedString(closedAt)).append("\n");
     sb.append("    cancelledAt: ").append(toIndentedString(cancelledAt)).append("\n");
+    sb.append("    mitigationMessage: ").append(toIndentedString(mitigationMessage)).append("\n");
+    sb.append("    resolutionMessage: ").append(toIndentedString(resolutionMessage)).append("\n");
+    sb.append("    cancellationMessage: ").append(toIndentedString(cancellationMessage)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -1002,16 +1358,25 @@ public class UpdateIncidentDataAttributes {
     openapiFields.add("status");
     openapiFields.add("private");
     openapiFields.add("severity_id");
+    openapiFields.add("public_title");
+    openapiFields.add("alert_ids");
     openapiFields.add("environment_ids");
     openapiFields.add("incident_type_ids");
     openapiFields.add("service_ids");
     openapiFields.add("functionality_ids");
+    openapiFields.add("muted_service_ids");
     openapiFields.add("group_ids");
     openapiFields.add("cause_ids");
     openapiFields.add("labels");
     openapiFields.add("slack_channel_id");
     openapiFields.add("slack_channel_name");
     openapiFields.add("slack_channel_url");
+    openapiFields.add("slack_channel_archived");
+    openapiFields.add("google_drive_parent_id");
+    openapiFields.add("google_drive_url");
+    openapiFields.add("jira_issue_key");
+    openapiFields.add("jira_issue_id");
+    openapiFields.add("jira_issue_url");
     openapiFields.add("scheduled_for");
     openapiFields.add("scheduled_until");
     openapiFields.add("in_triage_at");
@@ -1020,7 +1385,11 @@ public class UpdateIncidentDataAttributes {
     openapiFields.add("acknowledged_at");
     openapiFields.add("mitigated_at");
     openapiFields.add("resolved_at");
+    openapiFields.add("closed_at");
     openapiFields.add("cancelled_at");
+    openapiFields.add("mitigation_message");
+    openapiFields.add("resolution_message");
+    openapiFields.add("cancellation_message");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -1076,6 +1445,13 @@ public class UpdateIncidentDataAttributes {
       if ((jsonObj.get("severity_id") != null && !jsonObj.get("severity_id").isJsonNull()) && !jsonObj.get("severity_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `severity_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("severity_id").toString()));
       }
+      if ((jsonObj.get("public_title") != null && !jsonObj.get("public_title").isJsonNull()) && !jsonObj.get("public_title").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `public_title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("public_title").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("alert_ids") != null && !jsonObj.get("alert_ids").isJsonNull() && !jsonObj.get("alert_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `alert_ids` to be an array in the JSON string but got `%s`", jsonObj.get("alert_ids").toString()));
+      }
       // ensure the optional json data is an array if present
       if (jsonObj.get("environment_ids") != null && !jsonObj.get("environment_ids").isJsonNull() && !jsonObj.get("environment_ids").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `environment_ids` to be an array in the JSON string but got `%s`", jsonObj.get("environment_ids").toString()));
@@ -1093,6 +1469,10 @@ public class UpdateIncidentDataAttributes {
         throw new IllegalArgumentException(String.format("Expected the field `functionality_ids` to be an array in the JSON string but got `%s`", jsonObj.get("functionality_ids").toString()));
       }
       // ensure the optional json data is an array if present
+      if (jsonObj.get("muted_service_ids") != null && !jsonObj.get("muted_service_ids").isJsonNull() && !jsonObj.get("muted_service_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `muted_service_ids` to be an array in the JSON string but got `%s`", jsonObj.get("muted_service_ids").toString()));
+      }
+      // ensure the optional json data is an array if present
       if (jsonObj.get("group_ids") != null && !jsonObj.get("group_ids").isJsonNull() && !jsonObj.get("group_ids").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `group_ids` to be an array in the JSON string but got `%s`", jsonObj.get("group_ids").toString()));
       }
@@ -1108,6 +1488,21 @@ public class UpdateIncidentDataAttributes {
       }
       if ((jsonObj.get("slack_channel_url") != null && !jsonObj.get("slack_channel_url").isJsonNull()) && !jsonObj.get("slack_channel_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `slack_channel_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slack_channel_url").toString()));
+      }
+      if ((jsonObj.get("google_drive_parent_id") != null && !jsonObj.get("google_drive_parent_id").isJsonNull()) && !jsonObj.get("google_drive_parent_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `google_drive_parent_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("google_drive_parent_id").toString()));
+      }
+      if ((jsonObj.get("google_drive_url") != null && !jsonObj.get("google_drive_url").isJsonNull()) && !jsonObj.get("google_drive_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `google_drive_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("google_drive_url").toString()));
+      }
+      if ((jsonObj.get("jira_issue_key") != null && !jsonObj.get("jira_issue_key").isJsonNull()) && !jsonObj.get("jira_issue_key").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `jira_issue_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("jira_issue_key").toString()));
+      }
+      if ((jsonObj.get("jira_issue_id") != null && !jsonObj.get("jira_issue_id").isJsonNull()) && !jsonObj.get("jira_issue_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `jira_issue_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("jira_issue_id").toString()));
+      }
+      if ((jsonObj.get("jira_issue_url") != null && !jsonObj.get("jira_issue_url").isJsonNull()) && !jsonObj.get("jira_issue_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `jira_issue_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("jira_issue_url").toString()));
       }
       if ((jsonObj.get("scheduled_for") != null && !jsonObj.get("scheduled_for").isJsonNull()) && !jsonObj.get("scheduled_for").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `scheduled_for` to be a primitive type in the JSON string but got `%s`", jsonObj.get("scheduled_for").toString()));
@@ -1133,8 +1528,20 @@ public class UpdateIncidentDataAttributes {
       if ((jsonObj.get("resolved_at") != null && !jsonObj.get("resolved_at").isJsonNull()) && !jsonObj.get("resolved_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `resolved_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resolved_at").toString()));
       }
+      if ((jsonObj.get("closed_at") != null && !jsonObj.get("closed_at").isJsonNull()) && !jsonObj.get("closed_at").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `closed_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("closed_at").toString()));
+      }
       if ((jsonObj.get("cancelled_at") != null && !jsonObj.get("cancelled_at").isJsonNull()) && !jsonObj.get("cancelled_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `cancelled_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cancelled_at").toString()));
+      }
+      if ((jsonObj.get("mitigation_message") != null && !jsonObj.get("mitigation_message").isJsonNull()) && !jsonObj.get("mitigation_message").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `mitigation_message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mitigation_message").toString()));
+      }
+      if ((jsonObj.get("resolution_message") != null && !jsonObj.get("resolution_message").isJsonNull()) && !jsonObj.get("resolution_message").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `resolution_message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resolution_message").toString()));
+      }
+      if ((jsonObj.get("cancellation_message") != null && !jsonObj.get("cancellation_message").isJsonNull()) && !jsonObj.get("cancellation_message").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `cancellation_message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cancellation_message").toString()));
       }
   }
 

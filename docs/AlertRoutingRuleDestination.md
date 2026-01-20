@@ -17,8 +17,8 @@ The destinations for the alert routing rule
 
 | Name | Value |
 |---- | -----|
-| GROUP | &quot;Group&quot; |
 | SERVICE | &quot;Service&quot; |
+| GROUP | &quot;Group&quot; |
 | ESCALATION_POLICY | &quot;EscalationPolicy&quot; |
 
 

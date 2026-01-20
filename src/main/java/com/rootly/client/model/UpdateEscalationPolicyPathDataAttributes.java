@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -20,6 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.rootly.client.model.UpdateEscalationPolicyPathDataAttributesRulesInner;
+import com.rootly.client.model.UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -52,7 +53,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateEscalationPolicyPathDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T17:46:55.918190357Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateEscalationPolicyPathDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -202,6 +203,672 @@ public class UpdateEscalationPolicyPathDataAttributes {
   @SerializedName(SERIALIZED_NAME_RULES)
   @javax.annotation.Nullable
   private List<UpdateEscalationPolicyPathDataAttributesRulesInner> rules = new ArrayList<>();
+
+  /**
+   * Time zone used for time restrictions.
+   */
+  @JsonAdapter(TimeRestrictionTimeZoneEnum.Adapter.class)
+  public enum TimeRestrictionTimeZoneEnum {
+    INTERNATIONAL_DATE_LINE_WEST("International Date Line West"),
+    
+    ETC_GMT_12("Etc/GMT+12"),
+    
+    AMERICAN_SAMOA("American Samoa"),
+    
+    PACIFIC_PAGO_PAGO("Pacific/Pago_Pago"),
+    
+    MIDWAY_ISLAND("Midway Island"),
+    
+    PACIFIC_MIDWAY("Pacific/Midway"),
+    
+    HAWAII("Hawaii"),
+    
+    PACIFIC_HONOLULU("Pacific/Honolulu"),
+    
+    ALASKA("Alaska"),
+    
+    AMERICA_JUNEAU("America/Juneau"),
+    
+    PACIFIC_TIME_US_CANADA_("Pacific Time (US & Canada)"),
+    
+    AMERICA_LOS_ANGELES("America/Los_Angeles"),
+    
+    TIJUANA("Tijuana"),
+    
+    AMERICA_TIJUANA("America/Tijuana"),
+    
+    ARIZONA("Arizona"),
+    
+    AMERICA_PHOENIX("America/Phoenix"),
+    
+    MAZATLAN("Mazatlan"),
+    
+    AMERICA_MAZATLAN("America/Mazatlan"),
+    
+    MOUNTAIN_TIME_US_CANADA_("Mountain Time (US & Canada)"),
+    
+    AMERICA_DENVER("America/Denver"),
+    
+    CENTRAL_AMERICA("Central America"),
+    
+    AMERICA_GUATEMALA("America/Guatemala"),
+    
+    CENTRAL_TIME_US_CANADA_("Central Time (US & Canada)"),
+    
+    AMERICA_CHICAGO("America/Chicago"),
+    
+    CHIHUAHUA("Chihuahua"),
+    
+    AMERICA_CHIHUAHUA("America/Chihuahua"),
+    
+    GUADALAJARA("Guadalajara"),
+    
+    AMERICA_MEXICO_CITY("America/Mexico_City"),
+    
+    MEXICO_CITY("Mexico City"),
+    
+    AMERICA_MEXICO_CITY2("America/Mexico_City"),
+    
+    MONTERREY("Monterrey"),
+    
+    AMERICA_MONTERREY("America/Monterrey"),
+    
+    SASKATCHEWAN("Saskatchewan"),
+    
+    AMERICA_REGINA("America/Regina"),
+    
+    BOGOTA("Bogota"),
+    
+    AMERICA_BOGOTA("America/Bogota"),
+    
+    EASTERN_TIME_US_CANADA_("Eastern Time (US & Canada)"),
+    
+    AMERICA_NEW_YORK("America/New_York"),
+    
+    INDIANA_EAST_("Indiana (East)"),
+    
+    AMERICA_INDIANA_INDIANAPOLIS("America/Indiana/Indianapolis"),
+    
+    LIMA("Lima"),
+    
+    AMERICA_LIMA("America/Lima"),
+    
+    QUITO("Quito"),
+    
+    AMERICA_LIMA2("America/Lima"),
+    
+    ATLANTIC_TIME_CANADA_("Atlantic Time (Canada)"),
+    
+    AMERICA_HALIFAX("America/Halifax"),
+    
+    CARACAS("Caracas"),
+    
+    AMERICA_CARACAS("America/Caracas"),
+    
+    GEORGETOWN("Georgetown"),
+    
+    AMERICA_GUYANA("America/Guyana"),
+    
+    LA_PAZ("La Paz"),
+    
+    AMERICA_LA_PAZ("America/La_Paz"),
+    
+    PUERTO_RICO("Puerto Rico"),
+    
+    AMERICA_PUERTO_RICO("America/Puerto_Rico"),
+    
+    SANTIAGO("Santiago"),
+    
+    AMERICA_SANTIAGO("America/Santiago"),
+    
+    NEWFOUNDLAND("Newfoundland"),
+    
+    AMERICA_ST_JOHNS("America/St_Johns"),
+    
+    ASUNCION("Asuncion"),
+    
+    AMERICA_ASUNCION("America/Asuncion"),
+    
+    BRASILIA("Brasilia"),
+    
+    AMERICA_SAO_PAULO("America/Sao_Paulo"),
+    
+    BUENOS_AIRES("Buenos Aires"),
+    
+    AMERICA_ARGENTINA_BUENOS_AIRES("America/Argentina/Buenos_Aires"),
+    
+    MONTEVIDEO("Montevideo"),
+    
+    AMERICA_MONTEVIDEO("America/Montevideo"),
+    
+    GREENLAND("Greenland"),
+    
+    AMERICA_NUUK("America/Nuuk"),
+    
+    MID_ATLANTIC("Mid-Atlantic"),
+    
+    ATLANTIC_SOUTH_GEORGIA("Atlantic/South_Georgia"),
+    
+    AZORES("Azores"),
+    
+    ATLANTIC_AZORES("Atlantic/Azores"),
+    
+    CAPE_VERDE_IS_("Cape Verde Is."),
+    
+    ATLANTIC_CAPE_VERDE("Atlantic/Cape_Verde"),
+    
+    CASABLANCA("Casablanca"),
+    
+    AFRICA_CASABLANCA("Africa/Casablanca"),
+    
+    DUBLIN("Dublin"),
+    
+    EUROPE_DUBLIN("Europe/Dublin"),
+    
+    EDINBURGH("Edinburgh"),
+    
+    EUROPE_LONDON("Europe/London"),
+    
+    LISBON("Lisbon"),
+    
+    EUROPE_LISBON("Europe/Lisbon"),
+    
+    LONDON("London"),
+    
+    EUROPE_LONDON2("Europe/London"),
+    
+    MONROVIA("Monrovia"),
+    
+    AFRICA_MONROVIA("Africa/Monrovia"),
+    
+    UTC("UTC"),
+    
+    ETC_UTC("Etc/UTC"),
+    
+    AMSTERDAM("Amsterdam"),
+    
+    EUROPE_AMSTERDAM("Europe/Amsterdam"),
+    
+    BELGRADE("Belgrade"),
+    
+    EUROPE_BELGRADE("Europe/Belgrade"),
+    
+    BERLIN("Berlin"),
+    
+    EUROPE_BERLIN("Europe/Berlin"),
+    
+    BERN("Bern"),
+    
+    EUROPE_ZURICH("Europe/Zurich"),
+    
+    BRATISLAVA("Bratislava"),
+    
+    EUROPE_BRATISLAVA("Europe/Bratislava"),
+    
+    BRUSSELS("Brussels"),
+    
+    EUROPE_BRUSSELS("Europe/Brussels"),
+    
+    BUDAPEST("Budapest"),
+    
+    EUROPE_BUDAPEST("Europe/Budapest"),
+    
+    COPENHAGEN("Copenhagen"),
+    
+    EUROPE_COPENHAGEN("Europe/Copenhagen"),
+    
+    LJUBLJANA("Ljubljana"),
+    
+    EUROPE_LJUBLJANA("Europe/Ljubljana"),
+    
+    MADRID("Madrid"),
+    
+    EUROPE_MADRID("Europe/Madrid"),
+    
+    PARIS("Paris"),
+    
+    EUROPE_PARIS("Europe/Paris"),
+    
+    PRAGUE("Prague"),
+    
+    EUROPE_PRAGUE("Europe/Prague"),
+    
+    ROME("Rome"),
+    
+    EUROPE_ROME("Europe/Rome"),
+    
+    SARAJEVO("Sarajevo"),
+    
+    EUROPE_SARAJEVO("Europe/Sarajevo"),
+    
+    SKOPJE("Skopje"),
+    
+    EUROPE_SKOPJE("Europe/Skopje"),
+    
+    STOCKHOLM("Stockholm"),
+    
+    EUROPE_STOCKHOLM("Europe/Stockholm"),
+    
+    VIENNA("Vienna"),
+    
+    EUROPE_VIENNA("Europe/Vienna"),
+    
+    WARSAW("Warsaw"),
+    
+    EUROPE_WARSAW("Europe/Warsaw"),
+    
+    WEST_CENTRAL_AFRICA("West Central Africa"),
+    
+    AFRICA_ALGIERS("Africa/Algiers"),
+    
+    ZAGREB("Zagreb"),
+    
+    EUROPE_ZAGREB("Europe/Zagreb"),
+    
+    ZURICH("Zurich"),
+    
+    EUROPE_ZURICH2("Europe/Zurich"),
+    
+    ATHENS("Athens"),
+    
+    EUROPE_ATHENS("Europe/Athens"),
+    
+    BUCHAREST("Bucharest"),
+    
+    EUROPE_BUCHAREST("Europe/Bucharest"),
+    
+    CAIRO("Cairo"),
+    
+    AFRICA_CAIRO("Africa/Cairo"),
+    
+    HARARE("Harare"),
+    
+    AFRICA_HARARE("Africa/Harare"),
+    
+    HELSINKI("Helsinki"),
+    
+    EUROPE_HELSINKI("Europe/Helsinki"),
+    
+    JERUSALEM("Jerusalem"),
+    
+    ASIA_JERUSALEM("Asia/Jerusalem"),
+    
+    KALININGRAD("Kaliningrad"),
+    
+    EUROPE_KALININGRAD("Europe/Kaliningrad"),
+    
+    KYIV("Kyiv"),
+    
+    EUROPE_KIEV("Europe/Kiev"),
+    
+    PRETORIA("Pretoria"),
+    
+    AFRICA_JOHANNESBURG("Africa/Johannesburg"),
+    
+    RIGA("Riga"),
+    
+    EUROPE_RIGA("Europe/Riga"),
+    
+    SOFIA("Sofia"),
+    
+    EUROPE_SOFIA("Europe/Sofia"),
+    
+    TALLINN("Tallinn"),
+    
+    EUROPE_TALLINN("Europe/Tallinn"),
+    
+    VILNIUS("Vilnius"),
+    
+    EUROPE_VILNIUS("Europe/Vilnius"),
+    
+    BAGHDAD("Baghdad"),
+    
+    ASIA_BAGHDAD("Asia/Baghdad"),
+    
+    ISTANBUL("Istanbul"),
+    
+    EUROPE_ISTANBUL("Europe/Istanbul"),
+    
+    KUWAIT("Kuwait"),
+    
+    ASIA_KUWAIT("Asia/Kuwait"),
+    
+    MINSK("Minsk"),
+    
+    EUROPE_MINSK("Europe/Minsk"),
+    
+    MOSCOW("Moscow"),
+    
+    EUROPE_MOSCOW("Europe/Moscow"),
+    
+    NAIROBI("Nairobi"),
+    
+    AFRICA_NAIROBI("Africa/Nairobi"),
+    
+    RIYADH("Riyadh"),
+    
+    ASIA_RIYADH("Asia/Riyadh"),
+    
+    ST_PETERSBURG("St. Petersburg"),
+    
+    EUROPE_MOSCOW2("Europe/Moscow"),
+    
+    VOLGOGRAD("Volgograd"),
+    
+    EUROPE_VOLGOGRAD("Europe/Volgograd"),
+    
+    TEHRAN("Tehran"),
+    
+    ASIA_TEHRAN("Asia/Tehran"),
+    
+    ABU_DHABI("Abu Dhabi"),
+    
+    ASIA_MUSCAT("Asia/Muscat"),
+    
+    BAKU("Baku"),
+    
+    ASIA_BAKU("Asia/Baku"),
+    
+    MUSCAT("Muscat"),
+    
+    ASIA_MUSCAT2("Asia/Muscat"),
+    
+    SAMARA("Samara"),
+    
+    EUROPE_SAMARA("Europe/Samara"),
+    
+    TBILISI("Tbilisi"),
+    
+    ASIA_TBILISI("Asia/Tbilisi"),
+    
+    YEREVAN("Yerevan"),
+    
+    ASIA_YEREVAN("Asia/Yerevan"),
+    
+    KABUL("Kabul"),
+    
+    ASIA_KABUL("Asia/Kabul"),
+    
+    ALMATY("Almaty"),
+    
+    ASIA_ALMATY("Asia/Almaty"),
+    
+    ASTANA("Astana"),
+    
+    ASIA_ALMATY2("Asia/Almaty"),
+    
+    EKATERINBURG("Ekaterinburg"),
+    
+    ASIA_YEKATERINBURG("Asia/Yekaterinburg"),
+    
+    ISLAMABAD("Islamabad"),
+    
+    ASIA_KARACHI("Asia/Karachi"),
+    
+    KARACHI("Karachi"),
+    
+    ASIA_KARACHI2("Asia/Karachi"),
+    
+    TASHKENT("Tashkent"),
+    
+    ASIA_TASHKENT("Asia/Tashkent"),
+    
+    CHENNAI("Chennai"),
+    
+    ASIA_KOLKATA("Asia/Kolkata"),
+    
+    KOLKATA("Kolkata"),
+    
+    ASIA_KOLKATA2("Asia/Kolkata"),
+    
+    MUMBAI("Mumbai"),
+    
+    ASIA_KOLKATA3("Asia/Kolkata"),
+    
+    NEW_DELHI("New Delhi"),
+    
+    ASIA_KOLKATA4("Asia/Kolkata"),
+    
+    SRI_JAYAWARDENEPURA("Sri Jayawardenepura"),
+    
+    ASIA_COLOMBO("Asia/Colombo"),
+    
+    KATHMANDU("Kathmandu"),
+    
+    ASIA_KATHMANDU("Asia/Kathmandu"),
+    
+    DHAKA("Dhaka"),
+    
+    ASIA_DHAKA("Asia/Dhaka"),
+    
+    URUMQI("Urumqi"),
+    
+    ASIA_URUMQI("Asia/Urumqi"),
+    
+    RANGOON("Rangoon"),
+    
+    ASIA_RANGOON("Asia/Rangoon"),
+    
+    BANGKOK("Bangkok"),
+    
+    ASIA_BANGKOK("Asia/Bangkok"),
+    
+    HANOI("Hanoi"),
+    
+    ASIA_BANGKOK2("Asia/Bangkok"),
+    
+    JAKARTA("Jakarta"),
+    
+    ASIA_JAKARTA("Asia/Jakarta"),
+    
+    KRASNOYARSK("Krasnoyarsk"),
+    
+    ASIA_KRASNOYARSK("Asia/Krasnoyarsk"),
+    
+    NOVOSIBIRSK("Novosibirsk"),
+    
+    ASIA_NOVOSIBIRSK("Asia/Novosibirsk"),
+    
+    BEIJING("Beijing"),
+    
+    ASIA_SHANGHAI("Asia/Shanghai"),
+    
+    CHONGQING("Chongqing"),
+    
+    ASIA_CHONGQING("Asia/Chongqing"),
+    
+    HONG_KONG("Hong Kong"),
+    
+    ASIA_HONG_KONG("Asia/Hong_Kong"),
+    
+    IRKUTSK("Irkutsk"),
+    
+    ASIA_IRKUTSK("Asia/Irkutsk"),
+    
+    KUALA_LUMPUR("Kuala Lumpur"),
+    
+    ASIA_KUALA_LUMPUR("Asia/Kuala_Lumpur"),
+    
+    PERTH("Perth"),
+    
+    AUSTRALIA_PERTH("Australia/Perth"),
+    
+    SINGAPORE("Singapore"),
+    
+    ASIA_SINGAPORE("Asia/Singapore"),
+    
+    TAIPEI("Taipei"),
+    
+    ASIA_TAIPEI("Asia/Taipei"),
+    
+    ULAANBAATAR("Ulaanbaatar"),
+    
+    ASIA_ULAANBAATAR("Asia/Ulaanbaatar"),
+    
+    OSAKA("Osaka"),
+    
+    ASIA_TOKYO("Asia/Tokyo"),
+    
+    SAPPORO("Sapporo"),
+    
+    ASIA_TOKYO2("Asia/Tokyo"),
+    
+    SEOUL("Seoul"),
+    
+    ASIA_SEOUL("Asia/Seoul"),
+    
+    TOKYO("Tokyo"),
+    
+    ASIA_TOKYO3("Asia/Tokyo"),
+    
+    YAKUTSK("Yakutsk"),
+    
+    ASIA_YAKUTSK("Asia/Yakutsk"),
+    
+    ADELAIDE("Adelaide"),
+    
+    AUSTRALIA_ADELAIDE("Australia/Adelaide"),
+    
+    DARWIN("Darwin"),
+    
+    AUSTRALIA_DARWIN("Australia/Darwin"),
+    
+    BRISBANE("Brisbane"),
+    
+    AUSTRALIA_BRISBANE("Australia/Brisbane"),
+    
+    CANBERRA("Canberra"),
+    
+    AUSTRALIA_CANBERRA("Australia/Canberra"),
+    
+    GUAM("Guam"),
+    
+    PACIFIC_GUAM("Pacific/Guam"),
+    
+    HOBART("Hobart"),
+    
+    AUSTRALIA_HOBART("Australia/Hobart"),
+    
+    MELBOURNE("Melbourne"),
+    
+    AUSTRALIA_MELBOURNE("Australia/Melbourne"),
+    
+    PORT_MORESBY("Port Moresby"),
+    
+    PACIFIC_PORT_MORESBY("Pacific/Port_Moresby"),
+    
+    SYDNEY("Sydney"),
+    
+    AUSTRALIA_SYDNEY("Australia/Sydney"),
+    
+    VLADIVOSTOK("Vladivostok"),
+    
+    ASIA_VLADIVOSTOK("Asia/Vladivostok"),
+    
+    MAGADAN("Magadan"),
+    
+    ASIA_MAGADAN("Asia/Magadan"),
+    
+    NEW_CALEDONIA("New Caledonia"),
+    
+    PACIFIC_NOUMEA("Pacific/Noumea"),
+    
+    SOLOMON_IS_("Solomon Is."),
+    
+    PACIFIC_GUADALCANAL("Pacific/Guadalcanal"),
+    
+    SREDNEKOLYMSK("Srednekolymsk"),
+    
+    ASIA_SREDNEKOLYMSK("Asia/Srednekolymsk"),
+    
+    AUCKLAND("Auckland"),
+    
+    PACIFIC_AUCKLAND("Pacific/Auckland"),
+    
+    FIJI("Fiji"),
+    
+    PACIFIC_FIJI("Pacific/Fiji"),
+    
+    KAMCHATKA("Kamchatka"),
+    
+    ASIA_KAMCHATKA("Asia/Kamchatka"),
+    
+    MARSHALL_IS_("Marshall Is."),
+    
+    PACIFIC_MAJURO("Pacific/Majuro"),
+    
+    WELLINGTON("Wellington"),
+    
+    PACIFIC_AUCKLAND2("Pacific/Auckland"),
+    
+    CHATHAM_IS_("Chatham Is."),
+    
+    PACIFIC_CHATHAM("Pacific/Chatham"),
+    
+    NUKU_ALOFA("Nuku'alofa"),
+    
+    PACIFIC_TONGATAPU("Pacific/Tongatapu"),
+    
+    SAMOA("Samoa"),
+    
+    PACIFIC_APIA("Pacific/Apia"),
+    
+    TOKELAU_IS_("Tokelau Is."),
+    
+    PACIFIC_FAKAOFO("Pacific/Fakaofo");
+
+    private String value;
+
+    TimeRestrictionTimeZoneEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static TimeRestrictionTimeZoneEnum fromValue(String value) {
+      for (TimeRestrictionTimeZoneEnum b : TimeRestrictionTimeZoneEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<TimeRestrictionTimeZoneEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final TimeRestrictionTimeZoneEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public TimeRestrictionTimeZoneEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return TimeRestrictionTimeZoneEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      TimeRestrictionTimeZoneEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_TIME_RESTRICTION_TIME_ZONE = "time_restriction_time_zone";
+  @SerializedName(SERIALIZED_NAME_TIME_RESTRICTION_TIME_ZONE)
+  @javax.annotation.Nullable
+  private TimeRestrictionTimeZoneEnum timeRestrictionTimeZone;
+
+  public static final String SERIALIZED_NAME_TIME_RESTRICTIONS = "time_restrictions";
+  @SerializedName(SERIALIZED_NAME_TIME_RESTRICTIONS)
+  @javax.annotation.Nullable
+  private List<UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner> timeRestrictions = new ArrayList<>();
 
   public UpdateEscalationPolicyPathDataAttributes() {
   }
@@ -385,6 +1052,52 @@ public class UpdateEscalationPolicyPathDataAttributes {
   }
 
 
+  public UpdateEscalationPolicyPathDataAttributes timeRestrictionTimeZone(@javax.annotation.Nullable TimeRestrictionTimeZoneEnum timeRestrictionTimeZone) {
+    this.timeRestrictionTimeZone = timeRestrictionTimeZone;
+    return this;
+  }
+
+  /**
+   * Time zone used for time restrictions.
+   * @return timeRestrictionTimeZone
+   */
+  @javax.annotation.Nullable
+  public TimeRestrictionTimeZoneEnum getTimeRestrictionTimeZone() {
+    return timeRestrictionTimeZone;
+  }
+
+  public void setTimeRestrictionTimeZone(@javax.annotation.Nullable TimeRestrictionTimeZoneEnum timeRestrictionTimeZone) {
+    this.timeRestrictionTimeZone = timeRestrictionTimeZone;
+  }
+
+
+  public UpdateEscalationPolicyPathDataAttributes timeRestrictions(@javax.annotation.Nullable List<UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner> timeRestrictions) {
+    this.timeRestrictions = timeRestrictions;
+    return this;
+  }
+
+  public UpdateEscalationPolicyPathDataAttributes addTimeRestrictionsItem(UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner timeRestrictionsItem) {
+    if (this.timeRestrictions == null) {
+      this.timeRestrictions = new ArrayList<>();
+    }
+    this.timeRestrictions.add(timeRestrictionsItem);
+    return this;
+  }
+
+  /**
+   * If time restrictions are set, alerts will follow this path when they arrive within the specified time ranges and meet the rules.
+   * @return timeRestrictions
+   */
+  @javax.annotation.Nullable
+  public List<UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner> getTimeRestrictions() {
+    return timeRestrictions;
+  }
+
+  public void setTimeRestrictions(@javax.annotation.Nullable List<UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner> timeRestrictions) {
+    this.timeRestrictions = timeRestrictions;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -403,7 +1116,9 @@ public class UpdateEscalationPolicyPathDataAttributes {
         Objects.equals(this.repeat, updateEscalationPolicyPathDataAttributes.repeat) &&
         Objects.equals(this.repeatCount, updateEscalationPolicyPathDataAttributes.repeatCount) &&
         Objects.equals(this.initialDelay, updateEscalationPolicyPathDataAttributes.initialDelay) &&
-        Objects.equals(this.rules, updateEscalationPolicyPathDataAttributes.rules);
+        Objects.equals(this.rules, updateEscalationPolicyPathDataAttributes.rules) &&
+        Objects.equals(this.timeRestrictionTimeZone, updateEscalationPolicyPathDataAttributes.timeRestrictionTimeZone) &&
+        Objects.equals(this.timeRestrictions, updateEscalationPolicyPathDataAttributes.timeRestrictions);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -412,7 +1127,7 @@ public class UpdateEscalationPolicyPathDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, notificationType, _default, matchMode, position, repeat, repeatCount, initialDelay, rules);
+    return Objects.hash(name, notificationType, _default, matchMode, position, repeat, repeatCount, initialDelay, rules, timeRestrictionTimeZone, timeRestrictions);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -435,6 +1150,8 @@ public class UpdateEscalationPolicyPathDataAttributes {
     sb.append("    repeatCount: ").append(toIndentedString(repeatCount)).append("\n");
     sb.append("    initialDelay: ").append(toIndentedString(initialDelay)).append("\n");
     sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
+    sb.append("    timeRestrictionTimeZone: ").append(toIndentedString(timeRestrictionTimeZone)).append("\n");
+    sb.append("    timeRestrictions: ").append(toIndentedString(timeRestrictions)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -466,6 +1183,8 @@ public class UpdateEscalationPolicyPathDataAttributes {
     openapiFields.add("repeat_count");
     openapiFields.add("initial_delay");
     openapiFields.add("rules");
+    openapiFields.add("time_restriction_time_zone");
+    openapiFields.add("time_restrictions");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -520,6 +1239,27 @@ public class UpdateEscalationPolicyPathDataAttributes {
           // validate the optional field `rules` (array)
           for (int i = 0; i < jsonArrayrules.size(); i++) {
             UpdateEscalationPolicyPathDataAttributesRulesInner.validateJsonElement(jsonArrayrules.get(i));
+          };
+        }
+      }
+      if ((jsonObj.get("time_restriction_time_zone") != null && !jsonObj.get("time_restriction_time_zone").isJsonNull()) && !jsonObj.get("time_restriction_time_zone").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `time_restriction_time_zone` to be a primitive type in the JSON string but got `%s`", jsonObj.get("time_restriction_time_zone").toString()));
+      }
+      // validate the optional field `time_restriction_time_zone`
+      if (jsonObj.get("time_restriction_time_zone") != null && !jsonObj.get("time_restriction_time_zone").isJsonNull()) {
+        TimeRestrictionTimeZoneEnum.validateJsonElement(jsonObj.get("time_restriction_time_zone"));
+      }
+      if (jsonObj.get("time_restrictions") != null && !jsonObj.get("time_restrictions").isJsonNull()) {
+        JsonArray jsonArraytimeRestrictions = jsonObj.getAsJsonArray("time_restrictions");
+        if (jsonArraytimeRestrictions != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("time_restrictions").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `time_restrictions` to be an array in the JSON string but got `%s`", jsonObj.get("time_restrictions").toString()));
+          }
+
+          // validate the optional field `time_restrictions` (array)
+          for (int i = 0; i < jsonArraytimeRestrictions.size(); i++) {
+            UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner.validateJsonElement(jsonArraytimeRestrictions.get(i));
           };
         }
       }

@@ -76,8 +76,8 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | status_page created |  -  |
-| **422** | invalid request |  -  |
+| **201** | status page with SAML created |  -  |
+| **422** | invalid SAML configuration |  -  |
 | **401** | responds with unauthorized for invalid token |  -  |
 
 <a id="deleteStatusPage"></a>
@@ -108,7 +108,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     StatusPagesApi apiInstance = new StatusPagesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       StatusPageResponse result = apiInstance.deleteStatusPage(id);
       System.out.println(result);
@@ -127,7 +127,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -176,7 +176,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     StatusPagesApi apiInstance = new StatusPagesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       StatusPageResponse result = apiInstance.getStatusPage(id);
       System.out.println(result);
@@ -195,7 +195,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -331,7 +331,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     StatusPagesApi apiInstance = new StatusPagesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     UpdateStatusPage updateStatusPage = new UpdateStatusPage(); // UpdateStatusPage | 
     try {
       StatusPageResponse result = apiInstance.updateStatusPage(id, updateStatusPage);
@@ -351,7 +351,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **updateStatusPage** | [**UpdateStatusPage**](UpdateStatusPage.md)|  | |
 
 ### Return type
@@ -370,6 +370,6 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | status_page updated |  -  |
+| **200** | status page SAML updated |  -  |
 | **404** | resource not found |  -  |
 

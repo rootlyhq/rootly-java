@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -28,6 +28,7 @@ import java.io.IOException;
 
 
 import com.rootly.client.model.ErrorsList;
+import com.rootly.client.model.GetTeamIdParameter;
 import com.rootly.client.model.NewTeam;
 import com.rootly.client.model.TeamList;
 import com.rootly.client.model.TeamResponse;
@@ -225,7 +226,7 @@ public class TeamsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteTeamCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteTeamCall(@javax.annotation.Nonnull GetTeamIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -271,7 +272,7 @@ public class TeamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteTeamValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteTeamValidateBeforeCall(@javax.annotation.Nonnull GetTeamIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteTeam(Async)");
@@ -295,7 +296,7 @@ public class TeamsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public TeamResponse deleteTeam(@javax.annotation.Nonnull String id) throws ApiException {
+    public TeamResponse deleteTeam(@javax.annotation.Nonnull GetTeamIdParameter id) throws ApiException {
         ApiResponse<TeamResponse> localVarResp = deleteTeamWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -314,7 +315,7 @@ public class TeamsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<TeamResponse> deleteTeamWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<TeamResponse> deleteTeamWithHttpInfo(@javax.annotation.Nonnull GetTeamIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = deleteTeamValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<TeamResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -335,7 +336,7 @@ public class TeamsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteTeamAsync(@javax.annotation.Nonnull String id, final ApiCallback<TeamResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteTeamAsync(@javax.annotation.Nonnull GetTeamIdParameter id, final ApiCallback<TeamResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteTeamValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<TeamResponse>(){}.getType();
@@ -345,6 +346,7 @@ public class TeamsApi {
     /**
      * Build call for getTeam
      * @param id  (required)
+     * @param include comma separated if needed. eg: users (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -352,11 +354,11 @@ public class TeamsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> team found </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> team found by slug </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTeamCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getTeamCall(@javax.annotation.Nonnull GetTeamIdParameter id, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -382,6 +384,10 @@ public class TeamsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (include != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("include", include));
+        }
+
         final String[] localVarAccepts = {
             "application/vnd.api+json"
         };
@@ -402,13 +408,13 @@ public class TeamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getTeamValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getTeamValidateBeforeCall(@javax.annotation.Nonnull GetTeamIdParameter id, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getTeam(Async)");
         }
 
-        return getTeamCall(id, _callback);
+        return getTeamCall(id, include, _callback);
 
     }
 
@@ -416,18 +422,19 @@ public class TeamsApi {
      * Retrieves a team
      * Retrieves a specific team by id
      * @param id  (required)
+     * @param include comma separated if needed. eg: users (optional)
      * @return TeamResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> team found </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> team found by slug </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public TeamResponse getTeam(@javax.annotation.Nonnull String id) throws ApiException {
-        ApiResponse<TeamResponse> localVarResp = getTeamWithHttpInfo(id);
+    public TeamResponse getTeam(@javax.annotation.Nonnull GetTeamIdParameter id, @javax.annotation.Nullable String include) throws ApiException {
+        ApiResponse<TeamResponse> localVarResp = getTeamWithHttpInfo(id, include);
         return localVarResp.getData();
     }
 
@@ -435,18 +442,19 @@ public class TeamsApi {
      * Retrieves a team
      * Retrieves a specific team by id
      * @param id  (required)
+     * @param include comma separated if needed. eg: users (optional)
      * @return ApiResponse&lt;TeamResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> team found </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> team found by slug </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<TeamResponse> getTeamWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
-        okhttp3.Call localVarCall = getTeamValidateBeforeCall(id, null);
+    public ApiResponse<TeamResponse> getTeamWithHttpInfo(@javax.annotation.Nonnull GetTeamIdParameter id, @javax.annotation.Nullable String include) throws ApiException {
+        okhttp3.Call localVarCall = getTeamValidateBeforeCall(id, include, null);
         Type localVarReturnType = new TypeToken<TeamResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -455,6 +463,7 @@ public class TeamsApi {
      * Retrieves a team (asynchronously)
      * Retrieves a specific team by id
      * @param id  (required)
+     * @param include comma separated if needed. eg: users (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -462,13 +471,13 @@ public class TeamsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> team found </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> team found by slug </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTeamAsync(@javax.annotation.Nonnull String id, final ApiCallback<TeamResponse> _callback) throws ApiException {
+    public okhttp3.Call getTeamAsync(@javax.annotation.Nonnull GetTeamIdParameter id, @javax.annotation.Nullable String include, final ApiCallback<TeamResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getTeamValidateBeforeCall(id, _callback);
+        okhttp3.Call localVarCall = getTeamValidateBeforeCall(id, include, _callback);
         Type localVarReturnType = new TypeToken<TeamResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -619,7 +628,7 @@ public class TeamsApi {
     }
     /**
      * Build call for listTeams
-     * @param include  (optional)
+     * @param include comma separated if needed. eg: users (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
      * @param filterSearch  (optional)
@@ -630,6 +639,8 @@ public class TeamsApi {
      * @param filterOpslevelId  (optional)
      * @param filterExternalId  (optional)
      * @param filterColor  (optional)
+     * @param filterAlertBroadcastEnabled  (optional)
+     * @param filterIncidentBroadcastEnabled  (optional)
      * @param filterCreatedAtGt  (optional)
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
@@ -645,7 +656,7 @@ public class TeamsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listTeamsCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterBackstageId, @javax.annotation.Nullable String filterCortexId, @javax.annotation.Nullable String filterOpslevelId, @javax.annotation.Nullable String filterExternalId, @javax.annotation.Nullable String filterColor, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listTeamsCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterBackstageId, @javax.annotation.Nullable String filterCortexId, @javax.annotation.Nullable String filterOpslevelId, @javax.annotation.Nullable String filterExternalId, @javax.annotation.Nullable String filterColor, @javax.annotation.Nullable Boolean filterAlertBroadcastEnabled, @javax.annotation.Nullable Boolean filterIncidentBroadcastEnabled, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -714,6 +725,14 @@ public class TeamsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[color]", filterColor));
         }
 
+        if (filterAlertBroadcastEnabled != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[alert_broadcast_enabled]", filterAlertBroadcastEnabled));
+        }
+
+        if (filterIncidentBroadcastEnabled != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[incident_broadcast_enabled]", filterIncidentBroadcastEnabled));
+        }
+
         if (filterCreatedAtGt != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[created_at][gt]", filterCreatedAtGt));
         }
@@ -754,15 +773,15 @@ public class TeamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listTeamsValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterBackstageId, @javax.annotation.Nullable String filterCortexId, @javax.annotation.Nullable String filterOpslevelId, @javax.annotation.Nullable String filterExternalId, @javax.annotation.Nullable String filterColor, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
-        return listTeamsCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterColor, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
+    private okhttp3.Call listTeamsValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterBackstageId, @javax.annotation.Nullable String filterCortexId, @javax.annotation.Nullable String filterOpslevelId, @javax.annotation.Nullable String filterExternalId, @javax.annotation.Nullable String filterColor, @javax.annotation.Nullable Boolean filterAlertBroadcastEnabled, @javax.annotation.Nullable Boolean filterIncidentBroadcastEnabled, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+        return listTeamsCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterColor, filterAlertBroadcastEnabled, filterIncidentBroadcastEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
 
     }
 
     /**
      * List teams
      * List teams
-     * @param include  (optional)
+     * @param include comma separated if needed. eg: users (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
      * @param filterSearch  (optional)
@@ -773,6 +792,8 @@ public class TeamsApi {
      * @param filterOpslevelId  (optional)
      * @param filterExternalId  (optional)
      * @param filterColor  (optional)
+     * @param filterAlertBroadcastEnabled  (optional)
+     * @param filterIncidentBroadcastEnabled  (optional)
      * @param filterCreatedAtGt  (optional)
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
@@ -787,15 +808,15 @@ public class TeamsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public TeamList listTeams(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterBackstageId, @javax.annotation.Nullable String filterCortexId, @javax.annotation.Nullable String filterOpslevelId, @javax.annotation.Nullable String filterExternalId, @javax.annotation.Nullable String filterColor, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
-        ApiResponse<TeamList> localVarResp = listTeamsWithHttpInfo(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterColor, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
+    public TeamList listTeams(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterBackstageId, @javax.annotation.Nullable String filterCortexId, @javax.annotation.Nullable String filterOpslevelId, @javax.annotation.Nullable String filterExternalId, @javax.annotation.Nullable String filterColor, @javax.annotation.Nullable Boolean filterAlertBroadcastEnabled, @javax.annotation.Nullable Boolean filterIncidentBroadcastEnabled, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+        ApiResponse<TeamList> localVarResp = listTeamsWithHttpInfo(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterColor, filterAlertBroadcastEnabled, filterIncidentBroadcastEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
         return localVarResp.getData();
     }
 
     /**
      * List teams
      * List teams
-     * @param include  (optional)
+     * @param include comma separated if needed. eg: users (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
      * @param filterSearch  (optional)
@@ -806,6 +827,8 @@ public class TeamsApi {
      * @param filterOpslevelId  (optional)
      * @param filterExternalId  (optional)
      * @param filterColor  (optional)
+     * @param filterAlertBroadcastEnabled  (optional)
+     * @param filterIncidentBroadcastEnabled  (optional)
      * @param filterCreatedAtGt  (optional)
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
@@ -820,8 +843,8 @@ public class TeamsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<TeamList> listTeamsWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterBackstageId, @javax.annotation.Nullable String filterCortexId, @javax.annotation.Nullable String filterOpslevelId, @javax.annotation.Nullable String filterExternalId, @javax.annotation.Nullable String filterColor, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
-        okhttp3.Call localVarCall = listTeamsValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterColor, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, null);
+    public ApiResponse<TeamList> listTeamsWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterBackstageId, @javax.annotation.Nullable String filterCortexId, @javax.annotation.Nullable String filterOpslevelId, @javax.annotation.Nullable String filterExternalId, @javax.annotation.Nullable String filterColor, @javax.annotation.Nullable Boolean filterAlertBroadcastEnabled, @javax.annotation.Nullable Boolean filterIncidentBroadcastEnabled, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+        okhttp3.Call localVarCall = listTeamsValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterColor, filterAlertBroadcastEnabled, filterIncidentBroadcastEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, null);
         Type localVarReturnType = new TypeToken<TeamList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -829,7 +852,7 @@ public class TeamsApi {
     /**
      * List teams (asynchronously)
      * List teams
-     * @param include  (optional)
+     * @param include comma separated if needed. eg: users (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
      * @param filterSearch  (optional)
@@ -840,6 +863,8 @@ public class TeamsApi {
      * @param filterOpslevelId  (optional)
      * @param filterExternalId  (optional)
      * @param filterColor  (optional)
+     * @param filterAlertBroadcastEnabled  (optional)
+     * @param filterIncidentBroadcastEnabled  (optional)
      * @param filterCreatedAtGt  (optional)
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
@@ -855,9 +880,9 @@ public class TeamsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listTeamsAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterBackstageId, @javax.annotation.Nullable String filterCortexId, @javax.annotation.Nullable String filterOpslevelId, @javax.annotation.Nullable String filterExternalId, @javax.annotation.Nullable String filterColor, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback<TeamList> _callback) throws ApiException {
+    public okhttp3.Call listTeamsAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterBackstageId, @javax.annotation.Nullable String filterCortexId, @javax.annotation.Nullable String filterOpslevelId, @javax.annotation.Nullable String filterExternalId, @javax.annotation.Nullable String filterColor, @javax.annotation.Nullable Boolean filterAlertBroadcastEnabled, @javax.annotation.Nullable Boolean filterIncidentBroadcastEnabled, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback<TeamList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listTeamsValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterColor, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
+        okhttp3.Call localVarCall = listTeamsValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterColor, filterAlertBroadcastEnabled, filterIncidentBroadcastEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
         Type localVarReturnType = new TypeToken<TeamList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -877,7 +902,7 @@ public class TeamsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateTeamCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateTeam updateTeam, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateTeamCall(@javax.annotation.Nonnull GetTeamIdParameter id, @javax.annotation.Nonnull UpdateTeam updateTeam, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -924,7 +949,7 @@ public class TeamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateTeamValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateTeam updateTeam, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateTeamValidateBeforeCall(@javax.annotation.Nonnull GetTeamIdParameter id, @javax.annotation.Nonnull UpdateTeam updateTeam, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateTeam(Async)");
@@ -954,7 +979,7 @@ public class TeamsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public TeamResponse updateTeam(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateTeam updateTeam) throws ApiException {
+    public TeamResponse updateTeam(@javax.annotation.Nonnull GetTeamIdParameter id, @javax.annotation.Nonnull UpdateTeam updateTeam) throws ApiException {
         ApiResponse<TeamResponse> localVarResp = updateTeamWithHttpInfo(id, updateTeam);
         return localVarResp.getData();
     }
@@ -974,7 +999,7 @@ public class TeamsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<TeamResponse> updateTeamWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateTeam updateTeam) throws ApiException {
+    public ApiResponse<TeamResponse> updateTeamWithHttpInfo(@javax.annotation.Nonnull GetTeamIdParameter id, @javax.annotation.Nonnull UpdateTeam updateTeam) throws ApiException {
         okhttp3.Call localVarCall = updateTeamValidateBeforeCall(id, updateTeam, null);
         Type localVarReturnType = new TypeToken<TeamResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -996,7 +1021,7 @@ public class TeamsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateTeamAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateTeam updateTeam, final ApiCallback<TeamResponse> _callback) throws ApiException {
+    public okhttp3.Call updateTeamAsync(@javax.annotation.Nonnull GetTeamIdParameter id, @javax.annotation.Nonnull UpdateTeam updateTeam, final ApiCallback<TeamResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateTeamValidateBeforeCall(id, updateTeam, _callback);
         Type localVarReturnType = new TypeToken<TeamResponse>(){}.getType();

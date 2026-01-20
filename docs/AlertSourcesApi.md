@@ -4,16 +4,16 @@ All URIs are relative to *https://api.rootly.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**createAlertSource**](AlertSourcesApi.md#createAlertSource) | **POST** /v1/alert_sources | Creates an alert source |
-| [**deleteAlertSource**](AlertSourcesApi.md#deleteAlertSource) | **DELETE** /v1/alert_sources/{id} | Delete an alert source |
-| [**getAlertSource**](AlertSourcesApi.md#getAlertSource) | **GET** /v1/alert_sources/{id} | Retrieves an alert source |
-| [**listAlertSources**](AlertSourcesApi.md#listAlertSources) | **GET** /v1/alert_sources | List alert sources |
-| [**updateAlertSource**](AlertSourcesApi.md#updateAlertSource) | **PUT** /v1/alert_sources/{id} | Update an alert source |
+| [**createAlertsSource**](AlertSourcesApi.md#createAlertsSource) | **POST** /v1/alert_sources | Creates an alert source |
+| [**deleteAlertsSource**](AlertSourcesApi.md#deleteAlertsSource) | **DELETE** /v1/alert_sources/{id} | Delete an alert source |
+| [**getAlertsSource**](AlertSourcesApi.md#getAlertsSource) | **GET** /v1/alert_sources/{id} | Retrieves an alert source |
+| [**listAlertsSources**](AlertSourcesApi.md#listAlertsSources) | **GET** /v1/alert_sources | List alert sources |
+| [**updateAlertsSource**](AlertSourcesApi.md#updateAlertsSource) | **PUT** /v1/alert_sources/{id} | Update an alert source |
 
 
-<a id="createAlertSource"></a>
-# **createAlertSource**
-> AlertsSourceResponse createAlertSource(newAlertsSource)
+<a id="createAlertsSource"></a>
+# **createAlertsSource**
+> AlertsSourceResponse createAlertsSource(newAlertsSource)
 
 Creates an alert source
 
@@ -41,10 +41,10 @@ public class Example {
     AlertSourcesApi apiInstance = new AlertSourcesApi(defaultClient);
     NewAlertsSource newAlertsSource = new NewAlertsSource(); // NewAlertsSource | 
     try {
-      AlertsSourceResponse result = apiInstance.createAlertSource(newAlertsSource);
+      AlertsSourceResponse result = apiInstance.createAlertsSource(newAlertsSource);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AlertSourcesApi#createAlertSource");
+      System.err.println("Exception when calling AlertSourcesApi#createAlertsSource");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -77,12 +77,13 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | alert source created with resolution rule |  -  |
+| **400** | alert template attribute when alert fields are enabled |  -  |
 | **422** | invalid request |  -  |
 | **401** | responds with unauthorized for invalid token |  -  |
 
-<a id="deleteAlertSource"></a>
-# **deleteAlertSource**
-> AlertsSourceResponse deleteAlertSource(id)
+<a id="deleteAlertsSource"></a>
+# **deleteAlertsSource**
+> AlertsSourceResponse deleteAlertsSource(id)
 
 Delete an alert source
 
@@ -110,10 +111,10 @@ public class Example {
     AlertSourcesApi apiInstance = new AlertSourcesApi(defaultClient);
     String id = "id_example"; // String | 
     try {
-      AlertsSourceResponse result = apiInstance.deleteAlertSource(id);
+      AlertsSourceResponse result = apiInstance.deleteAlertsSource(id);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AlertSourcesApi#deleteAlertSource");
+      System.err.println("Exception when calling AlertSourcesApi#deleteAlertsSource");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -148,9 +149,9 @@ public class Example {
 | **200** | alert source deleted |  -  |
 | **404** | resource not found |  -  |
 
-<a id="getAlertSource"></a>
-# **getAlertSource**
-> AlertsSourceResponse getAlertSource(id)
+<a id="getAlertsSource"></a>
+# **getAlertsSource**
+> AlertsSourceResponse getAlertsSource(id)
 
 Retrieves an alert source
 
@@ -178,10 +179,10 @@ public class Example {
     AlertSourcesApi apiInstance = new AlertSourcesApi(defaultClient);
     String id = "id_example"; // String | 
     try {
-      AlertsSourceResponse result = apiInstance.getAlertSource(id);
+      AlertsSourceResponse result = apiInstance.getAlertsSource(id);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AlertSourcesApi#getAlertSource");
+      System.err.println("Exception when calling AlertSourcesApi#getAlertsSource");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -216,9 +217,9 @@ public class Example {
 | **200** | alert source found |  -  |
 | **404** | resource not found |  -  |
 
-<a id="listAlertSources"></a>
-# **listAlertSources**
-> AlertsSourceList listAlertSources(include, pageNumber, pageSize, filterSearch, filterStatuses, filterSourceTypes, sort)
+<a id="listAlertsSources"></a>
+# **listAlertsSources**
+> AlertsSourceList listAlertsSources(include, pageNumber, pageSize, filterSearch, filterStatuses, filterSourceTypes, sort)
 
 List alert sources
 
@@ -252,10 +253,10 @@ public class Example {
     String filterSourceTypes = "filterSourceTypes_example"; // String | 
     String sort = "sort_example"; // String | 
     try {
-      AlertsSourceList result = apiInstance.listAlertSources(include, pageNumber, pageSize, filterSearch, filterStatuses, filterSourceTypes, sort);
+      AlertsSourceList result = apiInstance.listAlertsSources(include, pageNumber, pageSize, filterSearch, filterStatuses, filterSourceTypes, sort);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AlertSourcesApi#listAlertSources");
+      System.err.println("Exception when calling AlertSourcesApi#listAlertsSources");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -295,9 +296,9 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | success |  -  |
 
-<a id="updateAlertSource"></a>
-# **updateAlertSource**
-> AlertsSourceResponse updateAlertSource(id, updateAlertsSource)
+<a id="updateAlertsSource"></a>
+# **updateAlertsSource**
+> AlertsSourceResponse updateAlertsSource(id, updateAlertsSource)
 
 Update an alert source
 
@@ -326,10 +327,10 @@ public class Example {
     String id = "id_example"; // String | 
     UpdateAlertsSource updateAlertsSource = new UpdateAlertsSource(); // UpdateAlertsSource | 
     try {
-      AlertsSourceResponse result = apiInstance.updateAlertSource(id, updateAlertsSource);
+      AlertsSourceResponse result = apiInstance.updateAlertsSource(id, updateAlertsSource);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AlertSourcesApi#updateAlertSource");
+      System.err.println("Exception when calling AlertSourcesApi#updateAlertsSource");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

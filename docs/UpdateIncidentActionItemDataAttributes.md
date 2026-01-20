@@ -16,6 +16,7 @@
 |**status** | [**StatusEnum**](#StatusEnum) | The status of the action item |  [optional] |
 |**dueDate** | **String** | The due date of the action item |  [optional] |
 |**jiraIssueId** | **String** | The Jira issue ID. |  [optional] |
+|**jiraIssueKey** | **String** | The Jira issue key. |  [optional] |
 |**jiraIssueUrl** | **String** | The Jira issue URL. |  [optional] |
 
 

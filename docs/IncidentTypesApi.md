@@ -108,7 +108,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     IncidentTypesApi apiInstance = new IncidentTypesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       IncidentTypeResponse result = apiInstance.deleteIncidentType(id);
       System.out.println(result);
@@ -127,7 +127,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -176,7 +176,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     IncidentTypesApi apiInstance = new IncidentTypesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       IncidentTypeResponse result = apiInstance.getIncidentType(id);
       System.out.println(result);
@@ -195,7 +195,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -213,7 +213,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | incident_type found |  -  |
+| **200** | incident_type found by slug |  -  |
 | **404** | resource not found |  -  |
 
 <a id="listIncidentTypes"></a>
@@ -331,7 +331,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     IncidentTypesApi apiInstance = new IncidentTypesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     UpdateIncidentType updateIncidentType = new UpdateIncidentType(); // UpdateIncidentType | 
     try {
       IncidentTypeResponse result = apiInstance.updateIncidentType(id, updateIncidentType);
@@ -351,7 +351,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **updateIncidentType** | [**UpdateIncidentType**](UpdateIncidentType.md)|  | |
 
 ### Return type

@@ -10,6 +10,7 @@
 |**name** | **String** | The name of the heartbeat |  |
 |**description** | **String** | The description of the heartbeat |  [optional] |
 |**alertSummary** | **String** | Summary of alerts triggered when heartbeat expires. |  |
+|**alertDescription** | **String** | Description of alerts triggered when heartbeat expires. |  [optional] |
 |**alertUrgencyId** | **String** | Urgency of alerts triggered when heartbeat expires. |  [optional] |
 |**interval** | **Integer** |  |  |
 |**intervalUnit** | [**IntervalUnitEnum**](#IntervalUnitEnum) |  |  |
@@ -23,9 +24,9 @@
 
 | Name | Value |
 |---- | -----|
-| SECONDS | &quot;seconds&quot; |
 | MINUTES | &quot;minutes&quot; |
 | HOURS | &quot;hours&quot; |
+| DAYS | &quot;days&quot; |
 
 
 

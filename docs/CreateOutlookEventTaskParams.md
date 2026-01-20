@@ -17,6 +17,7 @@
 |**summary** | **String** | The event summary |  |
 |**description** | **String** | The event description |  |
 |**excludeWeekends** | **Boolean** |  |  [optional] |
+|**enableOnlineMeeting** | **Boolean** | Enable Microsoft Teams online meeting |  [optional] |
 |**postToIncidentTimeline** | **Boolean** |  |  [optional] |
 |**postToSlackChannels** | [**List&lt;AddActionItemTaskParamsPostToSlackChannelsInner&gt;**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
 

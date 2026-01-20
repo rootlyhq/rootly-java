@@ -28,6 +28,11 @@
 |**alertUrgencyId** | **String** | The alert urgency id of the team |  [optional] |
 |**slackChannels** | [**List&lt;NewEnvironmentDataAttributesSlackChannelsInner&gt;**](NewEnvironmentDataAttributesSlackChannelsInner.md) | Slack Channels associated with this team |  [optional] |
 |**slackAliases** | [**List&lt;NewEnvironmentDataAttributesSlackAliasesInner&gt;**](NewEnvironmentDataAttributesSlackAliasesInner.md) | Slack Aliases associated with this team |  [optional] |
+|**alertBroadcastEnabled** | **Boolean** | Enable alerts to be broadcasted to a specific channel |  [optional] |
+|**alertBroadcastChannel** | [**NewServiceDataAttributesAlertBroadcastChannel**](NewServiceDataAttributesAlertBroadcastChannel.md) |  |  [optional] |
+|**incidentBroadcastEnabled** | **Boolean** | Enable incidents to be broadcasted to a specific channel |  [optional] |
+|**incidentBroadcastChannel** | [**NewServiceDataAttributesIncidentBroadcastChannel**](NewServiceDataAttributesIncidentBroadcastChannel.md) |  |  [optional] |
+|**autoAddMembersWhenAttached** | **Boolean** | Auto add members to incident channel when team is attached |  [optional] |
 
 
 

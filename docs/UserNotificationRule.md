@@ -29,6 +29,7 @@
 | CALL | &quot;call&quot; |
 | DEVICE | &quot;device&quot; |
 | NON_CRITICAL_DEVICE | &quot;non_critical_device&quot; |
+| SLACK | &quot;slack&quot; |
 
 
 

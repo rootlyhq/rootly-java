@@ -49,7 +49,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     IncidentsApi apiInstance = new IncidentsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     AddSubscribers addSubscribers = new AddSubscribers(); // AddSubscribers | 
     try {
       IncidentResponse result = apiInstance.addSubscribersToIncident(id, addSubscribers);
@@ -69,7 +69,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **addSubscribers** | [**AddSubscribers**](AddSubscribers.md)|  | |
 
 ### Return type
@@ -119,7 +119,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     IncidentsApi apiInstance = new IncidentsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     AssignRoleToUser assignRoleToUser = new AssignRoleToUser(); // AssignRoleToUser | 
     try {
       IncidentResponse result = apiInstance.assignUserToIncident(id, assignRoleToUser);
@@ -139,7 +139,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **assignRoleToUser** | [**AssignRoleToUser**](AssignRoleToUser.md)|  | |
 
 ### Return type
@@ -189,7 +189,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     IncidentsApi apiInstance = new IncidentsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     CancelIncident cancelIncident = new CancelIncident(); // CancelIncident | 
     try {
       IncidentResponse result = apiInstance.cancelIncident(id, cancelIncident);
@@ -209,7 +209,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **cancelIncident** | [**CancelIncident**](CancelIncident.md)|  | |
 
 ### Return type
@@ -328,7 +328,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     IncidentsApi apiInstance = new IncidentsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       IncidentResponse result = apiInstance.deleteIncident(id);
       System.out.println(result);
@@ -347,7 +347,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -396,7 +396,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     IncidentsApi apiInstance = new IncidentsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     String include = "sub_statuses"; // String | comma separated if needed. eg: sub_statuses,causes,subscribers
     try {
       IncidentResponse result = apiInstance.getIncident(id, include);
@@ -416,8 +416,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
-| **include** | **String**| comma separated if needed. eg: sub_statuses,causes,subscribers | [optional] [enum: sub_statuses, causes, subscribers, roles, slack_messages, environments, incident_types, services, functionalities, groups, events, action_items, custom_field_selections, feedbacks, incident_post_mortem] |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
+| **include** | **String**| comma separated if needed. eg: sub_statuses,causes,subscribers | [optional] [enum: sub_statuses, causes, subscribers, roles, slack_messages, environments, incident_types, services, functionalities, groups, events, action_items, custom_field_selections, feedbacks, incident_post_mortem, alerts] |
 
 ### Return type
 
@@ -435,7 +435,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | incident found |  -  |
+| **200** | incident found by slug |  -  |
 | **404** | resource not found |  -  |
 
 <a id="listIncidents"></a>
@@ -605,7 +605,7 @@ public class Example {
 | **filterInTriageAtLt** | **String**|  | [optional] |
 | **filterInTriageAtLte** | **String**|  | [optional] |
 | **sort** | **String**| comma separated if needed. eg: created_at,updated_at | [optional] [enum: created_at, -created_at, updated_at, -updated_at] |
-| **include** | **String**| comma separated if needed. eg: sub_statuses,causes,subscribers | [optional] [enum: sub_statuses, causes, subscribers, roles, slack_messages, environments, incident_types, services, functionalities, groups, events, action_items, custom_field_selections, feedbacks, incident_post_mortem] |
+| **include** | **String**| comma separated if needed. eg: sub_statuses,causes,subscribers | [optional] [enum: sub_statuses, causes, subscribers, roles, slack_messages, environments, incident_types, services, functionalities, groups, events, action_items, custom_field_selections, feedbacks, incident_post_mortem, alerts] |
 
 ### Return type
 
@@ -653,7 +653,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     IncidentsApi apiInstance = new IncidentsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     ResolveIncident resolveIncident = new ResolveIncident(); // ResolveIncident | 
     try {
       IncidentResponse result = apiInstance.markAsDuplicateIncident(id, resolveIncident);
@@ -673,7 +673,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **resolveIncident** | [**ResolveIncident**](ResolveIncident.md)|  | |
 
 ### Return type
@@ -723,7 +723,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     IncidentsApi apiInstance = new IncidentsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     MitigateIncident mitigateIncident = new MitigateIncident(); // MitigateIncident | 
     try {
       IncidentResponse result = apiInstance.mitigateIncident(id, mitigateIncident);
@@ -743,7 +743,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **mitigateIncident** | [**MitigateIncident**](MitigateIncident.md)|  | |
 
 ### Return type
@@ -793,7 +793,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     IncidentsApi apiInstance = new IncidentsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     UnassignRoleFromUser unassignRoleFromUser = new UnassignRoleFromUser(); // UnassignRoleFromUser | 
     try {
       IncidentResponse result = apiInstance.removeAssignedUserFromIncident(id, unassignRoleFromUser);
@@ -813,7 +813,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **unassignRoleFromUser** | [**UnassignRoleFromUser**](UnassignRoleFromUser.md)|  | |
 
 ### Return type
@@ -863,7 +863,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     IncidentsApi apiInstance = new IncidentsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     RemoveSubscribers removeSubscribers = new RemoveSubscribers(); // RemoveSubscribers | 
     try {
       IncidentResponse result = apiInstance.removeSubscribersToIncident(id, removeSubscribers);
@@ -883,7 +883,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **removeSubscribers** | [**RemoveSubscribers**](RemoveSubscribers.md)|  | |
 
 ### Return type
@@ -933,7 +933,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     IncidentsApi apiInstance = new IncidentsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     ResolveIncident resolveIncident = new ResolveIncident(); // ResolveIncident | 
     try {
       IncidentResponse result = apiInstance.resolveIncident(id, resolveIncident);
@@ -953,7 +953,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **resolveIncident** | [**ResolveIncident**](ResolveIncident.md)|  | |
 
 ### Return type
@@ -1003,7 +1003,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     IncidentsApi apiInstance = new IncidentsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     RestartIncident restartIncident = new RestartIncident(); // RestartIncident | 
     try {
       IncidentResponse result = apiInstance.restartIncident(id, restartIncident);
@@ -1023,7 +1023,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **restartIncident** | [**RestartIncident**](RestartIncident.md)|  | |
 
 ### Return type
@@ -1073,7 +1073,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     IncidentsApi apiInstance = new IncidentsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     InTriageIncident inTriageIncident = new InTriageIncident(); // InTriageIncident | 
     try {
       IncidentResponse result = apiInstance.triageIncident(id, inTriageIncident);
@@ -1093,7 +1093,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **inTriageIncident** | [**InTriageIncident**](InTriageIncident.md)|  | |
 
 ### Return type
@@ -1143,7 +1143,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     IncidentsApi apiInstance = new IncidentsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     UpdateIncident updateIncident = new UpdateIncident(); // UpdateIncident | 
     try {
       IncidentResponse result = apiInstance.updateIncident(id, updateIncident);
@@ -1163,7 +1163,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **updateIncident** | [**UpdateIncident**](UpdateIncident.md)|  | |
 
 ### Return type

@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -20,11 +20,13 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.rootly.client.model.NewScheduleRotationDataAttributesActiveTimeAttributesInner;
+import com.rootly.client.model.NewScheduleRotationDataAttributesScheduleRotationMembersInner;
 import com.rootly.client.model.NewScheduleRotationDataAttributesScheduleRotationableAttributes;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,7 +54,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateScheduleRotationDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T17:46:55.918190357Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateScheduleRotationDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -273,6 +275,21 @@ public class UpdateScheduleRotationDataAttributes {
   @javax.annotation.Nullable
   private NewScheduleRotationDataAttributesScheduleRotationableAttributes scheduleRotationableAttributes;
 
+  public static final String SERIALIZED_NAME_START_TIME = "start_time";
+  @SerializedName(SERIALIZED_NAME_START_TIME)
+  @javax.annotation.Nullable
+  private String startTime;
+
+  public static final String SERIALIZED_NAME_END_TIME = "end_time";
+  @SerializedName(SERIALIZED_NAME_END_TIME)
+  @javax.annotation.Nullable
+  private String endTime;
+
+  public static final String SERIALIZED_NAME_SCHEDULE_ROTATION_MEMBERS = "schedule_rotation_members";
+  @SerializedName(SERIALIZED_NAME_SCHEDULE_ROTATION_MEMBERS)
+  @javax.annotation.Nullable
+  private List<NewScheduleRotationDataAttributesScheduleRotationMembersInner> scheduleRotationMembers;
+
   public UpdateScheduleRotationDataAttributes() {
   }
 
@@ -471,6 +488,71 @@ public class UpdateScheduleRotationDataAttributes {
   }
 
 
+  public UpdateScheduleRotationDataAttributes startTime(@javax.annotation.Nullable String startTime) {
+    this.startTime = startTime;
+    return this;
+  }
+
+  /**
+   * ISO8601 date and time when rotation starts. Shifts will only be created after this time.
+   * @return startTime
+   */
+  @javax.annotation.Nullable
+  public String getStartTime() {
+    return startTime;
+  }
+
+  public void setStartTime(@javax.annotation.Nullable String startTime) {
+    this.startTime = startTime;
+  }
+
+
+  public UpdateScheduleRotationDataAttributes endTime(@javax.annotation.Nullable String endTime) {
+    this.endTime = endTime;
+    return this;
+  }
+
+  /**
+   * ISO8601 date and time when rotation ends. Shifts will only be created before this time.
+   * @return endTime
+   */
+  @javax.annotation.Nullable
+  public String getEndTime() {
+    return endTime;
+  }
+
+  public void setEndTime(@javax.annotation.Nullable String endTime) {
+    this.endTime = endTime;
+  }
+
+
+  public UpdateScheduleRotationDataAttributes scheduleRotationMembers(@javax.annotation.Nullable List<NewScheduleRotationDataAttributesScheduleRotationMembersInner> scheduleRotationMembers) {
+    this.scheduleRotationMembers = scheduleRotationMembers;
+    return this;
+  }
+
+  public UpdateScheduleRotationDataAttributes addScheduleRotationMembersItem(NewScheduleRotationDataAttributesScheduleRotationMembersInner scheduleRotationMembersItem) {
+    if (this.scheduleRotationMembers == null) {
+      this.scheduleRotationMembers = new ArrayList<>();
+    }
+    this.scheduleRotationMembers.add(scheduleRotationMembersItem);
+    return this;
+  }
+
+  /**
+   * You can only update schedule rotation members if your account has schedule nesting feature enabled
+   * @return scheduleRotationMembers
+   */
+  @javax.annotation.Nullable
+  public List<NewScheduleRotationDataAttributesScheduleRotationMembersInner> getScheduleRotationMembers() {
+    return scheduleRotationMembers;
+  }
+
+  public void setScheduleRotationMembers(@javax.annotation.Nullable List<NewScheduleRotationDataAttributesScheduleRotationMembersInner> scheduleRotationMembers) {
+    this.scheduleRotationMembers = scheduleRotationMembers;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -489,12 +571,26 @@ public class UpdateScheduleRotationDataAttributes {
         Objects.equals(this.activeTimeType, updateScheduleRotationDataAttributes.activeTimeType) &&
         Objects.equals(this.activeTimeAttributes, updateScheduleRotationDataAttributes.activeTimeAttributes) &&
         Objects.equals(this.timeZone, updateScheduleRotationDataAttributes.timeZone) &&
-        Objects.equals(this.scheduleRotationableAttributes, updateScheduleRotationDataAttributes.scheduleRotationableAttributes);
+        Objects.equals(this.scheduleRotationableAttributes, updateScheduleRotationDataAttributes.scheduleRotationableAttributes) &&
+        Objects.equals(this.startTime, updateScheduleRotationDataAttributes.startTime) &&
+        Objects.equals(this.endTime, updateScheduleRotationDataAttributes.endTime) &&
+        Objects.equals(this.scheduleRotationMembers, updateScheduleRotationDataAttributes.scheduleRotationMembers);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, position, scheduleRotationableType, activeAllWeek, activeDays, activeTimeType, activeTimeAttributes, timeZone, scheduleRotationableAttributes);
+    return Objects.hash(name, position, scheduleRotationableType, activeAllWeek, activeDays, activeTimeType, activeTimeAttributes, timeZone, scheduleRotationableAttributes, startTime, endTime, scheduleRotationMembers);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -510,6 +606,9 @@ public class UpdateScheduleRotationDataAttributes {
     sb.append("    activeTimeAttributes: ").append(toIndentedString(activeTimeAttributes)).append("\n");
     sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
     sb.append("    scheduleRotationableAttributes: ").append(toIndentedString(scheduleRotationableAttributes)).append("\n");
+    sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+    sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+    sb.append("    scheduleRotationMembers: ").append(toIndentedString(scheduleRotationMembers)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -541,6 +640,9 @@ public class UpdateScheduleRotationDataAttributes {
     openapiFields.add("active_time_attributes");
     openapiFields.add("time_zone");
     openapiFields.add("schedule_rotationable_attributes");
+    openapiFields.add("start_time");
+    openapiFields.add("end_time");
+    openapiFields.add("schedule_rotation_members");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -611,6 +713,26 @@ public class UpdateScheduleRotationDataAttributes {
       // validate the optional field `schedule_rotationable_attributes`
       if (jsonObj.get("schedule_rotationable_attributes") != null && !jsonObj.get("schedule_rotationable_attributes").isJsonNull()) {
         NewScheduleRotationDataAttributesScheduleRotationableAttributes.validateJsonElement(jsonObj.get("schedule_rotationable_attributes"));
+      }
+      if ((jsonObj.get("start_time") != null && !jsonObj.get("start_time").isJsonNull()) && !jsonObj.get("start_time").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("start_time").toString()));
+      }
+      if ((jsonObj.get("end_time") != null && !jsonObj.get("end_time").isJsonNull()) && !jsonObj.get("end_time").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `end_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("end_time").toString()));
+      }
+      if (jsonObj.get("schedule_rotation_members") != null && !jsonObj.get("schedule_rotation_members").isJsonNull()) {
+        JsonArray jsonArrayscheduleRotationMembers = jsonObj.getAsJsonArray("schedule_rotation_members");
+        if (jsonArrayscheduleRotationMembers != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("schedule_rotation_members").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `schedule_rotation_members` to be an array in the JSON string but got `%s`", jsonObj.get("schedule_rotation_members").toString()));
+          }
+
+          // validate the optional field `schedule_rotation_members` (array)
+          for (int i = 0; i < jsonArrayscheduleRotationMembers.size(); i++) {
+            NewScheduleRotationDataAttributesScheduleRotationMembersInner.validateJsonElement(jsonArrayscheduleRotationMembers.get(i));
+          };
+        }
       }
   }
 

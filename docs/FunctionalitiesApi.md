@@ -110,7 +110,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     FunctionalitiesApi apiInstance = new FunctionalitiesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       FunctionalityResponse result = apiInstance.deleteFunctionality(id);
       System.out.println(result);
@@ -129,7 +129,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -178,7 +178,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     FunctionalitiesApi apiInstance = new FunctionalitiesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       FunctionalityResponse result = apiInstance.getFunctionality(id);
       System.out.println(result);
@@ -197,7 +197,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -246,7 +246,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     FunctionalitiesApi apiInstance = new FunctionalitiesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     String period = "period_example"; // String | 
     try {
       Object result = apiInstance.getFunctionalityIncidentsChart(id, period);
@@ -266,7 +266,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **period** | **String**|  | |
 
 ### Return type
@@ -316,7 +316,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     FunctionalitiesApi apiInstance = new FunctionalitiesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     String period = "period_example"; // String | 
     try {
       Object result = apiInstance.getFunctionalityUptimeChart(id, period);
@@ -336,7 +336,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **period** | **String**|  | [optional] |
 
 ### Return type
@@ -481,7 +481,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     FunctionalitiesApi apiInstance = new FunctionalitiesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     UpdateFunctionality updateFunctionality = new UpdateFunctionality(); // UpdateFunctionality | 
     try {
       FunctionalityResponse result = apiInstance.updateFunctionality(id, updateFunctionality);
@@ -501,7 +501,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **updateFunctionality** | [**UpdateFunctionality**](UpdateFunctionality.md)|  | |
 
 ### Return type

@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -53,7 +53,7 @@ import com.rootly.client.JSON;
 /**
  * NewFunctionalityDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T17:46:55.918190357Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewFunctionalityDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -194,15 +194,15 @@ public class NewFunctionalityDataAttributes {
   @javax.annotation.Nullable
   private List<String> serviceIds;
 
-  public static final String SERIALIZED_NAME_OWNERS_GROUP_IDS = "owners_group_ids";
-  @SerializedName(SERIALIZED_NAME_OWNERS_GROUP_IDS)
+  public static final String SERIALIZED_NAME_OWNER_GROUP_IDS = "owner_group_ids";
+  @SerializedName(SERIALIZED_NAME_OWNER_GROUP_IDS)
   @javax.annotation.Nullable
-  private List<String> ownersGroupIds;
+  private List<String> ownerGroupIds;
 
-  public static final String SERIALIZED_NAME_OWNERS_USER_IDS = "owners_user_ids";
-  @SerializedName(SERIALIZED_NAME_OWNERS_USER_IDS)
+  public static final String SERIALIZED_NAME_OWNER_USER_IDS = "owner_user_ids";
+  @SerializedName(SERIALIZED_NAME_OWNER_USER_IDS)
   @javax.annotation.Nullable
-  private List<Integer> ownersUserIds;
+  private List<Integer> ownerUserIds;
 
   public static final String SERIALIZED_NAME_SLACK_CHANNELS = "slack_channels";
   @SerializedName(SERIALIZED_NAME_SLACK_CHANNELS)
@@ -564,57 +564,57 @@ public class NewFunctionalityDataAttributes {
   }
 
 
-  public NewFunctionalityDataAttributes ownersGroupIds(@javax.annotation.Nullable List<String> ownersGroupIds) {
-    this.ownersGroupIds = ownersGroupIds;
+  public NewFunctionalityDataAttributes ownerGroupIds(@javax.annotation.Nullable List<String> ownerGroupIds) {
+    this.ownerGroupIds = ownerGroupIds;
     return this;
   }
 
-  public NewFunctionalityDataAttributes addOwnersGroupIdsItem(String ownersGroupIdsItem) {
-    if (this.ownersGroupIds == null) {
-      this.ownersGroupIds = new ArrayList<>();
+  public NewFunctionalityDataAttributes addOwnerGroupIdsItem(String ownerGroupIdsItem) {
+    if (this.ownerGroupIds == null) {
+      this.ownerGroupIds = new ArrayList<>();
     }
-    this.ownersGroupIds.add(ownersGroupIdsItem);
+    this.ownerGroupIds.add(ownerGroupIdsItem);
     return this;
   }
 
   /**
    * Owner Teams associated with this functionality
-   * @return ownersGroupIds
+   * @return ownerGroupIds
    */
   @javax.annotation.Nullable
-  public List<String> getOwnersGroupIds() {
-    return ownersGroupIds;
+  public List<String> getOwnerGroupIds() {
+    return ownerGroupIds;
   }
 
-  public void setOwnersGroupIds(@javax.annotation.Nullable List<String> ownersGroupIds) {
-    this.ownersGroupIds = ownersGroupIds;
+  public void setOwnerGroupIds(@javax.annotation.Nullable List<String> ownerGroupIds) {
+    this.ownerGroupIds = ownerGroupIds;
   }
 
 
-  public NewFunctionalityDataAttributes ownersUserIds(@javax.annotation.Nullable List<Integer> ownersUserIds) {
-    this.ownersUserIds = ownersUserIds;
+  public NewFunctionalityDataAttributes ownerUserIds(@javax.annotation.Nullable List<Integer> ownerUserIds) {
+    this.ownerUserIds = ownerUserIds;
     return this;
   }
 
-  public NewFunctionalityDataAttributes addOwnersUserIdsItem(Integer ownersUserIdsItem) {
-    if (this.ownersUserIds == null) {
-      this.ownersUserIds = new ArrayList<>();
+  public NewFunctionalityDataAttributes addOwnerUserIdsItem(Integer ownerUserIdsItem) {
+    if (this.ownerUserIds == null) {
+      this.ownerUserIds = new ArrayList<>();
     }
-    this.ownersUserIds.add(ownersUserIdsItem);
+    this.ownerUserIds.add(ownerUserIdsItem);
     return this;
   }
 
   /**
    * Owner Users associated with this functionality
-   * @return ownersUserIds
+   * @return ownerUserIds
    */
   @javax.annotation.Nullable
-  public List<Integer> getOwnersUserIds() {
-    return ownersUserIds;
+  public List<Integer> getOwnerUserIds() {
+    return ownerUserIds;
   }
 
-  public void setOwnersUserIds(@javax.annotation.Nullable List<Integer> ownersUserIds) {
-    this.ownersUserIds = ownersUserIds;
+  public void setOwnerUserIds(@javax.annotation.Nullable List<Integer> ownerUserIds) {
+    this.ownerUserIds = ownerUserIds;
   }
 
 
@@ -699,8 +699,8 @@ public class NewFunctionalityDataAttributes {
         Objects.equals(this.showUptimeLastDays, newFunctionalityDataAttributes.showUptimeLastDays) &&
         Objects.equals(this.environmentIds, newFunctionalityDataAttributes.environmentIds) &&
         Objects.equals(this.serviceIds, newFunctionalityDataAttributes.serviceIds) &&
-        Objects.equals(this.ownersGroupIds, newFunctionalityDataAttributes.ownersGroupIds) &&
-        Objects.equals(this.ownersUserIds, newFunctionalityDataAttributes.ownersUserIds) &&
+        Objects.equals(this.ownerGroupIds, newFunctionalityDataAttributes.ownerGroupIds) &&
+        Objects.equals(this.ownerUserIds, newFunctionalityDataAttributes.ownerUserIds) &&
         Objects.equals(this.slackChannels, newFunctionalityDataAttributes.slackChannels) &&
         Objects.equals(this.slackAliases, newFunctionalityDataAttributes.slackAliases);
   }
@@ -711,7 +711,7 @@ public class NewFunctionalityDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, publicDescription, notifyEmails, color, position, backstageId, externalId, pagerdutyId, opsgenieId, opsgenieTeamId, cortexId, serviceNowCiSysId, showUptime, showUptimeLastDays, environmentIds, serviceIds, ownersGroupIds, ownersUserIds, slackChannels, slackAliases);
+    return Objects.hash(name, description, publicDescription, notifyEmails, color, position, backstageId, externalId, pagerdutyId, opsgenieId, opsgenieTeamId, cortexId, serviceNowCiSysId, showUptime, showUptimeLastDays, environmentIds, serviceIds, ownerGroupIds, ownerUserIds, slackChannels, slackAliases);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -742,8 +742,8 @@ public class NewFunctionalityDataAttributes {
     sb.append("    showUptimeLastDays: ").append(toIndentedString(showUptimeLastDays)).append("\n");
     sb.append("    environmentIds: ").append(toIndentedString(environmentIds)).append("\n");
     sb.append("    serviceIds: ").append(toIndentedString(serviceIds)).append("\n");
-    sb.append("    ownersGroupIds: ").append(toIndentedString(ownersGroupIds)).append("\n");
-    sb.append("    ownersUserIds: ").append(toIndentedString(ownersUserIds)).append("\n");
+    sb.append("    ownerGroupIds: ").append(toIndentedString(ownerGroupIds)).append("\n");
+    sb.append("    ownerUserIds: ").append(toIndentedString(ownerUserIds)).append("\n");
     sb.append("    slackChannels: ").append(toIndentedString(slackChannels)).append("\n");
     sb.append("    slackAliases: ").append(toIndentedString(slackAliases)).append("\n");
     sb.append("}");
@@ -785,8 +785,8 @@ public class NewFunctionalityDataAttributes {
     openapiFields.add("show_uptime_last_days");
     openapiFields.add("environment_ids");
     openapiFields.add("service_ids");
-    openapiFields.add("owners_group_ids");
-    openapiFields.add("owners_user_ids");
+    openapiFields.add("owner_group_ids");
+    openapiFields.add("owner_user_ids");
     openapiFields.add("slack_channels");
     openapiFields.add("slack_aliases");
 
@@ -873,12 +873,12 @@ public class NewFunctionalityDataAttributes {
         throw new IllegalArgumentException(String.format("Expected the field `service_ids` to be an array in the JSON string but got `%s`", jsonObj.get("service_ids").toString()));
       }
       // ensure the optional json data is an array if present
-      if (jsonObj.get("owners_group_ids") != null && !jsonObj.get("owners_group_ids").isJsonNull() && !jsonObj.get("owners_group_ids").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `owners_group_ids` to be an array in the JSON string but got `%s`", jsonObj.get("owners_group_ids").toString()));
+      if (jsonObj.get("owner_group_ids") != null && !jsonObj.get("owner_group_ids").isJsonNull() && !jsonObj.get("owner_group_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `owner_group_ids` to be an array in the JSON string but got `%s`", jsonObj.get("owner_group_ids").toString()));
       }
       // ensure the optional json data is an array if present
-      if (jsonObj.get("owners_user_ids") != null && !jsonObj.get("owners_user_ids").isJsonNull() && !jsonObj.get("owners_user_ids").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `owners_user_ids` to be an array in the JSON string but got `%s`", jsonObj.get("owners_user_ids").toString()));
+      if (jsonObj.get("owner_user_ids") != null && !jsonObj.get("owner_user_ids").isJsonNull() && !jsonObj.get("owner_user_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `owner_user_ids` to be an array in the JSON string but got `%s`", jsonObj.get("owner_user_ids").toString()));
       }
       if (jsonObj.get("slack_channels") != null && !jsonObj.get("slack_channels").isJsonNull()) {
         JsonArray jsonArrayslackChannels = jsonObj.getAsJsonArray("slack_channels");

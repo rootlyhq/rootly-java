@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -90,6 +90,7 @@ public class AlertsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> alert acknowledged </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> cannot acknowledge open alert </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call acknowledgeAlertCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
@@ -160,6 +161,7 @@ public class AlertsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> alert acknowledged </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> cannot acknowledge open alert </td><td>  -  </td></tr>
      </table>
      */
     public AlertResponse acknowledgeAlert(@javax.annotation.Nonnull String id) throws ApiException {
@@ -179,6 +181,7 @@ public class AlertsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> alert acknowledged </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> cannot acknowledge open alert </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<AlertResponse> acknowledgeAlertWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
@@ -200,6 +203,7 @@ public class AlertsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> alert acknowledged </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> cannot acknowledge open alert </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call acknowledgeAlertAsync(@javax.annotation.Nonnull String id, final ApiCallback<AlertResponse> _callback) throws ApiException {
@@ -488,6 +492,7 @@ public class AlertsApi {
     /**
      * Build call for getAlert
      * @param id  (required)
+     * @param include comma separated if needed. eg: environments,services,groups (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -495,11 +500,11 @@ public class AlertsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> alert found </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> alert found with group_member_alerts included </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAlertCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAlertCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -525,6 +530,10 @@ public class AlertsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (include != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("include", include));
+        }
+
         final String[] localVarAccepts = {
             "application/vnd.api+json"
         };
@@ -545,13 +554,13 @@ public class AlertsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAlertValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAlertValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getAlert(Async)");
         }
 
-        return getAlertCall(id, _callback);
+        return getAlertCall(id, include, _callback);
 
     }
 
@@ -559,18 +568,19 @@ public class AlertsApi {
      * Retrieves an alert
      * Retrieves a specific alert by id
      * @param id  (required)
+     * @param include comma separated if needed. eg: environments,services,groups (optional)
      * @return AlertResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> alert found </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> alert found with group_member_alerts included </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public AlertResponse getAlert(@javax.annotation.Nonnull String id) throws ApiException {
-        ApiResponse<AlertResponse> localVarResp = getAlertWithHttpInfo(id);
+    public AlertResponse getAlert(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include) throws ApiException {
+        ApiResponse<AlertResponse> localVarResp = getAlertWithHttpInfo(id, include);
         return localVarResp.getData();
     }
 
@@ -578,18 +588,19 @@ public class AlertsApi {
      * Retrieves an alert
      * Retrieves a specific alert by id
      * @param id  (required)
+     * @param include comma separated if needed. eg: environments,services,groups (optional)
      * @return ApiResponse&lt;AlertResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> alert found </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> alert found with group_member_alerts included </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertResponse> getAlertWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
-        okhttp3.Call localVarCall = getAlertValidateBeforeCall(id, null);
+    public ApiResponse<AlertResponse> getAlertWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include) throws ApiException {
+        okhttp3.Call localVarCall = getAlertValidateBeforeCall(id, include, null);
         Type localVarReturnType = new TypeToken<AlertResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -598,6 +609,7 @@ public class AlertsApi {
      * Retrieves an alert (asynchronously)
      * Retrieves a specific alert by id
      * @param id  (required)
+     * @param include comma separated if needed. eg: environments,services,groups (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -605,21 +617,38 @@ public class AlertsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> alert found </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> alert found with group_member_alerts included </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAlertAsync(@javax.annotation.Nonnull String id, final ApiCallback<AlertResponse> _callback) throws ApiException {
+    public okhttp3.Call getAlertAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include, final ApiCallback<AlertResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getAlertValidateBeforeCall(id, _callback);
+        okhttp3.Call localVarCall = getAlertValidateBeforeCall(id, include, _callback);
         Type localVarReturnType = new TypeToken<AlertResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for listAlerts
-     * @param include  (optional)
+     * @param include comma separated if needed. eg: environments,services,groups (optional)
      * @param filterStatus  (optional)
+     * @param filterSource  (optional)
+     * @param filterServices  (optional)
+     * @param filterEnvironments  (optional)
+     * @param filterGroups  (optional)
+     * @param filterLabels  (optional)
+     * @param filterStartedAtGt  (optional)
+     * @param filterStartedAtGte  (optional)
+     * @param filterStartedAtLt  (optional)
+     * @param filterStartedAtLte  (optional)
+     * @param filterEndedAtGt  (optional)
+     * @param filterEndedAtGte  (optional)
+     * @param filterEndedAtLt  (optional)
+     * @param filterEndedAtLte  (optional)
+     * @param filterCreatedAtGt  (optional)
+     * @param filterCreatedAtGte  (optional)
+     * @param filterCreatedAtLt  (optional)
+     * @param filterCreatedAtLte  (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
      * @param _callback Callback for upload/download progress
@@ -629,10 +658,10 @@ public class AlertsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> filter by status </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> returns grouping attributes </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAlertsCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listAlertsCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable String filterSource, @javax.annotation.Nullable String filterServices, @javax.annotation.Nullable String filterEnvironments, @javax.annotation.Nullable String filterGroups, @javax.annotation.Nullable String filterLabels, @javax.annotation.Nullable String filterStartedAtGt, @javax.annotation.Nullable String filterStartedAtGte, @javax.annotation.Nullable String filterStartedAtLt, @javax.annotation.Nullable String filterStartedAtLte, @javax.annotation.Nullable String filterEndedAtGt, @javax.annotation.Nullable String filterEndedAtGte, @javax.annotation.Nullable String filterEndedAtLt, @javax.annotation.Nullable String filterEndedAtLte, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -663,169 +692,6 @@ public class AlertsApi {
 
         if (filterStatus != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[status]", filterStatus));
-        }
-
-        if (pageNumber != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page[number]", pageNumber));
-        }
-
-        if (pageSize != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page[size]", pageSize));
-        }
-
-        final String[] localVarAccepts = {
-            "application/vnd.api+json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "bearer_auth" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call listAlertsValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
-        return listAlertsCall(include, filterStatus, pageNumber, pageSize, _callback);
-
-    }
-
-    /**
-     * List alerts
-     * List alerts
-     * @param include  (optional)
-     * @param filterStatus  (optional)
-     * @param pageNumber  (optional)
-     * @param pageSize  (optional)
-     * @return AlertList
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> filter by status </td><td>  -  </td></tr>
-     </table>
-     */
-    public AlertList listAlerts(@javax.annotation.Nullable String include, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
-        ApiResponse<AlertList> localVarResp = listAlertsWithHttpInfo(include, filterStatus, pageNumber, pageSize);
-        return localVarResp.getData();
-    }
-
-    /**
-     * List alerts
-     * List alerts
-     * @param include  (optional)
-     * @param filterStatus  (optional)
-     * @param pageNumber  (optional)
-     * @param pageSize  (optional)
-     * @return ApiResponse&lt;AlertList&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> filter by status </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<AlertList> listAlertsWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
-        okhttp3.Call localVarCall = listAlertsValidateBeforeCall(include, filterStatus, pageNumber, pageSize, null);
-        Type localVarReturnType = new TypeToken<AlertList>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * List alerts (asynchronously)
-     * List alerts
-     * @param include  (optional)
-     * @param filterStatus  (optional)
-     * @param pageNumber  (optional)
-     * @param pageSize  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> filter by status </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call listAlertsAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback<AlertList> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = listAlertsValidateBeforeCall(include, filterStatus, pageNumber, pageSize, _callback);
-        Type localVarReturnType = new TypeToken<AlertList>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for listIncidentAlerts
-     * @param incidentId  (required)
-     * @param include  (optional)
-     * @param filterSource  (optional)
-     * @param filterServices  (optional)
-     * @param filterEnvironments  (optional)
-     * @param filterGroups  (optional)
-     * @param filterLabels  (optional)
-     * @param filterStartedAtGt  (optional)
-     * @param filterStartedAtGte  (optional)
-     * @param filterStartedAtLt  (optional)
-     * @param filterStartedAtLte  (optional)
-     * @param filterEndedAtGt  (optional)
-     * @param filterEndedAtGte  (optional)
-     * @param filterEndedAtLt  (optional)
-     * @param filterEndedAtLte  (optional)
-     * @param filterCreatedAtGt  (optional)
-     * @param filterCreatedAtGte  (optional)
-     * @param filterCreatedAtLt  (optional)
-     * @param filterCreatedAtLte  (optional)
-     * @param pageNumber  (optional)
-     * @param pageSize  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call listIncidentAlertsCall(@javax.annotation.Nonnull String incidentId, @javax.annotation.Nullable String include, @javax.annotation.Nullable String filterSource, @javax.annotation.Nullable String filterServices, @javax.annotation.Nullable String filterEnvironments, @javax.annotation.Nullable String filterGroups, @javax.annotation.Nullable String filterLabels, @javax.annotation.Nullable String filterStartedAtGt, @javax.annotation.Nullable String filterStartedAtGte, @javax.annotation.Nullable String filterStartedAtLt, @javax.annotation.Nullable String filterStartedAtLte, @javax.annotation.Nullable String filterEndedAtGt, @javax.annotation.Nullable String filterEndedAtGte, @javax.annotation.Nullable String filterEndedAtLt, @javax.annotation.Nullable String filterEndedAtLte, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/v1/incidents/{incident_id}/alerts"
-            .replace("{" + "incident_id" + "}", localVarApiClient.escapeString(incidentId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (include != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("include", include));
         }
 
         if (filterSource != null) {
@@ -924,21 +790,16 @@ public class AlertsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listIncidentAlertsValidateBeforeCall(@javax.annotation.Nonnull String incidentId, @javax.annotation.Nullable String include, @javax.annotation.Nullable String filterSource, @javax.annotation.Nullable String filterServices, @javax.annotation.Nullable String filterEnvironments, @javax.annotation.Nullable String filterGroups, @javax.annotation.Nullable String filterLabels, @javax.annotation.Nullable String filterStartedAtGt, @javax.annotation.Nullable String filterStartedAtGte, @javax.annotation.Nullable String filterStartedAtLt, @javax.annotation.Nullable String filterStartedAtLte, @javax.annotation.Nullable String filterEndedAtGt, @javax.annotation.Nullable String filterEndedAtGte, @javax.annotation.Nullable String filterEndedAtLt, @javax.annotation.Nullable String filterEndedAtLte, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'incidentId' is set
-        if (incidentId == null) {
-            throw new ApiException("Missing the required parameter 'incidentId' when calling listIncidentAlerts(Async)");
-        }
-
-        return listIncidentAlertsCall(incidentId, include, filterSource, filterServices, filterEnvironments, filterGroups, filterLabels, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize, _callback);
+    private okhttp3.Call listAlertsValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable String filterSource, @javax.annotation.Nullable String filterServices, @javax.annotation.Nullable String filterEnvironments, @javax.annotation.Nullable String filterGroups, @javax.annotation.Nullable String filterLabels, @javax.annotation.Nullable String filterStartedAtGt, @javax.annotation.Nullable String filterStartedAtGte, @javax.annotation.Nullable String filterStartedAtLt, @javax.annotation.Nullable String filterStartedAtLte, @javax.annotation.Nullable String filterEndedAtGt, @javax.annotation.Nullable String filterEndedAtGte, @javax.annotation.Nullable String filterEndedAtLt, @javax.annotation.Nullable String filterEndedAtLte, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+        return listAlertsCall(include, filterStatus, filterSource, filterServices, filterEnvironments, filterGroups, filterLabels, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize, _callback);
 
     }
 
     /**
-     * List Incident alerts
-     * List incident alerts
-     * @param incidentId  (required)
-     * @param include  (optional)
+     * List alerts
+     * List alerts
+     * @param include comma separated if needed. eg: environments,services,groups (optional)
+     * @param filterStatus  (optional)
      * @param filterSource  (optional)
      * @param filterServices  (optional)
      * @param filterEnvironments  (optional)
@@ -964,19 +825,19 @@ public class AlertsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> returns grouping attributes </td><td>  -  </td></tr>
      </table>
      */
-    public AlertList listIncidentAlerts(@javax.annotation.Nonnull String incidentId, @javax.annotation.Nullable String include, @javax.annotation.Nullable String filterSource, @javax.annotation.Nullable String filterServices, @javax.annotation.Nullable String filterEnvironments, @javax.annotation.Nullable String filterGroups, @javax.annotation.Nullable String filterLabels, @javax.annotation.Nullable String filterStartedAtGt, @javax.annotation.Nullable String filterStartedAtGte, @javax.annotation.Nullable String filterStartedAtLt, @javax.annotation.Nullable String filterStartedAtLte, @javax.annotation.Nullable String filterEndedAtGt, @javax.annotation.Nullable String filterEndedAtGte, @javax.annotation.Nullable String filterEndedAtLt, @javax.annotation.Nullable String filterEndedAtLte, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
-        ApiResponse<AlertList> localVarResp = listIncidentAlertsWithHttpInfo(incidentId, include, filterSource, filterServices, filterEnvironments, filterGroups, filterLabels, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize);
+    public AlertList listAlerts(@javax.annotation.Nullable String include, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable String filterSource, @javax.annotation.Nullable String filterServices, @javax.annotation.Nullable String filterEnvironments, @javax.annotation.Nullable String filterGroups, @javax.annotation.Nullable String filterLabels, @javax.annotation.Nullable String filterStartedAtGt, @javax.annotation.Nullable String filterStartedAtGte, @javax.annotation.Nullable String filterStartedAtLt, @javax.annotation.Nullable String filterStartedAtLte, @javax.annotation.Nullable String filterEndedAtGt, @javax.annotation.Nullable String filterEndedAtGte, @javax.annotation.Nullable String filterEndedAtLt, @javax.annotation.Nullable String filterEndedAtLte, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+        ApiResponse<AlertList> localVarResp = listAlertsWithHttpInfo(include, filterStatus, filterSource, filterServices, filterEnvironments, filterGroups, filterLabels, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize);
         return localVarResp.getData();
     }
 
     /**
-     * List Incident alerts
-     * List incident alerts
-     * @param incidentId  (required)
-     * @param include  (optional)
+     * List alerts
+     * List alerts
+     * @param include comma separated if needed. eg: environments,services,groups (optional)
+     * @param filterStatus  (optional)
      * @param filterSource  (optional)
      * @param filterServices  (optional)
      * @param filterEnvironments  (optional)
@@ -1002,20 +863,20 @@ public class AlertsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> returns grouping attributes </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertList> listIncidentAlertsWithHttpInfo(@javax.annotation.Nonnull String incidentId, @javax.annotation.Nullable String include, @javax.annotation.Nullable String filterSource, @javax.annotation.Nullable String filterServices, @javax.annotation.Nullable String filterEnvironments, @javax.annotation.Nullable String filterGroups, @javax.annotation.Nullable String filterLabels, @javax.annotation.Nullable String filterStartedAtGt, @javax.annotation.Nullable String filterStartedAtGte, @javax.annotation.Nullable String filterStartedAtLt, @javax.annotation.Nullable String filterStartedAtLte, @javax.annotation.Nullable String filterEndedAtGt, @javax.annotation.Nullable String filterEndedAtGte, @javax.annotation.Nullable String filterEndedAtLt, @javax.annotation.Nullable String filterEndedAtLte, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
-        okhttp3.Call localVarCall = listIncidentAlertsValidateBeforeCall(incidentId, include, filterSource, filterServices, filterEnvironments, filterGroups, filterLabels, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize, null);
+    public ApiResponse<AlertList> listAlertsWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable String filterSource, @javax.annotation.Nullable String filterServices, @javax.annotation.Nullable String filterEnvironments, @javax.annotation.Nullable String filterGroups, @javax.annotation.Nullable String filterLabels, @javax.annotation.Nullable String filterStartedAtGt, @javax.annotation.Nullable String filterStartedAtGte, @javax.annotation.Nullable String filterStartedAtLt, @javax.annotation.Nullable String filterStartedAtLte, @javax.annotation.Nullable String filterEndedAtGt, @javax.annotation.Nullable String filterEndedAtGte, @javax.annotation.Nullable String filterEndedAtLt, @javax.annotation.Nullable String filterEndedAtLte, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+        okhttp3.Call localVarCall = listAlertsValidateBeforeCall(include, filterStatus, filterSource, filterServices, filterEnvironments, filterGroups, filterLabels, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize, null);
         Type localVarReturnType = new TypeToken<AlertList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * List Incident alerts (asynchronously)
-     * List incident alerts
-     * @param incidentId  (required)
-     * @param include  (optional)
+     * List alerts (asynchronously)
+     * List alerts
+     * @param include comma separated if needed. eg: environments,services,groups (optional)
+     * @param filterStatus  (optional)
      * @param filterSource  (optional)
      * @param filterServices  (optional)
      * @param filterEnvironments  (optional)
@@ -1042,12 +903,147 @@ public class AlertsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> returns grouping attributes </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listAlertsAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable String filterSource, @javax.annotation.Nullable String filterServices, @javax.annotation.Nullable String filterEnvironments, @javax.annotation.Nullable String filterGroups, @javax.annotation.Nullable String filterLabels, @javax.annotation.Nullable String filterStartedAtGt, @javax.annotation.Nullable String filterStartedAtGte, @javax.annotation.Nullable String filterStartedAtLt, @javax.annotation.Nullable String filterStartedAtLte, @javax.annotation.Nullable String filterEndedAtGt, @javax.annotation.Nullable String filterEndedAtGte, @javax.annotation.Nullable String filterEndedAtLt, @javax.annotation.Nullable String filterEndedAtLte, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback<AlertList> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listAlertsValidateBeforeCall(include, filterStatus, filterSource, filterServices, filterEnvironments, filterGroups, filterLabels, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize, _callback);
+        Type localVarReturnType = new TypeToken<AlertList>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for listIncidentAlerts
+     * @param incidentId  (required)
+     * @param include comma separated if needed. eg: environments,services,groups (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listIncidentAlertsAsync(@javax.annotation.Nonnull String incidentId, @javax.annotation.Nullable String include, @javax.annotation.Nullable String filterSource, @javax.annotation.Nullable String filterServices, @javax.annotation.Nullable String filterEnvironments, @javax.annotation.Nullable String filterGroups, @javax.annotation.Nullable String filterLabels, @javax.annotation.Nullable String filterStartedAtGt, @javax.annotation.Nullable String filterStartedAtGte, @javax.annotation.Nullable String filterStartedAtLt, @javax.annotation.Nullable String filterStartedAtLte, @javax.annotation.Nullable String filterEndedAtGt, @javax.annotation.Nullable String filterEndedAtGte, @javax.annotation.Nullable String filterEndedAtLt, @javax.annotation.Nullable String filterEndedAtLte, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback<AlertList> _callback) throws ApiException {
+    public okhttp3.Call listIncidentAlertsCall(@javax.annotation.Nonnull String incidentId, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
 
-        okhttp3.Call localVarCall = listIncidentAlertsValidateBeforeCall(incidentId, include, filterSource, filterServices, filterEnvironments, filterGroups, filterLabels, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize, _callback);
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v1/incidents/{incident_id}/alerts"
+            .replace("{" + "incident_id" + "}", localVarApiClient.escapeString(incidentId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (include != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("include", include));
+        }
+
+        final String[] localVarAccepts = {
+            "application/vnd.api+json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "bearer_auth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listIncidentAlertsValidateBeforeCall(@javax.annotation.Nonnull String incidentId, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'incidentId' is set
+        if (incidentId == null) {
+            throw new ApiException("Missing the required parameter 'incidentId' when calling listIncidentAlerts(Async)");
+        }
+
+        return listIncidentAlertsCall(incidentId, include, _callback);
+
+    }
+
+    /**
+     * List Incident alerts
+     * List incident alerts
+     * @param incidentId  (required)
+     * @param include comma separated if needed. eg: environments,services,groups (optional)
+     * @return AlertList
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
+     </table>
+     */
+    public AlertList listIncidentAlerts(@javax.annotation.Nonnull String incidentId, @javax.annotation.Nullable String include) throws ApiException {
+        ApiResponse<AlertList> localVarResp = listIncidentAlertsWithHttpInfo(incidentId, include);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List Incident alerts
+     * List incident alerts
+     * @param incidentId  (required)
+     * @param include comma separated if needed. eg: environments,services,groups (optional)
+     * @return ApiResponse&lt;AlertList&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<AlertList> listIncidentAlertsWithHttpInfo(@javax.annotation.Nonnull String incidentId, @javax.annotation.Nullable String include) throws ApiException {
+        okhttp3.Call localVarCall = listIncidentAlertsValidateBeforeCall(incidentId, include, null);
+        Type localVarReturnType = new TypeToken<AlertList>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List Incident alerts (asynchronously)
+     * List incident alerts
+     * @param incidentId  (required)
+     * @param include comma separated if needed. eg: environments,services,groups (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listIncidentAlertsAsync(@javax.annotation.Nonnull String incidentId, @javax.annotation.Nullable String include, final ApiCallback<AlertList> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listIncidentAlertsValidateBeforeCall(incidentId, include, _callback);
         Type localVarReturnType = new TypeToken<AlertList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1065,6 +1061,7 @@ public class AlertsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> resolve acknowledged </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> cannot resolve open alert </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call resolveAlertCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable ResolveAlert resolveAlert, final ApiCallback _callback) throws ApiException {
@@ -1137,6 +1134,7 @@ public class AlertsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> resolve acknowledged </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> cannot resolve open alert </td><td>  -  </td></tr>
      </table>
      */
     public AlertResponse resolveAlert(@javax.annotation.Nonnull String id, @javax.annotation.Nullable ResolveAlert resolveAlert) throws ApiException {
@@ -1157,6 +1155,7 @@ public class AlertsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> resolve acknowledged </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> cannot resolve open alert </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<AlertResponse> resolveAlertWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable ResolveAlert resolveAlert) throws ApiException {
@@ -1179,6 +1178,7 @@ public class AlertsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> resolve acknowledged </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> cannot resolve open alert </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call resolveAlertAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nullable ResolveAlert resolveAlert, final ApiCallback<AlertResponse> _callback) throws ApiException {
@@ -1199,7 +1199,7 @@ public class AlertsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> alert updated </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> removes existing alert field values and adds new ones </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
@@ -1271,7 +1271,7 @@ public class AlertsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> alert updated </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> removes existing alert field values and adds new ones </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
@@ -1291,7 +1291,7 @@ public class AlertsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> alert updated </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> removes existing alert field values and adds new ones </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
@@ -1313,7 +1313,7 @@ public class AlertsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> alert updated </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> removes existing alert field values and adds new ones </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */

@@ -10,12 +10,13 @@
 |**summary** | **String** | The summary of the action item |  |
 |**description** | **String** | The description of incident action item |  [optional] |
 |**kind** | [**KindEnum**](#KindEnum) | The kind of the action item |  [optional] |
-|**assignedToUserId** | **Integer** | ID of user you wish to assign this action item |  [optional] |
+|**assignedTo** | [**UserFlatResponse**](UserFlatResponse.md) | User assigned to this action item |  [optional] |
 |**assignedToGroupIds** | **List&lt;String&gt;** | IDs of groups you wish to assign this action item |  [optional] |
 |**priority** | [**PriorityEnum**](#PriorityEnum) | The priority of the action item |  [optional] |
 |**status** | [**StatusEnum**](#StatusEnum) | The status of the action item |  [optional] |
 |**dueDate** | **String** | The due date of the action item |  [optional] |
 |**jiraIssueId** | **String** | The Jira issue ID. |  [optional] |
+|**jiraIssueKey** | **String** | The Jira issue key. |  [optional] |
 |**jiraIssueUrl** | **String** | The Jira issue URL. |  [optional] |
 |**createdAt** | **String** | Date of creation |  |
 |**updatedAt** | **String** | Date of last update |  |

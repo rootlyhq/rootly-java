@@ -87,7 +87,7 @@ public class Example {
 
 Delete alert event
 
-Deletes a specific alert event
+Deletes a specific alert event. Only alert events with kind &#39;note&#39; (user-created notes) can be deleted. System-generated events are immutable to maintain audit trail integrity.
 
 ### Example
 ```java
@@ -299,7 +299,7 @@ public class Example {
 
 Update alert event
 
-Updates a specific alert event
+Updates a specific alert event. Only alert events with kind &#39;note&#39; (user-created notes) can be updated. System-generated events are immutable to maintain audit trail integrity.
 
 ### Example
 ```java

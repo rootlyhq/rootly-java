@@ -78,8 +78,8 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | catalog_field created |  -  |
-| **422** | invalid request |  -  |
+| **201** | catalog_field created with required attribute |  -  |
+| **422** | exceeds max fields per catalog |  -  |
 | **401** | responds with unauthorized for invalid token |  -  |
 
 <a id="deleteCatalogField"></a>
@@ -110,7 +110,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     CatalogFieldsApi apiInstance = new CatalogFieldsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       CatalogFieldResponse result = apiInstance.deleteCatalogField(id);
       System.out.println(result);
@@ -129,7 +129,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -178,7 +178,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     CatalogFieldsApi apiInstance = new CatalogFieldsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     String include = "catalog"; // String | comma separated if needed. eg: catalog
     try {
       CatalogFieldResponse result = apiInstance.getCatalogField(id, include);
@@ -198,7 +198,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **include** | **String**| comma separated if needed. eg: catalog | [optional] [enum: catalog] |
 
 ### Return type
@@ -337,7 +337,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     CatalogFieldsApi apiInstance = new CatalogFieldsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     UpdateCatalogField updateCatalogField = new UpdateCatalogField(); // UpdateCatalogField | 
     try {
       CatalogFieldResponse result = apiInstance.updateCatalogField(id, updateCatalogField);
@@ -357,7 +357,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **updateCatalogField** | [**UpdateCatalogField**](UpdateCatalogField.md)|  | |
 
 ### Return type

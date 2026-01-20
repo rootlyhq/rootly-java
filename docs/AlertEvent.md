@@ -40,11 +40,14 @@
 | Name | Value |
 |---- | -----|
 | CREATED | &quot;created&quot; |
+| ESCALATION_POLICY_PAGED | &quot;escalation_policy_paged&quot; |
+| IGNORED_ALERT_REQUEST | &quot;ignored_alert_request&quot; |
 | EMAILED | &quot;emailed&quot; |
 | SLACKED | &quot;slacked&quot; |
 | CALLED | &quot;called&quot; |
 | TEXTED | &quot;texted&quot; |
 | NOTIFIED | &quot;notified&quot; |
+| SKIPPED | &quot;skipped&quot; |
 | OPENED | &quot;opened&quot; |
 | RETRIGGERED | &quot;retriggered&quot; |
 | ANSWERED | &quot;answered&quot; |

@@ -108,7 +108,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     FormFieldsApi apiInstance = new FormFieldsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       FormFieldResponse result = apiInstance.deleteFormField(id);
       System.out.println(result);
@@ -127,7 +127,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -176,7 +176,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     FormFieldsApi apiInstance = new FormFieldsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     String include = "options"; // String | comma separated if needed. eg: options,positions
     try {
       FormFieldResponse result = apiInstance.getFormField(id, include);
@@ -196,7 +196,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **include** | **String**| comma separated if needed. eg: options,positions | [optional] [enum: options, positions] |
 
 ### Return type
@@ -215,7 +215,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | form_field found |  -  |
+| **200** | form_field found by slug |  -  |
 | **404** | resource not found |  -  |
 
 <a id="listFormFields"></a>
@@ -335,7 +335,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     FormFieldsApi apiInstance = new FormFieldsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     UpdateFormField updateFormField = new UpdateFormField(); // UpdateFormField | 
     try {
       FormFieldResponse result = apiInstance.updateFormField(id, updateFormField);
@@ -355,7 +355,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **updateFormField** | [**UpdateFormField**](UpdateFormField.md)|  | |
 
 ### Return type

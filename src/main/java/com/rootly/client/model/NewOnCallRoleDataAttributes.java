@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -50,7 +50,7 @@ import com.rootly.client.JSON;
 /**
  * NewOnCallRoleDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T17:46:55.918190357Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewOnCallRoleDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -72,6 +72,8 @@ public class NewOnCallRoleDataAttributes {
     USER("user"),
     
     CUSTOM("custom"),
+    
+    OBSERVER("observer"),
     
     NO_ACCESS("no_access");
 
@@ -120,8 +122,307 @@ public class NewOnCallRoleDataAttributes {
 
   public static final String SERIALIZED_NAME_SYSTEM_ROLE = "system_role";
   @SerializedName(SERIALIZED_NAME_SYSTEM_ROLE)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private List<SystemRoleEnum> systemRole = new ArrayList<>();
+
+  /**
+   * Gets or Sets alertFieldsPermissions
+   */
+  @JsonAdapter(AlertFieldsPermissionsEnum.Adapter.class)
+  public enum AlertFieldsPermissionsEnum {
+    CREATE("create"),
+    
+    READ("read"),
+    
+    UPDATE("update"),
+    
+    DELETE("delete");
+
+    private String value;
+
+    AlertFieldsPermissionsEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static AlertFieldsPermissionsEnum fromValue(String value) {
+      for (AlertFieldsPermissionsEnum b : AlertFieldsPermissionsEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<AlertFieldsPermissionsEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final AlertFieldsPermissionsEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public AlertFieldsPermissionsEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return AlertFieldsPermissionsEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      AlertFieldsPermissionsEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_ALERT_FIELDS_PERMISSIONS = "alert_fields_permissions";
+  @SerializedName(SERIALIZED_NAME_ALERT_FIELDS_PERMISSIONS)
+  @javax.annotation.Nullable
+  private List<AlertFieldsPermissionsEnum> alertFieldsPermissions = new ArrayList<>();
+
+  /**
+   * Gets or Sets alertGroupsPermissions
+   */
+  @JsonAdapter(AlertGroupsPermissionsEnum.Adapter.class)
+  public enum AlertGroupsPermissionsEnum {
+    CREATE("create"),
+    
+    READ("read"),
+    
+    UPDATE("update"),
+    
+    DELETE("delete");
+
+    private String value;
+
+    AlertGroupsPermissionsEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static AlertGroupsPermissionsEnum fromValue(String value) {
+      for (AlertGroupsPermissionsEnum b : AlertGroupsPermissionsEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<AlertGroupsPermissionsEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final AlertGroupsPermissionsEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public AlertGroupsPermissionsEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return AlertGroupsPermissionsEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      AlertGroupsPermissionsEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_ALERT_GROUPS_PERMISSIONS = "alert_groups_permissions";
+  @SerializedName(SERIALIZED_NAME_ALERT_GROUPS_PERMISSIONS)
+  @javax.annotation.Nullable
+  private List<AlertGroupsPermissionsEnum> alertGroupsPermissions = new ArrayList<>();
+
+  /**
+   * Gets or Sets alertRoutingRulesPermissions
+   */
+  @JsonAdapter(AlertRoutingRulesPermissionsEnum.Adapter.class)
+  public enum AlertRoutingRulesPermissionsEnum {
+    CREATE("create"),
+    
+    READ("read"),
+    
+    UPDATE("update"),
+    
+    DELETE("delete");
+
+    private String value;
+
+    AlertRoutingRulesPermissionsEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static AlertRoutingRulesPermissionsEnum fromValue(String value) {
+      for (AlertRoutingRulesPermissionsEnum b : AlertRoutingRulesPermissionsEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<AlertRoutingRulesPermissionsEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final AlertRoutingRulesPermissionsEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public AlertRoutingRulesPermissionsEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return AlertRoutingRulesPermissionsEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      AlertRoutingRulesPermissionsEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_ALERT_ROUTING_RULES_PERMISSIONS = "alert_routing_rules_permissions";
+  @SerializedName(SERIALIZED_NAME_ALERT_ROUTING_RULES_PERMISSIONS)
+  @javax.annotation.Nullable
+  private List<AlertRoutingRulesPermissionsEnum> alertRoutingRulesPermissions = new ArrayList<>();
+
+  /**
+   * Gets or Sets onCallReadinessReportPermissions
+   */
+  @JsonAdapter(OnCallReadinessReportPermissionsEnum.Adapter.class)
+  public enum OnCallReadinessReportPermissionsEnum {
+    READ("read");
+
+    private String value;
+
+    OnCallReadinessReportPermissionsEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static OnCallReadinessReportPermissionsEnum fromValue(String value) {
+      for (OnCallReadinessReportPermissionsEnum b : OnCallReadinessReportPermissionsEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<OnCallReadinessReportPermissionsEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final OnCallReadinessReportPermissionsEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public OnCallReadinessReportPermissionsEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return OnCallReadinessReportPermissionsEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      OnCallReadinessReportPermissionsEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_ON_CALL_READINESS_REPORT_PERMISSIONS = "on_call_readiness_report_permissions";
+  @SerializedName(SERIALIZED_NAME_ON_CALL_READINESS_REPORT_PERMISSIONS)
+  @javax.annotation.Nullable
+  private List<OnCallReadinessReportPermissionsEnum> onCallReadinessReportPermissions = new ArrayList<>();
+
+  /**
+   * Gets or Sets onCallRolesPermissions
+   */
+  @JsonAdapter(OnCallRolesPermissionsEnum.Adapter.class)
+  public enum OnCallRolesPermissionsEnum {
+    CREATE("create"),
+    
+    READ("read"),
+    
+    UPDATE("update"),
+    
+    DELETE("delete");
+
+    private String value;
+
+    OnCallRolesPermissionsEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static OnCallRolesPermissionsEnum fromValue(String value) {
+      for (OnCallRolesPermissionsEnum b : OnCallRolesPermissionsEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<OnCallRolesPermissionsEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final OnCallRolesPermissionsEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public OnCallRolesPermissionsEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return OnCallRolesPermissionsEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      OnCallRolesPermissionsEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_ON_CALL_ROLES_PERMISSIONS = "on_call_roles_permissions";
+  @SerializedName(SERIALIZED_NAME_ON_CALL_ROLES_PERMISSIONS)
+  @javax.annotation.Nullable
+  private List<OnCallRolesPermissionsEnum> onCallRolesPermissions = new ArrayList<>();
 
   /**
    * Gets or Sets alertSourcesPermissions
@@ -129,6 +430,8 @@ public class NewOnCallRoleDataAttributes {
   @JsonAdapter(AlertSourcesPermissionsEnum.Adapter.class)
   public enum AlertSourcesPermissionsEnum {
     CREATE("create"),
+    
+    READ("read"),
     
     UPDATE("update"),
     
@@ -1187,7 +1490,7 @@ public class NewOnCallRoleDataAttributes {
   }
 
 
-  public NewOnCallRoleDataAttributes systemRole(@javax.annotation.Nonnull List<SystemRoleEnum> systemRole) {
+  public NewOnCallRoleDataAttributes systemRole(@javax.annotation.Nullable List<SystemRoleEnum> systemRole) {
     this.systemRole = systemRole;
     return this;
   }
@@ -1204,13 +1507,148 @@ public class NewOnCallRoleDataAttributes {
    * The kind of role (user and custom type roles are only editable)
    * @return systemRole
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public List<SystemRoleEnum> getSystemRole() {
     return systemRole;
   }
 
-  public void setSystemRole(@javax.annotation.Nonnull List<SystemRoleEnum> systemRole) {
+  public void setSystemRole(@javax.annotation.Nullable List<SystemRoleEnum> systemRole) {
     this.systemRole = systemRole;
+  }
+
+
+  public NewOnCallRoleDataAttributes alertFieldsPermissions(@javax.annotation.Nullable List<AlertFieldsPermissionsEnum> alertFieldsPermissions) {
+    this.alertFieldsPermissions = alertFieldsPermissions;
+    return this;
+  }
+
+  public NewOnCallRoleDataAttributes addAlertFieldsPermissionsItem(AlertFieldsPermissionsEnum alertFieldsPermissionsItem) {
+    if (this.alertFieldsPermissions == null) {
+      this.alertFieldsPermissions = new ArrayList<>();
+    }
+    this.alertFieldsPermissions.add(alertFieldsPermissionsItem);
+    return this;
+  }
+
+  /**
+   * Get alertFieldsPermissions
+   * @return alertFieldsPermissions
+   */
+  @javax.annotation.Nullable
+  public List<AlertFieldsPermissionsEnum> getAlertFieldsPermissions() {
+    return alertFieldsPermissions;
+  }
+
+  public void setAlertFieldsPermissions(@javax.annotation.Nullable List<AlertFieldsPermissionsEnum> alertFieldsPermissions) {
+    this.alertFieldsPermissions = alertFieldsPermissions;
+  }
+
+
+  public NewOnCallRoleDataAttributes alertGroupsPermissions(@javax.annotation.Nullable List<AlertGroupsPermissionsEnum> alertGroupsPermissions) {
+    this.alertGroupsPermissions = alertGroupsPermissions;
+    return this;
+  }
+
+  public NewOnCallRoleDataAttributes addAlertGroupsPermissionsItem(AlertGroupsPermissionsEnum alertGroupsPermissionsItem) {
+    if (this.alertGroupsPermissions == null) {
+      this.alertGroupsPermissions = new ArrayList<>();
+    }
+    this.alertGroupsPermissions.add(alertGroupsPermissionsItem);
+    return this;
+  }
+
+  /**
+   * Get alertGroupsPermissions
+   * @return alertGroupsPermissions
+   */
+  @javax.annotation.Nullable
+  public List<AlertGroupsPermissionsEnum> getAlertGroupsPermissions() {
+    return alertGroupsPermissions;
+  }
+
+  public void setAlertGroupsPermissions(@javax.annotation.Nullable List<AlertGroupsPermissionsEnum> alertGroupsPermissions) {
+    this.alertGroupsPermissions = alertGroupsPermissions;
+  }
+
+
+  public NewOnCallRoleDataAttributes alertRoutingRulesPermissions(@javax.annotation.Nullable List<AlertRoutingRulesPermissionsEnum> alertRoutingRulesPermissions) {
+    this.alertRoutingRulesPermissions = alertRoutingRulesPermissions;
+    return this;
+  }
+
+  public NewOnCallRoleDataAttributes addAlertRoutingRulesPermissionsItem(AlertRoutingRulesPermissionsEnum alertRoutingRulesPermissionsItem) {
+    if (this.alertRoutingRulesPermissions == null) {
+      this.alertRoutingRulesPermissions = new ArrayList<>();
+    }
+    this.alertRoutingRulesPermissions.add(alertRoutingRulesPermissionsItem);
+    return this;
+  }
+
+  /**
+   * Get alertRoutingRulesPermissions
+   * @return alertRoutingRulesPermissions
+   */
+  @javax.annotation.Nullable
+  public List<AlertRoutingRulesPermissionsEnum> getAlertRoutingRulesPermissions() {
+    return alertRoutingRulesPermissions;
+  }
+
+  public void setAlertRoutingRulesPermissions(@javax.annotation.Nullable List<AlertRoutingRulesPermissionsEnum> alertRoutingRulesPermissions) {
+    this.alertRoutingRulesPermissions = alertRoutingRulesPermissions;
+  }
+
+
+  public NewOnCallRoleDataAttributes onCallReadinessReportPermissions(@javax.annotation.Nullable List<OnCallReadinessReportPermissionsEnum> onCallReadinessReportPermissions) {
+    this.onCallReadinessReportPermissions = onCallReadinessReportPermissions;
+    return this;
+  }
+
+  public NewOnCallRoleDataAttributes addOnCallReadinessReportPermissionsItem(OnCallReadinessReportPermissionsEnum onCallReadinessReportPermissionsItem) {
+    if (this.onCallReadinessReportPermissions == null) {
+      this.onCallReadinessReportPermissions = new ArrayList<>();
+    }
+    this.onCallReadinessReportPermissions.add(onCallReadinessReportPermissionsItem);
+    return this;
+  }
+
+  /**
+   * Get onCallReadinessReportPermissions
+   * @return onCallReadinessReportPermissions
+   */
+  @javax.annotation.Nullable
+  public List<OnCallReadinessReportPermissionsEnum> getOnCallReadinessReportPermissions() {
+    return onCallReadinessReportPermissions;
+  }
+
+  public void setOnCallReadinessReportPermissions(@javax.annotation.Nullable List<OnCallReadinessReportPermissionsEnum> onCallReadinessReportPermissions) {
+    this.onCallReadinessReportPermissions = onCallReadinessReportPermissions;
+  }
+
+
+  public NewOnCallRoleDataAttributes onCallRolesPermissions(@javax.annotation.Nullable List<OnCallRolesPermissionsEnum> onCallRolesPermissions) {
+    this.onCallRolesPermissions = onCallRolesPermissions;
+    return this;
+  }
+
+  public NewOnCallRoleDataAttributes addOnCallRolesPermissionsItem(OnCallRolesPermissionsEnum onCallRolesPermissionsItem) {
+    if (this.onCallRolesPermissions == null) {
+      this.onCallRolesPermissions = new ArrayList<>();
+    }
+    this.onCallRolesPermissions.add(onCallRolesPermissionsItem);
+    return this;
+  }
+
+  /**
+   * Get onCallRolesPermissions
+   * @return onCallRolesPermissions
+   */
+  @javax.annotation.Nullable
+  public List<OnCallRolesPermissionsEnum> getOnCallRolesPermissions() {
+    return onCallRolesPermissions;
+  }
+
+  public void setOnCallRolesPermissions(@javax.annotation.Nullable List<OnCallRolesPermissionsEnum> onCallRolesPermissions) {
+    this.onCallRolesPermissions = onCallRolesPermissions;
   }
 
 
@@ -1686,6 +2124,11 @@ public class NewOnCallRoleDataAttributes {
     return Objects.equals(this.name, newOnCallRoleDataAttributes.name) &&
         Objects.equals(this.slug, newOnCallRoleDataAttributes.slug) &&
         Objects.equals(this.systemRole, newOnCallRoleDataAttributes.systemRole) &&
+        Objects.equals(this.alertFieldsPermissions, newOnCallRoleDataAttributes.alertFieldsPermissions) &&
+        Objects.equals(this.alertGroupsPermissions, newOnCallRoleDataAttributes.alertGroupsPermissions) &&
+        Objects.equals(this.alertRoutingRulesPermissions, newOnCallRoleDataAttributes.alertRoutingRulesPermissions) &&
+        Objects.equals(this.onCallReadinessReportPermissions, newOnCallRoleDataAttributes.onCallReadinessReportPermissions) &&
+        Objects.equals(this.onCallRolesPermissions, newOnCallRoleDataAttributes.onCallRolesPermissions) &&
         Objects.equals(this.alertSourcesPermissions, newOnCallRoleDataAttributes.alertSourcesPermissions) &&
         Objects.equals(this.alertUrgencyPermissions, newOnCallRoleDataAttributes.alertUrgencyPermissions) &&
         Objects.equals(this.alertsPermissions, newOnCallRoleDataAttributes.alertsPermissions) &&
@@ -1707,7 +2150,7 @@ public class NewOnCallRoleDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, slug, systemRole, alertSourcesPermissions, alertUrgencyPermissions, alertsPermissions, apiKeysPermissions, auditsPermissions, contactsPermissions, escalationPoliciesPermissions, groupsPermissions, heartbeatsPermissions, integrationsPermissions, invitationsPermissions, liveCallRoutingPermissions, scheduleOverridePermissions, schedulesPermissions, servicesPermissions, webhooksPermissions, workflowsPermissions);
+    return Objects.hash(name, slug, systemRole, alertFieldsPermissions, alertGroupsPermissions, alertRoutingRulesPermissions, onCallReadinessReportPermissions, onCallRolesPermissions, alertSourcesPermissions, alertUrgencyPermissions, alertsPermissions, apiKeysPermissions, auditsPermissions, contactsPermissions, escalationPoliciesPermissions, groupsPermissions, heartbeatsPermissions, integrationsPermissions, invitationsPermissions, liveCallRoutingPermissions, scheduleOverridePermissions, schedulesPermissions, servicesPermissions, webhooksPermissions, workflowsPermissions);
   }
 
   @Override
@@ -1717,6 +2160,11 @@ public class NewOnCallRoleDataAttributes {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    systemRole: ").append(toIndentedString(systemRole)).append("\n");
+    sb.append("    alertFieldsPermissions: ").append(toIndentedString(alertFieldsPermissions)).append("\n");
+    sb.append("    alertGroupsPermissions: ").append(toIndentedString(alertGroupsPermissions)).append("\n");
+    sb.append("    alertRoutingRulesPermissions: ").append(toIndentedString(alertRoutingRulesPermissions)).append("\n");
+    sb.append("    onCallReadinessReportPermissions: ").append(toIndentedString(onCallReadinessReportPermissions)).append("\n");
+    sb.append("    onCallRolesPermissions: ").append(toIndentedString(onCallRolesPermissions)).append("\n");
     sb.append("    alertSourcesPermissions: ").append(toIndentedString(alertSourcesPermissions)).append("\n");
     sb.append("    alertUrgencyPermissions: ").append(toIndentedString(alertUrgencyPermissions)).append("\n");
     sb.append("    alertsPermissions: ").append(toIndentedString(alertsPermissions)).append("\n");
@@ -1759,6 +2207,11 @@ public class NewOnCallRoleDataAttributes {
     openapiFields.add("name");
     openapiFields.add("slug");
     openapiFields.add("system_role");
+    openapiFields.add("alert_fields_permissions");
+    openapiFields.add("alert_groups_permissions");
+    openapiFields.add("alert_routing_rules_permissions");
+    openapiFields.add("on_call_readiness_report_permissions");
+    openapiFields.add("on_call_roles_permissions");
     openapiFields.add("alert_sources_permissions");
     openapiFields.add("alert_urgency_permissions");
     openapiFields.add("alerts_permissions");
@@ -1780,7 +2233,6 @@ public class NewOnCallRoleDataAttributes {
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
     openapiRequiredFields.add("name");
-    openapiRequiredFields.add("system_role");
   }
 
   /**
@@ -1817,11 +2269,29 @@ public class NewOnCallRoleDataAttributes {
       if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
       }
-      // ensure the required json array is present
-      if (jsonObj.get("system_role") == null) {
-        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
-      } else if (!jsonObj.get("system_role").isJsonArray()) {
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("system_role") != null && !jsonObj.get("system_role").isJsonNull() && !jsonObj.get("system_role").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `system_role` to be an array in the JSON string but got `%s`", jsonObj.get("system_role").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("alert_fields_permissions") != null && !jsonObj.get("alert_fields_permissions").isJsonNull() && !jsonObj.get("alert_fields_permissions").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `alert_fields_permissions` to be an array in the JSON string but got `%s`", jsonObj.get("alert_fields_permissions").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("alert_groups_permissions") != null && !jsonObj.get("alert_groups_permissions").isJsonNull() && !jsonObj.get("alert_groups_permissions").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `alert_groups_permissions` to be an array in the JSON string but got `%s`", jsonObj.get("alert_groups_permissions").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("alert_routing_rules_permissions") != null && !jsonObj.get("alert_routing_rules_permissions").isJsonNull() && !jsonObj.get("alert_routing_rules_permissions").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `alert_routing_rules_permissions` to be an array in the JSON string but got `%s`", jsonObj.get("alert_routing_rules_permissions").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("on_call_readiness_report_permissions") != null && !jsonObj.get("on_call_readiness_report_permissions").isJsonNull() && !jsonObj.get("on_call_readiness_report_permissions").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `on_call_readiness_report_permissions` to be an array in the JSON string but got `%s`", jsonObj.get("on_call_readiness_report_permissions").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("on_call_roles_permissions") != null && !jsonObj.get("on_call_roles_permissions").isJsonNull() && !jsonObj.get("on_call_roles_permissions").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `on_call_roles_permissions` to be an array in the JSON string but got `%s`", jsonObj.get("on_call_roles_permissions").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("alert_sources_permissions") != null && !jsonObj.get("alert_sources_permissions").isJsonNull() && !jsonObj.get("alert_sources_permissions").isJsonArray()) {

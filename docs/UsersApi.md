@@ -192,7 +192,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **String**|  | |
-| **include** | **String**| comma separated if needed. eg: email_addresses,phone_numbers | [optional] [enum: email_addresses, phone_numbers, devices, role, on_call_role] |
+| **include** | **String**| comma separated if needed. eg: email_addresses,phone_numbers | [optional] [enum: email_addresses, phone_numbers, devices, role, on_call_role, teams, schedules, notification_rules] |
 
 ### Return type
 
@@ -210,7 +210,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | user found |  -  |
+| **200** | user found with teams, schedules, and notification_rules includes |  -  |
 | **404** | resource not found |  -  |
 
 <a id="listUsers"></a>
@@ -278,7 +278,7 @@ public class Example {
 | **filterCreatedAtLt** | **String**|  | [optional] |
 | **filterCreatedAtLte** | **String**|  | [optional] |
 | **sort** | **String**| comma separated if needed. eg: created_at,updated_at | [optional] [enum: created_at, -created_at, updated_at, -updated_at] |
-| **include** | **String**| comma separated if needed. eg: email_addresses,phone_numbers | [optional] [enum: email_addresses, phone_numbers, devices, role, on_call_role] |
+| **include** | **String**| comma separated if needed. eg: email_addresses,phone_numbers | [optional] [enum: email_addresses, phone_numbers, devices, role, on_call_role, teams, schedules, notification_rules] |
 
 ### Return type
 

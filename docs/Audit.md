@@ -28,6 +28,8 @@
 | CUSTOM_FIELD_OPTION | &quot;CustomFieldOption&quot; |
 | CUSTOM_FORM | &quot;CustomForm&quot; |
 | DASHBOARD | &quot;Dashboard&quot; |
+| EDGE_CONNECTOR | &quot;EdgeConnector&quot; |
+| EDGE_CONNECTOR_ACTION | &quot;EdgeConnector::Action&quot; |
 | ENVIRONMENT | &quot;Environment&quot; |
 | ESCALATION_POLICY | &quot;EscalationPolicy&quot; |
 | ESCALATION_POLICY_PATH | &quot;EscalationPolicyPath&quot; |

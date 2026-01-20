@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateHeartbeatDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T17:46:55.918190357Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateHeartbeatDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -66,6 +66,11 @@ public class UpdateHeartbeatDataAttributes {
   @javax.annotation.Nullable
   private String alertSummary;
 
+  public static final String SERIALIZED_NAME_ALERT_DESCRIPTION = "alert_description";
+  @SerializedName(SERIALIZED_NAME_ALERT_DESCRIPTION)
+  @javax.annotation.Nullable
+  private String alertDescription;
+
   public static final String SERIALIZED_NAME_ALERT_URGENCY_ID = "alert_urgency_id";
   @SerializedName(SERIALIZED_NAME_ALERT_URGENCY_ID)
   @javax.annotation.Nullable
@@ -81,11 +86,11 @@ public class UpdateHeartbeatDataAttributes {
    */
   @JsonAdapter(IntervalUnitEnum.Adapter.class)
   public enum IntervalUnitEnum {
-    SECONDS("seconds"),
-    
     MINUTES("minutes"),
     
-    HOURS("hours");
+    HOURS("hours"),
+    
+    DAYS("days");
 
     private String value;
 
@@ -266,6 +271,25 @@ public class UpdateHeartbeatDataAttributes {
   }
 
 
+  public UpdateHeartbeatDataAttributes alertDescription(@javax.annotation.Nullable String alertDescription) {
+    this.alertDescription = alertDescription;
+    return this;
+  }
+
+  /**
+   * Description of alerts triggered when heartbeat expires.
+   * @return alertDescription
+   */
+  @javax.annotation.Nullable
+  public String getAlertDescription() {
+    return alertDescription;
+  }
+
+  public void setAlertDescription(@javax.annotation.Nullable String alertDescription) {
+    this.alertDescription = alertDescription;
+  }
+
+
   public UpdateHeartbeatDataAttributes alertUrgencyId(@javax.annotation.Nullable String alertUrgencyId) {
     this.alertUrgencyId = alertUrgencyId;
     return this;
@@ -393,6 +417,7 @@ public class UpdateHeartbeatDataAttributes {
     return Objects.equals(this.name, updateHeartbeatDataAttributes.name) &&
         Objects.equals(this.description, updateHeartbeatDataAttributes.description) &&
         Objects.equals(this.alertSummary, updateHeartbeatDataAttributes.alertSummary) &&
+        Objects.equals(this.alertDescription, updateHeartbeatDataAttributes.alertDescription) &&
         Objects.equals(this.alertUrgencyId, updateHeartbeatDataAttributes.alertUrgencyId) &&
         Objects.equals(this.interval, updateHeartbeatDataAttributes.interval) &&
         Objects.equals(this.intervalUnit, updateHeartbeatDataAttributes.intervalUnit) &&
@@ -407,7 +432,7 @@ public class UpdateHeartbeatDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, alertSummary, alertUrgencyId, interval, intervalUnit, notificationTargetId, notificationTargetType, enabled);
+    return Objects.hash(name, description, alertSummary, alertDescription, alertUrgencyId, interval, intervalUnit, notificationTargetId, notificationTargetType, enabled);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -424,6 +449,7 @@ public class UpdateHeartbeatDataAttributes {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    alertSummary: ").append(toIndentedString(alertSummary)).append("\n");
+    sb.append("    alertDescription: ").append(toIndentedString(alertDescription)).append("\n");
     sb.append("    alertUrgencyId: ").append(toIndentedString(alertUrgencyId)).append("\n");
     sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
     sb.append("    intervalUnit: ").append(toIndentedString(intervalUnit)).append("\n");
@@ -455,6 +481,7 @@ public class UpdateHeartbeatDataAttributes {
     openapiFields.add("name");
     openapiFields.add("description");
     openapiFields.add("alert_summary");
+    openapiFields.add("alert_description");
     openapiFields.add("alert_urgency_id");
     openapiFields.add("interval");
     openapiFields.add("interval_unit");
@@ -495,6 +522,9 @@ public class UpdateHeartbeatDataAttributes {
       }
       if ((jsonObj.get("alert_summary") != null && !jsonObj.get("alert_summary").isJsonNull()) && !jsonObj.get("alert_summary").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `alert_summary` to be a primitive type in the JSON string but got `%s`", jsonObj.get("alert_summary").toString()));
+      }
+      if ((jsonObj.get("alert_description") != null && !jsonObj.get("alert_description").isJsonNull()) && !jsonObj.get("alert_description").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `alert_description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("alert_description").toString()));
       }
       if ((jsonObj.get("alert_urgency_id") != null && !jsonObj.get("alert_urgency_id").isJsonNull()) && !jsonObj.get("alert_urgency_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `alert_urgency_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("alert_urgency_id").toString()));

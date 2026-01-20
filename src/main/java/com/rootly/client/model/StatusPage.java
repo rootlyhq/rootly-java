@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -51,12 +51,17 @@ import com.rootly.client.JSON;
 /**
  * StatusPage
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T17:46:55.918190357Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class StatusPage {
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
   @javax.annotation.Nonnull
   private String title;
+
+  public static final String SERIALIZED_NAME_SLUG = "slug";
+  @SerializedName(SERIALIZED_NAME_SLUG)
+  @javax.annotation.Nullable
+  private String slug;
 
   public static final String SERIALIZED_NAME_PUBLIC_TITLE = "public_title";
   @SerializedName(SERIALIZED_NAME_PUBLIC_TITLE)
@@ -102,11 +107,7 @@ public class StatusPage {
     
     NUMBER_60(60),
     
-    NUMBER_90(90),
-    
-    NUMBER_180(180),
-    
-    NUMBER_360(360);
+    NUMBER_90(90);
 
     private Integer value;
 
@@ -166,7 +167,67 @@ public class StatusPage {
   @javax.annotation.Nullable
   private String failureMessage;
 
+  /**
+   * Authentication method
+   */
+  @JsonAdapter(AuthenticationMethodEnum.Adapter.class)
+  public enum AuthenticationMethodEnum {
+    NONE("none"),
+    
+    PASSWORD("password"),
+    
+    SAML("saml");
+
+    private String value;
+
+    AuthenticationMethodEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static AuthenticationMethodEnum fromValue(String value) {
+      for (AuthenticationMethodEnum b : AuthenticationMethodEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<AuthenticationMethodEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final AuthenticationMethodEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public AuthenticationMethodEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return AuthenticationMethodEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      AuthenticationMethodEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_AUTHENTICATION_METHOD = "authentication_method";
+  @SerializedName(SERIALIZED_NAME_AUTHENTICATION_METHOD)
+  @javax.annotation.Nullable
+  private AuthenticationMethodEnum authenticationMethod = AuthenticationMethodEnum.NONE;
+
   public static final String SERIALIZED_NAME_AUTHENTICATION_ENABLED = "authentication_enabled";
+  @Deprecated
   @SerializedName(SERIALIZED_NAME_AUTHENTICATION_ENABLED)
   @javax.annotation.Nullable
   private Boolean authenticationEnabled = false;
@@ -175,6 +236,87 @@ public class StatusPage {
   @SerializedName(SERIALIZED_NAME_AUTHENTICATION_PASSWORD)
   @javax.annotation.Nullable
   private String authenticationPassword;
+
+  public static final String SERIALIZED_NAME_SAML_IDP_SSO_SERVICE_URL = "saml_idp_sso_service_url";
+  @SerializedName(SERIALIZED_NAME_SAML_IDP_SSO_SERVICE_URL)
+  @javax.annotation.Nullable
+  private String samlIdpSsoServiceUrl;
+
+  public static final String SERIALIZED_NAME_SAML_IDP_SLO_SERVICE_URL = "saml_idp_slo_service_url";
+  @SerializedName(SERIALIZED_NAME_SAML_IDP_SLO_SERVICE_URL)
+  @javax.annotation.Nullable
+  private String samlIdpSloServiceUrl;
+
+  public static final String SERIALIZED_NAME_SAML_IDP_CERT = "saml_idp_cert";
+  @SerializedName(SERIALIZED_NAME_SAML_IDP_CERT)
+  @javax.annotation.Nullable
+  private String samlIdpCert;
+
+  public static final String SERIALIZED_NAME_SAML_IDP_CERT_FINGERPRINT = "saml_idp_cert_fingerprint";
+  @SerializedName(SERIALIZED_NAME_SAML_IDP_CERT_FINGERPRINT)
+  @javax.annotation.Nullable
+  private String samlIdpCertFingerprint;
+
+  /**
+   * SAML name identifier format
+   */
+  @JsonAdapter(SamlNameIdentifierFormatEnum.Adapter.class)
+  public enum SamlNameIdentifierFormatEnum {
+    URN_OASIS_NAMES_TC_SAML_1_1_NAMEID_FORMAT_EMAIL_ADDRESS("urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress"),
+    
+    URN_OASIS_NAMES_TC_SAML_2_0_NAMEID_FORMAT_PERSISTENT("urn:oasis:names:tc:SAML:2.0:nameid-format:persistent"),
+    
+    URN_OASIS_NAMES_TC_SAML_2_0_NAMEID_FORMAT_TRANSIENT("urn:oasis:names:tc:SAML:2.0:nameid-format:transient"),
+    
+    URN_OASIS_NAMES_TC_SAML_1_1_NAMEID_FORMAT_UNSPECIFIED("urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified");
+
+    private String value;
+
+    SamlNameIdentifierFormatEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static SamlNameIdentifierFormatEnum fromValue(String value) {
+      for (SamlNameIdentifierFormatEnum b : SamlNameIdentifierFormatEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<SamlNameIdentifierFormatEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final SamlNameIdentifierFormatEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public SamlNameIdentifierFormatEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return SamlNameIdentifierFormatEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      SamlNameIdentifierFormatEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_SAML_NAME_IDENTIFIER_FORMAT = "saml_name_identifier_format";
+  @SerializedName(SERIALIZED_NAME_SAML_NAME_IDENTIFIER_FORMAT)
+  @javax.annotation.Nullable
+  private SamlNameIdentifierFormatEnum samlNameIdentifierFormat;
 
   public static final String SERIALIZED_NAME_WEBSITE_URL = "website_url";
   @SerializedName(SERIALIZED_NAME_WEBSITE_URL)
@@ -255,6 +397,25 @@ public class StatusPage {
 
   public void setTitle(@javax.annotation.Nonnull String title) {
     this.title = title;
+  }
+
+
+  public StatusPage slug(@javax.annotation.Nullable String slug) {
+    this.slug = slug;
+    return this;
+  }
+
+  /**
+   * The slug of the status page
+   * @return slug
+   */
+  @javax.annotation.Nullable
+  public String getSlug() {
+    return slug;
+  }
+
+  public void setSlug(@javax.annotation.Nullable String slug) {
+    this.slug = slug;
   }
 
 
@@ -448,20 +609,43 @@ public class StatusPage {
   }
 
 
+  public StatusPage authenticationMethod(@javax.annotation.Nullable AuthenticationMethodEnum authenticationMethod) {
+    this.authenticationMethod = authenticationMethod;
+    return this;
+  }
+
+  /**
+   * Authentication method
+   * @return authenticationMethod
+   */
+  @javax.annotation.Nullable
+  public AuthenticationMethodEnum getAuthenticationMethod() {
+    return authenticationMethod;
+  }
+
+  public void setAuthenticationMethod(@javax.annotation.Nullable AuthenticationMethodEnum authenticationMethod) {
+    this.authenticationMethod = authenticationMethod;
+  }
+
+
+  @Deprecated
   public StatusPage authenticationEnabled(@javax.annotation.Nullable Boolean authenticationEnabled) {
     this.authenticationEnabled = authenticationEnabled;
     return this;
   }
 
   /**
-   * Enable authentication
+   * Enable authentication (deprecated - use authentication_method instead)
    * @return authenticationEnabled
+   * @deprecated
    */
+  @Deprecated
   @javax.annotation.Nullable
   public Boolean getAuthenticationEnabled() {
     return authenticationEnabled;
   }
 
+  @Deprecated
   public void setAuthenticationEnabled(@javax.annotation.Nullable Boolean authenticationEnabled) {
     this.authenticationEnabled = authenticationEnabled;
   }
@@ -483,6 +667,101 @@ public class StatusPage {
 
   public void setAuthenticationPassword(@javax.annotation.Nullable String authenticationPassword) {
     this.authenticationPassword = authenticationPassword;
+  }
+
+
+  public StatusPage samlIdpSsoServiceUrl(@javax.annotation.Nullable String samlIdpSsoServiceUrl) {
+    this.samlIdpSsoServiceUrl = samlIdpSsoServiceUrl;
+    return this;
+  }
+
+  /**
+   * SAML IdP SSO service URL
+   * @return samlIdpSsoServiceUrl
+   */
+  @javax.annotation.Nullable
+  public String getSamlIdpSsoServiceUrl() {
+    return samlIdpSsoServiceUrl;
+  }
+
+  public void setSamlIdpSsoServiceUrl(@javax.annotation.Nullable String samlIdpSsoServiceUrl) {
+    this.samlIdpSsoServiceUrl = samlIdpSsoServiceUrl;
+  }
+
+
+  public StatusPage samlIdpSloServiceUrl(@javax.annotation.Nullable String samlIdpSloServiceUrl) {
+    this.samlIdpSloServiceUrl = samlIdpSloServiceUrl;
+    return this;
+  }
+
+  /**
+   * SAML IdP SLO service URL
+   * @return samlIdpSloServiceUrl
+   */
+  @javax.annotation.Nullable
+  public String getSamlIdpSloServiceUrl() {
+    return samlIdpSloServiceUrl;
+  }
+
+  public void setSamlIdpSloServiceUrl(@javax.annotation.Nullable String samlIdpSloServiceUrl) {
+    this.samlIdpSloServiceUrl = samlIdpSloServiceUrl;
+  }
+
+
+  public StatusPage samlIdpCert(@javax.annotation.Nullable String samlIdpCert) {
+    this.samlIdpCert = samlIdpCert;
+    return this;
+  }
+
+  /**
+   * SAML IdP certificate
+   * @return samlIdpCert
+   */
+  @javax.annotation.Nullable
+  public String getSamlIdpCert() {
+    return samlIdpCert;
+  }
+
+  public void setSamlIdpCert(@javax.annotation.Nullable String samlIdpCert) {
+    this.samlIdpCert = samlIdpCert;
+  }
+
+
+  public StatusPage samlIdpCertFingerprint(@javax.annotation.Nullable String samlIdpCertFingerprint) {
+    this.samlIdpCertFingerprint = samlIdpCertFingerprint;
+    return this;
+  }
+
+  /**
+   * SAML IdP certificate fingerprint
+   * @return samlIdpCertFingerprint
+   */
+  @javax.annotation.Nullable
+  public String getSamlIdpCertFingerprint() {
+    return samlIdpCertFingerprint;
+  }
+
+  public void setSamlIdpCertFingerprint(@javax.annotation.Nullable String samlIdpCertFingerprint) {
+    this.samlIdpCertFingerprint = samlIdpCertFingerprint;
+  }
+
+
+  public StatusPage samlNameIdentifierFormat(@javax.annotation.Nullable SamlNameIdentifierFormatEnum samlNameIdentifierFormat) {
+    this.samlNameIdentifierFormat = samlNameIdentifierFormat;
+    return this;
+  }
+
+  /**
+   * SAML name identifier format
+   * @return samlNameIdentifierFormat
+   */
+  @javax.annotation.Nullable
+  public SamlNameIdentifierFormatEnum getSamlNameIdentifierFormat() {
+    return samlNameIdentifierFormat;
+  }
+
+  public void setSamlNameIdentifierFormat(@javax.annotation.Nullable SamlNameIdentifierFormatEnum samlNameIdentifierFormat) {
+    this.samlNameIdentifierFormat = samlNameIdentifierFormat;
   }
 
 
@@ -749,6 +1028,7 @@ public class StatusPage {
     }
     StatusPage statusPage = (StatusPage) o;
     return Objects.equals(this.title, statusPage.title) &&
+        Objects.equals(this.slug, statusPage.slug) &&
         Objects.equals(this.publicTitle, statusPage.publicTitle) &&
         Objects.equals(this.description, statusPage.description) &&
         Objects.equals(this.publicDescription, statusPage.publicDescription) &&
@@ -759,8 +1039,14 @@ public class StatusPage {
         Objects.equals(this.showUptimeLastDays, statusPage.showUptimeLastDays) &&
         Objects.equals(this.successMessage, statusPage.successMessage) &&
         Objects.equals(this.failureMessage, statusPage.failureMessage) &&
+        Objects.equals(this.authenticationMethod, statusPage.authenticationMethod) &&
         Objects.equals(this.authenticationEnabled, statusPage.authenticationEnabled) &&
         Objects.equals(this.authenticationPassword, statusPage.authenticationPassword) &&
+        Objects.equals(this.samlIdpSsoServiceUrl, statusPage.samlIdpSsoServiceUrl) &&
+        Objects.equals(this.samlIdpSloServiceUrl, statusPage.samlIdpSloServiceUrl) &&
+        Objects.equals(this.samlIdpCert, statusPage.samlIdpCert) &&
+        Objects.equals(this.samlIdpCertFingerprint, statusPage.samlIdpCertFingerprint) &&
+        Objects.equals(this.samlNameIdentifierFormat, statusPage.samlNameIdentifierFormat) &&
         Objects.equals(this.websiteUrl, statusPage.websiteUrl) &&
         Objects.equals(this.websitePrivacyUrl, statusPage.websitePrivacyUrl) &&
         Objects.equals(this.websiteSupportUrl, statusPage.websiteSupportUrl) &&
@@ -781,7 +1067,7 @@ public class StatusPage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, publicTitle, description, publicDescription, headerColor, footerColor, allowSearchEngineIndex, showUptime, showUptimeLastDays, successMessage, failureMessage, authenticationEnabled, authenticationPassword, websiteUrl, websitePrivacyUrl, websiteSupportUrl, gaTrackingId, timeZone, _public, serviceIds, functionalityIds, externalDomainNames, enabled, createdAt, updatedAt);
+    return Objects.hash(title, slug, publicTitle, description, publicDescription, headerColor, footerColor, allowSearchEngineIndex, showUptime, showUptimeLastDays, successMessage, failureMessage, authenticationMethod, authenticationEnabled, authenticationPassword, samlIdpSsoServiceUrl, samlIdpSloServiceUrl, samlIdpCert, samlIdpCertFingerprint, samlNameIdentifierFormat, websiteUrl, websitePrivacyUrl, websiteSupportUrl, gaTrackingId, timeZone, _public, serviceIds, functionalityIds, externalDomainNames, enabled, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -796,6 +1082,7 @@ public class StatusPage {
     StringBuilder sb = new StringBuilder();
     sb.append("class StatusPage {\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
+    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    publicTitle: ").append(toIndentedString(publicTitle)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    publicDescription: ").append(toIndentedString(publicDescription)).append("\n");
@@ -806,8 +1093,14 @@ public class StatusPage {
     sb.append("    showUptimeLastDays: ").append(toIndentedString(showUptimeLastDays)).append("\n");
     sb.append("    successMessage: ").append(toIndentedString(successMessage)).append("\n");
     sb.append("    failureMessage: ").append(toIndentedString(failureMessage)).append("\n");
+    sb.append("    authenticationMethod: ").append(toIndentedString(authenticationMethod)).append("\n");
     sb.append("    authenticationEnabled: ").append(toIndentedString(authenticationEnabled)).append("\n");
     sb.append("    authenticationPassword: ").append(toIndentedString(authenticationPassword)).append("\n");
+    sb.append("    samlIdpSsoServiceUrl: ").append(toIndentedString(samlIdpSsoServiceUrl)).append("\n");
+    sb.append("    samlIdpSloServiceUrl: ").append(toIndentedString(samlIdpSloServiceUrl)).append("\n");
+    sb.append("    samlIdpCert: ").append(toIndentedString(samlIdpCert)).append("\n");
+    sb.append("    samlIdpCertFingerprint: ").append(toIndentedString(samlIdpCertFingerprint)).append("\n");
+    sb.append("    samlNameIdentifierFormat: ").append(toIndentedString(samlNameIdentifierFormat)).append("\n");
     sb.append("    websiteUrl: ").append(toIndentedString(websiteUrl)).append("\n");
     sb.append("    websitePrivacyUrl: ").append(toIndentedString(websitePrivacyUrl)).append("\n");
     sb.append("    websiteSupportUrl: ").append(toIndentedString(websiteSupportUrl)).append("\n");
@@ -843,6 +1136,7 @@ public class StatusPage {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("title");
+    openapiFields.add("slug");
     openapiFields.add("public_title");
     openapiFields.add("description");
     openapiFields.add("public_description");
@@ -853,8 +1147,14 @@ public class StatusPage {
     openapiFields.add("show_uptime_last_days");
     openapiFields.add("success_message");
     openapiFields.add("failure_message");
+    openapiFields.add("authentication_method");
     openapiFields.add("authentication_enabled");
     openapiFields.add("authentication_password");
+    openapiFields.add("saml_idp_sso_service_url");
+    openapiFields.add("saml_idp_slo_service_url");
+    openapiFields.add("saml_idp_cert");
+    openapiFields.add("saml_idp_cert_fingerprint");
+    openapiFields.add("saml_name_identifier_format");
     openapiFields.add("website_url");
     openapiFields.add("website_privacy_url");
     openapiFields.add("website_support_url");
@@ -906,6 +1206,9 @@ public class StatusPage {
       if (!jsonObj.get("title").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
       }
+      if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
+      }
       if ((jsonObj.get("public_title") != null && !jsonObj.get("public_title").isJsonNull()) && !jsonObj.get("public_title").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `public_title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("public_title").toString()));
       }
@@ -931,8 +1234,34 @@ public class StatusPage {
       if ((jsonObj.get("failure_message") != null && !jsonObj.get("failure_message").isJsonNull()) && !jsonObj.get("failure_message").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `failure_message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("failure_message").toString()));
       }
+      if ((jsonObj.get("authentication_method") != null && !jsonObj.get("authentication_method").isJsonNull()) && !jsonObj.get("authentication_method").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `authentication_method` to be a primitive type in the JSON string but got `%s`", jsonObj.get("authentication_method").toString()));
+      }
+      // validate the optional field `authentication_method`
+      if (jsonObj.get("authentication_method") != null && !jsonObj.get("authentication_method").isJsonNull()) {
+        AuthenticationMethodEnum.validateJsonElement(jsonObj.get("authentication_method"));
+      }
       if ((jsonObj.get("authentication_password") != null && !jsonObj.get("authentication_password").isJsonNull()) && !jsonObj.get("authentication_password").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `authentication_password` to be a primitive type in the JSON string but got `%s`", jsonObj.get("authentication_password").toString()));
+      }
+      if ((jsonObj.get("saml_idp_sso_service_url") != null && !jsonObj.get("saml_idp_sso_service_url").isJsonNull()) && !jsonObj.get("saml_idp_sso_service_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `saml_idp_sso_service_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("saml_idp_sso_service_url").toString()));
+      }
+      if ((jsonObj.get("saml_idp_slo_service_url") != null && !jsonObj.get("saml_idp_slo_service_url").isJsonNull()) && !jsonObj.get("saml_idp_slo_service_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `saml_idp_slo_service_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("saml_idp_slo_service_url").toString()));
+      }
+      if ((jsonObj.get("saml_idp_cert") != null && !jsonObj.get("saml_idp_cert").isJsonNull()) && !jsonObj.get("saml_idp_cert").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `saml_idp_cert` to be a primitive type in the JSON string but got `%s`", jsonObj.get("saml_idp_cert").toString()));
+      }
+      if ((jsonObj.get("saml_idp_cert_fingerprint") != null && !jsonObj.get("saml_idp_cert_fingerprint").isJsonNull()) && !jsonObj.get("saml_idp_cert_fingerprint").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `saml_idp_cert_fingerprint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("saml_idp_cert_fingerprint").toString()));
+      }
+      if ((jsonObj.get("saml_name_identifier_format") != null && !jsonObj.get("saml_name_identifier_format").isJsonNull()) && !jsonObj.get("saml_name_identifier_format").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `saml_name_identifier_format` to be a primitive type in the JSON string but got `%s`", jsonObj.get("saml_name_identifier_format").toString()));
+      }
+      // validate the optional field `saml_name_identifier_format`
+      if (jsonObj.get("saml_name_identifier_format") != null && !jsonObj.get("saml_name_identifier_format").isJsonNull()) {
+        SamlNameIdentifierFormatEnum.validateJsonElement(jsonObj.get("saml_name_identifier_format"));
       }
       if ((jsonObj.get("website_url") != null && !jsonObj.get("website_url").isJsonNull()) && !jsonObj.get("website_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `website_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("website_url").toString()));

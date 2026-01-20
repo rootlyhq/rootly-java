@@ -29,6 +29,7 @@
 | Name | Value |
 |---- | -----|
 | EQUAL | &quot;equal&quot; |
+| NOT_EQUAL | &quot;not_equal&quot; |
 | IS_SET | &quot;is_set&quot; |
 | IS_NOT_SET | &quot;is_not_set&quot; |
 

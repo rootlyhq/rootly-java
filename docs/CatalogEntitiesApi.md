@@ -110,7 +110,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     CatalogEntitiesApi apiInstance = new CatalogEntitiesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       CatalogEntityResponse result = apiInstance.deleteCatalogEntity(id);
       System.out.println(result);
@@ -129,7 +129,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -178,7 +178,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     CatalogEntitiesApi apiInstance = new CatalogEntitiesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     String include = "catalog"; // String | comma separated if needed. eg: catalog,properties
     try {
       CatalogEntityResponse result = apiInstance.getCatalogEntity(id, include);
@@ -198,7 +198,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **include** | **String**| comma separated if needed. eg: catalog,properties | [optional] [enum: catalog, properties] |
 
 ### Return type
@@ -217,7 +217,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | catalog_entity found |  -  |
+| **200** | catalog_entity found by slug |  -  |
 | **404** | resource not found |  -  |
 
 <a id="listCatalogEntities"></a>
@@ -335,7 +335,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     CatalogEntitiesApi apiInstance = new CatalogEntitiesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     UpdateCatalogEntity updateCatalogEntity = new UpdateCatalogEntity(); // UpdateCatalogEntity | 
     try {
       CatalogEntityResponse result = apiInstance.updateCatalogEntity(id, updateCatalogEntity);
@@ -355,7 +355,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **updateCatalogEntity** | [**UpdateCatalogEntity**](UpdateCatalogEntity.md)|  | |
 
 ### Return type

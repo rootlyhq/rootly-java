@@ -109,7 +109,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     TeamsApi apiInstance = new TeamsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetTeamIdParameter id = new GetTeamIdParameter(); // GetTeamIdParameter | 
     try {
       TeamResponse result = apiInstance.deleteTeam(id);
       System.out.println(result);
@@ -128,7 +128,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetTeamIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -151,7 +151,7 @@ public class Example {
 
 <a id="getTeam"></a>
 # **getTeam**
-> TeamResponse getTeam(id)
+> TeamResponse getTeam(id, include)
 
 Retrieves a team
 
@@ -177,9 +177,10 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     TeamsApi apiInstance = new TeamsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetTeamIdParameter id = new GetTeamIdParameter(); // GetTeamIdParameter | 
+    String include = "users"; // String | comma separated if needed. eg: users
     try {
-      TeamResponse result = apiInstance.getTeam(id);
+      TeamResponse result = apiInstance.getTeam(id, include);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TeamsApi#getTeam");
@@ -196,7 +197,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetTeamIdParameter**](.md)|  | |
+| **include** | **String**| comma separated if needed. eg: users | [optional] [enum: users] |
 
 ### Return type
 
@@ -214,7 +216,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | team found |  -  |
+| **200** | team found by slug |  -  |
 | **404** | resource not found |  -  |
 
 <a id="getTeamIncidentsChart"></a>
@@ -289,7 +291,7 @@ public class Example {
 
 <a id="listTeams"></a>
 # **listTeams**
-> TeamList listTeams(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterColor, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort)
+> TeamList listTeams(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterColor, filterAlertBroadcastEnabled, filterIncidentBroadcastEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort)
 
 List teams
 
@@ -315,7 +317,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     TeamsApi apiInstance = new TeamsApi(defaultClient);
-    String include = "include_example"; // String | 
+    String include = "users"; // String | comma separated if needed. eg: users
     Integer pageNumber = 56; // Integer | 
     Integer pageSize = 56; // Integer | 
     String filterSearch = "filterSearch_example"; // String | 
@@ -326,13 +328,15 @@ public class Example {
     String filterOpslevelId = "filterOpslevelId_example"; // String | 
     String filterExternalId = "filterExternalId_example"; // String | 
     String filterColor = "filterColor_example"; // String | 
+    Boolean filterAlertBroadcastEnabled = true; // Boolean | 
+    Boolean filterIncidentBroadcastEnabled = true; // Boolean | 
     String filterCreatedAtGt = "filterCreatedAtGt_example"; // String | 
     String filterCreatedAtGte = "filterCreatedAtGte_example"; // String | 
     String filterCreatedAtLt = "filterCreatedAtLt_example"; // String | 
     String filterCreatedAtLte = "filterCreatedAtLte_example"; // String | 
     String sort = "sort_example"; // String | 
     try {
-      TeamList result = apiInstance.listTeams(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterColor, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
+      TeamList result = apiInstance.listTeams(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterColor, filterAlertBroadcastEnabled, filterIncidentBroadcastEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TeamsApi#listTeams");
@@ -349,7 +353,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **include** | **String**|  | [optional] |
+| **include** | **String**| comma separated if needed. eg: users | [optional] [enum: users] |
 | **pageNumber** | **Integer**|  | [optional] |
 | **pageSize** | **Integer**|  | [optional] |
 | **filterSearch** | **String**|  | [optional] |
@@ -360,6 +364,8 @@ public class Example {
 | **filterOpslevelId** | **String**|  | [optional] |
 | **filterExternalId** | **String**|  | [optional] |
 | **filterColor** | **String**|  | [optional] |
+| **filterAlertBroadcastEnabled** | **Boolean**|  | [optional] |
+| **filterIncidentBroadcastEnabled** | **Boolean**|  | [optional] |
 | **filterCreatedAtGt** | **String**|  | [optional] |
 | **filterCreatedAtGte** | **String**|  | [optional] |
 | **filterCreatedAtLt** | **String**|  | [optional] |
@@ -412,7 +418,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     TeamsApi apiInstance = new TeamsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetTeamIdParameter id = new GetTeamIdParameter(); // GetTeamIdParameter | 
     UpdateTeam updateTeam = new UpdateTeam(); // UpdateTeam | 
     try {
       TeamResponse result = apiInstance.updateTeam(id, updateTeam);
@@ -432,7 +438,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetTeamIdParameter**](.md)|  | |
 | **updateTeam** | [**UpdateTeam**](UpdateTeam.md)|  | |
 
 ### Return type

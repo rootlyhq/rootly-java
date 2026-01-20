@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -20,6 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.rootly.client.model.Shift;
+import com.rootly.client.model.ShiftRelationships;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -49,7 +50,7 @@ import com.rootly.client.JSON;
 /**
  * ShiftListDataInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T17:46:55.918190357Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ShiftListDataInner {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -116,6 +117,11 @@ public class ShiftListDataInner {
   @javax.annotation.Nonnull
   private Shift attributes;
 
+  public static final String SERIALIZED_NAME_RELATIONSHIPS = "relationships";
+  @SerializedName(SERIALIZED_NAME_RELATIONSHIPS)
+  @javax.annotation.Nullable
+  private ShiftRelationships relationships;
+
   public ShiftListDataInner() {
   }
 
@@ -176,6 +182,25 @@ public class ShiftListDataInner {
   }
 
 
+  public ShiftListDataInner relationships(@javax.annotation.Nullable ShiftRelationships relationships) {
+    this.relationships = relationships;
+    return this;
+  }
+
+  /**
+   * Get relationships
+   * @return relationships
+   */
+  @javax.annotation.Nullable
+  public ShiftRelationships getRelationships() {
+    return relationships;
+  }
+
+  public void setRelationships(@javax.annotation.Nullable ShiftRelationships relationships) {
+    this.relationships = relationships;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -188,12 +213,13 @@ public class ShiftListDataInner {
     ShiftListDataInner shiftListDataInner = (ShiftListDataInner) o;
     return Objects.equals(this.id, shiftListDataInner.id) &&
         Objects.equals(this.type, shiftListDataInner.type) &&
-        Objects.equals(this.attributes, shiftListDataInner.attributes);
+        Objects.equals(this.attributes, shiftListDataInner.attributes) &&
+        Objects.equals(this.relationships, shiftListDataInner.relationships);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, attributes);
+    return Objects.hash(id, type, attributes, relationships);
   }
 
   @Override
@@ -203,6 +229,7 @@ public class ShiftListDataInner {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
+    sb.append("    relationships: ").append(toIndentedString(relationships)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -228,6 +255,7 @@ public class ShiftListDataInner {
     openapiFields.add("id");
     openapiFields.add("type");
     openapiFields.add("attributes");
+    openapiFields.add("relationships");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -274,6 +302,10 @@ public class ShiftListDataInner {
       TypeEnum.validateJsonElement(jsonObj.get("type"));
       // validate the required field `attributes`
       Shift.validateJsonElement(jsonObj.get("attributes"));
+      // validate the optional field `relationships`
+      if (jsonObj.get("relationships") != null && !jsonObj.get("relationships").isJsonNull()) {
+        ShiftRelationships.validateJsonElement(jsonObj.get("relationships"));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

@@ -24,15 +24,21 @@
 |**githubRepositoryBranch** | **String** | The GitHub repository branch associated to this service. eg: main |  [optional] |
 |**gitlabRepositoryName** | **String** | The GitLab repository name associated to this service. eg: rootlyhq/my-service |  [optional] |
 |**gitlabRepositoryBranch** | **String** | The GitLab repository branch associated to this service. eg: main |  [optional] |
+|**kubernetesDeploymentName** | **String** | The Kubernetes deployment name associated to this service. eg: namespace/deployment-name |  [optional] |
 |**environmentIds** | **List&lt;String&gt;** | Environments associated with this service |  [optional] |
 |**serviceIds** | **List&lt;String&gt;** | Services dependent on this service |  [optional] |
-|**ownersGroupIds** | **List&lt;String&gt;** | Owner Teams associated with this service |  [optional] |
-|**ownersUserIds** | **List&lt;Integer&gt;** | Owner Users associated with this service |  [optional] |
+|**ownerGroupIds** | **List&lt;String&gt;** | Owner Teams associated with this service |  [optional] |
+|**ownerUserIds** | **List&lt;Integer&gt;** | Owner Users associated with this service |  [optional] |
 |**alertUrgencyId** | **String** | The alert urgency id of the service |  [optional] |
+|**escalationPolicyId** | **String** | The escalation policy id of the service |  [optional] |
 |**alertsEmailEnabled** | **Boolean** | Enable alerts through email |  [optional] |
 |**alertsEmailAddress** | **String** | Email generated to send alerts to |  [optional] |
 |**slackChannels** | [**List&lt;NewEnvironmentDataAttributesSlackChannelsInner&gt;**](NewEnvironmentDataAttributesSlackChannelsInner.md) | Slack Channels associated with this service |  [optional] |
 |**slackAliases** | [**List&lt;NewEnvironmentDataAttributesSlackAliasesInner&gt;**](NewEnvironmentDataAttributesSlackAliasesInner.md) | Slack Aliases associated with this service |  [optional] |
+|**alertBroadcastEnabled** | **Boolean** | Enable alerts to be broadcasted to a specific channel |  [optional] |
+|**alertBroadcastChannel** | [**ServiceAlertBroadcastChannel**](ServiceAlertBroadcastChannel.md) |  |  [optional] |
+|**incidentBroadcastEnabled** | **Boolean** | Enable incidents to be broadcasted to a specific channel |  [optional] |
+|**incidentBroadcastChannel** | [**ServiceIncidentBroadcastChannel**](ServiceIncidentBroadcastChannel.md) |  |  [optional] |
 |**createdAt** | **String** | Date of creation |  |
 |**updatedAt** | **String** | Date of last update |  |
 

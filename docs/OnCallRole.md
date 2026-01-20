@@ -9,9 +9,14 @@
 |------------ | ------------- | ------------- | -------------|
 |**name** | **String** | The role name. |  |
 |**slug** | **String** | The role slug. |  |
-|**systemRole** | [**List&lt;SystemRoleEnum&gt;**](#List&lt;SystemRoleEnum&gt;) | The kind of role |  |
+|**systemRole** | [**List&lt;SystemRoleEnum&gt;**](#List&lt;SystemRoleEnum&gt;) | The kind of role |  [optional] |
 |**alertSourcesPermissions** | [**List&lt;AlertSourcesPermissionsEnum&gt;**](#List&lt;AlertSourcesPermissionsEnum&gt;) |  |  [optional] |
 |**alertUrgencyPermissions** | [**List&lt;AlertUrgencyPermissionsEnum&gt;**](#List&lt;AlertUrgencyPermissionsEnum&gt;) |  |  [optional] |
+|**alertFieldsPermissions** | [**List&lt;AlertFieldsPermissionsEnum&gt;**](#List&lt;AlertFieldsPermissionsEnum&gt;) |  |  [optional] |
+|**alertGroupsPermissions** | [**List&lt;AlertGroupsPermissionsEnum&gt;**](#List&lt;AlertGroupsPermissionsEnum&gt;) |  |  [optional] |
+|**alertRoutingRulesPermissions** | [**List&lt;AlertRoutingRulesPermissionsEnum&gt;**](#List&lt;AlertRoutingRulesPermissionsEnum&gt;) |  |  [optional] |
+|**onCallReadinessReportPermissions** | [**List&lt;OnCallReadinessReportPermissionsEnum&gt;**](#List&lt;OnCallReadinessReportPermissionsEnum&gt;) |  |  [optional] |
+|**onCallRolesPermissions** | [**List&lt;OnCallRolesPermissionsEnum&gt;**](#List&lt;OnCallRolesPermissionsEnum&gt;) |  |  [optional] |
 |**alertsPermissions** | [**List&lt;AlertsPermissionsEnum&gt;**](#List&lt;AlertsPermissionsEnum&gt;) |  |  [optional] |
 |**apiKeysPermissions** | [**List&lt;ApiKeysPermissionsEnum&gt;**](#List&lt;ApiKeysPermissionsEnum&gt;) |  |  [optional] |
 |**auditsPermissions** | [**List&lt;AuditsPermissionsEnum&gt;**](#List&lt;AuditsPermissionsEnum&gt;) |  |  [optional] |
@@ -39,6 +44,7 @@
 | ADMIN | &quot;admin&quot; |
 | USER | &quot;user&quot; |
 | CUSTOM | &quot;custom&quot; |
+| OBSERVER | &quot;observer&quot; |
 | NO_ACCESS | &quot;no_access&quot; |
 
 
@@ -48,12 +54,65 @@
 | Name | Value |
 |---- | -----|
 | CREATE | &quot;create&quot; |
+| READ | &quot;read&quot; |
 | UPDATE | &quot;update&quot; |
 | DELETE | &quot;delete&quot; |
 
 
 
 ## Enum: List&lt;AlertUrgencyPermissionsEnum&gt;
+
+| Name | Value |
+|---- | -----|
+| CREATE | &quot;create&quot; |
+| READ | &quot;read&quot; |
+| UPDATE | &quot;update&quot; |
+| DELETE | &quot;delete&quot; |
+
+
+
+## Enum: List&lt;AlertFieldsPermissionsEnum&gt;
+
+| Name | Value |
+|---- | -----|
+| CREATE | &quot;create&quot; |
+| READ | &quot;read&quot; |
+| UPDATE | &quot;update&quot; |
+| DELETE | &quot;delete&quot; |
+
+
+
+## Enum: List&lt;AlertGroupsPermissionsEnum&gt;
+
+| Name | Value |
+|---- | -----|
+| CREATE | &quot;create&quot; |
+| READ | &quot;read&quot; |
+| UPDATE | &quot;update&quot; |
+| DELETE | &quot;delete&quot; |
+
+
+
+## Enum: List&lt;AlertRoutingRulesPermissionsEnum&gt;
+
+| Name | Value |
+|---- | -----|
+| CREATE | &quot;create&quot; |
+| READ | &quot;read&quot; |
+| UPDATE | &quot;update&quot; |
+| DELETE | &quot;delete&quot; |
+
+
+
+## Enum: List&lt;OnCallReadinessReportPermissionsEnum&gt;
+
+| Name | Value |
+|---- | -----|
+| READ | &quot;read&quot; |
+
+
+
+## Enum: List&lt;OnCallRolesPermissionsEnum&gt;
 
 | Name | Value |
 |---- | -----|

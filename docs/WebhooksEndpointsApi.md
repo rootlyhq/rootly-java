@@ -146,7 +146,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | webhooks_endpoint deleted |  -  |
-| **404** | resource not found |  -  |
+| **404** | hidden endpoint not accessible |  -  |
 
 <a id="getWebhooksEndpoint"></a>
 # **getWebhooksEndpoint**
@@ -214,7 +214,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | webhooks_endpoint found |  -  |
-| **404** | resource not found |  -  |
+| **404** | hidden endpoint not accessible |  -  |
 
 <a id="listWebhooksEndpoints"></a>
 # **listWebhooksEndpoints**
@@ -289,7 +289,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | success |  -  |
+| **200** | excludes hidden endpoints from listing |  -  |
 
 <a id="updateWebhooksEndpoint"></a>
 # **updateWebhooksEndpoint**
@@ -359,5 +359,5 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | webhooks_endpoint updated |  -  |
-| **404** | resource not found |  -  |
+| **404** | hidden endpoint not accessible |  -  |
 

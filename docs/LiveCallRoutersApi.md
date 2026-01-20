@@ -77,7 +77,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | live_call_router created |  -  |
+| **201** | live_call_router created with multiple notification targets |  -  |
 | **422** | invalid request |  -  |
 | **401** | responds with unauthorized for invalid token |  -  |
 
@@ -177,7 +177,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     LiveCallRoutersApi apiInstance = new LiveCallRoutersApi(defaultClient);
-    String countryCode = "US"; // String | 
+    String countryCode = "AU"; // String | 
     String phoneType = "local"; // String | 
     try {
       apiInstance.generatePhoneNumberLiveCallRouter(countryCode, phoneType);
@@ -196,8 +196,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **countryCode** | **String**|  | [enum: US, GB, NZ, CA, AU] |
-| **phoneType** | **String**|  | [enum: local, toll_free] |
+| **countryCode** | **String**|  | [enum: AU, CA, DE, NL, NZ, GB, US] |
+| **phoneType** | **String**|  | [enum: local, toll_free, mobile] |
 
 ### Return type
 

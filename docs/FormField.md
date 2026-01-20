@@ -56,6 +56,7 @@
 | MITIGATED_AT | &quot;mitigated_at&quot; |
 | RESOLVED_AT | &quot;resolved_at&quot; |
 | CLOSED_AT | &quot;closed_at&quot; |
+| CUSTOM_SUB_STATUS | &quot;custom_sub_status&quot; |
 | MANUAL_STARTING_DATETIME_FIELD | &quot;manual_starting_datetime_field&quot; |
 
 

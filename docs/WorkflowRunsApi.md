@@ -158,5 +158,5 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | success |  -  |
+| **200** | success with date filters using gte with timezone |  -  |
 

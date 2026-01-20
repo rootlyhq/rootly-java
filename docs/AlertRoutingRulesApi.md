@@ -17,7 +17,7 @@ All URIs are relative to *https://api.rootly.com*
 
 Creates an alert routing rule
 
-Creates a new alert routing rule from provided data
+Creates a new alert routing rule from provided data. **Note: If you are an advanced alert routing user, you should use the Alert Routes endpoint instead of this endpoint. If you don&#39;t know whether you are an advanced user, please contact Rootly customer support.**
 
 ### Example
 ```java
@@ -86,7 +86,7 @@ public class Example {
 
 Delete an alert routing rule
 
-Delete a specific alert routing rule by id
+Delete a specific alert routing rule by id. **Note: If you are an advanced alert routing user, you should use the Alert Routes endpoint instead of this endpoint. If you don&#39;t know whether you are an advanced user, please contact Rootly customer support.**
 
 ### Example
 ```java
@@ -108,7 +108,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     AlertRoutingRulesApi apiInstance = new AlertRoutingRulesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       AlertRoutingRuleResponse result = apiInstance.deleteAlertRoutingRule(id);
       System.out.println(result);
@@ -127,7 +127,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -154,7 +154,7 @@ public class Example {
 
 Retrieves an alert routing rule
 
-Retrieves a specific alert routing rule by id
+Retrieves a specific alert routing rule by id. **Note: If you are an advanced alert routing user, you should use the Alert Routes endpoint instead of this endpoint. If you don&#39;t know whether you are an advanced user, please contact Rootly customer support.**
 
 ### Example
 ```java
@@ -176,7 +176,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     AlertRoutingRulesApi apiInstance = new AlertRoutingRulesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       AlertRoutingRuleResponse result = apiInstance.getAlertRoutingRule(id);
       System.out.println(result);
@@ -195,7 +195,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -213,7 +213,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | alert routing rule found |  -  |
+| **200** | alert_routing_rule found by slug |  -  |
 | **404** | resource not found |  -  |
 
 <a id="listAlertRoutingRules"></a>
@@ -222,7 +222,7 @@ public class Example {
 
 List alert routing rules
 
-List alert routing rules
+List alert routing rules. **Note: If you are an advanced alert routing user, you should use the Alert Routes endpoint instead of this endpoint. If you don&#39;t know whether you are an advanced user, please contact Rootly customer support.**
 
 ### Example
 ```java
@@ -307,7 +307,7 @@ public class Example {
 
 Update an alert routing rule
 
-Update a specific alert routing rule by id
+Update a specific alert routing rule by id. **Note: If you are an advanced alert routing user, you should use the Alert Routes endpoint instead of this endpoint. If you don&#39;t know whether you are an advanced user, please contact Rootly customer support.**
 
 ### Example
 ```java
@@ -329,7 +329,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     AlertRoutingRulesApi apiInstance = new AlertRoutingRulesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     UpdateAlertRoutingRule updateAlertRoutingRule = new UpdateAlertRoutingRule(); // UpdateAlertRoutingRule | 
     try {
       AlertRoutingRuleResponse result = apiInstance.updateAlertRoutingRule(id, updateAlertRoutingRule);
@@ -349,7 +349,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **updateAlertRoutingRule** | [**UpdateAlertRoutingRule**](UpdateAlertRoutingRule.md)|  | |
 
 ### Return type

@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -19,10 +19,12 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewLiveCallRouterDataAttributesPagingTargetsInner;
 import com.rootly.client.model.UpdateLiveCallRouterDataAttributesEscalationPolicyTriggerParams;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
-import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * LiveCallRouter
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T17:46:55.918190357Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class LiveCallRouter {
   /**
    * The kind of the live_call_router
@@ -124,15 +126,19 @@ public class LiveCallRouter {
    */
   @JsonAdapter(CountryCodeEnum.Adapter.class)
   public enum CountryCodeEnum {
-    US("US"),
-    
-    GB("GB"),
-    
-    NZ("NZ"),
+    AU("AU"),
     
     CA("CA"),
     
-    AU("AU");
+    DE("DE"),
+    
+    NL("NL"),
+    
+    NZ("NZ"),
+    
+    GB("GB"),
+    
+    US("US");
 
     private String value;
 
@@ -189,7 +195,9 @@ public class LiveCallRouter {
   public enum PhoneTypeEnum {
     LOCAL("local"),
     
-    TOLL_FREE("toll_free");
+    TOLL_FREE("toll_free"),
+    
+    MOBILE("mobile");
 
     private String value;
 
@@ -254,10 +262,72 @@ public class LiveCallRouter {
   @javax.annotation.Nullable
   private String callerGreeting;
 
+  /**
+   * The waiting music URL of the live_call_router
+   */
+  @JsonAdapter(WaitingMusicUrlEnum.Adapter.class)
+  public enum WaitingMusicUrlEnum {
+    HTTPS_STORAGE_ROOTLY_COM_TWILIO_VOICEMAIL_CLOCKWORK_WALTZ_MP3("https://storage.rootly.com/twilio/voicemail/ClockworkWaltz.mp3"),
+    
+    HTTPS_STORAGE_ROOTLY_COM_TWILIO_VOICEMAIL_ITH_BRAHMS_116_4_MP3("https://storage.rootly.com/twilio/voicemail/ith_brahms-116-4.mp3"),
+    
+    HTTPS_STORAGE_ROOTLY_COM_TWILIO_VOICEMAIL_MELLOTRONIAC___FLIGHT_OF_YOUNG_HEARTS_FLUTE_MP3("https://storage.rootly.com/twilio/voicemail/Mellotroniac_-_Flight_Of_Young_Hearts_Flute.mp3"),
+    
+    HTTPS_STORAGE_ROOTLY_COM_TWILIO_VOICEMAIL_BUSY_STRINGS_MP3("https://storage.rootly.com/twilio/voicemail/BusyStrings.mp3"),
+    
+    HTTPS_STORAGE_ROOTLY_COM_TWILIO_VOICEMAIL_OLD_DOG___ENDLESS_GOODBYE__28INSTR_29_MP3("https://storage.rootly.com/twilio/voicemail/oldDog_-_endless_goodbye_%28instr.%29.mp3"),
+    
+    HTTPS_STORAGE_ROOTLY_COM_TWILIO_VOICEMAIL_MARKOVICHAMP_BORGHESTRAL_MP3("https://storage.rootly.com/twilio/voicemail/MARKOVICHAMP-Borghestral.mp3"),
+    
+    HTTPS_STORAGE_ROOTLY_COM_TWILIO_VOICEMAIL_ITH_CHOPIN_15_2_MP3("https://storage.rootly.com/twilio/voicemail/ith_chopin-15-2.mp3");
+
+    private String value;
+
+    WaitingMusicUrlEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static WaitingMusicUrlEnum fromValue(String value) {
+      for (WaitingMusicUrlEnum b : WaitingMusicUrlEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<WaitingMusicUrlEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final WaitingMusicUrlEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public WaitingMusicUrlEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return WaitingMusicUrlEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      WaitingMusicUrlEnum.fromValue(value);
+    }
+  }
+
   public static final String SERIALIZED_NAME_WAITING_MUSIC_URL = "waiting_music_url";
   @SerializedName(SERIALIZED_NAME_WAITING_MUSIC_URL)
   @javax.annotation.Nullable
-  private String waitingMusicUrl;
+  private WaitingMusicUrlEnum waitingMusicUrl;
 
   public static final String SERIALIZED_NAME_SENT_TO_VOICEMAIL_DELAY = "sent_to_voicemail_delay";
   @SerializedName(SERIALIZED_NAME_SENT_TO_VOICEMAIL_DELAY)
@@ -283,6 +353,16 @@ public class LiveCallRouter {
   @SerializedName(SERIALIZED_NAME_ALERT_URGENCY_ID)
   @javax.annotation.Nullable
   private String alertUrgencyId;
+
+  public static final String SERIALIZED_NAME_CALLING_TREE_PROMPT = "calling_tree_prompt";
+  @SerializedName(SERIALIZED_NAME_CALLING_TREE_PROMPT)
+  @javax.annotation.Nullable
+  private String callingTreePrompt;
+
+  public static final String SERIALIZED_NAME_PAGING_TARGETS = "paging_targets";
+  @SerializedName(SERIALIZED_NAME_PAGING_TARGETS)
+  @javax.annotation.Nullable
+  private List<NewLiveCallRouterDataAttributesPagingTargetsInner> pagingTargets = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ESCALATION_POLICY_TRIGGER_PARAMS = "escalation_policy_trigger_params";
   @SerializedName(SERIALIZED_NAME_ESCALATION_POLICY_TRIGGER_PARAMS)
@@ -454,7 +534,7 @@ public class LiveCallRouter {
   }
 
 
-  public LiveCallRouter waitingMusicUrl(@javax.annotation.Nullable String waitingMusicUrl) {
+  public LiveCallRouter waitingMusicUrl(@javax.annotation.Nullable WaitingMusicUrlEnum waitingMusicUrl) {
     this.waitingMusicUrl = waitingMusicUrl;
     return this;
   }
@@ -464,11 +544,11 @@ public class LiveCallRouter {
    * @return waitingMusicUrl
    */
   @javax.annotation.Nullable
-  public String getWaitingMusicUrl() {
+  public WaitingMusicUrlEnum getWaitingMusicUrl() {
     return waitingMusicUrl;
   }
 
-  public void setWaitingMusicUrl(@javax.annotation.Nullable String waitingMusicUrl) {
+  public void setWaitingMusicUrl(@javax.annotation.Nullable WaitingMusicUrlEnum waitingMusicUrl) {
     this.waitingMusicUrl = waitingMusicUrl;
   }
 
@@ -568,6 +648,52 @@ public class LiveCallRouter {
   }
 
 
+  public LiveCallRouter callingTreePrompt(@javax.annotation.Nullable String callingTreePrompt) {
+    this.callingTreePrompt = callingTreePrompt;
+    return this;
+  }
+
+  /**
+   * The audio instructions callers will hear when they call this number, prompting them to select from available options to route their call
+   * @return callingTreePrompt
+   */
+  @javax.annotation.Nullable
+  public String getCallingTreePrompt() {
+    return callingTreePrompt;
+  }
+
+  public void setCallingTreePrompt(@javax.annotation.Nullable String callingTreePrompt) {
+    this.callingTreePrompt = callingTreePrompt;
+  }
+
+
+  public LiveCallRouter pagingTargets(@javax.annotation.Nullable List<NewLiveCallRouterDataAttributesPagingTargetsInner> pagingTargets) {
+    this.pagingTargets = pagingTargets;
+    return this;
+  }
+
+  public LiveCallRouter addPagingTargetsItem(NewLiveCallRouterDataAttributesPagingTargetsInner pagingTargetsItem) {
+    if (this.pagingTargets == null) {
+      this.pagingTargets = new ArrayList<>();
+    }
+    this.pagingTargets.add(pagingTargetsItem);
+    return this;
+  }
+
+  /**
+   * Paging targets that callers can select from when this live call router is configured as a phone tree.
+   * @return pagingTargets
+   */
+  @javax.annotation.Nullable
+  public List<NewLiveCallRouterDataAttributesPagingTargetsInner> getPagingTargets() {
+    return pagingTargets;
+  }
+
+  public void setPagingTargets(@javax.annotation.Nullable List<NewLiveCallRouterDataAttributesPagingTargetsInner> pagingTargets) {
+    this.pagingTargets = pagingTargets;
+  }
+
+
   public LiveCallRouter escalationPolicyTriggerParams(@javax.annotation.Nullable UpdateLiveCallRouterDataAttributesEscalationPolicyTriggerParams escalationPolicyTriggerParams) {
     this.escalationPolicyTriggerParams = escalationPolicyTriggerParams;
     return this;
@@ -649,25 +775,16 @@ public class LiveCallRouter {
         Objects.equals(this.escalationLevelDelayInSeconds, liveCallRouter.escalationLevelDelayInSeconds) &&
         Objects.equals(this.shouldAutoResolveAlertOnCallEnd, liveCallRouter.shouldAutoResolveAlertOnCallEnd) &&
         Objects.equals(this.alertUrgencyId, liveCallRouter.alertUrgencyId) &&
+        Objects.equals(this.callingTreePrompt, liveCallRouter.callingTreePrompt) &&
+        Objects.equals(this.pagingTargets, liveCallRouter.pagingTargets) &&
         Objects.equals(this.escalationPolicyTriggerParams, liveCallRouter.escalationPolicyTriggerParams) &&
         Objects.equals(this.createdAt, liveCallRouter.createdAt) &&
         Objects.equals(this.updatedAt, liveCallRouter.updatedAt);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(kind, enabled, name, countryCode, phoneType, phoneNumber, voicemailGreeting, callerGreeting, waitingMusicUrl, sentToVoicemailDelay, shouldRedirectToVoicemailOnNoAnswer, escalationLevelDelayInSeconds, shouldAutoResolveAlertOnCallEnd, alertUrgencyId, escalationPolicyTriggerParams, createdAt, updatedAt);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(kind, enabled, name, countryCode, phoneType, phoneNumber, voicemailGreeting, callerGreeting, waitingMusicUrl, sentToVoicemailDelay, shouldRedirectToVoicemailOnNoAnswer, escalationLevelDelayInSeconds, shouldAutoResolveAlertOnCallEnd, alertUrgencyId, callingTreePrompt, pagingTargets, escalationPolicyTriggerParams, createdAt, updatedAt);
   }
 
   @Override
@@ -688,6 +805,8 @@ public class LiveCallRouter {
     sb.append("    escalationLevelDelayInSeconds: ").append(toIndentedString(escalationLevelDelayInSeconds)).append("\n");
     sb.append("    shouldAutoResolveAlertOnCallEnd: ").append(toIndentedString(shouldAutoResolveAlertOnCallEnd)).append("\n");
     sb.append("    alertUrgencyId: ").append(toIndentedString(alertUrgencyId)).append("\n");
+    sb.append("    callingTreePrompt: ").append(toIndentedString(callingTreePrompt)).append("\n");
+    sb.append("    pagingTargets: ").append(toIndentedString(pagingTargets)).append("\n");
     sb.append("    escalationPolicyTriggerParams: ").append(toIndentedString(escalationPolicyTriggerParams)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
@@ -727,6 +846,8 @@ public class LiveCallRouter {
     openapiFields.add("escalation_level_delay_in_seconds");
     openapiFields.add("should_auto_resolve_alert_on_call_end");
     openapiFields.add("alert_urgency_id");
+    openapiFields.add("calling_tree_prompt");
+    openapiFields.add("paging_targets");
     openapiFields.add("escalation_policy_trigger_params");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
@@ -802,8 +923,29 @@ public class LiveCallRouter {
       if ((jsonObj.get("waiting_music_url") != null && !jsonObj.get("waiting_music_url").isJsonNull()) && !jsonObj.get("waiting_music_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `waiting_music_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("waiting_music_url").toString()));
       }
+      // validate the optional field `waiting_music_url`
+      if (jsonObj.get("waiting_music_url") != null && !jsonObj.get("waiting_music_url").isJsonNull()) {
+        WaitingMusicUrlEnum.validateJsonElement(jsonObj.get("waiting_music_url"));
+      }
       if ((jsonObj.get("alert_urgency_id") != null && !jsonObj.get("alert_urgency_id").isJsonNull()) && !jsonObj.get("alert_urgency_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `alert_urgency_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("alert_urgency_id").toString()));
+      }
+      if ((jsonObj.get("calling_tree_prompt") != null && !jsonObj.get("calling_tree_prompt").isJsonNull()) && !jsonObj.get("calling_tree_prompt").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `calling_tree_prompt` to be a primitive type in the JSON string but got `%s`", jsonObj.get("calling_tree_prompt").toString()));
+      }
+      if (jsonObj.get("paging_targets") != null && !jsonObj.get("paging_targets").isJsonNull()) {
+        JsonArray jsonArraypagingTargets = jsonObj.getAsJsonArray("paging_targets");
+        if (jsonArraypagingTargets != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("paging_targets").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `paging_targets` to be an array in the JSON string but got `%s`", jsonObj.get("paging_targets").toString()));
+          }
+
+          // validate the optional field `paging_targets` (array)
+          for (int i = 0; i < jsonArraypagingTargets.size(); i++) {
+            NewLiveCallRouterDataAttributesPagingTargetsInner.validateJsonElement(jsonArraypagingTargets.get(i));
+          };
+        }
       }
       // validate the optional field `escalation_policy_trigger_params`
       if (jsonObj.get("escalation_policy_trigger_params") != null && !jsonObj.get("escalation_policy_trigger_params").isJsonNull()) {

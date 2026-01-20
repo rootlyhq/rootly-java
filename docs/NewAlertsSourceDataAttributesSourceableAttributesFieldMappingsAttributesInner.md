@@ -19,6 +19,7 @@
 | EXTERNAL_ID | &quot;external_id&quot; |
 | STATE | &quot;state&quot; |
 | ALERT_TITLE | &quot;alert_title&quot; |
+| ALERT_DESCRIPTION | &quot;alert_description&quot; |
 | ALERT_EXTERNAL_URL | &quot;alert_external_url&quot; |
 | NOTIFICATION_TARGET_TYPE | &quot;notification_target_type&quot; |
 | NOTIFICATION_TARGET_ID | &quot;notification_target_id&quot; |

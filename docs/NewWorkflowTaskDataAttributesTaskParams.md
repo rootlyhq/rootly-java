@@ -21,7 +21,7 @@
 |**postToIncidentTimeline** | **Boolean** |  |  [optional] |
 |**customFieldsMapping** | **String** | Custom field mappings. Can contain liquid markup and need to be valid JSON |  [optional] |
 |**postToSlackChannels** | [**List&lt;AddActionItemTaskParamsPostToSlackChannelsInner&gt;**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
-|**groupIds** | **List&lt;String&gt;** |  |  [optional] |
+|**groupIds** | **List&lt;String&gt;** | Array of group/team UUIDs |  [optional] |
 |**playbookId** | **String** | The playbook id if tab is of an incident playbook |  [optional] |
 |**channel** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
 |**title** | **String** | The task title |  |
@@ -68,11 +68,12 @@
 |**integration** | [**CreateJiraIssueTaskParamsIntegration**](CreateJiraIssueTaskParamsIntegration.md) |  |  [optional] |
 |**space** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
 |**ancestor** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
-|**template** | [**CreateIncidentPostmortemTaskParamsTemplate**](CreateIncidentPostmortemTaskParamsTemplate.md) |  |  [optional] |
-|**postMortemTemplateId** | **String** | Retrospective template to use when creating page task, if desired |  [optional] |
+|**template** | [**UpdateDatadogNotebookTaskParamsTemplate**](UpdateDatadogNotebookTaskParamsTemplate.md) |  |  [optional] |
+|**postMortemTemplateId** | **String** | Retrospective template to use when updating notebook, if desired |  [optional] |
 |**markPostMortemAsPublished** | **Boolean** |  |  [optional] |
 |**subtitle** | **String** | The Coda page subtitle |  [optional] |
 |**folderId** | **String** | The Coda folder id |  [optional] |
+|**doc** | [**CreateCodaPageTaskParamsDoc**](CreateCodaPageTaskParamsDoc.md) |  |  [optional] |
 |**namespace** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
 |**parentFolder** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
 |**body** | **String** | The issue body |  |
@@ -86,13 +87,14 @@
 |**timeOfMeeting** | **String** | Time of meeting in format HH:MM |  |
 |**meetingDuration** | **String** | Meeting duration in format like &#39;1 hour&#39;, &#39;30 minutes&#39; |  |
 |**excludeWeekends** | **Boolean** |  |  [optional] |
+|**enableOnlineMeeting** | **Boolean** | Enable Microsoft Teams online meeting |  [optional] |
 |**calendarId** | **String** |  |  [optional] |
 |**sendUpdates** | **Boolean** | Send an email to the attendees notifying them of the event |  [optional] |
 |**canGuestsModifyEvent** | **Boolean** |  |  [optional] |
 |**canGuestsSeeOtherGuests** | **Boolean** |  |  [optional] |
 |**canGuestsInviteOthers** | **Boolean** |  |  [optional] |
 |**conferenceSolutionKey** | [**ConferenceSolutionKeyEnum**](#ConferenceSolutionKeyEnum) | [DEPRECATED] Sets the video conference type attached to the meeting |  [optional] |
-|**fileId** | **String** | The Notion page ID |  |
+|**fileId** | **String** | The Datadog notebook ID |  |
 |**templateId** | **String** | The Quip file ID to use as a template |  [optional] |
 |**docId** | **String** | The Coda doc id |  [optional] |
 |**pageId** | **String** | The Coda page id |  |
@@ -112,8 +114,8 @@
 |**passwordRequired** | **Boolean** |  |  [optional] |
 |**severityId** | **String** |  |  [optional] |
 |**incidentTypeIds** | **List&lt;String&gt;** |  |  [optional] |
-|**serviceIds** | **List&lt;String&gt;** |  |  [optional] |
-|**functionalityIds** | **List&lt;String&gt;** |  |  [optional] |
+|**serviceIds** | **List&lt;String&gt;** | Array of service UUIDs |  [optional] |
+|**functionalityIds** | **List&lt;String&gt;** | Array of functionality UUIDs |  [optional] |
 |**environmentIds** | **List&lt;String&gt;** |  |  [optional] |
 |**_private** | **Boolean** |  |  [optional] |
 |**incidentId** | **String** | The incident id |  |
@@ -122,9 +124,12 @@
 |**updatePayload** | **String** | Update payload. Can contain liquid markup and need to be valid JSON |  [optional] |
 |**parentIssueId** | **String** | The parent issue |  |
 |**subtaskIssueType** | [**CreateJiraIssueTaskParamsIssueType**](CreateJiraIssueTaskParamsIssueType.md) |  |  |
-|**state** | [**CreateLinearIssueTaskParamsState**](CreateLinearIssueTaskParamsState.md) |  |  |
+|**state** | [**UpdateLinearIssueTaskParamsState**](UpdateLinearIssueTaskParamsState.md) |  |  |
 |**project** | [**CreateLinearIssueTaskParamsProject**](CreateLinearIssueTaskParamsProject.md) |  |  [optional] |
 |**issueId** | **String** | The issue id |  |
+|**topic** | **String** |  |  |
+|**chatType** | [**ChatTypeEnum**](#ChatTypeEnum) | Type of chat to create |  [optional] |
+|**members** | [**List&lt;CreateMicrosoftTeamsChatTaskParamsMembersInner&gt;**](CreateMicrosoftTeamsChatTaskParamsMembersInner.md) | Array of members to include in the chat |  |
 |**emails** | **String** | Comma separated list of emails to invite |  |
 |**parentPage** | [**CreateNotionPageTaskParamsParentPage**](CreateNotionPageTaskParamsParentPage.md) |  |  |
 |**showTimelineAsTable** | **Boolean** |  |  [optional] |
@@ -137,7 +142,6 @@
 |**parentStoryId** | **String** | The parent story |  |
 |**board** | [**CreateTrelloCardTaskParamsBoard**](CreateTrelloCardTaskParamsBoard.md) |  |  |
 |**_list** | [**CreateTrelloCardTaskParamsList**](CreateTrelloCardTaskParamsList.md) |  |  |
-|**topic** | **String** |  |  |
 |**password** | **String** | The meeting password |  [optional] |
 |**comment** | **String** | The ticket comment |  [optional] |
 |**tags** | **String** | The ticket tags |  [optional] |
@@ -230,8 +234,14 @@
 |**workflow** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
 |**checkWorkflowConditions** | **Boolean** |  |  [optional] |
 |**blocks** | **String** | Support liquid markup. Needs to be a valid JSON string after liquid is parsed |  |
-|**model** | [**GeniusCreateWatsonxChatCompletionTaskParamsModel**](GeniusCreateWatsonxChatCompletionTaskParamsModel.md) |  |  |
-|**prompt** | **String** | The prompt to send to WatsonX |  |
+|**model** | [**CreateAnthropicChatCompletionTaskParamsModel**](CreateAnthropicChatCompletionTaskParamsModel.md) |  |  |
+|**systemPrompt** | **String** | The system prompt to send to Anthropic (optional) |  [optional] |
+|**prompt** | **String** | The prompt to send to Anthropic |  |
+|**temperature** | **BigDecimal** | Sampling temperature (0.0-1.5). Higher values make output more random. |  [optional] |
+|**maxTokens** | **Integer** | Maximum number of tokens to generate |  [optional] |
+|**topP** | **BigDecimal** | Nucleus sampling parameter (0.0-1.0) |  [optional] |
+|**reasoningEffort** | [**ReasoningEffortEnum**](#ReasoningEffortEnum) | Constrains effort on reasoning for GPT-5 and o-series models |  [optional] |
+|**reasoningSummary** | [**ReasoningSummaryEnum**](#ReasoningSummaryEnum) | Summary of the reasoning performed by the model for GPT-5 and o-series models |  [optional] |
 |**projectId** | **String** |  |  |
 
 
@@ -240,7 +250,7 @@
 
 | Name | Value |
 |---- | -----|
-| GENIUS_CREATE_WATSONX_CHAT_COMPLETION_TASK | &quot;genius_create_watsonx_chat_completion_task&quot; |
+| CREATE_ANTHROPIC_CHAT_COMPLETION_TASK | &quot;create_anthropic_chat_completion_task&quot; |
 
 
 
@@ -355,6 +365,15 @@
 
 
 
+## Enum: ChatTypeEnum
+
+| Name | Value |
+|---- | -----|
+| GROUP | &quot;group&quot; |
+| ONE_ON_ONE | &quot;oneOnOne&quot; |
+
+
+
 ## Enum: AutoRecordingEnum
 
 | Name | Value |
@@ -442,6 +461,27 @@
 | STACKED_HORIZONTAL_BAR | &quot;STACKED_HORIZONTAL_BAR&quot; |
 | TABLE | &quot;TABLE&quot; |
 | VERTICAL_BAR | &quot;VERTICAL_BAR&quot; |
+
+
+
+## Enum: ReasoningEffortEnum
+
+| Name | Value |
+|---- | -----|
+| MINIMAL | &quot;minimal&quot; |
+| LOW | &quot;low&quot; |
+| MEDIUM | &quot;medium&quot; |
+| HIGH | &quot;high&quot; |
+
+
+
+## Enum: ReasoningSummaryEnum
+
+| Name | Value |
+|---- | -----|
+| AUTO | &quot;auto&quot; |
+| CONCISE | &quot;concise&quot; |
+| DETAILED | &quot;detailed&quot; |
 
 
 

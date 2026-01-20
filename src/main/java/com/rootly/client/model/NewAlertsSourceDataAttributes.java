@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner;
 import com.rootly.client.model.NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner;
 import com.rootly.client.model.NewAlertsSourceDataAttributesAlertTemplateAttributes;
 import com.rootly.client.model.NewAlertsSourceDataAttributesResolutionRuleAttributes;
@@ -27,6 +28,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -54,7 +56,7 @@ import com.rootly.client.JSON;
 /**
  * NewAlertsSourceDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T17:46:55.918190357Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewAlertsSourceDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -161,6 +163,76 @@ public class NewAlertsSourceDataAttributes {
   @javax.annotation.Nullable
   private String alertUrgencyId;
 
+  public static final String SERIALIZED_NAME_DEDUPLICATE_ALERTS_BY_KEY = "deduplicate_alerts_by_key";
+  @SerializedName(SERIALIZED_NAME_DEDUPLICATE_ALERTS_BY_KEY)
+  @javax.annotation.Nullable
+  private Boolean deduplicateAlertsByKey;
+
+  /**
+   * Kind of deduplication key.
+   */
+  @JsonAdapter(DeduplicationKeyKindEnum.Adapter.class)
+  public enum DeduplicationKeyKindEnum {
+    PAYLOAD("payload");
+
+    private String value;
+
+    DeduplicationKeyKindEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static DeduplicationKeyKindEnum fromValue(String value) {
+      for (DeduplicationKeyKindEnum b : DeduplicationKeyKindEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<DeduplicationKeyKindEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final DeduplicationKeyKindEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public DeduplicationKeyKindEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return DeduplicationKeyKindEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      DeduplicationKeyKindEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_DEDUPLICATION_KEY_KIND = "deduplication_key_kind";
+  @SerializedName(SERIALIZED_NAME_DEDUPLICATION_KEY_KIND)
+  @javax.annotation.Nullable
+  private DeduplicationKeyKindEnum deduplicationKeyKind;
+
+  public static final String SERIALIZED_NAME_DEDUPLICATION_KEY_PATH = "deduplication_key_path";
+  @SerializedName(SERIALIZED_NAME_DEDUPLICATION_KEY_PATH)
+  @javax.annotation.Nullable
+  private String deduplicationKeyPath;
+
+  public static final String SERIALIZED_NAME_DEDUPLICATION_KEY_REGEXP = "deduplication_key_regexp";
+  @SerializedName(SERIALIZED_NAME_DEDUPLICATION_KEY_REGEXP)
+  @javax.annotation.Nullable
+  private String deduplicationKeyRegexp;
+
   public static final String SERIALIZED_NAME_OWNER_GROUP_IDS = "owner_group_ids";
   @SerializedName(SERIALIZED_NAME_OWNER_GROUP_IDS)
   @javax.annotation.Nullable
@@ -185,6 +257,11 @@ public class NewAlertsSourceDataAttributes {
   @SerializedName(SERIALIZED_NAME_RESOLUTION_RULE_ATTRIBUTES)
   @javax.annotation.Nullable
   private NewAlertsSourceDataAttributesResolutionRuleAttributes resolutionRuleAttributes;
+
+  public static final String SERIALIZED_NAME_ALERT_SOURCE_FIELDS_ATTRIBUTES = "alert_source_fields_attributes";
+  @SerializedName(SERIALIZED_NAME_ALERT_SOURCE_FIELDS_ATTRIBUTES)
+  @javax.annotation.Nullable
+  private List<NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner> alertSourceFieldsAttributes = new ArrayList<>();
 
   public NewAlertsSourceDataAttributes() {
   }
@@ -243,6 +320,82 @@ public class NewAlertsSourceDataAttributes {
 
   public void setAlertUrgencyId(@javax.annotation.Nullable String alertUrgencyId) {
     this.alertUrgencyId = alertUrgencyId;
+  }
+
+
+  public NewAlertsSourceDataAttributes deduplicateAlertsByKey(@javax.annotation.Nullable Boolean deduplicateAlertsByKey) {
+    this.deduplicateAlertsByKey = deduplicateAlertsByKey;
+    return this;
+  }
+
+  /**
+   * Toggle alert deduplication using deduplication key. If enabled, deduplication_key_kind and deduplication_key_path are required.
+   * @return deduplicateAlertsByKey
+   */
+  @javax.annotation.Nullable
+  public Boolean getDeduplicateAlertsByKey() {
+    return deduplicateAlertsByKey;
+  }
+
+  public void setDeduplicateAlertsByKey(@javax.annotation.Nullable Boolean deduplicateAlertsByKey) {
+    this.deduplicateAlertsByKey = deduplicateAlertsByKey;
+  }
+
+
+  public NewAlertsSourceDataAttributes deduplicationKeyKind(@javax.annotation.Nullable DeduplicationKeyKindEnum deduplicationKeyKind) {
+    this.deduplicationKeyKind = deduplicationKeyKind;
+    return this;
+  }
+
+  /**
+   * Kind of deduplication key.
+   * @return deduplicationKeyKind
+   */
+  @javax.annotation.Nullable
+  public DeduplicationKeyKindEnum getDeduplicationKeyKind() {
+    return deduplicationKeyKind;
+  }
+
+  public void setDeduplicationKeyKind(@javax.annotation.Nullable DeduplicationKeyKindEnum deduplicationKeyKind) {
+    this.deduplicationKeyKind = deduplicationKeyKind;
+  }
+
+
+  public NewAlertsSourceDataAttributes deduplicationKeyPath(@javax.annotation.Nullable String deduplicationKeyPath) {
+    this.deduplicationKeyPath = deduplicationKeyPath;
+    return this;
+  }
+
+  /**
+   * Path to deduplication key. This is a JSON Path to extract the deduplication key from the request body.
+   * @return deduplicationKeyPath
+   */
+  @javax.annotation.Nullable
+  public String getDeduplicationKeyPath() {
+    return deduplicationKeyPath;
+  }
+
+  public void setDeduplicationKeyPath(@javax.annotation.Nullable String deduplicationKeyPath) {
+    this.deduplicationKeyPath = deduplicationKeyPath;
+  }
+
+
+  public NewAlertsSourceDataAttributes deduplicationKeyRegexp(@javax.annotation.Nullable String deduplicationKeyRegexp) {
+    this.deduplicationKeyRegexp = deduplicationKeyRegexp;
+    return this;
+  }
+
+  /**
+   * Regular expression to extract key from value found at key path.
+   * @return deduplicationKeyRegexp
+   */
+  @javax.annotation.Nullable
+  public String getDeduplicationKeyRegexp() {
+    return deduplicationKeyRegexp;
+  }
+
+  public void setDeduplicationKeyRegexp(@javax.annotation.Nullable String deduplicationKeyRegexp) {
+    this.deduplicationKeyRegexp = deduplicationKeyRegexp;
   }
 
 
@@ -357,6 +510,33 @@ public class NewAlertsSourceDataAttributes {
   }
 
 
+  public NewAlertsSourceDataAttributes alertSourceFieldsAttributes(@javax.annotation.Nullable List<NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner> alertSourceFieldsAttributes) {
+    this.alertSourceFieldsAttributes = alertSourceFieldsAttributes;
+    return this;
+  }
+
+  public NewAlertsSourceDataAttributes addAlertSourceFieldsAttributesItem(NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner alertSourceFieldsAttributesItem) {
+    if (this.alertSourceFieldsAttributes == null) {
+      this.alertSourceFieldsAttributes = new ArrayList<>();
+    }
+    this.alertSourceFieldsAttributes.add(alertSourceFieldsAttributesItem);
+    return this;
+  }
+
+  /**
+   * List of alert fields to be added to the alert source. Note: This attribute requires the alert field feature to be enabled on your account. Contact Rootly customer support if you need assistance with this feature.
+   * @return alertSourceFieldsAttributes
+   */
+  @javax.annotation.Nullable
+  public List<NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner> getAlertSourceFieldsAttributes() {
+    return alertSourceFieldsAttributes;
+  }
+
+  public void setAlertSourceFieldsAttributes(@javax.annotation.Nullable List<NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner> alertSourceFieldsAttributes) {
+    this.alertSourceFieldsAttributes = alertSourceFieldsAttributes;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -370,16 +550,32 @@ public class NewAlertsSourceDataAttributes {
     return Objects.equals(this.name, newAlertsSourceDataAttributes.name) &&
         Objects.equals(this.sourceType, newAlertsSourceDataAttributes.sourceType) &&
         Objects.equals(this.alertUrgencyId, newAlertsSourceDataAttributes.alertUrgencyId) &&
+        Objects.equals(this.deduplicateAlertsByKey, newAlertsSourceDataAttributes.deduplicateAlertsByKey) &&
+        Objects.equals(this.deduplicationKeyKind, newAlertsSourceDataAttributes.deduplicationKeyKind) &&
+        Objects.equals(this.deduplicationKeyPath, newAlertsSourceDataAttributes.deduplicationKeyPath) &&
+        Objects.equals(this.deduplicationKeyRegexp, newAlertsSourceDataAttributes.deduplicationKeyRegexp) &&
         Objects.equals(this.ownerGroupIds, newAlertsSourceDataAttributes.ownerGroupIds) &&
         Objects.equals(this.alertTemplateAttributes, newAlertsSourceDataAttributes.alertTemplateAttributes) &&
         Objects.equals(this.alertSourceUrgencyRulesAttributes, newAlertsSourceDataAttributes.alertSourceUrgencyRulesAttributes) &&
         Objects.equals(this.sourceableAttributes, newAlertsSourceDataAttributes.sourceableAttributes) &&
-        Objects.equals(this.resolutionRuleAttributes, newAlertsSourceDataAttributes.resolutionRuleAttributes);
+        Objects.equals(this.resolutionRuleAttributes, newAlertsSourceDataAttributes.resolutionRuleAttributes) &&
+        Objects.equals(this.alertSourceFieldsAttributes, newAlertsSourceDataAttributes.alertSourceFieldsAttributes);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, sourceType, alertUrgencyId, ownerGroupIds, alertTemplateAttributes, alertSourceUrgencyRulesAttributes, sourceableAttributes, resolutionRuleAttributes);
+    return Objects.hash(name, sourceType, alertUrgencyId, deduplicateAlertsByKey, deduplicationKeyKind, deduplicationKeyPath, deduplicationKeyRegexp, ownerGroupIds, alertTemplateAttributes, alertSourceUrgencyRulesAttributes, sourceableAttributes, resolutionRuleAttributes, alertSourceFieldsAttributes);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -389,11 +585,16 @@ public class NewAlertsSourceDataAttributes {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    sourceType: ").append(toIndentedString(sourceType)).append("\n");
     sb.append("    alertUrgencyId: ").append(toIndentedString(alertUrgencyId)).append("\n");
+    sb.append("    deduplicateAlertsByKey: ").append(toIndentedString(deduplicateAlertsByKey)).append("\n");
+    sb.append("    deduplicationKeyKind: ").append(toIndentedString(deduplicationKeyKind)).append("\n");
+    sb.append("    deduplicationKeyPath: ").append(toIndentedString(deduplicationKeyPath)).append("\n");
+    sb.append("    deduplicationKeyRegexp: ").append(toIndentedString(deduplicationKeyRegexp)).append("\n");
     sb.append("    ownerGroupIds: ").append(toIndentedString(ownerGroupIds)).append("\n");
     sb.append("    alertTemplateAttributes: ").append(toIndentedString(alertTemplateAttributes)).append("\n");
     sb.append("    alertSourceUrgencyRulesAttributes: ").append(toIndentedString(alertSourceUrgencyRulesAttributes)).append("\n");
     sb.append("    sourceableAttributes: ").append(toIndentedString(sourceableAttributes)).append("\n");
     sb.append("    resolutionRuleAttributes: ").append(toIndentedString(resolutionRuleAttributes)).append("\n");
+    sb.append("    alertSourceFieldsAttributes: ").append(toIndentedString(alertSourceFieldsAttributes)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -419,11 +620,16 @@ public class NewAlertsSourceDataAttributes {
     openapiFields.add("name");
     openapiFields.add("source_type");
     openapiFields.add("alert_urgency_id");
+    openapiFields.add("deduplicate_alerts_by_key");
+    openapiFields.add("deduplication_key_kind");
+    openapiFields.add("deduplication_key_path");
+    openapiFields.add("deduplication_key_regexp");
     openapiFields.add("owner_group_ids");
     openapiFields.add("alert_template_attributes");
     openapiFields.add("alert_source_urgency_rules_attributes");
     openapiFields.add("sourceable_attributes");
     openapiFields.add("resolution_rule_attributes");
+    openapiFields.add("alert_source_fields_attributes");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -471,6 +677,19 @@ public class NewAlertsSourceDataAttributes {
       if ((jsonObj.get("alert_urgency_id") != null && !jsonObj.get("alert_urgency_id").isJsonNull()) && !jsonObj.get("alert_urgency_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `alert_urgency_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("alert_urgency_id").toString()));
       }
+      if ((jsonObj.get("deduplication_key_kind") != null && !jsonObj.get("deduplication_key_kind").isJsonNull()) && !jsonObj.get("deduplication_key_kind").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `deduplication_key_kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("deduplication_key_kind").toString()));
+      }
+      // validate the optional field `deduplication_key_kind`
+      if (jsonObj.get("deduplication_key_kind") != null && !jsonObj.get("deduplication_key_kind").isJsonNull()) {
+        DeduplicationKeyKindEnum.validateJsonElement(jsonObj.get("deduplication_key_kind"));
+      }
+      if ((jsonObj.get("deduplication_key_path") != null && !jsonObj.get("deduplication_key_path").isJsonNull()) && !jsonObj.get("deduplication_key_path").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `deduplication_key_path` to be a primitive type in the JSON string but got `%s`", jsonObj.get("deduplication_key_path").toString()));
+      }
+      if ((jsonObj.get("deduplication_key_regexp") != null && !jsonObj.get("deduplication_key_regexp").isJsonNull()) && !jsonObj.get("deduplication_key_regexp").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `deduplication_key_regexp` to be a primitive type in the JSON string but got `%s`", jsonObj.get("deduplication_key_regexp").toString()));
+      }
       // ensure the optional json data is an array if present
       if (jsonObj.get("owner_group_ids") != null && !jsonObj.get("owner_group_ids").isJsonNull() && !jsonObj.get("owner_group_ids").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `owner_group_ids` to be an array in the JSON string but got `%s`", jsonObj.get("owner_group_ids").toString()));
@@ -500,6 +719,20 @@ public class NewAlertsSourceDataAttributes {
       // validate the optional field `resolution_rule_attributes`
       if (jsonObj.get("resolution_rule_attributes") != null && !jsonObj.get("resolution_rule_attributes").isJsonNull()) {
         NewAlertsSourceDataAttributesResolutionRuleAttributes.validateJsonElement(jsonObj.get("resolution_rule_attributes"));
+      }
+      if (jsonObj.get("alert_source_fields_attributes") != null && !jsonObj.get("alert_source_fields_attributes").isJsonNull()) {
+        JsonArray jsonArrayalertSourceFieldsAttributes = jsonObj.getAsJsonArray("alert_source_fields_attributes");
+        if (jsonArrayalertSourceFieldsAttributes != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("alert_source_fields_attributes").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `alert_source_fields_attributes` to be an array in the JSON string but got `%s`", jsonObj.get("alert_source_fields_attributes").toString()));
+          }
+
+          // validate the optional field `alert_source_fields_attributes` (array)
+          for (int i = 0; i < jsonArrayalertSourceFieldsAttributes.size(); i++) {
+            NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner.validateJsonElement(jsonArrayalertSourceFieldsAttributes.get(i));
+          };
+        }
       }
   }
 

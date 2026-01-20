@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateIncidentActionItemDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T17:46:55.918190357Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateIncidentActionItemDataAttributes {
   public static final String SERIALIZED_NAME_SUMMARY = "summary";
   @SerializedName(SERIALIZED_NAME_SUMMARY)
@@ -260,6 +260,11 @@ public class UpdateIncidentActionItemDataAttributes {
   @javax.annotation.Nullable
   private String jiraIssueId;
 
+  public static final String SERIALIZED_NAME_JIRA_ISSUE_KEY = "jira_issue_key";
+  @SerializedName(SERIALIZED_NAME_JIRA_ISSUE_KEY)
+  @javax.annotation.Nullable
+  private String jiraIssueKey;
+
   public static final String SERIALIZED_NAME_JIRA_ISSUE_URL = "jira_issue_url";
   @SerializedName(SERIALIZED_NAME_JIRA_ISSUE_URL)
   @javax.annotation.Nullable
@@ -447,6 +452,25 @@ public class UpdateIncidentActionItemDataAttributes {
   }
 
 
+  public UpdateIncidentActionItemDataAttributes jiraIssueKey(@javax.annotation.Nullable String jiraIssueKey) {
+    this.jiraIssueKey = jiraIssueKey;
+    return this;
+  }
+
+  /**
+   * The Jira issue key.
+   * @return jiraIssueKey
+   */
+  @javax.annotation.Nullable
+  public String getJiraIssueKey() {
+    return jiraIssueKey;
+  }
+
+  public void setJiraIssueKey(@javax.annotation.Nullable String jiraIssueKey) {
+    this.jiraIssueKey = jiraIssueKey;
+  }
+
+
   public UpdateIncidentActionItemDataAttributes jiraIssueUrl(@javax.annotation.Nullable String jiraIssueUrl) {
     this.jiraIssueUrl = jiraIssueUrl;
     return this;
@@ -485,6 +509,7 @@ public class UpdateIncidentActionItemDataAttributes {
         Objects.equals(this.status, updateIncidentActionItemDataAttributes.status) &&
         Objects.equals(this.dueDate, updateIncidentActionItemDataAttributes.dueDate) &&
         Objects.equals(this.jiraIssueId, updateIncidentActionItemDataAttributes.jiraIssueId) &&
+        Objects.equals(this.jiraIssueKey, updateIncidentActionItemDataAttributes.jiraIssueKey) &&
         Objects.equals(this.jiraIssueUrl, updateIncidentActionItemDataAttributes.jiraIssueUrl);
   }
 
@@ -494,7 +519,7 @@ public class UpdateIncidentActionItemDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(summary, description, kind, assignedToUserId, assignedToGroupIds, priority, status, dueDate, jiraIssueId, jiraIssueUrl);
+    return Objects.hash(summary, description, kind, assignedToUserId, assignedToGroupIds, priority, status, dueDate, jiraIssueId, jiraIssueKey, jiraIssueUrl);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -517,6 +542,7 @@ public class UpdateIncidentActionItemDataAttributes {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    dueDate: ").append(toIndentedString(dueDate)).append("\n");
     sb.append("    jiraIssueId: ").append(toIndentedString(jiraIssueId)).append("\n");
+    sb.append("    jiraIssueKey: ").append(toIndentedString(jiraIssueKey)).append("\n");
     sb.append("    jiraIssueUrl: ").append(toIndentedString(jiraIssueUrl)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -549,6 +575,7 @@ public class UpdateIncidentActionItemDataAttributes {
     openapiFields.add("status");
     openapiFields.add("due_date");
     openapiFields.add("jira_issue_id");
+    openapiFields.add("jira_issue_key");
     openapiFields.add("jira_issue_url");
 
     // a set of required properties/fields (JSON key names)
@@ -612,6 +639,9 @@ public class UpdateIncidentActionItemDataAttributes {
       }
       if ((jsonObj.get("jira_issue_id") != null && !jsonObj.get("jira_issue_id").isJsonNull()) && !jsonObj.get("jira_issue_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `jira_issue_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("jira_issue_id").toString()));
+      }
+      if ((jsonObj.get("jira_issue_key") != null && !jsonObj.get("jira_issue_key").isJsonNull()) && !jsonObj.get("jira_issue_key").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `jira_issue_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("jira_issue_key").toString()));
       }
       if ((jsonObj.get("jira_issue_url") != null && !jsonObj.get("jira_issue_url").isJsonNull()) && !jsonObj.get("jira_issue_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `jira_issue_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("jira_issue_url").toString()));

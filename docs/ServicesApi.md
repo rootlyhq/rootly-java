@@ -110,7 +110,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     ServicesApi apiInstance = new ServicesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       ServiceResponse result = apiInstance.deleteService(id);
       System.out.println(result);
@@ -129,7 +129,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -178,7 +178,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     ServicesApi apiInstance = new ServicesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       ServiceResponse result = apiInstance.getService(id);
       System.out.println(result);
@@ -197,7 +197,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -215,7 +215,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | service found |  -  |
+| **200** | service found by slug |  -  |
 | **404** | resource not found |  -  |
 
 <a id="getServiceIncidentsChart"></a>
@@ -246,7 +246,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     ServicesApi apiInstance = new ServicesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     String period = "period_example"; // String | 
     try {
       Object result = apiInstance.getServiceIncidentsChart(id, period);
@@ -266,7 +266,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **period** | **String**|  | |
 
 ### Return type
@@ -316,7 +316,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     ServicesApi apiInstance = new ServicesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     String period = "period_example"; // String | 
     try {
       Object result = apiInstance.getServiceUptimeChart(id, period);
@@ -336,7 +336,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **period** | **String**|  | [optional] |
 
 ### Return type
@@ -360,7 +360,7 @@ public class Example {
 
 <a id="listServices"></a>
 # **listServices**
-> ServiceList listServices(include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort)
+> ServiceList listServices(include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterAlertBroadcastEnabled, filterIncidentBroadcastEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort)
 
 List services
 
@@ -396,13 +396,15 @@ public class Example {
     String filterCortexId = "filterCortexId_example"; // String | 
     String filterOpslevelId = "filterOpslevelId_example"; // String | 
     String filterExternalId = "filterExternalId_example"; // String | 
+    Boolean filterAlertBroadcastEnabled = true; // Boolean | 
+    Boolean filterIncidentBroadcastEnabled = true; // Boolean | 
     String filterCreatedAtGt = "filterCreatedAtGt_example"; // String | 
     String filterCreatedAtGte = "filterCreatedAtGte_example"; // String | 
     String filterCreatedAtLt = "filterCreatedAtLt_example"; // String | 
     String filterCreatedAtLte = "filterCreatedAtLte_example"; // String | 
     String sort = "sort_example"; // String | 
     try {
-      ServiceList result = apiInstance.listServices(include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
+      ServiceList result = apiInstance.listServices(include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterAlertBroadcastEnabled, filterIncidentBroadcastEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ServicesApi#listServices");
@@ -429,6 +431,8 @@ public class Example {
 | **filterCortexId** | **String**|  | [optional] |
 | **filterOpslevelId** | **String**|  | [optional] |
 | **filterExternalId** | **String**|  | [optional] |
+| **filterAlertBroadcastEnabled** | **Boolean**|  | [optional] |
+| **filterIncidentBroadcastEnabled** | **Boolean**|  | [optional] |
 | **filterCreatedAtGt** | **String**|  | [optional] |
 | **filterCreatedAtGte** | **String**|  | [optional] |
 | **filterCreatedAtLt** | **String**|  | [optional] |
@@ -481,7 +485,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     ServicesApi apiInstance = new ServicesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     UpdateService updateService = new UpdateService(); // UpdateService | 
     try {
       ServiceResponse result = apiInstance.updateService(id, updateService);
@@ -501,7 +505,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **updateService** | [**UpdateService**](UpdateService.md)|  | |
 
 ### Return type
