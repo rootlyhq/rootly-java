@@ -92,7 +92,7 @@ public class AlertRoutingRulesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createAlertRoutingRuleCall(@javax.annotation.Nonnull NewAlertRoutingRule newAlertRoutingRule, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createAlertRoutingRuleCall(@jakarta.annotation.Nonnull NewAlertRoutingRule newAlertRoutingRule, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -138,7 +138,7 @@ public class AlertRoutingRulesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createAlertRoutingRuleValidateBeforeCall(@javax.annotation.Nonnull NewAlertRoutingRule newAlertRoutingRule, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createAlertRoutingRuleValidateBeforeCall(@jakarta.annotation.Nonnull NewAlertRoutingRule newAlertRoutingRule, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'newAlertRoutingRule' is set
         if (newAlertRoutingRule == null) {
             throw new ApiException("Missing the required parameter 'newAlertRoutingRule' when calling createAlertRoutingRule(Async)");
@@ -163,7 +163,7 @@ public class AlertRoutingRulesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public AlertRoutingRuleResponse createAlertRoutingRule(@javax.annotation.Nonnull NewAlertRoutingRule newAlertRoutingRule) throws ApiException {
+    public AlertRoutingRuleResponse createAlertRoutingRule(@jakarta.annotation.Nonnull NewAlertRoutingRule newAlertRoutingRule) throws ApiException {
         ApiResponse<AlertRoutingRuleResponse> localVarResp = createAlertRoutingRuleWithHttpInfo(newAlertRoutingRule);
         return localVarResp.getData();
     }
@@ -183,7 +183,7 @@ public class AlertRoutingRulesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertRoutingRuleResponse> createAlertRoutingRuleWithHttpInfo(@javax.annotation.Nonnull NewAlertRoutingRule newAlertRoutingRule) throws ApiException {
+    public ApiResponse<AlertRoutingRuleResponse> createAlertRoutingRuleWithHttpInfo(@jakarta.annotation.Nonnull NewAlertRoutingRule newAlertRoutingRule) throws ApiException {
         okhttp3.Call localVarCall = createAlertRoutingRuleValidateBeforeCall(newAlertRoutingRule, null);
         Type localVarReturnType = new TypeToken<AlertRoutingRuleResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -205,7 +205,7 @@ public class AlertRoutingRulesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createAlertRoutingRuleAsync(@javax.annotation.Nonnull NewAlertRoutingRule newAlertRoutingRule, final ApiCallback<AlertRoutingRuleResponse> _callback) throws ApiException {
+    public okhttp3.Call createAlertRoutingRuleAsync(@jakarta.annotation.Nonnull NewAlertRoutingRule newAlertRoutingRule, final ApiCallback<AlertRoutingRuleResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createAlertRoutingRuleValidateBeforeCall(newAlertRoutingRule, _callback);
         Type localVarReturnType = new TypeToken<AlertRoutingRuleResponse>(){}.getType();
@@ -226,7 +226,7 @@ public class AlertRoutingRulesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteAlertRoutingRuleCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteAlertRoutingRuleCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -272,7 +272,7 @@ public class AlertRoutingRulesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteAlertRoutingRuleValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteAlertRoutingRuleValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteAlertRoutingRule(Async)");
@@ -296,7 +296,7 @@ public class AlertRoutingRulesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public AlertRoutingRuleResponse deleteAlertRoutingRule(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public AlertRoutingRuleResponse deleteAlertRoutingRule(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<AlertRoutingRuleResponse> localVarResp = deleteAlertRoutingRuleWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -315,7 +315,7 @@ public class AlertRoutingRulesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertRoutingRuleResponse> deleteAlertRoutingRuleWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public ApiResponse<AlertRoutingRuleResponse> deleteAlertRoutingRuleWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = deleteAlertRoutingRuleValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<AlertRoutingRuleResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -336,7 +336,7 @@ public class AlertRoutingRulesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteAlertRoutingRuleAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<AlertRoutingRuleResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteAlertRoutingRuleAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<AlertRoutingRuleResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteAlertRoutingRuleValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<AlertRoutingRuleResponse>(){}.getType();
@@ -357,7 +357,7 @@ public class AlertRoutingRulesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAlertRoutingRuleCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAlertRoutingRuleCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -403,7 +403,7 @@ public class AlertRoutingRulesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAlertRoutingRuleValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAlertRoutingRuleValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getAlertRoutingRule(Async)");
@@ -427,7 +427,7 @@ public class AlertRoutingRulesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public AlertRoutingRuleResponse getAlertRoutingRule(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public AlertRoutingRuleResponse getAlertRoutingRule(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<AlertRoutingRuleResponse> localVarResp = getAlertRoutingRuleWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -446,7 +446,7 @@ public class AlertRoutingRulesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertRoutingRuleResponse> getAlertRoutingRuleWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public ApiResponse<AlertRoutingRuleResponse> getAlertRoutingRuleWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = getAlertRoutingRuleValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<AlertRoutingRuleResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -467,7 +467,7 @@ public class AlertRoutingRulesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAlertRoutingRuleAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<AlertRoutingRuleResponse> _callback) throws ApiException {
+    public okhttp3.Call getAlertRoutingRuleAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<AlertRoutingRuleResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAlertRoutingRuleValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<AlertRoutingRuleResponse>(){}.getType();
@@ -496,7 +496,7 @@ public class AlertRoutingRulesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAlertRoutingRulesCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listAlertRoutingRulesCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -581,7 +581,7 @@ public class AlertRoutingRulesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listAlertRoutingRulesValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listAlertRoutingRulesValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         return listAlertRoutingRulesCall(include, pageNumber, pageSize, filterSearch, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
 
     }
@@ -608,7 +608,7 @@ public class AlertRoutingRulesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public AlertRoutingRuleList listAlertRoutingRules(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+    public AlertRoutingRuleList listAlertRoutingRules(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
         ApiResponse<AlertRoutingRuleList> localVarResp = listAlertRoutingRulesWithHttpInfo(include, pageNumber, pageSize, filterSearch, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
         return localVarResp.getData();
     }
@@ -635,7 +635,7 @@ public class AlertRoutingRulesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertRoutingRuleList> listAlertRoutingRulesWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+    public ApiResponse<AlertRoutingRuleList> listAlertRoutingRulesWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
         okhttp3.Call localVarCall = listAlertRoutingRulesValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, null);
         Type localVarReturnType = new TypeToken<AlertRoutingRuleList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -664,7 +664,7 @@ public class AlertRoutingRulesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAlertRoutingRulesAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback<AlertRoutingRuleList> _callback) throws ApiException {
+    public okhttp3.Call listAlertRoutingRulesAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback<AlertRoutingRuleList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listAlertRoutingRulesValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
         Type localVarReturnType = new TypeToken<AlertRoutingRuleList>(){}.getType();
@@ -686,7 +686,7 @@ public class AlertRoutingRulesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateAlertRoutingRuleCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateAlertRoutingRule updateAlertRoutingRule, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateAlertRoutingRuleCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateAlertRoutingRule updateAlertRoutingRule, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -733,7 +733,7 @@ public class AlertRoutingRulesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateAlertRoutingRuleValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateAlertRoutingRule updateAlertRoutingRule, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateAlertRoutingRuleValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateAlertRoutingRule updateAlertRoutingRule, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateAlertRoutingRule(Async)");
@@ -763,7 +763,7 @@ public class AlertRoutingRulesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public AlertRoutingRuleResponse updateAlertRoutingRule(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateAlertRoutingRule updateAlertRoutingRule) throws ApiException {
+    public AlertRoutingRuleResponse updateAlertRoutingRule(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateAlertRoutingRule updateAlertRoutingRule) throws ApiException {
         ApiResponse<AlertRoutingRuleResponse> localVarResp = updateAlertRoutingRuleWithHttpInfo(id, updateAlertRoutingRule);
         return localVarResp.getData();
     }
@@ -783,7 +783,7 @@ public class AlertRoutingRulesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertRoutingRuleResponse> updateAlertRoutingRuleWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateAlertRoutingRule updateAlertRoutingRule) throws ApiException {
+    public ApiResponse<AlertRoutingRuleResponse> updateAlertRoutingRuleWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateAlertRoutingRule updateAlertRoutingRule) throws ApiException {
         okhttp3.Call localVarCall = updateAlertRoutingRuleValidateBeforeCall(id, updateAlertRoutingRule, null);
         Type localVarReturnType = new TypeToken<AlertRoutingRuleResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -805,7 +805,7 @@ public class AlertRoutingRulesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateAlertRoutingRuleAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateAlertRoutingRule updateAlertRoutingRule, final ApiCallback<AlertRoutingRuleResponse> _callback) throws ApiException {
+    public okhttp3.Call updateAlertRoutingRuleAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateAlertRoutingRule updateAlertRoutingRule, final ApiCallback<AlertRoutingRuleResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateAlertRoutingRuleValidateBeforeCall(id, updateAlertRoutingRule, _callback);
         Type localVarReturnType = new TypeToken<AlertRoutingRuleResponse>(){}.getType();

@@ -51,27 +51,27 @@ import com.rootly.client.JSON;
 /**
  * ShiftRelationships
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ShiftRelationships {
   public static final String SERIALIZED_NAME_SHIFT_OVERRIDE = "shift_override";
   @SerializedName(SERIALIZED_NAME_SHIFT_OVERRIDE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ShiftRelationshipsShiftOverride shiftOverride;
 
   public static final String SERIALIZED_NAME_USER = "user";
   @SerializedName(SERIALIZED_NAME_USER)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ShiftRelationshipsUser user;
 
   public static final String SERIALIZED_NAME_ASSIGNEE = "assignee";
   @SerializedName(SERIALIZED_NAME_ASSIGNEE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ShiftRelationshipsAssignee assignee;
 
   public ShiftRelationships() {
   }
 
-  public ShiftRelationships shiftOverride(@javax.annotation.Nullable ShiftRelationshipsShiftOverride shiftOverride) {
+  public ShiftRelationships shiftOverride(@jakarta.annotation.Nullable ShiftRelationshipsShiftOverride shiftOverride) {
     this.shiftOverride = shiftOverride;
     return this;
   }
@@ -80,17 +80,17 @@ public class ShiftRelationships {
    * Get shiftOverride
    * @return shiftOverride
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ShiftRelationshipsShiftOverride getShiftOverride() {
     return shiftOverride;
   }
 
-  public void setShiftOverride(@javax.annotation.Nullable ShiftRelationshipsShiftOverride shiftOverride) {
+  public void setShiftOverride(@jakarta.annotation.Nullable ShiftRelationshipsShiftOverride shiftOverride) {
     this.shiftOverride = shiftOverride;
   }
 
 
-  public ShiftRelationships user(@javax.annotation.Nullable ShiftRelationshipsUser user) {
+  public ShiftRelationships user(@jakarta.annotation.Nullable ShiftRelationshipsUser user) {
     this.user = user;
     return this;
   }
@@ -99,17 +99,17 @@ public class ShiftRelationships {
    * Get user
    * @return user
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ShiftRelationshipsUser getUser() {
     return user;
   }
 
-  public void setUser(@javax.annotation.Nullable ShiftRelationshipsUser user) {
+  public void setUser(@jakarta.annotation.Nullable ShiftRelationshipsUser user) {
     this.user = user;
   }
 
 
-  public ShiftRelationships assignee(@javax.annotation.Nullable ShiftRelationshipsAssignee assignee) {
+  public ShiftRelationships assignee(@jakarta.annotation.Nullable ShiftRelationshipsAssignee assignee) {
     this.assignee = assignee;
     return this;
   }
@@ -118,12 +118,12 @@ public class ShiftRelationships {
    * Get assignee
    * @return assignee
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ShiftRelationshipsAssignee getAssignee() {
     return assignee;
   }
 
-  public void setAssignee(@javax.annotation.Nullable ShiftRelationshipsAssignee assignee) {
+  public void setAssignee(@jakarta.annotation.Nullable ShiftRelationshipsAssignee assignee) {
     this.assignee = assignee;
   }
 

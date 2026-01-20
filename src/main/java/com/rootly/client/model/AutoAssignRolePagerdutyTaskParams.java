@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * AutoAssignRolePagerdutyTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AutoAssignRolePagerdutyTaskParams {
   /**
    * Gets or Sets taskType
@@ -102,33 +102,33 @@ public class AutoAssignRolePagerdutyTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_INCIDENT_ROLE_ID = "incident_role_id";
   @SerializedName(SERIALIZED_NAME_INCIDENT_ROLE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String incidentRoleId;
 
   public static final String SERIALIZED_NAME_SERVICE = "service";
   @SerializedName(SERIALIZED_NAME_SERVICE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Object service;
 
   public static final String SERIALIZED_NAME_SCHEDULE = "schedule";
   @SerializedName(SERIALIZED_NAME_SCHEDULE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Object schedule;
 
   public static final String SERIALIZED_NAME_ESCALATION_POLICY = "escalation_policy";
   @SerializedName(SERIALIZED_NAME_ESCALATION_POLICY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Object escalationPolicy;
 
   public AutoAssignRolePagerdutyTaskParams() {
   }
 
-  public AutoAssignRolePagerdutyTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public AutoAssignRolePagerdutyTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -137,17 +137,17 @@ public class AutoAssignRolePagerdutyTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public AutoAssignRolePagerdutyTaskParams incidentRoleId(@javax.annotation.Nonnull String incidentRoleId) {
+  public AutoAssignRolePagerdutyTaskParams incidentRoleId(@jakarta.annotation.Nonnull String incidentRoleId) {
     this.incidentRoleId = incidentRoleId;
     return this;
   }
@@ -156,17 +156,17 @@ public class AutoAssignRolePagerdutyTaskParams {
    * The role id
    * @return incidentRoleId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getIncidentRoleId() {
     return incidentRoleId;
   }
 
-  public void setIncidentRoleId(@javax.annotation.Nonnull String incidentRoleId) {
+  public void setIncidentRoleId(@jakarta.annotation.Nonnull String incidentRoleId) {
     this.incidentRoleId = incidentRoleId;
   }
 
 
-  public AutoAssignRolePagerdutyTaskParams service(@javax.annotation.Nullable Object service) {
+  public AutoAssignRolePagerdutyTaskParams service(@jakarta.annotation.Nullable Object service) {
     this.service = service;
     return this;
   }
@@ -175,17 +175,17 @@ public class AutoAssignRolePagerdutyTaskParams {
    * Get service
    * @return service
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Object getService() {
     return service;
   }
 
-  public void setService(@javax.annotation.Nullable Object service) {
+  public void setService(@jakarta.annotation.Nullable Object service) {
     this.service = service;
   }
 
 
-  public AutoAssignRolePagerdutyTaskParams schedule(@javax.annotation.Nullable Object schedule) {
+  public AutoAssignRolePagerdutyTaskParams schedule(@jakarta.annotation.Nullable Object schedule) {
     this.schedule = schedule;
     return this;
   }
@@ -194,17 +194,17 @@ public class AutoAssignRolePagerdutyTaskParams {
    * Get schedule
    * @return schedule
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Object getSchedule() {
     return schedule;
   }
 
-  public void setSchedule(@javax.annotation.Nullable Object schedule) {
+  public void setSchedule(@jakarta.annotation.Nullable Object schedule) {
     this.schedule = schedule;
   }
 
 
-  public AutoAssignRolePagerdutyTaskParams escalationPolicy(@javax.annotation.Nullable Object escalationPolicy) {
+  public AutoAssignRolePagerdutyTaskParams escalationPolicy(@jakarta.annotation.Nullable Object escalationPolicy) {
     this.escalationPolicy = escalationPolicy;
     return this;
   }
@@ -213,12 +213,12 @@ public class AutoAssignRolePagerdutyTaskParams {
    * Get escalationPolicy
    * @return escalationPolicy
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Object getEscalationPolicy() {
     return escalationPolicy;
   }
 
-  public void setEscalationPolicy(@javax.annotation.Nullable Object escalationPolicy) {
+  public void setEscalationPolicy(@jakarta.annotation.Nullable Object escalationPolicy) {
     this.escalationPolicy = escalationPolicy;
   }
 

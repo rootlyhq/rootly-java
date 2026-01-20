@@ -55,7 +55,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateLinearIssueTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateLinearIssueTaskParams {
   /**
    * Gets or Sets taskType
@@ -109,53 +109,53 @@ public class UpdateLinearIssueTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_ISSUE_ID = "issue_id";
   @SerializedName(SERIALIZED_NAME_ISSUE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String issueId;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String title;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private UpdateLinearIssueTaskParamsState state;
 
   public static final String SERIALIZED_NAME_PROJECT = "project";
   @SerializedName(SERIALIZED_NAME_PROJECT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CreateLinearIssueTaskParamsProject project;
 
   public static final String SERIALIZED_NAME_LABELS = "labels";
   @SerializedName(SERIALIZED_NAME_LABELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AddActionItemTaskParamsPostToSlackChannelsInner> labels = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PRIORITY = "priority";
   @SerializedName(SERIALIZED_NAME_PRIORITY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CreateJiraIssueTaskParamsPriority priority;
 
   public static final String SERIALIZED_NAME_ASSIGN_USER_EMAIL = "assign_user_email";
   @SerializedName(SERIALIZED_NAME_ASSIGN_USER_EMAIL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String assignUserEmail;
 
   public UpdateLinearIssueTaskParams() {
   }
 
-  public UpdateLinearIssueTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public UpdateLinearIssueTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -164,17 +164,17 @@ public class UpdateLinearIssueTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public UpdateLinearIssueTaskParams issueId(@javax.annotation.Nonnull String issueId) {
+  public UpdateLinearIssueTaskParams issueId(@jakarta.annotation.Nonnull String issueId) {
     this.issueId = issueId;
     return this;
   }
@@ -183,17 +183,17 @@ public class UpdateLinearIssueTaskParams {
    * The issue id
    * @return issueId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getIssueId() {
     return issueId;
   }
 
-  public void setIssueId(@javax.annotation.Nonnull String issueId) {
+  public void setIssueId(@jakarta.annotation.Nonnull String issueId) {
     this.issueId = issueId;
   }
 
 
-  public UpdateLinearIssueTaskParams title(@javax.annotation.Nullable String title) {
+  public UpdateLinearIssueTaskParams title(@jakarta.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
@@ -202,17 +202,17 @@ public class UpdateLinearIssueTaskParams {
    * The issue title
    * @return title
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nullable String title) {
+  public void setTitle(@jakarta.annotation.Nullable String title) {
     this.title = title;
   }
 
 
-  public UpdateLinearIssueTaskParams description(@javax.annotation.Nullable String description) {
+  public UpdateLinearIssueTaskParams description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -221,17 +221,17 @@ public class UpdateLinearIssueTaskParams {
    * The issue description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UpdateLinearIssueTaskParams state(@javax.annotation.Nullable UpdateLinearIssueTaskParamsState state) {
+  public UpdateLinearIssueTaskParams state(@jakarta.annotation.Nullable UpdateLinearIssueTaskParamsState state) {
     this.state = state;
     return this;
   }
@@ -240,17 +240,17 @@ public class UpdateLinearIssueTaskParams {
    * Get state
    * @return state
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public UpdateLinearIssueTaskParamsState getState() {
     return state;
   }
 
-  public void setState(@javax.annotation.Nullable UpdateLinearIssueTaskParamsState state) {
+  public void setState(@jakarta.annotation.Nullable UpdateLinearIssueTaskParamsState state) {
     this.state = state;
   }
 
 
-  public UpdateLinearIssueTaskParams project(@javax.annotation.Nullable CreateLinearIssueTaskParamsProject project) {
+  public UpdateLinearIssueTaskParams project(@jakarta.annotation.Nullable CreateLinearIssueTaskParamsProject project) {
     this.project = project;
     return this;
   }
@@ -259,17 +259,17 @@ public class UpdateLinearIssueTaskParams {
    * Get project
    * @return project
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CreateLinearIssueTaskParamsProject getProject() {
     return project;
   }
 
-  public void setProject(@javax.annotation.Nullable CreateLinearIssueTaskParamsProject project) {
+  public void setProject(@jakarta.annotation.Nullable CreateLinearIssueTaskParamsProject project) {
     this.project = project;
   }
 
 
-  public UpdateLinearIssueTaskParams labels(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> labels) {
+  public UpdateLinearIssueTaskParams labels(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> labels) {
     this.labels = labels;
     return this;
   }
@@ -286,17 +286,17 @@ public class UpdateLinearIssueTaskParams {
    * Get labels
    * @return labels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AddActionItemTaskParamsPostToSlackChannelsInner> getLabels() {
     return labels;
   }
 
-  public void setLabels(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> labels) {
+  public void setLabels(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> labels) {
     this.labels = labels;
   }
 
 
-  public UpdateLinearIssueTaskParams priority(@javax.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
+  public UpdateLinearIssueTaskParams priority(@jakarta.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
     this.priority = priority;
     return this;
   }
@@ -305,17 +305,17 @@ public class UpdateLinearIssueTaskParams {
    * Get priority
    * @return priority
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CreateJiraIssueTaskParamsPriority getPriority() {
     return priority;
   }
 
-  public void setPriority(@javax.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
+  public void setPriority(@jakarta.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
     this.priority = priority;
   }
 
 
-  public UpdateLinearIssueTaskParams assignUserEmail(@javax.annotation.Nullable String assignUserEmail) {
+  public UpdateLinearIssueTaskParams assignUserEmail(@jakarta.annotation.Nullable String assignUserEmail) {
     this.assignUserEmail = assignUserEmail;
     return this;
   }
@@ -324,12 +324,12 @@ public class UpdateLinearIssueTaskParams {
    * The assigned user&#39;s email
    * @return assignUserEmail
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getAssignUserEmail() {
     return assignUserEmail;
   }
 
-  public void setAssignUserEmail(@javax.annotation.Nullable String assignUserEmail) {
+  public void setAssignUserEmail(@jakarta.annotation.Nullable String assignUserEmail) {
     this.assignUserEmail = assignUserEmail;
   }
 

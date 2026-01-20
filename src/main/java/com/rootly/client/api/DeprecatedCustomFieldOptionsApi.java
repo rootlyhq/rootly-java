@@ -94,7 +94,7 @@ public class DeprecatedCustomFieldOptionsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call createCustomFieldOptionCall(@javax.annotation.Nonnull String customFieldId, @javax.annotation.Nonnull NewCustomFieldOption newCustomFieldOption, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createCustomFieldOptionCall(@jakarta.annotation.Nonnull String customFieldId, @jakarta.annotation.Nonnull NewCustomFieldOption newCustomFieldOption, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -142,7 +142,7 @@ public class DeprecatedCustomFieldOptionsApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createCustomFieldOptionValidateBeforeCall(@javax.annotation.Nonnull String customFieldId, @javax.annotation.Nonnull NewCustomFieldOption newCustomFieldOption, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createCustomFieldOptionValidateBeforeCall(@jakarta.annotation.Nonnull String customFieldId, @jakarta.annotation.Nonnull NewCustomFieldOption newCustomFieldOption, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'customFieldId' is set
         if (customFieldId == null) {
             throw new ApiException("Missing the required parameter 'customFieldId' when calling createCustomFieldOption(Async)");
@@ -175,7 +175,7 @@ public class DeprecatedCustomFieldOptionsApi {
      * @deprecated
      */
     @Deprecated
-    public CustomFieldOptionResponse createCustomFieldOption(@javax.annotation.Nonnull String customFieldId, @javax.annotation.Nonnull NewCustomFieldOption newCustomFieldOption) throws ApiException {
+    public CustomFieldOptionResponse createCustomFieldOption(@jakarta.annotation.Nonnull String customFieldId, @jakarta.annotation.Nonnull NewCustomFieldOption newCustomFieldOption) throws ApiException {
         ApiResponse<CustomFieldOptionResponse> localVarResp = createCustomFieldOptionWithHttpInfo(customFieldId, newCustomFieldOption);
         return localVarResp.getData();
     }
@@ -198,7 +198,7 @@ public class DeprecatedCustomFieldOptionsApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<CustomFieldOptionResponse> createCustomFieldOptionWithHttpInfo(@javax.annotation.Nonnull String customFieldId, @javax.annotation.Nonnull NewCustomFieldOption newCustomFieldOption) throws ApiException {
+    public ApiResponse<CustomFieldOptionResponse> createCustomFieldOptionWithHttpInfo(@jakarta.annotation.Nonnull String customFieldId, @jakarta.annotation.Nonnull NewCustomFieldOption newCustomFieldOption) throws ApiException {
         okhttp3.Call localVarCall = createCustomFieldOptionValidateBeforeCall(customFieldId, newCustomFieldOption, null);
         Type localVarReturnType = new TypeToken<CustomFieldOptionResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -223,7 +223,7 @@ public class DeprecatedCustomFieldOptionsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call createCustomFieldOptionAsync(@javax.annotation.Nonnull String customFieldId, @javax.annotation.Nonnull NewCustomFieldOption newCustomFieldOption, final ApiCallback<CustomFieldOptionResponse> _callback) throws ApiException {
+    public okhttp3.Call createCustomFieldOptionAsync(@jakarta.annotation.Nonnull String customFieldId, @jakarta.annotation.Nonnull NewCustomFieldOption newCustomFieldOption, final ApiCallback<CustomFieldOptionResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createCustomFieldOptionValidateBeforeCall(customFieldId, newCustomFieldOption, _callback);
         Type localVarReturnType = new TypeToken<CustomFieldOptionResponse>(){}.getType();
@@ -246,7 +246,7 @@ public class DeprecatedCustomFieldOptionsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call deleteCustomFieldOptionCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteCustomFieldOptionCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -293,7 +293,7 @@ public class DeprecatedCustomFieldOptionsApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteCustomFieldOptionValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteCustomFieldOptionValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteCustomFieldOption(Async)");
@@ -319,7 +319,7 @@ public class DeprecatedCustomFieldOptionsApi {
      * @deprecated
      */
     @Deprecated
-    public CustomFieldOptionResponse deleteCustomFieldOption(@javax.annotation.Nonnull String id) throws ApiException {
+    public CustomFieldOptionResponse deleteCustomFieldOption(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<CustomFieldOptionResponse> localVarResp = deleteCustomFieldOptionWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -340,7 +340,7 @@ public class DeprecatedCustomFieldOptionsApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<CustomFieldOptionResponse> deleteCustomFieldOptionWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<CustomFieldOptionResponse> deleteCustomFieldOptionWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteCustomFieldOptionValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<CustomFieldOptionResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -363,7 +363,7 @@ public class DeprecatedCustomFieldOptionsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call deleteCustomFieldOptionAsync(@javax.annotation.Nonnull String id, final ApiCallback<CustomFieldOptionResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteCustomFieldOptionAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<CustomFieldOptionResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteCustomFieldOptionValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<CustomFieldOptionResponse>(){}.getType();
@@ -386,7 +386,7 @@ public class DeprecatedCustomFieldOptionsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call getCustomFieldOptionCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCustomFieldOptionCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -433,7 +433,7 @@ public class DeprecatedCustomFieldOptionsApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCustomFieldOptionValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCustomFieldOptionValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getCustomFieldOption(Async)");
@@ -459,7 +459,7 @@ public class DeprecatedCustomFieldOptionsApi {
      * @deprecated
      */
     @Deprecated
-    public CustomFieldOptionResponse getCustomFieldOption(@javax.annotation.Nonnull String id) throws ApiException {
+    public CustomFieldOptionResponse getCustomFieldOption(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<CustomFieldOptionResponse> localVarResp = getCustomFieldOptionWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -480,7 +480,7 @@ public class DeprecatedCustomFieldOptionsApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<CustomFieldOptionResponse> getCustomFieldOptionWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<CustomFieldOptionResponse> getCustomFieldOptionWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getCustomFieldOptionValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<CustomFieldOptionResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -503,7 +503,7 @@ public class DeprecatedCustomFieldOptionsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call getCustomFieldOptionAsync(@javax.annotation.Nonnull String id, final ApiCallback<CustomFieldOptionResponse> _callback) throws ApiException {
+    public okhttp3.Call getCustomFieldOptionAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<CustomFieldOptionResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCustomFieldOptionValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<CustomFieldOptionResponse>(){}.getType();
@@ -530,7 +530,7 @@ public class DeprecatedCustomFieldOptionsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call listCustomFieldOptionsCall(@javax.annotation.Nonnull String customFieldId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterValue, @javax.annotation.Nullable String filterColor, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listCustomFieldOptionsCall(@jakarta.annotation.Nonnull String customFieldId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterValue, @jakarta.annotation.Nullable String filterColor, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -597,7 +597,7 @@ public class DeprecatedCustomFieldOptionsApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listCustomFieldOptionsValidateBeforeCall(@javax.annotation.Nonnull String customFieldId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterValue, @javax.annotation.Nullable String filterColor, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listCustomFieldOptionsValidateBeforeCall(@jakarta.annotation.Nonnull String customFieldId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterValue, @jakarta.annotation.Nullable String filterColor, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'customFieldId' is set
         if (customFieldId == null) {
             throw new ApiException("Missing the required parameter 'customFieldId' when calling listCustomFieldOptions(Async)");
@@ -627,7 +627,7 @@ public class DeprecatedCustomFieldOptionsApi {
      * @deprecated
      */
     @Deprecated
-    public CustomFieldOptionList listCustomFieldOptions(@javax.annotation.Nonnull String customFieldId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterValue, @javax.annotation.Nullable String filterColor) throws ApiException {
+    public CustomFieldOptionList listCustomFieldOptions(@jakarta.annotation.Nonnull String customFieldId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterValue, @jakarta.annotation.Nullable String filterColor) throws ApiException {
         ApiResponse<CustomFieldOptionList> localVarResp = listCustomFieldOptionsWithHttpInfo(customFieldId, include, pageNumber, pageSize, filterValue, filterColor);
         return localVarResp.getData();
     }
@@ -652,7 +652,7 @@ public class DeprecatedCustomFieldOptionsApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<CustomFieldOptionList> listCustomFieldOptionsWithHttpInfo(@javax.annotation.Nonnull String customFieldId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterValue, @javax.annotation.Nullable String filterColor) throws ApiException {
+    public ApiResponse<CustomFieldOptionList> listCustomFieldOptionsWithHttpInfo(@jakarta.annotation.Nonnull String customFieldId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterValue, @jakarta.annotation.Nullable String filterColor) throws ApiException {
         okhttp3.Call localVarCall = listCustomFieldOptionsValidateBeforeCall(customFieldId, include, pageNumber, pageSize, filterValue, filterColor, null);
         Type localVarReturnType = new TypeToken<CustomFieldOptionList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -679,7 +679,7 @@ public class DeprecatedCustomFieldOptionsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call listCustomFieldOptionsAsync(@javax.annotation.Nonnull String customFieldId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterValue, @javax.annotation.Nullable String filterColor, final ApiCallback<CustomFieldOptionList> _callback) throws ApiException {
+    public okhttp3.Call listCustomFieldOptionsAsync(@jakarta.annotation.Nonnull String customFieldId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterValue, @jakarta.annotation.Nullable String filterColor, final ApiCallback<CustomFieldOptionList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listCustomFieldOptionsValidateBeforeCall(customFieldId, include, pageNumber, pageSize, filterValue, filterColor, _callback);
         Type localVarReturnType = new TypeToken<CustomFieldOptionList>(){}.getType();
@@ -703,7 +703,7 @@ public class DeprecatedCustomFieldOptionsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call updateCustomFieldOptionCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateCustomFieldOption updateCustomFieldOption, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateCustomFieldOptionCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateCustomFieldOption updateCustomFieldOption, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -751,7 +751,7 @@ public class DeprecatedCustomFieldOptionsApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateCustomFieldOptionValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateCustomFieldOption updateCustomFieldOption, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateCustomFieldOptionValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateCustomFieldOption updateCustomFieldOption, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateCustomFieldOption(Async)");
@@ -783,7 +783,7 @@ public class DeprecatedCustomFieldOptionsApi {
      * @deprecated
      */
     @Deprecated
-    public CustomFieldOptionResponse updateCustomFieldOption(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateCustomFieldOption updateCustomFieldOption) throws ApiException {
+    public CustomFieldOptionResponse updateCustomFieldOption(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateCustomFieldOption updateCustomFieldOption) throws ApiException {
         ApiResponse<CustomFieldOptionResponse> localVarResp = updateCustomFieldOptionWithHttpInfo(id, updateCustomFieldOption);
         return localVarResp.getData();
     }
@@ -805,7 +805,7 @@ public class DeprecatedCustomFieldOptionsApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<CustomFieldOptionResponse> updateCustomFieldOptionWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateCustomFieldOption updateCustomFieldOption) throws ApiException {
+    public ApiResponse<CustomFieldOptionResponse> updateCustomFieldOptionWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateCustomFieldOption updateCustomFieldOption) throws ApiException {
         okhttp3.Call localVarCall = updateCustomFieldOptionValidateBeforeCall(id, updateCustomFieldOption, null);
         Type localVarReturnType = new TypeToken<CustomFieldOptionResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -829,7 +829,7 @@ public class DeprecatedCustomFieldOptionsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call updateCustomFieldOptionAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateCustomFieldOption updateCustomFieldOption, final ApiCallback<CustomFieldOptionResponse> _callback) throws ApiException {
+    public okhttp3.Call updateCustomFieldOptionAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateCustomFieldOption updateCustomFieldOption, final ApiCallback<CustomFieldOptionResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateCustomFieldOptionValidateBeforeCall(id, updateCustomFieldOption, _callback);
         Type localVarReturnType = new TypeToken<CustomFieldOptionResponse>(){}.getType();

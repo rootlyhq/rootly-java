@@ -52,16 +52,16 @@ import com.rootly.client.JSON;
 /**
  * NewEscalationPolicyLevelDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewEscalationPolicyLevelDataAttributes {
   public static final String SERIALIZED_NAME_DELAY = "delay";
   @SerializedName(SERIALIZED_NAME_DELAY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer delay;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Integer position;
 
   /**
@@ -122,7 +122,7 @@ public class NewEscalationPolicyLevelDataAttributes {
 
   public static final String SERIALIZED_NAME_PAGING_STRATEGY_CONFIGURATION_STRATEGY = "paging_strategy_configuration_strategy";
   @SerializedName(SERIALIZED_NAME_PAGING_STRATEGY_CONFIGURATION_STRATEGY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private PagingStrategyConfigurationStrategyEnum pagingStrategyConfigurationStrategy;
 
   /**
@@ -179,23 +179,23 @@ public class NewEscalationPolicyLevelDataAttributes {
 
   public static final String SERIALIZED_NAME_PAGING_STRATEGY_CONFIGURATION_SCHEDULE_STRATEGY = "paging_strategy_configuration_schedule_strategy";
   @SerializedName(SERIALIZED_NAME_PAGING_STRATEGY_CONFIGURATION_SCHEDULE_STRATEGY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private PagingStrategyConfigurationScheduleStrategyEnum pagingStrategyConfigurationScheduleStrategy;
 
   public static final String SERIALIZED_NAME_ESCALATION_POLICY_PATH_ID = "escalation_policy_path_id";
   @SerializedName(SERIALIZED_NAME_ESCALATION_POLICY_PATH_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String escalationPolicyPathId;
 
   public static final String SERIALIZED_NAME_NOTIFICATION_TARGET_PARAMS = "notification_target_params";
   @SerializedName(SERIALIZED_NAME_NOTIFICATION_TARGET_PARAMS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<NewEscalationPolicyLevelDataAttributesNotificationTargetParamsInner> notificationTargetParams = new ArrayList<>();
 
   public NewEscalationPolicyLevelDataAttributes() {
   }
 
-  public NewEscalationPolicyLevelDataAttributes delay(@javax.annotation.Nullable Integer delay) {
+  public NewEscalationPolicyLevelDataAttributes delay(@jakarta.annotation.Nullable Integer delay) {
     this.delay = delay;
     return this;
   }
@@ -204,17 +204,17 @@ public class NewEscalationPolicyLevelDataAttributes {
    * Delay before notification targets will be alerted.
    * @return delay
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getDelay() {
     return delay;
   }
 
-  public void setDelay(@javax.annotation.Nullable Integer delay) {
+  public void setDelay(@jakarta.annotation.Nullable Integer delay) {
     this.delay = delay;
   }
 
 
-  public NewEscalationPolicyLevelDataAttributes position(@javax.annotation.Nonnull Integer position) {
+  public NewEscalationPolicyLevelDataAttributes position(@jakarta.annotation.Nonnull Integer position) {
     this.position = position;
     return this;
   }
@@ -223,17 +223,17 @@ public class NewEscalationPolicyLevelDataAttributes {
    * Position of the escalation policy level
    * @return position
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nonnull Integer position) {
+  public void setPosition(@jakarta.annotation.Nonnull Integer position) {
     this.position = position;
   }
 
 
-  public NewEscalationPolicyLevelDataAttributes pagingStrategyConfigurationStrategy(@javax.annotation.Nullable PagingStrategyConfigurationStrategyEnum pagingStrategyConfigurationStrategy) {
+  public NewEscalationPolicyLevelDataAttributes pagingStrategyConfigurationStrategy(@jakarta.annotation.Nullable PagingStrategyConfigurationStrategyEnum pagingStrategyConfigurationStrategy) {
     this.pagingStrategyConfigurationStrategy = pagingStrategyConfigurationStrategy;
     return this;
   }
@@ -242,17 +242,17 @@ public class NewEscalationPolicyLevelDataAttributes {
    * Get pagingStrategyConfigurationStrategy
    * @return pagingStrategyConfigurationStrategy
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public PagingStrategyConfigurationStrategyEnum getPagingStrategyConfigurationStrategy() {
     return pagingStrategyConfigurationStrategy;
   }
 
-  public void setPagingStrategyConfigurationStrategy(@javax.annotation.Nullable PagingStrategyConfigurationStrategyEnum pagingStrategyConfigurationStrategy) {
+  public void setPagingStrategyConfigurationStrategy(@jakarta.annotation.Nullable PagingStrategyConfigurationStrategyEnum pagingStrategyConfigurationStrategy) {
     this.pagingStrategyConfigurationStrategy = pagingStrategyConfigurationStrategy;
   }
 
 
-  public NewEscalationPolicyLevelDataAttributes pagingStrategyConfigurationScheduleStrategy(@javax.annotation.Nullable PagingStrategyConfigurationScheduleStrategyEnum pagingStrategyConfigurationScheduleStrategy) {
+  public NewEscalationPolicyLevelDataAttributes pagingStrategyConfigurationScheduleStrategy(@jakarta.annotation.Nullable PagingStrategyConfigurationScheduleStrategyEnum pagingStrategyConfigurationScheduleStrategy) {
     this.pagingStrategyConfigurationScheduleStrategy = pagingStrategyConfigurationScheduleStrategy;
     return this;
   }
@@ -261,17 +261,17 @@ public class NewEscalationPolicyLevelDataAttributes {
    * Get pagingStrategyConfigurationScheduleStrategy
    * @return pagingStrategyConfigurationScheduleStrategy
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public PagingStrategyConfigurationScheduleStrategyEnum getPagingStrategyConfigurationScheduleStrategy() {
     return pagingStrategyConfigurationScheduleStrategy;
   }
 
-  public void setPagingStrategyConfigurationScheduleStrategy(@javax.annotation.Nullable PagingStrategyConfigurationScheduleStrategyEnum pagingStrategyConfigurationScheduleStrategy) {
+  public void setPagingStrategyConfigurationScheduleStrategy(@jakarta.annotation.Nullable PagingStrategyConfigurationScheduleStrategyEnum pagingStrategyConfigurationScheduleStrategy) {
     this.pagingStrategyConfigurationScheduleStrategy = pagingStrategyConfigurationScheduleStrategy;
   }
 
 
-  public NewEscalationPolicyLevelDataAttributes escalationPolicyPathId(@javax.annotation.Nullable String escalationPolicyPathId) {
+  public NewEscalationPolicyLevelDataAttributes escalationPolicyPathId(@jakarta.annotation.Nullable String escalationPolicyPathId) {
     this.escalationPolicyPathId = escalationPolicyPathId;
     return this;
   }
@@ -280,17 +280,17 @@ public class NewEscalationPolicyLevelDataAttributes {
    * The ID of the dynamic escalation policy path the level will belong to. If nothing is specified it will add the level to your default path.
    * @return escalationPolicyPathId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getEscalationPolicyPathId() {
     return escalationPolicyPathId;
   }
 
-  public void setEscalationPolicyPathId(@javax.annotation.Nullable String escalationPolicyPathId) {
+  public void setEscalationPolicyPathId(@jakarta.annotation.Nullable String escalationPolicyPathId) {
     this.escalationPolicyPathId = escalationPolicyPathId;
   }
 
 
-  public NewEscalationPolicyLevelDataAttributes notificationTargetParams(@javax.annotation.Nonnull List<NewEscalationPolicyLevelDataAttributesNotificationTargetParamsInner> notificationTargetParams) {
+  public NewEscalationPolicyLevelDataAttributes notificationTargetParams(@jakarta.annotation.Nonnull List<NewEscalationPolicyLevelDataAttributesNotificationTargetParamsInner> notificationTargetParams) {
     this.notificationTargetParams = notificationTargetParams;
     return this;
   }
@@ -307,12 +307,12 @@ public class NewEscalationPolicyLevelDataAttributes {
    * Escalation level&#39;s notification targets
    * @return notificationTargetParams
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<NewEscalationPolicyLevelDataAttributesNotificationTargetParamsInner> getNotificationTargetParams() {
     return notificationTargetParams;
   }
 
-  public void setNotificationTargetParams(@javax.annotation.Nonnull List<NewEscalationPolicyLevelDataAttributesNotificationTargetParamsInner> notificationTargetParams) {
+  public void setNotificationTargetParams(@jakarta.annotation.Nonnull List<NewEscalationPolicyLevelDataAttributesNotificationTargetParamsInner> notificationTargetParams) {
     this.notificationTargetParams = notificationTargetParams;
   }
 

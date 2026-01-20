@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * CreateDropboxPaperPageTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateDropboxPaperPageTaskParams {
   /**
    * Gets or Sets taskType
@@ -103,43 +103,43 @@ public class CreateDropboxPaperPageTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_POST_MORTEM_TEMPLATE_ID = "post_mortem_template_id";
   @SerializedName(SERIALIZED_NAME_POST_MORTEM_TEMPLATE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String postMortemTemplateId;
 
   public static final String SERIALIZED_NAME_MARK_POST_MORTEM_AS_PUBLISHED = "mark_post_mortem_as_published";
   @SerializedName(SERIALIZED_NAME_MARK_POST_MORTEM_AS_PUBLISHED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean markPostMortemAsPublished = true;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String title;
 
   public static final String SERIALIZED_NAME_CONTENT = "content";
   @SerializedName(SERIALIZED_NAME_CONTENT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String content;
 
   public static final String SERIALIZED_NAME_NAMESPACE = "namespace";
   @SerializedName(SERIALIZED_NAME_NAMESPACE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AddActionItemTaskParamsPostToSlackChannelsInner namespace;
 
   public static final String SERIALIZED_NAME_PARENT_FOLDER = "parent_folder";
   @SerializedName(SERIALIZED_NAME_PARENT_FOLDER)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AddActionItemTaskParamsPostToSlackChannelsInner parentFolder;
 
   public CreateDropboxPaperPageTaskParams() {
   }
 
-  public CreateDropboxPaperPageTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public CreateDropboxPaperPageTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -148,17 +148,17 @@ public class CreateDropboxPaperPageTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public CreateDropboxPaperPageTaskParams postMortemTemplateId(@javax.annotation.Nullable String postMortemTemplateId) {
+  public CreateDropboxPaperPageTaskParams postMortemTemplateId(@jakarta.annotation.Nullable String postMortemTemplateId) {
     this.postMortemTemplateId = postMortemTemplateId;
     return this;
   }
@@ -167,17 +167,17 @@ public class CreateDropboxPaperPageTaskParams {
    * Retrospective template to use when creating page task, if desired
    * @return postMortemTemplateId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPostMortemTemplateId() {
     return postMortemTemplateId;
   }
 
-  public void setPostMortemTemplateId(@javax.annotation.Nullable String postMortemTemplateId) {
+  public void setPostMortemTemplateId(@jakarta.annotation.Nullable String postMortemTemplateId) {
     this.postMortemTemplateId = postMortemTemplateId;
   }
 
 
-  public CreateDropboxPaperPageTaskParams markPostMortemAsPublished(@javax.annotation.Nullable Boolean markPostMortemAsPublished) {
+  public CreateDropboxPaperPageTaskParams markPostMortemAsPublished(@jakarta.annotation.Nullable Boolean markPostMortemAsPublished) {
     this.markPostMortemAsPublished = markPostMortemAsPublished;
     return this;
   }
@@ -186,17 +186,17 @@ public class CreateDropboxPaperPageTaskParams {
    * Get markPostMortemAsPublished
    * @return markPostMortemAsPublished
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getMarkPostMortemAsPublished() {
     return markPostMortemAsPublished;
   }
 
-  public void setMarkPostMortemAsPublished(@javax.annotation.Nullable Boolean markPostMortemAsPublished) {
+  public void setMarkPostMortemAsPublished(@jakarta.annotation.Nullable Boolean markPostMortemAsPublished) {
     this.markPostMortemAsPublished = markPostMortemAsPublished;
   }
 
 
-  public CreateDropboxPaperPageTaskParams title(@javax.annotation.Nonnull String title) {
+  public CreateDropboxPaperPageTaskParams title(@jakarta.annotation.Nonnull String title) {
     this.title = title;
     return this;
   }
@@ -205,17 +205,17 @@ public class CreateDropboxPaperPageTaskParams {
    * The page task title
    * @return title
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nonnull String title) {
+  public void setTitle(@jakarta.annotation.Nonnull String title) {
     this.title = title;
   }
 
 
-  public CreateDropboxPaperPageTaskParams content(@javax.annotation.Nullable String content) {
+  public CreateDropboxPaperPageTaskParams content(@jakarta.annotation.Nullable String content) {
     this.content = content;
     return this;
   }
@@ -224,17 +224,17 @@ public class CreateDropboxPaperPageTaskParams {
    * The page content
    * @return content
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getContent() {
     return content;
   }
 
-  public void setContent(@javax.annotation.Nullable String content) {
+  public void setContent(@jakarta.annotation.Nullable String content) {
     this.content = content;
   }
 
 
-  public CreateDropboxPaperPageTaskParams namespace(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner namespace) {
+  public CreateDropboxPaperPageTaskParams namespace(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner namespace) {
     this.namespace = namespace;
     return this;
   }
@@ -243,17 +243,17 @@ public class CreateDropboxPaperPageTaskParams {
    * Get namespace
    * @return namespace
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AddActionItemTaskParamsPostToSlackChannelsInner getNamespace() {
     return namespace;
   }
 
-  public void setNamespace(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner namespace) {
+  public void setNamespace(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner namespace) {
     this.namespace = namespace;
   }
 
 
-  public CreateDropboxPaperPageTaskParams parentFolder(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner parentFolder) {
+  public CreateDropboxPaperPageTaskParams parentFolder(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner parentFolder) {
     this.parentFolder = parentFolder;
     return this;
   }
@@ -262,12 +262,12 @@ public class CreateDropboxPaperPageTaskParams {
    * Get parentFolder
    * @return parentFolder
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AddActionItemTaskParamsPostToSlackChannelsInner getParentFolder() {
     return parentFolder;
   }
 
-  public void setParentFolder(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner parentFolder) {
+  public void setParentFolder(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner parentFolder) {
     this.parentFolder = parentFolder;
   }
 

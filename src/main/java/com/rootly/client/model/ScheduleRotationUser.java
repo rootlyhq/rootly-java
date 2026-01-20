@@ -48,37 +48,37 @@ import com.rootly.client.JSON;
 /**
  * ScheduleRotationUser
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ScheduleRotationUser {
   public static final String SERIALIZED_NAME_SCHEDULE_ROTATION_ID = "schedule_rotation_id";
   @SerializedName(SERIALIZED_NAME_SCHEDULE_ROTATION_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String scheduleRotationId;
 
   public static final String SERIALIZED_NAME_USER_ID = "user_id";
   @SerializedName(SERIALIZED_NAME_USER_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Integer userId;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Integer position;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public ScheduleRotationUser() {
   }
 
-  public ScheduleRotationUser scheduleRotationId(@javax.annotation.Nonnull String scheduleRotationId) {
+  public ScheduleRotationUser scheduleRotationId(@jakarta.annotation.Nonnull String scheduleRotationId) {
     this.scheduleRotationId = scheduleRotationId;
     return this;
   }
@@ -87,17 +87,17 @@ public class ScheduleRotationUser {
    * Get scheduleRotationId
    * @return scheduleRotationId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getScheduleRotationId() {
     return scheduleRotationId;
   }
 
-  public void setScheduleRotationId(@javax.annotation.Nonnull String scheduleRotationId) {
+  public void setScheduleRotationId(@jakarta.annotation.Nonnull String scheduleRotationId) {
     this.scheduleRotationId = scheduleRotationId;
   }
 
 
-  public ScheduleRotationUser userId(@javax.annotation.Nonnull Integer userId) {
+  public ScheduleRotationUser userId(@jakarta.annotation.Nonnull Integer userId) {
     this.userId = userId;
     return this;
   }
@@ -106,17 +106,17 @@ public class ScheduleRotationUser {
    * Schedule rotation user
    * @return userId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Integer getUserId() {
     return userId;
   }
 
-  public void setUserId(@javax.annotation.Nonnull Integer userId) {
+  public void setUserId(@jakarta.annotation.Nonnull Integer userId) {
     this.userId = userId;
   }
 
 
-  public ScheduleRotationUser position(@javax.annotation.Nonnull Integer position) {
+  public ScheduleRotationUser position(@jakarta.annotation.Nonnull Integer position) {
     this.position = position;
     return this;
   }
@@ -125,17 +125,17 @@ public class ScheduleRotationUser {
    * Position of the user inside rotation
    * @return position
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nonnull Integer position) {
+  public void setPosition(@jakarta.annotation.Nonnull Integer position) {
     this.position = position;
   }
 
 
-  public ScheduleRotationUser createdAt(@javax.annotation.Nonnull String createdAt) {
+  public ScheduleRotationUser createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -144,17 +144,17 @@ public class ScheduleRotationUser {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public ScheduleRotationUser updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public ScheduleRotationUser updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -163,12 +163,12 @@ public class ScheduleRotationUser {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

@@ -92,7 +92,7 @@ public class IncidentEventServicesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createIncidentEventServiceCall(@javax.annotation.Nonnull String incidentEventId, @javax.annotation.Nonnull NewIncidentEventService newIncidentEventService, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createIncidentEventServiceCall(@jakarta.annotation.Nonnull String incidentEventId, @jakarta.annotation.Nonnull NewIncidentEventService newIncidentEventService, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -139,7 +139,7 @@ public class IncidentEventServicesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createIncidentEventServiceValidateBeforeCall(@javax.annotation.Nonnull String incidentEventId, @javax.annotation.Nonnull NewIncidentEventService newIncidentEventService, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createIncidentEventServiceValidateBeforeCall(@jakarta.annotation.Nonnull String incidentEventId, @jakarta.annotation.Nonnull NewIncidentEventService newIncidentEventService, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'incidentEventId' is set
         if (incidentEventId == null) {
             throw new ApiException("Missing the required parameter 'incidentEventId' when calling createIncidentEventService(Async)");
@@ -170,7 +170,7 @@ public class IncidentEventServicesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentEventServiceResponse createIncidentEventService(@javax.annotation.Nonnull String incidentEventId, @javax.annotation.Nonnull NewIncidentEventService newIncidentEventService) throws ApiException {
+    public IncidentEventServiceResponse createIncidentEventService(@jakarta.annotation.Nonnull String incidentEventId, @jakarta.annotation.Nonnull NewIncidentEventService newIncidentEventService) throws ApiException {
         ApiResponse<IncidentEventServiceResponse> localVarResp = createIncidentEventServiceWithHttpInfo(incidentEventId, newIncidentEventService);
         return localVarResp.getData();
     }
@@ -191,7 +191,7 @@ public class IncidentEventServicesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentEventServiceResponse> createIncidentEventServiceWithHttpInfo(@javax.annotation.Nonnull String incidentEventId, @javax.annotation.Nonnull NewIncidentEventService newIncidentEventService) throws ApiException {
+    public ApiResponse<IncidentEventServiceResponse> createIncidentEventServiceWithHttpInfo(@jakarta.annotation.Nonnull String incidentEventId, @jakarta.annotation.Nonnull NewIncidentEventService newIncidentEventService) throws ApiException {
         okhttp3.Call localVarCall = createIncidentEventServiceValidateBeforeCall(incidentEventId, newIncidentEventService, null);
         Type localVarReturnType = new TypeToken<IncidentEventServiceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -214,7 +214,7 @@ public class IncidentEventServicesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createIncidentEventServiceAsync(@javax.annotation.Nonnull String incidentEventId, @javax.annotation.Nonnull NewIncidentEventService newIncidentEventService, final ApiCallback<IncidentEventServiceResponse> _callback) throws ApiException {
+    public okhttp3.Call createIncidentEventServiceAsync(@jakarta.annotation.Nonnull String incidentEventId, @jakarta.annotation.Nonnull NewIncidentEventService newIncidentEventService, final ApiCallback<IncidentEventServiceResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createIncidentEventServiceValidateBeforeCall(incidentEventId, newIncidentEventService, _callback);
         Type localVarReturnType = new TypeToken<IncidentEventServiceResponse>(){}.getType();
@@ -235,7 +235,7 @@ public class IncidentEventServicesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteIncidentEventServiceCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteIncidentEventServiceCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -281,7 +281,7 @@ public class IncidentEventServicesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteIncidentEventServiceValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteIncidentEventServiceValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteIncidentEventService(Async)");
@@ -305,7 +305,7 @@ public class IncidentEventServicesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentEventServiceResponse deleteIncidentEventService(@javax.annotation.Nonnull String id) throws ApiException {
+    public IncidentEventServiceResponse deleteIncidentEventService(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<IncidentEventServiceResponse> localVarResp = deleteIncidentEventServiceWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -324,7 +324,7 @@ public class IncidentEventServicesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentEventServiceResponse> deleteIncidentEventServiceWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<IncidentEventServiceResponse> deleteIncidentEventServiceWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteIncidentEventServiceValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<IncidentEventServiceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -345,7 +345,7 @@ public class IncidentEventServicesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteIncidentEventServiceAsync(@javax.annotation.Nonnull String id, final ApiCallback<IncidentEventServiceResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteIncidentEventServiceAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<IncidentEventServiceResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteIncidentEventServiceValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<IncidentEventServiceResponse>(){}.getType();
@@ -366,7 +366,7 @@ public class IncidentEventServicesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getIncidentEventServicesCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getIncidentEventServicesCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -412,7 +412,7 @@ public class IncidentEventServicesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getIncidentEventServicesValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getIncidentEventServicesValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getIncidentEventServices(Async)");
@@ -436,7 +436,7 @@ public class IncidentEventServicesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentEventServiceResponse getIncidentEventServices(@javax.annotation.Nonnull String id) throws ApiException {
+    public IncidentEventServiceResponse getIncidentEventServices(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<IncidentEventServiceResponse> localVarResp = getIncidentEventServicesWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -455,7 +455,7 @@ public class IncidentEventServicesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentEventServiceResponse> getIncidentEventServicesWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<IncidentEventServiceResponse> getIncidentEventServicesWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getIncidentEventServicesValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<IncidentEventServiceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -476,7 +476,7 @@ public class IncidentEventServicesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getIncidentEventServicesAsync(@javax.annotation.Nonnull String id, final ApiCallback<IncidentEventServiceResponse> _callback) throws ApiException {
+    public okhttp3.Call getIncidentEventServicesAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<IncidentEventServiceResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getIncidentEventServicesValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<IncidentEventServiceResponse>(){}.getType();
@@ -499,7 +499,7 @@ public class IncidentEventServicesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listIncidentEventServicesCall(@javax.annotation.Nonnull String incidentEventId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listIncidentEventServicesCall(@jakarta.annotation.Nonnull String incidentEventId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -557,7 +557,7 @@ public class IncidentEventServicesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listIncidentEventServicesValidateBeforeCall(@javax.annotation.Nonnull String incidentEventId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listIncidentEventServicesValidateBeforeCall(@jakarta.annotation.Nonnull String incidentEventId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'incidentEventId' is set
         if (incidentEventId == null) {
             throw new ApiException("Missing the required parameter 'incidentEventId' when calling listIncidentEventServices(Async)");
@@ -583,7 +583,7 @@ public class IncidentEventServicesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentEventServiceList listIncidentEventServices(@javax.annotation.Nonnull String incidentEventId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+    public IncidentEventServiceList listIncidentEventServices(@jakarta.annotation.Nonnull String incidentEventId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
         ApiResponse<IncidentEventServiceList> localVarResp = listIncidentEventServicesWithHttpInfo(incidentEventId, include, pageNumber, pageSize);
         return localVarResp.getData();
     }
@@ -604,7 +604,7 @@ public class IncidentEventServicesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentEventServiceList> listIncidentEventServicesWithHttpInfo(@javax.annotation.Nonnull String incidentEventId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+    public ApiResponse<IncidentEventServiceList> listIncidentEventServicesWithHttpInfo(@jakarta.annotation.Nonnull String incidentEventId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
         okhttp3.Call localVarCall = listIncidentEventServicesValidateBeforeCall(incidentEventId, include, pageNumber, pageSize, null);
         Type localVarReturnType = new TypeToken<IncidentEventServiceList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -627,7 +627,7 @@ public class IncidentEventServicesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listIncidentEventServicesAsync(@javax.annotation.Nonnull String incidentEventId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback<IncidentEventServiceList> _callback) throws ApiException {
+    public okhttp3.Call listIncidentEventServicesAsync(@jakarta.annotation.Nonnull String incidentEventId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback<IncidentEventServiceList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listIncidentEventServicesValidateBeforeCall(incidentEventId, include, pageNumber, pageSize, _callback);
         Type localVarReturnType = new TypeToken<IncidentEventServiceList>(){}.getType();
@@ -649,7 +649,7 @@ public class IncidentEventServicesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateIncidentEventServiceCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateIncidentEventService updateIncidentEventService, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateIncidentEventServiceCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateIncidentEventService updateIncidentEventService, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -696,7 +696,7 @@ public class IncidentEventServicesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateIncidentEventServiceValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateIncidentEventService updateIncidentEventService, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateIncidentEventServiceValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateIncidentEventService updateIncidentEventService, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateIncidentEventService(Async)");
@@ -726,7 +726,7 @@ public class IncidentEventServicesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentEventServiceResponse updateIncidentEventService(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateIncidentEventService updateIncidentEventService) throws ApiException {
+    public IncidentEventServiceResponse updateIncidentEventService(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateIncidentEventService updateIncidentEventService) throws ApiException {
         ApiResponse<IncidentEventServiceResponse> localVarResp = updateIncidentEventServiceWithHttpInfo(id, updateIncidentEventService);
         return localVarResp.getData();
     }
@@ -746,7 +746,7 @@ public class IncidentEventServicesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentEventServiceResponse> updateIncidentEventServiceWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateIncidentEventService updateIncidentEventService) throws ApiException {
+    public ApiResponse<IncidentEventServiceResponse> updateIncidentEventServiceWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateIncidentEventService updateIncidentEventService) throws ApiException {
         okhttp3.Call localVarCall = updateIncidentEventServiceValidateBeforeCall(id, updateIncidentEventService, null);
         Type localVarReturnType = new TypeToken<IncidentEventServiceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -768,7 +768,7 @@ public class IncidentEventServicesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateIncidentEventServiceAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateIncidentEventService updateIncidentEventService, final ApiCallback<IncidentEventServiceResponse> _callback) throws ApiException {
+    public okhttp3.Call updateIncidentEventServiceAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateIncidentEventService updateIncidentEventService, final ApiCallback<IncidentEventServiceResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateIncidentEventServiceValidateBeforeCall(id, updateIncidentEventService, _callback);
         Type localVarReturnType = new TypeToken<IncidentEventServiceResponse>(){}.getType();

@@ -53,16 +53,16 @@ import com.rootly.client.JSON;
 /**
  * NewSeverityDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewSeverityDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   /**
@@ -123,38 +123,38 @@ public class NewSeverityDataAttributes {
 
   public static final String SERIALIZED_NAME_SEVERITY = "severity";
   @SerializedName(SERIALIZED_NAME_SEVERITY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private SeverityEnum severity;
 
   public static final String SERIALIZED_NAME_COLOR = "color";
   @SerializedName(SERIALIZED_NAME_COLOR)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String color;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public static final String SERIALIZED_NAME_NOTIFY_EMAILS = "notify_emails";
   @SerializedName(SERIALIZED_NAME_NOTIFY_EMAILS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> notifyEmails;
 
   public static final String SERIALIZED_NAME_SLACK_CHANNELS = "slack_channels";
   @SerializedName(SERIALIZED_NAME_SLACK_CHANNELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewEnvironmentDataAttributesSlackChannelsInner> slackChannels;
 
   public static final String SERIALIZED_NAME_SLACK_ALIASES = "slack_aliases";
   @SerializedName(SERIALIZED_NAME_SLACK_ALIASES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases;
 
   public NewSeverityDataAttributes() {
   }
 
-  public NewSeverityDataAttributes name(@javax.annotation.Nonnull String name) {
+  public NewSeverityDataAttributes name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -163,17 +163,17 @@ public class NewSeverityDataAttributes {
    * The name of the severity
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public NewSeverityDataAttributes description(@javax.annotation.Nullable String description) {
+  public NewSeverityDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -182,17 +182,17 @@ public class NewSeverityDataAttributes {
    * The description of the severity
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public NewSeverityDataAttributes severity(@javax.annotation.Nullable SeverityEnum severity) {
+  public NewSeverityDataAttributes severity(@jakarta.annotation.Nullable SeverityEnum severity) {
     this.severity = severity;
     return this;
   }
@@ -201,17 +201,17 @@ public class NewSeverityDataAttributes {
    * The severity of the severity
    * @return severity
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public SeverityEnum getSeverity() {
     return severity;
   }
 
-  public void setSeverity(@javax.annotation.Nullable SeverityEnum severity) {
+  public void setSeverity(@jakarta.annotation.Nullable SeverityEnum severity) {
     this.severity = severity;
   }
 
 
-  public NewSeverityDataAttributes color(@javax.annotation.Nullable String color) {
+  public NewSeverityDataAttributes color(@jakarta.annotation.Nullable String color) {
     this.color = color;
     return this;
   }
@@ -220,17 +220,17 @@ public class NewSeverityDataAttributes {
    * The hex color of the severity
    * @return color
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getColor() {
     return color;
   }
 
-  public void setColor(@javax.annotation.Nullable String color) {
+  public void setColor(@jakarta.annotation.Nullable String color) {
     this.color = color;
   }
 
 
-  public NewSeverityDataAttributes position(@javax.annotation.Nullable Integer position) {
+  public NewSeverityDataAttributes position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -239,17 +239,17 @@ public class NewSeverityDataAttributes {
    * Position of the severity
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 
 
-  public NewSeverityDataAttributes notifyEmails(@javax.annotation.Nullable List<String> notifyEmails) {
+  public NewSeverityDataAttributes notifyEmails(@jakarta.annotation.Nullable List<String> notifyEmails) {
     this.notifyEmails = notifyEmails;
     return this;
   }
@@ -266,17 +266,17 @@ public class NewSeverityDataAttributes {
    * Emails to attach to the severity
    * @return notifyEmails
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getNotifyEmails() {
     return notifyEmails;
   }
 
-  public void setNotifyEmails(@javax.annotation.Nullable List<String> notifyEmails) {
+  public void setNotifyEmails(@jakarta.annotation.Nullable List<String> notifyEmails) {
     this.notifyEmails = notifyEmails;
   }
 
 
-  public NewSeverityDataAttributes slackChannels(@javax.annotation.Nullable List<NewEnvironmentDataAttributesSlackChannelsInner> slackChannels) {
+  public NewSeverityDataAttributes slackChannels(@jakarta.annotation.Nullable List<NewEnvironmentDataAttributesSlackChannelsInner> slackChannels) {
     this.slackChannels = slackChannels;
     return this;
   }
@@ -293,17 +293,17 @@ public class NewSeverityDataAttributes {
    * Slack Channels associated with this severity
    * @return slackChannels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewEnvironmentDataAttributesSlackChannelsInner> getSlackChannels() {
     return slackChannels;
   }
 
-  public void setSlackChannels(@javax.annotation.Nullable List<NewEnvironmentDataAttributesSlackChannelsInner> slackChannels) {
+  public void setSlackChannels(@jakarta.annotation.Nullable List<NewEnvironmentDataAttributesSlackChannelsInner> slackChannels) {
     this.slackChannels = slackChannels;
   }
 
 
-  public NewSeverityDataAttributes slackAliases(@javax.annotation.Nullable List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases) {
+  public NewSeverityDataAttributes slackAliases(@jakarta.annotation.Nullable List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases) {
     this.slackAliases = slackAliases;
     return this;
   }
@@ -320,12 +320,12 @@ public class NewSeverityDataAttributes {
    * Slack Aliases associated with this severity
    * @return slackAliases
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewEnvironmentDataAttributesSlackAliasesInner> getSlackAliases() {
     return slackAliases;
   }
 
-  public void setSlackAliases(@javax.annotation.Nullable List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases) {
+  public void setSlackAliases(@jakarta.annotation.Nullable List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases) {
     this.slackAliases = slackAliases;
   }
 

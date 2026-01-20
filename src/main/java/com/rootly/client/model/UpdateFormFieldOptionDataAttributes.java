@@ -48,32 +48,32 @@ import com.rootly.client.JSON;
 /**
  * UpdateFormFieldOptionDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateFormFieldOptionDataAttributes {
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String value;
 
   public static final String SERIALIZED_NAME_COLOR = "color";
   @SerializedName(SERIALIZED_NAME_COLOR)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String color;
 
   public static final String SERIALIZED_NAME_DEFAULT = "default";
   @SerializedName(SERIALIZED_NAME_DEFAULT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean _default;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public UpdateFormFieldOptionDataAttributes() {
   }
 
-  public UpdateFormFieldOptionDataAttributes value(@javax.annotation.Nullable String value) {
+  public UpdateFormFieldOptionDataAttributes value(@jakarta.annotation.Nullable String value) {
     this.value = value;
     return this;
   }
@@ -82,17 +82,17 @@ public class UpdateFormFieldOptionDataAttributes {
    * The value of the form field option
    * @return value
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getValue() {
     return value;
   }
 
-  public void setValue(@javax.annotation.Nullable String value) {
+  public void setValue(@jakarta.annotation.Nullable String value) {
     this.value = value;
   }
 
 
-  public UpdateFormFieldOptionDataAttributes color(@javax.annotation.Nullable String color) {
+  public UpdateFormFieldOptionDataAttributes color(@jakarta.annotation.Nullable String color) {
     this.color = color;
     return this;
   }
@@ -101,17 +101,17 @@ public class UpdateFormFieldOptionDataAttributes {
    * The hex color of the form field option
    * @return color
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getColor() {
     return color;
   }
 
-  public void setColor(@javax.annotation.Nullable String color) {
+  public void setColor(@jakarta.annotation.Nullable String color) {
     this.color = color;
   }
 
 
-  public UpdateFormFieldOptionDataAttributes _default(@javax.annotation.Nullable Boolean _default) {
+  public UpdateFormFieldOptionDataAttributes _default(@jakarta.annotation.Nullable Boolean _default) {
     this._default = _default;
     return this;
   }
@@ -120,17 +120,17 @@ public class UpdateFormFieldOptionDataAttributes {
    * Get _default
    * @return _default
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getDefault() {
     return _default;
   }
 
-  public void setDefault(@javax.annotation.Nullable Boolean _default) {
+  public void setDefault(@jakarta.annotation.Nullable Boolean _default) {
     this._default = _default;
   }
 
 
-  public UpdateFormFieldOptionDataAttributes position(@javax.annotation.Nullable Integer position) {
+  public UpdateFormFieldOptionDataAttributes position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -139,12 +139,12 @@ public class UpdateFormFieldOptionDataAttributes {
    * The position of the form field option
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 

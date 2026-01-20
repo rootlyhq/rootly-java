@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * SnapshotNewRelicGraphTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SnapshotNewRelicGraphTaskParams {
   /**
    * Gets or Sets taskType
@@ -105,12 +105,12 @@ public class SnapshotNewRelicGraphTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_METRIC_QUERY = "metric_query";
   @SerializedName(SERIALIZED_NAME_METRIC_QUERY)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String metricQuery;
 
   /**
@@ -195,23 +195,23 @@ public class SnapshotNewRelicGraphTaskParams {
 
   public static final String SERIALIZED_NAME_METRIC_TYPE = "metric_type";
   @SerializedName(SERIALIZED_NAME_METRIC_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private MetricTypeEnum metricType;
 
   public static final String SERIALIZED_NAME_POST_TO_INCIDENT_TIMELINE = "post_to_incident_timeline";
   @SerializedName(SERIALIZED_NAME_POST_TO_INCIDENT_TIMELINE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean postToIncidentTimeline;
 
   public static final String SERIALIZED_NAME_POST_TO_SLACK_CHANNELS = "post_to_slack_channels";
   @SerializedName(SERIALIZED_NAME_POST_TO_SLACK_CHANNELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels = new ArrayList<>();
 
   public SnapshotNewRelicGraphTaskParams() {
   }
 
-  public SnapshotNewRelicGraphTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public SnapshotNewRelicGraphTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -220,17 +220,17 @@ public class SnapshotNewRelicGraphTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public SnapshotNewRelicGraphTaskParams metricQuery(@javax.annotation.Nonnull String metricQuery) {
+  public SnapshotNewRelicGraphTaskParams metricQuery(@jakarta.annotation.Nonnull String metricQuery) {
     this.metricQuery = metricQuery;
     return this;
   }
@@ -239,17 +239,17 @@ public class SnapshotNewRelicGraphTaskParams {
    * Get metricQuery
    * @return metricQuery
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getMetricQuery() {
     return metricQuery;
   }
 
-  public void setMetricQuery(@javax.annotation.Nonnull String metricQuery) {
+  public void setMetricQuery(@jakarta.annotation.Nonnull String metricQuery) {
     this.metricQuery = metricQuery;
   }
 
 
-  public SnapshotNewRelicGraphTaskParams metricType(@javax.annotation.Nonnull MetricTypeEnum metricType) {
+  public SnapshotNewRelicGraphTaskParams metricType(@jakarta.annotation.Nonnull MetricTypeEnum metricType) {
     this.metricType = metricType;
     return this;
   }
@@ -258,17 +258,17 @@ public class SnapshotNewRelicGraphTaskParams {
    * Get metricType
    * @return metricType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public MetricTypeEnum getMetricType() {
     return metricType;
   }
 
-  public void setMetricType(@javax.annotation.Nonnull MetricTypeEnum metricType) {
+  public void setMetricType(@jakarta.annotation.Nonnull MetricTypeEnum metricType) {
     this.metricType = metricType;
   }
 
 
-  public SnapshotNewRelicGraphTaskParams postToIncidentTimeline(@javax.annotation.Nullable Boolean postToIncidentTimeline) {
+  public SnapshotNewRelicGraphTaskParams postToIncidentTimeline(@jakarta.annotation.Nullable Boolean postToIncidentTimeline) {
     this.postToIncidentTimeline = postToIncidentTimeline;
     return this;
   }
@@ -277,17 +277,17 @@ public class SnapshotNewRelicGraphTaskParams {
    * Get postToIncidentTimeline
    * @return postToIncidentTimeline
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getPostToIncidentTimeline() {
     return postToIncidentTimeline;
   }
 
-  public void setPostToIncidentTimeline(@javax.annotation.Nullable Boolean postToIncidentTimeline) {
+  public void setPostToIncidentTimeline(@jakarta.annotation.Nullable Boolean postToIncidentTimeline) {
     this.postToIncidentTimeline = postToIncidentTimeline;
   }
 
 
-  public SnapshotNewRelicGraphTaskParams postToSlackChannels(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
+  public SnapshotNewRelicGraphTaskParams postToSlackChannels(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
     this.postToSlackChannels = postToSlackChannels;
     return this;
   }
@@ -304,12 +304,12 @@ public class SnapshotNewRelicGraphTaskParams {
    * Get postToSlackChannels
    * @return postToSlackChannels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AddActionItemTaskParamsPostToSlackChannelsInner> getPostToSlackChannels() {
     return postToSlackChannels;
   }
 
-  public void setPostToSlackChannels(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
+  public void setPostToSlackChannels(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
     this.postToSlackChannels = postToSlackChannels;
   }
 

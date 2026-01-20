@@ -52,32 +52,32 @@ import com.rootly.client.JSON;
 /**
  * Provide additional attributes for generic_webhook alerts source
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewAlertsSourceDataAttributesSourceableAttributes {
   public static final String SERIALIZED_NAME_AUTO_RESOLVE = "auto_resolve";
   @SerializedName(SERIALIZED_NAME_AUTO_RESOLVE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean autoResolve;
 
   public static final String SERIALIZED_NAME_RESOLVE_STATE = "resolve_state";
   @SerializedName(SERIALIZED_NAME_RESOLVE_STATE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String resolveState;
 
   public static final String SERIALIZED_NAME_ACCEPT_THREADED_EMAILS = "accept_threaded_emails";
   @SerializedName(SERIALIZED_NAME_ACCEPT_THREADED_EMAILS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean acceptThreadedEmails;
 
   public static final String SERIALIZED_NAME_FIELD_MAPPINGS_ATTRIBUTES = "field_mappings_attributes";
   @SerializedName(SERIALIZED_NAME_FIELD_MAPPINGS_ATTRIBUTES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesInner> fieldMappingsAttributes = new ArrayList<>();
 
   public NewAlertsSourceDataAttributesSourceableAttributes() {
   }
 
-  public NewAlertsSourceDataAttributesSourceableAttributes autoResolve(@javax.annotation.Nullable Boolean autoResolve) {
+  public NewAlertsSourceDataAttributesSourceableAttributes autoResolve(@jakarta.annotation.Nullable Boolean autoResolve) {
     this.autoResolve = autoResolve;
     return this;
   }
@@ -86,17 +86,17 @@ public class NewAlertsSourceDataAttributesSourceableAttributes {
    * Set this to true to auto-resolve alerts based on field_mappings_attributes conditions
    * @return autoResolve
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getAutoResolve() {
     return autoResolve;
   }
 
-  public void setAutoResolve(@javax.annotation.Nullable Boolean autoResolve) {
+  public void setAutoResolve(@jakarta.annotation.Nullable Boolean autoResolve) {
     this.autoResolve = autoResolve;
   }
 
 
-  public NewAlertsSourceDataAttributesSourceableAttributes resolveState(@javax.annotation.Nullable String resolveState) {
+  public NewAlertsSourceDataAttributesSourceableAttributes resolveState(@jakarta.annotation.Nullable String resolveState) {
     this.resolveState = resolveState;
     return this;
   }
@@ -105,17 +105,17 @@ public class NewAlertsSourceDataAttributesSourceableAttributes {
    * This value is matched with the value extracted from alerts payload using JSON path in field_mappings_attributes
    * @return resolveState
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getResolveState() {
     return resolveState;
   }
 
-  public void setResolveState(@javax.annotation.Nullable String resolveState) {
+  public void setResolveState(@jakarta.annotation.Nullable String resolveState) {
     this.resolveState = resolveState;
   }
 
 
-  public NewAlertsSourceDataAttributesSourceableAttributes acceptThreadedEmails(@javax.annotation.Nullable Boolean acceptThreadedEmails) {
+  public NewAlertsSourceDataAttributesSourceableAttributes acceptThreadedEmails(@jakarta.annotation.Nullable Boolean acceptThreadedEmails) {
     this.acceptThreadedEmails = acceptThreadedEmails;
     return this;
   }
@@ -124,17 +124,17 @@ public class NewAlertsSourceDataAttributesSourceableAttributes {
    * Set this to false to reject threaded emails
    * @return acceptThreadedEmails
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getAcceptThreadedEmails() {
     return acceptThreadedEmails;
   }
 
-  public void setAcceptThreadedEmails(@javax.annotation.Nullable Boolean acceptThreadedEmails) {
+  public void setAcceptThreadedEmails(@jakarta.annotation.Nullable Boolean acceptThreadedEmails) {
     this.acceptThreadedEmails = acceptThreadedEmails;
   }
 
 
-  public NewAlertsSourceDataAttributesSourceableAttributes fieldMappingsAttributes(@javax.annotation.Nullable List<NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesInner> fieldMappingsAttributes) {
+  public NewAlertsSourceDataAttributesSourceableAttributes fieldMappingsAttributes(@jakarta.annotation.Nullable List<NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesInner> fieldMappingsAttributes) {
     this.fieldMappingsAttributes = fieldMappingsAttributes;
     return this;
   }
@@ -151,12 +151,12 @@ public class NewAlertsSourceDataAttributesSourceableAttributes {
    * Specify rules to auto resolve alerts
    * @return fieldMappingsAttributes
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesInner> getFieldMappingsAttributes() {
     return fieldMappingsAttributes;
   }
 
-  public void setFieldMappingsAttributes(@javax.annotation.Nullable List<NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesInner> fieldMappingsAttributes) {
+  public void setFieldMappingsAttributes(@jakarta.annotation.Nullable List<NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesInner> fieldMappingsAttributes) {
     this.fieldMappingsAttributes = fieldMappingsAttributes;
   }
 

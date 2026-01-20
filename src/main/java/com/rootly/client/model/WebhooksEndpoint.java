@@ -50,21 +50,21 @@ import com.rootly.client.JSON;
 /**
  * WebhooksEndpoint
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class WebhooksEndpoint {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String slug;
 
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String url;
 
   /**
@@ -175,33 +175,33 @@ public class WebhooksEndpoint {
 
   public static final String SERIALIZED_NAME_EVENT_TYPES = "event_types";
   @SerializedName(SERIALIZED_NAME_EVENT_TYPES)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<EventTypesEnum> eventTypes = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SECRET = "secret";
   @SerializedName(SERIALIZED_NAME_SECRET)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String secret;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public WebhooksEndpoint() {
   }
 
-  public WebhooksEndpoint name(@javax.annotation.Nonnull String name) {
+  public WebhooksEndpoint name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -210,17 +210,17 @@ public class WebhooksEndpoint {
    * The name of the endpoint
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public WebhooksEndpoint slug(@javax.annotation.Nonnull String slug) {
+  public WebhooksEndpoint slug(@jakarta.annotation.Nonnull String slug) {
     this.slug = slug;
     return this;
   }
@@ -229,17 +229,17 @@ public class WebhooksEndpoint {
    * The slug of the endpoint
    * @return slug
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getSlug() {
     return slug;
   }
 
-  public void setSlug(@javax.annotation.Nonnull String slug) {
+  public void setSlug(@jakarta.annotation.Nonnull String slug) {
     this.slug = slug;
   }
 
 
-  public WebhooksEndpoint url(@javax.annotation.Nonnull String url) {
+  public WebhooksEndpoint url(@jakarta.annotation.Nonnull String url) {
     this.url = url;
     return this;
   }
@@ -248,17 +248,17 @@ public class WebhooksEndpoint {
    * The URL of the endpoint.
    * @return url
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUrl() {
     return url;
   }
 
-  public void setUrl(@javax.annotation.Nonnull String url) {
+  public void setUrl(@jakarta.annotation.Nonnull String url) {
     this.url = url;
   }
 
 
-  public WebhooksEndpoint eventTypes(@javax.annotation.Nonnull List<EventTypesEnum> eventTypes) {
+  public WebhooksEndpoint eventTypes(@jakarta.annotation.Nonnull List<EventTypesEnum> eventTypes) {
     this.eventTypes = eventTypes;
     return this;
   }
@@ -275,17 +275,17 @@ public class WebhooksEndpoint {
    * Get eventTypes
    * @return eventTypes
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<EventTypesEnum> getEventTypes() {
     return eventTypes;
   }
 
-  public void setEventTypes(@javax.annotation.Nonnull List<EventTypesEnum> eventTypes) {
+  public void setEventTypes(@jakarta.annotation.Nonnull List<EventTypesEnum> eventTypes) {
     this.eventTypes = eventTypes;
   }
 
 
-  public WebhooksEndpoint secret(@javax.annotation.Nonnull String secret) {
+  public WebhooksEndpoint secret(@jakarta.annotation.Nonnull String secret) {
     this.secret = secret;
     return this;
   }
@@ -294,17 +294,17 @@ public class WebhooksEndpoint {
    * The webhook signing secret used to verify webhook requests.
    * @return secret
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getSecret() {
     return secret;
   }
 
-  public void setSecret(@javax.annotation.Nonnull String secret) {
+  public void setSecret(@jakarta.annotation.Nonnull String secret) {
     this.secret = secret;
   }
 
 
-  public WebhooksEndpoint enabled(@javax.annotation.Nonnull Boolean enabled) {
+  public WebhooksEndpoint enabled(@jakarta.annotation.Nonnull Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -313,17 +313,17 @@ public class WebhooksEndpoint {
    * Get enabled
    * @return enabled
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Boolean getEnabled() {
     return enabled;
   }
 
-  public void setEnabled(@javax.annotation.Nonnull Boolean enabled) {
+  public void setEnabled(@jakarta.annotation.Nonnull Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public WebhooksEndpoint createdAt(@javax.annotation.Nonnull String createdAt) {
+  public WebhooksEndpoint createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -332,17 +332,17 @@ public class WebhooksEndpoint {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public WebhooksEndpoint updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public WebhooksEndpoint updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -351,12 +351,12 @@ public class WebhooksEndpoint {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

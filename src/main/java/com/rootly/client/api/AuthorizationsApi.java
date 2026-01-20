@@ -90,7 +90,7 @@ public class AuthorizationsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createAuthorizationCall(@javax.annotation.Nonnull NewAuthorization newAuthorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createAuthorizationCall(@jakarta.annotation.Nonnull NewAuthorization newAuthorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -136,7 +136,7 @@ public class AuthorizationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createAuthorizationValidateBeforeCall(@javax.annotation.Nonnull NewAuthorization newAuthorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createAuthorizationValidateBeforeCall(@jakarta.annotation.Nonnull NewAuthorization newAuthorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'newAuthorization' is set
         if (newAuthorization == null) {
             throw new ApiException("Missing the required parameter 'newAuthorization' when calling createAuthorization(Async)");
@@ -160,7 +160,7 @@ public class AuthorizationsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public AuthorizationResponse createAuthorization(@javax.annotation.Nonnull NewAuthorization newAuthorization) throws ApiException {
+    public AuthorizationResponse createAuthorization(@jakarta.annotation.Nonnull NewAuthorization newAuthorization) throws ApiException {
         ApiResponse<AuthorizationResponse> localVarResp = createAuthorizationWithHttpInfo(newAuthorization);
         return localVarResp.getData();
     }
@@ -179,7 +179,7 @@ public class AuthorizationsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AuthorizationResponse> createAuthorizationWithHttpInfo(@javax.annotation.Nonnull NewAuthorization newAuthorization) throws ApiException {
+    public ApiResponse<AuthorizationResponse> createAuthorizationWithHttpInfo(@jakarta.annotation.Nonnull NewAuthorization newAuthorization) throws ApiException {
         okhttp3.Call localVarCall = createAuthorizationValidateBeforeCall(newAuthorization, null);
         Type localVarReturnType = new TypeToken<AuthorizationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -200,7 +200,7 @@ public class AuthorizationsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createAuthorizationAsync(@javax.annotation.Nonnull NewAuthorization newAuthorization, final ApiCallback<AuthorizationResponse> _callback) throws ApiException {
+    public okhttp3.Call createAuthorizationAsync(@jakarta.annotation.Nonnull NewAuthorization newAuthorization, final ApiCallback<AuthorizationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createAuthorizationValidateBeforeCall(newAuthorization, _callback);
         Type localVarReturnType = new TypeToken<AuthorizationResponse>(){}.getType();
@@ -221,7 +221,7 @@ public class AuthorizationsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteAuthorizationCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteAuthorizationCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -267,7 +267,7 @@ public class AuthorizationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteAuthorizationValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteAuthorizationValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteAuthorization(Async)");
@@ -291,7 +291,7 @@ public class AuthorizationsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public AuthorizationResponse deleteAuthorization(@javax.annotation.Nonnull String id) throws ApiException {
+    public AuthorizationResponse deleteAuthorization(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<AuthorizationResponse> localVarResp = deleteAuthorizationWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -310,7 +310,7 @@ public class AuthorizationsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AuthorizationResponse> deleteAuthorizationWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<AuthorizationResponse> deleteAuthorizationWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteAuthorizationValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<AuthorizationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -331,7 +331,7 @@ public class AuthorizationsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteAuthorizationAsync(@javax.annotation.Nonnull String id, final ApiCallback<AuthorizationResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteAuthorizationAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<AuthorizationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteAuthorizationValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<AuthorizationResponse>(){}.getType();
@@ -352,7 +352,7 @@ public class AuthorizationsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAuthorizationCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAuthorizationCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -398,7 +398,7 @@ public class AuthorizationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAuthorizationValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAuthorizationValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getAuthorization(Async)");
@@ -422,7 +422,7 @@ public class AuthorizationsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public AuthorizationResponse getAuthorization(@javax.annotation.Nonnull String id) throws ApiException {
+    public AuthorizationResponse getAuthorization(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<AuthorizationResponse> localVarResp = getAuthorizationWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -441,7 +441,7 @@ public class AuthorizationsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AuthorizationResponse> getAuthorizationWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<AuthorizationResponse> getAuthorizationWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getAuthorizationValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<AuthorizationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -462,7 +462,7 @@ public class AuthorizationsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAuthorizationAsync(@javax.annotation.Nonnull String id, final ApiCallback<AuthorizationResponse> _callback) throws ApiException {
+    public okhttp3.Call getAuthorizationAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<AuthorizationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAuthorizationValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<AuthorizationResponse>(){}.getType();
@@ -493,7 +493,7 @@ public class AuthorizationsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAuthorizationsCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterAuthorizableId, @javax.annotation.Nullable String filterAuthorizableType, @javax.annotation.Nullable String filterGranteeId, @javax.annotation.Nullable String filterGranteeType, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listAuthorizationsCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterAuthorizableId, @jakarta.annotation.Nullable String filterAuthorizableType, @jakarta.annotation.Nullable String filterGranteeId, @jakarta.annotation.Nullable String filterGranteeType, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -586,7 +586,7 @@ public class AuthorizationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listAuthorizationsValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterAuthorizableId, @javax.annotation.Nullable String filterAuthorizableType, @javax.annotation.Nullable String filterGranteeId, @javax.annotation.Nullable String filterGranteeType, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listAuthorizationsValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterAuthorizableId, @jakarta.annotation.Nullable String filterAuthorizableType, @jakarta.annotation.Nullable String filterGranteeId, @jakarta.annotation.Nullable String filterGranteeType, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         return listAuthorizationsCall(include, pageNumber, pageSize, filterAuthorizableId, filterAuthorizableType, filterGranteeId, filterGranteeType, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
 
     }
@@ -615,7 +615,7 @@ public class AuthorizationsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public AuthorizationList listAuthorizations(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterAuthorizableId, @javax.annotation.Nullable String filterAuthorizableType, @javax.annotation.Nullable String filterGranteeId, @javax.annotation.Nullable String filterGranteeType, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+    public AuthorizationList listAuthorizations(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterAuthorizableId, @jakarta.annotation.Nullable String filterAuthorizableType, @jakarta.annotation.Nullable String filterGranteeId, @jakarta.annotation.Nullable String filterGranteeType, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
         ApiResponse<AuthorizationList> localVarResp = listAuthorizationsWithHttpInfo(include, pageNumber, pageSize, filterAuthorizableId, filterAuthorizableType, filterGranteeId, filterGranteeType, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
         return localVarResp.getData();
     }
@@ -644,7 +644,7 @@ public class AuthorizationsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AuthorizationList> listAuthorizationsWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterAuthorizableId, @javax.annotation.Nullable String filterAuthorizableType, @javax.annotation.Nullable String filterGranteeId, @javax.annotation.Nullable String filterGranteeType, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+    public ApiResponse<AuthorizationList> listAuthorizationsWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterAuthorizableId, @jakarta.annotation.Nullable String filterAuthorizableType, @jakarta.annotation.Nullable String filterGranteeId, @jakarta.annotation.Nullable String filterGranteeType, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
         okhttp3.Call localVarCall = listAuthorizationsValidateBeforeCall(include, pageNumber, pageSize, filterAuthorizableId, filterAuthorizableType, filterGranteeId, filterGranteeType, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, null);
         Type localVarReturnType = new TypeToken<AuthorizationList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -675,7 +675,7 @@ public class AuthorizationsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAuthorizationsAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterAuthorizableId, @javax.annotation.Nullable String filterAuthorizableType, @javax.annotation.Nullable String filterGranteeId, @javax.annotation.Nullable String filterGranteeType, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback<AuthorizationList> _callback) throws ApiException {
+    public okhttp3.Call listAuthorizationsAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterAuthorizableId, @jakarta.annotation.Nullable String filterAuthorizableType, @jakarta.annotation.Nullable String filterGranteeId, @jakarta.annotation.Nullable String filterGranteeType, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback<AuthorizationList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listAuthorizationsValidateBeforeCall(include, pageNumber, pageSize, filterAuthorizableId, filterAuthorizableType, filterGranteeId, filterGranteeType, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
         Type localVarReturnType = new TypeToken<AuthorizationList>(){}.getType();
@@ -697,7 +697,7 @@ public class AuthorizationsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateAuthorizationCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateAuthorization updateAuthorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateAuthorizationCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateAuthorization updateAuthorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -744,7 +744,7 @@ public class AuthorizationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateAuthorizationValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateAuthorization updateAuthorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateAuthorizationValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateAuthorization updateAuthorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateAuthorization(Async)");
@@ -774,7 +774,7 @@ public class AuthorizationsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public AuthorizationResponse updateAuthorization(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateAuthorization updateAuthorization) throws ApiException {
+    public AuthorizationResponse updateAuthorization(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateAuthorization updateAuthorization) throws ApiException {
         ApiResponse<AuthorizationResponse> localVarResp = updateAuthorizationWithHttpInfo(id, updateAuthorization);
         return localVarResp.getData();
     }
@@ -794,7 +794,7 @@ public class AuthorizationsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AuthorizationResponse> updateAuthorizationWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateAuthorization updateAuthorization) throws ApiException {
+    public ApiResponse<AuthorizationResponse> updateAuthorizationWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateAuthorization updateAuthorization) throws ApiException {
         okhttp3.Call localVarCall = updateAuthorizationValidateBeforeCall(id, updateAuthorization, null);
         Type localVarReturnType = new TypeToken<AuthorizationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -816,7 +816,7 @@ public class AuthorizationsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateAuthorizationAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateAuthorization updateAuthorization, final ApiCallback<AuthorizationResponse> _callback) throws ApiException {
+    public okhttp3.Call updateAuthorizationAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateAuthorization updateAuthorization, final ApiCallback<AuthorizationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateAuthorizationValidateBeforeCall(id, updateAuthorization, _callback);
         Type localVarReturnType = new TypeToken<AuthorizationResponse>(){}.getType();

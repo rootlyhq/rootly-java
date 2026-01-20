@@ -50,7 +50,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateWorkflowCustomFieldSelectionDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateWorkflowCustomFieldSelectionDataAttributes {
   /**
    * The trigger condition
@@ -120,23 +120,23 @@ public class UpdateWorkflowCustomFieldSelectionDataAttributes {
 
   public static final String SERIALIZED_NAME_INCIDENT_CONDITION = "incident_condition";
   @SerializedName(SERIALIZED_NAME_INCIDENT_CONDITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private IncidentConditionEnum incidentCondition = IncidentConditionEnum.ANY;
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> values = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SELECTED_OPTION_IDS = "selected_option_ids";
   @SerializedName(SERIALIZED_NAME_SELECTED_OPTION_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<Integer> selectedOptionIds = new ArrayList<>();
 
   public UpdateWorkflowCustomFieldSelectionDataAttributes() {
   }
 
-  public UpdateWorkflowCustomFieldSelectionDataAttributes incidentCondition(@javax.annotation.Nullable IncidentConditionEnum incidentCondition) {
+  public UpdateWorkflowCustomFieldSelectionDataAttributes incidentCondition(@jakarta.annotation.Nullable IncidentConditionEnum incidentCondition) {
     this.incidentCondition = incidentCondition;
     return this;
   }
@@ -145,17 +145,17 @@ public class UpdateWorkflowCustomFieldSelectionDataAttributes {
    * The trigger condition
    * @return incidentCondition
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public IncidentConditionEnum getIncidentCondition() {
     return incidentCondition;
   }
 
-  public void setIncidentCondition(@javax.annotation.Nullable IncidentConditionEnum incidentCondition) {
+  public void setIncidentCondition(@jakarta.annotation.Nullable IncidentConditionEnum incidentCondition) {
     this.incidentCondition = incidentCondition;
   }
 
 
-  public UpdateWorkflowCustomFieldSelectionDataAttributes values(@javax.annotation.Nullable List<String> values) {
+  public UpdateWorkflowCustomFieldSelectionDataAttributes values(@jakarta.annotation.Nullable List<String> values) {
     this.values = values;
     return this;
   }
@@ -172,17 +172,17 @@ public class UpdateWorkflowCustomFieldSelectionDataAttributes {
    * Get values
    * @return values
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getValues() {
     return values;
   }
 
-  public void setValues(@javax.annotation.Nullable List<String> values) {
+  public void setValues(@jakarta.annotation.Nullable List<String> values) {
     this.values = values;
   }
 
 
-  public UpdateWorkflowCustomFieldSelectionDataAttributes selectedOptionIds(@javax.annotation.Nullable List<Integer> selectedOptionIds) {
+  public UpdateWorkflowCustomFieldSelectionDataAttributes selectedOptionIds(@jakarta.annotation.Nullable List<Integer> selectedOptionIds) {
     this.selectedOptionIds = selectedOptionIds;
     return this;
   }
@@ -199,12 +199,12 @@ public class UpdateWorkflowCustomFieldSelectionDataAttributes {
    * Get selectedOptionIds
    * @return selectedOptionIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<Integer> getSelectedOptionIds() {
     return selectedOptionIds;
   }
 
-  public void setSelectedOptionIds(@javax.annotation.Nullable List<Integer> selectedOptionIds) {
+  public void setSelectedOptionIds(@jakarta.annotation.Nullable List<Integer> selectedOptionIds) {
     this.selectedOptionIds = selectedOptionIds;
   }
 

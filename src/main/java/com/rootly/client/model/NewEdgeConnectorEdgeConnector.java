@@ -51,16 +51,16 @@ import com.rootly.client.JSON;
 /**
  * NewEdgeConnectorEdgeConnector
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewEdgeConnectorEdgeConnector {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   /**
@@ -117,18 +117,18 @@ public class NewEdgeConnectorEdgeConnector {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private StatusEnum status;
 
   public static final String SERIALIZED_NAME_SUBSCRIPTIONS = "subscriptions";
   @SerializedName(SERIALIZED_NAME_SUBSCRIPTIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> subscriptions = new ArrayList<>();
 
   public NewEdgeConnectorEdgeConnector() {
   }
 
-  public NewEdgeConnectorEdgeConnector name(@javax.annotation.Nonnull String name) {
+  public NewEdgeConnectorEdgeConnector name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -137,17 +137,17 @@ public class NewEdgeConnectorEdgeConnector {
    * Connector name
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public NewEdgeConnectorEdgeConnector description(@javax.annotation.Nullable String description) {
+  public NewEdgeConnectorEdgeConnector description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -156,17 +156,17 @@ public class NewEdgeConnectorEdgeConnector {
    * Connector description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public NewEdgeConnectorEdgeConnector status(@javax.annotation.Nullable StatusEnum status) {
+  public NewEdgeConnectorEdgeConnector status(@jakarta.annotation.Nullable StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -175,17 +175,17 @@ public class NewEdgeConnectorEdgeConnector {
    * Connector status
    * @return status
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nullable StatusEnum status) {
+  public void setStatus(@jakarta.annotation.Nullable StatusEnum status) {
     this.status = status;
   }
 
 
-  public NewEdgeConnectorEdgeConnector subscriptions(@javax.annotation.Nullable List<String> subscriptions) {
+  public NewEdgeConnectorEdgeConnector subscriptions(@jakarta.annotation.Nullable List<String> subscriptions) {
     this.subscriptions = subscriptions;
     return this;
   }
@@ -202,12 +202,12 @@ public class NewEdgeConnectorEdgeConnector {
    * Array of event types to subscribe to
    * @return subscriptions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getSubscriptions() {
     return subscriptions;
   }
 
-  public void setSubscriptions(@javax.annotation.Nullable List<String> subscriptions) {
+  public void setSubscriptions(@jakarta.annotation.Nullable List<String> subscriptions) {
     this.subscriptions = subscriptions;
   }
 

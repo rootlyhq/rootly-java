@@ -49,11 +49,11 @@ import com.rootly.client.JSON;
 /**
  * NewIncidentPermissionSetBooleanDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewIncidentPermissionSetBooleanDataAttributes {
   public static final String SERIALIZED_NAME_INCIDENT_PERMISSION_SET_ID = "incident_permission_set_id";
   @SerializedName(SERIALIZED_NAME_INCIDENT_PERMISSION_SET_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String incidentPermissionSetId;
 
   /**
@@ -130,28 +130,28 @@ public class NewIncidentPermissionSetBooleanDataAttributes {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private KindEnum kind;
 
   public static final String SERIALIZED_NAME_PRIVATE = "private";
   @SerializedName(SERIALIZED_NAME_PRIVATE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean _private;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_SEVERITY_PARAMS = "severity_params";
   @SerializedName(SERIALIZED_NAME_SEVERITY_PARAMS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private NewIncidentPermissionSetBooleanDataAttributesSeverityParams severityParams;
 
   public NewIncidentPermissionSetBooleanDataAttributes() {
   }
 
-  public NewIncidentPermissionSetBooleanDataAttributes incidentPermissionSetId(@javax.annotation.Nonnull String incidentPermissionSetId) {
+  public NewIncidentPermissionSetBooleanDataAttributes incidentPermissionSetId(@jakarta.annotation.Nonnull String incidentPermissionSetId) {
     this.incidentPermissionSetId = incidentPermissionSetId;
     return this;
   }
@@ -160,17 +160,17 @@ public class NewIncidentPermissionSetBooleanDataAttributes {
    * Get incidentPermissionSetId
    * @return incidentPermissionSetId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getIncidentPermissionSetId() {
     return incidentPermissionSetId;
   }
 
-  public void setIncidentPermissionSetId(@javax.annotation.Nonnull String incidentPermissionSetId) {
+  public void setIncidentPermissionSetId(@jakarta.annotation.Nonnull String incidentPermissionSetId) {
     this.incidentPermissionSetId = incidentPermissionSetId;
   }
 
 
-  public NewIncidentPermissionSetBooleanDataAttributes kind(@javax.annotation.Nonnull KindEnum kind) {
+  public NewIncidentPermissionSetBooleanDataAttributes kind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
     return this;
   }
@@ -179,17 +179,17 @@ public class NewIncidentPermissionSetBooleanDataAttributes {
    * Get kind
    * @return kind
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(@javax.annotation.Nonnull KindEnum kind) {
+  public void setKind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public NewIncidentPermissionSetBooleanDataAttributes _private(@javax.annotation.Nullable Boolean _private) {
+  public NewIncidentPermissionSetBooleanDataAttributes _private(@jakarta.annotation.Nullable Boolean _private) {
     this._private = _private;
     return this;
   }
@@ -198,17 +198,17 @@ public class NewIncidentPermissionSetBooleanDataAttributes {
    * Get _private
    * @return _private
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getPrivate() {
     return _private;
   }
 
-  public void setPrivate(@javax.annotation.Nullable Boolean _private) {
+  public void setPrivate(@jakarta.annotation.Nullable Boolean _private) {
     this._private = _private;
   }
 
 
-  public NewIncidentPermissionSetBooleanDataAttributes enabled(@javax.annotation.Nullable Boolean enabled) {
+  public NewIncidentPermissionSetBooleanDataAttributes enabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -217,17 +217,17 @@ public class NewIncidentPermissionSetBooleanDataAttributes {
    * Get enabled
    * @return enabled
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getEnabled() {
     return enabled;
   }
 
-  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
+  public void setEnabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public NewIncidentPermissionSetBooleanDataAttributes severityParams(@javax.annotation.Nullable NewIncidentPermissionSetBooleanDataAttributesSeverityParams severityParams) {
+  public NewIncidentPermissionSetBooleanDataAttributes severityParams(@jakarta.annotation.Nullable NewIncidentPermissionSetBooleanDataAttributesSeverityParams severityParams) {
     this.severityParams = severityParams;
     return this;
   }
@@ -236,12 +236,12 @@ public class NewIncidentPermissionSetBooleanDataAttributes {
    * Get severityParams
    * @return severityParams
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public NewIncidentPermissionSetBooleanDataAttributesSeverityParams getSeverityParams() {
     return severityParams;
   }
 
-  public void setSeverityParams(@javax.annotation.Nullable NewIncidentPermissionSetBooleanDataAttributesSeverityParams severityParams) {
+  public void setSeverityParams(@jakarta.annotation.Nullable NewIncidentPermissionSetBooleanDataAttributesSeverityParams severityParams) {
     this.severityParams = severityParams;
   }
 

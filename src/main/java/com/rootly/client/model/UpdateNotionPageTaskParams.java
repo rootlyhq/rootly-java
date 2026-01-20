@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateNotionPageTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateNotionPageTaskParams {
   /**
    * Gets or Sets taskType
@@ -102,43 +102,43 @@ public class UpdateNotionPageTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_FILE_ID = "file_id";
   @SerializedName(SERIALIZED_NAME_FILE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String fileId;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String title;
 
   public static final String SERIALIZED_NAME_POST_MORTEM_TEMPLATE_ID = "post_mortem_template_id";
   @SerializedName(SERIALIZED_NAME_POST_MORTEM_TEMPLATE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String postMortemTemplateId;
 
   public static final String SERIALIZED_NAME_CONTENT = "content";
   @SerializedName(SERIALIZED_NAME_CONTENT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String content;
 
   public static final String SERIALIZED_NAME_SHOW_TIMELINE_AS_TABLE = "show_timeline_as_table";
   @SerializedName(SERIALIZED_NAME_SHOW_TIMELINE_AS_TABLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean showTimelineAsTable;
 
   public static final String SERIALIZED_NAME_SHOW_ACTION_ITEMS_AS_TABLE = "show_action_items_as_table";
   @SerializedName(SERIALIZED_NAME_SHOW_ACTION_ITEMS_AS_TABLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean showActionItemsAsTable;
 
   public UpdateNotionPageTaskParams() {
   }
 
-  public UpdateNotionPageTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public UpdateNotionPageTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -147,17 +147,17 @@ public class UpdateNotionPageTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public UpdateNotionPageTaskParams fileId(@javax.annotation.Nonnull String fileId) {
+  public UpdateNotionPageTaskParams fileId(@jakarta.annotation.Nonnull String fileId) {
     this.fileId = fileId;
     return this;
   }
@@ -166,17 +166,17 @@ public class UpdateNotionPageTaskParams {
    * The Notion page ID
    * @return fileId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getFileId() {
     return fileId;
   }
 
-  public void setFileId(@javax.annotation.Nonnull String fileId) {
+  public void setFileId(@jakarta.annotation.Nonnull String fileId) {
     this.fileId = fileId;
   }
 
 
-  public UpdateNotionPageTaskParams title(@javax.annotation.Nullable String title) {
+  public UpdateNotionPageTaskParams title(@jakarta.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
@@ -185,17 +185,17 @@ public class UpdateNotionPageTaskParams {
    * The Notion page title
    * @return title
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nullable String title) {
+  public void setTitle(@jakarta.annotation.Nullable String title) {
     this.title = title;
   }
 
 
-  public UpdateNotionPageTaskParams postMortemTemplateId(@javax.annotation.Nullable String postMortemTemplateId) {
+  public UpdateNotionPageTaskParams postMortemTemplateId(@jakarta.annotation.Nullable String postMortemTemplateId) {
     this.postMortemTemplateId = postMortemTemplateId;
     return this;
   }
@@ -204,17 +204,17 @@ public class UpdateNotionPageTaskParams {
    * Retrospective template to use when creating page task, if desired
    * @return postMortemTemplateId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPostMortemTemplateId() {
     return postMortemTemplateId;
   }
 
-  public void setPostMortemTemplateId(@javax.annotation.Nullable String postMortemTemplateId) {
+  public void setPostMortemTemplateId(@jakarta.annotation.Nullable String postMortemTemplateId) {
     this.postMortemTemplateId = postMortemTemplateId;
   }
 
 
-  public UpdateNotionPageTaskParams content(@javax.annotation.Nullable String content) {
+  public UpdateNotionPageTaskParams content(@jakarta.annotation.Nullable String content) {
     this.content = content;
     return this;
   }
@@ -223,17 +223,17 @@ public class UpdateNotionPageTaskParams {
    * Custom page content with liquid templating support. When provided, only this content will be rendered (no default sections)
    * @return content
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getContent() {
     return content;
   }
 
-  public void setContent(@javax.annotation.Nullable String content) {
+  public void setContent(@jakarta.annotation.Nullable String content) {
     this.content = content;
   }
 
 
-  public UpdateNotionPageTaskParams showTimelineAsTable(@javax.annotation.Nullable Boolean showTimelineAsTable) {
+  public UpdateNotionPageTaskParams showTimelineAsTable(@jakarta.annotation.Nullable Boolean showTimelineAsTable) {
     this.showTimelineAsTable = showTimelineAsTable;
     return this;
   }
@@ -242,17 +242,17 @@ public class UpdateNotionPageTaskParams {
    * Get showTimelineAsTable
    * @return showTimelineAsTable
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getShowTimelineAsTable() {
     return showTimelineAsTable;
   }
 
-  public void setShowTimelineAsTable(@javax.annotation.Nullable Boolean showTimelineAsTable) {
+  public void setShowTimelineAsTable(@jakarta.annotation.Nullable Boolean showTimelineAsTable) {
     this.showTimelineAsTable = showTimelineAsTable;
   }
 
 
-  public UpdateNotionPageTaskParams showActionItemsAsTable(@javax.annotation.Nullable Boolean showActionItemsAsTable) {
+  public UpdateNotionPageTaskParams showActionItemsAsTable(@jakarta.annotation.Nullable Boolean showActionItemsAsTable) {
     this.showActionItemsAsTable = showActionItemsAsTable;
     return this;
   }
@@ -261,12 +261,12 @@ public class UpdateNotionPageTaskParams {
    * Get showActionItemsAsTable
    * @return showActionItemsAsTable
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getShowActionItemsAsTable() {
     return showActionItemsAsTable;
   }
 
-  public void setShowActionItemsAsTable(@javax.annotation.Nullable Boolean showActionItemsAsTable) {
+  public void setShowActionItemsAsTable(@jakarta.annotation.Nullable Boolean showActionItemsAsTable) {
     this.showActionItemsAsTable = showActionItemsAsTable;
   }
 

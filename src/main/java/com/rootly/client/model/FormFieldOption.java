@@ -48,52 +48,52 @@ import com.rootly.client.JSON;
 /**
  * FormFieldOption
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class FormFieldOption {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_FORM_FIELD_ID = "form_field_id";
   @SerializedName(SERIALIZED_NAME_FORM_FIELD_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String formFieldId;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String value;
 
   public static final String SERIALIZED_NAME_COLOR = "color";
   @SerializedName(SERIALIZED_NAME_COLOR)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String color;
 
   public static final String SERIALIZED_NAME_DEFAULT = "default";
   @SerializedName(SERIALIZED_NAME_DEFAULT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean _default;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Integer position;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public FormFieldOption() {
   }
 
-  public FormFieldOption id(@javax.annotation.Nullable String id) {
+  public FormFieldOption id(@jakarta.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -102,17 +102,17 @@ public class FormFieldOption {
    * Unique ID of the form field option
    * @return id
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getId() {
     return id;
   }
 
-  public void setId(@javax.annotation.Nullable String id) {
+  public void setId(@jakarta.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public FormFieldOption formFieldId(@javax.annotation.Nullable String formFieldId) {
+  public FormFieldOption formFieldId(@jakarta.annotation.Nullable String formFieldId) {
     this.formFieldId = formFieldId;
     return this;
   }
@@ -121,17 +121,17 @@ public class FormFieldOption {
    * The ID of the parent custom field
    * @return formFieldId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getFormFieldId() {
     return formFieldId;
   }
 
-  public void setFormFieldId(@javax.annotation.Nullable String formFieldId) {
+  public void setFormFieldId(@jakarta.annotation.Nullable String formFieldId) {
     this.formFieldId = formFieldId;
   }
 
 
-  public FormFieldOption value(@javax.annotation.Nonnull String value) {
+  public FormFieldOption value(@jakarta.annotation.Nonnull String value) {
     this.value = value;
     return this;
   }
@@ -140,17 +140,17 @@ public class FormFieldOption {
    * The value of the form field option
    * @return value
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getValue() {
     return value;
   }
 
-  public void setValue(@javax.annotation.Nonnull String value) {
+  public void setValue(@jakarta.annotation.Nonnull String value) {
     this.value = value;
   }
 
 
-  public FormFieldOption color(@javax.annotation.Nonnull String color) {
+  public FormFieldOption color(@jakarta.annotation.Nonnull String color) {
     this.color = color;
     return this;
   }
@@ -159,17 +159,17 @@ public class FormFieldOption {
    * The hex color of the form field option
    * @return color
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getColor() {
     return color;
   }
 
-  public void setColor(@javax.annotation.Nonnull String color) {
+  public void setColor(@jakarta.annotation.Nonnull String color) {
     this.color = color;
   }
 
 
-  public FormFieldOption _default(@javax.annotation.Nullable Boolean _default) {
+  public FormFieldOption _default(@jakarta.annotation.Nullable Boolean _default) {
     this._default = _default;
     return this;
   }
@@ -178,17 +178,17 @@ public class FormFieldOption {
    * Get _default
    * @return _default
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getDefault() {
     return _default;
   }
 
-  public void setDefault(@javax.annotation.Nullable Boolean _default) {
+  public void setDefault(@jakarta.annotation.Nullable Boolean _default) {
     this._default = _default;
   }
 
 
-  public FormFieldOption position(@javax.annotation.Nonnull Integer position) {
+  public FormFieldOption position(@jakarta.annotation.Nonnull Integer position) {
     this.position = position;
     return this;
   }
@@ -197,17 +197,17 @@ public class FormFieldOption {
    * The position of the form field option
    * @return position
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nonnull Integer position) {
+  public void setPosition(@jakarta.annotation.Nonnull Integer position) {
     this.position = position;
   }
 
 
-  public FormFieldOption createdAt(@javax.annotation.Nonnull String createdAt) {
+  public FormFieldOption createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -216,17 +216,17 @@ public class FormFieldOption {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public FormFieldOption updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public FormFieldOption updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -235,12 +235,12 @@ public class FormFieldOption {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

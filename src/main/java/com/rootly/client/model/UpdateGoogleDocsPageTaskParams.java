@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateGoogleDocsPageTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateGoogleDocsPageTaskParams {
   /**
    * Gets or Sets taskType
@@ -102,38 +102,38 @@ public class UpdateGoogleDocsPageTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_FILE_ID = "file_id";
   @SerializedName(SERIALIZED_NAME_FILE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String fileId;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String title;
 
   public static final String SERIALIZED_NAME_CONTENT = "content";
   @SerializedName(SERIALIZED_NAME_CONTENT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String content;
 
   public static final String SERIALIZED_NAME_POST_MORTEM_TEMPLATE_ID = "post_mortem_template_id";
   @SerializedName(SERIALIZED_NAME_POST_MORTEM_TEMPLATE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String postMortemTemplateId;
 
   public static final String SERIALIZED_NAME_TEMPLATE_ID = "template_id";
   @SerializedName(SERIALIZED_NAME_TEMPLATE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String templateId;
 
   public UpdateGoogleDocsPageTaskParams() {
   }
 
-  public UpdateGoogleDocsPageTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public UpdateGoogleDocsPageTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -142,17 +142,17 @@ public class UpdateGoogleDocsPageTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public UpdateGoogleDocsPageTaskParams fileId(@javax.annotation.Nonnull String fileId) {
+  public UpdateGoogleDocsPageTaskParams fileId(@jakarta.annotation.Nonnull String fileId) {
     this.fileId = fileId;
     return this;
   }
@@ -161,17 +161,17 @@ public class UpdateGoogleDocsPageTaskParams {
    * The Google Doc file ID
    * @return fileId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getFileId() {
     return fileId;
   }
 
-  public void setFileId(@javax.annotation.Nonnull String fileId) {
+  public void setFileId(@jakarta.annotation.Nonnull String fileId) {
     this.fileId = fileId;
   }
 
 
-  public UpdateGoogleDocsPageTaskParams title(@javax.annotation.Nullable String title) {
+  public UpdateGoogleDocsPageTaskParams title(@jakarta.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
@@ -180,17 +180,17 @@ public class UpdateGoogleDocsPageTaskParams {
    * The Google Doc title
    * @return title
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nullable String title) {
+  public void setTitle(@jakarta.annotation.Nullable String title) {
     this.title = title;
   }
 
 
-  public UpdateGoogleDocsPageTaskParams content(@javax.annotation.Nullable String content) {
+  public UpdateGoogleDocsPageTaskParams content(@jakarta.annotation.Nullable String content) {
     this.content = content;
     return this;
   }
@@ -199,17 +199,17 @@ public class UpdateGoogleDocsPageTaskParams {
    * The Google Doc content
    * @return content
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getContent() {
     return content;
   }
 
-  public void setContent(@javax.annotation.Nullable String content) {
+  public void setContent(@jakarta.annotation.Nullable String content) {
     this.content = content;
   }
 
 
-  public UpdateGoogleDocsPageTaskParams postMortemTemplateId(@javax.annotation.Nullable String postMortemTemplateId) {
+  public UpdateGoogleDocsPageTaskParams postMortemTemplateId(@jakarta.annotation.Nullable String postMortemTemplateId) {
     this.postMortemTemplateId = postMortemTemplateId;
     return this;
   }
@@ -218,17 +218,17 @@ public class UpdateGoogleDocsPageTaskParams {
    * Retrospective template to use when updating page, if desired
    * @return postMortemTemplateId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPostMortemTemplateId() {
     return postMortemTemplateId;
   }
 
-  public void setPostMortemTemplateId(@javax.annotation.Nullable String postMortemTemplateId) {
+  public void setPostMortemTemplateId(@jakarta.annotation.Nullable String postMortemTemplateId) {
     this.postMortemTemplateId = postMortemTemplateId;
   }
 
 
-  public UpdateGoogleDocsPageTaskParams templateId(@javax.annotation.Nullable String templateId) {
+  public UpdateGoogleDocsPageTaskParams templateId(@jakarta.annotation.Nullable String templateId) {
     this.templateId = templateId;
     return this;
   }
@@ -237,12 +237,12 @@ public class UpdateGoogleDocsPageTaskParams {
    * The Google Doc file ID to use as a template.
    * @return templateId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTemplateId() {
     return templateId;
   }
 
-  public void setTemplateId(@javax.annotation.Nullable String templateId) {
+  public void setTemplateId(@jakarta.annotation.Nullable String templateId) {
     this.templateId = templateId;
   }
 

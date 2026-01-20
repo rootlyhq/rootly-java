@@ -92,7 +92,7 @@ public class DashboardsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createDashboardCall(@javax.annotation.Nonnull NewDashboard newDashboard, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createDashboardCall(@jakarta.annotation.Nonnull NewDashboard newDashboard, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -138,7 +138,7 @@ public class DashboardsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createDashboardValidateBeforeCall(@javax.annotation.Nonnull NewDashboard newDashboard, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createDashboardValidateBeforeCall(@jakarta.annotation.Nonnull NewDashboard newDashboard, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'newDashboard' is set
         if (newDashboard == null) {
             throw new ApiException("Missing the required parameter 'newDashboard' when calling createDashboard(Async)");
@@ -163,7 +163,7 @@ public class DashboardsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public DashboardResponse createDashboard(@javax.annotation.Nonnull NewDashboard newDashboard) throws ApiException {
+    public DashboardResponse createDashboard(@jakarta.annotation.Nonnull NewDashboard newDashboard) throws ApiException {
         ApiResponse<DashboardResponse> localVarResp = createDashboardWithHttpInfo(newDashboard);
         return localVarResp.getData();
     }
@@ -183,7 +183,7 @@ public class DashboardsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DashboardResponse> createDashboardWithHttpInfo(@javax.annotation.Nonnull NewDashboard newDashboard) throws ApiException {
+    public ApiResponse<DashboardResponse> createDashboardWithHttpInfo(@jakarta.annotation.Nonnull NewDashboard newDashboard) throws ApiException {
         okhttp3.Call localVarCall = createDashboardValidateBeforeCall(newDashboard, null);
         Type localVarReturnType = new TypeToken<DashboardResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -205,7 +205,7 @@ public class DashboardsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createDashboardAsync(@javax.annotation.Nonnull NewDashboard newDashboard, final ApiCallback<DashboardResponse> _callback) throws ApiException {
+    public okhttp3.Call createDashboardAsync(@jakarta.annotation.Nonnull NewDashboard newDashboard, final ApiCallback<DashboardResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createDashboardValidateBeforeCall(newDashboard, _callback);
         Type localVarReturnType = new TypeToken<DashboardResponse>(){}.getType();
@@ -226,7 +226,7 @@ public class DashboardsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteDashboardCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteDashboardCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -272,7 +272,7 @@ public class DashboardsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteDashboardValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteDashboardValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteDashboard(Async)");
@@ -296,7 +296,7 @@ public class DashboardsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public DashboardResponse deleteDashboard(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public DashboardResponse deleteDashboard(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<DashboardResponse> localVarResp = deleteDashboardWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -315,7 +315,7 @@ public class DashboardsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DashboardResponse> deleteDashboardWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public ApiResponse<DashboardResponse> deleteDashboardWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = deleteDashboardValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<DashboardResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -336,7 +336,7 @@ public class DashboardsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteDashboardAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<DashboardResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteDashboardAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<DashboardResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteDashboardValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<DashboardResponse>(){}.getType();
@@ -357,7 +357,7 @@ public class DashboardsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call duplicateDashboardCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call duplicateDashboardCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -403,7 +403,7 @@ public class DashboardsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call duplicateDashboardValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call duplicateDashboardValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling duplicateDashboard(Async)");
@@ -427,7 +427,7 @@ public class DashboardsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public DashboardResponse duplicateDashboard(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public DashboardResponse duplicateDashboard(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<DashboardResponse> localVarResp = duplicateDashboardWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -446,7 +446,7 @@ public class DashboardsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DashboardResponse> duplicateDashboardWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public ApiResponse<DashboardResponse> duplicateDashboardWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = duplicateDashboardValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<DashboardResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -467,7 +467,7 @@ public class DashboardsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call duplicateDashboardAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<DashboardResponse> _callback) throws ApiException {
+    public okhttp3.Call duplicateDashboardAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<DashboardResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = duplicateDashboardValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<DashboardResponse>(){}.getType();
@@ -489,7 +489,7 @@ public class DashboardsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDashboardCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getDashboardCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -539,7 +539,7 @@ public class DashboardsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getDashboardValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getDashboardValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getDashboard(Async)");
@@ -564,7 +564,7 @@ public class DashboardsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public DashboardResponse getDashboard(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nullable String include) throws ApiException {
+    public DashboardResponse getDashboard(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nullable String include) throws ApiException {
         ApiResponse<DashboardResponse> localVarResp = getDashboardWithHttpInfo(id, include);
         return localVarResp.getData();
     }
@@ -584,7 +584,7 @@ public class DashboardsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DashboardResponse> getDashboardWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nullable String include) throws ApiException {
+    public ApiResponse<DashboardResponse> getDashboardWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nullable String include) throws ApiException {
         okhttp3.Call localVarCall = getDashboardValidateBeforeCall(id, include, null);
         Type localVarReturnType = new TypeToken<DashboardResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -606,7 +606,7 @@ public class DashboardsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDashboardAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nullable String include, final ApiCallback<DashboardResponse> _callback) throws ApiException {
+    public okhttp3.Call getDashboardAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nullable String include, final ApiCallback<DashboardResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getDashboardValidateBeforeCall(id, include, _callback);
         Type localVarReturnType = new TypeToken<DashboardResponse>(){}.getType();
@@ -628,7 +628,7 @@ public class DashboardsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listDashboardsCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listDashboardsCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -685,7 +685,7 @@ public class DashboardsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listDashboardsValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listDashboardsValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         return listDashboardsCall(include, pageNumber, pageSize, _callback);
 
     }
@@ -705,7 +705,7 @@ public class DashboardsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public DashboardList listDashboards(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+    public DashboardList listDashboards(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
         ApiResponse<DashboardList> localVarResp = listDashboardsWithHttpInfo(include, pageNumber, pageSize);
         return localVarResp.getData();
     }
@@ -725,7 +725,7 @@ public class DashboardsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DashboardList> listDashboardsWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+    public ApiResponse<DashboardList> listDashboardsWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
         okhttp3.Call localVarCall = listDashboardsValidateBeforeCall(include, pageNumber, pageSize, null);
         Type localVarReturnType = new TypeToken<DashboardList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -747,7 +747,7 @@ public class DashboardsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listDashboardsAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback<DashboardList> _callback) throws ApiException {
+    public okhttp3.Call listDashboardsAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback<DashboardList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listDashboardsValidateBeforeCall(include, pageNumber, pageSize, _callback);
         Type localVarReturnType = new TypeToken<DashboardList>(){}.getType();
@@ -768,7 +768,7 @@ public class DashboardsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call setDefaultDashboardCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call setDefaultDashboardCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -814,7 +814,7 @@ public class DashboardsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call setDefaultDashboardValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call setDefaultDashboardValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling setDefaultDashboard(Async)");
@@ -838,7 +838,7 @@ public class DashboardsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public DashboardResponse setDefaultDashboard(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public DashboardResponse setDefaultDashboard(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<DashboardResponse> localVarResp = setDefaultDashboardWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -857,7 +857,7 @@ public class DashboardsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DashboardResponse> setDefaultDashboardWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public ApiResponse<DashboardResponse> setDefaultDashboardWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = setDefaultDashboardValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<DashboardResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -878,7 +878,7 @@ public class DashboardsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call setDefaultDashboardAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<DashboardResponse> _callback) throws ApiException {
+    public okhttp3.Call setDefaultDashboardAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<DashboardResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = setDefaultDashboardValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<DashboardResponse>(){}.getType();
@@ -900,7 +900,7 @@ public class DashboardsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateDashboardCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateDashboard updateDashboard, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateDashboardCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateDashboard updateDashboard, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -947,7 +947,7 @@ public class DashboardsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateDashboardValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateDashboard updateDashboard, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateDashboardValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateDashboard updateDashboard, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateDashboard(Async)");
@@ -977,7 +977,7 @@ public class DashboardsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public DashboardResponse updateDashboard(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateDashboard updateDashboard) throws ApiException {
+    public DashboardResponse updateDashboard(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateDashboard updateDashboard) throws ApiException {
         ApiResponse<DashboardResponse> localVarResp = updateDashboardWithHttpInfo(id, updateDashboard);
         return localVarResp.getData();
     }
@@ -997,7 +997,7 @@ public class DashboardsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DashboardResponse> updateDashboardWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateDashboard updateDashboard) throws ApiException {
+    public ApiResponse<DashboardResponse> updateDashboardWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateDashboard updateDashboard) throws ApiException {
         okhttp3.Call localVarCall = updateDashboardValidateBeforeCall(id, updateDashboard, null);
         Type localVarReturnType = new TypeToken<DashboardResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1019,7 +1019,7 @@ public class DashboardsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateDashboardAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateDashboard updateDashboard, final ApiCallback<DashboardResponse> _callback) throws ApiException {
+    public okhttp3.Call updateDashboardAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateDashboard updateDashboard, final ApiCallback<DashboardResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateDashboardValidateBeforeCall(id, updateDashboard, _callback);
         Type localVarReturnType = new TypeToken<DashboardResponse>(){}.getType();

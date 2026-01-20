@@ -52,16 +52,16 @@ import com.rootly.client.JSON;
 /**
  * NewEdgeConnectorActionActionMetadata
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewEdgeConnectorActionActionMetadata {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_TIMEOUT = "timeout";
   @SerializedName(SERIALIZED_NAME_TIMEOUT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer timeout;
 
   /**
@@ -138,18 +138,18 @@ public class NewEdgeConnectorActionActionMetadata {
 
   public static final String SERIALIZED_NAME_ICON = "icon";
   @SerializedName(SERIALIZED_NAME_ICON)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private IconEnum icon;
 
   public static final String SERIALIZED_NAME_PARAMETERS = "parameters";
   @SerializedName(SERIALIZED_NAME_PARAMETERS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<EdgeConnectorActionDataAttributesParametersInner> parameters;
 
   public NewEdgeConnectorActionActionMetadata() {
   }
 
-  public NewEdgeConnectorActionActionMetadata description(@javax.annotation.Nullable String description) {
+  public NewEdgeConnectorActionActionMetadata description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -158,17 +158,17 @@ public class NewEdgeConnectorActionActionMetadata {
    * Get description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public NewEdgeConnectorActionActionMetadata timeout(@javax.annotation.Nullable Integer timeout) {
+  public NewEdgeConnectorActionActionMetadata timeout(@jakarta.annotation.Nullable Integer timeout) {
     this.timeout = timeout;
     return this;
   }
@@ -177,17 +177,17 @@ public class NewEdgeConnectorActionActionMetadata {
    * Get timeout
    * @return timeout
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getTimeout() {
     return timeout;
   }
 
-  public void setTimeout(@javax.annotation.Nullable Integer timeout) {
+  public void setTimeout(@jakarta.annotation.Nullable Integer timeout) {
     this.timeout = timeout;
   }
 
 
-  public NewEdgeConnectorActionActionMetadata icon(@javax.annotation.Nullable IconEnum icon) {
+  public NewEdgeConnectorActionActionMetadata icon(@jakarta.annotation.Nullable IconEnum icon) {
     this.icon = icon;
     return this;
   }
@@ -196,17 +196,17 @@ public class NewEdgeConnectorActionActionMetadata {
    * Get icon
    * @return icon
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public IconEnum getIcon() {
     return icon;
   }
 
-  public void setIcon(@javax.annotation.Nullable IconEnum icon) {
+  public void setIcon(@jakarta.annotation.Nullable IconEnum icon) {
     this.icon = icon;
   }
 
 
-  public NewEdgeConnectorActionActionMetadata parameters(@javax.annotation.Nullable List<EdgeConnectorActionDataAttributesParametersInner> parameters) {
+  public NewEdgeConnectorActionActionMetadata parameters(@jakarta.annotation.Nullable List<EdgeConnectorActionDataAttributesParametersInner> parameters) {
     this.parameters = parameters;
     return this;
   }
@@ -223,12 +223,12 @@ public class NewEdgeConnectorActionActionMetadata {
    * Get parameters
    * @return parameters
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<EdgeConnectorActionDataAttributesParametersInner> getParameters() {
     return parameters;
   }
 
-  public void setParameters(@javax.annotation.Nullable List<EdgeConnectorActionDataAttributesParametersInner> parameters) {
+  public void setParameters(@jakarta.annotation.Nullable List<EdgeConnectorActionDataAttributesParametersInner> parameters) {
     this.parameters = parameters;
   }
 

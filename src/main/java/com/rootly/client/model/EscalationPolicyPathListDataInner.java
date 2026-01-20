@@ -49,22 +49,22 @@ import com.rootly.client.JSON;
 /**
  * EscalationPolicyPathListDataInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class EscalationPolicyPathListDataInner {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private EscalationPolicyPath attributes;
 
   public EscalationPolicyPathListDataInner() {
   }
 
-  public EscalationPolicyPathListDataInner id(@javax.annotation.Nonnull String id) {
+  public EscalationPolicyPathListDataInner id(@jakarta.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
@@ -73,17 +73,17 @@ public class EscalationPolicyPathListDataInner {
    * Unique ID of the escalation policy path
    * @return id
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(@javax.annotation.Nonnull String id) {
+  public void setId(@jakarta.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public EscalationPolicyPathListDataInner attributes(@javax.annotation.Nonnull EscalationPolicyPath attributes) {
+  public EscalationPolicyPathListDataInner attributes(@jakarta.annotation.Nonnull EscalationPolicyPath attributes) {
     this.attributes = attributes;
     return this;
   }
@@ -92,12 +92,12 @@ public class EscalationPolicyPathListDataInner {
    * Get attributes
    * @return attributes
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public EscalationPolicyPath getAttributes() {
     return attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nonnull EscalationPolicyPath attributes) {
+  public void setAttributes(@jakarta.annotation.Nonnull EscalationPolicyPath attributes) {
     this.attributes = attributes;
   }
 

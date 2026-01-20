@@ -50,7 +50,7 @@ import com.rootly.client.JSON;
 /**
  * CreateMistralChatCompletionTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateMistralChatCompletionTaskParams {
   /**
    * Gets or Sets taskType
@@ -104,43 +104,43 @@ public class CreateMistralChatCompletionTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_MODEL = "model";
   @SerializedName(SERIALIZED_NAME_MODEL)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private CreateMistralChatCompletionTaskParamsModel model;
 
   public static final String SERIALIZED_NAME_SYSTEM_PROMPT = "system_prompt";
   @SerializedName(SERIALIZED_NAME_SYSTEM_PROMPT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String systemPrompt;
 
   public static final String SERIALIZED_NAME_PROMPT = "prompt";
   @SerializedName(SERIALIZED_NAME_PROMPT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String prompt;
 
   public static final String SERIALIZED_NAME_TEMPERATURE = "temperature";
   @SerializedName(SERIALIZED_NAME_TEMPERATURE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private BigDecimal temperature;
 
   public static final String SERIALIZED_NAME_MAX_TOKENS = "max_tokens";
   @SerializedName(SERIALIZED_NAME_MAX_TOKENS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer maxTokens;
 
   public static final String SERIALIZED_NAME_TOP_P = "top_p";
   @SerializedName(SERIALIZED_NAME_TOP_P)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private BigDecimal topP;
 
   public CreateMistralChatCompletionTaskParams() {
   }
 
-  public CreateMistralChatCompletionTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public CreateMistralChatCompletionTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -149,17 +149,17 @@ public class CreateMistralChatCompletionTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public CreateMistralChatCompletionTaskParams model(@javax.annotation.Nonnull CreateMistralChatCompletionTaskParamsModel model) {
+  public CreateMistralChatCompletionTaskParams model(@jakarta.annotation.Nonnull CreateMistralChatCompletionTaskParamsModel model) {
     this.model = model;
     return this;
   }
@@ -168,17 +168,17 @@ public class CreateMistralChatCompletionTaskParams {
    * Get model
    * @return model
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public CreateMistralChatCompletionTaskParamsModel getModel() {
     return model;
   }
 
-  public void setModel(@javax.annotation.Nonnull CreateMistralChatCompletionTaskParamsModel model) {
+  public void setModel(@jakarta.annotation.Nonnull CreateMistralChatCompletionTaskParamsModel model) {
     this.model = model;
   }
 
 
-  public CreateMistralChatCompletionTaskParams systemPrompt(@javax.annotation.Nullable String systemPrompt) {
+  public CreateMistralChatCompletionTaskParams systemPrompt(@jakarta.annotation.Nullable String systemPrompt) {
     this.systemPrompt = systemPrompt;
     return this;
   }
@@ -187,17 +187,17 @@ public class CreateMistralChatCompletionTaskParams {
    * The system prompt to send to Mistral (optional)
    * @return systemPrompt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSystemPrompt() {
     return systemPrompt;
   }
 
-  public void setSystemPrompt(@javax.annotation.Nullable String systemPrompt) {
+  public void setSystemPrompt(@jakarta.annotation.Nullable String systemPrompt) {
     this.systemPrompt = systemPrompt;
   }
 
 
-  public CreateMistralChatCompletionTaskParams prompt(@javax.annotation.Nonnull String prompt) {
+  public CreateMistralChatCompletionTaskParams prompt(@jakarta.annotation.Nonnull String prompt) {
     this.prompt = prompt;
     return this;
   }
@@ -206,17 +206,17 @@ public class CreateMistralChatCompletionTaskParams {
    * The prompt to send to Mistral
    * @return prompt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getPrompt() {
     return prompt;
   }
 
-  public void setPrompt(@javax.annotation.Nonnull String prompt) {
+  public void setPrompt(@jakarta.annotation.Nonnull String prompt) {
     this.prompt = prompt;
   }
 
 
-  public CreateMistralChatCompletionTaskParams temperature(@javax.annotation.Nullable BigDecimal temperature) {
+  public CreateMistralChatCompletionTaskParams temperature(@jakarta.annotation.Nullable BigDecimal temperature) {
     this.temperature = temperature;
     return this;
   }
@@ -227,17 +227,17 @@ public class CreateMistralChatCompletionTaskParams {
    * maximum: 1.5
    * @return temperature
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public BigDecimal getTemperature() {
     return temperature;
   }
 
-  public void setTemperature(@javax.annotation.Nullable BigDecimal temperature) {
+  public void setTemperature(@jakarta.annotation.Nullable BigDecimal temperature) {
     this.temperature = temperature;
   }
 
 
-  public CreateMistralChatCompletionTaskParams maxTokens(@javax.annotation.Nullable Integer maxTokens) {
+  public CreateMistralChatCompletionTaskParams maxTokens(@jakarta.annotation.Nullable Integer maxTokens) {
     this.maxTokens = maxTokens;
     return this;
   }
@@ -247,17 +247,17 @@ public class CreateMistralChatCompletionTaskParams {
    * minimum: 1
    * @return maxTokens
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getMaxTokens() {
     return maxTokens;
   }
 
-  public void setMaxTokens(@javax.annotation.Nullable Integer maxTokens) {
+  public void setMaxTokens(@jakarta.annotation.Nullable Integer maxTokens) {
     this.maxTokens = maxTokens;
   }
 
 
-  public CreateMistralChatCompletionTaskParams topP(@javax.annotation.Nullable BigDecimal topP) {
+  public CreateMistralChatCompletionTaskParams topP(@jakarta.annotation.Nullable BigDecimal topP) {
     this.topP = topP;
     return this;
   }
@@ -268,12 +268,12 @@ public class CreateMistralChatCompletionTaskParams {
    * maximum: 1.0
    * @return topP
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public BigDecimal getTopP() {
     return topP;
   }
 
-  public void setTopP(@javax.annotation.Nullable BigDecimal topP) {
+  public void setTopP(@jakarta.annotation.Nullable BigDecimal topP) {
     this.topP = topP;
   }
 

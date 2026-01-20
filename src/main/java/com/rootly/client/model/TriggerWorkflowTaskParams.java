@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * TriggerWorkflowTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class TriggerWorkflowTaskParams {
   /**
    * Gets or Sets taskType
@@ -103,7 +103,7 @@ public class TriggerWorkflowTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   /**
@@ -166,7 +166,7 @@ public class TriggerWorkflowTaskParams {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private KindEnum kind = KindEnum.INCIDENT;
 
   /**
@@ -257,28 +257,28 @@ public class TriggerWorkflowTaskParams {
 
   public static final String SERIALIZED_NAME_ATTRIBUTE_TO_QUERY_BY = "attribute_to_query_by";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTE_TO_QUERY_BY)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private AttributeToQueryByEnum attributeToQueryBy = AttributeToQueryByEnum.ID;
 
   public static final String SERIALIZED_NAME_RESOURCE = "resource";
   @SerializedName(SERIALIZED_NAME_RESOURCE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private AddActionItemTaskParamsPostToSlackChannelsInner resource;
 
   public static final String SERIALIZED_NAME_WORKFLOW = "workflow";
   @SerializedName(SERIALIZED_NAME_WORKFLOW)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private AddActionItemTaskParamsPostToSlackChannelsInner workflow;
 
   public static final String SERIALIZED_NAME_CHECK_WORKFLOW_CONDITIONS = "check_workflow_conditions";
   @SerializedName(SERIALIZED_NAME_CHECK_WORKFLOW_CONDITIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean checkWorkflowConditions;
 
   public TriggerWorkflowTaskParams() {
   }
 
-  public TriggerWorkflowTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public TriggerWorkflowTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -287,17 +287,17 @@ public class TriggerWorkflowTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public TriggerWorkflowTaskParams kind(@javax.annotation.Nonnull KindEnum kind) {
+  public TriggerWorkflowTaskParams kind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
     return this;
   }
@@ -306,17 +306,17 @@ public class TriggerWorkflowTaskParams {
    * Get kind
    * @return kind
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(@javax.annotation.Nonnull KindEnum kind) {
+  public void setKind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public TriggerWorkflowTaskParams attributeToQueryBy(@javax.annotation.Nonnull AttributeToQueryByEnum attributeToQueryBy) {
+  public TriggerWorkflowTaskParams attributeToQueryBy(@jakarta.annotation.Nonnull AttributeToQueryByEnum attributeToQueryBy) {
     this.attributeToQueryBy = attributeToQueryBy;
     return this;
   }
@@ -325,17 +325,17 @@ public class TriggerWorkflowTaskParams {
    * [\&quot;(incident) kind can only match [:id, :slug, :sequential_id, :pagerduty_incident_id, :opsgenie_incident_id, :victor_ops_incident_id, :jira_issue_id, :asana_task_id, :shortcut_task_id, :linear_issue_id, :zendesk_ticket_id, :motion_task_id, :trello_card_id, :airtable_record_id, :shortcut_story_id, :github_issue_id, :freshservice_ticket_id, :freshservice_task_id, :clickup_task_id]\&quot;, \&quot;(post_mortem) kind can only match [:id]\&quot;, \&quot;(action_item) kind can only match [:id, :jira_issue_id, :asana_task_id, :shortcut_task_id, :linear_issue_id, :zendesk_ticket_id, :motion_task_id, :trello_card_id, :airtable_record_id, :shortcut_story_id, :github_issue_id, :freshservice_ticket_id, :freshservice_task_id, :clickup_task_id]\&quot;, \&quot;(pulse) kind can only match [:id]\&quot;, \&quot;(alert) kind can only match [:id]\&quot;]
    * @return attributeToQueryBy
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public AttributeToQueryByEnum getAttributeToQueryBy() {
     return attributeToQueryBy;
   }
 
-  public void setAttributeToQueryBy(@javax.annotation.Nonnull AttributeToQueryByEnum attributeToQueryBy) {
+  public void setAttributeToQueryBy(@jakarta.annotation.Nonnull AttributeToQueryByEnum attributeToQueryBy) {
     this.attributeToQueryBy = attributeToQueryBy;
   }
 
 
-  public TriggerWorkflowTaskParams resource(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner resource) {
+  public TriggerWorkflowTaskParams resource(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner resource) {
     this.resource = resource;
     return this;
   }
@@ -344,17 +344,17 @@ public class TriggerWorkflowTaskParams {
    * Get resource
    * @return resource
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public AddActionItemTaskParamsPostToSlackChannelsInner getResource() {
     return resource;
   }
 
-  public void setResource(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner resource) {
+  public void setResource(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner resource) {
     this.resource = resource;
   }
 
 
-  public TriggerWorkflowTaskParams workflow(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner workflow) {
+  public TriggerWorkflowTaskParams workflow(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner workflow) {
     this.workflow = workflow;
     return this;
   }
@@ -363,17 +363,17 @@ public class TriggerWorkflowTaskParams {
    * Get workflow
    * @return workflow
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public AddActionItemTaskParamsPostToSlackChannelsInner getWorkflow() {
     return workflow;
   }
 
-  public void setWorkflow(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner workflow) {
+  public void setWorkflow(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner workflow) {
     this.workflow = workflow;
   }
 
 
-  public TriggerWorkflowTaskParams checkWorkflowConditions(@javax.annotation.Nullable Boolean checkWorkflowConditions) {
+  public TriggerWorkflowTaskParams checkWorkflowConditions(@jakarta.annotation.Nullable Boolean checkWorkflowConditions) {
     this.checkWorkflowConditions = checkWorkflowConditions;
     return this;
   }
@@ -382,12 +382,12 @@ public class TriggerWorkflowTaskParams {
    * Get checkWorkflowConditions
    * @return checkWorkflowConditions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getCheckWorkflowConditions() {
     return checkWorkflowConditions;
   }
 
-  public void setCheckWorkflowConditions(@javax.annotation.Nullable Boolean checkWorkflowConditions) {
+  public void setCheckWorkflowConditions(@jakarta.annotation.Nullable Boolean checkWorkflowConditions) {
     this.checkWorkflowConditions = checkWorkflowConditions;
   }
 

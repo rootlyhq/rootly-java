@@ -89,7 +89,7 @@ public class UsersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteUserCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteUserCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -135,7 +135,7 @@ public class UsersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteUserValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteUserValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteUser(Async)");
@@ -159,7 +159,7 @@ public class UsersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public UserResponse deleteUser(@javax.annotation.Nonnull String id) throws ApiException {
+    public UserResponse deleteUser(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<UserResponse> localVarResp = deleteUserWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -178,7 +178,7 @@ public class UsersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UserResponse> deleteUserWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<UserResponse> deleteUserWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteUserValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<UserResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -199,7 +199,7 @@ public class UsersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteUserAsync(@javax.annotation.Nonnull String id, final ApiCallback<UserResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteUserAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<UserResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteUserValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<UserResponse>(){}.getType();
@@ -342,7 +342,7 @@ public class UsersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getUserCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getUserCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -392,7 +392,7 @@ public class UsersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getUserValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getUserValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getUser(Async)");
@@ -417,7 +417,7 @@ public class UsersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public UserResponse getUser(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include) throws ApiException {
+    public UserResponse getUser(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include) throws ApiException {
         ApiResponse<UserResponse> localVarResp = getUserWithHttpInfo(id, include);
         return localVarResp.getData();
     }
@@ -437,7 +437,7 @@ public class UsersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UserResponse> getUserWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include) throws ApiException {
+    public ApiResponse<UserResponse> getUserWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include) throws ApiException {
         okhttp3.Call localVarCall = getUserValidateBeforeCall(id, include, null);
         Type localVarReturnType = new TypeToken<UserResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -459,7 +459,7 @@ public class UsersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getUserAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include, final ApiCallback<UserResponse> _callback) throws ApiException {
+    public okhttp3.Call getUserAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include, final ApiCallback<UserResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getUserValidateBeforeCall(id, include, _callback);
         Type localVarReturnType = new TypeToken<UserResponse>(){}.getType();
@@ -489,7 +489,7 @@ public class UsersApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listUsersCall(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterEmail, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listUsersCall(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterEmail, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -574,7 +574,7 @@ public class UsersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listUsersValidateBeforeCall(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterEmail, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listUsersValidateBeforeCall(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterEmail, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         return listUsersCall(pageNumber, pageSize, filterSearch, filterEmail, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, include, _callback);
 
     }
@@ -602,7 +602,7 @@ public class UsersApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public UserList listUsers(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterEmail, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String include) throws ApiException {
+    public UserList listUsers(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterEmail, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable String include) throws ApiException {
         ApiResponse<UserList> localVarResp = listUsersWithHttpInfo(pageNumber, pageSize, filterSearch, filterEmail, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, include);
         return localVarResp.getData();
     }
@@ -630,7 +630,7 @@ public class UsersApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UserList> listUsersWithHttpInfo(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterEmail, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String include) throws ApiException {
+    public ApiResponse<UserList> listUsersWithHttpInfo(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterEmail, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable String include) throws ApiException {
         okhttp3.Call localVarCall = listUsersValidateBeforeCall(pageNumber, pageSize, filterSearch, filterEmail, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, include, null);
         Type localVarReturnType = new TypeToken<UserList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -660,7 +660,7 @@ public class UsersApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listUsersAsync(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterEmail, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String include, final ApiCallback<UserList> _callback) throws ApiException {
+    public okhttp3.Call listUsersAsync(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterEmail, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable String include, final ApiCallback<UserList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listUsersValidateBeforeCall(pageNumber, pageSize, filterSearch, filterEmail, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, include, _callback);
         Type localVarReturnType = new TypeToken<UserList>(){}.getType();
@@ -682,7 +682,7 @@ public class UsersApi {
         <tr><td> 404 </td><td> returns 404 for on_call_role_id belonging to another team </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateUserCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable UpdateUser updateUser, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateUserCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable UpdateUser updateUser, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -729,7 +729,7 @@ public class UsersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateUserValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable UpdateUser updateUser, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateUserValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable UpdateUser updateUser, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateUser(Async)");
@@ -754,7 +754,7 @@ public class UsersApi {
         <tr><td> 404 </td><td> returns 404 for on_call_role_id belonging to another team </td><td>  -  </td></tr>
      </table>
      */
-    public UserResponse updateUser(@javax.annotation.Nonnull String id, @javax.annotation.Nullable UpdateUser updateUser) throws ApiException {
+    public UserResponse updateUser(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable UpdateUser updateUser) throws ApiException {
         ApiResponse<UserResponse> localVarResp = updateUserWithHttpInfo(id, updateUser);
         return localVarResp.getData();
     }
@@ -774,7 +774,7 @@ public class UsersApi {
         <tr><td> 404 </td><td> returns 404 for on_call_role_id belonging to another team </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UserResponse> updateUserWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable UpdateUser updateUser) throws ApiException {
+    public ApiResponse<UserResponse> updateUserWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable UpdateUser updateUser) throws ApiException {
         okhttp3.Call localVarCall = updateUserValidateBeforeCall(id, updateUser, null);
         Type localVarReturnType = new TypeToken<UserResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -796,7 +796,7 @@ public class UsersApi {
         <tr><td> 404 </td><td> returns 404 for on_call_role_id belonging to another team </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateUserAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nullable UpdateUser updateUser, final ApiCallback<UserResponse> _callback) throws ApiException {
+    public okhttp3.Call updateUserAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable UpdateUser updateUser, final ApiCallback<UserResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateUserValidateBeforeCall(id, updateUser, _callback);
         Type localVarReturnType = new TypeToken<UserResponse>(){}.getType();

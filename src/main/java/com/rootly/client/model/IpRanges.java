@@ -50,32 +50,32 @@ import com.rootly.client.JSON;
 /**
  * IpRanges
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class IpRanges {
   public static final String SERIALIZED_NAME_INTEGRATIONS_IPV4 = "integrations_ipv4";
   @SerializedName(SERIALIZED_NAME_INTEGRATIONS_IPV4)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<String> integrationsIpv4 = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_INTEGRATIONS_IPV6 = "integrations_ipv6";
   @SerializedName(SERIALIZED_NAME_INTEGRATIONS_IPV6)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<String> integrationsIpv6 = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_WEBHOOKS_IPV4 = "webhooks_ipv4";
   @SerializedName(SERIALIZED_NAME_WEBHOOKS_IPV4)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<String> webhooksIpv4 = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_WEBHOOKS_IPV6 = "webhooks_ipv6";
   @SerializedName(SERIALIZED_NAME_WEBHOOKS_IPV6)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<String> webhooksIpv6 = new ArrayList<>();
 
   public IpRanges() {
   }
 
-  public IpRanges integrationsIpv4(@javax.annotation.Nonnull List<String> integrationsIpv4) {
+  public IpRanges integrationsIpv4(@jakarta.annotation.Nonnull List<String> integrationsIpv4) {
     this.integrationsIpv4 = integrationsIpv4;
     return this;
   }
@@ -92,17 +92,17 @@ public class IpRanges {
    * IPv4 addresses associated with Rootly integrations.
    * @return integrationsIpv4
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<String> getIntegrationsIpv4() {
     return integrationsIpv4;
   }
 
-  public void setIntegrationsIpv4(@javax.annotation.Nonnull List<String> integrationsIpv4) {
+  public void setIntegrationsIpv4(@jakarta.annotation.Nonnull List<String> integrationsIpv4) {
     this.integrationsIpv4 = integrationsIpv4;
   }
 
 
-  public IpRanges integrationsIpv6(@javax.annotation.Nonnull List<String> integrationsIpv6) {
+  public IpRanges integrationsIpv6(@jakarta.annotation.Nonnull List<String> integrationsIpv6) {
     this.integrationsIpv6 = integrationsIpv6;
     return this;
   }
@@ -119,17 +119,17 @@ public class IpRanges {
    * IPv6 addresses associated with Rootly integrations.
    * @return integrationsIpv6
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<String> getIntegrationsIpv6() {
     return integrationsIpv6;
   }
 
-  public void setIntegrationsIpv6(@javax.annotation.Nonnull List<String> integrationsIpv6) {
+  public void setIntegrationsIpv6(@jakarta.annotation.Nonnull List<String> integrationsIpv6) {
     this.integrationsIpv6 = integrationsIpv6;
   }
 
 
-  public IpRanges webhooksIpv4(@javax.annotation.Nonnull List<String> webhooksIpv4) {
+  public IpRanges webhooksIpv4(@jakarta.annotation.Nonnull List<String> webhooksIpv4) {
     this.webhooksIpv4 = webhooksIpv4;
     return this;
   }
@@ -146,17 +146,17 @@ public class IpRanges {
    * IPv4 addresses associated with Rootly webhooks.
    * @return webhooksIpv4
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<String> getWebhooksIpv4() {
     return webhooksIpv4;
   }
 
-  public void setWebhooksIpv4(@javax.annotation.Nonnull List<String> webhooksIpv4) {
+  public void setWebhooksIpv4(@jakarta.annotation.Nonnull List<String> webhooksIpv4) {
     this.webhooksIpv4 = webhooksIpv4;
   }
 
 
-  public IpRanges webhooksIpv6(@javax.annotation.Nonnull List<String> webhooksIpv6) {
+  public IpRanges webhooksIpv6(@jakarta.annotation.Nonnull List<String> webhooksIpv6) {
     this.webhooksIpv6 = webhooksIpv6;
     return this;
   }
@@ -173,12 +173,12 @@ public class IpRanges {
    * IPv6 addresses associated with Rootly webhooks.
    * @return webhooksIpv6
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<String> getWebhooksIpv6() {
     return webhooksIpv6;
   }
 
-  public void setWebhooksIpv6(@javax.annotation.Nonnull List<String> webhooksIpv6) {
+  public void setWebhooksIpv6(@jakarta.annotation.Nonnull List<String> webhooksIpv6) {
     this.webhooksIpv6 = webhooksIpv6;
   }
 

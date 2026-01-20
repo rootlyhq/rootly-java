@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * NewScheduleRotationDataAttributesScheduleRotationMembersInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewScheduleRotationDataAttributesScheduleRotationMembersInner {
   /**
    * Type of member
@@ -104,23 +104,23 @@ public class NewScheduleRotationDataAttributesScheduleRotationMembersInner {
 
   public static final String SERIALIZED_NAME_MEMBER_TYPE = "member_type";
   @SerializedName(SERIALIZED_NAME_MEMBER_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private MemberTypeEnum memberType;
 
   public static final String SERIALIZED_NAME_MEMBER_ID = "member_id";
   @SerializedName(SERIALIZED_NAME_MEMBER_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String memberId;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public NewScheduleRotationDataAttributesScheduleRotationMembersInner() {
   }
 
-  public NewScheduleRotationDataAttributesScheduleRotationMembersInner memberType(@javax.annotation.Nonnull MemberTypeEnum memberType) {
+  public NewScheduleRotationDataAttributesScheduleRotationMembersInner memberType(@jakarta.annotation.Nonnull MemberTypeEnum memberType) {
     this.memberType = memberType;
     return this;
   }
@@ -129,17 +129,17 @@ public class NewScheduleRotationDataAttributesScheduleRotationMembersInner {
    * Type of member
    * @return memberType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public MemberTypeEnum getMemberType() {
     return memberType;
   }
 
-  public void setMemberType(@javax.annotation.Nonnull MemberTypeEnum memberType) {
+  public void setMemberType(@jakarta.annotation.Nonnull MemberTypeEnum memberType) {
     this.memberType = memberType;
   }
 
 
-  public NewScheduleRotationDataAttributesScheduleRotationMembersInner memberId(@javax.annotation.Nonnull String memberId) {
+  public NewScheduleRotationDataAttributesScheduleRotationMembersInner memberId(@jakarta.annotation.Nonnull String memberId) {
     this.memberId = memberId;
     return this;
   }
@@ -148,17 +148,17 @@ public class NewScheduleRotationDataAttributesScheduleRotationMembersInner {
    * ID of the member
    * @return memberId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getMemberId() {
     return memberId;
   }
 
-  public void setMemberId(@javax.annotation.Nonnull String memberId) {
+  public void setMemberId(@jakarta.annotation.Nonnull String memberId) {
     this.memberId = memberId;
   }
 
 
-  public NewScheduleRotationDataAttributesScheduleRotationMembersInner position(@javax.annotation.Nullable Integer position) {
+  public NewScheduleRotationDataAttributesScheduleRotationMembersInner position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -167,12 +167,12 @@ public class NewScheduleRotationDataAttributesScheduleRotationMembersInner {
    * Position of the member in rotation
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 

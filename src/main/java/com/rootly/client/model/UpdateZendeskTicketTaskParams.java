@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateZendeskTicketTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateZendeskTicketTaskParams {
   /**
    * Gets or Sets taskType
@@ -105,48 +105,48 @@ public class UpdateZendeskTicketTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_TICKET_ID = "ticket_id";
   @SerializedName(SERIALIZED_NAME_TICKET_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String ticketId;
 
   public static final String SERIALIZED_NAME_SUBJECT = "subject";
   @SerializedName(SERIALIZED_NAME_SUBJECT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String subject;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String tags;
 
   public static final String SERIALIZED_NAME_PRIORITY = "priority";
   @SerializedName(SERIALIZED_NAME_PRIORITY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CreateJiraIssueTaskParamsPriority priority;
 
   public static final String SERIALIZED_NAME_COMPLETION = "completion";
   @SerializedName(SERIALIZED_NAME_COMPLETION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CreateServiceNowIncidentTaskParamsCompletion completion;
 
   public static final String SERIALIZED_NAME_CUSTOM_FIELDS_MAPPING = "custom_fields_mapping";
   @SerializedName(SERIALIZED_NAME_CUSTOM_FIELDS_MAPPING)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String customFieldsMapping;
 
   public static final String SERIALIZED_NAME_TICKET_PAYLOAD = "ticket_payload";
   @SerializedName(SERIALIZED_NAME_TICKET_PAYLOAD)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String ticketPayload;
 
   public UpdateZendeskTicketTaskParams() {
   }
 
-  public UpdateZendeskTicketTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public UpdateZendeskTicketTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -155,17 +155,17 @@ public class UpdateZendeskTicketTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public UpdateZendeskTicketTaskParams ticketId(@javax.annotation.Nonnull String ticketId) {
+  public UpdateZendeskTicketTaskParams ticketId(@jakarta.annotation.Nonnull String ticketId) {
     this.ticketId = ticketId;
     return this;
   }
@@ -174,17 +174,17 @@ public class UpdateZendeskTicketTaskParams {
    * The ticket id
    * @return ticketId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getTicketId() {
     return ticketId;
   }
 
-  public void setTicketId(@javax.annotation.Nonnull String ticketId) {
+  public void setTicketId(@jakarta.annotation.Nonnull String ticketId) {
     this.ticketId = ticketId;
   }
 
 
-  public UpdateZendeskTicketTaskParams subject(@javax.annotation.Nullable String subject) {
+  public UpdateZendeskTicketTaskParams subject(@jakarta.annotation.Nullable String subject) {
     this.subject = subject;
     return this;
   }
@@ -193,17 +193,17 @@ public class UpdateZendeskTicketTaskParams {
    * The ticket subject
    * @return subject
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSubject() {
     return subject;
   }
 
-  public void setSubject(@javax.annotation.Nullable String subject) {
+  public void setSubject(@jakarta.annotation.Nullable String subject) {
     this.subject = subject;
   }
 
 
-  public UpdateZendeskTicketTaskParams tags(@javax.annotation.Nullable String tags) {
+  public UpdateZendeskTicketTaskParams tags(@jakarta.annotation.Nullable String tags) {
     this.tags = tags;
     return this;
   }
@@ -212,17 +212,17 @@ public class UpdateZendeskTicketTaskParams {
    * The ticket tags
    * @return tags
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTags() {
     return tags;
   }
 
-  public void setTags(@javax.annotation.Nullable String tags) {
+  public void setTags(@jakarta.annotation.Nullable String tags) {
     this.tags = tags;
   }
 
 
-  public UpdateZendeskTicketTaskParams priority(@javax.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
+  public UpdateZendeskTicketTaskParams priority(@jakarta.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
     this.priority = priority;
     return this;
   }
@@ -231,17 +231,17 @@ public class UpdateZendeskTicketTaskParams {
    * Get priority
    * @return priority
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CreateJiraIssueTaskParamsPriority getPriority() {
     return priority;
   }
 
-  public void setPriority(@javax.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
+  public void setPriority(@jakarta.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
     this.priority = priority;
   }
 
 
-  public UpdateZendeskTicketTaskParams completion(@javax.annotation.Nullable CreateServiceNowIncidentTaskParamsCompletion completion) {
+  public UpdateZendeskTicketTaskParams completion(@jakarta.annotation.Nullable CreateServiceNowIncidentTaskParamsCompletion completion) {
     this.completion = completion;
     return this;
   }
@@ -250,17 +250,17 @@ public class UpdateZendeskTicketTaskParams {
    * Get completion
    * @return completion
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CreateServiceNowIncidentTaskParamsCompletion getCompletion() {
     return completion;
   }
 
-  public void setCompletion(@javax.annotation.Nullable CreateServiceNowIncidentTaskParamsCompletion completion) {
+  public void setCompletion(@jakarta.annotation.Nullable CreateServiceNowIncidentTaskParamsCompletion completion) {
     this.completion = completion;
   }
 
 
-  public UpdateZendeskTicketTaskParams customFieldsMapping(@javax.annotation.Nullable String customFieldsMapping) {
+  public UpdateZendeskTicketTaskParams customFieldsMapping(@jakarta.annotation.Nullable String customFieldsMapping) {
     this.customFieldsMapping = customFieldsMapping;
     return this;
   }
@@ -269,17 +269,17 @@ public class UpdateZendeskTicketTaskParams {
    * Custom field mappings. Can contain liquid markup and need to be valid JSON
    * @return customFieldsMapping
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCustomFieldsMapping() {
     return customFieldsMapping;
   }
 
-  public void setCustomFieldsMapping(@javax.annotation.Nullable String customFieldsMapping) {
+  public void setCustomFieldsMapping(@jakarta.annotation.Nullable String customFieldsMapping) {
     this.customFieldsMapping = customFieldsMapping;
   }
 
 
-  public UpdateZendeskTicketTaskParams ticketPayload(@javax.annotation.Nullable String ticketPayload) {
+  public UpdateZendeskTicketTaskParams ticketPayload(@jakarta.annotation.Nullable String ticketPayload) {
     this.ticketPayload = ticketPayload;
     return this;
   }
@@ -288,12 +288,12 @@ public class UpdateZendeskTicketTaskParams {
    * Additional Zendesk ticket attributes. Will be merged into whatever was specified in this tasks current parameters. Can contain liquid markup and need to be valid JSON
    * @return ticketPayload
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTicketPayload() {
     return ticketPayload;
   }
 
-  public void setTicketPayload(@javax.annotation.Nullable String ticketPayload) {
+  public void setTicketPayload(@jakarta.annotation.Nullable String ticketPayload) {
     this.ticketPayload = ticketPayload;
   }
 

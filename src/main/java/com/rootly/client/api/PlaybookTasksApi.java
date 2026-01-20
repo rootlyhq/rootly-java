@@ -92,7 +92,7 @@ public class PlaybookTasksApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createPlaybookTaskCall(@javax.annotation.Nonnull String playbookId, @javax.annotation.Nonnull NewPlaybookTask newPlaybookTask, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createPlaybookTaskCall(@jakarta.annotation.Nonnull String playbookId, @jakarta.annotation.Nonnull NewPlaybookTask newPlaybookTask, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -139,7 +139,7 @@ public class PlaybookTasksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createPlaybookTaskValidateBeforeCall(@javax.annotation.Nonnull String playbookId, @javax.annotation.Nonnull NewPlaybookTask newPlaybookTask, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createPlaybookTaskValidateBeforeCall(@jakarta.annotation.Nonnull String playbookId, @jakarta.annotation.Nonnull NewPlaybookTask newPlaybookTask, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'playbookId' is set
         if (playbookId == null) {
             throw new ApiException("Missing the required parameter 'playbookId' when calling createPlaybookTask(Async)");
@@ -170,7 +170,7 @@ public class PlaybookTasksApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public PlaybookTaskResponse createPlaybookTask(@javax.annotation.Nonnull String playbookId, @javax.annotation.Nonnull NewPlaybookTask newPlaybookTask) throws ApiException {
+    public PlaybookTaskResponse createPlaybookTask(@jakarta.annotation.Nonnull String playbookId, @jakarta.annotation.Nonnull NewPlaybookTask newPlaybookTask) throws ApiException {
         ApiResponse<PlaybookTaskResponse> localVarResp = createPlaybookTaskWithHttpInfo(playbookId, newPlaybookTask);
         return localVarResp.getData();
     }
@@ -191,7 +191,7 @@ public class PlaybookTasksApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PlaybookTaskResponse> createPlaybookTaskWithHttpInfo(@javax.annotation.Nonnull String playbookId, @javax.annotation.Nonnull NewPlaybookTask newPlaybookTask) throws ApiException {
+    public ApiResponse<PlaybookTaskResponse> createPlaybookTaskWithHttpInfo(@jakarta.annotation.Nonnull String playbookId, @jakarta.annotation.Nonnull NewPlaybookTask newPlaybookTask) throws ApiException {
         okhttp3.Call localVarCall = createPlaybookTaskValidateBeforeCall(playbookId, newPlaybookTask, null);
         Type localVarReturnType = new TypeToken<PlaybookTaskResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -214,7 +214,7 @@ public class PlaybookTasksApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createPlaybookTaskAsync(@javax.annotation.Nonnull String playbookId, @javax.annotation.Nonnull NewPlaybookTask newPlaybookTask, final ApiCallback<PlaybookTaskResponse> _callback) throws ApiException {
+    public okhttp3.Call createPlaybookTaskAsync(@jakarta.annotation.Nonnull String playbookId, @jakarta.annotation.Nonnull NewPlaybookTask newPlaybookTask, final ApiCallback<PlaybookTaskResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createPlaybookTaskValidateBeforeCall(playbookId, newPlaybookTask, _callback);
         Type localVarReturnType = new TypeToken<PlaybookTaskResponse>(){}.getType();
@@ -235,7 +235,7 @@ public class PlaybookTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deletePlaybookTaskCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deletePlaybookTaskCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -281,7 +281,7 @@ public class PlaybookTasksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deletePlaybookTaskValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deletePlaybookTaskValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deletePlaybookTask(Async)");
@@ -305,7 +305,7 @@ public class PlaybookTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public PlaybookTaskResponse deletePlaybookTask(@javax.annotation.Nonnull String id) throws ApiException {
+    public PlaybookTaskResponse deletePlaybookTask(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<PlaybookTaskResponse> localVarResp = deletePlaybookTaskWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -324,7 +324,7 @@ public class PlaybookTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PlaybookTaskResponse> deletePlaybookTaskWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<PlaybookTaskResponse> deletePlaybookTaskWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deletePlaybookTaskValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<PlaybookTaskResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -345,7 +345,7 @@ public class PlaybookTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deletePlaybookTaskAsync(@javax.annotation.Nonnull String id, final ApiCallback<PlaybookTaskResponse> _callback) throws ApiException {
+    public okhttp3.Call deletePlaybookTaskAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<PlaybookTaskResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deletePlaybookTaskValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<PlaybookTaskResponse>(){}.getType();
@@ -366,7 +366,7 @@ public class PlaybookTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPlaybookTaskCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getPlaybookTaskCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -412,7 +412,7 @@ public class PlaybookTasksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getPlaybookTaskValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getPlaybookTaskValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getPlaybookTask(Async)");
@@ -436,7 +436,7 @@ public class PlaybookTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public PlaybookTaskResponse getPlaybookTask(@javax.annotation.Nonnull String id) throws ApiException {
+    public PlaybookTaskResponse getPlaybookTask(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<PlaybookTaskResponse> localVarResp = getPlaybookTaskWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -455,7 +455,7 @@ public class PlaybookTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PlaybookTaskResponse> getPlaybookTaskWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<PlaybookTaskResponse> getPlaybookTaskWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getPlaybookTaskValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<PlaybookTaskResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -476,7 +476,7 @@ public class PlaybookTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPlaybookTaskAsync(@javax.annotation.Nonnull String id, final ApiCallback<PlaybookTaskResponse> _callback) throws ApiException {
+    public okhttp3.Call getPlaybookTaskAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<PlaybookTaskResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getPlaybookTaskValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<PlaybookTaskResponse>(){}.getType();
@@ -499,7 +499,7 @@ public class PlaybookTasksApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listPlaybookTasksCall(@javax.annotation.Nonnull String playbookId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listPlaybookTasksCall(@jakarta.annotation.Nonnull String playbookId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -557,7 +557,7 @@ public class PlaybookTasksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listPlaybookTasksValidateBeforeCall(@javax.annotation.Nonnull String playbookId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listPlaybookTasksValidateBeforeCall(@jakarta.annotation.Nonnull String playbookId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'playbookId' is set
         if (playbookId == null) {
             throw new ApiException("Missing the required parameter 'playbookId' when calling listPlaybookTasks(Async)");
@@ -583,7 +583,7 @@ public class PlaybookTasksApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public PlaybookTaskList listPlaybookTasks(@javax.annotation.Nonnull String playbookId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+    public PlaybookTaskList listPlaybookTasks(@jakarta.annotation.Nonnull String playbookId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
         ApiResponse<PlaybookTaskList> localVarResp = listPlaybookTasksWithHttpInfo(playbookId, include, pageNumber, pageSize);
         return localVarResp.getData();
     }
@@ -604,7 +604,7 @@ public class PlaybookTasksApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PlaybookTaskList> listPlaybookTasksWithHttpInfo(@javax.annotation.Nonnull String playbookId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+    public ApiResponse<PlaybookTaskList> listPlaybookTasksWithHttpInfo(@jakarta.annotation.Nonnull String playbookId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
         okhttp3.Call localVarCall = listPlaybookTasksValidateBeforeCall(playbookId, include, pageNumber, pageSize, null);
         Type localVarReturnType = new TypeToken<PlaybookTaskList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -627,7 +627,7 @@ public class PlaybookTasksApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listPlaybookTasksAsync(@javax.annotation.Nonnull String playbookId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback<PlaybookTaskList> _callback) throws ApiException {
+    public okhttp3.Call listPlaybookTasksAsync(@jakarta.annotation.Nonnull String playbookId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback<PlaybookTaskList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listPlaybookTasksValidateBeforeCall(playbookId, include, pageNumber, pageSize, _callback);
         Type localVarReturnType = new TypeToken<PlaybookTaskList>(){}.getType();
@@ -649,7 +649,7 @@ public class PlaybookTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePlaybookTaskCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdatePlaybookTask updatePlaybookTask, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updatePlaybookTaskCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdatePlaybookTask updatePlaybookTask, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -696,7 +696,7 @@ public class PlaybookTasksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updatePlaybookTaskValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdatePlaybookTask updatePlaybookTask, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updatePlaybookTaskValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdatePlaybookTask updatePlaybookTask, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updatePlaybookTask(Async)");
@@ -726,7 +726,7 @@ public class PlaybookTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public PlaybookTaskResponse updatePlaybookTask(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdatePlaybookTask updatePlaybookTask) throws ApiException {
+    public PlaybookTaskResponse updatePlaybookTask(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdatePlaybookTask updatePlaybookTask) throws ApiException {
         ApiResponse<PlaybookTaskResponse> localVarResp = updatePlaybookTaskWithHttpInfo(id, updatePlaybookTask);
         return localVarResp.getData();
     }
@@ -746,7 +746,7 @@ public class PlaybookTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PlaybookTaskResponse> updatePlaybookTaskWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdatePlaybookTask updatePlaybookTask) throws ApiException {
+    public ApiResponse<PlaybookTaskResponse> updatePlaybookTaskWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdatePlaybookTask updatePlaybookTask) throws ApiException {
         okhttp3.Call localVarCall = updatePlaybookTaskValidateBeforeCall(id, updatePlaybookTask, null);
         Type localVarReturnType = new TypeToken<PlaybookTaskResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -768,7 +768,7 @@ public class PlaybookTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePlaybookTaskAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdatePlaybookTask updatePlaybookTask, final ApiCallback<PlaybookTaskResponse> _callback) throws ApiException {
+    public okhttp3.Call updatePlaybookTaskAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdatePlaybookTask updatePlaybookTask, final ApiCallback<PlaybookTaskResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updatePlaybookTaskValidateBeforeCall(id, updatePlaybookTask, _callback);
         Type localVarReturnType = new TypeToken<PlaybookTaskResponse>(){}.getType();

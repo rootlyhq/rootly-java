@@ -53,47 +53,47 @@ import com.rootly.client.JSON;
 /**
  * NewScheduleDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewScheduleDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_ALL_TIME_COVERAGE = "all_time_coverage";
   @SerializedName(SERIALIZED_NAME_ALL_TIME_COVERAGE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean allTimeCoverage;
 
   public static final String SERIALIZED_NAME_SLACK_USER_GROUP = "slack_user_group";
   @SerializedName(SERIALIZED_NAME_SLACK_USER_GROUP)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private NewScheduleDataAttributesSlackUserGroup slackUserGroup;
 
   public static final String SERIALIZED_NAME_SLACK_CHANNEL = "slack_channel";
   @SerializedName(SERIALIZED_NAME_SLACK_CHANNEL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private NewScheduleDataAttributesSlackChannel slackChannel;
 
   public static final String SERIALIZED_NAME_OWNER_GROUP_IDS = "owner_group_ids";
   @SerializedName(SERIALIZED_NAME_OWNER_GROUP_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> ownerGroupIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_OWNER_USER_ID = "owner_user_id";
   @SerializedName(SERIALIZED_NAME_OWNER_USER_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Integer ownerUserId;
 
   public NewScheduleDataAttributes() {
   }
 
-  public NewScheduleDataAttributes name(@javax.annotation.Nonnull String name) {
+  public NewScheduleDataAttributes name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -102,17 +102,17 @@ public class NewScheduleDataAttributes {
    * The name of the schedule
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public NewScheduleDataAttributes description(@javax.annotation.Nullable String description) {
+  public NewScheduleDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -121,17 +121,17 @@ public class NewScheduleDataAttributes {
    * The description of the schedule
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public NewScheduleDataAttributes allTimeCoverage(@javax.annotation.Nullable Boolean allTimeCoverage) {
+  public NewScheduleDataAttributes allTimeCoverage(@jakarta.annotation.Nullable Boolean allTimeCoverage) {
     this.allTimeCoverage = allTimeCoverage;
     return this;
   }
@@ -140,17 +140,17 @@ public class NewScheduleDataAttributes {
    * 24/7 coverage of the schedule
    * @return allTimeCoverage
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getAllTimeCoverage() {
     return allTimeCoverage;
   }
 
-  public void setAllTimeCoverage(@javax.annotation.Nullable Boolean allTimeCoverage) {
+  public void setAllTimeCoverage(@jakarta.annotation.Nullable Boolean allTimeCoverage) {
     this.allTimeCoverage = allTimeCoverage;
   }
 
 
-  public NewScheduleDataAttributes slackUserGroup(@javax.annotation.Nullable NewScheduleDataAttributesSlackUserGroup slackUserGroup) {
+  public NewScheduleDataAttributes slackUserGroup(@jakarta.annotation.Nullable NewScheduleDataAttributesSlackUserGroup slackUserGroup) {
     this.slackUserGroup = slackUserGroup;
     return this;
   }
@@ -159,17 +159,17 @@ public class NewScheduleDataAttributes {
    * Get slackUserGroup
    * @return slackUserGroup
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public NewScheduleDataAttributesSlackUserGroup getSlackUserGroup() {
     return slackUserGroup;
   }
 
-  public void setSlackUserGroup(@javax.annotation.Nullable NewScheduleDataAttributesSlackUserGroup slackUserGroup) {
+  public void setSlackUserGroup(@jakarta.annotation.Nullable NewScheduleDataAttributesSlackUserGroup slackUserGroup) {
     this.slackUserGroup = slackUserGroup;
   }
 
 
-  public NewScheduleDataAttributes slackChannel(@javax.annotation.Nullable NewScheduleDataAttributesSlackChannel slackChannel) {
+  public NewScheduleDataAttributes slackChannel(@jakarta.annotation.Nullable NewScheduleDataAttributesSlackChannel slackChannel) {
     this.slackChannel = slackChannel;
     return this;
   }
@@ -178,17 +178,17 @@ public class NewScheduleDataAttributes {
    * Get slackChannel
    * @return slackChannel
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public NewScheduleDataAttributesSlackChannel getSlackChannel() {
     return slackChannel;
   }
 
-  public void setSlackChannel(@javax.annotation.Nullable NewScheduleDataAttributesSlackChannel slackChannel) {
+  public void setSlackChannel(@jakarta.annotation.Nullable NewScheduleDataAttributesSlackChannel slackChannel) {
     this.slackChannel = slackChannel;
   }
 
 
-  public NewScheduleDataAttributes ownerGroupIds(@javax.annotation.Nullable List<String> ownerGroupIds) {
+  public NewScheduleDataAttributes ownerGroupIds(@jakarta.annotation.Nullable List<String> ownerGroupIds) {
     this.ownerGroupIds = ownerGroupIds;
     return this;
   }
@@ -205,17 +205,17 @@ public class NewScheduleDataAttributes {
    * Owning teams.
    * @return ownerGroupIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getOwnerGroupIds() {
     return ownerGroupIds;
   }
 
-  public void setOwnerGroupIds(@javax.annotation.Nullable List<String> ownerGroupIds) {
+  public void setOwnerGroupIds(@jakarta.annotation.Nullable List<String> ownerGroupIds) {
     this.ownerGroupIds = ownerGroupIds;
   }
 
 
-  public NewScheduleDataAttributes ownerUserId(@javax.annotation.Nonnull Integer ownerUserId) {
+  public NewScheduleDataAttributes ownerUserId(@jakarta.annotation.Nonnull Integer ownerUserId) {
     this.ownerUserId = ownerUserId;
     return this;
   }
@@ -224,12 +224,12 @@ public class NewScheduleDataAttributes {
    * ID of the owner of the schedule
    * @return ownerUserId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Integer getOwnerUserId() {
     return ownerUserId;
   }
 
-  public void setOwnerUserId(@javax.annotation.Nonnull Integer ownerUserId) {
+  public void setOwnerUserId(@jakarta.annotation.Nonnull Integer ownerUserId) {
     this.ownerUserId = ownerUserId;
   }
 

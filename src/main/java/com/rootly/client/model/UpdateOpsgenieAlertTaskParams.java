@@ -49,11 +49,11 @@ import com.rootly.client.JSON;
 /**
  * UpdateOpsgenieAlertTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateOpsgenieAlertTaskParams {
   public static final String SERIALIZED_NAME_ALERT_ID = "alert_id";
   @SerializedName(SERIALIZED_NAME_ALERT_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String alertId;
 
   /**
@@ -108,17 +108,17 @@ public class UpdateOpsgenieAlertTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String message;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   /**
@@ -183,18 +183,18 @@ public class UpdateOpsgenieAlertTaskParams {
 
   public static final String SERIALIZED_NAME_PRIORITY = "priority";
   @SerializedName(SERIALIZED_NAME_PRIORITY)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private PriorityEnum priority;
 
   public static final String SERIALIZED_NAME_COMPLETION = "completion";
   @SerializedName(SERIALIZED_NAME_COMPLETION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private AddActionItemTaskParamsPostToSlackChannelsInner completion;
 
   public UpdateOpsgenieAlertTaskParams() {
   }
 
-  public UpdateOpsgenieAlertTaskParams alertId(@javax.annotation.Nonnull String alertId) {
+  public UpdateOpsgenieAlertTaskParams alertId(@jakarta.annotation.Nonnull String alertId) {
     this.alertId = alertId;
     return this;
   }
@@ -203,17 +203,17 @@ public class UpdateOpsgenieAlertTaskParams {
    * Opsgenie Alert ID
    * @return alertId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getAlertId() {
     return alertId;
   }
 
-  public void setAlertId(@javax.annotation.Nonnull String alertId) {
+  public void setAlertId(@jakarta.annotation.Nonnull String alertId) {
     this.alertId = alertId;
   }
 
 
-  public UpdateOpsgenieAlertTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public UpdateOpsgenieAlertTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -222,17 +222,17 @@ public class UpdateOpsgenieAlertTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public UpdateOpsgenieAlertTaskParams message(@javax.annotation.Nullable String message) {
+  public UpdateOpsgenieAlertTaskParams message(@jakarta.annotation.Nullable String message) {
     this.message = message;
     return this;
   }
@@ -241,17 +241,17 @@ public class UpdateOpsgenieAlertTaskParams {
    * Message of the alert
    * @return message
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getMessage() {
     return message;
   }
 
-  public void setMessage(@javax.annotation.Nullable String message) {
+  public void setMessage(@jakarta.annotation.Nullable String message) {
     this.message = message;
   }
 
 
-  public UpdateOpsgenieAlertTaskParams description(@javax.annotation.Nullable String description) {
+  public UpdateOpsgenieAlertTaskParams description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -260,17 +260,17 @@ public class UpdateOpsgenieAlertTaskParams {
    * Description field of the alert that is generally used to provide a detailed information about the alert
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UpdateOpsgenieAlertTaskParams priority(@javax.annotation.Nonnull PriorityEnum priority) {
+  public UpdateOpsgenieAlertTaskParams priority(@jakarta.annotation.Nonnull PriorityEnum priority) {
     this.priority = priority;
     return this;
   }
@@ -279,17 +279,17 @@ public class UpdateOpsgenieAlertTaskParams {
    * Get priority
    * @return priority
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public PriorityEnum getPriority() {
     return priority;
   }
 
-  public void setPriority(@javax.annotation.Nonnull PriorityEnum priority) {
+  public void setPriority(@jakarta.annotation.Nonnull PriorityEnum priority) {
     this.priority = priority;
   }
 
 
-  public UpdateOpsgenieAlertTaskParams completion(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner completion) {
+  public UpdateOpsgenieAlertTaskParams completion(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner completion) {
     this.completion = completion;
     return this;
   }
@@ -298,12 +298,12 @@ public class UpdateOpsgenieAlertTaskParams {
    * Get completion
    * @return completion
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public AddActionItemTaskParamsPostToSlackChannelsInner getCompletion() {
     return completion;
   }
 
-  public void setCompletion(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner completion) {
+  public void setCompletion(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner completion) {
     this.completion = completion;
   }
 

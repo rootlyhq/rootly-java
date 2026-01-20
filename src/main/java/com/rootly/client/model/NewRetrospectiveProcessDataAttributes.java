@@ -50,32 +50,32 @@ import com.rootly.client.JSON;
 /**
  * NewRetrospectiveProcessDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewRetrospectiveProcessDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_COPY_FROM = "copy_from";
   @SerializedName(SERIALIZED_NAME_COPY_FROM)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String copyFrom;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_RETROSPECTIVE_PROCESS_MATCHING_CRITERIA = "retrospective_process_matching_criteria";
   @SerializedName(SERIALIZED_NAME_RETROSPECTIVE_PROCESS_MATCHING_CRITERIA)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria retrospectiveProcessMatchingCriteria;
 
   public NewRetrospectiveProcessDataAttributes() {
   }
 
-  public NewRetrospectiveProcessDataAttributes name(@javax.annotation.Nonnull String name) {
+  public NewRetrospectiveProcessDataAttributes name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -84,17 +84,17 @@ public class NewRetrospectiveProcessDataAttributes {
    * The name of the retrospective process
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public NewRetrospectiveProcessDataAttributes copyFrom(@javax.annotation.Nonnull String copyFrom) {
+  public NewRetrospectiveProcessDataAttributes copyFrom(@jakarta.annotation.Nonnull String copyFrom) {
     this.copyFrom = copyFrom;
     return this;
   }
@@ -103,17 +103,17 @@ public class NewRetrospectiveProcessDataAttributes {
    * Retrospective process ID from which retrospective steps have to be copied. To use starter template for retrospective steps provide value: &#39;starter_template&#39;
    * @return copyFrom
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCopyFrom() {
     return copyFrom;
   }
 
-  public void setCopyFrom(@javax.annotation.Nonnull String copyFrom) {
+  public void setCopyFrom(@jakarta.annotation.Nonnull String copyFrom) {
     this.copyFrom = copyFrom;
   }
 
 
-  public NewRetrospectiveProcessDataAttributes description(@javax.annotation.Nullable String description) {
+  public NewRetrospectiveProcessDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -122,17 +122,17 @@ public class NewRetrospectiveProcessDataAttributes {
    * The description of the retrospective process
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public NewRetrospectiveProcessDataAttributes retrospectiveProcessMatchingCriteria(@javax.annotation.Nullable NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria retrospectiveProcessMatchingCriteria) {
+  public NewRetrospectiveProcessDataAttributes retrospectiveProcessMatchingCriteria(@jakarta.annotation.Nullable NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria retrospectiveProcessMatchingCriteria) {
     this.retrospectiveProcessMatchingCriteria = retrospectiveProcessMatchingCriteria;
     return this;
   }
@@ -141,12 +141,12 @@ public class NewRetrospectiveProcessDataAttributes {
    * Get retrospectiveProcessMatchingCriteria
    * @return retrospectiveProcessMatchingCriteria
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria getRetrospectiveProcessMatchingCriteria() {
     return retrospectiveProcessMatchingCriteria;
   }
 
-  public void setRetrospectiveProcessMatchingCriteria(@javax.annotation.Nullable NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria retrospectiveProcessMatchingCriteria) {
+  public void setRetrospectiveProcessMatchingCriteria(@jakarta.annotation.Nullable NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteria retrospectiveProcessMatchingCriteria) {
     this.retrospectiveProcessMatchingCriteria = retrospectiveProcessMatchingCriteria;
   }
 

@@ -49,11 +49,11 @@ import com.rootly.client.JSON;
 /**
  * V1EdgeConnectorsEdgeConnectorIdActionsPostRequestAction
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class V1EdgeConnectorsEdgeConnectorIdActionsPostRequestAction {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   /**
@@ -110,18 +110,18 @@ public class V1EdgeConnectorsEdgeConnectorIdActionsPostRequestAction {
 
   public static final String SERIALIZED_NAME_ACTION_TYPE = "action_type";
   @SerializedName(SERIALIZED_NAME_ACTION_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private ActionTypeEnum actionType;
 
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private V1EdgeConnectorsEdgeConnectorIdActionsPostRequestActionMetadata metadata;
 
   public V1EdgeConnectorsEdgeConnectorIdActionsPostRequestAction() {
   }
 
-  public V1EdgeConnectorsEdgeConnectorIdActionsPostRequestAction name(@javax.annotation.Nonnull String name) {
+  public V1EdgeConnectorsEdgeConnectorIdActionsPostRequestAction name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -130,17 +130,17 @@ public class V1EdgeConnectorsEdgeConnectorIdActionsPostRequestAction {
    * Action name
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public V1EdgeConnectorsEdgeConnectorIdActionsPostRequestAction actionType(@javax.annotation.Nonnull ActionTypeEnum actionType) {
+  public V1EdgeConnectorsEdgeConnectorIdActionsPostRequestAction actionType(@jakarta.annotation.Nonnull ActionTypeEnum actionType) {
     this.actionType = actionType;
     return this;
   }
@@ -149,17 +149,17 @@ public class V1EdgeConnectorsEdgeConnectorIdActionsPostRequestAction {
    * Action type
    * @return actionType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public ActionTypeEnum getActionType() {
     return actionType;
   }
 
-  public void setActionType(@javax.annotation.Nonnull ActionTypeEnum actionType) {
+  public void setActionType(@jakarta.annotation.Nonnull ActionTypeEnum actionType) {
     this.actionType = actionType;
   }
 
 
-  public V1EdgeConnectorsEdgeConnectorIdActionsPostRequestAction metadata(@javax.annotation.Nullable V1EdgeConnectorsEdgeConnectorIdActionsPostRequestActionMetadata metadata) {
+  public V1EdgeConnectorsEdgeConnectorIdActionsPostRequestAction metadata(@jakarta.annotation.Nullable V1EdgeConnectorsEdgeConnectorIdActionsPostRequestActionMetadata metadata) {
     this.metadata = metadata;
     return this;
   }
@@ -168,12 +168,12 @@ public class V1EdgeConnectorsEdgeConnectorIdActionsPostRequestAction {
    * Get metadata
    * @return metadata
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public V1EdgeConnectorsEdgeConnectorIdActionsPostRequestActionMetadata getMetadata() {
     return metadata;
   }
 
-  public void setMetadata(@javax.annotation.Nullable V1EdgeConnectorsEdgeConnectorIdActionsPostRequestActionMetadata metadata) {
+  public void setMetadata(@jakarta.annotation.Nullable V1EdgeConnectorsEdgeConnectorIdActionsPostRequestActionMetadata metadata) {
     this.metadata = metadata;
   }
 

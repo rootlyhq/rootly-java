@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateAirtableTableRecordTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateAirtableTableRecordTaskParams {
   /**
    * Gets or Sets taskType
@@ -103,33 +103,33 @@ public class UpdateAirtableTableRecordTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_BASE_KEY = "base_key";
   @SerializedName(SERIALIZED_NAME_BASE_KEY)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String baseKey;
 
   public static final String SERIALIZED_NAME_TABLE_NAME = "table_name";
   @SerializedName(SERIALIZED_NAME_TABLE_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String tableName;
 
   public static final String SERIALIZED_NAME_RECORD_ID = "record_id";
   @SerializedName(SERIALIZED_NAME_RECORD_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String recordId;
 
   public static final String SERIALIZED_NAME_CUSTOM_FIELDS_MAPPING = "custom_fields_mapping";
   @SerializedName(SERIALIZED_NAME_CUSTOM_FIELDS_MAPPING)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String customFieldsMapping;
 
   public UpdateAirtableTableRecordTaskParams() {
   }
 
-  public UpdateAirtableTableRecordTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public UpdateAirtableTableRecordTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -138,17 +138,17 @@ public class UpdateAirtableTableRecordTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public UpdateAirtableTableRecordTaskParams baseKey(@javax.annotation.Nonnull String baseKey) {
+  public UpdateAirtableTableRecordTaskParams baseKey(@jakarta.annotation.Nonnull String baseKey) {
     this.baseKey = baseKey;
     return this;
   }
@@ -157,17 +157,17 @@ public class UpdateAirtableTableRecordTaskParams {
    * The base key
    * @return baseKey
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getBaseKey() {
     return baseKey;
   }
 
-  public void setBaseKey(@javax.annotation.Nonnull String baseKey) {
+  public void setBaseKey(@jakarta.annotation.Nonnull String baseKey) {
     this.baseKey = baseKey;
   }
 
 
-  public UpdateAirtableTableRecordTaskParams tableName(@javax.annotation.Nonnull String tableName) {
+  public UpdateAirtableTableRecordTaskParams tableName(@jakarta.annotation.Nonnull String tableName) {
     this.tableName = tableName;
     return this;
   }
@@ -176,17 +176,17 @@ public class UpdateAirtableTableRecordTaskParams {
    * The table name
    * @return tableName
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getTableName() {
     return tableName;
   }
 
-  public void setTableName(@javax.annotation.Nonnull String tableName) {
+  public void setTableName(@jakarta.annotation.Nonnull String tableName) {
     this.tableName = tableName;
   }
 
 
-  public UpdateAirtableTableRecordTaskParams recordId(@javax.annotation.Nonnull String recordId) {
+  public UpdateAirtableTableRecordTaskParams recordId(@jakarta.annotation.Nonnull String recordId) {
     this.recordId = recordId;
     return this;
   }
@@ -195,17 +195,17 @@ public class UpdateAirtableTableRecordTaskParams {
    * The record id
    * @return recordId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getRecordId() {
     return recordId;
   }
 
-  public void setRecordId(@javax.annotation.Nonnull String recordId) {
+  public void setRecordId(@jakarta.annotation.Nonnull String recordId) {
     this.recordId = recordId;
   }
 
 
-  public UpdateAirtableTableRecordTaskParams customFieldsMapping(@javax.annotation.Nullable String customFieldsMapping) {
+  public UpdateAirtableTableRecordTaskParams customFieldsMapping(@jakarta.annotation.Nullable String customFieldsMapping) {
     this.customFieldsMapping = customFieldsMapping;
     return this;
   }
@@ -214,12 +214,12 @@ public class UpdateAirtableTableRecordTaskParams {
    * Custom field mappings. Can contain liquid markup and need to be valid JSON
    * @return customFieldsMapping
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCustomFieldsMapping() {
     return customFieldsMapping;
   }
 
-  public void setCustomFieldsMapping(@javax.annotation.Nullable String customFieldsMapping) {
+  public void setCustomFieldsMapping(@jakarta.annotation.Nullable String customFieldsMapping) {
     this.customFieldsMapping = customFieldsMapping;
   }
 

@@ -48,11 +48,11 @@ import com.rootly.client.JSON;
 /**
  * Followup component block
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class TiptapBlockSchemaFollowupComponent {
   public static final String SERIALIZED_NAME_HTML = "html";
   @SerializedName(SERIALIZED_NAME_HTML)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String html;
 
   /**
@@ -111,13 +111,13 @@ public class TiptapBlockSchemaFollowupComponent {
 
   public static final String SERIALIZED_NAME_DATA_SORT = "data_sort";
   @SerializedName(SERIALIZED_NAME_DATA_SORT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private DataSortEnum dataSort = DataSortEnum.DUE_DATE;
 
   public TiptapBlockSchemaFollowupComponent() {
   }
 
-  public TiptapBlockSchemaFollowupComponent html(@javax.annotation.Nonnull String html) {
+  public TiptapBlockSchemaFollowupComponent html(@jakarta.annotation.Nonnull String html) {
     this.html = html;
     return this;
   }
@@ -126,17 +126,17 @@ public class TiptapBlockSchemaFollowupComponent {
    * HTML representation: &lt;div data-sort&#x3D;\&quot;due_date\&quot; data-followup-component&#x3D;\&quot;true\&quot; class&#x3D;\&quot;followups-node-placeholder\&quot;&gt;&lt;/div&gt;
    * @return html
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getHtml() {
     return html;
   }
 
-  public void setHtml(@javax.annotation.Nonnull String html) {
+  public void setHtml(@jakarta.annotation.Nonnull String html) {
     this.html = html;
   }
 
 
-  public TiptapBlockSchemaFollowupComponent dataSort(@javax.annotation.Nullable DataSortEnum dataSort) {
+  public TiptapBlockSchemaFollowupComponent dataSort(@jakarta.annotation.Nullable DataSortEnum dataSort) {
     this.dataSort = dataSort;
     return this;
   }
@@ -145,12 +145,12 @@ public class TiptapBlockSchemaFollowupComponent {
    * Sort order for followups. Valid values: due_date, status, priority
    * @return dataSort
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public DataSortEnum getDataSort() {
     return dataSort;
   }
 
-  public void setDataSort(@javax.annotation.Nullable DataSortEnum dataSort) {
+  public void setDataSort(@jakarta.annotation.Nullable DataSortEnum dataSort) {
     this.dataSort = dataSort;
   }
 

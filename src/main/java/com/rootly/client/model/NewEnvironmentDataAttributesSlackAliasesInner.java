@@ -48,22 +48,22 @@ import com.rootly.client.JSON;
 /**
  * NewEnvironmentDataAttributesSlackAliasesInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewEnvironmentDataAttributesSlackAliasesInner {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public NewEnvironmentDataAttributesSlackAliasesInner() {
   }
 
-  public NewEnvironmentDataAttributesSlackAliasesInner id(@javax.annotation.Nonnull String id) {
+  public NewEnvironmentDataAttributesSlackAliasesInner id(@jakarta.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
@@ -72,17 +72,17 @@ public class NewEnvironmentDataAttributesSlackAliasesInner {
    * Slack alias ID
    * @return id
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(@javax.annotation.Nonnull String id) {
+  public void setId(@jakarta.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public NewEnvironmentDataAttributesSlackAliasesInner name(@javax.annotation.Nonnull String name) {
+  public NewEnvironmentDataAttributesSlackAliasesInner name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -91,12 +91,12 @@ public class NewEnvironmentDataAttributesSlackAliasesInner {
    * Slack alias name
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 

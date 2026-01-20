@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * CreateShortcutStoryTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateShortcutStoryTaskParams {
   /**
    * Gets or Sets taskType
@@ -102,12 +102,12 @@ public class CreateShortcutStoryTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String title;
 
   /**
@@ -166,48 +166,48 @@ public class CreateShortcutStoryTaskParams {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private KindEnum kind;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_LABELS = "labels";
   @SerializedName(SERIALIZED_NAME_LABELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String labels;
 
   public static final String SERIALIZED_NAME_DUE_DATE = "due_date";
   @SerializedName(SERIALIZED_NAME_DUE_DATE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String dueDate;
 
   public static final String SERIALIZED_NAME_ARCHIVATION = "archivation";
   @SerializedName(SERIALIZED_NAME_ARCHIVATION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Object archivation;
 
   public static final String SERIALIZED_NAME_GROUP = "group";
   @SerializedName(SERIALIZED_NAME_GROUP)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Object group;
 
   public static final String SERIALIZED_NAME_PROJECT = "project";
   @SerializedName(SERIALIZED_NAME_PROJECT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Object project;
 
   public static final String SERIALIZED_NAME_WORKFLOW_STATE = "workflow_state";
   @SerializedName(SERIALIZED_NAME_WORKFLOW_STATE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Object workflowState;
 
   public CreateShortcutStoryTaskParams() {
   }
 
-  public CreateShortcutStoryTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public CreateShortcutStoryTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -216,17 +216,17 @@ public class CreateShortcutStoryTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public CreateShortcutStoryTaskParams title(@javax.annotation.Nonnull String title) {
+  public CreateShortcutStoryTaskParams title(@jakarta.annotation.Nonnull String title) {
     this.title = title;
     return this;
   }
@@ -235,17 +235,17 @@ public class CreateShortcutStoryTaskParams {
    * The incident title
    * @return title
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nonnull String title) {
+  public void setTitle(@jakarta.annotation.Nonnull String title) {
     this.title = title;
   }
 
 
-  public CreateShortcutStoryTaskParams kind(@javax.annotation.Nonnull KindEnum kind) {
+  public CreateShortcutStoryTaskParams kind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
     return this;
   }
@@ -254,17 +254,17 @@ public class CreateShortcutStoryTaskParams {
    * Get kind
    * @return kind
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(@javax.annotation.Nonnull KindEnum kind) {
+  public void setKind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public CreateShortcutStoryTaskParams description(@javax.annotation.Nullable String description) {
+  public CreateShortcutStoryTaskParams description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -273,17 +273,17 @@ public class CreateShortcutStoryTaskParams {
    * The incident description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public CreateShortcutStoryTaskParams labels(@javax.annotation.Nullable String labels) {
+  public CreateShortcutStoryTaskParams labels(@jakarta.annotation.Nullable String labels) {
     this.labels = labels;
     return this;
   }
@@ -292,17 +292,17 @@ public class CreateShortcutStoryTaskParams {
    * The story labels
    * @return labels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getLabels() {
     return labels;
   }
 
-  public void setLabels(@javax.annotation.Nullable String labels) {
+  public void setLabels(@jakarta.annotation.Nullable String labels) {
     this.labels = labels;
   }
 
 
-  public CreateShortcutStoryTaskParams dueDate(@javax.annotation.Nullable String dueDate) {
+  public CreateShortcutStoryTaskParams dueDate(@jakarta.annotation.Nullable String dueDate) {
     this.dueDate = dueDate;
     return this;
   }
@@ -311,17 +311,17 @@ public class CreateShortcutStoryTaskParams {
    * The due date
    * @return dueDate
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDueDate() {
     return dueDate;
   }
 
-  public void setDueDate(@javax.annotation.Nullable String dueDate) {
+  public void setDueDate(@jakarta.annotation.Nullable String dueDate) {
     this.dueDate = dueDate;
   }
 
 
-  public CreateShortcutStoryTaskParams archivation(@javax.annotation.Nonnull Object archivation) {
+  public CreateShortcutStoryTaskParams archivation(@jakarta.annotation.Nonnull Object archivation) {
     this.archivation = archivation;
     return this;
   }
@@ -330,17 +330,17 @@ public class CreateShortcutStoryTaskParams {
    * The archivation id and display name
    * @return archivation
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Object getArchivation() {
     return archivation;
   }
 
-  public void setArchivation(@javax.annotation.Nonnull Object archivation) {
+  public void setArchivation(@jakarta.annotation.Nonnull Object archivation) {
     this.archivation = archivation;
   }
 
 
-  public CreateShortcutStoryTaskParams group(@javax.annotation.Nullable Object group) {
+  public CreateShortcutStoryTaskParams group(@jakarta.annotation.Nullable Object group) {
     this.group = group;
     return this;
   }
@@ -349,17 +349,17 @@ public class CreateShortcutStoryTaskParams {
    * The group id and display name
    * @return group
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Object getGroup() {
     return group;
   }
 
-  public void setGroup(@javax.annotation.Nullable Object group) {
+  public void setGroup(@jakarta.annotation.Nullable Object group) {
     this.group = group;
   }
 
 
-  public CreateShortcutStoryTaskParams project(@javax.annotation.Nullable Object project) {
+  public CreateShortcutStoryTaskParams project(@jakarta.annotation.Nullable Object project) {
     this.project = project;
     return this;
   }
@@ -368,17 +368,17 @@ public class CreateShortcutStoryTaskParams {
    * The project id and display name
    * @return project
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Object getProject() {
     return project;
   }
 
-  public void setProject(@javax.annotation.Nullable Object project) {
+  public void setProject(@jakarta.annotation.Nullable Object project) {
     this.project = project;
   }
 
 
-  public CreateShortcutStoryTaskParams workflowState(@javax.annotation.Nullable Object workflowState) {
+  public CreateShortcutStoryTaskParams workflowState(@jakarta.annotation.Nullable Object workflowState) {
     this.workflowState = workflowState;
     return this;
   }
@@ -387,12 +387,12 @@ public class CreateShortcutStoryTaskParams {
    * The workflow state id workflow state name
    * @return workflowState
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Object getWorkflowState() {
     return workflowState;
   }
 
-  public void setWorkflowState(@javax.annotation.Nullable Object workflowState) {
+  public void setWorkflowState(@jakarta.annotation.Nullable Object workflowState) {
     this.workflowState = workflowState;
   }
 

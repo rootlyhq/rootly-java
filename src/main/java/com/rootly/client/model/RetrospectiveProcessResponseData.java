@@ -49,11 +49,11 @@ import com.rootly.client.JSON;
 /**
  * RetrospectiveProcessResponseData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RetrospectiveProcessResponseData {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String id;
 
   /**
@@ -108,18 +108,18 @@ public class RetrospectiveProcessResponseData {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private RetrospectiveProcess attributes;
 
   public RetrospectiveProcessResponseData() {
   }
 
-  public RetrospectiveProcessResponseData id(@javax.annotation.Nonnull String id) {
+  public RetrospectiveProcessResponseData id(@jakarta.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
@@ -128,17 +128,17 @@ public class RetrospectiveProcessResponseData {
    * Unique id of retrospective process
    * @return id
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(@javax.annotation.Nonnull String id) {
+  public void setId(@jakarta.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public RetrospectiveProcessResponseData type(@javax.annotation.Nonnull TypeEnum type) {
+  public RetrospectiveProcessResponseData type(@jakarta.annotation.Nonnull TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -147,17 +147,17 @@ public class RetrospectiveProcessResponseData {
    * Get type
    * @return type
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public TypeEnum getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nonnull TypeEnum type) {
+  public void setType(@jakarta.annotation.Nonnull TypeEnum type) {
     this.type = type;
   }
 
 
-  public RetrospectiveProcessResponseData attributes(@javax.annotation.Nonnull RetrospectiveProcess attributes) {
+  public RetrospectiveProcessResponseData attributes(@jakarta.annotation.Nonnull RetrospectiveProcess attributes) {
     this.attributes = attributes;
     return this;
   }
@@ -166,12 +166,12 @@ public class RetrospectiveProcessResponseData {
    * Get attributes
    * @return attributes
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public RetrospectiveProcess getAttributes() {
     return attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nonnull RetrospectiveProcess attributes) {
+  public void setAttributes(@jakarta.annotation.Nonnull RetrospectiveProcess attributes) {
     this.attributes = attributes;
   }
 

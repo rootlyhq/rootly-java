@@ -50,7 +50,7 @@ import com.rootly.client.JSON;
 /**
  * InviteToSlackChannelTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class InviteToSlackChannelTaskParams {
   /**
    * Gets or Sets taskType
@@ -104,33 +104,33 @@ public class InviteToSlackChannelTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_CHANNEL = "channel";
   @SerializedName(SERIALIZED_NAME_CHANNEL)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Object channel;
 
   public static final String SERIALIZED_NAME_SLACK_USERS = "slack_users";
   @SerializedName(SERIALIZED_NAME_SLACK_USERS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<Object> slackUsers = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SLACK_USER_GROUPS = "slack_user_groups";
   @SerializedName(SERIALIZED_NAME_SLACK_USER_GROUPS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<Object> slackUserGroups = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SLACK_EMAILS = "slack_emails";
   @SerializedName(SERIALIZED_NAME_SLACK_EMAILS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String slackEmails;
 
   public InviteToSlackChannelTaskParams() {
   }
 
-  public InviteToSlackChannelTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public InviteToSlackChannelTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -139,17 +139,17 @@ public class InviteToSlackChannelTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public InviteToSlackChannelTaskParams channel(@javax.annotation.Nonnull Object channel) {
+  public InviteToSlackChannelTaskParams channel(@jakarta.annotation.Nonnull Object channel) {
     this.channel = channel;
     return this;
   }
@@ -158,17 +158,17 @@ public class InviteToSlackChannelTaskParams {
    * Get channel
    * @return channel
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Object getChannel() {
     return channel;
   }
 
-  public void setChannel(@javax.annotation.Nonnull Object channel) {
+  public void setChannel(@jakarta.annotation.Nonnull Object channel) {
     this.channel = channel;
   }
 
 
-  public InviteToSlackChannelTaskParams slackUsers(@javax.annotation.Nullable List<Object> slackUsers) {
+  public InviteToSlackChannelTaskParams slackUsers(@jakarta.annotation.Nullable List<Object> slackUsers) {
     this.slackUsers = slackUsers;
     return this;
   }
@@ -185,17 +185,17 @@ public class InviteToSlackChannelTaskParams {
    * Get slackUsers
    * @return slackUsers
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<Object> getSlackUsers() {
     return slackUsers;
   }
 
-  public void setSlackUsers(@javax.annotation.Nullable List<Object> slackUsers) {
+  public void setSlackUsers(@jakarta.annotation.Nullable List<Object> slackUsers) {
     this.slackUsers = slackUsers;
   }
 
 
-  public InviteToSlackChannelTaskParams slackUserGroups(@javax.annotation.Nullable List<Object> slackUserGroups) {
+  public InviteToSlackChannelTaskParams slackUserGroups(@jakarta.annotation.Nullable List<Object> slackUserGroups) {
     this.slackUserGroups = slackUserGroups;
     return this;
   }
@@ -212,17 +212,17 @@ public class InviteToSlackChannelTaskParams {
    * Get slackUserGroups
    * @return slackUserGroups
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<Object> getSlackUserGroups() {
     return slackUserGroups;
   }
 
-  public void setSlackUserGroups(@javax.annotation.Nullable List<Object> slackUserGroups) {
+  public void setSlackUserGroups(@jakarta.annotation.Nullable List<Object> slackUserGroups) {
     this.slackUserGroups = slackUserGroups;
   }
 
 
-  public InviteToSlackChannelTaskParams slackEmails(@javax.annotation.Nullable String slackEmails) {
+  public InviteToSlackChannelTaskParams slackEmails(@jakarta.annotation.Nullable String slackEmails) {
     this.slackEmails = slackEmails;
     return this;
   }
@@ -231,12 +231,12 @@ public class InviteToSlackChannelTaskParams {
    * Comma separated list of emails to invite to the channel
    * @return slackEmails
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSlackEmails() {
     return slackEmails;
   }
 
-  public void setSlackEmails(@javax.annotation.Nullable String slackEmails) {
+  public void setSlackEmails(@jakarta.annotation.Nullable String slackEmails) {
     this.slackEmails = slackEmails;
   }
 

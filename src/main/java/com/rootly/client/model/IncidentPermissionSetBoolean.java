@@ -48,11 +48,11 @@ import com.rootly.client.JSON;
 /**
  * IncidentPermissionSetBoolean
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class IncidentPermissionSetBoolean {
   public static final String SERIALIZED_NAME_INCIDENT_PERMISSION_SET_ID = "incident_permission_set_id";
   @SerializedName(SERIALIZED_NAME_INCIDENT_PERMISSION_SET_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String incidentPermissionSetId;
 
   /**
@@ -129,33 +129,33 @@ public class IncidentPermissionSetBoolean {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private KindEnum kind;
 
   public static final String SERIALIZED_NAME_PRIVATE = "private";
   @SerializedName(SERIALIZED_NAME_PRIVATE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean _private;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public IncidentPermissionSetBoolean() {
   }
 
-  public IncidentPermissionSetBoolean incidentPermissionSetId(@javax.annotation.Nullable String incidentPermissionSetId) {
+  public IncidentPermissionSetBoolean incidentPermissionSetId(@jakarta.annotation.Nullable String incidentPermissionSetId) {
     this.incidentPermissionSetId = incidentPermissionSetId;
     return this;
   }
@@ -164,17 +164,17 @@ public class IncidentPermissionSetBoolean {
    * Get incidentPermissionSetId
    * @return incidentPermissionSetId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getIncidentPermissionSetId() {
     return incidentPermissionSetId;
   }
 
-  public void setIncidentPermissionSetId(@javax.annotation.Nullable String incidentPermissionSetId) {
+  public void setIncidentPermissionSetId(@jakarta.annotation.Nullable String incidentPermissionSetId) {
     this.incidentPermissionSetId = incidentPermissionSetId;
   }
 
 
-  public IncidentPermissionSetBoolean kind(@javax.annotation.Nonnull KindEnum kind) {
+  public IncidentPermissionSetBoolean kind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
     return this;
   }
@@ -183,17 +183,17 @@ public class IncidentPermissionSetBoolean {
    * Get kind
    * @return kind
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(@javax.annotation.Nonnull KindEnum kind) {
+  public void setKind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public IncidentPermissionSetBoolean _private(@javax.annotation.Nullable Boolean _private) {
+  public IncidentPermissionSetBoolean _private(@jakarta.annotation.Nullable Boolean _private) {
     this._private = _private;
     return this;
   }
@@ -202,17 +202,17 @@ public class IncidentPermissionSetBoolean {
    * Get _private
    * @return _private
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getPrivate() {
     return _private;
   }
 
-  public void setPrivate(@javax.annotation.Nullable Boolean _private) {
+  public void setPrivate(@jakarta.annotation.Nullable Boolean _private) {
     this._private = _private;
   }
 
 
-  public IncidentPermissionSetBoolean enabled(@javax.annotation.Nullable Boolean enabled) {
+  public IncidentPermissionSetBoolean enabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -221,17 +221,17 @@ public class IncidentPermissionSetBoolean {
    * Get enabled
    * @return enabled
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getEnabled() {
     return enabled;
   }
 
-  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
+  public void setEnabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public IncidentPermissionSetBoolean createdAt(@javax.annotation.Nonnull String createdAt) {
+  public IncidentPermissionSetBoolean createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -240,17 +240,17 @@ public class IncidentPermissionSetBoolean {
    * Get createdAt
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public IncidentPermissionSetBoolean updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public IncidentPermissionSetBoolean updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -259,12 +259,12 @@ public class IncidentPermissionSetBoolean {
    * Get updatedAt
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

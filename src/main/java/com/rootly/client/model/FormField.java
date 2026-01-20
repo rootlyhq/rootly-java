@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * FormField
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class FormField {
   /**
    * The kind of the form field
@@ -163,7 +163,7 @@ public class FormField {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private KindEnum kind;
 
   /**
@@ -236,7 +236,7 @@ public class FormField {
 
   public static final String SERIALIZED_NAME_INPUT_KIND = "input_kind";
   @SerializedName(SERIALIZED_NAME_INPUT_KIND)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private InputKindEnum inputKind;
 
   /**
@@ -301,68 +301,68 @@ public class FormField {
 
   public static final String SERIALIZED_NAME_VALUE_KIND = "value_kind";
   @SerializedName(SERIALIZED_NAME_VALUE_KIND)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private ValueKindEnum valueKind;
 
   public static final String SERIALIZED_NAME_VALUE_KIND_CATALOG_ID = "value_kind_catalog_id";
   @SerializedName(SERIALIZED_NAME_VALUE_KIND_CATALOG_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String valueKindCatalogId;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String slug;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_SHOWN = "shown";
   @SerializedName(SERIALIZED_NAME_SHOWN)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<String> shown = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_REQUIRED = "required";
   @SerializedName(SERIALIZED_NAME_REQUIRED)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<String> required = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SHOW_ON_INCIDENT_DETAILS = "show_on_incident_details";
   @SerializedName(SERIALIZED_NAME_SHOW_ON_INCIDENT_DETAILS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean showOnIncidentDetails;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_DEFAULT_VALUES = "default_values";
   @SerializedName(SERIALIZED_NAME_DEFAULT_VALUES)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<String> defaultValues = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public FormField() {
   }
 
-  public FormField kind(@javax.annotation.Nonnull KindEnum kind) {
+  public FormField kind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
     return this;
   }
@@ -371,17 +371,17 @@ public class FormField {
    * The kind of the form field
    * @return kind
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(@javax.annotation.Nonnull KindEnum kind) {
+  public void setKind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public FormField inputKind(@javax.annotation.Nonnull InputKindEnum inputKind) {
+  public FormField inputKind(@jakarta.annotation.Nonnull InputKindEnum inputKind) {
     this.inputKind = inputKind;
     return this;
   }
@@ -390,17 +390,17 @@ public class FormField {
    * The input kind of the form field
    * @return inputKind
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public InputKindEnum getInputKind() {
     return inputKind;
   }
 
-  public void setInputKind(@javax.annotation.Nonnull InputKindEnum inputKind) {
+  public void setInputKind(@jakarta.annotation.Nonnull InputKindEnum inputKind) {
     this.inputKind = inputKind;
   }
 
 
-  public FormField valueKind(@javax.annotation.Nonnull ValueKindEnum valueKind) {
+  public FormField valueKind(@jakarta.annotation.Nonnull ValueKindEnum valueKind) {
     this.valueKind = valueKind;
     return this;
   }
@@ -409,17 +409,17 @@ public class FormField {
    * The value kind of the form field
    * @return valueKind
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public ValueKindEnum getValueKind() {
     return valueKind;
   }
 
-  public void setValueKind(@javax.annotation.Nonnull ValueKindEnum valueKind) {
+  public void setValueKind(@jakarta.annotation.Nonnull ValueKindEnum valueKind) {
     this.valueKind = valueKind;
   }
 
 
-  public FormField valueKindCatalogId(@javax.annotation.Nullable String valueKindCatalogId) {
+  public FormField valueKindCatalogId(@jakarta.annotation.Nullable String valueKindCatalogId) {
     this.valueKindCatalogId = valueKindCatalogId;
     return this;
   }
@@ -428,17 +428,17 @@ public class FormField {
    * The ID of the catalog used when value_kind is &#x60;catalog_entity&#x60;
    * @return valueKindCatalogId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getValueKindCatalogId() {
     return valueKindCatalogId;
   }
 
-  public void setValueKindCatalogId(@javax.annotation.Nullable String valueKindCatalogId) {
+  public void setValueKindCatalogId(@jakarta.annotation.Nullable String valueKindCatalogId) {
     this.valueKindCatalogId = valueKindCatalogId;
   }
 
 
-  public FormField name(@javax.annotation.Nonnull String name) {
+  public FormField name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -447,17 +447,17 @@ public class FormField {
    * The name of the form field
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public FormField slug(@javax.annotation.Nonnull String slug) {
+  public FormField slug(@jakarta.annotation.Nonnull String slug) {
     this.slug = slug;
     return this;
   }
@@ -466,17 +466,17 @@ public class FormField {
    * The slug of the form field
    * @return slug
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getSlug() {
     return slug;
   }
 
-  public void setSlug(@javax.annotation.Nonnull String slug) {
+  public void setSlug(@jakarta.annotation.Nonnull String slug) {
     this.slug = slug;
   }
 
 
-  public FormField description(@javax.annotation.Nullable String description) {
+  public FormField description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -485,17 +485,17 @@ public class FormField {
    * The description of the form field
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public FormField shown(@javax.annotation.Nonnull List<String> shown) {
+  public FormField shown(@jakarta.annotation.Nonnull List<String> shown) {
     this.shown = shown;
     return this;
   }
@@ -512,17 +512,17 @@ public class FormField {
    * Get shown
    * @return shown
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<String> getShown() {
     return shown;
   }
 
-  public void setShown(@javax.annotation.Nonnull List<String> shown) {
+  public void setShown(@jakarta.annotation.Nonnull List<String> shown) {
     this.shown = shown;
   }
 
 
-  public FormField required(@javax.annotation.Nonnull List<String> required) {
+  public FormField required(@jakarta.annotation.Nonnull List<String> required) {
     this.required = required;
     return this;
   }
@@ -539,17 +539,17 @@ public class FormField {
    * Get required
    * @return required
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<String> getRequired() {
     return required;
   }
 
-  public void setRequired(@javax.annotation.Nonnull List<String> required) {
+  public void setRequired(@jakarta.annotation.Nonnull List<String> required) {
     this.required = required;
   }
 
 
-  public FormField showOnIncidentDetails(@javax.annotation.Nullable Boolean showOnIncidentDetails) {
+  public FormField showOnIncidentDetails(@jakarta.annotation.Nullable Boolean showOnIncidentDetails) {
     this.showOnIncidentDetails = showOnIncidentDetails;
     return this;
   }
@@ -558,17 +558,17 @@ public class FormField {
    * Whether the form field is shown on the incident details panel
    * @return showOnIncidentDetails
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getShowOnIncidentDetails() {
     return showOnIncidentDetails;
   }
 
-  public void setShowOnIncidentDetails(@javax.annotation.Nullable Boolean showOnIncidentDetails) {
+  public void setShowOnIncidentDetails(@jakarta.annotation.Nullable Boolean showOnIncidentDetails) {
     this.showOnIncidentDetails = showOnIncidentDetails;
   }
 
 
-  public FormField enabled(@javax.annotation.Nullable Boolean enabled) {
+  public FormField enabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -577,17 +577,17 @@ public class FormField {
    * Whether the form field is enabled
    * @return enabled
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getEnabled() {
     return enabled;
   }
 
-  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
+  public void setEnabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public FormField defaultValues(@javax.annotation.Nonnull List<String> defaultValues) {
+  public FormField defaultValues(@jakarta.annotation.Nonnull List<String> defaultValues) {
     this.defaultValues = defaultValues;
     return this;
   }
@@ -604,17 +604,17 @@ public class FormField {
    * Get defaultValues
    * @return defaultValues
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<String> getDefaultValues() {
     return defaultValues;
   }
 
-  public void setDefaultValues(@javax.annotation.Nonnull List<String> defaultValues) {
+  public void setDefaultValues(@jakarta.annotation.Nonnull List<String> defaultValues) {
     this.defaultValues = defaultValues;
   }
 
 
-  public FormField createdAt(@javax.annotation.Nonnull String createdAt) {
+  public FormField createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -623,17 +623,17 @@ public class FormField {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public FormField updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public FormField updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -642,12 +642,12 @@ public class FormField {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

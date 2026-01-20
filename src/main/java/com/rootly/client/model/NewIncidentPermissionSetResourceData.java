@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * NewIncidentPermissionSetResourceData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewIncidentPermissionSetResourceData {
   /**
    * Gets or Sets type
@@ -103,18 +103,18 @@ public class NewIncidentPermissionSetResourceData {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private NewIncidentPermissionSetResourceDataAttributes attributes;
 
   public NewIncidentPermissionSetResourceData() {
   }
 
-  public NewIncidentPermissionSetResourceData type(@javax.annotation.Nonnull TypeEnum type) {
+  public NewIncidentPermissionSetResourceData type(@jakarta.annotation.Nonnull TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -123,17 +123,17 @@ public class NewIncidentPermissionSetResourceData {
    * Get type
    * @return type
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public TypeEnum getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nonnull TypeEnum type) {
+  public void setType(@jakarta.annotation.Nonnull TypeEnum type) {
     this.type = type;
   }
 
 
-  public NewIncidentPermissionSetResourceData attributes(@javax.annotation.Nonnull NewIncidentPermissionSetResourceDataAttributes attributes) {
+  public NewIncidentPermissionSetResourceData attributes(@jakarta.annotation.Nonnull NewIncidentPermissionSetResourceDataAttributes attributes) {
     this.attributes = attributes;
     return this;
   }
@@ -142,12 +142,12 @@ public class NewIncidentPermissionSetResourceData {
    * Get attributes
    * @return attributes
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public NewIncidentPermissionSetResourceDataAttributes getAttributes() {
     return attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nonnull NewIncidentPermissionSetResourceDataAttributes attributes) {
+  public void setAttributes(@jakarta.annotation.Nonnull NewIncidentPermissionSetResourceDataAttributes attributes) {
     this.attributes = attributes;
   }
 

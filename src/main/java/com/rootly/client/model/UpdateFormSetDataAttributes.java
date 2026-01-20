@@ -50,22 +50,22 @@ import com.rootly.client.JSON;
 /**
  * UpdateFormSetDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateFormSetDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_FORMS = "forms";
   @SerializedName(SERIALIZED_NAME_FORMS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> forms = new ArrayList<>();
 
   public UpdateFormSetDataAttributes() {
   }
 
-  public UpdateFormSetDataAttributes name(@javax.annotation.Nullable String name) {
+  public UpdateFormSetDataAttributes name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -74,17 +74,17 @@ public class UpdateFormSetDataAttributes {
    * The name of the form set
    * @return name
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public UpdateFormSetDataAttributes forms(@javax.annotation.Nullable List<String> forms) {
+  public UpdateFormSetDataAttributes forms(@jakarta.annotation.Nullable List<String> forms) {
     this.forms = forms;
     return this;
   }
@@ -101,12 +101,12 @@ public class UpdateFormSetDataAttributes {
    * The forms included in the form set. Add custom forms using the custom form&#39;s &#x60;slug&#x60; field. Or choose a built-in form: &#x60;web_new_incident_form&#x60;, &#x60;web_update_incident_form&#x60;, &#x60;web_incident_post_mortem_form&#x60;, &#x60;web_incident_mitigation_form&#x60;, &#x60;web_incident_resolution_form&#x60;, &#x60;web_incident_cancellation_form&#x60;, &#x60;web_scheduled_incident_form&#x60;, &#x60;web_update_scheduled_incident_form&#x60;, &#x60;slack_new_incident_form&#x60;, &#x60;slack_update_incident_form&#x60;, &#x60;slack_update_incident_status_form&#x60;, &#x60;slack_incident_mitigation_form&#x60;, &#x60;slack_incident_resolution_form&#x60;, &#x60;slack_incident_cancellation_form&#x60;, &#x60;slack_scheduled_incident_form&#x60;, &#x60;slack_update_scheduled_incident_form&#x60;
    * @return forms
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getForms() {
     return forms;
   }
 
-  public void setForms(@javax.annotation.Nullable List<String> forms) {
+  public void setForms(@jakarta.annotation.Nullable List<String> forms) {
     this.forms = forms;
   }
 

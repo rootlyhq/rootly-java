@@ -48,37 +48,37 @@ import com.rootly.client.JSON;
 /**
  * NewFormFieldOptionDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewFormFieldOptionDataAttributes {
   public static final String SERIALIZED_NAME_FORM_FIELD_ID = "form_field_id";
   @SerializedName(SERIALIZED_NAME_FORM_FIELD_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String formFieldId;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String value;
 
   public static final String SERIALIZED_NAME_COLOR = "color";
   @SerializedName(SERIALIZED_NAME_COLOR)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String color;
 
   public static final String SERIALIZED_NAME_DEFAULT = "default";
   @SerializedName(SERIALIZED_NAME_DEFAULT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean _default;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public NewFormFieldOptionDataAttributes() {
   }
 
-  public NewFormFieldOptionDataAttributes formFieldId(@javax.annotation.Nonnull String formFieldId) {
+  public NewFormFieldOptionDataAttributes formFieldId(@jakarta.annotation.Nonnull String formFieldId) {
     this.formFieldId = formFieldId;
     return this;
   }
@@ -87,17 +87,17 @@ public class NewFormFieldOptionDataAttributes {
    * The ID of the form field
    * @return formFieldId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getFormFieldId() {
     return formFieldId;
   }
 
-  public void setFormFieldId(@javax.annotation.Nonnull String formFieldId) {
+  public void setFormFieldId(@jakarta.annotation.Nonnull String formFieldId) {
     this.formFieldId = formFieldId;
   }
 
 
-  public NewFormFieldOptionDataAttributes value(@javax.annotation.Nonnull String value) {
+  public NewFormFieldOptionDataAttributes value(@jakarta.annotation.Nonnull String value) {
     this.value = value;
     return this;
   }
@@ -106,17 +106,17 @@ public class NewFormFieldOptionDataAttributes {
    * The value of the form field option
    * @return value
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getValue() {
     return value;
   }
 
-  public void setValue(@javax.annotation.Nonnull String value) {
+  public void setValue(@jakarta.annotation.Nonnull String value) {
     this.value = value;
   }
 
 
-  public NewFormFieldOptionDataAttributes color(@javax.annotation.Nullable String color) {
+  public NewFormFieldOptionDataAttributes color(@jakarta.annotation.Nullable String color) {
     this.color = color;
     return this;
   }
@@ -125,17 +125,17 @@ public class NewFormFieldOptionDataAttributes {
    * The hex color of the form field option
    * @return color
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getColor() {
     return color;
   }
 
-  public void setColor(@javax.annotation.Nullable String color) {
+  public void setColor(@jakarta.annotation.Nullable String color) {
     this.color = color;
   }
 
 
-  public NewFormFieldOptionDataAttributes _default(@javax.annotation.Nullable Boolean _default) {
+  public NewFormFieldOptionDataAttributes _default(@jakarta.annotation.Nullable Boolean _default) {
     this._default = _default;
     return this;
   }
@@ -144,17 +144,17 @@ public class NewFormFieldOptionDataAttributes {
    * Get _default
    * @return _default
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getDefault() {
     return _default;
   }
 
-  public void setDefault(@javax.annotation.Nullable Boolean _default) {
+  public void setDefault(@jakarta.annotation.Nullable Boolean _default) {
     this._default = _default;
   }
 
 
-  public NewFormFieldOptionDataAttributes position(@javax.annotation.Nullable Integer position) {
+  public NewFormFieldOptionDataAttributes position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -163,12 +163,12 @@ public class NewFormFieldOptionDataAttributes {
    * The position of the form field option
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 

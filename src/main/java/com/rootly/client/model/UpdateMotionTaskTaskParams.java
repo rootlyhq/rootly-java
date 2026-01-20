@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateMotionTaskTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateMotionTaskTaskParams {
   /**
    * Gets or Sets taskType
@@ -105,48 +105,48 @@ public class UpdateMotionTaskTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_TASK_ID = "task_id";
   @SerializedName(SERIALIZED_NAME_TASK_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String taskId;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String title;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_LABELS = "labels";
   @SerializedName(SERIALIZED_NAME_LABELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> labels = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PRIORITY = "priority";
   @SerializedName(SERIALIZED_NAME_PRIORITY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CreateJiraIssueTaskParamsPriority priority;
 
   public static final String SERIALIZED_NAME_DURATION = "duration";
   @SerializedName(SERIALIZED_NAME_DURATION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String duration;
 
   public static final String SERIALIZED_NAME_DUE_DATE = "due_date";
   @SerializedName(SERIALIZED_NAME_DUE_DATE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String dueDate;
 
   public UpdateMotionTaskTaskParams() {
   }
 
-  public UpdateMotionTaskTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public UpdateMotionTaskTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -155,17 +155,17 @@ public class UpdateMotionTaskTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public UpdateMotionTaskTaskParams taskId(@javax.annotation.Nonnull String taskId) {
+  public UpdateMotionTaskTaskParams taskId(@jakarta.annotation.Nonnull String taskId) {
     this.taskId = taskId;
     return this;
   }
@@ -174,17 +174,17 @@ public class UpdateMotionTaskTaskParams {
    * The task id
    * @return taskId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getTaskId() {
     return taskId;
   }
 
-  public void setTaskId(@javax.annotation.Nonnull String taskId) {
+  public void setTaskId(@jakarta.annotation.Nonnull String taskId) {
     this.taskId = taskId;
   }
 
 
-  public UpdateMotionTaskTaskParams title(@javax.annotation.Nullable String title) {
+  public UpdateMotionTaskTaskParams title(@jakarta.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
@@ -193,17 +193,17 @@ public class UpdateMotionTaskTaskParams {
    * The task title
    * @return title
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nullable String title) {
+  public void setTitle(@jakarta.annotation.Nullable String title) {
     this.title = title;
   }
 
 
-  public UpdateMotionTaskTaskParams description(@javax.annotation.Nullable String description) {
+  public UpdateMotionTaskTaskParams description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -212,17 +212,17 @@ public class UpdateMotionTaskTaskParams {
    * The task description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UpdateMotionTaskTaskParams labels(@javax.annotation.Nullable List<String> labels) {
+  public UpdateMotionTaskTaskParams labels(@jakarta.annotation.Nullable List<String> labels) {
     this.labels = labels;
     return this;
   }
@@ -239,17 +239,17 @@ public class UpdateMotionTaskTaskParams {
    * Get labels
    * @return labels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getLabels() {
     return labels;
   }
 
-  public void setLabels(@javax.annotation.Nullable List<String> labels) {
+  public void setLabels(@jakarta.annotation.Nullable List<String> labels) {
     this.labels = labels;
   }
 
 
-  public UpdateMotionTaskTaskParams priority(@javax.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
+  public UpdateMotionTaskTaskParams priority(@jakarta.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
     this.priority = priority;
     return this;
   }
@@ -258,17 +258,17 @@ public class UpdateMotionTaskTaskParams {
    * Get priority
    * @return priority
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CreateJiraIssueTaskParamsPriority getPriority() {
     return priority;
   }
 
-  public void setPriority(@javax.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
+  public void setPriority(@jakarta.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
     this.priority = priority;
   }
 
 
-  public UpdateMotionTaskTaskParams duration(@javax.annotation.Nullable String duration) {
+  public UpdateMotionTaskTaskParams duration(@jakarta.annotation.Nullable String duration) {
     this.duration = duration;
     return this;
   }
@@ -277,17 +277,17 @@ public class UpdateMotionTaskTaskParams {
    * The duration. Eg.  \&quot;NONE\&quot;, \&quot;REMINDER\&quot;, or a integer greater than 0.
    * @return duration
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDuration() {
     return duration;
   }
 
-  public void setDuration(@javax.annotation.Nullable String duration) {
+  public void setDuration(@jakarta.annotation.Nullable String duration) {
     this.duration = duration;
   }
 
 
-  public UpdateMotionTaskTaskParams dueDate(@javax.annotation.Nullable String dueDate) {
+  public UpdateMotionTaskTaskParams dueDate(@jakarta.annotation.Nullable String dueDate) {
     this.dueDate = dueDate;
     return this;
   }
@@ -296,12 +296,12 @@ public class UpdateMotionTaskTaskParams {
    * The due date
    * @return dueDate
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDueDate() {
     return dueDate;
   }
 
-  public void setDueDate(@javax.annotation.Nullable String dueDate) {
+  public void setDueDate(@jakarta.annotation.Nullable String dueDate) {
     this.dueDate = dueDate;
   }
 

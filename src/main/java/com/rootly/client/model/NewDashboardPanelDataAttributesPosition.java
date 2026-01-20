@@ -49,32 +49,32 @@ import com.rootly.client.JSON;
 /**
  * NewDashboardPanelDataAttributesPosition
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewDashboardPanelDataAttributesPosition {
   public static final String SERIALIZED_NAME_X = "x";
   @SerializedName(SERIALIZED_NAME_X)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private BigDecimal x;
 
   public static final String SERIALIZED_NAME_Y = "y";
   @SerializedName(SERIALIZED_NAME_Y)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private BigDecimal y;
 
   public static final String SERIALIZED_NAME_W = "w";
   @SerializedName(SERIALIZED_NAME_W)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private BigDecimal w;
 
   public static final String SERIALIZED_NAME_H = "h";
   @SerializedName(SERIALIZED_NAME_H)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private BigDecimal h;
 
   public NewDashboardPanelDataAttributesPosition() {
   }
 
-  public NewDashboardPanelDataAttributesPosition x(@javax.annotation.Nonnull BigDecimal x) {
+  public NewDashboardPanelDataAttributesPosition x(@jakarta.annotation.Nonnull BigDecimal x) {
     this.x = x;
     return this;
   }
@@ -83,17 +83,17 @@ public class NewDashboardPanelDataAttributesPosition {
    * Get x
    * @return x
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public BigDecimal getX() {
     return x;
   }
 
-  public void setX(@javax.annotation.Nonnull BigDecimal x) {
+  public void setX(@jakarta.annotation.Nonnull BigDecimal x) {
     this.x = x;
   }
 
 
-  public NewDashboardPanelDataAttributesPosition y(@javax.annotation.Nonnull BigDecimal y) {
+  public NewDashboardPanelDataAttributesPosition y(@jakarta.annotation.Nonnull BigDecimal y) {
     this.y = y;
     return this;
   }
@@ -102,17 +102,17 @@ public class NewDashboardPanelDataAttributesPosition {
    * Get y
    * @return y
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public BigDecimal getY() {
     return y;
   }
 
-  public void setY(@javax.annotation.Nonnull BigDecimal y) {
+  public void setY(@jakarta.annotation.Nonnull BigDecimal y) {
     this.y = y;
   }
 
 
-  public NewDashboardPanelDataAttributesPosition w(@javax.annotation.Nonnull BigDecimal w) {
+  public NewDashboardPanelDataAttributesPosition w(@jakarta.annotation.Nonnull BigDecimal w) {
     this.w = w;
     return this;
   }
@@ -121,17 +121,17 @@ public class NewDashboardPanelDataAttributesPosition {
    * Get w
    * @return w
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public BigDecimal getW() {
     return w;
   }
 
-  public void setW(@javax.annotation.Nonnull BigDecimal w) {
+  public void setW(@jakarta.annotation.Nonnull BigDecimal w) {
     this.w = w;
   }
 
 
-  public NewDashboardPanelDataAttributesPosition h(@javax.annotation.Nonnull BigDecimal h) {
+  public NewDashboardPanelDataAttributesPosition h(@jakarta.annotation.Nonnull BigDecimal h) {
     this.h = h;
     return this;
   }
@@ -140,12 +140,12 @@ public class NewDashboardPanelDataAttributesPosition {
    * Get h
    * @return h
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public BigDecimal getH() {
     return h;
   }
 
-  public void setH(@javax.annotation.Nonnull BigDecimal h) {
+  public void setH(@jakarta.annotation.Nonnull BigDecimal h) {
     this.h = h;
   }
 

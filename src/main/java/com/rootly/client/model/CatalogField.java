@@ -49,21 +49,21 @@ import com.rootly.client.JSON;
 /**
  * CatalogField
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CatalogField {
   public static final String SERIALIZED_NAME_CATALOG_ID = "catalog_id";
   @SerializedName(SERIALIZED_NAME_CATALOG_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String catalogId;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String slug;
 
   /**
@@ -120,38 +120,38 @@ public class CatalogField {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private KindEnum kind;
 
   public static final String SERIALIZED_NAME_KIND_CATALOG_ID = "kind_catalog_id";
   @SerializedName(SERIALIZED_NAME_KIND_CATALOG_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String kindCatalogId;
 
   public static final String SERIALIZED_NAME_MULTIPLE = "multiple";
   @SerializedName(SERIALIZED_NAME_MULTIPLE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Boolean multiple;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public CatalogField() {
   }
 
-  public CatalogField catalogId(@javax.annotation.Nonnull String catalogId) {
+  public CatalogField catalogId(@jakarta.annotation.Nonnull String catalogId) {
     this.catalogId = catalogId;
     return this;
   }
@@ -160,17 +160,17 @@ public class CatalogField {
    * Get catalogId
    * @return catalogId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCatalogId() {
     return catalogId;
   }
 
-  public void setCatalogId(@javax.annotation.Nonnull String catalogId) {
+  public void setCatalogId(@jakarta.annotation.Nonnull String catalogId) {
     this.catalogId = catalogId;
   }
 
 
-  public CatalogField name(@javax.annotation.Nonnull String name) {
+  public CatalogField name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -179,17 +179,17 @@ public class CatalogField {
    * Get name
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public CatalogField slug(@javax.annotation.Nonnull String slug) {
+  public CatalogField slug(@jakarta.annotation.Nonnull String slug) {
     this.slug = slug;
     return this;
   }
@@ -198,17 +198,17 @@ public class CatalogField {
    * Get slug
    * @return slug
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getSlug() {
     return slug;
   }
 
-  public void setSlug(@javax.annotation.Nonnull String slug) {
+  public void setSlug(@jakarta.annotation.Nonnull String slug) {
     this.slug = slug;
   }
 
 
-  public CatalogField kind(@javax.annotation.Nonnull KindEnum kind) {
+  public CatalogField kind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
     return this;
   }
@@ -217,17 +217,17 @@ public class CatalogField {
    * Get kind
    * @return kind
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(@javax.annotation.Nonnull KindEnum kind) {
+  public void setKind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public CatalogField kindCatalogId(@javax.annotation.Nullable String kindCatalogId) {
+  public CatalogField kindCatalogId(@jakarta.annotation.Nullable String kindCatalogId) {
     this.kindCatalogId = kindCatalogId;
     return this;
   }
@@ -236,17 +236,17 @@ public class CatalogField {
    * Restricts values to items of specified catalog.
    * @return kindCatalogId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getKindCatalogId() {
     return kindCatalogId;
   }
 
-  public void setKindCatalogId(@javax.annotation.Nullable String kindCatalogId) {
+  public void setKindCatalogId(@jakarta.annotation.Nullable String kindCatalogId) {
     this.kindCatalogId = kindCatalogId;
   }
 
 
-  public CatalogField multiple(@javax.annotation.Nonnull Boolean multiple) {
+  public CatalogField multiple(@jakarta.annotation.Nonnull Boolean multiple) {
     this.multiple = multiple;
     return this;
   }
@@ -255,17 +255,17 @@ public class CatalogField {
    * Whether the attribute accepts multiple values.
    * @return multiple
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Boolean getMultiple() {
     return multiple;
   }
 
-  public void setMultiple(@javax.annotation.Nonnull Boolean multiple) {
+  public void setMultiple(@jakarta.annotation.Nonnull Boolean multiple) {
     this.multiple = multiple;
   }
 
 
-  public CatalogField position(@javax.annotation.Nullable Integer position) {
+  public CatalogField position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -274,17 +274,17 @@ public class CatalogField {
    * Default position of the item when displayed in a list.
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 
 
-  public CatalogField createdAt(@javax.annotation.Nonnull String createdAt) {
+  public CatalogField createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -293,17 +293,17 @@ public class CatalogField {
    * Get createdAt
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public CatalogField updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public CatalogField updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -312,12 +312,12 @@ public class CatalogField {
    * Get updatedAt
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

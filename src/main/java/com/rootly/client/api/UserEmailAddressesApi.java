@@ -93,7 +93,7 @@ public class UserEmailAddressesApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createUserEmailAddressCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull NewUserEmailAddress newUserEmailAddress, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createUserEmailAddressCall(@jakarta.annotation.Nonnull String userId, @jakarta.annotation.Nonnull NewUserEmailAddress newUserEmailAddress, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -140,7 +140,7 @@ public class UserEmailAddressesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createUserEmailAddressValidateBeforeCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull NewUserEmailAddress newUserEmailAddress, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createUserEmailAddressValidateBeforeCall(@jakarta.annotation.Nonnull String userId, @jakarta.annotation.Nonnull NewUserEmailAddress newUserEmailAddress, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling createUserEmailAddress(Async)");
@@ -172,7 +172,7 @@ public class UserEmailAddressesApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public UserEmailAddressResponse createUserEmailAddress(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull NewUserEmailAddress newUserEmailAddress) throws ApiException {
+    public UserEmailAddressResponse createUserEmailAddress(@jakarta.annotation.Nonnull String userId, @jakarta.annotation.Nonnull NewUserEmailAddress newUserEmailAddress) throws ApiException {
         ApiResponse<UserEmailAddressResponse> localVarResp = createUserEmailAddressWithHttpInfo(userId, newUserEmailAddress);
         return localVarResp.getData();
     }
@@ -194,7 +194,7 @@ public class UserEmailAddressesApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UserEmailAddressResponse> createUserEmailAddressWithHttpInfo(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull NewUserEmailAddress newUserEmailAddress) throws ApiException {
+    public ApiResponse<UserEmailAddressResponse> createUserEmailAddressWithHttpInfo(@jakarta.annotation.Nonnull String userId, @jakarta.annotation.Nonnull NewUserEmailAddress newUserEmailAddress) throws ApiException {
         okhttp3.Call localVarCall = createUserEmailAddressValidateBeforeCall(userId, newUserEmailAddress, null);
         Type localVarReturnType = new TypeToken<UserEmailAddressResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -218,7 +218,7 @@ public class UserEmailAddressesApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createUserEmailAddressAsync(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull NewUserEmailAddress newUserEmailAddress, final ApiCallback<UserEmailAddressResponse> _callback) throws ApiException {
+    public okhttp3.Call createUserEmailAddressAsync(@jakarta.annotation.Nonnull String userId, @jakarta.annotation.Nonnull NewUserEmailAddress newUserEmailAddress, final ApiCallback<UserEmailAddressResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createUserEmailAddressValidateBeforeCall(userId, newUserEmailAddress, _callback);
         Type localVarReturnType = new TypeToken<UserEmailAddressResponse>(){}.getType();
@@ -240,7 +240,7 @@ public class UserEmailAddressesApi {
         <tr><td> 404 </td><td> responds with not found when accessing other user&#39;s resources </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteUserEmailAddressCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteUserEmailAddressCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -286,7 +286,7 @@ public class UserEmailAddressesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteUserEmailAddressValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteUserEmailAddressValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteUserEmailAddress(Async)");
@@ -311,7 +311,7 @@ public class UserEmailAddressesApi {
         <tr><td> 404 </td><td> responds with not found when accessing other user&#39;s resources </td><td>  -  </td></tr>
      </table>
      */
-    public UserEmailAddressResponse deleteUserEmailAddress(@javax.annotation.Nonnull String id) throws ApiException {
+    public UserEmailAddressResponse deleteUserEmailAddress(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<UserEmailAddressResponse> localVarResp = deleteUserEmailAddressWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -331,7 +331,7 @@ public class UserEmailAddressesApi {
         <tr><td> 404 </td><td> responds with not found when accessing other user&#39;s resources </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UserEmailAddressResponse> deleteUserEmailAddressWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<UserEmailAddressResponse> deleteUserEmailAddressWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteUserEmailAddressValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<UserEmailAddressResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -353,7 +353,7 @@ public class UserEmailAddressesApi {
         <tr><td> 404 </td><td> responds with not found when accessing other user&#39;s resources </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteUserEmailAddressAsync(@javax.annotation.Nonnull String id, final ApiCallback<UserEmailAddressResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteUserEmailAddressAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<UserEmailAddressResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteUserEmailAddressValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<UserEmailAddressResponse>(){}.getType();
@@ -375,7 +375,7 @@ public class UserEmailAddressesApi {
         <tr><td> 404 </td><td> responds with not found when accessing other user&#39;s resources </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getUserEmailAddressesCall(@javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getUserEmailAddressesCall(@jakarta.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -421,7 +421,7 @@ public class UserEmailAddressesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getUserEmailAddressesValidateBeforeCall(@javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getUserEmailAddressesValidateBeforeCall(@jakarta.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling getUserEmailAddresses(Async)");
@@ -446,7 +446,7 @@ public class UserEmailAddressesApi {
         <tr><td> 404 </td><td> responds with not found when accessing other user&#39;s resources </td><td>  -  </td></tr>
      </table>
      */
-    public UserEmailAddressList getUserEmailAddresses(@javax.annotation.Nonnull String userId) throws ApiException {
+    public UserEmailAddressList getUserEmailAddresses(@jakarta.annotation.Nonnull String userId) throws ApiException {
         ApiResponse<UserEmailAddressList> localVarResp = getUserEmailAddressesWithHttpInfo(userId);
         return localVarResp.getData();
     }
@@ -466,7 +466,7 @@ public class UserEmailAddressesApi {
         <tr><td> 404 </td><td> responds with not found when accessing other user&#39;s resources </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UserEmailAddressList> getUserEmailAddressesWithHttpInfo(@javax.annotation.Nonnull String userId) throws ApiException {
+    public ApiResponse<UserEmailAddressList> getUserEmailAddressesWithHttpInfo(@jakarta.annotation.Nonnull String userId) throws ApiException {
         okhttp3.Call localVarCall = getUserEmailAddressesValidateBeforeCall(userId, null);
         Type localVarReturnType = new TypeToken<UserEmailAddressList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -488,7 +488,7 @@ public class UserEmailAddressesApi {
         <tr><td> 404 </td><td> responds with not found when accessing other user&#39;s resources </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getUserEmailAddressesAsync(@javax.annotation.Nonnull String userId, final ApiCallback<UserEmailAddressList> _callback) throws ApiException {
+    public okhttp3.Call getUserEmailAddressesAsync(@jakarta.annotation.Nonnull String userId, final ApiCallback<UserEmailAddressList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getUserEmailAddressesValidateBeforeCall(userId, _callback);
         Type localVarReturnType = new TypeToken<UserEmailAddressList>(){}.getType();
@@ -510,7 +510,7 @@ public class UserEmailAddressesApi {
         <tr><td> 404 </td><td> email address not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call resendUserEmailAddressVerificationCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call resendUserEmailAddressVerificationCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -556,7 +556,7 @@ public class UserEmailAddressesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call resendUserEmailAddressVerificationValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call resendUserEmailAddressVerificationValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling resendUserEmailAddressVerification(Async)");
@@ -581,7 +581,7 @@ public class UserEmailAddressesApi {
         <tr><td> 404 </td><td> email address not found </td><td>  -  </td></tr>
      </table>
      */
-    public UserEmailAddressResponse resendUserEmailAddressVerification(@javax.annotation.Nonnull String id) throws ApiException {
+    public UserEmailAddressResponse resendUserEmailAddressVerification(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<UserEmailAddressResponse> localVarResp = resendUserEmailAddressVerificationWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -601,7 +601,7 @@ public class UserEmailAddressesApi {
         <tr><td> 404 </td><td> email address not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UserEmailAddressResponse> resendUserEmailAddressVerificationWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<UserEmailAddressResponse> resendUserEmailAddressVerificationWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = resendUserEmailAddressVerificationValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<UserEmailAddressResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -623,7 +623,7 @@ public class UserEmailAddressesApi {
         <tr><td> 404 </td><td> email address not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call resendUserEmailAddressVerificationAsync(@javax.annotation.Nonnull String id, final ApiCallback<UserEmailAddressResponse> _callback) throws ApiException {
+    public okhttp3.Call resendUserEmailAddressVerificationAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<UserEmailAddressResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = resendUserEmailAddressVerificationValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<UserEmailAddressResponse>(){}.getType();
@@ -645,7 +645,7 @@ public class UserEmailAddressesApi {
         <tr><td> 404 </td><td> responds with not found when accessing other user&#39;s resources </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call showUserEmailAddressCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call showUserEmailAddressCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -691,7 +691,7 @@ public class UserEmailAddressesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call showUserEmailAddressValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call showUserEmailAddressValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling showUserEmailAddress(Async)");
@@ -716,7 +716,7 @@ public class UserEmailAddressesApi {
         <tr><td> 404 </td><td> responds with not found when accessing other user&#39;s resources </td><td>  -  </td></tr>
      </table>
      */
-    public UserEmailAddressResponse showUserEmailAddress(@javax.annotation.Nonnull String id) throws ApiException {
+    public UserEmailAddressResponse showUserEmailAddress(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<UserEmailAddressResponse> localVarResp = showUserEmailAddressWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -736,7 +736,7 @@ public class UserEmailAddressesApi {
         <tr><td> 404 </td><td> responds with not found when accessing other user&#39;s resources </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UserEmailAddressResponse> showUserEmailAddressWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<UserEmailAddressResponse> showUserEmailAddressWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = showUserEmailAddressValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<UserEmailAddressResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -758,7 +758,7 @@ public class UserEmailAddressesApi {
         <tr><td> 404 </td><td> responds with not found when accessing other user&#39;s resources </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call showUserEmailAddressAsync(@javax.annotation.Nonnull String id, final ApiCallback<UserEmailAddressResponse> _callback) throws ApiException {
+    public okhttp3.Call showUserEmailAddressAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<UserEmailAddressResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = showUserEmailAddressValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<UserEmailAddressResponse>(){}.getType();
@@ -782,7 +782,7 @@ public class UserEmailAddressesApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateUserEmailAddressCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateUserEmailAddress updateUserEmailAddress, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateUserEmailAddressCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateUserEmailAddress updateUserEmailAddress, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -829,7 +829,7 @@ public class UserEmailAddressesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateUserEmailAddressValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateUserEmailAddress updateUserEmailAddress, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateUserEmailAddressValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateUserEmailAddress updateUserEmailAddress, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateUserEmailAddress(Async)");
@@ -861,7 +861,7 @@ public class UserEmailAddressesApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public UserEmailAddressResponse updateUserEmailAddress(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateUserEmailAddress updateUserEmailAddress) throws ApiException {
+    public UserEmailAddressResponse updateUserEmailAddress(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateUserEmailAddress updateUserEmailAddress) throws ApiException {
         ApiResponse<UserEmailAddressResponse> localVarResp = updateUserEmailAddressWithHttpInfo(id, updateUserEmailAddress);
         return localVarResp.getData();
     }
@@ -883,7 +883,7 @@ public class UserEmailAddressesApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UserEmailAddressResponse> updateUserEmailAddressWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateUserEmailAddress updateUserEmailAddress) throws ApiException {
+    public ApiResponse<UserEmailAddressResponse> updateUserEmailAddressWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateUserEmailAddress updateUserEmailAddress) throws ApiException {
         okhttp3.Call localVarCall = updateUserEmailAddressValidateBeforeCall(id, updateUserEmailAddress, null);
         Type localVarReturnType = new TypeToken<UserEmailAddressResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -907,7 +907,7 @@ public class UserEmailAddressesApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateUserEmailAddressAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateUserEmailAddress updateUserEmailAddress, final ApiCallback<UserEmailAddressResponse> _callback) throws ApiException {
+    public okhttp3.Call updateUserEmailAddressAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateUserEmailAddress updateUserEmailAddress, final ApiCallback<UserEmailAddressResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateUserEmailAddressValidateBeforeCall(id, updateUserEmailAddress, _callback);
         Type localVarReturnType = new TypeToken<UserEmailAddressResponse>(){}.getType();
@@ -930,7 +930,7 @@ public class UserEmailAddressesApi {
         <tr><td> 404 </td><td> email address not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call verifyUserEmailAddressCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull String token, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call verifyUserEmailAddressCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull String token, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -980,7 +980,7 @@ public class UserEmailAddressesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call verifyUserEmailAddressValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull String token, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call verifyUserEmailAddressValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull String token, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling verifyUserEmailAddress(Async)");
@@ -1011,7 +1011,7 @@ public class UserEmailAddressesApi {
         <tr><td> 404 </td><td> email address not found </td><td>  -  </td></tr>
      </table>
      */
-    public UserEmailAddressResponse verifyUserEmailAddress(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull String token) throws ApiException {
+    public UserEmailAddressResponse verifyUserEmailAddress(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull String token) throws ApiException {
         ApiResponse<UserEmailAddressResponse> localVarResp = verifyUserEmailAddressWithHttpInfo(id, token);
         return localVarResp.getData();
     }
@@ -1032,7 +1032,7 @@ public class UserEmailAddressesApi {
         <tr><td> 404 </td><td> email address not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UserEmailAddressResponse> verifyUserEmailAddressWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull String token) throws ApiException {
+    public ApiResponse<UserEmailAddressResponse> verifyUserEmailAddressWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull String token) throws ApiException {
         okhttp3.Call localVarCall = verifyUserEmailAddressValidateBeforeCall(id, token, null);
         Type localVarReturnType = new TypeToken<UserEmailAddressResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1055,7 +1055,7 @@ public class UserEmailAddressesApi {
         <tr><td> 404 </td><td> email address not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call verifyUserEmailAddressAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull String token, final ApiCallback<UserEmailAddressResponse> _callback) throws ApiException {
+    public okhttp3.Call verifyUserEmailAddressAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull String token, final ApiCallback<UserEmailAddressResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = verifyUserEmailAddressValidateBeforeCall(id, token, _callback);
         Type localVarReturnType = new TypeToken<UserEmailAddressResponse>(){}.getType();

@@ -48,22 +48,22 @@ import com.rootly.client.JSON;
 /**
  * CreateMicrosoftTeamsChatTaskParamsMembersInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateMicrosoftTeamsChatTaskParamsMembersInner {
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String email;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String name;
 
   public CreateMicrosoftTeamsChatTaskParamsMembersInner() {
   }
 
-  public CreateMicrosoftTeamsChatTaskParamsMembersInner email(@javax.annotation.Nullable String email) {
+  public CreateMicrosoftTeamsChatTaskParamsMembersInner email(@jakarta.annotation.Nullable String email) {
     this.email = email;
     return this;
   }
@@ -72,17 +72,17 @@ public class CreateMicrosoftTeamsChatTaskParamsMembersInner {
    * Get email
    * @return email
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getEmail() {
     return email;
   }
 
-  public void setEmail(@javax.annotation.Nullable String email) {
+  public void setEmail(@jakarta.annotation.Nullable String email) {
     this.email = email;
   }
 
 
-  public CreateMicrosoftTeamsChatTaskParamsMembersInner name(@javax.annotation.Nullable String name) {
+  public CreateMicrosoftTeamsChatTaskParamsMembersInner name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -91,12 +91,12 @@ public class CreateMicrosoftTeamsChatTaskParamsMembersInner {
    * Get name
    * @return name
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 

@@ -49,47 +49,47 @@ import com.rootly.client.JSON;
 /**
  * CustomForm
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CustomForm {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String slug;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_COMMAND = "command";
   @SerializedName(SERIALIZED_NAME_COMMAND)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String command;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public CustomForm() {
   }
 
-  public CustomForm name(@javax.annotation.Nonnull String name) {
+  public CustomForm name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -98,17 +98,17 @@ public class CustomForm {
    * The name of the custom form.
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public CustomForm slug(@javax.annotation.Nonnull String slug) {
+  public CustomForm slug(@jakarta.annotation.Nonnull String slug) {
     this.slug = slug;
     return this;
   }
@@ -117,17 +117,17 @@ public class CustomForm {
    * The custom form slug. Add this to form_field.shown or form_field.required to associate form fields with custom forms.
    * @return slug
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getSlug() {
     return slug;
   }
 
-  public void setSlug(@javax.annotation.Nonnull String slug) {
+  public void setSlug(@jakarta.annotation.Nonnull String slug) {
     this.slug = slug;
   }
 
 
-  public CustomForm description(@javax.annotation.Nullable String description) {
+  public CustomForm description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -136,17 +136,17 @@ public class CustomForm {
    * Get description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public CustomForm enabled(@javax.annotation.Nonnull Boolean enabled) {
+  public CustomForm enabled(@jakarta.annotation.Nonnull Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -155,17 +155,17 @@ public class CustomForm {
    * Get enabled
    * @return enabled
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Boolean getEnabled() {
     return enabled;
   }
 
-  public void setEnabled(@javax.annotation.Nonnull Boolean enabled) {
+  public void setEnabled(@jakarta.annotation.Nonnull Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public CustomForm command(@javax.annotation.Nonnull String command) {
+  public CustomForm command(@jakarta.annotation.Nonnull String command) {
     this.command = command;
     return this;
   }
@@ -174,17 +174,17 @@ public class CustomForm {
    * The Slack command used to trigger this form.
    * @return command
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCommand() {
     return command;
   }
 
-  public void setCommand(@javax.annotation.Nonnull String command) {
+  public void setCommand(@jakarta.annotation.Nonnull String command) {
     this.command = command;
   }
 
 
-  public CustomForm createdAt(@javax.annotation.Nonnull String createdAt) {
+  public CustomForm createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -193,17 +193,17 @@ public class CustomForm {
    * Date of creation.
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public CustomForm updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public CustomForm updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -212,12 +212,12 @@ public class CustomForm {
    * Date of last update.
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

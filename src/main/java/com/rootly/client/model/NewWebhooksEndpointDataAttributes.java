@@ -50,21 +50,21 @@ import com.rootly.client.JSON;
 /**
  * NewWebhooksEndpointDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewWebhooksEndpointDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String url;
 
   public static final String SERIALIZED_NAME_SECRET = "secret";
   @SerializedName(SERIALIZED_NAME_SECRET)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String secret;
 
   /**
@@ -175,18 +175,18 @@ public class NewWebhooksEndpointDataAttributes {
 
   public static final String SERIALIZED_NAME_EVENT_TYPES = "event_types";
   @SerializedName(SERIALIZED_NAME_EVENT_TYPES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<EventTypesEnum> eventTypes = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean enabled;
 
   public NewWebhooksEndpointDataAttributes() {
   }
 
-  public NewWebhooksEndpointDataAttributes name(@javax.annotation.Nonnull String name) {
+  public NewWebhooksEndpointDataAttributes name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -195,17 +195,17 @@ public class NewWebhooksEndpointDataAttributes {
    * The name of the endpoint
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public NewWebhooksEndpointDataAttributes url(@javax.annotation.Nonnull String url) {
+  public NewWebhooksEndpointDataAttributes url(@jakarta.annotation.Nonnull String url) {
     this.url = url;
     return this;
   }
@@ -214,17 +214,17 @@ public class NewWebhooksEndpointDataAttributes {
    * The URL of the endpoint.
    * @return url
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUrl() {
     return url;
   }
 
-  public void setUrl(@javax.annotation.Nonnull String url) {
+  public void setUrl(@jakarta.annotation.Nonnull String url) {
     this.url = url;
   }
 
 
-  public NewWebhooksEndpointDataAttributes secret(@javax.annotation.Nullable String secret) {
+  public NewWebhooksEndpointDataAttributes secret(@jakarta.annotation.Nullable String secret) {
     this.secret = secret;
     return this;
   }
@@ -233,17 +233,17 @@ public class NewWebhooksEndpointDataAttributes {
    * The webhook signing secret used to verify webhook requests.
    * @return secret
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSecret() {
     return secret;
   }
 
-  public void setSecret(@javax.annotation.Nullable String secret) {
+  public void setSecret(@jakarta.annotation.Nullable String secret) {
     this.secret = secret;
   }
 
 
-  public NewWebhooksEndpointDataAttributes eventTypes(@javax.annotation.Nullable List<EventTypesEnum> eventTypes) {
+  public NewWebhooksEndpointDataAttributes eventTypes(@jakarta.annotation.Nullable List<EventTypesEnum> eventTypes) {
     this.eventTypes = eventTypes;
     return this;
   }
@@ -260,17 +260,17 @@ public class NewWebhooksEndpointDataAttributes {
    * Get eventTypes
    * @return eventTypes
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<EventTypesEnum> getEventTypes() {
     return eventTypes;
   }
 
-  public void setEventTypes(@javax.annotation.Nullable List<EventTypesEnum> eventTypes) {
+  public void setEventTypes(@jakarta.annotation.Nullable List<EventTypesEnum> eventTypes) {
     this.eventTypes = eventTypes;
   }
 
 
-  public NewWebhooksEndpointDataAttributes enabled(@javax.annotation.Nullable Boolean enabled) {
+  public NewWebhooksEndpointDataAttributes enabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -279,12 +279,12 @@ public class NewWebhooksEndpointDataAttributes {
    * Get enabled
    * @return enabled
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getEnabled() {
     return enabled;
   }
 
-  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
+  public void setEnabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 

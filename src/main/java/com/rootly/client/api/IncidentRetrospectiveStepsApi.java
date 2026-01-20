@@ -88,7 +88,7 @@ public class IncidentRetrospectiveStepsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getIncidentRetrospectiveStepCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getIncidentRetrospectiveStepCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -134,7 +134,7 @@ public class IncidentRetrospectiveStepsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getIncidentRetrospectiveStepValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getIncidentRetrospectiveStepValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getIncidentRetrospectiveStep(Async)");
@@ -158,7 +158,7 @@ public class IncidentRetrospectiveStepsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentRetrospectiveStepResponse getIncidentRetrospectiveStep(@javax.annotation.Nonnull String id) throws ApiException {
+    public IncidentRetrospectiveStepResponse getIncidentRetrospectiveStep(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<IncidentRetrospectiveStepResponse> localVarResp = getIncidentRetrospectiveStepWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -177,7 +177,7 @@ public class IncidentRetrospectiveStepsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentRetrospectiveStepResponse> getIncidentRetrospectiveStepWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<IncidentRetrospectiveStepResponse> getIncidentRetrospectiveStepWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getIncidentRetrospectiveStepValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<IncidentRetrospectiveStepResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -198,7 +198,7 @@ public class IncidentRetrospectiveStepsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getIncidentRetrospectiveStepAsync(@javax.annotation.Nonnull String id, final ApiCallback<IncidentRetrospectiveStepResponse> _callback) throws ApiException {
+    public okhttp3.Call getIncidentRetrospectiveStepAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<IncidentRetrospectiveStepResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getIncidentRetrospectiveStepValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<IncidentRetrospectiveStepResponse>(){}.getType();
@@ -220,7 +220,7 @@ public class IncidentRetrospectiveStepsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateIncidentRetrospectiveStepCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateIncidentRetrospectiveStep updateIncidentRetrospectiveStep, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateIncidentRetrospectiveStepCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateIncidentRetrospectiveStep updateIncidentRetrospectiveStep, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -267,7 +267,7 @@ public class IncidentRetrospectiveStepsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateIncidentRetrospectiveStepValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateIncidentRetrospectiveStep updateIncidentRetrospectiveStep, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateIncidentRetrospectiveStepValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateIncidentRetrospectiveStep updateIncidentRetrospectiveStep, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateIncidentRetrospectiveStep(Async)");
@@ -297,7 +297,7 @@ public class IncidentRetrospectiveStepsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentRetrospectiveStepResponse updateIncidentRetrospectiveStep(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateIncidentRetrospectiveStep updateIncidentRetrospectiveStep) throws ApiException {
+    public IncidentRetrospectiveStepResponse updateIncidentRetrospectiveStep(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateIncidentRetrospectiveStep updateIncidentRetrospectiveStep) throws ApiException {
         ApiResponse<IncidentRetrospectiveStepResponse> localVarResp = updateIncidentRetrospectiveStepWithHttpInfo(id, updateIncidentRetrospectiveStep);
         return localVarResp.getData();
     }
@@ -317,7 +317,7 @@ public class IncidentRetrospectiveStepsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentRetrospectiveStepResponse> updateIncidentRetrospectiveStepWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateIncidentRetrospectiveStep updateIncidentRetrospectiveStep) throws ApiException {
+    public ApiResponse<IncidentRetrospectiveStepResponse> updateIncidentRetrospectiveStepWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateIncidentRetrospectiveStep updateIncidentRetrospectiveStep) throws ApiException {
         okhttp3.Call localVarCall = updateIncidentRetrospectiveStepValidateBeforeCall(id, updateIncidentRetrospectiveStep, null);
         Type localVarReturnType = new TypeToken<IncidentRetrospectiveStepResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -339,7 +339,7 @@ public class IncidentRetrospectiveStepsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateIncidentRetrospectiveStepAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateIncidentRetrospectiveStep updateIncidentRetrospectiveStep, final ApiCallback<IncidentRetrospectiveStepResponse> _callback) throws ApiException {
+    public okhttp3.Call updateIncidentRetrospectiveStepAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateIncidentRetrospectiveStep updateIncidentRetrospectiveStep, final ApiCallback<IncidentRetrospectiveStepResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateIncidentRetrospectiveStepValidateBeforeCall(id, updateIncidentRetrospectiveStep, _callback);
         Type localVarReturnType = new TypeToken<IncidentRetrospectiveStepResponse>(){}.getType();

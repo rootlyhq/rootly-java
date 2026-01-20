@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * NewDashboardPanelDataAttributesParamsDatasetsInnerGroupByOneOf
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewDashboardPanelDataAttributesParamsDatasetsInnerGroupByOneOf {
   /**
    * Gets or Sets key
@@ -104,18 +104,18 @@ public class NewDashboardPanelDataAttributesParamsDatasetsInnerGroupByOneOf {
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private KeyEnum key;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String value;
 
   public NewDashboardPanelDataAttributesParamsDatasetsInnerGroupByOneOf() {
   }
 
-  public NewDashboardPanelDataAttributesParamsDatasetsInnerGroupByOneOf key(@javax.annotation.Nonnull KeyEnum key) {
+  public NewDashboardPanelDataAttributesParamsDatasetsInnerGroupByOneOf key(@jakarta.annotation.Nonnull KeyEnum key) {
     this.key = key;
     return this;
   }
@@ -124,17 +124,17 @@ public class NewDashboardPanelDataAttributesParamsDatasetsInnerGroupByOneOf {
    * Get key
    * @return key
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public KeyEnum getKey() {
     return key;
   }
 
-  public void setKey(@javax.annotation.Nonnull KeyEnum key) {
+  public void setKey(@jakarta.annotation.Nonnull KeyEnum key) {
     this.key = key;
   }
 
 
-  public NewDashboardPanelDataAttributesParamsDatasetsInnerGroupByOneOf value(@javax.annotation.Nonnull String value) {
+  public NewDashboardPanelDataAttributesParamsDatasetsInnerGroupByOneOf value(@jakarta.annotation.Nonnull String value) {
     this.value = value;
     return this;
   }
@@ -143,12 +143,12 @@ public class NewDashboardPanelDataAttributesParamsDatasetsInnerGroupByOneOf {
    * Get value
    * @return value
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getValue() {
     return value;
   }
 
-  public void setValue(@javax.annotation.Nonnull String value) {
+  public void setValue(@jakarta.annotation.Nonnull String value) {
     this.value = value;
   }
 

@@ -52,56 +52,56 @@ import com.rootly.client.JSON;
 /**
  * Workflow
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Workflow {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String slug;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_COMMAND = "command";
   @SerializedName(SERIALIZED_NAME_COMMAND)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String command;
 
   public static final String SERIALIZED_NAME_COMMAND_FEEDBACK_ENABLED = "command_feedback_enabled";
   @SerializedName(SERIALIZED_NAME_COMMAND_FEEDBACK_ENABLED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean commandFeedbackEnabled;
 
   public static final String SERIALIZED_NAME_WAIT = "wait";
   @SerializedName(SERIALIZED_NAME_WAIT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String wait;
 
   public static final String SERIALIZED_NAME_REPEAT_EVERY_DURATION = "repeat_every_duration";
   @SerializedName(SERIALIZED_NAME_REPEAT_EVERY_DURATION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String repeatEveryDuration;
 
   public static final String SERIALIZED_NAME_REPEAT_CONDITION_DURATION_SINCE_FIRST_RUN = "repeat_condition_duration_since_first_run";
   @SerializedName(SERIALIZED_NAME_REPEAT_CONDITION_DURATION_SINCE_FIRST_RUN)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String repeatConditionDurationSinceFirstRun;
 
   public static final String SERIALIZED_NAME_REPEAT_CONDITION_NUMBER_OF_REPEATS = "repeat_condition_number_of_repeats";
   @SerializedName(SERIALIZED_NAME_REPEAT_CONDITION_NUMBER_OF_REPEATS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer repeatConditionNumberOfRepeats;
 
   public static final String SERIALIZED_NAME_CONTINUOUSLY_REPEAT = "continuously_repeat";
   @SerializedName(SERIALIZED_NAME_CONTINUOUSLY_REPEAT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean continuouslyRepeat;
 
   /**
@@ -168,93 +168,93 @@ public class Workflow {
 
   public static final String SERIALIZED_NAME_REPEAT_ON = "repeat_on";
   @SerializedName(SERIALIZED_NAME_REPEAT_ON)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<RepeatOnEnum> repeatOn;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_LOCKED = "locked";
   @SerializedName(SERIALIZED_NAME_LOCKED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean locked;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public static final String SERIALIZED_NAME_WORKFLOW_GROUP_ID = "workflow_group_id";
   @SerializedName(SERIALIZED_NAME_WORKFLOW_GROUP_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String workflowGroupId;
 
   public static final String SERIALIZED_NAME_TRIGGER_PARAMS = "trigger_params";
   @SerializedName(SERIALIZED_NAME_TRIGGER_PARAMS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private NewWorkflowDataAttributesTriggerParams triggerParams;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_IDS = "environment_ids";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> environmentIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SEVERITY_IDS = "severity_ids";
   @SerializedName(SERIALIZED_NAME_SEVERITY_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> severityIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_INCIDENT_TYPE_IDS = "incident_type_ids";
   @SerializedName(SERIALIZED_NAME_INCIDENT_TYPE_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> incidentTypeIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_INCIDENT_ROLE_IDS = "incident_role_ids";
   @SerializedName(SERIALIZED_NAME_INCIDENT_ROLE_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> incidentRoleIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SERVICE_IDS = "service_ids";
   @SerializedName(SERIALIZED_NAME_SERVICE_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> serviceIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_FUNCTIONALITY_IDS = "functionality_ids";
   @SerializedName(SERIALIZED_NAME_FUNCTIONALITY_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> functionalityIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_GROUP_IDS = "group_ids";
   @SerializedName(SERIALIZED_NAME_GROUP_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> groupIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CAUSE_IDS = "cause_ids";
   @SerializedName(SERIALIZED_NAME_CAUSE_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> causeIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SUB_STATUS_IDS = "sub_status_ids";
   @SerializedName(SERIALIZED_NAME_SUB_STATUS_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> subStatusIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public Workflow() {
   }
 
-  public Workflow name(@javax.annotation.Nonnull String name) {
+  public Workflow name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -263,17 +263,17 @@ public class Workflow {
    * The title of the workflow
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public Workflow slug(@javax.annotation.Nullable String slug) {
+  public Workflow slug(@jakarta.annotation.Nullable String slug) {
     this.slug = slug;
     return this;
   }
@@ -282,17 +282,17 @@ public class Workflow {
    * The slug of the workflow
    * @return slug
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSlug() {
     return slug;
   }
 
-  public void setSlug(@javax.annotation.Nullable String slug) {
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
     this.slug = slug;
   }
 
 
-  public Workflow description(@javax.annotation.Nullable String description) {
+  public Workflow description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -301,17 +301,17 @@ public class Workflow {
    * The description of the workflow
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public Workflow command(@javax.annotation.Nullable String command) {
+  public Workflow command(@jakarta.annotation.Nullable String command) {
     this.command = command;
     return this;
   }
@@ -320,17 +320,17 @@ public class Workflow {
    * Workflow command
    * @return command
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCommand() {
     return command;
   }
 
-  public void setCommand(@javax.annotation.Nullable String command) {
+  public void setCommand(@jakarta.annotation.Nullable String command) {
     this.command = command;
   }
 
 
-  public Workflow commandFeedbackEnabled(@javax.annotation.Nullable Boolean commandFeedbackEnabled) {
+  public Workflow commandFeedbackEnabled(@jakarta.annotation.Nullable Boolean commandFeedbackEnabled) {
     this.commandFeedbackEnabled = commandFeedbackEnabled;
     return this;
   }
@@ -339,17 +339,17 @@ public class Workflow {
    * This will notify you back when the workflow is starting
    * @return commandFeedbackEnabled
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getCommandFeedbackEnabled() {
     return commandFeedbackEnabled;
   }
 
-  public void setCommandFeedbackEnabled(@javax.annotation.Nullable Boolean commandFeedbackEnabled) {
+  public void setCommandFeedbackEnabled(@jakarta.annotation.Nullable Boolean commandFeedbackEnabled) {
     this.commandFeedbackEnabled = commandFeedbackEnabled;
   }
 
 
-  public Workflow wait(@javax.annotation.Nullable String wait) {
+  public Workflow wait(@jakarta.annotation.Nullable String wait) {
     this.wait = wait;
     return this;
   }
@@ -358,17 +358,17 @@ public class Workflow {
    * Wait this duration before executing
    * @return wait
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getWait() {
     return wait;
   }
 
-  public void setWait(@javax.annotation.Nullable String wait) {
+  public void setWait(@jakarta.annotation.Nullable String wait) {
     this.wait = wait;
   }
 
 
-  public Workflow repeatEveryDuration(@javax.annotation.Nullable String repeatEveryDuration) {
+  public Workflow repeatEveryDuration(@jakarta.annotation.Nullable String repeatEveryDuration) {
     this.repeatEveryDuration = repeatEveryDuration;
     return this;
   }
@@ -377,17 +377,17 @@ public class Workflow {
    * Repeat workflow every duration
    * @return repeatEveryDuration
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getRepeatEveryDuration() {
     return repeatEveryDuration;
   }
 
-  public void setRepeatEveryDuration(@javax.annotation.Nullable String repeatEveryDuration) {
+  public void setRepeatEveryDuration(@jakarta.annotation.Nullable String repeatEveryDuration) {
     this.repeatEveryDuration = repeatEveryDuration;
   }
 
 
-  public Workflow repeatConditionDurationSinceFirstRun(@javax.annotation.Nullable String repeatConditionDurationSinceFirstRun) {
+  public Workflow repeatConditionDurationSinceFirstRun(@jakarta.annotation.Nullable String repeatConditionDurationSinceFirstRun) {
     this.repeatConditionDurationSinceFirstRun = repeatConditionDurationSinceFirstRun;
     return this;
   }
@@ -396,17 +396,17 @@ public class Workflow {
    * The workflow will stop repeating if its runtime since it&#39;s first workflow run exceeds the duration set in this field
    * @return repeatConditionDurationSinceFirstRun
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getRepeatConditionDurationSinceFirstRun() {
     return repeatConditionDurationSinceFirstRun;
   }
 
-  public void setRepeatConditionDurationSinceFirstRun(@javax.annotation.Nullable String repeatConditionDurationSinceFirstRun) {
+  public void setRepeatConditionDurationSinceFirstRun(@jakarta.annotation.Nullable String repeatConditionDurationSinceFirstRun) {
     this.repeatConditionDurationSinceFirstRun = repeatConditionDurationSinceFirstRun;
   }
 
 
-  public Workflow repeatConditionNumberOfRepeats(@javax.annotation.Nullable Integer repeatConditionNumberOfRepeats) {
+  public Workflow repeatConditionNumberOfRepeats(@jakarta.annotation.Nullable Integer repeatConditionNumberOfRepeats) {
     this.repeatConditionNumberOfRepeats = repeatConditionNumberOfRepeats;
     return this;
   }
@@ -415,17 +415,17 @@ public class Workflow {
    * The workflow will stop repeating if the number of repeats exceeds the value set in this field
    * @return repeatConditionNumberOfRepeats
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getRepeatConditionNumberOfRepeats() {
     return repeatConditionNumberOfRepeats;
   }
 
-  public void setRepeatConditionNumberOfRepeats(@javax.annotation.Nullable Integer repeatConditionNumberOfRepeats) {
+  public void setRepeatConditionNumberOfRepeats(@jakarta.annotation.Nullable Integer repeatConditionNumberOfRepeats) {
     this.repeatConditionNumberOfRepeats = repeatConditionNumberOfRepeats;
   }
 
 
-  public Workflow continuouslyRepeat(@javax.annotation.Nullable Boolean continuouslyRepeat) {
+  public Workflow continuouslyRepeat(@jakarta.annotation.Nullable Boolean continuouslyRepeat) {
     this.continuouslyRepeat = continuouslyRepeat;
     return this;
   }
@@ -434,17 +434,17 @@ public class Workflow {
    * When continuously repeat is true, repeat workflows aren&#39;t automatically stopped when conditions aren&#39;t met. This setting won&#39;t override your conditions set by repeat_condition_duration_since_first_run and repeat_condition_number_of_repeats parameters.
    * @return continuouslyRepeat
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getContinuouslyRepeat() {
     return continuouslyRepeat;
   }
 
-  public void setContinuouslyRepeat(@javax.annotation.Nullable Boolean continuouslyRepeat) {
+  public void setContinuouslyRepeat(@jakarta.annotation.Nullable Boolean continuouslyRepeat) {
     this.continuouslyRepeat = continuouslyRepeat;
   }
 
 
-  public Workflow repeatOn(@javax.annotation.Nullable List<RepeatOnEnum> repeatOn) {
+  public Workflow repeatOn(@jakarta.annotation.Nullable List<RepeatOnEnum> repeatOn) {
     this.repeatOn = repeatOn;
     return this;
   }
@@ -461,17 +461,17 @@ public class Workflow {
    * Get repeatOn
    * @return repeatOn
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<RepeatOnEnum> getRepeatOn() {
     return repeatOn;
   }
 
-  public void setRepeatOn(@javax.annotation.Nullable List<RepeatOnEnum> repeatOn) {
+  public void setRepeatOn(@jakarta.annotation.Nullable List<RepeatOnEnum> repeatOn) {
     this.repeatOn = repeatOn;
   }
 
 
-  public Workflow enabled(@javax.annotation.Nullable Boolean enabled) {
+  public Workflow enabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -480,17 +480,17 @@ public class Workflow {
    * Get enabled
    * @return enabled
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getEnabled() {
     return enabled;
   }
 
-  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
+  public void setEnabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public Workflow locked(@javax.annotation.Nullable Boolean locked) {
+  public Workflow locked(@jakarta.annotation.Nullable Boolean locked) {
     this.locked = locked;
     return this;
   }
@@ -499,17 +499,17 @@ public class Workflow {
    * Restricts workflow edits to admins when turned on. Only admins can set this field.
    * @return locked
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getLocked() {
     return locked;
   }
 
-  public void setLocked(@javax.annotation.Nullable Boolean locked) {
+  public void setLocked(@jakarta.annotation.Nullable Boolean locked) {
     this.locked = locked;
   }
 
 
-  public Workflow position(@javax.annotation.Nullable Integer position) {
+  public Workflow position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -518,17 +518,17 @@ public class Workflow {
    * The order which the workflow should run with other workflows.
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 
 
-  public Workflow workflowGroupId(@javax.annotation.Nullable String workflowGroupId) {
+  public Workflow workflowGroupId(@jakarta.annotation.Nullable String workflowGroupId) {
     this.workflowGroupId = workflowGroupId;
     return this;
   }
@@ -537,17 +537,17 @@ public class Workflow {
    * The group this workflow belongs to.
    * @return workflowGroupId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getWorkflowGroupId() {
     return workflowGroupId;
   }
 
-  public void setWorkflowGroupId(@javax.annotation.Nullable String workflowGroupId) {
+  public void setWorkflowGroupId(@jakarta.annotation.Nullable String workflowGroupId) {
     this.workflowGroupId = workflowGroupId;
   }
 
 
-  public Workflow triggerParams(@javax.annotation.Nullable NewWorkflowDataAttributesTriggerParams triggerParams) {
+  public Workflow triggerParams(@jakarta.annotation.Nullable NewWorkflowDataAttributesTriggerParams triggerParams) {
     this.triggerParams = triggerParams;
     return this;
   }
@@ -556,17 +556,17 @@ public class Workflow {
    * Get triggerParams
    * @return triggerParams
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public NewWorkflowDataAttributesTriggerParams getTriggerParams() {
     return triggerParams;
   }
 
-  public void setTriggerParams(@javax.annotation.Nullable NewWorkflowDataAttributesTriggerParams triggerParams) {
+  public void setTriggerParams(@jakarta.annotation.Nullable NewWorkflowDataAttributesTriggerParams triggerParams) {
     this.triggerParams = triggerParams;
   }
 
 
-  public Workflow environmentIds(@javax.annotation.Nullable List<String> environmentIds) {
+  public Workflow environmentIds(@jakarta.annotation.Nullable List<String> environmentIds) {
     this.environmentIds = environmentIds;
     return this;
   }
@@ -583,17 +583,17 @@ public class Workflow {
    * Get environmentIds
    * @return environmentIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getEnvironmentIds() {
     return environmentIds;
   }
 
-  public void setEnvironmentIds(@javax.annotation.Nullable List<String> environmentIds) {
+  public void setEnvironmentIds(@jakarta.annotation.Nullable List<String> environmentIds) {
     this.environmentIds = environmentIds;
   }
 
 
-  public Workflow severityIds(@javax.annotation.Nullable List<String> severityIds) {
+  public Workflow severityIds(@jakarta.annotation.Nullable List<String> severityIds) {
     this.severityIds = severityIds;
     return this;
   }
@@ -610,17 +610,17 @@ public class Workflow {
    * Get severityIds
    * @return severityIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getSeverityIds() {
     return severityIds;
   }
 
-  public void setSeverityIds(@javax.annotation.Nullable List<String> severityIds) {
+  public void setSeverityIds(@jakarta.annotation.Nullable List<String> severityIds) {
     this.severityIds = severityIds;
   }
 
 
-  public Workflow incidentTypeIds(@javax.annotation.Nullable List<String> incidentTypeIds) {
+  public Workflow incidentTypeIds(@jakarta.annotation.Nullable List<String> incidentTypeIds) {
     this.incidentTypeIds = incidentTypeIds;
     return this;
   }
@@ -637,17 +637,17 @@ public class Workflow {
    * Get incidentTypeIds
    * @return incidentTypeIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getIncidentTypeIds() {
     return incidentTypeIds;
   }
 
-  public void setIncidentTypeIds(@javax.annotation.Nullable List<String> incidentTypeIds) {
+  public void setIncidentTypeIds(@jakarta.annotation.Nullable List<String> incidentTypeIds) {
     this.incidentTypeIds = incidentTypeIds;
   }
 
 
-  public Workflow incidentRoleIds(@javax.annotation.Nullable List<String> incidentRoleIds) {
+  public Workflow incidentRoleIds(@jakarta.annotation.Nullable List<String> incidentRoleIds) {
     this.incidentRoleIds = incidentRoleIds;
     return this;
   }
@@ -664,17 +664,17 @@ public class Workflow {
    * Get incidentRoleIds
    * @return incidentRoleIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getIncidentRoleIds() {
     return incidentRoleIds;
   }
 
-  public void setIncidentRoleIds(@javax.annotation.Nullable List<String> incidentRoleIds) {
+  public void setIncidentRoleIds(@jakarta.annotation.Nullable List<String> incidentRoleIds) {
     this.incidentRoleIds = incidentRoleIds;
   }
 
 
-  public Workflow serviceIds(@javax.annotation.Nullable List<String> serviceIds) {
+  public Workflow serviceIds(@jakarta.annotation.Nullable List<String> serviceIds) {
     this.serviceIds = serviceIds;
     return this;
   }
@@ -691,17 +691,17 @@ public class Workflow {
    * Get serviceIds
    * @return serviceIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getServiceIds() {
     return serviceIds;
   }
 
-  public void setServiceIds(@javax.annotation.Nullable List<String> serviceIds) {
+  public void setServiceIds(@jakarta.annotation.Nullable List<String> serviceIds) {
     this.serviceIds = serviceIds;
   }
 
 
-  public Workflow functionalityIds(@javax.annotation.Nullable List<String> functionalityIds) {
+  public Workflow functionalityIds(@jakarta.annotation.Nullable List<String> functionalityIds) {
     this.functionalityIds = functionalityIds;
     return this;
   }
@@ -718,17 +718,17 @@ public class Workflow {
    * Get functionalityIds
    * @return functionalityIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getFunctionalityIds() {
     return functionalityIds;
   }
 
-  public void setFunctionalityIds(@javax.annotation.Nullable List<String> functionalityIds) {
+  public void setFunctionalityIds(@jakarta.annotation.Nullable List<String> functionalityIds) {
     this.functionalityIds = functionalityIds;
   }
 
 
-  public Workflow groupIds(@javax.annotation.Nullable List<String> groupIds) {
+  public Workflow groupIds(@jakarta.annotation.Nullable List<String> groupIds) {
     this.groupIds = groupIds;
     return this;
   }
@@ -745,17 +745,17 @@ public class Workflow {
    * Get groupIds
    * @return groupIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getGroupIds() {
     return groupIds;
   }
 
-  public void setGroupIds(@javax.annotation.Nullable List<String> groupIds) {
+  public void setGroupIds(@jakarta.annotation.Nullable List<String> groupIds) {
     this.groupIds = groupIds;
   }
 
 
-  public Workflow causeIds(@javax.annotation.Nullable List<String> causeIds) {
+  public Workflow causeIds(@jakarta.annotation.Nullable List<String> causeIds) {
     this.causeIds = causeIds;
     return this;
   }
@@ -772,17 +772,17 @@ public class Workflow {
    * Get causeIds
    * @return causeIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getCauseIds() {
     return causeIds;
   }
 
-  public void setCauseIds(@javax.annotation.Nullable List<String> causeIds) {
+  public void setCauseIds(@jakarta.annotation.Nullable List<String> causeIds) {
     this.causeIds = causeIds;
   }
 
 
-  public Workflow subStatusIds(@javax.annotation.Nullable List<String> subStatusIds) {
+  public Workflow subStatusIds(@jakarta.annotation.Nullable List<String> subStatusIds) {
     this.subStatusIds = subStatusIds;
     return this;
   }
@@ -799,17 +799,17 @@ public class Workflow {
    * Get subStatusIds
    * @return subStatusIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getSubStatusIds() {
     return subStatusIds;
   }
 
-  public void setSubStatusIds(@javax.annotation.Nullable List<String> subStatusIds) {
+  public void setSubStatusIds(@jakarta.annotation.Nullable List<String> subStatusIds) {
     this.subStatusIds = subStatusIds;
   }
 
 
-  public Workflow createdAt(@javax.annotation.Nonnull String createdAt) {
+  public Workflow createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -818,17 +818,17 @@ public class Workflow {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public Workflow updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public Workflow updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -837,12 +837,12 @@ public class Workflow {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

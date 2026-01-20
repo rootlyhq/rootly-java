@@ -51,22 +51,22 @@ import com.rootly.client.JSON;
 /**
  * UpdateIncidentCustomFieldSelectionDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateIncidentCustomFieldSelectionDataAttributes {
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String value;
 
   public static final String SERIALIZED_NAME_SELECTED_OPTION_IDS = "selected_option_ids";
   @SerializedName(SERIALIZED_NAME_SELECTED_OPTION_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<Integer> selectedOptionIds = new ArrayList<>();
 
   public UpdateIncidentCustomFieldSelectionDataAttributes() {
   }
 
-  public UpdateIncidentCustomFieldSelectionDataAttributes value(@javax.annotation.Nullable String value) {
+  public UpdateIncidentCustomFieldSelectionDataAttributes value(@jakarta.annotation.Nullable String value) {
     this.value = value;
     return this;
   }
@@ -75,17 +75,17 @@ public class UpdateIncidentCustomFieldSelectionDataAttributes {
    * The selected value for text kind custom fields
    * @return value
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getValue() {
     return value;
   }
 
-  public void setValue(@javax.annotation.Nullable String value) {
+  public void setValue(@jakarta.annotation.Nullable String value) {
     this.value = value;
   }
 
 
-  public UpdateIncidentCustomFieldSelectionDataAttributes selectedOptionIds(@javax.annotation.Nullable List<Integer> selectedOptionIds) {
+  public UpdateIncidentCustomFieldSelectionDataAttributes selectedOptionIds(@jakarta.annotation.Nullable List<Integer> selectedOptionIds) {
     this.selectedOptionIds = selectedOptionIds;
     return this;
   }
@@ -102,12 +102,12 @@ public class UpdateIncidentCustomFieldSelectionDataAttributes {
    * Get selectedOptionIds
    * @return selectedOptionIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<Integer> getSelectedOptionIds() {
     return selectedOptionIds;
   }
 
-  public void setSelectedOptionIds(@javax.annotation.Nullable List<Integer> selectedOptionIds) {
+  public void setSelectedOptionIds(@jakarta.annotation.Nullable List<Integer> selectedOptionIds) {
     this.selectedOptionIds = selectedOptionIds;
   }
 

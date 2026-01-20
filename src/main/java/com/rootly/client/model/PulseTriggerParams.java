@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * PulseTriggerParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class PulseTriggerParams {
   /**
    * Gets or Sets triggerType
@@ -105,7 +105,7 @@ public class PulseTriggerParams {
 
   public static final String SERIALIZED_NAME_TRIGGER_TYPE = "trigger_type";
   @SerializedName(SERIALIZED_NAME_TRIGGER_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private TriggerTypeEnum triggerType;
 
   /**
@@ -160,7 +160,7 @@ public class PulseTriggerParams {
 
   public static final String SERIALIZED_NAME_TRIGGERS = "triggers";
   @SerializedName(SERIALIZED_NAME_TRIGGERS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<TriggersEnum> triggers = new ArrayList<>();
 
   /**
@@ -219,7 +219,7 @@ public class PulseTriggerParams {
 
   public static final String SERIALIZED_NAME_PULSE_CONDITION = "pulse_condition";
   @SerializedName(SERIALIZED_NAME_PULSE_CONDITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private PulseConditionEnum pulseCondition;
 
   /**
@@ -290,17 +290,17 @@ public class PulseTriggerParams {
 
   public static final String SERIALIZED_NAME_PULSE_CONDITION_SOURCE = "pulse_condition_source";
   @SerializedName(SERIALIZED_NAME_PULSE_CONDITION_SOURCE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private PulseConditionSourceEnum pulseConditionSource = PulseConditionSourceEnum.ANY;
 
   public static final String SERIALIZED_NAME_PULSE_CONDITION_SOURCE_USE_REGEXP = "pulse_condition_source_use_regexp";
   @SerializedName(SERIALIZED_NAME_PULSE_CONDITION_SOURCE_USE_REGEXP)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean pulseConditionSourceUseRegexp = false;
 
   public static final String SERIALIZED_NAME_PULSE_SOURCES = "pulse_sources";
   @SerializedName(SERIALIZED_NAME_PULSE_SOURCES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> pulseSources = new ArrayList<>();
 
   /**
@@ -371,17 +371,17 @@ public class PulseTriggerParams {
 
   public static final String SERIALIZED_NAME_PULSE_CONDITION_LABEL = "pulse_condition_label";
   @SerializedName(SERIALIZED_NAME_PULSE_CONDITION_LABEL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private PulseConditionLabelEnum pulseConditionLabel = PulseConditionLabelEnum.ANY;
 
   public static final String SERIALIZED_NAME_PULSE_CONDITION_LABEL_USE_REGEXP = "pulse_condition_label_use_regexp";
   @SerializedName(SERIALIZED_NAME_PULSE_CONDITION_LABEL_USE_REGEXP)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean pulseConditionLabelUseRegexp = false;
 
   public static final String SERIALIZED_NAME_PULSE_LABELS = "pulse_labels";
   @SerializedName(SERIALIZED_NAME_PULSE_LABELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> pulseLabels = new ArrayList<>();
 
   /**
@@ -452,28 +452,28 @@ public class PulseTriggerParams {
 
   public static final String SERIALIZED_NAME_PULSE_CONDITION_PAYLOAD = "pulse_condition_payload";
   @SerializedName(SERIALIZED_NAME_PULSE_CONDITION_PAYLOAD)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private PulseConditionPayloadEnum pulseConditionPayload = PulseConditionPayloadEnum.ANY;
 
   public static final String SERIALIZED_NAME_PULSE_CONDITION_PAYLOAD_USE_REGEXP = "pulse_condition_payload_use_regexp";
   @SerializedName(SERIALIZED_NAME_PULSE_CONDITION_PAYLOAD_USE_REGEXP)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean pulseConditionPayloadUseRegexp = false;
 
   public static final String SERIALIZED_NAME_PULSE_PAYLOAD = "pulse_payload";
   @SerializedName(SERIALIZED_NAME_PULSE_PAYLOAD)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> pulsePayload = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PULSE_QUERY_PAYLOAD = "pulse_query_payload";
   @SerializedName(SERIALIZED_NAME_PULSE_QUERY_PAYLOAD)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String pulseQueryPayload;
 
   public PulseTriggerParams() {
   }
 
-  public PulseTriggerParams triggerType(@javax.annotation.Nonnull TriggerTypeEnum triggerType) {
+  public PulseTriggerParams triggerType(@jakarta.annotation.Nonnull TriggerTypeEnum triggerType) {
     this.triggerType = triggerType;
     return this;
   }
@@ -482,17 +482,17 @@ public class PulseTriggerParams {
    * Get triggerType
    * @return triggerType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public TriggerTypeEnum getTriggerType() {
     return triggerType;
   }
 
-  public void setTriggerType(@javax.annotation.Nonnull TriggerTypeEnum triggerType) {
+  public void setTriggerType(@jakarta.annotation.Nonnull TriggerTypeEnum triggerType) {
     this.triggerType = triggerType;
   }
 
 
-  public PulseTriggerParams triggers(@javax.annotation.Nullable List<TriggersEnum> triggers) {
+  public PulseTriggerParams triggers(@jakarta.annotation.Nullable List<TriggersEnum> triggers) {
     this.triggers = triggers;
     return this;
   }
@@ -509,17 +509,17 @@ public class PulseTriggerParams {
    * Get triggers
    * @return triggers
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<TriggersEnum> getTriggers() {
     return triggers;
   }
 
-  public void setTriggers(@javax.annotation.Nullable List<TriggersEnum> triggers) {
+  public void setTriggers(@jakarta.annotation.Nullable List<TriggersEnum> triggers) {
     this.triggers = triggers;
   }
 
 
-  public PulseTriggerParams pulseCondition(@javax.annotation.Nullable PulseConditionEnum pulseCondition) {
+  public PulseTriggerParams pulseCondition(@jakarta.annotation.Nullable PulseConditionEnum pulseCondition) {
     this.pulseCondition = pulseCondition;
     return this;
   }
@@ -528,17 +528,17 @@ public class PulseTriggerParams {
    * Get pulseCondition
    * @return pulseCondition
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public PulseConditionEnum getPulseCondition() {
     return pulseCondition;
   }
 
-  public void setPulseCondition(@javax.annotation.Nullable PulseConditionEnum pulseCondition) {
+  public void setPulseCondition(@jakarta.annotation.Nullable PulseConditionEnum pulseCondition) {
     this.pulseCondition = pulseCondition;
   }
 
 
-  public PulseTriggerParams pulseConditionSource(@javax.annotation.Nullable PulseConditionSourceEnum pulseConditionSource) {
+  public PulseTriggerParams pulseConditionSource(@jakarta.annotation.Nullable PulseConditionSourceEnum pulseConditionSource) {
     this.pulseConditionSource = pulseConditionSource;
     return this;
   }
@@ -547,17 +547,17 @@ public class PulseTriggerParams {
    * Get pulseConditionSource
    * @return pulseConditionSource
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public PulseConditionSourceEnum getPulseConditionSource() {
     return pulseConditionSource;
   }
 
-  public void setPulseConditionSource(@javax.annotation.Nullable PulseConditionSourceEnum pulseConditionSource) {
+  public void setPulseConditionSource(@jakarta.annotation.Nullable PulseConditionSourceEnum pulseConditionSource) {
     this.pulseConditionSource = pulseConditionSource;
   }
 
 
-  public PulseTriggerParams pulseConditionSourceUseRegexp(@javax.annotation.Nullable Boolean pulseConditionSourceUseRegexp) {
+  public PulseTriggerParams pulseConditionSourceUseRegexp(@jakarta.annotation.Nullable Boolean pulseConditionSourceUseRegexp) {
     this.pulseConditionSourceUseRegexp = pulseConditionSourceUseRegexp;
     return this;
   }
@@ -566,17 +566,17 @@ public class PulseTriggerParams {
    * Get pulseConditionSourceUseRegexp
    * @return pulseConditionSourceUseRegexp
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getPulseConditionSourceUseRegexp() {
     return pulseConditionSourceUseRegexp;
   }
 
-  public void setPulseConditionSourceUseRegexp(@javax.annotation.Nullable Boolean pulseConditionSourceUseRegexp) {
+  public void setPulseConditionSourceUseRegexp(@jakarta.annotation.Nullable Boolean pulseConditionSourceUseRegexp) {
     this.pulseConditionSourceUseRegexp = pulseConditionSourceUseRegexp;
   }
 
 
-  public PulseTriggerParams pulseSources(@javax.annotation.Nullable List<String> pulseSources) {
+  public PulseTriggerParams pulseSources(@jakarta.annotation.Nullable List<String> pulseSources) {
     this.pulseSources = pulseSources;
     return this;
   }
@@ -593,17 +593,17 @@ public class PulseTriggerParams {
    * Get pulseSources
    * @return pulseSources
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getPulseSources() {
     return pulseSources;
   }
 
-  public void setPulseSources(@javax.annotation.Nullable List<String> pulseSources) {
+  public void setPulseSources(@jakarta.annotation.Nullable List<String> pulseSources) {
     this.pulseSources = pulseSources;
   }
 
 
-  public PulseTriggerParams pulseConditionLabel(@javax.annotation.Nullable PulseConditionLabelEnum pulseConditionLabel) {
+  public PulseTriggerParams pulseConditionLabel(@jakarta.annotation.Nullable PulseConditionLabelEnum pulseConditionLabel) {
     this.pulseConditionLabel = pulseConditionLabel;
     return this;
   }
@@ -612,17 +612,17 @@ public class PulseTriggerParams {
    * Get pulseConditionLabel
    * @return pulseConditionLabel
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public PulseConditionLabelEnum getPulseConditionLabel() {
     return pulseConditionLabel;
   }
 
-  public void setPulseConditionLabel(@javax.annotation.Nullable PulseConditionLabelEnum pulseConditionLabel) {
+  public void setPulseConditionLabel(@jakarta.annotation.Nullable PulseConditionLabelEnum pulseConditionLabel) {
     this.pulseConditionLabel = pulseConditionLabel;
   }
 
 
-  public PulseTriggerParams pulseConditionLabelUseRegexp(@javax.annotation.Nullable Boolean pulseConditionLabelUseRegexp) {
+  public PulseTriggerParams pulseConditionLabelUseRegexp(@jakarta.annotation.Nullable Boolean pulseConditionLabelUseRegexp) {
     this.pulseConditionLabelUseRegexp = pulseConditionLabelUseRegexp;
     return this;
   }
@@ -631,17 +631,17 @@ public class PulseTriggerParams {
    * Get pulseConditionLabelUseRegexp
    * @return pulseConditionLabelUseRegexp
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getPulseConditionLabelUseRegexp() {
     return pulseConditionLabelUseRegexp;
   }
 
-  public void setPulseConditionLabelUseRegexp(@javax.annotation.Nullable Boolean pulseConditionLabelUseRegexp) {
+  public void setPulseConditionLabelUseRegexp(@jakarta.annotation.Nullable Boolean pulseConditionLabelUseRegexp) {
     this.pulseConditionLabelUseRegexp = pulseConditionLabelUseRegexp;
   }
 
 
-  public PulseTriggerParams pulseLabels(@javax.annotation.Nullable List<String> pulseLabels) {
+  public PulseTriggerParams pulseLabels(@jakarta.annotation.Nullable List<String> pulseLabels) {
     this.pulseLabels = pulseLabels;
     return this;
   }
@@ -658,17 +658,17 @@ public class PulseTriggerParams {
    * Get pulseLabels
    * @return pulseLabels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getPulseLabels() {
     return pulseLabels;
   }
 
-  public void setPulseLabels(@javax.annotation.Nullable List<String> pulseLabels) {
+  public void setPulseLabels(@jakarta.annotation.Nullable List<String> pulseLabels) {
     this.pulseLabels = pulseLabels;
   }
 
 
-  public PulseTriggerParams pulseConditionPayload(@javax.annotation.Nullable PulseConditionPayloadEnum pulseConditionPayload) {
+  public PulseTriggerParams pulseConditionPayload(@jakarta.annotation.Nullable PulseConditionPayloadEnum pulseConditionPayload) {
     this.pulseConditionPayload = pulseConditionPayload;
     return this;
   }
@@ -677,17 +677,17 @@ public class PulseTriggerParams {
    * Get pulseConditionPayload
    * @return pulseConditionPayload
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public PulseConditionPayloadEnum getPulseConditionPayload() {
     return pulseConditionPayload;
   }
 
-  public void setPulseConditionPayload(@javax.annotation.Nullable PulseConditionPayloadEnum pulseConditionPayload) {
+  public void setPulseConditionPayload(@jakarta.annotation.Nullable PulseConditionPayloadEnum pulseConditionPayload) {
     this.pulseConditionPayload = pulseConditionPayload;
   }
 
 
-  public PulseTriggerParams pulseConditionPayloadUseRegexp(@javax.annotation.Nullable Boolean pulseConditionPayloadUseRegexp) {
+  public PulseTriggerParams pulseConditionPayloadUseRegexp(@jakarta.annotation.Nullable Boolean pulseConditionPayloadUseRegexp) {
     this.pulseConditionPayloadUseRegexp = pulseConditionPayloadUseRegexp;
     return this;
   }
@@ -696,17 +696,17 @@ public class PulseTriggerParams {
    * Get pulseConditionPayloadUseRegexp
    * @return pulseConditionPayloadUseRegexp
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getPulseConditionPayloadUseRegexp() {
     return pulseConditionPayloadUseRegexp;
   }
 
-  public void setPulseConditionPayloadUseRegexp(@javax.annotation.Nullable Boolean pulseConditionPayloadUseRegexp) {
+  public void setPulseConditionPayloadUseRegexp(@jakarta.annotation.Nullable Boolean pulseConditionPayloadUseRegexp) {
     this.pulseConditionPayloadUseRegexp = pulseConditionPayloadUseRegexp;
   }
 
 
-  public PulseTriggerParams pulsePayload(@javax.annotation.Nullable List<String> pulsePayload) {
+  public PulseTriggerParams pulsePayload(@jakarta.annotation.Nullable List<String> pulsePayload) {
     this.pulsePayload = pulsePayload;
     return this;
   }
@@ -723,17 +723,17 @@ public class PulseTriggerParams {
    * Get pulsePayload
    * @return pulsePayload
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getPulsePayload() {
     return pulsePayload;
   }
 
-  public void setPulsePayload(@javax.annotation.Nullable List<String> pulsePayload) {
+  public void setPulsePayload(@jakarta.annotation.Nullable List<String> pulsePayload) {
     this.pulsePayload = pulsePayload;
   }
 
 
-  public PulseTriggerParams pulseQueryPayload(@javax.annotation.Nullable String pulseQueryPayload) {
+  public PulseTriggerParams pulseQueryPayload(@jakarta.annotation.Nullable String pulseQueryPayload) {
     this.pulseQueryPayload = pulseQueryPayload;
     return this;
   }
@@ -742,12 +742,12 @@ public class PulseTriggerParams {
    * You can use jsonpath syntax. eg: $.incident.teams[*]
    * @return pulseQueryPayload
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPulseQueryPayload() {
     return pulseQueryPayload;
   }
 
-  public void setPulseQueryPayload(@javax.annotation.Nullable String pulseQueryPayload) {
+  public void setPulseQueryPayload(@jakarta.annotation.Nullable String pulseQueryPayload) {
     this.pulseQueryPayload = pulseQueryPayload;
   }
 

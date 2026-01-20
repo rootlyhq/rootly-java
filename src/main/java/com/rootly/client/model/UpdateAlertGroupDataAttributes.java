@@ -54,32 +54,32 @@ import com.rootly.client.JSON;
 /**
  * UpdateAlertGroupDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateAlertGroupDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_TIME_WINDOW = "time_window";
   @SerializedName(SERIALIZED_NAME_TIME_WINDOW)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer timeWindow;
 
   public static final String SERIALIZED_NAME_TARGETS = "targets";
   @SerializedName(SERIALIZED_NAME_TARGETS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewAlertGroupDataAttributesTargetsInner> targets = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @Deprecated
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewAlertGroupDataAttributesAttributesInner> attributes = new ArrayList<>();
 
   /**
@@ -137,7 +137,7 @@ public class UpdateAlertGroupDataAttributes {
   public static final String SERIALIZED_NAME_GROUP_BY_ALERT_TITLE = "group_by_alert_title";
   @Deprecated
   @SerializedName(SERIALIZED_NAME_GROUP_BY_ALERT_TITLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private GroupByAlertTitleEnum groupByAlertTitle;
 
   /**
@@ -195,7 +195,7 @@ public class UpdateAlertGroupDataAttributes {
   public static final String SERIALIZED_NAME_GROUP_BY_ALERT_URGENCY = "group_by_alert_urgency";
   @Deprecated
   @SerializedName(SERIALIZED_NAME_GROUP_BY_ALERT_URGENCY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private GroupByAlertUrgencyEnum groupByAlertUrgency;
 
   /**
@@ -252,18 +252,18 @@ public class UpdateAlertGroupDataAttributes {
 
   public static final String SERIALIZED_NAME_CONDITION_TYPE = "condition_type";
   @SerializedName(SERIALIZED_NAME_CONDITION_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ConditionTypeEnum conditionType;
 
   public static final String SERIALIZED_NAME_CONDITIONS = "conditions";
   @SerializedName(SERIALIZED_NAME_CONDITIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewAlertGroupDataAttributesConditionsInner> conditions = new ArrayList<>();
 
   public UpdateAlertGroupDataAttributes() {
   }
 
-  public UpdateAlertGroupDataAttributes name(@javax.annotation.Nullable String name) {
+  public UpdateAlertGroupDataAttributes name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -272,17 +272,17 @@ public class UpdateAlertGroupDataAttributes {
    * The name of the alert group
    * @return name
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public UpdateAlertGroupDataAttributes description(@javax.annotation.Nullable String description) {
+  public UpdateAlertGroupDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -291,17 +291,17 @@ public class UpdateAlertGroupDataAttributes {
    * The description of the alert group
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UpdateAlertGroupDataAttributes timeWindow(@javax.annotation.Nullable Integer timeWindow) {
+  public UpdateAlertGroupDataAttributes timeWindow(@jakarta.annotation.Nullable Integer timeWindow) {
     this.timeWindow = timeWindow;
     return this;
   }
@@ -310,17 +310,17 @@ public class UpdateAlertGroupDataAttributes {
    * The length of time an Alert Group should stay open and accept new alerts
    * @return timeWindow
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getTimeWindow() {
     return timeWindow;
   }
 
-  public void setTimeWindow(@javax.annotation.Nullable Integer timeWindow) {
+  public void setTimeWindow(@jakarta.annotation.Nullable Integer timeWindow) {
     this.timeWindow = timeWindow;
   }
 
 
-  public UpdateAlertGroupDataAttributes targets(@javax.annotation.Nullable List<NewAlertGroupDataAttributesTargetsInner> targets) {
+  public UpdateAlertGroupDataAttributes targets(@jakarta.annotation.Nullable List<NewAlertGroupDataAttributesTargetsInner> targets) {
     this.targets = targets;
     return this;
   }
@@ -337,18 +337,18 @@ public class UpdateAlertGroupDataAttributes {
    * Get targets
    * @return targets
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewAlertGroupDataAttributesTargetsInner> getTargets() {
     return targets;
   }
 
-  public void setTargets(@javax.annotation.Nullable List<NewAlertGroupDataAttributesTargetsInner> targets) {
+  public void setTargets(@jakarta.annotation.Nullable List<NewAlertGroupDataAttributesTargetsInner> targets) {
     this.targets = targets;
   }
 
 
   @Deprecated
-  public UpdateAlertGroupDataAttributes attributes(@javax.annotation.Nullable List<NewAlertGroupDataAttributesAttributesInner> attributes) {
+  public UpdateAlertGroupDataAttributes attributes(@jakarta.annotation.Nullable List<NewAlertGroupDataAttributesAttributesInner> attributes) {
     this.attributes = attributes;
     return this;
   }
@@ -367,19 +367,19 @@ public class UpdateAlertGroupDataAttributes {
    * @deprecated
    */
   @Deprecated
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewAlertGroupDataAttributesAttributesInner> getAttributes() {
     return attributes;
   }
 
   @Deprecated
-  public void setAttributes(@javax.annotation.Nullable List<NewAlertGroupDataAttributesAttributesInner> attributes) {
+  public void setAttributes(@jakarta.annotation.Nullable List<NewAlertGroupDataAttributesAttributesInner> attributes) {
     this.attributes = attributes;
   }
 
 
   @Deprecated
-  public UpdateAlertGroupDataAttributes groupByAlertTitle(@javax.annotation.Nullable GroupByAlertTitleEnum groupByAlertTitle) {
+  public UpdateAlertGroupDataAttributes groupByAlertTitle(@jakarta.annotation.Nullable GroupByAlertTitleEnum groupByAlertTitle) {
     this.groupByAlertTitle = groupByAlertTitle;
     return this;
   }
@@ -390,19 +390,19 @@ public class UpdateAlertGroupDataAttributes {
    * @deprecated
    */
   @Deprecated
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public GroupByAlertTitleEnum getGroupByAlertTitle() {
     return groupByAlertTitle;
   }
 
   @Deprecated
-  public void setGroupByAlertTitle(@javax.annotation.Nullable GroupByAlertTitleEnum groupByAlertTitle) {
+  public void setGroupByAlertTitle(@jakarta.annotation.Nullable GroupByAlertTitleEnum groupByAlertTitle) {
     this.groupByAlertTitle = groupByAlertTitle;
   }
 
 
   @Deprecated
-  public UpdateAlertGroupDataAttributes groupByAlertUrgency(@javax.annotation.Nullable GroupByAlertUrgencyEnum groupByAlertUrgency) {
+  public UpdateAlertGroupDataAttributes groupByAlertUrgency(@jakarta.annotation.Nullable GroupByAlertUrgencyEnum groupByAlertUrgency) {
     this.groupByAlertUrgency = groupByAlertUrgency;
     return this;
   }
@@ -413,18 +413,18 @@ public class UpdateAlertGroupDataAttributes {
    * @deprecated
    */
   @Deprecated
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public GroupByAlertUrgencyEnum getGroupByAlertUrgency() {
     return groupByAlertUrgency;
   }
 
   @Deprecated
-  public void setGroupByAlertUrgency(@javax.annotation.Nullable GroupByAlertUrgencyEnum groupByAlertUrgency) {
+  public void setGroupByAlertUrgency(@jakarta.annotation.Nullable GroupByAlertUrgencyEnum groupByAlertUrgency) {
     this.groupByAlertUrgency = groupByAlertUrgency;
   }
 
 
-  public UpdateAlertGroupDataAttributes conditionType(@javax.annotation.Nullable ConditionTypeEnum conditionType) {
+  public UpdateAlertGroupDataAttributes conditionType(@jakarta.annotation.Nullable ConditionTypeEnum conditionType) {
     this.conditionType = conditionType;
     return this;
   }
@@ -433,17 +433,17 @@ public class UpdateAlertGroupDataAttributes {
    * Group alerts when ANY or ALL of the fields are matching.
    * @return conditionType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ConditionTypeEnum getConditionType() {
     return conditionType;
   }
 
-  public void setConditionType(@javax.annotation.Nullable ConditionTypeEnum conditionType) {
+  public void setConditionType(@jakarta.annotation.Nullable ConditionTypeEnum conditionType) {
     this.conditionType = conditionType;
   }
 
 
-  public UpdateAlertGroupDataAttributes conditions(@javax.annotation.Nullable List<NewAlertGroupDataAttributesConditionsInner> conditions) {
+  public UpdateAlertGroupDataAttributes conditions(@jakarta.annotation.Nullable List<NewAlertGroupDataAttributesConditionsInner> conditions) {
     this.conditions = conditions;
     return this;
   }
@@ -460,12 +460,12 @@ public class UpdateAlertGroupDataAttributes {
    * Get conditions
    * @return conditions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewAlertGroupDataAttributesConditionsInner> getConditions() {
     return conditions;
   }
 
-  public void setConditions(@javax.annotation.Nullable List<NewAlertGroupDataAttributesConditionsInner> conditions) {
+  public void setConditions(@jakarta.annotation.Nullable List<NewAlertGroupDataAttributesConditionsInner> conditions) {
     this.conditions = conditions;
   }
 

@@ -93,7 +93,7 @@ public class UserPhoneNumbersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createUserPhoneNumberCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull NewUserPhoneNumber newUserPhoneNumber, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createUserPhoneNumberCall(@jakarta.annotation.Nonnull String userId, @jakarta.annotation.Nonnull NewUserPhoneNumber newUserPhoneNumber, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -140,7 +140,7 @@ public class UserPhoneNumbersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createUserPhoneNumberValidateBeforeCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull NewUserPhoneNumber newUserPhoneNumber, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createUserPhoneNumberValidateBeforeCall(@jakarta.annotation.Nonnull String userId, @jakarta.annotation.Nonnull NewUserPhoneNumber newUserPhoneNumber, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling createUserPhoneNumber(Async)");
@@ -172,7 +172,7 @@ public class UserPhoneNumbersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public UserPhoneNumberResponse createUserPhoneNumber(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull NewUserPhoneNumber newUserPhoneNumber) throws ApiException {
+    public UserPhoneNumberResponse createUserPhoneNumber(@jakarta.annotation.Nonnull String userId, @jakarta.annotation.Nonnull NewUserPhoneNumber newUserPhoneNumber) throws ApiException {
         ApiResponse<UserPhoneNumberResponse> localVarResp = createUserPhoneNumberWithHttpInfo(userId, newUserPhoneNumber);
         return localVarResp.getData();
     }
@@ -194,7 +194,7 @@ public class UserPhoneNumbersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UserPhoneNumberResponse> createUserPhoneNumberWithHttpInfo(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull NewUserPhoneNumber newUserPhoneNumber) throws ApiException {
+    public ApiResponse<UserPhoneNumberResponse> createUserPhoneNumberWithHttpInfo(@jakarta.annotation.Nonnull String userId, @jakarta.annotation.Nonnull NewUserPhoneNumber newUserPhoneNumber) throws ApiException {
         okhttp3.Call localVarCall = createUserPhoneNumberValidateBeforeCall(userId, newUserPhoneNumber, null);
         Type localVarReturnType = new TypeToken<UserPhoneNumberResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -218,7 +218,7 @@ public class UserPhoneNumbersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createUserPhoneNumberAsync(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull NewUserPhoneNumber newUserPhoneNumber, final ApiCallback<UserPhoneNumberResponse> _callback) throws ApiException {
+    public okhttp3.Call createUserPhoneNumberAsync(@jakarta.annotation.Nonnull String userId, @jakarta.annotation.Nonnull NewUserPhoneNumber newUserPhoneNumber, final ApiCallback<UserPhoneNumberResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createUserPhoneNumberValidateBeforeCall(userId, newUserPhoneNumber, _callback);
         Type localVarReturnType = new TypeToken<UserPhoneNumberResponse>(){}.getType();
@@ -241,7 +241,7 @@ public class UserPhoneNumbersApi {
         <tr><td> 422 </td><td> cannot delete phone number used by notification rule </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteUserPhoneNumberCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteUserPhoneNumberCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -287,7 +287,7 @@ public class UserPhoneNumbersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteUserPhoneNumberValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteUserPhoneNumberValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteUserPhoneNumber(Async)");
@@ -313,7 +313,7 @@ public class UserPhoneNumbersApi {
         <tr><td> 422 </td><td> cannot delete phone number used by notification rule </td><td>  -  </td></tr>
      </table>
      */
-    public UserPhoneNumberResponse deleteUserPhoneNumber(@javax.annotation.Nonnull String id) throws ApiException {
+    public UserPhoneNumberResponse deleteUserPhoneNumber(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<UserPhoneNumberResponse> localVarResp = deleteUserPhoneNumberWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -334,7 +334,7 @@ public class UserPhoneNumbersApi {
         <tr><td> 422 </td><td> cannot delete phone number used by notification rule </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UserPhoneNumberResponse> deleteUserPhoneNumberWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<UserPhoneNumberResponse> deleteUserPhoneNumberWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteUserPhoneNumberValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<UserPhoneNumberResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -357,7 +357,7 @@ public class UserPhoneNumbersApi {
         <tr><td> 422 </td><td> cannot delete phone number used by notification rule </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteUserPhoneNumberAsync(@javax.annotation.Nonnull String id, final ApiCallback<UserPhoneNumberResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteUserPhoneNumberAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<UserPhoneNumberResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteUserPhoneNumberValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<UserPhoneNumberResponse>(){}.getType();
@@ -379,7 +379,7 @@ public class UserPhoneNumbersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getUserPhoneNumbersCall(@javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getUserPhoneNumbersCall(@jakarta.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -425,7 +425,7 @@ public class UserPhoneNumbersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getUserPhoneNumbersValidateBeforeCall(@javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getUserPhoneNumbersValidateBeforeCall(@jakarta.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling getUserPhoneNumbers(Async)");
@@ -450,7 +450,7 @@ public class UserPhoneNumbersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public UserPhoneNumberList getUserPhoneNumbers(@javax.annotation.Nonnull String userId) throws ApiException {
+    public UserPhoneNumberList getUserPhoneNumbers(@jakarta.annotation.Nonnull String userId) throws ApiException {
         ApiResponse<UserPhoneNumberList> localVarResp = getUserPhoneNumbersWithHttpInfo(userId);
         return localVarResp.getData();
     }
@@ -470,7 +470,7 @@ public class UserPhoneNumbersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UserPhoneNumberList> getUserPhoneNumbersWithHttpInfo(@javax.annotation.Nonnull String userId) throws ApiException {
+    public ApiResponse<UserPhoneNumberList> getUserPhoneNumbersWithHttpInfo(@jakarta.annotation.Nonnull String userId) throws ApiException {
         okhttp3.Call localVarCall = getUserPhoneNumbersValidateBeforeCall(userId, null);
         Type localVarReturnType = new TypeToken<UserPhoneNumberList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -492,7 +492,7 @@ public class UserPhoneNumbersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getUserPhoneNumbersAsync(@javax.annotation.Nonnull String userId, final ApiCallback<UserPhoneNumberList> _callback) throws ApiException {
+    public okhttp3.Call getUserPhoneNumbersAsync(@jakarta.annotation.Nonnull String userId, final ApiCallback<UserPhoneNumberList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getUserPhoneNumbersValidateBeforeCall(userId, _callback);
         Type localVarReturnType = new TypeToken<UserPhoneNumberList>(){}.getType();
@@ -514,7 +514,7 @@ public class UserPhoneNumbersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call showUserPhoneNumberCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call showUserPhoneNumberCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -560,7 +560,7 @@ public class UserPhoneNumbersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call showUserPhoneNumberValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call showUserPhoneNumberValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling showUserPhoneNumber(Async)");
@@ -585,7 +585,7 @@ public class UserPhoneNumbersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public UserPhoneNumberResponse showUserPhoneNumber(@javax.annotation.Nonnull String id) throws ApiException {
+    public UserPhoneNumberResponse showUserPhoneNumber(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<UserPhoneNumberResponse> localVarResp = showUserPhoneNumberWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -605,7 +605,7 @@ public class UserPhoneNumbersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UserPhoneNumberResponse> showUserPhoneNumberWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<UserPhoneNumberResponse> showUserPhoneNumberWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = showUserPhoneNumberValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<UserPhoneNumberResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -627,7 +627,7 @@ public class UserPhoneNumbersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call showUserPhoneNumberAsync(@javax.annotation.Nonnull String id, final ApiCallback<UserPhoneNumberResponse> _callback) throws ApiException {
+    public okhttp3.Call showUserPhoneNumberAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<UserPhoneNumberResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = showUserPhoneNumberValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<UserPhoneNumberResponse>(){}.getType();
@@ -651,7 +651,7 @@ public class UserPhoneNumbersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateUserPhoneNumberCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateUserPhoneNumber updateUserPhoneNumber, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateUserPhoneNumberCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateUserPhoneNumber updateUserPhoneNumber, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -698,7 +698,7 @@ public class UserPhoneNumbersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateUserPhoneNumberValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateUserPhoneNumber updateUserPhoneNumber, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateUserPhoneNumberValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateUserPhoneNumber updateUserPhoneNumber, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateUserPhoneNumber(Async)");
@@ -730,7 +730,7 @@ public class UserPhoneNumbersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public UserPhoneNumberResponse updateUserPhoneNumber(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateUserPhoneNumber updateUserPhoneNumber) throws ApiException {
+    public UserPhoneNumberResponse updateUserPhoneNumber(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateUserPhoneNumber updateUserPhoneNumber) throws ApiException {
         ApiResponse<UserPhoneNumberResponse> localVarResp = updateUserPhoneNumberWithHttpInfo(id, updateUserPhoneNumber);
         return localVarResp.getData();
     }
@@ -752,7 +752,7 @@ public class UserPhoneNumbersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UserPhoneNumberResponse> updateUserPhoneNumberWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateUserPhoneNumber updateUserPhoneNumber) throws ApiException {
+    public ApiResponse<UserPhoneNumberResponse> updateUserPhoneNumberWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateUserPhoneNumber updateUserPhoneNumber) throws ApiException {
         okhttp3.Call localVarCall = updateUserPhoneNumberValidateBeforeCall(id, updateUserPhoneNumber, null);
         Type localVarReturnType = new TypeToken<UserPhoneNumberResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -776,7 +776,7 @@ public class UserPhoneNumbersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateUserPhoneNumberAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateUserPhoneNumber updateUserPhoneNumber, final ApiCallback<UserPhoneNumberResponse> _callback) throws ApiException {
+    public okhttp3.Call updateUserPhoneNumberAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateUserPhoneNumber updateUserPhoneNumber, final ApiCallback<UserPhoneNumberResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateUserPhoneNumberValidateBeforeCall(id, updateUserPhoneNumber, _callback);
         Type localVarReturnType = new TypeToken<UserPhoneNumberResponse>(){}.getType();

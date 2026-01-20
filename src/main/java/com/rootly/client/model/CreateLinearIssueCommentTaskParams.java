@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * CreateLinearIssueCommentTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateLinearIssueCommentTaskParams {
   /**
    * Gets or Sets taskType
@@ -102,23 +102,23 @@ public class CreateLinearIssueCommentTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_ISSUE_ID = "issue_id";
   @SerializedName(SERIALIZED_NAME_ISSUE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String issueId;
 
   public static final String SERIALIZED_NAME_BODY = "body";
   @SerializedName(SERIALIZED_NAME_BODY)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String body;
 
   public CreateLinearIssueCommentTaskParams() {
   }
 
-  public CreateLinearIssueCommentTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public CreateLinearIssueCommentTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -127,17 +127,17 @@ public class CreateLinearIssueCommentTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public CreateLinearIssueCommentTaskParams issueId(@javax.annotation.Nonnull String issueId) {
+  public CreateLinearIssueCommentTaskParams issueId(@jakarta.annotation.Nonnull String issueId) {
     this.issueId = issueId;
     return this;
   }
@@ -146,17 +146,17 @@ public class CreateLinearIssueCommentTaskParams {
    * The issue id
    * @return issueId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getIssueId() {
     return issueId;
   }
 
-  public void setIssueId(@javax.annotation.Nonnull String issueId) {
+  public void setIssueId(@jakarta.annotation.Nonnull String issueId) {
     this.issueId = issueId;
   }
 
 
-  public CreateLinearIssueCommentTaskParams body(@javax.annotation.Nonnull String body) {
+  public CreateLinearIssueCommentTaskParams body(@jakarta.annotation.Nonnull String body) {
     this.body = body;
     return this;
   }
@@ -165,12 +165,12 @@ public class CreateLinearIssueCommentTaskParams {
    * The issue description
    * @return body
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getBody() {
     return body;
   }
 
-  public void setBody(@javax.annotation.Nonnull String body) {
+  public void setBody(@jakarta.annotation.Nonnull String body) {
     this.body = body;
   }
 

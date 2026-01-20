@@ -49,17 +49,17 @@ import com.rootly.client.JSON;
 /**
  * UserPhoneNumberResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UserPhoneNumberResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private UserPhoneNumberResponseData data;
 
   public UserPhoneNumberResponse() {
   }
 
-  public UserPhoneNumberResponse data(@javax.annotation.Nonnull UserPhoneNumberResponseData data) {
+  public UserPhoneNumberResponse data(@jakarta.annotation.Nonnull UserPhoneNumberResponseData data) {
     this.data = data;
     return this;
   }
@@ -68,12 +68,12 @@ public class UserPhoneNumberResponse {
    * Get data
    * @return data
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public UserPhoneNumberResponseData getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nonnull UserPhoneNumberResponseData data) {
+  public void setData(@jakarta.annotation.Nonnull UserPhoneNumberResponseData data) {
     this.data = data;
   }
 

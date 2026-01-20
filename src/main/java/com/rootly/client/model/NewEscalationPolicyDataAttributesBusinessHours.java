@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * NewEscalationPolicyDataAttributesBusinessHours
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewEscalationPolicyDataAttributesBusinessHours {
   /**
    * Time zone for business hours
@@ -711,7 +711,7 @@ public class NewEscalationPolicyDataAttributesBusinessHours {
 
   public static final String SERIALIZED_NAME_TIME_ZONE = "time_zone";
   @SerializedName(SERIALIZED_NAME_TIME_ZONE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TimeZoneEnum timeZone;
 
   /**
@@ -778,23 +778,23 @@ public class NewEscalationPolicyDataAttributesBusinessHours {
 
   public static final String SERIALIZED_NAME_DAYS = "days";
   @SerializedName(SERIALIZED_NAME_DAYS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<DaysEnum> days;
 
   public static final String SERIALIZED_NAME_START_TIME = "start_time";
   @SerializedName(SERIALIZED_NAME_START_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String startTime;
 
   public static final String SERIALIZED_NAME_END_TIME = "end_time";
   @SerializedName(SERIALIZED_NAME_END_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String endTime;
 
   public NewEscalationPolicyDataAttributesBusinessHours() {
   }
 
-  public NewEscalationPolicyDataAttributesBusinessHours timeZone(@javax.annotation.Nullable TimeZoneEnum timeZone) {
+  public NewEscalationPolicyDataAttributesBusinessHours timeZone(@jakarta.annotation.Nullable TimeZoneEnum timeZone) {
     this.timeZone = timeZone;
     return this;
   }
@@ -803,17 +803,17 @@ public class NewEscalationPolicyDataAttributesBusinessHours {
    * Time zone for business hours
    * @return timeZone
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TimeZoneEnum getTimeZone() {
     return timeZone;
   }
 
-  public void setTimeZone(@javax.annotation.Nullable TimeZoneEnum timeZone) {
+  public void setTimeZone(@jakarta.annotation.Nullable TimeZoneEnum timeZone) {
     this.timeZone = timeZone;
   }
 
 
-  public NewEscalationPolicyDataAttributesBusinessHours days(@javax.annotation.Nullable List<DaysEnum> days) {
+  public NewEscalationPolicyDataAttributesBusinessHours days(@jakarta.annotation.Nullable List<DaysEnum> days) {
     this.days = days;
     return this;
   }
@@ -830,17 +830,17 @@ public class NewEscalationPolicyDataAttributesBusinessHours {
    * Business days
    * @return days
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<DaysEnum> getDays() {
     return days;
   }
 
-  public void setDays(@javax.annotation.Nullable List<DaysEnum> days) {
+  public void setDays(@jakarta.annotation.Nullable List<DaysEnum> days) {
     this.days = days;
   }
 
 
-  public NewEscalationPolicyDataAttributesBusinessHours startTime(@javax.annotation.Nullable String startTime) {
+  public NewEscalationPolicyDataAttributesBusinessHours startTime(@jakarta.annotation.Nullable String startTime) {
     this.startTime = startTime;
     return this;
   }
@@ -849,17 +849,17 @@ public class NewEscalationPolicyDataAttributesBusinessHours {
    * Start time for business hours (HH:MM)
    * @return startTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getStartTime() {
     return startTime;
   }
 
-  public void setStartTime(@javax.annotation.Nullable String startTime) {
+  public void setStartTime(@jakarta.annotation.Nullable String startTime) {
     this.startTime = startTime;
   }
 
 
-  public NewEscalationPolicyDataAttributesBusinessHours endTime(@javax.annotation.Nullable String endTime) {
+  public NewEscalationPolicyDataAttributesBusinessHours endTime(@jakarta.annotation.Nullable String endTime) {
     this.endTime = endTime;
     return this;
   }
@@ -868,12 +868,12 @@ public class NewEscalationPolicyDataAttributesBusinessHours {
    * End time for business hours (HH:MM)
    * @return endTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getEndTime() {
     return endTime;
   }
 
-  public void setEndTime(@javax.annotation.Nullable String endTime) {
+  public void setEndTime(@jakarta.annotation.Nullable String endTime) {
     this.endTime = endTime;
   }
 

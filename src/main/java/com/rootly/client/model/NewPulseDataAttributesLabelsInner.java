@@ -48,22 +48,22 @@ import com.rootly.client.JSON;
 /**
  * NewPulseDataAttributesLabelsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewPulseDataAttributesLabelsInner {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String key;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String value;
 
   public NewPulseDataAttributesLabelsInner() {
   }
 
-  public NewPulseDataAttributesLabelsInner key(@javax.annotation.Nonnull String key) {
+  public NewPulseDataAttributesLabelsInner key(@jakarta.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
@@ -72,17 +72,17 @@ public class NewPulseDataAttributesLabelsInner {
    * Key of the tag
    * @return key
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getKey() {
     return key;
   }
 
-  public void setKey(@javax.annotation.Nonnull String key) {
+  public void setKey(@jakarta.annotation.Nonnull String key) {
     this.key = key;
   }
 
 
-  public NewPulseDataAttributesLabelsInner value(@javax.annotation.Nonnull String value) {
+  public NewPulseDataAttributesLabelsInner value(@jakarta.annotation.Nonnull String value) {
     this.value = value;
     return this;
   }
@@ -91,12 +91,12 @@ public class NewPulseDataAttributesLabelsInner {
    * Value of the tag
    * @return value
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getValue() {
     return value;
   }
 
-  public void setValue(@javax.annotation.Nonnull String value) {
+  public void setValue(@jakarta.annotation.Nonnull String value) {
     this.value = value;
   }
 

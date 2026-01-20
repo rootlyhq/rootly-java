@@ -92,7 +92,7 @@ public class HeartbeatsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createHeartbeatCall(@javax.annotation.Nonnull NewHeartbeat newHeartbeat, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createHeartbeatCall(@jakarta.annotation.Nonnull NewHeartbeat newHeartbeat, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -138,7 +138,7 @@ public class HeartbeatsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createHeartbeatValidateBeforeCall(@javax.annotation.Nonnull NewHeartbeat newHeartbeat, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createHeartbeatValidateBeforeCall(@jakarta.annotation.Nonnull NewHeartbeat newHeartbeat, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'newHeartbeat' is set
         if (newHeartbeat == null) {
             throw new ApiException("Missing the required parameter 'newHeartbeat' when calling createHeartbeat(Async)");
@@ -163,7 +163,7 @@ public class HeartbeatsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public HeartbeatResponse createHeartbeat(@javax.annotation.Nonnull NewHeartbeat newHeartbeat) throws ApiException {
+    public HeartbeatResponse createHeartbeat(@jakarta.annotation.Nonnull NewHeartbeat newHeartbeat) throws ApiException {
         ApiResponse<HeartbeatResponse> localVarResp = createHeartbeatWithHttpInfo(newHeartbeat);
         return localVarResp.getData();
     }
@@ -183,7 +183,7 @@ public class HeartbeatsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<HeartbeatResponse> createHeartbeatWithHttpInfo(@javax.annotation.Nonnull NewHeartbeat newHeartbeat) throws ApiException {
+    public ApiResponse<HeartbeatResponse> createHeartbeatWithHttpInfo(@jakarta.annotation.Nonnull NewHeartbeat newHeartbeat) throws ApiException {
         okhttp3.Call localVarCall = createHeartbeatValidateBeforeCall(newHeartbeat, null);
         Type localVarReturnType = new TypeToken<HeartbeatResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -205,7 +205,7 @@ public class HeartbeatsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createHeartbeatAsync(@javax.annotation.Nonnull NewHeartbeat newHeartbeat, final ApiCallback<HeartbeatResponse> _callback) throws ApiException {
+    public okhttp3.Call createHeartbeatAsync(@jakarta.annotation.Nonnull NewHeartbeat newHeartbeat, final ApiCallback<HeartbeatResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createHeartbeatValidateBeforeCall(newHeartbeat, _callback);
         Type localVarReturnType = new TypeToken<HeartbeatResponse>(){}.getType();
@@ -226,7 +226,7 @@ public class HeartbeatsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteHeartbeatCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteHeartbeatCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -272,7 +272,7 @@ public class HeartbeatsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteHeartbeatValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteHeartbeatValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteHeartbeat(Async)");
@@ -296,7 +296,7 @@ public class HeartbeatsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public HeartbeatResponse deleteHeartbeat(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public HeartbeatResponse deleteHeartbeat(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<HeartbeatResponse> localVarResp = deleteHeartbeatWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -315,7 +315,7 @@ public class HeartbeatsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<HeartbeatResponse> deleteHeartbeatWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public ApiResponse<HeartbeatResponse> deleteHeartbeatWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = deleteHeartbeatValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<HeartbeatResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -336,7 +336,7 @@ public class HeartbeatsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteHeartbeatAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<HeartbeatResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteHeartbeatAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<HeartbeatResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteHeartbeatValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<HeartbeatResponse>(){}.getType();
@@ -357,7 +357,7 @@ public class HeartbeatsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getHeartbeatCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getHeartbeatCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -403,7 +403,7 @@ public class HeartbeatsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getHeartbeatValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getHeartbeatValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getHeartbeat(Async)");
@@ -427,7 +427,7 @@ public class HeartbeatsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public HeartbeatResponse getHeartbeat(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public HeartbeatResponse getHeartbeat(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<HeartbeatResponse> localVarResp = getHeartbeatWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -446,7 +446,7 @@ public class HeartbeatsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<HeartbeatResponse> getHeartbeatWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public ApiResponse<HeartbeatResponse> getHeartbeatWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = getHeartbeatValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<HeartbeatResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -467,7 +467,7 @@ public class HeartbeatsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getHeartbeatAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<HeartbeatResponse> _callback) throws ApiException {
+    public okhttp3.Call getHeartbeatAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<HeartbeatResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getHeartbeatValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<HeartbeatResponse>(){}.getType();
@@ -496,7 +496,7 @@ public class HeartbeatsApi {
         <tr><td> 200 </td><td> filter by name </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listHeartbeatsCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listHeartbeatsCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -581,7 +581,7 @@ public class HeartbeatsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listHeartbeatsValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listHeartbeatsValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
         return listHeartbeatsCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, _callback);
 
     }
@@ -608,7 +608,7 @@ public class HeartbeatsApi {
         <tr><td> 200 </td><td> filter by name </td><td>  -  </td></tr>
      </table>
      */
-    public HeartbeatList listHeartbeats(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte) throws ApiException {
+    public HeartbeatList listHeartbeats(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte) throws ApiException {
         ApiResponse<HeartbeatList> localVarResp = listHeartbeatsWithHttpInfo(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
         return localVarResp.getData();
     }
@@ -635,7 +635,7 @@ public class HeartbeatsApi {
         <tr><td> 200 </td><td> filter by name </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<HeartbeatList> listHeartbeatsWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte) throws ApiException {
+    public ApiResponse<HeartbeatList> listHeartbeatsWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte) throws ApiException {
         okhttp3.Call localVarCall = listHeartbeatsValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, null);
         Type localVarReturnType = new TypeToken<HeartbeatList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -664,7 +664,7 @@ public class HeartbeatsApi {
         <tr><td> 200 </td><td> filter by name </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listHeartbeatsAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback<HeartbeatList> _callback) throws ApiException {
+    public okhttp3.Call listHeartbeatsAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback<HeartbeatList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listHeartbeatsValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, _callback);
         Type localVarReturnType = new TypeToken<HeartbeatList>(){}.getType();
@@ -685,7 +685,7 @@ public class HeartbeatsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call pingHeartbeatCall(@javax.annotation.Nonnull String heartbeatId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call pingHeartbeatCall(@jakarta.annotation.Nonnull String heartbeatId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -731,7 +731,7 @@ public class HeartbeatsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call pingHeartbeatValidateBeforeCall(@javax.annotation.Nonnull String heartbeatId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call pingHeartbeatValidateBeforeCall(@jakarta.annotation.Nonnull String heartbeatId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'heartbeatId' is set
         if (heartbeatId == null) {
             throw new ApiException("Missing the required parameter 'heartbeatId' when calling pingHeartbeat(Async)");
@@ -754,7 +754,7 @@ public class HeartbeatsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public void pingHeartbeat(@javax.annotation.Nonnull String heartbeatId) throws ApiException {
+    public void pingHeartbeat(@jakarta.annotation.Nonnull String heartbeatId) throws ApiException {
         pingHeartbeatWithHttpInfo(heartbeatId);
     }
 
@@ -772,7 +772,7 @@ public class HeartbeatsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> pingHeartbeatWithHttpInfo(@javax.annotation.Nonnull String heartbeatId) throws ApiException {
+    public ApiResponse<Void> pingHeartbeatWithHttpInfo(@jakarta.annotation.Nonnull String heartbeatId) throws ApiException {
         okhttp3.Call localVarCall = pingHeartbeatValidateBeforeCall(heartbeatId, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -792,7 +792,7 @@ public class HeartbeatsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call pingHeartbeatAsync(@javax.annotation.Nonnull String heartbeatId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call pingHeartbeatAsync(@jakarta.annotation.Nonnull String heartbeatId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = pingHeartbeatValidateBeforeCall(heartbeatId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -814,7 +814,7 @@ public class HeartbeatsApi {
         <tr><td> 422 </td><td> invalid enum value </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateHeartbeatCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateHeartbeat updateHeartbeat, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateHeartbeatCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateHeartbeat updateHeartbeat, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -861,7 +861,7 @@ public class HeartbeatsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateHeartbeatValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateHeartbeat updateHeartbeat, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateHeartbeatValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateHeartbeat updateHeartbeat, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateHeartbeat(Async)");
@@ -892,7 +892,7 @@ public class HeartbeatsApi {
         <tr><td> 422 </td><td> invalid enum value </td><td>  -  </td></tr>
      </table>
      */
-    public HeartbeatResponse updateHeartbeat(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateHeartbeat updateHeartbeat) throws ApiException {
+    public HeartbeatResponse updateHeartbeat(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateHeartbeat updateHeartbeat) throws ApiException {
         ApiResponse<HeartbeatResponse> localVarResp = updateHeartbeatWithHttpInfo(id, updateHeartbeat);
         return localVarResp.getData();
     }
@@ -913,7 +913,7 @@ public class HeartbeatsApi {
         <tr><td> 422 </td><td> invalid enum value </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<HeartbeatResponse> updateHeartbeatWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateHeartbeat updateHeartbeat) throws ApiException {
+    public ApiResponse<HeartbeatResponse> updateHeartbeatWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateHeartbeat updateHeartbeat) throws ApiException {
         okhttp3.Call localVarCall = updateHeartbeatValidateBeforeCall(id, updateHeartbeat, null);
         Type localVarReturnType = new TypeToken<HeartbeatResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -936,7 +936,7 @@ public class HeartbeatsApi {
         <tr><td> 422 </td><td> invalid enum value </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateHeartbeatAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateHeartbeat updateHeartbeat, final ApiCallback<HeartbeatResponse> _callback) throws ApiException {
+    public okhttp3.Call updateHeartbeatAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateHeartbeat updateHeartbeat, final ApiCallback<HeartbeatResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateHeartbeatValidateBeforeCall(id, updateHeartbeat, _callback);
         Type localVarReturnType = new TypeToken<HeartbeatResponse>(){}.getType();

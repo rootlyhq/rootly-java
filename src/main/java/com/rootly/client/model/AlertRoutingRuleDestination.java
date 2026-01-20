@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * The destinations for the alert routing rule
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AlertRoutingRuleDestination {
   /**
    * The type of the target
@@ -107,18 +107,18 @@ public class AlertRoutingRuleDestination {
 
   public static final String SERIALIZED_NAME_TARGET_TYPE = "target_type";
   @SerializedName(SERIALIZED_NAME_TARGET_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private TargetTypeEnum targetType;
 
   public static final String SERIALIZED_NAME_TARGET_ID = "target_id";
   @SerializedName(SERIALIZED_NAME_TARGET_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private UUID targetId;
 
   public AlertRoutingRuleDestination() {
   }
 
-  public AlertRoutingRuleDestination targetType(@javax.annotation.Nonnull TargetTypeEnum targetType) {
+  public AlertRoutingRuleDestination targetType(@jakarta.annotation.Nonnull TargetTypeEnum targetType) {
     this.targetType = targetType;
     return this;
   }
@@ -127,17 +127,17 @@ public class AlertRoutingRuleDestination {
    * The type of the target
    * @return targetType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public TargetTypeEnum getTargetType() {
     return targetType;
   }
 
-  public void setTargetType(@javax.annotation.Nonnull TargetTypeEnum targetType) {
+  public void setTargetType(@jakarta.annotation.Nonnull TargetTypeEnum targetType) {
     this.targetType = targetType;
   }
 
 
-  public AlertRoutingRuleDestination targetId(@javax.annotation.Nonnull UUID targetId) {
+  public AlertRoutingRuleDestination targetId(@jakarta.annotation.Nonnull UUID targetId) {
     this.targetId = targetId;
     return this;
   }
@@ -146,12 +146,12 @@ public class AlertRoutingRuleDestination {
    * The ID of the target
    * @return targetId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public UUID getTargetId() {
     return targetId;
   }
 
-  public void setTargetId(@javax.annotation.Nonnull UUID targetId) {
+  public void setTargetId(@jakarta.annotation.Nonnull UUID targetId) {
     this.targetId = targetId;
   }
 

@@ -48,32 +48,32 @@ import com.rootly.client.JSON;
 /**
  * NewCustomFieldOptionDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewCustomFieldOptionDataAttributes {
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String value;
 
   public static final String SERIALIZED_NAME_COLOR = "color";
   @SerializedName(SERIALIZED_NAME_COLOR)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String color;
 
   public static final String SERIALIZED_NAME_DEFAULT = "default";
   @SerializedName(SERIALIZED_NAME_DEFAULT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean _default;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public NewCustomFieldOptionDataAttributes() {
   }
 
-  public NewCustomFieldOptionDataAttributes value(@javax.annotation.Nonnull String value) {
+  public NewCustomFieldOptionDataAttributes value(@jakarta.annotation.Nonnull String value) {
     this.value = value;
     return this;
   }
@@ -82,17 +82,17 @@ public class NewCustomFieldOptionDataAttributes {
    * The value of the custom_field_option
    * @return value
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getValue() {
     return value;
   }
 
-  public void setValue(@javax.annotation.Nonnull String value) {
+  public void setValue(@jakarta.annotation.Nonnull String value) {
     this.value = value;
   }
 
 
-  public NewCustomFieldOptionDataAttributes color(@javax.annotation.Nullable String color) {
+  public NewCustomFieldOptionDataAttributes color(@jakarta.annotation.Nullable String color) {
     this.color = color;
     return this;
   }
@@ -101,17 +101,17 @@ public class NewCustomFieldOptionDataAttributes {
    * The hex color of the custom_field_option
    * @return color
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getColor() {
     return color;
   }
 
-  public void setColor(@javax.annotation.Nullable String color) {
+  public void setColor(@jakarta.annotation.Nullable String color) {
     this.color = color;
   }
 
 
-  public NewCustomFieldOptionDataAttributes _default(@javax.annotation.Nullable Boolean _default) {
+  public NewCustomFieldOptionDataAttributes _default(@jakarta.annotation.Nullable Boolean _default) {
     this._default = _default;
     return this;
   }
@@ -120,17 +120,17 @@ public class NewCustomFieldOptionDataAttributes {
    * Get _default
    * @return _default
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getDefault() {
     return _default;
   }
 
-  public void setDefault(@javax.annotation.Nullable Boolean _default) {
+  public void setDefault(@jakarta.annotation.Nullable Boolean _default) {
     this._default = _default;
   }
 
 
-  public NewCustomFieldOptionDataAttributes position(@javax.annotation.Nullable Integer position) {
+  public NewCustomFieldOptionDataAttributes position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -139,12 +139,12 @@ public class NewCustomFieldOptionDataAttributes {
    * The position of the custom_field_option
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 

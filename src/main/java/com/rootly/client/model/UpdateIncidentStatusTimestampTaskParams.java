@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateIncidentStatusTimestampTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateIncidentStatusTimestampTaskParams {
   /**
    * Gets or Sets taskType
@@ -102,23 +102,23 @@ public class UpdateIncidentStatusTimestampTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_SUB_STATUS_ID = "sub_status_id";
   @SerializedName(SERIALIZED_NAME_SUB_STATUS_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String subStatusId;
 
   public static final String SERIALIZED_NAME_ASSIGNED_AT = "assigned_at";
   @SerializedName(SERIALIZED_NAME_ASSIGNED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String assignedAt;
 
   public UpdateIncidentStatusTimestampTaskParams() {
   }
 
-  public UpdateIncidentStatusTimestampTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public UpdateIncidentStatusTimestampTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -127,17 +127,17 @@ public class UpdateIncidentStatusTimestampTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public UpdateIncidentStatusTimestampTaskParams subStatusId(@javax.annotation.Nonnull String subStatusId) {
+  public UpdateIncidentStatusTimestampTaskParams subStatusId(@jakarta.annotation.Nonnull String subStatusId) {
     this.subStatusId = subStatusId;
     return this;
   }
@@ -146,17 +146,17 @@ public class UpdateIncidentStatusTimestampTaskParams {
    * Sub-status to update timestamp for
    * @return subStatusId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getSubStatusId() {
     return subStatusId;
   }
 
-  public void setSubStatusId(@javax.annotation.Nonnull String subStatusId) {
+  public void setSubStatusId(@jakarta.annotation.Nonnull String subStatusId) {
     this.subStatusId = subStatusId;
   }
 
 
-  public UpdateIncidentStatusTimestampTaskParams assignedAt(@javax.annotation.Nonnull String assignedAt) {
+  public UpdateIncidentStatusTimestampTaskParams assignedAt(@jakarta.annotation.Nonnull String assignedAt) {
     this.assignedAt = assignedAt;
     return this;
   }
@@ -165,12 +165,12 @@ public class UpdateIncidentStatusTimestampTaskParams {
    * Timestamp of when the sub-status was assigned
    * @return assignedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getAssignedAt() {
     return assignedAt;
   }
 
-  public void setAssignedAt(@javax.annotation.Nonnull String assignedAt) {
+  public void setAssignedAt(@jakarta.annotation.Nonnull String assignedAt) {
     this.assignedAt = assignedAt;
   }
 

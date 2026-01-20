@@ -92,7 +92,7 @@ public class AlertFieldsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createAlertFieldCall(@javax.annotation.Nonnull NewAlertField newAlertField, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createAlertFieldCall(@jakarta.annotation.Nonnull NewAlertField newAlertField, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -138,7 +138,7 @@ public class AlertFieldsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createAlertFieldValidateBeforeCall(@javax.annotation.Nonnull NewAlertField newAlertField, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createAlertFieldValidateBeforeCall(@jakarta.annotation.Nonnull NewAlertField newAlertField, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'newAlertField' is set
         if (newAlertField == null) {
             throw new ApiException("Missing the required parameter 'newAlertField' when calling createAlertField(Async)");
@@ -163,7 +163,7 @@ public class AlertFieldsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public AlertFieldResponse createAlertField(@javax.annotation.Nonnull NewAlertField newAlertField) throws ApiException {
+    public AlertFieldResponse createAlertField(@jakarta.annotation.Nonnull NewAlertField newAlertField) throws ApiException {
         ApiResponse<AlertFieldResponse> localVarResp = createAlertFieldWithHttpInfo(newAlertField);
         return localVarResp.getData();
     }
@@ -183,7 +183,7 @@ public class AlertFieldsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertFieldResponse> createAlertFieldWithHttpInfo(@javax.annotation.Nonnull NewAlertField newAlertField) throws ApiException {
+    public ApiResponse<AlertFieldResponse> createAlertFieldWithHttpInfo(@jakarta.annotation.Nonnull NewAlertField newAlertField) throws ApiException {
         okhttp3.Call localVarCall = createAlertFieldValidateBeforeCall(newAlertField, null);
         Type localVarReturnType = new TypeToken<AlertFieldResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -205,7 +205,7 @@ public class AlertFieldsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createAlertFieldAsync(@javax.annotation.Nonnull NewAlertField newAlertField, final ApiCallback<AlertFieldResponse> _callback) throws ApiException {
+    public okhttp3.Call createAlertFieldAsync(@jakarta.annotation.Nonnull NewAlertField newAlertField, final ApiCallback<AlertFieldResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createAlertFieldValidateBeforeCall(newAlertField, _callback);
         Type localVarReturnType = new TypeToken<AlertFieldResponse>(){}.getType();
@@ -227,7 +227,7 @@ public class AlertFieldsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteAlertFieldCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteAlertFieldCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -273,7 +273,7 @@ public class AlertFieldsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteAlertFieldValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteAlertFieldValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteAlertField(Async)");
@@ -298,7 +298,7 @@ public class AlertFieldsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public AlertFieldResponse deleteAlertField(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public AlertFieldResponse deleteAlertField(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<AlertFieldResponse> localVarResp = deleteAlertFieldWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -318,7 +318,7 @@ public class AlertFieldsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertFieldResponse> deleteAlertFieldWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public ApiResponse<AlertFieldResponse> deleteAlertFieldWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = deleteAlertFieldValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<AlertFieldResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -340,7 +340,7 @@ public class AlertFieldsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteAlertFieldAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<AlertFieldResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteAlertFieldAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<AlertFieldResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteAlertFieldValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<AlertFieldResponse>(){}.getType();
@@ -361,7 +361,7 @@ public class AlertFieldsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAlertFieldCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAlertFieldCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -407,7 +407,7 @@ public class AlertFieldsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAlertFieldValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAlertFieldValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getAlertField(Async)");
@@ -431,7 +431,7 @@ public class AlertFieldsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public AlertFieldResponse getAlertField(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public AlertFieldResponse getAlertField(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<AlertFieldResponse> localVarResp = getAlertFieldWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -450,7 +450,7 @@ public class AlertFieldsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertFieldResponse> getAlertFieldWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public ApiResponse<AlertFieldResponse> getAlertFieldWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = getAlertFieldValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<AlertFieldResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -471,7 +471,7 @@ public class AlertFieldsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAlertFieldAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<AlertFieldResponse> _callback) throws ApiException {
+    public okhttp3.Call getAlertFieldAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<AlertFieldResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAlertFieldValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<AlertFieldResponse>(){}.getType();
@@ -501,7 +501,7 @@ public class AlertFieldsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAlertFieldsCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listAlertFieldsCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -590,7 +590,7 @@ public class AlertFieldsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listAlertFieldsValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listAlertFieldsValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         return listAlertFieldsCall(include, pageNumber, pageSize, filterSearch, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
 
     }
@@ -618,7 +618,7 @@ public class AlertFieldsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public AlertFieldList listAlertFields(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+    public AlertFieldList listAlertFields(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
         ApiResponse<AlertFieldList> localVarResp = listAlertFieldsWithHttpInfo(include, pageNumber, pageSize, filterSearch, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
         return localVarResp.getData();
     }
@@ -646,7 +646,7 @@ public class AlertFieldsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertFieldList> listAlertFieldsWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+    public ApiResponse<AlertFieldList> listAlertFieldsWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
         okhttp3.Call localVarCall = listAlertFieldsValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, null);
         Type localVarReturnType = new TypeToken<AlertFieldList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -676,7 +676,7 @@ public class AlertFieldsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAlertFieldsAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback<AlertFieldList> _callback) throws ApiException {
+    public okhttp3.Call listAlertFieldsAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback<AlertFieldList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listAlertFieldsValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
         Type localVarReturnType = new TypeToken<AlertFieldList>(){}.getType();
@@ -698,7 +698,7 @@ public class AlertFieldsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateAlertFieldCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateAlertField updateAlertField, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateAlertFieldCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateAlertField updateAlertField, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -745,7 +745,7 @@ public class AlertFieldsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateAlertFieldValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateAlertField updateAlertField, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateAlertFieldValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateAlertField updateAlertField, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateAlertField(Async)");
@@ -775,7 +775,7 @@ public class AlertFieldsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public AlertFieldResponse updateAlertField(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateAlertField updateAlertField) throws ApiException {
+    public AlertFieldResponse updateAlertField(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateAlertField updateAlertField) throws ApiException {
         ApiResponse<AlertFieldResponse> localVarResp = updateAlertFieldWithHttpInfo(id, updateAlertField);
         return localVarResp.getData();
     }
@@ -795,7 +795,7 @@ public class AlertFieldsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertFieldResponse> updateAlertFieldWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateAlertField updateAlertField) throws ApiException {
+    public ApiResponse<AlertFieldResponse> updateAlertFieldWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateAlertField updateAlertField) throws ApiException {
         okhttp3.Call localVarCall = updateAlertFieldValidateBeforeCall(id, updateAlertField, null);
         Type localVarReturnType = new TypeToken<AlertFieldResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -817,7 +817,7 @@ public class AlertFieldsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateAlertFieldAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateAlertField updateAlertField, final ApiCallback<AlertFieldResponse> _callback) throws ApiException {
+    public okhttp3.Call updateAlertFieldAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateAlertField updateAlertField, final ApiCallback<AlertFieldResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateAlertFieldValidateBeforeCall(id, updateAlertField, _callback);
         Type localVarReturnType = new TypeToken<AlertFieldResponse>(){}.getType();

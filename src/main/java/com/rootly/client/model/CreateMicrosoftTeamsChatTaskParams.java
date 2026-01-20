@@ -52,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * CreateMicrosoftTeamsChatTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateMicrosoftTeamsChatTaskParams {
   /**
    * Gets or Sets taskType
@@ -106,12 +106,12 @@ public class CreateMicrosoftTeamsChatTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_TOPIC = "topic";
   @SerializedName(SERIALIZED_NAME_TOPIC)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String topic;
 
   /**
@@ -168,18 +168,18 @@ public class CreateMicrosoftTeamsChatTaskParams {
 
   public static final String SERIALIZED_NAME_CHAT_TYPE = "chat_type";
   @SerializedName(SERIALIZED_NAME_CHAT_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ChatTypeEnum chatType = ChatTypeEnum.GROUP;
 
   public static final String SERIALIZED_NAME_MEMBERS = "members";
   @SerializedName(SERIALIZED_NAME_MEMBERS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<CreateMicrosoftTeamsChatTaskParamsMembersInner> members = new ArrayList<>();
 
   public CreateMicrosoftTeamsChatTaskParams() {
   }
 
-  public CreateMicrosoftTeamsChatTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public CreateMicrosoftTeamsChatTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -188,17 +188,17 @@ public class CreateMicrosoftTeamsChatTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public CreateMicrosoftTeamsChatTaskParams topic(@javax.annotation.Nullable String topic) {
+  public CreateMicrosoftTeamsChatTaskParams topic(@jakarta.annotation.Nullable String topic) {
     this.topic = topic;
     return this;
   }
@@ -207,17 +207,17 @@ public class CreateMicrosoftTeamsChatTaskParams {
    * Chat topic (only for group chats)
    * @return topic
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTopic() {
     return topic;
   }
 
-  public void setTopic(@javax.annotation.Nullable String topic) {
+  public void setTopic(@jakarta.annotation.Nullable String topic) {
     this.topic = topic;
   }
 
 
-  public CreateMicrosoftTeamsChatTaskParams chatType(@javax.annotation.Nullable ChatTypeEnum chatType) {
+  public CreateMicrosoftTeamsChatTaskParams chatType(@jakarta.annotation.Nullable ChatTypeEnum chatType) {
     this.chatType = chatType;
     return this;
   }
@@ -226,17 +226,17 @@ public class CreateMicrosoftTeamsChatTaskParams {
    * Type of chat to create
    * @return chatType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ChatTypeEnum getChatType() {
     return chatType;
   }
 
-  public void setChatType(@javax.annotation.Nullable ChatTypeEnum chatType) {
+  public void setChatType(@jakarta.annotation.Nullable ChatTypeEnum chatType) {
     this.chatType = chatType;
   }
 
 
-  public CreateMicrosoftTeamsChatTaskParams members(@javax.annotation.Nonnull List<CreateMicrosoftTeamsChatTaskParamsMembersInner> members) {
+  public CreateMicrosoftTeamsChatTaskParams members(@jakarta.annotation.Nonnull List<CreateMicrosoftTeamsChatTaskParamsMembersInner> members) {
     this.members = members;
     return this;
   }
@@ -253,12 +253,12 @@ public class CreateMicrosoftTeamsChatTaskParams {
    * Array of members to include in the chat
    * @return members
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<CreateMicrosoftTeamsChatTaskParamsMembersInner> getMembers() {
     return members;
   }
 
-  public void setMembers(@javax.annotation.Nonnull List<CreateMicrosoftTeamsChatTaskParamsMembersInner> members) {
+  public void setMembers(@jakarta.annotation.Nonnull List<CreateMicrosoftTeamsChatTaskParamsMembersInner> members) {
     this.members = members;
   }
 

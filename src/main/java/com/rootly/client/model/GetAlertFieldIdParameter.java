@@ -51,7 +51,7 @@ import com.google.gson.JsonParseException;
 
 import com.rootly.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class GetAlertFieldIdParameter extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(GetAlertFieldIdParameter.class.getName());
 
@@ -100,7 +100,6 @@ public class GetAlertFieldIdParameter extends AbstractOpenApiSchema {
                     // deserialize UUID
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        UUID.validateJsonElement(jsonElement);
                         actualAdapter = adapterUUID;
                         GetAlertFieldIdParameter ret = new GetAlertFieldIdParameter();
                         ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
@@ -221,7 +220,6 @@ public class GetAlertFieldIdParameter extends AbstractOpenApiSchema {
         ArrayList<String> errorMessages = new ArrayList<>();
         // validate the json string with UUID
         try {
-            UUID.validateJsonElement(jsonElement);
             return;
         } catch (Exception e) {
             errorMessages.add(String.format("Deserialization for UUID failed with `%s`.", e.getMessage()));

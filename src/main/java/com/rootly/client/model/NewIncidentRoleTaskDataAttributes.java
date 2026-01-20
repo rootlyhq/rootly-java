@@ -49,21 +49,21 @@ import com.rootly.client.JSON;
 /**
  * NewIncidentRoleTaskDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewIncidentRoleTaskDataAttributes {
   public static final String SERIALIZED_NAME_INCIDENT_ROLE_ID = "incident_role_id";
   @SerializedName(SERIALIZED_NAME_INCIDENT_ROLE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String incidentRoleId;
 
   public static final String SERIALIZED_NAME_TASK = "task";
   @SerializedName(SERIALIZED_NAME_TASK)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String task;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   /**
@@ -122,13 +122,13 @@ public class NewIncidentRoleTaskDataAttributes {
 
   public static final String SERIALIZED_NAME_PRIORITY = "priority";
   @SerializedName(SERIALIZED_NAME_PRIORITY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private PriorityEnum priority;
 
   public NewIncidentRoleTaskDataAttributes() {
   }
 
-  public NewIncidentRoleTaskDataAttributes incidentRoleId(@javax.annotation.Nullable String incidentRoleId) {
+  public NewIncidentRoleTaskDataAttributes incidentRoleId(@jakarta.annotation.Nullable String incidentRoleId) {
     this.incidentRoleId = incidentRoleId;
     return this;
   }
@@ -137,17 +137,17 @@ public class NewIncidentRoleTaskDataAttributes {
    * Get incidentRoleId
    * @return incidentRoleId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getIncidentRoleId() {
     return incidentRoleId;
   }
 
-  public void setIncidentRoleId(@javax.annotation.Nullable String incidentRoleId) {
+  public void setIncidentRoleId(@jakarta.annotation.Nullable String incidentRoleId) {
     this.incidentRoleId = incidentRoleId;
   }
 
 
-  public NewIncidentRoleTaskDataAttributes task(@javax.annotation.Nonnull String task) {
+  public NewIncidentRoleTaskDataAttributes task(@jakarta.annotation.Nonnull String task) {
     this.task = task;
     return this;
   }
@@ -156,17 +156,17 @@ public class NewIncidentRoleTaskDataAttributes {
    * The task of the incident task
    * @return task
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getTask() {
     return task;
   }
 
-  public void setTask(@javax.annotation.Nonnull String task) {
+  public void setTask(@jakarta.annotation.Nonnull String task) {
     this.task = task;
   }
 
 
-  public NewIncidentRoleTaskDataAttributes description(@javax.annotation.Nullable String description) {
+  public NewIncidentRoleTaskDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -175,17 +175,17 @@ public class NewIncidentRoleTaskDataAttributes {
    * The description of the incident task
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public NewIncidentRoleTaskDataAttributes priority(@javax.annotation.Nullable PriorityEnum priority) {
+  public NewIncidentRoleTaskDataAttributes priority(@jakarta.annotation.Nullable PriorityEnum priority) {
     this.priority = priority;
     return this;
   }
@@ -194,12 +194,12 @@ public class NewIncidentRoleTaskDataAttributes {
    * The priority of the incident task
    * @return priority
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public PriorityEnum getPriority() {
     return priority;
   }
 
-  public void setPriority(@javax.annotation.Nullable PriorityEnum priority) {
+  public void setPriority(@jakarta.annotation.Nullable PriorityEnum priority) {
     this.priority = priority;
   }
 

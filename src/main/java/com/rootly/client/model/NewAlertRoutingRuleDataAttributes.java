@@ -53,31 +53,31 @@ import com.rootly.client.JSON;
 /**
  * NewAlertRoutingRuleDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewAlertRoutingRuleDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_OWNING_TEAM_IDS = "owning_team_ids";
   @SerializedName(SERIALIZED_NAME_OWNING_TEAM_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<UUID> owningTeamIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ALERTS_SOURCE_ID = "alerts_source_id";
   @SerializedName(SERIALIZED_NAME_ALERTS_SOURCE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private UUID alertsSourceId;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   /**
@@ -134,23 +134,23 @@ public class NewAlertRoutingRuleDataAttributes {
 
   public static final String SERIALIZED_NAME_CONDITION_TYPE = "condition_type";
   @SerializedName(SERIALIZED_NAME_CONDITION_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ConditionTypeEnum conditionType;
 
   public static final String SERIALIZED_NAME_CONDITIONS = "conditions";
   @SerializedName(SERIALIZED_NAME_CONDITIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewAlertRoutingRuleDataAttributesConditionsInner> conditions = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_DESTINATION = "destination";
   @SerializedName(SERIALIZED_NAME_DESTINATION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private NewAlertRouteDataAttributesRulesInnerDestinationsInner destination;
 
   public NewAlertRoutingRuleDataAttributes() {
   }
 
-  public NewAlertRoutingRuleDataAttributes name(@javax.annotation.Nonnull String name) {
+  public NewAlertRoutingRuleDataAttributes name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -159,17 +159,17 @@ public class NewAlertRoutingRuleDataAttributes {
    * The name of the alert routing rule
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public NewAlertRoutingRuleDataAttributes enabled(@javax.annotation.Nullable Boolean enabled) {
+  public NewAlertRoutingRuleDataAttributes enabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -178,17 +178,17 @@ public class NewAlertRoutingRuleDataAttributes {
    * Whether the alert routing rule is enabled
    * @return enabled
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getEnabled() {
     return enabled;
   }
 
-  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
+  public void setEnabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public NewAlertRoutingRuleDataAttributes owningTeamIds(@javax.annotation.Nullable List<UUID> owningTeamIds) {
+  public NewAlertRoutingRuleDataAttributes owningTeamIds(@jakarta.annotation.Nullable List<UUID> owningTeamIds) {
     this.owningTeamIds = owningTeamIds;
     return this;
   }
@@ -205,17 +205,17 @@ public class NewAlertRoutingRuleDataAttributes {
    * The IDs of the teams which own the alert routing rule. If the user doesn&#39;t have Alert Routing Create Permission in On-Call Roles, then this field is required and can contain Team IDs the user is an admin of.
    * @return owningTeamIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<UUID> getOwningTeamIds() {
     return owningTeamIds;
   }
 
-  public void setOwningTeamIds(@javax.annotation.Nullable List<UUID> owningTeamIds) {
+  public void setOwningTeamIds(@jakarta.annotation.Nullable List<UUID> owningTeamIds) {
     this.owningTeamIds = owningTeamIds;
   }
 
 
-  public NewAlertRoutingRuleDataAttributes alertsSourceId(@javax.annotation.Nonnull UUID alertsSourceId) {
+  public NewAlertRoutingRuleDataAttributes alertsSourceId(@jakarta.annotation.Nonnull UUID alertsSourceId) {
     this.alertsSourceId = alertsSourceId;
     return this;
   }
@@ -224,17 +224,17 @@ public class NewAlertRoutingRuleDataAttributes {
    * The ID of the alerts source
    * @return alertsSourceId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public UUID getAlertsSourceId() {
     return alertsSourceId;
   }
 
-  public void setAlertsSourceId(@javax.annotation.Nonnull UUID alertsSourceId) {
+  public void setAlertsSourceId(@jakarta.annotation.Nonnull UUID alertsSourceId) {
     this.alertsSourceId = alertsSourceId;
   }
 
 
-  public NewAlertRoutingRuleDataAttributes position(@javax.annotation.Nullable Integer position) {
+  public NewAlertRoutingRuleDataAttributes position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -243,17 +243,17 @@ public class NewAlertRoutingRuleDataAttributes {
    * The position of the alert routing rule for ordering evaluation
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 
 
-  public NewAlertRoutingRuleDataAttributes conditionType(@javax.annotation.Nullable ConditionTypeEnum conditionType) {
+  public NewAlertRoutingRuleDataAttributes conditionType(@jakarta.annotation.Nullable ConditionTypeEnum conditionType) {
     this.conditionType = conditionType;
     return this;
   }
@@ -262,17 +262,17 @@ public class NewAlertRoutingRuleDataAttributes {
    * The type of condition for the alert routing rule
    * @return conditionType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ConditionTypeEnum getConditionType() {
     return conditionType;
   }
 
-  public void setConditionType(@javax.annotation.Nullable ConditionTypeEnum conditionType) {
+  public void setConditionType(@jakarta.annotation.Nullable ConditionTypeEnum conditionType) {
     this.conditionType = conditionType;
   }
 
 
-  public NewAlertRoutingRuleDataAttributes conditions(@javax.annotation.Nullable List<NewAlertRoutingRuleDataAttributesConditionsInner> conditions) {
+  public NewAlertRoutingRuleDataAttributes conditions(@jakarta.annotation.Nullable List<NewAlertRoutingRuleDataAttributesConditionsInner> conditions) {
     this.conditions = conditions;
     return this;
   }
@@ -289,17 +289,17 @@ public class NewAlertRoutingRuleDataAttributes {
    * Get conditions
    * @return conditions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewAlertRoutingRuleDataAttributesConditionsInner> getConditions() {
     return conditions;
   }
 
-  public void setConditions(@javax.annotation.Nullable List<NewAlertRoutingRuleDataAttributesConditionsInner> conditions) {
+  public void setConditions(@jakarta.annotation.Nullable List<NewAlertRoutingRuleDataAttributesConditionsInner> conditions) {
     this.conditions = conditions;
   }
 
 
-  public NewAlertRoutingRuleDataAttributes destination(@javax.annotation.Nonnull NewAlertRouteDataAttributesRulesInnerDestinationsInner destination) {
+  public NewAlertRoutingRuleDataAttributes destination(@jakarta.annotation.Nonnull NewAlertRouteDataAttributesRulesInnerDestinationsInner destination) {
     this.destination = destination;
     return this;
   }
@@ -308,12 +308,12 @@ public class NewAlertRoutingRuleDataAttributes {
    * Get destination
    * @return destination
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public NewAlertRouteDataAttributesRulesInnerDestinationsInner getDestination() {
     return destination;
   }
 
-  public void setDestination(@javax.annotation.Nonnull NewAlertRouteDataAttributesRulesInnerDestinationsInner destination) {
+  public void setDestination(@jakarta.annotation.Nonnull NewAlertRouteDataAttributesRulesInnerDestinationsInner destination) {
     this.destination = destination;
   }
 

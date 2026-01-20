@@ -48,16 +48,16 @@ import com.rootly.client.JSON;
 /**
  * IncidentEventService
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class IncidentEventService {
   public static final String SERIALIZED_NAME_INCIDENT_EVENT_ID = "incident_event_id";
   @SerializedName(SERIALIZED_NAME_INCIDENT_EVENT_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String incidentEventId;
 
   public static final String SERIALIZED_NAME_SERVICE_ID = "service_id";
   @SerializedName(SERIALIZED_NAME_SERVICE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String serviceId;
 
   /**
@@ -116,13 +116,13 @@ public class IncidentEventService {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private StatusEnum status;
 
   public IncidentEventService() {
   }
 
-  public IncidentEventService incidentEventId(@javax.annotation.Nonnull String incidentEventId) {
+  public IncidentEventService incidentEventId(@jakarta.annotation.Nonnull String incidentEventId) {
     this.incidentEventId = incidentEventId;
     return this;
   }
@@ -131,17 +131,17 @@ public class IncidentEventService {
    * The ID of the incident event.
    * @return incidentEventId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getIncidentEventId() {
     return incidentEventId;
   }
 
-  public void setIncidentEventId(@javax.annotation.Nonnull String incidentEventId) {
+  public void setIncidentEventId(@jakarta.annotation.Nonnull String incidentEventId) {
     this.incidentEventId = incidentEventId;
   }
 
 
-  public IncidentEventService serviceId(@javax.annotation.Nonnull String serviceId) {
+  public IncidentEventService serviceId(@jakarta.annotation.Nonnull String serviceId) {
     this.serviceId = serviceId;
     return this;
   }
@@ -150,17 +150,17 @@ public class IncidentEventService {
    * The ID of the service.
    * @return serviceId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getServiceId() {
     return serviceId;
   }
 
-  public void setServiceId(@javax.annotation.Nonnull String serviceId) {
+  public void setServiceId(@jakarta.annotation.Nonnull String serviceId) {
     this.serviceId = serviceId;
   }
 
 
-  public IncidentEventService status(@javax.annotation.Nonnull StatusEnum status) {
+  public IncidentEventService status(@jakarta.annotation.Nonnull StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -169,12 +169,12 @@ public class IncidentEventService {
    * The status of the affected service
    * @return status
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nonnull StatusEnum status) {
+  public void setStatus(@jakarta.annotation.Nonnull StatusEnum status) {
     this.status = status;
   }
 

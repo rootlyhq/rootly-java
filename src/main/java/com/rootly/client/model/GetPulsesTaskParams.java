@@ -52,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * GetPulsesTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class GetPulsesTaskParams {
   /**
    * Gets or Sets taskType
@@ -106,68 +106,68 @@ public class GetPulsesTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_SERVICE_IDS = "service_ids";
   @SerializedName(SERIALIZED_NAME_SERVICE_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> serviceIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_IDS = "environment_ids";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> environmentIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_LABELS = "labels";
   @SerializedName(SERIALIZED_NAME_LABELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> labels = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_REFS = "refs";
   @SerializedName(SERIALIZED_NAME_REFS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> refs = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SOURCES = "sources";
   @SerializedName(SERIALIZED_NAME_SOURCES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> sources = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PAST_DURATION = "past_duration";
   @SerializedName(SERIALIZED_NAME_PAST_DURATION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String pastDuration;
 
   public static final String SERIALIZED_NAME_SERVICES_IMPACTED_BY_INCIDENT = "services_impacted_by_incident";
   @SerializedName(SERIALIZED_NAME_SERVICES_IMPACTED_BY_INCIDENT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean servicesImpactedByIncident;
 
   public static final String SERIALIZED_NAME_ENVIRONMENTS_IMPACTED_BY_INCIDENT = "environments_impacted_by_incident";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENTS_IMPACTED_BY_INCIDENT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean environmentsImpactedByIncident;
 
   public static final String SERIALIZED_NAME_POST_TO_INCIDENT_TIMELINE = "post_to_incident_timeline";
   @SerializedName(SERIALIZED_NAME_POST_TO_INCIDENT_TIMELINE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean postToIncidentTimeline;
 
   public static final String SERIALIZED_NAME_POST_TO_SLACK_CHANNELS = "post_to_slack_channels";
   @SerializedName(SERIALIZED_NAME_POST_TO_SLACK_CHANNELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PARENT_MESSAGE_THREAD_TASK = "parent_message_thread_task";
   @SerializedName(SERIALIZED_NAME_PARENT_MESSAGE_THREAD_TASK)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private GetPulsesTaskParamsParentMessageThreadTask parentMessageThreadTask;
 
   public GetPulsesTaskParams() {
   }
 
-  public GetPulsesTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public GetPulsesTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -176,17 +176,17 @@ public class GetPulsesTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public GetPulsesTaskParams serviceIds(@javax.annotation.Nullable List<String> serviceIds) {
+  public GetPulsesTaskParams serviceIds(@jakarta.annotation.Nullable List<String> serviceIds) {
     this.serviceIds = serviceIds;
     return this;
   }
@@ -203,17 +203,17 @@ public class GetPulsesTaskParams {
    * Get serviceIds
    * @return serviceIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getServiceIds() {
     return serviceIds;
   }
 
-  public void setServiceIds(@javax.annotation.Nullable List<String> serviceIds) {
+  public void setServiceIds(@jakarta.annotation.Nullable List<String> serviceIds) {
     this.serviceIds = serviceIds;
   }
 
 
-  public GetPulsesTaskParams environmentIds(@javax.annotation.Nullable List<String> environmentIds) {
+  public GetPulsesTaskParams environmentIds(@jakarta.annotation.Nullable List<String> environmentIds) {
     this.environmentIds = environmentIds;
     return this;
   }
@@ -230,17 +230,17 @@ public class GetPulsesTaskParams {
    * Get environmentIds
    * @return environmentIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getEnvironmentIds() {
     return environmentIds;
   }
 
-  public void setEnvironmentIds(@javax.annotation.Nullable List<String> environmentIds) {
+  public void setEnvironmentIds(@jakarta.annotation.Nullable List<String> environmentIds) {
     this.environmentIds = environmentIds;
   }
 
 
-  public GetPulsesTaskParams labels(@javax.annotation.Nullable List<String> labels) {
+  public GetPulsesTaskParams labels(@jakarta.annotation.Nullable List<String> labels) {
     this.labels = labels;
     return this;
   }
@@ -257,17 +257,17 @@ public class GetPulsesTaskParams {
    * Get labels
    * @return labels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getLabels() {
     return labels;
   }
 
-  public void setLabels(@javax.annotation.Nullable List<String> labels) {
+  public void setLabels(@jakarta.annotation.Nullable List<String> labels) {
     this.labels = labels;
   }
 
 
-  public GetPulsesTaskParams refs(@javax.annotation.Nullable List<String> refs) {
+  public GetPulsesTaskParams refs(@jakarta.annotation.Nullable List<String> refs) {
     this.refs = refs;
     return this;
   }
@@ -284,17 +284,17 @@ public class GetPulsesTaskParams {
    * Get refs
    * @return refs
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getRefs() {
     return refs;
   }
 
-  public void setRefs(@javax.annotation.Nullable List<String> refs) {
+  public void setRefs(@jakarta.annotation.Nullable List<String> refs) {
     this.refs = refs;
   }
 
 
-  public GetPulsesTaskParams sources(@javax.annotation.Nullable List<String> sources) {
+  public GetPulsesTaskParams sources(@jakarta.annotation.Nullable List<String> sources) {
     this.sources = sources;
     return this;
   }
@@ -311,17 +311,17 @@ public class GetPulsesTaskParams {
    * Get sources
    * @return sources
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getSources() {
     return sources;
   }
 
-  public void setSources(@javax.annotation.Nullable List<String> sources) {
+  public void setSources(@jakarta.annotation.Nullable List<String> sources) {
     this.sources = sources;
   }
 
 
-  public GetPulsesTaskParams pastDuration(@javax.annotation.Nonnull String pastDuration) {
+  public GetPulsesTaskParams pastDuration(@jakarta.annotation.Nonnull String pastDuration) {
     this.pastDuration = pastDuration;
     return this;
   }
@@ -330,17 +330,17 @@ public class GetPulsesTaskParams {
    * How far back to fetch commits (in format &#39;1 minute&#39;, &#39;30 days&#39;, &#39;3 months&#39;, etc.)
    * @return pastDuration
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getPastDuration() {
     return pastDuration;
   }
 
-  public void setPastDuration(@javax.annotation.Nonnull String pastDuration) {
+  public void setPastDuration(@jakarta.annotation.Nonnull String pastDuration) {
     this.pastDuration = pastDuration;
   }
 
 
-  public GetPulsesTaskParams servicesImpactedByIncident(@javax.annotation.Nullable Boolean servicesImpactedByIncident) {
+  public GetPulsesTaskParams servicesImpactedByIncident(@jakarta.annotation.Nullable Boolean servicesImpactedByIncident) {
     this.servicesImpactedByIncident = servicesImpactedByIncident;
     return this;
   }
@@ -349,17 +349,17 @@ public class GetPulsesTaskParams {
    * Get servicesImpactedByIncident
    * @return servicesImpactedByIncident
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getServicesImpactedByIncident() {
     return servicesImpactedByIncident;
   }
 
-  public void setServicesImpactedByIncident(@javax.annotation.Nullable Boolean servicesImpactedByIncident) {
+  public void setServicesImpactedByIncident(@jakarta.annotation.Nullable Boolean servicesImpactedByIncident) {
     this.servicesImpactedByIncident = servicesImpactedByIncident;
   }
 
 
-  public GetPulsesTaskParams environmentsImpactedByIncident(@javax.annotation.Nullable Boolean environmentsImpactedByIncident) {
+  public GetPulsesTaskParams environmentsImpactedByIncident(@jakarta.annotation.Nullable Boolean environmentsImpactedByIncident) {
     this.environmentsImpactedByIncident = environmentsImpactedByIncident;
     return this;
   }
@@ -368,17 +368,17 @@ public class GetPulsesTaskParams {
    * Get environmentsImpactedByIncident
    * @return environmentsImpactedByIncident
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getEnvironmentsImpactedByIncident() {
     return environmentsImpactedByIncident;
   }
 
-  public void setEnvironmentsImpactedByIncident(@javax.annotation.Nullable Boolean environmentsImpactedByIncident) {
+  public void setEnvironmentsImpactedByIncident(@jakarta.annotation.Nullable Boolean environmentsImpactedByIncident) {
     this.environmentsImpactedByIncident = environmentsImpactedByIncident;
   }
 
 
-  public GetPulsesTaskParams postToIncidentTimeline(@javax.annotation.Nullable Boolean postToIncidentTimeline) {
+  public GetPulsesTaskParams postToIncidentTimeline(@jakarta.annotation.Nullable Boolean postToIncidentTimeline) {
     this.postToIncidentTimeline = postToIncidentTimeline;
     return this;
   }
@@ -387,17 +387,17 @@ public class GetPulsesTaskParams {
    * Get postToIncidentTimeline
    * @return postToIncidentTimeline
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getPostToIncidentTimeline() {
     return postToIncidentTimeline;
   }
 
-  public void setPostToIncidentTimeline(@javax.annotation.Nullable Boolean postToIncidentTimeline) {
+  public void setPostToIncidentTimeline(@jakarta.annotation.Nullable Boolean postToIncidentTimeline) {
     this.postToIncidentTimeline = postToIncidentTimeline;
   }
 
 
-  public GetPulsesTaskParams postToSlackChannels(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
+  public GetPulsesTaskParams postToSlackChannels(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
     this.postToSlackChannels = postToSlackChannels;
     return this;
   }
@@ -414,17 +414,17 @@ public class GetPulsesTaskParams {
    * Get postToSlackChannels
    * @return postToSlackChannels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AddActionItemTaskParamsPostToSlackChannelsInner> getPostToSlackChannels() {
     return postToSlackChannels;
   }
 
-  public void setPostToSlackChannels(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
+  public void setPostToSlackChannels(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
     this.postToSlackChannels = postToSlackChannels;
   }
 
 
-  public GetPulsesTaskParams parentMessageThreadTask(@javax.annotation.Nullable GetPulsesTaskParamsParentMessageThreadTask parentMessageThreadTask) {
+  public GetPulsesTaskParams parentMessageThreadTask(@jakarta.annotation.Nullable GetPulsesTaskParamsParentMessageThreadTask parentMessageThreadTask) {
     this.parentMessageThreadTask = parentMessageThreadTask;
     return this;
   }
@@ -433,12 +433,12 @@ public class GetPulsesTaskParams {
    * Get parentMessageThreadTask
    * @return parentMessageThreadTask
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public GetPulsesTaskParamsParentMessageThreadTask getParentMessageThreadTask() {
     return parentMessageThreadTask;
   }
 
-  public void setParentMessageThreadTask(@javax.annotation.Nullable GetPulsesTaskParamsParentMessageThreadTask parentMessageThreadTask) {
+  public void setParentMessageThreadTask(@jakarta.annotation.Nullable GetPulsesTaskParamsParentMessageThreadTask parentMessageThreadTask) {
     this.parentMessageThreadTask = parentMessageThreadTask;
   }
 

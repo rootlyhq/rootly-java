@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * InviteToSlackChannelRootlyTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class InviteToSlackChannelRootlyTaskParams {
   /**
    * Gets or Sets taskType
@@ -105,43 +105,43 @@ public class InviteToSlackChannelRootlyTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_CHANNELS = "channels";
   @SerializedName(SERIALIZED_NAME_CHANNELS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<AddActionItemTaskParamsPostToSlackChannelsInner> channels = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ESCALATION_POLICY_TARGET = "escalation_policy_target";
   @SerializedName(SERIALIZED_NAME_ESCALATION_POLICY_TARGET)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AddActionItemTaskParamsPostToSlackChannelsInner escalationPolicyTarget;
 
   public static final String SERIALIZED_NAME_SERVICE_TARGET = "service_target";
   @SerializedName(SERIALIZED_NAME_SERVICE_TARGET)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AddActionItemTaskParamsPostToSlackChannelsInner serviceTarget;
 
   public static final String SERIALIZED_NAME_USER_TARGET = "user_target";
   @SerializedName(SERIALIZED_NAME_USER_TARGET)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AddActionItemTaskParamsPostToSlackChannelsInner userTarget;
 
   public static final String SERIALIZED_NAME_GROUP_TARGET = "group_target";
   @SerializedName(SERIALIZED_NAME_GROUP_TARGET)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AddActionItemTaskParamsPostToSlackChannelsInner groupTarget;
 
   public static final String SERIALIZED_NAME_SCHEDULE_TARGET = "schedule_target";
   @SerializedName(SERIALIZED_NAME_SCHEDULE_TARGET)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AddActionItemTaskParamsPostToSlackChannelsInner scheduleTarget;
 
   public InviteToSlackChannelRootlyTaskParams() {
   }
 
-  public InviteToSlackChannelRootlyTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public InviteToSlackChannelRootlyTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -150,17 +150,17 @@ public class InviteToSlackChannelRootlyTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public InviteToSlackChannelRootlyTaskParams channels(@javax.annotation.Nonnull List<AddActionItemTaskParamsPostToSlackChannelsInner> channels) {
+  public InviteToSlackChannelRootlyTaskParams channels(@jakarta.annotation.Nonnull List<AddActionItemTaskParamsPostToSlackChannelsInner> channels) {
     this.channels = channels;
     return this;
   }
@@ -177,17 +177,17 @@ public class InviteToSlackChannelRootlyTaskParams {
    * Get channels
    * @return channels
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<AddActionItemTaskParamsPostToSlackChannelsInner> getChannels() {
     return channels;
   }
 
-  public void setChannels(@javax.annotation.Nonnull List<AddActionItemTaskParamsPostToSlackChannelsInner> channels) {
+  public void setChannels(@jakarta.annotation.Nonnull List<AddActionItemTaskParamsPostToSlackChannelsInner> channels) {
     this.channels = channels;
   }
 
 
-  public InviteToSlackChannelRootlyTaskParams escalationPolicyTarget(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner escalationPolicyTarget) {
+  public InviteToSlackChannelRootlyTaskParams escalationPolicyTarget(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner escalationPolicyTarget) {
     this.escalationPolicyTarget = escalationPolicyTarget;
     return this;
   }
@@ -196,17 +196,17 @@ public class InviteToSlackChannelRootlyTaskParams {
    * Get escalationPolicyTarget
    * @return escalationPolicyTarget
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AddActionItemTaskParamsPostToSlackChannelsInner getEscalationPolicyTarget() {
     return escalationPolicyTarget;
   }
 
-  public void setEscalationPolicyTarget(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner escalationPolicyTarget) {
+  public void setEscalationPolicyTarget(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner escalationPolicyTarget) {
     this.escalationPolicyTarget = escalationPolicyTarget;
   }
 
 
-  public InviteToSlackChannelRootlyTaskParams serviceTarget(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner serviceTarget) {
+  public InviteToSlackChannelRootlyTaskParams serviceTarget(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner serviceTarget) {
     this.serviceTarget = serviceTarget;
     return this;
   }
@@ -215,17 +215,17 @@ public class InviteToSlackChannelRootlyTaskParams {
    * Get serviceTarget
    * @return serviceTarget
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AddActionItemTaskParamsPostToSlackChannelsInner getServiceTarget() {
     return serviceTarget;
   }
 
-  public void setServiceTarget(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner serviceTarget) {
+  public void setServiceTarget(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner serviceTarget) {
     this.serviceTarget = serviceTarget;
   }
 
 
-  public InviteToSlackChannelRootlyTaskParams userTarget(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner userTarget) {
+  public InviteToSlackChannelRootlyTaskParams userTarget(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner userTarget) {
     this.userTarget = userTarget;
     return this;
   }
@@ -234,17 +234,17 @@ public class InviteToSlackChannelRootlyTaskParams {
    * Get userTarget
    * @return userTarget
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AddActionItemTaskParamsPostToSlackChannelsInner getUserTarget() {
     return userTarget;
   }
 
-  public void setUserTarget(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner userTarget) {
+  public void setUserTarget(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner userTarget) {
     this.userTarget = userTarget;
   }
 
 
-  public InviteToSlackChannelRootlyTaskParams groupTarget(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner groupTarget) {
+  public InviteToSlackChannelRootlyTaskParams groupTarget(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner groupTarget) {
     this.groupTarget = groupTarget;
     return this;
   }
@@ -253,17 +253,17 @@ public class InviteToSlackChannelRootlyTaskParams {
    * Get groupTarget
    * @return groupTarget
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AddActionItemTaskParamsPostToSlackChannelsInner getGroupTarget() {
     return groupTarget;
   }
 
-  public void setGroupTarget(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner groupTarget) {
+  public void setGroupTarget(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner groupTarget) {
     this.groupTarget = groupTarget;
   }
 
 
-  public InviteToSlackChannelRootlyTaskParams scheduleTarget(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner scheduleTarget) {
+  public InviteToSlackChannelRootlyTaskParams scheduleTarget(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner scheduleTarget) {
     this.scheduleTarget = scheduleTarget;
     return this;
   }
@@ -272,12 +272,12 @@ public class InviteToSlackChannelRootlyTaskParams {
    * Get scheduleTarget
    * @return scheduleTarget
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AddActionItemTaskParamsPostToSlackChannelsInner getScheduleTarget() {
     return scheduleTarget;
   }
 
-  public void setScheduleTarget(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner scheduleTarget) {
+  public void setScheduleTarget(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner scheduleTarget) {
     this.scheduleTarget = scheduleTarget;
   }
 

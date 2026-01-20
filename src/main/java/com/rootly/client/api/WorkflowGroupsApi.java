@@ -91,7 +91,7 @@ public class WorkflowGroupsApi {
         <tr><td> 401 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createWorkflowGroupCall(@javax.annotation.Nonnull NewWorkflowGroup newWorkflowGroup, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createWorkflowGroupCall(@jakarta.annotation.Nonnull NewWorkflowGroup newWorkflowGroup, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -137,7 +137,7 @@ public class WorkflowGroupsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createWorkflowGroupValidateBeforeCall(@javax.annotation.Nonnull NewWorkflowGroup newWorkflowGroup, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createWorkflowGroupValidateBeforeCall(@jakarta.annotation.Nonnull NewWorkflowGroup newWorkflowGroup, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'newWorkflowGroup' is set
         if (newWorkflowGroup == null) {
             throw new ApiException("Missing the required parameter 'newWorkflowGroup' when calling createWorkflowGroup(Async)");
@@ -162,7 +162,7 @@ public class WorkflowGroupsApi {
         <tr><td> 401 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public WorkflowGroupResponse createWorkflowGroup(@javax.annotation.Nonnull NewWorkflowGroup newWorkflowGroup) throws ApiException {
+    public WorkflowGroupResponse createWorkflowGroup(@jakarta.annotation.Nonnull NewWorkflowGroup newWorkflowGroup) throws ApiException {
         ApiResponse<WorkflowGroupResponse> localVarResp = createWorkflowGroupWithHttpInfo(newWorkflowGroup);
         return localVarResp.getData();
     }
@@ -182,7 +182,7 @@ public class WorkflowGroupsApi {
         <tr><td> 401 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WorkflowGroupResponse> createWorkflowGroupWithHttpInfo(@javax.annotation.Nonnull NewWorkflowGroup newWorkflowGroup) throws ApiException {
+    public ApiResponse<WorkflowGroupResponse> createWorkflowGroupWithHttpInfo(@jakarta.annotation.Nonnull NewWorkflowGroup newWorkflowGroup) throws ApiException {
         okhttp3.Call localVarCall = createWorkflowGroupValidateBeforeCall(newWorkflowGroup, null);
         Type localVarReturnType = new TypeToken<WorkflowGroupResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -204,7 +204,7 @@ public class WorkflowGroupsApi {
         <tr><td> 401 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createWorkflowGroupAsync(@javax.annotation.Nonnull NewWorkflowGroup newWorkflowGroup, final ApiCallback<WorkflowGroupResponse> _callback) throws ApiException {
+    public okhttp3.Call createWorkflowGroupAsync(@jakarta.annotation.Nonnull NewWorkflowGroup newWorkflowGroup, final ApiCallback<WorkflowGroupResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createWorkflowGroupValidateBeforeCall(newWorkflowGroup, _callback);
         Type localVarReturnType = new TypeToken<WorkflowGroupResponse>(){}.getType();
@@ -225,7 +225,7 @@ public class WorkflowGroupsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteWorkflowGroupCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteWorkflowGroupCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -271,7 +271,7 @@ public class WorkflowGroupsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteWorkflowGroupValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteWorkflowGroupValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteWorkflowGroup(Async)");
@@ -295,7 +295,7 @@ public class WorkflowGroupsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public WorkflowGroupResponse deleteWorkflowGroup(@javax.annotation.Nonnull String id) throws ApiException {
+    public WorkflowGroupResponse deleteWorkflowGroup(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<WorkflowGroupResponse> localVarResp = deleteWorkflowGroupWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -314,7 +314,7 @@ public class WorkflowGroupsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WorkflowGroupResponse> deleteWorkflowGroupWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<WorkflowGroupResponse> deleteWorkflowGroupWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteWorkflowGroupValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<WorkflowGroupResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -335,7 +335,7 @@ public class WorkflowGroupsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteWorkflowGroupAsync(@javax.annotation.Nonnull String id, final ApiCallback<WorkflowGroupResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteWorkflowGroupAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<WorkflowGroupResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteWorkflowGroupValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<WorkflowGroupResponse>(){}.getType();
@@ -356,7 +356,7 @@ public class WorkflowGroupsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWorkflowGroupCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getWorkflowGroupCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -402,7 +402,7 @@ public class WorkflowGroupsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getWorkflowGroupValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getWorkflowGroupValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getWorkflowGroup(Async)");
@@ -426,7 +426,7 @@ public class WorkflowGroupsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public WorkflowGroupResponse getWorkflowGroup(@javax.annotation.Nonnull String id) throws ApiException {
+    public WorkflowGroupResponse getWorkflowGroup(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<WorkflowGroupResponse> localVarResp = getWorkflowGroupWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -445,7 +445,7 @@ public class WorkflowGroupsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WorkflowGroupResponse> getWorkflowGroupWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<WorkflowGroupResponse> getWorkflowGroupWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getWorkflowGroupValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<WorkflowGroupResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -466,7 +466,7 @@ public class WorkflowGroupsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWorkflowGroupAsync(@javax.annotation.Nonnull String id, final ApiCallback<WorkflowGroupResponse> _callback) throws ApiException {
+    public okhttp3.Call getWorkflowGroupAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<WorkflowGroupResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getWorkflowGroupValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<WorkflowGroupResponse>(){}.getType();
@@ -494,7 +494,7 @@ public class WorkflowGroupsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listWorkflowGroupsCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable Boolean filterExpanded, @javax.annotation.Nullable Integer filterPosition, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listWorkflowGroupsCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable Boolean filterExpanded, @jakarta.annotation.Nullable Integer filterPosition, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -575,7 +575,7 @@ public class WorkflowGroupsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listWorkflowGroupsValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable Boolean filterExpanded, @javax.annotation.Nullable Integer filterPosition, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listWorkflowGroupsValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable Boolean filterExpanded, @jakarta.annotation.Nullable Integer filterPosition, final ApiCallback _callback) throws ApiException {
         return listWorkflowGroupsCall(include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterKind, filterExpanded, filterPosition, _callback);
 
     }
@@ -601,7 +601,7 @@ public class WorkflowGroupsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public WorkflowGroupList listWorkflowGroups(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable Boolean filterExpanded, @javax.annotation.Nullable Integer filterPosition) throws ApiException {
+    public WorkflowGroupList listWorkflowGroups(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable Boolean filterExpanded, @jakarta.annotation.Nullable Integer filterPosition) throws ApiException {
         ApiResponse<WorkflowGroupList> localVarResp = listWorkflowGroupsWithHttpInfo(include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterKind, filterExpanded, filterPosition);
         return localVarResp.getData();
     }
@@ -627,7 +627,7 @@ public class WorkflowGroupsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WorkflowGroupList> listWorkflowGroupsWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable Boolean filterExpanded, @javax.annotation.Nullable Integer filterPosition) throws ApiException {
+    public ApiResponse<WorkflowGroupList> listWorkflowGroupsWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable Boolean filterExpanded, @jakarta.annotation.Nullable Integer filterPosition) throws ApiException {
         okhttp3.Call localVarCall = listWorkflowGroupsValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterKind, filterExpanded, filterPosition, null);
         Type localVarReturnType = new TypeToken<WorkflowGroupList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -655,7 +655,7 @@ public class WorkflowGroupsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listWorkflowGroupsAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable Boolean filterExpanded, @javax.annotation.Nullable Integer filterPosition, final ApiCallback<WorkflowGroupList> _callback) throws ApiException {
+    public okhttp3.Call listWorkflowGroupsAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable Boolean filterExpanded, @jakarta.annotation.Nullable Integer filterPosition, final ApiCallback<WorkflowGroupList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listWorkflowGroupsValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterKind, filterExpanded, filterPosition, _callback);
         Type localVarReturnType = new TypeToken<WorkflowGroupList>(){}.getType();
@@ -677,7 +677,7 @@ public class WorkflowGroupsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateWorkflowGroupCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateWorkflowGroup updateWorkflowGroup, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateWorkflowGroupCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateWorkflowGroup updateWorkflowGroup, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -724,7 +724,7 @@ public class WorkflowGroupsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateWorkflowGroupValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateWorkflowGroup updateWorkflowGroup, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateWorkflowGroupValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateWorkflowGroup updateWorkflowGroup, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateWorkflowGroup(Async)");
@@ -754,7 +754,7 @@ public class WorkflowGroupsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public WorkflowGroupResponse updateWorkflowGroup(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateWorkflowGroup updateWorkflowGroup) throws ApiException {
+    public WorkflowGroupResponse updateWorkflowGroup(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateWorkflowGroup updateWorkflowGroup) throws ApiException {
         ApiResponse<WorkflowGroupResponse> localVarResp = updateWorkflowGroupWithHttpInfo(id, updateWorkflowGroup);
         return localVarResp.getData();
     }
@@ -774,7 +774,7 @@ public class WorkflowGroupsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WorkflowGroupResponse> updateWorkflowGroupWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateWorkflowGroup updateWorkflowGroup) throws ApiException {
+    public ApiResponse<WorkflowGroupResponse> updateWorkflowGroupWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateWorkflowGroup updateWorkflowGroup) throws ApiException {
         okhttp3.Call localVarCall = updateWorkflowGroupValidateBeforeCall(id, updateWorkflowGroup, null);
         Type localVarReturnType = new TypeToken<WorkflowGroupResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -796,7 +796,7 @@ public class WorkflowGroupsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateWorkflowGroupAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateWorkflowGroup updateWorkflowGroup, final ApiCallback<WorkflowGroupResponse> _callback) throws ApiException {
+    public okhttp3.Call updateWorkflowGroupAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateWorkflowGroup updateWorkflowGroup, final ApiCallback<WorkflowGroupResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateWorkflowGroupValidateBeforeCall(id, updateWorkflowGroup, _callback);
         Type localVarReturnType = new TypeToken<WorkflowGroupResponse>(){}.getType();

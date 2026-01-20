@@ -51,31 +51,31 @@ import com.rootly.client.JSON;
 /**
  * Role
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Role {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String slug;
 
   public static final String SERIALIZED_NAME_INCIDENT_PERMISSION_SET_ID = "incident_permission_set_id";
   @SerializedName(SERIALIZED_NAME_INCIDENT_PERMISSION_SET_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String incidentPermissionSetId;
 
   public static final String SERIALIZED_NAME_IS_DELETABLE = "is_deletable";
   @SerializedName(SERIALIZED_NAME_IS_DELETABLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean isDeletable;
 
   public static final String SERIALIZED_NAME_IS_EDITABLE = "is_editable";
   @SerializedName(SERIALIZED_NAME_IS_EDITABLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean isEditable;
 
   /**
@@ -132,7 +132,7 @@ public class Role {
 
   public static final String SERIALIZED_NAME_ALERTS_PERMISSIONS = "alerts_permissions";
   @SerializedName(SERIALIZED_NAME_ALERTS_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AlertsPermissionsEnum> alertsPermissions = new ArrayList<>();
 
   /**
@@ -193,7 +193,7 @@ public class Role {
 
   public static final String SERIALIZED_NAME_API_KEYS_PERMISSIONS = "api_keys_permissions";
   @SerializedName(SERIALIZED_NAME_API_KEYS_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<ApiKeysPermissionsEnum> apiKeysPermissions = new ArrayList<>();
 
   /**
@@ -254,7 +254,7 @@ public class Role {
 
   public static final String SERIALIZED_NAME_AUDITS_PERMISSIONS = "audits_permissions";
   @SerializedName(SERIALIZED_NAME_AUDITS_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AuditsPermissionsEnum> auditsPermissions = new ArrayList<>();
 
   /**
@@ -315,7 +315,7 @@ public class Role {
 
   public static final String SERIALIZED_NAME_BILLING_PERMISSIONS = "billing_permissions";
   @SerializedName(SERIALIZED_NAME_BILLING_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<BillingPermissionsEnum> billingPermissions = new ArrayList<>();
 
   /**
@@ -376,7 +376,7 @@ public class Role {
 
   public static final String SERIALIZED_NAME_ENVIRONMENTS_PERMISSIONS = "environments_permissions";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENTS_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<EnvironmentsPermissionsEnum> environmentsPermissions = new ArrayList<>();
 
   /**
@@ -437,7 +437,7 @@ public class Role {
 
   public static final String SERIALIZED_NAME_FORM_FIELDS_PERMISSIONS = "form_fields_permissions";
   @SerializedName(SERIALIZED_NAME_FORM_FIELDS_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<FormFieldsPermissionsEnum> formFieldsPermissions = new ArrayList<>();
 
   /**
@@ -498,7 +498,7 @@ public class Role {
 
   public static final String SERIALIZED_NAME_FUNCTIONALITIES_PERMISSIONS = "functionalities_permissions";
   @SerializedName(SERIALIZED_NAME_FUNCTIONALITIES_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<FunctionalitiesPermissionsEnum> functionalitiesPermissions = new ArrayList<>();
 
   /**
@@ -559,7 +559,7 @@ public class Role {
 
   public static final String SERIALIZED_NAME_GROUPS_PERMISSIONS = "groups_permissions";
   @SerializedName(SERIALIZED_NAME_GROUPS_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<GroupsPermissionsEnum> groupsPermissions = new ArrayList<>();
 
   /**
@@ -620,7 +620,7 @@ public class Role {
 
   public static final String SERIALIZED_NAME_INCIDENT_CAUSES_PERMISSIONS = "incident_causes_permissions";
   @SerializedName(SERIALIZED_NAME_INCIDENT_CAUSES_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<IncidentCausesPermissionsEnum> incidentCausesPermissions = new ArrayList<>();
 
   /**
@@ -681,7 +681,7 @@ public class Role {
 
   public static final String SERIALIZED_NAME_INCIDENT_FEEDBACKS_PERMISSIONS = "incident_feedbacks_permissions";
   @SerializedName(SERIALIZED_NAME_INCIDENT_FEEDBACKS_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<IncidentFeedbacksPermissionsEnum> incidentFeedbacksPermissions = new ArrayList<>();
 
   /**
@@ -742,7 +742,7 @@ public class Role {
 
   public static final String SERIALIZED_NAME_INCIDENT_ROLES_PERMISSIONS = "incident_roles_permissions";
   @SerializedName(SERIALIZED_NAME_INCIDENT_ROLES_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<IncidentRolesPermissionsEnum> incidentRolesPermissions = new ArrayList<>();
 
   /**
@@ -803,7 +803,7 @@ public class Role {
 
   public static final String SERIALIZED_NAME_INCIDENT_TYPES_PERMISSIONS = "incident_types_permissions";
   @SerializedName(SERIALIZED_NAME_INCIDENT_TYPES_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<IncidentTypesPermissionsEnum> incidentTypesPermissions = new ArrayList<>();
 
   /**
@@ -864,7 +864,7 @@ public class Role {
 
   public static final String SERIALIZED_NAME_INCIDENTS_PERMISSIONS = "incidents_permissions";
   @SerializedName(SERIALIZED_NAME_INCIDENTS_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<IncidentsPermissionsEnum> incidentsPermissions = new ArrayList<>();
 
   /**
@@ -925,7 +925,7 @@ public class Role {
 
   public static final String SERIALIZED_NAME_INTEGRATIONS_PERMISSIONS = "integrations_permissions";
   @SerializedName(SERIALIZED_NAME_INTEGRATIONS_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<IntegrationsPermissionsEnum> integrationsPermissions = new ArrayList<>();
 
   /**
@@ -986,7 +986,7 @@ public class Role {
 
   public static final String SERIALIZED_NAME_INVITATIONS_PERMISSIONS = "invitations_permissions";
   @SerializedName(SERIALIZED_NAME_INVITATIONS_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<InvitationsPermissionsEnum> invitationsPermissions = new ArrayList<>();
 
   /**
@@ -1047,7 +1047,7 @@ public class Role {
 
   public static final String SERIALIZED_NAME_PLAYBOOKS_PERMISSIONS = "playbooks_permissions";
   @SerializedName(SERIALIZED_NAME_PLAYBOOKS_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<PlaybooksPermissionsEnum> playbooksPermissions = new ArrayList<>();
 
   /**
@@ -1108,7 +1108,7 @@ public class Role {
 
   public static final String SERIALIZED_NAME_PRIVATE_INCIDENTS_PERMISSIONS = "private_incidents_permissions";
   @SerializedName(SERIALIZED_NAME_PRIVATE_INCIDENTS_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<PrivateIncidentsPermissionsEnum> privateIncidentsPermissions = new ArrayList<>();
 
   /**
@@ -1167,7 +1167,7 @@ public class Role {
 
   public static final String SERIALIZED_NAME_PULSES_PERMISSIONS = "pulses_permissions";
   @SerializedName(SERIALIZED_NAME_PULSES_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<PulsesPermissionsEnum> pulsesPermissions = new ArrayList<>();
 
   /**
@@ -1228,7 +1228,7 @@ public class Role {
 
   public static final String SERIALIZED_NAME_RETROSPECTIVE_PERMISSIONS = "retrospective_permissions";
   @SerializedName(SERIALIZED_NAME_RETROSPECTIVE_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<RetrospectivePermissionsEnum> retrospectivePermissions = new ArrayList<>();
 
   /**
@@ -1289,7 +1289,7 @@ public class Role {
 
   public static final String SERIALIZED_NAME_ROLES_PERMISSIONS = "roles_permissions";
   @SerializedName(SERIALIZED_NAME_ROLES_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<RolesPermissionsEnum> rolesPermissions = new ArrayList<>();
 
   /**
@@ -1350,7 +1350,7 @@ public class Role {
 
   public static final String SERIALIZED_NAME_SECRETS_PERMISSIONS = "secrets_permissions";
   @SerializedName(SERIALIZED_NAME_SECRETS_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<SecretsPermissionsEnum> secretsPermissions = new ArrayList<>();
 
   /**
@@ -1411,7 +1411,7 @@ public class Role {
 
   public static final String SERIALIZED_NAME_SERVICES_PERMISSIONS = "services_permissions";
   @SerializedName(SERIALIZED_NAME_SERVICES_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<ServicesPermissionsEnum> servicesPermissions = new ArrayList<>();
 
   /**
@@ -1472,7 +1472,7 @@ public class Role {
 
   public static final String SERIALIZED_NAME_SEVERITIES_PERMISSIONS = "severities_permissions";
   @SerializedName(SERIALIZED_NAME_SEVERITIES_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<SeveritiesPermissionsEnum> severitiesPermissions = new ArrayList<>();
 
   /**
@@ -1533,7 +1533,7 @@ public class Role {
 
   public static final String SERIALIZED_NAME_STATUS_PAGES_PERMISSIONS = "status_pages_permissions";
   @SerializedName(SERIALIZED_NAME_STATUS_PAGES_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<StatusPagesPermissionsEnum> statusPagesPermissions = new ArrayList<>();
 
   /**
@@ -1594,7 +1594,7 @@ public class Role {
 
   public static final String SERIALIZED_NAME_WEBHOOKS_PERMISSIONS = "webhooks_permissions";
   @SerializedName(SERIALIZED_NAME_WEBHOOKS_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<WebhooksPermissionsEnum> webhooksPermissions = new ArrayList<>();
 
   /**
@@ -1655,23 +1655,23 @@ public class Role {
 
   public static final String SERIALIZED_NAME_WORKFLOWS_PERMISSIONS = "workflows_permissions";
   @SerializedName(SERIALIZED_NAME_WORKFLOWS_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<WorkflowsPermissionsEnum> workflowsPermissions = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public Role() {
   }
 
-  public Role name(@javax.annotation.Nonnull String name) {
+  public Role name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -1680,17 +1680,17 @@ public class Role {
    * The role name.
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public Role slug(@javax.annotation.Nonnull String slug) {
+  public Role slug(@jakarta.annotation.Nonnull String slug) {
     this.slug = slug;
     return this;
   }
@@ -1699,17 +1699,17 @@ public class Role {
    * The role slug.
    * @return slug
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getSlug() {
     return slug;
   }
 
-  public void setSlug(@javax.annotation.Nonnull String slug) {
+  public void setSlug(@jakarta.annotation.Nonnull String slug) {
     this.slug = slug;
   }
 
 
-  public Role incidentPermissionSetId(@javax.annotation.Nullable String incidentPermissionSetId) {
+  public Role incidentPermissionSetId(@jakarta.annotation.Nullable String incidentPermissionSetId) {
     this.incidentPermissionSetId = incidentPermissionSetId;
     return this;
   }
@@ -1718,17 +1718,17 @@ public class Role {
    * Associated incident permissions set.
    * @return incidentPermissionSetId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getIncidentPermissionSetId() {
     return incidentPermissionSetId;
   }
 
-  public void setIncidentPermissionSetId(@javax.annotation.Nullable String incidentPermissionSetId) {
+  public void setIncidentPermissionSetId(@jakarta.annotation.Nullable String incidentPermissionSetId) {
     this.incidentPermissionSetId = incidentPermissionSetId;
   }
 
 
-  public Role isDeletable(@javax.annotation.Nullable Boolean isDeletable) {
+  public Role isDeletable(@jakarta.annotation.Nullable Boolean isDeletable) {
     this.isDeletable = isDeletable;
     return this;
   }
@@ -1737,17 +1737,17 @@ public class Role {
    * Whether the role can be deleted.
    * @return isDeletable
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getIsDeletable() {
     return isDeletable;
   }
 
-  public void setIsDeletable(@javax.annotation.Nullable Boolean isDeletable) {
+  public void setIsDeletable(@jakarta.annotation.Nullable Boolean isDeletable) {
     this.isDeletable = isDeletable;
   }
 
 
-  public Role isEditable(@javax.annotation.Nullable Boolean isEditable) {
+  public Role isEditable(@jakarta.annotation.Nullable Boolean isEditable) {
     this.isEditable = isEditable;
     return this;
   }
@@ -1756,17 +1756,17 @@ public class Role {
    * Whether the role can be edited.
    * @return isEditable
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getIsEditable() {
     return isEditable;
   }
 
-  public void setIsEditable(@javax.annotation.Nullable Boolean isEditable) {
+  public void setIsEditable(@jakarta.annotation.Nullable Boolean isEditable) {
     this.isEditable = isEditable;
   }
 
 
-  public Role alertsPermissions(@javax.annotation.Nullable List<AlertsPermissionsEnum> alertsPermissions) {
+  public Role alertsPermissions(@jakarta.annotation.Nullable List<AlertsPermissionsEnum> alertsPermissions) {
     this.alertsPermissions = alertsPermissions;
     return this;
   }
@@ -1783,17 +1783,17 @@ public class Role {
    * Get alertsPermissions
    * @return alertsPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AlertsPermissionsEnum> getAlertsPermissions() {
     return alertsPermissions;
   }
 
-  public void setAlertsPermissions(@javax.annotation.Nullable List<AlertsPermissionsEnum> alertsPermissions) {
+  public void setAlertsPermissions(@jakarta.annotation.Nullable List<AlertsPermissionsEnum> alertsPermissions) {
     this.alertsPermissions = alertsPermissions;
   }
 
 
-  public Role apiKeysPermissions(@javax.annotation.Nullable List<ApiKeysPermissionsEnum> apiKeysPermissions) {
+  public Role apiKeysPermissions(@jakarta.annotation.Nullable List<ApiKeysPermissionsEnum> apiKeysPermissions) {
     this.apiKeysPermissions = apiKeysPermissions;
     return this;
   }
@@ -1810,17 +1810,17 @@ public class Role {
    * Get apiKeysPermissions
    * @return apiKeysPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<ApiKeysPermissionsEnum> getApiKeysPermissions() {
     return apiKeysPermissions;
   }
 
-  public void setApiKeysPermissions(@javax.annotation.Nullable List<ApiKeysPermissionsEnum> apiKeysPermissions) {
+  public void setApiKeysPermissions(@jakarta.annotation.Nullable List<ApiKeysPermissionsEnum> apiKeysPermissions) {
     this.apiKeysPermissions = apiKeysPermissions;
   }
 
 
-  public Role auditsPermissions(@javax.annotation.Nullable List<AuditsPermissionsEnum> auditsPermissions) {
+  public Role auditsPermissions(@jakarta.annotation.Nullable List<AuditsPermissionsEnum> auditsPermissions) {
     this.auditsPermissions = auditsPermissions;
     return this;
   }
@@ -1837,17 +1837,17 @@ public class Role {
    * Get auditsPermissions
    * @return auditsPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AuditsPermissionsEnum> getAuditsPermissions() {
     return auditsPermissions;
   }
 
-  public void setAuditsPermissions(@javax.annotation.Nullable List<AuditsPermissionsEnum> auditsPermissions) {
+  public void setAuditsPermissions(@jakarta.annotation.Nullable List<AuditsPermissionsEnum> auditsPermissions) {
     this.auditsPermissions = auditsPermissions;
   }
 
 
-  public Role billingPermissions(@javax.annotation.Nullable List<BillingPermissionsEnum> billingPermissions) {
+  public Role billingPermissions(@jakarta.annotation.Nullable List<BillingPermissionsEnum> billingPermissions) {
     this.billingPermissions = billingPermissions;
     return this;
   }
@@ -1864,17 +1864,17 @@ public class Role {
    * Get billingPermissions
    * @return billingPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<BillingPermissionsEnum> getBillingPermissions() {
     return billingPermissions;
   }
 
-  public void setBillingPermissions(@javax.annotation.Nullable List<BillingPermissionsEnum> billingPermissions) {
+  public void setBillingPermissions(@jakarta.annotation.Nullable List<BillingPermissionsEnum> billingPermissions) {
     this.billingPermissions = billingPermissions;
   }
 
 
-  public Role environmentsPermissions(@javax.annotation.Nullable List<EnvironmentsPermissionsEnum> environmentsPermissions) {
+  public Role environmentsPermissions(@jakarta.annotation.Nullable List<EnvironmentsPermissionsEnum> environmentsPermissions) {
     this.environmentsPermissions = environmentsPermissions;
     return this;
   }
@@ -1891,17 +1891,17 @@ public class Role {
    * Get environmentsPermissions
    * @return environmentsPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<EnvironmentsPermissionsEnum> getEnvironmentsPermissions() {
     return environmentsPermissions;
   }
 
-  public void setEnvironmentsPermissions(@javax.annotation.Nullable List<EnvironmentsPermissionsEnum> environmentsPermissions) {
+  public void setEnvironmentsPermissions(@jakarta.annotation.Nullable List<EnvironmentsPermissionsEnum> environmentsPermissions) {
     this.environmentsPermissions = environmentsPermissions;
   }
 
 
-  public Role formFieldsPermissions(@javax.annotation.Nullable List<FormFieldsPermissionsEnum> formFieldsPermissions) {
+  public Role formFieldsPermissions(@jakarta.annotation.Nullable List<FormFieldsPermissionsEnum> formFieldsPermissions) {
     this.formFieldsPermissions = formFieldsPermissions;
     return this;
   }
@@ -1918,17 +1918,17 @@ public class Role {
    * Get formFieldsPermissions
    * @return formFieldsPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<FormFieldsPermissionsEnum> getFormFieldsPermissions() {
     return formFieldsPermissions;
   }
 
-  public void setFormFieldsPermissions(@javax.annotation.Nullable List<FormFieldsPermissionsEnum> formFieldsPermissions) {
+  public void setFormFieldsPermissions(@jakarta.annotation.Nullable List<FormFieldsPermissionsEnum> formFieldsPermissions) {
     this.formFieldsPermissions = formFieldsPermissions;
   }
 
 
-  public Role functionalitiesPermissions(@javax.annotation.Nullable List<FunctionalitiesPermissionsEnum> functionalitiesPermissions) {
+  public Role functionalitiesPermissions(@jakarta.annotation.Nullable List<FunctionalitiesPermissionsEnum> functionalitiesPermissions) {
     this.functionalitiesPermissions = functionalitiesPermissions;
     return this;
   }
@@ -1945,17 +1945,17 @@ public class Role {
    * Get functionalitiesPermissions
    * @return functionalitiesPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<FunctionalitiesPermissionsEnum> getFunctionalitiesPermissions() {
     return functionalitiesPermissions;
   }
 
-  public void setFunctionalitiesPermissions(@javax.annotation.Nullable List<FunctionalitiesPermissionsEnum> functionalitiesPermissions) {
+  public void setFunctionalitiesPermissions(@jakarta.annotation.Nullable List<FunctionalitiesPermissionsEnum> functionalitiesPermissions) {
     this.functionalitiesPermissions = functionalitiesPermissions;
   }
 
 
-  public Role groupsPermissions(@javax.annotation.Nullable List<GroupsPermissionsEnum> groupsPermissions) {
+  public Role groupsPermissions(@jakarta.annotation.Nullable List<GroupsPermissionsEnum> groupsPermissions) {
     this.groupsPermissions = groupsPermissions;
     return this;
   }
@@ -1972,17 +1972,17 @@ public class Role {
    * Get groupsPermissions
    * @return groupsPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<GroupsPermissionsEnum> getGroupsPermissions() {
     return groupsPermissions;
   }
 
-  public void setGroupsPermissions(@javax.annotation.Nullable List<GroupsPermissionsEnum> groupsPermissions) {
+  public void setGroupsPermissions(@jakarta.annotation.Nullable List<GroupsPermissionsEnum> groupsPermissions) {
     this.groupsPermissions = groupsPermissions;
   }
 
 
-  public Role incidentCausesPermissions(@javax.annotation.Nullable List<IncidentCausesPermissionsEnum> incidentCausesPermissions) {
+  public Role incidentCausesPermissions(@jakarta.annotation.Nullable List<IncidentCausesPermissionsEnum> incidentCausesPermissions) {
     this.incidentCausesPermissions = incidentCausesPermissions;
     return this;
   }
@@ -1999,17 +1999,17 @@ public class Role {
    * Get incidentCausesPermissions
    * @return incidentCausesPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<IncidentCausesPermissionsEnum> getIncidentCausesPermissions() {
     return incidentCausesPermissions;
   }
 
-  public void setIncidentCausesPermissions(@javax.annotation.Nullable List<IncidentCausesPermissionsEnum> incidentCausesPermissions) {
+  public void setIncidentCausesPermissions(@jakarta.annotation.Nullable List<IncidentCausesPermissionsEnum> incidentCausesPermissions) {
     this.incidentCausesPermissions = incidentCausesPermissions;
   }
 
 
-  public Role incidentFeedbacksPermissions(@javax.annotation.Nullable List<IncidentFeedbacksPermissionsEnum> incidentFeedbacksPermissions) {
+  public Role incidentFeedbacksPermissions(@jakarta.annotation.Nullable List<IncidentFeedbacksPermissionsEnum> incidentFeedbacksPermissions) {
     this.incidentFeedbacksPermissions = incidentFeedbacksPermissions;
     return this;
   }
@@ -2026,17 +2026,17 @@ public class Role {
    * Get incidentFeedbacksPermissions
    * @return incidentFeedbacksPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<IncidentFeedbacksPermissionsEnum> getIncidentFeedbacksPermissions() {
     return incidentFeedbacksPermissions;
   }
 
-  public void setIncidentFeedbacksPermissions(@javax.annotation.Nullable List<IncidentFeedbacksPermissionsEnum> incidentFeedbacksPermissions) {
+  public void setIncidentFeedbacksPermissions(@jakarta.annotation.Nullable List<IncidentFeedbacksPermissionsEnum> incidentFeedbacksPermissions) {
     this.incidentFeedbacksPermissions = incidentFeedbacksPermissions;
   }
 
 
-  public Role incidentRolesPermissions(@javax.annotation.Nullable List<IncidentRolesPermissionsEnum> incidentRolesPermissions) {
+  public Role incidentRolesPermissions(@jakarta.annotation.Nullable List<IncidentRolesPermissionsEnum> incidentRolesPermissions) {
     this.incidentRolesPermissions = incidentRolesPermissions;
     return this;
   }
@@ -2053,17 +2053,17 @@ public class Role {
    * Get incidentRolesPermissions
    * @return incidentRolesPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<IncidentRolesPermissionsEnum> getIncidentRolesPermissions() {
     return incidentRolesPermissions;
   }
 
-  public void setIncidentRolesPermissions(@javax.annotation.Nullable List<IncidentRolesPermissionsEnum> incidentRolesPermissions) {
+  public void setIncidentRolesPermissions(@jakarta.annotation.Nullable List<IncidentRolesPermissionsEnum> incidentRolesPermissions) {
     this.incidentRolesPermissions = incidentRolesPermissions;
   }
 
 
-  public Role incidentTypesPermissions(@javax.annotation.Nullable List<IncidentTypesPermissionsEnum> incidentTypesPermissions) {
+  public Role incidentTypesPermissions(@jakarta.annotation.Nullable List<IncidentTypesPermissionsEnum> incidentTypesPermissions) {
     this.incidentTypesPermissions = incidentTypesPermissions;
     return this;
   }
@@ -2080,17 +2080,17 @@ public class Role {
    * Get incidentTypesPermissions
    * @return incidentTypesPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<IncidentTypesPermissionsEnum> getIncidentTypesPermissions() {
     return incidentTypesPermissions;
   }
 
-  public void setIncidentTypesPermissions(@javax.annotation.Nullable List<IncidentTypesPermissionsEnum> incidentTypesPermissions) {
+  public void setIncidentTypesPermissions(@jakarta.annotation.Nullable List<IncidentTypesPermissionsEnum> incidentTypesPermissions) {
     this.incidentTypesPermissions = incidentTypesPermissions;
   }
 
 
-  public Role incidentsPermissions(@javax.annotation.Nullable List<IncidentsPermissionsEnum> incidentsPermissions) {
+  public Role incidentsPermissions(@jakarta.annotation.Nullable List<IncidentsPermissionsEnum> incidentsPermissions) {
     this.incidentsPermissions = incidentsPermissions;
     return this;
   }
@@ -2107,17 +2107,17 @@ public class Role {
    * Get incidentsPermissions
    * @return incidentsPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<IncidentsPermissionsEnum> getIncidentsPermissions() {
     return incidentsPermissions;
   }
 
-  public void setIncidentsPermissions(@javax.annotation.Nullable List<IncidentsPermissionsEnum> incidentsPermissions) {
+  public void setIncidentsPermissions(@jakarta.annotation.Nullable List<IncidentsPermissionsEnum> incidentsPermissions) {
     this.incidentsPermissions = incidentsPermissions;
   }
 
 
-  public Role integrationsPermissions(@javax.annotation.Nullable List<IntegrationsPermissionsEnum> integrationsPermissions) {
+  public Role integrationsPermissions(@jakarta.annotation.Nullable List<IntegrationsPermissionsEnum> integrationsPermissions) {
     this.integrationsPermissions = integrationsPermissions;
     return this;
   }
@@ -2134,17 +2134,17 @@ public class Role {
    * Get integrationsPermissions
    * @return integrationsPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<IntegrationsPermissionsEnum> getIntegrationsPermissions() {
     return integrationsPermissions;
   }
 
-  public void setIntegrationsPermissions(@javax.annotation.Nullable List<IntegrationsPermissionsEnum> integrationsPermissions) {
+  public void setIntegrationsPermissions(@jakarta.annotation.Nullable List<IntegrationsPermissionsEnum> integrationsPermissions) {
     this.integrationsPermissions = integrationsPermissions;
   }
 
 
-  public Role invitationsPermissions(@javax.annotation.Nullable List<InvitationsPermissionsEnum> invitationsPermissions) {
+  public Role invitationsPermissions(@jakarta.annotation.Nullable List<InvitationsPermissionsEnum> invitationsPermissions) {
     this.invitationsPermissions = invitationsPermissions;
     return this;
   }
@@ -2161,17 +2161,17 @@ public class Role {
    * Get invitationsPermissions
    * @return invitationsPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<InvitationsPermissionsEnum> getInvitationsPermissions() {
     return invitationsPermissions;
   }
 
-  public void setInvitationsPermissions(@javax.annotation.Nullable List<InvitationsPermissionsEnum> invitationsPermissions) {
+  public void setInvitationsPermissions(@jakarta.annotation.Nullable List<InvitationsPermissionsEnum> invitationsPermissions) {
     this.invitationsPermissions = invitationsPermissions;
   }
 
 
-  public Role playbooksPermissions(@javax.annotation.Nullable List<PlaybooksPermissionsEnum> playbooksPermissions) {
+  public Role playbooksPermissions(@jakarta.annotation.Nullable List<PlaybooksPermissionsEnum> playbooksPermissions) {
     this.playbooksPermissions = playbooksPermissions;
     return this;
   }
@@ -2188,17 +2188,17 @@ public class Role {
    * Get playbooksPermissions
    * @return playbooksPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<PlaybooksPermissionsEnum> getPlaybooksPermissions() {
     return playbooksPermissions;
   }
 
-  public void setPlaybooksPermissions(@javax.annotation.Nullable List<PlaybooksPermissionsEnum> playbooksPermissions) {
+  public void setPlaybooksPermissions(@jakarta.annotation.Nullable List<PlaybooksPermissionsEnum> playbooksPermissions) {
     this.playbooksPermissions = playbooksPermissions;
   }
 
 
-  public Role privateIncidentsPermissions(@javax.annotation.Nullable List<PrivateIncidentsPermissionsEnum> privateIncidentsPermissions) {
+  public Role privateIncidentsPermissions(@jakarta.annotation.Nullable List<PrivateIncidentsPermissionsEnum> privateIncidentsPermissions) {
     this.privateIncidentsPermissions = privateIncidentsPermissions;
     return this;
   }
@@ -2215,17 +2215,17 @@ public class Role {
    * Get privateIncidentsPermissions
    * @return privateIncidentsPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<PrivateIncidentsPermissionsEnum> getPrivateIncidentsPermissions() {
     return privateIncidentsPermissions;
   }
 
-  public void setPrivateIncidentsPermissions(@javax.annotation.Nullable List<PrivateIncidentsPermissionsEnum> privateIncidentsPermissions) {
+  public void setPrivateIncidentsPermissions(@jakarta.annotation.Nullable List<PrivateIncidentsPermissionsEnum> privateIncidentsPermissions) {
     this.privateIncidentsPermissions = privateIncidentsPermissions;
   }
 
 
-  public Role pulsesPermissions(@javax.annotation.Nullable List<PulsesPermissionsEnum> pulsesPermissions) {
+  public Role pulsesPermissions(@jakarta.annotation.Nullable List<PulsesPermissionsEnum> pulsesPermissions) {
     this.pulsesPermissions = pulsesPermissions;
     return this;
   }
@@ -2242,17 +2242,17 @@ public class Role {
    * Get pulsesPermissions
    * @return pulsesPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<PulsesPermissionsEnum> getPulsesPermissions() {
     return pulsesPermissions;
   }
 
-  public void setPulsesPermissions(@javax.annotation.Nullable List<PulsesPermissionsEnum> pulsesPermissions) {
+  public void setPulsesPermissions(@jakarta.annotation.Nullable List<PulsesPermissionsEnum> pulsesPermissions) {
     this.pulsesPermissions = pulsesPermissions;
   }
 
 
-  public Role retrospectivePermissions(@javax.annotation.Nullable List<RetrospectivePermissionsEnum> retrospectivePermissions) {
+  public Role retrospectivePermissions(@jakarta.annotation.Nullable List<RetrospectivePermissionsEnum> retrospectivePermissions) {
     this.retrospectivePermissions = retrospectivePermissions;
     return this;
   }
@@ -2269,17 +2269,17 @@ public class Role {
    * Get retrospectivePermissions
    * @return retrospectivePermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<RetrospectivePermissionsEnum> getRetrospectivePermissions() {
     return retrospectivePermissions;
   }
 
-  public void setRetrospectivePermissions(@javax.annotation.Nullable List<RetrospectivePermissionsEnum> retrospectivePermissions) {
+  public void setRetrospectivePermissions(@jakarta.annotation.Nullable List<RetrospectivePermissionsEnum> retrospectivePermissions) {
     this.retrospectivePermissions = retrospectivePermissions;
   }
 
 
-  public Role rolesPermissions(@javax.annotation.Nullable List<RolesPermissionsEnum> rolesPermissions) {
+  public Role rolesPermissions(@jakarta.annotation.Nullable List<RolesPermissionsEnum> rolesPermissions) {
     this.rolesPermissions = rolesPermissions;
     return this;
   }
@@ -2296,17 +2296,17 @@ public class Role {
    * Get rolesPermissions
    * @return rolesPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<RolesPermissionsEnum> getRolesPermissions() {
     return rolesPermissions;
   }
 
-  public void setRolesPermissions(@javax.annotation.Nullable List<RolesPermissionsEnum> rolesPermissions) {
+  public void setRolesPermissions(@jakarta.annotation.Nullable List<RolesPermissionsEnum> rolesPermissions) {
     this.rolesPermissions = rolesPermissions;
   }
 
 
-  public Role secretsPermissions(@javax.annotation.Nullable List<SecretsPermissionsEnum> secretsPermissions) {
+  public Role secretsPermissions(@jakarta.annotation.Nullable List<SecretsPermissionsEnum> secretsPermissions) {
     this.secretsPermissions = secretsPermissions;
     return this;
   }
@@ -2323,17 +2323,17 @@ public class Role {
    * Get secretsPermissions
    * @return secretsPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<SecretsPermissionsEnum> getSecretsPermissions() {
     return secretsPermissions;
   }
 
-  public void setSecretsPermissions(@javax.annotation.Nullable List<SecretsPermissionsEnum> secretsPermissions) {
+  public void setSecretsPermissions(@jakarta.annotation.Nullable List<SecretsPermissionsEnum> secretsPermissions) {
     this.secretsPermissions = secretsPermissions;
   }
 
 
-  public Role servicesPermissions(@javax.annotation.Nullable List<ServicesPermissionsEnum> servicesPermissions) {
+  public Role servicesPermissions(@jakarta.annotation.Nullable List<ServicesPermissionsEnum> servicesPermissions) {
     this.servicesPermissions = servicesPermissions;
     return this;
   }
@@ -2350,17 +2350,17 @@ public class Role {
    * Get servicesPermissions
    * @return servicesPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<ServicesPermissionsEnum> getServicesPermissions() {
     return servicesPermissions;
   }
 
-  public void setServicesPermissions(@javax.annotation.Nullable List<ServicesPermissionsEnum> servicesPermissions) {
+  public void setServicesPermissions(@jakarta.annotation.Nullable List<ServicesPermissionsEnum> servicesPermissions) {
     this.servicesPermissions = servicesPermissions;
   }
 
 
-  public Role severitiesPermissions(@javax.annotation.Nullable List<SeveritiesPermissionsEnum> severitiesPermissions) {
+  public Role severitiesPermissions(@jakarta.annotation.Nullable List<SeveritiesPermissionsEnum> severitiesPermissions) {
     this.severitiesPermissions = severitiesPermissions;
     return this;
   }
@@ -2377,17 +2377,17 @@ public class Role {
    * Get severitiesPermissions
    * @return severitiesPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<SeveritiesPermissionsEnum> getSeveritiesPermissions() {
     return severitiesPermissions;
   }
 
-  public void setSeveritiesPermissions(@javax.annotation.Nullable List<SeveritiesPermissionsEnum> severitiesPermissions) {
+  public void setSeveritiesPermissions(@jakarta.annotation.Nullable List<SeveritiesPermissionsEnum> severitiesPermissions) {
     this.severitiesPermissions = severitiesPermissions;
   }
 
 
-  public Role statusPagesPermissions(@javax.annotation.Nullable List<StatusPagesPermissionsEnum> statusPagesPermissions) {
+  public Role statusPagesPermissions(@jakarta.annotation.Nullable List<StatusPagesPermissionsEnum> statusPagesPermissions) {
     this.statusPagesPermissions = statusPagesPermissions;
     return this;
   }
@@ -2404,17 +2404,17 @@ public class Role {
    * Get statusPagesPermissions
    * @return statusPagesPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<StatusPagesPermissionsEnum> getStatusPagesPermissions() {
     return statusPagesPermissions;
   }
 
-  public void setStatusPagesPermissions(@javax.annotation.Nullable List<StatusPagesPermissionsEnum> statusPagesPermissions) {
+  public void setStatusPagesPermissions(@jakarta.annotation.Nullable List<StatusPagesPermissionsEnum> statusPagesPermissions) {
     this.statusPagesPermissions = statusPagesPermissions;
   }
 
 
-  public Role webhooksPermissions(@javax.annotation.Nullable List<WebhooksPermissionsEnum> webhooksPermissions) {
+  public Role webhooksPermissions(@jakarta.annotation.Nullable List<WebhooksPermissionsEnum> webhooksPermissions) {
     this.webhooksPermissions = webhooksPermissions;
     return this;
   }
@@ -2431,17 +2431,17 @@ public class Role {
    * Get webhooksPermissions
    * @return webhooksPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<WebhooksPermissionsEnum> getWebhooksPermissions() {
     return webhooksPermissions;
   }
 
-  public void setWebhooksPermissions(@javax.annotation.Nullable List<WebhooksPermissionsEnum> webhooksPermissions) {
+  public void setWebhooksPermissions(@jakarta.annotation.Nullable List<WebhooksPermissionsEnum> webhooksPermissions) {
     this.webhooksPermissions = webhooksPermissions;
   }
 
 
-  public Role workflowsPermissions(@javax.annotation.Nullable List<WorkflowsPermissionsEnum> workflowsPermissions) {
+  public Role workflowsPermissions(@jakarta.annotation.Nullable List<WorkflowsPermissionsEnum> workflowsPermissions) {
     this.workflowsPermissions = workflowsPermissions;
     return this;
   }
@@ -2458,17 +2458,17 @@ public class Role {
    * Get workflowsPermissions
    * @return workflowsPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<WorkflowsPermissionsEnum> getWorkflowsPermissions() {
     return workflowsPermissions;
   }
 
-  public void setWorkflowsPermissions(@javax.annotation.Nullable List<WorkflowsPermissionsEnum> workflowsPermissions) {
+  public void setWorkflowsPermissions(@jakarta.annotation.Nullable List<WorkflowsPermissionsEnum> workflowsPermissions) {
     this.workflowsPermissions = workflowsPermissions;
   }
 
 
-  public Role createdAt(@javax.annotation.Nonnull String createdAt) {
+  public Role createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -2477,17 +2477,17 @@ public class Role {
    * Get createdAt
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public Role updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public Role updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -2496,12 +2496,12 @@ public class Role {
    * Get updatedAt
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

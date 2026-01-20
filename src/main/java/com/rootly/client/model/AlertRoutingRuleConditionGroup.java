@@ -52,37 +52,37 @@ import com.rootly.client.JSON;
 /**
  * A group of conditions for alert routing rule
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AlertRoutingRuleConditionGroup {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private UUID id;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Integer position;
 
   public static final String SERIALIZED_NAME_CONDITIONS = "conditions";
   @SerializedName(SERIALIZED_NAME_CONDITIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AlertRoutingRuleCondition> conditions = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String updatedAt;
 
   public AlertRoutingRuleConditionGroup() {
   }
 
-  public AlertRoutingRuleConditionGroup id(@javax.annotation.Nullable UUID id) {
+  public AlertRoutingRuleConditionGroup id(@jakarta.annotation.Nullable UUID id) {
     this.id = id;
     return this;
   }
@@ -91,17 +91,17 @@ public class AlertRoutingRuleConditionGroup {
    * Unique ID of the condition group
    * @return id
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public UUID getId() {
     return id;
   }
 
-  public void setId(@javax.annotation.Nullable UUID id) {
+  public void setId(@jakarta.annotation.Nullable UUID id) {
     this.id = id;
   }
 
 
-  public AlertRoutingRuleConditionGroup position(@javax.annotation.Nonnull Integer position) {
+  public AlertRoutingRuleConditionGroup position(@jakarta.annotation.Nonnull Integer position) {
     this.position = position;
     return this;
   }
@@ -110,17 +110,17 @@ public class AlertRoutingRuleConditionGroup {
    * The position of the condition group for ordering
    * @return position
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nonnull Integer position) {
+  public void setPosition(@jakarta.annotation.Nonnull Integer position) {
     this.position = position;
   }
 
 
-  public AlertRoutingRuleConditionGroup conditions(@javax.annotation.Nullable List<AlertRoutingRuleCondition> conditions) {
+  public AlertRoutingRuleConditionGroup conditions(@jakarta.annotation.Nullable List<AlertRoutingRuleCondition> conditions) {
     this.conditions = conditions;
     return this;
   }
@@ -137,17 +137,17 @@ public class AlertRoutingRuleConditionGroup {
    * The conditions within this group
    * @return conditions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AlertRoutingRuleCondition> getConditions() {
     return conditions;
   }
 
-  public void setConditions(@javax.annotation.Nullable List<AlertRoutingRuleCondition> conditions) {
+  public void setConditions(@jakarta.annotation.Nullable List<AlertRoutingRuleCondition> conditions) {
     this.conditions = conditions;
   }
 
 
-  public AlertRoutingRuleConditionGroup createdAt(@javax.annotation.Nullable String createdAt) {
+  public AlertRoutingRuleConditionGroup createdAt(@jakarta.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -156,17 +156,17 @@ public class AlertRoutingRuleConditionGroup {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nullable String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public AlertRoutingRuleConditionGroup updatedAt(@javax.annotation.Nullable String updatedAt) {
+  public AlertRoutingRuleConditionGroup updatedAt(@jakarta.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -175,12 +175,12 @@ public class AlertRoutingRuleConditionGroup {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nullable String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

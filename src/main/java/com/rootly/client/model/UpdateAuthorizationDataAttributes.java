@@ -50,7 +50,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateAuthorizationDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateAuthorizationDataAttributes {
   /**
    * Gets or Sets permissions
@@ -110,13 +110,13 @@ public class UpdateAuthorizationDataAttributes {
 
   public static final String SERIALIZED_NAME_PERMISSIONS = "permissions";
   @SerializedName(SERIALIZED_NAME_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<PermissionsEnum> permissions = new ArrayList<>();
 
   public UpdateAuthorizationDataAttributes() {
   }
 
-  public UpdateAuthorizationDataAttributes permissions(@javax.annotation.Nullable List<PermissionsEnum> permissions) {
+  public UpdateAuthorizationDataAttributes permissions(@jakarta.annotation.Nullable List<PermissionsEnum> permissions) {
     this.permissions = permissions;
     return this;
   }
@@ -133,12 +133,12 @@ public class UpdateAuthorizationDataAttributes {
    * Get permissions
    * @return permissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<PermissionsEnum> getPermissions() {
     return permissions;
   }
 
-  public void setPermissions(@javax.annotation.Nullable List<PermissionsEnum> permissions) {
+  public void setPermissions(@jakarta.annotation.Nullable List<PermissionsEnum> permissions) {
     this.permissions = permissions;
   }
 

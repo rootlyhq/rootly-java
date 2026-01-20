@@ -48,17 +48,17 @@ import com.rootly.client.JSON;
 /**
  * NewScheduleRotationDataAttributesScheduleRotationableAttributesOneOf
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewScheduleRotationDataAttributesScheduleRotationableAttributesOneOf {
   public static final String SERIALIZED_NAME_HANDOFF_TIME = "handoff_time";
   @SerializedName(SERIALIZED_NAME_HANDOFF_TIME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String handoffTime;
 
   public NewScheduleRotationDataAttributesScheduleRotationableAttributesOneOf() {
   }
 
-  public NewScheduleRotationDataAttributesScheduleRotationableAttributesOneOf handoffTime(@javax.annotation.Nonnull String handoffTime) {
+  public NewScheduleRotationDataAttributesScheduleRotationableAttributesOneOf handoffTime(@jakarta.annotation.Nonnull String handoffTime) {
     this.handoffTime = handoffTime;
     return this;
   }
@@ -67,12 +67,12 @@ public class NewScheduleRotationDataAttributesScheduleRotationableAttributesOneO
    * Hand off time for daily rotation
    * @return handoffTime
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getHandoffTime() {
     return handoffTime;
   }
 
-  public void setHandoffTime(@javax.annotation.Nonnull String handoffTime) {
+  public void setHandoffTime(@jakarta.annotation.Nonnull String handoffTime) {
     this.handoffTime = handoffTime;
   }
 

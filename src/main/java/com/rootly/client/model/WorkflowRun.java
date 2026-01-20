@@ -51,11 +51,11 @@ import com.rootly.client.JSON;
 /**
  * WorkflowRun
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class WorkflowRun {
   public static final String SERIALIZED_NAME_WORKFLOW_ID = "workflow_id";
   @SerializedName(SERIALIZED_NAME_WORKFLOW_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String workflowId;
 
   /**
@@ -120,12 +120,12 @@ public class WorkflowRun {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private StatusEnum status;
 
   public static final String SERIALIZED_NAME_STATUS_MESSAGE = "status_message";
   @SerializedName(SERIALIZED_NAME_STATUS_MESSAGE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String statusMessage;
 
   /**
@@ -184,63 +184,63 @@ public class WorkflowRun {
 
   public static final String SERIALIZED_NAME_TRIGGERED_BY = "triggered_by";
   @SerializedName(SERIALIZED_NAME_TRIGGERED_BY)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private TriggeredByEnum triggeredBy;
 
   public static final String SERIALIZED_NAME_STARTED_AT = "started_at";
   @SerializedName(SERIALIZED_NAME_STARTED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String startedAt;
 
   public static final String SERIALIZED_NAME_COMPLETED_AT = "completed_at";
   @SerializedName(SERIALIZED_NAME_COMPLETED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String completedAt;
 
   public static final String SERIALIZED_NAME_FAILED_AT = "failed_at";
   @SerializedName(SERIALIZED_NAME_FAILED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String failedAt;
 
   public static final String SERIALIZED_NAME_CANCELED_AT = "canceled_at";
   @SerializedName(SERIALIZED_NAME_CANCELED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String canceledAt;
 
   public static final String SERIALIZED_NAME_INCIDENT_ID = "incident_id";
   @SerializedName(SERIALIZED_NAME_INCIDENT_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String incidentId;
 
   public static final String SERIALIZED_NAME_POST_MORTEM_ID = "post_mortem_id";
   @SerializedName(SERIALIZED_NAME_POST_MORTEM_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String postMortemId;
 
   public static final String SERIALIZED_NAME_ACTION_ITEM_ID = "action_item_id";
   @SerializedName(SERIALIZED_NAME_ACTION_ITEM_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String actionItemId;
 
   public static final String SERIALIZED_NAME_ALERT_ID = "alert_id";
   @SerializedName(SERIALIZED_NAME_ALERT_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String alertId;
 
   public static final String SERIALIZED_NAME_PULSE_ID = "pulse_id";
   @SerializedName(SERIALIZED_NAME_PULSE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String pulseId;
 
   public static final String SERIALIZED_NAME_CONTEXT = "context";
   @SerializedName(SERIALIZED_NAME_CONTEXT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Map<String, Object> context = new HashMap<>();
 
   public WorkflowRun() {
   }
 
-  public WorkflowRun workflowId(@javax.annotation.Nonnull String workflowId) {
+  public WorkflowRun workflowId(@jakarta.annotation.Nonnull String workflowId) {
     this.workflowId = workflowId;
     return this;
   }
@@ -249,17 +249,17 @@ public class WorkflowRun {
    * Get workflowId
    * @return workflowId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getWorkflowId() {
     return workflowId;
   }
 
-  public void setWorkflowId(@javax.annotation.Nonnull String workflowId) {
+  public void setWorkflowId(@jakarta.annotation.Nonnull String workflowId) {
     this.workflowId = workflowId;
   }
 
 
-  public WorkflowRun status(@javax.annotation.Nonnull StatusEnum status) {
+  public WorkflowRun status(@jakarta.annotation.Nonnull StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -268,17 +268,17 @@ public class WorkflowRun {
    * Get status
    * @return status
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nonnull StatusEnum status) {
+  public void setStatus(@jakarta.annotation.Nonnull StatusEnum status) {
     this.status = status;
   }
 
 
-  public WorkflowRun statusMessage(@javax.annotation.Nullable String statusMessage) {
+  public WorkflowRun statusMessage(@jakarta.annotation.Nullable String statusMessage) {
     this.statusMessage = statusMessage;
     return this;
   }
@@ -287,17 +287,17 @@ public class WorkflowRun {
    * Get statusMessage
    * @return statusMessage
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getStatusMessage() {
     return statusMessage;
   }
 
-  public void setStatusMessage(@javax.annotation.Nullable String statusMessage) {
+  public void setStatusMessage(@jakarta.annotation.Nullable String statusMessage) {
     this.statusMessage = statusMessage;
   }
 
 
-  public WorkflowRun triggeredBy(@javax.annotation.Nonnull TriggeredByEnum triggeredBy) {
+  public WorkflowRun triggeredBy(@jakarta.annotation.Nonnull TriggeredByEnum triggeredBy) {
     this.triggeredBy = triggeredBy;
     return this;
   }
@@ -306,17 +306,17 @@ public class WorkflowRun {
    * Get triggeredBy
    * @return triggeredBy
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public TriggeredByEnum getTriggeredBy() {
     return triggeredBy;
   }
 
-  public void setTriggeredBy(@javax.annotation.Nonnull TriggeredByEnum triggeredBy) {
+  public void setTriggeredBy(@jakarta.annotation.Nonnull TriggeredByEnum triggeredBy) {
     this.triggeredBy = triggeredBy;
   }
 
 
-  public WorkflowRun startedAt(@javax.annotation.Nullable String startedAt) {
+  public WorkflowRun startedAt(@jakarta.annotation.Nullable String startedAt) {
     this.startedAt = startedAt;
     return this;
   }
@@ -325,17 +325,17 @@ public class WorkflowRun {
    * Get startedAt
    * @return startedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getStartedAt() {
     return startedAt;
   }
 
-  public void setStartedAt(@javax.annotation.Nullable String startedAt) {
+  public void setStartedAt(@jakarta.annotation.Nullable String startedAt) {
     this.startedAt = startedAt;
   }
 
 
-  public WorkflowRun completedAt(@javax.annotation.Nullable String completedAt) {
+  public WorkflowRun completedAt(@jakarta.annotation.Nullable String completedAt) {
     this.completedAt = completedAt;
     return this;
   }
@@ -344,17 +344,17 @@ public class WorkflowRun {
    * Get completedAt
    * @return completedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCompletedAt() {
     return completedAt;
   }
 
-  public void setCompletedAt(@javax.annotation.Nullable String completedAt) {
+  public void setCompletedAt(@jakarta.annotation.Nullable String completedAt) {
     this.completedAt = completedAt;
   }
 
 
-  public WorkflowRun failedAt(@javax.annotation.Nullable String failedAt) {
+  public WorkflowRun failedAt(@jakarta.annotation.Nullable String failedAt) {
     this.failedAt = failedAt;
     return this;
   }
@@ -363,17 +363,17 @@ public class WorkflowRun {
    * Get failedAt
    * @return failedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getFailedAt() {
     return failedAt;
   }
 
-  public void setFailedAt(@javax.annotation.Nullable String failedAt) {
+  public void setFailedAt(@jakarta.annotation.Nullable String failedAt) {
     this.failedAt = failedAt;
   }
 
 
-  public WorkflowRun canceledAt(@javax.annotation.Nullable String canceledAt) {
+  public WorkflowRun canceledAt(@jakarta.annotation.Nullable String canceledAt) {
     this.canceledAt = canceledAt;
     return this;
   }
@@ -382,17 +382,17 @@ public class WorkflowRun {
    * Get canceledAt
    * @return canceledAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCanceledAt() {
     return canceledAt;
   }
 
-  public void setCanceledAt(@javax.annotation.Nullable String canceledAt) {
+  public void setCanceledAt(@jakarta.annotation.Nullable String canceledAt) {
     this.canceledAt = canceledAt;
   }
 
 
-  public WorkflowRun incidentId(@javax.annotation.Nullable String incidentId) {
+  public WorkflowRun incidentId(@jakarta.annotation.Nullable String incidentId) {
     this.incidentId = incidentId;
     return this;
   }
@@ -401,17 +401,17 @@ public class WorkflowRun {
    * Get incidentId
    * @return incidentId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getIncidentId() {
     return incidentId;
   }
 
-  public void setIncidentId(@javax.annotation.Nullable String incidentId) {
+  public void setIncidentId(@jakarta.annotation.Nullable String incidentId) {
     this.incidentId = incidentId;
   }
 
 
-  public WorkflowRun postMortemId(@javax.annotation.Nullable String postMortemId) {
+  public WorkflowRun postMortemId(@jakarta.annotation.Nullable String postMortemId) {
     this.postMortemId = postMortemId;
     return this;
   }
@@ -420,17 +420,17 @@ public class WorkflowRun {
    * Get postMortemId
    * @return postMortemId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPostMortemId() {
     return postMortemId;
   }
 
-  public void setPostMortemId(@javax.annotation.Nullable String postMortemId) {
+  public void setPostMortemId(@jakarta.annotation.Nullable String postMortemId) {
     this.postMortemId = postMortemId;
   }
 
 
-  public WorkflowRun actionItemId(@javax.annotation.Nullable String actionItemId) {
+  public WorkflowRun actionItemId(@jakarta.annotation.Nullable String actionItemId) {
     this.actionItemId = actionItemId;
     return this;
   }
@@ -439,17 +439,17 @@ public class WorkflowRun {
    * Get actionItemId
    * @return actionItemId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getActionItemId() {
     return actionItemId;
   }
 
-  public void setActionItemId(@javax.annotation.Nullable String actionItemId) {
+  public void setActionItemId(@jakarta.annotation.Nullable String actionItemId) {
     this.actionItemId = actionItemId;
   }
 
 
-  public WorkflowRun alertId(@javax.annotation.Nullable String alertId) {
+  public WorkflowRun alertId(@jakarta.annotation.Nullable String alertId) {
     this.alertId = alertId;
     return this;
   }
@@ -458,17 +458,17 @@ public class WorkflowRun {
    * Get alertId
    * @return alertId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getAlertId() {
     return alertId;
   }
 
-  public void setAlertId(@javax.annotation.Nullable String alertId) {
+  public void setAlertId(@jakarta.annotation.Nullable String alertId) {
     this.alertId = alertId;
   }
 
 
-  public WorkflowRun pulseId(@javax.annotation.Nullable String pulseId) {
+  public WorkflowRun pulseId(@jakarta.annotation.Nullable String pulseId) {
     this.pulseId = pulseId;
     return this;
   }
@@ -477,17 +477,17 @@ public class WorkflowRun {
    * Get pulseId
    * @return pulseId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPulseId() {
     return pulseId;
   }
 
-  public void setPulseId(@javax.annotation.Nullable String pulseId) {
+  public void setPulseId(@jakarta.annotation.Nullable String pulseId) {
     this.pulseId = pulseId;
   }
 
 
-  public WorkflowRun context(@javax.annotation.Nullable Map<String, Object> context) {
+  public WorkflowRun context(@jakarta.annotation.Nullable Map<String, Object> context) {
     this.context = context;
     return this;
   }
@@ -504,12 +504,12 @@ public class WorkflowRun {
    * Get context
    * @return context
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Map<String, Object> getContext() {
     return context;
   }
 
-  public void setContext(@javax.annotation.Nullable Map<String, Object> context) {
+  public void setContext(@jakarta.annotation.Nullable Map<String, Object> context) {
     this.context = context;
   }
 

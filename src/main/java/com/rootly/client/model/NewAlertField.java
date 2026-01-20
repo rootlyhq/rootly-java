@@ -49,17 +49,17 @@ import com.rootly.client.JSON;
 /**
  * NewAlertField
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewAlertField {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private NewAlertFieldData data;
 
   public NewAlertField() {
   }
 
-  public NewAlertField data(@javax.annotation.Nonnull NewAlertFieldData data) {
+  public NewAlertField data(@jakarta.annotation.Nonnull NewAlertFieldData data) {
     this.data = data;
     return this;
   }
@@ -68,12 +68,12 @@ public class NewAlertField {
    * Get data
    * @return data
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public NewAlertFieldData getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nonnull NewAlertFieldData data) {
+  public void setData(@jakarta.annotation.Nonnull NewAlertFieldData data) {
     this.data = data;
   }
 

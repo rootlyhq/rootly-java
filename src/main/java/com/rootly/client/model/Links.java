@@ -48,37 +48,37 @@ import com.rootly.client.JSON;
 /**
  * Links
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Links {
   public static final String SERIALIZED_NAME_SELF = "self";
   @SerializedName(SERIALIZED_NAME_SELF)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String self;
 
   public static final String SERIALIZED_NAME_FIRST = "first";
   @SerializedName(SERIALIZED_NAME_FIRST)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String first;
 
   public static final String SERIALIZED_NAME_PREV = "prev";
   @SerializedName(SERIALIZED_NAME_PREV)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String prev;
 
   public static final String SERIALIZED_NAME_NEXT = "next";
   @SerializedName(SERIALIZED_NAME_NEXT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String next;
 
   public static final String SERIALIZED_NAME_LAST = "last";
   @SerializedName(SERIALIZED_NAME_LAST)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String last;
 
   public Links() {
   }
 
-  public Links self(@javax.annotation.Nonnull String self) {
+  public Links self(@jakarta.annotation.Nonnull String self) {
     this.self = self;
     return this;
   }
@@ -87,17 +87,17 @@ public class Links {
    * Get self
    * @return self
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getSelf() {
     return self;
   }
 
-  public void setSelf(@javax.annotation.Nonnull String self) {
+  public void setSelf(@jakarta.annotation.Nonnull String self) {
     this.self = self;
   }
 
 
-  public Links first(@javax.annotation.Nonnull String first) {
+  public Links first(@jakarta.annotation.Nonnull String first) {
     this.first = first;
     return this;
   }
@@ -106,17 +106,17 @@ public class Links {
    * Get first
    * @return first
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getFirst() {
     return first;
   }
 
-  public void setFirst(@javax.annotation.Nonnull String first) {
+  public void setFirst(@jakarta.annotation.Nonnull String first) {
     this.first = first;
   }
 
 
-  public Links prev(@javax.annotation.Nullable String prev) {
+  public Links prev(@jakarta.annotation.Nullable String prev) {
     this.prev = prev;
     return this;
   }
@@ -125,17 +125,17 @@ public class Links {
    * Get prev
    * @return prev
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPrev() {
     return prev;
   }
 
-  public void setPrev(@javax.annotation.Nullable String prev) {
+  public void setPrev(@jakarta.annotation.Nullable String prev) {
     this.prev = prev;
   }
 
 
-  public Links next(@javax.annotation.Nullable String next) {
+  public Links next(@jakarta.annotation.Nullable String next) {
     this.next = next;
     return this;
   }
@@ -144,17 +144,17 @@ public class Links {
    * Get next
    * @return next
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getNext() {
     return next;
   }
 
-  public void setNext(@javax.annotation.Nullable String next) {
+  public void setNext(@jakarta.annotation.Nullable String next) {
     this.next = next;
   }
 
 
-  public Links last(@javax.annotation.Nonnull String last) {
+  public Links last(@jakarta.annotation.Nonnull String last) {
     this.last = last;
     return this;
   }
@@ -163,12 +163,12 @@ public class Links {
    * Get last
    * @return last
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getLast() {
     return last;
   }
 
-  public void setLast(@javax.annotation.Nonnull String last) {
+  public void setLast(@jakarta.annotation.Nonnull String last) {
     this.last = last;
   }
 

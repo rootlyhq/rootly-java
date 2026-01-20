@@ -51,57 +51,57 @@ import com.rootly.client.JSON;
 /**
  * NewIncidentFormFieldSelectionDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewIncidentFormFieldSelectionDataAttributes {
   public static final String SERIALIZED_NAME_INCIDENT_ID = "incident_id";
   @SerializedName(SERIALIZED_NAME_INCIDENT_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String incidentId;
 
   public static final String SERIALIZED_NAME_FORM_FIELD_ID = "form_field_id";
   @SerializedName(SERIALIZED_NAME_FORM_FIELD_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String formFieldId;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String value;
 
   public static final String SERIALIZED_NAME_SELECTED_CATALOG_ENTITY_IDS = "selected_catalog_entity_ids";
   @SerializedName(SERIALIZED_NAME_SELECTED_CATALOG_ENTITY_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> selectedCatalogEntityIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SELECTED_GROUP_IDS = "selected_group_ids";
   @SerializedName(SERIALIZED_NAME_SELECTED_GROUP_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> selectedGroupIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SELECTED_OPTION_IDS = "selected_option_ids";
   @SerializedName(SERIALIZED_NAME_SELECTED_OPTION_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> selectedOptionIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SELECTED_SERVICE_IDS = "selected_service_ids";
   @SerializedName(SERIALIZED_NAME_SELECTED_SERVICE_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> selectedServiceIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SELECTED_FUNCTIONALITY_IDS = "selected_functionality_ids";
   @SerializedName(SERIALIZED_NAME_SELECTED_FUNCTIONALITY_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> selectedFunctionalityIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SELECTED_USER_IDS = "selected_user_ids";
   @SerializedName(SERIALIZED_NAME_SELECTED_USER_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<Integer> selectedUserIds = new ArrayList<>();
 
   public NewIncidentFormFieldSelectionDataAttributes() {
   }
 
-  public NewIncidentFormFieldSelectionDataAttributes incidentId(@javax.annotation.Nonnull String incidentId) {
+  public NewIncidentFormFieldSelectionDataAttributes incidentId(@jakarta.annotation.Nonnull String incidentId) {
     this.incidentId = incidentId;
     return this;
   }
@@ -110,17 +110,17 @@ public class NewIncidentFormFieldSelectionDataAttributes {
    * Get incidentId
    * @return incidentId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getIncidentId() {
     return incidentId;
   }
 
-  public void setIncidentId(@javax.annotation.Nonnull String incidentId) {
+  public void setIncidentId(@jakarta.annotation.Nonnull String incidentId) {
     this.incidentId = incidentId;
   }
 
 
-  public NewIncidentFormFieldSelectionDataAttributes formFieldId(@javax.annotation.Nonnull String formFieldId) {
+  public NewIncidentFormFieldSelectionDataAttributes formFieldId(@jakarta.annotation.Nonnull String formFieldId) {
     this.formFieldId = formFieldId;
     return this;
   }
@@ -129,17 +129,17 @@ public class NewIncidentFormFieldSelectionDataAttributes {
    * The custom field for this selection
    * @return formFieldId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getFormFieldId() {
     return formFieldId;
   }
 
-  public void setFormFieldId(@javax.annotation.Nonnull String formFieldId) {
+  public void setFormFieldId(@jakarta.annotation.Nonnull String formFieldId) {
     this.formFieldId = formFieldId;
   }
 
 
-  public NewIncidentFormFieldSelectionDataAttributes value(@javax.annotation.Nullable String value) {
+  public NewIncidentFormFieldSelectionDataAttributes value(@jakarta.annotation.Nullable String value) {
     this.value = value;
     return this;
   }
@@ -148,17 +148,17 @@ public class NewIncidentFormFieldSelectionDataAttributes {
    * The selected value for text kind custom fields
    * @return value
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getValue() {
     return value;
   }
 
-  public void setValue(@javax.annotation.Nullable String value) {
+  public void setValue(@jakarta.annotation.Nullable String value) {
     this.value = value;
   }
 
 
-  public NewIncidentFormFieldSelectionDataAttributes selectedCatalogEntityIds(@javax.annotation.Nullable List<String> selectedCatalogEntityIds) {
+  public NewIncidentFormFieldSelectionDataAttributes selectedCatalogEntityIds(@jakarta.annotation.Nullable List<String> selectedCatalogEntityIds) {
     this.selectedCatalogEntityIds = selectedCatalogEntityIds;
     return this;
   }
@@ -175,17 +175,17 @@ public class NewIncidentFormFieldSelectionDataAttributes {
    * Get selectedCatalogEntityIds
    * @return selectedCatalogEntityIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getSelectedCatalogEntityIds() {
     return selectedCatalogEntityIds;
   }
 
-  public void setSelectedCatalogEntityIds(@javax.annotation.Nullable List<String> selectedCatalogEntityIds) {
+  public void setSelectedCatalogEntityIds(@jakarta.annotation.Nullable List<String> selectedCatalogEntityIds) {
     this.selectedCatalogEntityIds = selectedCatalogEntityIds;
   }
 
 
-  public NewIncidentFormFieldSelectionDataAttributes selectedGroupIds(@javax.annotation.Nullable List<String> selectedGroupIds) {
+  public NewIncidentFormFieldSelectionDataAttributes selectedGroupIds(@jakarta.annotation.Nullable List<String> selectedGroupIds) {
     this.selectedGroupIds = selectedGroupIds;
     return this;
   }
@@ -202,17 +202,17 @@ public class NewIncidentFormFieldSelectionDataAttributes {
    * Get selectedGroupIds
    * @return selectedGroupIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getSelectedGroupIds() {
     return selectedGroupIds;
   }
 
-  public void setSelectedGroupIds(@javax.annotation.Nullable List<String> selectedGroupIds) {
+  public void setSelectedGroupIds(@jakarta.annotation.Nullable List<String> selectedGroupIds) {
     this.selectedGroupIds = selectedGroupIds;
   }
 
 
-  public NewIncidentFormFieldSelectionDataAttributes selectedOptionIds(@javax.annotation.Nullable List<String> selectedOptionIds) {
+  public NewIncidentFormFieldSelectionDataAttributes selectedOptionIds(@jakarta.annotation.Nullable List<String> selectedOptionIds) {
     this.selectedOptionIds = selectedOptionIds;
     return this;
   }
@@ -229,17 +229,17 @@ public class NewIncidentFormFieldSelectionDataAttributes {
    * Get selectedOptionIds
    * @return selectedOptionIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getSelectedOptionIds() {
     return selectedOptionIds;
   }
 
-  public void setSelectedOptionIds(@javax.annotation.Nullable List<String> selectedOptionIds) {
+  public void setSelectedOptionIds(@jakarta.annotation.Nullable List<String> selectedOptionIds) {
     this.selectedOptionIds = selectedOptionIds;
   }
 
 
-  public NewIncidentFormFieldSelectionDataAttributes selectedServiceIds(@javax.annotation.Nullable List<String> selectedServiceIds) {
+  public NewIncidentFormFieldSelectionDataAttributes selectedServiceIds(@jakarta.annotation.Nullable List<String> selectedServiceIds) {
     this.selectedServiceIds = selectedServiceIds;
     return this;
   }
@@ -256,17 +256,17 @@ public class NewIncidentFormFieldSelectionDataAttributes {
    * Get selectedServiceIds
    * @return selectedServiceIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getSelectedServiceIds() {
     return selectedServiceIds;
   }
 
-  public void setSelectedServiceIds(@javax.annotation.Nullable List<String> selectedServiceIds) {
+  public void setSelectedServiceIds(@jakarta.annotation.Nullable List<String> selectedServiceIds) {
     this.selectedServiceIds = selectedServiceIds;
   }
 
 
-  public NewIncidentFormFieldSelectionDataAttributes selectedFunctionalityIds(@javax.annotation.Nullable List<String> selectedFunctionalityIds) {
+  public NewIncidentFormFieldSelectionDataAttributes selectedFunctionalityIds(@jakarta.annotation.Nullable List<String> selectedFunctionalityIds) {
     this.selectedFunctionalityIds = selectedFunctionalityIds;
     return this;
   }
@@ -283,17 +283,17 @@ public class NewIncidentFormFieldSelectionDataAttributes {
    * Get selectedFunctionalityIds
    * @return selectedFunctionalityIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getSelectedFunctionalityIds() {
     return selectedFunctionalityIds;
   }
 
-  public void setSelectedFunctionalityIds(@javax.annotation.Nullable List<String> selectedFunctionalityIds) {
+  public void setSelectedFunctionalityIds(@jakarta.annotation.Nullable List<String> selectedFunctionalityIds) {
     this.selectedFunctionalityIds = selectedFunctionalityIds;
   }
 
 
-  public NewIncidentFormFieldSelectionDataAttributes selectedUserIds(@javax.annotation.Nullable List<Integer> selectedUserIds) {
+  public NewIncidentFormFieldSelectionDataAttributes selectedUserIds(@jakarta.annotation.Nullable List<Integer> selectedUserIds) {
     this.selectedUserIds = selectedUserIds;
     return this;
   }
@@ -310,12 +310,12 @@ public class NewIncidentFormFieldSelectionDataAttributes {
    * Get selectedUserIds
    * @return selectedUserIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<Integer> getSelectedUserIds() {
     return selectedUserIds;
   }
 
-  public void setSelectedUserIds(@javax.annotation.Nullable List<Integer> selectedUserIds) {
+  public void setSelectedUserIds(@jakarta.annotation.Nullable List<Integer> selectedUserIds) {
     this.selectedUserIds = selectedUserIds;
   }
 

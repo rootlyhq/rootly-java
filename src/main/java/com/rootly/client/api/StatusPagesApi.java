@@ -92,7 +92,7 @@ public class StatusPagesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createStatusPageCall(@javax.annotation.Nonnull NewStatusPage newStatusPage, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createStatusPageCall(@jakarta.annotation.Nonnull NewStatusPage newStatusPage, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -138,7 +138,7 @@ public class StatusPagesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createStatusPageValidateBeforeCall(@javax.annotation.Nonnull NewStatusPage newStatusPage, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createStatusPageValidateBeforeCall(@jakarta.annotation.Nonnull NewStatusPage newStatusPage, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'newStatusPage' is set
         if (newStatusPage == null) {
             throw new ApiException("Missing the required parameter 'newStatusPage' when calling createStatusPage(Async)");
@@ -163,7 +163,7 @@ public class StatusPagesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public StatusPageResponse createStatusPage(@javax.annotation.Nonnull NewStatusPage newStatusPage) throws ApiException {
+    public StatusPageResponse createStatusPage(@jakarta.annotation.Nonnull NewStatusPage newStatusPage) throws ApiException {
         ApiResponse<StatusPageResponse> localVarResp = createStatusPageWithHttpInfo(newStatusPage);
         return localVarResp.getData();
     }
@@ -183,7 +183,7 @@ public class StatusPagesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StatusPageResponse> createStatusPageWithHttpInfo(@javax.annotation.Nonnull NewStatusPage newStatusPage) throws ApiException {
+    public ApiResponse<StatusPageResponse> createStatusPageWithHttpInfo(@jakarta.annotation.Nonnull NewStatusPage newStatusPage) throws ApiException {
         okhttp3.Call localVarCall = createStatusPageValidateBeforeCall(newStatusPage, null);
         Type localVarReturnType = new TypeToken<StatusPageResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -205,7 +205,7 @@ public class StatusPagesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createStatusPageAsync(@javax.annotation.Nonnull NewStatusPage newStatusPage, final ApiCallback<StatusPageResponse> _callback) throws ApiException {
+    public okhttp3.Call createStatusPageAsync(@jakarta.annotation.Nonnull NewStatusPage newStatusPage, final ApiCallback<StatusPageResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createStatusPageValidateBeforeCall(newStatusPage, _callback);
         Type localVarReturnType = new TypeToken<StatusPageResponse>(){}.getType();
@@ -226,7 +226,7 @@ public class StatusPagesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteStatusPageCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteStatusPageCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -272,7 +272,7 @@ public class StatusPagesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteStatusPageValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteStatusPageValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteStatusPage(Async)");
@@ -296,7 +296,7 @@ public class StatusPagesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public StatusPageResponse deleteStatusPage(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public StatusPageResponse deleteStatusPage(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<StatusPageResponse> localVarResp = deleteStatusPageWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -315,7 +315,7 @@ public class StatusPagesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StatusPageResponse> deleteStatusPageWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public ApiResponse<StatusPageResponse> deleteStatusPageWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = deleteStatusPageValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<StatusPageResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -336,7 +336,7 @@ public class StatusPagesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteStatusPageAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<StatusPageResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteStatusPageAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<StatusPageResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteStatusPageValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<StatusPageResponse>(){}.getType();
@@ -357,7 +357,7 @@ public class StatusPagesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStatusPageCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getStatusPageCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -403,7 +403,7 @@ public class StatusPagesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getStatusPageValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getStatusPageValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getStatusPage(Async)");
@@ -427,7 +427,7 @@ public class StatusPagesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public StatusPageResponse getStatusPage(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public StatusPageResponse getStatusPage(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<StatusPageResponse> localVarResp = getStatusPageWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -446,7 +446,7 @@ public class StatusPagesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StatusPageResponse> getStatusPageWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public ApiResponse<StatusPageResponse> getStatusPageWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = getStatusPageValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<StatusPageResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -467,7 +467,7 @@ public class StatusPagesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStatusPageAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<StatusPageResponse> _callback) throws ApiException {
+    public okhttp3.Call getStatusPageAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<StatusPageResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getStatusPageValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<StatusPageResponse>(){}.getType();
@@ -497,7 +497,7 @@ public class StatusPagesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listStatusPagesCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listStatusPagesCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -586,7 +586,7 @@ public class StatusPagesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listStatusPagesValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listStatusPagesValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         return listStatusPagesCall(include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
 
     }
@@ -614,7 +614,7 @@ public class StatusPagesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public StatusPageList listStatusPages(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+    public StatusPageList listStatusPages(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
         ApiResponse<StatusPageList> localVarResp = listStatusPagesWithHttpInfo(include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
         return localVarResp.getData();
     }
@@ -642,7 +642,7 @@ public class StatusPagesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StatusPageList> listStatusPagesWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+    public ApiResponse<StatusPageList> listStatusPagesWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
         okhttp3.Call localVarCall = listStatusPagesValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, null);
         Type localVarReturnType = new TypeToken<StatusPageList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -672,7 +672,7 @@ public class StatusPagesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listStatusPagesAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback<StatusPageList> _callback) throws ApiException {
+    public okhttp3.Call listStatusPagesAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback<StatusPageList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listStatusPagesValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
         Type localVarReturnType = new TypeToken<StatusPageList>(){}.getType();
@@ -694,7 +694,7 @@ public class StatusPagesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateStatusPageCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateStatusPage updateStatusPage, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateStatusPageCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateStatusPage updateStatusPage, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -741,7 +741,7 @@ public class StatusPagesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateStatusPageValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateStatusPage updateStatusPage, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateStatusPageValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateStatusPage updateStatusPage, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateStatusPage(Async)");
@@ -771,7 +771,7 @@ public class StatusPagesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public StatusPageResponse updateStatusPage(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateStatusPage updateStatusPage) throws ApiException {
+    public StatusPageResponse updateStatusPage(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateStatusPage updateStatusPage) throws ApiException {
         ApiResponse<StatusPageResponse> localVarResp = updateStatusPageWithHttpInfo(id, updateStatusPage);
         return localVarResp.getData();
     }
@@ -791,7 +791,7 @@ public class StatusPagesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StatusPageResponse> updateStatusPageWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateStatusPage updateStatusPage) throws ApiException {
+    public ApiResponse<StatusPageResponse> updateStatusPageWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateStatusPage updateStatusPage) throws ApiException {
         okhttp3.Call localVarCall = updateStatusPageValidateBeforeCall(id, updateStatusPage, null);
         Type localVarReturnType = new TypeToken<StatusPageResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -813,7 +813,7 @@ public class StatusPagesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateStatusPageAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateStatusPage updateStatusPage, final ApiCallback<StatusPageResponse> _callback) throws ApiException {
+    public okhttp3.Call updateStatusPageAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateStatusPage updateStatusPage, final ApiCallback<StatusPageResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateStatusPageValidateBeforeCall(id, updateStatusPage, _callback);
         Type localVarReturnType = new TypeToken<StatusPageResponse>(){}.getType();

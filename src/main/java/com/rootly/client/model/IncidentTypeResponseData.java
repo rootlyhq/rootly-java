@@ -49,11 +49,11 @@ import com.rootly.client.JSON;
 /**
  * IncidentTypeResponseData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class IncidentTypeResponseData {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String id;
 
   /**
@@ -108,18 +108,18 @@ public class IncidentTypeResponseData {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private IncidentType attributes;
 
   public IncidentTypeResponseData() {
   }
 
-  public IncidentTypeResponseData id(@javax.annotation.Nonnull String id) {
+  public IncidentTypeResponseData id(@jakarta.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
@@ -128,17 +128,17 @@ public class IncidentTypeResponseData {
    * Unique ID of the incident type
    * @return id
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(@javax.annotation.Nonnull String id) {
+  public void setId(@jakarta.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public IncidentTypeResponseData type(@javax.annotation.Nonnull TypeEnum type) {
+  public IncidentTypeResponseData type(@jakarta.annotation.Nonnull TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -147,17 +147,17 @@ public class IncidentTypeResponseData {
    * Get type
    * @return type
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public TypeEnum getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nonnull TypeEnum type) {
+  public void setType(@jakarta.annotation.Nonnull TypeEnum type) {
     this.type = type;
   }
 
 
-  public IncidentTypeResponseData attributes(@javax.annotation.Nonnull IncidentType attributes) {
+  public IncidentTypeResponseData attributes(@jakarta.annotation.Nonnull IncidentType attributes) {
     this.attributes = attributes;
     return this;
   }
@@ -166,12 +166,12 @@ public class IncidentTypeResponseData {
    * Get attributes
    * @return attributes
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public IncidentType getAttributes() {
     return attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nonnull IncidentType attributes) {
+  public void setAttributes(@jakarta.annotation.Nonnull IncidentType attributes) {
     this.attributes = attributes;
   }
 

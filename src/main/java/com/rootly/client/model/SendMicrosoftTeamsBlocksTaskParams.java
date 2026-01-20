@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * SendMicrosoftTeamsBlocksTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SendMicrosoftTeamsBlocksTaskParams {
   /**
    * Gets or Sets taskType
@@ -102,18 +102,18 @@ public class SendMicrosoftTeamsBlocksTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_ATTACHMENTS = "attachments";
   @SerializedName(SERIALIZED_NAME_ATTACHMENTS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String attachments;
 
   public SendMicrosoftTeamsBlocksTaskParams() {
   }
 
-  public SendMicrosoftTeamsBlocksTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public SendMicrosoftTeamsBlocksTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -122,17 +122,17 @@ public class SendMicrosoftTeamsBlocksTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public SendMicrosoftTeamsBlocksTaskParams attachments(@javax.annotation.Nonnull String attachments) {
+  public SendMicrosoftTeamsBlocksTaskParams attachments(@jakarta.annotation.Nonnull String attachments) {
     this.attachments = attachments;
     return this;
   }
@@ -141,12 +141,12 @@ public class SendMicrosoftTeamsBlocksTaskParams {
    * Support liquid markup. Needs to be a valid JSON string after liquid is parsed
    * @return attachments
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getAttachments() {
     return attachments;
   }
 
-  public void setAttachments(@javax.annotation.Nonnull String attachments) {
+  public void setAttachments(@jakarta.annotation.Nonnull String attachments) {
     this.attachments = attachments;
   }
 

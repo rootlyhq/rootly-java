@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * CreatePagerdutyStatusUpdateTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreatePagerdutyStatusUpdateTaskParams {
   /**
    * Gets or Sets taskType
@@ -102,23 +102,23 @@ public class CreatePagerdutyStatusUpdateTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_PAGERDUTY_INCIDENT_ID = "pagerduty_incident_id";
   @SerializedName(SERIALIZED_NAME_PAGERDUTY_INCIDENT_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String pagerdutyIncidentId;
 
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String message;
 
   public CreatePagerdutyStatusUpdateTaskParams() {
   }
 
-  public CreatePagerdutyStatusUpdateTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public CreatePagerdutyStatusUpdateTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -127,17 +127,17 @@ public class CreatePagerdutyStatusUpdateTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public CreatePagerdutyStatusUpdateTaskParams pagerdutyIncidentId(@javax.annotation.Nonnull String pagerdutyIncidentId) {
+  public CreatePagerdutyStatusUpdateTaskParams pagerdutyIncidentId(@jakarta.annotation.Nonnull String pagerdutyIncidentId) {
     this.pagerdutyIncidentId = pagerdutyIncidentId;
     return this;
   }
@@ -146,17 +146,17 @@ public class CreatePagerdutyStatusUpdateTaskParams {
    * PagerDuty incident id
    * @return pagerdutyIncidentId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getPagerdutyIncidentId() {
     return pagerdutyIncidentId;
   }
 
-  public void setPagerdutyIncidentId(@javax.annotation.Nonnull String pagerdutyIncidentId) {
+  public void setPagerdutyIncidentId(@jakarta.annotation.Nonnull String pagerdutyIncidentId) {
     this.pagerdutyIncidentId = pagerdutyIncidentId;
   }
 
 
-  public CreatePagerdutyStatusUpdateTaskParams message(@javax.annotation.Nonnull String message) {
+  public CreatePagerdutyStatusUpdateTaskParams message(@jakarta.annotation.Nonnull String message) {
     this.message = message;
     return this;
   }
@@ -165,12 +165,12 @@ public class CreatePagerdutyStatusUpdateTaskParams {
    * A message outlining the incident&#39;s resolution in PagerDuty
    * @return message
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getMessage() {
     return message;
   }
 
-  public void setMessage(@javax.annotation.Nonnull String message) {
+  public void setMessage(@jakarta.annotation.Nonnull String message) {
     this.message = message;
   }
 

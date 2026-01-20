@@ -92,7 +92,7 @@ public class IncidentPermissionSetBooleansApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createIncidentPermissionSetBooleanCall(@javax.annotation.Nonnull String incidentPermissionSetId, @javax.annotation.Nonnull NewIncidentPermissionSetBoolean newIncidentPermissionSetBoolean, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createIncidentPermissionSetBooleanCall(@jakarta.annotation.Nonnull String incidentPermissionSetId, @jakarta.annotation.Nonnull NewIncidentPermissionSetBoolean newIncidentPermissionSetBoolean, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -139,7 +139,7 @@ public class IncidentPermissionSetBooleansApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createIncidentPermissionSetBooleanValidateBeforeCall(@javax.annotation.Nonnull String incidentPermissionSetId, @javax.annotation.Nonnull NewIncidentPermissionSetBoolean newIncidentPermissionSetBoolean, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createIncidentPermissionSetBooleanValidateBeforeCall(@jakarta.annotation.Nonnull String incidentPermissionSetId, @jakarta.annotation.Nonnull NewIncidentPermissionSetBoolean newIncidentPermissionSetBoolean, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'incidentPermissionSetId' is set
         if (incidentPermissionSetId == null) {
             throw new ApiException("Missing the required parameter 'incidentPermissionSetId' when calling createIncidentPermissionSetBoolean(Async)");
@@ -170,7 +170,7 @@ public class IncidentPermissionSetBooleansApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentPermissionSetBooleanResponse createIncidentPermissionSetBoolean(@javax.annotation.Nonnull String incidentPermissionSetId, @javax.annotation.Nonnull NewIncidentPermissionSetBoolean newIncidentPermissionSetBoolean) throws ApiException {
+    public IncidentPermissionSetBooleanResponse createIncidentPermissionSetBoolean(@jakarta.annotation.Nonnull String incidentPermissionSetId, @jakarta.annotation.Nonnull NewIncidentPermissionSetBoolean newIncidentPermissionSetBoolean) throws ApiException {
         ApiResponse<IncidentPermissionSetBooleanResponse> localVarResp = createIncidentPermissionSetBooleanWithHttpInfo(incidentPermissionSetId, newIncidentPermissionSetBoolean);
         return localVarResp.getData();
     }
@@ -191,7 +191,7 @@ public class IncidentPermissionSetBooleansApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentPermissionSetBooleanResponse> createIncidentPermissionSetBooleanWithHttpInfo(@javax.annotation.Nonnull String incidentPermissionSetId, @javax.annotation.Nonnull NewIncidentPermissionSetBoolean newIncidentPermissionSetBoolean) throws ApiException {
+    public ApiResponse<IncidentPermissionSetBooleanResponse> createIncidentPermissionSetBooleanWithHttpInfo(@jakarta.annotation.Nonnull String incidentPermissionSetId, @jakarta.annotation.Nonnull NewIncidentPermissionSetBoolean newIncidentPermissionSetBoolean) throws ApiException {
         okhttp3.Call localVarCall = createIncidentPermissionSetBooleanValidateBeforeCall(incidentPermissionSetId, newIncidentPermissionSetBoolean, null);
         Type localVarReturnType = new TypeToken<IncidentPermissionSetBooleanResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -214,7 +214,7 @@ public class IncidentPermissionSetBooleansApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createIncidentPermissionSetBooleanAsync(@javax.annotation.Nonnull String incidentPermissionSetId, @javax.annotation.Nonnull NewIncidentPermissionSetBoolean newIncidentPermissionSetBoolean, final ApiCallback<IncidentPermissionSetBooleanResponse> _callback) throws ApiException {
+    public okhttp3.Call createIncidentPermissionSetBooleanAsync(@jakarta.annotation.Nonnull String incidentPermissionSetId, @jakarta.annotation.Nonnull NewIncidentPermissionSetBoolean newIncidentPermissionSetBoolean, final ApiCallback<IncidentPermissionSetBooleanResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createIncidentPermissionSetBooleanValidateBeforeCall(incidentPermissionSetId, newIncidentPermissionSetBoolean, _callback);
         Type localVarReturnType = new TypeToken<IncidentPermissionSetBooleanResponse>(){}.getType();
@@ -235,7 +235,7 @@ public class IncidentPermissionSetBooleansApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteIncidentPermissionSetBooleanCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteIncidentPermissionSetBooleanCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -281,7 +281,7 @@ public class IncidentPermissionSetBooleansApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteIncidentPermissionSetBooleanValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteIncidentPermissionSetBooleanValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteIncidentPermissionSetBoolean(Async)");
@@ -305,7 +305,7 @@ public class IncidentPermissionSetBooleansApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentPermissionSetBooleanResponse deleteIncidentPermissionSetBoolean(@javax.annotation.Nonnull String id) throws ApiException {
+    public IncidentPermissionSetBooleanResponse deleteIncidentPermissionSetBoolean(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<IncidentPermissionSetBooleanResponse> localVarResp = deleteIncidentPermissionSetBooleanWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -324,7 +324,7 @@ public class IncidentPermissionSetBooleansApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentPermissionSetBooleanResponse> deleteIncidentPermissionSetBooleanWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<IncidentPermissionSetBooleanResponse> deleteIncidentPermissionSetBooleanWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteIncidentPermissionSetBooleanValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<IncidentPermissionSetBooleanResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -345,7 +345,7 @@ public class IncidentPermissionSetBooleansApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteIncidentPermissionSetBooleanAsync(@javax.annotation.Nonnull String id, final ApiCallback<IncidentPermissionSetBooleanResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteIncidentPermissionSetBooleanAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<IncidentPermissionSetBooleanResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteIncidentPermissionSetBooleanValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<IncidentPermissionSetBooleanResponse>(){}.getType();
@@ -366,7 +366,7 @@ public class IncidentPermissionSetBooleansApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getIncidentPermissionSetBooleanCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getIncidentPermissionSetBooleanCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -412,7 +412,7 @@ public class IncidentPermissionSetBooleansApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getIncidentPermissionSetBooleanValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getIncidentPermissionSetBooleanValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getIncidentPermissionSetBoolean(Async)");
@@ -436,7 +436,7 @@ public class IncidentPermissionSetBooleansApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentPermissionSetBooleanResponse getIncidentPermissionSetBoolean(@javax.annotation.Nonnull String id) throws ApiException {
+    public IncidentPermissionSetBooleanResponse getIncidentPermissionSetBoolean(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<IncidentPermissionSetBooleanResponse> localVarResp = getIncidentPermissionSetBooleanWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -455,7 +455,7 @@ public class IncidentPermissionSetBooleansApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentPermissionSetBooleanResponse> getIncidentPermissionSetBooleanWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<IncidentPermissionSetBooleanResponse> getIncidentPermissionSetBooleanWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getIncidentPermissionSetBooleanValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<IncidentPermissionSetBooleanResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -476,7 +476,7 @@ public class IncidentPermissionSetBooleansApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getIncidentPermissionSetBooleanAsync(@javax.annotation.Nonnull String id, final ApiCallback<IncidentPermissionSetBooleanResponse> _callback) throws ApiException {
+    public okhttp3.Call getIncidentPermissionSetBooleanAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<IncidentPermissionSetBooleanResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getIncidentPermissionSetBooleanValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<IncidentPermissionSetBooleanResponse>(){}.getType();
@@ -505,7 +505,7 @@ public class IncidentPermissionSetBooleansApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listIncidentPermissionSetBooleansCall(@javax.annotation.Nonnull String incidentPermissionSetId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listIncidentPermissionSetBooleansCall(@jakarta.annotation.Nonnull String incidentPermissionSetId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -587,7 +587,7 @@ public class IncidentPermissionSetBooleansApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listIncidentPermissionSetBooleansValidateBeforeCall(@javax.annotation.Nonnull String incidentPermissionSetId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listIncidentPermissionSetBooleansValidateBeforeCall(@jakarta.annotation.Nonnull String incidentPermissionSetId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'incidentPermissionSetId' is set
         if (incidentPermissionSetId == null) {
             throw new ApiException("Missing the required parameter 'incidentPermissionSetId' when calling listIncidentPermissionSetBooleans(Async)");
@@ -619,7 +619,7 @@ public class IncidentPermissionSetBooleansApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentPermissionSetBooleanList listIncidentPermissionSetBooleans(@javax.annotation.Nonnull String incidentPermissionSetId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+    public IncidentPermissionSetBooleanList listIncidentPermissionSetBooleans(@jakarta.annotation.Nonnull String incidentPermissionSetId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
         ApiResponse<IncidentPermissionSetBooleanList> localVarResp = listIncidentPermissionSetBooleansWithHttpInfo(incidentPermissionSetId, include, pageNumber, pageSize, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
         return localVarResp.getData();
     }
@@ -646,7 +646,7 @@ public class IncidentPermissionSetBooleansApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentPermissionSetBooleanList> listIncidentPermissionSetBooleansWithHttpInfo(@javax.annotation.Nonnull String incidentPermissionSetId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+    public ApiResponse<IncidentPermissionSetBooleanList> listIncidentPermissionSetBooleansWithHttpInfo(@jakarta.annotation.Nonnull String incidentPermissionSetId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
         okhttp3.Call localVarCall = listIncidentPermissionSetBooleansValidateBeforeCall(incidentPermissionSetId, include, pageNumber, pageSize, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, null);
         Type localVarReturnType = new TypeToken<IncidentPermissionSetBooleanList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -675,7 +675,7 @@ public class IncidentPermissionSetBooleansApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listIncidentPermissionSetBooleansAsync(@javax.annotation.Nonnull String incidentPermissionSetId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback<IncidentPermissionSetBooleanList> _callback) throws ApiException {
+    public okhttp3.Call listIncidentPermissionSetBooleansAsync(@jakarta.annotation.Nonnull String incidentPermissionSetId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback<IncidentPermissionSetBooleanList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listIncidentPermissionSetBooleansValidateBeforeCall(incidentPermissionSetId, include, pageNumber, pageSize, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
         Type localVarReturnType = new TypeToken<IncidentPermissionSetBooleanList>(){}.getType();
@@ -697,7 +697,7 @@ public class IncidentPermissionSetBooleansApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateIncidentPermissionSetBooleanCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateIncidentPermissionSetBoolean updateIncidentPermissionSetBoolean, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateIncidentPermissionSetBooleanCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateIncidentPermissionSetBoolean updateIncidentPermissionSetBoolean, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -744,7 +744,7 @@ public class IncidentPermissionSetBooleansApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateIncidentPermissionSetBooleanValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateIncidentPermissionSetBoolean updateIncidentPermissionSetBoolean, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateIncidentPermissionSetBooleanValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateIncidentPermissionSetBoolean updateIncidentPermissionSetBoolean, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateIncidentPermissionSetBoolean(Async)");
@@ -774,7 +774,7 @@ public class IncidentPermissionSetBooleansApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentPermissionSetBooleanResponse updateIncidentPermissionSetBoolean(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateIncidentPermissionSetBoolean updateIncidentPermissionSetBoolean) throws ApiException {
+    public IncidentPermissionSetBooleanResponse updateIncidentPermissionSetBoolean(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateIncidentPermissionSetBoolean updateIncidentPermissionSetBoolean) throws ApiException {
         ApiResponse<IncidentPermissionSetBooleanResponse> localVarResp = updateIncidentPermissionSetBooleanWithHttpInfo(id, updateIncidentPermissionSetBoolean);
         return localVarResp.getData();
     }
@@ -794,7 +794,7 @@ public class IncidentPermissionSetBooleansApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentPermissionSetBooleanResponse> updateIncidentPermissionSetBooleanWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateIncidentPermissionSetBoolean updateIncidentPermissionSetBoolean) throws ApiException {
+    public ApiResponse<IncidentPermissionSetBooleanResponse> updateIncidentPermissionSetBooleanWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateIncidentPermissionSetBoolean updateIncidentPermissionSetBoolean) throws ApiException {
         okhttp3.Call localVarCall = updateIncidentPermissionSetBooleanValidateBeforeCall(id, updateIncidentPermissionSetBoolean, null);
         Type localVarReturnType = new TypeToken<IncidentPermissionSetBooleanResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -816,7 +816,7 @@ public class IncidentPermissionSetBooleansApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateIncidentPermissionSetBooleanAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateIncidentPermissionSetBoolean updateIncidentPermissionSetBoolean, final ApiCallback<IncidentPermissionSetBooleanResponse> _callback) throws ApiException {
+    public okhttp3.Call updateIncidentPermissionSetBooleanAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateIncidentPermissionSetBoolean updateIncidentPermissionSetBoolean, final ApiCallback<IncidentPermissionSetBooleanResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateIncidentPermissionSetBooleanValidateBeforeCall(id, updateIncidentPermissionSetBoolean, _callback);
         Type localVarReturnType = new TypeToken<IncidentPermissionSetBooleanResponse>(){}.getType();

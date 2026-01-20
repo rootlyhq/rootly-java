@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * NewOnCallShadowDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewOnCallShadowDataAttributes {
   /**
    * Gets or Sets shadowableType
@@ -105,33 +105,33 @@ public class NewOnCallShadowDataAttributes {
 
   public static final String SERIALIZED_NAME_SHADOWABLE_TYPE = "shadowable_type";
   @SerializedName(SERIALIZED_NAME_SHADOWABLE_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private ShadowableTypeEnum shadowableType;
 
   public static final String SERIALIZED_NAME_SHADOWABLE_ID = "shadowable_id";
   @SerializedName(SERIALIZED_NAME_SHADOWABLE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String shadowableId;
 
   public static final String SERIALIZED_NAME_SHADOW_USER_ID = "shadow_user_id";
   @SerializedName(SERIALIZED_NAME_SHADOW_USER_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Integer shadowUserId;
 
   public static final String SERIALIZED_NAME_STARTS_AT = "starts_at";
   @SerializedName(SERIALIZED_NAME_STARTS_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private OffsetDateTime startsAt;
 
   public static final String SERIALIZED_NAME_ENDS_AT = "ends_at";
   @SerializedName(SERIALIZED_NAME_ENDS_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private OffsetDateTime endsAt;
 
   public NewOnCallShadowDataAttributes() {
   }
 
-  public NewOnCallShadowDataAttributes shadowableType(@javax.annotation.Nonnull ShadowableTypeEnum shadowableType) {
+  public NewOnCallShadowDataAttributes shadowableType(@jakarta.annotation.Nonnull ShadowableTypeEnum shadowableType) {
     this.shadowableType = shadowableType;
     return this;
   }
@@ -140,17 +140,17 @@ public class NewOnCallShadowDataAttributes {
    * Get shadowableType
    * @return shadowableType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public ShadowableTypeEnum getShadowableType() {
     return shadowableType;
   }
 
-  public void setShadowableType(@javax.annotation.Nonnull ShadowableTypeEnum shadowableType) {
+  public void setShadowableType(@jakarta.annotation.Nonnull ShadowableTypeEnum shadowableType) {
     this.shadowableType = shadowableType;
   }
 
 
-  public NewOnCallShadowDataAttributes shadowableId(@javax.annotation.Nonnull String shadowableId) {
+  public NewOnCallShadowDataAttributes shadowableId(@jakarta.annotation.Nonnull String shadowableId) {
     this.shadowableId = shadowableId;
     return this;
   }
@@ -159,17 +159,17 @@ public class NewOnCallShadowDataAttributes {
    * ID of schedule or user the shadow user is shadowing
    * @return shadowableId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getShadowableId() {
     return shadowableId;
   }
 
-  public void setShadowableId(@javax.annotation.Nonnull String shadowableId) {
+  public void setShadowableId(@jakarta.annotation.Nonnull String shadowableId) {
     this.shadowableId = shadowableId;
   }
 
 
-  public NewOnCallShadowDataAttributes shadowUserId(@javax.annotation.Nonnull Integer shadowUserId) {
+  public NewOnCallShadowDataAttributes shadowUserId(@jakarta.annotation.Nonnull Integer shadowUserId) {
     this.shadowUserId = shadowUserId;
     return this;
   }
@@ -178,17 +178,17 @@ public class NewOnCallShadowDataAttributes {
    * Which user the shadow shift belongs to.
    * @return shadowUserId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Integer getShadowUserId() {
     return shadowUserId;
   }
 
-  public void setShadowUserId(@javax.annotation.Nonnull Integer shadowUserId) {
+  public void setShadowUserId(@jakarta.annotation.Nonnull Integer shadowUserId) {
     this.shadowUserId = shadowUserId;
   }
 
 
-  public NewOnCallShadowDataAttributes startsAt(@javax.annotation.Nonnull OffsetDateTime startsAt) {
+  public NewOnCallShadowDataAttributes startsAt(@jakarta.annotation.Nonnull OffsetDateTime startsAt) {
     this.startsAt = startsAt;
     return this;
   }
@@ -197,17 +197,17 @@ public class NewOnCallShadowDataAttributes {
    * Start datetime of shadow shift
    * @return startsAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public OffsetDateTime getStartsAt() {
     return startsAt;
   }
 
-  public void setStartsAt(@javax.annotation.Nonnull OffsetDateTime startsAt) {
+  public void setStartsAt(@jakarta.annotation.Nonnull OffsetDateTime startsAt) {
     this.startsAt = startsAt;
   }
 
 
-  public NewOnCallShadowDataAttributes endsAt(@javax.annotation.Nonnull OffsetDateTime endsAt) {
+  public NewOnCallShadowDataAttributes endsAt(@jakarta.annotation.Nonnull OffsetDateTime endsAt) {
     this.endsAt = endsAt;
     return this;
   }
@@ -216,12 +216,12 @@ public class NewOnCallShadowDataAttributes {
    * End datetime for shadow shift
    * @return endsAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public OffsetDateTime getEndsAt() {
     return endsAt;
   }
 
-  public void setEndsAt(@javax.annotation.Nonnull OffsetDateTime endsAt) {
+  public void setEndsAt(@jakarta.annotation.Nonnull OffsetDateTime endsAt) {
     this.endsAt = endsAt;
   }
 

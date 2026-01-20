@@ -49,17 +49,17 @@ import com.rootly.client.JSON;
 /**
  * FormFieldPlacementConditionResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class FormFieldPlacementConditionResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private FormFieldPlacementConditionResponseData data;
 
   public FormFieldPlacementConditionResponse() {
   }
 
-  public FormFieldPlacementConditionResponse data(@javax.annotation.Nonnull FormFieldPlacementConditionResponseData data) {
+  public FormFieldPlacementConditionResponse data(@jakarta.annotation.Nonnull FormFieldPlacementConditionResponseData data) {
     this.data = data;
     return this;
   }
@@ -68,12 +68,12 @@ public class FormFieldPlacementConditionResponse {
    * Get data
    * @return data
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public FormFieldPlacementConditionResponseData getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nonnull FormFieldPlacementConditionResponseData data) {
+  public void setData(@jakarta.annotation.Nonnull FormFieldPlacementConditionResponseData data) {
     this.data = data;
   }
 

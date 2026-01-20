@@ -49,17 +49,17 @@ import com.rootly.client.JSON;
 /**
  * NewWorkflow
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewWorkflow {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private NewWorkflowData data;
 
   public NewWorkflow() {
   }
 
-  public NewWorkflow data(@javax.annotation.Nonnull NewWorkflowData data) {
+  public NewWorkflow data(@jakarta.annotation.Nonnull NewWorkflowData data) {
     this.data = data;
     return this;
   }
@@ -68,12 +68,12 @@ public class NewWorkflow {
    * Get data
    * @return data
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public NewWorkflowData getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nonnull NewWorkflowData data) {
+  public void setData(@jakarta.annotation.Nonnull NewWorkflowData data) {
     this.data = data;
   }
 

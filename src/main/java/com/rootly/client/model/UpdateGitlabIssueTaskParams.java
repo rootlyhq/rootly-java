@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateGitlabIssueTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateGitlabIssueTaskParams {
   /**
    * Gets or Sets taskType
@@ -103,12 +103,12 @@ public class UpdateGitlabIssueTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_ISSUE_ID = "issue_id";
   @SerializedName(SERIALIZED_NAME_ISSUE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String issueId;
 
   /**
@@ -169,38 +169,38 @@ public class UpdateGitlabIssueTaskParams {
 
   public static final String SERIALIZED_NAME_ISSUE_TYPE = "issue_type";
   @SerializedName(SERIALIZED_NAME_ISSUE_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private IssueTypeEnum issueType;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String title;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_LABELS = "labels";
   @SerializedName(SERIALIZED_NAME_LABELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String labels;
 
   public static final String SERIALIZED_NAME_DUE_DATE = "due_date";
   @SerializedName(SERIALIZED_NAME_DUE_DATE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String dueDate;
 
   public static final String SERIALIZED_NAME_COMPLETION = "completion";
   @SerializedName(SERIALIZED_NAME_COMPLETION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private AddActionItemTaskParamsPostToSlackChannelsInner completion;
 
   public UpdateGitlabIssueTaskParams() {
   }
 
-  public UpdateGitlabIssueTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public UpdateGitlabIssueTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -209,17 +209,17 @@ public class UpdateGitlabIssueTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public UpdateGitlabIssueTaskParams issueId(@javax.annotation.Nonnull String issueId) {
+  public UpdateGitlabIssueTaskParams issueId(@jakarta.annotation.Nonnull String issueId) {
     this.issueId = issueId;
     return this;
   }
@@ -228,17 +228,17 @@ public class UpdateGitlabIssueTaskParams {
    * The issue id
    * @return issueId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getIssueId() {
     return issueId;
   }
 
-  public void setIssueId(@javax.annotation.Nonnull String issueId) {
+  public void setIssueId(@jakarta.annotation.Nonnull String issueId) {
     this.issueId = issueId;
   }
 
 
-  public UpdateGitlabIssueTaskParams issueType(@javax.annotation.Nullable IssueTypeEnum issueType) {
+  public UpdateGitlabIssueTaskParams issueType(@jakarta.annotation.Nullable IssueTypeEnum issueType) {
     this.issueType = issueType;
     return this;
   }
@@ -247,17 +247,17 @@ public class UpdateGitlabIssueTaskParams {
    * The issue type
    * @return issueType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public IssueTypeEnum getIssueType() {
     return issueType;
   }
 
-  public void setIssueType(@javax.annotation.Nullable IssueTypeEnum issueType) {
+  public void setIssueType(@jakarta.annotation.Nullable IssueTypeEnum issueType) {
     this.issueType = issueType;
   }
 
 
-  public UpdateGitlabIssueTaskParams title(@javax.annotation.Nullable String title) {
+  public UpdateGitlabIssueTaskParams title(@jakarta.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
@@ -266,17 +266,17 @@ public class UpdateGitlabIssueTaskParams {
    * The issue title
    * @return title
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nullable String title) {
+  public void setTitle(@jakarta.annotation.Nullable String title) {
     this.title = title;
   }
 
 
-  public UpdateGitlabIssueTaskParams description(@javax.annotation.Nullable String description) {
+  public UpdateGitlabIssueTaskParams description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -285,17 +285,17 @@ public class UpdateGitlabIssueTaskParams {
    * The issue description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UpdateGitlabIssueTaskParams labels(@javax.annotation.Nullable String labels) {
+  public UpdateGitlabIssueTaskParams labels(@jakarta.annotation.Nullable String labels) {
     this.labels = labels;
     return this;
   }
@@ -304,17 +304,17 @@ public class UpdateGitlabIssueTaskParams {
    * The issue labels
    * @return labels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getLabels() {
     return labels;
   }
 
-  public void setLabels(@javax.annotation.Nullable String labels) {
+  public void setLabels(@jakarta.annotation.Nullable String labels) {
     this.labels = labels;
   }
 
 
-  public UpdateGitlabIssueTaskParams dueDate(@javax.annotation.Nullable String dueDate) {
+  public UpdateGitlabIssueTaskParams dueDate(@jakarta.annotation.Nullable String dueDate) {
     this.dueDate = dueDate;
     return this;
   }
@@ -323,17 +323,17 @@ public class UpdateGitlabIssueTaskParams {
    * The due date
    * @return dueDate
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDueDate() {
     return dueDate;
   }
 
-  public void setDueDate(@javax.annotation.Nullable String dueDate) {
+  public void setDueDate(@jakarta.annotation.Nullable String dueDate) {
     this.dueDate = dueDate;
   }
 
 
-  public UpdateGitlabIssueTaskParams completion(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner completion) {
+  public UpdateGitlabIssueTaskParams completion(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner completion) {
     this.completion = completion;
     return this;
   }
@@ -342,12 +342,12 @@ public class UpdateGitlabIssueTaskParams {
    * Get completion
    * @return completion
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public AddActionItemTaskParamsPostToSlackChannelsInner getCompletion() {
     return completion;
   }
 
-  public void setCompletion(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner completion) {
+  public void setCompletion(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner completion) {
     this.completion = completion;
   }
 

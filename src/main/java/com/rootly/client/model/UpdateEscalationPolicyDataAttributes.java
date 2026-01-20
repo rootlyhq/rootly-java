@@ -52,42 +52,42 @@ import com.rootly.client.JSON;
 /**
  * UpdateEscalationPolicyDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateEscalationPolicyDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_REPEAT_COUNT = "repeat_count";
   @SerializedName(SERIALIZED_NAME_REPEAT_COUNT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer repeatCount;
 
   public static final String SERIALIZED_NAME_GROUP_IDS = "group_ids";
   @SerializedName(SERIALIZED_NAME_GROUP_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> groupIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SERVICE_IDS = "service_ids";
   @SerializedName(SERIALIZED_NAME_SERVICE_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> serviceIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_BUSINESS_HOURS = "business_hours";
   @SerializedName(SERIALIZED_NAME_BUSINESS_HOURS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private NewEscalationPolicyDataAttributesBusinessHours businessHours;
 
   public UpdateEscalationPolicyDataAttributes() {
   }
 
-  public UpdateEscalationPolicyDataAttributes name(@javax.annotation.Nullable String name) {
+  public UpdateEscalationPolicyDataAttributes name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -96,17 +96,17 @@ public class UpdateEscalationPolicyDataAttributes {
    * The name of the escalation policy
    * @return name
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public UpdateEscalationPolicyDataAttributes description(@javax.annotation.Nullable String description) {
+  public UpdateEscalationPolicyDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -115,17 +115,17 @@ public class UpdateEscalationPolicyDataAttributes {
    * The description of the escalation policy
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UpdateEscalationPolicyDataAttributes repeatCount(@javax.annotation.Nullable Integer repeatCount) {
+  public UpdateEscalationPolicyDataAttributes repeatCount(@jakarta.annotation.Nullable Integer repeatCount) {
     this.repeatCount = repeatCount;
     return this;
   }
@@ -134,17 +134,17 @@ public class UpdateEscalationPolicyDataAttributes {
    * The number of times this policy will be executed until someone acknowledges the alert
    * @return repeatCount
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getRepeatCount() {
     return repeatCount;
   }
 
-  public void setRepeatCount(@javax.annotation.Nullable Integer repeatCount) {
+  public void setRepeatCount(@jakarta.annotation.Nullable Integer repeatCount) {
     this.repeatCount = repeatCount;
   }
 
 
-  public UpdateEscalationPolicyDataAttributes groupIds(@javax.annotation.Nullable List<String> groupIds) {
+  public UpdateEscalationPolicyDataAttributes groupIds(@jakarta.annotation.Nullable List<String> groupIds) {
     this.groupIds = groupIds;
     return this;
   }
@@ -161,17 +161,17 @@ public class UpdateEscalationPolicyDataAttributes {
    * Associated groups (alerting the group will trigger escalation policy)
    * @return groupIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getGroupIds() {
     return groupIds;
   }
 
-  public void setGroupIds(@javax.annotation.Nullable List<String> groupIds) {
+  public void setGroupIds(@jakarta.annotation.Nullable List<String> groupIds) {
     this.groupIds = groupIds;
   }
 
 
-  public UpdateEscalationPolicyDataAttributes serviceIds(@javax.annotation.Nullable List<String> serviceIds) {
+  public UpdateEscalationPolicyDataAttributes serviceIds(@jakarta.annotation.Nullable List<String> serviceIds) {
     this.serviceIds = serviceIds;
     return this;
   }
@@ -188,17 +188,17 @@ public class UpdateEscalationPolicyDataAttributes {
    * Associated services (alerting the service will trigger escalation policy)
    * @return serviceIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getServiceIds() {
     return serviceIds;
   }
 
-  public void setServiceIds(@javax.annotation.Nullable List<String> serviceIds) {
+  public void setServiceIds(@jakarta.annotation.Nullable List<String> serviceIds) {
     this.serviceIds = serviceIds;
   }
 
 
-  public UpdateEscalationPolicyDataAttributes businessHours(@javax.annotation.Nullable NewEscalationPolicyDataAttributesBusinessHours businessHours) {
+  public UpdateEscalationPolicyDataAttributes businessHours(@jakarta.annotation.Nullable NewEscalationPolicyDataAttributesBusinessHours businessHours) {
     this.businessHours = businessHours;
     return this;
   }
@@ -207,12 +207,12 @@ public class UpdateEscalationPolicyDataAttributes {
    * Get businessHours
    * @return businessHours
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public NewEscalationPolicyDataAttributesBusinessHours getBusinessHours() {
     return businessHours;
   }
 
-  public void setBusinessHours(@javax.annotation.Nullable NewEscalationPolicyDataAttributesBusinessHours businessHours) {
+  public void setBusinessHours(@jakarta.annotation.Nullable NewEscalationPolicyDataAttributesBusinessHours businessHours) {
     this.businessHours = businessHours;
   }
 

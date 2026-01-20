@@ -48,11 +48,11 @@ import com.rootly.client.JSON;
 /**
  * IncidentFeedback
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class IncidentFeedback {
   public static final String SERIALIZED_NAME_FEEDBACK = "feedback";
   @SerializedName(SERIALIZED_NAME_FEEDBACK)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String feedback;
 
   /**
@@ -115,28 +115,28 @@ public class IncidentFeedback {
 
   public static final String SERIALIZED_NAME_RATING = "rating";
   @SerializedName(SERIALIZED_NAME_RATING)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private RatingEnum rating;
 
   public static final String SERIALIZED_NAME_ANONYMOUS = "anonymous";
   @SerializedName(SERIALIZED_NAME_ANONYMOUS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Boolean anonymous;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public IncidentFeedback() {
   }
 
-  public IncidentFeedback feedback(@javax.annotation.Nonnull String feedback) {
+  public IncidentFeedback feedback(@jakarta.annotation.Nonnull String feedback) {
     this.feedback = feedback;
     return this;
   }
@@ -145,17 +145,17 @@ public class IncidentFeedback {
    * The feedback of the incident feedback
    * @return feedback
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getFeedback() {
     return feedback;
   }
 
-  public void setFeedback(@javax.annotation.Nonnull String feedback) {
+  public void setFeedback(@jakarta.annotation.Nonnull String feedback) {
     this.feedback = feedback;
   }
 
 
-  public IncidentFeedback rating(@javax.annotation.Nonnull RatingEnum rating) {
+  public IncidentFeedback rating(@jakarta.annotation.Nonnull RatingEnum rating) {
     this.rating = rating;
     return this;
   }
@@ -164,17 +164,17 @@ public class IncidentFeedback {
    * The rating of the incident feedback
    * @return rating
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public RatingEnum getRating() {
     return rating;
   }
 
-  public void setRating(@javax.annotation.Nonnull RatingEnum rating) {
+  public void setRating(@jakarta.annotation.Nonnull RatingEnum rating) {
     this.rating = rating;
   }
 
 
-  public IncidentFeedback anonymous(@javax.annotation.Nonnull Boolean anonymous) {
+  public IncidentFeedback anonymous(@jakarta.annotation.Nonnull Boolean anonymous) {
     this.anonymous = anonymous;
     return this;
   }
@@ -183,17 +183,17 @@ public class IncidentFeedback {
    * Is the feedback anonymous?
    * @return anonymous
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Boolean getAnonymous() {
     return anonymous;
   }
 
-  public void setAnonymous(@javax.annotation.Nonnull Boolean anonymous) {
+  public void setAnonymous(@jakarta.annotation.Nonnull Boolean anonymous) {
     this.anonymous = anonymous;
   }
 
 
-  public IncidentFeedback createdAt(@javax.annotation.Nonnull String createdAt) {
+  public IncidentFeedback createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -202,17 +202,17 @@ public class IncidentFeedback {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public IncidentFeedback updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public IncidentFeedback updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -221,12 +221,12 @@ public class IncidentFeedback {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

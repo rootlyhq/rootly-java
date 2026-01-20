@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * CreateZendeskJiraLinkTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateZendeskJiraLinkTaskParams {
   /**
    * Gets or Sets taskType
@@ -102,28 +102,28 @@ public class CreateZendeskJiraLinkTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_JIRA_ISSUE_ID = "jira_issue_id";
   @SerializedName(SERIALIZED_NAME_JIRA_ISSUE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String jiraIssueId;
 
   public static final String SERIALIZED_NAME_JIRA_ISSUE_KEY = "jira_issue_key";
   @SerializedName(SERIALIZED_NAME_JIRA_ISSUE_KEY)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String jiraIssueKey;
 
   public static final String SERIALIZED_NAME_ZENDESK_TICKET_ID = "zendesk_ticket_id";
   @SerializedName(SERIALIZED_NAME_ZENDESK_TICKET_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String zendeskTicketId;
 
   public CreateZendeskJiraLinkTaskParams() {
   }
 
-  public CreateZendeskJiraLinkTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public CreateZendeskJiraLinkTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -132,17 +132,17 @@ public class CreateZendeskJiraLinkTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public CreateZendeskJiraLinkTaskParams jiraIssueId(@javax.annotation.Nonnull String jiraIssueId) {
+  public CreateZendeskJiraLinkTaskParams jiraIssueId(@jakarta.annotation.Nonnull String jiraIssueId) {
     this.jiraIssueId = jiraIssueId;
     return this;
   }
@@ -151,17 +151,17 @@ public class CreateZendeskJiraLinkTaskParams {
    * Jira Issue Id.
    * @return jiraIssueId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getJiraIssueId() {
     return jiraIssueId;
   }
 
-  public void setJiraIssueId(@javax.annotation.Nonnull String jiraIssueId) {
+  public void setJiraIssueId(@jakarta.annotation.Nonnull String jiraIssueId) {
     this.jiraIssueId = jiraIssueId;
   }
 
 
-  public CreateZendeskJiraLinkTaskParams jiraIssueKey(@javax.annotation.Nonnull String jiraIssueKey) {
+  public CreateZendeskJiraLinkTaskParams jiraIssueKey(@jakarta.annotation.Nonnull String jiraIssueKey) {
     this.jiraIssueKey = jiraIssueKey;
     return this;
   }
@@ -170,17 +170,17 @@ public class CreateZendeskJiraLinkTaskParams {
    * Jira Issue Key.
    * @return jiraIssueKey
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getJiraIssueKey() {
     return jiraIssueKey;
   }
 
-  public void setJiraIssueKey(@javax.annotation.Nonnull String jiraIssueKey) {
+  public void setJiraIssueKey(@jakarta.annotation.Nonnull String jiraIssueKey) {
     this.jiraIssueKey = jiraIssueKey;
   }
 
 
-  public CreateZendeskJiraLinkTaskParams zendeskTicketId(@javax.annotation.Nonnull String zendeskTicketId) {
+  public CreateZendeskJiraLinkTaskParams zendeskTicketId(@jakarta.annotation.Nonnull String zendeskTicketId) {
     this.zendeskTicketId = zendeskTicketId;
     return this;
   }
@@ -189,12 +189,12 @@ public class CreateZendeskJiraLinkTaskParams {
    * Zendesk Ticket Id.
    * @return zendeskTicketId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getZendeskTicketId() {
     return zendeskTicketId;
   }
 
-  public void setZendeskTicketId(@javax.annotation.Nonnull String zendeskTicketId) {
+  public void setZendeskTicketId(@jakarta.annotation.Nonnull String zendeskTicketId) {
     this.zendeskTicketId = zendeskTicketId;
   }
 

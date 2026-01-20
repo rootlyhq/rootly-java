@@ -53,26 +53,26 @@ import com.rootly.client.JSON;
 /**
  * EscalationPolicyPath
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class EscalationPolicyPath {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DEFAULT = "default";
   @SerializedName(SERIALIZED_NAME_DEFAULT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Boolean _default;
 
   public static final String SERIALIZED_NAME_NOTIFICATION_TYPE = "notification_type";
   @SerializedName(SERIALIZED_NAME_NOTIFICATION_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String notificationType;
 
   public static final String SERIALIZED_NAME_ESCALATION_POLICY_ID = "escalation_policy_id";
   @SerializedName(SERIALIZED_NAME_ESCALATION_POLICY_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String escalationPolicyId;
 
   /**
@@ -129,42 +129,42 @@ public class EscalationPolicyPath {
 
   public static final String SERIALIZED_NAME_MATCH_MODE = "match_mode";
   @SerializedName(SERIALIZED_NAME_MATCH_MODE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private MatchModeEnum matchMode;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public static final String SERIALIZED_NAME_REPEAT = "repeat";
   @SerializedName(SERIALIZED_NAME_REPEAT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean repeat;
 
   public static final String SERIALIZED_NAME_REPEAT_COUNT = "repeat_count";
   @SerializedName(SERIALIZED_NAME_REPEAT_COUNT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer repeatCount;
 
   public static final String SERIALIZED_NAME_INITIAL_DELAY = "initial_delay";
   @SerializedName(SERIALIZED_NAME_INITIAL_DELAY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer initialDelay;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String updatedAt;
 
   public static final String SERIALIZED_NAME_RULES = "rules";
   @SerializedName(SERIALIZED_NAME_RULES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<EscalationPolicyPathRulesInner> rules = new ArrayList<>();
 
   /**
@@ -825,18 +825,18 @@ public class EscalationPolicyPath {
 
   public static final String SERIALIZED_NAME_TIME_RESTRICTION_TIME_ZONE = "time_restriction_time_zone";
   @SerializedName(SERIALIZED_NAME_TIME_RESTRICTION_TIME_ZONE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TimeRestrictionTimeZoneEnum timeRestrictionTimeZone;
 
   public static final String SERIALIZED_NAME_TIME_RESTRICTIONS = "time_restrictions";
   @SerializedName(SERIALIZED_NAME_TIME_RESTRICTIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner> timeRestrictions = new ArrayList<>();
 
   public EscalationPolicyPath() {
   }
 
-  public EscalationPolicyPath name(@javax.annotation.Nonnull String name) {
+  public EscalationPolicyPath name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -845,17 +845,17 @@ public class EscalationPolicyPath {
    * The name of the escalation path
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public EscalationPolicyPath _default(@javax.annotation.Nonnull Boolean _default) {
+  public EscalationPolicyPath _default(@jakarta.annotation.Nonnull Boolean _default) {
     this._default = _default;
     return this;
   }
@@ -864,17 +864,17 @@ public class EscalationPolicyPath {
    * Whether this escalation path is the default path
    * @return _default
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Boolean getDefault() {
     return _default;
   }
 
-  public void setDefault(@javax.annotation.Nonnull Boolean _default) {
+  public void setDefault(@jakarta.annotation.Nonnull Boolean _default) {
     this._default = _default;
   }
 
 
-  public EscalationPolicyPath notificationType(@javax.annotation.Nonnull String notificationType) {
+  public EscalationPolicyPath notificationType(@jakarta.annotation.Nonnull String notificationType) {
     this.notificationType = notificationType;
     return this;
   }
@@ -883,17 +883,17 @@ public class EscalationPolicyPath {
    * Notification rule type
    * @return notificationType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getNotificationType() {
     return notificationType;
   }
 
-  public void setNotificationType(@javax.annotation.Nonnull String notificationType) {
+  public void setNotificationType(@jakarta.annotation.Nonnull String notificationType) {
     this.notificationType = notificationType;
   }
 
 
-  public EscalationPolicyPath escalationPolicyId(@javax.annotation.Nonnull String escalationPolicyId) {
+  public EscalationPolicyPath escalationPolicyId(@jakarta.annotation.Nonnull String escalationPolicyId) {
     this.escalationPolicyId = escalationPolicyId;
     return this;
   }
@@ -902,17 +902,17 @@ public class EscalationPolicyPath {
    * The ID of the escalation policy
    * @return escalationPolicyId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getEscalationPolicyId() {
     return escalationPolicyId;
   }
 
-  public void setEscalationPolicyId(@javax.annotation.Nonnull String escalationPolicyId) {
+  public void setEscalationPolicyId(@jakarta.annotation.Nonnull String escalationPolicyId) {
     this.escalationPolicyId = escalationPolicyId;
   }
 
 
-  public EscalationPolicyPath matchMode(@javax.annotation.Nullable MatchModeEnum matchMode) {
+  public EscalationPolicyPath matchMode(@jakarta.annotation.Nullable MatchModeEnum matchMode) {
     this.matchMode = matchMode;
     return this;
   }
@@ -921,17 +921,17 @@ public class EscalationPolicyPath {
    * How path rules are matched.
    * @return matchMode
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public MatchModeEnum getMatchMode() {
     return matchMode;
   }
 
-  public void setMatchMode(@javax.annotation.Nullable MatchModeEnum matchMode) {
+  public void setMatchMode(@jakarta.annotation.Nullable MatchModeEnum matchMode) {
     this.matchMode = matchMode;
   }
 
 
-  public EscalationPolicyPath position(@javax.annotation.Nullable Integer position) {
+  public EscalationPolicyPath position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -940,17 +940,17 @@ public class EscalationPolicyPath {
    * The position of this path in the paths for this EP.
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 
 
-  public EscalationPolicyPath repeat(@javax.annotation.Nullable Boolean repeat) {
+  public EscalationPolicyPath repeat(@jakarta.annotation.Nullable Boolean repeat) {
     this.repeat = repeat;
     return this;
   }
@@ -959,17 +959,17 @@ public class EscalationPolicyPath {
    * Whether this path should be repeated until someone acknowledges the alert
    * @return repeat
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getRepeat() {
     return repeat;
   }
 
-  public void setRepeat(@javax.annotation.Nullable Boolean repeat) {
+  public void setRepeat(@jakarta.annotation.Nullable Boolean repeat) {
     this.repeat = repeat;
   }
 
 
-  public EscalationPolicyPath repeatCount(@javax.annotation.Nullable Integer repeatCount) {
+  public EscalationPolicyPath repeatCount(@jakarta.annotation.Nullable Integer repeatCount) {
     this.repeatCount = repeatCount;
     return this;
   }
@@ -978,17 +978,17 @@ public class EscalationPolicyPath {
    * The number of times this path will be executed until someone acknowledges the alert
    * @return repeatCount
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getRepeatCount() {
     return repeatCount;
   }
 
-  public void setRepeatCount(@javax.annotation.Nullable Integer repeatCount) {
+  public void setRepeatCount(@jakarta.annotation.Nullable Integer repeatCount) {
     this.repeatCount = repeatCount;
   }
 
 
-  public EscalationPolicyPath initialDelay(@javax.annotation.Nullable Integer initialDelay) {
+  public EscalationPolicyPath initialDelay(@jakarta.annotation.Nullable Integer initialDelay) {
     this.initialDelay = initialDelay;
     return this;
   }
@@ -997,17 +997,17 @@ public class EscalationPolicyPath {
    * Initial delay for escalation path in minutes. Maximum 1 week (10080).
    * @return initialDelay
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getInitialDelay() {
     return initialDelay;
   }
 
-  public void setInitialDelay(@javax.annotation.Nullable Integer initialDelay) {
+  public void setInitialDelay(@jakarta.annotation.Nullable Integer initialDelay) {
     this.initialDelay = initialDelay;
   }
 
 
-  public EscalationPolicyPath createdAt(@javax.annotation.Nullable String createdAt) {
+  public EscalationPolicyPath createdAt(@jakarta.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -1016,17 +1016,17 @@ public class EscalationPolicyPath {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nullable String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public EscalationPolicyPath updatedAt(@javax.annotation.Nullable String updatedAt) {
+  public EscalationPolicyPath updatedAt(@jakarta.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -1035,17 +1035,17 @@ public class EscalationPolicyPath {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nullable String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
   }
 
 
-  public EscalationPolicyPath rules(@javax.annotation.Nullable List<EscalationPolicyPathRulesInner> rules) {
+  public EscalationPolicyPath rules(@jakarta.annotation.Nullable List<EscalationPolicyPathRulesInner> rules) {
     this.rules = rules;
     return this;
   }
@@ -1062,17 +1062,17 @@ public class EscalationPolicyPath {
    * Escalation path rules
    * @return rules
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<EscalationPolicyPathRulesInner> getRules() {
     return rules;
   }
 
-  public void setRules(@javax.annotation.Nullable List<EscalationPolicyPathRulesInner> rules) {
+  public void setRules(@jakarta.annotation.Nullable List<EscalationPolicyPathRulesInner> rules) {
     this.rules = rules;
   }
 
 
-  public EscalationPolicyPath timeRestrictionTimeZone(@javax.annotation.Nullable TimeRestrictionTimeZoneEnum timeRestrictionTimeZone) {
+  public EscalationPolicyPath timeRestrictionTimeZone(@jakarta.annotation.Nullable TimeRestrictionTimeZoneEnum timeRestrictionTimeZone) {
     this.timeRestrictionTimeZone = timeRestrictionTimeZone;
     return this;
   }
@@ -1081,17 +1081,17 @@ public class EscalationPolicyPath {
    * Time zone used for time restrictions.
    * @return timeRestrictionTimeZone
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TimeRestrictionTimeZoneEnum getTimeRestrictionTimeZone() {
     return timeRestrictionTimeZone;
   }
 
-  public void setTimeRestrictionTimeZone(@javax.annotation.Nullable TimeRestrictionTimeZoneEnum timeRestrictionTimeZone) {
+  public void setTimeRestrictionTimeZone(@jakarta.annotation.Nullable TimeRestrictionTimeZoneEnum timeRestrictionTimeZone) {
     this.timeRestrictionTimeZone = timeRestrictionTimeZone;
   }
 
 
-  public EscalationPolicyPath timeRestrictions(@javax.annotation.Nullable List<UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner> timeRestrictions) {
+  public EscalationPolicyPath timeRestrictions(@jakarta.annotation.Nullable List<UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner> timeRestrictions) {
     this.timeRestrictions = timeRestrictions;
     return this;
   }
@@ -1108,12 +1108,12 @@ public class EscalationPolicyPath {
    * If time restrictions are set, alerts will follow this path when they arrive within the specified time ranges and meet the rules.
    * @return timeRestrictions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner> getTimeRestrictions() {
     return timeRestrictions;
   }
 
-  public void setTimeRestrictions(@javax.annotation.Nullable List<UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner> timeRestrictions) {
+  public void setTimeRestrictions(@jakarta.annotation.Nullable List<UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner> timeRestrictions) {
     this.timeRestrictions = timeRestrictions;
   }
 

@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * AttachDatadogDashboardsTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AttachDatadogDashboardsTaskParams {
   /**
    * Gets or Sets taskType
@@ -105,28 +105,28 @@ public class AttachDatadogDashboardsTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_DASHBOARDS = "dashboards";
   @SerializedName(SERIALIZED_NAME_DASHBOARDS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<AddActionItemTaskParamsPostToSlackChannelsInner> dashboards = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_POST_TO_INCIDENT_TIMELINE = "post_to_incident_timeline";
   @SerializedName(SERIALIZED_NAME_POST_TO_INCIDENT_TIMELINE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean postToIncidentTimeline;
 
   public static final String SERIALIZED_NAME_POST_TO_SLACK_CHANNELS = "post_to_slack_channels";
   @SerializedName(SERIALIZED_NAME_POST_TO_SLACK_CHANNELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels = new ArrayList<>();
 
   public AttachDatadogDashboardsTaskParams() {
   }
 
-  public AttachDatadogDashboardsTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public AttachDatadogDashboardsTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -135,17 +135,17 @@ public class AttachDatadogDashboardsTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public AttachDatadogDashboardsTaskParams dashboards(@javax.annotation.Nonnull List<AddActionItemTaskParamsPostToSlackChannelsInner> dashboards) {
+  public AttachDatadogDashboardsTaskParams dashboards(@jakarta.annotation.Nonnull List<AddActionItemTaskParamsPostToSlackChannelsInner> dashboards) {
     this.dashboards = dashboards;
     return this;
   }
@@ -162,17 +162,17 @@ public class AttachDatadogDashboardsTaskParams {
    * Get dashboards
    * @return dashboards
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<AddActionItemTaskParamsPostToSlackChannelsInner> getDashboards() {
     return dashboards;
   }
 
-  public void setDashboards(@javax.annotation.Nonnull List<AddActionItemTaskParamsPostToSlackChannelsInner> dashboards) {
+  public void setDashboards(@jakarta.annotation.Nonnull List<AddActionItemTaskParamsPostToSlackChannelsInner> dashboards) {
     this.dashboards = dashboards;
   }
 
 
-  public AttachDatadogDashboardsTaskParams postToIncidentTimeline(@javax.annotation.Nullable Boolean postToIncidentTimeline) {
+  public AttachDatadogDashboardsTaskParams postToIncidentTimeline(@jakarta.annotation.Nullable Boolean postToIncidentTimeline) {
     this.postToIncidentTimeline = postToIncidentTimeline;
     return this;
   }
@@ -181,17 +181,17 @@ public class AttachDatadogDashboardsTaskParams {
    * Get postToIncidentTimeline
    * @return postToIncidentTimeline
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getPostToIncidentTimeline() {
     return postToIncidentTimeline;
   }
 
-  public void setPostToIncidentTimeline(@javax.annotation.Nullable Boolean postToIncidentTimeline) {
+  public void setPostToIncidentTimeline(@jakarta.annotation.Nullable Boolean postToIncidentTimeline) {
     this.postToIncidentTimeline = postToIncidentTimeline;
   }
 
 
-  public AttachDatadogDashboardsTaskParams postToSlackChannels(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
+  public AttachDatadogDashboardsTaskParams postToSlackChannels(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
     this.postToSlackChannels = postToSlackChannels;
     return this;
   }
@@ -208,12 +208,12 @@ public class AttachDatadogDashboardsTaskParams {
    * Get postToSlackChannels
    * @return postToSlackChannels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AddActionItemTaskParamsPostToSlackChannelsInner> getPostToSlackChannels() {
     return postToSlackChannels;
   }
 
-  public void setPostToSlackChannels(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
+  public void setPostToSlackChannels(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
     this.postToSlackChannels = postToSlackChannels;
   }
 

@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateHeartbeatData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateHeartbeatData {
   /**
    * Gets or Sets type
@@ -103,18 +103,18 @@ public class UpdateHeartbeatData {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private UpdateHeartbeatDataAttributes attributes;
 
   public UpdateHeartbeatData() {
   }
 
-  public UpdateHeartbeatData type(@javax.annotation.Nonnull TypeEnum type) {
+  public UpdateHeartbeatData type(@jakarta.annotation.Nonnull TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -123,17 +123,17 @@ public class UpdateHeartbeatData {
    * Get type
    * @return type
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public TypeEnum getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nonnull TypeEnum type) {
+  public void setType(@jakarta.annotation.Nonnull TypeEnum type) {
     this.type = type;
   }
 
 
-  public UpdateHeartbeatData attributes(@javax.annotation.Nonnull UpdateHeartbeatDataAttributes attributes) {
+  public UpdateHeartbeatData attributes(@jakarta.annotation.Nonnull UpdateHeartbeatDataAttributes attributes) {
     this.attributes = attributes;
     return this;
   }
@@ -142,12 +142,12 @@ public class UpdateHeartbeatData {
    * Get attributes
    * @return attributes
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public UpdateHeartbeatDataAttributes getAttributes() {
     return attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nonnull UpdateHeartbeatDataAttributes attributes) {
+  public void setAttributes(@jakarta.annotation.Nonnull UpdateHeartbeatDataAttributes attributes) {
     this.attributes = attributes;
   }
 

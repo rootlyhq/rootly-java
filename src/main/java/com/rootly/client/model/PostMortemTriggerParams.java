@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * PostMortemTriggerParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class PostMortemTriggerParams {
   /**
    * Gets or Sets triggerType
@@ -105,17 +105,17 @@ public class PostMortemTriggerParams {
 
   public static final String SERIALIZED_NAME_TRIGGER_TYPE = "trigger_type";
   @SerializedName(SERIALIZED_NAME_TRIGGER_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private TriggerTypeEnum triggerType;
 
   public static final String SERIALIZED_NAME_TRIGGERS = "triggers";
   @SerializedName(SERIALIZED_NAME_TRIGGERS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> triggers = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_INCIDENT_VISIBILITIES = "incident_visibilities";
   @SerializedName(SERIALIZED_NAME_INCIDENT_VISIBILITIES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<Boolean> incidentVisibilities = new ArrayList<>();
 
   /**
@@ -186,7 +186,7 @@ public class PostMortemTriggerParams {
 
   public static final String SERIALIZED_NAME_INCIDENT_KINDS = "incident_kinds";
   @SerializedName(SERIALIZED_NAME_INCIDENT_KINDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<IncidentKindsEnum> incidentKinds = new ArrayList<>();
 
   /**
@@ -261,12 +261,12 @@ public class PostMortemTriggerParams {
 
   public static final String SERIALIZED_NAME_INCIDENT_STATUSES = "incident_statuses";
   @SerializedName(SERIALIZED_NAME_INCIDENT_STATUSES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<IncidentStatusesEnum> incidentStatuses = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_INCIDENT_INACTIVITY_DURATION = "incident_inactivity_duration";
   @SerializedName(SERIALIZED_NAME_INCIDENT_INACTIVITY_DURATION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String incidentInactivityDuration;
 
   /**
@@ -325,7 +325,7 @@ public class PostMortemTriggerParams {
 
   public static final String SERIALIZED_NAME_INCIDENT_CONDITION = "incident_condition";
   @SerializedName(SERIALIZED_NAME_INCIDENT_CONDITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private IncidentConditionEnum incidentCondition = IncidentConditionEnum.ALL;
 
   /**
@@ -396,7 +396,7 @@ public class PostMortemTriggerParams {
 
   public static final String SERIALIZED_NAME_INCIDENT_CONDITION_VISIBILITY = "incident_condition_visibility";
   @SerializedName(SERIALIZED_NAME_INCIDENT_CONDITION_VISIBILITY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private IncidentConditionVisibilityEnum incidentConditionVisibility = IncidentConditionVisibilityEnum.ANY;
 
   /**
@@ -467,7 +467,7 @@ public class PostMortemTriggerParams {
 
   public static final String SERIALIZED_NAME_INCIDENT_CONDITION_KIND = "incident_condition_kind";
   @SerializedName(SERIALIZED_NAME_INCIDENT_CONDITION_KIND)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private IncidentConditionKindEnum incidentConditionKind = IncidentConditionKindEnum.IS;
 
   /**
@@ -538,7 +538,7 @@ public class PostMortemTriggerParams {
 
   public static final String SERIALIZED_NAME_INCIDENT_CONDITION_STATUS = "incident_condition_status";
   @SerializedName(SERIALIZED_NAME_INCIDENT_CONDITION_STATUS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private IncidentConditionStatusEnum incidentConditionStatus = IncidentConditionStatusEnum.ANY;
 
   /**
@@ -609,7 +609,7 @@ public class PostMortemTriggerParams {
 
   public static final String SERIALIZED_NAME_INCIDENT_CONDITION_SUB_STATUS = "incident_condition_sub_status";
   @SerializedName(SERIALIZED_NAME_INCIDENT_CONDITION_SUB_STATUS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private IncidentConditionSubStatusEnum incidentConditionSubStatus = IncidentConditionSubStatusEnum.ANY;
 
   /**
@@ -680,7 +680,7 @@ public class PostMortemTriggerParams {
 
   public static final String SERIALIZED_NAME_INCIDENT_CONDITION_ENVIRONMENT = "incident_condition_environment";
   @SerializedName(SERIALIZED_NAME_INCIDENT_CONDITION_ENVIRONMENT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private IncidentConditionEnvironmentEnum incidentConditionEnvironment = IncidentConditionEnvironmentEnum.ANY;
 
   /**
@@ -751,7 +751,7 @@ public class PostMortemTriggerParams {
 
   public static final String SERIALIZED_NAME_INCIDENT_CONDITION_SEVERITY = "incident_condition_severity";
   @SerializedName(SERIALIZED_NAME_INCIDENT_CONDITION_SEVERITY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private IncidentConditionSeverityEnum incidentConditionSeverity = IncidentConditionSeverityEnum.ANY;
 
   /**
@@ -822,7 +822,7 @@ public class PostMortemTriggerParams {
 
   public static final String SERIALIZED_NAME_INCIDENT_CONDITION_INCIDENT_TYPE = "incident_condition_incident_type";
   @SerializedName(SERIALIZED_NAME_INCIDENT_CONDITION_INCIDENT_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private IncidentConditionIncidentTypeEnum incidentConditionIncidentType = IncidentConditionIncidentTypeEnum.ANY;
 
   /**
@@ -893,7 +893,7 @@ public class PostMortemTriggerParams {
 
   public static final String SERIALIZED_NAME_INCIDENT_CONDITION_INCIDENT_ROLES = "incident_condition_incident_roles";
   @SerializedName(SERIALIZED_NAME_INCIDENT_CONDITION_INCIDENT_ROLES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private IncidentConditionIncidentRolesEnum incidentConditionIncidentRoles = IncidentConditionIncidentRolesEnum.ANY;
 
   /**
@@ -964,7 +964,7 @@ public class PostMortemTriggerParams {
 
   public static final String SERIALIZED_NAME_INCIDENT_CONDITION_SERVICE = "incident_condition_service";
   @SerializedName(SERIALIZED_NAME_INCIDENT_CONDITION_SERVICE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private IncidentConditionServiceEnum incidentConditionService = IncidentConditionServiceEnum.ANY;
 
   /**
@@ -1035,7 +1035,7 @@ public class PostMortemTriggerParams {
 
   public static final String SERIALIZED_NAME_INCIDENT_CONDITION_FUNCTIONALITY = "incident_condition_functionality";
   @SerializedName(SERIALIZED_NAME_INCIDENT_CONDITION_FUNCTIONALITY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private IncidentConditionFunctionalityEnum incidentConditionFunctionality = IncidentConditionFunctionalityEnum.ANY;
 
   /**
@@ -1106,7 +1106,7 @@ public class PostMortemTriggerParams {
 
   public static final String SERIALIZED_NAME_INCIDENT_CONDITION_GROUP = "incident_condition_group";
   @SerializedName(SERIALIZED_NAME_INCIDENT_CONDITION_GROUP)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private IncidentConditionGroupEnum incidentConditionGroup = IncidentConditionGroupEnum.ANY;
 
   /**
@@ -1177,7 +1177,7 @@ public class PostMortemTriggerParams {
 
   public static final String SERIALIZED_NAME_INCIDENT_CONDITION_CAUSE = "incident_condition_cause";
   @SerializedName(SERIALIZED_NAME_INCIDENT_CONDITION_CAUSE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private IncidentConditionCauseEnum incidentConditionCause = IncidentConditionCauseEnum.ANY;
 
   /**
@@ -1248,7 +1248,7 @@ public class PostMortemTriggerParams {
 
   public static final String SERIALIZED_NAME_INCIDENT_POST_MORTEM_CONDITION_CAUSE = "incident_post_mortem_condition_cause";
   @SerializedName(SERIALIZED_NAME_INCIDENT_POST_MORTEM_CONDITION_CAUSE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private IncidentPostMortemConditionCauseEnum incidentPostMortemConditionCause = IncidentPostMortemConditionCauseEnum.ANY;
 
   /**
@@ -1305,7 +1305,7 @@ public class PostMortemTriggerParams {
 
   public static final String SERIALIZED_NAME_INCIDENT_CONDITION_SUMMARY = "incident_condition_summary";
   @SerializedName(SERIALIZED_NAME_INCIDENT_CONDITION_SUMMARY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private IncidentConditionSummaryEnum incidentConditionSummary;
 
   /**
@@ -1362,7 +1362,7 @@ public class PostMortemTriggerParams {
 
   public static final String SERIALIZED_NAME_INCIDENT_CONDITION_STARTED_AT = "incident_condition_started_at";
   @SerializedName(SERIALIZED_NAME_INCIDENT_CONDITION_STARTED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private IncidentConditionStartedAtEnum incidentConditionStartedAt;
 
   /**
@@ -1419,7 +1419,7 @@ public class PostMortemTriggerParams {
 
   public static final String SERIALIZED_NAME_INCIDENT_CONDITION_DETECTED_AT = "incident_condition_detected_at";
   @SerializedName(SERIALIZED_NAME_INCIDENT_CONDITION_DETECTED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private IncidentConditionDetectedAtEnum incidentConditionDetectedAt;
 
   /**
@@ -1476,7 +1476,7 @@ public class PostMortemTriggerParams {
 
   public static final String SERIALIZED_NAME_INCIDENT_CONDITION_ACKNOWLEDGED_AT = "incident_condition_acknowledged_at";
   @SerializedName(SERIALIZED_NAME_INCIDENT_CONDITION_ACKNOWLEDGED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private IncidentConditionAcknowledgedAtEnum incidentConditionAcknowledgedAt;
 
   /**
@@ -1533,7 +1533,7 @@ public class PostMortemTriggerParams {
 
   public static final String SERIALIZED_NAME_INCIDENT_CONDITION_MITIGATED_AT = "incident_condition_mitigated_at";
   @SerializedName(SERIALIZED_NAME_INCIDENT_CONDITION_MITIGATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private IncidentConditionMitigatedAtEnum incidentConditionMitigatedAt;
 
   /**
@@ -1590,7 +1590,7 @@ public class PostMortemTriggerParams {
 
   public static final String SERIALIZED_NAME_INCIDENT_CONDITION_RESOLVED_AT = "incident_condition_resolved_at";
   @SerializedName(SERIALIZED_NAME_INCIDENT_CONDITION_RESOLVED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private IncidentConditionResolvedAtEnum incidentConditionResolvedAt;
 
   /**
@@ -1645,7 +1645,7 @@ public class PostMortemTriggerParams {
 
   public static final String SERIALIZED_NAME_INCIDENT_CONDITIONAL_INACTIVITY = "incident_conditional_inactivity";
   @SerializedName(SERIALIZED_NAME_INCIDENT_CONDITIONAL_INACTIVITY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private IncidentConditionalInactivityEnum incidentConditionalInactivity;
 
   /**
@@ -1704,7 +1704,7 @@ public class PostMortemTriggerParams {
 
   public static final String SERIALIZED_NAME_INCIDENT_POST_MORTEM_CONDITION = "incident_post_mortem_condition";
   @SerializedName(SERIALIZED_NAME_INCIDENT_POST_MORTEM_CONDITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private IncidentPostMortemConditionEnum incidentPostMortemCondition;
 
   /**
@@ -1775,7 +1775,7 @@ public class PostMortemTriggerParams {
 
   public static final String SERIALIZED_NAME_INCIDENT_POST_MORTEM_CONDITION_STATUS = "incident_post_mortem_condition_status";
   @SerializedName(SERIALIZED_NAME_INCIDENT_POST_MORTEM_CONDITION_STATUS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private IncidentPostMortemConditionStatusEnum incidentPostMortemConditionStatus = IncidentPostMortemConditionStatusEnum.ANY;
 
   /**
@@ -1832,13 +1832,13 @@ public class PostMortemTriggerParams {
 
   public static final String SERIALIZED_NAME_INCIDENT_POST_MORTEM_STATUSES = "incident_post_mortem_statuses";
   @SerializedName(SERIALIZED_NAME_INCIDENT_POST_MORTEM_STATUSES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<IncidentPostMortemStatusesEnum> incidentPostMortemStatuses = new ArrayList<>();
 
   public PostMortemTriggerParams() {
   }
 
-  public PostMortemTriggerParams triggerType(@javax.annotation.Nonnull TriggerTypeEnum triggerType) {
+  public PostMortemTriggerParams triggerType(@jakarta.annotation.Nonnull TriggerTypeEnum triggerType) {
     this.triggerType = triggerType;
     return this;
   }
@@ -1847,17 +1847,17 @@ public class PostMortemTriggerParams {
    * Get triggerType
    * @return triggerType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public TriggerTypeEnum getTriggerType() {
     return triggerType;
   }
 
-  public void setTriggerType(@javax.annotation.Nonnull TriggerTypeEnum triggerType) {
+  public void setTriggerType(@jakarta.annotation.Nonnull TriggerTypeEnum triggerType) {
     this.triggerType = triggerType;
   }
 
 
-  public PostMortemTriggerParams triggers(@javax.annotation.Nullable List<String> triggers) {
+  public PostMortemTriggerParams triggers(@jakarta.annotation.Nullable List<String> triggers) {
     this.triggers = triggers;
     return this;
   }
@@ -1874,17 +1874,17 @@ public class PostMortemTriggerParams {
    * Get triggers
    * @return triggers
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getTriggers() {
     return triggers;
   }
 
-  public void setTriggers(@javax.annotation.Nullable List<String> triggers) {
+  public void setTriggers(@jakarta.annotation.Nullable List<String> triggers) {
     this.triggers = triggers;
   }
 
 
-  public PostMortemTriggerParams incidentVisibilities(@javax.annotation.Nullable List<Boolean> incidentVisibilities) {
+  public PostMortemTriggerParams incidentVisibilities(@jakarta.annotation.Nullable List<Boolean> incidentVisibilities) {
     this.incidentVisibilities = incidentVisibilities;
     return this;
   }
@@ -1901,17 +1901,17 @@ public class PostMortemTriggerParams {
    * Get incidentVisibilities
    * @return incidentVisibilities
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<Boolean> getIncidentVisibilities() {
     return incidentVisibilities;
   }
 
-  public void setIncidentVisibilities(@javax.annotation.Nullable List<Boolean> incidentVisibilities) {
+  public void setIncidentVisibilities(@jakarta.annotation.Nullable List<Boolean> incidentVisibilities) {
     this.incidentVisibilities = incidentVisibilities;
   }
 
 
-  public PostMortemTriggerParams incidentKinds(@javax.annotation.Nullable List<IncidentKindsEnum> incidentKinds) {
+  public PostMortemTriggerParams incidentKinds(@jakarta.annotation.Nullable List<IncidentKindsEnum> incidentKinds) {
     this.incidentKinds = incidentKinds;
     return this;
   }
@@ -1928,17 +1928,17 @@ public class PostMortemTriggerParams {
    * Get incidentKinds
    * @return incidentKinds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<IncidentKindsEnum> getIncidentKinds() {
     return incidentKinds;
   }
 
-  public void setIncidentKinds(@javax.annotation.Nullable List<IncidentKindsEnum> incidentKinds) {
+  public void setIncidentKinds(@jakarta.annotation.Nullable List<IncidentKindsEnum> incidentKinds) {
     this.incidentKinds = incidentKinds;
   }
 
 
-  public PostMortemTriggerParams incidentStatuses(@javax.annotation.Nullable List<IncidentStatusesEnum> incidentStatuses) {
+  public PostMortemTriggerParams incidentStatuses(@jakarta.annotation.Nullable List<IncidentStatusesEnum> incidentStatuses) {
     this.incidentStatuses = incidentStatuses;
     return this;
   }
@@ -1955,17 +1955,17 @@ public class PostMortemTriggerParams {
    * Get incidentStatuses
    * @return incidentStatuses
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<IncidentStatusesEnum> getIncidentStatuses() {
     return incidentStatuses;
   }
 
-  public void setIncidentStatuses(@javax.annotation.Nullable List<IncidentStatusesEnum> incidentStatuses) {
+  public void setIncidentStatuses(@jakarta.annotation.Nullable List<IncidentStatusesEnum> incidentStatuses) {
     this.incidentStatuses = incidentStatuses;
   }
 
 
-  public PostMortemTriggerParams incidentInactivityDuration(@javax.annotation.Nullable String incidentInactivityDuration) {
+  public PostMortemTriggerParams incidentInactivityDuration(@jakarta.annotation.Nullable String incidentInactivityDuration) {
     this.incidentInactivityDuration = incidentInactivityDuration;
     return this;
   }
@@ -1974,17 +1974,17 @@ public class PostMortemTriggerParams {
    * ex. 10 min, 1h, 3 days, 2 weeks
    * @return incidentInactivityDuration
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getIncidentInactivityDuration() {
     return incidentInactivityDuration;
   }
 
-  public void setIncidentInactivityDuration(@javax.annotation.Nullable String incidentInactivityDuration) {
+  public void setIncidentInactivityDuration(@jakarta.annotation.Nullable String incidentInactivityDuration) {
     this.incidentInactivityDuration = incidentInactivityDuration;
   }
 
 
-  public PostMortemTriggerParams incidentCondition(@javax.annotation.Nullable IncidentConditionEnum incidentCondition) {
+  public PostMortemTriggerParams incidentCondition(@jakarta.annotation.Nullable IncidentConditionEnum incidentCondition) {
     this.incidentCondition = incidentCondition;
     return this;
   }
@@ -1993,17 +1993,17 @@ public class PostMortemTriggerParams {
    * Get incidentCondition
    * @return incidentCondition
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public IncidentConditionEnum getIncidentCondition() {
     return incidentCondition;
   }
 
-  public void setIncidentCondition(@javax.annotation.Nullable IncidentConditionEnum incidentCondition) {
+  public void setIncidentCondition(@jakarta.annotation.Nullable IncidentConditionEnum incidentCondition) {
     this.incidentCondition = incidentCondition;
   }
 
 
-  public PostMortemTriggerParams incidentConditionVisibility(@javax.annotation.Nullable IncidentConditionVisibilityEnum incidentConditionVisibility) {
+  public PostMortemTriggerParams incidentConditionVisibility(@jakarta.annotation.Nullable IncidentConditionVisibilityEnum incidentConditionVisibility) {
     this.incidentConditionVisibility = incidentConditionVisibility;
     return this;
   }
@@ -2012,17 +2012,17 @@ public class PostMortemTriggerParams {
    * Get incidentConditionVisibility
    * @return incidentConditionVisibility
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public IncidentConditionVisibilityEnum getIncidentConditionVisibility() {
     return incidentConditionVisibility;
   }
 
-  public void setIncidentConditionVisibility(@javax.annotation.Nullable IncidentConditionVisibilityEnum incidentConditionVisibility) {
+  public void setIncidentConditionVisibility(@jakarta.annotation.Nullable IncidentConditionVisibilityEnum incidentConditionVisibility) {
     this.incidentConditionVisibility = incidentConditionVisibility;
   }
 
 
-  public PostMortemTriggerParams incidentConditionKind(@javax.annotation.Nullable IncidentConditionKindEnum incidentConditionKind) {
+  public PostMortemTriggerParams incidentConditionKind(@jakarta.annotation.Nullable IncidentConditionKindEnum incidentConditionKind) {
     this.incidentConditionKind = incidentConditionKind;
     return this;
   }
@@ -2031,17 +2031,17 @@ public class PostMortemTriggerParams {
    * Get incidentConditionKind
    * @return incidentConditionKind
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public IncidentConditionKindEnum getIncidentConditionKind() {
     return incidentConditionKind;
   }
 
-  public void setIncidentConditionKind(@javax.annotation.Nullable IncidentConditionKindEnum incidentConditionKind) {
+  public void setIncidentConditionKind(@jakarta.annotation.Nullable IncidentConditionKindEnum incidentConditionKind) {
     this.incidentConditionKind = incidentConditionKind;
   }
 
 
-  public PostMortemTriggerParams incidentConditionStatus(@javax.annotation.Nullable IncidentConditionStatusEnum incidentConditionStatus) {
+  public PostMortemTriggerParams incidentConditionStatus(@jakarta.annotation.Nullable IncidentConditionStatusEnum incidentConditionStatus) {
     this.incidentConditionStatus = incidentConditionStatus;
     return this;
   }
@@ -2050,17 +2050,17 @@ public class PostMortemTriggerParams {
    * Get incidentConditionStatus
    * @return incidentConditionStatus
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public IncidentConditionStatusEnum getIncidentConditionStatus() {
     return incidentConditionStatus;
   }
 
-  public void setIncidentConditionStatus(@javax.annotation.Nullable IncidentConditionStatusEnum incidentConditionStatus) {
+  public void setIncidentConditionStatus(@jakarta.annotation.Nullable IncidentConditionStatusEnum incidentConditionStatus) {
     this.incidentConditionStatus = incidentConditionStatus;
   }
 
 
-  public PostMortemTriggerParams incidentConditionSubStatus(@javax.annotation.Nullable IncidentConditionSubStatusEnum incidentConditionSubStatus) {
+  public PostMortemTriggerParams incidentConditionSubStatus(@jakarta.annotation.Nullable IncidentConditionSubStatusEnum incidentConditionSubStatus) {
     this.incidentConditionSubStatus = incidentConditionSubStatus;
     return this;
   }
@@ -2069,17 +2069,17 @@ public class PostMortemTriggerParams {
    * Get incidentConditionSubStatus
    * @return incidentConditionSubStatus
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public IncidentConditionSubStatusEnum getIncidentConditionSubStatus() {
     return incidentConditionSubStatus;
   }
 
-  public void setIncidentConditionSubStatus(@javax.annotation.Nullable IncidentConditionSubStatusEnum incidentConditionSubStatus) {
+  public void setIncidentConditionSubStatus(@jakarta.annotation.Nullable IncidentConditionSubStatusEnum incidentConditionSubStatus) {
     this.incidentConditionSubStatus = incidentConditionSubStatus;
   }
 
 
-  public PostMortemTriggerParams incidentConditionEnvironment(@javax.annotation.Nullable IncidentConditionEnvironmentEnum incidentConditionEnvironment) {
+  public PostMortemTriggerParams incidentConditionEnvironment(@jakarta.annotation.Nullable IncidentConditionEnvironmentEnum incidentConditionEnvironment) {
     this.incidentConditionEnvironment = incidentConditionEnvironment;
     return this;
   }
@@ -2088,17 +2088,17 @@ public class PostMortemTriggerParams {
    * Get incidentConditionEnvironment
    * @return incidentConditionEnvironment
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public IncidentConditionEnvironmentEnum getIncidentConditionEnvironment() {
     return incidentConditionEnvironment;
   }
 
-  public void setIncidentConditionEnvironment(@javax.annotation.Nullable IncidentConditionEnvironmentEnum incidentConditionEnvironment) {
+  public void setIncidentConditionEnvironment(@jakarta.annotation.Nullable IncidentConditionEnvironmentEnum incidentConditionEnvironment) {
     this.incidentConditionEnvironment = incidentConditionEnvironment;
   }
 
 
-  public PostMortemTriggerParams incidentConditionSeverity(@javax.annotation.Nullable IncidentConditionSeverityEnum incidentConditionSeverity) {
+  public PostMortemTriggerParams incidentConditionSeverity(@jakarta.annotation.Nullable IncidentConditionSeverityEnum incidentConditionSeverity) {
     this.incidentConditionSeverity = incidentConditionSeverity;
     return this;
   }
@@ -2107,17 +2107,17 @@ public class PostMortemTriggerParams {
    * Get incidentConditionSeverity
    * @return incidentConditionSeverity
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public IncidentConditionSeverityEnum getIncidentConditionSeverity() {
     return incidentConditionSeverity;
   }
 
-  public void setIncidentConditionSeverity(@javax.annotation.Nullable IncidentConditionSeverityEnum incidentConditionSeverity) {
+  public void setIncidentConditionSeverity(@jakarta.annotation.Nullable IncidentConditionSeverityEnum incidentConditionSeverity) {
     this.incidentConditionSeverity = incidentConditionSeverity;
   }
 
 
-  public PostMortemTriggerParams incidentConditionIncidentType(@javax.annotation.Nullable IncidentConditionIncidentTypeEnum incidentConditionIncidentType) {
+  public PostMortemTriggerParams incidentConditionIncidentType(@jakarta.annotation.Nullable IncidentConditionIncidentTypeEnum incidentConditionIncidentType) {
     this.incidentConditionIncidentType = incidentConditionIncidentType;
     return this;
   }
@@ -2126,17 +2126,17 @@ public class PostMortemTriggerParams {
    * Get incidentConditionIncidentType
    * @return incidentConditionIncidentType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public IncidentConditionIncidentTypeEnum getIncidentConditionIncidentType() {
     return incidentConditionIncidentType;
   }
 
-  public void setIncidentConditionIncidentType(@javax.annotation.Nullable IncidentConditionIncidentTypeEnum incidentConditionIncidentType) {
+  public void setIncidentConditionIncidentType(@jakarta.annotation.Nullable IncidentConditionIncidentTypeEnum incidentConditionIncidentType) {
     this.incidentConditionIncidentType = incidentConditionIncidentType;
   }
 
 
-  public PostMortemTriggerParams incidentConditionIncidentRoles(@javax.annotation.Nullable IncidentConditionIncidentRolesEnum incidentConditionIncidentRoles) {
+  public PostMortemTriggerParams incidentConditionIncidentRoles(@jakarta.annotation.Nullable IncidentConditionIncidentRolesEnum incidentConditionIncidentRoles) {
     this.incidentConditionIncidentRoles = incidentConditionIncidentRoles;
     return this;
   }
@@ -2145,17 +2145,17 @@ public class PostMortemTriggerParams {
    * Get incidentConditionIncidentRoles
    * @return incidentConditionIncidentRoles
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public IncidentConditionIncidentRolesEnum getIncidentConditionIncidentRoles() {
     return incidentConditionIncidentRoles;
   }
 
-  public void setIncidentConditionIncidentRoles(@javax.annotation.Nullable IncidentConditionIncidentRolesEnum incidentConditionIncidentRoles) {
+  public void setIncidentConditionIncidentRoles(@jakarta.annotation.Nullable IncidentConditionIncidentRolesEnum incidentConditionIncidentRoles) {
     this.incidentConditionIncidentRoles = incidentConditionIncidentRoles;
   }
 
 
-  public PostMortemTriggerParams incidentConditionService(@javax.annotation.Nullable IncidentConditionServiceEnum incidentConditionService) {
+  public PostMortemTriggerParams incidentConditionService(@jakarta.annotation.Nullable IncidentConditionServiceEnum incidentConditionService) {
     this.incidentConditionService = incidentConditionService;
     return this;
   }
@@ -2164,17 +2164,17 @@ public class PostMortemTriggerParams {
    * Get incidentConditionService
    * @return incidentConditionService
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public IncidentConditionServiceEnum getIncidentConditionService() {
     return incidentConditionService;
   }
 
-  public void setIncidentConditionService(@javax.annotation.Nullable IncidentConditionServiceEnum incidentConditionService) {
+  public void setIncidentConditionService(@jakarta.annotation.Nullable IncidentConditionServiceEnum incidentConditionService) {
     this.incidentConditionService = incidentConditionService;
   }
 
 
-  public PostMortemTriggerParams incidentConditionFunctionality(@javax.annotation.Nullable IncidentConditionFunctionalityEnum incidentConditionFunctionality) {
+  public PostMortemTriggerParams incidentConditionFunctionality(@jakarta.annotation.Nullable IncidentConditionFunctionalityEnum incidentConditionFunctionality) {
     this.incidentConditionFunctionality = incidentConditionFunctionality;
     return this;
   }
@@ -2183,17 +2183,17 @@ public class PostMortemTriggerParams {
    * Get incidentConditionFunctionality
    * @return incidentConditionFunctionality
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public IncidentConditionFunctionalityEnum getIncidentConditionFunctionality() {
     return incidentConditionFunctionality;
   }
 
-  public void setIncidentConditionFunctionality(@javax.annotation.Nullable IncidentConditionFunctionalityEnum incidentConditionFunctionality) {
+  public void setIncidentConditionFunctionality(@jakarta.annotation.Nullable IncidentConditionFunctionalityEnum incidentConditionFunctionality) {
     this.incidentConditionFunctionality = incidentConditionFunctionality;
   }
 
 
-  public PostMortemTriggerParams incidentConditionGroup(@javax.annotation.Nullable IncidentConditionGroupEnum incidentConditionGroup) {
+  public PostMortemTriggerParams incidentConditionGroup(@jakarta.annotation.Nullable IncidentConditionGroupEnum incidentConditionGroup) {
     this.incidentConditionGroup = incidentConditionGroup;
     return this;
   }
@@ -2202,17 +2202,17 @@ public class PostMortemTriggerParams {
    * Get incidentConditionGroup
    * @return incidentConditionGroup
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public IncidentConditionGroupEnum getIncidentConditionGroup() {
     return incidentConditionGroup;
   }
 
-  public void setIncidentConditionGroup(@javax.annotation.Nullable IncidentConditionGroupEnum incidentConditionGroup) {
+  public void setIncidentConditionGroup(@jakarta.annotation.Nullable IncidentConditionGroupEnum incidentConditionGroup) {
     this.incidentConditionGroup = incidentConditionGroup;
   }
 
 
-  public PostMortemTriggerParams incidentConditionCause(@javax.annotation.Nullable IncidentConditionCauseEnum incidentConditionCause) {
+  public PostMortemTriggerParams incidentConditionCause(@jakarta.annotation.Nullable IncidentConditionCauseEnum incidentConditionCause) {
     this.incidentConditionCause = incidentConditionCause;
     return this;
   }
@@ -2221,17 +2221,17 @@ public class PostMortemTriggerParams {
    * Get incidentConditionCause
    * @return incidentConditionCause
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public IncidentConditionCauseEnum getIncidentConditionCause() {
     return incidentConditionCause;
   }
 
-  public void setIncidentConditionCause(@javax.annotation.Nullable IncidentConditionCauseEnum incidentConditionCause) {
+  public void setIncidentConditionCause(@jakarta.annotation.Nullable IncidentConditionCauseEnum incidentConditionCause) {
     this.incidentConditionCause = incidentConditionCause;
   }
 
 
-  public PostMortemTriggerParams incidentPostMortemConditionCause(@javax.annotation.Nullable IncidentPostMortemConditionCauseEnum incidentPostMortemConditionCause) {
+  public PostMortemTriggerParams incidentPostMortemConditionCause(@jakarta.annotation.Nullable IncidentPostMortemConditionCauseEnum incidentPostMortemConditionCause) {
     this.incidentPostMortemConditionCause = incidentPostMortemConditionCause;
     return this;
   }
@@ -2240,17 +2240,17 @@ public class PostMortemTriggerParams {
    * [DEPRECATED] Use incident_condition_cause instead
    * @return incidentPostMortemConditionCause
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public IncidentPostMortemConditionCauseEnum getIncidentPostMortemConditionCause() {
     return incidentPostMortemConditionCause;
   }
 
-  public void setIncidentPostMortemConditionCause(@javax.annotation.Nullable IncidentPostMortemConditionCauseEnum incidentPostMortemConditionCause) {
+  public void setIncidentPostMortemConditionCause(@jakarta.annotation.Nullable IncidentPostMortemConditionCauseEnum incidentPostMortemConditionCause) {
     this.incidentPostMortemConditionCause = incidentPostMortemConditionCause;
   }
 
 
-  public PostMortemTriggerParams incidentConditionSummary(@javax.annotation.Nullable IncidentConditionSummaryEnum incidentConditionSummary) {
+  public PostMortemTriggerParams incidentConditionSummary(@jakarta.annotation.Nullable IncidentConditionSummaryEnum incidentConditionSummary) {
     this.incidentConditionSummary = incidentConditionSummary;
     return this;
   }
@@ -2259,17 +2259,17 @@ public class PostMortemTriggerParams {
    * Get incidentConditionSummary
    * @return incidentConditionSummary
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public IncidentConditionSummaryEnum getIncidentConditionSummary() {
     return incidentConditionSummary;
   }
 
-  public void setIncidentConditionSummary(@javax.annotation.Nullable IncidentConditionSummaryEnum incidentConditionSummary) {
+  public void setIncidentConditionSummary(@jakarta.annotation.Nullable IncidentConditionSummaryEnum incidentConditionSummary) {
     this.incidentConditionSummary = incidentConditionSummary;
   }
 
 
-  public PostMortemTriggerParams incidentConditionStartedAt(@javax.annotation.Nullable IncidentConditionStartedAtEnum incidentConditionStartedAt) {
+  public PostMortemTriggerParams incidentConditionStartedAt(@jakarta.annotation.Nullable IncidentConditionStartedAtEnum incidentConditionStartedAt) {
     this.incidentConditionStartedAt = incidentConditionStartedAt;
     return this;
   }
@@ -2278,17 +2278,17 @@ public class PostMortemTriggerParams {
    * Get incidentConditionStartedAt
    * @return incidentConditionStartedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public IncidentConditionStartedAtEnum getIncidentConditionStartedAt() {
     return incidentConditionStartedAt;
   }
 
-  public void setIncidentConditionStartedAt(@javax.annotation.Nullable IncidentConditionStartedAtEnum incidentConditionStartedAt) {
+  public void setIncidentConditionStartedAt(@jakarta.annotation.Nullable IncidentConditionStartedAtEnum incidentConditionStartedAt) {
     this.incidentConditionStartedAt = incidentConditionStartedAt;
   }
 
 
-  public PostMortemTriggerParams incidentConditionDetectedAt(@javax.annotation.Nullable IncidentConditionDetectedAtEnum incidentConditionDetectedAt) {
+  public PostMortemTriggerParams incidentConditionDetectedAt(@jakarta.annotation.Nullable IncidentConditionDetectedAtEnum incidentConditionDetectedAt) {
     this.incidentConditionDetectedAt = incidentConditionDetectedAt;
     return this;
   }
@@ -2297,17 +2297,17 @@ public class PostMortemTriggerParams {
    * Get incidentConditionDetectedAt
    * @return incidentConditionDetectedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public IncidentConditionDetectedAtEnum getIncidentConditionDetectedAt() {
     return incidentConditionDetectedAt;
   }
 
-  public void setIncidentConditionDetectedAt(@javax.annotation.Nullable IncidentConditionDetectedAtEnum incidentConditionDetectedAt) {
+  public void setIncidentConditionDetectedAt(@jakarta.annotation.Nullable IncidentConditionDetectedAtEnum incidentConditionDetectedAt) {
     this.incidentConditionDetectedAt = incidentConditionDetectedAt;
   }
 
 
-  public PostMortemTriggerParams incidentConditionAcknowledgedAt(@javax.annotation.Nullable IncidentConditionAcknowledgedAtEnum incidentConditionAcknowledgedAt) {
+  public PostMortemTriggerParams incidentConditionAcknowledgedAt(@jakarta.annotation.Nullable IncidentConditionAcknowledgedAtEnum incidentConditionAcknowledgedAt) {
     this.incidentConditionAcknowledgedAt = incidentConditionAcknowledgedAt;
     return this;
   }
@@ -2316,17 +2316,17 @@ public class PostMortemTriggerParams {
    * Get incidentConditionAcknowledgedAt
    * @return incidentConditionAcknowledgedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public IncidentConditionAcknowledgedAtEnum getIncidentConditionAcknowledgedAt() {
     return incidentConditionAcknowledgedAt;
   }
 
-  public void setIncidentConditionAcknowledgedAt(@javax.annotation.Nullable IncidentConditionAcknowledgedAtEnum incidentConditionAcknowledgedAt) {
+  public void setIncidentConditionAcknowledgedAt(@jakarta.annotation.Nullable IncidentConditionAcknowledgedAtEnum incidentConditionAcknowledgedAt) {
     this.incidentConditionAcknowledgedAt = incidentConditionAcknowledgedAt;
   }
 
 
-  public PostMortemTriggerParams incidentConditionMitigatedAt(@javax.annotation.Nullable IncidentConditionMitigatedAtEnum incidentConditionMitigatedAt) {
+  public PostMortemTriggerParams incidentConditionMitigatedAt(@jakarta.annotation.Nullable IncidentConditionMitigatedAtEnum incidentConditionMitigatedAt) {
     this.incidentConditionMitigatedAt = incidentConditionMitigatedAt;
     return this;
   }
@@ -2335,17 +2335,17 @@ public class PostMortemTriggerParams {
    * Get incidentConditionMitigatedAt
    * @return incidentConditionMitigatedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public IncidentConditionMitigatedAtEnum getIncidentConditionMitigatedAt() {
     return incidentConditionMitigatedAt;
   }
 
-  public void setIncidentConditionMitigatedAt(@javax.annotation.Nullable IncidentConditionMitigatedAtEnum incidentConditionMitigatedAt) {
+  public void setIncidentConditionMitigatedAt(@jakarta.annotation.Nullable IncidentConditionMitigatedAtEnum incidentConditionMitigatedAt) {
     this.incidentConditionMitigatedAt = incidentConditionMitigatedAt;
   }
 
 
-  public PostMortemTriggerParams incidentConditionResolvedAt(@javax.annotation.Nullable IncidentConditionResolvedAtEnum incidentConditionResolvedAt) {
+  public PostMortemTriggerParams incidentConditionResolvedAt(@jakarta.annotation.Nullable IncidentConditionResolvedAtEnum incidentConditionResolvedAt) {
     this.incidentConditionResolvedAt = incidentConditionResolvedAt;
     return this;
   }
@@ -2354,17 +2354,17 @@ public class PostMortemTriggerParams {
    * Get incidentConditionResolvedAt
    * @return incidentConditionResolvedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public IncidentConditionResolvedAtEnum getIncidentConditionResolvedAt() {
     return incidentConditionResolvedAt;
   }
 
-  public void setIncidentConditionResolvedAt(@javax.annotation.Nullable IncidentConditionResolvedAtEnum incidentConditionResolvedAt) {
+  public void setIncidentConditionResolvedAt(@jakarta.annotation.Nullable IncidentConditionResolvedAtEnum incidentConditionResolvedAt) {
     this.incidentConditionResolvedAt = incidentConditionResolvedAt;
   }
 
 
-  public PostMortemTriggerParams incidentConditionalInactivity(@javax.annotation.Nullable IncidentConditionalInactivityEnum incidentConditionalInactivity) {
+  public PostMortemTriggerParams incidentConditionalInactivity(@jakarta.annotation.Nullable IncidentConditionalInactivityEnum incidentConditionalInactivity) {
     this.incidentConditionalInactivity = incidentConditionalInactivity;
     return this;
   }
@@ -2373,17 +2373,17 @@ public class PostMortemTriggerParams {
    * Get incidentConditionalInactivity
    * @return incidentConditionalInactivity
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public IncidentConditionalInactivityEnum getIncidentConditionalInactivity() {
     return incidentConditionalInactivity;
   }
 
-  public void setIncidentConditionalInactivity(@javax.annotation.Nullable IncidentConditionalInactivityEnum incidentConditionalInactivity) {
+  public void setIncidentConditionalInactivity(@jakarta.annotation.Nullable IncidentConditionalInactivityEnum incidentConditionalInactivity) {
     this.incidentConditionalInactivity = incidentConditionalInactivity;
   }
 
 
-  public PostMortemTriggerParams incidentPostMortemCondition(@javax.annotation.Nullable IncidentPostMortemConditionEnum incidentPostMortemCondition) {
+  public PostMortemTriggerParams incidentPostMortemCondition(@jakarta.annotation.Nullable IncidentPostMortemConditionEnum incidentPostMortemCondition) {
     this.incidentPostMortemCondition = incidentPostMortemCondition;
     return this;
   }
@@ -2392,17 +2392,17 @@ public class PostMortemTriggerParams {
    * Get incidentPostMortemCondition
    * @return incidentPostMortemCondition
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public IncidentPostMortemConditionEnum getIncidentPostMortemCondition() {
     return incidentPostMortemCondition;
   }
 
-  public void setIncidentPostMortemCondition(@javax.annotation.Nullable IncidentPostMortemConditionEnum incidentPostMortemCondition) {
+  public void setIncidentPostMortemCondition(@jakarta.annotation.Nullable IncidentPostMortemConditionEnum incidentPostMortemCondition) {
     this.incidentPostMortemCondition = incidentPostMortemCondition;
   }
 
 
-  public PostMortemTriggerParams incidentPostMortemConditionStatus(@javax.annotation.Nullable IncidentPostMortemConditionStatusEnum incidentPostMortemConditionStatus) {
+  public PostMortemTriggerParams incidentPostMortemConditionStatus(@jakarta.annotation.Nullable IncidentPostMortemConditionStatusEnum incidentPostMortemConditionStatus) {
     this.incidentPostMortemConditionStatus = incidentPostMortemConditionStatus;
     return this;
   }
@@ -2411,17 +2411,17 @@ public class PostMortemTriggerParams {
    * Get incidentPostMortemConditionStatus
    * @return incidentPostMortemConditionStatus
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public IncidentPostMortemConditionStatusEnum getIncidentPostMortemConditionStatus() {
     return incidentPostMortemConditionStatus;
   }
 
-  public void setIncidentPostMortemConditionStatus(@javax.annotation.Nullable IncidentPostMortemConditionStatusEnum incidentPostMortemConditionStatus) {
+  public void setIncidentPostMortemConditionStatus(@jakarta.annotation.Nullable IncidentPostMortemConditionStatusEnum incidentPostMortemConditionStatus) {
     this.incidentPostMortemConditionStatus = incidentPostMortemConditionStatus;
   }
 
 
-  public PostMortemTriggerParams incidentPostMortemStatuses(@javax.annotation.Nullable List<IncidentPostMortemStatusesEnum> incidentPostMortemStatuses) {
+  public PostMortemTriggerParams incidentPostMortemStatuses(@jakarta.annotation.Nullable List<IncidentPostMortemStatusesEnum> incidentPostMortemStatuses) {
     this.incidentPostMortemStatuses = incidentPostMortemStatuses;
     return this;
   }
@@ -2438,12 +2438,12 @@ public class PostMortemTriggerParams {
    * Get incidentPostMortemStatuses
    * @return incidentPostMortemStatuses
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<IncidentPostMortemStatusesEnum> getIncidentPostMortemStatuses() {
     return incidentPostMortemStatuses;
   }
 
-  public void setIncidentPostMortemStatuses(@javax.annotation.Nullable List<IncidentPostMortemStatusesEnum> incidentPostMortemStatuses) {
+  public void setIncidentPostMortemStatuses(@jakarta.annotation.Nullable List<IncidentPostMortemStatusesEnum> incidentPostMortemStatuses) {
     this.incidentPostMortemStatuses = incidentPostMortemStatuses;
   }
 

@@ -48,16 +48,16 @@ import com.rootly.client.JSON;
 /**
  * IncidentStatusPageEvent
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class IncidentStatusPageEvent {
   public static final String SERIALIZED_NAME_EVENT = "event";
   @SerializedName(SERIALIZED_NAME_EVENT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String event;
 
   public static final String SERIALIZED_NAME_STATUS_PAGE_ID = "status_page_id";
   @SerializedName(SERIALIZED_NAME_STATUS_PAGE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String statusPageId;
 
   /**
@@ -124,38 +124,38 @@ public class IncidentStatusPageEvent {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private StatusEnum status;
 
   public static final String SERIALIZED_NAME_NOTIFY_SUBSCRIBERS = "notify_subscribers";
   @SerializedName(SERIALIZED_NAME_NOTIFY_SUBSCRIBERS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean notifySubscribers;
 
   public static final String SERIALIZED_NAME_SHOULD_TWEET = "should_tweet";
   @SerializedName(SERIALIZED_NAME_SHOULD_TWEET)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean shouldTweet;
 
   public static final String SERIALIZED_NAME_STARTED_AT = "started_at";
   @SerializedName(SERIALIZED_NAME_STARTED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String startedAt;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public IncidentStatusPageEvent() {
   }
 
-  public IncidentStatusPageEvent event(@javax.annotation.Nonnull String event) {
+  public IncidentStatusPageEvent event(@jakarta.annotation.Nonnull String event) {
     this.event = event;
     return this;
   }
@@ -164,17 +164,17 @@ public class IncidentStatusPageEvent {
    * The summary of the incident event
    * @return event
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getEvent() {
     return event;
   }
 
-  public void setEvent(@javax.annotation.Nonnull String event) {
+  public void setEvent(@jakarta.annotation.Nonnull String event) {
     this.event = event;
   }
 
 
-  public IncidentStatusPageEvent statusPageId(@javax.annotation.Nullable String statusPageId) {
+  public IncidentStatusPageEvent statusPageId(@jakarta.annotation.Nullable String statusPageId) {
     this.statusPageId = statusPageId;
     return this;
   }
@@ -183,17 +183,17 @@ public class IncidentStatusPageEvent {
    * Unique ID of the status page you wish to post the event to
    * @return statusPageId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getStatusPageId() {
     return statusPageId;
   }
 
-  public void setStatusPageId(@javax.annotation.Nullable String statusPageId) {
+  public void setStatusPageId(@jakarta.annotation.Nullable String statusPageId) {
     this.statusPageId = statusPageId;
   }
 
 
-  public IncidentStatusPageEvent status(@javax.annotation.Nullable StatusEnum status) {
+  public IncidentStatusPageEvent status(@jakarta.annotation.Nullable StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -202,17 +202,17 @@ public class IncidentStatusPageEvent {
    * The status of the incident event
    * @return status
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nullable StatusEnum status) {
+  public void setStatus(@jakarta.annotation.Nullable StatusEnum status) {
     this.status = status;
   }
 
 
-  public IncidentStatusPageEvent notifySubscribers(@javax.annotation.Nullable Boolean notifySubscribers) {
+  public IncidentStatusPageEvent notifySubscribers(@jakarta.annotation.Nullable Boolean notifySubscribers) {
     this.notifySubscribers = notifySubscribers;
     return this;
   }
@@ -221,17 +221,17 @@ public class IncidentStatusPageEvent {
    * Notify all status pages subscribers
    * @return notifySubscribers
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getNotifySubscribers() {
     return notifySubscribers;
   }
 
-  public void setNotifySubscribers(@javax.annotation.Nullable Boolean notifySubscribers) {
+  public void setNotifySubscribers(@jakarta.annotation.Nullable Boolean notifySubscribers) {
     this.notifySubscribers = notifySubscribers;
   }
 
 
-  public IncidentStatusPageEvent shouldTweet(@javax.annotation.Nullable Boolean shouldTweet) {
+  public IncidentStatusPageEvent shouldTweet(@jakarta.annotation.Nullable Boolean shouldTweet) {
     this.shouldTweet = shouldTweet;
     return this;
   }
@@ -240,17 +240,17 @@ public class IncidentStatusPageEvent {
    * For Statuspage.io integrated pages auto publishes a tweet for your update
    * @return shouldTweet
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getShouldTweet() {
     return shouldTweet;
   }
 
-  public void setShouldTweet(@javax.annotation.Nullable Boolean shouldTweet) {
+  public void setShouldTweet(@jakarta.annotation.Nullable Boolean shouldTweet) {
     this.shouldTweet = shouldTweet;
   }
 
 
-  public IncidentStatusPageEvent startedAt(@javax.annotation.Nonnull String startedAt) {
+  public IncidentStatusPageEvent startedAt(@jakarta.annotation.Nonnull String startedAt) {
     this.startedAt = startedAt;
     return this;
   }
@@ -259,17 +259,17 @@ public class IncidentStatusPageEvent {
    * Date of start
    * @return startedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getStartedAt() {
     return startedAt;
   }
 
-  public void setStartedAt(@javax.annotation.Nonnull String startedAt) {
+  public void setStartedAt(@jakarta.annotation.Nonnull String startedAt) {
     this.startedAt = startedAt;
   }
 
 
-  public IncidentStatusPageEvent createdAt(@javax.annotation.Nonnull String createdAt) {
+  public IncidentStatusPageEvent createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -278,17 +278,17 @@ public class IncidentStatusPageEvent {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public IncidentStatusPageEvent updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public IncidentStatusPageEvent updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -297,12 +297,12 @@ public class IncidentStatusPageEvent {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

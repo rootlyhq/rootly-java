@@ -49,17 +49,17 @@ import com.rootly.client.JSON;
 /**
  * StatusPageTemplateResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class StatusPageTemplateResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private StatusPageTemplateResponseData data;
 
   public StatusPageTemplateResponse() {
   }
 
-  public StatusPageTemplateResponse data(@javax.annotation.Nonnull StatusPageTemplateResponseData data) {
+  public StatusPageTemplateResponse data(@jakarta.annotation.Nonnull StatusPageTemplateResponseData data) {
     this.data = data;
     return this;
   }
@@ -68,12 +68,12 @@ public class StatusPageTemplateResponse {
    * Get data
    * @return data
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public StatusPageTemplateResponseData getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nonnull StatusPageTemplateResponseData data) {
+  public void setData(@jakarta.annotation.Nonnull StatusPageTemplateResponseData data) {
     this.data = data;
   }
 

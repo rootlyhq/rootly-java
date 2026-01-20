@@ -54,11 +54,11 @@ import com.rootly.client.JSON;
 /**
  * NewDashboardPanelDataAttributesParamsDatasetsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewDashboardPanelDataAttributesParamsDatasetsInner {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String name;
 
   /**
@@ -121,28 +121,28 @@ public class NewDashboardPanelDataAttributesParamsDatasetsInner {
 
   public static final String SERIALIZED_NAME_COLLECTION = "collection";
   @SerializedName(SERIALIZED_NAME_COLLECTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CollectionEnum collection;
 
   public static final String SERIALIZED_NAME_FILTER = "filter";
   @SerializedName(SERIALIZED_NAME_FILTER)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInner> filter = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_GROUP_BY = "group_by";
   @SerializedName(SERIALIZED_NAME_GROUP_BY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private NewDashboardPanelDataAttributesParamsDatasetsInnerGroupBy groupBy;
 
   public static final String SERIALIZED_NAME_AGGREGATE = "aggregate";
   @SerializedName(SERIALIZED_NAME_AGGREGATE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private NewDashboardPanelDataAttributesParamsDatasetsInnerAggregate aggregate;
 
   public NewDashboardPanelDataAttributesParamsDatasetsInner() {
   }
 
-  public NewDashboardPanelDataAttributesParamsDatasetsInner name(@javax.annotation.Nullable String name) {
+  public NewDashboardPanelDataAttributesParamsDatasetsInner name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -151,17 +151,17 @@ public class NewDashboardPanelDataAttributesParamsDatasetsInner {
    * Get name
    * @return name
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public NewDashboardPanelDataAttributesParamsDatasetsInner collection(@javax.annotation.Nullable CollectionEnum collection) {
+  public NewDashboardPanelDataAttributesParamsDatasetsInner collection(@jakarta.annotation.Nullable CollectionEnum collection) {
     this.collection = collection;
     return this;
   }
@@ -170,17 +170,17 @@ public class NewDashboardPanelDataAttributesParamsDatasetsInner {
    * Get collection
    * @return collection
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CollectionEnum getCollection() {
     return collection;
   }
 
-  public void setCollection(@javax.annotation.Nullable CollectionEnum collection) {
+  public void setCollection(@jakarta.annotation.Nullable CollectionEnum collection) {
     this.collection = collection;
   }
 
 
-  public NewDashboardPanelDataAttributesParamsDatasetsInner filter(@javax.annotation.Nullable List<NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInner> filter) {
+  public NewDashboardPanelDataAttributesParamsDatasetsInner filter(@jakarta.annotation.Nullable List<NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInner> filter) {
     this.filter = filter;
     return this;
   }
@@ -197,17 +197,17 @@ public class NewDashboardPanelDataAttributesParamsDatasetsInner {
    * Get filter
    * @return filter
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInner> getFilter() {
     return filter;
   }
 
-  public void setFilter(@javax.annotation.Nullable List<NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInner> filter) {
+  public void setFilter(@jakarta.annotation.Nullable List<NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInner> filter) {
     this.filter = filter;
   }
 
 
-  public NewDashboardPanelDataAttributesParamsDatasetsInner groupBy(@javax.annotation.Nullable NewDashboardPanelDataAttributesParamsDatasetsInnerGroupBy groupBy) {
+  public NewDashboardPanelDataAttributesParamsDatasetsInner groupBy(@jakarta.annotation.Nullable NewDashboardPanelDataAttributesParamsDatasetsInnerGroupBy groupBy) {
     this.groupBy = groupBy;
     return this;
   }
@@ -216,17 +216,17 @@ public class NewDashboardPanelDataAttributesParamsDatasetsInner {
    * Get groupBy
    * @return groupBy
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public NewDashboardPanelDataAttributesParamsDatasetsInnerGroupBy getGroupBy() {
     return groupBy;
   }
 
-  public void setGroupBy(@javax.annotation.Nullable NewDashboardPanelDataAttributesParamsDatasetsInnerGroupBy groupBy) {
+  public void setGroupBy(@jakarta.annotation.Nullable NewDashboardPanelDataAttributesParamsDatasetsInnerGroupBy groupBy) {
     this.groupBy = groupBy;
   }
 
 
-  public NewDashboardPanelDataAttributesParamsDatasetsInner aggregate(@javax.annotation.Nullable NewDashboardPanelDataAttributesParamsDatasetsInnerAggregate aggregate) {
+  public NewDashboardPanelDataAttributesParamsDatasetsInner aggregate(@jakarta.annotation.Nullable NewDashboardPanelDataAttributesParamsDatasetsInnerAggregate aggregate) {
     this.aggregate = aggregate;
     return this;
   }
@@ -235,12 +235,12 @@ public class NewDashboardPanelDataAttributesParamsDatasetsInner {
    * Get aggregate
    * @return aggregate
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public NewDashboardPanelDataAttributesParamsDatasetsInnerAggregate getAggregate() {
     return aggregate;
   }
 
-  public void setAggregate(@javax.annotation.Nullable NewDashboardPanelDataAttributesParamsDatasetsInnerAggregate aggregate) {
+  public void setAggregate(@jakarta.annotation.Nullable NewDashboardPanelDataAttributesParamsDatasetsInnerAggregate aggregate) {
     this.aggregate = aggregate;
   }
 

@@ -91,7 +91,7 @@ public class WorkflowTasksApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createWorkflowTaskCall(@javax.annotation.Nonnull String workflowId, @javax.annotation.Nonnull NewWorkflowTask newWorkflowTask, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createWorkflowTaskCall(@jakarta.annotation.Nonnull String workflowId, @jakarta.annotation.Nonnull NewWorkflowTask newWorkflowTask, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -138,7 +138,7 @@ public class WorkflowTasksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createWorkflowTaskValidateBeforeCall(@javax.annotation.Nonnull String workflowId, @javax.annotation.Nonnull NewWorkflowTask newWorkflowTask, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createWorkflowTaskValidateBeforeCall(@jakarta.annotation.Nonnull String workflowId, @jakarta.annotation.Nonnull NewWorkflowTask newWorkflowTask, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'workflowId' is set
         if (workflowId == null) {
             throw new ApiException("Missing the required parameter 'workflowId' when calling createWorkflowTask(Async)");
@@ -168,7 +168,7 @@ public class WorkflowTasksApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public WorkflowTaskResponse createWorkflowTask(@javax.annotation.Nonnull String workflowId, @javax.annotation.Nonnull NewWorkflowTask newWorkflowTask) throws ApiException {
+    public WorkflowTaskResponse createWorkflowTask(@jakarta.annotation.Nonnull String workflowId, @jakarta.annotation.Nonnull NewWorkflowTask newWorkflowTask) throws ApiException {
         ApiResponse<WorkflowTaskResponse> localVarResp = createWorkflowTaskWithHttpInfo(workflowId, newWorkflowTask);
         return localVarResp.getData();
     }
@@ -188,7 +188,7 @@ public class WorkflowTasksApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WorkflowTaskResponse> createWorkflowTaskWithHttpInfo(@javax.annotation.Nonnull String workflowId, @javax.annotation.Nonnull NewWorkflowTask newWorkflowTask) throws ApiException {
+    public ApiResponse<WorkflowTaskResponse> createWorkflowTaskWithHttpInfo(@jakarta.annotation.Nonnull String workflowId, @jakarta.annotation.Nonnull NewWorkflowTask newWorkflowTask) throws ApiException {
         okhttp3.Call localVarCall = createWorkflowTaskValidateBeforeCall(workflowId, newWorkflowTask, null);
         Type localVarReturnType = new TypeToken<WorkflowTaskResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -210,7 +210,7 @@ public class WorkflowTasksApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createWorkflowTaskAsync(@javax.annotation.Nonnull String workflowId, @javax.annotation.Nonnull NewWorkflowTask newWorkflowTask, final ApiCallback<WorkflowTaskResponse> _callback) throws ApiException {
+    public okhttp3.Call createWorkflowTaskAsync(@jakarta.annotation.Nonnull String workflowId, @jakarta.annotation.Nonnull NewWorkflowTask newWorkflowTask, final ApiCallback<WorkflowTaskResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createWorkflowTaskValidateBeforeCall(workflowId, newWorkflowTask, _callback);
         Type localVarReturnType = new TypeToken<WorkflowTaskResponse>(){}.getType();
@@ -231,7 +231,7 @@ public class WorkflowTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteWorkflowTaskCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteWorkflowTaskCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -277,7 +277,7 @@ public class WorkflowTasksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteWorkflowTaskValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteWorkflowTaskValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteWorkflowTask(Async)");
@@ -301,7 +301,7 @@ public class WorkflowTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public WorkflowTaskResponse deleteWorkflowTask(@javax.annotation.Nonnull String id) throws ApiException {
+    public WorkflowTaskResponse deleteWorkflowTask(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<WorkflowTaskResponse> localVarResp = deleteWorkflowTaskWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -320,7 +320,7 @@ public class WorkflowTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WorkflowTaskResponse> deleteWorkflowTaskWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<WorkflowTaskResponse> deleteWorkflowTaskWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteWorkflowTaskValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<WorkflowTaskResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -341,7 +341,7 @@ public class WorkflowTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteWorkflowTaskAsync(@javax.annotation.Nonnull String id, final ApiCallback<WorkflowTaskResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteWorkflowTaskAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<WorkflowTaskResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteWorkflowTaskValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<WorkflowTaskResponse>(){}.getType();
@@ -362,7 +362,7 @@ public class WorkflowTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWorkflowTaskCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getWorkflowTaskCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -408,7 +408,7 @@ public class WorkflowTasksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getWorkflowTaskValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getWorkflowTaskValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getWorkflowTask(Async)");
@@ -432,7 +432,7 @@ public class WorkflowTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public WorkflowTaskResponse getWorkflowTask(@javax.annotation.Nonnull String id) throws ApiException {
+    public WorkflowTaskResponse getWorkflowTask(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<WorkflowTaskResponse> localVarResp = getWorkflowTaskWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -451,7 +451,7 @@ public class WorkflowTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WorkflowTaskResponse> getWorkflowTaskWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<WorkflowTaskResponse> getWorkflowTaskWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getWorkflowTaskValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<WorkflowTaskResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -472,7 +472,7 @@ public class WorkflowTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWorkflowTaskAsync(@javax.annotation.Nonnull String id, final ApiCallback<WorkflowTaskResponse> _callback) throws ApiException {
+    public okhttp3.Call getWorkflowTaskAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<WorkflowTaskResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getWorkflowTaskValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<WorkflowTaskResponse>(){}.getType();
@@ -498,7 +498,7 @@ public class WorkflowTasksApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listWorkflowTasksCall(@javax.annotation.Nonnull String workflowId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSlug, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listWorkflowTasksCall(@jakarta.annotation.Nonnull String workflowId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -568,7 +568,7 @@ public class WorkflowTasksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listWorkflowTasksValidateBeforeCall(@javax.annotation.Nonnull String workflowId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSlug, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listWorkflowTasksValidateBeforeCall(@jakarta.annotation.Nonnull String workflowId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'workflowId' is set
         if (workflowId == null) {
             throw new ApiException("Missing the required parameter 'workflowId' when calling listWorkflowTasks(Async)");
@@ -597,7 +597,7 @@ public class WorkflowTasksApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public WorkflowTaskList listWorkflowTasks(@javax.annotation.Nonnull String workflowId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSlug) throws ApiException {
+    public WorkflowTaskList listWorkflowTasks(@jakarta.annotation.Nonnull String workflowId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug) throws ApiException {
         ApiResponse<WorkflowTaskList> localVarResp = listWorkflowTasksWithHttpInfo(workflowId, include, pageNumber, pageSize, filterSearch, filterName, filterSlug);
         return localVarResp.getData();
     }
@@ -621,7 +621,7 @@ public class WorkflowTasksApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WorkflowTaskList> listWorkflowTasksWithHttpInfo(@javax.annotation.Nonnull String workflowId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSlug) throws ApiException {
+    public ApiResponse<WorkflowTaskList> listWorkflowTasksWithHttpInfo(@jakarta.annotation.Nonnull String workflowId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug) throws ApiException {
         okhttp3.Call localVarCall = listWorkflowTasksValidateBeforeCall(workflowId, include, pageNumber, pageSize, filterSearch, filterName, filterSlug, null);
         Type localVarReturnType = new TypeToken<WorkflowTaskList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -647,7 +647,7 @@ public class WorkflowTasksApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listWorkflowTasksAsync(@javax.annotation.Nonnull String workflowId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSlug, final ApiCallback<WorkflowTaskList> _callback) throws ApiException {
+    public okhttp3.Call listWorkflowTasksAsync(@jakarta.annotation.Nonnull String workflowId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, final ApiCallback<WorkflowTaskList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listWorkflowTasksValidateBeforeCall(workflowId, include, pageNumber, pageSize, filterSearch, filterName, filterSlug, _callback);
         Type localVarReturnType = new TypeToken<WorkflowTaskList>(){}.getType();
@@ -669,7 +669,7 @@ public class WorkflowTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateWorkflowTaskCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateWorkflowTask updateWorkflowTask, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateWorkflowTaskCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateWorkflowTask updateWorkflowTask, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -716,7 +716,7 @@ public class WorkflowTasksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateWorkflowTaskValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateWorkflowTask updateWorkflowTask, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateWorkflowTaskValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateWorkflowTask updateWorkflowTask, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateWorkflowTask(Async)");
@@ -746,7 +746,7 @@ public class WorkflowTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public WorkflowTaskResponse updateWorkflowTask(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateWorkflowTask updateWorkflowTask) throws ApiException {
+    public WorkflowTaskResponse updateWorkflowTask(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateWorkflowTask updateWorkflowTask) throws ApiException {
         ApiResponse<WorkflowTaskResponse> localVarResp = updateWorkflowTaskWithHttpInfo(id, updateWorkflowTask);
         return localVarResp.getData();
     }
@@ -766,7 +766,7 @@ public class WorkflowTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WorkflowTaskResponse> updateWorkflowTaskWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateWorkflowTask updateWorkflowTask) throws ApiException {
+    public ApiResponse<WorkflowTaskResponse> updateWorkflowTaskWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateWorkflowTask updateWorkflowTask) throws ApiException {
         okhttp3.Call localVarCall = updateWorkflowTaskValidateBeforeCall(id, updateWorkflowTask, null);
         Type localVarReturnType = new TypeToken<WorkflowTaskResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -788,7 +788,7 @@ public class WorkflowTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateWorkflowTaskAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateWorkflowTask updateWorkflowTask, final ApiCallback<WorkflowTaskResponse> _callback) throws ApiException {
+    public okhttp3.Call updateWorkflowTaskAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateWorkflowTask updateWorkflowTask, final ApiCallback<WorkflowTaskResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateWorkflowTaskValidateBeforeCall(id, updateWorkflowTask, _callback);
         Type localVarReturnType = new TypeToken<WorkflowTaskResponse>(){}.getType();

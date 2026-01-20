@@ -50,7 +50,7 @@ import com.rootly.client.JSON;
 /**
  * SendSlackBlocksTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SendSlackBlocksTaskParams {
   /**
    * Gets or Sets taskType
@@ -104,78 +104,78 @@ public class SendSlackBlocksTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String message;
 
   public static final String SERIALIZED_NAME_BLOCKS = "blocks";
   @SerializedName(SERIALIZED_NAME_BLOCKS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String blocks;
 
   public static final String SERIALIZED_NAME_ATTACHMENTS = "attachments";
   @SerializedName(SERIALIZED_NAME_ATTACHMENTS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String attachments;
 
   public static final String SERIALIZED_NAME_CHANNELS = "channels";
   @SerializedName(SERIALIZED_NAME_CHANNELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<Object> channels = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SLACK_USERS = "slack_users";
   @SerializedName(SERIALIZED_NAME_SLACK_USERS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<Object> slackUsers = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SLACK_USER_GROUPS = "slack_user_groups";
   @SerializedName(SERIALIZED_NAME_SLACK_USER_GROUPS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<Object> slackUserGroups = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_BROADCAST_THREAD_REPLY_TO_CHANNEL = "broadcast_thread_reply_to_channel";
   @SerializedName(SERIALIZED_NAME_BROADCAST_THREAD_REPLY_TO_CHANNEL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean broadcastThreadReplyToChannel;
 
   public static final String SERIALIZED_NAME_SEND_AS_EPHEMERAL = "send_as_ephemeral";
   @SerializedName(SERIALIZED_NAME_SEND_AS_EPHEMERAL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean sendAsEphemeral;
 
   public static final String SERIALIZED_NAME_PIN_TO_CHANNEL = "pin_to_channel";
   @SerializedName(SERIALIZED_NAME_PIN_TO_CHANNEL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean pinToChannel;
 
   public static final String SERIALIZED_NAME_THREAD_TS = "thread_ts";
   @SerializedName(SERIALIZED_NAME_THREAD_TS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String threadTs;
 
   public static final String SERIALIZED_NAME_UPDATE_PARENT_MESSAGE = "update_parent_message";
   @SerializedName(SERIALIZED_NAME_UPDATE_PARENT_MESSAGE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean updateParentMessage;
 
   public static final String SERIALIZED_NAME_PARENT_MESSAGE_THREAD_TASK = "parent_message_thread_task";
   @SerializedName(SERIALIZED_NAME_PARENT_MESSAGE_THREAD_TASK)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Object parentMessageThreadTask;
 
   public static final String SERIALIZED_NAME_SEND_ONLY_AS_THREADED_MESSAGE = "send_only_as_threaded_message";
   @SerializedName(SERIALIZED_NAME_SEND_ONLY_AS_THREADED_MESSAGE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean sendOnlyAsThreadedMessage;
 
   public SendSlackBlocksTaskParams() {
   }
 
-  public SendSlackBlocksTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public SendSlackBlocksTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -184,17 +184,17 @@ public class SendSlackBlocksTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public SendSlackBlocksTaskParams message(@javax.annotation.Nullable String message) {
+  public SendSlackBlocksTaskParams message(@jakarta.annotation.Nullable String message) {
     this.message = message;
     return this;
   }
@@ -203,17 +203,17 @@ public class SendSlackBlocksTaskParams {
    * Get message
    * @return message
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getMessage() {
     return message;
   }
 
-  public void setMessage(@javax.annotation.Nullable String message) {
+  public void setMessage(@jakarta.annotation.Nullable String message) {
     this.message = message;
   }
 
 
-  public SendSlackBlocksTaskParams blocks(@javax.annotation.Nonnull String blocks) {
+  public SendSlackBlocksTaskParams blocks(@jakarta.annotation.Nonnull String blocks) {
     this.blocks = blocks;
     return this;
   }
@@ -222,17 +222,17 @@ public class SendSlackBlocksTaskParams {
    * Support liquid markup. Needs to be a valid JSON string after liquid is parsed
    * @return blocks
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getBlocks() {
     return blocks;
   }
 
-  public void setBlocks(@javax.annotation.Nonnull String blocks) {
+  public void setBlocks(@jakarta.annotation.Nonnull String blocks) {
     this.blocks = blocks;
   }
 
 
-  public SendSlackBlocksTaskParams attachments(@javax.annotation.Nullable String attachments) {
+  public SendSlackBlocksTaskParams attachments(@jakarta.annotation.Nullable String attachments) {
     this.attachments = attachments;
     return this;
   }
@@ -241,17 +241,17 @@ public class SendSlackBlocksTaskParams {
    * Support liquid markup. Needs to be a valid JSON string after liquid is parsed
    * @return attachments
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getAttachments() {
     return attachments;
   }
 
-  public void setAttachments(@javax.annotation.Nullable String attachments) {
+  public void setAttachments(@jakarta.annotation.Nullable String attachments) {
     this.attachments = attachments;
   }
 
 
-  public SendSlackBlocksTaskParams channels(@javax.annotation.Nullable List<Object> channels) {
+  public SendSlackBlocksTaskParams channels(@jakarta.annotation.Nullable List<Object> channels) {
     this.channels = channels;
     return this;
   }
@@ -268,17 +268,17 @@ public class SendSlackBlocksTaskParams {
    * Get channels
    * @return channels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<Object> getChannels() {
     return channels;
   }
 
-  public void setChannels(@javax.annotation.Nullable List<Object> channels) {
+  public void setChannels(@jakarta.annotation.Nullable List<Object> channels) {
     this.channels = channels;
   }
 
 
-  public SendSlackBlocksTaskParams slackUsers(@javax.annotation.Nullable List<Object> slackUsers) {
+  public SendSlackBlocksTaskParams slackUsers(@jakarta.annotation.Nullable List<Object> slackUsers) {
     this.slackUsers = slackUsers;
     return this;
   }
@@ -295,17 +295,17 @@ public class SendSlackBlocksTaskParams {
    * Get slackUsers
    * @return slackUsers
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<Object> getSlackUsers() {
     return slackUsers;
   }
 
-  public void setSlackUsers(@javax.annotation.Nullable List<Object> slackUsers) {
+  public void setSlackUsers(@jakarta.annotation.Nullable List<Object> slackUsers) {
     this.slackUsers = slackUsers;
   }
 
 
-  public SendSlackBlocksTaskParams slackUserGroups(@javax.annotation.Nullable List<Object> slackUserGroups) {
+  public SendSlackBlocksTaskParams slackUserGroups(@jakarta.annotation.Nullable List<Object> slackUserGroups) {
     this.slackUserGroups = slackUserGroups;
     return this;
   }
@@ -322,17 +322,17 @@ public class SendSlackBlocksTaskParams {
    * Get slackUserGroups
    * @return slackUserGroups
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<Object> getSlackUserGroups() {
     return slackUserGroups;
   }
 
-  public void setSlackUserGroups(@javax.annotation.Nullable List<Object> slackUserGroups) {
+  public void setSlackUserGroups(@jakarta.annotation.Nullable List<Object> slackUserGroups) {
     this.slackUserGroups = slackUserGroups;
   }
 
 
-  public SendSlackBlocksTaskParams broadcastThreadReplyToChannel(@javax.annotation.Nullable Boolean broadcastThreadReplyToChannel) {
+  public SendSlackBlocksTaskParams broadcastThreadReplyToChannel(@jakarta.annotation.Nullable Boolean broadcastThreadReplyToChannel) {
     this.broadcastThreadReplyToChannel = broadcastThreadReplyToChannel;
     return this;
   }
@@ -341,17 +341,17 @@ public class SendSlackBlocksTaskParams {
    * Get broadcastThreadReplyToChannel
    * @return broadcastThreadReplyToChannel
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getBroadcastThreadReplyToChannel() {
     return broadcastThreadReplyToChannel;
   }
 
-  public void setBroadcastThreadReplyToChannel(@javax.annotation.Nullable Boolean broadcastThreadReplyToChannel) {
+  public void setBroadcastThreadReplyToChannel(@jakarta.annotation.Nullable Boolean broadcastThreadReplyToChannel) {
     this.broadcastThreadReplyToChannel = broadcastThreadReplyToChannel;
   }
 
 
-  public SendSlackBlocksTaskParams sendAsEphemeral(@javax.annotation.Nullable Boolean sendAsEphemeral) {
+  public SendSlackBlocksTaskParams sendAsEphemeral(@jakarta.annotation.Nullable Boolean sendAsEphemeral) {
     this.sendAsEphemeral = sendAsEphemeral;
     return this;
   }
@@ -360,17 +360,17 @@ public class SendSlackBlocksTaskParams {
    * Get sendAsEphemeral
    * @return sendAsEphemeral
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getSendAsEphemeral() {
     return sendAsEphemeral;
   }
 
-  public void setSendAsEphemeral(@javax.annotation.Nullable Boolean sendAsEphemeral) {
+  public void setSendAsEphemeral(@jakarta.annotation.Nullable Boolean sendAsEphemeral) {
     this.sendAsEphemeral = sendAsEphemeral;
   }
 
 
-  public SendSlackBlocksTaskParams pinToChannel(@javax.annotation.Nullable Boolean pinToChannel) {
+  public SendSlackBlocksTaskParams pinToChannel(@jakarta.annotation.Nullable Boolean pinToChannel) {
     this.pinToChannel = pinToChannel;
     return this;
   }
@@ -379,17 +379,17 @@ public class SendSlackBlocksTaskParams {
    * Get pinToChannel
    * @return pinToChannel
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getPinToChannel() {
     return pinToChannel;
   }
 
-  public void setPinToChannel(@javax.annotation.Nullable Boolean pinToChannel) {
+  public void setPinToChannel(@jakarta.annotation.Nullable Boolean pinToChannel) {
     this.pinToChannel = pinToChannel;
   }
 
 
-  public SendSlackBlocksTaskParams threadTs(@javax.annotation.Nullable String threadTs) {
+  public SendSlackBlocksTaskParams threadTs(@jakarta.annotation.Nullable String threadTs) {
     this.threadTs = threadTs;
     return this;
   }
@@ -398,17 +398,17 @@ public class SendSlackBlocksTaskParams {
    * The thread to send the message into
    * @return threadTs
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getThreadTs() {
     return threadTs;
   }
 
-  public void setThreadTs(@javax.annotation.Nullable String threadTs) {
+  public void setThreadTs(@jakarta.annotation.Nullable String threadTs) {
     this.threadTs = threadTs;
   }
 
 
-  public SendSlackBlocksTaskParams updateParentMessage(@javax.annotation.Nullable Boolean updateParentMessage) {
+  public SendSlackBlocksTaskParams updateParentMessage(@jakarta.annotation.Nullable Boolean updateParentMessage) {
     this.updateParentMessage = updateParentMessage;
     return this;
   }
@@ -417,17 +417,17 @@ public class SendSlackBlocksTaskParams {
    * Get updateParentMessage
    * @return updateParentMessage
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getUpdateParentMessage() {
     return updateParentMessage;
   }
 
-  public void setUpdateParentMessage(@javax.annotation.Nullable Boolean updateParentMessage) {
+  public void setUpdateParentMessage(@jakarta.annotation.Nullable Boolean updateParentMessage) {
     this.updateParentMessage = updateParentMessage;
   }
 
 
-  public SendSlackBlocksTaskParams parentMessageThreadTask(@javax.annotation.Nullable Object parentMessageThreadTask) {
+  public SendSlackBlocksTaskParams parentMessageThreadTask(@jakarta.annotation.Nullable Object parentMessageThreadTask) {
     this.parentMessageThreadTask = parentMessageThreadTask;
     return this;
   }
@@ -436,17 +436,17 @@ public class SendSlackBlocksTaskParams {
    * A hash where [id] is the task id of the parent task that sent a message, and [name] is the name of the parent task
    * @return parentMessageThreadTask
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Object getParentMessageThreadTask() {
     return parentMessageThreadTask;
   }
 
-  public void setParentMessageThreadTask(@javax.annotation.Nullable Object parentMessageThreadTask) {
+  public void setParentMessageThreadTask(@jakarta.annotation.Nullable Object parentMessageThreadTask) {
     this.parentMessageThreadTask = parentMessageThreadTask;
   }
 
 
-  public SendSlackBlocksTaskParams sendOnlyAsThreadedMessage(@javax.annotation.Nullable Boolean sendOnlyAsThreadedMessage) {
+  public SendSlackBlocksTaskParams sendOnlyAsThreadedMessage(@jakarta.annotation.Nullable Boolean sendOnlyAsThreadedMessage) {
     this.sendOnlyAsThreadedMessage = sendOnlyAsThreadedMessage;
     return this;
   }
@@ -455,12 +455,12 @@ public class SendSlackBlocksTaskParams {
    * When set to true, if the parent for this threaded message cannot be found the message will be skipped.
    * @return sendOnlyAsThreadedMessage
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getSendOnlyAsThreadedMessage() {
     return sendOnlyAsThreadedMessage;
   }
 
-  public void setSendOnlyAsThreadedMessage(@javax.annotation.Nullable Boolean sendOnlyAsThreadedMessage) {
+  public void setSendOnlyAsThreadedMessage(@jakarta.annotation.Nullable Boolean sendOnlyAsThreadedMessage) {
     this.sendOnlyAsThreadedMessage = sendOnlyAsThreadedMessage;
   }
 

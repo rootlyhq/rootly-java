@@ -48,17 +48,17 @@ import com.rootly.client.JSON;
 /**
  * UpdateUserPhoneNumberDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateUserPhoneNumberDataAttributes {
   public static final String SERIALIZED_NAME_PHONE = "phone";
   @SerializedName(SERIALIZED_NAME_PHONE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String phone;
 
   public UpdateUserPhoneNumberDataAttributes() {
   }
 
-  public UpdateUserPhoneNumberDataAttributes phone(@javax.annotation.Nullable String phone) {
+  public UpdateUserPhoneNumberDataAttributes phone(@jakarta.annotation.Nullable String phone) {
     this.phone = phone;
     return this;
   }
@@ -67,12 +67,12 @@ public class UpdateUserPhoneNumberDataAttributes {
    * Phone number in international format
    * @return phone
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPhone() {
     return phone;
   }
 
-  public void setPhone(@javax.annotation.Nullable String phone) {
+  public void setPhone(@jakarta.annotation.Nullable String phone) {
     this.phone = phone;
   }
 

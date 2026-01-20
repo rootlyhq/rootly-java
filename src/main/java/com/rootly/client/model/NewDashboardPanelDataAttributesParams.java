@@ -53,7 +53,7 @@ import com.rootly.client.JSON;
 /**
  * NewDashboardPanelDataAttributesParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewDashboardPanelDataAttributesParams {
   /**
    * Gets or Sets display
@@ -121,38 +121,38 @@ public class NewDashboardPanelDataAttributesParams {
 
   public static final String SERIALIZED_NAME_DISPLAY = "display";
   @SerializedName(SERIALIZED_NAME_DISPLAY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private DisplayEnum display;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_TABLE_FIELDS = "table_fields";
   @SerializedName(SERIALIZED_NAME_TABLE_FIELDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> tableFields = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_LEGEND = "legend";
   @SerializedName(SERIALIZED_NAME_LEGEND)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private NewDashboardPanelDataAttributesParamsLegend legend;
 
   public static final String SERIALIZED_NAME_DATALABELS = "datalabels";
   @SerializedName(SERIALIZED_NAME_DATALABELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private NewDashboardPanelDataAttributesParamsDatalabels datalabels;
 
   public static final String SERIALIZED_NAME_DATASETS = "datasets";
   @SerializedName(SERIALIZED_NAME_DATASETS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewDashboardPanelDataAttributesParamsDatasetsInner> datasets = new ArrayList<>();
 
   public NewDashboardPanelDataAttributesParams() {
   }
 
-  public NewDashboardPanelDataAttributesParams display(@javax.annotation.Nullable DisplayEnum display) {
+  public NewDashboardPanelDataAttributesParams display(@jakarta.annotation.Nullable DisplayEnum display) {
     this.display = display;
     return this;
   }
@@ -161,17 +161,17 @@ public class NewDashboardPanelDataAttributesParams {
    * Get display
    * @return display
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public DisplayEnum getDisplay() {
     return display;
   }
 
-  public void setDisplay(@javax.annotation.Nullable DisplayEnum display) {
+  public void setDisplay(@jakarta.annotation.Nullable DisplayEnum display) {
     this.display = display;
   }
 
 
-  public NewDashboardPanelDataAttributesParams description(@javax.annotation.Nullable String description) {
+  public NewDashboardPanelDataAttributesParams description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -180,17 +180,17 @@ public class NewDashboardPanelDataAttributesParams {
    * Get description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public NewDashboardPanelDataAttributesParams tableFields(@javax.annotation.Nullable List<String> tableFields) {
+  public NewDashboardPanelDataAttributesParams tableFields(@jakarta.annotation.Nullable List<String> tableFields) {
     this.tableFields = tableFields;
     return this;
   }
@@ -207,17 +207,17 @@ public class NewDashboardPanelDataAttributesParams {
    * Get tableFields
    * @return tableFields
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getTableFields() {
     return tableFields;
   }
 
-  public void setTableFields(@javax.annotation.Nullable List<String> tableFields) {
+  public void setTableFields(@jakarta.annotation.Nullable List<String> tableFields) {
     this.tableFields = tableFields;
   }
 
 
-  public NewDashboardPanelDataAttributesParams legend(@javax.annotation.Nullable NewDashboardPanelDataAttributesParamsLegend legend) {
+  public NewDashboardPanelDataAttributesParams legend(@jakarta.annotation.Nullable NewDashboardPanelDataAttributesParamsLegend legend) {
     this.legend = legend;
     return this;
   }
@@ -226,17 +226,17 @@ public class NewDashboardPanelDataAttributesParams {
    * Get legend
    * @return legend
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public NewDashboardPanelDataAttributesParamsLegend getLegend() {
     return legend;
   }
 
-  public void setLegend(@javax.annotation.Nullable NewDashboardPanelDataAttributesParamsLegend legend) {
+  public void setLegend(@jakarta.annotation.Nullable NewDashboardPanelDataAttributesParamsLegend legend) {
     this.legend = legend;
   }
 
 
-  public NewDashboardPanelDataAttributesParams datalabels(@javax.annotation.Nullable NewDashboardPanelDataAttributesParamsDatalabels datalabels) {
+  public NewDashboardPanelDataAttributesParams datalabels(@jakarta.annotation.Nullable NewDashboardPanelDataAttributesParamsDatalabels datalabels) {
     this.datalabels = datalabels;
     return this;
   }
@@ -245,17 +245,17 @@ public class NewDashboardPanelDataAttributesParams {
    * Get datalabels
    * @return datalabels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public NewDashboardPanelDataAttributesParamsDatalabels getDatalabels() {
     return datalabels;
   }
 
-  public void setDatalabels(@javax.annotation.Nullable NewDashboardPanelDataAttributesParamsDatalabels datalabels) {
+  public void setDatalabels(@jakarta.annotation.Nullable NewDashboardPanelDataAttributesParamsDatalabels datalabels) {
     this.datalabels = datalabels;
   }
 
 
-  public NewDashboardPanelDataAttributesParams datasets(@javax.annotation.Nullable List<NewDashboardPanelDataAttributesParamsDatasetsInner> datasets) {
+  public NewDashboardPanelDataAttributesParams datasets(@jakarta.annotation.Nullable List<NewDashboardPanelDataAttributesParamsDatasetsInner> datasets) {
     this.datasets = datasets;
     return this;
   }
@@ -272,12 +272,12 @@ public class NewDashboardPanelDataAttributesParams {
    * Get datasets
    * @return datasets
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewDashboardPanelDataAttributesParamsDatasetsInner> getDatasets() {
     return datasets;
   }
 
-  public void setDatasets(@javax.annotation.Nullable List<NewDashboardPanelDataAttributesParamsDatasetsInner> datasets) {
+  public void setDatasets(@jakarta.annotation.Nullable List<NewDashboardPanelDataAttributesParamsDatasetsInner> datasets) {
     this.datasets = datasets;
   }
 

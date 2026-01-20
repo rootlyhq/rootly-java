@@ -49,17 +49,17 @@ import com.rootly.client.JSON;
 /**
  * UpdateRetrospectiveProcessGroup
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateRetrospectiveProcessGroup {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private UpdateRetrospectiveProcessGroupData data;
 
   public UpdateRetrospectiveProcessGroup() {
   }
 
-  public UpdateRetrospectiveProcessGroup data(@javax.annotation.Nonnull UpdateRetrospectiveProcessGroupData data) {
+  public UpdateRetrospectiveProcessGroup data(@jakarta.annotation.Nonnull UpdateRetrospectiveProcessGroupData data) {
     this.data = data;
     return this;
   }
@@ -68,12 +68,12 @@ public class UpdateRetrospectiveProcessGroup {
    * Get data
    * @return data
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public UpdateRetrospectiveProcessGroupData getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nonnull UpdateRetrospectiveProcessGroupData data) {
+  public void setData(@jakarta.annotation.Nonnull UpdateRetrospectiveProcessGroupData data) {
     this.data = data;
   }
 

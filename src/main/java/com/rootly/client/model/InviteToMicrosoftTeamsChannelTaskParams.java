@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * InviteToMicrosoftTeamsChannelTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class InviteToMicrosoftTeamsChannelTaskParams {
   /**
    * Gets or Sets taskType
@@ -103,28 +103,28 @@ public class InviteToMicrosoftTeamsChannelTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_TEAM = "team";
   @SerializedName(SERIALIZED_NAME_TEAM)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AddActionItemTaskParamsPostToSlackChannelsInner team;
 
   public static final String SERIALIZED_NAME_CHANNEL = "channel";
   @SerializedName(SERIALIZED_NAME_CHANNEL)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private AddActionItemTaskParamsPostToSlackChannelsInner channel;
 
   public static final String SERIALIZED_NAME_EMAILS = "emails";
   @SerializedName(SERIALIZED_NAME_EMAILS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String emails;
 
   public InviteToMicrosoftTeamsChannelTaskParams() {
   }
 
-  public InviteToMicrosoftTeamsChannelTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public InviteToMicrosoftTeamsChannelTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -133,17 +133,17 @@ public class InviteToMicrosoftTeamsChannelTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public InviteToMicrosoftTeamsChannelTaskParams team(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner team) {
+  public InviteToMicrosoftTeamsChannelTaskParams team(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner team) {
     this.team = team;
     return this;
   }
@@ -152,17 +152,17 @@ public class InviteToMicrosoftTeamsChannelTaskParams {
    * Get team
    * @return team
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AddActionItemTaskParamsPostToSlackChannelsInner getTeam() {
     return team;
   }
 
-  public void setTeam(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner team) {
+  public void setTeam(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner team) {
     this.team = team;
   }
 
 
-  public InviteToMicrosoftTeamsChannelTaskParams channel(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner channel) {
+  public InviteToMicrosoftTeamsChannelTaskParams channel(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner channel) {
     this.channel = channel;
     return this;
   }
@@ -171,17 +171,17 @@ public class InviteToMicrosoftTeamsChannelTaskParams {
    * Get channel
    * @return channel
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public AddActionItemTaskParamsPostToSlackChannelsInner getChannel() {
     return channel;
   }
 
-  public void setChannel(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner channel) {
+  public void setChannel(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner channel) {
     this.channel = channel;
   }
 
 
-  public InviteToMicrosoftTeamsChannelTaskParams emails(@javax.annotation.Nonnull String emails) {
+  public InviteToMicrosoftTeamsChannelTaskParams emails(@jakarta.annotation.Nonnull String emails) {
     this.emails = emails;
     return this;
   }
@@ -190,12 +190,12 @@ public class InviteToMicrosoftTeamsChannelTaskParams {
    * Comma separated list of emails to invite
    * @return emails
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getEmails() {
     return emails;
   }
 
-  public void setEmails(@javax.annotation.Nonnull String emails) {
+  public void setEmails(@jakarta.annotation.Nonnull String emails) {
     this.emails = emails;
   }
 

@@ -49,17 +49,17 @@ import com.rootly.client.JSON;
 /**
  * CancelIncidentDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CancelIncidentDataAttributes {
   public static final String SERIALIZED_NAME_CANCELLATION_MESSAGE = "cancellation_message";
   @SerializedName(SERIALIZED_NAME_CANCELLATION_MESSAGE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String cancellationMessage;
 
   public CancelIncidentDataAttributes() {
   }
 
-  public CancelIncidentDataAttributes cancellationMessage(@javax.annotation.Nullable String cancellationMessage) {
+  public CancelIncidentDataAttributes cancellationMessage(@jakarta.annotation.Nullable String cancellationMessage) {
     this.cancellationMessage = cancellationMessage;
     return this;
   }
@@ -68,12 +68,12 @@ public class CancelIncidentDataAttributes {
    * Why was the incident cancelled?
    * @return cancellationMessage
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCancellationMessage() {
     return cancellationMessage;
   }
 
-  public void setCancellationMessage(@javax.annotation.Nullable String cancellationMessage) {
+  public void setCancellationMessage(@jakarta.annotation.Nullable String cancellationMessage) {
     this.cancellationMessage = cancellationMessage;
   }
 

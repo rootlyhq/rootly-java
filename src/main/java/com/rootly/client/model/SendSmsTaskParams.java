@@ -50,7 +50,7 @@ import com.rootly.client.JSON;
 /**
  * SendSmsTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SendSmsTaskParams {
   /**
    * Gets or Sets taskType
@@ -104,28 +104,28 @@ public class SendSmsTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_PHONE_NUMBERS = "phone_numbers";
   @SerializedName(SERIALIZED_NAME_PHONE_NUMBERS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<String> phoneNumbers = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_CONTENT = "content";
   @SerializedName(SERIALIZED_NAME_CONTENT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String content;
 
   public SendSmsTaskParams() {
   }
 
-  public SendSmsTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public SendSmsTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -134,17 +134,17 @@ public class SendSmsTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public SendSmsTaskParams phoneNumbers(@javax.annotation.Nonnull List<String> phoneNumbers) {
+  public SendSmsTaskParams phoneNumbers(@jakarta.annotation.Nonnull List<String> phoneNumbers) {
     this.phoneNumbers = phoneNumbers;
     return this;
   }
@@ -161,17 +161,17 @@ public class SendSmsTaskParams {
    * Get phoneNumbers
    * @return phoneNumbers
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<String> getPhoneNumbers() {
     return phoneNumbers;
   }
 
-  public void setPhoneNumbers(@javax.annotation.Nonnull List<String> phoneNumbers) {
+  public void setPhoneNumbers(@jakarta.annotation.Nonnull List<String> phoneNumbers) {
     this.phoneNumbers = phoneNumbers;
   }
 
 
-  public SendSmsTaskParams name(@javax.annotation.Nonnull String name) {
+  public SendSmsTaskParams name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -180,17 +180,17 @@ public class SendSmsTaskParams {
    * The name
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public SendSmsTaskParams content(@javax.annotation.Nonnull String content) {
+  public SendSmsTaskParams content(@jakarta.annotation.Nonnull String content) {
     this.content = content;
     return this;
   }
@@ -199,12 +199,12 @@ public class SendSmsTaskParams {
    * The SMS message
    * @return content
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getContent() {
     return content;
   }
 
-  public void setContent(@javax.annotation.Nonnull String content) {
+  public void setContent(@jakarta.annotation.Nonnull String content) {
     this.content = content;
   }
 

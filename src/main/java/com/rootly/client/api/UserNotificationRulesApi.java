@@ -92,7 +92,7 @@ public class UserNotificationRulesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createUserNotificationRuleCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull NewUserNotificationRule newUserNotificationRule, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createUserNotificationRuleCall(@jakarta.annotation.Nonnull String userId, @jakarta.annotation.Nonnull NewUserNotificationRule newUserNotificationRule, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -139,7 +139,7 @@ public class UserNotificationRulesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createUserNotificationRuleValidateBeforeCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull NewUserNotificationRule newUserNotificationRule, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createUserNotificationRuleValidateBeforeCall(@jakarta.annotation.Nonnull String userId, @jakarta.annotation.Nonnull NewUserNotificationRule newUserNotificationRule, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling createUserNotificationRule(Async)");
@@ -170,7 +170,7 @@ public class UserNotificationRulesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public UserNotificationRuleResponse createUserNotificationRule(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull NewUserNotificationRule newUserNotificationRule) throws ApiException {
+    public UserNotificationRuleResponse createUserNotificationRule(@jakarta.annotation.Nonnull String userId, @jakarta.annotation.Nonnull NewUserNotificationRule newUserNotificationRule) throws ApiException {
         ApiResponse<UserNotificationRuleResponse> localVarResp = createUserNotificationRuleWithHttpInfo(userId, newUserNotificationRule);
         return localVarResp.getData();
     }
@@ -191,7 +191,7 @@ public class UserNotificationRulesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UserNotificationRuleResponse> createUserNotificationRuleWithHttpInfo(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull NewUserNotificationRule newUserNotificationRule) throws ApiException {
+    public ApiResponse<UserNotificationRuleResponse> createUserNotificationRuleWithHttpInfo(@jakarta.annotation.Nonnull String userId, @jakarta.annotation.Nonnull NewUserNotificationRule newUserNotificationRule) throws ApiException {
         okhttp3.Call localVarCall = createUserNotificationRuleValidateBeforeCall(userId, newUserNotificationRule, null);
         Type localVarReturnType = new TypeToken<UserNotificationRuleResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -214,7 +214,7 @@ public class UserNotificationRulesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createUserNotificationRuleAsync(@javax.annotation.Nonnull String userId, @javax.annotation.Nonnull NewUserNotificationRule newUserNotificationRule, final ApiCallback<UserNotificationRuleResponse> _callback) throws ApiException {
+    public okhttp3.Call createUserNotificationRuleAsync(@jakarta.annotation.Nonnull String userId, @jakarta.annotation.Nonnull NewUserNotificationRule newUserNotificationRule, final ApiCallback<UserNotificationRuleResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createUserNotificationRuleValidateBeforeCall(userId, newUserNotificationRule, _callback);
         Type localVarReturnType = new TypeToken<UserNotificationRuleResponse>(){}.getType();
@@ -235,7 +235,7 @@ public class UserNotificationRulesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteUserNotificationRuleCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteUserNotificationRuleCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -281,7 +281,7 @@ public class UserNotificationRulesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteUserNotificationRuleValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteUserNotificationRuleValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteUserNotificationRule(Async)");
@@ -305,7 +305,7 @@ public class UserNotificationRulesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public UserNotificationRuleResponse deleteUserNotificationRule(@javax.annotation.Nonnull String id) throws ApiException {
+    public UserNotificationRuleResponse deleteUserNotificationRule(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<UserNotificationRuleResponse> localVarResp = deleteUserNotificationRuleWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -324,7 +324,7 @@ public class UserNotificationRulesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UserNotificationRuleResponse> deleteUserNotificationRuleWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<UserNotificationRuleResponse> deleteUserNotificationRuleWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteUserNotificationRuleValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<UserNotificationRuleResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -345,7 +345,7 @@ public class UserNotificationRulesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteUserNotificationRuleAsync(@javax.annotation.Nonnull String id, final ApiCallback<UserNotificationRuleResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteUserNotificationRuleAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<UserNotificationRuleResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteUserNotificationRuleValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<UserNotificationRuleResponse>(){}.getType();
@@ -366,7 +366,7 @@ public class UserNotificationRulesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getUserNotificationRuleCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getUserNotificationRuleCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -412,7 +412,7 @@ public class UserNotificationRulesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getUserNotificationRuleValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getUserNotificationRuleValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getUserNotificationRule(Async)");
@@ -436,7 +436,7 @@ public class UserNotificationRulesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public UserNotificationRuleResponse getUserNotificationRule(@javax.annotation.Nonnull String id) throws ApiException {
+    public UserNotificationRuleResponse getUserNotificationRule(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<UserNotificationRuleResponse> localVarResp = getUserNotificationRuleWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -455,7 +455,7 @@ public class UserNotificationRulesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UserNotificationRuleResponse> getUserNotificationRuleWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<UserNotificationRuleResponse> getUserNotificationRuleWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getUserNotificationRuleValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<UserNotificationRuleResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -476,7 +476,7 @@ public class UserNotificationRulesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getUserNotificationRuleAsync(@javax.annotation.Nonnull String id, final ApiCallback<UserNotificationRuleResponse> _callback) throws ApiException {
+    public okhttp3.Call getUserNotificationRuleAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<UserNotificationRuleResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getUserNotificationRuleValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<UserNotificationRuleResponse>(){}.getType();
@@ -500,7 +500,7 @@ public class UserNotificationRulesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listUserNotificationRulesCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listUserNotificationRulesCall(@jakarta.annotation.Nonnull String userId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -562,7 +562,7 @@ public class UserNotificationRulesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listUserNotificationRulesValidateBeforeCall(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listUserNotificationRulesValidateBeforeCall(@jakarta.annotation.Nonnull String userId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'userId' is set
         if (userId == null) {
             throw new ApiException("Missing the required parameter 'userId' when calling listUserNotificationRules(Async)");
@@ -589,7 +589,7 @@ public class UserNotificationRulesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public UserNotificationRuleList listUserNotificationRules(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort) throws ApiException {
+    public UserNotificationRuleList listUserNotificationRules(@jakarta.annotation.Nonnull String userId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String sort) throws ApiException {
         ApiResponse<UserNotificationRuleList> localVarResp = listUserNotificationRulesWithHttpInfo(userId, include, pageNumber, pageSize, sort);
         return localVarResp.getData();
     }
@@ -611,7 +611,7 @@ public class UserNotificationRulesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UserNotificationRuleList> listUserNotificationRulesWithHttpInfo(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort) throws ApiException {
+    public ApiResponse<UserNotificationRuleList> listUserNotificationRulesWithHttpInfo(@jakarta.annotation.Nonnull String userId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String sort) throws ApiException {
         okhttp3.Call localVarCall = listUserNotificationRulesValidateBeforeCall(userId, include, pageNumber, pageSize, sort, null);
         Type localVarReturnType = new TypeToken<UserNotificationRuleList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -635,7 +635,7 @@ public class UserNotificationRulesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listUserNotificationRulesAsync(@javax.annotation.Nonnull String userId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback<UserNotificationRuleList> _callback) throws ApiException {
+    public okhttp3.Call listUserNotificationRulesAsync(@jakarta.annotation.Nonnull String userId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String sort, final ApiCallback<UserNotificationRuleList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listUserNotificationRulesValidateBeforeCall(userId, include, pageNumber, pageSize, sort, _callback);
         Type localVarReturnType = new TypeToken<UserNotificationRuleList>(){}.getType();
@@ -657,7 +657,7 @@ public class UserNotificationRulesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateUserNotificationRuleCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateUserNotificationRule updateUserNotificationRule, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateUserNotificationRuleCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateUserNotificationRule updateUserNotificationRule, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -704,7 +704,7 @@ public class UserNotificationRulesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateUserNotificationRuleValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateUserNotificationRule updateUserNotificationRule, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateUserNotificationRuleValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateUserNotificationRule updateUserNotificationRule, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateUserNotificationRule(Async)");
@@ -734,7 +734,7 @@ public class UserNotificationRulesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public UserNotificationRuleResponse updateUserNotificationRule(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateUserNotificationRule updateUserNotificationRule) throws ApiException {
+    public UserNotificationRuleResponse updateUserNotificationRule(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateUserNotificationRule updateUserNotificationRule) throws ApiException {
         ApiResponse<UserNotificationRuleResponse> localVarResp = updateUserNotificationRuleWithHttpInfo(id, updateUserNotificationRule);
         return localVarResp.getData();
     }
@@ -754,7 +754,7 @@ public class UserNotificationRulesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UserNotificationRuleResponse> updateUserNotificationRuleWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateUserNotificationRule updateUserNotificationRule) throws ApiException {
+    public ApiResponse<UserNotificationRuleResponse> updateUserNotificationRuleWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateUserNotificationRule updateUserNotificationRule) throws ApiException {
         okhttp3.Call localVarCall = updateUserNotificationRuleValidateBeforeCall(id, updateUserNotificationRule, null);
         Type localVarReturnType = new TypeToken<UserNotificationRuleResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -776,7 +776,7 @@ public class UserNotificationRulesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateUserNotificationRuleAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateUserNotificationRule updateUserNotificationRule, final ApiCallback<UserNotificationRuleResponse> _callback) throws ApiException {
+    public okhttp3.Call updateUserNotificationRuleAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateUserNotificationRule updateUserNotificationRule, final ApiCallback<UserNotificationRuleResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateUserNotificationRuleValidateBeforeCall(id, updateUserNotificationRule, _callback);
         Type localVarReturnType = new TypeToken<UserNotificationRuleResponse>(){}.getType();

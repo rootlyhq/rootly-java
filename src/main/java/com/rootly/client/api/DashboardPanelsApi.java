@@ -91,7 +91,7 @@ public class DashboardPanelsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createDashboardPanelCall(@javax.annotation.Nonnull String dashboardId, @javax.annotation.Nonnull NewDashboardPanel newDashboardPanel, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createDashboardPanelCall(@jakarta.annotation.Nonnull String dashboardId, @jakarta.annotation.Nonnull NewDashboardPanel newDashboardPanel, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -138,7 +138,7 @@ public class DashboardPanelsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createDashboardPanelValidateBeforeCall(@javax.annotation.Nonnull String dashboardId, @javax.annotation.Nonnull NewDashboardPanel newDashboardPanel, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createDashboardPanelValidateBeforeCall(@jakarta.annotation.Nonnull String dashboardId, @jakarta.annotation.Nonnull NewDashboardPanel newDashboardPanel, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'dashboardId' is set
         if (dashboardId == null) {
             throw new ApiException("Missing the required parameter 'dashboardId' when calling createDashboardPanel(Async)");
@@ -168,7 +168,7 @@ public class DashboardPanelsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public DashboardPanelResponse createDashboardPanel(@javax.annotation.Nonnull String dashboardId, @javax.annotation.Nonnull NewDashboardPanel newDashboardPanel) throws ApiException {
+    public DashboardPanelResponse createDashboardPanel(@jakarta.annotation.Nonnull String dashboardId, @jakarta.annotation.Nonnull NewDashboardPanel newDashboardPanel) throws ApiException {
         ApiResponse<DashboardPanelResponse> localVarResp = createDashboardPanelWithHttpInfo(dashboardId, newDashboardPanel);
         return localVarResp.getData();
     }
@@ -188,7 +188,7 @@ public class DashboardPanelsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DashboardPanelResponse> createDashboardPanelWithHttpInfo(@javax.annotation.Nonnull String dashboardId, @javax.annotation.Nonnull NewDashboardPanel newDashboardPanel) throws ApiException {
+    public ApiResponse<DashboardPanelResponse> createDashboardPanelWithHttpInfo(@jakarta.annotation.Nonnull String dashboardId, @jakarta.annotation.Nonnull NewDashboardPanel newDashboardPanel) throws ApiException {
         okhttp3.Call localVarCall = createDashboardPanelValidateBeforeCall(dashboardId, newDashboardPanel, null);
         Type localVarReturnType = new TypeToken<DashboardPanelResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -210,7 +210,7 @@ public class DashboardPanelsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createDashboardPanelAsync(@javax.annotation.Nonnull String dashboardId, @javax.annotation.Nonnull NewDashboardPanel newDashboardPanel, final ApiCallback<DashboardPanelResponse> _callback) throws ApiException {
+    public okhttp3.Call createDashboardPanelAsync(@jakarta.annotation.Nonnull String dashboardId, @jakarta.annotation.Nonnull NewDashboardPanel newDashboardPanel, final ApiCallback<DashboardPanelResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createDashboardPanelValidateBeforeCall(dashboardId, newDashboardPanel, _callback);
         Type localVarReturnType = new TypeToken<DashboardPanelResponse>(){}.getType();
@@ -230,7 +230,7 @@ public class DashboardPanelsApi {
         <tr><td> 200 </td><td> dashboard panel deleted </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteDashboardPanelCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteDashboardPanelCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -276,7 +276,7 @@ public class DashboardPanelsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteDashboardPanelValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteDashboardPanelValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteDashboardPanel(Async)");
@@ -299,7 +299,7 @@ public class DashboardPanelsApi {
         <tr><td> 200 </td><td> dashboard panel deleted </td><td>  -  </td></tr>
      </table>
      */
-    public DashboardPanelResponse deleteDashboardPanel(@javax.annotation.Nonnull String id) throws ApiException {
+    public DashboardPanelResponse deleteDashboardPanel(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<DashboardPanelResponse> localVarResp = deleteDashboardPanelWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -317,7 +317,7 @@ public class DashboardPanelsApi {
         <tr><td> 200 </td><td> dashboard panel deleted </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DashboardPanelResponse> deleteDashboardPanelWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<DashboardPanelResponse> deleteDashboardPanelWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteDashboardPanelValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<DashboardPanelResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -337,7 +337,7 @@ public class DashboardPanelsApi {
         <tr><td> 200 </td><td> dashboard panel deleted </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteDashboardPanelAsync(@javax.annotation.Nonnull String id, final ApiCallback<DashboardPanelResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteDashboardPanelAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<DashboardPanelResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteDashboardPanelValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<DashboardPanelResponse>(){}.getType();
@@ -358,7 +358,7 @@ public class DashboardPanelsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call duplicateDashboardPanelCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call duplicateDashboardPanelCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -404,7 +404,7 @@ public class DashboardPanelsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call duplicateDashboardPanelValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call duplicateDashboardPanelValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling duplicateDashboardPanel(Async)");
@@ -428,7 +428,7 @@ public class DashboardPanelsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public DashboardPanelResponse duplicateDashboardPanel(@javax.annotation.Nonnull String id) throws ApiException {
+    public DashboardPanelResponse duplicateDashboardPanel(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<DashboardPanelResponse> localVarResp = duplicateDashboardPanelWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -447,7 +447,7 @@ public class DashboardPanelsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DashboardPanelResponse> duplicateDashboardPanelWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<DashboardPanelResponse> duplicateDashboardPanelWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = duplicateDashboardPanelValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<DashboardPanelResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -468,7 +468,7 @@ public class DashboardPanelsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call duplicateDashboardPanelAsync(@javax.annotation.Nonnull String id, final ApiCallback<DashboardPanelResponse> _callback) throws ApiException {
+    public okhttp3.Call duplicateDashboardPanelAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<DashboardPanelResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = duplicateDashboardPanelValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<DashboardPanelResponse>(){}.getType();
@@ -491,7 +491,7 @@ public class DashboardPanelsApi {
         <tr><td> 200 </td><td> dashboard panel found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDashboardPanelCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String range, @javax.annotation.Nullable String period, @javax.annotation.Nullable String timeZone, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getDashboardPanelCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String range, @jakarta.annotation.Nullable String period, @jakarta.annotation.Nullable String timeZone, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -549,7 +549,7 @@ public class DashboardPanelsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getDashboardPanelValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String range, @javax.annotation.Nullable String period, @javax.annotation.Nullable String timeZone, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getDashboardPanelValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String range, @jakarta.annotation.Nullable String period, @jakarta.annotation.Nullable String timeZone, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getDashboardPanel(Async)");
@@ -575,7 +575,7 @@ public class DashboardPanelsApi {
         <tr><td> 200 </td><td> dashboard panel found </td><td>  -  </td></tr>
      </table>
      */
-    public DashboardPanelResponse getDashboardPanel(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String range, @javax.annotation.Nullable String period, @javax.annotation.Nullable String timeZone) throws ApiException {
+    public DashboardPanelResponse getDashboardPanel(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String range, @jakarta.annotation.Nullable String period, @jakarta.annotation.Nullable String timeZone) throws ApiException {
         ApiResponse<DashboardPanelResponse> localVarResp = getDashboardPanelWithHttpInfo(id, range, period, timeZone);
         return localVarResp.getData();
     }
@@ -596,7 +596,7 @@ public class DashboardPanelsApi {
         <tr><td> 200 </td><td> dashboard panel found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DashboardPanelResponse> getDashboardPanelWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String range, @javax.annotation.Nullable String period, @javax.annotation.Nullable String timeZone) throws ApiException {
+    public ApiResponse<DashboardPanelResponse> getDashboardPanelWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String range, @jakarta.annotation.Nullable String period, @jakarta.annotation.Nullable String timeZone) throws ApiException {
         okhttp3.Call localVarCall = getDashboardPanelValidateBeforeCall(id, range, period, timeZone, null);
         Type localVarReturnType = new TypeToken<DashboardPanelResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -619,7 +619,7 @@ public class DashboardPanelsApi {
         <tr><td> 200 </td><td> dashboard panel found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDashboardPanelAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String range, @javax.annotation.Nullable String period, @javax.annotation.Nullable String timeZone, final ApiCallback<DashboardPanelResponse> _callback) throws ApiException {
+    public okhttp3.Call getDashboardPanelAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String range, @jakarta.annotation.Nullable String period, @jakarta.annotation.Nullable String timeZone, final ApiCallback<DashboardPanelResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getDashboardPanelValidateBeforeCall(id, range, period, timeZone, _callback);
         Type localVarReturnType = new TypeToken<DashboardPanelResponse>(){}.getType();
@@ -642,7 +642,7 @@ public class DashboardPanelsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listDashboardPanelsCall(@javax.annotation.Nonnull String dashboardId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listDashboardPanelsCall(@jakarta.annotation.Nonnull String dashboardId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -700,7 +700,7 @@ public class DashboardPanelsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listDashboardPanelsValidateBeforeCall(@javax.annotation.Nonnull String dashboardId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listDashboardPanelsValidateBeforeCall(@jakarta.annotation.Nonnull String dashboardId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'dashboardId' is set
         if (dashboardId == null) {
             throw new ApiException("Missing the required parameter 'dashboardId' when calling listDashboardPanels(Async)");
@@ -726,7 +726,7 @@ public class DashboardPanelsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public DashboardPanelList listDashboardPanels(@javax.annotation.Nonnull String dashboardId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+    public DashboardPanelList listDashboardPanels(@jakarta.annotation.Nonnull String dashboardId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
         ApiResponse<DashboardPanelList> localVarResp = listDashboardPanelsWithHttpInfo(dashboardId, include, pageNumber, pageSize);
         return localVarResp.getData();
     }
@@ -747,7 +747,7 @@ public class DashboardPanelsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DashboardPanelList> listDashboardPanelsWithHttpInfo(@javax.annotation.Nonnull String dashboardId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+    public ApiResponse<DashboardPanelList> listDashboardPanelsWithHttpInfo(@jakarta.annotation.Nonnull String dashboardId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
         okhttp3.Call localVarCall = listDashboardPanelsValidateBeforeCall(dashboardId, include, pageNumber, pageSize, null);
         Type localVarReturnType = new TypeToken<DashboardPanelList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -770,7 +770,7 @@ public class DashboardPanelsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listDashboardPanelsAsync(@javax.annotation.Nonnull String dashboardId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback<DashboardPanelList> _callback) throws ApiException {
+    public okhttp3.Call listDashboardPanelsAsync(@jakarta.annotation.Nonnull String dashboardId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback<DashboardPanelList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listDashboardPanelsValidateBeforeCall(dashboardId, include, pageNumber, pageSize, _callback);
         Type localVarReturnType = new TypeToken<DashboardPanelList>(){}.getType();
@@ -791,7 +791,7 @@ public class DashboardPanelsApi {
         <tr><td> 200 </td><td> dashboard panel updated </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateDashboardPanelCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateDashboardPanel updateDashboardPanel, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateDashboardPanelCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateDashboardPanel updateDashboardPanel, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -838,7 +838,7 @@ public class DashboardPanelsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateDashboardPanelValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateDashboardPanel updateDashboardPanel, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateDashboardPanelValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateDashboardPanel updateDashboardPanel, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateDashboardPanel(Async)");
@@ -867,7 +867,7 @@ public class DashboardPanelsApi {
         <tr><td> 200 </td><td> dashboard panel updated </td><td>  -  </td></tr>
      </table>
      */
-    public DashboardPanelResponse updateDashboardPanel(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateDashboardPanel updateDashboardPanel) throws ApiException {
+    public DashboardPanelResponse updateDashboardPanel(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateDashboardPanel updateDashboardPanel) throws ApiException {
         ApiResponse<DashboardPanelResponse> localVarResp = updateDashboardPanelWithHttpInfo(id, updateDashboardPanel);
         return localVarResp.getData();
     }
@@ -886,7 +886,7 @@ public class DashboardPanelsApi {
         <tr><td> 200 </td><td> dashboard panel updated </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DashboardPanelResponse> updateDashboardPanelWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateDashboardPanel updateDashboardPanel) throws ApiException {
+    public ApiResponse<DashboardPanelResponse> updateDashboardPanelWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateDashboardPanel updateDashboardPanel) throws ApiException {
         okhttp3.Call localVarCall = updateDashboardPanelValidateBeforeCall(id, updateDashboardPanel, null);
         Type localVarReturnType = new TypeToken<DashboardPanelResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -907,7 +907,7 @@ public class DashboardPanelsApi {
         <tr><td> 200 </td><td> dashboard panel updated </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateDashboardPanelAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateDashboardPanel updateDashboardPanel, final ApiCallback<DashboardPanelResponse> _callback) throws ApiException {
+    public okhttp3.Call updateDashboardPanelAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateDashboardPanel updateDashboardPanel, final ApiCallback<DashboardPanelResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateDashboardPanelValidateBeforeCall(id, updateDashboardPanel, _callback);
         Type localVarReturnType = new TypeToken<DashboardPanelResponse>(){}.getType();

@@ -88,7 +88,7 @@ public class EdgeConnectorActionsApi {
         <tr><td> 404 </td><td> Edge connector not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1EdgeConnectorsEdgeConnectorIdActionsGetCall(@javax.annotation.Nonnull String edgeConnectorId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1EdgeConnectorsEdgeConnectorIdActionsGetCall(@jakarta.annotation.Nonnull String edgeConnectorId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -133,7 +133,7 @@ public class EdgeConnectorActionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1EdgeConnectorsEdgeConnectorIdActionsGetValidateBeforeCall(@javax.annotation.Nonnull String edgeConnectorId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1EdgeConnectorsEdgeConnectorIdActionsGetValidateBeforeCall(@jakarta.annotation.Nonnull String edgeConnectorId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'edgeConnectorId' is set
         if (edgeConnectorId == null) {
             throw new ApiException("Missing the required parameter 'edgeConnectorId' when calling v1EdgeConnectorsEdgeConnectorIdActionsGet(Async)");
@@ -156,7 +156,7 @@ public class EdgeConnectorActionsApi {
         <tr><td> 404 </td><td> Edge connector not found </td><td>  -  </td></tr>
      </table>
      */
-    public void v1EdgeConnectorsEdgeConnectorIdActionsGet(@javax.annotation.Nonnull String edgeConnectorId) throws ApiException {
+    public void v1EdgeConnectorsEdgeConnectorIdActionsGet(@jakarta.annotation.Nonnull String edgeConnectorId) throws ApiException {
         v1EdgeConnectorsEdgeConnectorIdActionsGetWithHttpInfo(edgeConnectorId);
     }
 
@@ -174,7 +174,7 @@ public class EdgeConnectorActionsApi {
         <tr><td> 404 </td><td> Edge connector not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> v1EdgeConnectorsEdgeConnectorIdActionsGetWithHttpInfo(@javax.annotation.Nonnull String edgeConnectorId) throws ApiException {
+    public ApiResponse<Void> v1EdgeConnectorsEdgeConnectorIdActionsGetWithHttpInfo(@jakarta.annotation.Nonnull String edgeConnectorId) throws ApiException {
         okhttp3.Call localVarCall = v1EdgeConnectorsEdgeConnectorIdActionsGetValidateBeforeCall(edgeConnectorId, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -194,7 +194,7 @@ public class EdgeConnectorActionsApi {
         <tr><td> 404 </td><td> Edge connector not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1EdgeConnectorsEdgeConnectorIdActionsGetAsync(@javax.annotation.Nonnull String edgeConnectorId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call v1EdgeConnectorsEdgeConnectorIdActionsGetAsync(@jakarta.annotation.Nonnull String edgeConnectorId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1EdgeConnectorsEdgeConnectorIdActionsGetValidateBeforeCall(edgeConnectorId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -214,7 +214,7 @@ public class EdgeConnectorActionsApi {
         <tr><td> 200 </td><td> Action deleted </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1EdgeConnectorsEdgeConnectorIdActionsIdDeleteCall(@javax.annotation.Nonnull String edgeConnectorId, @javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1EdgeConnectorsEdgeConnectorIdActionsIdDeleteCall(@jakarta.annotation.Nonnull String edgeConnectorId, @jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -260,7 +260,7 @@ public class EdgeConnectorActionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1EdgeConnectorsEdgeConnectorIdActionsIdDeleteValidateBeforeCall(@javax.annotation.Nonnull String edgeConnectorId, @javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1EdgeConnectorsEdgeConnectorIdActionsIdDeleteValidateBeforeCall(@jakarta.annotation.Nonnull String edgeConnectorId, @jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'edgeConnectorId' is set
         if (edgeConnectorId == null) {
             throw new ApiException("Missing the required parameter 'edgeConnectorId' when calling v1EdgeConnectorsEdgeConnectorIdActionsIdDelete(Async)");
@@ -288,7 +288,7 @@ public class EdgeConnectorActionsApi {
         <tr><td> 200 </td><td> Action deleted </td><td>  -  </td></tr>
      </table>
      */
-    public void v1EdgeConnectorsEdgeConnectorIdActionsIdDelete(@javax.annotation.Nonnull String edgeConnectorId, @javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public void v1EdgeConnectorsEdgeConnectorIdActionsIdDelete(@jakarta.annotation.Nonnull String edgeConnectorId, @jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         v1EdgeConnectorsEdgeConnectorIdActionsIdDeleteWithHttpInfo(edgeConnectorId, id);
     }
 
@@ -306,7 +306,7 @@ public class EdgeConnectorActionsApi {
         <tr><td> 200 </td><td> Action deleted </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> v1EdgeConnectorsEdgeConnectorIdActionsIdDeleteWithHttpInfo(@javax.annotation.Nonnull String edgeConnectorId, @javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public ApiResponse<Void> v1EdgeConnectorsEdgeConnectorIdActionsIdDeleteWithHttpInfo(@jakarta.annotation.Nonnull String edgeConnectorId, @jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = v1EdgeConnectorsEdgeConnectorIdActionsIdDeleteValidateBeforeCall(edgeConnectorId, id, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -326,7 +326,7 @@ public class EdgeConnectorActionsApi {
         <tr><td> 200 </td><td> Action deleted </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1EdgeConnectorsEdgeConnectorIdActionsIdDeleteAsync(@javax.annotation.Nonnull String edgeConnectorId, @javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call v1EdgeConnectorsEdgeConnectorIdActionsIdDeleteAsync(@jakarta.annotation.Nonnull String edgeConnectorId, @jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1EdgeConnectorsEdgeConnectorIdActionsIdDeleteValidateBeforeCall(edgeConnectorId, id, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -347,7 +347,7 @@ public class EdgeConnectorActionsApi {
         <tr><td> 404 </td><td> Action not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1EdgeConnectorsEdgeConnectorIdActionsIdGetCall(@javax.annotation.Nonnull String edgeConnectorId, @javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1EdgeConnectorsEdgeConnectorIdActionsIdGetCall(@jakarta.annotation.Nonnull String edgeConnectorId, @jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -393,7 +393,7 @@ public class EdgeConnectorActionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1EdgeConnectorsEdgeConnectorIdActionsIdGetValidateBeforeCall(@javax.annotation.Nonnull String edgeConnectorId, @javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1EdgeConnectorsEdgeConnectorIdActionsIdGetValidateBeforeCall(@jakarta.annotation.Nonnull String edgeConnectorId, @jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'edgeConnectorId' is set
         if (edgeConnectorId == null) {
             throw new ApiException("Missing the required parameter 'edgeConnectorId' when calling v1EdgeConnectorsEdgeConnectorIdActionsIdGet(Async)");
@@ -422,7 +422,7 @@ public class EdgeConnectorActionsApi {
         <tr><td> 404 </td><td> Action not found </td><td>  -  </td></tr>
      </table>
      */
-    public void v1EdgeConnectorsEdgeConnectorIdActionsIdGet(@javax.annotation.Nonnull String edgeConnectorId, @javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public void v1EdgeConnectorsEdgeConnectorIdActionsIdGet(@jakarta.annotation.Nonnull String edgeConnectorId, @jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         v1EdgeConnectorsEdgeConnectorIdActionsIdGetWithHttpInfo(edgeConnectorId, id);
     }
 
@@ -441,7 +441,7 @@ public class EdgeConnectorActionsApi {
         <tr><td> 404 </td><td> Action not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> v1EdgeConnectorsEdgeConnectorIdActionsIdGetWithHttpInfo(@javax.annotation.Nonnull String edgeConnectorId, @javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public ApiResponse<Void> v1EdgeConnectorsEdgeConnectorIdActionsIdGetWithHttpInfo(@jakarta.annotation.Nonnull String edgeConnectorId, @jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = v1EdgeConnectorsEdgeConnectorIdActionsIdGetValidateBeforeCall(edgeConnectorId, id, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -462,7 +462,7 @@ public class EdgeConnectorActionsApi {
         <tr><td> 404 </td><td> Action not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1EdgeConnectorsEdgeConnectorIdActionsIdGetAsync(@javax.annotation.Nonnull String edgeConnectorId, @javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call v1EdgeConnectorsEdgeConnectorIdActionsIdGetAsync(@jakarta.annotation.Nonnull String edgeConnectorId, @jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1EdgeConnectorsEdgeConnectorIdActionsIdGetValidateBeforeCall(edgeConnectorId, id, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -483,7 +483,7 @@ public class EdgeConnectorActionsApi {
         <tr><td> 200 </td><td> Action updated </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1EdgeConnectorsEdgeConnectorIdActionsIdPatchCall(@javax.annotation.Nonnull String edgeConnectorId, @javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nullable V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest v1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1EdgeConnectorsEdgeConnectorIdActionsIdPatchCall(@jakarta.annotation.Nonnull String edgeConnectorId, @jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nullable V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest v1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -530,7 +530,7 @@ public class EdgeConnectorActionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1EdgeConnectorsEdgeConnectorIdActionsIdPatchValidateBeforeCall(@javax.annotation.Nonnull String edgeConnectorId, @javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nullable V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest v1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1EdgeConnectorsEdgeConnectorIdActionsIdPatchValidateBeforeCall(@jakarta.annotation.Nonnull String edgeConnectorId, @jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nullable V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest v1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'edgeConnectorId' is set
         if (edgeConnectorId == null) {
             throw new ApiException("Missing the required parameter 'edgeConnectorId' when calling v1EdgeConnectorsEdgeConnectorIdActionsIdPatch(Async)");
@@ -559,7 +559,7 @@ public class EdgeConnectorActionsApi {
         <tr><td> 200 </td><td> Action updated </td><td>  -  </td></tr>
      </table>
      */
-    public void v1EdgeConnectorsEdgeConnectorIdActionsIdPatch(@javax.annotation.Nonnull String edgeConnectorId, @javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nullable V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest v1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest) throws ApiException {
+    public void v1EdgeConnectorsEdgeConnectorIdActionsIdPatch(@jakarta.annotation.Nonnull String edgeConnectorId, @jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nullable V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest v1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest) throws ApiException {
         v1EdgeConnectorsEdgeConnectorIdActionsIdPatchWithHttpInfo(edgeConnectorId, id, v1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest);
     }
 
@@ -578,7 +578,7 @@ public class EdgeConnectorActionsApi {
         <tr><td> 200 </td><td> Action updated </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> v1EdgeConnectorsEdgeConnectorIdActionsIdPatchWithHttpInfo(@javax.annotation.Nonnull String edgeConnectorId, @javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nullable V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest v1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest) throws ApiException {
+    public ApiResponse<Void> v1EdgeConnectorsEdgeConnectorIdActionsIdPatchWithHttpInfo(@jakarta.annotation.Nonnull String edgeConnectorId, @jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nullable V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest v1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest) throws ApiException {
         okhttp3.Call localVarCall = v1EdgeConnectorsEdgeConnectorIdActionsIdPatchValidateBeforeCall(edgeConnectorId, id, v1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -599,7 +599,7 @@ public class EdgeConnectorActionsApi {
         <tr><td> 200 </td><td> Action updated </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1EdgeConnectorsEdgeConnectorIdActionsIdPatchAsync(@javax.annotation.Nonnull String edgeConnectorId, @javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nullable V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest v1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call v1EdgeConnectorsEdgeConnectorIdActionsIdPatchAsync(@jakarta.annotation.Nonnull String edgeConnectorId, @jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nullable V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest v1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1EdgeConnectorsEdgeConnectorIdActionsIdPatchValidateBeforeCall(edgeConnectorId, id, v1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -620,7 +620,7 @@ public class EdgeConnectorActionsApi {
         <tr><td> 422 </td><td> Invalid parameters </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1EdgeConnectorsEdgeConnectorIdActionsPostCall(@javax.annotation.Nonnull String edgeConnectorId, @javax.annotation.Nullable V1EdgeConnectorsEdgeConnectorIdActionsPostRequest v1EdgeConnectorsEdgeConnectorIdActionsPostRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1EdgeConnectorsEdgeConnectorIdActionsPostCall(@jakarta.annotation.Nonnull String edgeConnectorId, @jakarta.annotation.Nullable V1EdgeConnectorsEdgeConnectorIdActionsPostRequest v1EdgeConnectorsEdgeConnectorIdActionsPostRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -666,7 +666,7 @@ public class EdgeConnectorActionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1EdgeConnectorsEdgeConnectorIdActionsPostValidateBeforeCall(@javax.annotation.Nonnull String edgeConnectorId, @javax.annotation.Nullable V1EdgeConnectorsEdgeConnectorIdActionsPostRequest v1EdgeConnectorsEdgeConnectorIdActionsPostRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1EdgeConnectorsEdgeConnectorIdActionsPostValidateBeforeCall(@jakarta.annotation.Nonnull String edgeConnectorId, @jakarta.annotation.Nullable V1EdgeConnectorsEdgeConnectorIdActionsPostRequest v1EdgeConnectorsEdgeConnectorIdActionsPostRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'edgeConnectorId' is set
         if (edgeConnectorId == null) {
             throw new ApiException("Missing the required parameter 'edgeConnectorId' when calling v1EdgeConnectorsEdgeConnectorIdActionsPost(Async)");
@@ -690,7 +690,7 @@ public class EdgeConnectorActionsApi {
         <tr><td> 422 </td><td> Invalid parameters </td><td>  -  </td></tr>
      </table>
      */
-    public void v1EdgeConnectorsEdgeConnectorIdActionsPost(@javax.annotation.Nonnull String edgeConnectorId, @javax.annotation.Nullable V1EdgeConnectorsEdgeConnectorIdActionsPostRequest v1EdgeConnectorsEdgeConnectorIdActionsPostRequest) throws ApiException {
+    public void v1EdgeConnectorsEdgeConnectorIdActionsPost(@jakarta.annotation.Nonnull String edgeConnectorId, @jakarta.annotation.Nullable V1EdgeConnectorsEdgeConnectorIdActionsPostRequest v1EdgeConnectorsEdgeConnectorIdActionsPostRequest) throws ApiException {
         v1EdgeConnectorsEdgeConnectorIdActionsPostWithHttpInfo(edgeConnectorId, v1EdgeConnectorsEdgeConnectorIdActionsPostRequest);
     }
 
@@ -709,7 +709,7 @@ public class EdgeConnectorActionsApi {
         <tr><td> 422 </td><td> Invalid parameters </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> v1EdgeConnectorsEdgeConnectorIdActionsPostWithHttpInfo(@javax.annotation.Nonnull String edgeConnectorId, @javax.annotation.Nullable V1EdgeConnectorsEdgeConnectorIdActionsPostRequest v1EdgeConnectorsEdgeConnectorIdActionsPostRequest) throws ApiException {
+    public ApiResponse<Void> v1EdgeConnectorsEdgeConnectorIdActionsPostWithHttpInfo(@jakarta.annotation.Nonnull String edgeConnectorId, @jakarta.annotation.Nullable V1EdgeConnectorsEdgeConnectorIdActionsPostRequest v1EdgeConnectorsEdgeConnectorIdActionsPostRequest) throws ApiException {
         okhttp3.Call localVarCall = v1EdgeConnectorsEdgeConnectorIdActionsPostValidateBeforeCall(edgeConnectorId, v1EdgeConnectorsEdgeConnectorIdActionsPostRequest, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -730,7 +730,7 @@ public class EdgeConnectorActionsApi {
         <tr><td> 422 </td><td> Invalid parameters </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1EdgeConnectorsEdgeConnectorIdActionsPostAsync(@javax.annotation.Nonnull String edgeConnectorId, @javax.annotation.Nullable V1EdgeConnectorsEdgeConnectorIdActionsPostRequest v1EdgeConnectorsEdgeConnectorIdActionsPostRequest, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call v1EdgeConnectorsEdgeConnectorIdActionsPostAsync(@jakarta.annotation.Nonnull String edgeConnectorId, @jakarta.annotation.Nullable V1EdgeConnectorsEdgeConnectorIdActionsPostRequest v1EdgeConnectorsEdgeConnectorIdActionsPostRequest, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1EdgeConnectorsEdgeConnectorIdActionsPostValidateBeforeCall(edgeConnectorId, v1EdgeConnectorsEdgeConnectorIdActionsPostRequest, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);

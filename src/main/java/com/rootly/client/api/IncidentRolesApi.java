@@ -92,7 +92,7 @@ public class IncidentRolesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createIncidentRoleCall(@javax.annotation.Nonnull NewIncidentRole newIncidentRole, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createIncidentRoleCall(@jakarta.annotation.Nonnull NewIncidentRole newIncidentRole, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -138,7 +138,7 @@ public class IncidentRolesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createIncidentRoleValidateBeforeCall(@javax.annotation.Nonnull NewIncidentRole newIncidentRole, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createIncidentRoleValidateBeforeCall(@jakarta.annotation.Nonnull NewIncidentRole newIncidentRole, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'newIncidentRole' is set
         if (newIncidentRole == null) {
             throw new ApiException("Missing the required parameter 'newIncidentRole' when calling createIncidentRole(Async)");
@@ -163,7 +163,7 @@ public class IncidentRolesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentRoleResponse createIncidentRole(@javax.annotation.Nonnull NewIncidentRole newIncidentRole) throws ApiException {
+    public IncidentRoleResponse createIncidentRole(@jakarta.annotation.Nonnull NewIncidentRole newIncidentRole) throws ApiException {
         ApiResponse<IncidentRoleResponse> localVarResp = createIncidentRoleWithHttpInfo(newIncidentRole);
         return localVarResp.getData();
     }
@@ -183,7 +183,7 @@ public class IncidentRolesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentRoleResponse> createIncidentRoleWithHttpInfo(@javax.annotation.Nonnull NewIncidentRole newIncidentRole) throws ApiException {
+    public ApiResponse<IncidentRoleResponse> createIncidentRoleWithHttpInfo(@jakarta.annotation.Nonnull NewIncidentRole newIncidentRole) throws ApiException {
         okhttp3.Call localVarCall = createIncidentRoleValidateBeforeCall(newIncidentRole, null);
         Type localVarReturnType = new TypeToken<IncidentRoleResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -205,7 +205,7 @@ public class IncidentRolesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createIncidentRoleAsync(@javax.annotation.Nonnull NewIncidentRole newIncidentRole, final ApiCallback<IncidentRoleResponse> _callback) throws ApiException {
+    public okhttp3.Call createIncidentRoleAsync(@jakarta.annotation.Nonnull NewIncidentRole newIncidentRole, final ApiCallback<IncidentRoleResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createIncidentRoleValidateBeforeCall(newIncidentRole, _callback);
         Type localVarReturnType = new TypeToken<IncidentRoleResponse>(){}.getType();
@@ -226,7 +226,7 @@ public class IncidentRolesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteIncidentRoleCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteIncidentRoleCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -272,7 +272,7 @@ public class IncidentRolesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteIncidentRoleValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteIncidentRoleValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteIncidentRole(Async)");
@@ -296,7 +296,7 @@ public class IncidentRolesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentRoleResponse deleteIncidentRole(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public IncidentRoleResponse deleteIncidentRole(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<IncidentRoleResponse> localVarResp = deleteIncidentRoleWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -315,7 +315,7 @@ public class IncidentRolesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentRoleResponse> deleteIncidentRoleWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public ApiResponse<IncidentRoleResponse> deleteIncidentRoleWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = deleteIncidentRoleValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<IncidentRoleResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -336,7 +336,7 @@ public class IncidentRolesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteIncidentRoleAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<IncidentRoleResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteIncidentRoleAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<IncidentRoleResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteIncidentRoleValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<IncidentRoleResponse>(){}.getType();
@@ -357,7 +357,7 @@ public class IncidentRolesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getIncidentRoleCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getIncidentRoleCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -403,7 +403,7 @@ public class IncidentRolesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getIncidentRoleValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getIncidentRoleValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getIncidentRole(Async)");
@@ -427,7 +427,7 @@ public class IncidentRolesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentRoleResponse getIncidentRole(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public IncidentRoleResponse getIncidentRole(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<IncidentRoleResponse> localVarResp = getIncidentRoleWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -446,7 +446,7 @@ public class IncidentRolesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentRoleResponse> getIncidentRoleWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public ApiResponse<IncidentRoleResponse> getIncidentRoleWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = getIncidentRoleValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<IncidentRoleResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -467,7 +467,7 @@ public class IncidentRolesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getIncidentRoleAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<IncidentRoleResponse> _callback) throws ApiException {
+    public okhttp3.Call getIncidentRoleAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<IncidentRoleResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getIncidentRoleValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<IncidentRoleResponse>(){}.getType();
@@ -498,7 +498,7 @@ public class IncidentRolesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listIncidentRolesCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable Boolean filterEnabled, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listIncidentRolesCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -591,7 +591,7 @@ public class IncidentRolesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listIncidentRolesValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable Boolean filterEnabled, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listIncidentRolesValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         return listIncidentRolesCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
 
     }
@@ -620,7 +620,7 @@ public class IncidentRolesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentRoleList listIncidentRoles(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable Boolean filterEnabled, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+    public IncidentRoleList listIncidentRoles(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
         ApiResponse<IncidentRoleList> localVarResp = listIncidentRolesWithHttpInfo(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
         return localVarResp.getData();
     }
@@ -649,7 +649,7 @@ public class IncidentRolesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentRoleList> listIncidentRolesWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable Boolean filterEnabled, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+    public ApiResponse<IncidentRoleList> listIncidentRolesWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
         okhttp3.Call localVarCall = listIncidentRolesValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, null);
         Type localVarReturnType = new TypeToken<IncidentRoleList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -680,7 +680,7 @@ public class IncidentRolesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listIncidentRolesAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable Boolean filterEnabled, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback<IncidentRoleList> _callback) throws ApiException {
+    public okhttp3.Call listIncidentRolesAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback<IncidentRoleList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listIncidentRolesValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
         Type localVarReturnType = new TypeToken<IncidentRoleList>(){}.getType();
@@ -702,7 +702,7 @@ public class IncidentRolesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateIncidentRoleCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateIncidentRole updateIncidentRole, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateIncidentRoleCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateIncidentRole updateIncidentRole, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -749,7 +749,7 @@ public class IncidentRolesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateIncidentRoleValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateIncidentRole updateIncidentRole, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateIncidentRoleValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateIncidentRole updateIncidentRole, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateIncidentRole(Async)");
@@ -779,7 +779,7 @@ public class IncidentRolesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentRoleResponse updateIncidentRole(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateIncidentRole updateIncidentRole) throws ApiException {
+    public IncidentRoleResponse updateIncidentRole(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateIncidentRole updateIncidentRole) throws ApiException {
         ApiResponse<IncidentRoleResponse> localVarResp = updateIncidentRoleWithHttpInfo(id, updateIncidentRole);
         return localVarResp.getData();
     }
@@ -799,7 +799,7 @@ public class IncidentRolesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentRoleResponse> updateIncidentRoleWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateIncidentRole updateIncidentRole) throws ApiException {
+    public ApiResponse<IncidentRoleResponse> updateIncidentRoleWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateIncidentRole updateIncidentRole) throws ApiException {
         okhttp3.Call localVarCall = updateIncidentRoleValidateBeforeCall(id, updateIncidentRole, null);
         Type localVarReturnType = new TypeToken<IncidentRoleResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -821,7 +821,7 @@ public class IncidentRolesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateIncidentRoleAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateIncidentRole updateIncidentRole, final ApiCallback<IncidentRoleResponse> _callback) throws ApiException {
+    public okhttp3.Call updateIncidentRoleAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateIncidentRole updateIncidentRole, final ApiCallback<IncidentRoleResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateIncidentRoleValidateBeforeCall(id, updateIncidentRole, _callback);
         Type localVarReturnType = new TypeToken<IncidentRoleResponse>(){}.getType();

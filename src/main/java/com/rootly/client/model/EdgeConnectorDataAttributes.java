@@ -52,16 +52,16 @@ import com.rootly.client.JSON;
 /**
  * EdgeConnectorDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class EdgeConnectorDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   /**
@@ -118,63 +118,63 @@ public class EdgeConnectorDataAttributes {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private StatusEnum status;
 
   public static final String SERIALIZED_NAME_SUBSCRIPTIONS = "subscriptions";
   @SerializedName(SERIALIZED_NAME_SUBSCRIPTIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> subscriptions = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_LAST_POLL_AT = "last_poll_at";
   @SerializedName(SERIALIZED_NAME_LAST_POLL_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private OffsetDateTime lastPollAt;
 
   public static final String SERIALIZED_NAME_ONLINE = "online";
   @SerializedName(SERIALIZED_NAME_ONLINE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean online;
 
   public static final String SERIALIZED_NAME_DELIVERIES_COUNT = "deliveries_count";
   @SerializedName(SERIALIZED_NAME_DELIVERIES_COUNT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer deliveriesCount;
 
   public static final String SERIALIZED_NAME_DELIVERIES_QUEUED_COUNT = "deliveries_queued_count";
   @SerializedName(SERIALIZED_NAME_DELIVERIES_QUEUED_COUNT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer deliveriesQueuedCount;
 
   public static final String SERIALIZED_NAME_DELIVERIES_RUNNING_COUNT = "deliveries_running_count";
   @SerializedName(SERIALIZED_NAME_DELIVERIES_RUNNING_COUNT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer deliveriesRunningCount;
 
   public static final String SERIALIZED_NAME_DELIVERIES_COMPLETED_COUNT = "deliveries_completed_count";
   @SerializedName(SERIALIZED_NAME_DELIVERIES_COMPLETED_COUNT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer deliveriesCompletedCount;
 
   public static final String SERIALIZED_NAME_DELIVERIES_FAILED_COUNT = "deliveries_failed_count";
   @SerializedName(SERIALIZED_NAME_DELIVERIES_FAILED_COUNT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer deliveriesFailedCount;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private OffsetDateTime updatedAt;
 
   public EdgeConnectorDataAttributes() {
   }
 
-  public EdgeConnectorDataAttributes name(@javax.annotation.Nonnull String name) {
+  public EdgeConnectorDataAttributes name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -183,17 +183,17 @@ public class EdgeConnectorDataAttributes {
    * Connector name
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public EdgeConnectorDataAttributes description(@javax.annotation.Nullable String description) {
+  public EdgeConnectorDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -202,17 +202,17 @@ public class EdgeConnectorDataAttributes {
    * Connector description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public EdgeConnectorDataAttributes status(@javax.annotation.Nonnull StatusEnum status) {
+  public EdgeConnectorDataAttributes status(@jakarta.annotation.Nonnull StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -221,17 +221,17 @@ public class EdgeConnectorDataAttributes {
    * Connector status
    * @return status
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nonnull StatusEnum status) {
+  public void setStatus(@jakarta.annotation.Nonnull StatusEnum status) {
     this.status = status;
   }
 
 
-  public EdgeConnectorDataAttributes subscriptions(@javax.annotation.Nullable List<String> subscriptions) {
+  public EdgeConnectorDataAttributes subscriptions(@jakarta.annotation.Nullable List<String> subscriptions) {
     this.subscriptions = subscriptions;
     return this;
   }
@@ -248,17 +248,17 @@ public class EdgeConnectorDataAttributes {
    * Array of event types to subscribe to
    * @return subscriptions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getSubscriptions() {
     return subscriptions;
   }
 
-  public void setSubscriptions(@javax.annotation.Nullable List<String> subscriptions) {
+  public void setSubscriptions(@jakarta.annotation.Nullable List<String> subscriptions) {
     this.subscriptions = subscriptions;
   }
 
 
-  public EdgeConnectorDataAttributes lastPollAt(@javax.annotation.Nullable OffsetDateTime lastPollAt) {
+  public EdgeConnectorDataAttributes lastPollAt(@jakarta.annotation.Nullable OffsetDateTime lastPollAt) {
     this.lastPollAt = lastPollAt;
     return this;
   }
@@ -267,17 +267,17 @@ public class EdgeConnectorDataAttributes {
    * Last time connector polled
    * @return lastPollAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public OffsetDateTime getLastPollAt() {
     return lastPollAt;
   }
 
-  public void setLastPollAt(@javax.annotation.Nullable OffsetDateTime lastPollAt) {
+  public void setLastPollAt(@jakarta.annotation.Nullable OffsetDateTime lastPollAt) {
     this.lastPollAt = lastPollAt;
   }
 
 
-  public EdgeConnectorDataAttributes online(@javax.annotation.Nullable Boolean online) {
+  public EdgeConnectorDataAttributes online(@jakarta.annotation.Nullable Boolean online) {
     this.online = online;
     return this;
   }
@@ -286,17 +286,17 @@ public class EdgeConnectorDataAttributes {
    * Whether connector is currently online
    * @return online
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getOnline() {
     return online;
   }
 
-  public void setOnline(@javax.annotation.Nullable Boolean online) {
+  public void setOnline(@jakarta.annotation.Nullable Boolean online) {
     this.online = online;
   }
 
 
-  public EdgeConnectorDataAttributes deliveriesCount(@javax.annotation.Nullable Integer deliveriesCount) {
+  public EdgeConnectorDataAttributes deliveriesCount(@jakarta.annotation.Nullable Integer deliveriesCount) {
     this.deliveriesCount = deliveriesCount;
     return this;
   }
@@ -305,17 +305,17 @@ public class EdgeConnectorDataAttributes {
    * Total number of deliveries
    * @return deliveriesCount
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getDeliveriesCount() {
     return deliveriesCount;
   }
 
-  public void setDeliveriesCount(@javax.annotation.Nullable Integer deliveriesCount) {
+  public void setDeliveriesCount(@jakarta.annotation.Nullable Integer deliveriesCount) {
     this.deliveriesCount = deliveriesCount;
   }
 
 
-  public EdgeConnectorDataAttributes deliveriesQueuedCount(@javax.annotation.Nullable Integer deliveriesQueuedCount) {
+  public EdgeConnectorDataAttributes deliveriesQueuedCount(@jakarta.annotation.Nullable Integer deliveriesQueuedCount) {
     this.deliveriesQueuedCount = deliveriesQueuedCount;
     return this;
   }
@@ -324,17 +324,17 @@ public class EdgeConnectorDataAttributes {
    * Number of queued deliveries
    * @return deliveriesQueuedCount
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getDeliveriesQueuedCount() {
     return deliveriesQueuedCount;
   }
 
-  public void setDeliveriesQueuedCount(@javax.annotation.Nullable Integer deliveriesQueuedCount) {
+  public void setDeliveriesQueuedCount(@jakarta.annotation.Nullable Integer deliveriesQueuedCount) {
     this.deliveriesQueuedCount = deliveriesQueuedCount;
   }
 
 
-  public EdgeConnectorDataAttributes deliveriesRunningCount(@javax.annotation.Nullable Integer deliveriesRunningCount) {
+  public EdgeConnectorDataAttributes deliveriesRunningCount(@jakarta.annotation.Nullable Integer deliveriesRunningCount) {
     this.deliveriesRunningCount = deliveriesRunningCount;
     return this;
   }
@@ -343,17 +343,17 @@ public class EdgeConnectorDataAttributes {
    * Number of running deliveries
    * @return deliveriesRunningCount
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getDeliveriesRunningCount() {
     return deliveriesRunningCount;
   }
 
-  public void setDeliveriesRunningCount(@javax.annotation.Nullable Integer deliveriesRunningCount) {
+  public void setDeliveriesRunningCount(@jakarta.annotation.Nullable Integer deliveriesRunningCount) {
     this.deliveriesRunningCount = deliveriesRunningCount;
   }
 
 
-  public EdgeConnectorDataAttributes deliveriesCompletedCount(@javax.annotation.Nullable Integer deliveriesCompletedCount) {
+  public EdgeConnectorDataAttributes deliveriesCompletedCount(@jakarta.annotation.Nullable Integer deliveriesCompletedCount) {
     this.deliveriesCompletedCount = deliveriesCompletedCount;
     return this;
   }
@@ -362,17 +362,17 @@ public class EdgeConnectorDataAttributes {
    * Number of completed deliveries
    * @return deliveriesCompletedCount
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getDeliveriesCompletedCount() {
     return deliveriesCompletedCount;
   }
 
-  public void setDeliveriesCompletedCount(@javax.annotation.Nullable Integer deliveriesCompletedCount) {
+  public void setDeliveriesCompletedCount(@jakarta.annotation.Nullable Integer deliveriesCompletedCount) {
     this.deliveriesCompletedCount = deliveriesCompletedCount;
   }
 
 
-  public EdgeConnectorDataAttributes deliveriesFailedCount(@javax.annotation.Nullable Integer deliveriesFailedCount) {
+  public EdgeConnectorDataAttributes deliveriesFailedCount(@jakarta.annotation.Nullable Integer deliveriesFailedCount) {
     this.deliveriesFailedCount = deliveriesFailedCount;
     return this;
   }
@@ -381,17 +381,17 @@ public class EdgeConnectorDataAttributes {
    * Number of failed deliveries
    * @return deliveriesFailedCount
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getDeliveriesFailedCount() {
     return deliveriesFailedCount;
   }
 
-  public void setDeliveriesFailedCount(@javax.annotation.Nullable Integer deliveriesFailedCount) {
+  public void setDeliveriesFailedCount(@jakarta.annotation.Nullable Integer deliveriesFailedCount) {
     this.deliveriesFailedCount = deliveriesFailedCount;
   }
 
 
-  public EdgeConnectorDataAttributes createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
+  public EdgeConnectorDataAttributes createdAt(@jakarta.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -400,17 +400,17 @@ public class EdgeConnectorDataAttributes {
    * Get createdAt
    * @return createdAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public EdgeConnectorDataAttributes updatedAt(@javax.annotation.Nullable OffsetDateTime updatedAt) {
+  public EdgeConnectorDataAttributes updatedAt(@jakarta.annotation.Nullable OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -419,12 +419,12 @@ public class EdgeConnectorDataAttributes {
    * Get updatedAt
    * @return updatedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nullable OffsetDateTime updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nullable OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
   }
 

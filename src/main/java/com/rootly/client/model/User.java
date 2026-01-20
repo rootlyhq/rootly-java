@@ -49,52 +49,52 @@ import com.rootly.client.JSON;
 /**
  * User
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class User {
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String email;
 
   public static final String SERIALIZED_NAME_FIRST_NAME = "first_name";
   @SerializedName(SERIALIZED_NAME_FIRST_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String firstName;
 
   public static final String SERIALIZED_NAME_LAST_NAME = "last_name";
   @SerializedName(SERIALIZED_NAME_LAST_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String lastName;
 
   public static final String SERIALIZED_NAME_FULL_NAME = "full_name";
   @SerializedName(SERIALIZED_NAME_FULL_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String fullName;
 
   public static final String SERIALIZED_NAME_FULL_NAME_WITH_TEAM = "full_name_with_team";
   @SerializedName(SERIALIZED_NAME_FULL_NAME_WITH_TEAM)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String fullNameWithTeam;
 
   public static final String SERIALIZED_NAME_TIME_ZONE = "time_zone";
   @SerializedName(SERIALIZED_NAME_TIME_ZONE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String timeZone;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public User() {
   }
 
-  public User email(@javax.annotation.Nonnull String email) {
+  public User email(@jakarta.annotation.Nonnull String email) {
     this.email = email;
     return this;
   }
@@ -103,17 +103,17 @@ public class User {
    * The email of the user
    * @return email
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getEmail() {
     return email;
   }
 
-  public void setEmail(@javax.annotation.Nonnull String email) {
+  public void setEmail(@jakarta.annotation.Nonnull String email) {
     this.email = email;
   }
 
 
-  public User firstName(@javax.annotation.Nullable String firstName) {
+  public User firstName(@jakarta.annotation.Nullable String firstName) {
     this.firstName = firstName;
     return this;
   }
@@ -122,17 +122,17 @@ public class User {
    * First name of the user
    * @return firstName
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getFirstName() {
     return firstName;
   }
 
-  public void setFirstName(@javax.annotation.Nullable String firstName) {
+  public void setFirstName(@jakarta.annotation.Nullable String firstName) {
     this.firstName = firstName;
   }
 
 
-  public User lastName(@javax.annotation.Nullable String lastName) {
+  public User lastName(@jakarta.annotation.Nullable String lastName) {
     this.lastName = lastName;
     return this;
   }
@@ -141,17 +141,17 @@ public class User {
    * Last name of the user
    * @return lastName
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getLastName() {
     return lastName;
   }
 
-  public void setLastName(@javax.annotation.Nullable String lastName) {
+  public void setLastName(@jakarta.annotation.Nullable String lastName) {
     this.lastName = lastName;
   }
 
 
-  public User fullName(@javax.annotation.Nullable String fullName) {
+  public User fullName(@jakarta.annotation.Nullable String fullName) {
     this.fullName = fullName;
     return this;
   }
@@ -160,17 +160,17 @@ public class User {
    * The full name of the user
    * @return fullName
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getFullName() {
     return fullName;
   }
 
-  public void setFullName(@javax.annotation.Nullable String fullName) {
+  public void setFullName(@jakarta.annotation.Nullable String fullName) {
     this.fullName = fullName;
   }
 
 
-  public User fullNameWithTeam(@javax.annotation.Nullable String fullNameWithTeam) {
+  public User fullNameWithTeam(@jakarta.annotation.Nullable String fullNameWithTeam) {
     this.fullNameWithTeam = fullNameWithTeam;
     return this;
   }
@@ -179,17 +179,17 @@ public class User {
    * The full name with team of the user
    * @return fullNameWithTeam
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getFullNameWithTeam() {
     return fullNameWithTeam;
   }
 
-  public void setFullNameWithTeam(@javax.annotation.Nullable String fullNameWithTeam) {
+  public void setFullNameWithTeam(@jakarta.annotation.Nullable String fullNameWithTeam) {
     this.fullNameWithTeam = fullNameWithTeam;
   }
 
 
-  public User timeZone(@javax.annotation.Nullable String timeZone) {
+  public User timeZone(@jakarta.annotation.Nullable String timeZone) {
     this.timeZone = timeZone;
     return this;
   }
@@ -198,17 +198,17 @@ public class User {
    * Configured time zone
    * @return timeZone
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTimeZone() {
     return timeZone;
   }
 
-  public void setTimeZone(@javax.annotation.Nullable String timeZone) {
+  public void setTimeZone(@jakarta.annotation.Nullable String timeZone) {
     this.timeZone = timeZone;
   }
 
 
-  public User createdAt(@javax.annotation.Nonnull String createdAt) {
+  public User createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -217,17 +217,17 @@ public class User {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public User updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public User updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -236,12 +236,12 @@ public class User {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

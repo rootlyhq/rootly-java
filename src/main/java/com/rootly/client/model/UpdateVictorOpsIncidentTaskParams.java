@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateVictorOpsIncidentTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateVictorOpsIncidentTaskParams {
   /**
    * Gets or Sets taskType
@@ -102,12 +102,12 @@ public class UpdateVictorOpsIncidentTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_VICTOR_OPS_INCIDENT_ID = "victor_ops_incident_id";
   @SerializedName(SERIALIZED_NAME_VICTOR_OPS_INCIDENT_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String victorOpsIncidentId;
 
   /**
@@ -166,18 +166,18 @@ public class UpdateVictorOpsIncidentTaskParams {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private StatusEnum status;
 
   public static final String SERIALIZED_NAME_RESOLUTION_MESSAGE = "resolution_message";
   @SerializedName(SERIALIZED_NAME_RESOLUTION_MESSAGE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String resolutionMessage;
 
   public UpdateVictorOpsIncidentTaskParams() {
   }
 
-  public UpdateVictorOpsIncidentTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public UpdateVictorOpsIncidentTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -186,17 +186,17 @@ public class UpdateVictorOpsIncidentTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public UpdateVictorOpsIncidentTaskParams victorOpsIncidentId(@javax.annotation.Nonnull String victorOpsIncidentId) {
+  public UpdateVictorOpsIncidentTaskParams victorOpsIncidentId(@jakarta.annotation.Nonnull String victorOpsIncidentId) {
     this.victorOpsIncidentId = victorOpsIncidentId;
     return this;
   }
@@ -205,17 +205,17 @@ public class UpdateVictorOpsIncidentTaskParams {
    * The victor_ops incident ID, this can also be a Rootly incident variable ex. {{ incident.victor_ops_incident_id }}
    * @return victorOpsIncidentId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getVictorOpsIncidentId() {
     return victorOpsIncidentId;
   }
 
-  public void setVictorOpsIncidentId(@javax.annotation.Nonnull String victorOpsIncidentId) {
+  public void setVictorOpsIncidentId(@jakarta.annotation.Nonnull String victorOpsIncidentId) {
     this.victorOpsIncidentId = victorOpsIncidentId;
   }
 
 
-  public UpdateVictorOpsIncidentTaskParams status(@javax.annotation.Nonnull StatusEnum status) {
+  public UpdateVictorOpsIncidentTaskParams status(@jakarta.annotation.Nonnull StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -224,17 +224,17 @@ public class UpdateVictorOpsIncidentTaskParams {
    * Get status
    * @return status
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nonnull StatusEnum status) {
+  public void setStatus(@jakarta.annotation.Nonnull StatusEnum status) {
     this.status = status;
   }
 
 
-  public UpdateVictorOpsIncidentTaskParams resolutionMessage(@javax.annotation.Nullable String resolutionMessage) {
+  public UpdateVictorOpsIncidentTaskParams resolutionMessage(@jakarta.annotation.Nullable String resolutionMessage) {
     this.resolutionMessage = resolutionMessage;
     return this;
   }
@@ -243,12 +243,12 @@ public class UpdateVictorOpsIncidentTaskParams {
    * Resolution message
    * @return resolutionMessage
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getResolutionMessage() {
     return resolutionMessage;
   }
 
-  public void setResolutionMessage(@javax.annotation.Nullable String resolutionMessage) {
+  public void setResolutionMessage(@jakarta.annotation.Nullable String resolutionMessage) {
     this.resolutionMessage = resolutionMessage;
   }
 

@@ -91,7 +91,7 @@ public class AlertEventsApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createAlertEventCall(@javax.annotation.Nonnull String alertId, @javax.annotation.Nullable NewAlertEvent newAlertEvent, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createAlertEventCall(@jakarta.annotation.Nonnull String alertId, @jakarta.annotation.Nullable NewAlertEvent newAlertEvent, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -138,7 +138,7 @@ public class AlertEventsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createAlertEventValidateBeforeCall(@javax.annotation.Nonnull String alertId, @javax.annotation.Nullable NewAlertEvent newAlertEvent, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createAlertEventValidateBeforeCall(@jakarta.annotation.Nonnull String alertId, @jakarta.annotation.Nullable NewAlertEvent newAlertEvent, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'alertId' is set
         if (alertId == null) {
             throw new ApiException("Missing the required parameter 'alertId' when calling createAlertEvent(Async)");
@@ -163,7 +163,7 @@ public class AlertEventsApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public AlertEventResponse createAlertEvent(@javax.annotation.Nonnull String alertId, @javax.annotation.Nullable NewAlertEvent newAlertEvent) throws ApiException {
+    public AlertEventResponse createAlertEvent(@jakarta.annotation.Nonnull String alertId, @jakarta.annotation.Nullable NewAlertEvent newAlertEvent) throws ApiException {
         ApiResponse<AlertEventResponse> localVarResp = createAlertEventWithHttpInfo(alertId, newAlertEvent);
         return localVarResp.getData();
     }
@@ -183,7 +183,7 @@ public class AlertEventsApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertEventResponse> createAlertEventWithHttpInfo(@javax.annotation.Nonnull String alertId, @javax.annotation.Nullable NewAlertEvent newAlertEvent) throws ApiException {
+    public ApiResponse<AlertEventResponse> createAlertEventWithHttpInfo(@jakarta.annotation.Nonnull String alertId, @jakarta.annotation.Nullable NewAlertEvent newAlertEvent) throws ApiException {
         okhttp3.Call localVarCall = createAlertEventValidateBeforeCall(alertId, newAlertEvent, null);
         Type localVarReturnType = new TypeToken<AlertEventResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -205,7 +205,7 @@ public class AlertEventsApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createAlertEventAsync(@javax.annotation.Nonnull String alertId, @javax.annotation.Nullable NewAlertEvent newAlertEvent, final ApiCallback<AlertEventResponse> _callback) throws ApiException {
+    public okhttp3.Call createAlertEventAsync(@jakarta.annotation.Nonnull String alertId, @jakarta.annotation.Nullable NewAlertEvent newAlertEvent, final ApiCallback<AlertEventResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createAlertEventValidateBeforeCall(alertId, newAlertEvent, _callback);
         Type localVarReturnType = new TypeToken<AlertEventResponse>(){}.getType();
@@ -226,7 +226,7 @@ public class AlertEventsApi {
         <tr><td> 404 </td><td> alert event not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteAlertEventCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteAlertEventCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -272,7 +272,7 @@ public class AlertEventsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteAlertEventValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteAlertEventValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteAlertEvent(Async)");
@@ -295,7 +295,7 @@ public class AlertEventsApi {
         <tr><td> 404 </td><td> alert event not found </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteAlertEvent(@javax.annotation.Nonnull String id) throws ApiException {
+    public void deleteAlertEvent(@jakarta.annotation.Nonnull String id) throws ApiException {
         deleteAlertEventWithHttpInfo(id);
     }
 
@@ -313,7 +313,7 @@ public class AlertEventsApi {
         <tr><td> 404 </td><td> alert event not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteAlertEventWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<Void> deleteAlertEventWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteAlertEventValidateBeforeCall(id, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -333,7 +333,7 @@ public class AlertEventsApi {
         <tr><td> 404 </td><td> alert event not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteAlertEventAsync(@javax.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteAlertEventAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteAlertEventValidateBeforeCall(id, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -353,7 +353,7 @@ public class AlertEventsApi {
         <tr><td> 404 </td><td> alert_event not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAlertEventCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAlertEventCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -399,7 +399,7 @@ public class AlertEventsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAlertEventValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAlertEventValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getAlertEvent(Async)");
@@ -423,7 +423,7 @@ public class AlertEventsApi {
         <tr><td> 404 </td><td> alert_event not found </td><td>  -  </td></tr>
      </table>
      */
-    public AlertEventResponse getAlertEvent(@javax.annotation.Nonnull String id) throws ApiException {
+    public AlertEventResponse getAlertEvent(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<AlertEventResponse> localVarResp = getAlertEventWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -442,7 +442,7 @@ public class AlertEventsApi {
         <tr><td> 404 </td><td> alert_event not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertEventResponse> getAlertEventWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<AlertEventResponse> getAlertEventWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getAlertEventValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<AlertEventResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -463,7 +463,7 @@ public class AlertEventsApi {
         <tr><td> 404 </td><td> alert_event not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAlertEventAsync(@javax.annotation.Nonnull String id, final ApiCallback<AlertEventResponse> _callback) throws ApiException {
+    public okhttp3.Call getAlertEventAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<AlertEventResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAlertEventValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<AlertEventResponse>(){}.getType();
@@ -488,7 +488,7 @@ public class AlertEventsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAlertEventsCall(@javax.annotation.Nonnull String alertId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterAction, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listAlertEventsCall(@jakarta.annotation.Nonnull String alertId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterAction, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -554,7 +554,7 @@ public class AlertEventsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listAlertEventsValidateBeforeCall(@javax.annotation.Nonnull String alertId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterAction, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listAlertEventsValidateBeforeCall(@jakarta.annotation.Nonnull String alertId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterAction, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'alertId' is set
         if (alertId == null) {
             throw new ApiException("Missing the required parameter 'alertId' when calling listAlertEvents(Async)");
@@ -582,7 +582,7 @@ public class AlertEventsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public AlertEventList listAlertEvents(@javax.annotation.Nonnull String alertId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterAction) throws ApiException {
+    public AlertEventList listAlertEvents(@jakarta.annotation.Nonnull String alertId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterAction) throws ApiException {
         ApiResponse<AlertEventList> localVarResp = listAlertEventsWithHttpInfo(alertId, include, pageNumber, pageSize, filterKind, filterAction);
         return localVarResp.getData();
     }
@@ -605,7 +605,7 @@ public class AlertEventsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertEventList> listAlertEventsWithHttpInfo(@javax.annotation.Nonnull String alertId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterAction) throws ApiException {
+    public ApiResponse<AlertEventList> listAlertEventsWithHttpInfo(@jakarta.annotation.Nonnull String alertId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterAction) throws ApiException {
         okhttp3.Call localVarCall = listAlertEventsValidateBeforeCall(alertId, include, pageNumber, pageSize, filterKind, filterAction, null);
         Type localVarReturnType = new TypeToken<AlertEventList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -630,7 +630,7 @@ public class AlertEventsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAlertEventsAsync(@javax.annotation.Nonnull String alertId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterAction, final ApiCallback<AlertEventList> _callback) throws ApiException {
+    public okhttp3.Call listAlertEventsAsync(@jakarta.annotation.Nonnull String alertId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterAction, final ApiCallback<AlertEventList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listAlertEventsValidateBeforeCall(alertId, include, pageNumber, pageSize, filterKind, filterAction, _callback);
         Type localVarReturnType = new TypeToken<AlertEventList>(){}.getType();
@@ -652,7 +652,7 @@ public class AlertEventsApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateAlertEventCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable UpdateAlertEvent updateAlertEvent, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateAlertEventCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable UpdateAlertEvent updateAlertEvent, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -699,7 +699,7 @@ public class AlertEventsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateAlertEventValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable UpdateAlertEvent updateAlertEvent, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateAlertEventValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable UpdateAlertEvent updateAlertEvent, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateAlertEvent(Async)");
@@ -724,7 +724,7 @@ public class AlertEventsApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public AlertEventResponse updateAlertEvent(@javax.annotation.Nonnull String id, @javax.annotation.Nullable UpdateAlertEvent updateAlertEvent) throws ApiException {
+    public AlertEventResponse updateAlertEvent(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable UpdateAlertEvent updateAlertEvent) throws ApiException {
         ApiResponse<AlertEventResponse> localVarResp = updateAlertEventWithHttpInfo(id, updateAlertEvent);
         return localVarResp.getData();
     }
@@ -744,7 +744,7 @@ public class AlertEventsApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertEventResponse> updateAlertEventWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable UpdateAlertEvent updateAlertEvent) throws ApiException {
+    public ApiResponse<AlertEventResponse> updateAlertEventWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable UpdateAlertEvent updateAlertEvent) throws ApiException {
         okhttp3.Call localVarCall = updateAlertEventValidateBeforeCall(id, updateAlertEvent, null);
         Type localVarReturnType = new TypeToken<AlertEventResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -766,7 +766,7 @@ public class AlertEventsApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateAlertEventAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nullable UpdateAlertEvent updateAlertEvent, final ApiCallback<AlertEventResponse> _callback) throws ApiException {
+    public okhttp3.Call updateAlertEventAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable UpdateAlertEvent updateAlertEvent, final ApiCallback<AlertEventResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateAlertEventValidateBeforeCall(id, updateAlertEvent, _callback);
         Type localVarReturnType = new TypeToken<AlertEventResponse>(){}.getType();

@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner {
   /**
    * Gets or Sets startDay
@@ -114,12 +114,12 @@ public class UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner {
 
   public static final String SERIALIZED_NAME_START_DAY = "start_day";
   @SerializedName(SERIALIZED_NAME_START_DAY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private StartDayEnum startDay;
 
   public static final String SERIALIZED_NAME_START_TIME = "start_time";
   @SerializedName(SERIALIZED_NAME_START_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String startTime;
 
   /**
@@ -186,18 +186,18 @@ public class UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner {
 
   public static final String SERIALIZED_NAME_END_DAY = "end_day";
   @SerializedName(SERIALIZED_NAME_END_DAY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private EndDayEnum endDay;
 
   public static final String SERIALIZED_NAME_END_TIME = "end_time";
   @SerializedName(SERIALIZED_NAME_END_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String endTime;
 
   public UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner() {
   }
 
-  public UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner startDay(@javax.annotation.Nullable StartDayEnum startDay) {
+  public UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner startDay(@jakarta.annotation.Nullable StartDayEnum startDay) {
     this.startDay = startDay;
     return this;
   }
@@ -206,17 +206,17 @@ public class UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner {
    * Get startDay
    * @return startDay
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public StartDayEnum getStartDay() {
     return startDay;
   }
 
-  public void setStartDay(@javax.annotation.Nullable StartDayEnum startDay) {
+  public void setStartDay(@jakarta.annotation.Nullable StartDayEnum startDay) {
     this.startDay = startDay;
   }
 
 
-  public UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner startTime(@javax.annotation.Nullable String startTime) {
+  public UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner startTime(@jakarta.annotation.Nullable String startTime) {
     this.startTime = startTime;
     return this;
   }
@@ -225,17 +225,17 @@ public class UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner {
    * Formatted as HH:MM
    * @return startTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getStartTime() {
     return startTime;
   }
 
-  public void setStartTime(@javax.annotation.Nullable String startTime) {
+  public void setStartTime(@jakarta.annotation.Nullable String startTime) {
     this.startTime = startTime;
   }
 
 
-  public UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner endDay(@javax.annotation.Nullable EndDayEnum endDay) {
+  public UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner endDay(@jakarta.annotation.Nullable EndDayEnum endDay) {
     this.endDay = endDay;
     return this;
   }
@@ -244,17 +244,17 @@ public class UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner {
    * Get endDay
    * @return endDay
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public EndDayEnum getEndDay() {
     return endDay;
   }
 
-  public void setEndDay(@javax.annotation.Nullable EndDayEnum endDay) {
+  public void setEndDay(@jakarta.annotation.Nullable EndDayEnum endDay) {
     this.endDay = endDay;
   }
 
 
-  public UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner endTime(@javax.annotation.Nullable String endTime) {
+  public UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner endTime(@jakarta.annotation.Nullable String endTime) {
     this.endTime = endTime;
     return this;
   }
@@ -263,12 +263,12 @@ public class UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner {
    * Formatted as HH:MM
    * @return endTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getEndTime() {
     return endTime;
   }
 
-  public void setEndTime(@javax.annotation.Nullable String endTime) {
+  public void setEndTime(@jakarta.annotation.Nullable String endTime) {
     this.endTime = endTime;
   }
 

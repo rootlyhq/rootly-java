@@ -51,11 +51,11 @@ import com.rootly.client.JSON;
 /**
  * UpdateIncidentPostMortemDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateIncidentPostMortemDataAttributes {
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String title;
 
   /**
@@ -112,83 +112,83 @@ public class UpdateIncidentPostMortemDataAttributes {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private StatusEnum status;
 
   public static final String SERIALIZED_NAME_STARTED_AT = "started_at";
   @SerializedName(SERIALIZED_NAME_STARTED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String startedAt;
 
   public static final String SERIALIZED_NAME_MITIGATED_AT = "mitigated_at";
   @SerializedName(SERIALIZED_NAME_MITIGATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String mitigatedAt;
 
   public static final String SERIALIZED_NAME_RESOLVED_AT = "resolved_at";
   @SerializedName(SERIALIZED_NAME_RESOLVED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String resolvedAt;
 
   public static final String SERIALIZED_NAME_SHOW_TIMELINE = "show_timeline";
   @SerializedName(SERIALIZED_NAME_SHOW_TIMELINE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean showTimeline;
 
   public static final String SERIALIZED_NAME_SHOW_TIMELINE_TRAIL = "show_timeline_trail";
   @SerializedName(SERIALIZED_NAME_SHOW_TIMELINE_TRAIL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean showTimelineTrail;
 
   public static final String SERIALIZED_NAME_SHOW_TIMELINE_GENIUS = "show_timeline_genius";
   @SerializedName(SERIALIZED_NAME_SHOW_TIMELINE_GENIUS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean showTimelineGenius;
 
   public static final String SERIALIZED_NAME_SHOW_TIMELINE_TASKS = "show_timeline_tasks";
   @SerializedName(SERIALIZED_NAME_SHOW_TIMELINE_TASKS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean showTimelineTasks;
 
   public static final String SERIALIZED_NAME_SHOW_TIMELINE_ACTION_ITEMS = "show_timeline_action_items";
   @SerializedName(SERIALIZED_NAME_SHOW_TIMELINE_ACTION_ITEMS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean showTimelineActionItems;
 
   public static final String SERIALIZED_NAME_SHOW_SERVICES_IMPACTED = "show_services_impacted";
   @SerializedName(SERIALIZED_NAME_SHOW_SERVICES_IMPACTED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean showServicesImpacted;
 
   public static final String SERIALIZED_NAME_SHOW_FUNCTIONALITIES_IMPACTED = "show_functionalities_impacted";
   @SerializedName(SERIALIZED_NAME_SHOW_FUNCTIONALITIES_IMPACTED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean showFunctionalitiesImpacted;
 
   public static final String SERIALIZED_NAME_SHOW_GROUPS_IMPACTED = "show_groups_impacted";
   @SerializedName(SERIALIZED_NAME_SHOW_GROUPS_IMPACTED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean showGroupsImpacted;
 
   public static final String SERIALIZED_NAME_SHOW_ALERTS_ATTACHED = "show_alerts_attached";
   @SerializedName(SERIALIZED_NAME_SHOW_ALERTS_ATTACHED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean showAlertsAttached;
 
   public static final String SERIALIZED_NAME_SHOW_ACTION_ITEMS = "show_action_items";
   @SerializedName(SERIALIZED_NAME_SHOW_ACTION_ITEMS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean showActionItems;
 
   public static final String SERIALIZED_NAME_CAUSE_IDS = "cause_ids";
   @SerializedName(SERIALIZED_NAME_CAUSE_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> causeIds;
 
   public UpdateIncidentPostMortemDataAttributes() {
   }
 
-  public UpdateIncidentPostMortemDataAttributes title(@javax.annotation.Nullable String title) {
+  public UpdateIncidentPostMortemDataAttributes title(@jakarta.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
@@ -197,17 +197,17 @@ public class UpdateIncidentPostMortemDataAttributes {
    * The title of the incident retrospective
    * @return title
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nullable String title) {
+  public void setTitle(@jakarta.annotation.Nullable String title) {
     this.title = title;
   }
 
 
-  public UpdateIncidentPostMortemDataAttributes status(@javax.annotation.Nullable StatusEnum status) {
+  public UpdateIncidentPostMortemDataAttributes status(@jakarta.annotation.Nullable StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -216,17 +216,17 @@ public class UpdateIncidentPostMortemDataAttributes {
    * The status of the incident retrospective
    * @return status
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nullable StatusEnum status) {
+  public void setStatus(@jakarta.annotation.Nullable StatusEnum status) {
     this.status = status;
   }
 
 
-  public UpdateIncidentPostMortemDataAttributes startedAt(@javax.annotation.Nullable String startedAt) {
+  public UpdateIncidentPostMortemDataAttributes startedAt(@jakarta.annotation.Nullable String startedAt) {
     this.startedAt = startedAt;
     return this;
   }
@@ -235,17 +235,17 @@ public class UpdateIncidentPostMortemDataAttributes {
    * Date of started at
    * @return startedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getStartedAt() {
     return startedAt;
   }
 
-  public void setStartedAt(@javax.annotation.Nullable String startedAt) {
+  public void setStartedAt(@jakarta.annotation.Nullable String startedAt) {
     this.startedAt = startedAt;
   }
 
 
-  public UpdateIncidentPostMortemDataAttributes mitigatedAt(@javax.annotation.Nullable String mitigatedAt) {
+  public UpdateIncidentPostMortemDataAttributes mitigatedAt(@jakarta.annotation.Nullable String mitigatedAt) {
     this.mitigatedAt = mitigatedAt;
     return this;
   }
@@ -254,17 +254,17 @@ public class UpdateIncidentPostMortemDataAttributes {
    * Date of mitigation
    * @return mitigatedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getMitigatedAt() {
     return mitigatedAt;
   }
 
-  public void setMitigatedAt(@javax.annotation.Nullable String mitigatedAt) {
+  public void setMitigatedAt(@jakarta.annotation.Nullable String mitigatedAt) {
     this.mitigatedAt = mitigatedAt;
   }
 
 
-  public UpdateIncidentPostMortemDataAttributes resolvedAt(@javax.annotation.Nullable String resolvedAt) {
+  public UpdateIncidentPostMortemDataAttributes resolvedAt(@jakarta.annotation.Nullable String resolvedAt) {
     this.resolvedAt = resolvedAt;
     return this;
   }
@@ -273,17 +273,17 @@ public class UpdateIncidentPostMortemDataAttributes {
    * Date of resolution
    * @return resolvedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getResolvedAt() {
     return resolvedAt;
   }
 
-  public void setResolvedAt(@javax.annotation.Nullable String resolvedAt) {
+  public void setResolvedAt(@jakarta.annotation.Nullable String resolvedAt) {
     this.resolvedAt = resolvedAt;
   }
 
 
-  public UpdateIncidentPostMortemDataAttributes showTimeline(@javax.annotation.Nullable Boolean showTimeline) {
+  public UpdateIncidentPostMortemDataAttributes showTimeline(@jakarta.annotation.Nullable Boolean showTimeline) {
     this.showTimeline = showTimeline;
     return this;
   }
@@ -292,17 +292,17 @@ public class UpdateIncidentPostMortemDataAttributes {
    * Show events timeline of the incident retrospective
    * @return showTimeline
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getShowTimeline() {
     return showTimeline;
   }
 
-  public void setShowTimeline(@javax.annotation.Nullable Boolean showTimeline) {
+  public void setShowTimeline(@jakarta.annotation.Nullable Boolean showTimeline) {
     this.showTimeline = showTimeline;
   }
 
 
-  public UpdateIncidentPostMortemDataAttributes showTimelineTrail(@javax.annotation.Nullable Boolean showTimelineTrail) {
+  public UpdateIncidentPostMortemDataAttributes showTimelineTrail(@jakarta.annotation.Nullable Boolean showTimelineTrail) {
     this.showTimelineTrail = showTimelineTrail;
     return this;
   }
@@ -311,17 +311,17 @@ public class UpdateIncidentPostMortemDataAttributes {
    * Show trail events in the timeline of the incident retrospective
    * @return showTimelineTrail
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getShowTimelineTrail() {
     return showTimelineTrail;
   }
 
-  public void setShowTimelineTrail(@javax.annotation.Nullable Boolean showTimelineTrail) {
+  public void setShowTimelineTrail(@jakarta.annotation.Nullable Boolean showTimelineTrail) {
     this.showTimelineTrail = showTimelineTrail;
   }
 
 
-  public UpdateIncidentPostMortemDataAttributes showTimelineGenius(@javax.annotation.Nullable Boolean showTimelineGenius) {
+  public UpdateIncidentPostMortemDataAttributes showTimelineGenius(@jakarta.annotation.Nullable Boolean showTimelineGenius) {
     this.showTimelineGenius = showTimelineGenius;
     return this;
   }
@@ -330,17 +330,17 @@ public class UpdateIncidentPostMortemDataAttributes {
    * Show workflow events in the timeline of the incident retrospective
    * @return showTimelineGenius
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getShowTimelineGenius() {
     return showTimelineGenius;
   }
 
-  public void setShowTimelineGenius(@javax.annotation.Nullable Boolean showTimelineGenius) {
+  public void setShowTimelineGenius(@jakarta.annotation.Nullable Boolean showTimelineGenius) {
     this.showTimelineGenius = showTimelineGenius;
   }
 
 
-  public UpdateIncidentPostMortemDataAttributes showTimelineTasks(@javax.annotation.Nullable Boolean showTimelineTasks) {
+  public UpdateIncidentPostMortemDataAttributes showTimelineTasks(@jakarta.annotation.Nullable Boolean showTimelineTasks) {
     this.showTimelineTasks = showTimelineTasks;
     return this;
   }
@@ -349,17 +349,17 @@ public class UpdateIncidentPostMortemDataAttributes {
    * Show tasks in the timeline of the incident retrospective
    * @return showTimelineTasks
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getShowTimelineTasks() {
     return showTimelineTasks;
   }
 
-  public void setShowTimelineTasks(@javax.annotation.Nullable Boolean showTimelineTasks) {
+  public void setShowTimelineTasks(@jakarta.annotation.Nullable Boolean showTimelineTasks) {
     this.showTimelineTasks = showTimelineTasks;
   }
 
 
-  public UpdateIncidentPostMortemDataAttributes showTimelineActionItems(@javax.annotation.Nullable Boolean showTimelineActionItems) {
+  public UpdateIncidentPostMortemDataAttributes showTimelineActionItems(@jakarta.annotation.Nullable Boolean showTimelineActionItems) {
     this.showTimelineActionItems = showTimelineActionItems;
     return this;
   }
@@ -368,17 +368,17 @@ public class UpdateIncidentPostMortemDataAttributes {
    * Show action items in the timeline of the incident retrospective
    * @return showTimelineActionItems
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getShowTimelineActionItems() {
     return showTimelineActionItems;
   }
 
-  public void setShowTimelineActionItems(@javax.annotation.Nullable Boolean showTimelineActionItems) {
+  public void setShowTimelineActionItems(@jakarta.annotation.Nullable Boolean showTimelineActionItems) {
     this.showTimelineActionItems = showTimelineActionItems;
   }
 
 
-  public UpdateIncidentPostMortemDataAttributes showServicesImpacted(@javax.annotation.Nullable Boolean showServicesImpacted) {
+  public UpdateIncidentPostMortemDataAttributes showServicesImpacted(@jakarta.annotation.Nullable Boolean showServicesImpacted) {
     this.showServicesImpacted = showServicesImpacted;
     return this;
   }
@@ -387,17 +387,17 @@ public class UpdateIncidentPostMortemDataAttributes {
    * Show functionalities impacted of the incident retrospective
    * @return showServicesImpacted
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getShowServicesImpacted() {
     return showServicesImpacted;
   }
 
-  public void setShowServicesImpacted(@javax.annotation.Nullable Boolean showServicesImpacted) {
+  public void setShowServicesImpacted(@jakarta.annotation.Nullable Boolean showServicesImpacted) {
     this.showServicesImpacted = showServicesImpacted;
   }
 
 
-  public UpdateIncidentPostMortemDataAttributes showFunctionalitiesImpacted(@javax.annotation.Nullable Boolean showFunctionalitiesImpacted) {
+  public UpdateIncidentPostMortemDataAttributes showFunctionalitiesImpacted(@jakarta.annotation.Nullable Boolean showFunctionalitiesImpacted) {
     this.showFunctionalitiesImpacted = showFunctionalitiesImpacted;
     return this;
   }
@@ -406,17 +406,17 @@ public class UpdateIncidentPostMortemDataAttributes {
    * Show services impacted of the incident retrospective
    * @return showFunctionalitiesImpacted
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getShowFunctionalitiesImpacted() {
     return showFunctionalitiesImpacted;
   }
 
-  public void setShowFunctionalitiesImpacted(@javax.annotation.Nullable Boolean showFunctionalitiesImpacted) {
+  public void setShowFunctionalitiesImpacted(@jakarta.annotation.Nullable Boolean showFunctionalitiesImpacted) {
     this.showFunctionalitiesImpacted = showFunctionalitiesImpacted;
   }
 
 
-  public UpdateIncidentPostMortemDataAttributes showGroupsImpacted(@javax.annotation.Nullable Boolean showGroupsImpacted) {
+  public UpdateIncidentPostMortemDataAttributes showGroupsImpacted(@jakarta.annotation.Nullable Boolean showGroupsImpacted) {
     this.showGroupsImpacted = showGroupsImpacted;
     return this;
   }
@@ -425,17 +425,17 @@ public class UpdateIncidentPostMortemDataAttributes {
    * Show groups impacted of the incident retrospective
    * @return showGroupsImpacted
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getShowGroupsImpacted() {
     return showGroupsImpacted;
   }
 
-  public void setShowGroupsImpacted(@javax.annotation.Nullable Boolean showGroupsImpacted) {
+  public void setShowGroupsImpacted(@jakarta.annotation.Nullable Boolean showGroupsImpacted) {
     this.showGroupsImpacted = showGroupsImpacted;
   }
 
 
-  public UpdateIncidentPostMortemDataAttributes showAlertsAttached(@javax.annotation.Nullable Boolean showAlertsAttached) {
+  public UpdateIncidentPostMortemDataAttributes showAlertsAttached(@jakarta.annotation.Nullable Boolean showAlertsAttached) {
     this.showAlertsAttached = showAlertsAttached;
     return this;
   }
@@ -444,17 +444,17 @@ public class UpdateIncidentPostMortemDataAttributes {
    * Show alerts attached to the incident
    * @return showAlertsAttached
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getShowAlertsAttached() {
     return showAlertsAttached;
   }
 
-  public void setShowAlertsAttached(@javax.annotation.Nullable Boolean showAlertsAttached) {
+  public void setShowAlertsAttached(@jakarta.annotation.Nullable Boolean showAlertsAttached) {
     this.showAlertsAttached = showAlertsAttached;
   }
 
 
-  public UpdateIncidentPostMortemDataAttributes showActionItems(@javax.annotation.Nullable Boolean showActionItems) {
+  public UpdateIncidentPostMortemDataAttributes showActionItems(@jakarta.annotation.Nullable Boolean showActionItems) {
     this.showActionItems = showActionItems;
     return this;
   }
@@ -463,17 +463,17 @@ public class UpdateIncidentPostMortemDataAttributes {
    * Show action items (follow-ups) in the incident retrospective
    * @return showActionItems
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getShowActionItems() {
     return showActionItems;
   }
 
-  public void setShowActionItems(@javax.annotation.Nullable Boolean showActionItems) {
+  public void setShowActionItems(@jakarta.annotation.Nullable Boolean showActionItems) {
     this.showActionItems = showActionItems;
   }
 
 
-  public UpdateIncidentPostMortemDataAttributes causeIds(@javax.annotation.Nullable List<String> causeIds) {
+  public UpdateIncidentPostMortemDataAttributes causeIds(@jakarta.annotation.Nullable List<String> causeIds) {
     this.causeIds = causeIds;
     return this;
   }
@@ -490,12 +490,12 @@ public class UpdateIncidentPostMortemDataAttributes {
    * The Cause IDs to attach to the incident retrospective
    * @return causeIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getCauseIds() {
     return causeIds;
   }
 
-  public void setCauseIds(@javax.annotation.Nullable List<String> causeIds) {
+  public void setCauseIds(@jakarta.annotation.Nullable List<String> causeIds) {
     this.causeIds = causeIds;
   }
 

@@ -49,17 +49,17 @@ import com.rootly.client.JSON;
 /**
  * NewIncidentPermissionSetBoolean
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewIncidentPermissionSetBoolean {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private NewIncidentPermissionSetBooleanData data;
 
   public NewIncidentPermissionSetBoolean() {
   }
 
-  public NewIncidentPermissionSetBoolean data(@javax.annotation.Nonnull NewIncidentPermissionSetBooleanData data) {
+  public NewIncidentPermissionSetBoolean data(@jakarta.annotation.Nonnull NewIncidentPermissionSetBooleanData data) {
     this.data = data;
     return this;
   }
@@ -68,12 +68,12 @@ public class NewIncidentPermissionSetBoolean {
    * Get data
    * @return data
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public NewIncidentPermissionSetBooleanData getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nonnull NewIncidentPermissionSetBooleanData data) {
+  public void setData(@jakarta.annotation.Nonnull NewIncidentPermissionSetBooleanData data) {
     this.data = data;
   }
 

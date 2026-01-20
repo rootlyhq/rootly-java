@@ -49,16 +49,16 @@ import com.rootly.client.JSON;
 /**
  * UpdateCatalogDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateCatalogDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   /**
@@ -127,18 +127,18 @@ public class UpdateCatalogDataAttributes {
 
   public static final String SERIALIZED_NAME_ICON = "icon";
   @SerializedName(SERIALIZED_NAME_ICON)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private IconEnum icon;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public UpdateCatalogDataAttributes() {
   }
 
-  public UpdateCatalogDataAttributes name(@javax.annotation.Nullable String name) {
+  public UpdateCatalogDataAttributes name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -147,17 +147,17 @@ public class UpdateCatalogDataAttributes {
    * Get name
    * @return name
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public UpdateCatalogDataAttributes description(@javax.annotation.Nullable String description) {
+  public UpdateCatalogDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -166,17 +166,17 @@ public class UpdateCatalogDataAttributes {
    * Get description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UpdateCatalogDataAttributes icon(@javax.annotation.Nullable IconEnum icon) {
+  public UpdateCatalogDataAttributes icon(@jakarta.annotation.Nullable IconEnum icon) {
     this.icon = icon;
     return this;
   }
@@ -185,17 +185,17 @@ public class UpdateCatalogDataAttributes {
    * Get icon
    * @return icon
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public IconEnum getIcon() {
     return icon;
   }
 
-  public void setIcon(@javax.annotation.Nullable IconEnum icon) {
+  public void setIcon(@jakarta.annotation.Nullable IconEnum icon) {
     this.icon = icon;
   }
 
 
-  public UpdateCatalogDataAttributes position(@javax.annotation.Nullable Integer position) {
+  public UpdateCatalogDataAttributes position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -204,12 +204,12 @@ public class UpdateCatalogDataAttributes {
    * Default position of the catalog when displayed in a list.
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 

@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * InviteToSlackChannelOpsgenieTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class InviteToSlackChannelOpsgenieTaskParams {
   /**
    * Gets or Sets taskType
@@ -105,23 +105,23 @@ public class InviteToSlackChannelOpsgenieTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_CHANNELS = "channels";
   @SerializedName(SERIALIZED_NAME_CHANNELS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<AddActionItemTaskParamsPostToSlackChannelsInner> channels = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SCHEDULE = "schedule";
   @SerializedName(SERIALIZED_NAME_SCHEDULE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private AddActionItemTaskParamsPostToSlackChannelsInner schedule;
 
   public InviteToSlackChannelOpsgenieTaskParams() {
   }
 
-  public InviteToSlackChannelOpsgenieTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public InviteToSlackChannelOpsgenieTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -130,17 +130,17 @@ public class InviteToSlackChannelOpsgenieTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public InviteToSlackChannelOpsgenieTaskParams channels(@javax.annotation.Nonnull List<AddActionItemTaskParamsPostToSlackChannelsInner> channels) {
+  public InviteToSlackChannelOpsgenieTaskParams channels(@jakarta.annotation.Nonnull List<AddActionItemTaskParamsPostToSlackChannelsInner> channels) {
     this.channels = channels;
     return this;
   }
@@ -157,17 +157,17 @@ public class InviteToSlackChannelOpsgenieTaskParams {
    * Get channels
    * @return channels
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<AddActionItemTaskParamsPostToSlackChannelsInner> getChannels() {
     return channels;
   }
 
-  public void setChannels(@javax.annotation.Nonnull List<AddActionItemTaskParamsPostToSlackChannelsInner> channels) {
+  public void setChannels(@jakarta.annotation.Nonnull List<AddActionItemTaskParamsPostToSlackChannelsInner> channels) {
     this.channels = channels;
   }
 
 
-  public InviteToSlackChannelOpsgenieTaskParams schedule(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner schedule) {
+  public InviteToSlackChannelOpsgenieTaskParams schedule(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner schedule) {
     this.schedule = schedule;
     return this;
   }
@@ -176,12 +176,12 @@ public class InviteToSlackChannelOpsgenieTaskParams {
    * Get schedule
    * @return schedule
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public AddActionItemTaskParamsPostToSlackChannelsInner getSchedule() {
     return schedule;
   }
 
-  public void setSchedule(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner schedule) {
+  public void setSchedule(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner schedule) {
     this.schedule = schedule;
   }
 

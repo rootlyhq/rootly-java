@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * GeniusCreateWatsonxChatCompletionTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
 public class GeniusCreateWatsonxChatCompletionTaskParams {
   /**
    * Gets or Sets taskType

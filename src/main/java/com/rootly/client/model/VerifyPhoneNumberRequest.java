@@ -48,17 +48,17 @@ import com.rootly.client.JSON;
 /**
  * VerifyPhoneNumberRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class VerifyPhoneNumberRequest {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String code;
 
   public VerifyPhoneNumberRequest() {
   }
 
-  public VerifyPhoneNumberRequest code(@javax.annotation.Nonnull String code) {
+  public VerifyPhoneNumberRequest code(@jakarta.annotation.Nonnull String code) {
     this.code = code;
     return this;
   }
@@ -67,12 +67,12 @@ public class VerifyPhoneNumberRequest {
    * 6-digit verification code
    * @return code
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCode() {
     return code;
   }
 
-  public void setCode(@javax.annotation.Nonnull String code) {
+  public void setCode(@jakarta.annotation.Nonnull String code) {
     this.code = code;
   }
 

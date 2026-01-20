@@ -48,22 +48,22 @@ import com.rootly.client.JSON;
 /**
  * PhoneVerificationResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class PhoneVerificationResponse {
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String message;
 
   public static final String SERIALIZED_NAME_ERROR = "error";
   @SerializedName(SERIALIZED_NAME_ERROR)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String error;
 
   public PhoneVerificationResponse() {
   }
 
-  public PhoneVerificationResponse message(@javax.annotation.Nullable String message) {
+  public PhoneVerificationResponse message(@jakarta.annotation.Nullable String message) {
     this.message = message;
     return this;
   }
@@ -72,17 +72,17 @@ public class PhoneVerificationResponse {
    * Success message
    * @return message
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getMessage() {
     return message;
   }
 
-  public void setMessage(@javax.annotation.Nullable String message) {
+  public void setMessage(@jakarta.annotation.Nullable String message) {
     this.message = message;
   }
 
 
-  public PhoneVerificationResponse error(@javax.annotation.Nullable String error) {
+  public PhoneVerificationResponse error(@jakarta.annotation.Nullable String error) {
     this.error = error;
     return this;
   }
@@ -91,12 +91,12 @@ public class PhoneVerificationResponse {
    * Error message
    * @return error
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getError() {
     return error;
   }
 
-  public void setError(@javax.annotation.Nullable String error) {
+  public void setError(@jakarta.annotation.Nullable String error) {
     this.error = error;
   }
 

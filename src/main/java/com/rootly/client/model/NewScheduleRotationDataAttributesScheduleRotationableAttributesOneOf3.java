@@ -48,11 +48,11 @@ import com.rootly.client.JSON;
 /**
  * NewScheduleRotationDataAttributesScheduleRotationableAttributesOneOf3
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewScheduleRotationDataAttributesScheduleRotationableAttributesOneOf3 {
   public static final String SERIALIZED_NAME_SHIFT_LENGTH = "shift_length";
   @SerializedName(SERIALIZED_NAME_SHIFT_LENGTH)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Integer shiftLength;
 
   /**
@@ -111,18 +111,18 @@ public class NewScheduleRotationDataAttributesScheduleRotationableAttributesOneO
 
   public static final String SERIALIZED_NAME_SHIFT_LENGTH_UNIT = "shift_length_unit";
   @SerializedName(SERIALIZED_NAME_SHIFT_LENGTH_UNIT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private ShiftLengthUnitEnum shiftLengthUnit;
 
   public static final String SERIALIZED_NAME_HANDOFF_TIME = "handoff_time";
   @SerializedName(SERIALIZED_NAME_HANDOFF_TIME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String handoffTime;
 
   public NewScheduleRotationDataAttributesScheduleRotationableAttributesOneOf3() {
   }
 
-  public NewScheduleRotationDataAttributesScheduleRotationableAttributesOneOf3 shiftLength(@javax.annotation.Nonnull Integer shiftLength) {
+  public NewScheduleRotationDataAttributesScheduleRotationableAttributesOneOf3 shiftLength(@jakarta.annotation.Nonnull Integer shiftLength) {
     this.shiftLength = shiftLength;
     return this;
   }
@@ -131,17 +131,17 @@ public class NewScheduleRotationDataAttributesScheduleRotationableAttributesOneO
    * Shift length for custom rotation
    * @return shiftLength
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Integer getShiftLength() {
     return shiftLength;
   }
 
-  public void setShiftLength(@javax.annotation.Nonnull Integer shiftLength) {
+  public void setShiftLength(@jakarta.annotation.Nonnull Integer shiftLength) {
     this.shiftLength = shiftLength;
   }
 
 
-  public NewScheduleRotationDataAttributesScheduleRotationableAttributesOneOf3 shiftLengthUnit(@javax.annotation.Nonnull ShiftLengthUnitEnum shiftLengthUnit) {
+  public NewScheduleRotationDataAttributesScheduleRotationableAttributesOneOf3 shiftLengthUnit(@jakarta.annotation.Nonnull ShiftLengthUnitEnum shiftLengthUnit) {
     this.shiftLengthUnit = shiftLengthUnit;
     return this;
   }
@@ -150,17 +150,17 @@ public class NewScheduleRotationDataAttributesScheduleRotationableAttributesOneO
    * Shift length unit for custom rotation
    * @return shiftLengthUnit
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public ShiftLengthUnitEnum getShiftLengthUnit() {
     return shiftLengthUnit;
   }
 
-  public void setShiftLengthUnit(@javax.annotation.Nonnull ShiftLengthUnitEnum shiftLengthUnit) {
+  public void setShiftLengthUnit(@jakarta.annotation.Nonnull ShiftLengthUnitEnum shiftLengthUnit) {
     this.shiftLengthUnit = shiftLengthUnit;
   }
 
 
-  public NewScheduleRotationDataAttributesScheduleRotationableAttributesOneOf3 handoffTime(@javax.annotation.Nonnull String handoffTime) {
+  public NewScheduleRotationDataAttributesScheduleRotationableAttributesOneOf3 handoffTime(@jakarta.annotation.Nonnull String handoffTime) {
     this.handoffTime = handoffTime;
     return this;
   }
@@ -169,12 +169,12 @@ public class NewScheduleRotationDataAttributesScheduleRotationableAttributesOneO
    * Hand off time for custom rotation. Use minutes for hourly rotation.
    * @return handoffTime
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getHandoffTime() {
     return handoffTime;
   }
 
-  public void setHandoffTime(@javax.annotation.Nonnull String handoffTime) {
+  public void setHandoffTime(@jakarta.annotation.Nonnull String handoffTime) {
     this.handoffTime = handoffTime;
   }
 

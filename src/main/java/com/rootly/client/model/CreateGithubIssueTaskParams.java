@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * CreateGithubIssueTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateGithubIssueTaskParams {
   /**
    * Gets or Sets taskType
@@ -103,28 +103,28 @@ public class CreateGithubIssueTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String title;
 
   public static final String SERIALIZED_NAME_BODY = "body";
   @SerializedName(SERIALIZED_NAME_BODY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String body;
 
   public static final String SERIALIZED_NAME_REPOSITORY = "repository";
   @SerializedName(SERIALIZED_NAME_REPOSITORY)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private AddActionItemTaskParamsPostToSlackChannelsInner repository;
 
   public CreateGithubIssueTaskParams() {
   }
 
-  public CreateGithubIssueTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public CreateGithubIssueTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -133,17 +133,17 @@ public class CreateGithubIssueTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public CreateGithubIssueTaskParams title(@javax.annotation.Nonnull String title) {
+  public CreateGithubIssueTaskParams title(@jakarta.annotation.Nonnull String title) {
     this.title = title;
     return this;
   }
@@ -152,17 +152,17 @@ public class CreateGithubIssueTaskParams {
    * The issue title
    * @return title
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nonnull String title) {
+  public void setTitle(@jakarta.annotation.Nonnull String title) {
     this.title = title;
   }
 
 
-  public CreateGithubIssueTaskParams body(@javax.annotation.Nullable String body) {
+  public CreateGithubIssueTaskParams body(@jakarta.annotation.Nullable String body) {
     this.body = body;
     return this;
   }
@@ -171,17 +171,17 @@ public class CreateGithubIssueTaskParams {
    * The issue body
    * @return body
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getBody() {
     return body;
   }
 
-  public void setBody(@javax.annotation.Nullable String body) {
+  public void setBody(@jakarta.annotation.Nullable String body) {
     this.body = body;
   }
 
 
-  public CreateGithubIssueTaskParams repository(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner repository) {
+  public CreateGithubIssueTaskParams repository(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner repository) {
     this.repository = repository;
     return this;
   }
@@ -190,12 +190,12 @@ public class CreateGithubIssueTaskParams {
    * Get repository
    * @return repository
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public AddActionItemTaskParamsPostToSlackChannelsInner getRepository() {
     return repository;
   }
 
-  public void setRepository(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner repository) {
+  public void setRepository(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner repository) {
     this.repository = repository;
   }
 

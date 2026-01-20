@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * UpdatePulseData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdatePulseData {
   /**
    * Gets or Sets type
@@ -103,18 +103,18 @@ public class UpdatePulseData {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private UpdatePulseDataAttributes attributes;
 
   public UpdatePulseData() {
   }
 
-  public UpdatePulseData type(@javax.annotation.Nullable TypeEnum type) {
+  public UpdatePulseData type(@jakarta.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -123,17 +123,17 @@ public class UpdatePulseData {
    * Get type
    * @return type
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TypeEnum getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nullable TypeEnum type) {
+  public void setType(@jakarta.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
 
-  public UpdatePulseData attributes(@javax.annotation.Nonnull UpdatePulseDataAttributes attributes) {
+  public UpdatePulseData attributes(@jakarta.annotation.Nonnull UpdatePulseDataAttributes attributes) {
     this.attributes = attributes;
     return this;
   }
@@ -142,12 +142,12 @@ public class UpdatePulseData {
    * Get attributes
    * @return attributes
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public UpdatePulseDataAttributes getAttributes() {
     return attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nonnull UpdatePulseDataAttributes attributes) {
+  public void setAttributes(@jakarta.annotation.Nonnull UpdatePulseDataAttributes attributes) {
     this.attributes = attributes;
   }
 

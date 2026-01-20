@@ -50,7 +50,7 @@ import com.rootly.client.JSON;
 /**
  * CreateIncidentPostmortemTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateIncidentPostmortemTaskParams {
   /**
    * Gets or Sets taskType
@@ -104,33 +104,33 @@ public class CreateIncidentPostmortemTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_INCIDENT_ID = "incident_id";
   @SerializedName(SERIALIZED_NAME_INCIDENT_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String incidentId;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String title;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String status;
 
   public static final String SERIALIZED_NAME_TEMPLATE = "template";
   @SerializedName(SERIALIZED_NAME_TEMPLATE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CreateIncidentPostmortemTaskParamsTemplate template;
 
   public CreateIncidentPostmortemTaskParams() {
   }
 
-  public CreateIncidentPostmortemTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public CreateIncidentPostmortemTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -139,17 +139,17 @@ public class CreateIncidentPostmortemTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public CreateIncidentPostmortemTaskParams incidentId(@javax.annotation.Nonnull String incidentId) {
+  public CreateIncidentPostmortemTaskParams incidentId(@jakarta.annotation.Nonnull String incidentId) {
     this.incidentId = incidentId;
     return this;
   }
@@ -158,17 +158,17 @@ public class CreateIncidentPostmortemTaskParams {
    * UUID of the incident that needs a retrospective
    * @return incidentId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getIncidentId() {
     return incidentId;
   }
 
-  public void setIncidentId(@javax.annotation.Nonnull String incidentId) {
+  public void setIncidentId(@jakarta.annotation.Nonnull String incidentId) {
     this.incidentId = incidentId;
   }
 
 
-  public CreateIncidentPostmortemTaskParams title(@javax.annotation.Nonnull String title) {
+  public CreateIncidentPostmortemTaskParams title(@jakarta.annotation.Nonnull String title) {
     this.title = title;
     return this;
   }
@@ -177,17 +177,17 @@ public class CreateIncidentPostmortemTaskParams {
    * The retrospective title
    * @return title
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nonnull String title) {
+  public void setTitle(@jakarta.annotation.Nonnull String title) {
     this.title = title;
   }
 
 
-  public CreateIncidentPostmortemTaskParams status(@javax.annotation.Nullable String status) {
+  public CreateIncidentPostmortemTaskParams status(@jakarta.annotation.Nullable String status) {
     this.status = status;
     return this;
   }
@@ -196,17 +196,17 @@ public class CreateIncidentPostmortemTaskParams {
    * Get status
    * @return status
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nullable String status) {
+  public void setStatus(@jakarta.annotation.Nullable String status) {
     this.status = status;
   }
 
 
-  public CreateIncidentPostmortemTaskParams template(@javax.annotation.Nullable CreateIncidentPostmortemTaskParamsTemplate template) {
+  public CreateIncidentPostmortemTaskParams template(@jakarta.annotation.Nullable CreateIncidentPostmortemTaskParamsTemplate template) {
     this.template = template;
     return this;
   }
@@ -215,12 +215,12 @@ public class CreateIncidentPostmortemTaskParams {
    * Get template
    * @return template
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CreateIncidentPostmortemTaskParamsTemplate getTemplate() {
     return template;
   }
 
-  public void setTemplate(@javax.annotation.Nullable CreateIncidentPostmortemTaskParamsTemplate template) {
+  public void setTemplate(@jakarta.annotation.Nullable CreateIncidentPostmortemTaskParamsTemplate template) {
     this.template = template;
   }
 

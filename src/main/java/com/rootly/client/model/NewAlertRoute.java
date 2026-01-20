@@ -49,17 +49,17 @@ import com.rootly.client.JSON;
 /**
  * NewAlertRoute
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewAlertRoute {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private NewAlertRouteData data;
 
   public NewAlertRoute() {
   }
 
-  public NewAlertRoute data(@javax.annotation.Nullable NewAlertRouteData data) {
+  public NewAlertRoute data(@jakarta.annotation.Nullable NewAlertRouteData data) {
     this.data = data;
     return this;
   }
@@ -68,12 +68,12 @@ public class NewAlertRoute {
    * Get data
    * @return data
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public NewAlertRouteData getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nullable NewAlertRouteData data) {
+  public void setData(@jakarta.annotation.Nullable NewAlertRouteData data) {
     this.data = data;
   }
 

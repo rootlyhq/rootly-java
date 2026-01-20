@@ -51,62 +51,62 @@ import com.rootly.client.JSON;
 /**
  * OverrideShift
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class OverrideShift {
   public static final String SERIALIZED_NAME_SCHEDULE_ID = "schedule_id";
   @SerializedName(SERIALIZED_NAME_SCHEDULE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String scheduleId;
 
   public static final String SERIALIZED_NAME_ROTATION_ID = "rotation_id";
   @SerializedName(SERIALIZED_NAME_ROTATION_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String rotationId;
 
   public static final String SERIALIZED_NAME_STARTS_AT = "starts_at";
   @SerializedName(SERIALIZED_NAME_STARTS_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String startsAt;
 
   public static final String SERIALIZED_NAME_ENDS_AT = "ends_at";
   @SerializedName(SERIALIZED_NAME_ENDS_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String endsAt;
 
   public static final String SERIALIZED_NAME_IS_OVERRIDE = "is_override";
   @SerializedName(SERIALIZED_NAME_IS_OVERRIDE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Boolean isOverride;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String updatedAt;
 
   public static final String SERIALIZED_NAME_SHIFT_OVERRIDE = "shift_override";
   @SerializedName(SERIALIZED_NAME_SHIFT_OVERRIDE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ShiftOverrideResponse shiftOverride;
 
   public static final String SERIALIZED_NAME_USER_ID = "user_id";
   @SerializedName(SERIALIZED_NAME_USER_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer userId;
 
   public static final String SERIALIZED_NAME_USER = "user";
   @SerializedName(SERIALIZED_NAME_USER)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private UserResponse user;
 
   public OverrideShift() {
   }
 
-  public OverrideShift scheduleId(@javax.annotation.Nonnull String scheduleId) {
+  public OverrideShift scheduleId(@jakarta.annotation.Nonnull String scheduleId) {
     this.scheduleId = scheduleId;
     return this;
   }
@@ -115,17 +115,17 @@ public class OverrideShift {
    * ID of schedule
    * @return scheduleId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getScheduleId() {
     return scheduleId;
   }
 
-  public void setScheduleId(@javax.annotation.Nonnull String scheduleId) {
+  public void setScheduleId(@jakarta.annotation.Nonnull String scheduleId) {
     this.scheduleId = scheduleId;
   }
 
 
-  public OverrideShift rotationId(@javax.annotation.Nullable String rotationId) {
+  public OverrideShift rotationId(@jakarta.annotation.Nullable String rotationId) {
     this.rotationId = rotationId;
     return this;
   }
@@ -134,17 +134,17 @@ public class OverrideShift {
    * ID of rotation
    * @return rotationId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getRotationId() {
     return rotationId;
   }
 
-  public void setRotationId(@javax.annotation.Nullable String rotationId) {
+  public void setRotationId(@jakarta.annotation.Nullable String rotationId) {
     this.rotationId = rotationId;
   }
 
 
-  public OverrideShift startsAt(@javax.annotation.Nonnull String startsAt) {
+  public OverrideShift startsAt(@jakarta.annotation.Nonnull String startsAt) {
     this.startsAt = startsAt;
     return this;
   }
@@ -153,17 +153,17 @@ public class OverrideShift {
    * Start datetime of shift
    * @return startsAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getStartsAt() {
     return startsAt;
   }
 
-  public void setStartsAt(@javax.annotation.Nonnull String startsAt) {
+  public void setStartsAt(@jakarta.annotation.Nonnull String startsAt) {
     this.startsAt = startsAt;
   }
 
 
-  public OverrideShift endsAt(@javax.annotation.Nonnull String endsAt) {
+  public OverrideShift endsAt(@jakarta.annotation.Nonnull String endsAt) {
     this.endsAt = endsAt;
     return this;
   }
@@ -172,17 +172,17 @@ public class OverrideShift {
    * End datetime of shift
    * @return endsAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getEndsAt() {
     return endsAt;
   }
 
-  public void setEndsAt(@javax.annotation.Nonnull String endsAt) {
+  public void setEndsAt(@jakarta.annotation.Nonnull String endsAt) {
     this.endsAt = endsAt;
   }
 
 
-  public OverrideShift isOverride(@javax.annotation.Nonnull Boolean isOverride) {
+  public OverrideShift isOverride(@jakarta.annotation.Nonnull Boolean isOverride) {
     this.isOverride = isOverride;
     return this;
   }
@@ -191,17 +191,17 @@ public class OverrideShift {
    * Denotes shift is an override shift
    * @return isOverride
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Boolean getIsOverride() {
     return isOverride;
   }
 
-  public void setIsOverride(@javax.annotation.Nonnull Boolean isOverride) {
+  public void setIsOverride(@jakarta.annotation.Nonnull Boolean isOverride) {
     this.isOverride = isOverride;
   }
 
 
-  public OverrideShift createdAt(@javax.annotation.Nullable String createdAt) {
+  public OverrideShift createdAt(@jakarta.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -210,17 +210,17 @@ public class OverrideShift {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nullable String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public OverrideShift updatedAt(@javax.annotation.Nullable String updatedAt) {
+  public OverrideShift updatedAt(@jakarta.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -229,17 +229,17 @@ public class OverrideShift {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nullable String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
   }
 
 
-  public OverrideShift shiftOverride(@javax.annotation.Nullable ShiftOverrideResponse shiftOverride) {
+  public OverrideShift shiftOverride(@jakarta.annotation.Nullable ShiftOverrideResponse shiftOverride) {
     this.shiftOverride = shiftOverride;
     return this;
   }
@@ -248,17 +248,17 @@ public class OverrideShift {
    * Override metadata
    * @return shiftOverride
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ShiftOverrideResponse getShiftOverride() {
     return shiftOverride;
   }
 
-  public void setShiftOverride(@javax.annotation.Nullable ShiftOverrideResponse shiftOverride) {
+  public void setShiftOverride(@jakarta.annotation.Nullable ShiftOverrideResponse shiftOverride) {
     this.shiftOverride = shiftOverride;
   }
 
 
-  public OverrideShift userId(@javax.annotation.Nullable Integer userId) {
+  public OverrideShift userId(@jakarta.annotation.Nullable Integer userId) {
     this.userId = userId;
     return this;
   }
@@ -267,17 +267,17 @@ public class OverrideShift {
    * Override shift user
    * @return userId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getUserId() {
     return userId;
   }
 
-  public void setUserId(@javax.annotation.Nullable Integer userId) {
+  public void setUserId(@jakarta.annotation.Nullable Integer userId) {
     this.userId = userId;
   }
 
 
-  public OverrideShift user(@javax.annotation.Nullable UserResponse user) {
+  public OverrideShift user(@jakarta.annotation.Nullable UserResponse user) {
     this.user = user;
     return this;
   }
@@ -286,12 +286,12 @@ public class OverrideShift {
    * User metadata
    * @return user
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public UserResponse getUser() {
     return user;
   }
 
-  public void setUser(@javax.annotation.Nullable UserResponse user) {
+  public void setUser(@jakarta.annotation.Nullable UserResponse user) {
     this.user = user;
   }
 

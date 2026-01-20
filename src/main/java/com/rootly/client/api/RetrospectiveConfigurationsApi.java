@@ -90,7 +90,7 @@ public class RetrospectiveConfigurationsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRetrospectiveConfigurationCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getRetrospectiveConfigurationCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -140,7 +140,7 @@ public class RetrospectiveConfigurationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRetrospectiveConfigurationValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getRetrospectiveConfigurationValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getRetrospectiveConfiguration(Async)");
@@ -165,7 +165,7 @@ public class RetrospectiveConfigurationsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public RetrospectiveConfigurationResponse getRetrospectiveConfiguration(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include) throws ApiException {
+    public RetrospectiveConfigurationResponse getRetrospectiveConfiguration(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include) throws ApiException {
         ApiResponse<RetrospectiveConfigurationResponse> localVarResp = getRetrospectiveConfigurationWithHttpInfo(id, include);
         return localVarResp.getData();
     }
@@ -185,7 +185,7 @@ public class RetrospectiveConfigurationsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RetrospectiveConfigurationResponse> getRetrospectiveConfigurationWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include) throws ApiException {
+    public ApiResponse<RetrospectiveConfigurationResponse> getRetrospectiveConfigurationWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include) throws ApiException {
         okhttp3.Call localVarCall = getRetrospectiveConfigurationValidateBeforeCall(id, include, null);
         Type localVarReturnType = new TypeToken<RetrospectiveConfigurationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -207,7 +207,7 @@ public class RetrospectiveConfigurationsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRetrospectiveConfigurationAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include, final ApiCallback<RetrospectiveConfigurationResponse> _callback) throws ApiException {
+    public okhttp3.Call getRetrospectiveConfigurationAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include, final ApiCallback<RetrospectiveConfigurationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getRetrospectiveConfigurationValidateBeforeCall(id, include, _callback);
         Type localVarReturnType = new TypeToken<RetrospectiveConfigurationResponse>(){}.getType();
@@ -230,7 +230,7 @@ public class RetrospectiveConfigurationsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listRetrospectiveConfigurationsCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterKind, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listRetrospectiveConfigurationsCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterKind, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -291,7 +291,7 @@ public class RetrospectiveConfigurationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listRetrospectiveConfigurationsValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterKind, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listRetrospectiveConfigurationsValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterKind, final ApiCallback _callback) throws ApiException {
         return listRetrospectiveConfigurationsCall(include, pageNumber, pageSize, filterKind, _callback);
 
     }
@@ -312,7 +312,7 @@ public class RetrospectiveConfigurationsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public RetrospectiveConfigurationList listRetrospectiveConfigurations(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterKind) throws ApiException {
+    public RetrospectiveConfigurationList listRetrospectiveConfigurations(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterKind) throws ApiException {
         ApiResponse<RetrospectiveConfigurationList> localVarResp = listRetrospectiveConfigurationsWithHttpInfo(include, pageNumber, pageSize, filterKind);
         return localVarResp.getData();
     }
@@ -333,7 +333,7 @@ public class RetrospectiveConfigurationsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RetrospectiveConfigurationList> listRetrospectiveConfigurationsWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterKind) throws ApiException {
+    public ApiResponse<RetrospectiveConfigurationList> listRetrospectiveConfigurationsWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterKind) throws ApiException {
         okhttp3.Call localVarCall = listRetrospectiveConfigurationsValidateBeforeCall(include, pageNumber, pageSize, filterKind, null);
         Type localVarReturnType = new TypeToken<RetrospectiveConfigurationList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -356,7 +356,7 @@ public class RetrospectiveConfigurationsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listRetrospectiveConfigurationsAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterKind, final ApiCallback<RetrospectiveConfigurationList> _callback) throws ApiException {
+    public okhttp3.Call listRetrospectiveConfigurationsAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterKind, final ApiCallback<RetrospectiveConfigurationList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listRetrospectiveConfigurationsValidateBeforeCall(include, pageNumber, pageSize, filterKind, _callback);
         Type localVarReturnType = new TypeToken<RetrospectiveConfigurationList>(){}.getType();
@@ -378,7 +378,7 @@ public class RetrospectiveConfigurationsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateRetrospectiveConfigurationCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateRetrospectiveConfiguration updateRetrospectiveConfiguration, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateRetrospectiveConfigurationCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateRetrospectiveConfiguration updateRetrospectiveConfiguration, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -425,7 +425,7 @@ public class RetrospectiveConfigurationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateRetrospectiveConfigurationValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateRetrospectiveConfiguration updateRetrospectiveConfiguration, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateRetrospectiveConfigurationValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateRetrospectiveConfiguration updateRetrospectiveConfiguration, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateRetrospectiveConfiguration(Async)");
@@ -455,7 +455,7 @@ public class RetrospectiveConfigurationsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public RetrospectiveConfigurationResponse updateRetrospectiveConfiguration(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateRetrospectiveConfiguration updateRetrospectiveConfiguration) throws ApiException {
+    public RetrospectiveConfigurationResponse updateRetrospectiveConfiguration(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateRetrospectiveConfiguration updateRetrospectiveConfiguration) throws ApiException {
         ApiResponse<RetrospectiveConfigurationResponse> localVarResp = updateRetrospectiveConfigurationWithHttpInfo(id, updateRetrospectiveConfiguration);
         return localVarResp.getData();
     }
@@ -475,7 +475,7 @@ public class RetrospectiveConfigurationsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RetrospectiveConfigurationResponse> updateRetrospectiveConfigurationWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateRetrospectiveConfiguration updateRetrospectiveConfiguration) throws ApiException {
+    public ApiResponse<RetrospectiveConfigurationResponse> updateRetrospectiveConfigurationWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateRetrospectiveConfiguration updateRetrospectiveConfiguration) throws ApiException {
         okhttp3.Call localVarCall = updateRetrospectiveConfigurationValidateBeforeCall(id, updateRetrospectiveConfiguration, null);
         Type localVarReturnType = new TypeToken<RetrospectiveConfigurationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -497,7 +497,7 @@ public class RetrospectiveConfigurationsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateRetrospectiveConfigurationAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateRetrospectiveConfiguration updateRetrospectiveConfiguration, final ApiCallback<RetrospectiveConfigurationResponse> _callback) throws ApiException {
+    public okhttp3.Call updateRetrospectiveConfigurationAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateRetrospectiveConfiguration updateRetrospectiveConfiguration, final ApiCallback<RetrospectiveConfigurationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateRetrospectiveConfigurationValidateBeforeCall(id, updateRetrospectiveConfiguration, _callback);
         Type localVarReturnType = new TypeToken<RetrospectiveConfigurationResponse>(){}.getType();

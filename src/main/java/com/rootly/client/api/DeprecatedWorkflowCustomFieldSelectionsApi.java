@@ -93,7 +93,7 @@ public class DeprecatedWorkflowCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call createWorkflowCustomFieldSelectionCall(@javax.annotation.Nonnull String workflowId, @javax.annotation.Nonnull NewWorkflowCustomFieldSelection newWorkflowCustomFieldSelection, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createWorkflowCustomFieldSelectionCall(@jakarta.annotation.Nonnull String workflowId, @jakarta.annotation.Nonnull NewWorkflowCustomFieldSelection newWorkflowCustomFieldSelection, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -141,7 +141,7 @@ public class DeprecatedWorkflowCustomFieldSelectionsApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createWorkflowCustomFieldSelectionValidateBeforeCall(@javax.annotation.Nonnull String workflowId, @javax.annotation.Nonnull NewWorkflowCustomFieldSelection newWorkflowCustomFieldSelection, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createWorkflowCustomFieldSelectionValidateBeforeCall(@jakarta.annotation.Nonnull String workflowId, @jakarta.annotation.Nonnull NewWorkflowCustomFieldSelection newWorkflowCustomFieldSelection, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'workflowId' is set
         if (workflowId == null) {
             throw new ApiException("Missing the required parameter 'workflowId' when calling createWorkflowCustomFieldSelection(Async)");
@@ -173,7 +173,7 @@ public class DeprecatedWorkflowCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public WorkflowCustomFieldSelectionResponse createWorkflowCustomFieldSelection(@javax.annotation.Nonnull String workflowId, @javax.annotation.Nonnull NewWorkflowCustomFieldSelection newWorkflowCustomFieldSelection) throws ApiException {
+    public WorkflowCustomFieldSelectionResponse createWorkflowCustomFieldSelection(@jakarta.annotation.Nonnull String workflowId, @jakarta.annotation.Nonnull NewWorkflowCustomFieldSelection newWorkflowCustomFieldSelection) throws ApiException {
         ApiResponse<WorkflowCustomFieldSelectionResponse> localVarResp = createWorkflowCustomFieldSelectionWithHttpInfo(workflowId, newWorkflowCustomFieldSelection);
         return localVarResp.getData();
     }
@@ -195,7 +195,7 @@ public class DeprecatedWorkflowCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<WorkflowCustomFieldSelectionResponse> createWorkflowCustomFieldSelectionWithHttpInfo(@javax.annotation.Nonnull String workflowId, @javax.annotation.Nonnull NewWorkflowCustomFieldSelection newWorkflowCustomFieldSelection) throws ApiException {
+    public ApiResponse<WorkflowCustomFieldSelectionResponse> createWorkflowCustomFieldSelectionWithHttpInfo(@jakarta.annotation.Nonnull String workflowId, @jakarta.annotation.Nonnull NewWorkflowCustomFieldSelection newWorkflowCustomFieldSelection) throws ApiException {
         okhttp3.Call localVarCall = createWorkflowCustomFieldSelectionValidateBeforeCall(workflowId, newWorkflowCustomFieldSelection, null);
         Type localVarReturnType = new TypeToken<WorkflowCustomFieldSelectionResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -219,7 +219,7 @@ public class DeprecatedWorkflowCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call createWorkflowCustomFieldSelectionAsync(@javax.annotation.Nonnull String workflowId, @javax.annotation.Nonnull NewWorkflowCustomFieldSelection newWorkflowCustomFieldSelection, final ApiCallback<WorkflowCustomFieldSelectionResponse> _callback) throws ApiException {
+    public okhttp3.Call createWorkflowCustomFieldSelectionAsync(@jakarta.annotation.Nonnull String workflowId, @jakarta.annotation.Nonnull NewWorkflowCustomFieldSelection newWorkflowCustomFieldSelection, final ApiCallback<WorkflowCustomFieldSelectionResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createWorkflowCustomFieldSelectionValidateBeforeCall(workflowId, newWorkflowCustomFieldSelection, _callback);
         Type localVarReturnType = new TypeToken<WorkflowCustomFieldSelectionResponse>(){}.getType();
@@ -242,7 +242,7 @@ public class DeprecatedWorkflowCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call deleteWorkflowCustomFieldSelectionCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteWorkflowCustomFieldSelectionCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -289,7 +289,7 @@ public class DeprecatedWorkflowCustomFieldSelectionsApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteWorkflowCustomFieldSelectionValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteWorkflowCustomFieldSelectionValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteWorkflowCustomFieldSelection(Async)");
@@ -315,7 +315,7 @@ public class DeprecatedWorkflowCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public WorkflowCustomFieldSelectionResponse deleteWorkflowCustomFieldSelection(@javax.annotation.Nonnull String id) throws ApiException {
+    public WorkflowCustomFieldSelectionResponse deleteWorkflowCustomFieldSelection(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<WorkflowCustomFieldSelectionResponse> localVarResp = deleteWorkflowCustomFieldSelectionWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -336,7 +336,7 @@ public class DeprecatedWorkflowCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<WorkflowCustomFieldSelectionResponse> deleteWorkflowCustomFieldSelectionWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<WorkflowCustomFieldSelectionResponse> deleteWorkflowCustomFieldSelectionWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteWorkflowCustomFieldSelectionValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<WorkflowCustomFieldSelectionResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -359,7 +359,7 @@ public class DeprecatedWorkflowCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call deleteWorkflowCustomFieldSelectionAsync(@javax.annotation.Nonnull String id, final ApiCallback<WorkflowCustomFieldSelectionResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteWorkflowCustomFieldSelectionAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<WorkflowCustomFieldSelectionResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteWorkflowCustomFieldSelectionValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<WorkflowCustomFieldSelectionResponse>(){}.getType();
@@ -382,7 +382,7 @@ public class DeprecatedWorkflowCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call getWorkflowCustomFieldSelectionCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getWorkflowCustomFieldSelectionCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -429,7 +429,7 @@ public class DeprecatedWorkflowCustomFieldSelectionsApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getWorkflowCustomFieldSelectionValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getWorkflowCustomFieldSelectionValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getWorkflowCustomFieldSelection(Async)");
@@ -455,7 +455,7 @@ public class DeprecatedWorkflowCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public WorkflowCustomFieldSelectionResponse getWorkflowCustomFieldSelection(@javax.annotation.Nonnull String id) throws ApiException {
+    public WorkflowCustomFieldSelectionResponse getWorkflowCustomFieldSelection(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<WorkflowCustomFieldSelectionResponse> localVarResp = getWorkflowCustomFieldSelectionWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -476,7 +476,7 @@ public class DeprecatedWorkflowCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<WorkflowCustomFieldSelectionResponse> getWorkflowCustomFieldSelectionWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<WorkflowCustomFieldSelectionResponse> getWorkflowCustomFieldSelectionWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getWorkflowCustomFieldSelectionValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<WorkflowCustomFieldSelectionResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -499,7 +499,7 @@ public class DeprecatedWorkflowCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call getWorkflowCustomFieldSelectionAsync(@javax.annotation.Nonnull String id, final ApiCallback<WorkflowCustomFieldSelectionResponse> _callback) throws ApiException {
+    public okhttp3.Call getWorkflowCustomFieldSelectionAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<WorkflowCustomFieldSelectionResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getWorkflowCustomFieldSelectionValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<WorkflowCustomFieldSelectionResponse>(){}.getType();
@@ -524,7 +524,7 @@ public class DeprecatedWorkflowCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call listWorkflowCustomFieldSelectionsCall(@javax.annotation.Nonnull String workflowId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listWorkflowCustomFieldSelectionsCall(@jakarta.annotation.Nonnull String workflowId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -583,7 +583,7 @@ public class DeprecatedWorkflowCustomFieldSelectionsApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listWorkflowCustomFieldSelectionsValidateBeforeCall(@javax.annotation.Nonnull String workflowId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listWorkflowCustomFieldSelectionsValidateBeforeCall(@jakarta.annotation.Nonnull String workflowId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'workflowId' is set
         if (workflowId == null) {
             throw new ApiException("Missing the required parameter 'workflowId' when calling listWorkflowCustomFieldSelections(Async)");
@@ -611,7 +611,7 @@ public class DeprecatedWorkflowCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public WorkflowCustomFieldSelectionList listWorkflowCustomFieldSelections(@javax.annotation.Nonnull String workflowId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+    public WorkflowCustomFieldSelectionList listWorkflowCustomFieldSelections(@jakarta.annotation.Nonnull String workflowId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
         ApiResponse<WorkflowCustomFieldSelectionList> localVarResp = listWorkflowCustomFieldSelectionsWithHttpInfo(workflowId, include, pageNumber, pageSize);
         return localVarResp.getData();
     }
@@ -634,7 +634,7 @@ public class DeprecatedWorkflowCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<WorkflowCustomFieldSelectionList> listWorkflowCustomFieldSelectionsWithHttpInfo(@javax.annotation.Nonnull String workflowId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+    public ApiResponse<WorkflowCustomFieldSelectionList> listWorkflowCustomFieldSelectionsWithHttpInfo(@jakarta.annotation.Nonnull String workflowId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
         okhttp3.Call localVarCall = listWorkflowCustomFieldSelectionsValidateBeforeCall(workflowId, include, pageNumber, pageSize, null);
         Type localVarReturnType = new TypeToken<WorkflowCustomFieldSelectionList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -659,7 +659,7 @@ public class DeprecatedWorkflowCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call listWorkflowCustomFieldSelectionsAsync(@javax.annotation.Nonnull String workflowId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback<WorkflowCustomFieldSelectionList> _callback) throws ApiException {
+    public okhttp3.Call listWorkflowCustomFieldSelectionsAsync(@jakarta.annotation.Nonnull String workflowId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback<WorkflowCustomFieldSelectionList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listWorkflowCustomFieldSelectionsValidateBeforeCall(workflowId, include, pageNumber, pageSize, _callback);
         Type localVarReturnType = new TypeToken<WorkflowCustomFieldSelectionList>(){}.getType();
@@ -683,7 +683,7 @@ public class DeprecatedWorkflowCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call updateWorkflowCustomFieldSelectionCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateWorkflowCustomFieldSelection updateWorkflowCustomFieldSelection, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateWorkflowCustomFieldSelectionCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateWorkflowCustomFieldSelection updateWorkflowCustomFieldSelection, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -731,7 +731,7 @@ public class DeprecatedWorkflowCustomFieldSelectionsApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateWorkflowCustomFieldSelectionValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateWorkflowCustomFieldSelection updateWorkflowCustomFieldSelection, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateWorkflowCustomFieldSelectionValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateWorkflowCustomFieldSelection updateWorkflowCustomFieldSelection, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateWorkflowCustomFieldSelection(Async)");
@@ -763,7 +763,7 @@ public class DeprecatedWorkflowCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public WorkflowCustomFieldSelectionResponse updateWorkflowCustomFieldSelection(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateWorkflowCustomFieldSelection updateWorkflowCustomFieldSelection) throws ApiException {
+    public WorkflowCustomFieldSelectionResponse updateWorkflowCustomFieldSelection(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateWorkflowCustomFieldSelection updateWorkflowCustomFieldSelection) throws ApiException {
         ApiResponse<WorkflowCustomFieldSelectionResponse> localVarResp = updateWorkflowCustomFieldSelectionWithHttpInfo(id, updateWorkflowCustomFieldSelection);
         return localVarResp.getData();
     }
@@ -785,7 +785,7 @@ public class DeprecatedWorkflowCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<WorkflowCustomFieldSelectionResponse> updateWorkflowCustomFieldSelectionWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateWorkflowCustomFieldSelection updateWorkflowCustomFieldSelection) throws ApiException {
+    public ApiResponse<WorkflowCustomFieldSelectionResponse> updateWorkflowCustomFieldSelectionWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateWorkflowCustomFieldSelection updateWorkflowCustomFieldSelection) throws ApiException {
         okhttp3.Call localVarCall = updateWorkflowCustomFieldSelectionValidateBeforeCall(id, updateWorkflowCustomFieldSelection, null);
         Type localVarReturnType = new TypeToken<WorkflowCustomFieldSelectionResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -809,7 +809,7 @@ public class DeprecatedWorkflowCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call updateWorkflowCustomFieldSelectionAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateWorkflowCustomFieldSelection updateWorkflowCustomFieldSelection, final ApiCallback<WorkflowCustomFieldSelectionResponse> _callback) throws ApiException {
+    public okhttp3.Call updateWorkflowCustomFieldSelectionAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateWorkflowCustomFieldSelection updateWorkflowCustomFieldSelection, final ApiCallback<WorkflowCustomFieldSelectionResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateWorkflowCustomFieldSelectionValidateBeforeCall(id, updateWorkflowCustomFieldSelection, _callback);
         Type localVarReturnType = new TypeToken<WorkflowCustomFieldSelectionResponse>(){}.getType();

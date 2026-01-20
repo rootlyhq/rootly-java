@@ -48,11 +48,11 @@ import com.rootly.client.JSON;
 /**
  * IncidentPermissionSetResource
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class IncidentPermissionSetResource {
   public static final String SERIALIZED_NAME_INCIDENT_PERMISSION_SET_ID = "incident_permission_set_id";
   @SerializedName(SERIALIZED_NAME_INCIDENT_PERMISSION_SET_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String incidentPermissionSetId;
 
   /**
@@ -113,38 +113,38 @@ public class IncidentPermissionSetResource {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private KindEnum kind;
 
   public static final String SERIALIZED_NAME_PRIVATE = "private";
   @SerializedName(SERIALIZED_NAME_PRIVATE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean _private;
 
   public static final String SERIALIZED_NAME_RESOURCE_ID = "resource_id";
   @SerializedName(SERIALIZED_NAME_RESOURCE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String resourceId;
 
   public static final String SERIALIZED_NAME_RESOURCE_TYPE = "resource_type";
   @SerializedName(SERIALIZED_NAME_RESOURCE_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String resourceType;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public IncidentPermissionSetResource() {
   }
 
-  public IncidentPermissionSetResource incidentPermissionSetId(@javax.annotation.Nonnull String incidentPermissionSetId) {
+  public IncidentPermissionSetResource incidentPermissionSetId(@jakarta.annotation.Nonnull String incidentPermissionSetId) {
     this.incidentPermissionSetId = incidentPermissionSetId;
     return this;
   }
@@ -153,17 +153,17 @@ public class IncidentPermissionSetResource {
    * Get incidentPermissionSetId
    * @return incidentPermissionSetId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getIncidentPermissionSetId() {
     return incidentPermissionSetId;
   }
 
-  public void setIncidentPermissionSetId(@javax.annotation.Nonnull String incidentPermissionSetId) {
+  public void setIncidentPermissionSetId(@jakarta.annotation.Nonnull String incidentPermissionSetId) {
     this.incidentPermissionSetId = incidentPermissionSetId;
   }
 
 
-  public IncidentPermissionSetResource kind(@javax.annotation.Nonnull KindEnum kind) {
+  public IncidentPermissionSetResource kind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
     return this;
   }
@@ -172,17 +172,17 @@ public class IncidentPermissionSetResource {
    * Get kind
    * @return kind
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(@javax.annotation.Nonnull KindEnum kind) {
+  public void setKind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public IncidentPermissionSetResource _private(@javax.annotation.Nullable Boolean _private) {
+  public IncidentPermissionSetResource _private(@jakarta.annotation.Nullable Boolean _private) {
     this._private = _private;
     return this;
   }
@@ -191,17 +191,17 @@ public class IncidentPermissionSetResource {
    * Get _private
    * @return _private
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getPrivate() {
     return _private;
   }
 
-  public void setPrivate(@javax.annotation.Nullable Boolean _private) {
+  public void setPrivate(@jakarta.annotation.Nullable Boolean _private) {
     this._private = _private;
   }
 
 
-  public IncidentPermissionSetResource resourceId(@javax.annotation.Nullable String resourceId) {
+  public IncidentPermissionSetResource resourceId(@jakarta.annotation.Nullable String resourceId) {
     this.resourceId = resourceId;
     return this;
   }
@@ -210,17 +210,17 @@ public class IncidentPermissionSetResource {
    * Get resourceId
    * @return resourceId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getResourceId() {
     return resourceId;
   }
 
-  public void setResourceId(@javax.annotation.Nullable String resourceId) {
+  public void setResourceId(@jakarta.annotation.Nullable String resourceId) {
     this.resourceId = resourceId;
   }
 
 
-  public IncidentPermissionSetResource resourceType(@javax.annotation.Nullable String resourceType) {
+  public IncidentPermissionSetResource resourceType(@jakarta.annotation.Nullable String resourceType) {
     this.resourceType = resourceType;
     return this;
   }
@@ -229,17 +229,17 @@ public class IncidentPermissionSetResource {
    * Get resourceType
    * @return resourceType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getResourceType() {
     return resourceType;
   }
 
-  public void setResourceType(@javax.annotation.Nullable String resourceType) {
+  public void setResourceType(@jakarta.annotation.Nullable String resourceType) {
     this.resourceType = resourceType;
   }
 
 
-  public IncidentPermissionSetResource createdAt(@javax.annotation.Nonnull String createdAt) {
+  public IncidentPermissionSetResource createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -248,17 +248,17 @@ public class IncidentPermissionSetResource {
    * Get createdAt
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public IncidentPermissionSetResource updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public IncidentPermissionSetResource updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -267,12 +267,12 @@ public class IncidentPermissionSetResource {
    * Get updatedAt
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

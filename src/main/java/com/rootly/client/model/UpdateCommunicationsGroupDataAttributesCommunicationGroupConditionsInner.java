@@ -51,11 +51,11 @@ import com.rootly.client.JSON;
 /**
  * UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsInner {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String id;
 
   /**
@@ -118,38 +118,38 @@ public class UpdateCommunicationsGroupDataAttributesCommunicationGroupConditions
 
   public static final String SERIALIZED_NAME_PROPERTY_TYPE = "property_type";
   @SerializedName(SERIALIZED_NAME_PROPERTY_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private PropertyTypeEnum propertyType;
 
   public static final String SERIALIZED_NAME_SERVICE_IDS = "service_ids";
   @SerializedName(SERIALIZED_NAME_SERVICE_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> serviceIds;
 
   public static final String SERIALIZED_NAME_SEVERITY_IDS = "severity_ids";
   @SerializedName(SERIALIZED_NAME_SEVERITY_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> severityIds;
 
   public static final String SERIALIZED_NAME_FUNCTIONALITY_IDS = "functionality_ids";
   @SerializedName(SERIALIZED_NAME_FUNCTIONALITY_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> functionalityIds;
 
   public static final String SERIALIZED_NAME_GROUP_IDS = "group_ids";
   @SerializedName(SERIALIZED_NAME_GROUP_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> groupIds;
 
   public static final String SERIALIZED_NAME_INCIDENT_TYPE_IDS = "incident_type_ids";
   @SerializedName(SERIALIZED_NAME_INCIDENT_TYPE_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> incidentTypeIds;
 
   public UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsInner() {
   }
 
-  public UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsInner id(@javax.annotation.Nullable String id) {
+  public UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsInner id(@jakarta.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -158,17 +158,17 @@ public class UpdateCommunicationsGroupDataAttributesCommunicationGroupConditions
    * ID of the condition
    * @return id
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getId() {
     return id;
   }
 
-  public void setId(@javax.annotation.Nullable String id) {
+  public void setId(@jakarta.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsInner propertyType(@javax.annotation.Nullable PropertyTypeEnum propertyType) {
+  public UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsInner propertyType(@jakarta.annotation.Nullable PropertyTypeEnum propertyType) {
     this.propertyType = propertyType;
     return this;
   }
@@ -177,17 +177,17 @@ public class UpdateCommunicationsGroupDataAttributesCommunicationGroupConditions
    * Property type
    * @return propertyType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public PropertyTypeEnum getPropertyType() {
     return propertyType;
   }
 
-  public void setPropertyType(@javax.annotation.Nullable PropertyTypeEnum propertyType) {
+  public void setPropertyType(@jakarta.annotation.Nullable PropertyTypeEnum propertyType) {
     this.propertyType = propertyType;
   }
 
 
-  public UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsInner serviceIds(@javax.annotation.Nullable List<String> serviceIds) {
+  public UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsInner serviceIds(@jakarta.annotation.Nullable List<String> serviceIds) {
     this.serviceIds = serviceIds;
     return this;
   }
@@ -204,17 +204,17 @@ public class UpdateCommunicationsGroupDataAttributesCommunicationGroupConditions
    * Array of service IDs
    * @return serviceIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getServiceIds() {
     return serviceIds;
   }
 
-  public void setServiceIds(@javax.annotation.Nullable List<String> serviceIds) {
+  public void setServiceIds(@jakarta.annotation.Nullable List<String> serviceIds) {
     this.serviceIds = serviceIds;
   }
 
 
-  public UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsInner severityIds(@javax.annotation.Nullable List<String> severityIds) {
+  public UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsInner severityIds(@jakarta.annotation.Nullable List<String> severityIds) {
     this.severityIds = severityIds;
     return this;
   }
@@ -231,17 +231,17 @@ public class UpdateCommunicationsGroupDataAttributesCommunicationGroupConditions
    * Array of severity IDs
    * @return severityIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getSeverityIds() {
     return severityIds;
   }
 
-  public void setSeverityIds(@javax.annotation.Nullable List<String> severityIds) {
+  public void setSeverityIds(@jakarta.annotation.Nullable List<String> severityIds) {
     this.severityIds = severityIds;
   }
 
 
-  public UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsInner functionalityIds(@javax.annotation.Nullable List<String> functionalityIds) {
+  public UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsInner functionalityIds(@jakarta.annotation.Nullable List<String> functionalityIds) {
     this.functionalityIds = functionalityIds;
     return this;
   }
@@ -258,17 +258,17 @@ public class UpdateCommunicationsGroupDataAttributesCommunicationGroupConditions
    * Array of functionality IDs
    * @return functionalityIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getFunctionalityIds() {
     return functionalityIds;
   }
 
-  public void setFunctionalityIds(@javax.annotation.Nullable List<String> functionalityIds) {
+  public void setFunctionalityIds(@jakarta.annotation.Nullable List<String> functionalityIds) {
     this.functionalityIds = functionalityIds;
   }
 
 
-  public UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsInner groupIds(@javax.annotation.Nullable List<String> groupIds) {
+  public UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsInner groupIds(@jakarta.annotation.Nullable List<String> groupIds) {
     this.groupIds = groupIds;
     return this;
   }
@@ -285,17 +285,17 @@ public class UpdateCommunicationsGroupDataAttributesCommunicationGroupConditions
    * Array of group IDs
    * @return groupIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getGroupIds() {
     return groupIds;
   }
 
-  public void setGroupIds(@javax.annotation.Nullable List<String> groupIds) {
+  public void setGroupIds(@jakarta.annotation.Nullable List<String> groupIds) {
     this.groupIds = groupIds;
   }
 
 
-  public UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsInner incidentTypeIds(@javax.annotation.Nullable List<String> incidentTypeIds) {
+  public UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsInner incidentTypeIds(@jakarta.annotation.Nullable List<String> incidentTypeIds) {
     this.incidentTypeIds = incidentTypeIds;
     return this;
   }
@@ -312,12 +312,12 @@ public class UpdateCommunicationsGroupDataAttributesCommunicationGroupConditions
    * Array of incident type IDs
    * @return incidentTypeIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getIncidentTypeIds() {
     return incidentTypeIds;
   }
 
-  public void setIncidentTypeIds(@javax.annotation.Nullable List<String> incidentTypeIds) {
+  public void setIncidentTypeIds(@jakarta.annotation.Nullable List<String> incidentTypeIds) {
     this.incidentTypeIds = incidentTypeIds;
   }
 

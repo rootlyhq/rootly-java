@@ -49,11 +49,11 @@ import com.rootly.client.JSON;
 /**
  * FormSetConditionResponseData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class FormSetConditionResponseData {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String id;
 
   /**
@@ -108,18 +108,18 @@ public class FormSetConditionResponseData {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private FormSetCondition attributes;
 
   public FormSetConditionResponseData() {
   }
 
-  public FormSetConditionResponseData id(@javax.annotation.Nonnull String id) {
+  public FormSetConditionResponseData id(@jakarta.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
@@ -128,17 +128,17 @@ public class FormSetConditionResponseData {
    * Unique ID of the form set condition
    * @return id
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(@javax.annotation.Nonnull String id) {
+  public void setId(@jakarta.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public FormSetConditionResponseData type(@javax.annotation.Nonnull TypeEnum type) {
+  public FormSetConditionResponseData type(@jakarta.annotation.Nonnull TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -147,17 +147,17 @@ public class FormSetConditionResponseData {
    * Get type
    * @return type
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public TypeEnum getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nonnull TypeEnum type) {
+  public void setType(@jakarta.annotation.Nonnull TypeEnum type) {
     this.type = type;
   }
 
 
-  public FormSetConditionResponseData attributes(@javax.annotation.Nonnull FormSetCondition attributes) {
+  public FormSetConditionResponseData attributes(@jakarta.annotation.Nonnull FormSetCondition attributes) {
     this.attributes = attributes;
     return this;
   }
@@ -166,12 +166,12 @@ public class FormSetConditionResponseData {
    * Get attributes
    * @return attributes
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public FormSetCondition getAttributes() {
     return attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nonnull FormSetCondition attributes) {
+  public void setAttributes(@jakarta.annotation.Nonnull FormSetCondition attributes) {
     this.attributes = attributes;
   }
 

@@ -49,11 +49,11 @@ import com.rootly.client.JSON;
 /**
  * NewCatalogFieldDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewCatalogFieldDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   /**
@@ -110,28 +110,28 @@ public class NewCatalogFieldDataAttributes {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private KindEnum kind;
 
   public static final String SERIALIZED_NAME_KIND_CATALOG_ID = "kind_catalog_id";
   @SerializedName(SERIALIZED_NAME_KIND_CATALOG_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String kindCatalogId;
 
   public static final String SERIALIZED_NAME_MULTIPLE = "multiple";
   @SerializedName(SERIALIZED_NAME_MULTIPLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean multiple;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public NewCatalogFieldDataAttributes() {
   }
 
-  public NewCatalogFieldDataAttributes name(@javax.annotation.Nonnull String name) {
+  public NewCatalogFieldDataAttributes name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -140,17 +140,17 @@ public class NewCatalogFieldDataAttributes {
    * Get name
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public NewCatalogFieldDataAttributes kind(@javax.annotation.Nonnull KindEnum kind) {
+  public NewCatalogFieldDataAttributes kind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
     return this;
   }
@@ -159,17 +159,17 @@ public class NewCatalogFieldDataAttributes {
    * Get kind
    * @return kind
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(@javax.annotation.Nonnull KindEnum kind) {
+  public void setKind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public NewCatalogFieldDataAttributes kindCatalogId(@javax.annotation.Nullable String kindCatalogId) {
+  public NewCatalogFieldDataAttributes kindCatalogId(@jakarta.annotation.Nullable String kindCatalogId) {
     this.kindCatalogId = kindCatalogId;
     return this;
   }
@@ -178,17 +178,17 @@ public class NewCatalogFieldDataAttributes {
    * Restricts values to items of specified catalog.
    * @return kindCatalogId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getKindCatalogId() {
     return kindCatalogId;
   }
 
-  public void setKindCatalogId(@javax.annotation.Nullable String kindCatalogId) {
+  public void setKindCatalogId(@jakarta.annotation.Nullable String kindCatalogId) {
     this.kindCatalogId = kindCatalogId;
   }
 
 
-  public NewCatalogFieldDataAttributes multiple(@javax.annotation.Nullable Boolean multiple) {
+  public NewCatalogFieldDataAttributes multiple(@jakarta.annotation.Nullable Boolean multiple) {
     this.multiple = multiple;
     return this;
   }
@@ -197,17 +197,17 @@ public class NewCatalogFieldDataAttributes {
    * Whether the attribute accepts multiple values.
    * @return multiple
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getMultiple() {
     return multiple;
   }
 
-  public void setMultiple(@javax.annotation.Nullable Boolean multiple) {
+  public void setMultiple(@jakarta.annotation.Nullable Boolean multiple) {
     this.multiple = multiple;
   }
 
 
-  public NewCatalogFieldDataAttributes position(@javax.annotation.Nullable Integer position) {
+  public NewCatalogFieldDataAttributes position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -216,12 +216,12 @@ public class NewCatalogFieldDataAttributes {
    * Default position of the item when displayed in a list.
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 

@@ -92,7 +92,7 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createCatalogEntityPropertyCall(@javax.annotation.Nonnull String catalogEntityId, @javax.annotation.Nonnull NewCatalogEntityProperty newCatalogEntityProperty, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createCatalogEntityPropertyCall(@jakarta.annotation.Nonnull String catalogEntityId, @jakarta.annotation.Nonnull NewCatalogEntityProperty newCatalogEntityProperty, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -139,7 +139,7 @@ public class CatalogEntityPropertiesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createCatalogEntityPropertyValidateBeforeCall(@javax.annotation.Nonnull String catalogEntityId, @javax.annotation.Nonnull NewCatalogEntityProperty newCatalogEntityProperty, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createCatalogEntityPropertyValidateBeforeCall(@jakarta.annotation.Nonnull String catalogEntityId, @jakarta.annotation.Nonnull NewCatalogEntityProperty newCatalogEntityProperty, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'catalogEntityId' is set
         if (catalogEntityId == null) {
             throw new ApiException("Missing the required parameter 'catalogEntityId' when calling createCatalogEntityProperty(Async)");
@@ -170,7 +170,7 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public CatalogEntityPropertyResponse createCatalogEntityProperty(@javax.annotation.Nonnull String catalogEntityId, @javax.annotation.Nonnull NewCatalogEntityProperty newCatalogEntityProperty) throws ApiException {
+    public CatalogEntityPropertyResponse createCatalogEntityProperty(@jakarta.annotation.Nonnull String catalogEntityId, @jakarta.annotation.Nonnull NewCatalogEntityProperty newCatalogEntityProperty) throws ApiException {
         ApiResponse<CatalogEntityPropertyResponse> localVarResp = createCatalogEntityPropertyWithHttpInfo(catalogEntityId, newCatalogEntityProperty);
         return localVarResp.getData();
     }
@@ -191,7 +191,7 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CatalogEntityPropertyResponse> createCatalogEntityPropertyWithHttpInfo(@javax.annotation.Nonnull String catalogEntityId, @javax.annotation.Nonnull NewCatalogEntityProperty newCatalogEntityProperty) throws ApiException {
+    public ApiResponse<CatalogEntityPropertyResponse> createCatalogEntityPropertyWithHttpInfo(@jakarta.annotation.Nonnull String catalogEntityId, @jakarta.annotation.Nonnull NewCatalogEntityProperty newCatalogEntityProperty) throws ApiException {
         okhttp3.Call localVarCall = createCatalogEntityPropertyValidateBeforeCall(catalogEntityId, newCatalogEntityProperty, null);
         Type localVarReturnType = new TypeToken<CatalogEntityPropertyResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -214,7 +214,7 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createCatalogEntityPropertyAsync(@javax.annotation.Nonnull String catalogEntityId, @javax.annotation.Nonnull NewCatalogEntityProperty newCatalogEntityProperty, final ApiCallback<CatalogEntityPropertyResponse> _callback) throws ApiException {
+    public okhttp3.Call createCatalogEntityPropertyAsync(@jakarta.annotation.Nonnull String catalogEntityId, @jakarta.annotation.Nonnull NewCatalogEntityProperty newCatalogEntityProperty, final ApiCallback<CatalogEntityPropertyResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createCatalogEntityPropertyValidateBeforeCall(catalogEntityId, newCatalogEntityProperty, _callback);
         Type localVarReturnType = new TypeToken<CatalogEntityPropertyResponse>(){}.getType();
@@ -235,7 +235,7 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteCatalogEntityPropertyCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteCatalogEntityPropertyCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -281,7 +281,7 @@ public class CatalogEntityPropertiesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteCatalogEntityPropertyValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteCatalogEntityPropertyValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteCatalogEntityProperty(Async)");
@@ -305,7 +305,7 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public CatalogEntityPropertyResponse deleteCatalogEntityProperty(@javax.annotation.Nonnull String id) throws ApiException {
+    public CatalogEntityPropertyResponse deleteCatalogEntityProperty(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<CatalogEntityPropertyResponse> localVarResp = deleteCatalogEntityPropertyWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -324,7 +324,7 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CatalogEntityPropertyResponse> deleteCatalogEntityPropertyWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<CatalogEntityPropertyResponse> deleteCatalogEntityPropertyWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteCatalogEntityPropertyValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<CatalogEntityPropertyResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -345,7 +345,7 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteCatalogEntityPropertyAsync(@javax.annotation.Nonnull String id, final ApiCallback<CatalogEntityPropertyResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteCatalogEntityPropertyAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<CatalogEntityPropertyResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteCatalogEntityPropertyValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<CatalogEntityPropertyResponse>(){}.getType();
@@ -367,7 +367,7 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCatalogEntityPropertyCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCatalogEntityPropertyCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -417,7 +417,7 @@ public class CatalogEntityPropertiesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCatalogEntityPropertyValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCatalogEntityPropertyValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getCatalogEntityProperty(Async)");
@@ -442,7 +442,7 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public CatalogEntityPropertyResponse getCatalogEntityProperty(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include) throws ApiException {
+    public CatalogEntityPropertyResponse getCatalogEntityProperty(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include) throws ApiException {
         ApiResponse<CatalogEntityPropertyResponse> localVarResp = getCatalogEntityPropertyWithHttpInfo(id, include);
         return localVarResp.getData();
     }
@@ -462,7 +462,7 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CatalogEntityPropertyResponse> getCatalogEntityPropertyWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include) throws ApiException {
+    public ApiResponse<CatalogEntityPropertyResponse> getCatalogEntityPropertyWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include) throws ApiException {
         okhttp3.Call localVarCall = getCatalogEntityPropertyValidateBeforeCall(id, include, null);
         Type localVarReturnType = new TypeToken<CatalogEntityPropertyResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -484,7 +484,7 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCatalogEntityPropertyAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include, final ApiCallback<CatalogEntityPropertyResponse> _callback) throws ApiException {
+    public okhttp3.Call getCatalogEntityPropertyAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include, final ApiCallback<CatalogEntityPropertyResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCatalogEntityPropertyValidateBeforeCall(id, include, _callback);
         Type localVarReturnType = new TypeToken<CatalogEntityPropertyResponse>(){}.getType();
@@ -514,7 +514,7 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listCatalogEntityPropertiesCall(@javax.annotation.Nonnull String catalogEntityId, @javax.annotation.Nullable String include, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterCatalogFieldId, @javax.annotation.Nullable String filterKey, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listCatalogEntityPropertiesCall(@jakarta.annotation.Nonnull String catalogEntityId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterCatalogFieldId, @jakarta.annotation.Nullable String filterKey, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -600,7 +600,7 @@ public class CatalogEntityPropertiesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listCatalogEntityPropertiesValidateBeforeCall(@javax.annotation.Nonnull String catalogEntityId, @javax.annotation.Nullable String include, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterCatalogFieldId, @javax.annotation.Nullable String filterKey, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listCatalogEntityPropertiesValidateBeforeCall(@jakarta.annotation.Nonnull String catalogEntityId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterCatalogFieldId, @jakarta.annotation.Nullable String filterKey, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'catalogEntityId' is set
         if (catalogEntityId == null) {
             throw new ApiException("Missing the required parameter 'catalogEntityId' when calling listCatalogEntityProperties(Async)");
@@ -633,7 +633,7 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public CatalogEntityPropertyList listCatalogEntityProperties(@javax.annotation.Nonnull String catalogEntityId, @javax.annotation.Nullable String include, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterCatalogFieldId, @javax.annotation.Nullable String filterKey, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte) throws ApiException {
+    public CatalogEntityPropertyList listCatalogEntityProperties(@jakarta.annotation.Nonnull String catalogEntityId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterCatalogFieldId, @jakarta.annotation.Nullable String filterKey, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte) throws ApiException {
         ApiResponse<CatalogEntityPropertyList> localVarResp = listCatalogEntityPropertiesWithHttpInfo(catalogEntityId, include, sort, pageNumber, pageSize, filterCatalogFieldId, filterKey, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
         return localVarResp.getData();
     }
@@ -661,7 +661,7 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CatalogEntityPropertyList> listCatalogEntityPropertiesWithHttpInfo(@javax.annotation.Nonnull String catalogEntityId, @javax.annotation.Nullable String include, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterCatalogFieldId, @javax.annotation.Nullable String filterKey, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte) throws ApiException {
+    public ApiResponse<CatalogEntityPropertyList> listCatalogEntityPropertiesWithHttpInfo(@jakarta.annotation.Nonnull String catalogEntityId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterCatalogFieldId, @jakarta.annotation.Nullable String filterKey, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte) throws ApiException {
         okhttp3.Call localVarCall = listCatalogEntityPropertiesValidateBeforeCall(catalogEntityId, include, sort, pageNumber, pageSize, filterCatalogFieldId, filterKey, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, null);
         Type localVarReturnType = new TypeToken<CatalogEntityPropertyList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -691,7 +691,7 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listCatalogEntityPropertiesAsync(@javax.annotation.Nonnull String catalogEntityId, @javax.annotation.Nullable String include, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterCatalogFieldId, @javax.annotation.Nullable String filterKey, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback<CatalogEntityPropertyList> _callback) throws ApiException {
+    public okhttp3.Call listCatalogEntityPropertiesAsync(@jakarta.annotation.Nonnull String catalogEntityId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterCatalogFieldId, @jakarta.annotation.Nullable String filterKey, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback<CatalogEntityPropertyList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listCatalogEntityPropertiesValidateBeforeCall(catalogEntityId, include, sort, pageNumber, pageSize, filterCatalogFieldId, filterKey, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, _callback);
         Type localVarReturnType = new TypeToken<CatalogEntityPropertyList>(){}.getType();
@@ -713,7 +713,7 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateCatalogEntityPropertyCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateCatalogEntityProperty updateCatalogEntityProperty, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateCatalogEntityPropertyCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateCatalogEntityProperty updateCatalogEntityProperty, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -760,7 +760,7 @@ public class CatalogEntityPropertiesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateCatalogEntityPropertyValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateCatalogEntityProperty updateCatalogEntityProperty, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateCatalogEntityPropertyValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateCatalogEntityProperty updateCatalogEntityProperty, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateCatalogEntityProperty(Async)");
@@ -790,7 +790,7 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public CatalogEntityPropertyResponse updateCatalogEntityProperty(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateCatalogEntityProperty updateCatalogEntityProperty) throws ApiException {
+    public CatalogEntityPropertyResponse updateCatalogEntityProperty(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateCatalogEntityProperty updateCatalogEntityProperty) throws ApiException {
         ApiResponse<CatalogEntityPropertyResponse> localVarResp = updateCatalogEntityPropertyWithHttpInfo(id, updateCatalogEntityProperty);
         return localVarResp.getData();
     }
@@ -810,7 +810,7 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CatalogEntityPropertyResponse> updateCatalogEntityPropertyWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateCatalogEntityProperty updateCatalogEntityProperty) throws ApiException {
+    public ApiResponse<CatalogEntityPropertyResponse> updateCatalogEntityPropertyWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateCatalogEntityProperty updateCatalogEntityProperty) throws ApiException {
         okhttp3.Call localVarCall = updateCatalogEntityPropertyValidateBeforeCall(id, updateCatalogEntityProperty, null);
         Type localVarReturnType = new TypeToken<CatalogEntityPropertyResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -832,7 +832,7 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateCatalogEntityPropertyAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateCatalogEntityProperty updateCatalogEntityProperty, final ApiCallback<CatalogEntityPropertyResponse> _callback) throws ApiException {
+    public okhttp3.Call updateCatalogEntityPropertyAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateCatalogEntityProperty updateCatalogEntityProperty, final ApiCallback<CatalogEntityPropertyResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateCatalogEntityPropertyValidateBeforeCall(id, updateCatalogEntityProperty, _callback);
         Type localVarReturnType = new TypeToken<CatalogEntityPropertyResponse>(){}.getType();

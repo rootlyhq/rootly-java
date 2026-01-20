@@ -49,21 +49,21 @@ import com.rootly.client.JSON;
 /**
  * NewPostMortemTemplateDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewPostMortemTemplateDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DEFAULT = "default";
   @SerializedName(SERIALIZED_NAME_DEFAULT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean _default;
 
   public static final String SERIALIZED_NAME_CONTENT = "content";
   @SerializedName(SERIALIZED_NAME_CONTENT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String content;
 
   /**
@@ -120,13 +120,13 @@ public class NewPostMortemTemplateDataAttributes {
 
   public static final String SERIALIZED_NAME_FORMAT = "format";
   @SerializedName(SERIALIZED_NAME_FORMAT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private FormatEnum format = FormatEnum.HTML;
 
   public NewPostMortemTemplateDataAttributes() {
   }
 
-  public NewPostMortemTemplateDataAttributes name(@javax.annotation.Nonnull String name) {
+  public NewPostMortemTemplateDataAttributes name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -135,17 +135,17 @@ public class NewPostMortemTemplateDataAttributes {
    * The name of the postmortem template
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public NewPostMortemTemplateDataAttributes _default(@javax.annotation.Nullable Boolean _default) {
+  public NewPostMortemTemplateDataAttributes _default(@jakarta.annotation.Nullable Boolean _default) {
     this._default = _default;
     return this;
   }
@@ -154,17 +154,17 @@ public class NewPostMortemTemplateDataAttributes {
    * Default selected template when editing a postmortem
    * @return _default
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getDefault() {
     return _default;
   }
 
-  public void setDefault(@javax.annotation.Nullable Boolean _default) {
+  public void setDefault(@jakarta.annotation.Nullable Boolean _default) {
     this._default = _default;
   }
 
 
-  public NewPostMortemTemplateDataAttributes content(@javax.annotation.Nullable String content) {
+  public NewPostMortemTemplateDataAttributes content(@jakarta.annotation.Nullable String content) {
     this.content = content;
     return this;
   }
@@ -173,17 +173,17 @@ public class NewPostMortemTemplateDataAttributes {
    * The postmortem template. Supports TipTap blocks (followup and timeline components), Liquid syntax, and HTML. Will be sanitized and applied to both content and content_html fields.
    * @return content
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getContent() {
     return content;
   }
 
-  public void setContent(@javax.annotation.Nullable String content) {
+  public void setContent(@jakarta.annotation.Nullable String content) {
     this.content = content;
   }
 
 
-  public NewPostMortemTemplateDataAttributes format(@javax.annotation.Nullable FormatEnum format) {
+  public NewPostMortemTemplateDataAttributes format(@jakarta.annotation.Nullable FormatEnum format) {
     this.format = format;
     return this;
   }
@@ -192,12 +192,12 @@ public class NewPostMortemTemplateDataAttributes {
    * The format of the input
    * @return format
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public FormatEnum getFormat() {
     return format;
   }
 
-  public void setFormat(@javax.annotation.Nullable FormatEnum format) {
+  public void setFormat(@jakarta.annotation.Nullable FormatEnum format) {
     this.format = format;
   }
 

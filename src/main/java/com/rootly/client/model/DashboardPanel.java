@@ -53,37 +53,37 @@ import com.rootly.client.JSON;
 /**
  * DashboardPanel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class DashboardPanel {
   public static final String SERIALIZED_NAME_DASHBOARD_ID = "dashboard_id";
   @SerializedName(SERIALIZED_NAME_DASHBOARD_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String dashboardId;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_PARAMS = "params";
   @SerializedName(SERIALIZED_NAME_PARAMS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private NewDashboardPanelDataAttributesParams params;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private NewDashboardPanelDataAttributesPosition position;
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<Object> data = new ArrayList<>();
 
   public DashboardPanel() {
   }
 
-  public DashboardPanel dashboardId(@javax.annotation.Nullable String dashboardId) {
+  public DashboardPanel dashboardId(@jakarta.annotation.Nullable String dashboardId) {
     this.dashboardId = dashboardId;
     return this;
   }
@@ -92,17 +92,17 @@ public class DashboardPanel {
    * The panel dashboard
    * @return dashboardId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDashboardId() {
     return dashboardId;
   }
 
-  public void setDashboardId(@javax.annotation.Nullable String dashboardId) {
+  public void setDashboardId(@jakarta.annotation.Nullable String dashboardId) {
     this.dashboardId = dashboardId;
   }
 
 
-  public DashboardPanel name(@javax.annotation.Nullable String name) {
+  public DashboardPanel name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -111,17 +111,17 @@ public class DashboardPanel {
    * The name of the dashboard_panel
    * @return name
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public DashboardPanel params(@javax.annotation.Nonnull NewDashboardPanelDataAttributesParams params) {
+  public DashboardPanel params(@jakarta.annotation.Nonnull NewDashboardPanelDataAttributesParams params) {
     this.params = params;
     return this;
   }
@@ -130,17 +130,17 @@ public class DashboardPanel {
    * Get params
    * @return params
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public NewDashboardPanelDataAttributesParams getParams() {
     return params;
   }
 
-  public void setParams(@javax.annotation.Nonnull NewDashboardPanelDataAttributesParams params) {
+  public void setParams(@jakarta.annotation.Nonnull NewDashboardPanelDataAttributesParams params) {
     this.params = params;
   }
 
 
-  public DashboardPanel position(@javax.annotation.Nullable NewDashboardPanelDataAttributesPosition position) {
+  public DashboardPanel position(@jakarta.annotation.Nullable NewDashboardPanelDataAttributesPosition position) {
     this.position = position;
     return this;
   }
@@ -149,17 +149,17 @@ public class DashboardPanel {
    * Get position
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public NewDashboardPanelDataAttributesPosition getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable NewDashboardPanelDataAttributesPosition position) {
+  public void setPosition(@jakarta.annotation.Nullable NewDashboardPanelDataAttributesPosition position) {
     this.position = position;
   }
 
 
-  public DashboardPanel data(@javax.annotation.Nullable List<Object> data) {
+  public DashboardPanel data(@jakarta.annotation.Nullable List<Object> data) {
     this.data = data;
     return this;
   }
@@ -176,12 +176,12 @@ public class DashboardPanel {
    * Get data
    * @return data
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<Object> getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nullable List<Object> data) {
+  public void setData(@jakarta.annotation.Nullable List<Object> data) {
     this.data = data;
   }
 

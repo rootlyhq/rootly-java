@@ -48,16 +48,16 @@ import com.rootly.client.JSON;
 /**
  * NewIncidentEventFunctionalityDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewIncidentEventFunctionalityDataAttributes {
   public static final String SERIALIZED_NAME_INCIDENT_EVENT_ID = "incident_event_id";
   @SerializedName(SERIALIZED_NAME_INCIDENT_EVENT_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String incidentEventId;
 
   public static final String SERIALIZED_NAME_FUNCTIONALITY_ID = "functionality_id";
   @SerializedName(SERIALIZED_NAME_FUNCTIONALITY_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String functionalityId;
 
   /**
@@ -116,13 +116,13 @@ public class NewIncidentEventFunctionalityDataAttributes {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private StatusEnum status;
 
   public NewIncidentEventFunctionalityDataAttributes() {
   }
 
-  public NewIncidentEventFunctionalityDataAttributes incidentEventId(@javax.annotation.Nonnull String incidentEventId) {
+  public NewIncidentEventFunctionalityDataAttributes incidentEventId(@jakarta.annotation.Nonnull String incidentEventId) {
     this.incidentEventId = incidentEventId;
     return this;
   }
@@ -131,17 +131,17 @@ public class NewIncidentEventFunctionalityDataAttributes {
    * The ID of the incident event.
    * @return incidentEventId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getIncidentEventId() {
     return incidentEventId;
   }
 
-  public void setIncidentEventId(@javax.annotation.Nonnull String incidentEventId) {
+  public void setIncidentEventId(@jakarta.annotation.Nonnull String incidentEventId) {
     this.incidentEventId = incidentEventId;
   }
 
 
-  public NewIncidentEventFunctionalityDataAttributes functionalityId(@javax.annotation.Nonnull String functionalityId) {
+  public NewIncidentEventFunctionalityDataAttributes functionalityId(@jakarta.annotation.Nonnull String functionalityId) {
     this.functionalityId = functionalityId;
     return this;
   }
@@ -150,17 +150,17 @@ public class NewIncidentEventFunctionalityDataAttributes {
    * The ID of the functionality.
    * @return functionalityId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getFunctionalityId() {
     return functionalityId;
   }
 
-  public void setFunctionalityId(@javax.annotation.Nonnull String functionalityId) {
+  public void setFunctionalityId(@jakarta.annotation.Nonnull String functionalityId) {
     this.functionalityId = functionalityId;
   }
 
 
-  public NewIncidentEventFunctionalityDataAttributes status(@javax.annotation.Nonnull StatusEnum status) {
+  public NewIncidentEventFunctionalityDataAttributes status(@jakarta.annotation.Nonnull StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -169,12 +169,12 @@ public class NewIncidentEventFunctionalityDataAttributes {
    * The status of the affected functionality
    * @return status
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nonnull StatusEnum status) {
+  public void setStatus(@jakarta.annotation.Nonnull StatusEnum status) {
     this.status = status;
   }
 

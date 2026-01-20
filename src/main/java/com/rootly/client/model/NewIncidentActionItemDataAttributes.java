@@ -51,16 +51,16 @@ import com.rootly.client.JSON;
 /**
  * NewIncidentActionItemDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewIncidentActionItemDataAttributes {
   public static final String SERIALIZED_NAME_SUMMARY = "summary";
   @SerializedName(SERIALIZED_NAME_SUMMARY)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String summary;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   /**
@@ -117,17 +117,17 @@ public class NewIncidentActionItemDataAttributes {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private KindEnum kind;
 
   public static final String SERIALIZED_NAME_ASSIGNED_TO_USER_ID = "assigned_to_user_id";
   @SerializedName(SERIALIZED_NAME_ASSIGNED_TO_USER_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer assignedToUserId;
 
   public static final String SERIALIZED_NAME_ASSIGNED_TO_GROUP_IDS = "assigned_to_group_ids";
   @SerializedName(SERIALIZED_NAME_ASSIGNED_TO_GROUP_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> assignedToGroupIds = new ArrayList<>();
 
   /**
@@ -186,7 +186,7 @@ public class NewIncidentActionItemDataAttributes {
 
   public static final String SERIALIZED_NAME_PRIORITY = "priority";
   @SerializedName(SERIALIZED_NAME_PRIORITY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private PriorityEnum priority;
 
   /**
@@ -247,33 +247,33 @@ public class NewIncidentActionItemDataAttributes {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private StatusEnum status;
 
   public static final String SERIALIZED_NAME_DUE_DATE = "due_date";
   @SerializedName(SERIALIZED_NAME_DUE_DATE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String dueDate;
 
   public static final String SERIALIZED_NAME_JIRA_ISSUE_ID = "jira_issue_id";
   @SerializedName(SERIALIZED_NAME_JIRA_ISSUE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String jiraIssueId;
 
   public static final String SERIALIZED_NAME_JIRA_ISSUE_KEY = "jira_issue_key";
   @SerializedName(SERIALIZED_NAME_JIRA_ISSUE_KEY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String jiraIssueKey;
 
   public static final String SERIALIZED_NAME_JIRA_ISSUE_URL = "jira_issue_url";
   @SerializedName(SERIALIZED_NAME_JIRA_ISSUE_URL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String jiraIssueUrl;
 
   public NewIncidentActionItemDataAttributes() {
   }
 
-  public NewIncidentActionItemDataAttributes summary(@javax.annotation.Nonnull String summary) {
+  public NewIncidentActionItemDataAttributes summary(@jakarta.annotation.Nonnull String summary) {
     this.summary = summary;
     return this;
   }
@@ -282,17 +282,17 @@ public class NewIncidentActionItemDataAttributes {
    * The summary of the action item
    * @return summary
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getSummary() {
     return summary;
   }
 
-  public void setSummary(@javax.annotation.Nonnull String summary) {
+  public void setSummary(@jakarta.annotation.Nonnull String summary) {
     this.summary = summary;
   }
 
 
-  public NewIncidentActionItemDataAttributes description(@javax.annotation.Nullable String description) {
+  public NewIncidentActionItemDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -301,17 +301,17 @@ public class NewIncidentActionItemDataAttributes {
    * The description of the action item
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public NewIncidentActionItemDataAttributes kind(@javax.annotation.Nullable KindEnum kind) {
+  public NewIncidentActionItemDataAttributes kind(@jakarta.annotation.Nullable KindEnum kind) {
     this.kind = kind;
     return this;
   }
@@ -320,17 +320,17 @@ public class NewIncidentActionItemDataAttributes {
    * The kind of the action item
    * @return kind
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(@javax.annotation.Nullable KindEnum kind) {
+  public void setKind(@jakarta.annotation.Nullable KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public NewIncidentActionItemDataAttributes assignedToUserId(@javax.annotation.Nullable Integer assignedToUserId) {
+  public NewIncidentActionItemDataAttributes assignedToUserId(@jakarta.annotation.Nullable Integer assignedToUserId) {
     this.assignedToUserId = assignedToUserId;
     return this;
   }
@@ -339,17 +339,17 @@ public class NewIncidentActionItemDataAttributes {
    * ID of user you wish to assign this action item
    * @return assignedToUserId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getAssignedToUserId() {
     return assignedToUserId;
   }
 
-  public void setAssignedToUserId(@javax.annotation.Nullable Integer assignedToUserId) {
+  public void setAssignedToUserId(@jakarta.annotation.Nullable Integer assignedToUserId) {
     this.assignedToUserId = assignedToUserId;
   }
 
 
-  public NewIncidentActionItemDataAttributes assignedToGroupIds(@javax.annotation.Nullable List<String> assignedToGroupIds) {
+  public NewIncidentActionItemDataAttributes assignedToGroupIds(@jakarta.annotation.Nullable List<String> assignedToGroupIds) {
     this.assignedToGroupIds = assignedToGroupIds;
     return this;
   }
@@ -366,17 +366,17 @@ public class NewIncidentActionItemDataAttributes {
    * IDs of groups you wish to assign this action item
    * @return assignedToGroupIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getAssignedToGroupIds() {
     return assignedToGroupIds;
   }
 
-  public void setAssignedToGroupIds(@javax.annotation.Nullable List<String> assignedToGroupIds) {
+  public void setAssignedToGroupIds(@jakarta.annotation.Nullable List<String> assignedToGroupIds) {
     this.assignedToGroupIds = assignedToGroupIds;
   }
 
 
-  public NewIncidentActionItemDataAttributes priority(@javax.annotation.Nullable PriorityEnum priority) {
+  public NewIncidentActionItemDataAttributes priority(@jakarta.annotation.Nullable PriorityEnum priority) {
     this.priority = priority;
     return this;
   }
@@ -385,17 +385,17 @@ public class NewIncidentActionItemDataAttributes {
    * The priority of the action item
    * @return priority
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public PriorityEnum getPriority() {
     return priority;
   }
 
-  public void setPriority(@javax.annotation.Nullable PriorityEnum priority) {
+  public void setPriority(@jakarta.annotation.Nullable PriorityEnum priority) {
     this.priority = priority;
   }
 
 
-  public NewIncidentActionItemDataAttributes status(@javax.annotation.Nullable StatusEnum status) {
+  public NewIncidentActionItemDataAttributes status(@jakarta.annotation.Nullable StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -404,17 +404,17 @@ public class NewIncidentActionItemDataAttributes {
    * The status of the action item
    * @return status
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nullable StatusEnum status) {
+  public void setStatus(@jakarta.annotation.Nullable StatusEnum status) {
     this.status = status;
   }
 
 
-  public NewIncidentActionItemDataAttributes dueDate(@javax.annotation.Nullable String dueDate) {
+  public NewIncidentActionItemDataAttributes dueDate(@jakarta.annotation.Nullable String dueDate) {
     this.dueDate = dueDate;
     return this;
   }
@@ -423,17 +423,17 @@ public class NewIncidentActionItemDataAttributes {
    * The due date of the action item
    * @return dueDate
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDueDate() {
     return dueDate;
   }
 
-  public void setDueDate(@javax.annotation.Nullable String dueDate) {
+  public void setDueDate(@jakarta.annotation.Nullable String dueDate) {
     this.dueDate = dueDate;
   }
 
 
-  public NewIncidentActionItemDataAttributes jiraIssueId(@javax.annotation.Nullable String jiraIssueId) {
+  public NewIncidentActionItemDataAttributes jiraIssueId(@jakarta.annotation.Nullable String jiraIssueId) {
     this.jiraIssueId = jiraIssueId;
     return this;
   }
@@ -442,17 +442,17 @@ public class NewIncidentActionItemDataAttributes {
    * The Jira issue ID.
    * @return jiraIssueId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getJiraIssueId() {
     return jiraIssueId;
   }
 
-  public void setJiraIssueId(@javax.annotation.Nullable String jiraIssueId) {
+  public void setJiraIssueId(@jakarta.annotation.Nullable String jiraIssueId) {
     this.jiraIssueId = jiraIssueId;
   }
 
 
-  public NewIncidentActionItemDataAttributes jiraIssueKey(@javax.annotation.Nullable String jiraIssueKey) {
+  public NewIncidentActionItemDataAttributes jiraIssueKey(@jakarta.annotation.Nullable String jiraIssueKey) {
     this.jiraIssueKey = jiraIssueKey;
     return this;
   }
@@ -461,17 +461,17 @@ public class NewIncidentActionItemDataAttributes {
    * The Jira issue key.
    * @return jiraIssueKey
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getJiraIssueKey() {
     return jiraIssueKey;
   }
 
-  public void setJiraIssueKey(@javax.annotation.Nullable String jiraIssueKey) {
+  public void setJiraIssueKey(@jakarta.annotation.Nullable String jiraIssueKey) {
     this.jiraIssueKey = jiraIssueKey;
   }
 
 
-  public NewIncidentActionItemDataAttributes jiraIssueUrl(@javax.annotation.Nullable String jiraIssueUrl) {
+  public NewIncidentActionItemDataAttributes jiraIssueUrl(@jakarta.annotation.Nullable String jiraIssueUrl) {
     this.jiraIssueUrl = jiraIssueUrl;
     return this;
   }
@@ -480,12 +480,12 @@ public class NewIncidentActionItemDataAttributes {
    * The Jira issue URL.
    * @return jiraIssueUrl
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getJiraIssueUrl() {
     return jiraIssueUrl;
   }
 
-  public void setJiraIssueUrl(@javax.annotation.Nullable String jiraIssueUrl) {
+  public void setJiraIssueUrl(@jakarta.annotation.Nullable String jiraIssueUrl) {
     this.jiraIssueUrl = jiraIssueUrl;
   }
 

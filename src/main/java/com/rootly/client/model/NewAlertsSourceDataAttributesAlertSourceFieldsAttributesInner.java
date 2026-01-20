@@ -49,22 +49,22 @@ import com.rootly.client.JSON;
 /**
  * NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner {
   public static final String SERIALIZED_NAME_ALERT_FIELD_ID = "alert_field_id";
   @SerializedName(SERIALIZED_NAME_ALERT_FIELD_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String alertFieldId;
 
   public static final String SERIALIZED_NAME_TEMPLATE_BODY = "template_body";
   @SerializedName(SERIALIZED_NAME_TEMPLATE_BODY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String templateBody;
 
   public NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner() {
   }
 
-  public NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner alertFieldId(@javax.annotation.Nullable String alertFieldId) {
+  public NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner alertFieldId(@jakarta.annotation.Nullable String alertFieldId) {
     this.alertFieldId = alertFieldId;
     return this;
   }
@@ -73,17 +73,17 @@ public class NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner {
    * The ID of the alert field
    * @return alertFieldId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getAlertFieldId() {
     return alertFieldId;
   }
 
-  public void setAlertFieldId(@javax.annotation.Nullable String alertFieldId) {
+  public void setAlertFieldId(@jakarta.annotation.Nullable String alertFieldId) {
     this.alertFieldId = alertFieldId;
   }
 
 
-  public NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner templateBody(@javax.annotation.Nullable String templateBody) {
+  public NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner templateBody(@jakarta.annotation.Nullable String templateBody) {
     this.templateBody = templateBody;
     return this;
   }
@@ -92,12 +92,12 @@ public class NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner {
    * Liquid expression to extract a specific value from the alert&#39;s payload for evaluation
    * @return templateBody
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTemplateBody() {
     return templateBody;
   }
 
-  public void setTemplateBody(@javax.annotation.Nullable String templateBody) {
+  public void setTemplateBody(@jakarta.annotation.Nullable String templateBody) {
     this.templateBody = templateBody;
   }
 

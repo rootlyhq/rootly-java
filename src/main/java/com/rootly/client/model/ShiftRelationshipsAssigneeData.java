@@ -48,22 +48,22 @@ import com.rootly.client.JSON;
 /**
  * ShiftRelationshipsAssigneeData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ShiftRelationshipsAssigneeData {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String type;
 
   public ShiftRelationshipsAssigneeData() {
   }
 
-  public ShiftRelationshipsAssigneeData id(@javax.annotation.Nullable String id) {
+  public ShiftRelationshipsAssigneeData id(@jakarta.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -72,17 +72,17 @@ public class ShiftRelationshipsAssigneeData {
    * Get id
    * @return id
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getId() {
     return id;
   }
 
-  public void setId(@javax.annotation.Nullable String id) {
+  public void setId(@jakarta.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public ShiftRelationshipsAssigneeData type(@javax.annotation.Nullable String type) {
+  public ShiftRelationshipsAssigneeData type(@jakarta.annotation.Nullable String type) {
     this.type = type;
     return this;
   }
@@ -91,12 +91,12 @@ public class ShiftRelationshipsAssigneeData {
    * Get type
    * @return type
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nullable String type) {
+  public void setType(@jakarta.annotation.Nullable String type) {
     this.type = type;
   }
 

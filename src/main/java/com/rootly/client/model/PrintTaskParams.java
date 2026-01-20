@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * PrintTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class PrintTaskParams {
   /**
    * Gets or Sets taskType
@@ -102,18 +102,18 @@ public class PrintTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String message;
 
   public PrintTaskParams() {
   }
 
-  public PrintTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public PrintTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -122,17 +122,17 @@ public class PrintTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public PrintTaskParams message(@javax.annotation.Nonnull String message) {
+  public PrintTaskParams message(@jakarta.annotation.Nonnull String message) {
     this.message = message;
     return this;
   }
@@ -141,12 +141,12 @@ public class PrintTaskParams {
    * The message to print
    * @return message
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getMessage() {
     return message;
   }
 
-  public void setMessage(@javax.annotation.Nonnull String message) {
+  public void setMessage(@jakarta.annotation.Nonnull String message) {
     this.message = message;
   }
 

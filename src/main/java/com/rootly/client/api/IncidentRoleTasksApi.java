@@ -92,7 +92,7 @@ public class IncidentRoleTasksApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createIncidentRoleTaskCall(@javax.annotation.Nonnull String incidentRoleId, @javax.annotation.Nonnull NewIncidentRoleTask newIncidentRoleTask, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createIncidentRoleTaskCall(@jakarta.annotation.Nonnull String incidentRoleId, @jakarta.annotation.Nonnull NewIncidentRoleTask newIncidentRoleTask, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -139,7 +139,7 @@ public class IncidentRoleTasksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createIncidentRoleTaskValidateBeforeCall(@javax.annotation.Nonnull String incidentRoleId, @javax.annotation.Nonnull NewIncidentRoleTask newIncidentRoleTask, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createIncidentRoleTaskValidateBeforeCall(@jakarta.annotation.Nonnull String incidentRoleId, @jakarta.annotation.Nonnull NewIncidentRoleTask newIncidentRoleTask, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'incidentRoleId' is set
         if (incidentRoleId == null) {
             throw new ApiException("Missing the required parameter 'incidentRoleId' when calling createIncidentRoleTask(Async)");
@@ -170,7 +170,7 @@ public class IncidentRoleTasksApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentRoleTaskResponse createIncidentRoleTask(@javax.annotation.Nonnull String incidentRoleId, @javax.annotation.Nonnull NewIncidentRoleTask newIncidentRoleTask) throws ApiException {
+    public IncidentRoleTaskResponse createIncidentRoleTask(@jakarta.annotation.Nonnull String incidentRoleId, @jakarta.annotation.Nonnull NewIncidentRoleTask newIncidentRoleTask) throws ApiException {
         ApiResponse<IncidentRoleTaskResponse> localVarResp = createIncidentRoleTaskWithHttpInfo(incidentRoleId, newIncidentRoleTask);
         return localVarResp.getData();
     }
@@ -191,7 +191,7 @@ public class IncidentRoleTasksApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentRoleTaskResponse> createIncidentRoleTaskWithHttpInfo(@javax.annotation.Nonnull String incidentRoleId, @javax.annotation.Nonnull NewIncidentRoleTask newIncidentRoleTask) throws ApiException {
+    public ApiResponse<IncidentRoleTaskResponse> createIncidentRoleTaskWithHttpInfo(@jakarta.annotation.Nonnull String incidentRoleId, @jakarta.annotation.Nonnull NewIncidentRoleTask newIncidentRoleTask) throws ApiException {
         okhttp3.Call localVarCall = createIncidentRoleTaskValidateBeforeCall(incidentRoleId, newIncidentRoleTask, null);
         Type localVarReturnType = new TypeToken<IncidentRoleTaskResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -214,7 +214,7 @@ public class IncidentRoleTasksApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createIncidentRoleTaskAsync(@javax.annotation.Nonnull String incidentRoleId, @javax.annotation.Nonnull NewIncidentRoleTask newIncidentRoleTask, final ApiCallback<IncidentRoleTaskResponse> _callback) throws ApiException {
+    public okhttp3.Call createIncidentRoleTaskAsync(@jakarta.annotation.Nonnull String incidentRoleId, @jakarta.annotation.Nonnull NewIncidentRoleTask newIncidentRoleTask, final ApiCallback<IncidentRoleTaskResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createIncidentRoleTaskValidateBeforeCall(incidentRoleId, newIncidentRoleTask, _callback);
         Type localVarReturnType = new TypeToken<IncidentRoleTaskResponse>(){}.getType();
@@ -235,7 +235,7 @@ public class IncidentRoleTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteIncidentRoleTaskCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteIncidentRoleTaskCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -281,7 +281,7 @@ public class IncidentRoleTasksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteIncidentRoleTaskValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteIncidentRoleTaskValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteIncidentRoleTask(Async)");
@@ -305,7 +305,7 @@ public class IncidentRoleTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentRoleTaskResponse deleteIncidentRoleTask(@javax.annotation.Nonnull String id) throws ApiException {
+    public IncidentRoleTaskResponse deleteIncidentRoleTask(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<IncidentRoleTaskResponse> localVarResp = deleteIncidentRoleTaskWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -324,7 +324,7 @@ public class IncidentRoleTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentRoleTaskResponse> deleteIncidentRoleTaskWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<IncidentRoleTaskResponse> deleteIncidentRoleTaskWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteIncidentRoleTaskValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<IncidentRoleTaskResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -345,7 +345,7 @@ public class IncidentRoleTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteIncidentRoleTaskAsync(@javax.annotation.Nonnull String id, final ApiCallback<IncidentRoleTaskResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteIncidentRoleTaskAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<IncidentRoleTaskResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteIncidentRoleTaskValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<IncidentRoleTaskResponse>(){}.getType();
@@ -366,7 +366,7 @@ public class IncidentRoleTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getIncidentRoleTaskCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getIncidentRoleTaskCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -412,7 +412,7 @@ public class IncidentRoleTasksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getIncidentRoleTaskValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getIncidentRoleTaskValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getIncidentRoleTask(Async)");
@@ -436,7 +436,7 @@ public class IncidentRoleTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentRoleTaskResponse getIncidentRoleTask(@javax.annotation.Nonnull String id) throws ApiException {
+    public IncidentRoleTaskResponse getIncidentRoleTask(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<IncidentRoleTaskResponse> localVarResp = getIncidentRoleTaskWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -455,7 +455,7 @@ public class IncidentRoleTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentRoleTaskResponse> getIncidentRoleTaskWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<IncidentRoleTaskResponse> getIncidentRoleTaskWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getIncidentRoleTaskValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<IncidentRoleTaskResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -476,7 +476,7 @@ public class IncidentRoleTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getIncidentRoleTaskAsync(@javax.annotation.Nonnull String id, final ApiCallback<IncidentRoleTaskResponse> _callback) throws ApiException {
+    public okhttp3.Call getIncidentRoleTaskAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<IncidentRoleTaskResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getIncidentRoleTaskValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<IncidentRoleTaskResponse>(){}.getType();
@@ -499,7 +499,7 @@ public class IncidentRoleTasksApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listIncidentRoleTasksCall(@javax.annotation.Nonnull String incidentRoleId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listIncidentRoleTasksCall(@jakarta.annotation.Nonnull String incidentRoleId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -557,7 +557,7 @@ public class IncidentRoleTasksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listIncidentRoleTasksValidateBeforeCall(@javax.annotation.Nonnull String incidentRoleId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listIncidentRoleTasksValidateBeforeCall(@jakarta.annotation.Nonnull String incidentRoleId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'incidentRoleId' is set
         if (incidentRoleId == null) {
             throw new ApiException("Missing the required parameter 'incidentRoleId' when calling listIncidentRoleTasks(Async)");
@@ -583,7 +583,7 @@ public class IncidentRoleTasksApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentRoleTaskList listIncidentRoleTasks(@javax.annotation.Nonnull String incidentRoleId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+    public IncidentRoleTaskList listIncidentRoleTasks(@jakarta.annotation.Nonnull String incidentRoleId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
         ApiResponse<IncidentRoleTaskList> localVarResp = listIncidentRoleTasksWithHttpInfo(incidentRoleId, include, pageNumber, pageSize);
         return localVarResp.getData();
     }
@@ -604,7 +604,7 @@ public class IncidentRoleTasksApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentRoleTaskList> listIncidentRoleTasksWithHttpInfo(@javax.annotation.Nonnull String incidentRoleId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+    public ApiResponse<IncidentRoleTaskList> listIncidentRoleTasksWithHttpInfo(@jakarta.annotation.Nonnull String incidentRoleId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
         okhttp3.Call localVarCall = listIncidentRoleTasksValidateBeforeCall(incidentRoleId, include, pageNumber, pageSize, null);
         Type localVarReturnType = new TypeToken<IncidentRoleTaskList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -627,7 +627,7 @@ public class IncidentRoleTasksApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listIncidentRoleTasksAsync(@javax.annotation.Nonnull String incidentRoleId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback<IncidentRoleTaskList> _callback) throws ApiException {
+    public okhttp3.Call listIncidentRoleTasksAsync(@jakarta.annotation.Nonnull String incidentRoleId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback<IncidentRoleTaskList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listIncidentRoleTasksValidateBeforeCall(incidentRoleId, include, pageNumber, pageSize, _callback);
         Type localVarReturnType = new TypeToken<IncidentRoleTaskList>(){}.getType();
@@ -649,7 +649,7 @@ public class IncidentRoleTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateIncidentRoleTaskCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateIncidentRoleTask updateIncidentRoleTask, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateIncidentRoleTaskCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateIncidentRoleTask updateIncidentRoleTask, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -696,7 +696,7 @@ public class IncidentRoleTasksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateIncidentRoleTaskValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateIncidentRoleTask updateIncidentRoleTask, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateIncidentRoleTaskValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateIncidentRoleTask updateIncidentRoleTask, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateIncidentRoleTask(Async)");
@@ -726,7 +726,7 @@ public class IncidentRoleTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentRoleTaskResponse updateIncidentRoleTask(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateIncidentRoleTask updateIncidentRoleTask) throws ApiException {
+    public IncidentRoleTaskResponse updateIncidentRoleTask(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateIncidentRoleTask updateIncidentRoleTask) throws ApiException {
         ApiResponse<IncidentRoleTaskResponse> localVarResp = updateIncidentRoleTaskWithHttpInfo(id, updateIncidentRoleTask);
         return localVarResp.getData();
     }
@@ -746,7 +746,7 @@ public class IncidentRoleTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentRoleTaskResponse> updateIncidentRoleTaskWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateIncidentRoleTask updateIncidentRoleTask) throws ApiException {
+    public ApiResponse<IncidentRoleTaskResponse> updateIncidentRoleTaskWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateIncidentRoleTask updateIncidentRoleTask) throws ApiException {
         okhttp3.Call localVarCall = updateIncidentRoleTaskValidateBeforeCall(id, updateIncidentRoleTask, null);
         Type localVarReturnType = new TypeToken<IncidentRoleTaskResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -768,7 +768,7 @@ public class IncidentRoleTasksApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateIncidentRoleTaskAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateIncidentRoleTask updateIncidentRoleTask, final ApiCallback<IncidentRoleTaskResponse> _callback) throws ApiException {
+    public okhttp3.Call updateIncidentRoleTaskAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateIncidentRoleTask updateIncidentRoleTask, final ApiCallback<IncidentRoleTaskResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateIncidentRoleTaskValidateBeforeCall(id, updateIncidentRoleTask, _callback);
         Type localVarReturnType = new TypeToken<IncidentRoleTaskResponse>(){}.getType();

@@ -49,42 +49,42 @@ import com.rootly.client.JSON;
 /**
  * PlaybookTask
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class PlaybookTask {
   public static final String SERIALIZED_NAME_PLAYBOOK_ID = "playbook_id";
   @SerializedName(SERIALIZED_NAME_PLAYBOOK_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String playbookId;
 
   public static final String SERIALIZED_NAME_TASK = "task";
   @SerializedName(SERIALIZED_NAME_TASK)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String task;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public PlaybookTask() {
   }
 
-  public PlaybookTask playbookId(@javax.annotation.Nullable String playbookId) {
+  public PlaybookTask playbookId(@jakarta.annotation.Nullable String playbookId) {
     this.playbookId = playbookId;
     return this;
   }
@@ -93,17 +93,17 @@ public class PlaybookTask {
    * Get playbookId
    * @return playbookId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPlaybookId() {
     return playbookId;
   }
 
-  public void setPlaybookId(@javax.annotation.Nullable String playbookId) {
+  public void setPlaybookId(@jakarta.annotation.Nullable String playbookId) {
     this.playbookId = playbookId;
   }
 
 
-  public PlaybookTask task(@javax.annotation.Nonnull String task) {
+  public PlaybookTask task(@jakarta.annotation.Nonnull String task) {
     this.task = task;
     return this;
   }
@@ -112,17 +112,17 @@ public class PlaybookTask {
    * The task of the task
    * @return task
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getTask() {
     return task;
   }
 
-  public void setTask(@javax.annotation.Nonnull String task) {
+  public void setTask(@jakarta.annotation.Nonnull String task) {
     this.task = task;
   }
 
 
-  public PlaybookTask description(@javax.annotation.Nullable String description) {
+  public PlaybookTask description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -131,17 +131,17 @@ public class PlaybookTask {
    * The description of task
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public PlaybookTask position(@javax.annotation.Nullable Integer position) {
+  public PlaybookTask position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -150,17 +150,17 @@ public class PlaybookTask {
    * The position of the task
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 
 
-  public PlaybookTask createdAt(@javax.annotation.Nonnull String createdAt) {
+  public PlaybookTask createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -169,17 +169,17 @@ public class PlaybookTask {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public PlaybookTask updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public PlaybookTask updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -188,12 +188,12 @@ public class PlaybookTask {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

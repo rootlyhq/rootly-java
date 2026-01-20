@@ -48,22 +48,22 @@ import com.rootly.client.JSON;
 /**
  * AssignRoleToUserDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AssignRoleToUserDataAttributes {
   public static final String SERIALIZED_NAME_USER_ID = "user_id";
   @SerializedName(SERIALIZED_NAME_USER_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String userId;
 
   public static final String SERIALIZED_NAME_INCIDENT_ROLE_ID = "incident_role_id";
   @SerializedName(SERIALIZED_NAME_INCIDENT_ROLE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String incidentRoleId;
 
   public AssignRoleToUserDataAttributes() {
   }
 
-  public AssignRoleToUserDataAttributes userId(@javax.annotation.Nullable String userId) {
+  public AssignRoleToUserDataAttributes userId(@jakarta.annotation.Nullable String userId) {
     this.userId = userId;
     return this;
   }
@@ -72,17 +72,17 @@ public class AssignRoleToUserDataAttributes {
    * ID of user you wish to assign this incident
    * @return userId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUserId() {
     return userId;
   }
 
-  public void setUserId(@javax.annotation.Nullable String userId) {
+  public void setUserId(@jakarta.annotation.Nullable String userId) {
     this.userId = userId;
   }
 
 
-  public AssignRoleToUserDataAttributes incidentRoleId(@javax.annotation.Nullable String incidentRoleId) {
+  public AssignRoleToUserDataAttributes incidentRoleId(@jakarta.annotation.Nullable String incidentRoleId) {
     this.incidentRoleId = incidentRoleId;
     return this;
   }
@@ -91,12 +91,12 @@ public class AssignRoleToUserDataAttributes {
    * ID of the incident role
    * @return incidentRoleId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getIncidentRoleId() {
     return incidentRoleId;
   }
 
-  public void setIncidentRoleId(@javax.annotation.Nullable String incidentRoleId) {
+  public void setIncidentRoleId(@jakarta.annotation.Nullable String incidentRoleId) {
     this.incidentRoleId = incidentRoleId;
   }
 

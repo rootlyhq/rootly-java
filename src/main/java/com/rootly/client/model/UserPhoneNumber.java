@@ -50,47 +50,47 @@ import com.rootly.client.JSON;
 /**
  * UserPhoneNumber
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UserPhoneNumber {
   public static final String SERIALIZED_NAME_USER_ID = "user_id";
   @SerializedName(SERIALIZED_NAME_USER_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer userId;
 
   public static final String SERIALIZED_NAME_PHONE = "phone";
   @SerializedName(SERIALIZED_NAME_PHONE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String phone;
 
   public static final String SERIALIZED_NAME_PRIMARY = "primary";
   @SerializedName(SERIALIZED_NAME_PRIMARY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean primary;
 
   public static final String SERIALIZED_NAME_VERIFIED_AT = "verified_at";
   @SerializedName(SERIALIZED_NAME_VERIFIED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private OffsetDateTime verifiedAt;
 
   public static final String SERIALIZED_NAME_VERIFICATION_ATTEMPTS_TODAY = "verification_attempts_today";
   @SerializedName(SERIALIZED_NAME_VERIFICATION_ATTEMPTS_TODAY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer verificationAttemptsToday;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String updatedAt;
 
   public UserPhoneNumber() {
   }
 
-  public UserPhoneNumber userId(@javax.annotation.Nullable Integer userId) {
+  public UserPhoneNumber userId(@jakarta.annotation.Nullable Integer userId) {
     this.userId = userId;
     return this;
   }
@@ -99,17 +99,17 @@ public class UserPhoneNumber {
    * Get userId
    * @return userId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getUserId() {
     return userId;
   }
 
-  public void setUserId(@javax.annotation.Nullable Integer userId) {
+  public void setUserId(@jakarta.annotation.Nullable Integer userId) {
     this.userId = userId;
   }
 
 
-  public UserPhoneNumber phone(@javax.annotation.Nullable String phone) {
+  public UserPhoneNumber phone(@jakarta.annotation.Nullable String phone) {
     this.phone = phone;
     return this;
   }
@@ -118,17 +118,17 @@ public class UserPhoneNumber {
    * Phone number in international format
    * @return phone
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPhone() {
     return phone;
   }
 
-  public void setPhone(@javax.annotation.Nullable String phone) {
+  public void setPhone(@jakarta.annotation.Nullable String phone) {
     this.phone = phone;
   }
 
 
-  public UserPhoneNumber primary(@javax.annotation.Nullable Boolean primary) {
+  public UserPhoneNumber primary(@jakarta.annotation.Nullable Boolean primary) {
     this.primary = primary;
     return this;
   }
@@ -137,17 +137,17 @@ public class UserPhoneNumber {
    * Whether this is the primary phone number
    * @return primary
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getPrimary() {
     return primary;
   }
 
-  public void setPrimary(@javax.annotation.Nullable Boolean primary) {
+  public void setPrimary(@jakarta.annotation.Nullable Boolean primary) {
     this.primary = primary;
   }
 
 
-  public UserPhoneNumber verifiedAt(@javax.annotation.Nullable OffsetDateTime verifiedAt) {
+  public UserPhoneNumber verifiedAt(@jakarta.annotation.Nullable OffsetDateTime verifiedAt) {
     this.verifiedAt = verifiedAt;
     return this;
   }
@@ -156,17 +156,17 @@ public class UserPhoneNumber {
    * Date when phone number was verified
    * @return verifiedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public OffsetDateTime getVerifiedAt() {
     return verifiedAt;
   }
 
-  public void setVerifiedAt(@javax.annotation.Nullable OffsetDateTime verifiedAt) {
+  public void setVerifiedAt(@jakarta.annotation.Nullable OffsetDateTime verifiedAt) {
     this.verifiedAt = verifiedAt;
   }
 
 
-  public UserPhoneNumber verificationAttemptsToday(@javax.annotation.Nullable Integer verificationAttemptsToday) {
+  public UserPhoneNumber verificationAttemptsToday(@jakarta.annotation.Nullable Integer verificationAttemptsToday) {
     this.verificationAttemptsToday = verificationAttemptsToday;
     return this;
   }
@@ -175,17 +175,17 @@ public class UserPhoneNumber {
    * Number of verification attempts made today
    * @return verificationAttemptsToday
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getVerificationAttemptsToday() {
     return verificationAttemptsToday;
   }
 
-  public void setVerificationAttemptsToday(@javax.annotation.Nullable Integer verificationAttemptsToday) {
+  public void setVerificationAttemptsToday(@jakarta.annotation.Nullable Integer verificationAttemptsToday) {
     this.verificationAttemptsToday = verificationAttemptsToday;
   }
 
 
-  public UserPhoneNumber createdAt(@javax.annotation.Nullable String createdAt) {
+  public UserPhoneNumber createdAt(@jakarta.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -194,17 +194,17 @@ public class UserPhoneNumber {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nullable String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public UserPhoneNumber updatedAt(@javax.annotation.Nullable String updatedAt) {
+  public UserPhoneNumber updatedAt(@jakarta.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -213,12 +213,12 @@ public class UserPhoneNumber {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nullable String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

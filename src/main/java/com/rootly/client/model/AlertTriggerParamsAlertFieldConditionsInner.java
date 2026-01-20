@@ -50,11 +50,11 @@ import com.rootly.client.JSON;
 /**
  * AlertTriggerParamsAlertFieldConditionsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AlertTriggerParamsAlertFieldConditionsInner {
   public static final String SERIALIZED_NAME_ALERT_FIELD_ID = "alert_field_id";
   @SerializedName(SERIALIZED_NAME_ALERT_FIELD_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String alertFieldId;
 
   /**
@@ -125,18 +125,18 @@ public class AlertTriggerParamsAlertFieldConditionsInner {
 
   public static final String SERIALIZED_NAME_CONDITION_TYPE = "condition_type";
   @SerializedName(SERIALIZED_NAME_CONDITION_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private ConditionTypeEnum conditionType;
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> values = new ArrayList<>();
 
   public AlertTriggerParamsAlertFieldConditionsInner() {
   }
 
-  public AlertTriggerParamsAlertFieldConditionsInner alertFieldId(@javax.annotation.Nonnull String alertFieldId) {
+  public AlertTriggerParamsAlertFieldConditionsInner alertFieldId(@jakarta.annotation.Nonnull String alertFieldId) {
     this.alertFieldId = alertFieldId;
     return this;
   }
@@ -145,17 +145,17 @@ public class AlertTriggerParamsAlertFieldConditionsInner {
    * Get alertFieldId
    * @return alertFieldId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getAlertFieldId() {
     return alertFieldId;
   }
 
-  public void setAlertFieldId(@javax.annotation.Nonnull String alertFieldId) {
+  public void setAlertFieldId(@jakarta.annotation.Nonnull String alertFieldId) {
     this.alertFieldId = alertFieldId;
   }
 
 
-  public AlertTriggerParamsAlertFieldConditionsInner conditionType(@javax.annotation.Nonnull ConditionTypeEnum conditionType) {
+  public AlertTriggerParamsAlertFieldConditionsInner conditionType(@jakarta.annotation.Nonnull ConditionTypeEnum conditionType) {
     this.conditionType = conditionType;
     return this;
   }
@@ -164,17 +164,17 @@ public class AlertTriggerParamsAlertFieldConditionsInner {
    * Get conditionType
    * @return conditionType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public ConditionTypeEnum getConditionType() {
     return conditionType;
   }
 
-  public void setConditionType(@javax.annotation.Nonnull ConditionTypeEnum conditionType) {
+  public void setConditionType(@jakarta.annotation.Nonnull ConditionTypeEnum conditionType) {
     this.conditionType = conditionType;
   }
 
 
-  public AlertTriggerParamsAlertFieldConditionsInner values(@javax.annotation.Nullable List<String> values) {
+  public AlertTriggerParamsAlertFieldConditionsInner values(@jakarta.annotation.Nullable List<String> values) {
     this.values = values;
     return this;
   }
@@ -191,12 +191,12 @@ public class AlertTriggerParamsAlertFieldConditionsInner {
    * Get values
    * @return values
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getValues() {
     return values;
   }
 
-  public void setValues(@javax.annotation.Nullable List<String> values) {
+  public void setValues(@jakarta.annotation.Nullable List<String> values) {
     this.values = values;
   }
 

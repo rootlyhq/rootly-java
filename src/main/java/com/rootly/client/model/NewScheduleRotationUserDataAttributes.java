@@ -48,22 +48,22 @@ import com.rootly.client.JSON;
 /**
  * NewScheduleRotationUserDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewScheduleRotationUserDataAttributes {
   public static final String SERIALIZED_NAME_USER_ID = "user_id";
   @SerializedName(SERIALIZED_NAME_USER_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Integer userId;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public NewScheduleRotationUserDataAttributes() {
   }
 
-  public NewScheduleRotationUserDataAttributes userId(@javax.annotation.Nonnull Integer userId) {
+  public NewScheduleRotationUserDataAttributes userId(@jakarta.annotation.Nonnull Integer userId) {
     this.userId = userId;
     return this;
   }
@@ -72,17 +72,17 @@ public class NewScheduleRotationUserDataAttributes {
    * Schedule rotation user
    * @return userId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Integer getUserId() {
     return userId;
   }
 
-  public void setUserId(@javax.annotation.Nonnull Integer userId) {
+  public void setUserId(@jakarta.annotation.Nonnull Integer userId) {
     this.userId = userId;
   }
 
 
-  public NewScheduleRotationUserDataAttributes position(@javax.annotation.Nullable Integer position) {
+  public NewScheduleRotationUserDataAttributes position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -91,12 +91,12 @@ public class NewScheduleRotationUserDataAttributes {
    * Position of the user inside rotation
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 

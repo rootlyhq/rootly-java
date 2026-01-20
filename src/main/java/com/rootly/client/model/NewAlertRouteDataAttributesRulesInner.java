@@ -52,37 +52,37 @@ import com.rootly.client.JSON;
 /**
  * NewAlertRouteDataAttributesRulesInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewAlertRouteDataAttributesRulesInner {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public static final String SERIALIZED_NAME_FALLBACK_RULE = "fallback_rule";
   @SerializedName(SERIALIZED_NAME_FALLBACK_RULE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean fallbackRule;
 
   public static final String SERIALIZED_NAME_DESTINATIONS = "destinations";
   @SerializedName(SERIALIZED_NAME_DESTINATIONS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<NewAlertRouteDataAttributesRulesInnerDestinationsInner> destinations = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CONDITION_GROUPS = "condition_groups";
   @SerializedName(SERIALIZED_NAME_CONDITION_GROUPS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<NewAlertRouteDataAttributesRulesInnerConditionGroupsInner> conditionGroups = new ArrayList<>();
 
   public NewAlertRouteDataAttributesRulesInner() {
   }
 
-  public NewAlertRouteDataAttributesRulesInner name(@javax.annotation.Nonnull String name) {
+  public NewAlertRouteDataAttributesRulesInner name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -91,17 +91,17 @@ public class NewAlertRouteDataAttributesRulesInner {
    * The name of the alert routing rule
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public NewAlertRouteDataAttributesRulesInner position(@javax.annotation.Nullable Integer position) {
+  public NewAlertRouteDataAttributesRulesInner position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -110,17 +110,17 @@ public class NewAlertRouteDataAttributesRulesInner {
    * The position of the alert routing rule for ordering evaluation
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 
 
-  public NewAlertRouteDataAttributesRulesInner fallbackRule(@javax.annotation.Nullable Boolean fallbackRule) {
+  public NewAlertRouteDataAttributesRulesInner fallbackRule(@jakarta.annotation.Nullable Boolean fallbackRule) {
     this.fallbackRule = fallbackRule;
     return this;
   }
@@ -129,17 +129,17 @@ public class NewAlertRouteDataAttributesRulesInner {
    * Whether this is a fallback rule
    * @return fallbackRule
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getFallbackRule() {
     return fallbackRule;
   }
 
-  public void setFallbackRule(@javax.annotation.Nullable Boolean fallbackRule) {
+  public void setFallbackRule(@jakarta.annotation.Nullable Boolean fallbackRule) {
     this.fallbackRule = fallbackRule;
   }
 
 
-  public NewAlertRouteDataAttributesRulesInner destinations(@javax.annotation.Nonnull List<NewAlertRouteDataAttributesRulesInnerDestinationsInner> destinations) {
+  public NewAlertRouteDataAttributesRulesInner destinations(@jakarta.annotation.Nonnull List<NewAlertRouteDataAttributesRulesInnerDestinationsInner> destinations) {
     this.destinations = destinations;
     return this;
   }
@@ -156,17 +156,17 @@ public class NewAlertRouteDataAttributesRulesInner {
    * Get destinations
    * @return destinations
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<NewAlertRouteDataAttributesRulesInnerDestinationsInner> getDestinations() {
     return destinations;
   }
 
-  public void setDestinations(@javax.annotation.Nonnull List<NewAlertRouteDataAttributesRulesInnerDestinationsInner> destinations) {
+  public void setDestinations(@jakarta.annotation.Nonnull List<NewAlertRouteDataAttributesRulesInnerDestinationsInner> destinations) {
     this.destinations = destinations;
   }
 
 
-  public NewAlertRouteDataAttributesRulesInner conditionGroups(@javax.annotation.Nonnull List<NewAlertRouteDataAttributesRulesInnerConditionGroupsInner> conditionGroups) {
+  public NewAlertRouteDataAttributesRulesInner conditionGroups(@jakarta.annotation.Nonnull List<NewAlertRouteDataAttributesRulesInnerConditionGroupsInner> conditionGroups) {
     this.conditionGroups = conditionGroups;
     return this;
   }
@@ -183,12 +183,12 @@ public class NewAlertRouteDataAttributesRulesInner {
    * Get conditionGroups
    * @return conditionGroups
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<NewAlertRouteDataAttributesRulesInnerConditionGroupsInner> getConditionGroups() {
     return conditionGroups;
   }
 
-  public void setConditionGroups(@javax.annotation.Nonnull List<NewAlertRouteDataAttributesRulesInnerConditionGroupsInner> conditionGroups) {
+  public void setConditionGroups(@jakarta.annotation.Nonnull List<NewAlertRouteDataAttributesRulesInnerConditionGroupsInner> conditionGroups) {
     this.conditionGroups = conditionGroups;
   }
 

@@ -53,26 +53,26 @@ import com.rootly.client.JSON;
 /**
  * NewCommunicationsGroupDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewCommunicationsGroupDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_COMMUNICATION_TYPE_ID = "communication_type_id";
   @SerializedName(SERIALIZED_NAME_COMMUNICATION_TYPE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String communicationTypeId;
 
   public static final String SERIALIZED_NAME_IS_PRIVATE = "is_private";
   @SerializedName(SERIALIZED_NAME_IS_PRIVATE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean isPrivate;
 
   /**
@@ -129,43 +129,43 @@ public class NewCommunicationsGroupDataAttributes {
 
   public static final String SERIALIZED_NAME_CONDITION_TYPE = "condition_type";
   @SerializedName(SERIALIZED_NAME_CONDITION_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ConditionTypeEnum conditionType;
 
   public static final String SERIALIZED_NAME_SMS_CHANNEL = "sms_channel";
   @SerializedName(SERIALIZED_NAME_SMS_CHANNEL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean smsChannel;
 
   public static final String SERIALIZED_NAME_EMAIL_CHANNEL = "email_channel";
   @SerializedName(SERIALIZED_NAME_EMAIL_CHANNEL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean emailChannel;
 
   public static final String SERIALIZED_NAME_MEMBER_IDS = "member_ids";
   @SerializedName(SERIALIZED_NAME_MEMBER_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<Integer> memberIds;
 
   public static final String SERIALIZED_NAME_SLACK_CHANNEL_IDS = "slack_channel_ids";
   @SerializedName(SERIALIZED_NAME_SLACK_CHANNEL_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> slackChannelIds;
 
   public static final String SERIALIZED_NAME_COMMUNICATION_GROUP_CONDITIONS = "communication_group_conditions";
   @SerializedName(SERIALIZED_NAME_COMMUNICATION_GROUP_CONDITIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewCommunicationsGroupDataAttributesCommunicationGroupConditionsInner> communicationGroupConditions;
 
   public static final String SERIALIZED_NAME_COMMUNICATION_EXTERNAL_GROUP_MEMBERS = "communication_external_group_members";
   @SerializedName(SERIALIZED_NAME_COMMUNICATION_EXTERNAL_GROUP_MEMBERS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewCommunicationsGroupDataAttributesCommunicationExternalGroupMembersInner> communicationExternalGroupMembers;
 
   public NewCommunicationsGroupDataAttributes() {
   }
 
-  public NewCommunicationsGroupDataAttributes name(@javax.annotation.Nonnull String name) {
+  public NewCommunicationsGroupDataAttributes name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -174,17 +174,17 @@ public class NewCommunicationsGroupDataAttributes {
    * The name of the communications group
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public NewCommunicationsGroupDataAttributes description(@javax.annotation.Nullable String description) {
+  public NewCommunicationsGroupDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -193,17 +193,17 @@ public class NewCommunicationsGroupDataAttributes {
    * The description of the communications group
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public NewCommunicationsGroupDataAttributes communicationTypeId(@javax.annotation.Nonnull String communicationTypeId) {
+  public NewCommunicationsGroupDataAttributes communicationTypeId(@jakarta.annotation.Nonnull String communicationTypeId) {
     this.communicationTypeId = communicationTypeId;
     return this;
   }
@@ -212,17 +212,17 @@ public class NewCommunicationsGroupDataAttributes {
    * The communication type ID
    * @return communicationTypeId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCommunicationTypeId() {
     return communicationTypeId;
   }
 
-  public void setCommunicationTypeId(@javax.annotation.Nonnull String communicationTypeId) {
+  public void setCommunicationTypeId(@jakarta.annotation.Nonnull String communicationTypeId) {
     this.communicationTypeId = communicationTypeId;
   }
 
 
-  public NewCommunicationsGroupDataAttributes isPrivate(@javax.annotation.Nullable Boolean isPrivate) {
+  public NewCommunicationsGroupDataAttributes isPrivate(@jakarta.annotation.Nullable Boolean isPrivate) {
     this.isPrivate = isPrivate;
     return this;
   }
@@ -231,17 +231,17 @@ public class NewCommunicationsGroupDataAttributes {
    * Whether the group is private
    * @return isPrivate
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getIsPrivate() {
     return isPrivate;
   }
 
-  public void setIsPrivate(@javax.annotation.Nullable Boolean isPrivate) {
+  public void setIsPrivate(@jakarta.annotation.Nullable Boolean isPrivate) {
     this.isPrivate = isPrivate;
   }
 
 
-  public NewCommunicationsGroupDataAttributes conditionType(@javax.annotation.Nullable ConditionTypeEnum conditionType) {
+  public NewCommunicationsGroupDataAttributes conditionType(@jakarta.annotation.Nullable ConditionTypeEnum conditionType) {
     this.conditionType = conditionType;
     return this;
   }
@@ -250,17 +250,17 @@ public class NewCommunicationsGroupDataAttributes {
    * Condition type
    * @return conditionType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ConditionTypeEnum getConditionType() {
     return conditionType;
   }
 
-  public void setConditionType(@javax.annotation.Nullable ConditionTypeEnum conditionType) {
+  public void setConditionType(@jakarta.annotation.Nullable ConditionTypeEnum conditionType) {
     this.conditionType = conditionType;
   }
 
 
-  public NewCommunicationsGroupDataAttributes smsChannel(@javax.annotation.Nullable Boolean smsChannel) {
+  public NewCommunicationsGroupDataAttributes smsChannel(@jakarta.annotation.Nullable Boolean smsChannel) {
     this.smsChannel = smsChannel;
     return this;
   }
@@ -269,17 +269,17 @@ public class NewCommunicationsGroupDataAttributes {
    * SMS channel enabled
    * @return smsChannel
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getSmsChannel() {
     return smsChannel;
   }
 
-  public void setSmsChannel(@javax.annotation.Nullable Boolean smsChannel) {
+  public void setSmsChannel(@jakarta.annotation.Nullable Boolean smsChannel) {
     this.smsChannel = smsChannel;
   }
 
 
-  public NewCommunicationsGroupDataAttributes emailChannel(@javax.annotation.Nullable Boolean emailChannel) {
+  public NewCommunicationsGroupDataAttributes emailChannel(@jakarta.annotation.Nullable Boolean emailChannel) {
     this.emailChannel = emailChannel;
     return this;
   }
@@ -288,17 +288,17 @@ public class NewCommunicationsGroupDataAttributes {
    * Email channel enabled
    * @return emailChannel
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getEmailChannel() {
     return emailChannel;
   }
 
-  public void setEmailChannel(@javax.annotation.Nullable Boolean emailChannel) {
+  public void setEmailChannel(@jakarta.annotation.Nullable Boolean emailChannel) {
     this.emailChannel = emailChannel;
   }
 
 
-  public NewCommunicationsGroupDataAttributes memberIds(@javax.annotation.Nullable List<Integer> memberIds) {
+  public NewCommunicationsGroupDataAttributes memberIds(@jakarta.annotation.Nullable List<Integer> memberIds) {
     this.memberIds = memberIds;
     return this;
   }
@@ -315,17 +315,17 @@ public class NewCommunicationsGroupDataAttributes {
    * Array of member user IDs
    * @return memberIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<Integer> getMemberIds() {
     return memberIds;
   }
 
-  public void setMemberIds(@javax.annotation.Nullable List<Integer> memberIds) {
+  public void setMemberIds(@jakarta.annotation.Nullable List<Integer> memberIds) {
     this.memberIds = memberIds;
   }
 
 
-  public NewCommunicationsGroupDataAttributes slackChannelIds(@javax.annotation.Nullable List<String> slackChannelIds) {
+  public NewCommunicationsGroupDataAttributes slackChannelIds(@jakarta.annotation.Nullable List<String> slackChannelIds) {
     this.slackChannelIds = slackChannelIds;
     return this;
   }
@@ -342,17 +342,17 @@ public class NewCommunicationsGroupDataAttributes {
    * Array of Slack channel IDs
    * @return slackChannelIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getSlackChannelIds() {
     return slackChannelIds;
   }
 
-  public void setSlackChannelIds(@javax.annotation.Nullable List<String> slackChannelIds) {
+  public void setSlackChannelIds(@jakarta.annotation.Nullable List<String> slackChannelIds) {
     this.slackChannelIds = slackChannelIds;
   }
 
 
-  public NewCommunicationsGroupDataAttributes communicationGroupConditions(@javax.annotation.Nullable List<NewCommunicationsGroupDataAttributesCommunicationGroupConditionsInner> communicationGroupConditions) {
+  public NewCommunicationsGroupDataAttributes communicationGroupConditions(@jakarta.annotation.Nullable List<NewCommunicationsGroupDataAttributesCommunicationGroupConditionsInner> communicationGroupConditions) {
     this.communicationGroupConditions = communicationGroupConditions;
     return this;
   }
@@ -369,17 +369,17 @@ public class NewCommunicationsGroupDataAttributes {
    * Group conditions attributes
    * @return communicationGroupConditions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewCommunicationsGroupDataAttributesCommunicationGroupConditionsInner> getCommunicationGroupConditions() {
     return communicationGroupConditions;
   }
 
-  public void setCommunicationGroupConditions(@javax.annotation.Nullable List<NewCommunicationsGroupDataAttributesCommunicationGroupConditionsInner> communicationGroupConditions) {
+  public void setCommunicationGroupConditions(@jakarta.annotation.Nullable List<NewCommunicationsGroupDataAttributesCommunicationGroupConditionsInner> communicationGroupConditions) {
     this.communicationGroupConditions = communicationGroupConditions;
   }
 
 
-  public NewCommunicationsGroupDataAttributes communicationExternalGroupMembers(@javax.annotation.Nullable List<NewCommunicationsGroupDataAttributesCommunicationExternalGroupMembersInner> communicationExternalGroupMembers) {
+  public NewCommunicationsGroupDataAttributes communicationExternalGroupMembers(@jakarta.annotation.Nullable List<NewCommunicationsGroupDataAttributesCommunicationExternalGroupMembersInner> communicationExternalGroupMembers) {
     this.communicationExternalGroupMembers = communicationExternalGroupMembers;
     return this;
   }
@@ -396,12 +396,12 @@ public class NewCommunicationsGroupDataAttributes {
    * External group members attributes
    * @return communicationExternalGroupMembers
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewCommunicationsGroupDataAttributesCommunicationExternalGroupMembersInner> getCommunicationExternalGroupMembers() {
     return communicationExternalGroupMembers;
   }
 
-  public void setCommunicationExternalGroupMembers(@javax.annotation.Nullable List<NewCommunicationsGroupDataAttributesCommunicationExternalGroupMembersInner> communicationExternalGroupMembers) {
+  public void setCommunicationExternalGroupMembers(@jakarta.annotation.Nullable List<NewCommunicationsGroupDataAttributesCommunicationExternalGroupMembersInner> communicationExternalGroupMembers) {
     this.communicationExternalGroupMembers = communicationExternalGroupMembers;
   }
 

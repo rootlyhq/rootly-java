@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * RetrospectiveConfiguration
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RetrospectiveConfiguration {
   /**
    * The kind of the configuration.
@@ -107,38 +107,38 @@ public class RetrospectiveConfiguration {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private KindEnum kind;
 
   public static final String SERIALIZED_NAME_SEVERITY_IDS = "severity_ids";
   @SerializedName(SERIALIZED_NAME_SEVERITY_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> severityIds;
 
   public static final String SERIALIZED_NAME_GROUP_IDS = "group_ids";
   @SerializedName(SERIALIZED_NAME_GROUP_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> groupIds;
 
   public static final String SERIALIZED_NAME_INCIDENT_TYPE_IDS = "incident_type_ids";
   @SerializedName(SERIALIZED_NAME_INCIDENT_TYPE_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> incidentTypeIds;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String updatedAt;
 
   public RetrospectiveConfiguration() {
   }
 
-  public RetrospectiveConfiguration kind(@javax.annotation.Nullable KindEnum kind) {
+  public RetrospectiveConfiguration kind(@jakarta.annotation.Nullable KindEnum kind) {
     this.kind = kind;
     return this;
   }
@@ -147,17 +147,17 @@ public class RetrospectiveConfiguration {
    * The kind of the configuration.
    * @return kind
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(@javax.annotation.Nullable KindEnum kind) {
+  public void setKind(@jakarta.annotation.Nullable KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public RetrospectiveConfiguration severityIds(@javax.annotation.Nullable List<String> severityIds) {
+  public RetrospectiveConfiguration severityIds(@jakarta.annotation.Nullable List<String> severityIds) {
     this.severityIds = severityIds;
     return this;
   }
@@ -174,17 +174,17 @@ public class RetrospectiveConfiguration {
    * The Severity IDs to attach to the retrospective configuration
    * @return severityIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getSeverityIds() {
     return severityIds;
   }
 
-  public void setSeverityIds(@javax.annotation.Nullable List<String> severityIds) {
+  public void setSeverityIds(@jakarta.annotation.Nullable List<String> severityIds) {
     this.severityIds = severityIds;
   }
 
 
-  public RetrospectiveConfiguration groupIds(@javax.annotation.Nullable List<String> groupIds) {
+  public RetrospectiveConfiguration groupIds(@jakarta.annotation.Nullable List<String> groupIds) {
     this.groupIds = groupIds;
     return this;
   }
@@ -201,17 +201,17 @@ public class RetrospectiveConfiguration {
    * The Team IDs to attach to the retrospective configuration
    * @return groupIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getGroupIds() {
     return groupIds;
   }
 
-  public void setGroupIds(@javax.annotation.Nullable List<String> groupIds) {
+  public void setGroupIds(@jakarta.annotation.Nullable List<String> groupIds) {
     this.groupIds = groupIds;
   }
 
 
-  public RetrospectiveConfiguration incidentTypeIds(@javax.annotation.Nullable List<String> incidentTypeIds) {
+  public RetrospectiveConfiguration incidentTypeIds(@jakarta.annotation.Nullable List<String> incidentTypeIds) {
     this.incidentTypeIds = incidentTypeIds;
     return this;
   }
@@ -228,17 +228,17 @@ public class RetrospectiveConfiguration {
    * The Incident Type IDs to attach to the retrospective configuration
    * @return incidentTypeIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getIncidentTypeIds() {
     return incidentTypeIds;
   }
 
-  public void setIncidentTypeIds(@javax.annotation.Nullable List<String> incidentTypeIds) {
+  public void setIncidentTypeIds(@jakarta.annotation.Nullable List<String> incidentTypeIds) {
     this.incidentTypeIds = incidentTypeIds;
   }
 
 
-  public RetrospectiveConfiguration createdAt(@javax.annotation.Nullable String createdAt) {
+  public RetrospectiveConfiguration createdAt(@jakarta.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -247,17 +247,17 @@ public class RetrospectiveConfiguration {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nullable String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public RetrospectiveConfiguration updatedAt(@javax.annotation.Nullable String updatedAt) {
+  public RetrospectiveConfiguration updatedAt(@jakarta.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -266,12 +266,12 @@ public class RetrospectiveConfiguration {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nullable String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

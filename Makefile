@@ -1,34 +1,48 @@
-.PHONY: build build-docker build-local upgrade-deps version bump-patch bump-minor bump-major push-tag release-patch release-minor release-major
+.PHONY: build build-docker build-local test upgrade-deps version bump-patch bump-minor bump-major push-tag release-patch release-minor release-major
 
 # Default target uses Docker (recommended - no Java installation required)
 build: build-docker
 
+# Run tests using Docker
+test:
+	@echo "Running tests using Docker..."
+	docker run --rm -v "$${PWD}:/workspace" -w /workspace gradle:8.7-jdk17 gradle test --no-daemon
+	@echo "✓ Tests complete!"
+
 # Generate client using Docker (recommended)
 build-docker:
 	@echo "Generating client using Docker..."
+	@echo "Cleaning old openapitools package files..."
+	@rm -rf src/main/java/org/openapitools src/test/java/org/openapitools
 	docker run --rm -v "$${PWD}:/local" openapitools/openapi-generator-cli:v7.13.0 generate \
 		-i https://rootly-heroku.s3.amazonaws.com/swagger/v1/swagger.json \
 		-g java \
 		-o /local \
-		--additional-properties=artifactId=rootly,projectName=rootly,invokerPackage=com.rootly.client,apiPackage=com.rootly.client.api,modelPackage=com.rootly.client.model,testPackage=com.rootly.client.model,withXml=false \
+		--additional-properties=artifactId=rootly,projectName=rootly,invokerPackage=com.rootly.client,apiPackage=com.rootly.client.api,modelPackage=com.rootly.client.model,withXml=false,useJakartaEe=true \
 		--skip-validate-spec \
-		--library okhttp-gson
+		--library okhttp-gson \
+		--global-property apiTests=false,modelTests=false
 	@echo "Removing problematic validateJsonElement calls..."
-	find ./src/main/java ./src/test/java -type f -name '*.java' -exec sed -i '' '/Object\.validateJsonElement/d' {} +
+	find ./src/main/java -type f -name '*.java' -exec sed -i '' '/Object\.validateJsonElement/d' {} +
+	find ./src/main/java -type f -name '*.java' -exec sed -i '' '/UUID\.validateJsonElement/d' {} +
 	@echo "✓ Client generation complete!"
 
 # Generate client using local openapi-generator (requires Java and openapi-generator installed)
 build-local:
 	@echo "Generating client using local openapi-generator..."
+	@echo "Cleaning old openapitools package files..."
+	@rm -rf src/main/java/org/openapitools src/test/java/org/openapitools
 	openapi-generator generate \
 		-i https://rootly-heroku.s3.amazonaws.com/swagger/v1/swagger.json \
 		-g java \
 		-o . \
-		--additional-properties=artifactId=rootly,projectName=rootly,invokerPackage=com.rootly.client,apiPackage=com.rootly.client.api,modelPackage=com.rootly.client.model,testPackage=com.rootly.client.model,withXml=false \
+		--additional-properties=artifactId=rootly,projectName=rootly,invokerPackage=com.rootly.client,apiPackage=com.rootly.client.api,modelPackage=com.rootly.client.model,withXml=false,useJakartaEe=true \
 		--skip-validate-spec \
-		--library okhttp-gson
+		--library okhttp-gson \
+		--global-property apiTests=false,modelTests=false
 	@echo "Removing problematic validateJsonElement calls..."
-	find ./src/main/java ./src/test/java -type f -name '*.java' -exec sed -i '' '/Object\.validateJsonElement/d' {} +
+	find ./src/main/java -type f -name '*.java' -exec sed -i '' '/Object\.validateJsonElement/d' {} +
+	find ./src/main/java -type f -name '*.java' -exec sed -i '' '/UUID\.validateJsonElement/d' {} +
 	@echo "✓ Client generation complete!"
 
 # Upgrade all dependencies to latest versions

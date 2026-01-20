@@ -50,11 +50,11 @@ import com.rootly.client.JSON;
 /**
  * FormFieldPlacementCondition
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class FormFieldPlacementCondition {
   public static final String SERIALIZED_NAME_FORM_FIELD_PLACEMENT_ID = "form_field_placement_id";
   @SerializedName(SERIALIZED_NAME_FORM_FIELD_PLACEMENT_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String formFieldPlacementId;
 
   /**
@@ -111,17 +111,17 @@ public class FormFieldPlacementCondition {
 
   public static final String SERIALIZED_NAME_CONDITIONED = "conditioned";
   @SerializedName(SERIALIZED_NAME_CONDITIONED)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private ConditionedEnum conditioned;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Integer position;
 
   public static final String SERIALIZED_NAME_FORM_FIELD_ID = "form_field_id";
   @SerializedName(SERIALIZED_NAME_FORM_FIELD_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String formFieldId;
 
   /**
@@ -182,18 +182,18 @@ public class FormFieldPlacementCondition {
 
   public static final String SERIALIZED_NAME_COMPARISON = "comparison";
   @SerializedName(SERIALIZED_NAME_COMPARISON)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private ComparisonEnum comparison;
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<String> values = new ArrayList<>();
 
   public FormFieldPlacementCondition() {
   }
 
-  public FormFieldPlacementCondition formFieldPlacementId(@javax.annotation.Nonnull String formFieldPlacementId) {
+  public FormFieldPlacementCondition formFieldPlacementId(@jakarta.annotation.Nonnull String formFieldPlacementId) {
     this.formFieldPlacementId = formFieldPlacementId;
     return this;
   }
@@ -202,17 +202,17 @@ public class FormFieldPlacementCondition {
    * The form field placement this condition applies.
    * @return formFieldPlacementId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getFormFieldPlacementId() {
     return formFieldPlacementId;
   }
 
-  public void setFormFieldPlacementId(@javax.annotation.Nonnull String formFieldPlacementId) {
+  public void setFormFieldPlacementId(@jakarta.annotation.Nonnull String formFieldPlacementId) {
     this.formFieldPlacementId = formFieldPlacementId;
   }
 
 
-  public FormFieldPlacementCondition conditioned(@javax.annotation.Nonnull ConditionedEnum conditioned) {
+  public FormFieldPlacementCondition conditioned(@jakarta.annotation.Nonnull ConditionedEnum conditioned) {
     this.conditioned = conditioned;
     return this;
   }
@@ -221,17 +221,17 @@ public class FormFieldPlacementCondition {
    * The resource or attribute the condition applies.
    * @return conditioned
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public ConditionedEnum getConditioned() {
     return conditioned;
   }
 
-  public void setConditioned(@javax.annotation.Nonnull ConditionedEnum conditioned) {
+  public void setConditioned(@jakarta.annotation.Nonnull ConditionedEnum conditioned) {
     this.conditioned = conditioned;
   }
 
 
-  public FormFieldPlacementCondition position(@javax.annotation.Nonnull Integer position) {
+  public FormFieldPlacementCondition position(@jakarta.annotation.Nonnull Integer position) {
     this.position = position;
     return this;
   }
@@ -240,17 +240,17 @@ public class FormFieldPlacementCondition {
    * The condition position.
    * @return position
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nonnull Integer position) {
+  public void setPosition(@jakarta.annotation.Nonnull Integer position) {
     this.position = position;
   }
 
 
-  public FormFieldPlacementCondition formFieldId(@javax.annotation.Nonnull String formFieldId) {
+  public FormFieldPlacementCondition formFieldId(@jakarta.annotation.Nonnull String formFieldId) {
     this.formFieldId = formFieldId;
     return this;
   }
@@ -259,17 +259,17 @@ public class FormFieldPlacementCondition {
    * The condition field.
    * @return formFieldId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getFormFieldId() {
     return formFieldId;
   }
 
-  public void setFormFieldId(@javax.annotation.Nonnull String formFieldId) {
+  public void setFormFieldId(@jakarta.annotation.Nonnull String formFieldId) {
     this.formFieldId = formFieldId;
   }
 
 
-  public FormFieldPlacementCondition comparison(@javax.annotation.Nonnull ComparisonEnum comparison) {
+  public FormFieldPlacementCondition comparison(@jakarta.annotation.Nonnull ComparisonEnum comparison) {
     this.comparison = comparison;
     return this;
   }
@@ -278,17 +278,17 @@ public class FormFieldPlacementCondition {
    * The condition comparison.
    * @return comparison
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public ComparisonEnum getComparison() {
     return comparison;
   }
 
-  public void setComparison(@javax.annotation.Nonnull ComparisonEnum comparison) {
+  public void setComparison(@jakarta.annotation.Nonnull ComparisonEnum comparison) {
     this.comparison = comparison;
   }
 
 
-  public FormFieldPlacementCondition values(@javax.annotation.Nonnull List<String> values) {
+  public FormFieldPlacementCondition values(@jakarta.annotation.Nonnull List<String> values) {
     this.values = values;
     return this;
   }
@@ -305,12 +305,12 @@ public class FormFieldPlacementCondition {
    * The values for comparison.
    * @return values
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<String> getValues() {
     return values;
   }
 
-  public void setValues(@javax.annotation.Nonnull List<String> values) {
+  public void setValues(@jakarta.annotation.Nonnull List<String> values) {
     this.values = values;
   }
 

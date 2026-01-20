@@ -92,7 +92,7 @@ public class SubStatusesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createSubStatusCall(@javax.annotation.Nonnull NewSubStatus newSubStatus, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createSubStatusCall(@jakarta.annotation.Nonnull NewSubStatus newSubStatus, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -138,7 +138,7 @@ public class SubStatusesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createSubStatusValidateBeforeCall(@javax.annotation.Nonnull NewSubStatus newSubStatus, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createSubStatusValidateBeforeCall(@jakarta.annotation.Nonnull NewSubStatus newSubStatus, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'newSubStatus' is set
         if (newSubStatus == null) {
             throw new ApiException("Missing the required parameter 'newSubStatus' when calling createSubStatus(Async)");
@@ -163,7 +163,7 @@ public class SubStatusesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public SubStatusResponse createSubStatus(@javax.annotation.Nonnull NewSubStatus newSubStatus) throws ApiException {
+    public SubStatusResponse createSubStatus(@jakarta.annotation.Nonnull NewSubStatus newSubStatus) throws ApiException {
         ApiResponse<SubStatusResponse> localVarResp = createSubStatusWithHttpInfo(newSubStatus);
         return localVarResp.getData();
     }
@@ -183,7 +183,7 @@ public class SubStatusesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SubStatusResponse> createSubStatusWithHttpInfo(@javax.annotation.Nonnull NewSubStatus newSubStatus) throws ApiException {
+    public ApiResponse<SubStatusResponse> createSubStatusWithHttpInfo(@jakarta.annotation.Nonnull NewSubStatus newSubStatus) throws ApiException {
         okhttp3.Call localVarCall = createSubStatusValidateBeforeCall(newSubStatus, null);
         Type localVarReturnType = new TypeToken<SubStatusResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -205,7 +205,7 @@ public class SubStatusesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createSubStatusAsync(@javax.annotation.Nonnull NewSubStatus newSubStatus, final ApiCallback<SubStatusResponse> _callback) throws ApiException {
+    public okhttp3.Call createSubStatusAsync(@jakarta.annotation.Nonnull NewSubStatus newSubStatus, final ApiCallback<SubStatusResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createSubStatusValidateBeforeCall(newSubStatus, _callback);
         Type localVarReturnType = new TypeToken<SubStatusResponse>(){}.getType();
@@ -226,7 +226,7 @@ public class SubStatusesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteSubStatusCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteSubStatusCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -272,7 +272,7 @@ public class SubStatusesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteSubStatusValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteSubStatusValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteSubStatus(Async)");
@@ -296,7 +296,7 @@ public class SubStatusesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public SubStatusResponse deleteSubStatus(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public SubStatusResponse deleteSubStatus(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<SubStatusResponse> localVarResp = deleteSubStatusWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -315,7 +315,7 @@ public class SubStatusesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SubStatusResponse> deleteSubStatusWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public ApiResponse<SubStatusResponse> deleteSubStatusWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = deleteSubStatusValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<SubStatusResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -336,7 +336,7 @@ public class SubStatusesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteSubStatusAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<SubStatusResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteSubStatusAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<SubStatusResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteSubStatusValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<SubStatusResponse>(){}.getType();
@@ -357,7 +357,7 @@ public class SubStatusesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSubStatusCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getSubStatusCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -403,7 +403,7 @@ public class SubStatusesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSubStatusValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getSubStatusValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getSubStatus(Async)");
@@ -427,7 +427,7 @@ public class SubStatusesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public SubStatusResponse getSubStatus(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public SubStatusResponse getSubStatus(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<SubStatusResponse> localVarResp = getSubStatusWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -446,7 +446,7 @@ public class SubStatusesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SubStatusResponse> getSubStatusWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public ApiResponse<SubStatusResponse> getSubStatusWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = getSubStatusValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<SubStatusResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -467,7 +467,7 @@ public class SubStatusesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSubStatusAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<SubStatusResponse> _callback) throws ApiException {
+    public okhttp3.Call getSubStatusAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<SubStatusResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getSubStatusValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<SubStatusResponse>(){}.getType();
@@ -496,7 +496,7 @@ public class SubStatusesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listSubStatusesCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterParentStatus, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listSubStatusesCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterParentStatus, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -581,7 +581,7 @@ public class SubStatusesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listSubStatusesValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterParentStatus, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listSubStatusesValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterParentStatus, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
         return listSubStatusesCall(include, pageNumber, pageSize, filterSlug, filterName, filterParentStatus, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, _callback);
 
     }
@@ -608,7 +608,7 @@ public class SubStatusesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public SubStatusList listSubStatuses(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterParentStatus, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte) throws ApiException {
+    public SubStatusList listSubStatuses(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterParentStatus, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte) throws ApiException {
         ApiResponse<SubStatusList> localVarResp = listSubStatusesWithHttpInfo(include, pageNumber, pageSize, filterSlug, filterName, filterParentStatus, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
         return localVarResp.getData();
     }
@@ -635,7 +635,7 @@ public class SubStatusesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SubStatusList> listSubStatusesWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterParentStatus, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte) throws ApiException {
+    public ApiResponse<SubStatusList> listSubStatusesWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterParentStatus, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte) throws ApiException {
         okhttp3.Call localVarCall = listSubStatusesValidateBeforeCall(include, pageNumber, pageSize, filterSlug, filterName, filterParentStatus, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, null);
         Type localVarReturnType = new TypeToken<SubStatusList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -664,7 +664,7 @@ public class SubStatusesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listSubStatusesAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterParentStatus, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback<SubStatusList> _callback) throws ApiException {
+    public okhttp3.Call listSubStatusesAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterParentStatus, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback<SubStatusList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listSubStatusesValidateBeforeCall(include, pageNumber, pageSize, filterSlug, filterName, filterParentStatus, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, _callback);
         Type localVarReturnType = new TypeToken<SubStatusList>(){}.getType();
@@ -686,7 +686,7 @@ public class SubStatusesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateSubStatusCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateSubStatus updateSubStatus, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateSubStatusCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateSubStatus updateSubStatus, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -733,7 +733,7 @@ public class SubStatusesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateSubStatusValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateSubStatus updateSubStatus, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateSubStatusValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateSubStatus updateSubStatus, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateSubStatus(Async)");
@@ -763,7 +763,7 @@ public class SubStatusesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public SubStatusResponse updateSubStatus(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateSubStatus updateSubStatus) throws ApiException {
+    public SubStatusResponse updateSubStatus(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateSubStatus updateSubStatus) throws ApiException {
         ApiResponse<SubStatusResponse> localVarResp = updateSubStatusWithHttpInfo(id, updateSubStatus);
         return localVarResp.getData();
     }
@@ -783,7 +783,7 @@ public class SubStatusesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SubStatusResponse> updateSubStatusWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateSubStatus updateSubStatus) throws ApiException {
+    public ApiResponse<SubStatusResponse> updateSubStatusWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateSubStatus updateSubStatus) throws ApiException {
         okhttp3.Call localVarCall = updateSubStatusValidateBeforeCall(id, updateSubStatus, null);
         Type localVarReturnType = new TypeToken<SubStatusResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -805,7 +805,7 @@ public class SubStatusesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateSubStatusAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateSubStatus updateSubStatus, final ApiCallback<SubStatusResponse> _callback) throws ApiException {
+    public okhttp3.Call updateSubStatusAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateSubStatus updateSubStatus, final ApiCallback<SubStatusResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateSubStatusValidateBeforeCall(id, updateSubStatus, _callback);
         Type localVarReturnType = new TypeToken<SubStatusResponse>(){}.getType();

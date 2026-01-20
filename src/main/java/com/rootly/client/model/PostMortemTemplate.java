@@ -49,36 +49,36 @@ import com.rootly.client.JSON;
 /**
  * PostMortemTemplate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class PostMortemTemplate {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String slug;
 
   public static final String SERIALIZED_NAME_DEFAULT = "default";
   @SerializedName(SERIALIZED_NAME_DEFAULT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean _default;
 
   public static final String SERIALIZED_NAME_CONTENT = "content";
   @SerializedName(SERIALIZED_NAME_CONTENT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String content;
 
   public static final String SERIALIZED_NAME_CONTENT_HTML = "content_html";
   @SerializedName(SERIALIZED_NAME_CONTENT_HTML)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String contentHtml;
 
   public static final String SERIALIZED_NAME_CONTENT_JSON = "content_json";
   @SerializedName(SERIALIZED_NAME_CONTENT_JSON)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Object contentJson;
 
   /**
@@ -135,23 +135,23 @@ public class PostMortemTemplate {
 
   public static final String SERIALIZED_NAME_FORMAT = "format";
   @SerializedName(SERIALIZED_NAME_FORMAT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private FormatEnum format;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public PostMortemTemplate() {
   }
 
-  public PostMortemTemplate name(@javax.annotation.Nonnull String name) {
+  public PostMortemTemplate name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -160,17 +160,17 @@ public class PostMortemTemplate {
    * The name of the postmortem template
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public PostMortemTemplate slug(@javax.annotation.Nullable String slug) {
+  public PostMortemTemplate slug(@jakarta.annotation.Nullable String slug) {
     this.slug = slug;
     return this;
   }
@@ -179,17 +179,17 @@ public class PostMortemTemplate {
    * The slugified name of the postmortem template
    * @return slug
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSlug() {
     return slug;
   }
 
-  public void setSlug(@javax.annotation.Nullable String slug) {
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
     this.slug = slug;
   }
 
 
-  public PostMortemTemplate _default(@javax.annotation.Nullable Boolean _default) {
+  public PostMortemTemplate _default(@jakarta.annotation.Nullable Boolean _default) {
     this._default = _default;
     return this;
   }
@@ -198,17 +198,17 @@ public class PostMortemTemplate {
    * Default selected template when editing a postmortem
    * @return _default
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getDefault() {
     return _default;
   }
 
-  public void setDefault(@javax.annotation.Nullable Boolean _default) {
+  public void setDefault(@jakarta.annotation.Nullable Boolean _default) {
     this._default = _default;
   }
 
 
-  public PostMortemTemplate content(@javax.annotation.Nullable String content) {
+  public PostMortemTemplate content(@jakarta.annotation.Nullable String content) {
     this.content = content;
     return this;
   }
@@ -217,17 +217,17 @@ public class PostMortemTemplate {
    * The postmortem template. Liquid syntax and markdown are supported
    * @return content
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getContent() {
     return content;
   }
 
-  public void setContent(@javax.annotation.Nullable String content) {
+  public void setContent(@jakarta.annotation.Nullable String content) {
     this.content = content;
   }
 
 
-  public PostMortemTemplate contentHtml(@javax.annotation.Nullable String contentHtml) {
+  public PostMortemTemplate contentHtml(@jakarta.annotation.Nullable String contentHtml) {
     this.contentHtml = contentHtml;
     return this;
   }
@@ -236,17 +236,17 @@ public class PostMortemTemplate {
    * The postmortem template in HTML format with TipTap blocks support. Supports followup and timeline components. Liquid syntax is supported.
    * @return contentHtml
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getContentHtml() {
     return contentHtml;
   }
 
-  public void setContentHtml(@javax.annotation.Nullable String contentHtml) {
+  public void setContentHtml(@jakarta.annotation.Nullable String contentHtml) {
     this.contentHtml = contentHtml;
   }
 
 
-  public PostMortemTemplate contentJson(@javax.annotation.Nullable Object contentJson) {
+  public PostMortemTemplate contentJson(@jakarta.annotation.Nullable Object contentJson) {
     this.contentJson = contentJson;
     return this;
   }
@@ -255,17 +255,17 @@ public class PostMortemTemplate {
    * The postmortem template in TipTap JSON format
    * @return contentJson
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Object getContentJson() {
     return contentJson;
   }
 
-  public void setContentJson(@javax.annotation.Nullable Object contentJson) {
+  public void setContentJson(@jakarta.annotation.Nullable Object contentJson) {
     this.contentJson = contentJson;
   }
 
 
-  public PostMortemTemplate format(@javax.annotation.Nullable FormatEnum format) {
+  public PostMortemTemplate format(@jakarta.annotation.Nullable FormatEnum format) {
     this.format = format;
     return this;
   }
@@ -274,17 +274,17 @@ public class PostMortemTemplate {
    * The format of the input
    * @return format
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public FormatEnum getFormat() {
     return format;
   }
 
-  public void setFormat(@javax.annotation.Nullable FormatEnum format) {
+  public void setFormat(@jakarta.annotation.Nullable FormatEnum format) {
     this.format = format;
   }
 
 
-  public PostMortemTemplate createdAt(@javax.annotation.Nonnull String createdAt) {
+  public PostMortemTemplate createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -293,17 +293,17 @@ public class PostMortemTemplate {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public PostMortemTemplate updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public PostMortemTemplate updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -312,12 +312,12 @@ public class PostMortemTemplate {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

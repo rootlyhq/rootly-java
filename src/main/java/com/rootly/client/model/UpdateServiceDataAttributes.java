@@ -55,162 +55,162 @@ import com.rootly.client.JSON;
 /**
  * UpdateServiceDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateServiceDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_PUBLIC_DESCRIPTION = "public_description";
   @SerializedName(SERIALIZED_NAME_PUBLIC_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String publicDescription;
 
   public static final String SERIALIZED_NAME_NOTIFY_EMAILS = "notify_emails";
   @SerializedName(SERIALIZED_NAME_NOTIFY_EMAILS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> notifyEmails;
 
   public static final String SERIALIZED_NAME_COLOR = "color";
   @SerializedName(SERIALIZED_NAME_COLOR)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String color;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public static final String SERIALIZED_NAME_BACKSTAGE_ID = "backstage_id";
   @SerializedName(SERIALIZED_NAME_BACKSTAGE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String backstageId;
 
   public static final String SERIALIZED_NAME_EXTERNAL_ID = "external_id";
   @SerializedName(SERIALIZED_NAME_EXTERNAL_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String externalId;
 
   public static final String SERIALIZED_NAME_PAGERDUTY_ID = "pagerduty_id";
   @SerializedName(SERIALIZED_NAME_PAGERDUTY_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String pagerdutyId;
 
   public static final String SERIALIZED_NAME_OPSGENIE_ID = "opsgenie_id";
   @SerializedName(SERIALIZED_NAME_OPSGENIE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String opsgenieId;
 
   public static final String SERIALIZED_NAME_CORTEX_ID = "cortex_id";
   @SerializedName(SERIALIZED_NAME_CORTEX_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String cortexId;
 
   public static final String SERIALIZED_NAME_SERVICE_NOW_CI_SYS_ID = "service_now_ci_sys_id";
   @SerializedName(SERIALIZED_NAME_SERVICE_NOW_CI_SYS_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String serviceNowCiSysId;
 
   public static final String SERIALIZED_NAME_GITHUB_REPOSITORY_NAME = "github_repository_name";
   @SerializedName(SERIALIZED_NAME_GITHUB_REPOSITORY_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String githubRepositoryName;
 
   public static final String SERIALIZED_NAME_GITHUB_REPOSITORY_BRANCH = "github_repository_branch";
   @SerializedName(SERIALIZED_NAME_GITHUB_REPOSITORY_BRANCH)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String githubRepositoryBranch;
 
   public static final String SERIALIZED_NAME_GITLAB_REPOSITORY_NAME = "gitlab_repository_name";
   @SerializedName(SERIALIZED_NAME_GITLAB_REPOSITORY_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String gitlabRepositoryName;
 
   public static final String SERIALIZED_NAME_GITLAB_REPOSITORY_BRANCH = "gitlab_repository_branch";
   @SerializedName(SERIALIZED_NAME_GITLAB_REPOSITORY_BRANCH)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String gitlabRepositoryBranch;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_IDS = "environment_ids";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> environmentIds;
 
   public static final String SERIALIZED_NAME_SERVICE_IDS = "service_ids";
   @SerializedName(SERIALIZED_NAME_SERVICE_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> serviceIds;
 
   public static final String SERIALIZED_NAME_OWNER_GROUP_IDS = "owner_group_ids";
   @SerializedName(SERIALIZED_NAME_OWNER_GROUP_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> ownerGroupIds;
 
   public static final String SERIALIZED_NAME_OWNER_USER_IDS = "owner_user_ids";
   @SerializedName(SERIALIZED_NAME_OWNER_USER_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<Integer> ownerUserIds;
 
   public static final String SERIALIZED_NAME_ALERTS_EMAIL_ENABLED = "alerts_email_enabled";
   @SerializedName(SERIALIZED_NAME_ALERTS_EMAIL_ENABLED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean alertsEmailEnabled;
 
   public static final String SERIALIZED_NAME_ALERT_URGENCY_ID = "alert_urgency_id";
   @SerializedName(SERIALIZED_NAME_ALERT_URGENCY_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String alertUrgencyId;
 
   public static final String SERIALIZED_NAME_ESCALATION_POLICY_ID = "escalation_policy_id";
   @SerializedName(SERIALIZED_NAME_ESCALATION_POLICY_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String escalationPolicyId;
 
   public static final String SERIALIZED_NAME_KUBERNETES_DEPLOYMENT_NAME = "kubernetes_deployment_name";
   @SerializedName(SERIALIZED_NAME_KUBERNETES_DEPLOYMENT_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String kubernetesDeploymentName;
 
   public static final String SERIALIZED_NAME_SLACK_CHANNELS = "slack_channels";
   @SerializedName(SERIALIZED_NAME_SLACK_CHANNELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewEnvironmentDataAttributesSlackChannelsInner> slackChannels;
 
   public static final String SERIALIZED_NAME_SLACK_ALIASES = "slack_aliases";
   @SerializedName(SERIALIZED_NAME_SLACK_ALIASES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases;
 
   public static final String SERIALIZED_NAME_ALERT_BROADCAST_ENABLED = "alert_broadcast_enabled";
   @SerializedName(SERIALIZED_NAME_ALERT_BROADCAST_ENABLED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean alertBroadcastEnabled;
 
   public static final String SERIALIZED_NAME_ALERT_BROADCAST_CHANNEL = "alert_broadcast_channel";
   @SerializedName(SERIALIZED_NAME_ALERT_BROADCAST_CHANNEL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private NewServiceDataAttributesAlertBroadcastChannel alertBroadcastChannel;
 
   public static final String SERIALIZED_NAME_INCIDENT_BROADCAST_ENABLED = "incident_broadcast_enabled";
   @SerializedName(SERIALIZED_NAME_INCIDENT_BROADCAST_ENABLED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean incidentBroadcastEnabled;
 
   public static final String SERIALIZED_NAME_INCIDENT_BROADCAST_CHANNEL = "incident_broadcast_channel";
   @SerializedName(SERIALIZED_NAME_INCIDENT_BROADCAST_CHANNEL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private NewServiceDataAttributesIncidentBroadcastChannel incidentBroadcastChannel;
 
   public UpdateServiceDataAttributes() {
   }
 
-  public UpdateServiceDataAttributes name(@javax.annotation.Nullable String name) {
+  public UpdateServiceDataAttributes name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -219,17 +219,17 @@ public class UpdateServiceDataAttributes {
    * The name of the service
    * @return name
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public UpdateServiceDataAttributes description(@javax.annotation.Nullable String description) {
+  public UpdateServiceDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -238,17 +238,17 @@ public class UpdateServiceDataAttributes {
    * The description of the service
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UpdateServiceDataAttributes publicDescription(@javax.annotation.Nullable String publicDescription) {
+  public UpdateServiceDataAttributes publicDescription(@jakarta.annotation.Nullable String publicDescription) {
     this.publicDescription = publicDescription;
     return this;
   }
@@ -257,17 +257,17 @@ public class UpdateServiceDataAttributes {
    * The public description of the service
    * @return publicDescription
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPublicDescription() {
     return publicDescription;
   }
 
-  public void setPublicDescription(@javax.annotation.Nullable String publicDescription) {
+  public void setPublicDescription(@jakarta.annotation.Nullable String publicDescription) {
     this.publicDescription = publicDescription;
   }
 
 
-  public UpdateServiceDataAttributes notifyEmails(@javax.annotation.Nullable List<String> notifyEmails) {
+  public UpdateServiceDataAttributes notifyEmails(@jakarta.annotation.Nullable List<String> notifyEmails) {
     this.notifyEmails = notifyEmails;
     return this;
   }
@@ -284,17 +284,17 @@ public class UpdateServiceDataAttributes {
    * Emails to attach to the service
    * @return notifyEmails
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getNotifyEmails() {
     return notifyEmails;
   }
 
-  public void setNotifyEmails(@javax.annotation.Nullable List<String> notifyEmails) {
+  public void setNotifyEmails(@jakarta.annotation.Nullable List<String> notifyEmails) {
     this.notifyEmails = notifyEmails;
   }
 
 
-  public UpdateServiceDataAttributes color(@javax.annotation.Nullable String color) {
+  public UpdateServiceDataAttributes color(@jakarta.annotation.Nullable String color) {
     this.color = color;
     return this;
   }
@@ -303,17 +303,17 @@ public class UpdateServiceDataAttributes {
    * The hex color of the service
    * @return color
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getColor() {
     return color;
   }
 
-  public void setColor(@javax.annotation.Nullable String color) {
+  public void setColor(@jakarta.annotation.Nullable String color) {
     this.color = color;
   }
 
 
-  public UpdateServiceDataAttributes position(@javax.annotation.Nullable Integer position) {
+  public UpdateServiceDataAttributes position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -322,17 +322,17 @@ public class UpdateServiceDataAttributes {
    * Position of the service
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 
 
-  public UpdateServiceDataAttributes backstageId(@javax.annotation.Nullable String backstageId) {
+  public UpdateServiceDataAttributes backstageId(@jakarta.annotation.Nullable String backstageId) {
     this.backstageId = backstageId;
     return this;
   }
@@ -341,17 +341,17 @@ public class UpdateServiceDataAttributes {
    * The Backstage entity id associated to this service. eg: :namespace/:kind/:entity_name
    * @return backstageId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getBackstageId() {
     return backstageId;
   }
 
-  public void setBackstageId(@javax.annotation.Nullable String backstageId) {
+  public void setBackstageId(@jakarta.annotation.Nullable String backstageId) {
     this.backstageId = backstageId;
   }
 
 
-  public UpdateServiceDataAttributes externalId(@javax.annotation.Nullable String externalId) {
+  public UpdateServiceDataAttributes externalId(@jakarta.annotation.Nullable String externalId) {
     this.externalId = externalId;
     return this;
   }
@@ -360,17 +360,17 @@ public class UpdateServiceDataAttributes {
    * The external id associated to this service
    * @return externalId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getExternalId() {
     return externalId;
   }
 
-  public void setExternalId(@javax.annotation.Nullable String externalId) {
+  public void setExternalId(@jakarta.annotation.Nullable String externalId) {
     this.externalId = externalId;
   }
 
 
-  public UpdateServiceDataAttributes pagerdutyId(@javax.annotation.Nullable String pagerdutyId) {
+  public UpdateServiceDataAttributes pagerdutyId(@jakarta.annotation.Nullable String pagerdutyId) {
     this.pagerdutyId = pagerdutyId;
     return this;
   }
@@ -379,17 +379,17 @@ public class UpdateServiceDataAttributes {
    * The PagerDuty service id associated to this service
    * @return pagerdutyId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPagerdutyId() {
     return pagerdutyId;
   }
 
-  public void setPagerdutyId(@javax.annotation.Nullable String pagerdutyId) {
+  public void setPagerdutyId(@jakarta.annotation.Nullable String pagerdutyId) {
     this.pagerdutyId = pagerdutyId;
   }
 
 
-  public UpdateServiceDataAttributes opsgenieId(@javax.annotation.Nullable String opsgenieId) {
+  public UpdateServiceDataAttributes opsgenieId(@jakarta.annotation.Nullable String opsgenieId) {
     this.opsgenieId = opsgenieId;
     return this;
   }
@@ -398,17 +398,17 @@ public class UpdateServiceDataAttributes {
    * The Opsgenie service id associated to this service
    * @return opsgenieId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getOpsgenieId() {
     return opsgenieId;
   }
 
-  public void setOpsgenieId(@javax.annotation.Nullable String opsgenieId) {
+  public void setOpsgenieId(@jakarta.annotation.Nullable String opsgenieId) {
     this.opsgenieId = opsgenieId;
   }
 
 
-  public UpdateServiceDataAttributes cortexId(@javax.annotation.Nullable String cortexId) {
+  public UpdateServiceDataAttributes cortexId(@jakarta.annotation.Nullable String cortexId) {
     this.cortexId = cortexId;
     return this;
   }
@@ -417,17 +417,17 @@ public class UpdateServiceDataAttributes {
    * The Cortex group id associated to this service
    * @return cortexId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCortexId() {
     return cortexId;
   }
 
-  public void setCortexId(@javax.annotation.Nullable String cortexId) {
+  public void setCortexId(@jakarta.annotation.Nullable String cortexId) {
     this.cortexId = cortexId;
   }
 
 
-  public UpdateServiceDataAttributes serviceNowCiSysId(@javax.annotation.Nullable String serviceNowCiSysId) {
+  public UpdateServiceDataAttributes serviceNowCiSysId(@jakarta.annotation.Nullable String serviceNowCiSysId) {
     this.serviceNowCiSysId = serviceNowCiSysId;
     return this;
   }
@@ -436,17 +436,17 @@ public class UpdateServiceDataAttributes {
    * The Service Now CI sys id associated to this service
    * @return serviceNowCiSysId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getServiceNowCiSysId() {
     return serviceNowCiSysId;
   }
 
-  public void setServiceNowCiSysId(@javax.annotation.Nullable String serviceNowCiSysId) {
+  public void setServiceNowCiSysId(@jakarta.annotation.Nullable String serviceNowCiSysId) {
     this.serviceNowCiSysId = serviceNowCiSysId;
   }
 
 
-  public UpdateServiceDataAttributes githubRepositoryName(@javax.annotation.Nullable String githubRepositoryName) {
+  public UpdateServiceDataAttributes githubRepositoryName(@jakarta.annotation.Nullable String githubRepositoryName) {
     this.githubRepositoryName = githubRepositoryName;
     return this;
   }
@@ -455,17 +455,17 @@ public class UpdateServiceDataAttributes {
    * The GitHub repository name associated to this service. eg: rootlyhq/my-service
    * @return githubRepositoryName
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getGithubRepositoryName() {
     return githubRepositoryName;
   }
 
-  public void setGithubRepositoryName(@javax.annotation.Nullable String githubRepositoryName) {
+  public void setGithubRepositoryName(@jakarta.annotation.Nullable String githubRepositoryName) {
     this.githubRepositoryName = githubRepositoryName;
   }
 
 
-  public UpdateServiceDataAttributes githubRepositoryBranch(@javax.annotation.Nullable String githubRepositoryBranch) {
+  public UpdateServiceDataAttributes githubRepositoryBranch(@jakarta.annotation.Nullable String githubRepositoryBranch) {
     this.githubRepositoryBranch = githubRepositoryBranch;
     return this;
   }
@@ -474,17 +474,17 @@ public class UpdateServiceDataAttributes {
    * The GitHub repository branch associated to this service. eg: main
    * @return githubRepositoryBranch
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getGithubRepositoryBranch() {
     return githubRepositoryBranch;
   }
 
-  public void setGithubRepositoryBranch(@javax.annotation.Nullable String githubRepositoryBranch) {
+  public void setGithubRepositoryBranch(@jakarta.annotation.Nullable String githubRepositoryBranch) {
     this.githubRepositoryBranch = githubRepositoryBranch;
   }
 
 
-  public UpdateServiceDataAttributes gitlabRepositoryName(@javax.annotation.Nullable String gitlabRepositoryName) {
+  public UpdateServiceDataAttributes gitlabRepositoryName(@jakarta.annotation.Nullable String gitlabRepositoryName) {
     this.gitlabRepositoryName = gitlabRepositoryName;
     return this;
   }
@@ -493,17 +493,17 @@ public class UpdateServiceDataAttributes {
    * The GitLab repository name associated to this service. eg: rootlyhq/my-service
    * @return gitlabRepositoryName
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getGitlabRepositoryName() {
     return gitlabRepositoryName;
   }
 
-  public void setGitlabRepositoryName(@javax.annotation.Nullable String gitlabRepositoryName) {
+  public void setGitlabRepositoryName(@jakarta.annotation.Nullable String gitlabRepositoryName) {
     this.gitlabRepositoryName = gitlabRepositoryName;
   }
 
 
-  public UpdateServiceDataAttributes gitlabRepositoryBranch(@javax.annotation.Nullable String gitlabRepositoryBranch) {
+  public UpdateServiceDataAttributes gitlabRepositoryBranch(@jakarta.annotation.Nullable String gitlabRepositoryBranch) {
     this.gitlabRepositoryBranch = gitlabRepositoryBranch;
     return this;
   }
@@ -512,17 +512,17 @@ public class UpdateServiceDataAttributes {
    * The GitLab repository branch associated to this service. eg: main
    * @return gitlabRepositoryBranch
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getGitlabRepositoryBranch() {
     return gitlabRepositoryBranch;
   }
 
-  public void setGitlabRepositoryBranch(@javax.annotation.Nullable String gitlabRepositoryBranch) {
+  public void setGitlabRepositoryBranch(@jakarta.annotation.Nullable String gitlabRepositoryBranch) {
     this.gitlabRepositoryBranch = gitlabRepositoryBranch;
   }
 
 
-  public UpdateServiceDataAttributes environmentIds(@javax.annotation.Nullable List<String> environmentIds) {
+  public UpdateServiceDataAttributes environmentIds(@jakarta.annotation.Nullable List<String> environmentIds) {
     this.environmentIds = environmentIds;
     return this;
   }
@@ -539,17 +539,17 @@ public class UpdateServiceDataAttributes {
    * Environments associated with this service
    * @return environmentIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getEnvironmentIds() {
     return environmentIds;
   }
 
-  public void setEnvironmentIds(@javax.annotation.Nullable List<String> environmentIds) {
+  public void setEnvironmentIds(@jakarta.annotation.Nullable List<String> environmentIds) {
     this.environmentIds = environmentIds;
   }
 
 
-  public UpdateServiceDataAttributes serviceIds(@javax.annotation.Nullable List<String> serviceIds) {
+  public UpdateServiceDataAttributes serviceIds(@jakarta.annotation.Nullable List<String> serviceIds) {
     this.serviceIds = serviceIds;
     return this;
   }
@@ -566,17 +566,17 @@ public class UpdateServiceDataAttributes {
    * Services dependent on this service
    * @return serviceIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getServiceIds() {
     return serviceIds;
   }
 
-  public void setServiceIds(@javax.annotation.Nullable List<String> serviceIds) {
+  public void setServiceIds(@jakarta.annotation.Nullable List<String> serviceIds) {
     this.serviceIds = serviceIds;
   }
 
 
-  public UpdateServiceDataAttributes ownerGroupIds(@javax.annotation.Nullable List<String> ownerGroupIds) {
+  public UpdateServiceDataAttributes ownerGroupIds(@jakarta.annotation.Nullable List<String> ownerGroupIds) {
     this.ownerGroupIds = ownerGroupIds;
     return this;
   }
@@ -593,17 +593,17 @@ public class UpdateServiceDataAttributes {
    * Owner Teams associated with this service
    * @return ownerGroupIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getOwnerGroupIds() {
     return ownerGroupIds;
   }
 
-  public void setOwnerGroupIds(@javax.annotation.Nullable List<String> ownerGroupIds) {
+  public void setOwnerGroupIds(@jakarta.annotation.Nullable List<String> ownerGroupIds) {
     this.ownerGroupIds = ownerGroupIds;
   }
 
 
-  public UpdateServiceDataAttributes ownerUserIds(@javax.annotation.Nullable List<Integer> ownerUserIds) {
+  public UpdateServiceDataAttributes ownerUserIds(@jakarta.annotation.Nullable List<Integer> ownerUserIds) {
     this.ownerUserIds = ownerUserIds;
     return this;
   }
@@ -620,17 +620,17 @@ public class UpdateServiceDataAttributes {
    * Owner Users associated with this service
    * @return ownerUserIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<Integer> getOwnerUserIds() {
     return ownerUserIds;
   }
 
-  public void setOwnerUserIds(@javax.annotation.Nullable List<Integer> ownerUserIds) {
+  public void setOwnerUserIds(@jakarta.annotation.Nullable List<Integer> ownerUserIds) {
     this.ownerUserIds = ownerUserIds;
   }
 
 
-  public UpdateServiceDataAttributes alertsEmailEnabled(@javax.annotation.Nullable Boolean alertsEmailEnabled) {
+  public UpdateServiceDataAttributes alertsEmailEnabled(@jakarta.annotation.Nullable Boolean alertsEmailEnabled) {
     this.alertsEmailEnabled = alertsEmailEnabled;
     return this;
   }
@@ -639,17 +639,17 @@ public class UpdateServiceDataAttributes {
    * Enable alerts through email
    * @return alertsEmailEnabled
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getAlertsEmailEnabled() {
     return alertsEmailEnabled;
   }
 
-  public void setAlertsEmailEnabled(@javax.annotation.Nullable Boolean alertsEmailEnabled) {
+  public void setAlertsEmailEnabled(@jakarta.annotation.Nullable Boolean alertsEmailEnabled) {
     this.alertsEmailEnabled = alertsEmailEnabled;
   }
 
 
-  public UpdateServiceDataAttributes alertUrgencyId(@javax.annotation.Nullable String alertUrgencyId) {
+  public UpdateServiceDataAttributes alertUrgencyId(@jakarta.annotation.Nullable String alertUrgencyId) {
     this.alertUrgencyId = alertUrgencyId;
     return this;
   }
@@ -658,17 +658,17 @@ public class UpdateServiceDataAttributes {
    * The alert urgency id of the service
    * @return alertUrgencyId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getAlertUrgencyId() {
     return alertUrgencyId;
   }
 
-  public void setAlertUrgencyId(@javax.annotation.Nullable String alertUrgencyId) {
+  public void setAlertUrgencyId(@jakarta.annotation.Nullable String alertUrgencyId) {
     this.alertUrgencyId = alertUrgencyId;
   }
 
 
-  public UpdateServiceDataAttributes escalationPolicyId(@javax.annotation.Nullable String escalationPolicyId) {
+  public UpdateServiceDataAttributes escalationPolicyId(@jakarta.annotation.Nullable String escalationPolicyId) {
     this.escalationPolicyId = escalationPolicyId;
     return this;
   }
@@ -677,17 +677,17 @@ public class UpdateServiceDataAttributes {
    * The escalation policy id of the service
    * @return escalationPolicyId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getEscalationPolicyId() {
     return escalationPolicyId;
   }
 
-  public void setEscalationPolicyId(@javax.annotation.Nullable String escalationPolicyId) {
+  public void setEscalationPolicyId(@jakarta.annotation.Nullable String escalationPolicyId) {
     this.escalationPolicyId = escalationPolicyId;
   }
 
 
-  public UpdateServiceDataAttributes kubernetesDeploymentName(@javax.annotation.Nullable String kubernetesDeploymentName) {
+  public UpdateServiceDataAttributes kubernetesDeploymentName(@jakarta.annotation.Nullable String kubernetesDeploymentName) {
     this.kubernetesDeploymentName = kubernetesDeploymentName;
     return this;
   }
@@ -696,17 +696,17 @@ public class UpdateServiceDataAttributes {
    * The Kubernetes deployment name associated to this service. eg: namespace/deployment-name
    * @return kubernetesDeploymentName
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getKubernetesDeploymentName() {
     return kubernetesDeploymentName;
   }
 
-  public void setKubernetesDeploymentName(@javax.annotation.Nullable String kubernetesDeploymentName) {
+  public void setKubernetesDeploymentName(@jakarta.annotation.Nullable String kubernetesDeploymentName) {
     this.kubernetesDeploymentName = kubernetesDeploymentName;
   }
 
 
-  public UpdateServiceDataAttributes slackChannels(@javax.annotation.Nullable List<NewEnvironmentDataAttributesSlackChannelsInner> slackChannels) {
+  public UpdateServiceDataAttributes slackChannels(@jakarta.annotation.Nullable List<NewEnvironmentDataAttributesSlackChannelsInner> slackChannels) {
     this.slackChannels = slackChannels;
     return this;
   }
@@ -723,17 +723,17 @@ public class UpdateServiceDataAttributes {
    * Slack Channels associated with this service
    * @return slackChannels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewEnvironmentDataAttributesSlackChannelsInner> getSlackChannels() {
     return slackChannels;
   }
 
-  public void setSlackChannels(@javax.annotation.Nullable List<NewEnvironmentDataAttributesSlackChannelsInner> slackChannels) {
+  public void setSlackChannels(@jakarta.annotation.Nullable List<NewEnvironmentDataAttributesSlackChannelsInner> slackChannels) {
     this.slackChannels = slackChannels;
   }
 
 
-  public UpdateServiceDataAttributes slackAliases(@javax.annotation.Nullable List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases) {
+  public UpdateServiceDataAttributes slackAliases(@jakarta.annotation.Nullable List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases) {
     this.slackAliases = slackAliases;
     return this;
   }
@@ -750,17 +750,17 @@ public class UpdateServiceDataAttributes {
    * Slack Aliases associated with this service
    * @return slackAliases
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewEnvironmentDataAttributesSlackAliasesInner> getSlackAliases() {
     return slackAliases;
   }
 
-  public void setSlackAliases(@javax.annotation.Nullable List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases) {
+  public void setSlackAliases(@jakarta.annotation.Nullable List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases) {
     this.slackAliases = slackAliases;
   }
 
 
-  public UpdateServiceDataAttributes alertBroadcastEnabled(@javax.annotation.Nullable Boolean alertBroadcastEnabled) {
+  public UpdateServiceDataAttributes alertBroadcastEnabled(@jakarta.annotation.Nullable Boolean alertBroadcastEnabled) {
     this.alertBroadcastEnabled = alertBroadcastEnabled;
     return this;
   }
@@ -769,17 +769,17 @@ public class UpdateServiceDataAttributes {
    * Enable alerts to be broadcasted to a specific channel
    * @return alertBroadcastEnabled
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getAlertBroadcastEnabled() {
     return alertBroadcastEnabled;
   }
 
-  public void setAlertBroadcastEnabled(@javax.annotation.Nullable Boolean alertBroadcastEnabled) {
+  public void setAlertBroadcastEnabled(@jakarta.annotation.Nullable Boolean alertBroadcastEnabled) {
     this.alertBroadcastEnabled = alertBroadcastEnabled;
   }
 
 
-  public UpdateServiceDataAttributes alertBroadcastChannel(@javax.annotation.Nullable NewServiceDataAttributesAlertBroadcastChannel alertBroadcastChannel) {
+  public UpdateServiceDataAttributes alertBroadcastChannel(@jakarta.annotation.Nullable NewServiceDataAttributesAlertBroadcastChannel alertBroadcastChannel) {
     this.alertBroadcastChannel = alertBroadcastChannel;
     return this;
   }
@@ -788,17 +788,17 @@ public class UpdateServiceDataAttributes {
    * Get alertBroadcastChannel
    * @return alertBroadcastChannel
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public NewServiceDataAttributesAlertBroadcastChannel getAlertBroadcastChannel() {
     return alertBroadcastChannel;
   }
 
-  public void setAlertBroadcastChannel(@javax.annotation.Nullable NewServiceDataAttributesAlertBroadcastChannel alertBroadcastChannel) {
+  public void setAlertBroadcastChannel(@jakarta.annotation.Nullable NewServiceDataAttributesAlertBroadcastChannel alertBroadcastChannel) {
     this.alertBroadcastChannel = alertBroadcastChannel;
   }
 
 
-  public UpdateServiceDataAttributes incidentBroadcastEnabled(@javax.annotation.Nullable Boolean incidentBroadcastEnabled) {
+  public UpdateServiceDataAttributes incidentBroadcastEnabled(@jakarta.annotation.Nullable Boolean incidentBroadcastEnabled) {
     this.incidentBroadcastEnabled = incidentBroadcastEnabled;
     return this;
   }
@@ -807,17 +807,17 @@ public class UpdateServiceDataAttributes {
    * Enable incidents to be broadcasted to a specific channel
    * @return incidentBroadcastEnabled
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getIncidentBroadcastEnabled() {
     return incidentBroadcastEnabled;
   }
 
-  public void setIncidentBroadcastEnabled(@javax.annotation.Nullable Boolean incidentBroadcastEnabled) {
+  public void setIncidentBroadcastEnabled(@jakarta.annotation.Nullable Boolean incidentBroadcastEnabled) {
     this.incidentBroadcastEnabled = incidentBroadcastEnabled;
   }
 
 
-  public UpdateServiceDataAttributes incidentBroadcastChannel(@javax.annotation.Nullable NewServiceDataAttributesIncidentBroadcastChannel incidentBroadcastChannel) {
+  public UpdateServiceDataAttributes incidentBroadcastChannel(@jakarta.annotation.Nullable NewServiceDataAttributesIncidentBroadcastChannel incidentBroadcastChannel) {
     this.incidentBroadcastChannel = incidentBroadcastChannel;
     return this;
   }
@@ -826,12 +826,12 @@ public class UpdateServiceDataAttributes {
    * Get incidentBroadcastChannel
    * @return incidentBroadcastChannel
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public NewServiceDataAttributesIncidentBroadcastChannel getIncidentBroadcastChannel() {
     return incidentBroadcastChannel;
   }
 
-  public void setIncidentBroadcastChannel(@javax.annotation.Nullable NewServiceDataAttributesIncidentBroadcastChannel incidentBroadcastChannel) {
+  public void setIncidentBroadcastChannel(@jakarta.annotation.Nullable NewServiceDataAttributesIncidentBroadcastChannel incidentBroadcastChannel) {
     this.incidentBroadcastChannel = incidentBroadcastChannel;
   }
 

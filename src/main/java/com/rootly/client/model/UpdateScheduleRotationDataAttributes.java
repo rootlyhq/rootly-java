@@ -54,16 +54,16 @@ import com.rootly.client.JSON;
 /**
  * UpdateScheduleRotationDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateScheduleRotationDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   /**
@@ -126,12 +126,12 @@ public class UpdateScheduleRotationDataAttributes {
 
   public static final String SERIALIZED_NAME_SCHEDULE_ROTATIONABLE_TYPE = "schedule_rotationable_type";
   @SerializedName(SERIALIZED_NAME_SCHEDULE_ROTATIONABLE_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private ScheduleRotationableTypeEnum scheduleRotationableType;
 
   public static final String SERIALIZED_NAME_ACTIVE_ALL_WEEK = "active_all_week";
   @SerializedName(SERIALIZED_NAME_ACTIVE_ALL_WEEK)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean activeAllWeek = true;
 
   /**
@@ -198,7 +198,7 @@ public class UpdateScheduleRotationDataAttributes {
 
   public static final String SERIALIZED_NAME_ACTIVE_DAYS = "active_days";
   @SerializedName(SERIALIZED_NAME_ACTIVE_DAYS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<ActiveDaysEnum> activeDays = new ArrayList<>();
 
   /**
@@ -257,43 +257,43 @@ public class UpdateScheduleRotationDataAttributes {
 
   public static final String SERIALIZED_NAME_ACTIVE_TIME_TYPE = "active_time_type";
   @SerializedName(SERIALIZED_NAME_ACTIVE_TIME_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<ActiveTimeTypeEnum> activeTimeType = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ACTIVE_TIME_ATTRIBUTES = "active_time_attributes";
   @SerializedName(SERIALIZED_NAME_ACTIVE_TIME_ATTRIBUTES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewScheduleRotationDataAttributesActiveTimeAttributesInner> activeTimeAttributes = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TIME_ZONE = "time_zone";
   @SerializedName(SERIALIZED_NAME_TIME_ZONE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String timeZone = "Etc/UTC";
 
   public static final String SERIALIZED_NAME_SCHEDULE_ROTATIONABLE_ATTRIBUTES = "schedule_rotationable_attributes";
   @SerializedName(SERIALIZED_NAME_SCHEDULE_ROTATIONABLE_ATTRIBUTES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private NewScheduleRotationDataAttributesScheduleRotationableAttributes scheduleRotationableAttributes;
 
   public static final String SERIALIZED_NAME_START_TIME = "start_time";
   @SerializedName(SERIALIZED_NAME_START_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String startTime;
 
   public static final String SERIALIZED_NAME_END_TIME = "end_time";
   @SerializedName(SERIALIZED_NAME_END_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String endTime;
 
   public static final String SERIALIZED_NAME_SCHEDULE_ROTATION_MEMBERS = "schedule_rotation_members";
   @SerializedName(SERIALIZED_NAME_SCHEDULE_ROTATION_MEMBERS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewScheduleRotationDataAttributesScheduleRotationMembersInner> scheduleRotationMembers;
 
   public UpdateScheduleRotationDataAttributes() {
   }
 
-  public UpdateScheduleRotationDataAttributes name(@javax.annotation.Nullable String name) {
+  public UpdateScheduleRotationDataAttributes name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -302,17 +302,17 @@ public class UpdateScheduleRotationDataAttributes {
    * The name of the schedule rotation
    * @return name
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public UpdateScheduleRotationDataAttributes position(@javax.annotation.Nullable Integer position) {
+  public UpdateScheduleRotationDataAttributes position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -321,17 +321,17 @@ public class UpdateScheduleRotationDataAttributes {
    * Position of the schedule rotation
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 
 
-  public UpdateScheduleRotationDataAttributes scheduleRotationableType(@javax.annotation.Nonnull ScheduleRotationableTypeEnum scheduleRotationableType) {
+  public UpdateScheduleRotationDataAttributes scheduleRotationableType(@jakarta.annotation.Nonnull ScheduleRotationableTypeEnum scheduleRotationableType) {
     this.scheduleRotationableType = scheduleRotationableType;
     return this;
   }
@@ -340,17 +340,17 @@ public class UpdateScheduleRotationDataAttributes {
    * Schedule rotation type
    * @return scheduleRotationableType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public ScheduleRotationableTypeEnum getScheduleRotationableType() {
     return scheduleRotationableType;
   }
 
-  public void setScheduleRotationableType(@javax.annotation.Nonnull ScheduleRotationableTypeEnum scheduleRotationableType) {
+  public void setScheduleRotationableType(@jakarta.annotation.Nonnull ScheduleRotationableTypeEnum scheduleRotationableType) {
     this.scheduleRotationableType = scheduleRotationableType;
   }
 
 
-  public UpdateScheduleRotationDataAttributes activeAllWeek(@javax.annotation.Nullable Boolean activeAllWeek) {
+  public UpdateScheduleRotationDataAttributes activeAllWeek(@jakarta.annotation.Nullable Boolean activeAllWeek) {
     this.activeAllWeek = activeAllWeek;
     return this;
   }
@@ -359,17 +359,17 @@ public class UpdateScheduleRotationDataAttributes {
    * Schedule rotation active all week?
    * @return activeAllWeek
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getActiveAllWeek() {
     return activeAllWeek;
   }
 
-  public void setActiveAllWeek(@javax.annotation.Nullable Boolean activeAllWeek) {
+  public void setActiveAllWeek(@jakarta.annotation.Nullable Boolean activeAllWeek) {
     this.activeAllWeek = activeAllWeek;
   }
 
 
-  public UpdateScheduleRotationDataAttributes activeDays(@javax.annotation.Nullable List<ActiveDaysEnum> activeDays) {
+  public UpdateScheduleRotationDataAttributes activeDays(@jakarta.annotation.Nullable List<ActiveDaysEnum> activeDays) {
     this.activeDays = activeDays;
     return this;
   }
@@ -386,17 +386,17 @@ public class UpdateScheduleRotationDataAttributes {
    * Get activeDays
    * @return activeDays
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<ActiveDaysEnum> getActiveDays() {
     return activeDays;
   }
 
-  public void setActiveDays(@javax.annotation.Nullable List<ActiveDaysEnum> activeDays) {
+  public void setActiveDays(@jakarta.annotation.Nullable List<ActiveDaysEnum> activeDays) {
     this.activeDays = activeDays;
   }
 
 
-  public UpdateScheduleRotationDataAttributes activeTimeType(@javax.annotation.Nullable List<ActiveTimeTypeEnum> activeTimeType) {
+  public UpdateScheduleRotationDataAttributes activeTimeType(@jakarta.annotation.Nullable List<ActiveTimeTypeEnum> activeTimeType) {
     this.activeTimeType = activeTimeType;
     return this;
   }
@@ -413,17 +413,17 @@ public class UpdateScheduleRotationDataAttributes {
    * Get activeTimeType
    * @return activeTimeType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<ActiveTimeTypeEnum> getActiveTimeType() {
     return activeTimeType;
   }
 
-  public void setActiveTimeType(@javax.annotation.Nullable List<ActiveTimeTypeEnum> activeTimeType) {
+  public void setActiveTimeType(@jakarta.annotation.Nullable List<ActiveTimeTypeEnum> activeTimeType) {
     this.activeTimeType = activeTimeType;
   }
 
 
-  public UpdateScheduleRotationDataAttributes activeTimeAttributes(@javax.annotation.Nullable List<NewScheduleRotationDataAttributesActiveTimeAttributesInner> activeTimeAttributes) {
+  public UpdateScheduleRotationDataAttributes activeTimeAttributes(@jakarta.annotation.Nullable List<NewScheduleRotationDataAttributesActiveTimeAttributesInner> activeTimeAttributes) {
     this.activeTimeAttributes = activeTimeAttributes;
     return this;
   }
@@ -440,17 +440,17 @@ public class UpdateScheduleRotationDataAttributes {
    * Schedule rotation&#39;s active times
    * @return activeTimeAttributes
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewScheduleRotationDataAttributesActiveTimeAttributesInner> getActiveTimeAttributes() {
     return activeTimeAttributes;
   }
 
-  public void setActiveTimeAttributes(@javax.annotation.Nullable List<NewScheduleRotationDataAttributesActiveTimeAttributesInner> activeTimeAttributes) {
+  public void setActiveTimeAttributes(@jakarta.annotation.Nullable List<NewScheduleRotationDataAttributesActiveTimeAttributesInner> activeTimeAttributes) {
     this.activeTimeAttributes = activeTimeAttributes;
   }
 
 
-  public UpdateScheduleRotationDataAttributes timeZone(@javax.annotation.Nullable String timeZone) {
+  public UpdateScheduleRotationDataAttributes timeZone(@jakarta.annotation.Nullable String timeZone) {
     this.timeZone = timeZone;
     return this;
   }
@@ -459,17 +459,17 @@ public class UpdateScheduleRotationDataAttributes {
    * A valid IANA time zone name.
    * @return timeZone
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTimeZone() {
     return timeZone;
   }
 
-  public void setTimeZone(@javax.annotation.Nullable String timeZone) {
+  public void setTimeZone(@jakarta.annotation.Nullable String timeZone) {
     this.timeZone = timeZone;
   }
 
 
-  public UpdateScheduleRotationDataAttributes scheduleRotationableAttributes(@javax.annotation.Nullable NewScheduleRotationDataAttributesScheduleRotationableAttributes scheduleRotationableAttributes) {
+  public UpdateScheduleRotationDataAttributes scheduleRotationableAttributes(@jakarta.annotation.Nullable NewScheduleRotationDataAttributesScheduleRotationableAttributes scheduleRotationableAttributes) {
     this.scheduleRotationableAttributes = scheduleRotationableAttributes;
     return this;
   }
@@ -478,17 +478,17 @@ public class UpdateScheduleRotationDataAttributes {
    * Get scheduleRotationableAttributes
    * @return scheduleRotationableAttributes
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public NewScheduleRotationDataAttributesScheduleRotationableAttributes getScheduleRotationableAttributes() {
     return scheduleRotationableAttributes;
   }
 
-  public void setScheduleRotationableAttributes(@javax.annotation.Nullable NewScheduleRotationDataAttributesScheduleRotationableAttributes scheduleRotationableAttributes) {
+  public void setScheduleRotationableAttributes(@jakarta.annotation.Nullable NewScheduleRotationDataAttributesScheduleRotationableAttributes scheduleRotationableAttributes) {
     this.scheduleRotationableAttributes = scheduleRotationableAttributes;
   }
 
 
-  public UpdateScheduleRotationDataAttributes startTime(@javax.annotation.Nullable String startTime) {
+  public UpdateScheduleRotationDataAttributes startTime(@jakarta.annotation.Nullable String startTime) {
     this.startTime = startTime;
     return this;
   }
@@ -497,17 +497,17 @@ public class UpdateScheduleRotationDataAttributes {
    * ISO8601 date and time when rotation starts. Shifts will only be created after this time.
    * @return startTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getStartTime() {
     return startTime;
   }
 
-  public void setStartTime(@javax.annotation.Nullable String startTime) {
+  public void setStartTime(@jakarta.annotation.Nullable String startTime) {
     this.startTime = startTime;
   }
 
 
-  public UpdateScheduleRotationDataAttributes endTime(@javax.annotation.Nullable String endTime) {
+  public UpdateScheduleRotationDataAttributes endTime(@jakarta.annotation.Nullable String endTime) {
     this.endTime = endTime;
     return this;
   }
@@ -516,17 +516,17 @@ public class UpdateScheduleRotationDataAttributes {
    * ISO8601 date and time when rotation ends. Shifts will only be created before this time.
    * @return endTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getEndTime() {
     return endTime;
   }
 
-  public void setEndTime(@javax.annotation.Nullable String endTime) {
+  public void setEndTime(@jakarta.annotation.Nullable String endTime) {
     this.endTime = endTime;
   }
 
 
-  public UpdateScheduleRotationDataAttributes scheduleRotationMembers(@javax.annotation.Nullable List<NewScheduleRotationDataAttributesScheduleRotationMembersInner> scheduleRotationMembers) {
+  public UpdateScheduleRotationDataAttributes scheduleRotationMembers(@jakarta.annotation.Nullable List<NewScheduleRotationDataAttributesScheduleRotationMembersInner> scheduleRotationMembers) {
     this.scheduleRotationMembers = scheduleRotationMembers;
     return this;
   }
@@ -543,12 +543,12 @@ public class UpdateScheduleRotationDataAttributes {
    * You can only update schedule rotation members if your account has schedule nesting feature enabled
    * @return scheduleRotationMembers
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewScheduleRotationDataAttributesScheduleRotationMembersInner> getScheduleRotationMembers() {
     return scheduleRotationMembers;
   }
 
-  public void setScheduleRotationMembers(@javax.annotation.Nullable List<NewScheduleRotationDataAttributesScheduleRotationMembersInner> scheduleRotationMembers) {
+  public void setScheduleRotationMembers(@jakarta.annotation.Nullable List<NewScheduleRotationDataAttributesScheduleRotationMembersInner> scheduleRotationMembers) {
     this.scheduleRotationMembers = scheduleRotationMembers;
   }
 

@@ -90,7 +90,7 @@ public class CommunicationsTemplatesApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createCommunicationsTemplateCall(@javax.annotation.Nonnull NewCommunicationsTemplate newCommunicationsTemplate, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createCommunicationsTemplateCall(@jakarta.annotation.Nonnull NewCommunicationsTemplate newCommunicationsTemplate, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -136,7 +136,7 @@ public class CommunicationsTemplatesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createCommunicationsTemplateValidateBeforeCall(@javax.annotation.Nonnull NewCommunicationsTemplate newCommunicationsTemplate, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createCommunicationsTemplateValidateBeforeCall(@jakarta.annotation.Nonnull NewCommunicationsTemplate newCommunicationsTemplate, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'newCommunicationsTemplate' is set
         if (newCommunicationsTemplate == null) {
             throw new ApiException("Missing the required parameter 'newCommunicationsTemplate' when calling createCommunicationsTemplate(Async)");
@@ -160,7 +160,7 @@ public class CommunicationsTemplatesApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public CommunicationsTemplateResponse createCommunicationsTemplate(@javax.annotation.Nonnull NewCommunicationsTemplate newCommunicationsTemplate) throws ApiException {
+    public CommunicationsTemplateResponse createCommunicationsTemplate(@jakarta.annotation.Nonnull NewCommunicationsTemplate newCommunicationsTemplate) throws ApiException {
         ApiResponse<CommunicationsTemplateResponse> localVarResp = createCommunicationsTemplateWithHttpInfo(newCommunicationsTemplate);
         return localVarResp.getData();
     }
@@ -179,7 +179,7 @@ public class CommunicationsTemplatesApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CommunicationsTemplateResponse> createCommunicationsTemplateWithHttpInfo(@javax.annotation.Nonnull NewCommunicationsTemplate newCommunicationsTemplate) throws ApiException {
+    public ApiResponse<CommunicationsTemplateResponse> createCommunicationsTemplateWithHttpInfo(@jakarta.annotation.Nonnull NewCommunicationsTemplate newCommunicationsTemplate) throws ApiException {
         okhttp3.Call localVarCall = createCommunicationsTemplateValidateBeforeCall(newCommunicationsTemplate, null);
         Type localVarReturnType = new TypeToken<CommunicationsTemplateResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -200,7 +200,7 @@ public class CommunicationsTemplatesApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createCommunicationsTemplateAsync(@javax.annotation.Nonnull NewCommunicationsTemplate newCommunicationsTemplate, final ApiCallback<CommunicationsTemplateResponse> _callback) throws ApiException {
+    public okhttp3.Call createCommunicationsTemplateAsync(@jakarta.annotation.Nonnull NewCommunicationsTemplate newCommunicationsTemplate, final ApiCallback<CommunicationsTemplateResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createCommunicationsTemplateValidateBeforeCall(newCommunicationsTemplate, _callback);
         Type localVarReturnType = new TypeToken<CommunicationsTemplateResponse>(){}.getType();
@@ -221,7 +221,7 @@ public class CommunicationsTemplatesApi {
         <tr><td> 404 </td><td> communications template not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteCommunicationsTemplateCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteCommunicationsTemplateCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -267,7 +267,7 @@ public class CommunicationsTemplatesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteCommunicationsTemplateValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteCommunicationsTemplateValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteCommunicationsTemplate(Async)");
@@ -290,7 +290,7 @@ public class CommunicationsTemplatesApi {
         <tr><td> 404 </td><td> communications template not found </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteCommunicationsTemplate(@javax.annotation.Nonnull String id) throws ApiException {
+    public void deleteCommunicationsTemplate(@jakarta.annotation.Nonnull String id) throws ApiException {
         deleteCommunicationsTemplateWithHttpInfo(id);
     }
 
@@ -308,7 +308,7 @@ public class CommunicationsTemplatesApi {
         <tr><td> 404 </td><td> communications template not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteCommunicationsTemplateWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<Void> deleteCommunicationsTemplateWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteCommunicationsTemplateValidateBeforeCall(id, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -328,7 +328,7 @@ public class CommunicationsTemplatesApi {
         <tr><td> 404 </td><td> communications template not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteCommunicationsTemplateAsync(@javax.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteCommunicationsTemplateAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteCommunicationsTemplateValidateBeforeCall(id, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -348,7 +348,7 @@ public class CommunicationsTemplatesApi {
         <tr><td> 404 </td><td> communications template not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCommunicationsTemplateCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCommunicationsTemplateCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -394,7 +394,7 @@ public class CommunicationsTemplatesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCommunicationsTemplateValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCommunicationsTemplateValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getCommunicationsTemplate(Async)");
@@ -418,7 +418,7 @@ public class CommunicationsTemplatesApi {
         <tr><td> 404 </td><td> communications template not found </td><td>  -  </td></tr>
      </table>
      */
-    public CommunicationsTemplateResponse getCommunicationsTemplate(@javax.annotation.Nonnull String id) throws ApiException {
+    public CommunicationsTemplateResponse getCommunicationsTemplate(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<CommunicationsTemplateResponse> localVarResp = getCommunicationsTemplateWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -437,7 +437,7 @@ public class CommunicationsTemplatesApi {
         <tr><td> 404 </td><td> communications template not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CommunicationsTemplateResponse> getCommunicationsTemplateWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<CommunicationsTemplateResponse> getCommunicationsTemplateWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getCommunicationsTemplateValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<CommunicationsTemplateResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -458,7 +458,7 @@ public class CommunicationsTemplatesApi {
         <tr><td> 404 </td><td> communications template not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCommunicationsTemplateAsync(@javax.annotation.Nonnull String id, final ApiCallback<CommunicationsTemplateResponse> _callback) throws ApiException {
+    public okhttp3.Call getCommunicationsTemplateAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<CommunicationsTemplateResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCommunicationsTemplateValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<CommunicationsTemplateResponse>(){}.getType();
@@ -488,7 +488,7 @@ public class CommunicationsTemplatesApi {
         <tr><td> 200 </td><td> communications templates found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listCommunicationsTemplatesCall(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterCommunicationTypeId, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listCommunicationsTemplatesCall(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterCommunicationTypeId, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -577,7 +577,7 @@ public class CommunicationsTemplatesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listCommunicationsTemplatesValidateBeforeCall(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterCommunicationTypeId, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listCommunicationsTemplatesValidateBeforeCall(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterCommunicationTypeId, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         return listCommunicationsTemplatesCall(pageNumber, pageSize, filterSearch, filterName, filterSlug, filterCommunicationTypeId, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
 
     }
@@ -605,7 +605,7 @@ public class CommunicationsTemplatesApi {
         <tr><td> 200 </td><td> communications templates found </td><td>  -  </td></tr>
      </table>
      */
-    public CommunicationsTemplatesResponse listCommunicationsTemplates(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterCommunicationTypeId, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+    public CommunicationsTemplatesResponse listCommunicationsTemplates(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterCommunicationTypeId, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
         ApiResponse<CommunicationsTemplatesResponse> localVarResp = listCommunicationsTemplatesWithHttpInfo(pageNumber, pageSize, filterSearch, filterName, filterSlug, filterCommunicationTypeId, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
         return localVarResp.getData();
     }
@@ -633,7 +633,7 @@ public class CommunicationsTemplatesApi {
         <tr><td> 200 </td><td> communications templates found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CommunicationsTemplatesResponse> listCommunicationsTemplatesWithHttpInfo(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterCommunicationTypeId, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+    public ApiResponse<CommunicationsTemplatesResponse> listCommunicationsTemplatesWithHttpInfo(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterCommunicationTypeId, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
         okhttp3.Call localVarCall = listCommunicationsTemplatesValidateBeforeCall(pageNumber, pageSize, filterSearch, filterName, filterSlug, filterCommunicationTypeId, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, null);
         Type localVarReturnType = new TypeToken<CommunicationsTemplatesResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -663,7 +663,7 @@ public class CommunicationsTemplatesApi {
         <tr><td> 200 </td><td> communications templates found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listCommunicationsTemplatesAsync(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterCommunicationTypeId, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback<CommunicationsTemplatesResponse> _callback) throws ApiException {
+    public okhttp3.Call listCommunicationsTemplatesAsync(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterCommunicationTypeId, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback<CommunicationsTemplatesResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listCommunicationsTemplatesValidateBeforeCall(pageNumber, pageSize, filterSearch, filterName, filterSlug, filterCommunicationTypeId, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
         Type localVarReturnType = new TypeToken<CommunicationsTemplatesResponse>(){}.getType();
@@ -685,7 +685,7 @@ public class CommunicationsTemplatesApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateCommunicationsTemplateCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateCommunicationsTemplate updateCommunicationsTemplate, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateCommunicationsTemplateCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateCommunicationsTemplate updateCommunicationsTemplate, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -732,7 +732,7 @@ public class CommunicationsTemplatesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateCommunicationsTemplateValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateCommunicationsTemplate updateCommunicationsTemplate, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateCommunicationsTemplateValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateCommunicationsTemplate updateCommunicationsTemplate, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateCommunicationsTemplate(Async)");
@@ -762,7 +762,7 @@ public class CommunicationsTemplatesApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public CommunicationsTemplateResponse updateCommunicationsTemplate(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateCommunicationsTemplate updateCommunicationsTemplate) throws ApiException {
+    public CommunicationsTemplateResponse updateCommunicationsTemplate(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateCommunicationsTemplate updateCommunicationsTemplate) throws ApiException {
         ApiResponse<CommunicationsTemplateResponse> localVarResp = updateCommunicationsTemplateWithHttpInfo(id, updateCommunicationsTemplate);
         return localVarResp.getData();
     }
@@ -782,7 +782,7 @@ public class CommunicationsTemplatesApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CommunicationsTemplateResponse> updateCommunicationsTemplateWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateCommunicationsTemplate updateCommunicationsTemplate) throws ApiException {
+    public ApiResponse<CommunicationsTemplateResponse> updateCommunicationsTemplateWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateCommunicationsTemplate updateCommunicationsTemplate) throws ApiException {
         okhttp3.Call localVarCall = updateCommunicationsTemplateValidateBeforeCall(id, updateCommunicationsTemplate, null);
         Type localVarReturnType = new TypeToken<CommunicationsTemplateResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -804,7 +804,7 @@ public class CommunicationsTemplatesApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateCommunicationsTemplateAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateCommunicationsTemplate updateCommunicationsTemplate, final ApiCallback<CommunicationsTemplateResponse> _callback) throws ApiException {
+    public okhttp3.Call updateCommunicationsTemplateAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateCommunicationsTemplate updateCommunicationsTemplate, final ApiCallback<CommunicationsTemplateResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateCommunicationsTemplateValidateBeforeCall(id, updateCommunicationsTemplate, _callback);
         Type localVarReturnType = new TypeToken<CommunicationsTemplateResponse>(){}.getType();

@@ -52,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateGoogleCalendarEventTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateGoogleCalendarEventTaskParams {
   /**
    * Gets or Sets taskType
@@ -106,72 +106,72 @@ public class UpdateGoogleCalendarEventTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_CALENDAR_ID = "calendar_id";
   @SerializedName(SERIALIZED_NAME_CALENDAR_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String calendarId = "primary";
 
   public static final String SERIALIZED_NAME_EVENT_ID = "event_id";
   @SerializedName(SERIALIZED_NAME_EVENT_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String eventId;
 
   public static final String SERIALIZED_NAME_SUMMARY = "summary";
   @SerializedName(SERIALIZED_NAME_SUMMARY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String summary;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_ADJUSTMENT_DAYS = "adjustment_days";
   @SerializedName(SERIALIZED_NAME_ADJUSTMENT_DAYS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer adjustmentDays;
 
   public static final String SERIALIZED_NAME_TIME_OF_MEETING = "time_of_meeting";
   @SerializedName(SERIALIZED_NAME_TIME_OF_MEETING)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String timeOfMeeting;
 
   public static final String SERIALIZED_NAME_MEETING_DURATION = "meeting_duration";
   @SerializedName(SERIALIZED_NAME_MEETING_DURATION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String meetingDuration;
 
   public static final String SERIALIZED_NAME_SEND_UPDATES = "send_updates";
   @SerializedName(SERIALIZED_NAME_SEND_UPDATES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean sendUpdates;
 
   public static final String SERIALIZED_NAME_CAN_GUESTS_MODIFY_EVENT = "can_guests_modify_event";
   @SerializedName(SERIALIZED_NAME_CAN_GUESTS_MODIFY_EVENT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean canGuestsModifyEvent;
 
   public static final String SERIALIZED_NAME_CAN_GUESTS_SEE_OTHER_GUESTS = "can_guests_see_other_guests";
   @SerializedName(SERIALIZED_NAME_CAN_GUESTS_SEE_OTHER_GUESTS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean canGuestsSeeOtherGuests;
 
   public static final String SERIALIZED_NAME_CAN_GUESTS_INVITE_OTHERS = "can_guests_invite_others";
   @SerializedName(SERIALIZED_NAME_CAN_GUESTS_INVITE_OTHERS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean canGuestsInviteOthers;
 
   public static final String SERIALIZED_NAME_ATTENDEES = "attendees";
   @SerializedName(SERIALIZED_NAME_ATTENDEES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> attendees = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_REPLACE_ATTENDEES = "replace_attendees";
   @SerializedName(SERIALIZED_NAME_REPLACE_ATTENDEES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean replaceAttendees;
 
   /**
@@ -232,23 +232,23 @@ public class UpdateGoogleCalendarEventTaskParams {
 
   public static final String SERIALIZED_NAME_CONFERENCE_SOLUTION_KEY = "conference_solution_key";
   @SerializedName(SERIALIZED_NAME_CONFERENCE_SOLUTION_KEY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ConferenceSolutionKeyEnum conferenceSolutionKey;
 
   public static final String SERIALIZED_NAME_POST_TO_INCIDENT_TIMELINE = "post_to_incident_timeline";
   @SerializedName(SERIALIZED_NAME_POST_TO_INCIDENT_TIMELINE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean postToIncidentTimeline;
 
   public static final String SERIALIZED_NAME_POST_TO_SLACK_CHANNELS = "post_to_slack_channels";
   @SerializedName(SERIALIZED_NAME_POST_TO_SLACK_CHANNELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels = new ArrayList<>();
 
   public UpdateGoogleCalendarEventTaskParams() {
   }
 
-  public UpdateGoogleCalendarEventTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public UpdateGoogleCalendarEventTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -257,17 +257,17 @@ public class UpdateGoogleCalendarEventTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public UpdateGoogleCalendarEventTaskParams calendarId(@javax.annotation.Nullable String calendarId) {
+  public UpdateGoogleCalendarEventTaskParams calendarId(@jakarta.annotation.Nullable String calendarId) {
     this.calendarId = calendarId;
     return this;
   }
@@ -276,17 +276,17 @@ public class UpdateGoogleCalendarEventTaskParams {
    * Get calendarId
    * @return calendarId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCalendarId() {
     return calendarId;
   }
 
-  public void setCalendarId(@javax.annotation.Nullable String calendarId) {
+  public void setCalendarId(@jakarta.annotation.Nullable String calendarId) {
     this.calendarId = calendarId;
   }
 
 
-  public UpdateGoogleCalendarEventTaskParams eventId(@javax.annotation.Nonnull String eventId) {
+  public UpdateGoogleCalendarEventTaskParams eventId(@jakarta.annotation.Nonnull String eventId) {
     this.eventId = eventId;
     return this;
   }
@@ -295,17 +295,17 @@ public class UpdateGoogleCalendarEventTaskParams {
    * The event ID
    * @return eventId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getEventId() {
     return eventId;
   }
 
-  public void setEventId(@javax.annotation.Nonnull String eventId) {
+  public void setEventId(@jakarta.annotation.Nonnull String eventId) {
     this.eventId = eventId;
   }
 
 
-  public UpdateGoogleCalendarEventTaskParams summary(@javax.annotation.Nullable String summary) {
+  public UpdateGoogleCalendarEventTaskParams summary(@jakarta.annotation.Nullable String summary) {
     this.summary = summary;
     return this;
   }
@@ -314,17 +314,17 @@ public class UpdateGoogleCalendarEventTaskParams {
    * The event summary
    * @return summary
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSummary() {
     return summary;
   }
 
-  public void setSummary(@javax.annotation.Nullable String summary) {
+  public void setSummary(@jakarta.annotation.Nullable String summary) {
     this.summary = summary;
   }
 
 
-  public UpdateGoogleCalendarEventTaskParams description(@javax.annotation.Nullable String description) {
+  public UpdateGoogleCalendarEventTaskParams description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -333,17 +333,17 @@ public class UpdateGoogleCalendarEventTaskParams {
    * The event description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UpdateGoogleCalendarEventTaskParams adjustmentDays(@javax.annotation.Nullable Integer adjustmentDays) {
+  public UpdateGoogleCalendarEventTaskParams adjustmentDays(@jakarta.annotation.Nullable Integer adjustmentDays) {
     this.adjustmentDays = adjustmentDays;
     return this;
   }
@@ -354,17 +354,17 @@ public class UpdateGoogleCalendarEventTaskParams {
    * maximum: 31
    * @return adjustmentDays
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getAdjustmentDays() {
     return adjustmentDays;
   }
 
-  public void setAdjustmentDays(@javax.annotation.Nullable Integer adjustmentDays) {
+  public void setAdjustmentDays(@jakarta.annotation.Nullable Integer adjustmentDays) {
     this.adjustmentDays = adjustmentDays;
   }
 
 
-  public UpdateGoogleCalendarEventTaskParams timeOfMeeting(@javax.annotation.Nullable String timeOfMeeting) {
+  public UpdateGoogleCalendarEventTaskParams timeOfMeeting(@jakarta.annotation.Nullable String timeOfMeeting) {
     this.timeOfMeeting = timeOfMeeting;
     return this;
   }
@@ -373,17 +373,17 @@ public class UpdateGoogleCalendarEventTaskParams {
    * Time of meeting in format HH:MM
    * @return timeOfMeeting
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTimeOfMeeting() {
     return timeOfMeeting;
   }
 
-  public void setTimeOfMeeting(@javax.annotation.Nullable String timeOfMeeting) {
+  public void setTimeOfMeeting(@jakarta.annotation.Nullable String timeOfMeeting) {
     this.timeOfMeeting = timeOfMeeting;
   }
 
 
-  public UpdateGoogleCalendarEventTaskParams meetingDuration(@javax.annotation.Nullable String meetingDuration) {
+  public UpdateGoogleCalendarEventTaskParams meetingDuration(@jakarta.annotation.Nullable String meetingDuration) {
     this.meetingDuration = meetingDuration;
     return this;
   }
@@ -392,17 +392,17 @@ public class UpdateGoogleCalendarEventTaskParams {
    * Meeting duration in format like &#39;1 hour&#39;, &#39;30 minutes&#39;
    * @return meetingDuration
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getMeetingDuration() {
     return meetingDuration;
   }
 
-  public void setMeetingDuration(@javax.annotation.Nullable String meetingDuration) {
+  public void setMeetingDuration(@jakarta.annotation.Nullable String meetingDuration) {
     this.meetingDuration = meetingDuration;
   }
 
 
-  public UpdateGoogleCalendarEventTaskParams sendUpdates(@javax.annotation.Nullable Boolean sendUpdates) {
+  public UpdateGoogleCalendarEventTaskParams sendUpdates(@jakarta.annotation.Nullable Boolean sendUpdates) {
     this.sendUpdates = sendUpdates;
     return this;
   }
@@ -411,17 +411,17 @@ public class UpdateGoogleCalendarEventTaskParams {
    * Send an email to the attendees notifying them of the event
    * @return sendUpdates
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getSendUpdates() {
     return sendUpdates;
   }
 
-  public void setSendUpdates(@javax.annotation.Nullable Boolean sendUpdates) {
+  public void setSendUpdates(@jakarta.annotation.Nullable Boolean sendUpdates) {
     this.sendUpdates = sendUpdates;
   }
 
 
-  public UpdateGoogleCalendarEventTaskParams canGuestsModifyEvent(@javax.annotation.Nullable Boolean canGuestsModifyEvent) {
+  public UpdateGoogleCalendarEventTaskParams canGuestsModifyEvent(@jakarta.annotation.Nullable Boolean canGuestsModifyEvent) {
     this.canGuestsModifyEvent = canGuestsModifyEvent;
     return this;
   }
@@ -430,17 +430,17 @@ public class UpdateGoogleCalendarEventTaskParams {
    * Get canGuestsModifyEvent
    * @return canGuestsModifyEvent
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getCanGuestsModifyEvent() {
     return canGuestsModifyEvent;
   }
 
-  public void setCanGuestsModifyEvent(@javax.annotation.Nullable Boolean canGuestsModifyEvent) {
+  public void setCanGuestsModifyEvent(@jakarta.annotation.Nullable Boolean canGuestsModifyEvent) {
     this.canGuestsModifyEvent = canGuestsModifyEvent;
   }
 
 
-  public UpdateGoogleCalendarEventTaskParams canGuestsSeeOtherGuests(@javax.annotation.Nullable Boolean canGuestsSeeOtherGuests) {
+  public UpdateGoogleCalendarEventTaskParams canGuestsSeeOtherGuests(@jakarta.annotation.Nullable Boolean canGuestsSeeOtherGuests) {
     this.canGuestsSeeOtherGuests = canGuestsSeeOtherGuests;
     return this;
   }
@@ -449,17 +449,17 @@ public class UpdateGoogleCalendarEventTaskParams {
    * Get canGuestsSeeOtherGuests
    * @return canGuestsSeeOtherGuests
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getCanGuestsSeeOtherGuests() {
     return canGuestsSeeOtherGuests;
   }
 
-  public void setCanGuestsSeeOtherGuests(@javax.annotation.Nullable Boolean canGuestsSeeOtherGuests) {
+  public void setCanGuestsSeeOtherGuests(@jakarta.annotation.Nullable Boolean canGuestsSeeOtherGuests) {
     this.canGuestsSeeOtherGuests = canGuestsSeeOtherGuests;
   }
 
 
-  public UpdateGoogleCalendarEventTaskParams canGuestsInviteOthers(@javax.annotation.Nullable Boolean canGuestsInviteOthers) {
+  public UpdateGoogleCalendarEventTaskParams canGuestsInviteOthers(@jakarta.annotation.Nullable Boolean canGuestsInviteOthers) {
     this.canGuestsInviteOthers = canGuestsInviteOthers;
     return this;
   }
@@ -468,17 +468,17 @@ public class UpdateGoogleCalendarEventTaskParams {
    * Get canGuestsInviteOthers
    * @return canGuestsInviteOthers
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getCanGuestsInviteOthers() {
     return canGuestsInviteOthers;
   }
 
-  public void setCanGuestsInviteOthers(@javax.annotation.Nullable Boolean canGuestsInviteOthers) {
+  public void setCanGuestsInviteOthers(@jakarta.annotation.Nullable Boolean canGuestsInviteOthers) {
     this.canGuestsInviteOthers = canGuestsInviteOthers;
   }
 
 
-  public UpdateGoogleCalendarEventTaskParams attendees(@javax.annotation.Nullable List<String> attendees) {
+  public UpdateGoogleCalendarEventTaskParams attendees(@jakarta.annotation.Nullable List<String> attendees) {
     this.attendees = attendees;
     return this;
   }
@@ -495,17 +495,17 @@ public class UpdateGoogleCalendarEventTaskParams {
    * Emails of attendees
    * @return attendees
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getAttendees() {
     return attendees;
   }
 
-  public void setAttendees(@javax.annotation.Nullable List<String> attendees) {
+  public void setAttendees(@jakarta.annotation.Nullable List<String> attendees) {
     this.attendees = attendees;
   }
 
 
-  public UpdateGoogleCalendarEventTaskParams replaceAttendees(@javax.annotation.Nullable Boolean replaceAttendees) {
+  public UpdateGoogleCalendarEventTaskParams replaceAttendees(@jakarta.annotation.Nullable Boolean replaceAttendees) {
     this.replaceAttendees = replaceAttendees;
     return this;
   }
@@ -514,17 +514,17 @@ public class UpdateGoogleCalendarEventTaskParams {
    * Get replaceAttendees
    * @return replaceAttendees
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getReplaceAttendees() {
     return replaceAttendees;
   }
 
-  public void setReplaceAttendees(@javax.annotation.Nullable Boolean replaceAttendees) {
+  public void setReplaceAttendees(@jakarta.annotation.Nullable Boolean replaceAttendees) {
     this.replaceAttendees = replaceAttendees;
   }
 
 
-  public UpdateGoogleCalendarEventTaskParams conferenceSolutionKey(@javax.annotation.Nullable ConferenceSolutionKeyEnum conferenceSolutionKey) {
+  public UpdateGoogleCalendarEventTaskParams conferenceSolutionKey(@jakarta.annotation.Nullable ConferenceSolutionKeyEnum conferenceSolutionKey) {
     this.conferenceSolutionKey = conferenceSolutionKey;
     return this;
   }
@@ -533,17 +533,17 @@ public class UpdateGoogleCalendarEventTaskParams {
    * Sets the video conference type attached to the meeting
    * @return conferenceSolutionKey
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ConferenceSolutionKeyEnum getConferenceSolutionKey() {
     return conferenceSolutionKey;
   }
 
-  public void setConferenceSolutionKey(@javax.annotation.Nullable ConferenceSolutionKeyEnum conferenceSolutionKey) {
+  public void setConferenceSolutionKey(@jakarta.annotation.Nullable ConferenceSolutionKeyEnum conferenceSolutionKey) {
     this.conferenceSolutionKey = conferenceSolutionKey;
   }
 
 
-  public UpdateGoogleCalendarEventTaskParams postToIncidentTimeline(@javax.annotation.Nullable Boolean postToIncidentTimeline) {
+  public UpdateGoogleCalendarEventTaskParams postToIncidentTimeline(@jakarta.annotation.Nullable Boolean postToIncidentTimeline) {
     this.postToIncidentTimeline = postToIncidentTimeline;
     return this;
   }
@@ -552,17 +552,17 @@ public class UpdateGoogleCalendarEventTaskParams {
    * Get postToIncidentTimeline
    * @return postToIncidentTimeline
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getPostToIncidentTimeline() {
     return postToIncidentTimeline;
   }
 
-  public void setPostToIncidentTimeline(@javax.annotation.Nullable Boolean postToIncidentTimeline) {
+  public void setPostToIncidentTimeline(@jakarta.annotation.Nullable Boolean postToIncidentTimeline) {
     this.postToIncidentTimeline = postToIncidentTimeline;
   }
 
 
-  public UpdateGoogleCalendarEventTaskParams postToSlackChannels(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
+  public UpdateGoogleCalendarEventTaskParams postToSlackChannels(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
     this.postToSlackChannels = postToSlackChannels;
     return this;
   }
@@ -579,12 +579,12 @@ public class UpdateGoogleCalendarEventTaskParams {
    * Get postToSlackChannels
    * @return postToSlackChannels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AddActionItemTaskParamsPostToSlackChannelsInner> getPostToSlackChannels() {
     return postToSlackChannels;
   }
 
-  public void setPostToSlackChannels(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
+  public void setPostToSlackChannels(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
     this.postToSlackChannels = postToSlackChannels;
   }
 

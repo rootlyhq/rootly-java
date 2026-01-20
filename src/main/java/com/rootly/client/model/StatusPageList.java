@@ -53,27 +53,27 @@ import com.rootly.client.JSON;
 /**
  * StatusPageList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class StatusPageList {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<StatusPageResponseData> data = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Links links;
 
   public static final String SERIALIZED_NAME_META = "meta";
   @SerializedName(SERIALIZED_NAME_META)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Meta meta;
 
   public StatusPageList() {
   }
 
-  public StatusPageList data(@javax.annotation.Nonnull List<StatusPageResponseData> data) {
+  public StatusPageList data(@jakarta.annotation.Nonnull List<StatusPageResponseData> data) {
     this.data = data;
     return this;
   }
@@ -90,17 +90,17 @@ public class StatusPageList {
    * Get data
    * @return data
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<StatusPageResponseData> getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nonnull List<StatusPageResponseData> data) {
+  public void setData(@jakarta.annotation.Nonnull List<StatusPageResponseData> data) {
     this.data = data;
   }
 
 
-  public StatusPageList links(@javax.annotation.Nonnull Links links) {
+  public StatusPageList links(@jakarta.annotation.Nonnull Links links) {
     this.links = links;
     return this;
   }
@@ -109,17 +109,17 @@ public class StatusPageList {
    * Get links
    * @return links
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Links getLinks() {
     return links;
   }
 
-  public void setLinks(@javax.annotation.Nonnull Links links) {
+  public void setLinks(@jakarta.annotation.Nonnull Links links) {
     this.links = links;
   }
 
 
-  public StatusPageList meta(@javax.annotation.Nonnull Meta meta) {
+  public StatusPageList meta(@jakarta.annotation.Nonnull Meta meta) {
     this.meta = meta;
     return this;
   }
@@ -128,12 +128,12 @@ public class StatusPageList {
    * Get meta
    * @return meta
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Meta getMeta() {
     return meta;
   }
 
-  public void setMeta(@javax.annotation.Nonnull Meta meta) {
+  public void setMeta(@jakarta.annotation.Nonnull Meta meta) {
     this.meta = meta;
   }
 

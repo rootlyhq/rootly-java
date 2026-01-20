@@ -48,22 +48,22 @@ import com.rootly.client.JSON;
 /**
  * NewAlertDataAttributesAlertFieldValuesAttributesInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewAlertDataAttributesAlertFieldValuesAttributesInner {
   public static final String SERIALIZED_NAME_ALERT_FIELD_ID = "alert_field_id";
   @SerializedName(SERIALIZED_NAME_ALERT_FIELD_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String alertFieldId;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String value;
 
   public NewAlertDataAttributesAlertFieldValuesAttributesInner() {
   }
 
-  public NewAlertDataAttributesAlertFieldValuesAttributesInner alertFieldId(@javax.annotation.Nonnull String alertFieldId) {
+  public NewAlertDataAttributesAlertFieldValuesAttributesInner alertFieldId(@jakarta.annotation.Nonnull String alertFieldId) {
     this.alertFieldId = alertFieldId;
     return this;
   }
@@ -72,17 +72,17 @@ public class NewAlertDataAttributesAlertFieldValuesAttributesInner {
    * ID of the custom alert field
    * @return alertFieldId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getAlertFieldId() {
     return alertFieldId;
   }
 
-  public void setAlertFieldId(@javax.annotation.Nonnull String alertFieldId) {
+  public void setAlertFieldId(@jakarta.annotation.Nonnull String alertFieldId) {
     this.alertFieldId = alertFieldId;
   }
 
 
-  public NewAlertDataAttributesAlertFieldValuesAttributesInner value(@javax.annotation.Nonnull String value) {
+  public NewAlertDataAttributesAlertFieldValuesAttributesInner value(@jakarta.annotation.Nonnull String value) {
     this.value = value;
     return this;
   }
@@ -91,12 +91,12 @@ public class NewAlertDataAttributesAlertFieldValuesAttributesInner {
    * Value for the alert field
    * @return value
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getValue() {
     return value;
   }
 
-  public void setValue(@javax.annotation.Nonnull String value) {
+  public void setValue(@jakarta.annotation.Nonnull String value) {
     this.value = value;
   }
 

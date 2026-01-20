@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * NewScheduleRotationUserData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewScheduleRotationUserData {
   /**
    * Gets or Sets type
@@ -103,18 +103,18 @@ public class NewScheduleRotationUserData {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private NewScheduleRotationUserDataAttributes attributes;
 
   public NewScheduleRotationUserData() {
   }
 
-  public NewScheduleRotationUserData type(@javax.annotation.Nullable TypeEnum type) {
+  public NewScheduleRotationUserData type(@jakarta.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -123,17 +123,17 @@ public class NewScheduleRotationUserData {
    * Get type
    * @return type
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TypeEnum getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nullable TypeEnum type) {
+  public void setType(@jakarta.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
 
-  public NewScheduleRotationUserData attributes(@javax.annotation.Nullable NewScheduleRotationUserDataAttributes attributes) {
+  public NewScheduleRotationUserData attributes(@jakarta.annotation.Nullable NewScheduleRotationUserDataAttributes attributes) {
     this.attributes = attributes;
     return this;
   }
@@ -142,12 +142,12 @@ public class NewScheduleRotationUserData {
    * Get attributes
    * @return attributes
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public NewScheduleRotationUserDataAttributes getAttributes() {
     return attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nullable NewScheduleRotationUserDataAttributes attributes) {
+  public void setAttributes(@jakarta.annotation.Nullable NewScheduleRotationUserDataAttributes attributes) {
     this.attributes = attributes;
   }
 

@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * RemoveGoogleDocsPermissionsTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RemoveGoogleDocsPermissionsTaskParams {
   /**
    * Gets or Sets taskType
@@ -102,12 +102,12 @@ public class RemoveGoogleDocsPermissionsTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_FILE_ID = "file_id";
   @SerializedName(SERIALIZED_NAME_FILE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String fileId;
 
   /**
@@ -166,18 +166,18 @@ public class RemoveGoogleDocsPermissionsTaskParams {
 
   public static final String SERIALIZED_NAME_ATTRIBUTE_TO_QUERY_BY = "attribute_to_query_by";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTE_TO_QUERY_BY)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private AttributeToQueryByEnum attributeToQueryBy = AttributeToQueryByEnum.EMAIL_ADDRESS;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String value;
 
   public RemoveGoogleDocsPermissionsTaskParams() {
   }
 
-  public RemoveGoogleDocsPermissionsTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public RemoveGoogleDocsPermissionsTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -186,17 +186,17 @@ public class RemoveGoogleDocsPermissionsTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public RemoveGoogleDocsPermissionsTaskParams fileId(@javax.annotation.Nonnull String fileId) {
+  public RemoveGoogleDocsPermissionsTaskParams fileId(@jakarta.annotation.Nonnull String fileId) {
     this.fileId = fileId;
     return this;
   }
@@ -205,17 +205,17 @@ public class RemoveGoogleDocsPermissionsTaskParams {
    * The Google Doc file ID
    * @return fileId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getFileId() {
     return fileId;
   }
 
-  public void setFileId(@javax.annotation.Nonnull String fileId) {
+  public void setFileId(@jakarta.annotation.Nonnull String fileId) {
     this.fileId = fileId;
   }
 
 
-  public RemoveGoogleDocsPermissionsTaskParams attributeToQueryBy(@javax.annotation.Nonnull AttributeToQueryByEnum attributeToQueryBy) {
+  public RemoveGoogleDocsPermissionsTaskParams attributeToQueryBy(@jakarta.annotation.Nonnull AttributeToQueryByEnum attributeToQueryBy) {
     this.attributeToQueryBy = attributeToQueryBy;
     return this;
   }
@@ -224,17 +224,17 @@ public class RemoveGoogleDocsPermissionsTaskParams {
    * Get attributeToQueryBy
    * @return attributeToQueryBy
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public AttributeToQueryByEnum getAttributeToQueryBy() {
     return attributeToQueryBy;
   }
 
-  public void setAttributeToQueryBy(@javax.annotation.Nonnull AttributeToQueryByEnum attributeToQueryBy) {
+  public void setAttributeToQueryBy(@jakarta.annotation.Nonnull AttributeToQueryByEnum attributeToQueryBy) {
     this.attributeToQueryBy = attributeToQueryBy;
   }
 
 
-  public RemoveGoogleDocsPermissionsTaskParams value(@javax.annotation.Nonnull String value) {
+  public RemoveGoogleDocsPermissionsTaskParams value(@jakarta.annotation.Nonnull String value) {
     this.value = value;
     return this;
   }
@@ -243,12 +243,12 @@ public class RemoveGoogleDocsPermissionsTaskParams {
    * Get value
    * @return value
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getValue() {
     return value;
   }
 
-  public void setValue(@javax.annotation.Nonnull String value) {
+  public void setValue(@jakarta.annotation.Nonnull String value) {
     this.value = value;
   }
 

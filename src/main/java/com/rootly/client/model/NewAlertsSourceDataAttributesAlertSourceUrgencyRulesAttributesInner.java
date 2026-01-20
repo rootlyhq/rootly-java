@@ -49,11 +49,11 @@ import com.rootly.client.JSON;
 /**
  * NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner {
   public static final String SERIALIZED_NAME_JSON_PATH = "json_path";
   @SerializedName(SERIALIZED_NAME_JSON_PATH)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String jsonPath;
 
   /**
@@ -114,12 +114,12 @@ public class NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner
 
   public static final String SERIALIZED_NAME_OPERATOR = "operator";
   @SerializedName(SERIALIZED_NAME_OPERATOR)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private OperatorEnum operator;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String value;
 
   /**
@@ -174,12 +174,12 @@ public class NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner
 
   public static final String SERIALIZED_NAME_CONDITIONABLE_TYPE = "conditionable_type";
   @SerializedName(SERIALIZED_NAME_CONDITIONABLE_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ConditionableTypeEnum conditionableType;
 
   public static final String SERIALIZED_NAME_CONDITIONABLE_ID = "conditionable_id";
   @SerializedName(SERIALIZED_NAME_CONDITIONABLE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String conditionableId;
 
   /**
@@ -236,18 +236,18 @@ public class NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private KindEnum kind;
 
   public static final String SERIALIZED_NAME_ALERT_URGENCY_ID = "alert_urgency_id";
   @SerializedName(SERIALIZED_NAME_ALERT_URGENCY_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String alertUrgencyId;
 
   public NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner() {
   }
 
-  public NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner jsonPath(@javax.annotation.Nullable String jsonPath) {
+  public NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner jsonPath(@jakarta.annotation.Nullable String jsonPath) {
     this.jsonPath = jsonPath;
     return this;
   }
@@ -256,17 +256,17 @@ public class NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner
    * JSON path expression to extract a specific value from the alert&#39;s payload for evaluation
    * @return jsonPath
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getJsonPath() {
     return jsonPath;
   }
 
-  public void setJsonPath(@javax.annotation.Nullable String jsonPath) {
+  public void setJsonPath(@jakarta.annotation.Nullable String jsonPath) {
     this.jsonPath = jsonPath;
   }
 
 
-  public NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner operator(@javax.annotation.Nullable OperatorEnum operator) {
+  public NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner operator(@jakarta.annotation.Nullable OperatorEnum operator) {
     this.operator = operator;
     return this;
   }
@@ -275,17 +275,17 @@ public class NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner
    * Comparison operator used to evaluate the extracted value against the specified condition
    * @return operator
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public OperatorEnum getOperator() {
     return operator;
   }
 
-  public void setOperator(@javax.annotation.Nullable OperatorEnum operator) {
+  public void setOperator(@jakarta.annotation.Nullable OperatorEnum operator) {
     this.operator = operator;
   }
 
 
-  public NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner value(@javax.annotation.Nullable String value) {
+  public NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner value(@jakarta.annotation.Nullable String value) {
     this.value = value;
     return this;
   }
@@ -294,17 +294,17 @@ public class NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner
    * Value that the extracted payload data is compared to using the specified operator to determine a match
    * @return value
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getValue() {
     return value;
   }
 
-  public void setValue(@javax.annotation.Nullable String value) {
+  public void setValue(@jakarta.annotation.Nullable String value) {
     this.value = value;
   }
 
 
-  public NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner conditionableType(@javax.annotation.Nullable ConditionableTypeEnum conditionableType) {
+  public NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner conditionableType(@jakarta.annotation.Nullable ConditionableTypeEnum conditionableType) {
     this.conditionableType = conditionableType;
     return this;
   }
@@ -313,17 +313,17 @@ public class NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner
    * The type of the conditionable
    * @return conditionableType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ConditionableTypeEnum getConditionableType() {
     return conditionableType;
   }
 
-  public void setConditionableType(@javax.annotation.Nullable ConditionableTypeEnum conditionableType) {
+  public void setConditionableType(@jakarta.annotation.Nullable ConditionableTypeEnum conditionableType) {
     this.conditionableType = conditionableType;
   }
 
 
-  public NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner conditionableId(@javax.annotation.Nullable String conditionableId) {
+  public NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner conditionableId(@jakarta.annotation.Nullable String conditionableId) {
     this.conditionableId = conditionableId;
     return this;
   }
@@ -332,17 +332,17 @@ public class NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner
    * The ID of the conditionable. If conditionable_type is AlertField, this is the ID of the alert field.
    * @return conditionableId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getConditionableId() {
     return conditionableId;
   }
 
-  public void setConditionableId(@javax.annotation.Nullable String conditionableId) {
+  public void setConditionableId(@jakarta.annotation.Nullable String conditionableId) {
     this.conditionableId = conditionableId;
   }
 
 
-  public NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner kind(@javax.annotation.Nullable KindEnum kind) {
+  public NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner kind(@jakarta.annotation.Nullable KindEnum kind) {
     this.kind = kind;
     return this;
   }
@@ -351,17 +351,17 @@ public class NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner
    * The kind of the conditionable
    * @return kind
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(@javax.annotation.Nullable KindEnum kind) {
+  public void setKind(@jakarta.annotation.Nullable KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner alertUrgencyId(@javax.annotation.Nullable String alertUrgencyId) {
+  public NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner alertUrgencyId(@jakarta.annotation.Nullable String alertUrgencyId) {
     this.alertUrgencyId = alertUrgencyId;
     return this;
   }
@@ -370,12 +370,12 @@ public class NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner
    * The ID of the alert urgency
    * @return alertUrgencyId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getAlertUrgencyId() {
     return alertUrgencyId;
   }
 
-  public void setAlertUrgencyId(@javax.annotation.Nullable String alertUrgencyId) {
+  public void setAlertUrgencyId(@jakarta.annotation.Nullable String alertUrgencyId) {
     this.alertUrgencyId = alertUrgencyId;
   }
 

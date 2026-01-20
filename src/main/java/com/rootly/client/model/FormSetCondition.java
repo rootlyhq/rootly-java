@@ -50,16 +50,16 @@ import com.rootly.client.JSON;
 /**
  * FormSetCondition
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class FormSetCondition {
   public static final String SERIALIZED_NAME_FORM_SET_ID = "form_set_id";
   @SerializedName(SERIALIZED_NAME_FORM_SET_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String formSetId;
 
   public static final String SERIALIZED_NAME_FORM_FIELD_ID = "form_field_id";
   @SerializedName(SERIALIZED_NAME_FORM_FIELD_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String formFieldId;
 
   /**
@@ -114,18 +114,18 @@ public class FormSetCondition {
 
   public static final String SERIALIZED_NAME_COMPARISON = "comparison";
   @SerializedName(SERIALIZED_NAME_COMPARISON)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private ComparisonEnum comparison;
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<String> values = new ArrayList<>();
 
   public FormSetCondition() {
   }
 
-  public FormSetCondition formSetId(@javax.annotation.Nonnull String formSetId) {
+  public FormSetCondition formSetId(@jakarta.annotation.Nonnull String formSetId) {
     this.formSetId = formSetId;
     return this;
   }
@@ -134,17 +134,17 @@ public class FormSetCondition {
    * The form set this condition applies.
    * @return formSetId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getFormSetId() {
     return formSetId;
   }
 
-  public void setFormSetId(@javax.annotation.Nonnull String formSetId) {
+  public void setFormSetId(@jakarta.annotation.Nonnull String formSetId) {
     this.formSetId = formSetId;
   }
 
 
-  public FormSetCondition formFieldId(@javax.annotation.Nonnull String formFieldId) {
+  public FormSetCondition formFieldId(@jakarta.annotation.Nonnull String formFieldId) {
     this.formFieldId = formFieldId;
     return this;
   }
@@ -153,17 +153,17 @@ public class FormSetCondition {
    * The form field this condition applies.
    * @return formFieldId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getFormFieldId() {
     return formFieldId;
   }
 
-  public void setFormFieldId(@javax.annotation.Nonnull String formFieldId) {
+  public void setFormFieldId(@jakarta.annotation.Nonnull String formFieldId) {
     this.formFieldId = formFieldId;
   }
 
 
-  public FormSetCondition comparison(@javax.annotation.Nonnull ComparisonEnum comparison) {
+  public FormSetCondition comparison(@jakarta.annotation.Nonnull ComparisonEnum comparison) {
     this.comparison = comparison;
     return this;
   }
@@ -172,17 +172,17 @@ public class FormSetCondition {
    * The condition comparison.
    * @return comparison
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public ComparisonEnum getComparison() {
     return comparison;
   }
 
-  public void setComparison(@javax.annotation.Nonnull ComparisonEnum comparison) {
+  public void setComparison(@jakarta.annotation.Nonnull ComparisonEnum comparison) {
     this.comparison = comparison;
   }
 
 
-  public FormSetCondition values(@javax.annotation.Nonnull List<String> values) {
+  public FormSetCondition values(@jakarta.annotation.Nonnull List<String> values) {
     this.values = values;
     return this;
   }
@@ -199,12 +199,12 @@ public class FormSetCondition {
    * The values for comparison.
    * @return values
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<String> getValues() {
     return values;
   }
 
-  public void setValues(@javax.annotation.Nonnull List<String> values) {
+  public void setValues(@jakarta.annotation.Nonnull List<String> values) {
     this.values = values;
   }
 

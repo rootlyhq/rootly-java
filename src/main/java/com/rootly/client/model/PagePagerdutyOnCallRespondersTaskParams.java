@@ -52,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * PagePagerdutyOnCallRespondersTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class PagePagerdutyOnCallRespondersTaskParams {
   /**
    * Gets or Sets taskType
@@ -106,32 +106,32 @@ public class PagePagerdutyOnCallRespondersTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_SERVICE = "service";
   @SerializedName(SERIALIZED_NAME_SERVICE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private AddActionItemTaskParamsPostToSlackChannelsInner service;
 
   public static final String SERIALIZED_NAME_ESCALATION_POLICIES = "escalation_policies";
   @SerializedName(SERIALIZED_NAME_ESCALATION_POLICIES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AddActionItemTaskParamsPostToSlackChannelsInner> escalationPolicies = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_USERS = "users";
   @SerializedName(SERIALIZED_NAME_USERS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AddActionItemTaskParamsPostToSlackChannelsInner> users = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String title;
 
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String message;
 
   /**
@@ -190,23 +190,23 @@ public class PagePagerdutyOnCallRespondersTaskParams {
 
   public static final String SERIALIZED_NAME_URGENCY = "urgency";
   @SerializedName(SERIALIZED_NAME_URGENCY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private UrgencyEnum urgency = UrgencyEnum.HIGH;
 
   public static final String SERIALIZED_NAME_PRIORITY = "priority";
   @SerializedName(SERIALIZED_NAME_PRIORITY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String priority;
 
   public static final String SERIALIZED_NAME_CREATE_NEW_INCIDENT_ON_CONFLICT = "create_new_incident_on_conflict";
   @SerializedName(SERIALIZED_NAME_CREATE_NEW_INCIDENT_ON_CONFLICT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean createNewIncidentOnConflict = false;
 
   public PagePagerdutyOnCallRespondersTaskParams() {
   }
 
-  public PagePagerdutyOnCallRespondersTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public PagePagerdutyOnCallRespondersTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -215,17 +215,17 @@ public class PagePagerdutyOnCallRespondersTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public PagePagerdutyOnCallRespondersTaskParams service(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner service) {
+  public PagePagerdutyOnCallRespondersTaskParams service(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner service) {
     this.service = service;
     return this;
   }
@@ -234,17 +234,17 @@ public class PagePagerdutyOnCallRespondersTaskParams {
    * Get service
    * @return service
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public AddActionItemTaskParamsPostToSlackChannelsInner getService() {
     return service;
   }
 
-  public void setService(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner service) {
+  public void setService(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner service) {
     this.service = service;
   }
 
 
-  public PagePagerdutyOnCallRespondersTaskParams escalationPolicies(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> escalationPolicies) {
+  public PagePagerdutyOnCallRespondersTaskParams escalationPolicies(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> escalationPolicies) {
     this.escalationPolicies = escalationPolicies;
     return this;
   }
@@ -261,17 +261,17 @@ public class PagePagerdutyOnCallRespondersTaskParams {
    * Get escalationPolicies
    * @return escalationPolicies
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AddActionItemTaskParamsPostToSlackChannelsInner> getEscalationPolicies() {
     return escalationPolicies;
   }
 
-  public void setEscalationPolicies(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> escalationPolicies) {
+  public void setEscalationPolicies(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> escalationPolicies) {
     this.escalationPolicies = escalationPolicies;
   }
 
 
-  public PagePagerdutyOnCallRespondersTaskParams users(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> users) {
+  public PagePagerdutyOnCallRespondersTaskParams users(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> users) {
     this.users = users;
     return this;
   }
@@ -288,17 +288,17 @@ public class PagePagerdutyOnCallRespondersTaskParams {
    * Get users
    * @return users
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AddActionItemTaskParamsPostToSlackChannelsInner> getUsers() {
     return users;
   }
 
-  public void setUsers(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> users) {
+  public void setUsers(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> users) {
     this.users = users;
   }
 
 
-  public PagePagerdutyOnCallRespondersTaskParams title(@javax.annotation.Nullable String title) {
+  public PagePagerdutyOnCallRespondersTaskParams title(@jakarta.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
@@ -307,17 +307,17 @@ public class PagePagerdutyOnCallRespondersTaskParams {
    * Incident title.
    * @return title
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nullable String title) {
+  public void setTitle(@jakarta.annotation.Nullable String title) {
     this.title = title;
   }
 
 
-  public PagePagerdutyOnCallRespondersTaskParams message(@javax.annotation.Nullable String message) {
+  public PagePagerdutyOnCallRespondersTaskParams message(@jakarta.annotation.Nullable String message) {
     this.message = message;
     return this;
   }
@@ -326,17 +326,17 @@ public class PagePagerdutyOnCallRespondersTaskParams {
    * Get message
    * @return message
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getMessage() {
     return message;
   }
 
-  public void setMessage(@javax.annotation.Nullable String message) {
+  public void setMessage(@jakarta.annotation.Nullable String message) {
     this.message = message;
   }
 
 
-  public PagePagerdutyOnCallRespondersTaskParams urgency(@javax.annotation.Nullable UrgencyEnum urgency) {
+  public PagePagerdutyOnCallRespondersTaskParams urgency(@jakarta.annotation.Nullable UrgencyEnum urgency) {
     this.urgency = urgency;
     return this;
   }
@@ -345,17 +345,17 @@ public class PagePagerdutyOnCallRespondersTaskParams {
    * Get urgency
    * @return urgency
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public UrgencyEnum getUrgency() {
     return urgency;
   }
 
-  public void setUrgency(@javax.annotation.Nullable UrgencyEnum urgency) {
+  public void setUrgency(@jakarta.annotation.Nullable UrgencyEnum urgency) {
     this.urgency = urgency;
   }
 
 
-  public PagePagerdutyOnCallRespondersTaskParams priority(@javax.annotation.Nullable String priority) {
+  public PagePagerdutyOnCallRespondersTaskParams priority(@jakarta.annotation.Nullable String priority) {
     this.priority = priority;
     return this;
   }
@@ -364,17 +364,17 @@ public class PagePagerdutyOnCallRespondersTaskParams {
    * PagerDuty incident priority, selecting auto will let Rootly auto map our incident severity
    * @return priority
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPriority() {
     return priority;
   }
 
-  public void setPriority(@javax.annotation.Nullable String priority) {
+  public void setPriority(@jakarta.annotation.Nullable String priority) {
     this.priority = priority;
   }
 
 
-  public PagePagerdutyOnCallRespondersTaskParams createNewIncidentOnConflict(@javax.annotation.Nullable Boolean createNewIncidentOnConflict) {
+  public PagePagerdutyOnCallRespondersTaskParams createNewIncidentOnConflict(@jakarta.annotation.Nullable Boolean createNewIncidentOnConflict) {
     this.createNewIncidentOnConflict = createNewIncidentOnConflict;
     return this;
   }
@@ -383,12 +383,12 @@ public class PagePagerdutyOnCallRespondersTaskParams {
    * Rootly only supports linking to a single PagerDuty incident. If this feature is disabled Rootly will add responders from any additional pages to the existing PagerDuty incident that is linked to the Rootly incident. If enabled, Rootly will create a new PagerDuty incident that is not linked to any Rootly incidents
    * @return createNewIncidentOnConflict
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getCreateNewIncidentOnConflict() {
     return createNewIncidentOnConflict;
   }
 
-  public void setCreateNewIncidentOnConflict(@javax.annotation.Nullable Boolean createNewIncidentOnConflict) {
+  public void setCreateNewIncidentOnConflict(@jakarta.annotation.Nullable Boolean createNewIncidentOnConflict) {
     this.createNewIncidentOnConflict = createNewIncidentOnConflict;
   }
 

@@ -49,16 +49,16 @@ import com.rootly.client.JSON;
 /**
  * UpdateIncidentRoleTaskDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateIncidentRoleTaskDataAttributes {
   public static final String SERIALIZED_NAME_TASK = "task";
   @SerializedName(SERIALIZED_NAME_TASK)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String task;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   /**
@@ -117,13 +117,13 @@ public class UpdateIncidentRoleTaskDataAttributes {
 
   public static final String SERIALIZED_NAME_PRIORITY = "priority";
   @SerializedName(SERIALIZED_NAME_PRIORITY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private PriorityEnum priority;
 
   public UpdateIncidentRoleTaskDataAttributes() {
   }
 
-  public UpdateIncidentRoleTaskDataAttributes task(@javax.annotation.Nullable String task) {
+  public UpdateIncidentRoleTaskDataAttributes task(@jakarta.annotation.Nullable String task) {
     this.task = task;
     return this;
   }
@@ -132,17 +132,17 @@ public class UpdateIncidentRoleTaskDataAttributes {
    * The task of the incident task
    * @return task
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTask() {
     return task;
   }
 
-  public void setTask(@javax.annotation.Nullable String task) {
+  public void setTask(@jakarta.annotation.Nullable String task) {
     this.task = task;
   }
 
 
-  public UpdateIncidentRoleTaskDataAttributes description(@javax.annotation.Nullable String description) {
+  public UpdateIncidentRoleTaskDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -151,17 +151,17 @@ public class UpdateIncidentRoleTaskDataAttributes {
    * The description of the incident task
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UpdateIncidentRoleTaskDataAttributes priority(@javax.annotation.Nullable PriorityEnum priority) {
+  public UpdateIncidentRoleTaskDataAttributes priority(@jakarta.annotation.Nullable PriorityEnum priority) {
     this.priority = priority;
     return this;
   }
@@ -170,12 +170,12 @@ public class UpdateIncidentRoleTaskDataAttributes {
    * The priority of the incident task
    * @return priority
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public PriorityEnum getPriority() {
     return priority;
   }
 
-  public void setPriority(@javax.annotation.Nullable PriorityEnum priority) {
+  public void setPriority(@jakarta.annotation.Nullable PriorityEnum priority) {
     this.priority = priority;
   }
 

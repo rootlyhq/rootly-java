@@ -48,37 +48,37 @@ import com.rootly.client.JSON;
 /**
  * WebhooksDelivery
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class WebhooksDelivery {
   public static final String SERIALIZED_NAME_ENDPOINT_ID = "endpoint_id";
   @SerializedName(SERIALIZED_NAME_ENDPOINT_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String endpointId;
 
   public static final String SERIALIZED_NAME_PAYLOAD = "payload";
   @SerializedName(SERIALIZED_NAME_PAYLOAD)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String payload;
 
   public static final String SERIALIZED_NAME_DELIVERED_AT = "delivered_at";
   @SerializedName(SERIALIZED_NAME_DELIVERED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String deliveredAt;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public WebhooksDelivery() {
   }
 
-  public WebhooksDelivery endpointId(@javax.annotation.Nonnull String endpointId) {
+  public WebhooksDelivery endpointId(@jakarta.annotation.Nonnull String endpointId) {
     this.endpointId = endpointId;
     return this;
   }
@@ -87,17 +87,17 @@ public class WebhooksDelivery {
    * Get endpointId
    * @return endpointId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getEndpointId() {
     return endpointId;
   }
 
-  public void setEndpointId(@javax.annotation.Nonnull String endpointId) {
+  public void setEndpointId(@jakarta.annotation.Nonnull String endpointId) {
     this.endpointId = endpointId;
   }
 
 
-  public WebhooksDelivery payload(@javax.annotation.Nonnull String payload) {
+  public WebhooksDelivery payload(@jakarta.annotation.Nonnull String payload) {
     this.payload = payload;
     return this;
   }
@@ -106,17 +106,17 @@ public class WebhooksDelivery {
    * Get payload
    * @return payload
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getPayload() {
     return payload;
   }
 
-  public void setPayload(@javax.annotation.Nonnull String payload) {
+  public void setPayload(@jakarta.annotation.Nonnull String payload) {
     this.payload = payload;
   }
 
 
-  public WebhooksDelivery deliveredAt(@javax.annotation.Nullable String deliveredAt) {
+  public WebhooksDelivery deliveredAt(@jakarta.annotation.Nullable String deliveredAt) {
     this.deliveredAt = deliveredAt;
     return this;
   }
@@ -125,17 +125,17 @@ public class WebhooksDelivery {
    * Get deliveredAt
    * @return deliveredAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDeliveredAt() {
     return deliveredAt;
   }
 
-  public void setDeliveredAt(@javax.annotation.Nullable String deliveredAt) {
+  public void setDeliveredAt(@jakarta.annotation.Nullable String deliveredAt) {
     this.deliveredAt = deliveredAt;
   }
 
 
-  public WebhooksDelivery createdAt(@javax.annotation.Nonnull String createdAt) {
+  public WebhooksDelivery createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -144,17 +144,17 @@ public class WebhooksDelivery {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public WebhooksDelivery updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public WebhooksDelivery updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -163,12 +163,12 @@ public class WebhooksDelivery {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

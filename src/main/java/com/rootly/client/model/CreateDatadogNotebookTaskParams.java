@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * CreateDatadogNotebookTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateDatadogNotebookTaskParams {
   /**
    * Gets or Sets taskType
@@ -103,27 +103,27 @@ public class CreateDatadogNotebookTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_POST_MORTEM_TEMPLATE_ID = "post_mortem_template_id";
   @SerializedName(SERIALIZED_NAME_POST_MORTEM_TEMPLATE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String postMortemTemplateId;
 
   public static final String SERIALIZED_NAME_MARK_POST_MORTEM_AS_PUBLISHED = "mark_post_mortem_as_published";
   @SerializedName(SERIALIZED_NAME_MARK_POST_MORTEM_AS_PUBLISHED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean markPostMortemAsPublished = true;
 
   public static final String SERIALIZED_NAME_TEMPLATE = "template";
   @SerializedName(SERIALIZED_NAME_TEMPLATE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AddActionItemTaskParamsPostToSlackChannelsInner template;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String title;
 
   /**
@@ -186,18 +186,18 @@ public class CreateDatadogNotebookTaskParams {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private KindEnum kind;
 
   public static final String SERIALIZED_NAME_CONTENT = "content";
   @SerializedName(SERIALIZED_NAME_CONTENT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String content;
 
   public CreateDatadogNotebookTaskParams() {
   }
 
-  public CreateDatadogNotebookTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public CreateDatadogNotebookTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -206,17 +206,17 @@ public class CreateDatadogNotebookTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public CreateDatadogNotebookTaskParams postMortemTemplateId(@javax.annotation.Nullable String postMortemTemplateId) {
+  public CreateDatadogNotebookTaskParams postMortemTemplateId(@jakarta.annotation.Nullable String postMortemTemplateId) {
     this.postMortemTemplateId = postMortemTemplateId;
     return this;
   }
@@ -225,17 +225,17 @@ public class CreateDatadogNotebookTaskParams {
    * Retrospective template to use when creating notebook, if desired
    * @return postMortemTemplateId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPostMortemTemplateId() {
     return postMortemTemplateId;
   }
 
-  public void setPostMortemTemplateId(@javax.annotation.Nullable String postMortemTemplateId) {
+  public void setPostMortemTemplateId(@jakarta.annotation.Nullable String postMortemTemplateId) {
     this.postMortemTemplateId = postMortemTemplateId;
   }
 
 
-  public CreateDatadogNotebookTaskParams markPostMortemAsPublished(@javax.annotation.Nullable Boolean markPostMortemAsPublished) {
+  public CreateDatadogNotebookTaskParams markPostMortemAsPublished(@jakarta.annotation.Nullable Boolean markPostMortemAsPublished) {
     this.markPostMortemAsPublished = markPostMortemAsPublished;
     return this;
   }
@@ -244,17 +244,17 @@ public class CreateDatadogNotebookTaskParams {
    * Get markPostMortemAsPublished
    * @return markPostMortemAsPublished
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getMarkPostMortemAsPublished() {
     return markPostMortemAsPublished;
   }
 
-  public void setMarkPostMortemAsPublished(@javax.annotation.Nullable Boolean markPostMortemAsPublished) {
+  public void setMarkPostMortemAsPublished(@jakarta.annotation.Nullable Boolean markPostMortemAsPublished) {
     this.markPostMortemAsPublished = markPostMortemAsPublished;
   }
 
 
-  public CreateDatadogNotebookTaskParams template(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner template) {
+  public CreateDatadogNotebookTaskParams template(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner template) {
     this.template = template;
     return this;
   }
@@ -263,17 +263,17 @@ public class CreateDatadogNotebookTaskParams {
    * Get template
    * @return template
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AddActionItemTaskParamsPostToSlackChannelsInner getTemplate() {
     return template;
   }
 
-  public void setTemplate(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner template) {
+  public void setTemplate(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner template) {
     this.template = template;
   }
 
 
-  public CreateDatadogNotebookTaskParams title(@javax.annotation.Nonnull String title) {
+  public CreateDatadogNotebookTaskParams title(@jakarta.annotation.Nonnull String title) {
     this.title = title;
     return this;
   }
@@ -282,17 +282,17 @@ public class CreateDatadogNotebookTaskParams {
    * The notebook title
    * @return title
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nonnull String title) {
+  public void setTitle(@jakarta.annotation.Nonnull String title) {
     this.title = title;
   }
 
 
-  public CreateDatadogNotebookTaskParams kind(@javax.annotation.Nonnull KindEnum kind) {
+  public CreateDatadogNotebookTaskParams kind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
     return this;
   }
@@ -301,17 +301,17 @@ public class CreateDatadogNotebookTaskParams {
    * The notebook kind
    * @return kind
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(@javax.annotation.Nonnull KindEnum kind) {
+  public void setKind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public CreateDatadogNotebookTaskParams content(@javax.annotation.Nullable String content) {
+  public CreateDatadogNotebookTaskParams content(@jakarta.annotation.Nullable String content) {
     this.content = content;
     return this;
   }
@@ -320,12 +320,12 @@ public class CreateDatadogNotebookTaskParams {
    * The notebook content
    * @return content
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getContent() {
     return content;
   }
 
-  public void setContent(@javax.annotation.Nullable String content) {
+  public void setContent(@jakarta.annotation.Nullable String content) {
     this.content = content;
   }
 

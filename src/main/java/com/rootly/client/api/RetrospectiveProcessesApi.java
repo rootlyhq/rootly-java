@@ -91,7 +91,7 @@ public class RetrospectiveProcessesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createRetrospectiveProcessCall(@javax.annotation.Nonnull NewRetrospectiveProcess newRetrospectiveProcess, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createRetrospectiveProcessCall(@jakarta.annotation.Nonnull NewRetrospectiveProcess newRetrospectiveProcess, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -137,7 +137,7 @@ public class RetrospectiveProcessesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createRetrospectiveProcessValidateBeforeCall(@javax.annotation.Nonnull NewRetrospectiveProcess newRetrospectiveProcess, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createRetrospectiveProcessValidateBeforeCall(@jakarta.annotation.Nonnull NewRetrospectiveProcess newRetrospectiveProcess, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'newRetrospectiveProcess' is set
         if (newRetrospectiveProcess == null) {
             throw new ApiException("Missing the required parameter 'newRetrospectiveProcess' when calling createRetrospectiveProcess(Async)");
@@ -162,7 +162,7 @@ public class RetrospectiveProcessesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public RetrospectiveProcessResponse createRetrospectiveProcess(@javax.annotation.Nonnull NewRetrospectiveProcess newRetrospectiveProcess) throws ApiException {
+    public RetrospectiveProcessResponse createRetrospectiveProcess(@jakarta.annotation.Nonnull NewRetrospectiveProcess newRetrospectiveProcess) throws ApiException {
         ApiResponse<RetrospectiveProcessResponse> localVarResp = createRetrospectiveProcessWithHttpInfo(newRetrospectiveProcess);
         return localVarResp.getData();
     }
@@ -182,7 +182,7 @@ public class RetrospectiveProcessesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RetrospectiveProcessResponse> createRetrospectiveProcessWithHttpInfo(@javax.annotation.Nonnull NewRetrospectiveProcess newRetrospectiveProcess) throws ApiException {
+    public ApiResponse<RetrospectiveProcessResponse> createRetrospectiveProcessWithHttpInfo(@jakarta.annotation.Nonnull NewRetrospectiveProcess newRetrospectiveProcess) throws ApiException {
         okhttp3.Call localVarCall = createRetrospectiveProcessValidateBeforeCall(newRetrospectiveProcess, null);
         Type localVarReturnType = new TypeToken<RetrospectiveProcessResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -204,7 +204,7 @@ public class RetrospectiveProcessesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createRetrospectiveProcessAsync(@javax.annotation.Nonnull NewRetrospectiveProcess newRetrospectiveProcess, final ApiCallback<RetrospectiveProcessResponse> _callback) throws ApiException {
+    public okhttp3.Call createRetrospectiveProcessAsync(@jakarta.annotation.Nonnull NewRetrospectiveProcess newRetrospectiveProcess, final ApiCallback<RetrospectiveProcessResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createRetrospectiveProcessValidateBeforeCall(newRetrospectiveProcess, _callback);
         Type localVarReturnType = new TypeToken<RetrospectiveProcessResponse>(){}.getType();
@@ -225,7 +225,7 @@ public class RetrospectiveProcessesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteRetrospectiveProcessCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteRetrospectiveProcessCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -271,7 +271,7 @@ public class RetrospectiveProcessesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteRetrospectiveProcessValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteRetrospectiveProcessValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteRetrospectiveProcess(Async)");
@@ -295,7 +295,7 @@ public class RetrospectiveProcessesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public RetrospectiveProcessResponse deleteRetrospectiveProcess(@javax.annotation.Nonnull String id) throws ApiException {
+    public RetrospectiveProcessResponse deleteRetrospectiveProcess(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<RetrospectiveProcessResponse> localVarResp = deleteRetrospectiveProcessWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -314,7 +314,7 @@ public class RetrospectiveProcessesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RetrospectiveProcessResponse> deleteRetrospectiveProcessWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<RetrospectiveProcessResponse> deleteRetrospectiveProcessWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteRetrospectiveProcessValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<RetrospectiveProcessResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -335,7 +335,7 @@ public class RetrospectiveProcessesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteRetrospectiveProcessAsync(@javax.annotation.Nonnull String id, final ApiCallback<RetrospectiveProcessResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteRetrospectiveProcessAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<RetrospectiveProcessResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteRetrospectiveProcessValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<RetrospectiveProcessResponse>(){}.getType();
@@ -357,7 +357,7 @@ public class RetrospectiveProcessesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRetrospectiveProcessCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getRetrospectiveProcessCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -407,7 +407,7 @@ public class RetrospectiveProcessesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRetrospectiveProcessValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getRetrospectiveProcessValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getRetrospectiveProcess(Async)");
@@ -432,7 +432,7 @@ public class RetrospectiveProcessesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public RetrospectiveProcessResponse getRetrospectiveProcess(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include) throws ApiException {
+    public RetrospectiveProcessResponse getRetrospectiveProcess(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include) throws ApiException {
         ApiResponse<RetrospectiveProcessResponse> localVarResp = getRetrospectiveProcessWithHttpInfo(id, include);
         return localVarResp.getData();
     }
@@ -452,7 +452,7 @@ public class RetrospectiveProcessesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RetrospectiveProcessResponse> getRetrospectiveProcessWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include) throws ApiException {
+    public ApiResponse<RetrospectiveProcessResponse> getRetrospectiveProcessWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include) throws ApiException {
         okhttp3.Call localVarCall = getRetrospectiveProcessValidateBeforeCall(id, include, null);
         Type localVarReturnType = new TypeToken<RetrospectiveProcessResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -474,7 +474,7 @@ public class RetrospectiveProcessesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRetrospectiveProcessAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include, final ApiCallback<RetrospectiveProcessResponse> _callback) throws ApiException {
+    public okhttp3.Call getRetrospectiveProcessAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include, final ApiCallback<RetrospectiveProcessResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getRetrospectiveProcessValidateBeforeCall(id, include, _callback);
         Type localVarReturnType = new TypeToken<RetrospectiveProcessResponse>(){}.getType();
@@ -496,7 +496,7 @@ public class RetrospectiveProcessesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listRetrospectiveProcessesCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listRetrospectiveProcessesCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -553,7 +553,7 @@ public class RetrospectiveProcessesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listRetrospectiveProcessesValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listRetrospectiveProcessesValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         return listRetrospectiveProcessesCall(include, pageNumber, pageSize, _callback);
 
     }
@@ -573,7 +573,7 @@ public class RetrospectiveProcessesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public RetrospectiveProcessList listRetrospectiveProcesses(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+    public RetrospectiveProcessList listRetrospectiveProcesses(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
         ApiResponse<RetrospectiveProcessList> localVarResp = listRetrospectiveProcessesWithHttpInfo(include, pageNumber, pageSize);
         return localVarResp.getData();
     }
@@ -593,7 +593,7 @@ public class RetrospectiveProcessesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RetrospectiveProcessList> listRetrospectiveProcessesWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+    public ApiResponse<RetrospectiveProcessList> listRetrospectiveProcessesWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
         okhttp3.Call localVarCall = listRetrospectiveProcessesValidateBeforeCall(include, pageNumber, pageSize, null);
         Type localVarReturnType = new TypeToken<RetrospectiveProcessList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -615,7 +615,7 @@ public class RetrospectiveProcessesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listRetrospectiveProcessesAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback<RetrospectiveProcessList> _callback) throws ApiException {
+    public okhttp3.Call listRetrospectiveProcessesAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback<RetrospectiveProcessList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listRetrospectiveProcessesValidateBeforeCall(include, pageNumber, pageSize, _callback);
         Type localVarReturnType = new TypeToken<RetrospectiveProcessList>(){}.getType();
@@ -637,7 +637,7 @@ public class RetrospectiveProcessesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateRetrospectiveProcessCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateRetrospectiveProcess updateRetrospectiveProcess, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateRetrospectiveProcessCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateRetrospectiveProcess updateRetrospectiveProcess, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -684,7 +684,7 @@ public class RetrospectiveProcessesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateRetrospectiveProcessValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateRetrospectiveProcess updateRetrospectiveProcess, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateRetrospectiveProcessValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateRetrospectiveProcess updateRetrospectiveProcess, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateRetrospectiveProcess(Async)");
@@ -714,7 +714,7 @@ public class RetrospectiveProcessesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public RetrospectiveProcessResponse updateRetrospectiveProcess(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateRetrospectiveProcess updateRetrospectiveProcess) throws ApiException {
+    public RetrospectiveProcessResponse updateRetrospectiveProcess(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateRetrospectiveProcess updateRetrospectiveProcess) throws ApiException {
         ApiResponse<RetrospectiveProcessResponse> localVarResp = updateRetrospectiveProcessWithHttpInfo(id, updateRetrospectiveProcess);
         return localVarResp.getData();
     }
@@ -734,7 +734,7 @@ public class RetrospectiveProcessesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RetrospectiveProcessResponse> updateRetrospectiveProcessWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateRetrospectiveProcess updateRetrospectiveProcess) throws ApiException {
+    public ApiResponse<RetrospectiveProcessResponse> updateRetrospectiveProcessWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateRetrospectiveProcess updateRetrospectiveProcess) throws ApiException {
         okhttp3.Call localVarCall = updateRetrospectiveProcessValidateBeforeCall(id, updateRetrospectiveProcess, null);
         Type localVarReturnType = new TypeToken<RetrospectiveProcessResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -756,7 +756,7 @@ public class RetrospectiveProcessesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateRetrospectiveProcessAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateRetrospectiveProcess updateRetrospectiveProcess, final ApiCallback<RetrospectiveProcessResponse> _callback) throws ApiException {
+    public okhttp3.Call updateRetrospectiveProcessAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateRetrospectiveProcess updateRetrospectiveProcess, final ApiCallback<RetrospectiveProcessResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateRetrospectiveProcessValidateBeforeCall(id, updateRetrospectiveProcess, _callback);
         Type localVarReturnType = new TypeToken<RetrospectiveProcessResponse>(){}.getType();

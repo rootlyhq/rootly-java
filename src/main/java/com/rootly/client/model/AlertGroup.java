@@ -53,80 +53,80 @@ import com.rootly.client.JSON;
 /**
  * AlertGroup
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AlertGroup {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String slug;
 
   public static final String SERIALIZED_NAME_CONDITION_TYPE = "condition_type";
   @SerializedName(SERIALIZED_NAME_CONDITION_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String conditionType;
 
   public static final String SERIALIZED_NAME_TIME_WINDOW = "time_window";
   @SerializedName(SERIALIZED_NAME_TIME_WINDOW)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Integer timeWindow;
 
   public static final String SERIALIZED_NAME_GROUP_BY_ALERT_TITLE = "group_by_alert_title";
   @Deprecated
   @SerializedName(SERIALIZED_NAME_GROUP_BY_ALERT_TITLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean groupByAlertTitle;
 
   public static final String SERIALIZED_NAME_GROUP_BY_ALERT_URGENCY = "group_by_alert_urgency";
   @Deprecated
   @SerializedName(SERIALIZED_NAME_GROUP_BY_ALERT_URGENCY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean groupByAlertUrgency;
 
   public static final String SERIALIZED_NAME_TARGETS = "targets";
   @SerializedName(SERIALIZED_NAME_TARGETS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewAlertGroupDataAttributesTargetsInner> targets = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @Deprecated
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewAlertGroupDataAttributesAttributesInner> attributes = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CONDITIONS = "conditions";
   @SerializedName(SERIALIZED_NAME_CONDITIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AlertGroupConditionsInner> conditions = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public static final String SERIALIZED_NAME_DELETED_AT = "deleted_at";
   @SerializedName(SERIALIZED_NAME_DELETED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String deletedAt;
 
   public AlertGroup() {
   }
 
-  public AlertGroup name(@javax.annotation.Nonnull String name) {
+  public AlertGroup name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -135,17 +135,17 @@ public class AlertGroup {
    * The name of the alert group
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public AlertGroup description(@javax.annotation.Nullable String description) {
+  public AlertGroup description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -154,17 +154,17 @@ public class AlertGroup {
    * The description of the alert group
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public AlertGroup slug(@javax.annotation.Nonnull String slug) {
+  public AlertGroup slug(@jakarta.annotation.Nonnull String slug) {
     this.slug = slug;
     return this;
   }
@@ -173,17 +173,17 @@ public class AlertGroup {
    * The slug of the alert group
    * @return slug
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getSlug() {
     return slug;
   }
 
-  public void setSlug(@javax.annotation.Nonnull String slug) {
+  public void setSlug(@jakarta.annotation.Nonnull String slug) {
     this.slug = slug;
   }
 
 
-  public AlertGroup conditionType(@javax.annotation.Nonnull String conditionType) {
+  public AlertGroup conditionType(@jakarta.annotation.Nonnull String conditionType) {
     this.conditionType = conditionType;
     return this;
   }
@@ -192,17 +192,17 @@ public class AlertGroup {
    * Grouping condition for the alert group
    * @return conditionType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getConditionType() {
     return conditionType;
   }
 
-  public void setConditionType(@javax.annotation.Nonnull String conditionType) {
+  public void setConditionType(@jakarta.annotation.Nonnull String conditionType) {
     this.conditionType = conditionType;
   }
 
 
-  public AlertGroup timeWindow(@javax.annotation.Nonnull Integer timeWindow) {
+  public AlertGroup timeWindow(@jakarta.annotation.Nonnull Integer timeWindow) {
     this.timeWindow = timeWindow;
     return this;
   }
@@ -211,18 +211,18 @@ public class AlertGroup {
    * Time window for the alert grouping
    * @return timeWindow
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Integer getTimeWindow() {
     return timeWindow;
   }
 
-  public void setTimeWindow(@javax.annotation.Nonnull Integer timeWindow) {
+  public void setTimeWindow(@jakarta.annotation.Nonnull Integer timeWindow) {
     this.timeWindow = timeWindow;
   }
 
 
   @Deprecated
-  public AlertGroup groupByAlertTitle(@javax.annotation.Nullable Boolean groupByAlertTitle) {
+  public AlertGroup groupByAlertTitle(@jakarta.annotation.Nullable Boolean groupByAlertTitle) {
     this.groupByAlertTitle = groupByAlertTitle;
     return this;
   }
@@ -233,19 +233,19 @@ public class AlertGroup {
    * @deprecated
    */
   @Deprecated
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getGroupByAlertTitle() {
     return groupByAlertTitle;
   }
 
   @Deprecated
-  public void setGroupByAlertTitle(@javax.annotation.Nullable Boolean groupByAlertTitle) {
+  public void setGroupByAlertTitle(@jakarta.annotation.Nullable Boolean groupByAlertTitle) {
     this.groupByAlertTitle = groupByAlertTitle;
   }
 
 
   @Deprecated
-  public AlertGroup groupByAlertUrgency(@javax.annotation.Nullable Boolean groupByAlertUrgency) {
+  public AlertGroup groupByAlertUrgency(@jakarta.annotation.Nullable Boolean groupByAlertUrgency) {
     this.groupByAlertUrgency = groupByAlertUrgency;
     return this;
   }
@@ -256,18 +256,18 @@ public class AlertGroup {
    * @deprecated
    */
   @Deprecated
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getGroupByAlertUrgency() {
     return groupByAlertUrgency;
   }
 
   @Deprecated
-  public void setGroupByAlertUrgency(@javax.annotation.Nullable Boolean groupByAlertUrgency) {
+  public void setGroupByAlertUrgency(@jakarta.annotation.Nullable Boolean groupByAlertUrgency) {
     this.groupByAlertUrgency = groupByAlertUrgency;
   }
 
 
-  public AlertGroup targets(@javax.annotation.Nullable List<NewAlertGroupDataAttributesTargetsInner> targets) {
+  public AlertGroup targets(@jakarta.annotation.Nullable List<NewAlertGroupDataAttributesTargetsInner> targets) {
     this.targets = targets;
     return this;
   }
@@ -284,18 +284,18 @@ public class AlertGroup {
    * Get targets
    * @return targets
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewAlertGroupDataAttributesTargetsInner> getTargets() {
     return targets;
   }
 
-  public void setTargets(@javax.annotation.Nullable List<NewAlertGroupDataAttributesTargetsInner> targets) {
+  public void setTargets(@jakarta.annotation.Nullable List<NewAlertGroupDataAttributesTargetsInner> targets) {
     this.targets = targets;
   }
 
 
   @Deprecated
-  public AlertGroup attributes(@javax.annotation.Nullable List<NewAlertGroupDataAttributesAttributesInner> attributes) {
+  public AlertGroup attributes(@jakarta.annotation.Nullable List<NewAlertGroupDataAttributesAttributesInner> attributes) {
     this.attributes = attributes;
     return this;
   }
@@ -314,18 +314,18 @@ public class AlertGroup {
    * @deprecated
    */
   @Deprecated
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewAlertGroupDataAttributesAttributesInner> getAttributes() {
     return attributes;
   }
 
   @Deprecated
-  public void setAttributes(@javax.annotation.Nullable List<NewAlertGroupDataAttributesAttributesInner> attributes) {
+  public void setAttributes(@jakarta.annotation.Nullable List<NewAlertGroupDataAttributesAttributesInner> attributes) {
     this.attributes = attributes;
   }
 
 
-  public AlertGroup conditions(@javax.annotation.Nullable List<AlertGroupConditionsInner> conditions) {
+  public AlertGroup conditions(@jakarta.annotation.Nullable List<AlertGroupConditionsInner> conditions) {
     this.conditions = conditions;
     return this;
   }
@@ -342,17 +342,17 @@ public class AlertGroup {
    * The conditions for the alert group
    * @return conditions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AlertGroupConditionsInner> getConditions() {
     return conditions;
   }
 
-  public void setConditions(@javax.annotation.Nullable List<AlertGroupConditionsInner> conditions) {
+  public void setConditions(@jakarta.annotation.Nullable List<AlertGroupConditionsInner> conditions) {
     this.conditions = conditions;
   }
 
 
-  public AlertGroup createdAt(@javax.annotation.Nonnull String createdAt) {
+  public AlertGroup createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -361,17 +361,17 @@ public class AlertGroup {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public AlertGroup updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public AlertGroup updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -380,17 +380,17 @@ public class AlertGroup {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 
 
-  public AlertGroup deletedAt(@javax.annotation.Nullable String deletedAt) {
+  public AlertGroup deletedAt(@jakarta.annotation.Nullable String deletedAt) {
     this.deletedAt = deletedAt;
     return this;
   }
@@ -399,12 +399,12 @@ public class AlertGroup {
    * Date or deletion
    * @return deletedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDeletedAt() {
     return deletedAt;
   }
 
-  public void setDeletedAt(@javax.annotation.Nullable String deletedAt) {
+  public void setDeletedAt(@jakarta.annotation.Nullable String deletedAt) {
     this.deletedAt = deletedAt;
   }
 

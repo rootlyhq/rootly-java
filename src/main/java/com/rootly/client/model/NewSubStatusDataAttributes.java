@@ -49,21 +49,21 @@ import com.rootly.client.JSON;
 /**
  * NewSubStatusDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewSubStatusDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String slug;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   /**
@@ -120,18 +120,18 @@ public class NewSubStatusDataAttributes {
 
   public static final String SERIALIZED_NAME_PARENT_STATUS = "parent_status";
   @SerializedName(SERIALIZED_NAME_PARENT_STATUS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private ParentStatusEnum parentStatus;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public NewSubStatusDataAttributes() {
   }
 
-  public NewSubStatusDataAttributes name(@javax.annotation.Nonnull String name) {
+  public NewSubStatusDataAttributes name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -140,17 +140,17 @@ public class NewSubStatusDataAttributes {
    * Get name
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public NewSubStatusDataAttributes slug(@javax.annotation.Nullable String slug) {
+  public NewSubStatusDataAttributes slug(@jakarta.annotation.Nullable String slug) {
     this.slug = slug;
     return this;
   }
@@ -159,17 +159,17 @@ public class NewSubStatusDataAttributes {
    * Get slug
    * @return slug
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSlug() {
     return slug;
   }
 
-  public void setSlug(@javax.annotation.Nullable String slug) {
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
     this.slug = slug;
   }
 
 
-  public NewSubStatusDataAttributes description(@javax.annotation.Nullable String description) {
+  public NewSubStatusDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -178,17 +178,17 @@ public class NewSubStatusDataAttributes {
    * Get description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public NewSubStatusDataAttributes parentStatus(@javax.annotation.Nonnull ParentStatusEnum parentStatus) {
+  public NewSubStatusDataAttributes parentStatus(@jakarta.annotation.Nonnull ParentStatusEnum parentStatus) {
     this.parentStatus = parentStatus;
     return this;
   }
@@ -197,17 +197,17 @@ public class NewSubStatusDataAttributes {
    * Get parentStatus
    * @return parentStatus
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public ParentStatusEnum getParentStatus() {
     return parentStatus;
   }
 
-  public void setParentStatus(@javax.annotation.Nonnull ParentStatusEnum parentStatus) {
+  public void setParentStatus(@jakarta.annotation.Nonnull ParentStatusEnum parentStatus) {
     this.parentStatus = parentStatus;
   }
 
 
-  public NewSubStatusDataAttributes position(@javax.annotation.Nullable Integer position) {
+  public NewSubStatusDataAttributes position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -216,12 +216,12 @@ public class NewSubStatusDataAttributes {
    * Get position
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 

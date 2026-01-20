@@ -48,17 +48,17 @@ import com.rootly.client.JSON;
 /**
  * NewAlertGroupDataAttributesAttributesInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewAlertGroupDataAttributesAttributesInner {
   public static final String SERIALIZED_NAME_JSON_PATH = "json_path";
   @SerializedName(SERIALIZED_NAME_JSON_PATH)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String jsonPath;
 
   public NewAlertGroupDataAttributesAttributesInner() {
   }
 
-  public NewAlertGroupDataAttributesAttributesInner jsonPath(@javax.annotation.Nullable String jsonPath) {
+  public NewAlertGroupDataAttributesAttributesInner jsonPath(@jakarta.annotation.Nullable String jsonPath) {
     this.jsonPath = jsonPath;
     return this;
   }
@@ -67,12 +67,12 @@ public class NewAlertGroupDataAttributesAttributesInner {
    * The JSON path to the value to group by.
    * @return jsonPath
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getJsonPath() {
     return jsonPath;
   }
 
-  public void setJsonPath(@javax.annotation.Nullable String jsonPath) {
+  public void setJsonPath(@jakarta.annotation.Nullable String jsonPath) {
     this.jsonPath = jsonPath;
   }
 

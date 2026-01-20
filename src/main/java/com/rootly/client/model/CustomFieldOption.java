@@ -48,47 +48,47 @@ import com.rootly.client.JSON;
 /**
  * CustomFieldOption
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CustomFieldOption {
   public static final String SERIALIZED_NAME_CUSTOM_FIELD_ID = "custom_field_id";
   @SerializedName(SERIALIZED_NAME_CUSTOM_FIELD_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer customFieldId;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String value;
 
   public static final String SERIALIZED_NAME_COLOR = "color";
   @SerializedName(SERIALIZED_NAME_COLOR)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String color;
 
   public static final String SERIALIZED_NAME_DEFAULT = "default";
   @SerializedName(SERIALIZED_NAME_DEFAULT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean _default;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Integer position;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public CustomFieldOption() {
   }
 
-  public CustomFieldOption customFieldId(@javax.annotation.Nullable Integer customFieldId) {
+  public CustomFieldOption customFieldId(@jakarta.annotation.Nullable Integer customFieldId) {
     this.customFieldId = customFieldId;
     return this;
   }
@@ -97,17 +97,17 @@ public class CustomFieldOption {
    * The ID of the parent custom field
    * @return customFieldId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getCustomFieldId() {
     return customFieldId;
   }
 
-  public void setCustomFieldId(@javax.annotation.Nullable Integer customFieldId) {
+  public void setCustomFieldId(@jakarta.annotation.Nullable Integer customFieldId) {
     this.customFieldId = customFieldId;
   }
 
 
-  public CustomFieldOption value(@javax.annotation.Nonnull String value) {
+  public CustomFieldOption value(@jakarta.annotation.Nonnull String value) {
     this.value = value;
     return this;
   }
@@ -116,17 +116,17 @@ public class CustomFieldOption {
    * The value of the custom_field_option
    * @return value
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getValue() {
     return value;
   }
 
-  public void setValue(@javax.annotation.Nonnull String value) {
+  public void setValue(@jakarta.annotation.Nonnull String value) {
     this.value = value;
   }
 
 
-  public CustomFieldOption color(@javax.annotation.Nonnull String color) {
+  public CustomFieldOption color(@jakarta.annotation.Nonnull String color) {
     this.color = color;
     return this;
   }
@@ -135,17 +135,17 @@ public class CustomFieldOption {
    * The hex color of the custom_field_option
    * @return color
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getColor() {
     return color;
   }
 
-  public void setColor(@javax.annotation.Nonnull String color) {
+  public void setColor(@jakarta.annotation.Nonnull String color) {
     this.color = color;
   }
 
 
-  public CustomFieldOption _default(@javax.annotation.Nullable Boolean _default) {
+  public CustomFieldOption _default(@jakarta.annotation.Nullable Boolean _default) {
     this._default = _default;
     return this;
   }
@@ -154,17 +154,17 @@ public class CustomFieldOption {
    * Get _default
    * @return _default
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getDefault() {
     return _default;
   }
 
-  public void setDefault(@javax.annotation.Nullable Boolean _default) {
+  public void setDefault(@jakarta.annotation.Nullable Boolean _default) {
     this._default = _default;
   }
 
 
-  public CustomFieldOption position(@javax.annotation.Nonnull Integer position) {
+  public CustomFieldOption position(@jakarta.annotation.Nonnull Integer position) {
     this.position = position;
     return this;
   }
@@ -173,17 +173,17 @@ public class CustomFieldOption {
    * The position of the custom_field_option
    * @return position
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nonnull Integer position) {
+  public void setPosition(@jakarta.annotation.Nonnull Integer position) {
     this.position = position;
   }
 
 
-  public CustomFieldOption createdAt(@javax.annotation.Nonnull String createdAt) {
+  public CustomFieldOption createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -192,17 +192,17 @@ public class CustomFieldOption {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public CustomFieldOption updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public CustomFieldOption updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -211,12 +211,12 @@ public class CustomFieldOption {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

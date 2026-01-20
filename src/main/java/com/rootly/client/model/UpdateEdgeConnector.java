@@ -49,17 +49,17 @@ import com.rootly.client.JSON;
 /**
  * UpdateEdgeConnector
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateEdgeConnector {
   public static final String SERIALIZED_NAME_EDGE_CONNECTOR = "edge_connector";
   @SerializedName(SERIALIZED_NAME_EDGE_CONNECTOR)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private V1EdgeConnectorsIdPatchRequestEdgeConnector edgeConnector;
 
   public UpdateEdgeConnector() {
   }
 
-  public UpdateEdgeConnector edgeConnector(@javax.annotation.Nonnull V1EdgeConnectorsIdPatchRequestEdgeConnector edgeConnector) {
+  public UpdateEdgeConnector edgeConnector(@jakarta.annotation.Nonnull V1EdgeConnectorsIdPatchRequestEdgeConnector edgeConnector) {
     this.edgeConnector = edgeConnector;
     return this;
   }
@@ -68,12 +68,12 @@ public class UpdateEdgeConnector {
    * Get edgeConnector
    * @return edgeConnector
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public V1EdgeConnectorsIdPatchRequestEdgeConnector getEdgeConnector() {
     return edgeConnector;
   }
 
-  public void setEdgeConnector(@javax.annotation.Nonnull V1EdgeConnectorsIdPatchRequestEdgeConnector edgeConnector) {
+  public void setEdgeConnector(@jakarta.annotation.Nonnull V1EdgeConnectorsIdPatchRequestEdgeConnector edgeConnector) {
     this.edgeConnector = edgeConnector;
   }
 

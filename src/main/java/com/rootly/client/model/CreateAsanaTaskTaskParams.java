@@ -52,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * CreateAsanaTaskTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateAsanaTaskTaskParams {
   /**
    * Gets or Sets taskType
@@ -106,47 +106,47 @@ public class CreateAsanaTaskTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_WORKSPACE = "workspace";
   @SerializedName(SERIALIZED_NAME_WORKSPACE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private AddActionItemTaskParamsPostToSlackChannelsInner workspace;
 
   public static final String SERIALIZED_NAME_PROJECTS = "projects";
   @SerializedName(SERIALIZED_NAME_PROJECTS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<AddActionItemTaskParamsPostToSlackChannelsInner> projects = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String title;
 
   public static final String SERIALIZED_NAME_NOTES = "notes";
   @SerializedName(SERIALIZED_NAME_NOTES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String notes;
 
   public static final String SERIALIZED_NAME_ASSIGN_USER_EMAIL = "assign_user_email";
   @SerializedName(SERIALIZED_NAME_ASSIGN_USER_EMAIL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String assignUserEmail;
 
   public static final String SERIALIZED_NAME_COMPLETION = "completion";
   @SerializedName(SERIALIZED_NAME_COMPLETION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private AddActionItemTaskParamsPostToSlackChannelsInner completion;
 
   public static final String SERIALIZED_NAME_DUE_DATE = "due_date";
   @SerializedName(SERIALIZED_NAME_DUE_DATE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String dueDate;
 
   public static final String SERIALIZED_NAME_CUSTOM_FIELDS_MAPPING = "custom_fields_mapping";
   @SerializedName(SERIALIZED_NAME_CUSTOM_FIELDS_MAPPING)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String customFieldsMapping;
 
   /**
@@ -203,18 +203,18 @@ public class CreateAsanaTaskTaskParams {
 
   public static final String SERIALIZED_NAME_DEPENDENCY_DIRECTION = "dependency_direction";
   @SerializedName(SERIALIZED_NAME_DEPENDENCY_DIRECTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private DependencyDirectionEnum dependencyDirection = DependencyDirectionEnum.BLOCKING;
 
   public static final String SERIALIZED_NAME_DEPENDENT_TASK_IDS = "dependent_task_ids";
   @SerializedName(SERIALIZED_NAME_DEPENDENT_TASK_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> dependentTaskIds;
 
   public CreateAsanaTaskTaskParams() {
   }
 
-  public CreateAsanaTaskTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public CreateAsanaTaskTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -223,17 +223,17 @@ public class CreateAsanaTaskTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public CreateAsanaTaskTaskParams workspace(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner workspace) {
+  public CreateAsanaTaskTaskParams workspace(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner workspace) {
     this.workspace = workspace;
     return this;
   }
@@ -242,17 +242,17 @@ public class CreateAsanaTaskTaskParams {
    * Get workspace
    * @return workspace
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public AddActionItemTaskParamsPostToSlackChannelsInner getWorkspace() {
     return workspace;
   }
 
-  public void setWorkspace(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner workspace) {
+  public void setWorkspace(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner workspace) {
     this.workspace = workspace;
   }
 
 
-  public CreateAsanaTaskTaskParams projects(@javax.annotation.Nonnull List<AddActionItemTaskParamsPostToSlackChannelsInner> projects) {
+  public CreateAsanaTaskTaskParams projects(@jakarta.annotation.Nonnull List<AddActionItemTaskParamsPostToSlackChannelsInner> projects) {
     this.projects = projects;
     return this;
   }
@@ -269,17 +269,17 @@ public class CreateAsanaTaskTaskParams {
    * Get projects
    * @return projects
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<AddActionItemTaskParamsPostToSlackChannelsInner> getProjects() {
     return projects;
   }
 
-  public void setProjects(@javax.annotation.Nonnull List<AddActionItemTaskParamsPostToSlackChannelsInner> projects) {
+  public void setProjects(@jakarta.annotation.Nonnull List<AddActionItemTaskParamsPostToSlackChannelsInner> projects) {
     this.projects = projects;
   }
 
 
-  public CreateAsanaTaskTaskParams title(@javax.annotation.Nonnull String title) {
+  public CreateAsanaTaskTaskParams title(@jakarta.annotation.Nonnull String title) {
     this.title = title;
     return this;
   }
@@ -288,17 +288,17 @@ public class CreateAsanaTaskTaskParams {
    * The task title
    * @return title
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nonnull String title) {
+  public void setTitle(@jakarta.annotation.Nonnull String title) {
     this.title = title;
   }
 
 
-  public CreateAsanaTaskTaskParams notes(@javax.annotation.Nullable String notes) {
+  public CreateAsanaTaskTaskParams notes(@jakarta.annotation.Nullable String notes) {
     this.notes = notes;
     return this;
   }
@@ -307,17 +307,17 @@ public class CreateAsanaTaskTaskParams {
    * Get notes
    * @return notes
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getNotes() {
     return notes;
   }
 
-  public void setNotes(@javax.annotation.Nullable String notes) {
+  public void setNotes(@jakarta.annotation.Nullable String notes) {
     this.notes = notes;
   }
 
 
-  public CreateAsanaTaskTaskParams assignUserEmail(@javax.annotation.Nullable String assignUserEmail) {
+  public CreateAsanaTaskTaskParams assignUserEmail(@jakarta.annotation.Nullable String assignUserEmail) {
     this.assignUserEmail = assignUserEmail;
     return this;
   }
@@ -326,17 +326,17 @@ public class CreateAsanaTaskTaskParams {
    * The assigned user&#39;s email
    * @return assignUserEmail
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getAssignUserEmail() {
     return assignUserEmail;
   }
 
-  public void setAssignUserEmail(@javax.annotation.Nullable String assignUserEmail) {
+  public void setAssignUserEmail(@jakarta.annotation.Nullable String assignUserEmail) {
     this.assignUserEmail = assignUserEmail;
   }
 
 
-  public CreateAsanaTaskTaskParams completion(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner completion) {
+  public CreateAsanaTaskTaskParams completion(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner completion) {
     this.completion = completion;
     return this;
   }
@@ -345,17 +345,17 @@ public class CreateAsanaTaskTaskParams {
    * Get completion
    * @return completion
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public AddActionItemTaskParamsPostToSlackChannelsInner getCompletion() {
     return completion;
   }
 
-  public void setCompletion(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner completion) {
+  public void setCompletion(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner completion) {
     this.completion = completion;
   }
 
 
-  public CreateAsanaTaskTaskParams dueDate(@javax.annotation.Nullable String dueDate) {
+  public CreateAsanaTaskTaskParams dueDate(@jakarta.annotation.Nullable String dueDate) {
     this.dueDate = dueDate;
     return this;
   }
@@ -364,17 +364,17 @@ public class CreateAsanaTaskTaskParams {
    * The due date
    * @return dueDate
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDueDate() {
     return dueDate;
   }
 
-  public void setDueDate(@javax.annotation.Nullable String dueDate) {
+  public void setDueDate(@jakarta.annotation.Nullable String dueDate) {
     this.dueDate = dueDate;
   }
 
 
-  public CreateAsanaTaskTaskParams customFieldsMapping(@javax.annotation.Nullable String customFieldsMapping) {
+  public CreateAsanaTaskTaskParams customFieldsMapping(@jakarta.annotation.Nullable String customFieldsMapping) {
     this.customFieldsMapping = customFieldsMapping;
     return this;
   }
@@ -383,17 +383,17 @@ public class CreateAsanaTaskTaskParams {
    * Custom field mappings. Can contain liquid markup and need to be valid JSON
    * @return customFieldsMapping
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCustomFieldsMapping() {
     return customFieldsMapping;
   }
 
-  public void setCustomFieldsMapping(@javax.annotation.Nullable String customFieldsMapping) {
+  public void setCustomFieldsMapping(@jakarta.annotation.Nullable String customFieldsMapping) {
     this.customFieldsMapping = customFieldsMapping;
   }
 
 
-  public CreateAsanaTaskTaskParams dependencyDirection(@javax.annotation.Nullable DependencyDirectionEnum dependencyDirection) {
+  public CreateAsanaTaskTaskParams dependencyDirection(@jakarta.annotation.Nullable DependencyDirectionEnum dependencyDirection) {
     this.dependencyDirection = dependencyDirection;
     return this;
   }
@@ -402,17 +402,17 @@ public class CreateAsanaTaskTaskParams {
    * Get dependencyDirection
    * @return dependencyDirection
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public DependencyDirectionEnum getDependencyDirection() {
     return dependencyDirection;
   }
 
-  public void setDependencyDirection(@javax.annotation.Nullable DependencyDirectionEnum dependencyDirection) {
+  public void setDependencyDirection(@jakarta.annotation.Nullable DependencyDirectionEnum dependencyDirection) {
     this.dependencyDirection = dependencyDirection;
   }
 
 
-  public CreateAsanaTaskTaskParams dependentTaskIds(@javax.annotation.Nullable List<String> dependentTaskIds) {
+  public CreateAsanaTaskTaskParams dependentTaskIds(@jakarta.annotation.Nullable List<String> dependentTaskIds) {
     this.dependentTaskIds = dependentTaskIds;
     return this;
   }
@@ -429,12 +429,12 @@ public class CreateAsanaTaskTaskParams {
    * Dependent task ids. Supports liquid syntax
    * @return dependentTaskIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getDependentTaskIds() {
     return dependentTaskIds;
   }
 
-  public void setDependentTaskIds(@javax.annotation.Nullable List<String> dependentTaskIds) {
+  public void setDependentTaskIds(@jakarta.annotation.Nullable List<String> dependentTaskIds) {
     this.dependentTaskIds = dependentTaskIds;
   }
 

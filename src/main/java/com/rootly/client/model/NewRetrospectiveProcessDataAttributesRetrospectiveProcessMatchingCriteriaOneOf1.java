@@ -50,17 +50,17 @@ import com.rootly.client.JSON;
 /**
  * NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteriaOneOf1
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteriaOneOf1 {
   public static final String SERIALIZED_NAME_GROUP_IDS = "group_ids";
   @SerializedName(SERIALIZED_NAME_GROUP_IDS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<String> groupIds = new ArrayList<>();
 
   public NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteriaOneOf1() {
   }
 
-  public NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteriaOneOf1 groupIds(@javax.annotation.Nonnull List<String> groupIds) {
+  public NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteriaOneOf1 groupIds(@jakarta.annotation.Nonnull List<String> groupIds) {
     this.groupIds = groupIds;
     return this;
   }
@@ -77,12 +77,12 @@ public class NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCr
    * Team IDs for retrospective process matching criteria
    * @return groupIds
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<String> getGroupIds() {
     return groupIds;
   }
 
-  public void setGroupIds(@javax.annotation.Nonnull List<String> groupIds) {
+  public void setGroupIds(@jakarta.annotation.Nonnull List<String> groupIds) {
     this.groupIds = groupIds;
   }
 

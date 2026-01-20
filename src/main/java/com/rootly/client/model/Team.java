@@ -55,157 +55,157 @@ import com.rootly.client.JSON;
 /**
  * Team
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Team {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String slug;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_NOTIFY_EMAILS = "notify_emails";
   @SerializedName(SERIALIZED_NAME_NOTIFY_EMAILS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> notifyEmails;
 
   public static final String SERIALIZED_NAME_COLOR = "color";
   @SerializedName(SERIALIZED_NAME_COLOR)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String color;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public static final String SERIALIZED_NAME_BACKSTAGE_ID = "backstage_id";
   @SerializedName(SERIALIZED_NAME_BACKSTAGE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String backstageId;
 
   public static final String SERIALIZED_NAME_EXTERNAL_ID = "external_id";
   @SerializedName(SERIALIZED_NAME_EXTERNAL_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String externalId;
 
   public static final String SERIALIZED_NAME_PAGERDUTY_ID = "pagerduty_id";
   @SerializedName(SERIALIZED_NAME_PAGERDUTY_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String pagerdutyId;
 
   public static final String SERIALIZED_NAME_PAGERDUTY_SERVICE_ID = "pagerduty_service_id";
   @SerializedName(SERIALIZED_NAME_PAGERDUTY_SERVICE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String pagerdutyServiceId;
 
   public static final String SERIALIZED_NAME_OPSGENIE_ID = "opsgenie_id";
   @SerializedName(SERIALIZED_NAME_OPSGENIE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String opsgenieId;
 
   public static final String SERIALIZED_NAME_VICTOR_OPS_ID = "victor_ops_id";
   @SerializedName(SERIALIZED_NAME_VICTOR_OPS_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String victorOpsId;
 
   public static final String SERIALIZED_NAME_PAGERTREE_ID = "pagertree_id";
   @SerializedName(SERIALIZED_NAME_PAGERTREE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String pagertreeId;
 
   public static final String SERIALIZED_NAME_CORTEX_ID = "cortex_id";
   @SerializedName(SERIALIZED_NAME_CORTEX_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String cortexId;
 
   public static final String SERIALIZED_NAME_SERVICE_NOW_CI_SYS_ID = "service_now_ci_sys_id";
   @SerializedName(SERIALIZED_NAME_SERVICE_NOW_CI_SYS_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String serviceNowCiSysId;
 
   public static final String SERIALIZED_NAME_USER_IDS = "user_ids";
   @SerializedName(SERIALIZED_NAME_USER_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<Integer> userIds;
 
   public static final String SERIALIZED_NAME_ADMIN_IDS = "admin_ids";
   @SerializedName(SERIALIZED_NAME_ADMIN_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<Integer> adminIds;
 
   public static final String SERIALIZED_NAME_ALERTS_EMAIL_ENABLED = "alerts_email_enabled";
   @SerializedName(SERIALIZED_NAME_ALERTS_EMAIL_ENABLED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean alertsEmailEnabled;
 
   public static final String SERIALIZED_NAME_ALERTS_EMAIL_ADDRESS = "alerts_email_address";
   @SerializedName(SERIALIZED_NAME_ALERTS_EMAIL_ADDRESS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String alertsEmailAddress;
 
   public static final String SERIALIZED_NAME_ALERT_URGENCY_ID = "alert_urgency_id";
   @SerializedName(SERIALIZED_NAME_ALERT_URGENCY_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String alertUrgencyId;
 
   public static final String SERIALIZED_NAME_SLACK_CHANNELS = "slack_channels";
   @SerializedName(SERIALIZED_NAME_SLACK_CHANNELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewEnvironmentDataAttributesSlackChannelsInner> slackChannels;
 
   public static final String SERIALIZED_NAME_SLACK_ALIASES = "slack_aliases";
   @SerializedName(SERIALIZED_NAME_SLACK_ALIASES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases;
 
   public static final String SERIALIZED_NAME_ALERT_BROADCAST_ENABLED = "alert_broadcast_enabled";
   @SerializedName(SERIALIZED_NAME_ALERT_BROADCAST_ENABLED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean alertBroadcastEnabled;
 
   public static final String SERIALIZED_NAME_ALERT_BROADCAST_CHANNEL = "alert_broadcast_channel";
   @SerializedName(SERIALIZED_NAME_ALERT_BROADCAST_CHANNEL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ServiceAlertBroadcastChannel alertBroadcastChannel;
 
   public static final String SERIALIZED_NAME_INCIDENT_BROADCAST_ENABLED = "incident_broadcast_enabled";
   @SerializedName(SERIALIZED_NAME_INCIDENT_BROADCAST_ENABLED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean incidentBroadcastEnabled;
 
   public static final String SERIALIZED_NAME_INCIDENT_BROADCAST_CHANNEL = "incident_broadcast_channel";
   @SerializedName(SERIALIZED_NAME_INCIDENT_BROADCAST_CHANNEL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ServiceIncidentBroadcastChannel incidentBroadcastChannel;
 
   public static final String SERIALIZED_NAME_AUTO_ADD_MEMBERS_WHEN_ATTACHED = "auto_add_members_when_attached";
   @SerializedName(SERIALIZED_NAME_AUTO_ADD_MEMBERS_WHEN_ATTACHED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean autoAddMembersWhenAttached;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public Team() {
   }
 
-  public Team name(@javax.annotation.Nonnull String name) {
+  public Team name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -214,17 +214,17 @@ public class Team {
    * The name of the team
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public Team slug(@javax.annotation.Nullable String slug) {
+  public Team slug(@jakarta.annotation.Nullable String slug) {
     this.slug = slug;
     return this;
   }
@@ -233,17 +233,17 @@ public class Team {
    * Get slug
    * @return slug
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSlug() {
     return slug;
   }
 
-  public void setSlug(@javax.annotation.Nullable String slug) {
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
     this.slug = slug;
   }
 
 
-  public Team description(@javax.annotation.Nullable String description) {
+  public Team description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -252,17 +252,17 @@ public class Team {
    * The description of the team
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public Team notifyEmails(@javax.annotation.Nullable List<String> notifyEmails) {
+  public Team notifyEmails(@jakarta.annotation.Nullable List<String> notifyEmails) {
     this.notifyEmails = notifyEmails;
     return this;
   }
@@ -279,17 +279,17 @@ public class Team {
    * Emails to attach to the team
    * @return notifyEmails
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getNotifyEmails() {
     return notifyEmails;
   }
 
-  public void setNotifyEmails(@javax.annotation.Nullable List<String> notifyEmails) {
+  public void setNotifyEmails(@jakarta.annotation.Nullable List<String> notifyEmails) {
     this.notifyEmails = notifyEmails;
   }
 
 
-  public Team color(@javax.annotation.Nullable String color) {
+  public Team color(@jakarta.annotation.Nullable String color) {
     this.color = color;
     return this;
   }
@@ -298,17 +298,17 @@ public class Team {
    * The hex color of the team
    * @return color
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getColor() {
     return color;
   }
 
-  public void setColor(@javax.annotation.Nullable String color) {
+  public void setColor(@jakarta.annotation.Nullable String color) {
     this.color = color;
   }
 
 
-  public Team position(@javax.annotation.Nullable Integer position) {
+  public Team position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -317,17 +317,17 @@ public class Team {
    * Position of the team
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 
 
-  public Team backstageId(@javax.annotation.Nullable String backstageId) {
+  public Team backstageId(@jakarta.annotation.Nullable String backstageId) {
     this.backstageId = backstageId;
     return this;
   }
@@ -336,17 +336,17 @@ public class Team {
    * The Backstage entity id associated to this team. eg: :namespace/:kind/:entity_name
    * @return backstageId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getBackstageId() {
     return backstageId;
   }
 
-  public void setBackstageId(@javax.annotation.Nullable String backstageId) {
+  public void setBackstageId(@jakarta.annotation.Nullable String backstageId) {
     this.backstageId = backstageId;
   }
 
 
-  public Team externalId(@javax.annotation.Nullable String externalId) {
+  public Team externalId(@jakarta.annotation.Nullable String externalId) {
     this.externalId = externalId;
     return this;
   }
@@ -355,17 +355,17 @@ public class Team {
    * The external id associated to this team
    * @return externalId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getExternalId() {
     return externalId;
   }
 
-  public void setExternalId(@javax.annotation.Nullable String externalId) {
+  public void setExternalId(@jakarta.annotation.Nullable String externalId) {
     this.externalId = externalId;
   }
 
 
-  public Team pagerdutyId(@javax.annotation.Nullable String pagerdutyId) {
+  public Team pagerdutyId(@jakarta.annotation.Nullable String pagerdutyId) {
     this.pagerdutyId = pagerdutyId;
     return this;
   }
@@ -374,17 +374,17 @@ public class Team {
    * The PagerDuty group id associated to this team
    * @return pagerdutyId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPagerdutyId() {
     return pagerdutyId;
   }
 
-  public void setPagerdutyId(@javax.annotation.Nullable String pagerdutyId) {
+  public void setPagerdutyId(@jakarta.annotation.Nullable String pagerdutyId) {
     this.pagerdutyId = pagerdutyId;
   }
 
 
-  public Team pagerdutyServiceId(@javax.annotation.Nullable String pagerdutyServiceId) {
+  public Team pagerdutyServiceId(@jakarta.annotation.Nullable String pagerdutyServiceId) {
     this.pagerdutyServiceId = pagerdutyServiceId;
     return this;
   }
@@ -393,17 +393,17 @@ public class Team {
    * The PagerDuty service id associated to this team
    * @return pagerdutyServiceId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPagerdutyServiceId() {
     return pagerdutyServiceId;
   }
 
-  public void setPagerdutyServiceId(@javax.annotation.Nullable String pagerdutyServiceId) {
+  public void setPagerdutyServiceId(@jakarta.annotation.Nullable String pagerdutyServiceId) {
     this.pagerdutyServiceId = pagerdutyServiceId;
   }
 
 
-  public Team opsgenieId(@javax.annotation.Nullable String opsgenieId) {
+  public Team opsgenieId(@jakarta.annotation.Nullable String opsgenieId) {
     this.opsgenieId = opsgenieId;
     return this;
   }
@@ -412,17 +412,17 @@ public class Team {
    * The Opsgenie group id associated to this team
    * @return opsgenieId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getOpsgenieId() {
     return opsgenieId;
   }
 
-  public void setOpsgenieId(@javax.annotation.Nullable String opsgenieId) {
+  public void setOpsgenieId(@jakarta.annotation.Nullable String opsgenieId) {
     this.opsgenieId = opsgenieId;
   }
 
 
-  public Team victorOpsId(@javax.annotation.Nullable String victorOpsId) {
+  public Team victorOpsId(@jakarta.annotation.Nullable String victorOpsId) {
     this.victorOpsId = victorOpsId;
     return this;
   }
@@ -431,17 +431,17 @@ public class Team {
    * The VictorOps group id associated to this team
    * @return victorOpsId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getVictorOpsId() {
     return victorOpsId;
   }
 
-  public void setVictorOpsId(@javax.annotation.Nullable String victorOpsId) {
+  public void setVictorOpsId(@jakarta.annotation.Nullable String victorOpsId) {
     this.victorOpsId = victorOpsId;
   }
 
 
-  public Team pagertreeId(@javax.annotation.Nullable String pagertreeId) {
+  public Team pagertreeId(@jakarta.annotation.Nullable String pagertreeId) {
     this.pagertreeId = pagertreeId;
     return this;
   }
@@ -450,17 +450,17 @@ public class Team {
    * The PagerTree group id associated to this team
    * @return pagertreeId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPagertreeId() {
     return pagertreeId;
   }
 
-  public void setPagertreeId(@javax.annotation.Nullable String pagertreeId) {
+  public void setPagertreeId(@jakarta.annotation.Nullable String pagertreeId) {
     this.pagertreeId = pagertreeId;
   }
 
 
-  public Team cortexId(@javax.annotation.Nullable String cortexId) {
+  public Team cortexId(@jakarta.annotation.Nullable String cortexId) {
     this.cortexId = cortexId;
     return this;
   }
@@ -469,17 +469,17 @@ public class Team {
    * The Cortex group id associated to this team
    * @return cortexId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCortexId() {
     return cortexId;
   }
 
-  public void setCortexId(@javax.annotation.Nullable String cortexId) {
+  public void setCortexId(@jakarta.annotation.Nullable String cortexId) {
     this.cortexId = cortexId;
   }
 
 
-  public Team serviceNowCiSysId(@javax.annotation.Nullable String serviceNowCiSysId) {
+  public Team serviceNowCiSysId(@jakarta.annotation.Nullable String serviceNowCiSysId) {
     this.serviceNowCiSysId = serviceNowCiSysId;
     return this;
   }
@@ -488,17 +488,17 @@ public class Team {
    * The Service Now CI sys id associated to this team
    * @return serviceNowCiSysId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getServiceNowCiSysId() {
     return serviceNowCiSysId;
   }
 
-  public void setServiceNowCiSysId(@javax.annotation.Nullable String serviceNowCiSysId) {
+  public void setServiceNowCiSysId(@jakarta.annotation.Nullable String serviceNowCiSysId) {
     this.serviceNowCiSysId = serviceNowCiSysId;
   }
 
 
-  public Team userIds(@javax.annotation.Nullable List<Integer> userIds) {
+  public Team userIds(@jakarta.annotation.Nullable List<Integer> userIds) {
     this.userIds = userIds;
     return this;
   }
@@ -515,17 +515,17 @@ public class Team {
    * The user ids of the members of this team.
    * @return userIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<Integer> getUserIds() {
     return userIds;
   }
 
-  public void setUserIds(@javax.annotation.Nullable List<Integer> userIds) {
+  public void setUserIds(@jakarta.annotation.Nullable List<Integer> userIds) {
     this.userIds = userIds;
   }
 
 
-  public Team adminIds(@javax.annotation.Nullable List<Integer> adminIds) {
+  public Team adminIds(@jakarta.annotation.Nullable List<Integer> adminIds) {
     this.adminIds = adminIds;
     return this;
   }
@@ -542,17 +542,17 @@ public class Team {
    * The user ids of the admins of this team. These users must also be present in user_ids attribute.
    * @return adminIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<Integer> getAdminIds() {
     return adminIds;
   }
 
-  public void setAdminIds(@javax.annotation.Nullable List<Integer> adminIds) {
+  public void setAdminIds(@jakarta.annotation.Nullable List<Integer> adminIds) {
     this.adminIds = adminIds;
   }
 
 
-  public Team alertsEmailEnabled(@javax.annotation.Nullable Boolean alertsEmailEnabled) {
+  public Team alertsEmailEnabled(@jakarta.annotation.Nullable Boolean alertsEmailEnabled) {
     this.alertsEmailEnabled = alertsEmailEnabled;
     return this;
   }
@@ -561,17 +561,17 @@ public class Team {
    * Enable alerts through email
    * @return alertsEmailEnabled
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getAlertsEmailEnabled() {
     return alertsEmailEnabled;
   }
 
-  public void setAlertsEmailEnabled(@javax.annotation.Nullable Boolean alertsEmailEnabled) {
+  public void setAlertsEmailEnabled(@jakarta.annotation.Nullable Boolean alertsEmailEnabled) {
     this.alertsEmailEnabled = alertsEmailEnabled;
   }
 
 
-  public Team alertsEmailAddress(@javax.annotation.Nullable String alertsEmailAddress) {
+  public Team alertsEmailAddress(@jakarta.annotation.Nullable String alertsEmailAddress) {
     this.alertsEmailAddress = alertsEmailAddress;
     return this;
   }
@@ -580,17 +580,17 @@ public class Team {
    * Email generated to send alerts to
    * @return alertsEmailAddress
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getAlertsEmailAddress() {
     return alertsEmailAddress;
   }
 
-  public void setAlertsEmailAddress(@javax.annotation.Nullable String alertsEmailAddress) {
+  public void setAlertsEmailAddress(@jakarta.annotation.Nullable String alertsEmailAddress) {
     this.alertsEmailAddress = alertsEmailAddress;
   }
 
 
-  public Team alertUrgencyId(@javax.annotation.Nullable String alertUrgencyId) {
+  public Team alertUrgencyId(@jakarta.annotation.Nullable String alertUrgencyId) {
     this.alertUrgencyId = alertUrgencyId;
     return this;
   }
@@ -599,17 +599,17 @@ public class Team {
    * The alert urgency id of the team
    * @return alertUrgencyId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getAlertUrgencyId() {
     return alertUrgencyId;
   }
 
-  public void setAlertUrgencyId(@javax.annotation.Nullable String alertUrgencyId) {
+  public void setAlertUrgencyId(@jakarta.annotation.Nullable String alertUrgencyId) {
     this.alertUrgencyId = alertUrgencyId;
   }
 
 
-  public Team slackChannels(@javax.annotation.Nullable List<NewEnvironmentDataAttributesSlackChannelsInner> slackChannels) {
+  public Team slackChannels(@jakarta.annotation.Nullable List<NewEnvironmentDataAttributesSlackChannelsInner> slackChannels) {
     this.slackChannels = slackChannels;
     return this;
   }
@@ -626,17 +626,17 @@ public class Team {
    * Slack Channels associated with this team
    * @return slackChannels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewEnvironmentDataAttributesSlackChannelsInner> getSlackChannels() {
     return slackChannels;
   }
 
-  public void setSlackChannels(@javax.annotation.Nullable List<NewEnvironmentDataAttributesSlackChannelsInner> slackChannels) {
+  public void setSlackChannels(@jakarta.annotation.Nullable List<NewEnvironmentDataAttributesSlackChannelsInner> slackChannels) {
     this.slackChannels = slackChannels;
   }
 
 
-  public Team slackAliases(@javax.annotation.Nullable List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases) {
+  public Team slackAliases(@jakarta.annotation.Nullable List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases) {
     this.slackAliases = slackAliases;
     return this;
   }
@@ -653,17 +653,17 @@ public class Team {
    * Slack Aliases associated with this team
    * @return slackAliases
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewEnvironmentDataAttributesSlackAliasesInner> getSlackAliases() {
     return slackAliases;
   }
 
-  public void setSlackAliases(@javax.annotation.Nullable List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases) {
+  public void setSlackAliases(@jakarta.annotation.Nullable List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases) {
     this.slackAliases = slackAliases;
   }
 
 
-  public Team alertBroadcastEnabled(@javax.annotation.Nullable Boolean alertBroadcastEnabled) {
+  public Team alertBroadcastEnabled(@jakarta.annotation.Nullable Boolean alertBroadcastEnabled) {
     this.alertBroadcastEnabled = alertBroadcastEnabled;
     return this;
   }
@@ -672,17 +672,17 @@ public class Team {
    * Enable alerts to be broadcasted to a specific channel
    * @return alertBroadcastEnabled
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getAlertBroadcastEnabled() {
     return alertBroadcastEnabled;
   }
 
-  public void setAlertBroadcastEnabled(@javax.annotation.Nullable Boolean alertBroadcastEnabled) {
+  public void setAlertBroadcastEnabled(@jakarta.annotation.Nullable Boolean alertBroadcastEnabled) {
     this.alertBroadcastEnabled = alertBroadcastEnabled;
   }
 
 
-  public Team alertBroadcastChannel(@javax.annotation.Nullable ServiceAlertBroadcastChannel alertBroadcastChannel) {
+  public Team alertBroadcastChannel(@jakarta.annotation.Nullable ServiceAlertBroadcastChannel alertBroadcastChannel) {
     this.alertBroadcastChannel = alertBroadcastChannel;
     return this;
   }
@@ -691,17 +691,17 @@ public class Team {
    * Get alertBroadcastChannel
    * @return alertBroadcastChannel
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ServiceAlertBroadcastChannel getAlertBroadcastChannel() {
     return alertBroadcastChannel;
   }
 
-  public void setAlertBroadcastChannel(@javax.annotation.Nullable ServiceAlertBroadcastChannel alertBroadcastChannel) {
+  public void setAlertBroadcastChannel(@jakarta.annotation.Nullable ServiceAlertBroadcastChannel alertBroadcastChannel) {
     this.alertBroadcastChannel = alertBroadcastChannel;
   }
 
 
-  public Team incidentBroadcastEnabled(@javax.annotation.Nullable Boolean incidentBroadcastEnabled) {
+  public Team incidentBroadcastEnabled(@jakarta.annotation.Nullable Boolean incidentBroadcastEnabled) {
     this.incidentBroadcastEnabled = incidentBroadcastEnabled;
     return this;
   }
@@ -710,17 +710,17 @@ public class Team {
    * Enable incidents to be broadcasted to a specific channel
    * @return incidentBroadcastEnabled
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getIncidentBroadcastEnabled() {
     return incidentBroadcastEnabled;
   }
 
-  public void setIncidentBroadcastEnabled(@javax.annotation.Nullable Boolean incidentBroadcastEnabled) {
+  public void setIncidentBroadcastEnabled(@jakarta.annotation.Nullable Boolean incidentBroadcastEnabled) {
     this.incidentBroadcastEnabled = incidentBroadcastEnabled;
   }
 
 
-  public Team incidentBroadcastChannel(@javax.annotation.Nullable ServiceIncidentBroadcastChannel incidentBroadcastChannel) {
+  public Team incidentBroadcastChannel(@jakarta.annotation.Nullable ServiceIncidentBroadcastChannel incidentBroadcastChannel) {
     this.incidentBroadcastChannel = incidentBroadcastChannel;
     return this;
   }
@@ -729,17 +729,17 @@ public class Team {
    * Get incidentBroadcastChannel
    * @return incidentBroadcastChannel
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ServiceIncidentBroadcastChannel getIncidentBroadcastChannel() {
     return incidentBroadcastChannel;
   }
 
-  public void setIncidentBroadcastChannel(@javax.annotation.Nullable ServiceIncidentBroadcastChannel incidentBroadcastChannel) {
+  public void setIncidentBroadcastChannel(@jakarta.annotation.Nullable ServiceIncidentBroadcastChannel incidentBroadcastChannel) {
     this.incidentBroadcastChannel = incidentBroadcastChannel;
   }
 
 
-  public Team autoAddMembersWhenAttached(@javax.annotation.Nullable Boolean autoAddMembersWhenAttached) {
+  public Team autoAddMembersWhenAttached(@jakarta.annotation.Nullable Boolean autoAddMembersWhenAttached) {
     this.autoAddMembersWhenAttached = autoAddMembersWhenAttached;
     return this;
   }
@@ -748,17 +748,17 @@ public class Team {
    * Auto add members to incident channel when team is attached
    * @return autoAddMembersWhenAttached
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getAutoAddMembersWhenAttached() {
     return autoAddMembersWhenAttached;
   }
 
-  public void setAutoAddMembersWhenAttached(@javax.annotation.Nullable Boolean autoAddMembersWhenAttached) {
+  public void setAutoAddMembersWhenAttached(@jakarta.annotation.Nullable Boolean autoAddMembersWhenAttached) {
     this.autoAddMembersWhenAttached = autoAddMembersWhenAttached;
   }
 
 
-  public Team createdAt(@javax.annotation.Nonnull String createdAt) {
+  public Team createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -767,17 +767,17 @@ public class Team {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public Team updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public Team updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -786,12 +786,12 @@ public class Team {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

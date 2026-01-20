@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateDashboardPanelData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateDashboardPanelData {
   /**
    * Gets or Sets type
@@ -103,18 +103,18 @@ public class UpdateDashboardPanelData {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private UpdateDashboardPanelDataAttributes attributes;
 
   public UpdateDashboardPanelData() {
   }
 
-  public UpdateDashboardPanelData type(@javax.annotation.Nullable TypeEnum type) {
+  public UpdateDashboardPanelData type(@jakarta.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -123,17 +123,17 @@ public class UpdateDashboardPanelData {
    * Get type
    * @return type
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TypeEnum getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nullable TypeEnum type) {
+  public void setType(@jakarta.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
 
-  public UpdateDashboardPanelData attributes(@javax.annotation.Nullable UpdateDashboardPanelDataAttributes attributes) {
+  public UpdateDashboardPanelData attributes(@jakarta.annotation.Nullable UpdateDashboardPanelDataAttributes attributes) {
     this.attributes = attributes;
     return this;
   }
@@ -142,12 +142,12 @@ public class UpdateDashboardPanelData {
    * Get attributes
    * @return attributes
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public UpdateDashboardPanelDataAttributes getAttributes() {
     return attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nullable UpdateDashboardPanelDataAttributes attributes) {
+  public void setAttributes(@jakarta.annotation.Nullable UpdateDashboardPanelDataAttributes attributes) {
     this.attributes = attributes;
   }
 

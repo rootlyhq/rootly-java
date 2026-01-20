@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * ChangeSlackChannelPrivacyTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ChangeSlackChannelPrivacyTaskParams {
   /**
    * Gets or Sets taskType
@@ -103,12 +103,12 @@ public class ChangeSlackChannelPrivacyTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_CHANNEL = "channel";
   @SerializedName(SERIALIZED_NAME_CHANNEL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AddActionItemTaskParamsPostToSlackChannelsInner channel;
 
   /**
@@ -165,13 +165,13 @@ public class ChangeSlackChannelPrivacyTaskParams {
 
   public static final String SERIALIZED_NAME_PRIVACY = "privacy";
   @SerializedName(SERIALIZED_NAME_PRIVACY)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private PrivacyEnum privacy;
 
   public ChangeSlackChannelPrivacyTaskParams() {
   }
 
-  public ChangeSlackChannelPrivacyTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public ChangeSlackChannelPrivacyTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -180,17 +180,17 @@ public class ChangeSlackChannelPrivacyTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public ChangeSlackChannelPrivacyTaskParams channel(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner channel) {
+  public ChangeSlackChannelPrivacyTaskParams channel(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner channel) {
     this.channel = channel;
     return this;
   }
@@ -199,17 +199,17 @@ public class ChangeSlackChannelPrivacyTaskParams {
    * Get channel
    * @return channel
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AddActionItemTaskParamsPostToSlackChannelsInner getChannel() {
     return channel;
   }
 
-  public void setChannel(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner channel) {
+  public void setChannel(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner channel) {
     this.channel = channel;
   }
 
 
-  public ChangeSlackChannelPrivacyTaskParams privacy(@javax.annotation.Nonnull PrivacyEnum privacy) {
+  public ChangeSlackChannelPrivacyTaskParams privacy(@jakarta.annotation.Nonnull PrivacyEnum privacy) {
     this.privacy = privacy;
     return this;
   }
@@ -218,12 +218,12 @@ public class ChangeSlackChannelPrivacyTaskParams {
    * Get privacy
    * @return privacy
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public PrivacyEnum getPrivacy() {
     return privacy;
   }
 
-  public void setPrivacy(@javax.annotation.Nonnull PrivacyEnum privacy) {
+  public void setPrivacy(@jakarta.annotation.Nonnull PrivacyEnum privacy) {
     this.privacy = privacy;
   }
 

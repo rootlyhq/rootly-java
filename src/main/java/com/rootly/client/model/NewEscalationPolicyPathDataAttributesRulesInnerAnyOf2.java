@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2 {
   /**
    * The type of the escalation path rule
@@ -102,12 +102,12 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2 {
 
   public static final String SERIALIZED_NAME_RULE_TYPE = "rule_type";
   @SerializedName(SERIALIZED_NAME_RULE_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private RuleTypeEnum ruleType;
 
   public static final String SERIALIZED_NAME_JSON_PATH = "json_path";
   @SerializedName(SERIALIZED_NAME_JSON_PATH)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String jsonPath;
 
   /**
@@ -168,18 +168,18 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2 {
 
   public static final String SERIALIZED_NAME_OPERATOR = "operator";
   @SerializedName(SERIALIZED_NAME_OPERATOR)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private OperatorEnum operator;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String value;
 
   public NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2() {
   }
 
-  public NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2 ruleType(@javax.annotation.Nonnull RuleTypeEnum ruleType) {
+  public NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2 ruleType(@jakarta.annotation.Nonnull RuleTypeEnum ruleType) {
     this.ruleType = ruleType;
     return this;
   }
@@ -188,17 +188,17 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2 {
    * The type of the escalation path rule
    * @return ruleType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public RuleTypeEnum getRuleType() {
     return ruleType;
   }
 
-  public void setRuleType(@javax.annotation.Nonnull RuleTypeEnum ruleType) {
+  public void setRuleType(@jakarta.annotation.Nonnull RuleTypeEnum ruleType) {
     this.ruleType = ruleType;
   }
 
 
-  public NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2 jsonPath(@javax.annotation.Nonnull String jsonPath) {
+  public NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2 jsonPath(@jakarta.annotation.Nonnull String jsonPath) {
     this.jsonPath = jsonPath;
     return this;
   }
@@ -207,17 +207,17 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2 {
    * JSON path to extract value from payload
    * @return jsonPath
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getJsonPath() {
     return jsonPath;
   }
 
-  public void setJsonPath(@javax.annotation.Nonnull String jsonPath) {
+  public void setJsonPath(@jakarta.annotation.Nonnull String jsonPath) {
     this.jsonPath = jsonPath;
   }
 
 
-  public NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2 operator(@javax.annotation.Nonnull OperatorEnum operator) {
+  public NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2 operator(@jakarta.annotation.Nonnull OperatorEnum operator) {
     this.operator = operator;
     return this;
   }
@@ -226,17 +226,17 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2 {
    * How JSON path value should be matched
    * @return operator
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public OperatorEnum getOperator() {
     return operator;
   }
 
-  public void setOperator(@javax.annotation.Nonnull OperatorEnum operator) {
+  public void setOperator(@jakarta.annotation.Nonnull OperatorEnum operator) {
     this.operator = operator;
   }
 
 
-  public NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2 value(@javax.annotation.Nonnull String value) {
+  public NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2 value(@jakarta.annotation.Nonnull String value) {
     this.value = value;
     return this;
   }
@@ -245,12 +245,12 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2 {
    * Value with which JSON path value should be matched
    * @return value
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getValue() {
     return value;
   }
 
-  public void setValue(@javax.annotation.Nonnull String value) {
+  public void setValue(@jakarta.annotation.Nonnull String value) {
     this.value = value;
   }
 

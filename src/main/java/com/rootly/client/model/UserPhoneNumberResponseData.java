@@ -49,11 +49,11 @@ import com.rootly.client.JSON;
 /**
  * UserPhoneNumberResponseData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UserPhoneNumberResponseData {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String id;
 
   /**
@@ -108,18 +108,18 @@ public class UserPhoneNumberResponseData {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private UserPhoneNumber attributes;
 
   public UserPhoneNumberResponseData() {
   }
 
-  public UserPhoneNumberResponseData id(@javax.annotation.Nonnull String id) {
+  public UserPhoneNumberResponseData id(@jakarta.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
@@ -128,17 +128,17 @@ public class UserPhoneNumberResponseData {
    * Unique ID of the phone number
    * @return id
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(@javax.annotation.Nonnull String id) {
+  public void setId(@jakarta.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public UserPhoneNumberResponseData type(@javax.annotation.Nonnull TypeEnum type) {
+  public UserPhoneNumberResponseData type(@jakarta.annotation.Nonnull TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -147,17 +147,17 @@ public class UserPhoneNumberResponseData {
    * Get type
    * @return type
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public TypeEnum getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nonnull TypeEnum type) {
+  public void setType(@jakarta.annotation.Nonnull TypeEnum type) {
     this.type = type;
   }
 
 
-  public UserPhoneNumberResponseData attributes(@javax.annotation.Nonnull UserPhoneNumber attributes) {
+  public UserPhoneNumberResponseData attributes(@jakarta.annotation.Nonnull UserPhoneNumber attributes) {
     this.attributes = attributes;
     return this;
   }
@@ -166,12 +166,12 @@ public class UserPhoneNumberResponseData {
    * Get attributes
    * @return attributes
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public UserPhoneNumber getAttributes() {
     return attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nonnull UserPhoneNumber attributes) {
+  public void setAttributes(@jakarta.annotation.Nonnull UserPhoneNumber attributes) {
     this.attributes = attributes;
   }
 

@@ -49,11 +49,11 @@ import com.rootly.client.JSON;
 /**
  * Audit
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Audit {
   public static final String SERIALIZED_NAME_EVENT = "event";
   @SerializedName(SERIALIZED_NAME_EVENT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String event;
 
   /**
@@ -184,43 +184,43 @@ public class Audit {
 
   public static final String SERIALIZED_NAME_ITEM_TYPE = "item_type";
   @SerializedName(SERIALIZED_NAME_ITEM_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ItemTypeEnum itemType;
 
   public static final String SERIALIZED_NAME_OBJECT = "object";
   @SerializedName(SERIALIZED_NAME_OBJECT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Object _object;
 
   public static final String SERIALIZED_NAME_OBJECT_CHANGES = "object_changes";
   @SerializedName(SERIALIZED_NAME_OBJECT_CHANGES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Object objectChanges;
 
   public static final String SERIALIZED_NAME_USER_ID = "user_id";
   @SerializedName(SERIALIZED_NAME_USER_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer userId;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_ITEM_ID = "item_id";
   @SerializedName(SERIALIZED_NAME_ITEM_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String itemId;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer id;
 
   public Audit() {
   }
 
-  public Audit event(@javax.annotation.Nonnull String event) {
+  public Audit event(@jakarta.annotation.Nonnull String event) {
     this.event = event;
     return this;
   }
@@ -229,17 +229,17 @@ public class Audit {
    * Describes the action that was taken.
    * @return event
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getEvent() {
     return event;
   }
 
-  public void setEvent(@javax.annotation.Nonnull String event) {
+  public void setEvent(@jakarta.annotation.Nonnull String event) {
     this.event = event;
   }
 
 
-  public Audit itemType(@javax.annotation.Nullable ItemTypeEnum itemType) {
+  public Audit itemType(@jakarta.annotation.Nullable ItemTypeEnum itemType) {
     this.itemType = itemType;
     return this;
   }
@@ -248,17 +248,17 @@ public class Audit {
    * Describes the object in which the action was taken on
    * @return itemType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ItemTypeEnum getItemType() {
     return itemType;
   }
 
-  public void setItemType(@javax.annotation.Nullable ItemTypeEnum itemType) {
+  public void setItemType(@jakarta.annotation.Nullable ItemTypeEnum itemType) {
     this.itemType = itemType;
   }
 
 
-  public Audit _object(@javax.annotation.Nullable Object _object) {
+  public Audit _object(@jakarta.annotation.Nullable Object _object) {
     this._object = _object;
     return this;
   }
@@ -267,17 +267,17 @@ public class Audit {
    * The object in which the action was taken on
    * @return _object
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Object getObject() {
     return _object;
   }
 
-  public void setObject(@javax.annotation.Nullable Object _object) {
+  public void setObject(@jakarta.annotation.Nullable Object _object) {
     this._object = _object;
   }
 
 
-  public Audit objectChanges(@javax.annotation.Nullable Object objectChanges) {
+  public Audit objectChanges(@jakarta.annotation.Nullable Object objectChanges) {
     this.objectChanges = objectChanges;
     return this;
   }
@@ -286,17 +286,17 @@ public class Audit {
    * The changes that occurred on the object
    * @return objectChanges
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Object getObjectChanges() {
     return objectChanges;
   }
 
-  public void setObjectChanges(@javax.annotation.Nullable Object objectChanges) {
+  public void setObjectChanges(@jakarta.annotation.Nullable Object objectChanges) {
     this.objectChanges = objectChanges;
   }
 
 
-  public Audit userId(@javax.annotation.Nullable Integer userId) {
+  public Audit userId(@jakarta.annotation.Nullable Integer userId) {
     this.userId = userId;
     return this;
   }
@@ -305,17 +305,17 @@ public class Audit {
    * The ID of who took action on the object. Together with whodunnit_type can be used to find the user
    * @return userId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getUserId() {
     return userId;
   }
 
-  public void setUserId(@javax.annotation.Nullable Integer userId) {
+  public void setUserId(@jakarta.annotation.Nullable Integer userId) {
     this.userId = userId;
   }
 
 
-  public Audit createdAt(@javax.annotation.Nonnull String createdAt) {
+  public Audit createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -324,17 +324,17 @@ public class Audit {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public Audit itemId(@javax.annotation.Nullable String itemId) {
+  public Audit itemId(@jakarta.annotation.Nullable String itemId) {
     this.itemId = itemId;
     return this;
   }
@@ -343,17 +343,17 @@ public class Audit {
    * ID of the affected object
    * @return itemId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getItemId() {
     return itemId;
   }
 
-  public void setItemId(@javax.annotation.Nullable String itemId) {
+  public void setItemId(@jakarta.annotation.Nullable String itemId) {
     this.itemId = itemId;
   }
 
 
-  public Audit id(@javax.annotation.Nullable Integer id) {
+  public Audit id(@jakarta.annotation.Nullable Integer id) {
     this.id = id;
     return this;
   }
@@ -362,12 +362,12 @@ public class Audit {
    * ID of audit
    * @return id
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getId() {
     return id;
   }
 
-  public void setId(@javax.annotation.Nullable Integer id) {
+  public void setId(@jakarta.annotation.Nullable Integer id) {
     this.id = id;
   }
 

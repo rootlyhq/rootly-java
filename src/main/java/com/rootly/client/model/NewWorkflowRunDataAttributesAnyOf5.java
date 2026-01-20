@@ -51,32 +51,32 @@ import com.rootly.client.JSON;
 /**
  * NewWorkflowRunDataAttributesAnyOf5
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewWorkflowRunDataAttributesAnyOf5 {
   public static final String SERIALIZED_NAME_PULSE_ID = "pulse_id";
   @SerializedName(SERIALIZED_NAME_PULSE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String pulseId;
 
   public static final String SERIALIZED_NAME_IMMEDIATE = "immediate";
   @SerializedName(SERIALIZED_NAME_IMMEDIATE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean immediate = true;
 
   public static final String SERIALIZED_NAME_CHECK_CONDITIONS = "check_conditions";
   @SerializedName(SERIALIZED_NAME_CHECK_CONDITIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean checkConditions = false;
 
   public static final String SERIALIZED_NAME_CONTEXT = "context";
   @SerializedName(SERIALIZED_NAME_CONTEXT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Map<String, Object> context = new HashMap<>();
 
   public NewWorkflowRunDataAttributesAnyOf5() {
   }
 
-  public NewWorkflowRunDataAttributesAnyOf5 pulseId(@javax.annotation.Nonnull String pulseId) {
+  public NewWorkflowRunDataAttributesAnyOf5 pulseId(@jakarta.annotation.Nonnull String pulseId) {
     this.pulseId = pulseId;
     return this;
   }
@@ -85,17 +85,17 @@ public class NewWorkflowRunDataAttributesAnyOf5 {
    * Get pulseId
    * @return pulseId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getPulseId() {
     return pulseId;
   }
 
-  public void setPulseId(@javax.annotation.Nonnull String pulseId) {
+  public void setPulseId(@jakarta.annotation.Nonnull String pulseId) {
     this.pulseId = pulseId;
   }
 
 
-  public NewWorkflowRunDataAttributesAnyOf5 immediate(@javax.annotation.Nullable Boolean immediate) {
+  public NewWorkflowRunDataAttributesAnyOf5 immediate(@jakarta.annotation.Nullable Boolean immediate) {
     this.immediate = immediate;
     return this;
   }
@@ -104,17 +104,17 @@ public class NewWorkflowRunDataAttributesAnyOf5 {
    * If false, this will respect wait time configured on the workflow
    * @return immediate
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getImmediate() {
     return immediate;
   }
 
-  public void setImmediate(@javax.annotation.Nullable Boolean immediate) {
+  public void setImmediate(@jakarta.annotation.Nullable Boolean immediate) {
     this.immediate = immediate;
   }
 
 
-  public NewWorkflowRunDataAttributesAnyOf5 checkConditions(@javax.annotation.Nullable Boolean checkConditions) {
+  public NewWorkflowRunDataAttributesAnyOf5 checkConditions(@jakarta.annotation.Nullable Boolean checkConditions) {
     this.checkConditions = checkConditions;
     return this;
   }
@@ -123,17 +123,17 @@ public class NewWorkflowRunDataAttributesAnyOf5 {
    * If true, this will check conditions. If conditions are not satisfied the run will not be created
    * @return checkConditions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getCheckConditions() {
     return checkConditions;
   }
 
-  public void setCheckConditions(@javax.annotation.Nullable Boolean checkConditions) {
+  public void setCheckConditions(@jakarta.annotation.Nullable Boolean checkConditions) {
     this.checkConditions = checkConditions;
   }
 
 
-  public NewWorkflowRunDataAttributesAnyOf5 context(@javax.annotation.Nullable Map<String, Object> context) {
+  public NewWorkflowRunDataAttributesAnyOf5 context(@jakarta.annotation.Nullable Map<String, Object> context) {
     this.context = context;
     return this;
   }
@@ -150,12 +150,12 @@ public class NewWorkflowRunDataAttributesAnyOf5 {
    * Get context
    * @return context
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Map<String, Object> getContext() {
     return context;
   }
 
-  public void setContext(@javax.annotation.Nullable Map<String, Object> context) {
+  public void setContext(@jakarta.annotation.Nullable Map<String, Object> context) {
     this.context = context;
   }
 

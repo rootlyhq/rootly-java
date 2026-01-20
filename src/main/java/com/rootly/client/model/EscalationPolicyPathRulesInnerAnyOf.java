@@ -50,7 +50,7 @@ import com.rootly.client.JSON;
 /**
  * EscalationPolicyPathRulesInnerAnyOf
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class EscalationPolicyPathRulesInnerAnyOf {
   /**
    * The type of the escalation path rule
@@ -104,18 +104,18 @@ public class EscalationPolicyPathRulesInnerAnyOf {
 
   public static final String SERIALIZED_NAME_RULE_TYPE = "rule_type";
   @SerializedName(SERIALIZED_NAME_RULE_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private RuleTypeEnum ruleType;
 
   public static final String SERIALIZED_NAME_URGENCY_IDS = "urgency_ids";
   @SerializedName(SERIALIZED_NAME_URGENCY_IDS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<String> urgencyIds = new ArrayList<>();
 
   public EscalationPolicyPathRulesInnerAnyOf() {
   }
 
-  public EscalationPolicyPathRulesInnerAnyOf ruleType(@javax.annotation.Nonnull RuleTypeEnum ruleType) {
+  public EscalationPolicyPathRulesInnerAnyOf ruleType(@jakarta.annotation.Nonnull RuleTypeEnum ruleType) {
     this.ruleType = ruleType;
     return this;
   }
@@ -124,17 +124,17 @@ public class EscalationPolicyPathRulesInnerAnyOf {
    * The type of the escalation path rule
    * @return ruleType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public RuleTypeEnum getRuleType() {
     return ruleType;
   }
 
-  public void setRuleType(@javax.annotation.Nonnull RuleTypeEnum ruleType) {
+  public void setRuleType(@jakarta.annotation.Nonnull RuleTypeEnum ruleType) {
     this.ruleType = ruleType;
   }
 
 
-  public EscalationPolicyPathRulesInnerAnyOf urgencyIds(@javax.annotation.Nonnull List<String> urgencyIds) {
+  public EscalationPolicyPathRulesInnerAnyOf urgencyIds(@jakarta.annotation.Nonnull List<String> urgencyIds) {
     this.urgencyIds = urgencyIds;
     return this;
   }
@@ -151,12 +151,12 @@ public class EscalationPolicyPathRulesInnerAnyOf {
    * Alert urgency ids for which this escalation path should be used
    * @return urgencyIds
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<String> getUrgencyIds() {
     return urgencyIds;
   }
 
-  public void setUrgencyIds(@javax.annotation.Nonnull List<String> urgencyIds) {
+  public void setUrgencyIds(@jakarta.annotation.Nonnull List<String> urgencyIds) {
     this.urgencyIds = urgencyIds;
   }
 

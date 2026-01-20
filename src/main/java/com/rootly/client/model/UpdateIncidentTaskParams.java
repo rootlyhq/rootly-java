@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateIncidentTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateIncidentTaskParams {
   /**
    * Gets or Sets taskType
@@ -105,7 +105,7 @@ public class UpdateIncidentTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   /**
@@ -198,98 +198,98 @@ public class UpdateIncidentTaskParams {
 
   public static final String SERIALIZED_NAME_ATTRIBUTE_TO_QUERY_BY = "attribute_to_query_by";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTE_TO_QUERY_BY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AttributeToQueryByEnum attributeToQueryBy = AttributeToQueryByEnum.ID;
 
   public static final String SERIALIZED_NAME_INCIDENT_ID = "incident_id";
   @SerializedName(SERIALIZED_NAME_INCIDENT_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String incidentId;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String title;
 
   public static final String SERIALIZED_NAME_SUMMARY = "summary";
   @SerializedName(SERIALIZED_NAME_SUMMARY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String summary;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String status;
 
   public static final String SERIALIZED_NAME_SEVERITY_ID = "severity_id";
   @SerializedName(SERIALIZED_NAME_SEVERITY_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String severityId;
 
   public static final String SERIALIZED_NAME_INCIDENT_TYPE_IDS = "incident_type_ids";
   @SerializedName(SERIALIZED_NAME_INCIDENT_TYPE_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> incidentTypeIds;
 
   public static final String SERIALIZED_NAME_SERVICE_IDS = "service_ids";
   @SerializedName(SERIALIZED_NAME_SERVICE_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> serviceIds;
 
   public static final String SERIALIZED_NAME_FUNCTIONALITY_IDS = "functionality_ids";
   @SerializedName(SERIALIZED_NAME_FUNCTIONALITY_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> functionalityIds;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_IDS = "environment_ids";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> environmentIds;
 
   public static final String SERIALIZED_NAME_GROUP_IDS = "group_ids";
   @SerializedName(SERIALIZED_NAME_GROUP_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> groupIds;
 
   public static final String SERIALIZED_NAME_STARTED_AT = "started_at";
   @SerializedName(SERIALIZED_NAME_STARTED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String startedAt;
 
   public static final String SERIALIZED_NAME_DETECTED_AT = "detected_at";
   @SerializedName(SERIALIZED_NAME_DETECTED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String detectedAt;
 
   public static final String SERIALIZED_NAME_ACKNOWLEDGED_AT = "acknowledged_at";
   @SerializedName(SERIALIZED_NAME_ACKNOWLEDGED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String acknowledgedAt;
 
   public static final String SERIALIZED_NAME_MITIGATED_AT = "mitigated_at";
   @SerializedName(SERIALIZED_NAME_MITIGATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String mitigatedAt;
 
   public static final String SERIALIZED_NAME_RESOLVED_AT = "resolved_at";
   @SerializedName(SERIALIZED_NAME_RESOLVED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String resolvedAt;
 
   public static final String SERIALIZED_NAME_PRIVATE = "private";
   @SerializedName(SERIALIZED_NAME_PRIVATE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean _private;
 
   public static final String SERIALIZED_NAME_CUSTOM_FIELDS_MAPPING = "custom_fields_mapping";
   @SerializedName(SERIALIZED_NAME_CUSTOM_FIELDS_MAPPING)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String customFieldsMapping;
 
   public UpdateIncidentTaskParams() {
   }
 
-  public UpdateIncidentTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public UpdateIncidentTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -298,17 +298,17 @@ public class UpdateIncidentTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public UpdateIncidentTaskParams attributeToQueryBy(@javax.annotation.Nullable AttributeToQueryByEnum attributeToQueryBy) {
+  public UpdateIncidentTaskParams attributeToQueryBy(@jakarta.annotation.Nullable AttributeToQueryByEnum attributeToQueryBy) {
     this.attributeToQueryBy = attributeToQueryBy;
     return this;
   }
@@ -317,17 +317,17 @@ public class UpdateIncidentTaskParams {
    * Get attributeToQueryBy
    * @return attributeToQueryBy
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AttributeToQueryByEnum getAttributeToQueryBy() {
     return attributeToQueryBy;
   }
 
-  public void setAttributeToQueryBy(@javax.annotation.Nullable AttributeToQueryByEnum attributeToQueryBy) {
+  public void setAttributeToQueryBy(@jakarta.annotation.Nullable AttributeToQueryByEnum attributeToQueryBy) {
     this.attributeToQueryBy = attributeToQueryBy;
   }
 
 
-  public UpdateIncidentTaskParams incidentId(@javax.annotation.Nonnull String incidentId) {
+  public UpdateIncidentTaskParams incidentId(@jakarta.annotation.Nonnull String incidentId) {
     this.incidentId = incidentId;
     return this;
   }
@@ -336,17 +336,17 @@ public class UpdateIncidentTaskParams {
    * The incident id to update or id of any attribute on the incident
    * @return incidentId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getIncidentId() {
     return incidentId;
   }
 
-  public void setIncidentId(@javax.annotation.Nonnull String incidentId) {
+  public void setIncidentId(@jakarta.annotation.Nonnull String incidentId) {
     this.incidentId = incidentId;
   }
 
 
-  public UpdateIncidentTaskParams title(@javax.annotation.Nullable String title) {
+  public UpdateIncidentTaskParams title(@jakarta.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
@@ -355,17 +355,17 @@ public class UpdateIncidentTaskParams {
    * The incident title
    * @return title
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nullable String title) {
+  public void setTitle(@jakarta.annotation.Nullable String title) {
     this.title = title;
   }
 
 
-  public UpdateIncidentTaskParams summary(@javax.annotation.Nullable String summary) {
+  public UpdateIncidentTaskParams summary(@jakarta.annotation.Nullable String summary) {
     this.summary = summary;
     return this;
   }
@@ -374,17 +374,17 @@ public class UpdateIncidentTaskParams {
    * The incident summary
    * @return summary
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSummary() {
     return summary;
   }
 
-  public void setSummary(@javax.annotation.Nullable String summary) {
+  public void setSummary(@jakarta.annotation.Nullable String summary) {
     this.summary = summary;
   }
 
 
-  public UpdateIncidentTaskParams status(@javax.annotation.Nullable String status) {
+  public UpdateIncidentTaskParams status(@jakarta.annotation.Nullable String status) {
     this.status = status;
     return this;
   }
@@ -393,17 +393,17 @@ public class UpdateIncidentTaskParams {
    * Get status
    * @return status
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nullable String status) {
+  public void setStatus(@jakarta.annotation.Nullable String status) {
     this.status = status;
   }
 
 
-  public UpdateIncidentTaskParams severityId(@javax.annotation.Nullable String severityId) {
+  public UpdateIncidentTaskParams severityId(@jakarta.annotation.Nullable String severityId) {
     this.severityId = severityId;
     return this;
   }
@@ -412,17 +412,17 @@ public class UpdateIncidentTaskParams {
    * Get severityId
    * @return severityId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSeverityId() {
     return severityId;
   }
 
-  public void setSeverityId(@javax.annotation.Nullable String severityId) {
+  public void setSeverityId(@jakarta.annotation.Nullable String severityId) {
     this.severityId = severityId;
   }
 
 
-  public UpdateIncidentTaskParams incidentTypeIds(@javax.annotation.Nullable List<String> incidentTypeIds) {
+  public UpdateIncidentTaskParams incidentTypeIds(@jakarta.annotation.Nullable List<String> incidentTypeIds) {
     this.incidentTypeIds = incidentTypeIds;
     return this;
   }
@@ -439,17 +439,17 @@ public class UpdateIncidentTaskParams {
    * Get incidentTypeIds
    * @return incidentTypeIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getIncidentTypeIds() {
     return incidentTypeIds;
   }
 
-  public void setIncidentTypeIds(@javax.annotation.Nullable List<String> incidentTypeIds) {
+  public void setIncidentTypeIds(@jakarta.annotation.Nullable List<String> incidentTypeIds) {
     this.incidentTypeIds = incidentTypeIds;
   }
 
 
-  public UpdateIncidentTaskParams serviceIds(@javax.annotation.Nullable List<String> serviceIds) {
+  public UpdateIncidentTaskParams serviceIds(@jakarta.annotation.Nullable List<String> serviceIds) {
     this.serviceIds = serviceIds;
     return this;
   }
@@ -466,17 +466,17 @@ public class UpdateIncidentTaskParams {
    * Array of service UUIDs
    * @return serviceIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getServiceIds() {
     return serviceIds;
   }
 
-  public void setServiceIds(@javax.annotation.Nullable List<String> serviceIds) {
+  public void setServiceIds(@jakarta.annotation.Nullable List<String> serviceIds) {
     this.serviceIds = serviceIds;
   }
 
 
-  public UpdateIncidentTaskParams functionalityIds(@javax.annotation.Nullable List<String> functionalityIds) {
+  public UpdateIncidentTaskParams functionalityIds(@jakarta.annotation.Nullable List<String> functionalityIds) {
     this.functionalityIds = functionalityIds;
     return this;
   }
@@ -493,17 +493,17 @@ public class UpdateIncidentTaskParams {
    * Array of functionality UUIDs
    * @return functionalityIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getFunctionalityIds() {
     return functionalityIds;
   }
 
-  public void setFunctionalityIds(@javax.annotation.Nullable List<String> functionalityIds) {
+  public void setFunctionalityIds(@jakarta.annotation.Nullable List<String> functionalityIds) {
     this.functionalityIds = functionalityIds;
   }
 
 
-  public UpdateIncidentTaskParams environmentIds(@javax.annotation.Nullable List<String> environmentIds) {
+  public UpdateIncidentTaskParams environmentIds(@jakarta.annotation.Nullable List<String> environmentIds) {
     this.environmentIds = environmentIds;
     return this;
   }
@@ -520,17 +520,17 @@ public class UpdateIncidentTaskParams {
    * Get environmentIds
    * @return environmentIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getEnvironmentIds() {
     return environmentIds;
   }
 
-  public void setEnvironmentIds(@javax.annotation.Nullable List<String> environmentIds) {
+  public void setEnvironmentIds(@jakarta.annotation.Nullable List<String> environmentIds) {
     this.environmentIds = environmentIds;
   }
 
 
-  public UpdateIncidentTaskParams groupIds(@javax.annotation.Nullable List<String> groupIds) {
+  public UpdateIncidentTaskParams groupIds(@jakarta.annotation.Nullable List<String> groupIds) {
     this.groupIds = groupIds;
     return this;
   }
@@ -547,17 +547,17 @@ public class UpdateIncidentTaskParams {
    * Array of group/team UUIDs
    * @return groupIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getGroupIds() {
     return groupIds;
   }
 
-  public void setGroupIds(@javax.annotation.Nullable List<String> groupIds) {
+  public void setGroupIds(@jakarta.annotation.Nullable List<String> groupIds) {
     this.groupIds = groupIds;
   }
 
 
-  public UpdateIncidentTaskParams startedAt(@javax.annotation.Nullable String startedAt) {
+  public UpdateIncidentTaskParams startedAt(@jakarta.annotation.Nullable String startedAt) {
     this.startedAt = startedAt;
     return this;
   }
@@ -566,17 +566,17 @@ public class UpdateIncidentTaskParams {
    * Get startedAt
    * @return startedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getStartedAt() {
     return startedAt;
   }
 
-  public void setStartedAt(@javax.annotation.Nullable String startedAt) {
+  public void setStartedAt(@jakarta.annotation.Nullable String startedAt) {
     this.startedAt = startedAt;
   }
 
 
-  public UpdateIncidentTaskParams detectedAt(@javax.annotation.Nullable String detectedAt) {
+  public UpdateIncidentTaskParams detectedAt(@jakarta.annotation.Nullable String detectedAt) {
     this.detectedAt = detectedAt;
     return this;
   }
@@ -585,17 +585,17 @@ public class UpdateIncidentTaskParams {
    * Get detectedAt
    * @return detectedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDetectedAt() {
     return detectedAt;
   }
 
-  public void setDetectedAt(@javax.annotation.Nullable String detectedAt) {
+  public void setDetectedAt(@jakarta.annotation.Nullable String detectedAt) {
     this.detectedAt = detectedAt;
   }
 
 
-  public UpdateIncidentTaskParams acknowledgedAt(@javax.annotation.Nullable String acknowledgedAt) {
+  public UpdateIncidentTaskParams acknowledgedAt(@jakarta.annotation.Nullable String acknowledgedAt) {
     this.acknowledgedAt = acknowledgedAt;
     return this;
   }
@@ -604,17 +604,17 @@ public class UpdateIncidentTaskParams {
    * Get acknowledgedAt
    * @return acknowledgedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getAcknowledgedAt() {
     return acknowledgedAt;
   }
 
-  public void setAcknowledgedAt(@javax.annotation.Nullable String acknowledgedAt) {
+  public void setAcknowledgedAt(@jakarta.annotation.Nullable String acknowledgedAt) {
     this.acknowledgedAt = acknowledgedAt;
   }
 
 
-  public UpdateIncidentTaskParams mitigatedAt(@javax.annotation.Nullable String mitigatedAt) {
+  public UpdateIncidentTaskParams mitigatedAt(@jakarta.annotation.Nullable String mitigatedAt) {
     this.mitigatedAt = mitigatedAt;
     return this;
   }
@@ -623,17 +623,17 @@ public class UpdateIncidentTaskParams {
    * Get mitigatedAt
    * @return mitigatedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getMitigatedAt() {
     return mitigatedAt;
   }
 
-  public void setMitigatedAt(@javax.annotation.Nullable String mitigatedAt) {
+  public void setMitigatedAt(@jakarta.annotation.Nullable String mitigatedAt) {
     this.mitigatedAt = mitigatedAt;
   }
 
 
-  public UpdateIncidentTaskParams resolvedAt(@javax.annotation.Nullable String resolvedAt) {
+  public UpdateIncidentTaskParams resolvedAt(@jakarta.annotation.Nullable String resolvedAt) {
     this.resolvedAt = resolvedAt;
     return this;
   }
@@ -642,17 +642,17 @@ public class UpdateIncidentTaskParams {
    * Get resolvedAt
    * @return resolvedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getResolvedAt() {
     return resolvedAt;
   }
 
-  public void setResolvedAt(@javax.annotation.Nullable String resolvedAt) {
+  public void setResolvedAt(@jakarta.annotation.Nullable String resolvedAt) {
     this.resolvedAt = resolvedAt;
   }
 
 
-  public UpdateIncidentTaskParams _private(@javax.annotation.Nullable Boolean _private) {
+  public UpdateIncidentTaskParams _private(@jakarta.annotation.Nullable Boolean _private) {
     this._private = _private;
     return this;
   }
@@ -661,17 +661,17 @@ public class UpdateIncidentTaskParams {
    * Get _private
    * @return _private
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getPrivate() {
     return _private;
   }
 
-  public void setPrivate(@javax.annotation.Nullable Boolean _private) {
+  public void setPrivate(@jakarta.annotation.Nullable Boolean _private) {
     this._private = _private;
   }
 
 
-  public UpdateIncidentTaskParams customFieldsMapping(@javax.annotation.Nullable String customFieldsMapping) {
+  public UpdateIncidentTaskParams customFieldsMapping(@jakarta.annotation.Nullable String customFieldsMapping) {
     this.customFieldsMapping = customFieldsMapping;
     return this;
   }
@@ -680,12 +680,12 @@ public class UpdateIncidentTaskParams {
    * Custom field mappings. Can contain liquid markup and need to be valid JSON. Use &#39;services&#39;, &#39;functionalities&#39;, or &#39;groups&#39; keys with arrays of names/slugs for name/slug lookup
    * @return customFieldsMapping
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCustomFieldsMapping() {
     return customFieldsMapping;
   }
 
-  public void setCustomFieldsMapping(@javax.annotation.Nullable String customFieldsMapping) {
+  public void setCustomFieldsMapping(@jakarta.annotation.Nullable String customFieldsMapping) {
     this.customFieldsMapping = customFieldsMapping;
   }
 

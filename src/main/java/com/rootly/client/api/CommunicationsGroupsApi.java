@@ -90,7 +90,7 @@ public class CommunicationsGroupsApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createCommunicationsGroupCall(@javax.annotation.Nonnull NewCommunicationsGroup newCommunicationsGroup, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createCommunicationsGroupCall(@jakarta.annotation.Nonnull NewCommunicationsGroup newCommunicationsGroup, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -136,7 +136,7 @@ public class CommunicationsGroupsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createCommunicationsGroupValidateBeforeCall(@javax.annotation.Nonnull NewCommunicationsGroup newCommunicationsGroup, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createCommunicationsGroupValidateBeforeCall(@jakarta.annotation.Nonnull NewCommunicationsGroup newCommunicationsGroup, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'newCommunicationsGroup' is set
         if (newCommunicationsGroup == null) {
             throw new ApiException("Missing the required parameter 'newCommunicationsGroup' when calling createCommunicationsGroup(Async)");
@@ -160,7 +160,7 @@ public class CommunicationsGroupsApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public CommunicationsGroupResponse createCommunicationsGroup(@javax.annotation.Nonnull NewCommunicationsGroup newCommunicationsGroup) throws ApiException {
+    public CommunicationsGroupResponse createCommunicationsGroup(@jakarta.annotation.Nonnull NewCommunicationsGroup newCommunicationsGroup) throws ApiException {
         ApiResponse<CommunicationsGroupResponse> localVarResp = createCommunicationsGroupWithHttpInfo(newCommunicationsGroup);
         return localVarResp.getData();
     }
@@ -179,7 +179,7 @@ public class CommunicationsGroupsApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CommunicationsGroupResponse> createCommunicationsGroupWithHttpInfo(@javax.annotation.Nonnull NewCommunicationsGroup newCommunicationsGroup) throws ApiException {
+    public ApiResponse<CommunicationsGroupResponse> createCommunicationsGroupWithHttpInfo(@jakarta.annotation.Nonnull NewCommunicationsGroup newCommunicationsGroup) throws ApiException {
         okhttp3.Call localVarCall = createCommunicationsGroupValidateBeforeCall(newCommunicationsGroup, null);
         Type localVarReturnType = new TypeToken<CommunicationsGroupResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -200,7 +200,7 @@ public class CommunicationsGroupsApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createCommunicationsGroupAsync(@javax.annotation.Nonnull NewCommunicationsGroup newCommunicationsGroup, final ApiCallback<CommunicationsGroupResponse> _callback) throws ApiException {
+    public okhttp3.Call createCommunicationsGroupAsync(@jakarta.annotation.Nonnull NewCommunicationsGroup newCommunicationsGroup, final ApiCallback<CommunicationsGroupResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createCommunicationsGroupValidateBeforeCall(newCommunicationsGroup, _callback);
         Type localVarReturnType = new TypeToken<CommunicationsGroupResponse>(){}.getType();
@@ -221,7 +221,7 @@ public class CommunicationsGroupsApi {
         <tr><td> 404 </td><td> communications group not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteCommunicationsGroupCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteCommunicationsGroupCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -267,7 +267,7 @@ public class CommunicationsGroupsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteCommunicationsGroupValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteCommunicationsGroupValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteCommunicationsGroup(Async)");
@@ -290,7 +290,7 @@ public class CommunicationsGroupsApi {
         <tr><td> 404 </td><td> communications group not found </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteCommunicationsGroup(@javax.annotation.Nonnull String id) throws ApiException {
+    public void deleteCommunicationsGroup(@jakarta.annotation.Nonnull String id) throws ApiException {
         deleteCommunicationsGroupWithHttpInfo(id);
     }
 
@@ -308,7 +308,7 @@ public class CommunicationsGroupsApi {
         <tr><td> 404 </td><td> communications group not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteCommunicationsGroupWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<Void> deleteCommunicationsGroupWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteCommunicationsGroupValidateBeforeCall(id, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -328,7 +328,7 @@ public class CommunicationsGroupsApi {
         <tr><td> 404 </td><td> communications group not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteCommunicationsGroupAsync(@javax.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteCommunicationsGroupAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteCommunicationsGroupValidateBeforeCall(id, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -348,7 +348,7 @@ public class CommunicationsGroupsApi {
         <tr><td> 404 </td><td> communications group not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCommunicationsGroupCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCommunicationsGroupCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -394,7 +394,7 @@ public class CommunicationsGroupsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCommunicationsGroupValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCommunicationsGroupValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getCommunicationsGroup(Async)");
@@ -418,7 +418,7 @@ public class CommunicationsGroupsApi {
         <tr><td> 404 </td><td> communications group not found </td><td>  -  </td></tr>
      </table>
      */
-    public CommunicationsGroupResponse getCommunicationsGroup(@javax.annotation.Nonnull String id) throws ApiException {
+    public CommunicationsGroupResponse getCommunicationsGroup(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<CommunicationsGroupResponse> localVarResp = getCommunicationsGroupWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -437,7 +437,7 @@ public class CommunicationsGroupsApi {
         <tr><td> 404 </td><td> communications group not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CommunicationsGroupResponse> getCommunicationsGroupWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<CommunicationsGroupResponse> getCommunicationsGroupWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getCommunicationsGroupValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<CommunicationsGroupResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -458,7 +458,7 @@ public class CommunicationsGroupsApi {
         <tr><td> 404 </td><td> communications group not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCommunicationsGroupAsync(@javax.annotation.Nonnull String id, final ApiCallback<CommunicationsGroupResponse> _callback) throws ApiException {
+    public okhttp3.Call getCommunicationsGroupAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<CommunicationsGroupResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCommunicationsGroupValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<CommunicationsGroupResponse>(){}.getType();
@@ -490,7 +490,7 @@ public class CommunicationsGroupsApi {
         <tr><td> 200 </td><td> communications groups found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listCommunicationsGroupsCall(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterIsPrivate, @javax.annotation.Nullable String filterCommunicationTypeId, @javax.annotation.Nullable String filterConditionType, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listCommunicationsGroupsCall(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterIsPrivate, @jakarta.annotation.Nullable String filterCommunicationTypeId, @jakarta.annotation.Nullable String filterConditionType, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -587,7 +587,7 @@ public class CommunicationsGroupsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listCommunicationsGroupsValidateBeforeCall(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterIsPrivate, @javax.annotation.Nullable String filterCommunicationTypeId, @javax.annotation.Nullable String filterConditionType, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listCommunicationsGroupsValidateBeforeCall(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterIsPrivate, @jakarta.annotation.Nullable String filterCommunicationTypeId, @jakarta.annotation.Nullable String filterConditionType, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         return listCommunicationsGroupsCall(pageNumber, pageSize, filterSearch, filterName, filterSlug, filterIsPrivate, filterCommunicationTypeId, filterConditionType, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
 
     }
@@ -617,7 +617,7 @@ public class CommunicationsGroupsApi {
         <tr><td> 200 </td><td> communications groups found </td><td>  -  </td></tr>
      </table>
      */
-    public CommunicationsGroupsResponse listCommunicationsGroups(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterIsPrivate, @javax.annotation.Nullable String filterCommunicationTypeId, @javax.annotation.Nullable String filterConditionType, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+    public CommunicationsGroupsResponse listCommunicationsGroups(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterIsPrivate, @jakarta.annotation.Nullable String filterCommunicationTypeId, @jakarta.annotation.Nullable String filterConditionType, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
         ApiResponse<CommunicationsGroupsResponse> localVarResp = listCommunicationsGroupsWithHttpInfo(pageNumber, pageSize, filterSearch, filterName, filterSlug, filterIsPrivate, filterCommunicationTypeId, filterConditionType, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
         return localVarResp.getData();
     }
@@ -647,7 +647,7 @@ public class CommunicationsGroupsApi {
         <tr><td> 200 </td><td> communications groups found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CommunicationsGroupsResponse> listCommunicationsGroupsWithHttpInfo(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterIsPrivate, @javax.annotation.Nullable String filterCommunicationTypeId, @javax.annotation.Nullable String filterConditionType, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+    public ApiResponse<CommunicationsGroupsResponse> listCommunicationsGroupsWithHttpInfo(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterIsPrivate, @jakarta.annotation.Nullable String filterCommunicationTypeId, @jakarta.annotation.Nullable String filterConditionType, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
         okhttp3.Call localVarCall = listCommunicationsGroupsValidateBeforeCall(pageNumber, pageSize, filterSearch, filterName, filterSlug, filterIsPrivate, filterCommunicationTypeId, filterConditionType, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, null);
         Type localVarReturnType = new TypeToken<CommunicationsGroupsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -679,7 +679,7 @@ public class CommunicationsGroupsApi {
         <tr><td> 200 </td><td> communications groups found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listCommunicationsGroupsAsync(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterIsPrivate, @javax.annotation.Nullable String filterCommunicationTypeId, @javax.annotation.Nullable String filterConditionType, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback<CommunicationsGroupsResponse> _callback) throws ApiException {
+    public okhttp3.Call listCommunicationsGroupsAsync(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterIsPrivate, @jakarta.annotation.Nullable String filterCommunicationTypeId, @jakarta.annotation.Nullable String filterConditionType, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback<CommunicationsGroupsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listCommunicationsGroupsValidateBeforeCall(pageNumber, pageSize, filterSearch, filterName, filterSlug, filterIsPrivate, filterCommunicationTypeId, filterConditionType, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
         Type localVarReturnType = new TypeToken<CommunicationsGroupsResponse>(){}.getType();
@@ -701,7 +701,7 @@ public class CommunicationsGroupsApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateCommunicationsGroupCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateCommunicationsGroup updateCommunicationsGroup, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateCommunicationsGroupCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateCommunicationsGroup updateCommunicationsGroup, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -748,7 +748,7 @@ public class CommunicationsGroupsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateCommunicationsGroupValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateCommunicationsGroup updateCommunicationsGroup, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateCommunicationsGroupValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateCommunicationsGroup updateCommunicationsGroup, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateCommunicationsGroup(Async)");
@@ -778,7 +778,7 @@ public class CommunicationsGroupsApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public CommunicationsGroupResponse updateCommunicationsGroup(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateCommunicationsGroup updateCommunicationsGroup) throws ApiException {
+    public CommunicationsGroupResponse updateCommunicationsGroup(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateCommunicationsGroup updateCommunicationsGroup) throws ApiException {
         ApiResponse<CommunicationsGroupResponse> localVarResp = updateCommunicationsGroupWithHttpInfo(id, updateCommunicationsGroup);
         return localVarResp.getData();
     }
@@ -798,7 +798,7 @@ public class CommunicationsGroupsApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CommunicationsGroupResponse> updateCommunicationsGroupWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateCommunicationsGroup updateCommunicationsGroup) throws ApiException {
+    public ApiResponse<CommunicationsGroupResponse> updateCommunicationsGroupWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateCommunicationsGroup updateCommunicationsGroup) throws ApiException {
         okhttp3.Call localVarCall = updateCommunicationsGroupValidateBeforeCall(id, updateCommunicationsGroup, null);
         Type localVarReturnType = new TypeToken<CommunicationsGroupResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -820,7 +820,7 @@ public class CommunicationsGroupsApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateCommunicationsGroupAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateCommunicationsGroup updateCommunicationsGroup, final ApiCallback<CommunicationsGroupResponse> _callback) throws ApiException {
+    public okhttp3.Call updateCommunicationsGroupAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateCommunicationsGroup updateCommunicationsGroup, final ApiCallback<CommunicationsGroupResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateCommunicationsGroupValidateBeforeCall(id, updateCommunicationsGroup, _callback);
         Type localVarReturnType = new TypeToken<CommunicationsGroupResponse>(){}.getType();

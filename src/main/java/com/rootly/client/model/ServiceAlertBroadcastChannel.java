@@ -48,22 +48,22 @@ import com.rootly.client.JSON;
 /**
  * Slack channel to broadcast alerts to
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ServiceAlertBroadcastChannel {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String name;
 
   public ServiceAlertBroadcastChannel() {
   }
 
-  public ServiceAlertBroadcastChannel id(@javax.annotation.Nullable String id) {
+  public ServiceAlertBroadcastChannel id(@jakarta.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -72,17 +72,17 @@ public class ServiceAlertBroadcastChannel {
    * Slack channel ID
    * @return id
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getId() {
     return id;
   }
 
-  public void setId(@javax.annotation.Nullable String id) {
+  public void setId(@jakarta.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public ServiceAlertBroadcastChannel name(@javax.annotation.Nullable String name) {
+  public ServiceAlertBroadcastChannel name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -91,12 +91,12 @@ public class ServiceAlertBroadcastChannel {
    * Slack channel name
    * @return name
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 

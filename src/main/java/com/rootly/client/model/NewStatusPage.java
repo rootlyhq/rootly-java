@@ -49,17 +49,17 @@ import com.rootly.client.JSON;
 /**
  * NewStatusPage
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewStatusPage {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private NewStatusPageData data;
 
   public NewStatusPage() {
   }
 
-  public NewStatusPage data(@javax.annotation.Nonnull NewStatusPageData data) {
+  public NewStatusPage data(@jakarta.annotation.Nonnull NewStatusPageData data) {
     this.data = data;
     return this;
   }
@@ -68,12 +68,12 @@ public class NewStatusPage {
    * Get data
    * @return data
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public NewStatusPageData getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nonnull NewStatusPageData data) {
+  public void setData(@jakarta.annotation.Nonnull NewStatusPageData data) {
     this.data = data;
   }
 

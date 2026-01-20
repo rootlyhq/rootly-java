@@ -54,7 +54,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateAlertDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateAlertDataAttributes {
   /**
    * Whether the alert is marked as noise
@@ -110,7 +110,7 @@ public class UpdateAlertDataAttributes {
 
   public static final String SERIALIZED_NAME_NOISE = "noise";
   @SerializedName(SERIALIZED_NAME_NOISE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private NoiseEnum noise;
 
   /**
@@ -249,83 +249,83 @@ public class UpdateAlertDataAttributes {
 
   public static final String SERIALIZED_NAME_SOURCE = "source";
   @SerializedName(SERIALIZED_NAME_SOURCE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private SourceEnum source;
 
   public static final String SERIALIZED_NAME_SUMMARY = "summary";
   @SerializedName(SERIALIZED_NAME_SUMMARY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String summary;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_SERVICE_IDS = "service_ids";
   @SerializedName(SERIALIZED_NAME_SERVICE_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> serviceIds;
 
   public static final String SERIALIZED_NAME_GROUP_IDS = "group_ids";
   @SerializedName(SERIALIZED_NAME_GROUP_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> groupIds;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_IDS = "environment_ids";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> environmentIds;
 
   public static final String SERIALIZED_NAME_STARTED_AT = "started_at";
   @SerializedName(SERIALIZED_NAME_STARTED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private OffsetDateTime startedAt;
 
   public static final String SERIALIZED_NAME_ENDED_AT = "ended_at";
   @SerializedName(SERIALIZED_NAME_ENDED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private OffsetDateTime endedAt;
 
   public static final String SERIALIZED_NAME_EXTERNAL_ID = "external_id";
   @SerializedName(SERIALIZED_NAME_EXTERNAL_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String externalId;
 
   public static final String SERIALIZED_NAME_EXTERNAL_URL = "external_url";
   @SerializedName(SERIALIZED_NAME_EXTERNAL_URL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String externalUrl;
 
   public static final String SERIALIZED_NAME_ALERT_URGENCY_ID = "alert_urgency_id";
   @SerializedName(SERIALIZED_NAME_ALERT_URGENCY_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String alertUrgencyId;
 
   public static final String SERIALIZED_NAME_LABELS = "labels";
   @SerializedName(SERIALIZED_NAME_LABELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewAlertDataAttributesLabelsInner> labels = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Object data;
 
   public static final String SERIALIZED_NAME_DEDUPLICATION_KEY = "deduplication_key";
   @SerializedName(SERIALIZED_NAME_DEDUPLICATION_KEY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String deduplicationKey;
 
   public static final String SERIALIZED_NAME_ALERT_FIELD_VALUES_ATTRIBUTES = "alert_field_values_attributes";
   @SerializedName(SERIALIZED_NAME_ALERT_FIELD_VALUES_ATTRIBUTES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewAlertDataAttributesAlertFieldValuesAttributesInner> alertFieldValuesAttributes = new ArrayList<>();
 
   public UpdateAlertDataAttributes() {
   }
 
-  public UpdateAlertDataAttributes noise(@javax.annotation.Nullable NoiseEnum noise) {
+  public UpdateAlertDataAttributes noise(@jakarta.annotation.Nullable NoiseEnum noise) {
     this.noise = noise;
     return this;
   }
@@ -334,17 +334,17 @@ public class UpdateAlertDataAttributes {
    * Whether the alert is marked as noise
    * @return noise
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public NoiseEnum getNoise() {
     return noise;
   }
 
-  public void setNoise(@javax.annotation.Nullable NoiseEnum noise) {
+  public void setNoise(@jakarta.annotation.Nullable NoiseEnum noise) {
     this.noise = noise;
   }
 
 
-  public UpdateAlertDataAttributes source(@javax.annotation.Nullable SourceEnum source) {
+  public UpdateAlertDataAttributes source(@jakarta.annotation.Nullable SourceEnum source) {
     this.source = source;
     return this;
   }
@@ -353,17 +353,17 @@ public class UpdateAlertDataAttributes {
    * The source of the alert
    * @return source
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public SourceEnum getSource() {
     return source;
   }
 
-  public void setSource(@javax.annotation.Nullable SourceEnum source) {
+  public void setSource(@jakarta.annotation.Nullable SourceEnum source) {
     this.source = source;
   }
 
 
-  public UpdateAlertDataAttributes summary(@javax.annotation.Nullable String summary) {
+  public UpdateAlertDataAttributes summary(@jakarta.annotation.Nullable String summary) {
     this.summary = summary;
     return this;
   }
@@ -372,17 +372,17 @@ public class UpdateAlertDataAttributes {
    * The summary of the alert
    * @return summary
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSummary() {
     return summary;
   }
 
-  public void setSummary(@javax.annotation.Nullable String summary) {
+  public void setSummary(@jakarta.annotation.Nullable String summary) {
     this.summary = summary;
   }
 
 
-  public UpdateAlertDataAttributes description(@javax.annotation.Nullable String description) {
+  public UpdateAlertDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -391,17 +391,17 @@ public class UpdateAlertDataAttributes {
    * The description of the alert
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UpdateAlertDataAttributes serviceIds(@javax.annotation.Nullable List<String> serviceIds) {
+  public UpdateAlertDataAttributes serviceIds(@jakarta.annotation.Nullable List<String> serviceIds) {
     this.serviceIds = serviceIds;
     return this;
   }
@@ -418,17 +418,17 @@ public class UpdateAlertDataAttributes {
    * The Service IDs to attach to the alert
    * @return serviceIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getServiceIds() {
     return serviceIds;
   }
 
-  public void setServiceIds(@javax.annotation.Nullable List<String> serviceIds) {
+  public void setServiceIds(@jakarta.annotation.Nullable List<String> serviceIds) {
     this.serviceIds = serviceIds;
   }
 
 
-  public UpdateAlertDataAttributes groupIds(@javax.annotation.Nullable List<String> groupIds) {
+  public UpdateAlertDataAttributes groupIds(@jakarta.annotation.Nullable List<String> groupIds) {
     this.groupIds = groupIds;
     return this;
   }
@@ -445,17 +445,17 @@ public class UpdateAlertDataAttributes {
    * The Group IDs to attach to the alert
    * @return groupIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getGroupIds() {
     return groupIds;
   }
 
-  public void setGroupIds(@javax.annotation.Nullable List<String> groupIds) {
+  public void setGroupIds(@jakarta.annotation.Nullable List<String> groupIds) {
     this.groupIds = groupIds;
   }
 
 
-  public UpdateAlertDataAttributes environmentIds(@javax.annotation.Nullable List<String> environmentIds) {
+  public UpdateAlertDataAttributes environmentIds(@jakarta.annotation.Nullable List<String> environmentIds) {
     this.environmentIds = environmentIds;
     return this;
   }
@@ -472,17 +472,17 @@ public class UpdateAlertDataAttributes {
    * The Environment IDs to attach to the alert
    * @return environmentIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getEnvironmentIds() {
     return environmentIds;
   }
 
-  public void setEnvironmentIds(@javax.annotation.Nullable List<String> environmentIds) {
+  public void setEnvironmentIds(@jakarta.annotation.Nullable List<String> environmentIds) {
     this.environmentIds = environmentIds;
   }
 
 
-  public UpdateAlertDataAttributes startedAt(@javax.annotation.Nullable OffsetDateTime startedAt) {
+  public UpdateAlertDataAttributes startedAt(@jakarta.annotation.Nullable OffsetDateTime startedAt) {
     this.startedAt = startedAt;
     return this;
   }
@@ -491,17 +491,17 @@ public class UpdateAlertDataAttributes {
    * Alert start datetime
    * @return startedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public OffsetDateTime getStartedAt() {
     return startedAt;
   }
 
-  public void setStartedAt(@javax.annotation.Nullable OffsetDateTime startedAt) {
+  public void setStartedAt(@jakarta.annotation.Nullable OffsetDateTime startedAt) {
     this.startedAt = startedAt;
   }
 
 
-  public UpdateAlertDataAttributes endedAt(@javax.annotation.Nullable OffsetDateTime endedAt) {
+  public UpdateAlertDataAttributes endedAt(@jakarta.annotation.Nullable OffsetDateTime endedAt) {
     this.endedAt = endedAt;
     return this;
   }
@@ -510,17 +510,17 @@ public class UpdateAlertDataAttributes {
    * Alert end datetime
    * @return endedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public OffsetDateTime getEndedAt() {
     return endedAt;
   }
 
-  public void setEndedAt(@javax.annotation.Nullable OffsetDateTime endedAt) {
+  public void setEndedAt(@jakarta.annotation.Nullable OffsetDateTime endedAt) {
     this.endedAt = endedAt;
   }
 
 
-  public UpdateAlertDataAttributes externalId(@javax.annotation.Nullable String externalId) {
+  public UpdateAlertDataAttributes externalId(@jakarta.annotation.Nullable String externalId) {
     this.externalId = externalId;
     return this;
   }
@@ -529,17 +529,17 @@ public class UpdateAlertDataAttributes {
    * External ID
    * @return externalId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getExternalId() {
     return externalId;
   }
 
-  public void setExternalId(@javax.annotation.Nullable String externalId) {
+  public void setExternalId(@jakarta.annotation.Nullable String externalId) {
     this.externalId = externalId;
   }
 
 
-  public UpdateAlertDataAttributes externalUrl(@javax.annotation.Nullable String externalUrl) {
+  public UpdateAlertDataAttributes externalUrl(@jakarta.annotation.Nullable String externalUrl) {
     this.externalUrl = externalUrl;
     return this;
   }
@@ -548,17 +548,17 @@ public class UpdateAlertDataAttributes {
    * External Url
    * @return externalUrl
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getExternalUrl() {
     return externalUrl;
   }
 
-  public void setExternalUrl(@javax.annotation.Nullable String externalUrl) {
+  public void setExternalUrl(@jakarta.annotation.Nullable String externalUrl) {
     this.externalUrl = externalUrl;
   }
 
 
-  public UpdateAlertDataAttributes alertUrgencyId(@javax.annotation.Nullable String alertUrgencyId) {
+  public UpdateAlertDataAttributes alertUrgencyId(@jakarta.annotation.Nullable String alertUrgencyId) {
     this.alertUrgencyId = alertUrgencyId;
     return this;
   }
@@ -567,17 +567,17 @@ public class UpdateAlertDataAttributes {
    * The ID of the alert urgency
    * @return alertUrgencyId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getAlertUrgencyId() {
     return alertUrgencyId;
   }
 
-  public void setAlertUrgencyId(@javax.annotation.Nullable String alertUrgencyId) {
+  public void setAlertUrgencyId(@jakarta.annotation.Nullable String alertUrgencyId) {
     this.alertUrgencyId = alertUrgencyId;
   }
 
 
-  public UpdateAlertDataAttributes labels(@javax.annotation.Nullable List<NewAlertDataAttributesLabelsInner> labels) {
+  public UpdateAlertDataAttributes labels(@jakarta.annotation.Nullable List<NewAlertDataAttributesLabelsInner> labels) {
     this.labels = labels;
     return this;
   }
@@ -594,17 +594,17 @@ public class UpdateAlertDataAttributes {
    * Get labels
    * @return labels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewAlertDataAttributesLabelsInner> getLabels() {
     return labels;
   }
 
-  public void setLabels(@javax.annotation.Nullable List<NewAlertDataAttributesLabelsInner> labels) {
+  public void setLabels(@jakarta.annotation.Nullable List<NewAlertDataAttributesLabelsInner> labels) {
     this.labels = labels;
   }
 
 
-  public UpdateAlertDataAttributes data(@javax.annotation.Nullable Object data) {
+  public UpdateAlertDataAttributes data(@jakarta.annotation.Nullable Object data) {
     this.data = data;
     return this;
   }
@@ -613,17 +613,17 @@ public class UpdateAlertDataAttributes {
    * Additional data
    * @return data
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Object getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nullable Object data) {
+  public void setData(@jakarta.annotation.Nullable Object data) {
     this.data = data;
   }
 
 
-  public UpdateAlertDataAttributes deduplicationKey(@javax.annotation.Nullable String deduplicationKey) {
+  public UpdateAlertDataAttributes deduplicationKey(@jakarta.annotation.Nullable String deduplicationKey) {
     this.deduplicationKey = deduplicationKey;
     return this;
   }
@@ -632,17 +632,17 @@ public class UpdateAlertDataAttributes {
    * Alerts sharing the same deduplication key are treated as a single alert.
    * @return deduplicationKey
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDeduplicationKey() {
     return deduplicationKey;
   }
 
-  public void setDeduplicationKey(@javax.annotation.Nullable String deduplicationKey) {
+  public void setDeduplicationKey(@jakarta.annotation.Nullable String deduplicationKey) {
     this.deduplicationKey = deduplicationKey;
   }
 
 
-  public UpdateAlertDataAttributes alertFieldValuesAttributes(@javax.annotation.Nullable List<NewAlertDataAttributesAlertFieldValuesAttributesInner> alertFieldValuesAttributes) {
+  public UpdateAlertDataAttributes alertFieldValuesAttributes(@jakarta.annotation.Nullable List<NewAlertDataAttributesAlertFieldValuesAttributesInner> alertFieldValuesAttributes) {
     this.alertFieldValuesAttributes = alertFieldValuesAttributes;
     return this;
   }
@@ -659,12 +659,12 @@ public class UpdateAlertDataAttributes {
    * Custom alert field values to create with the alert
    * @return alertFieldValuesAttributes
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewAlertDataAttributesAlertFieldValuesAttributesInner> getAlertFieldValuesAttributes() {
     return alertFieldValuesAttributes;
   }
 
-  public void setAlertFieldValuesAttributes(@javax.annotation.Nullable List<NewAlertDataAttributesAlertFieldValuesAttributesInner> alertFieldValuesAttributes) {
+  public void setAlertFieldValuesAttributes(@jakarta.annotation.Nullable List<NewAlertDataAttributesAlertFieldValuesAttributesInner> alertFieldValuesAttributes) {
     this.alertFieldValuesAttributes = alertFieldValuesAttributes;
   }
 

@@ -92,7 +92,7 @@ public class CausesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createCauseCall(@javax.annotation.Nonnull NewCause newCause, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createCauseCall(@jakarta.annotation.Nonnull NewCause newCause, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -138,7 +138,7 @@ public class CausesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createCauseValidateBeforeCall(@javax.annotation.Nonnull NewCause newCause, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createCauseValidateBeforeCall(@jakarta.annotation.Nonnull NewCause newCause, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'newCause' is set
         if (newCause == null) {
             throw new ApiException("Missing the required parameter 'newCause' when calling createCause(Async)");
@@ -163,7 +163,7 @@ public class CausesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public CauseResponse createCause(@javax.annotation.Nonnull NewCause newCause) throws ApiException {
+    public CauseResponse createCause(@jakarta.annotation.Nonnull NewCause newCause) throws ApiException {
         ApiResponse<CauseResponse> localVarResp = createCauseWithHttpInfo(newCause);
         return localVarResp.getData();
     }
@@ -183,7 +183,7 @@ public class CausesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CauseResponse> createCauseWithHttpInfo(@javax.annotation.Nonnull NewCause newCause) throws ApiException {
+    public ApiResponse<CauseResponse> createCauseWithHttpInfo(@jakarta.annotation.Nonnull NewCause newCause) throws ApiException {
         okhttp3.Call localVarCall = createCauseValidateBeforeCall(newCause, null);
         Type localVarReturnType = new TypeToken<CauseResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -205,7 +205,7 @@ public class CausesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createCauseAsync(@javax.annotation.Nonnull NewCause newCause, final ApiCallback<CauseResponse> _callback) throws ApiException {
+    public okhttp3.Call createCauseAsync(@jakarta.annotation.Nonnull NewCause newCause, final ApiCallback<CauseResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createCauseValidateBeforeCall(newCause, _callback);
         Type localVarReturnType = new TypeToken<CauseResponse>(){}.getType();
@@ -226,7 +226,7 @@ public class CausesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteCauseCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteCauseCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -272,7 +272,7 @@ public class CausesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteCauseValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteCauseValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteCause(Async)");
@@ -296,7 +296,7 @@ public class CausesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public CauseResponse deleteCause(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public CauseResponse deleteCause(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<CauseResponse> localVarResp = deleteCauseWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -315,7 +315,7 @@ public class CausesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CauseResponse> deleteCauseWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public ApiResponse<CauseResponse> deleteCauseWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = deleteCauseValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<CauseResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -336,7 +336,7 @@ public class CausesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteCauseAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<CauseResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteCauseAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<CauseResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteCauseValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<CauseResponse>(){}.getType();
@@ -357,7 +357,7 @@ public class CausesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCauseCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCauseCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -403,7 +403,7 @@ public class CausesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCauseValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCauseValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getCause(Async)");
@@ -427,7 +427,7 @@ public class CausesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public CauseResponse getCause(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public CauseResponse getCause(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<CauseResponse> localVarResp = getCauseWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -446,7 +446,7 @@ public class CausesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CauseResponse> getCauseWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public ApiResponse<CauseResponse> getCauseWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = getCauseValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<CauseResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -467,7 +467,7 @@ public class CausesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCauseAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<CauseResponse> _callback) throws ApiException {
+    public okhttp3.Call getCauseAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<CauseResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCauseValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<CauseResponse>(){}.getType();
@@ -496,7 +496,7 @@ public class CausesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listCausesCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listCausesCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -581,7 +581,7 @@ public class CausesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listCausesValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listCausesValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
         return listCausesCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, _callback);
 
     }
@@ -608,7 +608,7 @@ public class CausesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public CauseList listCauses(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte) throws ApiException {
+    public CauseList listCauses(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte) throws ApiException {
         ApiResponse<CauseList> localVarResp = listCausesWithHttpInfo(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
         return localVarResp.getData();
     }
@@ -635,7 +635,7 @@ public class CausesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CauseList> listCausesWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte) throws ApiException {
+    public ApiResponse<CauseList> listCausesWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte) throws ApiException {
         okhttp3.Call localVarCall = listCausesValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, null);
         Type localVarReturnType = new TypeToken<CauseList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -664,7 +664,7 @@ public class CausesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listCausesAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback<CauseList> _callback) throws ApiException {
+    public okhttp3.Call listCausesAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback<CauseList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listCausesValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, _callback);
         Type localVarReturnType = new TypeToken<CauseList>(){}.getType();
@@ -686,7 +686,7 @@ public class CausesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateCauseCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateCause updateCause, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateCauseCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateCause updateCause, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -733,7 +733,7 @@ public class CausesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateCauseValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateCause updateCause, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateCauseValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateCause updateCause, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateCause(Async)");
@@ -763,7 +763,7 @@ public class CausesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public CauseResponse updateCause(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateCause updateCause) throws ApiException {
+    public CauseResponse updateCause(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateCause updateCause) throws ApiException {
         ApiResponse<CauseResponse> localVarResp = updateCauseWithHttpInfo(id, updateCause);
         return localVarResp.getData();
     }
@@ -783,7 +783,7 @@ public class CausesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CauseResponse> updateCauseWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateCause updateCause) throws ApiException {
+    public ApiResponse<CauseResponse> updateCauseWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateCause updateCause) throws ApiException {
         okhttp3.Call localVarCall = updateCauseValidateBeforeCall(id, updateCause, null);
         Type localVarReturnType = new TypeToken<CauseResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -805,7 +805,7 @@ public class CausesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateCauseAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateCause updateCause, final ApiCallback<CauseResponse> _callback) throws ApiException {
+    public okhttp3.Call updateCauseAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateCause updateCause, final ApiCallback<CauseResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateCauseValidateBeforeCall(id, updateCause, _callback);
         Type localVarReturnType = new TypeToken<CauseResponse>(){}.getType();

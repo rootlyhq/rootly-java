@@ -52,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * CreateOpsgenieAlertTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateOpsgenieAlertTaskParams {
   /**
    * Gets or Sets taskType
@@ -106,37 +106,37 @@ public class CreateOpsgenieAlertTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String message;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_TEAMS = "teams";
   @SerializedName(SERIALIZED_NAME_TEAMS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AddActionItemTaskParamsPostToSlackChannelsInner> teams = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_USERS = "users";
   @SerializedName(SERIALIZED_NAME_USERS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AddActionItemTaskParamsPostToSlackChannelsInner> users = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SCHEDULES = "schedules";
   @SerializedName(SERIALIZED_NAME_SCHEDULES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AddActionItemTaskParamsPostToSlackChannelsInner> schedules = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ESCALATIONS = "escalations";
   @SerializedName(SERIALIZED_NAME_ESCALATIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AddActionItemTaskParamsPostToSlackChannelsInner> escalations = new ArrayList<>();
 
   /**
@@ -201,18 +201,18 @@ public class CreateOpsgenieAlertTaskParams {
 
   public static final String SERIALIZED_NAME_PRIORITY = "priority";
   @SerializedName(SERIALIZED_NAME_PRIORITY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private PriorityEnum priority = PriorityEnum.P1;
 
   public static final String SERIALIZED_NAME_DETAILS = "details";
   @SerializedName(SERIALIZED_NAME_DETAILS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String details;
 
   public CreateOpsgenieAlertTaskParams() {
   }
 
-  public CreateOpsgenieAlertTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public CreateOpsgenieAlertTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -221,17 +221,17 @@ public class CreateOpsgenieAlertTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public CreateOpsgenieAlertTaskParams message(@javax.annotation.Nonnull String message) {
+  public CreateOpsgenieAlertTaskParams message(@jakarta.annotation.Nonnull String message) {
     this.message = message;
     return this;
   }
@@ -240,17 +240,17 @@ public class CreateOpsgenieAlertTaskParams {
    * Message of the alert
    * @return message
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getMessage() {
     return message;
   }
 
-  public void setMessage(@javax.annotation.Nonnull String message) {
+  public void setMessage(@jakarta.annotation.Nonnull String message) {
     this.message = message;
   }
 
 
-  public CreateOpsgenieAlertTaskParams description(@javax.annotation.Nullable String description) {
+  public CreateOpsgenieAlertTaskParams description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -259,17 +259,17 @@ public class CreateOpsgenieAlertTaskParams {
    * Description field of the alert that is generally used to provide a detailed information about the alert
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public CreateOpsgenieAlertTaskParams teams(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> teams) {
+  public CreateOpsgenieAlertTaskParams teams(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> teams) {
     this.teams = teams;
     return this;
   }
@@ -286,17 +286,17 @@ public class CreateOpsgenieAlertTaskParams {
    * Get teams
    * @return teams
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AddActionItemTaskParamsPostToSlackChannelsInner> getTeams() {
     return teams;
   }
 
-  public void setTeams(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> teams) {
+  public void setTeams(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> teams) {
     this.teams = teams;
   }
 
 
-  public CreateOpsgenieAlertTaskParams users(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> users) {
+  public CreateOpsgenieAlertTaskParams users(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> users) {
     this.users = users;
     return this;
   }
@@ -313,17 +313,17 @@ public class CreateOpsgenieAlertTaskParams {
    * Get users
    * @return users
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AddActionItemTaskParamsPostToSlackChannelsInner> getUsers() {
     return users;
   }
 
-  public void setUsers(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> users) {
+  public void setUsers(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> users) {
     this.users = users;
   }
 
 
-  public CreateOpsgenieAlertTaskParams schedules(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> schedules) {
+  public CreateOpsgenieAlertTaskParams schedules(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> schedules) {
     this.schedules = schedules;
     return this;
   }
@@ -340,17 +340,17 @@ public class CreateOpsgenieAlertTaskParams {
    * Get schedules
    * @return schedules
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AddActionItemTaskParamsPostToSlackChannelsInner> getSchedules() {
     return schedules;
   }
 
-  public void setSchedules(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> schedules) {
+  public void setSchedules(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> schedules) {
     this.schedules = schedules;
   }
 
 
-  public CreateOpsgenieAlertTaskParams escalations(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> escalations) {
+  public CreateOpsgenieAlertTaskParams escalations(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> escalations) {
     this.escalations = escalations;
     return this;
   }
@@ -367,17 +367,17 @@ public class CreateOpsgenieAlertTaskParams {
    * Get escalations
    * @return escalations
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AddActionItemTaskParamsPostToSlackChannelsInner> getEscalations() {
     return escalations;
   }
 
-  public void setEscalations(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> escalations) {
+  public void setEscalations(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> escalations) {
     this.escalations = escalations;
   }
 
 
-  public CreateOpsgenieAlertTaskParams priority(@javax.annotation.Nullable PriorityEnum priority) {
+  public CreateOpsgenieAlertTaskParams priority(@jakarta.annotation.Nullable PriorityEnum priority) {
     this.priority = priority;
     return this;
   }
@@ -386,17 +386,17 @@ public class CreateOpsgenieAlertTaskParams {
    * Get priority
    * @return priority
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public PriorityEnum getPriority() {
     return priority;
   }
 
-  public void setPriority(@javax.annotation.Nullable PriorityEnum priority) {
+  public void setPriority(@jakarta.annotation.Nullable PriorityEnum priority) {
     this.priority = priority;
   }
 
 
-  public CreateOpsgenieAlertTaskParams details(@javax.annotation.Nullable String details) {
+  public CreateOpsgenieAlertTaskParams details(@jakarta.annotation.Nullable String details) {
     this.details = details;
     return this;
   }
@@ -405,12 +405,12 @@ public class CreateOpsgenieAlertTaskParams {
    * Details payload. Can contain liquid markup and need to be valid JSON
    * @return details
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDetails() {
     return details;
   }
 
-  public void setDetails(@javax.annotation.Nullable String details) {
+  public void setDetails(@jakarta.annotation.Nullable String details) {
     this.details = details;
   }
 

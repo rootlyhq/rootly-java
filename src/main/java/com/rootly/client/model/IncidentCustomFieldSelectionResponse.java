@@ -49,17 +49,17 @@ import com.rootly.client.JSON;
 /**
  * IncidentCustomFieldSelectionResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class IncidentCustomFieldSelectionResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private IncidentCustomFieldSelectionResponseData data;
 
   public IncidentCustomFieldSelectionResponse() {
   }
 
-  public IncidentCustomFieldSelectionResponse data(@javax.annotation.Nonnull IncidentCustomFieldSelectionResponseData data) {
+  public IncidentCustomFieldSelectionResponse data(@jakarta.annotation.Nonnull IncidentCustomFieldSelectionResponseData data) {
     this.data = data;
     return this;
   }
@@ -68,12 +68,12 @@ public class IncidentCustomFieldSelectionResponse {
    * Get data
    * @return data
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public IncidentCustomFieldSelectionResponseData getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nonnull IncidentCustomFieldSelectionResponseData data) {
+  public void setData(@jakarta.annotation.Nonnull IncidentCustomFieldSelectionResponseData data) {
     this.data = data;
   }
 

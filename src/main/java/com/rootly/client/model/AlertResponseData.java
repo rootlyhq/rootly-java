@@ -49,11 +49,11 @@ import com.rootly.client.JSON;
 /**
  * AlertResponseData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AlertResponseData {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String id;
 
   /**
@@ -192,7 +192,7 @@ public class AlertResponseData {
 
   public static final String SERIALIZED_NAME_SOURCE = "source";
   @SerializedName(SERIALIZED_NAME_SOURCE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private SourceEnum source;
 
   /**
@@ -247,18 +247,18 @@ public class AlertResponseData {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Alert attributes;
 
   public AlertResponseData() {
   }
 
-  public AlertResponseData id(@javax.annotation.Nonnull String id) {
+  public AlertResponseData id(@jakarta.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
@@ -267,17 +267,17 @@ public class AlertResponseData {
    * Unique ID of the alert
    * @return id
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(@javax.annotation.Nonnull String id) {
+  public void setId(@jakarta.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public AlertResponseData source(@javax.annotation.Nullable SourceEnum source) {
+  public AlertResponseData source(@jakarta.annotation.Nullable SourceEnum source) {
     this.source = source;
     return this;
   }
@@ -286,17 +286,17 @@ public class AlertResponseData {
    * The source of the alert
    * @return source
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public SourceEnum getSource() {
     return source;
   }
 
-  public void setSource(@javax.annotation.Nullable SourceEnum source) {
+  public void setSource(@jakarta.annotation.Nullable SourceEnum source) {
     this.source = source;
   }
 
 
-  public AlertResponseData type(@javax.annotation.Nonnull TypeEnum type) {
+  public AlertResponseData type(@jakarta.annotation.Nonnull TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -305,17 +305,17 @@ public class AlertResponseData {
    * Get type
    * @return type
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public TypeEnum getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nonnull TypeEnum type) {
+  public void setType(@jakarta.annotation.Nonnull TypeEnum type) {
     this.type = type;
   }
 
 
-  public AlertResponseData attributes(@javax.annotation.Nonnull Alert attributes) {
+  public AlertResponseData attributes(@jakarta.annotation.Nonnull Alert attributes) {
     this.attributes = attributes;
     return this;
   }
@@ -324,12 +324,12 @@ public class AlertResponseData {
    * Get attributes
    * @return attributes
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Alert getAttributes() {
     return attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nonnull Alert attributes) {
+  public void setAttributes(@jakarta.annotation.Nonnull Alert attributes) {
     this.attributes = attributes;
   }
 

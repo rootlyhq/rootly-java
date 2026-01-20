@@ -49,42 +49,42 @@ import com.rootly.client.JSON;
 /**
  * UpdateRetrospectiveStepDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateRetrospectiveStepDataAttributes {
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String title;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_INCIDENT_ROLE_ID = "incident_role_id";
   @SerializedName(SERIALIZED_NAME_INCIDENT_ROLE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String incidentRoleId;
 
   public static final String SERIALIZED_NAME_DUE_AFTER_DAYS = "due_after_days";
   @SerializedName(SERIALIZED_NAME_DUE_AFTER_DAYS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer dueAfterDays;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public static final String SERIALIZED_NAME_SKIPPABLE = "skippable";
   @SerializedName(SERIALIZED_NAME_SKIPPABLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean skippable;
 
   public UpdateRetrospectiveStepDataAttributes() {
   }
 
-  public UpdateRetrospectiveStepDataAttributes title(@javax.annotation.Nullable String title) {
+  public UpdateRetrospectiveStepDataAttributes title(@jakarta.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
@@ -93,17 +93,17 @@ public class UpdateRetrospectiveStepDataAttributes {
    * The name of the step
    * @return title
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nullable String title) {
+  public void setTitle(@jakarta.annotation.Nullable String title) {
     this.title = title;
   }
 
 
-  public UpdateRetrospectiveStepDataAttributes description(@javax.annotation.Nullable String description) {
+  public UpdateRetrospectiveStepDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -112,17 +112,17 @@ public class UpdateRetrospectiveStepDataAttributes {
    * The description of the step
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UpdateRetrospectiveStepDataAttributes incidentRoleId(@javax.annotation.Nullable String incidentRoleId) {
+  public UpdateRetrospectiveStepDataAttributes incidentRoleId(@jakarta.annotation.Nullable String incidentRoleId) {
     this.incidentRoleId = incidentRoleId;
     return this;
   }
@@ -131,17 +131,17 @@ public class UpdateRetrospectiveStepDataAttributes {
    * Users assigned to the selected incident role will be the default owners for this step
    * @return incidentRoleId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getIncidentRoleId() {
     return incidentRoleId;
   }
 
-  public void setIncidentRoleId(@javax.annotation.Nullable String incidentRoleId) {
+  public void setIncidentRoleId(@jakarta.annotation.Nullable String incidentRoleId) {
     this.incidentRoleId = incidentRoleId;
   }
 
 
-  public UpdateRetrospectiveStepDataAttributes dueAfterDays(@javax.annotation.Nullable Integer dueAfterDays) {
+  public UpdateRetrospectiveStepDataAttributes dueAfterDays(@jakarta.annotation.Nullable Integer dueAfterDays) {
     this.dueAfterDays = dueAfterDays;
     return this;
   }
@@ -150,17 +150,17 @@ public class UpdateRetrospectiveStepDataAttributes {
    * Due date in days
    * @return dueAfterDays
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getDueAfterDays() {
     return dueAfterDays;
   }
 
-  public void setDueAfterDays(@javax.annotation.Nullable Integer dueAfterDays) {
+  public void setDueAfterDays(@jakarta.annotation.Nullable Integer dueAfterDays) {
     this.dueAfterDays = dueAfterDays;
   }
 
 
-  public UpdateRetrospectiveStepDataAttributes position(@javax.annotation.Nullable Integer position) {
+  public UpdateRetrospectiveStepDataAttributes position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -169,17 +169,17 @@ public class UpdateRetrospectiveStepDataAttributes {
    * Position of the step
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 
 
-  public UpdateRetrospectiveStepDataAttributes skippable(@javax.annotation.Nullable Boolean skippable) {
+  public UpdateRetrospectiveStepDataAttributes skippable(@jakarta.annotation.Nullable Boolean skippable) {
     this.skippable = skippable;
     return this;
   }
@@ -188,12 +188,12 @@ public class UpdateRetrospectiveStepDataAttributes {
    * Is the step skippable?
    * @return skippable
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getSkippable() {
     return skippable;
   }
 
-  public void setSkippable(@javax.annotation.Nullable Boolean skippable) {
+  public void setSkippable(@jakarta.annotation.Nullable Boolean skippable) {
     this.skippable = skippable;
   }
 

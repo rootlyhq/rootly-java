@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateIncidentEventFunctionalityData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateIncidentEventFunctionalityData {
   /**
    * Gets or Sets type
@@ -103,18 +103,18 @@ public class UpdateIncidentEventFunctionalityData {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private UpdateIncidentEventFunctionalityDataAttributes attributes;
 
   public UpdateIncidentEventFunctionalityData() {
   }
 
-  public UpdateIncidentEventFunctionalityData type(@javax.annotation.Nonnull TypeEnum type) {
+  public UpdateIncidentEventFunctionalityData type(@jakarta.annotation.Nonnull TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -123,17 +123,17 @@ public class UpdateIncidentEventFunctionalityData {
    * Get type
    * @return type
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public TypeEnum getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nonnull TypeEnum type) {
+  public void setType(@jakarta.annotation.Nonnull TypeEnum type) {
     this.type = type;
   }
 
 
-  public UpdateIncidentEventFunctionalityData attributes(@javax.annotation.Nonnull UpdateIncidentEventFunctionalityDataAttributes attributes) {
+  public UpdateIncidentEventFunctionalityData attributes(@jakarta.annotation.Nonnull UpdateIncidentEventFunctionalityDataAttributes attributes) {
     this.attributes = attributes;
     return this;
   }
@@ -142,12 +142,12 @@ public class UpdateIncidentEventFunctionalityData {
    * Get attributes
    * @return attributes
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public UpdateIncidentEventFunctionalityDataAttributes getAttributes() {
     return attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nonnull UpdateIncidentEventFunctionalityDataAttributes attributes) {
+  public void setAttributes(@jakarta.annotation.Nonnull UpdateIncidentEventFunctionalityDataAttributes attributes) {
     this.attributes = attributes;
   }
 

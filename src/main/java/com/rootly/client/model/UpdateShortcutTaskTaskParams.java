@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateShortcutTaskTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateShortcutTaskTaskParams {
   /**
    * Gets or Sets taskType
@@ -103,33 +103,33 @@ public class UpdateShortcutTaskTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_TASK_ID = "task_id";
   @SerializedName(SERIALIZED_NAME_TASK_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String taskId;
 
   public static final String SERIALIZED_NAME_PARENT_STORY_ID = "parent_story_id";
   @SerializedName(SERIALIZED_NAME_PARENT_STORY_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String parentStoryId;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_COMPLETION = "completion";
   @SerializedName(SERIALIZED_NAME_COMPLETION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private CreateServiceNowIncidentTaskParamsCompletion completion;
 
   public UpdateShortcutTaskTaskParams() {
   }
 
-  public UpdateShortcutTaskTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public UpdateShortcutTaskTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -138,17 +138,17 @@ public class UpdateShortcutTaskTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public UpdateShortcutTaskTaskParams taskId(@javax.annotation.Nonnull String taskId) {
+  public UpdateShortcutTaskTaskParams taskId(@jakarta.annotation.Nonnull String taskId) {
     this.taskId = taskId;
     return this;
   }
@@ -157,17 +157,17 @@ public class UpdateShortcutTaskTaskParams {
    * The task id
    * @return taskId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getTaskId() {
     return taskId;
   }
 
-  public void setTaskId(@javax.annotation.Nonnull String taskId) {
+  public void setTaskId(@jakarta.annotation.Nonnull String taskId) {
     this.taskId = taskId;
   }
 
 
-  public UpdateShortcutTaskTaskParams parentStoryId(@javax.annotation.Nonnull String parentStoryId) {
+  public UpdateShortcutTaskTaskParams parentStoryId(@jakarta.annotation.Nonnull String parentStoryId) {
     this.parentStoryId = parentStoryId;
     return this;
   }
@@ -176,17 +176,17 @@ public class UpdateShortcutTaskTaskParams {
    * The parent story
    * @return parentStoryId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getParentStoryId() {
     return parentStoryId;
   }
 
-  public void setParentStoryId(@javax.annotation.Nonnull String parentStoryId) {
+  public void setParentStoryId(@jakarta.annotation.Nonnull String parentStoryId) {
     this.parentStoryId = parentStoryId;
   }
 
 
-  public UpdateShortcutTaskTaskParams description(@javax.annotation.Nullable String description) {
+  public UpdateShortcutTaskTaskParams description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -195,17 +195,17 @@ public class UpdateShortcutTaskTaskParams {
    * The task description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UpdateShortcutTaskTaskParams completion(@javax.annotation.Nonnull CreateServiceNowIncidentTaskParamsCompletion completion) {
+  public UpdateShortcutTaskTaskParams completion(@jakarta.annotation.Nonnull CreateServiceNowIncidentTaskParamsCompletion completion) {
     this.completion = completion;
     return this;
   }
@@ -214,12 +214,12 @@ public class UpdateShortcutTaskTaskParams {
    * Get completion
    * @return completion
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public CreateServiceNowIncidentTaskParamsCompletion getCompletion() {
     return completion;
   }
 
-  public void setCompletion(@javax.annotation.Nonnull CreateServiceNowIncidentTaskParamsCompletion completion) {
+  public void setCompletion(@jakarta.annotation.Nonnull CreateServiceNowIncidentTaskParamsCompletion completion) {
     this.completion = completion;
   }
 

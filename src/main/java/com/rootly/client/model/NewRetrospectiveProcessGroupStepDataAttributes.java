@@ -48,22 +48,22 @@ import com.rootly.client.JSON;
 /**
  * NewRetrospectiveProcessGroupStepDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewRetrospectiveProcessGroupStepDataAttributes {
   public static final String SERIALIZED_NAME_RETROSPECTIVE_STEP_ID = "retrospective_step_id";
   @SerializedName(SERIALIZED_NAME_RETROSPECTIVE_STEP_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String retrospectiveStepId;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public NewRetrospectiveProcessGroupStepDataAttributes() {
   }
 
-  public NewRetrospectiveProcessGroupStepDataAttributes retrospectiveStepId(@javax.annotation.Nonnull String retrospectiveStepId) {
+  public NewRetrospectiveProcessGroupStepDataAttributes retrospectiveStepId(@jakarta.annotation.Nonnull String retrospectiveStepId) {
     this.retrospectiveStepId = retrospectiveStepId;
     return this;
   }
@@ -72,17 +72,17 @@ public class NewRetrospectiveProcessGroupStepDataAttributes {
    * Get retrospectiveStepId
    * @return retrospectiveStepId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getRetrospectiveStepId() {
     return retrospectiveStepId;
   }
 
-  public void setRetrospectiveStepId(@javax.annotation.Nonnull String retrospectiveStepId) {
+  public void setRetrospectiveStepId(@jakarta.annotation.Nonnull String retrospectiveStepId) {
     this.retrospectiveStepId = retrospectiveStepId;
   }
 
 
-  public NewRetrospectiveProcessGroupStepDataAttributes position(@javax.annotation.Nullable Integer position) {
+  public NewRetrospectiveProcessGroupStepDataAttributes position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -91,12 +91,12 @@ public class NewRetrospectiveProcessGroupStepDataAttributes {
    * Get position
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 

@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * AutoAssignRoleRootlyTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AutoAssignRoleRootlyTaskParams {
   /**
    * Gets or Sets taskType
@@ -103,43 +103,43 @@ public class AutoAssignRoleRootlyTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_INCIDENT_ROLE_ID = "incident_role_id";
   @SerializedName(SERIALIZED_NAME_INCIDENT_ROLE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String incidentRoleId;
 
   public static final String SERIALIZED_NAME_ESCALATION_POLICY_TARGET = "escalation_policy_target";
   @SerializedName(SERIALIZED_NAME_ESCALATION_POLICY_TARGET)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AddActionItemTaskParamsPostToSlackChannelsInner escalationPolicyTarget;
 
   public static final String SERIALIZED_NAME_SERVICE_TARGET = "service_target";
   @SerializedName(SERIALIZED_NAME_SERVICE_TARGET)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AddActionItemTaskParamsPostToSlackChannelsInner serviceTarget;
 
   public static final String SERIALIZED_NAME_USER_TARGET = "user_target";
   @SerializedName(SERIALIZED_NAME_USER_TARGET)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AddActionItemTaskParamsPostToSlackChannelsInner userTarget;
 
   public static final String SERIALIZED_NAME_GROUP_TARGET = "group_target";
   @SerializedName(SERIALIZED_NAME_GROUP_TARGET)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AddActionItemTaskParamsPostToSlackChannelsInner groupTarget;
 
   public static final String SERIALIZED_NAME_SCHEDULE_TARGET = "schedule_target";
   @SerializedName(SERIALIZED_NAME_SCHEDULE_TARGET)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AddActionItemTaskParamsPostToSlackChannelsInner scheduleTarget;
 
   public AutoAssignRoleRootlyTaskParams() {
   }
 
-  public AutoAssignRoleRootlyTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public AutoAssignRoleRootlyTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -148,17 +148,17 @@ public class AutoAssignRoleRootlyTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public AutoAssignRoleRootlyTaskParams incidentRoleId(@javax.annotation.Nonnull String incidentRoleId) {
+  public AutoAssignRoleRootlyTaskParams incidentRoleId(@jakarta.annotation.Nonnull String incidentRoleId) {
     this.incidentRoleId = incidentRoleId;
     return this;
   }
@@ -167,17 +167,17 @@ public class AutoAssignRoleRootlyTaskParams {
    * The role id
    * @return incidentRoleId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getIncidentRoleId() {
     return incidentRoleId;
   }
 
-  public void setIncidentRoleId(@javax.annotation.Nonnull String incidentRoleId) {
+  public void setIncidentRoleId(@jakarta.annotation.Nonnull String incidentRoleId) {
     this.incidentRoleId = incidentRoleId;
   }
 
 
-  public AutoAssignRoleRootlyTaskParams escalationPolicyTarget(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner escalationPolicyTarget) {
+  public AutoAssignRoleRootlyTaskParams escalationPolicyTarget(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner escalationPolicyTarget) {
     this.escalationPolicyTarget = escalationPolicyTarget;
     return this;
   }
@@ -186,17 +186,17 @@ public class AutoAssignRoleRootlyTaskParams {
    * Get escalationPolicyTarget
    * @return escalationPolicyTarget
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AddActionItemTaskParamsPostToSlackChannelsInner getEscalationPolicyTarget() {
     return escalationPolicyTarget;
   }
 
-  public void setEscalationPolicyTarget(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner escalationPolicyTarget) {
+  public void setEscalationPolicyTarget(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner escalationPolicyTarget) {
     this.escalationPolicyTarget = escalationPolicyTarget;
   }
 
 
-  public AutoAssignRoleRootlyTaskParams serviceTarget(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner serviceTarget) {
+  public AutoAssignRoleRootlyTaskParams serviceTarget(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner serviceTarget) {
     this.serviceTarget = serviceTarget;
     return this;
   }
@@ -205,17 +205,17 @@ public class AutoAssignRoleRootlyTaskParams {
    * Get serviceTarget
    * @return serviceTarget
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AddActionItemTaskParamsPostToSlackChannelsInner getServiceTarget() {
     return serviceTarget;
   }
 
-  public void setServiceTarget(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner serviceTarget) {
+  public void setServiceTarget(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner serviceTarget) {
     this.serviceTarget = serviceTarget;
   }
 
 
-  public AutoAssignRoleRootlyTaskParams userTarget(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner userTarget) {
+  public AutoAssignRoleRootlyTaskParams userTarget(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner userTarget) {
     this.userTarget = userTarget;
     return this;
   }
@@ -224,17 +224,17 @@ public class AutoAssignRoleRootlyTaskParams {
    * Get userTarget
    * @return userTarget
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AddActionItemTaskParamsPostToSlackChannelsInner getUserTarget() {
     return userTarget;
   }
 
-  public void setUserTarget(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner userTarget) {
+  public void setUserTarget(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner userTarget) {
     this.userTarget = userTarget;
   }
 
 
-  public AutoAssignRoleRootlyTaskParams groupTarget(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner groupTarget) {
+  public AutoAssignRoleRootlyTaskParams groupTarget(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner groupTarget) {
     this.groupTarget = groupTarget;
     return this;
   }
@@ -243,17 +243,17 @@ public class AutoAssignRoleRootlyTaskParams {
    * Get groupTarget
    * @return groupTarget
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AddActionItemTaskParamsPostToSlackChannelsInner getGroupTarget() {
     return groupTarget;
   }
 
-  public void setGroupTarget(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner groupTarget) {
+  public void setGroupTarget(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner groupTarget) {
     this.groupTarget = groupTarget;
   }
 
 
-  public AutoAssignRoleRootlyTaskParams scheduleTarget(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner scheduleTarget) {
+  public AutoAssignRoleRootlyTaskParams scheduleTarget(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner scheduleTarget) {
     this.scheduleTarget = scheduleTarget;
     return this;
   }
@@ -262,12 +262,12 @@ public class AutoAssignRoleRootlyTaskParams {
    * Get scheduleTarget
    * @return scheduleTarget
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AddActionItemTaskParamsPostToSlackChannelsInner getScheduleTarget() {
     return scheduleTarget;
   }
 
-  public void setScheduleTarget(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner scheduleTarget) {
+  public void setScheduleTarget(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner scheduleTarget) {
     this.scheduleTarget = scheduleTarget;
   }
 

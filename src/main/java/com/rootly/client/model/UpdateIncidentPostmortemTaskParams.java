@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateIncidentPostmortemTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateIncidentPostmortemTaskParams {
   /**
    * Gets or Sets taskType
@@ -103,28 +103,28 @@ public class UpdateIncidentPostmortemTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_POSTMORTEM_ID = "postmortem_id";
   @SerializedName(SERIALIZED_NAME_POSTMORTEM_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String postmortemId;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String title;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String status;
 
   public UpdateIncidentPostmortemTaskParams() {
   }
 
-  public UpdateIncidentPostmortemTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public UpdateIncidentPostmortemTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -133,17 +133,17 @@ public class UpdateIncidentPostmortemTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public UpdateIncidentPostmortemTaskParams postmortemId(@javax.annotation.Nonnull String postmortemId) {
+  public UpdateIncidentPostmortemTaskParams postmortemId(@jakarta.annotation.Nonnull String postmortemId) {
     this.postmortemId = postmortemId;
     return this;
   }
@@ -152,17 +152,17 @@ public class UpdateIncidentPostmortemTaskParams {
    * UUID of the retrospective that needs to be updated
    * @return postmortemId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getPostmortemId() {
     return postmortemId;
   }
 
-  public void setPostmortemId(@javax.annotation.Nonnull String postmortemId) {
+  public void setPostmortemId(@jakarta.annotation.Nonnull String postmortemId) {
     this.postmortemId = postmortemId;
   }
 
 
-  public UpdateIncidentPostmortemTaskParams title(@javax.annotation.Nullable String title) {
+  public UpdateIncidentPostmortemTaskParams title(@jakarta.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
@@ -171,17 +171,17 @@ public class UpdateIncidentPostmortemTaskParams {
    * The incident title
    * @return title
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nullable String title) {
+  public void setTitle(@jakarta.annotation.Nullable String title) {
     this.title = title;
   }
 
 
-  public UpdateIncidentPostmortemTaskParams status(@javax.annotation.Nullable String status) {
+  public UpdateIncidentPostmortemTaskParams status(@jakarta.annotation.Nullable String status) {
     this.status = status;
     return this;
   }
@@ -190,12 +190,12 @@ public class UpdateIncidentPostmortemTaskParams {
    * Get status
    * @return status
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nullable String status) {
+  public void setStatus(@jakarta.annotation.Nullable String status) {
     this.status = status;
   }
 

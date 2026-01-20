@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * AddRoleTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AddRoleTaskParams {
   /**
    * Gets or Sets taskType
@@ -103,28 +103,28 @@ public class AddRoleTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_INCIDENT_ROLE_ID = "incident_role_id";
   @SerializedName(SERIALIZED_NAME_INCIDENT_ROLE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String incidentRoleId;
 
   public static final String SERIALIZED_NAME_ASSIGNED_TO_USER_ID = "assigned_to_user_id";
   @SerializedName(SERIALIZED_NAME_ASSIGNED_TO_USER_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String assignedToUserId;
 
   public static final String SERIALIZED_NAME_ASSIGNED_TO_USER = "assigned_to_user";
   @SerializedName(SERIALIZED_NAME_ASSIGNED_TO_USER)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AddRoleTaskParamsAssignedToUser assignedToUser;
 
   public AddRoleTaskParams() {
   }
 
-  public AddRoleTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public AddRoleTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -133,17 +133,17 @@ public class AddRoleTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public AddRoleTaskParams incidentRoleId(@javax.annotation.Nonnull String incidentRoleId) {
+  public AddRoleTaskParams incidentRoleId(@jakarta.annotation.Nonnull String incidentRoleId) {
     this.incidentRoleId = incidentRoleId;
     return this;
   }
@@ -152,17 +152,17 @@ public class AddRoleTaskParams {
    * The role id to add to the incident
    * @return incidentRoleId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getIncidentRoleId() {
     return incidentRoleId;
   }
 
-  public void setIncidentRoleId(@javax.annotation.Nonnull String incidentRoleId) {
+  public void setIncidentRoleId(@jakarta.annotation.Nonnull String incidentRoleId) {
     this.incidentRoleId = incidentRoleId;
   }
 
 
-  public AddRoleTaskParams assignedToUserId(@javax.annotation.Nullable String assignedToUserId) {
+  public AddRoleTaskParams assignedToUserId(@jakarta.annotation.Nullable String assignedToUserId) {
     this.assignedToUserId = assignedToUserId;
     return this;
   }
@@ -171,17 +171,17 @@ public class AddRoleTaskParams {
    * [DEPRECATED] Use assigned_to_user attribute instead. The user id this role is assigned to
    * @return assignedToUserId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getAssignedToUserId() {
     return assignedToUserId;
   }
 
-  public void setAssignedToUserId(@javax.annotation.Nullable String assignedToUserId) {
+  public void setAssignedToUserId(@jakarta.annotation.Nullable String assignedToUserId) {
     this.assignedToUserId = assignedToUserId;
   }
 
 
-  public AddRoleTaskParams assignedToUser(@javax.annotation.Nullable AddRoleTaskParamsAssignedToUser assignedToUser) {
+  public AddRoleTaskParams assignedToUser(@jakarta.annotation.Nullable AddRoleTaskParamsAssignedToUser assignedToUser) {
     this.assignedToUser = assignedToUser;
     return this;
   }
@@ -190,12 +190,12 @@ public class AddRoleTaskParams {
    * Get assignedToUser
    * @return assignedToUser
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AddRoleTaskParamsAssignedToUser getAssignedToUser() {
     return assignedToUser;
   }
 
-  public void setAssignedToUser(@javax.annotation.Nullable AddRoleTaskParamsAssignedToUser assignedToUser) {
+  public void setAssignedToUser(@jakarta.annotation.Nullable AddRoleTaskParamsAssignedToUser assignedToUser) {
     this.assignedToUser = assignedToUser;
   }
 

@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateStatusTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateStatusTaskParams {
   /**
    * Gets or Sets taskType
@@ -102,7 +102,7 @@ public class UpdateStatusTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   /**
@@ -167,18 +167,18 @@ public class UpdateStatusTaskParams {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private StatusEnum status;
 
   public static final String SERIALIZED_NAME_INACTIVITY_TIMEOUT = "inactivity_timeout";
   @SerializedName(SERIALIZED_NAME_INACTIVITY_TIMEOUT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String inactivityTimeout;
 
   public UpdateStatusTaskParams() {
   }
 
-  public UpdateStatusTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public UpdateStatusTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -187,17 +187,17 @@ public class UpdateStatusTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public UpdateStatusTaskParams status(@javax.annotation.Nonnull StatusEnum status) {
+  public UpdateStatusTaskParams status(@jakarta.annotation.Nonnull StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -206,17 +206,17 @@ public class UpdateStatusTaskParams {
    * Get status
    * @return status
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nonnull StatusEnum status) {
+  public void setStatus(@jakarta.annotation.Nonnull StatusEnum status) {
     this.status = status;
   }
 
 
-  public UpdateStatusTaskParams inactivityTimeout(@javax.annotation.Nullable String inactivityTimeout) {
+  public UpdateStatusTaskParams inactivityTimeout(@jakarta.annotation.Nullable String inactivityTimeout) {
     this.inactivityTimeout = inactivityTimeout;
     return this;
   }
@@ -225,12 +225,12 @@ public class UpdateStatusTaskParams {
    * In format &#39;1 hour&#39;, &#39;1 day&#39;, etc
    * @return inactivityTimeout
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getInactivityTimeout() {
     return inactivityTimeout;
   }
 
-  public void setInactivityTimeout(@javax.annotation.Nullable String inactivityTimeout) {
+  public void setInactivityTimeout(@jakarta.annotation.Nullable String inactivityTimeout) {
     this.inactivityTimeout = inactivityTimeout;
   }
 

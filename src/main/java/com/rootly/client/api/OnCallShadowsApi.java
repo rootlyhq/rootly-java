@@ -92,7 +92,7 @@ public class OnCallShadowsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createOnCallShadowCall(@javax.annotation.Nonnull String scheduleId, @javax.annotation.Nonnull NewOnCallShadow newOnCallShadow, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createOnCallShadowCall(@jakarta.annotation.Nonnull String scheduleId, @jakarta.annotation.Nonnull NewOnCallShadow newOnCallShadow, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -139,7 +139,7 @@ public class OnCallShadowsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createOnCallShadowValidateBeforeCall(@javax.annotation.Nonnull String scheduleId, @javax.annotation.Nonnull NewOnCallShadow newOnCallShadow, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createOnCallShadowValidateBeforeCall(@jakarta.annotation.Nonnull String scheduleId, @jakarta.annotation.Nonnull NewOnCallShadow newOnCallShadow, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'scheduleId' is set
         if (scheduleId == null) {
             throw new ApiException("Missing the required parameter 'scheduleId' when calling createOnCallShadow(Async)");
@@ -170,7 +170,7 @@ public class OnCallShadowsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public OnCallShadowResponse createOnCallShadow(@javax.annotation.Nonnull String scheduleId, @javax.annotation.Nonnull NewOnCallShadow newOnCallShadow) throws ApiException {
+    public OnCallShadowResponse createOnCallShadow(@jakarta.annotation.Nonnull String scheduleId, @jakarta.annotation.Nonnull NewOnCallShadow newOnCallShadow) throws ApiException {
         ApiResponse<OnCallShadowResponse> localVarResp = createOnCallShadowWithHttpInfo(scheduleId, newOnCallShadow);
         return localVarResp.getData();
     }
@@ -191,7 +191,7 @@ public class OnCallShadowsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OnCallShadowResponse> createOnCallShadowWithHttpInfo(@javax.annotation.Nonnull String scheduleId, @javax.annotation.Nonnull NewOnCallShadow newOnCallShadow) throws ApiException {
+    public ApiResponse<OnCallShadowResponse> createOnCallShadowWithHttpInfo(@jakarta.annotation.Nonnull String scheduleId, @jakarta.annotation.Nonnull NewOnCallShadow newOnCallShadow) throws ApiException {
         okhttp3.Call localVarCall = createOnCallShadowValidateBeforeCall(scheduleId, newOnCallShadow, null);
         Type localVarReturnType = new TypeToken<OnCallShadowResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -214,7 +214,7 @@ public class OnCallShadowsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createOnCallShadowAsync(@javax.annotation.Nonnull String scheduleId, @javax.annotation.Nonnull NewOnCallShadow newOnCallShadow, final ApiCallback<OnCallShadowResponse> _callback) throws ApiException {
+    public okhttp3.Call createOnCallShadowAsync(@jakarta.annotation.Nonnull String scheduleId, @jakarta.annotation.Nonnull NewOnCallShadow newOnCallShadow, final ApiCallback<OnCallShadowResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createOnCallShadowValidateBeforeCall(scheduleId, newOnCallShadow, _callback);
         Type localVarReturnType = new TypeToken<OnCallShadowResponse>(){}.getType();
@@ -235,7 +235,7 @@ public class OnCallShadowsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getOnCallShadowCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getOnCallShadowCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -281,7 +281,7 @@ public class OnCallShadowsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getOnCallShadowValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getOnCallShadowValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getOnCallShadow(Async)");
@@ -305,7 +305,7 @@ public class OnCallShadowsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public OnCallShadowResponse getOnCallShadow(@javax.annotation.Nonnull String id) throws ApiException {
+    public OnCallShadowResponse getOnCallShadow(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<OnCallShadowResponse> localVarResp = getOnCallShadowWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -324,7 +324,7 @@ public class OnCallShadowsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OnCallShadowResponse> getOnCallShadowWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<OnCallShadowResponse> getOnCallShadowWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getOnCallShadowValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<OnCallShadowResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -345,7 +345,7 @@ public class OnCallShadowsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getOnCallShadowAsync(@javax.annotation.Nonnull String id, final ApiCallback<OnCallShadowResponse> _callback) throws ApiException {
+    public okhttp3.Call getOnCallShadowAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<OnCallShadowResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getOnCallShadowValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<OnCallShadowResponse>(){}.getType();
@@ -368,7 +368,7 @@ public class OnCallShadowsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listOnCallShadowsCall(@javax.annotation.Nonnull String scheduleId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listOnCallShadowsCall(@jakarta.annotation.Nonnull String scheduleId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -426,7 +426,7 @@ public class OnCallShadowsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listOnCallShadowsValidateBeforeCall(@javax.annotation.Nonnull String scheduleId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listOnCallShadowsValidateBeforeCall(@jakarta.annotation.Nonnull String scheduleId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'scheduleId' is set
         if (scheduleId == null) {
             throw new ApiException("Missing the required parameter 'scheduleId' when calling listOnCallShadows(Async)");
@@ -452,7 +452,7 @@ public class OnCallShadowsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public OnCallShadowsList listOnCallShadows(@javax.annotation.Nonnull String scheduleId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+    public OnCallShadowsList listOnCallShadows(@jakarta.annotation.Nonnull String scheduleId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
         ApiResponse<OnCallShadowsList> localVarResp = listOnCallShadowsWithHttpInfo(scheduleId, include, pageNumber, pageSize);
         return localVarResp.getData();
     }
@@ -473,7 +473,7 @@ public class OnCallShadowsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OnCallShadowsList> listOnCallShadowsWithHttpInfo(@javax.annotation.Nonnull String scheduleId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+    public ApiResponse<OnCallShadowsList> listOnCallShadowsWithHttpInfo(@jakarta.annotation.Nonnull String scheduleId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
         okhttp3.Call localVarCall = listOnCallShadowsValidateBeforeCall(scheduleId, include, pageNumber, pageSize, null);
         Type localVarReturnType = new TypeToken<OnCallShadowsList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -496,7 +496,7 @@ public class OnCallShadowsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listOnCallShadowsAsync(@javax.annotation.Nonnull String scheduleId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback<OnCallShadowsList> _callback) throws ApiException {
+    public okhttp3.Call listOnCallShadowsAsync(@jakarta.annotation.Nonnull String scheduleId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback<OnCallShadowsList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listOnCallShadowsValidateBeforeCall(scheduleId, include, pageNumber, pageSize, _callback);
         Type localVarReturnType = new TypeToken<OnCallShadowsList>(){}.getType();
@@ -518,7 +518,7 @@ public class OnCallShadowsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateOnCallShadowCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateOnCallShadow updateOnCallShadow, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateOnCallShadowCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateOnCallShadow updateOnCallShadow, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -565,7 +565,7 @@ public class OnCallShadowsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateOnCallShadowValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateOnCallShadow updateOnCallShadow, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateOnCallShadowValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateOnCallShadow updateOnCallShadow, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateOnCallShadow(Async)");
@@ -595,7 +595,7 @@ public class OnCallShadowsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public OnCallShadowResponse updateOnCallShadow(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateOnCallShadow updateOnCallShadow) throws ApiException {
+    public OnCallShadowResponse updateOnCallShadow(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateOnCallShadow updateOnCallShadow) throws ApiException {
         ApiResponse<OnCallShadowResponse> localVarResp = updateOnCallShadowWithHttpInfo(id, updateOnCallShadow);
         return localVarResp.getData();
     }
@@ -615,7 +615,7 @@ public class OnCallShadowsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OnCallShadowResponse> updateOnCallShadowWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateOnCallShadow updateOnCallShadow) throws ApiException {
+    public ApiResponse<OnCallShadowResponse> updateOnCallShadowWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateOnCallShadow updateOnCallShadow) throws ApiException {
         okhttp3.Call localVarCall = updateOnCallShadowValidateBeforeCall(id, updateOnCallShadow, null);
         Type localVarReturnType = new TypeToken<OnCallShadowResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -637,7 +637,7 @@ public class OnCallShadowsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateOnCallShadowAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateOnCallShadow updateOnCallShadow, final ApiCallback<OnCallShadowResponse> _callback) throws ApiException {
+    public okhttp3.Call updateOnCallShadowAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateOnCallShadow updateOnCallShadow, final ApiCallback<OnCallShadowResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateOnCallShadowValidateBeforeCall(id, updateOnCallShadow, _callback);
         Type localVarReturnType = new TypeToken<OnCallShadowResponse>(){}.getType();

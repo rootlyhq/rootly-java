@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * NewDashboardPanelDataAttributesParamsDatasetsInnerAggregate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewDashboardPanelDataAttributesParamsDatasetsInnerAggregate {
   /**
    * Gets or Sets operation
@@ -107,23 +107,23 @@ public class NewDashboardPanelDataAttributesParamsDatasetsInnerAggregate {
 
   public static final String SERIALIZED_NAME_OPERATION = "operation";
   @SerializedName(SERIALIZED_NAME_OPERATION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private OperationEnum operation;
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String key;
 
   public static final String SERIALIZED_NAME_CUMULATIVE = "cumulative";
   @SerializedName(SERIALIZED_NAME_CUMULATIVE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean cumulative;
 
   public NewDashboardPanelDataAttributesParamsDatasetsInnerAggregate() {
   }
 
-  public NewDashboardPanelDataAttributesParamsDatasetsInnerAggregate operation(@javax.annotation.Nullable OperationEnum operation) {
+  public NewDashboardPanelDataAttributesParamsDatasetsInnerAggregate operation(@jakarta.annotation.Nullable OperationEnum operation) {
     this.operation = operation;
     return this;
   }
@@ -132,17 +132,17 @@ public class NewDashboardPanelDataAttributesParamsDatasetsInnerAggregate {
    * Get operation
    * @return operation
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public OperationEnum getOperation() {
     return operation;
   }
 
-  public void setOperation(@javax.annotation.Nullable OperationEnum operation) {
+  public void setOperation(@jakarta.annotation.Nullable OperationEnum operation) {
     this.operation = operation;
   }
 
 
-  public NewDashboardPanelDataAttributesParamsDatasetsInnerAggregate key(@javax.annotation.Nullable String key) {
+  public NewDashboardPanelDataAttributesParamsDatasetsInnerAggregate key(@jakarta.annotation.Nullable String key) {
     this.key = key;
     return this;
   }
@@ -151,17 +151,17 @@ public class NewDashboardPanelDataAttributesParamsDatasetsInnerAggregate {
    * Get key
    * @return key
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getKey() {
     return key;
   }
 
-  public void setKey(@javax.annotation.Nullable String key) {
+  public void setKey(@jakarta.annotation.Nullable String key) {
     this.key = key;
   }
 
 
-  public NewDashboardPanelDataAttributesParamsDatasetsInnerAggregate cumulative(@javax.annotation.Nullable Boolean cumulative) {
+  public NewDashboardPanelDataAttributesParamsDatasetsInnerAggregate cumulative(@jakarta.annotation.Nullable Boolean cumulative) {
     this.cumulative = cumulative;
     return this;
   }
@@ -170,12 +170,12 @@ public class NewDashboardPanelDataAttributesParamsDatasetsInnerAggregate {
    * Get cumulative
    * @return cumulative
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getCumulative() {
     return cumulative;
   }
 
-  public void setCumulative(@javax.annotation.Nullable Boolean cumulative) {
+  public void setCumulative(@jakarta.annotation.Nullable Boolean cumulative) {
     this.cumulative = cumulative;
   }
 

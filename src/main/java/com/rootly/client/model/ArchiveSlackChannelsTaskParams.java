@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * ArchiveSlackChannelsTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ArchiveSlackChannelsTaskParams {
   /**
    * Gets or Sets taskType
@@ -105,18 +105,18 @@ public class ArchiveSlackChannelsTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_CHANNELS = "channels";
   @SerializedName(SERIALIZED_NAME_CHANNELS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<AddActionItemTaskParamsPostToSlackChannelsInner> channels = new ArrayList<>();
 
   public ArchiveSlackChannelsTaskParams() {
   }
 
-  public ArchiveSlackChannelsTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public ArchiveSlackChannelsTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -125,17 +125,17 @@ public class ArchiveSlackChannelsTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public ArchiveSlackChannelsTaskParams channels(@javax.annotation.Nonnull List<AddActionItemTaskParamsPostToSlackChannelsInner> channels) {
+  public ArchiveSlackChannelsTaskParams channels(@jakarta.annotation.Nonnull List<AddActionItemTaskParamsPostToSlackChannelsInner> channels) {
     this.channels = channels;
     return this;
   }
@@ -152,12 +152,12 @@ public class ArchiveSlackChannelsTaskParams {
    * Get channels
    * @return channels
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<AddActionItemTaskParamsPostToSlackChannelsInner> getChannels() {
     return channels;
   }
 
-  public void setChannels(@javax.annotation.Nonnull List<AddActionItemTaskParamsPostToSlackChannelsInner> channels) {
+  public void setChannels(@jakarta.annotation.Nonnull List<AddActionItemTaskParamsPostToSlackChannelsInner> channels) {
     this.channels = channels;
   }
 

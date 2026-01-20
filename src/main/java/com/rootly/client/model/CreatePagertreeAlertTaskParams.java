@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * CreatePagertreeAlertTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreatePagertreeAlertTaskParams {
   /**
    * Gets or Sets taskType
@@ -105,17 +105,17 @@ public class CreatePagertreeAlertTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String title;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   /**
@@ -178,7 +178,7 @@ public class CreatePagertreeAlertTaskParams {
 
   public static final String SERIALIZED_NAME_URGENCY = "urgency";
   @SerializedName(SERIALIZED_NAME_URGENCY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private UrgencyEnum urgency;
 
   /**
@@ -241,28 +241,28 @@ public class CreatePagertreeAlertTaskParams {
 
   public static final String SERIALIZED_NAME_SEVERITY = "severity";
   @SerializedName(SERIALIZED_NAME_SEVERITY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private SeverityEnum severity;
 
   public static final String SERIALIZED_NAME_TEAMS = "teams";
   @SerializedName(SERIALIZED_NAME_TEAMS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AddActionItemTaskParamsPostToSlackChannelsInner> teams = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_USERS = "users";
   @SerializedName(SERIALIZED_NAME_USERS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AddActionItemTaskParamsPostToSlackChannelsInner> users = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_INCIDENT = "incident";
   @SerializedName(SERIALIZED_NAME_INCIDENT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean incident;
 
   public CreatePagertreeAlertTaskParams() {
   }
 
-  public CreatePagertreeAlertTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public CreatePagertreeAlertTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -271,17 +271,17 @@ public class CreatePagertreeAlertTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public CreatePagertreeAlertTaskParams title(@javax.annotation.Nullable String title) {
+  public CreatePagertreeAlertTaskParams title(@jakarta.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
@@ -290,17 +290,17 @@ public class CreatePagertreeAlertTaskParams {
    * Title of alert as text
    * @return title
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nullable String title) {
+  public void setTitle(@jakarta.annotation.Nullable String title) {
     this.title = title;
   }
 
 
-  public CreatePagertreeAlertTaskParams description(@javax.annotation.Nullable String description) {
+  public CreatePagertreeAlertTaskParams description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -309,17 +309,17 @@ public class CreatePagertreeAlertTaskParams {
    * Description of alert as text
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public CreatePagertreeAlertTaskParams urgency(@javax.annotation.Nullable UrgencyEnum urgency) {
+  public CreatePagertreeAlertTaskParams urgency(@jakarta.annotation.Nullable UrgencyEnum urgency) {
     this.urgency = urgency;
     return this;
   }
@@ -328,17 +328,17 @@ public class CreatePagertreeAlertTaskParams {
    * Get urgency
    * @return urgency
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public UrgencyEnum getUrgency() {
     return urgency;
   }
 
-  public void setUrgency(@javax.annotation.Nullable UrgencyEnum urgency) {
+  public void setUrgency(@jakarta.annotation.Nullable UrgencyEnum urgency) {
     this.urgency = urgency;
   }
 
 
-  public CreatePagertreeAlertTaskParams severity(@javax.annotation.Nullable SeverityEnum severity) {
+  public CreatePagertreeAlertTaskParams severity(@jakarta.annotation.Nullable SeverityEnum severity) {
     this.severity = severity;
     return this;
   }
@@ -347,17 +347,17 @@ public class CreatePagertreeAlertTaskParams {
    * Get severity
    * @return severity
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public SeverityEnum getSeverity() {
     return severity;
   }
 
-  public void setSeverity(@javax.annotation.Nullable SeverityEnum severity) {
+  public void setSeverity(@jakarta.annotation.Nullable SeverityEnum severity) {
     this.severity = severity;
   }
 
 
-  public CreatePagertreeAlertTaskParams teams(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> teams) {
+  public CreatePagertreeAlertTaskParams teams(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> teams) {
     this.teams = teams;
     return this;
   }
@@ -374,17 +374,17 @@ public class CreatePagertreeAlertTaskParams {
    * Get teams
    * @return teams
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AddActionItemTaskParamsPostToSlackChannelsInner> getTeams() {
     return teams;
   }
 
-  public void setTeams(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> teams) {
+  public void setTeams(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> teams) {
     this.teams = teams;
   }
 
 
-  public CreatePagertreeAlertTaskParams users(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> users) {
+  public CreatePagertreeAlertTaskParams users(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> users) {
     this.users = users;
     return this;
   }
@@ -401,17 +401,17 @@ public class CreatePagertreeAlertTaskParams {
    * Get users
    * @return users
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AddActionItemTaskParamsPostToSlackChannelsInner> getUsers() {
     return users;
   }
 
-  public void setUsers(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> users) {
+  public void setUsers(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> users) {
     this.users = users;
   }
 
 
-  public CreatePagertreeAlertTaskParams incident(@javax.annotation.Nullable Boolean incident) {
+  public CreatePagertreeAlertTaskParams incident(@jakarta.annotation.Nullable Boolean incident) {
     this.incident = incident;
     return this;
   }
@@ -420,12 +420,12 @@ public class CreatePagertreeAlertTaskParams {
    * Setting to true makes an alert a Pagertree incident
    * @return incident
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getIncident() {
     return incident;
   }
 
-  public void setIncident(@javax.annotation.Nullable Boolean incident) {
+  public void setIncident(@jakarta.annotation.Nullable Boolean incident) {
     this.incident = incident;
   }
 

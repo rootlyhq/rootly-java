@@ -49,21 +49,21 @@ import com.rootly.client.JSON;
 /**
  * NewStatusPageTemplateDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewStatusPageTemplateDataAttributes {
   public static final String SERIALIZED_NAME_STATUS_PAGE_ID = "status_page_id";
   @SerializedName(SERIALIZED_NAME_STATUS_PAGE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String statusPageId;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String title;
 
   public static final String SERIALIZED_NAME_BODY = "body";
   @SerializedName(SERIALIZED_NAME_BODY)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String body;
 
   /**
@@ -130,7 +130,7 @@ public class NewStatusPageTemplateDataAttributes {
 
   public static final String SERIALIZED_NAME_UPDATE_STATUS = "update_status";
   @SerializedName(SERIALIZED_NAME_UPDATE_STATUS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private UpdateStatusEnum updateStatus;
 
   /**
@@ -187,28 +187,28 @@ public class NewStatusPageTemplateDataAttributes {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private KindEnum kind;
 
   public static final String SERIALIZED_NAME_SHOULD_NOTIFY_SUBSCRIBERS = "should_notify_subscribers";
   @SerializedName(SERIALIZED_NAME_SHOULD_NOTIFY_SUBSCRIBERS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean shouldNotifySubscribers;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean enabled;
 
   public NewStatusPageTemplateDataAttributes() {
   }
 
-  public NewStatusPageTemplateDataAttributes statusPageId(@javax.annotation.Nullable String statusPageId) {
+  public NewStatusPageTemplateDataAttributes statusPageId(@jakarta.annotation.Nullable String statusPageId) {
     this.statusPageId = statusPageId;
     return this;
   }
@@ -217,17 +217,17 @@ public class NewStatusPageTemplateDataAttributes {
    * Get statusPageId
    * @return statusPageId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getStatusPageId() {
     return statusPageId;
   }
 
-  public void setStatusPageId(@javax.annotation.Nullable String statusPageId) {
+  public void setStatusPageId(@jakarta.annotation.Nullable String statusPageId) {
     this.statusPageId = statusPageId;
   }
 
 
-  public NewStatusPageTemplateDataAttributes title(@javax.annotation.Nonnull String title) {
+  public NewStatusPageTemplateDataAttributes title(@jakarta.annotation.Nonnull String title) {
     this.title = title;
     return this;
   }
@@ -236,17 +236,17 @@ public class NewStatusPageTemplateDataAttributes {
    * Title of the template
    * @return title
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nonnull String title) {
+  public void setTitle(@jakarta.annotation.Nonnull String title) {
     this.title = title;
   }
 
 
-  public NewStatusPageTemplateDataAttributes body(@javax.annotation.Nonnull String body) {
+  public NewStatusPageTemplateDataAttributes body(@jakarta.annotation.Nonnull String body) {
     this.body = body;
     return this;
   }
@@ -255,17 +255,17 @@ public class NewStatusPageTemplateDataAttributes {
    * Description of the event the template will populate
    * @return body
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getBody() {
     return body;
   }
 
-  public void setBody(@javax.annotation.Nonnull String body) {
+  public void setBody(@jakarta.annotation.Nonnull String body) {
     this.body = body;
   }
 
 
-  public NewStatusPageTemplateDataAttributes updateStatus(@javax.annotation.Nullable UpdateStatusEnum updateStatus) {
+  public NewStatusPageTemplateDataAttributes updateStatus(@jakarta.annotation.Nullable UpdateStatusEnum updateStatus) {
     this.updateStatus = updateStatus;
     return this;
   }
@@ -274,17 +274,17 @@ public class NewStatusPageTemplateDataAttributes {
    * Status of the event the template will populate
    * @return updateStatus
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public UpdateStatusEnum getUpdateStatus() {
     return updateStatus;
   }
 
-  public void setUpdateStatus(@javax.annotation.Nullable UpdateStatusEnum updateStatus) {
+  public void setUpdateStatus(@jakarta.annotation.Nullable UpdateStatusEnum updateStatus) {
     this.updateStatus = updateStatus;
   }
 
 
-  public NewStatusPageTemplateDataAttributes kind(@javax.annotation.Nullable KindEnum kind) {
+  public NewStatusPageTemplateDataAttributes kind(@jakarta.annotation.Nullable KindEnum kind) {
     this.kind = kind;
     return this;
   }
@@ -293,17 +293,17 @@ public class NewStatusPageTemplateDataAttributes {
    * The kind of the status page template
    * @return kind
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(@javax.annotation.Nullable KindEnum kind) {
+  public void setKind(@jakarta.annotation.Nullable KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public NewStatusPageTemplateDataAttributes shouldNotifySubscribers(@javax.annotation.Nullable Boolean shouldNotifySubscribers) {
+  public NewStatusPageTemplateDataAttributes shouldNotifySubscribers(@jakarta.annotation.Nullable Boolean shouldNotifySubscribers) {
     this.shouldNotifySubscribers = shouldNotifySubscribers;
     return this;
   }
@@ -312,17 +312,17 @@ public class NewStatusPageTemplateDataAttributes {
    * Controls if incident subscribers should be notified
    * @return shouldNotifySubscribers
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getShouldNotifySubscribers() {
     return shouldNotifySubscribers;
   }
 
-  public void setShouldNotifySubscribers(@javax.annotation.Nullable Boolean shouldNotifySubscribers) {
+  public void setShouldNotifySubscribers(@jakarta.annotation.Nullable Boolean shouldNotifySubscribers) {
     this.shouldNotifySubscribers = shouldNotifySubscribers;
   }
 
 
-  public NewStatusPageTemplateDataAttributes position(@javax.annotation.Nullable Integer position) {
+  public NewStatusPageTemplateDataAttributes position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -331,17 +331,17 @@ public class NewStatusPageTemplateDataAttributes {
    * Position of the status page template
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 
 
-  public NewStatusPageTemplateDataAttributes enabled(@javax.annotation.Nullable Boolean enabled) {
+  public NewStatusPageTemplateDataAttributes enabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -350,12 +350,12 @@ public class NewStatusPageTemplateDataAttributes {
    * Enable / Disable the status page template
    * @return enabled
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getEnabled() {
     return enabled;
   }
 
-  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
+  public void setEnabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 

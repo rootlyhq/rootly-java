@@ -50,22 +50,22 @@ import com.rootly.client.JSON;
 /**
  * TipTap block component schema for post mortem templates
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class TiptapBlockSchema {
   public static final String SERIALIZED_NAME_FOLLOWUP_COMPONENT = "followup_component";
   @SerializedName(SERIALIZED_NAME_FOLLOWUP_COMPONENT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TiptapBlockSchemaFollowupComponent followupComponent;
 
   public static final String SERIALIZED_NAME_TIMELINE_COMPONENT = "timeline_component";
   @SerializedName(SERIALIZED_NAME_TIMELINE_COMPONENT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TiptapBlockSchemaTimelineComponent timelineComponent;
 
   public TiptapBlockSchema() {
   }
 
-  public TiptapBlockSchema followupComponent(@javax.annotation.Nullable TiptapBlockSchemaFollowupComponent followupComponent) {
+  public TiptapBlockSchema followupComponent(@jakarta.annotation.Nullable TiptapBlockSchemaFollowupComponent followupComponent) {
     this.followupComponent = followupComponent;
     return this;
   }
@@ -74,17 +74,17 @@ public class TiptapBlockSchema {
    * Get followupComponent
    * @return followupComponent
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TiptapBlockSchemaFollowupComponent getFollowupComponent() {
     return followupComponent;
   }
 
-  public void setFollowupComponent(@javax.annotation.Nullable TiptapBlockSchemaFollowupComponent followupComponent) {
+  public void setFollowupComponent(@jakarta.annotation.Nullable TiptapBlockSchemaFollowupComponent followupComponent) {
     this.followupComponent = followupComponent;
   }
 
 
-  public TiptapBlockSchema timelineComponent(@javax.annotation.Nullable TiptapBlockSchemaTimelineComponent timelineComponent) {
+  public TiptapBlockSchema timelineComponent(@jakarta.annotation.Nullable TiptapBlockSchemaTimelineComponent timelineComponent) {
     this.timelineComponent = timelineComponent;
     return this;
   }
@@ -93,12 +93,12 @@ public class TiptapBlockSchema {
    * Get timelineComponent
    * @return timelineComponent
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TiptapBlockSchemaTimelineComponent getTimelineComponent() {
     return timelineComponent;
   }
 
-  public void setTimelineComponent(@javax.annotation.Nullable TiptapBlockSchemaTimelineComponent timelineComponent) {
+  public void setTimelineComponent(@jakarta.annotation.Nullable TiptapBlockSchemaTimelineComponent timelineComponent) {
     this.timelineComponent = timelineComponent;
   }
 

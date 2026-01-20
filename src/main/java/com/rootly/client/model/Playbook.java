@@ -51,67 +51,67 @@ import com.rootly.client.JSON;
 /**
  * Playbook
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Playbook {
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String title;
 
   public static final String SERIALIZED_NAME_SUMMARY = "summary";
   @SerializedName(SERIALIZED_NAME_SUMMARY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String summary;
 
   public static final String SERIALIZED_NAME_EXTERNAL_URL = "external_url";
   @SerializedName(SERIALIZED_NAME_EXTERNAL_URL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String externalUrl;
 
   public static final String SERIALIZED_NAME_SEVERITY_IDS = "severity_ids";
   @SerializedName(SERIALIZED_NAME_SEVERITY_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> severityIds;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_IDS = "environment_ids";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> environmentIds;
 
   public static final String SERIALIZED_NAME_FUNCTIONALITY_IDS = "functionality_ids";
   @SerializedName(SERIALIZED_NAME_FUNCTIONALITY_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> functionalityIds;
 
   public static final String SERIALIZED_NAME_SERVICE_IDS = "service_ids";
   @SerializedName(SERIALIZED_NAME_SERVICE_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> serviceIds;
 
   public static final String SERIALIZED_NAME_GROUP_IDS = "group_ids";
   @SerializedName(SERIALIZED_NAME_GROUP_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> groupIds;
 
   public static final String SERIALIZED_NAME_INCIDENT_TYPE_IDS = "incident_type_ids";
   @SerializedName(SERIALIZED_NAME_INCIDENT_TYPE_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> incidentTypeIds;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public Playbook() {
   }
 
-  public Playbook title(@javax.annotation.Nonnull String title) {
+  public Playbook title(@jakarta.annotation.Nonnull String title) {
     this.title = title;
     return this;
   }
@@ -120,17 +120,17 @@ public class Playbook {
    * The title of the playbook
    * @return title
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nonnull String title) {
+  public void setTitle(@jakarta.annotation.Nonnull String title) {
     this.title = title;
   }
 
 
-  public Playbook summary(@javax.annotation.Nullable String summary) {
+  public Playbook summary(@jakarta.annotation.Nullable String summary) {
     this.summary = summary;
     return this;
   }
@@ -139,17 +139,17 @@ public class Playbook {
    * The summary of the playbook
    * @return summary
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSummary() {
     return summary;
   }
 
-  public void setSummary(@javax.annotation.Nullable String summary) {
+  public void setSummary(@jakarta.annotation.Nullable String summary) {
     this.summary = summary;
   }
 
 
-  public Playbook externalUrl(@javax.annotation.Nullable String externalUrl) {
+  public Playbook externalUrl(@jakarta.annotation.Nullable String externalUrl) {
     this.externalUrl = externalUrl;
     return this;
   }
@@ -158,17 +158,17 @@ public class Playbook {
    * The external url of the playbook
    * @return externalUrl
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getExternalUrl() {
     return externalUrl;
   }
 
-  public void setExternalUrl(@javax.annotation.Nullable String externalUrl) {
+  public void setExternalUrl(@jakarta.annotation.Nullable String externalUrl) {
     this.externalUrl = externalUrl;
   }
 
 
-  public Playbook severityIds(@javax.annotation.Nullable List<String> severityIds) {
+  public Playbook severityIds(@jakarta.annotation.Nullable List<String> severityIds) {
     this.severityIds = severityIds;
     return this;
   }
@@ -185,17 +185,17 @@ public class Playbook {
    * The Severity IDs to attach to the incident
    * @return severityIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getSeverityIds() {
     return severityIds;
   }
 
-  public void setSeverityIds(@javax.annotation.Nullable List<String> severityIds) {
+  public void setSeverityIds(@jakarta.annotation.Nullable List<String> severityIds) {
     this.severityIds = severityIds;
   }
 
 
-  public Playbook environmentIds(@javax.annotation.Nullable List<String> environmentIds) {
+  public Playbook environmentIds(@jakarta.annotation.Nullable List<String> environmentIds) {
     this.environmentIds = environmentIds;
     return this;
   }
@@ -212,17 +212,17 @@ public class Playbook {
    * The Environment IDs to attach to the incident
    * @return environmentIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getEnvironmentIds() {
     return environmentIds;
   }
 
-  public void setEnvironmentIds(@javax.annotation.Nullable List<String> environmentIds) {
+  public void setEnvironmentIds(@jakarta.annotation.Nullable List<String> environmentIds) {
     this.environmentIds = environmentIds;
   }
 
 
-  public Playbook functionalityIds(@javax.annotation.Nullable List<String> functionalityIds) {
+  public Playbook functionalityIds(@jakarta.annotation.Nullable List<String> functionalityIds) {
     this.functionalityIds = functionalityIds;
     return this;
   }
@@ -239,17 +239,17 @@ public class Playbook {
    * The Functionality IDs to attach to the incident
    * @return functionalityIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getFunctionalityIds() {
     return functionalityIds;
   }
 
-  public void setFunctionalityIds(@javax.annotation.Nullable List<String> functionalityIds) {
+  public void setFunctionalityIds(@jakarta.annotation.Nullable List<String> functionalityIds) {
     this.functionalityIds = functionalityIds;
   }
 
 
-  public Playbook serviceIds(@javax.annotation.Nullable List<String> serviceIds) {
+  public Playbook serviceIds(@jakarta.annotation.Nullable List<String> serviceIds) {
     this.serviceIds = serviceIds;
     return this;
   }
@@ -266,17 +266,17 @@ public class Playbook {
    * The Service IDs to attach to the incident
    * @return serviceIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getServiceIds() {
     return serviceIds;
   }
 
-  public void setServiceIds(@javax.annotation.Nullable List<String> serviceIds) {
+  public void setServiceIds(@jakarta.annotation.Nullable List<String> serviceIds) {
     this.serviceIds = serviceIds;
   }
 
 
-  public Playbook groupIds(@javax.annotation.Nullable List<String> groupIds) {
+  public Playbook groupIds(@jakarta.annotation.Nullable List<String> groupIds) {
     this.groupIds = groupIds;
     return this;
   }
@@ -293,17 +293,17 @@ public class Playbook {
    * The Team IDs to attach to the incident
    * @return groupIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getGroupIds() {
     return groupIds;
   }
 
-  public void setGroupIds(@javax.annotation.Nullable List<String> groupIds) {
+  public void setGroupIds(@jakarta.annotation.Nullable List<String> groupIds) {
     this.groupIds = groupIds;
   }
 
 
-  public Playbook incidentTypeIds(@javax.annotation.Nullable List<String> incidentTypeIds) {
+  public Playbook incidentTypeIds(@jakarta.annotation.Nullable List<String> incidentTypeIds) {
     this.incidentTypeIds = incidentTypeIds;
     return this;
   }
@@ -320,17 +320,17 @@ public class Playbook {
    * The Incident Type IDs to attach to the incident
    * @return incidentTypeIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getIncidentTypeIds() {
     return incidentTypeIds;
   }
 
-  public void setIncidentTypeIds(@javax.annotation.Nullable List<String> incidentTypeIds) {
+  public void setIncidentTypeIds(@jakarta.annotation.Nullable List<String> incidentTypeIds) {
     this.incidentTypeIds = incidentTypeIds;
   }
 
 
-  public Playbook createdAt(@javax.annotation.Nonnull String createdAt) {
+  public Playbook createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -339,17 +339,17 @@ public class Playbook {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public Playbook updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public Playbook updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -358,12 +358,12 @@ public class Playbook {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

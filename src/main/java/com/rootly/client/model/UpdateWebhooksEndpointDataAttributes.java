@@ -50,11 +50,11 @@ import com.rootly.client.JSON;
 /**
  * UpdateWebhooksEndpointDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateWebhooksEndpointDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String name;
 
   /**
@@ -165,18 +165,18 @@ public class UpdateWebhooksEndpointDataAttributes {
 
   public static final String SERIALIZED_NAME_EVENT_TYPES = "event_types";
   @SerializedName(SERIALIZED_NAME_EVENT_TYPES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<EventTypesEnum> eventTypes = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean enabled;
 
   public UpdateWebhooksEndpointDataAttributes() {
   }
 
-  public UpdateWebhooksEndpointDataAttributes name(@javax.annotation.Nullable String name) {
+  public UpdateWebhooksEndpointDataAttributes name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -185,17 +185,17 @@ public class UpdateWebhooksEndpointDataAttributes {
    * The name of the endpoint
    * @return name
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public UpdateWebhooksEndpointDataAttributes eventTypes(@javax.annotation.Nullable List<EventTypesEnum> eventTypes) {
+  public UpdateWebhooksEndpointDataAttributes eventTypes(@jakarta.annotation.Nullable List<EventTypesEnum> eventTypes) {
     this.eventTypes = eventTypes;
     return this;
   }
@@ -212,17 +212,17 @@ public class UpdateWebhooksEndpointDataAttributes {
    * Get eventTypes
    * @return eventTypes
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<EventTypesEnum> getEventTypes() {
     return eventTypes;
   }
 
-  public void setEventTypes(@javax.annotation.Nullable List<EventTypesEnum> eventTypes) {
+  public void setEventTypes(@jakarta.annotation.Nullable List<EventTypesEnum> eventTypes) {
     this.eventTypes = eventTypes;
   }
 
 
-  public UpdateWebhooksEndpointDataAttributes enabled(@javax.annotation.Nullable Boolean enabled) {
+  public UpdateWebhooksEndpointDataAttributes enabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -231,12 +231,12 @@ public class UpdateWebhooksEndpointDataAttributes {
    * Get enabled
    * @return enabled
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getEnabled() {
     return enabled;
   }
 
-  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
+  public void setEnabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 

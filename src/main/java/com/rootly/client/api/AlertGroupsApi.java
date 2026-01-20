@@ -92,7 +92,7 @@ public class AlertGroupsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createAlertGroupCall(@javax.annotation.Nonnull NewAlertGroup newAlertGroup, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createAlertGroupCall(@jakarta.annotation.Nonnull NewAlertGroup newAlertGroup, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -138,7 +138,7 @@ public class AlertGroupsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createAlertGroupValidateBeforeCall(@javax.annotation.Nonnull NewAlertGroup newAlertGroup, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createAlertGroupValidateBeforeCall(@jakarta.annotation.Nonnull NewAlertGroup newAlertGroup, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'newAlertGroup' is set
         if (newAlertGroup == null) {
             throw new ApiException("Missing the required parameter 'newAlertGroup' when calling createAlertGroup(Async)");
@@ -163,7 +163,7 @@ public class AlertGroupsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public AlertGroupResponse createAlertGroup(@javax.annotation.Nonnull NewAlertGroup newAlertGroup) throws ApiException {
+    public AlertGroupResponse createAlertGroup(@jakarta.annotation.Nonnull NewAlertGroup newAlertGroup) throws ApiException {
         ApiResponse<AlertGroupResponse> localVarResp = createAlertGroupWithHttpInfo(newAlertGroup);
         return localVarResp.getData();
     }
@@ -183,7 +183,7 @@ public class AlertGroupsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertGroupResponse> createAlertGroupWithHttpInfo(@javax.annotation.Nonnull NewAlertGroup newAlertGroup) throws ApiException {
+    public ApiResponse<AlertGroupResponse> createAlertGroupWithHttpInfo(@jakarta.annotation.Nonnull NewAlertGroup newAlertGroup) throws ApiException {
         okhttp3.Call localVarCall = createAlertGroupValidateBeforeCall(newAlertGroup, null);
         Type localVarReturnType = new TypeToken<AlertGroupResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -205,7 +205,7 @@ public class AlertGroupsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createAlertGroupAsync(@javax.annotation.Nonnull NewAlertGroup newAlertGroup, final ApiCallback<AlertGroupResponse> _callback) throws ApiException {
+    public okhttp3.Call createAlertGroupAsync(@jakarta.annotation.Nonnull NewAlertGroup newAlertGroup, final ApiCallback<AlertGroupResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createAlertGroupValidateBeforeCall(newAlertGroup, _callback);
         Type localVarReturnType = new TypeToken<AlertGroupResponse>(){}.getType();
@@ -226,7 +226,7 @@ public class AlertGroupsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteAlertGroupCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteAlertGroupCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -272,7 +272,7 @@ public class AlertGroupsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteAlertGroupValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteAlertGroupValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteAlertGroup(Async)");
@@ -296,7 +296,7 @@ public class AlertGroupsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public AlertGroupResponse deleteAlertGroup(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public AlertGroupResponse deleteAlertGroup(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<AlertGroupResponse> localVarResp = deleteAlertGroupWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -315,7 +315,7 @@ public class AlertGroupsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertGroupResponse> deleteAlertGroupWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public ApiResponse<AlertGroupResponse> deleteAlertGroupWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = deleteAlertGroupValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<AlertGroupResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -336,7 +336,7 @@ public class AlertGroupsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteAlertGroupAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<AlertGroupResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteAlertGroupAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<AlertGroupResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteAlertGroupValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<AlertGroupResponse>(){}.getType();
@@ -357,7 +357,7 @@ public class AlertGroupsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAlertGroupCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAlertGroupCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -403,7 +403,7 @@ public class AlertGroupsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAlertGroupValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAlertGroupValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getAlertGroup(Async)");
@@ -427,7 +427,7 @@ public class AlertGroupsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public AlertGroupResponse getAlertGroup(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public AlertGroupResponse getAlertGroup(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<AlertGroupResponse> localVarResp = getAlertGroupWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -446,7 +446,7 @@ public class AlertGroupsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertGroupResponse> getAlertGroupWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public ApiResponse<AlertGroupResponse> getAlertGroupWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = getAlertGroupValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<AlertGroupResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -467,7 +467,7 @@ public class AlertGroupsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAlertGroupAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<AlertGroupResponse> _callback) throws ApiException {
+    public okhttp3.Call getAlertGroupAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<AlertGroupResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAlertGroupValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<AlertGroupResponse>(){}.getType();
@@ -487,7 +487,7 @@ public class AlertGroupsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAlertGroupsCall(@javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listAlertGroupsCall(@jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -536,7 +536,7 @@ public class AlertGroupsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listAlertGroupsValidateBeforeCall(@javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listAlertGroupsValidateBeforeCall(@jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         return listAlertGroupsCall(include, _callback);
 
     }
@@ -554,7 +554,7 @@ public class AlertGroupsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public AlertGroupList listAlertGroups(@javax.annotation.Nullable String include) throws ApiException {
+    public AlertGroupList listAlertGroups(@jakarta.annotation.Nullable String include) throws ApiException {
         ApiResponse<AlertGroupList> localVarResp = listAlertGroupsWithHttpInfo(include);
         return localVarResp.getData();
     }
@@ -572,7 +572,7 @@ public class AlertGroupsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertGroupList> listAlertGroupsWithHttpInfo(@javax.annotation.Nullable String include) throws ApiException {
+    public ApiResponse<AlertGroupList> listAlertGroupsWithHttpInfo(@jakarta.annotation.Nullable String include) throws ApiException {
         okhttp3.Call localVarCall = listAlertGroupsValidateBeforeCall(include, null);
         Type localVarReturnType = new TypeToken<AlertGroupList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -592,7 +592,7 @@ public class AlertGroupsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAlertGroupsAsync(@javax.annotation.Nullable String include, final ApiCallback<AlertGroupList> _callback) throws ApiException {
+    public okhttp3.Call listAlertGroupsAsync(@jakarta.annotation.Nullable String include, final ApiCallback<AlertGroupList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listAlertGroupsValidateBeforeCall(include, _callback);
         Type localVarReturnType = new TypeToken<AlertGroupList>(){}.getType();
@@ -614,7 +614,7 @@ public class AlertGroupsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateAlertGroupCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateAlertGroup updateAlertGroup, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateAlertGroupCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateAlertGroup updateAlertGroup, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -661,7 +661,7 @@ public class AlertGroupsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateAlertGroupValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateAlertGroup updateAlertGroup, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateAlertGroupValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateAlertGroup updateAlertGroup, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateAlertGroup(Async)");
@@ -691,7 +691,7 @@ public class AlertGroupsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public AlertGroupResponse updateAlertGroup(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateAlertGroup updateAlertGroup) throws ApiException {
+    public AlertGroupResponse updateAlertGroup(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateAlertGroup updateAlertGroup) throws ApiException {
         ApiResponse<AlertGroupResponse> localVarResp = updateAlertGroupWithHttpInfo(id, updateAlertGroup);
         return localVarResp.getData();
     }
@@ -711,7 +711,7 @@ public class AlertGroupsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertGroupResponse> updateAlertGroupWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateAlertGroup updateAlertGroup) throws ApiException {
+    public ApiResponse<AlertGroupResponse> updateAlertGroupWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateAlertGroup updateAlertGroup) throws ApiException {
         okhttp3.Call localVarCall = updateAlertGroupValidateBeforeCall(id, updateAlertGroup, null);
         Type localVarReturnType = new TypeToken<AlertGroupResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -733,7 +733,7 @@ public class AlertGroupsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateAlertGroupAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateAlertGroup updateAlertGroup, final ApiCallback<AlertGroupResponse> _callback) throws ApiException {
+    public okhttp3.Call updateAlertGroupAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateAlertGroup updateAlertGroup, final ApiCallback<AlertGroupResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateAlertGroupValidateBeforeCall(id, updateAlertGroup, _callback);
         Type localVarReturnType = new TypeToken<AlertGroupResponse>(){}.getType();

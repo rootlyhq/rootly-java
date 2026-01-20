@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * SendEmailTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SendEmailTaskParams {
   /**
    * Gets or Sets taskType
@@ -105,63 +105,63 @@ public class SendEmailTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_FROM = "from";
   @SerializedName(SERIALIZED_NAME_FROM)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String from = "Rootly <workflows@rootly.com>";
 
   public static final String SERIALIZED_NAME_TO = "to";
   @SerializedName(SERIALIZED_NAME_TO)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<String> to = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CC = "cc";
   @SerializedName(SERIALIZED_NAME_CC)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> cc = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_BCC = "bcc";
   @SerializedName(SERIALIZED_NAME_BCC)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> bcc = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SUBJECT = "subject";
   @SerializedName(SERIALIZED_NAME_SUBJECT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String subject;
 
   public static final String SERIALIZED_NAME_PREHEADER = "preheader";
   @SerializedName(SERIALIZED_NAME_PREHEADER)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String preheader;
 
   public static final String SERIALIZED_NAME_BODY = "body";
   @SerializedName(SERIALIZED_NAME_BODY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String body;
 
   public static final String SERIALIZED_NAME_INCLUDE_HEADER = "include_header";
   @SerializedName(SERIALIZED_NAME_INCLUDE_HEADER)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean includeHeader;
 
   public static final String SERIALIZED_NAME_INCLUDE_FOOTER = "include_footer";
   @SerializedName(SERIALIZED_NAME_INCLUDE_FOOTER)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean includeFooter;
 
   public static final String SERIALIZED_NAME_CUSTOM_LOGO_URL = "custom_logo_url";
   @SerializedName(SERIALIZED_NAME_CUSTOM_LOGO_URL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String customLogoUrl;
 
   public SendEmailTaskParams() {
   }
 
-  public SendEmailTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public SendEmailTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -170,17 +170,17 @@ public class SendEmailTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public SendEmailTaskParams from(@javax.annotation.Nullable String from) {
+  public SendEmailTaskParams from(@jakarta.annotation.Nullable String from) {
     this.from = from;
     return this;
   }
@@ -189,17 +189,17 @@ public class SendEmailTaskParams {
    * The from email address. Need to use SMTP integration if different than rootly.com
    * @return from
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getFrom() {
     return from;
   }
 
-  public void setFrom(@javax.annotation.Nullable String from) {
+  public void setFrom(@jakarta.annotation.Nullable String from) {
     this.from = from;
   }
 
 
-  public SendEmailTaskParams to(@javax.annotation.Nonnull List<String> to) {
+  public SendEmailTaskParams to(@jakarta.annotation.Nonnull List<String> to) {
     this.to = to;
     return this;
   }
@@ -216,17 +216,17 @@ public class SendEmailTaskParams {
    * Get to
    * @return to
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<String> getTo() {
     return to;
   }
 
-  public void setTo(@javax.annotation.Nonnull List<String> to) {
+  public void setTo(@jakarta.annotation.Nonnull List<String> to) {
     this.to = to;
   }
 
 
-  public SendEmailTaskParams cc(@javax.annotation.Nullable List<String> cc) {
+  public SendEmailTaskParams cc(@jakarta.annotation.Nullable List<String> cc) {
     this.cc = cc;
     return this;
   }
@@ -243,17 +243,17 @@ public class SendEmailTaskParams {
    * Get cc
    * @return cc
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getCc() {
     return cc;
   }
 
-  public void setCc(@javax.annotation.Nullable List<String> cc) {
+  public void setCc(@jakarta.annotation.Nullable List<String> cc) {
     this.cc = cc;
   }
 
 
-  public SendEmailTaskParams bcc(@javax.annotation.Nullable List<String> bcc) {
+  public SendEmailTaskParams bcc(@jakarta.annotation.Nullable List<String> bcc) {
     this.bcc = bcc;
     return this;
   }
@@ -270,17 +270,17 @@ public class SendEmailTaskParams {
    * Get bcc
    * @return bcc
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getBcc() {
     return bcc;
   }
 
-  public void setBcc(@javax.annotation.Nullable List<String> bcc) {
+  public void setBcc(@jakarta.annotation.Nullable List<String> bcc) {
     this.bcc = bcc;
   }
 
 
-  public SendEmailTaskParams subject(@javax.annotation.Nonnull String subject) {
+  public SendEmailTaskParams subject(@jakarta.annotation.Nonnull String subject) {
     this.subject = subject;
     return this;
   }
@@ -289,17 +289,17 @@ public class SendEmailTaskParams {
    * The subject
    * @return subject
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getSubject() {
     return subject;
   }
 
-  public void setSubject(@javax.annotation.Nonnull String subject) {
+  public void setSubject(@jakarta.annotation.Nonnull String subject) {
     this.subject = subject;
   }
 
 
-  public SendEmailTaskParams preheader(@javax.annotation.Nullable String preheader) {
+  public SendEmailTaskParams preheader(@jakarta.annotation.Nullable String preheader) {
     this.preheader = preheader;
     return this;
   }
@@ -308,17 +308,17 @@ public class SendEmailTaskParams {
    * The preheader
    * @return preheader
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPreheader() {
     return preheader;
   }
 
-  public void setPreheader(@javax.annotation.Nullable String preheader) {
+  public void setPreheader(@jakarta.annotation.Nullable String preheader) {
     this.preheader = preheader;
   }
 
 
-  public SendEmailTaskParams body(@javax.annotation.Nullable String body) {
+  public SendEmailTaskParams body(@jakarta.annotation.Nullable String body) {
     this.body = body;
     return this;
   }
@@ -327,17 +327,17 @@ public class SendEmailTaskParams {
    * The email body
    * @return body
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getBody() {
     return body;
   }
 
-  public void setBody(@javax.annotation.Nullable String body) {
+  public void setBody(@jakarta.annotation.Nullable String body) {
     this.body = body;
   }
 
 
-  public SendEmailTaskParams includeHeader(@javax.annotation.Nullable Boolean includeHeader) {
+  public SendEmailTaskParams includeHeader(@jakarta.annotation.Nullable Boolean includeHeader) {
     this.includeHeader = includeHeader;
     return this;
   }
@@ -346,17 +346,17 @@ public class SendEmailTaskParams {
    * Get includeHeader
    * @return includeHeader
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getIncludeHeader() {
     return includeHeader;
   }
 
-  public void setIncludeHeader(@javax.annotation.Nullable Boolean includeHeader) {
+  public void setIncludeHeader(@jakarta.annotation.Nullable Boolean includeHeader) {
     this.includeHeader = includeHeader;
   }
 
 
-  public SendEmailTaskParams includeFooter(@javax.annotation.Nullable Boolean includeFooter) {
+  public SendEmailTaskParams includeFooter(@jakarta.annotation.Nullable Boolean includeFooter) {
     this.includeFooter = includeFooter;
     return this;
   }
@@ -365,17 +365,17 @@ public class SendEmailTaskParams {
    * Get includeFooter
    * @return includeFooter
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getIncludeFooter() {
     return includeFooter;
   }
 
-  public void setIncludeFooter(@javax.annotation.Nullable Boolean includeFooter) {
+  public void setIncludeFooter(@jakarta.annotation.Nullable Boolean includeFooter) {
     this.includeFooter = includeFooter;
   }
 
 
-  public SendEmailTaskParams customLogoUrl(@javax.annotation.Nullable String customLogoUrl) {
+  public SendEmailTaskParams customLogoUrl(@jakarta.annotation.Nullable String customLogoUrl) {
     this.customLogoUrl = customLogoUrl;
     return this;
   }
@@ -384,12 +384,12 @@ public class SendEmailTaskParams {
    * URL to your custom email logo
    * @return customLogoUrl
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCustomLogoUrl() {
     return customLogoUrl;
   }
 
-  public void setCustomLogoUrl(@javax.annotation.Nullable String customLogoUrl) {
+  public void setCustomLogoUrl(@jakarta.annotation.Nullable String customLogoUrl) {
     this.customLogoUrl = customLogoUrl;
   }
 

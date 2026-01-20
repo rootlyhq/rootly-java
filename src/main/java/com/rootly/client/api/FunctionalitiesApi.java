@@ -92,7 +92,7 @@ public class FunctionalitiesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createFunctionalityCall(@javax.annotation.Nonnull NewFunctionality newFunctionality, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createFunctionalityCall(@jakarta.annotation.Nonnull NewFunctionality newFunctionality, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -138,7 +138,7 @@ public class FunctionalitiesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createFunctionalityValidateBeforeCall(@javax.annotation.Nonnull NewFunctionality newFunctionality, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createFunctionalityValidateBeforeCall(@jakarta.annotation.Nonnull NewFunctionality newFunctionality, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'newFunctionality' is set
         if (newFunctionality == null) {
             throw new ApiException("Missing the required parameter 'newFunctionality' when calling createFunctionality(Async)");
@@ -163,7 +163,7 @@ public class FunctionalitiesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public FunctionalityResponse createFunctionality(@javax.annotation.Nonnull NewFunctionality newFunctionality) throws ApiException {
+    public FunctionalityResponse createFunctionality(@jakarta.annotation.Nonnull NewFunctionality newFunctionality) throws ApiException {
         ApiResponse<FunctionalityResponse> localVarResp = createFunctionalityWithHttpInfo(newFunctionality);
         return localVarResp.getData();
     }
@@ -183,7 +183,7 @@ public class FunctionalitiesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FunctionalityResponse> createFunctionalityWithHttpInfo(@javax.annotation.Nonnull NewFunctionality newFunctionality) throws ApiException {
+    public ApiResponse<FunctionalityResponse> createFunctionalityWithHttpInfo(@jakarta.annotation.Nonnull NewFunctionality newFunctionality) throws ApiException {
         okhttp3.Call localVarCall = createFunctionalityValidateBeforeCall(newFunctionality, null);
         Type localVarReturnType = new TypeToken<FunctionalityResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -205,7 +205,7 @@ public class FunctionalitiesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createFunctionalityAsync(@javax.annotation.Nonnull NewFunctionality newFunctionality, final ApiCallback<FunctionalityResponse> _callback) throws ApiException {
+    public okhttp3.Call createFunctionalityAsync(@jakarta.annotation.Nonnull NewFunctionality newFunctionality, final ApiCallback<FunctionalityResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createFunctionalityValidateBeforeCall(newFunctionality, _callback);
         Type localVarReturnType = new TypeToken<FunctionalityResponse>(){}.getType();
@@ -226,7 +226,7 @@ public class FunctionalitiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteFunctionalityCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteFunctionalityCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -272,7 +272,7 @@ public class FunctionalitiesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteFunctionalityValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteFunctionalityValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteFunctionality(Async)");
@@ -296,7 +296,7 @@ public class FunctionalitiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public FunctionalityResponse deleteFunctionality(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public FunctionalityResponse deleteFunctionality(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<FunctionalityResponse> localVarResp = deleteFunctionalityWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -315,7 +315,7 @@ public class FunctionalitiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FunctionalityResponse> deleteFunctionalityWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public ApiResponse<FunctionalityResponse> deleteFunctionalityWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = deleteFunctionalityValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<FunctionalityResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -336,7 +336,7 @@ public class FunctionalitiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteFunctionalityAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<FunctionalityResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteFunctionalityAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<FunctionalityResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteFunctionalityValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<FunctionalityResponse>(){}.getType();
@@ -357,7 +357,7 @@ public class FunctionalitiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFunctionalityCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getFunctionalityCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -403,7 +403,7 @@ public class FunctionalitiesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getFunctionalityValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getFunctionalityValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getFunctionality(Async)");
@@ -427,7 +427,7 @@ public class FunctionalitiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public FunctionalityResponse getFunctionality(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public FunctionalityResponse getFunctionality(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<FunctionalityResponse> localVarResp = getFunctionalityWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -446,7 +446,7 @@ public class FunctionalitiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FunctionalityResponse> getFunctionalityWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public ApiResponse<FunctionalityResponse> getFunctionalityWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = getFunctionalityValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<FunctionalityResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -467,7 +467,7 @@ public class FunctionalitiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFunctionalityAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<FunctionalityResponse> _callback) throws ApiException {
+    public okhttp3.Call getFunctionalityAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<FunctionalityResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getFunctionalityValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<FunctionalityResponse>(){}.getType();
@@ -489,7 +489,7 @@ public class FunctionalitiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFunctionalityIncidentsChartCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull String period, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getFunctionalityIncidentsChartCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull String period, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -539,7 +539,7 @@ public class FunctionalitiesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getFunctionalityIncidentsChartValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull String period, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getFunctionalityIncidentsChartValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull String period, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getFunctionalityIncidentsChart(Async)");
@@ -569,7 +569,7 @@ public class FunctionalitiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public Object getFunctionalityIncidentsChart(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull String period) throws ApiException {
+    public Object getFunctionalityIncidentsChart(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull String period) throws ApiException {
         ApiResponse<Object> localVarResp = getFunctionalityIncidentsChartWithHttpInfo(id, period);
         return localVarResp.getData();
     }
@@ -589,7 +589,7 @@ public class FunctionalitiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getFunctionalityIncidentsChartWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull String period) throws ApiException {
+    public ApiResponse<Object> getFunctionalityIncidentsChartWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull String period) throws ApiException {
         okhttp3.Call localVarCall = getFunctionalityIncidentsChartValidateBeforeCall(id, period, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -611,7 +611,7 @@ public class FunctionalitiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFunctionalityIncidentsChartAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull String period, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getFunctionalityIncidentsChartAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull String period, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getFunctionalityIncidentsChartValidateBeforeCall(id, period, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -633,7 +633,7 @@ public class FunctionalitiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFunctionalityUptimeChartCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nullable String period, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getFunctionalityUptimeChartCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nullable String period, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -683,7 +683,7 @@ public class FunctionalitiesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getFunctionalityUptimeChartValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nullable String period, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getFunctionalityUptimeChartValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nullable String period, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getFunctionalityUptimeChart(Async)");
@@ -708,7 +708,7 @@ public class FunctionalitiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public Object getFunctionalityUptimeChart(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nullable String period) throws ApiException {
+    public Object getFunctionalityUptimeChart(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nullable String period) throws ApiException {
         ApiResponse<Object> localVarResp = getFunctionalityUptimeChartWithHttpInfo(id, period);
         return localVarResp.getData();
     }
@@ -728,7 +728,7 @@ public class FunctionalitiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getFunctionalityUptimeChartWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nullable String period) throws ApiException {
+    public ApiResponse<Object> getFunctionalityUptimeChartWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nullable String period) throws ApiException {
         okhttp3.Call localVarCall = getFunctionalityUptimeChartValidateBeforeCall(id, period, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -750,7 +750,7 @@ public class FunctionalitiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getFunctionalityUptimeChartAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nullable String period, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getFunctionalityUptimeChartAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nullable String period, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getFunctionalityUptimeChartValidateBeforeCall(id, period, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -784,7 +784,7 @@ public class FunctionalitiesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listFunctionalitiesCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterBackstageId, @javax.annotation.Nullable String filterCortexId, @javax.annotation.Nullable String filterOpslevelId, @javax.annotation.Nullable String filterExternalId, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listFunctionalitiesCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterBackstageId, @jakarta.annotation.Nullable String filterCortexId, @jakarta.annotation.Nullable String filterOpslevelId, @jakarta.annotation.Nullable String filterExternalId, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -889,7 +889,7 @@ public class FunctionalitiesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listFunctionalitiesValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterBackstageId, @javax.annotation.Nullable String filterCortexId, @javax.annotation.Nullable String filterOpslevelId, @javax.annotation.Nullable String filterExternalId, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listFunctionalitiesValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterBackstageId, @jakarta.annotation.Nullable String filterCortexId, @jakarta.annotation.Nullable String filterOpslevelId, @jakarta.annotation.Nullable String filterExternalId, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         return listFunctionalitiesCall(include, pageNumber, pageSize, filterSearch, filterName, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterSlug, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
 
     }
@@ -921,7 +921,7 @@ public class FunctionalitiesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public FunctionalityList listFunctionalities(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterBackstageId, @javax.annotation.Nullable String filterCortexId, @javax.annotation.Nullable String filterOpslevelId, @javax.annotation.Nullable String filterExternalId, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+    public FunctionalityList listFunctionalities(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterBackstageId, @jakarta.annotation.Nullable String filterCortexId, @jakarta.annotation.Nullable String filterOpslevelId, @jakarta.annotation.Nullable String filterExternalId, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
         ApiResponse<FunctionalityList> localVarResp = listFunctionalitiesWithHttpInfo(include, pageNumber, pageSize, filterSearch, filterName, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterSlug, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
         return localVarResp.getData();
     }
@@ -953,7 +953,7 @@ public class FunctionalitiesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FunctionalityList> listFunctionalitiesWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterBackstageId, @javax.annotation.Nullable String filterCortexId, @javax.annotation.Nullable String filterOpslevelId, @javax.annotation.Nullable String filterExternalId, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+    public ApiResponse<FunctionalityList> listFunctionalitiesWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterBackstageId, @jakarta.annotation.Nullable String filterCortexId, @jakarta.annotation.Nullable String filterOpslevelId, @jakarta.annotation.Nullable String filterExternalId, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
         okhttp3.Call localVarCall = listFunctionalitiesValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterName, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterSlug, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, null);
         Type localVarReturnType = new TypeToken<FunctionalityList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -987,7 +987,7 @@ public class FunctionalitiesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listFunctionalitiesAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterBackstageId, @javax.annotation.Nullable String filterCortexId, @javax.annotation.Nullable String filterOpslevelId, @javax.annotation.Nullable String filterExternalId, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback<FunctionalityList> _callback) throws ApiException {
+    public okhttp3.Call listFunctionalitiesAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterBackstageId, @jakarta.annotation.Nullable String filterCortexId, @jakarta.annotation.Nullable String filterOpslevelId, @jakarta.annotation.Nullable String filterExternalId, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback<FunctionalityList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listFunctionalitiesValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterName, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterSlug, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
         Type localVarReturnType = new TypeToken<FunctionalityList>(){}.getType();
@@ -1009,7 +1009,7 @@ public class FunctionalitiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateFunctionalityCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateFunctionality updateFunctionality, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateFunctionalityCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateFunctionality updateFunctionality, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1056,7 +1056,7 @@ public class FunctionalitiesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateFunctionalityValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateFunctionality updateFunctionality, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateFunctionalityValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateFunctionality updateFunctionality, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateFunctionality(Async)");
@@ -1086,7 +1086,7 @@ public class FunctionalitiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public FunctionalityResponse updateFunctionality(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateFunctionality updateFunctionality) throws ApiException {
+    public FunctionalityResponse updateFunctionality(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateFunctionality updateFunctionality) throws ApiException {
         ApiResponse<FunctionalityResponse> localVarResp = updateFunctionalityWithHttpInfo(id, updateFunctionality);
         return localVarResp.getData();
     }
@@ -1106,7 +1106,7 @@ public class FunctionalitiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FunctionalityResponse> updateFunctionalityWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateFunctionality updateFunctionality) throws ApiException {
+    public ApiResponse<FunctionalityResponse> updateFunctionalityWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateFunctionality updateFunctionality) throws ApiException {
         okhttp3.Call localVarCall = updateFunctionalityValidateBeforeCall(id, updateFunctionality, null);
         Type localVarReturnType = new TypeToken<FunctionalityResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1128,7 +1128,7 @@ public class FunctionalitiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateFunctionalityAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateFunctionality updateFunctionality, final ApiCallback<FunctionalityResponse> _callback) throws ApiException {
+    public okhttp3.Call updateFunctionalityAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateFunctionality updateFunctionality, final ApiCallback<FunctionalityResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateFunctionalityValidateBeforeCall(id, updateFunctionality, _callback);
         Type localVarReturnType = new TypeToken<FunctionalityResponse>(){}.getType();

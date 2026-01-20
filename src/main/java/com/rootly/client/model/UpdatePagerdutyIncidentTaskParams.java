@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * UpdatePagerdutyIncidentTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdatePagerdutyIncidentTaskParams {
   /**
    * Gets or Sets taskType
@@ -102,17 +102,17 @@ public class UpdatePagerdutyIncidentTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_PAGERDUTY_INCIDENT_ID = "pagerduty_incident_id";
   @SerializedName(SERIALIZED_NAME_PAGERDUTY_INCIDENT_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String pagerdutyIncidentId;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String title;
 
   /**
@@ -171,17 +171,17 @@ public class UpdatePagerdutyIncidentTaskParams {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private StatusEnum status;
 
   public static final String SERIALIZED_NAME_RESOLUTION = "resolution";
   @SerializedName(SERIALIZED_NAME_RESOLUTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String resolution;
 
   public static final String SERIALIZED_NAME_ESCALATION_LEVEL = "escalation_level";
   @SerializedName(SERIALIZED_NAME_ESCALATION_LEVEL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer escalationLevel;
 
   /**
@@ -240,18 +240,18 @@ public class UpdatePagerdutyIncidentTaskParams {
 
   public static final String SERIALIZED_NAME_URGENCY = "urgency";
   @SerializedName(SERIALIZED_NAME_URGENCY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private UrgencyEnum urgency;
 
   public static final String SERIALIZED_NAME_PRIORITY = "priority";
   @SerializedName(SERIALIZED_NAME_PRIORITY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String priority;
 
   public UpdatePagerdutyIncidentTaskParams() {
   }
 
-  public UpdatePagerdutyIncidentTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public UpdatePagerdutyIncidentTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -260,17 +260,17 @@ public class UpdatePagerdutyIncidentTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public UpdatePagerdutyIncidentTaskParams pagerdutyIncidentId(@javax.annotation.Nonnull String pagerdutyIncidentId) {
+  public UpdatePagerdutyIncidentTaskParams pagerdutyIncidentId(@jakarta.annotation.Nonnull String pagerdutyIncidentId) {
     this.pagerdutyIncidentId = pagerdutyIncidentId;
     return this;
   }
@@ -279,17 +279,17 @@ public class UpdatePagerdutyIncidentTaskParams {
    * Pagerduty incident id
    * @return pagerdutyIncidentId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getPagerdutyIncidentId() {
     return pagerdutyIncidentId;
   }
 
-  public void setPagerdutyIncidentId(@javax.annotation.Nonnull String pagerdutyIncidentId) {
+  public void setPagerdutyIncidentId(@jakarta.annotation.Nonnull String pagerdutyIncidentId) {
     this.pagerdutyIncidentId = pagerdutyIncidentId;
   }
 
 
-  public UpdatePagerdutyIncidentTaskParams title(@javax.annotation.Nullable String title) {
+  public UpdatePagerdutyIncidentTaskParams title(@jakarta.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
@@ -298,17 +298,17 @@ public class UpdatePagerdutyIncidentTaskParams {
    * Title to update to
    * @return title
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nullable String title) {
+  public void setTitle(@jakarta.annotation.Nullable String title) {
     this.title = title;
   }
 
 
-  public UpdatePagerdutyIncidentTaskParams status(@javax.annotation.Nullable StatusEnum status) {
+  public UpdatePagerdutyIncidentTaskParams status(@jakarta.annotation.Nullable StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -317,17 +317,17 @@ public class UpdatePagerdutyIncidentTaskParams {
    * Get status
    * @return status
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nullable StatusEnum status) {
+  public void setStatus(@jakarta.annotation.Nullable StatusEnum status) {
     this.status = status;
   }
 
 
-  public UpdatePagerdutyIncidentTaskParams resolution(@javax.annotation.Nullable String resolution) {
+  public UpdatePagerdutyIncidentTaskParams resolution(@jakarta.annotation.Nullable String resolution) {
     this.resolution = resolution;
     return this;
   }
@@ -336,17 +336,17 @@ public class UpdatePagerdutyIncidentTaskParams {
    * A message outlining the incident&#39;s resolution in PagerDuty
    * @return resolution
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getResolution() {
     return resolution;
   }
 
-  public void setResolution(@javax.annotation.Nullable String resolution) {
+  public void setResolution(@jakarta.annotation.Nullable String resolution) {
     this.resolution = resolution;
   }
 
 
-  public UpdatePagerdutyIncidentTaskParams escalationLevel(@javax.annotation.Nullable Integer escalationLevel) {
+  public UpdatePagerdutyIncidentTaskParams escalationLevel(@jakarta.annotation.Nullable Integer escalationLevel) {
     this.escalationLevel = escalationLevel;
     return this;
   }
@@ -357,17 +357,17 @@ public class UpdatePagerdutyIncidentTaskParams {
    * maximum: 20
    * @return escalationLevel
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getEscalationLevel() {
     return escalationLevel;
   }
 
-  public void setEscalationLevel(@javax.annotation.Nullable Integer escalationLevel) {
+  public void setEscalationLevel(@jakarta.annotation.Nullable Integer escalationLevel) {
     this.escalationLevel = escalationLevel;
   }
 
 
-  public UpdatePagerdutyIncidentTaskParams urgency(@javax.annotation.Nullable UrgencyEnum urgency) {
+  public UpdatePagerdutyIncidentTaskParams urgency(@jakarta.annotation.Nullable UrgencyEnum urgency) {
     this.urgency = urgency;
     return this;
   }
@@ -376,17 +376,17 @@ public class UpdatePagerdutyIncidentTaskParams {
    * PagerDuty incident urgency, selecting auto will let Rootly auto map our incident severity
    * @return urgency
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public UrgencyEnum getUrgency() {
     return urgency;
   }
 
-  public void setUrgency(@javax.annotation.Nullable UrgencyEnum urgency) {
+  public void setUrgency(@jakarta.annotation.Nullable UrgencyEnum urgency) {
     this.urgency = urgency;
   }
 
 
-  public UpdatePagerdutyIncidentTaskParams priority(@javax.annotation.Nullable String priority) {
+  public UpdatePagerdutyIncidentTaskParams priority(@jakarta.annotation.Nullable String priority) {
     this.priority = priority;
     return this;
   }
@@ -395,12 +395,12 @@ public class UpdatePagerdutyIncidentTaskParams {
    * PagerDuty incident priority, selecting auto will let Rootly auto map our incident severity
    * @return priority
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPriority() {
     return priority;
   }
 
-  public void setPriority(@javax.annotation.Nullable String priority) {
+  public void setPriority(@jakarta.annotation.Nullable String priority) {
     this.priority = priority;
   }
 

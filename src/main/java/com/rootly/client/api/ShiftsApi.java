@@ -89,7 +89,7 @@ public class ShiftsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getScheduleShiftsCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String to, @javax.annotation.Nullable String from, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getScheduleShiftsCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String to, @jakarta.annotation.Nullable String from, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -143,7 +143,7 @@ public class ShiftsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getScheduleShiftsValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String to, @javax.annotation.Nullable String from, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getScheduleShiftsValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String to, @jakarta.annotation.Nullable String from, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getScheduleShifts(Async)");
@@ -169,7 +169,7 @@ public class ShiftsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ShiftList getScheduleShifts(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String to, @javax.annotation.Nullable String from) throws ApiException {
+    public ShiftList getScheduleShifts(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String to, @jakarta.annotation.Nullable String from) throws ApiException {
         ApiResponse<ShiftList> localVarResp = getScheduleShiftsWithHttpInfo(id, to, from);
         return localVarResp.getData();
     }
@@ -190,7 +190,7 @@ public class ShiftsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ShiftList> getScheduleShiftsWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String to, @javax.annotation.Nullable String from) throws ApiException {
+    public ApiResponse<ShiftList> getScheduleShiftsWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String to, @jakarta.annotation.Nullable String from) throws ApiException {
         okhttp3.Call localVarCall = getScheduleShiftsValidateBeforeCall(id, to, from, null);
         Type localVarReturnType = new TypeToken<ShiftList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -213,7 +213,7 @@ public class ShiftsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getScheduleShiftsAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String to, @javax.annotation.Nullable String from, final ApiCallback<ShiftList> _callback) throws ApiException {
+    public okhttp3.Call getScheduleShiftsAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String to, @jakarta.annotation.Nullable String from, final ApiCallback<ShiftList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getScheduleShiftsValidateBeforeCall(id, to, from, _callback);
         Type localVarReturnType = new TypeToken<ShiftList>(){}.getType();
@@ -238,7 +238,7 @@ public class ShiftsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listShiftsCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable List<Integer> userIds, @javax.annotation.Nullable List<String> scheduleIds, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listShiftsCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String from, @jakarta.annotation.Nullable String to, @jakarta.annotation.Nullable List<Integer> userIds, @jakarta.annotation.Nullable List<String> scheduleIds, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -303,7 +303,7 @@ public class ShiftsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listShiftsValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable List<Integer> userIds, @javax.annotation.Nullable List<String> scheduleIds, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listShiftsValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String from, @jakarta.annotation.Nullable String to, @jakarta.annotation.Nullable List<Integer> userIds, @jakarta.annotation.Nullable List<String> scheduleIds, final ApiCallback _callback) throws ApiException {
         return listShiftsCall(include, from, to, userIds, scheduleIds, _callback);
 
     }
@@ -326,7 +326,7 @@ public class ShiftsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ShiftList listShifts(@javax.annotation.Nullable String include, @javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable List<Integer> userIds, @javax.annotation.Nullable List<String> scheduleIds) throws ApiException {
+    public ShiftList listShifts(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String from, @jakarta.annotation.Nullable String to, @jakarta.annotation.Nullable List<Integer> userIds, @jakarta.annotation.Nullable List<String> scheduleIds) throws ApiException {
         ApiResponse<ShiftList> localVarResp = listShiftsWithHttpInfo(include, from, to, userIds, scheduleIds);
         return localVarResp.getData();
     }
@@ -349,7 +349,7 @@ public class ShiftsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ShiftList> listShiftsWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable List<Integer> userIds, @javax.annotation.Nullable List<String> scheduleIds) throws ApiException {
+    public ApiResponse<ShiftList> listShiftsWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String from, @jakarta.annotation.Nullable String to, @jakarta.annotation.Nullable List<Integer> userIds, @jakarta.annotation.Nullable List<String> scheduleIds) throws ApiException {
         okhttp3.Call localVarCall = listShiftsValidateBeforeCall(include, from, to, userIds, scheduleIds, null);
         Type localVarReturnType = new TypeToken<ShiftList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -374,7 +374,7 @@ public class ShiftsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listShiftsAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable String from, @javax.annotation.Nullable String to, @javax.annotation.Nullable List<Integer> userIds, @javax.annotation.Nullable List<String> scheduleIds, final ApiCallback<ShiftList> _callback) throws ApiException {
+    public okhttp3.Call listShiftsAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String from, @jakarta.annotation.Nullable String to, @jakarta.annotation.Nullable List<Integer> userIds, @jakarta.annotation.Nullable List<String> scheduleIds, final ApiCallback<ShiftList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listShiftsValidateBeforeCall(include, from, to, userIds, scheduleIds, _callback);
         Type localVarReturnType = new TypeToken<ShiftList>(){}.getType();

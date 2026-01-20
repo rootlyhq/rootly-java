@@ -48,16 +48,16 @@ import com.rootly.client.JSON;
 /**
  * CatalogEntityProperty
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CatalogEntityProperty {
   public static final String SERIALIZED_NAME_CATALOG_ENTITY_ID = "catalog_entity_id";
   @SerializedName(SERIALIZED_NAME_CATALOG_ENTITY_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String catalogEntityId;
 
   public static final String SERIALIZED_NAME_CATALOG_FIELD_ID = "catalog_field_id";
   @SerializedName(SERIALIZED_NAME_CATALOG_FIELD_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String catalogFieldId;
 
   /**
@@ -114,28 +114,28 @@ public class CatalogEntityProperty {
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private KeyEnum key;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String value;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public CatalogEntityProperty() {
   }
 
-  public CatalogEntityProperty catalogEntityId(@javax.annotation.Nonnull String catalogEntityId) {
+  public CatalogEntityProperty catalogEntityId(@jakarta.annotation.Nonnull String catalogEntityId) {
     this.catalogEntityId = catalogEntityId;
     return this;
   }
@@ -144,17 +144,17 @@ public class CatalogEntityProperty {
    * Get catalogEntityId
    * @return catalogEntityId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCatalogEntityId() {
     return catalogEntityId;
   }
 
-  public void setCatalogEntityId(@javax.annotation.Nonnull String catalogEntityId) {
+  public void setCatalogEntityId(@jakarta.annotation.Nonnull String catalogEntityId) {
     this.catalogEntityId = catalogEntityId;
   }
 
 
-  public CatalogEntityProperty catalogFieldId(@javax.annotation.Nonnull String catalogFieldId) {
+  public CatalogEntityProperty catalogFieldId(@jakarta.annotation.Nonnull String catalogFieldId) {
     this.catalogFieldId = catalogFieldId;
     return this;
   }
@@ -163,17 +163,17 @@ public class CatalogEntityProperty {
    * Get catalogFieldId
    * @return catalogFieldId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCatalogFieldId() {
     return catalogFieldId;
   }
 
-  public void setCatalogFieldId(@javax.annotation.Nonnull String catalogFieldId) {
+  public void setCatalogFieldId(@jakarta.annotation.Nonnull String catalogFieldId) {
     this.catalogFieldId = catalogFieldId;
   }
 
 
-  public CatalogEntityProperty key(@javax.annotation.Nonnull KeyEnum key) {
+  public CatalogEntityProperty key(@jakarta.annotation.Nonnull KeyEnum key) {
     this.key = key;
     return this;
   }
@@ -182,17 +182,17 @@ public class CatalogEntityProperty {
    * Get key
    * @return key
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public KeyEnum getKey() {
     return key;
   }
 
-  public void setKey(@javax.annotation.Nonnull KeyEnum key) {
+  public void setKey(@jakarta.annotation.Nonnull KeyEnum key) {
     this.key = key;
   }
 
 
-  public CatalogEntityProperty value(@javax.annotation.Nonnull String value) {
+  public CatalogEntityProperty value(@jakarta.annotation.Nonnull String value) {
     this.value = value;
     return this;
   }
@@ -201,17 +201,17 @@ public class CatalogEntityProperty {
    * Get value
    * @return value
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getValue() {
     return value;
   }
 
-  public void setValue(@javax.annotation.Nonnull String value) {
+  public void setValue(@jakarta.annotation.Nonnull String value) {
     this.value = value;
   }
 
 
-  public CatalogEntityProperty createdAt(@javax.annotation.Nonnull String createdAt) {
+  public CatalogEntityProperty createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -220,17 +220,17 @@ public class CatalogEntityProperty {
    * Get createdAt
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public CatalogEntityProperty updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public CatalogEntityProperty updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -239,12 +239,12 @@ public class CatalogEntityProperty {
    * Get updatedAt
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

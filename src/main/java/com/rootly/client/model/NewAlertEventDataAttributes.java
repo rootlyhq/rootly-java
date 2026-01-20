@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * NewAlertEventDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewAlertEventDataAttributes {
   /**
    * Gets or Sets kind
@@ -102,23 +102,23 @@ public class NewAlertEventDataAttributes {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private KindEnum kind;
 
   public static final String SERIALIZED_NAME_USER_ID = "user_id";
   @SerializedName(SERIALIZED_NAME_USER_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer userId;
 
   public static final String SERIALIZED_NAME_DETAILS = "details";
   @SerializedName(SERIALIZED_NAME_DETAILS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String details;
 
   public NewAlertEventDataAttributes() {
   }
 
-  public NewAlertEventDataAttributes kind(@javax.annotation.Nonnull KindEnum kind) {
+  public NewAlertEventDataAttributes kind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
     return this;
   }
@@ -127,17 +127,17 @@ public class NewAlertEventDataAttributes {
    * Get kind
    * @return kind
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(@javax.annotation.Nonnull KindEnum kind) {
+  public void setKind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public NewAlertEventDataAttributes userId(@javax.annotation.Nullable Integer userId) {
+  public NewAlertEventDataAttributes userId(@jakarta.annotation.Nullable Integer userId) {
     this.userId = userId;
     return this;
   }
@@ -146,17 +146,17 @@ public class NewAlertEventDataAttributes {
    * Author of the note.
    * @return userId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getUserId() {
     return userId;
   }
 
-  public void setUserId(@javax.annotation.Nullable Integer userId) {
+  public void setUserId(@jakarta.annotation.Nullable Integer userId) {
     this.userId = userId;
   }
 
 
-  public NewAlertEventDataAttributes details(@javax.annotation.Nonnull String details) {
+  public NewAlertEventDataAttributes details(@jakarta.annotation.Nonnull String details) {
     this.details = details;
     return this;
   }
@@ -165,12 +165,12 @@ public class NewAlertEventDataAttributes {
    * Note message.
    * @return details
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getDetails() {
     return details;
   }
 
-  public void setDetails(@javax.annotation.Nonnull String details) {
+  public void setDetails(@jakarta.annotation.Nonnull String details) {
     this.details = details;
   }
 

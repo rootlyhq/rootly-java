@@ -48,32 +48,32 @@ import com.rootly.client.JSON;
 /**
  * ShiftOverride
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ShiftOverride {
   public static final String SERIALIZED_NAME_SHIFT_ID = "shift_id";
   @SerializedName(SERIALIZED_NAME_SHIFT_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String shiftId;
 
   public static final String SERIALIZED_NAME_CREATED_BY_USER_ID = "created_by_user_id";
   @SerializedName(SERIALIZED_NAME_CREATED_BY_USER_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Integer createdByUserId;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String updatedAt;
 
   public ShiftOverride() {
   }
 
-  public ShiftOverride shiftId(@javax.annotation.Nonnull String shiftId) {
+  public ShiftOverride shiftId(@jakarta.annotation.Nonnull String shiftId) {
     this.shiftId = shiftId;
     return this;
   }
@@ -82,17 +82,17 @@ public class ShiftOverride {
    * ID of shift
    * @return shiftId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getShiftId() {
     return shiftId;
   }
 
-  public void setShiftId(@javax.annotation.Nonnull String shiftId) {
+  public void setShiftId(@jakarta.annotation.Nonnull String shiftId) {
     this.shiftId = shiftId;
   }
 
 
-  public ShiftOverride createdByUserId(@javax.annotation.Nonnull Integer createdByUserId) {
+  public ShiftOverride createdByUserId(@jakarta.annotation.Nonnull Integer createdByUserId) {
     this.createdByUserId = createdByUserId;
     return this;
   }
@@ -101,17 +101,17 @@ public class ShiftOverride {
    * User who created the override
    * @return createdByUserId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Integer getCreatedByUserId() {
     return createdByUserId;
   }
 
-  public void setCreatedByUserId(@javax.annotation.Nonnull Integer createdByUserId) {
+  public void setCreatedByUserId(@jakarta.annotation.Nonnull Integer createdByUserId) {
     this.createdByUserId = createdByUserId;
   }
 
 
-  public ShiftOverride createdAt(@javax.annotation.Nullable String createdAt) {
+  public ShiftOverride createdAt(@jakarta.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -120,17 +120,17 @@ public class ShiftOverride {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nullable String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public ShiftOverride updatedAt(@javax.annotation.Nullable String updatedAt) {
+  public ShiftOverride updatedAt(@jakarta.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -139,12 +139,12 @@ public class ShiftOverride {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nullable String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

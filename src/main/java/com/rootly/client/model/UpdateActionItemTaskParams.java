@@ -52,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateActionItemTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateActionItemTaskParams {
   /**
    * Gets or Sets taskType
@@ -106,12 +106,12 @@ public class UpdateActionItemTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_QUERY_VALUE = "query_value";
   @SerializedName(SERIALIZED_NAME_QUERY_VALUE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String queryValue;
 
   /**
@@ -194,32 +194,32 @@ public class UpdateActionItemTaskParams {
 
   public static final String SERIALIZED_NAME_ATTRIBUTE_TO_QUERY_BY = "attribute_to_query_by";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTE_TO_QUERY_BY)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private AttributeToQueryByEnum attributeToQueryBy = AttributeToQueryByEnum.ID;
 
   public static final String SERIALIZED_NAME_SUMMARY = "summary";
   @SerializedName(SERIALIZED_NAME_SUMMARY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String summary;
 
   public static final String SERIALIZED_NAME_ASSIGNED_TO_USER_ID = "assigned_to_user_id";
   @SerializedName(SERIALIZED_NAME_ASSIGNED_TO_USER_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String assignedToUserId;
 
   public static final String SERIALIZED_NAME_ASSIGNED_TO_USER = "assigned_to_user";
   @SerializedName(SERIALIZED_NAME_ASSIGNED_TO_USER)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AddActionItemTaskParamsAssignedToUser assignedToUser;
 
   public static final String SERIALIZED_NAME_GROUP_IDS = "group_ids";
   @SerializedName(SERIALIZED_NAME_GROUP_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> groupIds;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   /**
@@ -278,7 +278,7 @@ public class UpdateActionItemTaskParams {
 
   public static final String SERIALIZED_NAME_PRIORITY = "priority";
   @SerializedName(SERIALIZED_NAME_PRIORITY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private PriorityEnum priority;
 
   /**
@@ -339,23 +339,23 @@ public class UpdateActionItemTaskParams {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private StatusEnum status;
 
   public static final String SERIALIZED_NAME_CUSTOM_FIELDS_MAPPING = "custom_fields_mapping";
   @SerializedName(SERIALIZED_NAME_CUSTOM_FIELDS_MAPPING)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String customFieldsMapping;
 
   public static final String SERIALIZED_NAME_POST_TO_INCIDENT_TIMELINE = "post_to_incident_timeline";
   @SerializedName(SERIALIZED_NAME_POST_TO_INCIDENT_TIMELINE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean postToIncidentTimeline;
 
   public UpdateActionItemTaskParams() {
   }
 
-  public UpdateActionItemTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public UpdateActionItemTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -364,17 +364,17 @@ public class UpdateActionItemTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public UpdateActionItemTaskParams queryValue(@javax.annotation.Nonnull String queryValue) {
+  public UpdateActionItemTaskParams queryValue(@jakarta.annotation.Nonnull String queryValue) {
     this.queryValue = queryValue;
     return this;
   }
@@ -383,17 +383,17 @@ public class UpdateActionItemTaskParams {
    * Value that attribute_to_query_by to uses to match against
    * @return queryValue
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getQueryValue() {
     return queryValue;
   }
 
-  public void setQueryValue(@javax.annotation.Nonnull String queryValue) {
+  public void setQueryValue(@jakarta.annotation.Nonnull String queryValue) {
     this.queryValue = queryValue;
   }
 
 
-  public UpdateActionItemTaskParams attributeToQueryBy(@javax.annotation.Nonnull AttributeToQueryByEnum attributeToQueryBy) {
+  public UpdateActionItemTaskParams attributeToQueryBy(@jakarta.annotation.Nonnull AttributeToQueryByEnum attributeToQueryBy) {
     this.attributeToQueryBy = attributeToQueryBy;
     return this;
   }
@@ -402,17 +402,17 @@ public class UpdateActionItemTaskParams {
    * Attribute of the action item to match against
    * @return attributeToQueryBy
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public AttributeToQueryByEnum getAttributeToQueryBy() {
     return attributeToQueryBy;
   }
 
-  public void setAttributeToQueryBy(@javax.annotation.Nonnull AttributeToQueryByEnum attributeToQueryBy) {
+  public void setAttributeToQueryBy(@jakarta.annotation.Nonnull AttributeToQueryByEnum attributeToQueryBy) {
     this.attributeToQueryBy = attributeToQueryBy;
   }
 
 
-  public UpdateActionItemTaskParams summary(@javax.annotation.Nullable String summary) {
+  public UpdateActionItemTaskParams summary(@jakarta.annotation.Nullable String summary) {
     this.summary = summary;
     return this;
   }
@@ -421,17 +421,17 @@ public class UpdateActionItemTaskParams {
    * Brief description of the action item
    * @return summary
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSummary() {
     return summary;
   }
 
-  public void setSummary(@javax.annotation.Nullable String summary) {
+  public void setSummary(@jakarta.annotation.Nullable String summary) {
     this.summary = summary;
   }
 
 
-  public UpdateActionItemTaskParams assignedToUserId(@javax.annotation.Nullable String assignedToUserId) {
+  public UpdateActionItemTaskParams assignedToUserId(@jakarta.annotation.Nullable String assignedToUserId) {
     this.assignedToUserId = assignedToUserId;
     return this;
   }
@@ -440,17 +440,17 @@ public class UpdateActionItemTaskParams {
    * [DEPRECATED] Use assigned_to_user attribute instead. The user id this action item is assigned to
    * @return assignedToUserId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getAssignedToUserId() {
     return assignedToUserId;
   }
 
-  public void setAssignedToUserId(@javax.annotation.Nullable String assignedToUserId) {
+  public void setAssignedToUserId(@jakarta.annotation.Nullable String assignedToUserId) {
     this.assignedToUserId = assignedToUserId;
   }
 
 
-  public UpdateActionItemTaskParams assignedToUser(@javax.annotation.Nullable AddActionItemTaskParamsAssignedToUser assignedToUser) {
+  public UpdateActionItemTaskParams assignedToUser(@jakarta.annotation.Nullable AddActionItemTaskParamsAssignedToUser assignedToUser) {
     this.assignedToUser = assignedToUser;
     return this;
   }
@@ -459,17 +459,17 @@ public class UpdateActionItemTaskParams {
    * Get assignedToUser
    * @return assignedToUser
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AddActionItemTaskParamsAssignedToUser getAssignedToUser() {
     return assignedToUser;
   }
 
-  public void setAssignedToUser(@javax.annotation.Nullable AddActionItemTaskParamsAssignedToUser assignedToUser) {
+  public void setAssignedToUser(@jakarta.annotation.Nullable AddActionItemTaskParamsAssignedToUser assignedToUser) {
     this.assignedToUser = assignedToUser;
   }
 
 
-  public UpdateActionItemTaskParams groupIds(@javax.annotation.Nullable List<String> groupIds) {
+  public UpdateActionItemTaskParams groupIds(@jakarta.annotation.Nullable List<String> groupIds) {
     this.groupIds = groupIds;
     return this;
   }
@@ -486,17 +486,17 @@ public class UpdateActionItemTaskParams {
    * Get groupIds
    * @return groupIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getGroupIds() {
     return groupIds;
   }
 
-  public void setGroupIds(@javax.annotation.Nullable List<String> groupIds) {
+  public void setGroupIds(@jakarta.annotation.Nullable List<String> groupIds) {
     this.groupIds = groupIds;
   }
 
 
-  public UpdateActionItemTaskParams description(@javax.annotation.Nullable String description) {
+  public UpdateActionItemTaskParams description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -505,17 +505,17 @@ public class UpdateActionItemTaskParams {
    * The action item description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UpdateActionItemTaskParams priority(@javax.annotation.Nullable PriorityEnum priority) {
+  public UpdateActionItemTaskParams priority(@jakarta.annotation.Nullable PriorityEnum priority) {
     this.priority = priority;
     return this;
   }
@@ -524,17 +524,17 @@ public class UpdateActionItemTaskParams {
    * The action item priority
    * @return priority
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public PriorityEnum getPriority() {
     return priority;
   }
 
-  public void setPriority(@javax.annotation.Nullable PriorityEnum priority) {
+  public void setPriority(@jakarta.annotation.Nullable PriorityEnum priority) {
     this.priority = priority;
   }
 
 
-  public UpdateActionItemTaskParams status(@javax.annotation.Nullable StatusEnum status) {
+  public UpdateActionItemTaskParams status(@jakarta.annotation.Nullable StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -543,17 +543,17 @@ public class UpdateActionItemTaskParams {
    * The action item status
    * @return status
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nullable StatusEnum status) {
+  public void setStatus(@jakarta.annotation.Nullable StatusEnum status) {
     this.status = status;
   }
 
 
-  public UpdateActionItemTaskParams customFieldsMapping(@javax.annotation.Nullable String customFieldsMapping) {
+  public UpdateActionItemTaskParams customFieldsMapping(@jakarta.annotation.Nullable String customFieldsMapping) {
     this.customFieldsMapping = customFieldsMapping;
     return this;
   }
@@ -562,17 +562,17 @@ public class UpdateActionItemTaskParams {
    * Custom field mappings. Can contain liquid markup and need to be valid JSON
    * @return customFieldsMapping
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCustomFieldsMapping() {
     return customFieldsMapping;
   }
 
-  public void setCustomFieldsMapping(@javax.annotation.Nullable String customFieldsMapping) {
+  public void setCustomFieldsMapping(@jakarta.annotation.Nullable String customFieldsMapping) {
     this.customFieldsMapping = customFieldsMapping;
   }
 
 
-  public UpdateActionItemTaskParams postToIncidentTimeline(@javax.annotation.Nullable Boolean postToIncidentTimeline) {
+  public UpdateActionItemTaskParams postToIncidentTimeline(@jakarta.annotation.Nullable Boolean postToIncidentTimeline) {
     this.postToIncidentTimeline = postToIncidentTimeline;
     return this;
   }
@@ -581,12 +581,12 @@ public class UpdateActionItemTaskParams {
    * Get postToIncidentTimeline
    * @return postToIncidentTimeline
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getPostToIncidentTimeline() {
     return postToIncidentTimeline;
   }
 
-  public void setPostToIncidentTimeline(@javax.annotation.Nullable Boolean postToIncidentTimeline) {
+  public void setPostToIncidentTimeline(@jakarta.annotation.Nullable Boolean postToIncidentTimeline) {
     this.postToIncidentTimeline = postToIncidentTimeline;
   }
 

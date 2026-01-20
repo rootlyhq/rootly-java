@@ -49,52 +49,52 @@ import com.rootly.client.JSON;
 /**
  * WorkflowTask
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class WorkflowTask {
   public static final String SERIALIZED_NAME_WORKFLOW_ID = "workflow_id";
   @SerializedName(SERIALIZED_NAME_WORKFLOW_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String workflowId;
 
   public static final String SERIALIZED_NAME_TASK_PARAMS = "task_params";
   @SerializedName(SERIALIZED_NAME_TASK_PARAMS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private NewWorkflowTaskDataAttributesTaskParams taskParams;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Integer position;
 
   public static final String SERIALIZED_NAME_SKIP_ON_FAILURE = "skip_on_failure";
   @SerializedName(SERIALIZED_NAME_SKIP_ON_FAILURE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Boolean skipOnFailure;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Boolean enabled = true;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public WorkflowTask() {
   }
 
-  public WorkflowTask workflowId(@javax.annotation.Nonnull String workflowId) {
+  public WorkflowTask workflowId(@jakarta.annotation.Nonnull String workflowId) {
     this.workflowId = workflowId;
     return this;
   }
@@ -103,17 +103,17 @@ public class WorkflowTask {
    * The ID of the parent workflow
    * @return workflowId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getWorkflowId() {
     return workflowId;
   }
 
-  public void setWorkflowId(@javax.annotation.Nonnull String workflowId) {
+  public void setWorkflowId(@jakarta.annotation.Nonnull String workflowId) {
     this.workflowId = workflowId;
   }
 
 
-  public WorkflowTask taskParams(@javax.annotation.Nonnull NewWorkflowTaskDataAttributesTaskParams taskParams) {
+  public WorkflowTask taskParams(@jakarta.annotation.Nonnull NewWorkflowTaskDataAttributesTaskParams taskParams) {
     this.taskParams = taskParams;
     return this;
   }
@@ -122,17 +122,17 @@ public class WorkflowTask {
    * Get taskParams
    * @return taskParams
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public NewWorkflowTaskDataAttributesTaskParams getTaskParams() {
     return taskParams;
   }
 
-  public void setTaskParams(@javax.annotation.Nonnull NewWorkflowTaskDataAttributesTaskParams taskParams) {
+  public void setTaskParams(@jakarta.annotation.Nonnull NewWorkflowTaskDataAttributesTaskParams taskParams) {
     this.taskParams = taskParams;
   }
 
 
-  public WorkflowTask name(@javax.annotation.Nullable String name) {
+  public WorkflowTask name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -141,17 +141,17 @@ public class WorkflowTask {
    * Name of the workflow task
    * @return name
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public WorkflowTask position(@javax.annotation.Nonnull Integer position) {
+  public WorkflowTask position(@jakarta.annotation.Nonnull Integer position) {
     this.position = position;
     return this;
   }
@@ -160,17 +160,17 @@ public class WorkflowTask {
    * The position of the workflow task
    * @return position
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nonnull Integer position) {
+  public void setPosition(@jakarta.annotation.Nonnull Integer position) {
     this.position = position;
   }
 
 
-  public WorkflowTask skipOnFailure(@javax.annotation.Nonnull Boolean skipOnFailure) {
+  public WorkflowTask skipOnFailure(@jakarta.annotation.Nonnull Boolean skipOnFailure) {
     this.skipOnFailure = skipOnFailure;
     return this;
   }
@@ -179,17 +179,17 @@ public class WorkflowTask {
    * Skip workflow task if any failures
    * @return skipOnFailure
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Boolean getSkipOnFailure() {
     return skipOnFailure;
   }
 
-  public void setSkipOnFailure(@javax.annotation.Nonnull Boolean skipOnFailure) {
+  public void setSkipOnFailure(@jakarta.annotation.Nonnull Boolean skipOnFailure) {
     this.skipOnFailure = skipOnFailure;
   }
 
 
-  public WorkflowTask enabled(@javax.annotation.Nonnull Boolean enabled) {
+  public WorkflowTask enabled(@jakarta.annotation.Nonnull Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -198,17 +198,17 @@ public class WorkflowTask {
    * Enable/disable workflow task
    * @return enabled
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Boolean getEnabled() {
     return enabled;
   }
 
-  public void setEnabled(@javax.annotation.Nonnull Boolean enabled) {
+  public void setEnabled(@jakarta.annotation.Nonnull Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public WorkflowTask createdAt(@javax.annotation.Nonnull String createdAt) {
+  public WorkflowTask createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -217,17 +217,17 @@ public class WorkflowTask {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public WorkflowTask updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public WorkflowTask updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -236,12 +236,12 @@ public class WorkflowTask {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

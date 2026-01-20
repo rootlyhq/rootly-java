@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * AutoAssignRoleOpsgenieTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AutoAssignRoleOpsgenieTaskParams {
   /**
    * Gets or Sets taskType
@@ -103,23 +103,23 @@ public class AutoAssignRoleOpsgenieTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_INCIDENT_ROLE_ID = "incident_role_id";
   @SerializedName(SERIALIZED_NAME_INCIDENT_ROLE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String incidentRoleId;
 
   public static final String SERIALIZED_NAME_SCHEDULE = "schedule";
   @SerializedName(SERIALIZED_NAME_SCHEDULE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private AddActionItemTaskParamsPostToSlackChannelsInner schedule;
 
   public AutoAssignRoleOpsgenieTaskParams() {
   }
 
-  public AutoAssignRoleOpsgenieTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public AutoAssignRoleOpsgenieTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -128,17 +128,17 @@ public class AutoAssignRoleOpsgenieTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public AutoAssignRoleOpsgenieTaskParams incidentRoleId(@javax.annotation.Nonnull String incidentRoleId) {
+  public AutoAssignRoleOpsgenieTaskParams incidentRoleId(@jakarta.annotation.Nonnull String incidentRoleId) {
     this.incidentRoleId = incidentRoleId;
     return this;
   }
@@ -147,17 +147,17 @@ public class AutoAssignRoleOpsgenieTaskParams {
    * The role id
    * @return incidentRoleId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getIncidentRoleId() {
     return incidentRoleId;
   }
 
-  public void setIncidentRoleId(@javax.annotation.Nonnull String incidentRoleId) {
+  public void setIncidentRoleId(@jakarta.annotation.Nonnull String incidentRoleId) {
     this.incidentRoleId = incidentRoleId;
   }
 
 
-  public AutoAssignRoleOpsgenieTaskParams schedule(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner schedule) {
+  public AutoAssignRoleOpsgenieTaskParams schedule(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner schedule) {
     this.schedule = schedule;
     return this;
   }
@@ -166,12 +166,12 @@ public class AutoAssignRoleOpsgenieTaskParams {
    * Get schedule
    * @return schedule
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public AddActionItemTaskParamsPostToSlackChannelsInner getSchedule() {
     return schedule;
   }
 
-  public void setSchedule(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner schedule) {
+  public void setSchedule(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner schedule) {
     this.schedule = schedule;
   }
 

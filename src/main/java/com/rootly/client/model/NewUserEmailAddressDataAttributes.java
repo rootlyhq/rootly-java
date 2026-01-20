@@ -48,17 +48,17 @@ import com.rootly.client.JSON;
 /**
  * NewUserEmailAddressDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewUserEmailAddressDataAttributes {
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String email;
 
   public NewUserEmailAddressDataAttributes() {
   }
 
-  public NewUserEmailAddressDataAttributes email(@javax.annotation.Nonnull String email) {
+  public NewUserEmailAddressDataAttributes email(@jakarta.annotation.Nonnull String email) {
     this.email = email;
     return this;
   }
@@ -67,12 +67,12 @@ public class NewUserEmailAddressDataAttributes {
    * Email address
    * @return email
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getEmail() {
     return email;
   }
 
-  public void setEmail(@javax.annotation.Nonnull String email) {
+  public void setEmail(@jakarta.annotation.Nonnull String email) {
     this.email = email;
   }
 

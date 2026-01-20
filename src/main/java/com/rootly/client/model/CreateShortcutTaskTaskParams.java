@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * CreateShortcutTaskTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateShortcutTaskTaskParams {
   /**
    * Gets or Sets taskType
@@ -103,28 +103,28 @@ public class CreateShortcutTaskTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_PARENT_STORY_ID = "parent_story_id";
   @SerializedName(SERIALIZED_NAME_PARENT_STORY_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String parentStoryId;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String description;
 
   public static final String SERIALIZED_NAME_COMPLETION = "completion";
   @SerializedName(SERIALIZED_NAME_COMPLETION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private CreateServiceNowIncidentTaskParamsCompletion completion;
 
   public CreateShortcutTaskTaskParams() {
   }
 
-  public CreateShortcutTaskTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public CreateShortcutTaskTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -133,17 +133,17 @@ public class CreateShortcutTaskTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public CreateShortcutTaskTaskParams parentStoryId(@javax.annotation.Nonnull String parentStoryId) {
+  public CreateShortcutTaskTaskParams parentStoryId(@jakarta.annotation.Nonnull String parentStoryId) {
     this.parentStoryId = parentStoryId;
     return this;
   }
@@ -152,17 +152,17 @@ public class CreateShortcutTaskTaskParams {
    * The parent story
    * @return parentStoryId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getParentStoryId() {
     return parentStoryId;
   }
 
-  public void setParentStoryId(@javax.annotation.Nonnull String parentStoryId) {
+  public void setParentStoryId(@jakarta.annotation.Nonnull String parentStoryId) {
     this.parentStoryId = parentStoryId;
   }
 
 
-  public CreateShortcutTaskTaskParams description(@javax.annotation.Nonnull String description) {
+  public CreateShortcutTaskTaskParams description(@jakarta.annotation.Nonnull String description) {
     this.description = description;
     return this;
   }
@@ -171,17 +171,17 @@ public class CreateShortcutTaskTaskParams {
    * The task description
    * @return description
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nonnull String description) {
+  public void setDescription(@jakarta.annotation.Nonnull String description) {
     this.description = description;
   }
 
 
-  public CreateShortcutTaskTaskParams completion(@javax.annotation.Nonnull CreateServiceNowIncidentTaskParamsCompletion completion) {
+  public CreateShortcutTaskTaskParams completion(@jakarta.annotation.Nonnull CreateServiceNowIncidentTaskParamsCompletion completion) {
     this.completion = completion;
     return this;
   }
@@ -190,12 +190,12 @@ public class CreateShortcutTaskTaskParams {
    * Get completion
    * @return completion
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public CreateServiceNowIncidentTaskParamsCompletion getCompletion() {
     return completion;
   }
 
-  public void setCompletion(@javax.annotation.Nonnull CreateServiceNowIncidentTaskParamsCompletion completion) {
+  public void setCompletion(@jakarta.annotation.Nonnull CreateServiceNowIncidentTaskParamsCompletion completion) {
     this.completion = completion;
   }
 

@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInnerRulesInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInnerRulesInner {
   /**
    * Gets or Sets operation
@@ -104,7 +104,7 @@ public class NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInnerRulesI
 
   public static final String SERIALIZED_NAME_OPERATION = "operation";
   @SerializedName(SERIALIZED_NAME_OPERATION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private OperationEnum operation;
 
   /**
@@ -177,23 +177,23 @@ public class NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInnerRulesI
 
   public static final String SERIALIZED_NAME_CONDITION = "condition";
   @SerializedName(SERIALIZED_NAME_CONDITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ConditionEnum condition;
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String key;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String value;
 
   public NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInnerRulesInner() {
   }
 
-  public NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInnerRulesInner operation(@javax.annotation.Nullable OperationEnum operation) {
+  public NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInnerRulesInner operation(@jakarta.annotation.Nullable OperationEnum operation) {
     this.operation = operation;
     return this;
   }
@@ -202,17 +202,17 @@ public class NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInnerRulesI
    * Get operation
    * @return operation
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public OperationEnum getOperation() {
     return operation;
   }
 
-  public void setOperation(@javax.annotation.Nullable OperationEnum operation) {
+  public void setOperation(@jakarta.annotation.Nullable OperationEnum operation) {
     this.operation = operation;
   }
 
 
-  public NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInnerRulesInner condition(@javax.annotation.Nullable ConditionEnum condition) {
+  public NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInnerRulesInner condition(@jakarta.annotation.Nullable ConditionEnum condition) {
     this.condition = condition;
     return this;
   }
@@ -221,17 +221,17 @@ public class NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInnerRulesI
    * Get condition
    * @return condition
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ConditionEnum getCondition() {
     return condition;
   }
 
-  public void setCondition(@javax.annotation.Nullable ConditionEnum condition) {
+  public void setCondition(@jakarta.annotation.Nullable ConditionEnum condition) {
     this.condition = condition;
   }
 
 
-  public NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInnerRulesInner key(@javax.annotation.Nullable String key) {
+  public NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInnerRulesInner key(@jakarta.annotation.Nullable String key) {
     this.key = key;
     return this;
   }
@@ -240,17 +240,17 @@ public class NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInnerRulesI
    * Get key
    * @return key
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getKey() {
     return key;
   }
 
-  public void setKey(@javax.annotation.Nullable String key) {
+  public void setKey(@jakarta.annotation.Nullable String key) {
     this.key = key;
   }
 
 
-  public NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInnerRulesInner value(@javax.annotation.Nullable String value) {
+  public NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInnerRulesInner value(@jakarta.annotation.Nullable String value) {
     this.value = value;
     return this;
   }
@@ -259,12 +259,12 @@ public class NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInnerRulesI
    * Get value
    * @return value
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getValue() {
     return value;
   }
 
-  public void setValue(@javax.annotation.Nullable String value) {
+  public void setValue(@jakarta.annotation.Nullable String value) {
     this.value = value;
   }
 

@@ -92,7 +92,7 @@ public class AlertRoutesApi {
         <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createAlertRouteCall(@javax.annotation.Nonnull NewAlertRoute newAlertRoute, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createAlertRouteCall(@jakarta.annotation.Nonnull NewAlertRoute newAlertRoute, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -138,7 +138,7 @@ public class AlertRoutesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createAlertRouteValidateBeforeCall(@javax.annotation.Nonnull NewAlertRoute newAlertRoute, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createAlertRouteValidateBeforeCall(@jakarta.annotation.Nonnull NewAlertRoute newAlertRoute, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'newAlertRoute' is set
         if (newAlertRoute == null) {
             throw new ApiException("Missing the required parameter 'newAlertRoute' when calling createAlertRoute(Async)");
@@ -163,7 +163,7 @@ public class AlertRoutesApi {
         <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
      </table>
      */
-    public AlertRouteResponse createAlertRoute(@javax.annotation.Nonnull NewAlertRoute newAlertRoute) throws ApiException {
+    public AlertRouteResponse createAlertRoute(@jakarta.annotation.Nonnull NewAlertRoute newAlertRoute) throws ApiException {
         ApiResponse<AlertRouteResponse> localVarResp = createAlertRouteWithHttpInfo(newAlertRoute);
         return localVarResp.getData();
     }
@@ -183,7 +183,7 @@ public class AlertRoutesApi {
         <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertRouteResponse> createAlertRouteWithHttpInfo(@javax.annotation.Nonnull NewAlertRoute newAlertRoute) throws ApiException {
+    public ApiResponse<AlertRouteResponse> createAlertRouteWithHttpInfo(@jakarta.annotation.Nonnull NewAlertRoute newAlertRoute) throws ApiException {
         okhttp3.Call localVarCall = createAlertRouteValidateBeforeCall(newAlertRoute, null);
         Type localVarReturnType = new TypeToken<AlertRouteResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -205,7 +205,7 @@ public class AlertRoutesApi {
         <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createAlertRouteAsync(@javax.annotation.Nonnull NewAlertRoute newAlertRoute, final ApiCallback<AlertRouteResponse> _callback) throws ApiException {
+    public okhttp3.Call createAlertRouteAsync(@jakarta.annotation.Nonnull NewAlertRoute newAlertRoute, final ApiCallback<AlertRouteResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createAlertRouteValidateBeforeCall(newAlertRoute, _callback);
         Type localVarReturnType = new TypeToken<AlertRouteResponse>(){}.getType();
@@ -228,7 +228,7 @@ public class AlertRoutesApi {
         <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteAlertRouteCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteAlertRouteCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -274,7 +274,7 @@ public class AlertRoutesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteAlertRouteValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteAlertRouteValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteAlertRoute(Async)");
@@ -300,7 +300,7 @@ public class AlertRoutesApi {
         <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
      </table>
      */
-    public DeleteAlertRoute200Response deleteAlertRoute(@javax.annotation.Nonnull String id) throws ApiException {
+    public DeleteAlertRoute200Response deleteAlertRoute(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<DeleteAlertRoute200Response> localVarResp = deleteAlertRouteWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -321,7 +321,7 @@ public class AlertRoutesApi {
         <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DeleteAlertRoute200Response> deleteAlertRouteWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<DeleteAlertRoute200Response> deleteAlertRouteWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteAlertRouteValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<DeleteAlertRoute200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -344,7 +344,7 @@ public class AlertRoutesApi {
         <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteAlertRouteAsync(@javax.annotation.Nonnull String id, final ApiCallback<DeleteAlertRoute200Response> _callback) throws ApiException {
+    public okhttp3.Call deleteAlertRouteAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<DeleteAlertRoute200Response> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteAlertRouteValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<DeleteAlertRoute200Response>(){}.getType();
@@ -366,7 +366,7 @@ public class AlertRoutesApi {
         <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAlertRouteCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAlertRouteCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -412,7 +412,7 @@ public class AlertRoutesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAlertRouteValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAlertRouteValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getAlertRoute(Async)");
@@ -437,7 +437,7 @@ public class AlertRoutesApi {
         <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
      </table>
      */
-    public AlertRouteResponse getAlertRoute(@javax.annotation.Nonnull String id) throws ApiException {
+    public AlertRouteResponse getAlertRoute(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<AlertRouteResponse> localVarResp = getAlertRouteWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -457,7 +457,7 @@ public class AlertRoutesApi {
         <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertRouteResponse> getAlertRouteWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<AlertRouteResponse> getAlertRouteWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getAlertRouteValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<AlertRouteResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -479,7 +479,7 @@ public class AlertRoutesApi {
         <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAlertRouteAsync(@javax.annotation.Nonnull String id, final ApiCallback<AlertRouteResponse> _callback) throws ApiException {
+    public okhttp3.Call getAlertRouteAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<AlertRouteResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAlertRouteValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<AlertRouteResponse>(){}.getType();
@@ -504,7 +504,7 @@ public class AlertRoutesApi {
         <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAlertRoutesCall(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listAlertRoutesCall(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -569,7 +569,7 @@ public class AlertRoutesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listAlertRoutesValidateBeforeCall(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listAlertRoutesValidateBeforeCall(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         return listAlertRoutesCall(pageNumber, pageSize, filterSearch, filterName, sort, _callback);
 
     }
@@ -592,7 +592,7 @@ public class AlertRoutesApi {
         <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
      </table>
      */
-    public AlertRouteList listAlertRoutes(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String sort) throws ApiException {
+    public AlertRouteList listAlertRoutes(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String sort) throws ApiException {
         ApiResponse<AlertRouteList> localVarResp = listAlertRoutesWithHttpInfo(pageNumber, pageSize, filterSearch, filterName, sort);
         return localVarResp.getData();
     }
@@ -615,7 +615,7 @@ public class AlertRoutesApi {
         <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertRouteList> listAlertRoutesWithHttpInfo(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String sort) throws ApiException {
+    public ApiResponse<AlertRouteList> listAlertRoutesWithHttpInfo(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String sort) throws ApiException {
         okhttp3.Call localVarCall = listAlertRoutesValidateBeforeCall(pageNumber, pageSize, filterSearch, filterName, sort, null);
         Type localVarReturnType = new TypeToken<AlertRouteList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -640,7 +640,7 @@ public class AlertRoutesApi {
         <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAlertRoutesAsync(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String sort, final ApiCallback<AlertRouteList> _callback) throws ApiException {
+    public okhttp3.Call listAlertRoutesAsync(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String sort, final ApiCallback<AlertRouteList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listAlertRoutesValidateBeforeCall(pageNumber, pageSize, filterSearch, filterName, sort, _callback);
         Type localVarReturnType = new TypeToken<AlertRouteList>(){}.getType();
@@ -663,7 +663,7 @@ public class AlertRoutesApi {
         <tr><td> 404 </td><td> cross-team access denied </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateAlertRouteCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateAlertRoute updateAlertRoute, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateAlertRouteCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateAlertRoute updateAlertRoute, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -710,7 +710,7 @@ public class AlertRoutesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateAlertRouteValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateAlertRoute updateAlertRoute, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateAlertRouteValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateAlertRoute updateAlertRoute, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateAlertRoute(Async)");
@@ -741,7 +741,7 @@ public class AlertRoutesApi {
         <tr><td> 404 </td><td> cross-team access denied </td><td>  -  </td></tr>
      </table>
      */
-    public AlertRouteResponse updateAlertRoute(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateAlertRoute updateAlertRoute) throws ApiException {
+    public AlertRouteResponse updateAlertRoute(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateAlertRoute updateAlertRoute) throws ApiException {
         ApiResponse<AlertRouteResponse> localVarResp = updateAlertRouteWithHttpInfo(id, updateAlertRoute);
         return localVarResp.getData();
     }
@@ -762,7 +762,7 @@ public class AlertRoutesApi {
         <tr><td> 404 </td><td> cross-team access denied </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertRouteResponse> updateAlertRouteWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateAlertRoute updateAlertRoute) throws ApiException {
+    public ApiResponse<AlertRouteResponse> updateAlertRouteWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateAlertRoute updateAlertRoute) throws ApiException {
         okhttp3.Call localVarCall = updateAlertRouteValidateBeforeCall(id, updateAlertRoute, null);
         Type localVarReturnType = new TypeToken<AlertRouteResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -785,7 +785,7 @@ public class AlertRoutesApi {
         <tr><td> 404 </td><td> cross-team access denied </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateAlertRouteAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateAlertRoute updateAlertRoute, final ApiCallback<AlertRouteResponse> _callback) throws ApiException {
+    public okhttp3.Call updateAlertRouteAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateAlertRoute updateAlertRoute, final ApiCallback<AlertRouteResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateAlertRouteValidateBeforeCall(id, updateAlertRoute, _callback);
         Type localVarReturnType = new TypeToken<AlertRouteResponse>(){}.getType();

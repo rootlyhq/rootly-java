@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * AlertEvent
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AlertEvent {
   /**
    * Gets or Sets kind
@@ -123,7 +123,7 @@ public class AlertEvent {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private KindEnum kind;
 
   /**
@@ -226,38 +226,38 @@ public class AlertEvent {
 
   public static final String SERIALIZED_NAME_ACTION = "action";
   @SerializedName(SERIALIZED_NAME_ACTION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private ActionEnum action;
 
   public static final String SERIALIZED_NAME_SOURCE = "source";
   @SerializedName(SERIALIZED_NAME_SOURCE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String source;
 
   public static final String SERIALIZED_NAME_USER_ID = "user_id";
   @SerializedName(SERIALIZED_NAME_USER_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer userId;
 
   public static final String SERIALIZED_NAME_DETAILS = "details";
   @SerializedName(SERIALIZED_NAME_DETAILS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String details;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public AlertEvent() {
   }
 
-  public AlertEvent kind(@javax.annotation.Nonnull KindEnum kind) {
+  public AlertEvent kind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
     return this;
   }
@@ -266,17 +266,17 @@ public class AlertEvent {
    * Get kind
    * @return kind
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(@javax.annotation.Nonnull KindEnum kind) {
+  public void setKind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public AlertEvent action(@javax.annotation.Nonnull ActionEnum action) {
+  public AlertEvent action(@jakarta.annotation.Nonnull ActionEnum action) {
     this.action = action;
     return this;
   }
@@ -285,17 +285,17 @@ public class AlertEvent {
    * Get action
    * @return action
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public ActionEnum getAction() {
     return action;
   }
 
-  public void setAction(@javax.annotation.Nonnull ActionEnum action) {
+  public void setAction(@jakarta.annotation.Nonnull ActionEnum action) {
     this.action = action;
   }
 
 
-  public AlertEvent source(@javax.annotation.Nonnull String source) {
+  public AlertEvent source(@jakarta.annotation.Nonnull String source) {
     this.source = source;
     return this;
   }
@@ -304,17 +304,17 @@ public class AlertEvent {
    * Get source
    * @return source
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getSource() {
     return source;
   }
 
-  public void setSource(@javax.annotation.Nonnull String source) {
+  public void setSource(@jakarta.annotation.Nonnull String source) {
     this.source = source;
   }
 
 
-  public AlertEvent userId(@javax.annotation.Nullable Integer userId) {
+  public AlertEvent userId(@jakarta.annotation.Nullable Integer userId) {
     this.userId = userId;
     return this;
   }
@@ -323,17 +323,17 @@ public class AlertEvent {
    * Author of the note.
    * @return userId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getUserId() {
     return userId;
   }
 
-  public void setUserId(@javax.annotation.Nullable Integer userId) {
+  public void setUserId(@jakarta.annotation.Nullable Integer userId) {
     this.userId = userId;
   }
 
 
-  public AlertEvent details(@javax.annotation.Nullable String details) {
+  public AlertEvent details(@jakarta.annotation.Nullable String details) {
     this.details = details;
     return this;
   }
@@ -342,17 +342,17 @@ public class AlertEvent {
    * Note message.
    * @return details
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDetails() {
     return details;
   }
 
-  public void setDetails(@javax.annotation.Nullable String details) {
+  public void setDetails(@jakarta.annotation.Nullable String details) {
     this.details = details;
   }
 
 
-  public AlertEvent createdAt(@javax.annotation.Nonnull String createdAt) {
+  public AlertEvent createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -361,17 +361,17 @@ public class AlertEvent {
    * Get createdAt
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public AlertEvent updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public AlertEvent updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -380,12 +380,12 @@ public class AlertEvent {
    * Get updatedAt
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

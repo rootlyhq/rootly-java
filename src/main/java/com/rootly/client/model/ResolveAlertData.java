@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * ResolveAlertData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ResolveAlertData {
   /**
    * Gets or Sets type
@@ -103,18 +103,18 @@ public class ResolveAlertData {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ResolveAlertDataAttributes attributes;
 
   public ResolveAlertData() {
   }
 
-  public ResolveAlertData type(@javax.annotation.Nullable TypeEnum type) {
+  public ResolveAlertData type(@jakarta.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -123,17 +123,17 @@ public class ResolveAlertData {
    * Get type
    * @return type
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TypeEnum getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nullable TypeEnum type) {
+  public void setType(@jakarta.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
 
-  public ResolveAlertData attributes(@javax.annotation.Nullable ResolveAlertDataAttributes attributes) {
+  public ResolveAlertData attributes(@jakarta.annotation.Nullable ResolveAlertDataAttributes attributes) {
     this.attributes = attributes;
     return this;
   }
@@ -142,12 +142,12 @@ public class ResolveAlertData {
    * Get attributes
    * @return attributes
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ResolveAlertDataAttributes getAttributes() {
     return attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nullable ResolveAlertDataAttributes attributes) {
+  public void setAttributes(@jakarta.annotation.Nullable ResolveAlertDataAttributes attributes) {
     this.attributes = attributes;
   }
 

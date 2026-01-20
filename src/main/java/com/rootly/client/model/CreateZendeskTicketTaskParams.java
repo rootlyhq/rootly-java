@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * CreateZendeskTicketTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateZendeskTicketTaskParams {
   /**
    * Gets or Sets taskType
@@ -105,7 +105,7 @@ public class CreateZendeskTicketTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   /**
@@ -166,48 +166,48 @@ public class CreateZendeskTicketTaskParams {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private KindEnum kind;
 
   public static final String SERIALIZED_NAME_SUBJECT = "subject";
   @SerializedName(SERIALIZED_NAME_SUBJECT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String subject;
 
   public static final String SERIALIZED_NAME_COMMENT = "comment";
   @SerializedName(SERIALIZED_NAME_COMMENT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String comment;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String tags;
 
   public static final String SERIALIZED_NAME_PRIORITY = "priority";
   @SerializedName(SERIALIZED_NAME_PRIORITY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CreateJiraIssueTaskParamsPriority priority;
 
   public static final String SERIALIZED_NAME_COMPLETION = "completion";
   @SerializedName(SERIALIZED_NAME_COMPLETION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CreateServiceNowIncidentTaskParamsCompletion completion;
 
   public static final String SERIALIZED_NAME_CUSTOM_FIELDS_MAPPING = "custom_fields_mapping";
   @SerializedName(SERIALIZED_NAME_CUSTOM_FIELDS_MAPPING)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String customFieldsMapping;
 
   public static final String SERIALIZED_NAME_TICKET_PAYLOAD = "ticket_payload";
   @SerializedName(SERIALIZED_NAME_TICKET_PAYLOAD)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String ticketPayload;
 
   public CreateZendeskTicketTaskParams() {
   }
 
-  public CreateZendeskTicketTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public CreateZendeskTicketTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -216,17 +216,17 @@ public class CreateZendeskTicketTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public CreateZendeskTicketTaskParams kind(@javax.annotation.Nonnull KindEnum kind) {
+  public CreateZendeskTicketTaskParams kind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
     return this;
   }
@@ -235,17 +235,17 @@ public class CreateZendeskTicketTaskParams {
    * Get kind
    * @return kind
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(@javax.annotation.Nonnull KindEnum kind) {
+  public void setKind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public CreateZendeskTicketTaskParams subject(@javax.annotation.Nonnull String subject) {
+  public CreateZendeskTicketTaskParams subject(@jakarta.annotation.Nonnull String subject) {
     this.subject = subject;
     return this;
   }
@@ -254,17 +254,17 @@ public class CreateZendeskTicketTaskParams {
    * The ticket subject
    * @return subject
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getSubject() {
     return subject;
   }
 
-  public void setSubject(@javax.annotation.Nonnull String subject) {
+  public void setSubject(@jakarta.annotation.Nonnull String subject) {
     this.subject = subject;
   }
 
 
-  public CreateZendeskTicketTaskParams comment(@javax.annotation.Nullable String comment) {
+  public CreateZendeskTicketTaskParams comment(@jakarta.annotation.Nullable String comment) {
     this.comment = comment;
     return this;
   }
@@ -273,17 +273,17 @@ public class CreateZendeskTicketTaskParams {
    * The ticket comment
    * @return comment
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getComment() {
     return comment;
   }
 
-  public void setComment(@javax.annotation.Nullable String comment) {
+  public void setComment(@jakarta.annotation.Nullable String comment) {
     this.comment = comment;
   }
 
 
-  public CreateZendeskTicketTaskParams tags(@javax.annotation.Nullable String tags) {
+  public CreateZendeskTicketTaskParams tags(@jakarta.annotation.Nullable String tags) {
     this.tags = tags;
     return this;
   }
@@ -292,17 +292,17 @@ public class CreateZendeskTicketTaskParams {
    * The ticket tags
    * @return tags
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTags() {
     return tags;
   }
 
-  public void setTags(@javax.annotation.Nullable String tags) {
+  public void setTags(@jakarta.annotation.Nullable String tags) {
     this.tags = tags;
   }
 
 
-  public CreateZendeskTicketTaskParams priority(@javax.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
+  public CreateZendeskTicketTaskParams priority(@jakarta.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
     this.priority = priority;
     return this;
   }
@@ -311,17 +311,17 @@ public class CreateZendeskTicketTaskParams {
    * Get priority
    * @return priority
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CreateJiraIssueTaskParamsPriority getPriority() {
     return priority;
   }
 
-  public void setPriority(@javax.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
+  public void setPriority(@jakarta.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
     this.priority = priority;
   }
 
 
-  public CreateZendeskTicketTaskParams completion(@javax.annotation.Nullable CreateServiceNowIncidentTaskParamsCompletion completion) {
+  public CreateZendeskTicketTaskParams completion(@jakarta.annotation.Nullable CreateServiceNowIncidentTaskParamsCompletion completion) {
     this.completion = completion;
     return this;
   }
@@ -330,17 +330,17 @@ public class CreateZendeskTicketTaskParams {
    * Get completion
    * @return completion
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CreateServiceNowIncidentTaskParamsCompletion getCompletion() {
     return completion;
   }
 
-  public void setCompletion(@javax.annotation.Nullable CreateServiceNowIncidentTaskParamsCompletion completion) {
+  public void setCompletion(@jakarta.annotation.Nullable CreateServiceNowIncidentTaskParamsCompletion completion) {
     this.completion = completion;
   }
 
 
-  public CreateZendeskTicketTaskParams customFieldsMapping(@javax.annotation.Nullable String customFieldsMapping) {
+  public CreateZendeskTicketTaskParams customFieldsMapping(@jakarta.annotation.Nullable String customFieldsMapping) {
     this.customFieldsMapping = customFieldsMapping;
     return this;
   }
@@ -349,17 +349,17 @@ public class CreateZendeskTicketTaskParams {
    * Custom field mappings. Can contain liquid markup and need to be valid JSON
    * @return customFieldsMapping
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCustomFieldsMapping() {
     return customFieldsMapping;
   }
 
-  public void setCustomFieldsMapping(@javax.annotation.Nullable String customFieldsMapping) {
+  public void setCustomFieldsMapping(@jakarta.annotation.Nullable String customFieldsMapping) {
     this.customFieldsMapping = customFieldsMapping;
   }
 
 
-  public CreateZendeskTicketTaskParams ticketPayload(@javax.annotation.Nullable String ticketPayload) {
+  public CreateZendeskTicketTaskParams ticketPayload(@jakarta.annotation.Nullable String ticketPayload) {
     this.ticketPayload = ticketPayload;
     return this;
   }
@@ -368,12 +368,12 @@ public class CreateZendeskTicketTaskParams {
    * Additional Zendesk ticket attributes. Will be merged into whatever was specified in this tasks current parameters. Can contain liquid markup and need to be valid JSON
    * @return ticketPayload
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTicketPayload() {
     return ticketPayload;
   }
 
-  public void setTicketPayload(@javax.annotation.Nullable String ticketPayload) {
+  public void setTicketPayload(@jakarta.annotation.Nullable String ticketPayload) {
     this.ticketPayload = ticketPayload;
   }
 

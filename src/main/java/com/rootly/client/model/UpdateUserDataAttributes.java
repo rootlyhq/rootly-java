@@ -49,32 +49,32 @@ import com.rootly.client.JSON;
 /**
  * UpdateUserDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateUserDataAttributes {
   public static final String SERIALIZED_NAME_FIRST_NAME = "first_name";
   @SerializedName(SERIALIZED_NAME_FIRST_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String firstName;
 
   public static final String SERIALIZED_NAME_LAST_NAME = "last_name";
   @SerializedName(SERIALIZED_NAME_LAST_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String lastName;
 
   public static final String SERIALIZED_NAME_ROLE_ID = "role_id";
   @SerializedName(SERIALIZED_NAME_ROLE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String roleId;
 
   public static final String SERIALIZED_NAME_ON_CALL_ROLE_ID = "on_call_role_id";
   @SerializedName(SERIALIZED_NAME_ON_CALL_ROLE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String onCallRoleId;
 
   public UpdateUserDataAttributes() {
   }
 
-  public UpdateUserDataAttributes firstName(@javax.annotation.Nullable String firstName) {
+  public UpdateUserDataAttributes firstName(@jakarta.annotation.Nullable String firstName) {
     this.firstName = firstName;
     return this;
   }
@@ -83,17 +83,17 @@ public class UpdateUserDataAttributes {
    * First name of the user
    * @return firstName
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getFirstName() {
     return firstName;
   }
 
-  public void setFirstName(@javax.annotation.Nullable String firstName) {
+  public void setFirstName(@jakarta.annotation.Nullable String firstName) {
     this.firstName = firstName;
   }
 
 
-  public UpdateUserDataAttributes lastName(@javax.annotation.Nullable String lastName) {
+  public UpdateUserDataAttributes lastName(@jakarta.annotation.Nullable String lastName) {
     this.lastName = lastName;
     return this;
   }
@@ -102,17 +102,17 @@ public class UpdateUserDataAttributes {
    * Last name of the user
    * @return lastName
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getLastName() {
     return lastName;
   }
 
-  public void setLastName(@javax.annotation.Nullable String lastName) {
+  public void setLastName(@jakarta.annotation.Nullable String lastName) {
     this.lastName = lastName;
   }
 
 
-  public UpdateUserDataAttributes roleId(@javax.annotation.Nullable String roleId) {
+  public UpdateUserDataAttributes roleId(@jakarta.annotation.Nullable String roleId) {
     this.roleId = roleId;
     return this;
   }
@@ -121,17 +121,17 @@ public class UpdateUserDataAttributes {
    * ID of the role to assign
    * @return roleId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getRoleId() {
     return roleId;
   }
 
-  public void setRoleId(@javax.annotation.Nullable String roleId) {
+  public void setRoleId(@jakarta.annotation.Nullable String roleId) {
     this.roleId = roleId;
   }
 
 
-  public UpdateUserDataAttributes onCallRoleId(@javax.annotation.Nullable String onCallRoleId) {
+  public UpdateUserDataAttributes onCallRoleId(@jakarta.annotation.Nullable String onCallRoleId) {
     this.onCallRoleId = onCallRoleId;
     return this;
   }
@@ -140,12 +140,12 @@ public class UpdateUserDataAttributes {
    * ID of the on-call role to assign
    * @return onCallRoleId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getOnCallRoleId() {
     return onCallRoleId;
   }
 
-  public void setOnCallRoleId(@javax.annotation.Nullable String onCallRoleId) {
+  public void setOnCallRoleId(@jakarta.annotation.Nullable String onCallRoleId) {
     this.onCallRoleId = onCallRoleId;
   }
 

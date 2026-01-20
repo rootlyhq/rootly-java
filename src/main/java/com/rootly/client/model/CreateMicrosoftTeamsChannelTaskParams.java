@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * CreateMicrosoftTeamsChannelTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateMicrosoftTeamsChannelTaskParams {
   /**
    * Gets or Sets taskType
@@ -103,22 +103,22 @@ public class CreateMicrosoftTeamsChannelTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_TEAM = "team";
   @SerializedName(SERIALIZED_NAME_TEAM)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AddActionItemTaskParamsPostToSlackChannelsInner team;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String title;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   /**
@@ -177,13 +177,13 @@ public class CreateMicrosoftTeamsChannelTaskParams {
 
   public static final String SERIALIZED_NAME_PRIVATE = "private";
   @SerializedName(SERIALIZED_NAME_PRIVATE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private PrivateEnum _private = PrivateEnum.AUTO;
 
   public CreateMicrosoftTeamsChannelTaskParams() {
   }
 
-  public CreateMicrosoftTeamsChannelTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public CreateMicrosoftTeamsChannelTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -192,17 +192,17 @@ public class CreateMicrosoftTeamsChannelTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public CreateMicrosoftTeamsChannelTaskParams team(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner team) {
+  public CreateMicrosoftTeamsChannelTaskParams team(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner team) {
     this.team = team;
     return this;
   }
@@ -211,17 +211,17 @@ public class CreateMicrosoftTeamsChannelTaskParams {
    * Get team
    * @return team
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AddActionItemTaskParamsPostToSlackChannelsInner getTeam() {
     return team;
   }
 
-  public void setTeam(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner team) {
+  public void setTeam(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner team) {
     this.team = team;
   }
 
 
-  public CreateMicrosoftTeamsChannelTaskParams title(@javax.annotation.Nonnull String title) {
+  public CreateMicrosoftTeamsChannelTaskParams title(@jakarta.annotation.Nonnull String title) {
     this.title = title;
     return this;
   }
@@ -230,17 +230,17 @@ public class CreateMicrosoftTeamsChannelTaskParams {
    * Microsoft Team channel title
    * @return title
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nonnull String title) {
+  public void setTitle(@jakarta.annotation.Nonnull String title) {
     this.title = title;
   }
 
 
-  public CreateMicrosoftTeamsChannelTaskParams description(@javax.annotation.Nullable String description) {
+  public CreateMicrosoftTeamsChannelTaskParams description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -249,17 +249,17 @@ public class CreateMicrosoftTeamsChannelTaskParams {
    * Microsoft Team channel description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public CreateMicrosoftTeamsChannelTaskParams _private(@javax.annotation.Nullable PrivateEnum _private) {
+  public CreateMicrosoftTeamsChannelTaskParams _private(@jakarta.annotation.Nullable PrivateEnum _private) {
     this._private = _private;
     return this;
   }
@@ -268,12 +268,12 @@ public class CreateMicrosoftTeamsChannelTaskParams {
    * Get _private
    * @return _private
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public PrivateEnum getPrivate() {
     return _private;
   }
 
-  public void setPrivate(@javax.annotation.Nullable PrivateEnum _private) {
+  public void setPrivate(@jakarta.annotation.Nullable PrivateEnum _private) {
     this._private = _private;
   }
 

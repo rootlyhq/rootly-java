@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * SendDashboardReportTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SendDashboardReportTaskParams {
   /**
    * Gets or Sets taskType
@@ -105,43 +105,43 @@ public class SendDashboardReportTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_DASHBOARD_IDS = "dashboard_ids";
   @SerializedName(SERIALIZED_NAME_DASHBOARD_IDS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<String> dashboardIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_FROM = "from";
   @SerializedName(SERIALIZED_NAME_FROM)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String from = "Rootly <workflows@rootly.com>";
 
   public static final String SERIALIZED_NAME_TO = "to";
   @SerializedName(SERIALIZED_NAME_TO)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<String> to = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SUBJECT = "subject";
   @SerializedName(SERIALIZED_NAME_SUBJECT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String subject;
 
   public static final String SERIALIZED_NAME_PREHEADER = "preheader";
   @SerializedName(SERIALIZED_NAME_PREHEADER)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String preheader;
 
   public static final String SERIALIZED_NAME_BODY = "body";
   @SerializedName(SERIALIZED_NAME_BODY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String body;
 
   public SendDashboardReportTaskParams() {
   }
 
-  public SendDashboardReportTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public SendDashboardReportTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -150,17 +150,17 @@ public class SendDashboardReportTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public SendDashboardReportTaskParams dashboardIds(@javax.annotation.Nonnull List<String> dashboardIds) {
+  public SendDashboardReportTaskParams dashboardIds(@jakarta.annotation.Nonnull List<String> dashboardIds) {
     this.dashboardIds = dashboardIds;
     return this;
   }
@@ -177,17 +177,17 @@ public class SendDashboardReportTaskParams {
    * Get dashboardIds
    * @return dashboardIds
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<String> getDashboardIds() {
     return dashboardIds;
   }
 
-  public void setDashboardIds(@javax.annotation.Nonnull List<String> dashboardIds) {
+  public void setDashboardIds(@jakarta.annotation.Nonnull List<String> dashboardIds) {
     this.dashboardIds = dashboardIds;
   }
 
 
-  public SendDashboardReportTaskParams from(@javax.annotation.Nullable String from) {
+  public SendDashboardReportTaskParams from(@jakarta.annotation.Nullable String from) {
     this.from = from;
     return this;
   }
@@ -196,17 +196,17 @@ public class SendDashboardReportTaskParams {
    * The from email address. Need to use SMTP integration if different than rootly.com
    * @return from
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getFrom() {
     return from;
   }
 
-  public void setFrom(@javax.annotation.Nullable String from) {
+  public void setFrom(@jakarta.annotation.Nullable String from) {
     this.from = from;
   }
 
 
-  public SendDashboardReportTaskParams to(@javax.annotation.Nonnull List<String> to) {
+  public SendDashboardReportTaskParams to(@jakarta.annotation.Nonnull List<String> to) {
     this.to = to;
     return this;
   }
@@ -223,17 +223,17 @@ public class SendDashboardReportTaskParams {
    * Get to
    * @return to
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<String> getTo() {
     return to;
   }
 
-  public void setTo(@javax.annotation.Nonnull List<String> to) {
+  public void setTo(@jakarta.annotation.Nonnull List<String> to) {
     this.to = to;
   }
 
 
-  public SendDashboardReportTaskParams subject(@javax.annotation.Nonnull String subject) {
+  public SendDashboardReportTaskParams subject(@jakarta.annotation.Nonnull String subject) {
     this.subject = subject;
     return this;
   }
@@ -242,17 +242,17 @@ public class SendDashboardReportTaskParams {
    * The subject
    * @return subject
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getSubject() {
     return subject;
   }
 
-  public void setSubject(@javax.annotation.Nonnull String subject) {
+  public void setSubject(@jakarta.annotation.Nonnull String subject) {
     this.subject = subject;
   }
 
 
-  public SendDashboardReportTaskParams preheader(@javax.annotation.Nullable String preheader) {
+  public SendDashboardReportTaskParams preheader(@jakarta.annotation.Nullable String preheader) {
     this.preheader = preheader;
     return this;
   }
@@ -261,17 +261,17 @@ public class SendDashboardReportTaskParams {
    * The preheader
    * @return preheader
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPreheader() {
     return preheader;
   }
 
-  public void setPreheader(@javax.annotation.Nullable String preheader) {
+  public void setPreheader(@jakarta.annotation.Nullable String preheader) {
     this.preheader = preheader;
   }
 
 
-  public SendDashboardReportTaskParams body(@javax.annotation.Nullable String body) {
+  public SendDashboardReportTaskParams body(@jakarta.annotation.Nullable String body) {
     this.body = body;
     return this;
   }
@@ -280,12 +280,12 @@ public class SendDashboardReportTaskParams {
    * The email body
    * @return body
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getBody() {
     return body;
   }
 
-  public void setBody(@javax.annotation.Nullable String body) {
+  public void setBody(@jakarta.annotation.Nullable String body) {
     this.body = body;
   }
 

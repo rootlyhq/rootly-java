@@ -52,37 +52,37 @@ import com.rootly.client.JSON;
 /**
  * NewCommunicationsTemplateDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewCommunicationsTemplateDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_COMMUNICATION_TYPE_ID = "communication_type_id";
   @SerializedName(SERIALIZED_NAME_COMMUNICATION_TYPE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String communicationTypeId;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public static final String SERIALIZED_NAME_COMMUNICATION_TEMPLATE_STAGES_ATTRIBUTES = "communication_template_stages_attributes";
   @SerializedName(SERIALIZED_NAME_COMMUNICATION_TEMPLATE_STAGES_ATTRIBUTES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewCommunicationsTemplateDataAttributesCommunicationTemplateStagesAttributesInner> communicationTemplateStagesAttributes;
 
   public NewCommunicationsTemplateDataAttributes() {
   }
 
-  public NewCommunicationsTemplateDataAttributes name(@javax.annotation.Nonnull String name) {
+  public NewCommunicationsTemplateDataAttributes name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -91,17 +91,17 @@ public class NewCommunicationsTemplateDataAttributes {
    * The name of the communications template
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public NewCommunicationsTemplateDataAttributes description(@javax.annotation.Nullable String description) {
+  public NewCommunicationsTemplateDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -110,17 +110,17 @@ public class NewCommunicationsTemplateDataAttributes {
    * The description of the communications template
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public NewCommunicationsTemplateDataAttributes communicationTypeId(@javax.annotation.Nonnull String communicationTypeId) {
+  public NewCommunicationsTemplateDataAttributes communicationTypeId(@jakarta.annotation.Nonnull String communicationTypeId) {
     this.communicationTypeId = communicationTypeId;
     return this;
   }
@@ -129,17 +129,17 @@ public class NewCommunicationsTemplateDataAttributes {
    * The communication type ID
    * @return communicationTypeId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCommunicationTypeId() {
     return communicationTypeId;
   }
 
-  public void setCommunicationTypeId(@javax.annotation.Nonnull String communicationTypeId) {
+  public void setCommunicationTypeId(@jakarta.annotation.Nonnull String communicationTypeId) {
     this.communicationTypeId = communicationTypeId;
   }
 
 
-  public NewCommunicationsTemplateDataAttributes position(@javax.annotation.Nullable Integer position) {
+  public NewCommunicationsTemplateDataAttributes position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -148,17 +148,17 @@ public class NewCommunicationsTemplateDataAttributes {
    * Position of the communications template
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 
 
-  public NewCommunicationsTemplateDataAttributes communicationTemplateStagesAttributes(@javax.annotation.Nullable List<NewCommunicationsTemplateDataAttributesCommunicationTemplateStagesAttributesInner> communicationTemplateStagesAttributes) {
+  public NewCommunicationsTemplateDataAttributes communicationTemplateStagesAttributes(@jakarta.annotation.Nullable List<NewCommunicationsTemplateDataAttributesCommunicationTemplateStagesAttributesInner> communicationTemplateStagesAttributes) {
     this.communicationTemplateStagesAttributes = communicationTemplateStagesAttributes;
     return this;
   }
@@ -175,12 +175,12 @@ public class NewCommunicationsTemplateDataAttributes {
    * Template stages attributes
    * @return communicationTemplateStagesAttributes
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewCommunicationsTemplateDataAttributesCommunicationTemplateStagesAttributesInner> getCommunicationTemplateStagesAttributes() {
     return communicationTemplateStagesAttributes;
   }
 
-  public void setCommunicationTemplateStagesAttributes(@javax.annotation.Nullable List<NewCommunicationsTemplateDataAttributesCommunicationTemplateStagesAttributesInner> communicationTemplateStagesAttributes) {
+  public void setCommunicationTemplateStagesAttributes(@jakarta.annotation.Nullable List<NewCommunicationsTemplateDataAttributesCommunicationTemplateStagesAttributesInner> communicationTemplateStagesAttributes) {
     this.communicationTemplateStagesAttributes = communicationTemplateStagesAttributes;
   }
 

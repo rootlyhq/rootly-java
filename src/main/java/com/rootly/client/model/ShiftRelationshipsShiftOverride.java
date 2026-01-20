@@ -50,17 +50,17 @@ import com.rootly.client.JSON;
 /**
  * ShiftRelationshipsShiftOverride
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ShiftRelationshipsShiftOverride {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ShiftRelationshipsShiftOverrideData data;
 
   public ShiftRelationshipsShiftOverride() {
   }
 
-  public ShiftRelationshipsShiftOverride data(@javax.annotation.Nullable ShiftRelationshipsShiftOverrideData data) {
+  public ShiftRelationshipsShiftOverride data(@jakarta.annotation.Nullable ShiftRelationshipsShiftOverrideData data) {
     this.data = data;
     return this;
   }
@@ -69,12 +69,12 @@ public class ShiftRelationshipsShiftOverride {
    * Get data
    * @return data
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ShiftRelationshipsShiftOverrideData getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nullable ShiftRelationshipsShiftOverrideData data) {
+  public void setData(@jakarta.annotation.Nullable ShiftRelationshipsShiftOverrideData data) {
     this.data = data;
   }
 

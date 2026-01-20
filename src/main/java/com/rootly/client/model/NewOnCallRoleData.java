@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * NewOnCallRoleData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewOnCallRoleData {
   /**
    * Gets or Sets type
@@ -103,18 +103,18 @@ public class NewOnCallRoleData {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private NewOnCallRoleDataAttributes attributes;
 
   public NewOnCallRoleData() {
   }
 
-  public NewOnCallRoleData type(@javax.annotation.Nonnull TypeEnum type) {
+  public NewOnCallRoleData type(@jakarta.annotation.Nonnull TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -123,17 +123,17 @@ public class NewOnCallRoleData {
    * Get type
    * @return type
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public TypeEnum getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nonnull TypeEnum type) {
+  public void setType(@jakarta.annotation.Nonnull TypeEnum type) {
     this.type = type;
   }
 
 
-  public NewOnCallRoleData attributes(@javax.annotation.Nonnull NewOnCallRoleDataAttributes attributes) {
+  public NewOnCallRoleData attributes(@jakarta.annotation.Nonnull NewOnCallRoleDataAttributes attributes) {
     this.attributes = attributes;
     return this;
   }
@@ -142,12 +142,12 @@ public class NewOnCallRoleData {
    * Get attributes
    * @return attributes
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public NewOnCallRoleDataAttributes getAttributes() {
     return attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nonnull NewOnCallRoleDataAttributes attributes) {
+  public void setAttributes(@jakarta.annotation.Nonnull NewOnCallRoleDataAttributes attributes) {
     this.attributes = attributes;
   }
 

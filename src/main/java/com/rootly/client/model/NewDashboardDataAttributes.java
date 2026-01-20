@@ -49,16 +49,16 @@ import com.rootly.client.JSON;
 /**
  * NewDashboardDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewDashboardDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   /**
@@ -115,22 +115,22 @@ public class NewDashboardDataAttributes {
 
   public static final String SERIALIZED_NAME_OWNER = "owner";
   @SerializedName(SERIALIZED_NAME_OWNER)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private OwnerEnum owner;
 
   public static final String SERIALIZED_NAME_PUBLIC = "public";
   @SerializedName(SERIALIZED_NAME_PUBLIC)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean _public;
 
   public static final String SERIALIZED_NAME_RANGE = "range";
   @SerializedName(SERIALIZED_NAME_RANGE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String range;
 
   public static final String SERIALIZED_NAME_AUTO_REFRESH = "auto_refresh";
   @SerializedName(SERIALIZED_NAME_AUTO_REFRESH)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean autoRefresh;
 
   /**
@@ -193,12 +193,12 @@ public class NewDashboardDataAttributes {
 
   public static final String SERIALIZED_NAME_COLOR = "color";
   @SerializedName(SERIALIZED_NAME_COLOR)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ColorEnum color;
 
   public static final String SERIALIZED_NAME_ICON = "icon";
   @SerializedName(SERIALIZED_NAME_ICON)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String icon;
 
   /**
@@ -257,13 +257,13 @@ public class NewDashboardDataAttributes {
 
   public static final String SERIALIZED_NAME_PERIOD = "period";
   @SerializedName(SERIALIZED_NAME_PERIOD)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private PeriodEnum period;
 
   public NewDashboardDataAttributes() {
   }
 
-  public NewDashboardDataAttributes name(@javax.annotation.Nonnull String name) {
+  public NewDashboardDataAttributes name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -272,17 +272,17 @@ public class NewDashboardDataAttributes {
    * The name of the dashboard
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public NewDashboardDataAttributes description(@javax.annotation.Nullable String description) {
+  public NewDashboardDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -291,17 +291,17 @@ public class NewDashboardDataAttributes {
    * The description of the dashboard
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public NewDashboardDataAttributes owner(@javax.annotation.Nonnull OwnerEnum owner) {
+  public NewDashboardDataAttributes owner(@jakarta.annotation.Nonnull OwnerEnum owner) {
     this.owner = owner;
     return this;
   }
@@ -310,17 +310,17 @@ public class NewDashboardDataAttributes {
    * The owner type of the dashboard
    * @return owner
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public OwnerEnum getOwner() {
     return owner;
   }
 
-  public void setOwner(@javax.annotation.Nonnull OwnerEnum owner) {
+  public void setOwner(@jakarta.annotation.Nonnull OwnerEnum owner) {
     this.owner = owner;
   }
 
 
-  public NewDashboardDataAttributes _public(@javax.annotation.Nullable Boolean _public) {
+  public NewDashboardDataAttributes _public(@jakarta.annotation.Nullable Boolean _public) {
     this._public = _public;
     return this;
   }
@@ -329,17 +329,17 @@ public class NewDashboardDataAttributes {
    * Whether the dashboard is public
    * @return _public
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getPublic() {
     return _public;
   }
 
-  public void setPublic(@javax.annotation.Nullable Boolean _public) {
+  public void setPublic(@jakarta.annotation.Nullable Boolean _public) {
     this._public = _public;
   }
 
 
-  public NewDashboardDataAttributes range(@javax.annotation.Nullable String range) {
+  public NewDashboardDataAttributes range(@jakarta.annotation.Nullable String range) {
     this.range = range;
     return this;
   }
@@ -348,17 +348,17 @@ public class NewDashboardDataAttributes {
    * The date range for dashboard panel data
    * @return range
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getRange() {
     return range;
   }
 
-  public void setRange(@javax.annotation.Nullable String range) {
+  public void setRange(@jakarta.annotation.Nullable String range) {
     this.range = range;
   }
 
 
-  public NewDashboardDataAttributes autoRefresh(@javax.annotation.Nullable Boolean autoRefresh) {
+  public NewDashboardDataAttributes autoRefresh(@jakarta.annotation.Nullable Boolean autoRefresh) {
     this.autoRefresh = autoRefresh;
     return this;
   }
@@ -367,17 +367,17 @@ public class NewDashboardDataAttributes {
    * Whether the dashboard auto-updates the UI with new data.
    * @return autoRefresh
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getAutoRefresh() {
     return autoRefresh;
   }
 
-  public void setAutoRefresh(@javax.annotation.Nullable Boolean autoRefresh) {
+  public void setAutoRefresh(@jakarta.annotation.Nullable Boolean autoRefresh) {
     this.autoRefresh = autoRefresh;
   }
 
 
-  public NewDashboardDataAttributes color(@javax.annotation.Nullable ColorEnum color) {
+  public NewDashboardDataAttributes color(@jakarta.annotation.Nullable ColorEnum color) {
     this.color = color;
     return this;
   }
@@ -386,17 +386,17 @@ public class NewDashboardDataAttributes {
    * The hex color of the dashboard
    * @return color
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ColorEnum getColor() {
     return color;
   }
 
-  public void setColor(@javax.annotation.Nullable ColorEnum color) {
+  public void setColor(@jakarta.annotation.Nullable ColorEnum color) {
     this.color = color;
   }
 
 
-  public NewDashboardDataAttributes icon(@javax.annotation.Nullable String icon) {
+  public NewDashboardDataAttributes icon(@jakarta.annotation.Nullable String icon) {
     this.icon = icon;
     return this;
   }
@@ -405,17 +405,17 @@ public class NewDashboardDataAttributes {
    * The emoji icon of the dashboard
    * @return icon
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getIcon() {
     return icon;
   }
 
-  public void setIcon(@javax.annotation.Nullable String icon) {
+  public void setIcon(@jakarta.annotation.Nullable String icon) {
     this.icon = icon;
   }
 
 
-  public NewDashboardDataAttributes period(@javax.annotation.Nullable PeriodEnum period) {
+  public NewDashboardDataAttributes period(@jakarta.annotation.Nullable PeriodEnum period) {
     this.period = period;
     return this;
   }
@@ -424,12 +424,12 @@ public class NewDashboardDataAttributes {
    * The grouping period for dashboard panel data
    * @return period
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public PeriodEnum getPeriod() {
     return period;
   }
 
-  public void setPeriod(@javax.annotation.Nullable PeriodEnum period) {
+  public void setPeriod(@jakarta.annotation.Nullable PeriodEnum period) {
     this.period = period;
   }
 

@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateIncidentEventServiceDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateIncidentEventServiceDataAttributes {
   /**
    * The status of the affected service
@@ -106,13 +106,13 @@ public class UpdateIncidentEventServiceDataAttributes {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private StatusEnum status;
 
   public UpdateIncidentEventServiceDataAttributes() {
   }
 
-  public UpdateIncidentEventServiceDataAttributes status(@javax.annotation.Nonnull StatusEnum status) {
+  public UpdateIncidentEventServiceDataAttributes status(@jakarta.annotation.Nonnull StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -121,12 +121,12 @@ public class UpdateIncidentEventServiceDataAttributes {
    * The status of the affected service
    * @return status
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nonnull StatusEnum status) {
+  public void setStatus(@jakarta.annotation.Nonnull StatusEnum status) {
     this.status = status;
   }
 

@@ -48,16 +48,16 @@ import com.rootly.client.JSON;
 /**
  * NewCatalogEntityPropertyDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewCatalogEntityPropertyDataAttributes {
   public static final String SERIALIZED_NAME_CATALOG_ENTITY_ID = "catalog_entity_id";
   @SerializedName(SERIALIZED_NAME_CATALOG_ENTITY_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String catalogEntityId;
 
   public static final String SERIALIZED_NAME_CATALOG_FIELD_ID = "catalog_field_id";
   @SerializedName(SERIALIZED_NAME_CATALOG_FIELD_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String catalogFieldId;
 
   /**
@@ -114,18 +114,18 @@ public class NewCatalogEntityPropertyDataAttributes {
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private KeyEnum key;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String value;
 
   public NewCatalogEntityPropertyDataAttributes() {
   }
 
-  public NewCatalogEntityPropertyDataAttributes catalogEntityId(@javax.annotation.Nullable String catalogEntityId) {
+  public NewCatalogEntityPropertyDataAttributes catalogEntityId(@jakarta.annotation.Nullable String catalogEntityId) {
     this.catalogEntityId = catalogEntityId;
     return this;
   }
@@ -134,17 +134,17 @@ public class NewCatalogEntityPropertyDataAttributes {
    * Get catalogEntityId
    * @return catalogEntityId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCatalogEntityId() {
     return catalogEntityId;
   }
 
-  public void setCatalogEntityId(@javax.annotation.Nullable String catalogEntityId) {
+  public void setCatalogEntityId(@jakarta.annotation.Nullable String catalogEntityId) {
     this.catalogEntityId = catalogEntityId;
   }
 
 
-  public NewCatalogEntityPropertyDataAttributes catalogFieldId(@javax.annotation.Nonnull String catalogFieldId) {
+  public NewCatalogEntityPropertyDataAttributes catalogFieldId(@jakarta.annotation.Nonnull String catalogFieldId) {
     this.catalogFieldId = catalogFieldId;
     return this;
   }
@@ -153,17 +153,17 @@ public class NewCatalogEntityPropertyDataAttributes {
    * Get catalogFieldId
    * @return catalogFieldId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCatalogFieldId() {
     return catalogFieldId;
   }
 
-  public void setCatalogFieldId(@javax.annotation.Nonnull String catalogFieldId) {
+  public void setCatalogFieldId(@jakarta.annotation.Nonnull String catalogFieldId) {
     this.catalogFieldId = catalogFieldId;
   }
 
 
-  public NewCatalogEntityPropertyDataAttributes key(@javax.annotation.Nonnull KeyEnum key) {
+  public NewCatalogEntityPropertyDataAttributes key(@jakarta.annotation.Nonnull KeyEnum key) {
     this.key = key;
     return this;
   }
@@ -172,17 +172,17 @@ public class NewCatalogEntityPropertyDataAttributes {
    * Get key
    * @return key
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public KeyEnum getKey() {
     return key;
   }
 
-  public void setKey(@javax.annotation.Nonnull KeyEnum key) {
+  public void setKey(@jakarta.annotation.Nonnull KeyEnum key) {
     this.key = key;
   }
 
 
-  public NewCatalogEntityPropertyDataAttributes value(@javax.annotation.Nonnull String value) {
+  public NewCatalogEntityPropertyDataAttributes value(@jakarta.annotation.Nonnull String value) {
     this.value = value;
     return this;
   }
@@ -191,12 +191,12 @@ public class NewCatalogEntityPropertyDataAttributes {
    * Get value
    * @return value
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getValue() {
     return value;
   }
 
-  public void setValue(@javax.annotation.Nonnull String value) {
+  public void setValue(@jakarta.annotation.Nonnull String value) {
     this.value = value;
   }
 

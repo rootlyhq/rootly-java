@@ -49,27 +49,27 @@ import com.rootly.client.JSON;
 /**
  * NewAlertsSourceDataAttributesAlertTemplateAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewAlertsSourceDataAttributesAlertTemplateAttributes {
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String title;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_EXTERNAL_URL = "external_url";
   @SerializedName(SERIALIZED_NAME_EXTERNAL_URL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String externalUrl;
 
   public NewAlertsSourceDataAttributesAlertTemplateAttributes() {
   }
 
-  public NewAlertsSourceDataAttributesAlertTemplateAttributes title(@javax.annotation.Nullable String title) {
+  public NewAlertsSourceDataAttributesAlertTemplateAttributes title(@jakarta.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
@@ -78,17 +78,17 @@ public class NewAlertsSourceDataAttributesAlertTemplateAttributes {
    * The alert title.
    * @return title
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nullable String title) {
+  public void setTitle(@jakarta.annotation.Nullable String title) {
     this.title = title;
   }
 
 
-  public NewAlertsSourceDataAttributesAlertTemplateAttributes description(@javax.annotation.Nullable String description) {
+  public NewAlertsSourceDataAttributesAlertTemplateAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -97,17 +97,17 @@ public class NewAlertsSourceDataAttributesAlertTemplateAttributes {
    * The alert description.
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public NewAlertsSourceDataAttributesAlertTemplateAttributes externalUrl(@javax.annotation.Nullable String externalUrl) {
+  public NewAlertsSourceDataAttributesAlertTemplateAttributes externalUrl(@jakarta.annotation.Nullable String externalUrl) {
     this.externalUrl = externalUrl;
     return this;
   }
@@ -116,12 +116,12 @@ public class NewAlertsSourceDataAttributesAlertTemplateAttributes {
    * The alert URL.
    * @return externalUrl
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getExternalUrl() {
     return externalUrl;
   }
 
-  public void setExternalUrl(@javax.annotation.Nullable String externalUrl) {
+  public void setExternalUrl(@jakarta.annotation.Nullable String externalUrl) {
     this.externalUrl = externalUrl;
   }
 

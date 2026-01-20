@@ -51,27 +51,27 @@ import com.rootly.client.JSON;
 /**
  * V1EdgeConnectorsEdgeConnectorIdActionsPostRequestActionMetadata
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class V1EdgeConnectorsEdgeConnectorIdActionsPostRequestActionMetadata {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_TIMEOUT = "timeout";
   @SerializedName(SERIALIZED_NAME_TIMEOUT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer timeout;
 
   public static final String SERIALIZED_NAME_PARAMETERS = "parameters";
   @SerializedName(SERIALIZED_NAME_PARAMETERS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<V1EdgeConnectorsEdgeConnectorIdActionsPostRequestActionMetadataParametersInner> parameters = new ArrayList<>();
 
   public V1EdgeConnectorsEdgeConnectorIdActionsPostRequestActionMetadata() {
   }
 
-  public V1EdgeConnectorsEdgeConnectorIdActionsPostRequestActionMetadata description(@javax.annotation.Nullable String description) {
+  public V1EdgeConnectorsEdgeConnectorIdActionsPostRequestActionMetadata description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -80,17 +80,17 @@ public class V1EdgeConnectorsEdgeConnectorIdActionsPostRequestActionMetadata {
    * Get description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public V1EdgeConnectorsEdgeConnectorIdActionsPostRequestActionMetadata timeout(@javax.annotation.Nullable Integer timeout) {
+  public V1EdgeConnectorsEdgeConnectorIdActionsPostRequestActionMetadata timeout(@jakarta.annotation.Nullable Integer timeout) {
     this.timeout = timeout;
     return this;
   }
@@ -99,17 +99,17 @@ public class V1EdgeConnectorsEdgeConnectorIdActionsPostRequestActionMetadata {
    * Get timeout
    * @return timeout
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getTimeout() {
     return timeout;
   }
 
-  public void setTimeout(@javax.annotation.Nullable Integer timeout) {
+  public void setTimeout(@jakarta.annotation.Nullable Integer timeout) {
     this.timeout = timeout;
   }
 
 
-  public V1EdgeConnectorsEdgeConnectorIdActionsPostRequestActionMetadata parameters(@javax.annotation.Nullable List<V1EdgeConnectorsEdgeConnectorIdActionsPostRequestActionMetadataParametersInner> parameters) {
+  public V1EdgeConnectorsEdgeConnectorIdActionsPostRequestActionMetadata parameters(@jakarta.annotation.Nullable List<V1EdgeConnectorsEdgeConnectorIdActionsPostRequestActionMetadataParametersInner> parameters) {
     this.parameters = parameters;
     return this;
   }
@@ -126,12 +126,12 @@ public class V1EdgeConnectorsEdgeConnectorIdActionsPostRequestActionMetadata {
    * Get parameters
    * @return parameters
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<V1EdgeConnectorsEdgeConnectorIdActionsPostRequestActionMetadataParametersInner> getParameters() {
     return parameters;
   }
 
-  public void setParameters(@javax.annotation.Nullable List<V1EdgeConnectorsEdgeConnectorIdActionsPostRequestActionMetadataParametersInner> parameters) {
+  public void setParameters(@jakarta.annotation.Nullable List<V1EdgeConnectorsEdgeConnectorIdActionsPostRequestActionMetadataParametersInner> parameters) {
     this.parameters = parameters;
   }
 

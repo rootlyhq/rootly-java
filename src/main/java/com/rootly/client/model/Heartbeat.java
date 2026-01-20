@@ -49,36 +49,36 @@ import com.rootly.client.JSON;
 /**
  * Heartbeat
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Heartbeat {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_ALERT_SUMMARY = "alert_summary";
   @SerializedName(SERIALIZED_NAME_ALERT_SUMMARY)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String alertSummary;
 
   public static final String SERIALIZED_NAME_ALERT_DESCRIPTION = "alert_description";
   @SerializedName(SERIALIZED_NAME_ALERT_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String alertDescription;
 
   public static final String SERIALIZED_NAME_ALERT_URGENCY_ID = "alert_urgency_id";
   @SerializedName(SERIALIZED_NAME_ALERT_URGENCY_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String alertUrgencyId;
 
   public static final String SERIALIZED_NAME_INTERVAL = "interval";
   @SerializedName(SERIALIZED_NAME_INTERVAL)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Integer interval;
 
   /**
@@ -137,12 +137,12 @@ public class Heartbeat {
 
   public static final String SERIALIZED_NAME_INTERVAL_UNIT = "interval_unit";
   @SerializedName(SERIALIZED_NAME_INTERVAL_UNIT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private IntervalUnitEnum intervalUnit;
 
   public static final String SERIALIZED_NAME_NOTIFICATION_TARGET_ID = "notification_target_id";
   @SerializedName(SERIALIZED_NAME_NOTIFICATION_TARGET_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String notificationTargetId;
 
   /**
@@ -203,12 +203,12 @@ public class Heartbeat {
 
   public static final String SERIALIZED_NAME_NOTIFICATION_TARGET_TYPE = "notification_target_type";
   @SerializedName(SERIALIZED_NAME_NOTIFICATION_TARGET_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private NotificationTargetTypeEnum notificationTargetType;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Boolean enabled;
 
   /**
@@ -267,48 +267,48 @@ public class Heartbeat {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private StatusEnum status;
 
   public static final String SERIALIZED_NAME_PING_URL = "ping_url";
   @SerializedName(SERIALIZED_NAME_PING_URL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String pingUrl;
 
   public static final String SERIALIZED_NAME_SECRET = "secret";
   @SerializedName(SERIALIZED_NAME_SECRET)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String secret;
 
   public static final String SERIALIZED_NAME_EMAIL_ADDRESS = "email_address";
   @SerializedName(SERIALIZED_NAME_EMAIL_ADDRESS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String emailAddress;
 
   public static final String SERIALIZED_NAME_LAST_PINGED_AT = "last_pinged_at";
   @SerializedName(SERIALIZED_NAME_LAST_PINGED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String lastPingedAt;
 
   public static final String SERIALIZED_NAME_EXPIRES_AT = "expires_at";
   @SerializedName(SERIALIZED_NAME_EXPIRES_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String expiresAt;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public Heartbeat() {
   }
 
-  public Heartbeat name(@javax.annotation.Nonnull String name) {
+  public Heartbeat name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -317,17 +317,17 @@ public class Heartbeat {
    * The name of the heartbeat
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public Heartbeat description(@javax.annotation.Nullable String description) {
+  public Heartbeat description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -336,17 +336,17 @@ public class Heartbeat {
    * The description of the heartbeat
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public Heartbeat alertSummary(@javax.annotation.Nonnull String alertSummary) {
+  public Heartbeat alertSummary(@jakarta.annotation.Nonnull String alertSummary) {
     this.alertSummary = alertSummary;
     return this;
   }
@@ -355,17 +355,17 @@ public class Heartbeat {
    * Summary of alerts triggered when heartbeat expires.
    * @return alertSummary
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getAlertSummary() {
     return alertSummary;
   }
 
-  public void setAlertSummary(@javax.annotation.Nonnull String alertSummary) {
+  public void setAlertSummary(@jakarta.annotation.Nonnull String alertSummary) {
     this.alertSummary = alertSummary;
   }
 
 
-  public Heartbeat alertDescription(@javax.annotation.Nullable String alertDescription) {
+  public Heartbeat alertDescription(@jakarta.annotation.Nullable String alertDescription) {
     this.alertDescription = alertDescription;
     return this;
   }
@@ -374,17 +374,17 @@ public class Heartbeat {
    * Description of alerts triggered when heartbeat expires.
    * @return alertDescription
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getAlertDescription() {
     return alertDescription;
   }
 
-  public void setAlertDescription(@javax.annotation.Nullable String alertDescription) {
+  public void setAlertDescription(@jakarta.annotation.Nullable String alertDescription) {
     this.alertDescription = alertDescription;
   }
 
 
-  public Heartbeat alertUrgencyId(@javax.annotation.Nullable String alertUrgencyId) {
+  public Heartbeat alertUrgencyId(@jakarta.annotation.Nullable String alertUrgencyId) {
     this.alertUrgencyId = alertUrgencyId;
     return this;
   }
@@ -393,17 +393,17 @@ public class Heartbeat {
    * Urgency of alerts triggered when heartbeat expires.
    * @return alertUrgencyId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getAlertUrgencyId() {
     return alertUrgencyId;
   }
 
-  public void setAlertUrgencyId(@javax.annotation.Nullable String alertUrgencyId) {
+  public void setAlertUrgencyId(@jakarta.annotation.Nullable String alertUrgencyId) {
     this.alertUrgencyId = alertUrgencyId;
   }
 
 
-  public Heartbeat interval(@javax.annotation.Nonnull Integer interval) {
+  public Heartbeat interval(@jakarta.annotation.Nonnull Integer interval) {
     this.interval = interval;
     return this;
   }
@@ -412,17 +412,17 @@ public class Heartbeat {
    * Get interval
    * @return interval
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Integer getInterval() {
     return interval;
   }
 
-  public void setInterval(@javax.annotation.Nonnull Integer interval) {
+  public void setInterval(@jakarta.annotation.Nonnull Integer interval) {
     this.interval = interval;
   }
 
 
-  public Heartbeat intervalUnit(@javax.annotation.Nonnull IntervalUnitEnum intervalUnit) {
+  public Heartbeat intervalUnit(@jakarta.annotation.Nonnull IntervalUnitEnum intervalUnit) {
     this.intervalUnit = intervalUnit;
     return this;
   }
@@ -431,17 +431,17 @@ public class Heartbeat {
    * Get intervalUnit
    * @return intervalUnit
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public IntervalUnitEnum getIntervalUnit() {
     return intervalUnit;
   }
 
-  public void setIntervalUnit(@javax.annotation.Nonnull IntervalUnitEnum intervalUnit) {
+  public void setIntervalUnit(@jakarta.annotation.Nonnull IntervalUnitEnum intervalUnit) {
     this.intervalUnit = intervalUnit;
   }
 
 
-  public Heartbeat notificationTargetId(@javax.annotation.Nonnull String notificationTargetId) {
+  public Heartbeat notificationTargetId(@jakarta.annotation.Nonnull String notificationTargetId) {
     this.notificationTargetId = notificationTargetId;
     return this;
   }
@@ -450,17 +450,17 @@ public class Heartbeat {
    * Get notificationTargetId
    * @return notificationTargetId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getNotificationTargetId() {
     return notificationTargetId;
   }
 
-  public void setNotificationTargetId(@javax.annotation.Nonnull String notificationTargetId) {
+  public void setNotificationTargetId(@jakarta.annotation.Nonnull String notificationTargetId) {
     this.notificationTargetId = notificationTargetId;
   }
 
 
-  public Heartbeat notificationTargetType(@javax.annotation.Nonnull NotificationTargetTypeEnum notificationTargetType) {
+  public Heartbeat notificationTargetType(@jakarta.annotation.Nonnull NotificationTargetTypeEnum notificationTargetType) {
     this.notificationTargetType = notificationTargetType;
     return this;
   }
@@ -469,17 +469,17 @@ public class Heartbeat {
    * Get notificationTargetType
    * @return notificationTargetType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public NotificationTargetTypeEnum getNotificationTargetType() {
     return notificationTargetType;
   }
 
-  public void setNotificationTargetType(@javax.annotation.Nonnull NotificationTargetTypeEnum notificationTargetType) {
+  public void setNotificationTargetType(@jakarta.annotation.Nonnull NotificationTargetTypeEnum notificationTargetType) {
     this.notificationTargetType = notificationTargetType;
   }
 
 
-  public Heartbeat enabled(@javax.annotation.Nonnull Boolean enabled) {
+  public Heartbeat enabled(@jakarta.annotation.Nonnull Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -488,17 +488,17 @@ public class Heartbeat {
    * Whether to trigger alerts when heartbeat is expired.
    * @return enabled
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Boolean getEnabled() {
     return enabled;
   }
 
-  public void setEnabled(@javax.annotation.Nonnull Boolean enabled) {
+  public void setEnabled(@jakarta.annotation.Nonnull Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public Heartbeat status(@javax.annotation.Nonnull StatusEnum status) {
+  public Heartbeat status(@jakarta.annotation.Nonnull StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -507,17 +507,17 @@ public class Heartbeat {
    * Get status
    * @return status
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nonnull StatusEnum status) {
+  public void setStatus(@jakarta.annotation.Nonnull StatusEnum status) {
     this.status = status;
   }
 
 
-  public Heartbeat pingUrl(@javax.annotation.Nullable String pingUrl) {
+  public Heartbeat pingUrl(@jakarta.annotation.Nullable String pingUrl) {
     this.pingUrl = pingUrl;
     return this;
   }
@@ -526,17 +526,17 @@ public class Heartbeat {
    * URL to receive heartbeat pings.
    * @return pingUrl
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPingUrl() {
     return pingUrl;
   }
 
-  public void setPingUrl(@javax.annotation.Nullable String pingUrl) {
+  public void setPingUrl(@jakarta.annotation.Nullable String pingUrl) {
     this.pingUrl = pingUrl;
   }
 
 
-  public Heartbeat secret(@javax.annotation.Nullable String secret) {
+  public Heartbeat secret(@jakarta.annotation.Nullable String secret) {
     this.secret = secret;
     return this;
   }
@@ -545,17 +545,17 @@ public class Heartbeat {
    * Secret used as bearer token when pinging heartbeat.
    * @return secret
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSecret() {
     return secret;
   }
 
-  public void setSecret(@javax.annotation.Nullable String secret) {
+  public void setSecret(@jakarta.annotation.Nullable String secret) {
     this.secret = secret;
   }
 
 
-  public Heartbeat emailAddress(@javax.annotation.Nonnull String emailAddress) {
+  public Heartbeat emailAddress(@jakarta.annotation.Nonnull String emailAddress) {
     this.emailAddress = emailAddress;
     return this;
   }
@@ -564,17 +564,17 @@ public class Heartbeat {
    * Email address to receive heartbeat pings.
    * @return emailAddress
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getEmailAddress() {
     return emailAddress;
   }
 
-  public void setEmailAddress(@javax.annotation.Nonnull String emailAddress) {
+  public void setEmailAddress(@jakarta.annotation.Nonnull String emailAddress) {
     this.emailAddress = emailAddress;
   }
 
 
-  public Heartbeat lastPingedAt(@javax.annotation.Nullable String lastPingedAt) {
+  public Heartbeat lastPingedAt(@jakarta.annotation.Nullable String lastPingedAt) {
     this.lastPingedAt = lastPingedAt;
     return this;
   }
@@ -583,17 +583,17 @@ public class Heartbeat {
    * When the heartbeat was last pinged.
    * @return lastPingedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getLastPingedAt() {
     return lastPingedAt;
   }
 
-  public void setLastPingedAt(@javax.annotation.Nullable String lastPingedAt) {
+  public void setLastPingedAt(@jakarta.annotation.Nullable String lastPingedAt) {
     this.lastPingedAt = lastPingedAt;
   }
 
 
-  public Heartbeat expiresAt(@javax.annotation.Nullable String expiresAt) {
+  public Heartbeat expiresAt(@jakarta.annotation.Nullable String expiresAt) {
     this.expiresAt = expiresAt;
     return this;
   }
@@ -602,17 +602,17 @@ public class Heartbeat {
    * When heartbeat expires
    * @return expiresAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getExpiresAt() {
     return expiresAt;
   }
 
-  public void setExpiresAt(@javax.annotation.Nullable String expiresAt) {
+  public void setExpiresAt(@jakarta.annotation.Nullable String expiresAt) {
     this.expiresAt = expiresAt;
   }
 
 
-  public Heartbeat createdAt(@javax.annotation.Nonnull String createdAt) {
+  public Heartbeat createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -621,17 +621,17 @@ public class Heartbeat {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public Heartbeat updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public Heartbeat updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -640,12 +640,12 @@ public class Heartbeat {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

@@ -93,7 +93,7 @@ public class CatalogFieldsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createCatalogFieldCall(@javax.annotation.Nonnull String catalogId, @javax.annotation.Nonnull NewCatalogField newCatalogField, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createCatalogFieldCall(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nonnull NewCatalogField newCatalogField, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -140,7 +140,7 @@ public class CatalogFieldsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createCatalogFieldValidateBeforeCall(@javax.annotation.Nonnull String catalogId, @javax.annotation.Nonnull NewCatalogField newCatalogField, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createCatalogFieldValidateBeforeCall(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nonnull NewCatalogField newCatalogField, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'catalogId' is set
         if (catalogId == null) {
             throw new ApiException("Missing the required parameter 'catalogId' when calling createCatalogField(Async)");
@@ -171,7 +171,7 @@ public class CatalogFieldsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public CatalogFieldResponse createCatalogField(@javax.annotation.Nonnull String catalogId, @javax.annotation.Nonnull NewCatalogField newCatalogField) throws ApiException {
+    public CatalogFieldResponse createCatalogField(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nonnull NewCatalogField newCatalogField) throws ApiException {
         ApiResponse<CatalogFieldResponse> localVarResp = createCatalogFieldWithHttpInfo(catalogId, newCatalogField);
         return localVarResp.getData();
     }
@@ -192,7 +192,7 @@ public class CatalogFieldsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CatalogFieldResponse> createCatalogFieldWithHttpInfo(@javax.annotation.Nonnull String catalogId, @javax.annotation.Nonnull NewCatalogField newCatalogField) throws ApiException {
+    public ApiResponse<CatalogFieldResponse> createCatalogFieldWithHttpInfo(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nonnull NewCatalogField newCatalogField) throws ApiException {
         okhttp3.Call localVarCall = createCatalogFieldValidateBeforeCall(catalogId, newCatalogField, null);
         Type localVarReturnType = new TypeToken<CatalogFieldResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -215,7 +215,7 @@ public class CatalogFieldsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createCatalogFieldAsync(@javax.annotation.Nonnull String catalogId, @javax.annotation.Nonnull NewCatalogField newCatalogField, final ApiCallback<CatalogFieldResponse> _callback) throws ApiException {
+    public okhttp3.Call createCatalogFieldAsync(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nonnull NewCatalogField newCatalogField, final ApiCallback<CatalogFieldResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createCatalogFieldValidateBeforeCall(catalogId, newCatalogField, _callback);
         Type localVarReturnType = new TypeToken<CatalogFieldResponse>(){}.getType();
@@ -236,7 +236,7 @@ public class CatalogFieldsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteCatalogFieldCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteCatalogFieldCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -282,7 +282,7 @@ public class CatalogFieldsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteCatalogFieldValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteCatalogFieldValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteCatalogField(Async)");
@@ -306,7 +306,7 @@ public class CatalogFieldsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public CatalogFieldResponse deleteCatalogField(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public CatalogFieldResponse deleteCatalogField(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<CatalogFieldResponse> localVarResp = deleteCatalogFieldWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -325,7 +325,7 @@ public class CatalogFieldsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CatalogFieldResponse> deleteCatalogFieldWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public ApiResponse<CatalogFieldResponse> deleteCatalogFieldWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = deleteCatalogFieldValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<CatalogFieldResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -346,7 +346,7 @@ public class CatalogFieldsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteCatalogFieldAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<CatalogFieldResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteCatalogFieldAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<CatalogFieldResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteCatalogFieldValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<CatalogFieldResponse>(){}.getType();
@@ -368,7 +368,7 @@ public class CatalogFieldsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCatalogFieldCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCatalogFieldCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -418,7 +418,7 @@ public class CatalogFieldsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCatalogFieldValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCatalogFieldValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getCatalogField(Async)");
@@ -443,7 +443,7 @@ public class CatalogFieldsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public CatalogFieldResponse getCatalogField(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nullable String include) throws ApiException {
+    public CatalogFieldResponse getCatalogField(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nullable String include) throws ApiException {
         ApiResponse<CatalogFieldResponse> localVarResp = getCatalogFieldWithHttpInfo(id, include);
         return localVarResp.getData();
     }
@@ -463,7 +463,7 @@ public class CatalogFieldsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CatalogFieldResponse> getCatalogFieldWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nullable String include) throws ApiException {
+    public ApiResponse<CatalogFieldResponse> getCatalogFieldWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nullable String include) throws ApiException {
         okhttp3.Call localVarCall = getCatalogFieldValidateBeforeCall(id, include, null);
         Type localVarReturnType = new TypeToken<CatalogFieldResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -485,7 +485,7 @@ public class CatalogFieldsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCatalogFieldAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nullable String include, final ApiCallback<CatalogFieldResponse> _callback) throws ApiException {
+    public okhttp3.Call getCatalogFieldAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nullable String include, final ApiCallback<CatalogFieldResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCatalogFieldValidateBeforeCall(id, include, _callback);
         Type localVarReturnType = new TypeToken<CatalogFieldResponse>(){}.getType();
@@ -516,7 +516,7 @@ public class CatalogFieldsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listCatalogFieldsCall(@javax.annotation.Nonnull String catalogId, @javax.annotation.Nullable String include, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listCatalogFieldsCall(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -606,7 +606,7 @@ public class CatalogFieldsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listCatalogFieldsValidateBeforeCall(@javax.annotation.Nonnull String catalogId, @javax.annotation.Nullable String include, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listCatalogFieldsValidateBeforeCall(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'catalogId' is set
         if (catalogId == null) {
             throw new ApiException("Missing the required parameter 'catalogId' when calling listCatalogFields(Async)");
@@ -640,7 +640,7 @@ public class CatalogFieldsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public CatalogFieldList listCatalogFields(@javax.annotation.Nonnull String catalogId, @javax.annotation.Nullable String include, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte) throws ApiException {
+    public CatalogFieldList listCatalogFields(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte) throws ApiException {
         ApiResponse<CatalogFieldList> localVarResp = listCatalogFieldsWithHttpInfo(catalogId, include, sort, pageNumber, pageSize, filterSlug, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
         return localVarResp.getData();
     }
@@ -669,7 +669,7 @@ public class CatalogFieldsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CatalogFieldList> listCatalogFieldsWithHttpInfo(@javax.annotation.Nonnull String catalogId, @javax.annotation.Nullable String include, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte) throws ApiException {
+    public ApiResponse<CatalogFieldList> listCatalogFieldsWithHttpInfo(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte) throws ApiException {
         okhttp3.Call localVarCall = listCatalogFieldsValidateBeforeCall(catalogId, include, sort, pageNumber, pageSize, filterSlug, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, null);
         Type localVarReturnType = new TypeToken<CatalogFieldList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -700,7 +700,7 @@ public class CatalogFieldsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listCatalogFieldsAsync(@javax.annotation.Nonnull String catalogId, @javax.annotation.Nullable String include, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback<CatalogFieldList> _callback) throws ApiException {
+    public okhttp3.Call listCatalogFieldsAsync(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback<CatalogFieldList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listCatalogFieldsValidateBeforeCall(catalogId, include, sort, pageNumber, pageSize, filterSlug, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, _callback);
         Type localVarReturnType = new TypeToken<CatalogFieldList>(){}.getType();
@@ -722,7 +722,7 @@ public class CatalogFieldsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateCatalogFieldCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateCatalogField updateCatalogField, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateCatalogFieldCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateCatalogField updateCatalogField, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -769,7 +769,7 @@ public class CatalogFieldsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateCatalogFieldValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateCatalogField updateCatalogField, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateCatalogFieldValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateCatalogField updateCatalogField, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateCatalogField(Async)");
@@ -799,7 +799,7 @@ public class CatalogFieldsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public CatalogFieldResponse updateCatalogField(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateCatalogField updateCatalogField) throws ApiException {
+    public CatalogFieldResponse updateCatalogField(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateCatalogField updateCatalogField) throws ApiException {
         ApiResponse<CatalogFieldResponse> localVarResp = updateCatalogFieldWithHttpInfo(id, updateCatalogField);
         return localVarResp.getData();
     }
@@ -819,7 +819,7 @@ public class CatalogFieldsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CatalogFieldResponse> updateCatalogFieldWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateCatalogField updateCatalogField) throws ApiException {
+    public ApiResponse<CatalogFieldResponse> updateCatalogFieldWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateCatalogField updateCatalogField) throws ApiException {
         okhttp3.Call localVarCall = updateCatalogFieldValidateBeforeCall(id, updateCatalogField, null);
         Type localVarReturnType = new TypeToken<CatalogFieldResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -841,7 +841,7 @@ public class CatalogFieldsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateCatalogFieldAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateCatalogField updateCatalogField, final ApiCallback<CatalogFieldResponse> _callback) throws ApiException {
+    public okhttp3.Call updateCatalogFieldAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateCatalogField updateCatalogField, final ApiCallback<CatalogFieldResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateCatalogFieldValidateBeforeCall(id, updateCatalogField, _callback);
         Type localVarReturnType = new TypeToken<CatalogFieldResponse>(){}.getType();

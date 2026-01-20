@@ -50,16 +50,16 @@ import com.rootly.client.JSON;
 /**
  * UpdateOnCallRoleDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateOnCallRoleDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String slug;
 
   /**
@@ -122,7 +122,7 @@ public class UpdateOnCallRoleDataAttributes {
 
   public static final String SERIALIZED_NAME_SYSTEM_ROLE = "system_role";
   @SerializedName(SERIALIZED_NAME_SYSTEM_ROLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<SystemRoleEnum> systemRole = new ArrayList<>();
 
   /**
@@ -183,7 +183,7 @@ public class UpdateOnCallRoleDataAttributes {
 
   public static final String SERIALIZED_NAME_ALERT_SOURCES_PERMISSIONS = "alert_sources_permissions";
   @SerializedName(SERIALIZED_NAME_ALERT_SOURCES_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AlertSourcesPermissionsEnum> alertSourcesPermissions = new ArrayList<>();
 
   /**
@@ -244,7 +244,7 @@ public class UpdateOnCallRoleDataAttributes {
 
   public static final String SERIALIZED_NAME_ALERT_URGENCY_PERMISSIONS = "alert_urgency_permissions";
   @SerializedName(SERIALIZED_NAME_ALERT_URGENCY_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AlertUrgencyPermissionsEnum> alertUrgencyPermissions = new ArrayList<>();
 
   /**
@@ -305,7 +305,7 @@ public class UpdateOnCallRoleDataAttributes {
 
   public static final String SERIALIZED_NAME_ALERT_FIELDS_PERMISSIONS = "alert_fields_permissions";
   @SerializedName(SERIALIZED_NAME_ALERT_FIELDS_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AlertFieldsPermissionsEnum> alertFieldsPermissions = new ArrayList<>();
 
   /**
@@ -366,7 +366,7 @@ public class UpdateOnCallRoleDataAttributes {
 
   public static final String SERIALIZED_NAME_ALERT_GROUPS_PERMISSIONS = "alert_groups_permissions";
   @SerializedName(SERIALIZED_NAME_ALERT_GROUPS_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AlertGroupsPermissionsEnum> alertGroupsPermissions = new ArrayList<>();
 
   /**
@@ -427,7 +427,7 @@ public class UpdateOnCallRoleDataAttributes {
 
   public static final String SERIALIZED_NAME_ALERT_ROUTING_RULES_PERMISSIONS = "alert_routing_rules_permissions";
   @SerializedName(SERIALIZED_NAME_ALERT_ROUTING_RULES_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AlertRoutingRulesPermissionsEnum> alertRoutingRulesPermissions = new ArrayList<>();
 
   /**
@@ -482,7 +482,7 @@ public class UpdateOnCallRoleDataAttributes {
 
   public static final String SERIALIZED_NAME_ON_CALL_READINESS_REPORT_PERMISSIONS = "on_call_readiness_report_permissions";
   @SerializedName(SERIALIZED_NAME_ON_CALL_READINESS_REPORT_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<OnCallReadinessReportPermissionsEnum> onCallReadinessReportPermissions = new ArrayList<>();
 
   /**
@@ -543,7 +543,7 @@ public class UpdateOnCallRoleDataAttributes {
 
   public static final String SERIALIZED_NAME_ON_CALL_ROLES_PERMISSIONS = "on_call_roles_permissions";
   @SerializedName(SERIALIZED_NAME_ON_CALL_ROLES_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<OnCallRolesPermissionsEnum> onCallRolesPermissions = new ArrayList<>();
 
   /**
@@ -602,7 +602,7 @@ public class UpdateOnCallRoleDataAttributes {
 
   public static final String SERIALIZED_NAME_ALERTS_PERMISSIONS = "alerts_permissions";
   @SerializedName(SERIALIZED_NAME_ALERTS_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AlertsPermissionsEnum> alertsPermissions = new ArrayList<>();
 
   /**
@@ -663,7 +663,7 @@ public class UpdateOnCallRoleDataAttributes {
 
   public static final String SERIALIZED_NAME_API_KEYS_PERMISSIONS = "api_keys_permissions";
   @SerializedName(SERIALIZED_NAME_API_KEYS_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<ApiKeysPermissionsEnum> apiKeysPermissions = new ArrayList<>();
 
   /**
@@ -724,7 +724,7 @@ public class UpdateOnCallRoleDataAttributes {
 
   public static final String SERIALIZED_NAME_AUDITS_PERMISSIONS = "audits_permissions";
   @SerializedName(SERIALIZED_NAME_AUDITS_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AuditsPermissionsEnum> auditsPermissions = new ArrayList<>();
 
   /**
@@ -779,7 +779,7 @@ public class UpdateOnCallRoleDataAttributes {
 
   public static final String SERIALIZED_NAME_CONTACTS_PERMISSIONS = "contacts_permissions";
   @SerializedName(SERIALIZED_NAME_CONTACTS_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<ContactsPermissionsEnum> contactsPermissions = new ArrayList<>();
 
   /**
@@ -840,7 +840,7 @@ public class UpdateOnCallRoleDataAttributes {
 
   public static final String SERIALIZED_NAME_ESCALATION_POLICIES_PERMISSIONS = "escalation_policies_permissions";
   @SerializedName(SERIALIZED_NAME_ESCALATION_POLICIES_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<EscalationPoliciesPermissionsEnum> escalationPoliciesPermissions = new ArrayList<>();
 
   /**
@@ -901,7 +901,7 @@ public class UpdateOnCallRoleDataAttributes {
 
   public static final String SERIALIZED_NAME_GROUPS_PERMISSIONS = "groups_permissions";
   @SerializedName(SERIALIZED_NAME_GROUPS_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<GroupsPermissionsEnum> groupsPermissions = new ArrayList<>();
 
   /**
@@ -962,7 +962,7 @@ public class UpdateOnCallRoleDataAttributes {
 
   public static final String SERIALIZED_NAME_HEARTBEATS_PERMISSIONS = "heartbeats_permissions";
   @SerializedName(SERIALIZED_NAME_HEARTBEATS_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<HeartbeatsPermissionsEnum> heartbeatsPermissions = new ArrayList<>();
 
   /**
@@ -1023,7 +1023,7 @@ public class UpdateOnCallRoleDataAttributes {
 
   public static final String SERIALIZED_NAME_INTEGRATIONS_PERMISSIONS = "integrations_permissions";
   @SerializedName(SERIALIZED_NAME_INTEGRATIONS_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<IntegrationsPermissionsEnum> integrationsPermissions = new ArrayList<>();
 
   /**
@@ -1084,7 +1084,7 @@ public class UpdateOnCallRoleDataAttributes {
 
   public static final String SERIALIZED_NAME_INVITATIONS_PERMISSIONS = "invitations_permissions";
   @SerializedName(SERIALIZED_NAME_INVITATIONS_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<InvitationsPermissionsEnum> invitationsPermissions = new ArrayList<>();
 
   /**
@@ -1145,7 +1145,7 @@ public class UpdateOnCallRoleDataAttributes {
 
   public static final String SERIALIZED_NAME_LIVE_CALL_ROUTING_PERMISSIONS = "live_call_routing_permissions";
   @SerializedName(SERIALIZED_NAME_LIVE_CALL_ROUTING_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<LiveCallRoutingPermissionsEnum> liveCallRoutingPermissions = new ArrayList<>();
 
   /**
@@ -1202,7 +1202,7 @@ public class UpdateOnCallRoleDataAttributes {
 
   public static final String SERIALIZED_NAME_SCHEDULE_OVERRIDE_PERMISSIONS = "schedule_override_permissions";
   @SerializedName(SERIALIZED_NAME_SCHEDULE_OVERRIDE_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<ScheduleOverridePermissionsEnum> scheduleOverridePermissions = new ArrayList<>();
 
   /**
@@ -1263,7 +1263,7 @@ public class UpdateOnCallRoleDataAttributes {
 
   public static final String SERIALIZED_NAME_SCHEDULES_PERMISSIONS = "schedules_permissions";
   @SerializedName(SERIALIZED_NAME_SCHEDULES_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<SchedulesPermissionsEnum> schedulesPermissions = new ArrayList<>();
 
   /**
@@ -1324,7 +1324,7 @@ public class UpdateOnCallRoleDataAttributes {
 
   public static final String SERIALIZED_NAME_SERVICES_PERMISSIONS = "services_permissions";
   @SerializedName(SERIALIZED_NAME_SERVICES_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<ServicesPermissionsEnum> servicesPermissions = new ArrayList<>();
 
   /**
@@ -1385,7 +1385,7 @@ public class UpdateOnCallRoleDataAttributes {
 
   public static final String SERIALIZED_NAME_WEBHOOKS_PERMISSIONS = "webhooks_permissions";
   @SerializedName(SERIALIZED_NAME_WEBHOOKS_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<WebhooksPermissionsEnum> webhooksPermissions = new ArrayList<>();
 
   /**
@@ -1446,13 +1446,13 @@ public class UpdateOnCallRoleDataAttributes {
 
   public static final String SERIALIZED_NAME_WORKFLOWS_PERMISSIONS = "workflows_permissions";
   @SerializedName(SERIALIZED_NAME_WORKFLOWS_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<WorkflowsPermissionsEnum> workflowsPermissions = new ArrayList<>();
 
   public UpdateOnCallRoleDataAttributes() {
   }
 
-  public UpdateOnCallRoleDataAttributes name(@javax.annotation.Nullable String name) {
+  public UpdateOnCallRoleDataAttributes name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -1461,17 +1461,17 @@ public class UpdateOnCallRoleDataAttributes {
    * The role name.
    * @return name
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public UpdateOnCallRoleDataAttributes slug(@javax.annotation.Nullable String slug) {
+  public UpdateOnCallRoleDataAttributes slug(@jakarta.annotation.Nullable String slug) {
     this.slug = slug;
     return this;
   }
@@ -1480,17 +1480,17 @@ public class UpdateOnCallRoleDataAttributes {
    * The role slug.
    * @return slug
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSlug() {
     return slug;
   }
 
-  public void setSlug(@javax.annotation.Nullable String slug) {
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
     this.slug = slug;
   }
 
 
-  public UpdateOnCallRoleDataAttributes systemRole(@javax.annotation.Nullable List<SystemRoleEnum> systemRole) {
+  public UpdateOnCallRoleDataAttributes systemRole(@jakarta.annotation.Nullable List<SystemRoleEnum> systemRole) {
     this.systemRole = systemRole;
     return this;
   }
@@ -1507,17 +1507,17 @@ public class UpdateOnCallRoleDataAttributes {
    * The kind of role (user and custom type roles are only editable)
    * @return systemRole
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<SystemRoleEnum> getSystemRole() {
     return systemRole;
   }
 
-  public void setSystemRole(@javax.annotation.Nullable List<SystemRoleEnum> systemRole) {
+  public void setSystemRole(@jakarta.annotation.Nullable List<SystemRoleEnum> systemRole) {
     this.systemRole = systemRole;
   }
 
 
-  public UpdateOnCallRoleDataAttributes alertSourcesPermissions(@javax.annotation.Nullable List<AlertSourcesPermissionsEnum> alertSourcesPermissions) {
+  public UpdateOnCallRoleDataAttributes alertSourcesPermissions(@jakarta.annotation.Nullable List<AlertSourcesPermissionsEnum> alertSourcesPermissions) {
     this.alertSourcesPermissions = alertSourcesPermissions;
     return this;
   }
@@ -1534,17 +1534,17 @@ public class UpdateOnCallRoleDataAttributes {
    * Get alertSourcesPermissions
    * @return alertSourcesPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AlertSourcesPermissionsEnum> getAlertSourcesPermissions() {
     return alertSourcesPermissions;
   }
 
-  public void setAlertSourcesPermissions(@javax.annotation.Nullable List<AlertSourcesPermissionsEnum> alertSourcesPermissions) {
+  public void setAlertSourcesPermissions(@jakarta.annotation.Nullable List<AlertSourcesPermissionsEnum> alertSourcesPermissions) {
     this.alertSourcesPermissions = alertSourcesPermissions;
   }
 
 
-  public UpdateOnCallRoleDataAttributes alertUrgencyPermissions(@javax.annotation.Nullable List<AlertUrgencyPermissionsEnum> alertUrgencyPermissions) {
+  public UpdateOnCallRoleDataAttributes alertUrgencyPermissions(@jakarta.annotation.Nullable List<AlertUrgencyPermissionsEnum> alertUrgencyPermissions) {
     this.alertUrgencyPermissions = alertUrgencyPermissions;
     return this;
   }
@@ -1561,17 +1561,17 @@ public class UpdateOnCallRoleDataAttributes {
    * Get alertUrgencyPermissions
    * @return alertUrgencyPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AlertUrgencyPermissionsEnum> getAlertUrgencyPermissions() {
     return alertUrgencyPermissions;
   }
 
-  public void setAlertUrgencyPermissions(@javax.annotation.Nullable List<AlertUrgencyPermissionsEnum> alertUrgencyPermissions) {
+  public void setAlertUrgencyPermissions(@jakarta.annotation.Nullable List<AlertUrgencyPermissionsEnum> alertUrgencyPermissions) {
     this.alertUrgencyPermissions = alertUrgencyPermissions;
   }
 
 
-  public UpdateOnCallRoleDataAttributes alertFieldsPermissions(@javax.annotation.Nullable List<AlertFieldsPermissionsEnum> alertFieldsPermissions) {
+  public UpdateOnCallRoleDataAttributes alertFieldsPermissions(@jakarta.annotation.Nullable List<AlertFieldsPermissionsEnum> alertFieldsPermissions) {
     this.alertFieldsPermissions = alertFieldsPermissions;
     return this;
   }
@@ -1588,17 +1588,17 @@ public class UpdateOnCallRoleDataAttributes {
    * Get alertFieldsPermissions
    * @return alertFieldsPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AlertFieldsPermissionsEnum> getAlertFieldsPermissions() {
     return alertFieldsPermissions;
   }
 
-  public void setAlertFieldsPermissions(@javax.annotation.Nullable List<AlertFieldsPermissionsEnum> alertFieldsPermissions) {
+  public void setAlertFieldsPermissions(@jakarta.annotation.Nullable List<AlertFieldsPermissionsEnum> alertFieldsPermissions) {
     this.alertFieldsPermissions = alertFieldsPermissions;
   }
 
 
-  public UpdateOnCallRoleDataAttributes alertGroupsPermissions(@javax.annotation.Nullable List<AlertGroupsPermissionsEnum> alertGroupsPermissions) {
+  public UpdateOnCallRoleDataAttributes alertGroupsPermissions(@jakarta.annotation.Nullable List<AlertGroupsPermissionsEnum> alertGroupsPermissions) {
     this.alertGroupsPermissions = alertGroupsPermissions;
     return this;
   }
@@ -1615,17 +1615,17 @@ public class UpdateOnCallRoleDataAttributes {
    * Get alertGroupsPermissions
    * @return alertGroupsPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AlertGroupsPermissionsEnum> getAlertGroupsPermissions() {
     return alertGroupsPermissions;
   }
 
-  public void setAlertGroupsPermissions(@javax.annotation.Nullable List<AlertGroupsPermissionsEnum> alertGroupsPermissions) {
+  public void setAlertGroupsPermissions(@jakarta.annotation.Nullable List<AlertGroupsPermissionsEnum> alertGroupsPermissions) {
     this.alertGroupsPermissions = alertGroupsPermissions;
   }
 
 
-  public UpdateOnCallRoleDataAttributes alertRoutingRulesPermissions(@javax.annotation.Nullable List<AlertRoutingRulesPermissionsEnum> alertRoutingRulesPermissions) {
+  public UpdateOnCallRoleDataAttributes alertRoutingRulesPermissions(@jakarta.annotation.Nullable List<AlertRoutingRulesPermissionsEnum> alertRoutingRulesPermissions) {
     this.alertRoutingRulesPermissions = alertRoutingRulesPermissions;
     return this;
   }
@@ -1642,17 +1642,17 @@ public class UpdateOnCallRoleDataAttributes {
    * Get alertRoutingRulesPermissions
    * @return alertRoutingRulesPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AlertRoutingRulesPermissionsEnum> getAlertRoutingRulesPermissions() {
     return alertRoutingRulesPermissions;
   }
 
-  public void setAlertRoutingRulesPermissions(@javax.annotation.Nullable List<AlertRoutingRulesPermissionsEnum> alertRoutingRulesPermissions) {
+  public void setAlertRoutingRulesPermissions(@jakarta.annotation.Nullable List<AlertRoutingRulesPermissionsEnum> alertRoutingRulesPermissions) {
     this.alertRoutingRulesPermissions = alertRoutingRulesPermissions;
   }
 
 
-  public UpdateOnCallRoleDataAttributes onCallReadinessReportPermissions(@javax.annotation.Nullable List<OnCallReadinessReportPermissionsEnum> onCallReadinessReportPermissions) {
+  public UpdateOnCallRoleDataAttributes onCallReadinessReportPermissions(@jakarta.annotation.Nullable List<OnCallReadinessReportPermissionsEnum> onCallReadinessReportPermissions) {
     this.onCallReadinessReportPermissions = onCallReadinessReportPermissions;
     return this;
   }
@@ -1669,17 +1669,17 @@ public class UpdateOnCallRoleDataAttributes {
    * Get onCallReadinessReportPermissions
    * @return onCallReadinessReportPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<OnCallReadinessReportPermissionsEnum> getOnCallReadinessReportPermissions() {
     return onCallReadinessReportPermissions;
   }
 
-  public void setOnCallReadinessReportPermissions(@javax.annotation.Nullable List<OnCallReadinessReportPermissionsEnum> onCallReadinessReportPermissions) {
+  public void setOnCallReadinessReportPermissions(@jakarta.annotation.Nullable List<OnCallReadinessReportPermissionsEnum> onCallReadinessReportPermissions) {
     this.onCallReadinessReportPermissions = onCallReadinessReportPermissions;
   }
 
 
-  public UpdateOnCallRoleDataAttributes onCallRolesPermissions(@javax.annotation.Nullable List<OnCallRolesPermissionsEnum> onCallRolesPermissions) {
+  public UpdateOnCallRoleDataAttributes onCallRolesPermissions(@jakarta.annotation.Nullable List<OnCallRolesPermissionsEnum> onCallRolesPermissions) {
     this.onCallRolesPermissions = onCallRolesPermissions;
     return this;
   }
@@ -1696,17 +1696,17 @@ public class UpdateOnCallRoleDataAttributes {
    * Get onCallRolesPermissions
    * @return onCallRolesPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<OnCallRolesPermissionsEnum> getOnCallRolesPermissions() {
     return onCallRolesPermissions;
   }
 
-  public void setOnCallRolesPermissions(@javax.annotation.Nullable List<OnCallRolesPermissionsEnum> onCallRolesPermissions) {
+  public void setOnCallRolesPermissions(@jakarta.annotation.Nullable List<OnCallRolesPermissionsEnum> onCallRolesPermissions) {
     this.onCallRolesPermissions = onCallRolesPermissions;
   }
 
 
-  public UpdateOnCallRoleDataAttributes alertsPermissions(@javax.annotation.Nullable List<AlertsPermissionsEnum> alertsPermissions) {
+  public UpdateOnCallRoleDataAttributes alertsPermissions(@jakarta.annotation.Nullable List<AlertsPermissionsEnum> alertsPermissions) {
     this.alertsPermissions = alertsPermissions;
     return this;
   }
@@ -1723,17 +1723,17 @@ public class UpdateOnCallRoleDataAttributes {
    * Get alertsPermissions
    * @return alertsPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AlertsPermissionsEnum> getAlertsPermissions() {
     return alertsPermissions;
   }
 
-  public void setAlertsPermissions(@javax.annotation.Nullable List<AlertsPermissionsEnum> alertsPermissions) {
+  public void setAlertsPermissions(@jakarta.annotation.Nullable List<AlertsPermissionsEnum> alertsPermissions) {
     this.alertsPermissions = alertsPermissions;
   }
 
 
-  public UpdateOnCallRoleDataAttributes apiKeysPermissions(@javax.annotation.Nullable List<ApiKeysPermissionsEnum> apiKeysPermissions) {
+  public UpdateOnCallRoleDataAttributes apiKeysPermissions(@jakarta.annotation.Nullable List<ApiKeysPermissionsEnum> apiKeysPermissions) {
     this.apiKeysPermissions = apiKeysPermissions;
     return this;
   }
@@ -1750,17 +1750,17 @@ public class UpdateOnCallRoleDataAttributes {
    * Get apiKeysPermissions
    * @return apiKeysPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<ApiKeysPermissionsEnum> getApiKeysPermissions() {
     return apiKeysPermissions;
   }
 
-  public void setApiKeysPermissions(@javax.annotation.Nullable List<ApiKeysPermissionsEnum> apiKeysPermissions) {
+  public void setApiKeysPermissions(@jakarta.annotation.Nullable List<ApiKeysPermissionsEnum> apiKeysPermissions) {
     this.apiKeysPermissions = apiKeysPermissions;
   }
 
 
-  public UpdateOnCallRoleDataAttributes auditsPermissions(@javax.annotation.Nullable List<AuditsPermissionsEnum> auditsPermissions) {
+  public UpdateOnCallRoleDataAttributes auditsPermissions(@jakarta.annotation.Nullable List<AuditsPermissionsEnum> auditsPermissions) {
     this.auditsPermissions = auditsPermissions;
     return this;
   }
@@ -1777,17 +1777,17 @@ public class UpdateOnCallRoleDataAttributes {
    * Get auditsPermissions
    * @return auditsPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AuditsPermissionsEnum> getAuditsPermissions() {
     return auditsPermissions;
   }
 
-  public void setAuditsPermissions(@javax.annotation.Nullable List<AuditsPermissionsEnum> auditsPermissions) {
+  public void setAuditsPermissions(@jakarta.annotation.Nullable List<AuditsPermissionsEnum> auditsPermissions) {
     this.auditsPermissions = auditsPermissions;
   }
 
 
-  public UpdateOnCallRoleDataAttributes contactsPermissions(@javax.annotation.Nullable List<ContactsPermissionsEnum> contactsPermissions) {
+  public UpdateOnCallRoleDataAttributes contactsPermissions(@jakarta.annotation.Nullable List<ContactsPermissionsEnum> contactsPermissions) {
     this.contactsPermissions = contactsPermissions;
     return this;
   }
@@ -1804,17 +1804,17 @@ public class UpdateOnCallRoleDataAttributes {
    * Get contactsPermissions
    * @return contactsPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<ContactsPermissionsEnum> getContactsPermissions() {
     return contactsPermissions;
   }
 
-  public void setContactsPermissions(@javax.annotation.Nullable List<ContactsPermissionsEnum> contactsPermissions) {
+  public void setContactsPermissions(@jakarta.annotation.Nullable List<ContactsPermissionsEnum> contactsPermissions) {
     this.contactsPermissions = contactsPermissions;
   }
 
 
-  public UpdateOnCallRoleDataAttributes escalationPoliciesPermissions(@javax.annotation.Nullable List<EscalationPoliciesPermissionsEnum> escalationPoliciesPermissions) {
+  public UpdateOnCallRoleDataAttributes escalationPoliciesPermissions(@jakarta.annotation.Nullable List<EscalationPoliciesPermissionsEnum> escalationPoliciesPermissions) {
     this.escalationPoliciesPermissions = escalationPoliciesPermissions;
     return this;
   }
@@ -1831,17 +1831,17 @@ public class UpdateOnCallRoleDataAttributes {
    * Get escalationPoliciesPermissions
    * @return escalationPoliciesPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<EscalationPoliciesPermissionsEnum> getEscalationPoliciesPermissions() {
     return escalationPoliciesPermissions;
   }
 
-  public void setEscalationPoliciesPermissions(@javax.annotation.Nullable List<EscalationPoliciesPermissionsEnum> escalationPoliciesPermissions) {
+  public void setEscalationPoliciesPermissions(@jakarta.annotation.Nullable List<EscalationPoliciesPermissionsEnum> escalationPoliciesPermissions) {
     this.escalationPoliciesPermissions = escalationPoliciesPermissions;
   }
 
 
-  public UpdateOnCallRoleDataAttributes groupsPermissions(@javax.annotation.Nullable List<GroupsPermissionsEnum> groupsPermissions) {
+  public UpdateOnCallRoleDataAttributes groupsPermissions(@jakarta.annotation.Nullable List<GroupsPermissionsEnum> groupsPermissions) {
     this.groupsPermissions = groupsPermissions;
     return this;
   }
@@ -1858,17 +1858,17 @@ public class UpdateOnCallRoleDataAttributes {
    * Get groupsPermissions
    * @return groupsPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<GroupsPermissionsEnum> getGroupsPermissions() {
     return groupsPermissions;
   }
 
-  public void setGroupsPermissions(@javax.annotation.Nullable List<GroupsPermissionsEnum> groupsPermissions) {
+  public void setGroupsPermissions(@jakarta.annotation.Nullable List<GroupsPermissionsEnum> groupsPermissions) {
     this.groupsPermissions = groupsPermissions;
   }
 
 
-  public UpdateOnCallRoleDataAttributes heartbeatsPermissions(@javax.annotation.Nullable List<HeartbeatsPermissionsEnum> heartbeatsPermissions) {
+  public UpdateOnCallRoleDataAttributes heartbeatsPermissions(@jakarta.annotation.Nullable List<HeartbeatsPermissionsEnum> heartbeatsPermissions) {
     this.heartbeatsPermissions = heartbeatsPermissions;
     return this;
   }
@@ -1885,17 +1885,17 @@ public class UpdateOnCallRoleDataAttributes {
    * Get heartbeatsPermissions
    * @return heartbeatsPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<HeartbeatsPermissionsEnum> getHeartbeatsPermissions() {
     return heartbeatsPermissions;
   }
 
-  public void setHeartbeatsPermissions(@javax.annotation.Nullable List<HeartbeatsPermissionsEnum> heartbeatsPermissions) {
+  public void setHeartbeatsPermissions(@jakarta.annotation.Nullable List<HeartbeatsPermissionsEnum> heartbeatsPermissions) {
     this.heartbeatsPermissions = heartbeatsPermissions;
   }
 
 
-  public UpdateOnCallRoleDataAttributes integrationsPermissions(@javax.annotation.Nullable List<IntegrationsPermissionsEnum> integrationsPermissions) {
+  public UpdateOnCallRoleDataAttributes integrationsPermissions(@jakarta.annotation.Nullable List<IntegrationsPermissionsEnum> integrationsPermissions) {
     this.integrationsPermissions = integrationsPermissions;
     return this;
   }
@@ -1912,17 +1912,17 @@ public class UpdateOnCallRoleDataAttributes {
    * Get integrationsPermissions
    * @return integrationsPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<IntegrationsPermissionsEnum> getIntegrationsPermissions() {
     return integrationsPermissions;
   }
 
-  public void setIntegrationsPermissions(@javax.annotation.Nullable List<IntegrationsPermissionsEnum> integrationsPermissions) {
+  public void setIntegrationsPermissions(@jakarta.annotation.Nullable List<IntegrationsPermissionsEnum> integrationsPermissions) {
     this.integrationsPermissions = integrationsPermissions;
   }
 
 
-  public UpdateOnCallRoleDataAttributes invitationsPermissions(@javax.annotation.Nullable List<InvitationsPermissionsEnum> invitationsPermissions) {
+  public UpdateOnCallRoleDataAttributes invitationsPermissions(@jakarta.annotation.Nullable List<InvitationsPermissionsEnum> invitationsPermissions) {
     this.invitationsPermissions = invitationsPermissions;
     return this;
   }
@@ -1939,17 +1939,17 @@ public class UpdateOnCallRoleDataAttributes {
    * Get invitationsPermissions
    * @return invitationsPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<InvitationsPermissionsEnum> getInvitationsPermissions() {
     return invitationsPermissions;
   }
 
-  public void setInvitationsPermissions(@javax.annotation.Nullable List<InvitationsPermissionsEnum> invitationsPermissions) {
+  public void setInvitationsPermissions(@jakarta.annotation.Nullable List<InvitationsPermissionsEnum> invitationsPermissions) {
     this.invitationsPermissions = invitationsPermissions;
   }
 
 
-  public UpdateOnCallRoleDataAttributes liveCallRoutingPermissions(@javax.annotation.Nullable List<LiveCallRoutingPermissionsEnum> liveCallRoutingPermissions) {
+  public UpdateOnCallRoleDataAttributes liveCallRoutingPermissions(@jakarta.annotation.Nullable List<LiveCallRoutingPermissionsEnum> liveCallRoutingPermissions) {
     this.liveCallRoutingPermissions = liveCallRoutingPermissions;
     return this;
   }
@@ -1966,17 +1966,17 @@ public class UpdateOnCallRoleDataAttributes {
    * Get liveCallRoutingPermissions
    * @return liveCallRoutingPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<LiveCallRoutingPermissionsEnum> getLiveCallRoutingPermissions() {
     return liveCallRoutingPermissions;
   }
 
-  public void setLiveCallRoutingPermissions(@javax.annotation.Nullable List<LiveCallRoutingPermissionsEnum> liveCallRoutingPermissions) {
+  public void setLiveCallRoutingPermissions(@jakarta.annotation.Nullable List<LiveCallRoutingPermissionsEnum> liveCallRoutingPermissions) {
     this.liveCallRoutingPermissions = liveCallRoutingPermissions;
   }
 
 
-  public UpdateOnCallRoleDataAttributes scheduleOverridePermissions(@javax.annotation.Nullable List<ScheduleOverridePermissionsEnum> scheduleOverridePermissions) {
+  public UpdateOnCallRoleDataAttributes scheduleOverridePermissions(@jakarta.annotation.Nullable List<ScheduleOverridePermissionsEnum> scheduleOverridePermissions) {
     this.scheduleOverridePermissions = scheduleOverridePermissions;
     return this;
   }
@@ -1993,17 +1993,17 @@ public class UpdateOnCallRoleDataAttributes {
    * Get scheduleOverridePermissions
    * @return scheduleOverridePermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<ScheduleOverridePermissionsEnum> getScheduleOverridePermissions() {
     return scheduleOverridePermissions;
   }
 
-  public void setScheduleOverridePermissions(@javax.annotation.Nullable List<ScheduleOverridePermissionsEnum> scheduleOverridePermissions) {
+  public void setScheduleOverridePermissions(@jakarta.annotation.Nullable List<ScheduleOverridePermissionsEnum> scheduleOverridePermissions) {
     this.scheduleOverridePermissions = scheduleOverridePermissions;
   }
 
 
-  public UpdateOnCallRoleDataAttributes schedulesPermissions(@javax.annotation.Nullable List<SchedulesPermissionsEnum> schedulesPermissions) {
+  public UpdateOnCallRoleDataAttributes schedulesPermissions(@jakarta.annotation.Nullable List<SchedulesPermissionsEnum> schedulesPermissions) {
     this.schedulesPermissions = schedulesPermissions;
     return this;
   }
@@ -2020,17 +2020,17 @@ public class UpdateOnCallRoleDataAttributes {
    * Get schedulesPermissions
    * @return schedulesPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<SchedulesPermissionsEnum> getSchedulesPermissions() {
     return schedulesPermissions;
   }
 
-  public void setSchedulesPermissions(@javax.annotation.Nullable List<SchedulesPermissionsEnum> schedulesPermissions) {
+  public void setSchedulesPermissions(@jakarta.annotation.Nullable List<SchedulesPermissionsEnum> schedulesPermissions) {
     this.schedulesPermissions = schedulesPermissions;
   }
 
 
-  public UpdateOnCallRoleDataAttributes servicesPermissions(@javax.annotation.Nullable List<ServicesPermissionsEnum> servicesPermissions) {
+  public UpdateOnCallRoleDataAttributes servicesPermissions(@jakarta.annotation.Nullable List<ServicesPermissionsEnum> servicesPermissions) {
     this.servicesPermissions = servicesPermissions;
     return this;
   }
@@ -2047,17 +2047,17 @@ public class UpdateOnCallRoleDataAttributes {
    * Get servicesPermissions
    * @return servicesPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<ServicesPermissionsEnum> getServicesPermissions() {
     return servicesPermissions;
   }
 
-  public void setServicesPermissions(@javax.annotation.Nullable List<ServicesPermissionsEnum> servicesPermissions) {
+  public void setServicesPermissions(@jakarta.annotation.Nullable List<ServicesPermissionsEnum> servicesPermissions) {
     this.servicesPermissions = servicesPermissions;
   }
 
 
-  public UpdateOnCallRoleDataAttributes webhooksPermissions(@javax.annotation.Nullable List<WebhooksPermissionsEnum> webhooksPermissions) {
+  public UpdateOnCallRoleDataAttributes webhooksPermissions(@jakarta.annotation.Nullable List<WebhooksPermissionsEnum> webhooksPermissions) {
     this.webhooksPermissions = webhooksPermissions;
     return this;
   }
@@ -2074,17 +2074,17 @@ public class UpdateOnCallRoleDataAttributes {
    * Get webhooksPermissions
    * @return webhooksPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<WebhooksPermissionsEnum> getWebhooksPermissions() {
     return webhooksPermissions;
   }
 
-  public void setWebhooksPermissions(@javax.annotation.Nullable List<WebhooksPermissionsEnum> webhooksPermissions) {
+  public void setWebhooksPermissions(@jakarta.annotation.Nullable List<WebhooksPermissionsEnum> webhooksPermissions) {
     this.webhooksPermissions = webhooksPermissions;
   }
 
 
-  public UpdateOnCallRoleDataAttributes workflowsPermissions(@javax.annotation.Nullable List<WorkflowsPermissionsEnum> workflowsPermissions) {
+  public UpdateOnCallRoleDataAttributes workflowsPermissions(@jakarta.annotation.Nullable List<WorkflowsPermissionsEnum> workflowsPermissions) {
     this.workflowsPermissions = workflowsPermissions;
     return this;
   }
@@ -2101,12 +2101,12 @@ public class UpdateOnCallRoleDataAttributes {
    * Get workflowsPermissions
    * @return workflowsPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<WorkflowsPermissionsEnum> getWorkflowsPermissions() {
     return workflowsPermissions;
   }
 
-  public void setWorkflowsPermissions(@javax.annotation.Nullable List<WorkflowsPermissionsEnum> workflowsPermissions) {
+  public void setWorkflowsPermissions(@jakarta.annotation.Nullable List<WorkflowsPermissionsEnum> workflowsPermissions) {
     this.workflowsPermissions = workflowsPermissions;
   }
 

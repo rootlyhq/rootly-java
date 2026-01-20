@@ -49,11 +49,11 @@ import com.rootly.client.JSON;
 /**
  * ScheduleRotationActiveDayResponseData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ScheduleRotationActiveDayResponseData {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String id;
 
   /**
@@ -108,18 +108,18 @@ public class ScheduleRotationActiveDayResponseData {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ScheduleRotationActiveDay attributes;
 
   public ScheduleRotationActiveDayResponseData() {
   }
 
-  public ScheduleRotationActiveDayResponseData id(@javax.annotation.Nullable String id) {
+  public ScheduleRotationActiveDayResponseData id(@jakarta.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -128,17 +128,17 @@ public class ScheduleRotationActiveDayResponseData {
    * Unique ID of the schedule rotation active time
    * @return id
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getId() {
     return id;
   }
 
-  public void setId(@javax.annotation.Nullable String id) {
+  public void setId(@jakarta.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public ScheduleRotationActiveDayResponseData type(@javax.annotation.Nullable TypeEnum type) {
+  public ScheduleRotationActiveDayResponseData type(@jakarta.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -147,17 +147,17 @@ public class ScheduleRotationActiveDayResponseData {
    * Get type
    * @return type
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TypeEnum getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nullable TypeEnum type) {
+  public void setType(@jakarta.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
 
-  public ScheduleRotationActiveDayResponseData attributes(@javax.annotation.Nullable ScheduleRotationActiveDay attributes) {
+  public ScheduleRotationActiveDayResponseData attributes(@jakarta.annotation.Nullable ScheduleRotationActiveDay attributes) {
     this.attributes = attributes;
     return this;
   }
@@ -166,12 +166,12 @@ public class ScheduleRotationActiveDayResponseData {
    * Get attributes
    * @return attributes
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ScheduleRotationActiveDay getAttributes() {
     return attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nullable ScheduleRotationActiveDay attributes) {
+  public void setAttributes(@jakarta.annotation.Nullable ScheduleRotationActiveDay attributes) {
     this.attributes = attributes;
   }
 

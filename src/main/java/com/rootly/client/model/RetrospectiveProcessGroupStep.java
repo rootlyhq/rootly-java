@@ -48,27 +48,27 @@ import com.rootly.client.JSON;
 /**
  * RetrospectiveProcessGroupStep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RetrospectiveProcessGroupStep {
   public static final String SERIALIZED_NAME_RETROSPECTIVE_PROCESS_GROUP_ID = "retrospective_process_group_id";
   @SerializedName(SERIALIZED_NAME_RETROSPECTIVE_PROCESS_GROUP_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String retrospectiveProcessGroupId;
 
   public static final String SERIALIZED_NAME_RETROSPECTIVE_STEP_ID = "retrospective_step_id";
   @SerializedName(SERIALIZED_NAME_RETROSPECTIVE_STEP_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String retrospectiveStepId;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Integer position;
 
   public RetrospectiveProcessGroupStep() {
   }
 
-  public RetrospectiveProcessGroupStep retrospectiveProcessGroupId(@javax.annotation.Nonnull String retrospectiveProcessGroupId) {
+  public RetrospectiveProcessGroupStep retrospectiveProcessGroupId(@jakarta.annotation.Nonnull String retrospectiveProcessGroupId) {
     this.retrospectiveProcessGroupId = retrospectiveProcessGroupId;
     return this;
   }
@@ -77,17 +77,17 @@ public class RetrospectiveProcessGroupStep {
    * Get retrospectiveProcessGroupId
    * @return retrospectiveProcessGroupId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getRetrospectiveProcessGroupId() {
     return retrospectiveProcessGroupId;
   }
 
-  public void setRetrospectiveProcessGroupId(@javax.annotation.Nonnull String retrospectiveProcessGroupId) {
+  public void setRetrospectiveProcessGroupId(@jakarta.annotation.Nonnull String retrospectiveProcessGroupId) {
     this.retrospectiveProcessGroupId = retrospectiveProcessGroupId;
   }
 
 
-  public RetrospectiveProcessGroupStep retrospectiveStepId(@javax.annotation.Nonnull String retrospectiveStepId) {
+  public RetrospectiveProcessGroupStep retrospectiveStepId(@jakarta.annotation.Nonnull String retrospectiveStepId) {
     this.retrospectiveStepId = retrospectiveStepId;
     return this;
   }
@@ -96,17 +96,17 @@ public class RetrospectiveProcessGroupStep {
    * Get retrospectiveStepId
    * @return retrospectiveStepId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getRetrospectiveStepId() {
     return retrospectiveStepId;
   }
 
-  public void setRetrospectiveStepId(@javax.annotation.Nonnull String retrospectiveStepId) {
+  public void setRetrospectiveStepId(@jakarta.annotation.Nonnull String retrospectiveStepId) {
     this.retrospectiveStepId = retrospectiveStepId;
   }
 
 
-  public RetrospectiveProcessGroupStep position(@javax.annotation.Nonnull Integer position) {
+  public RetrospectiveProcessGroupStep position(@jakarta.annotation.Nonnull Integer position) {
     this.position = position;
     return this;
   }
@@ -115,12 +115,12 @@ public class RetrospectiveProcessGroupStep {
    * Get position
    * @return position
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nonnull Integer position) {
+  public void setPosition(@jakarta.annotation.Nonnull Integer position) {
     this.position = position;
   }
 

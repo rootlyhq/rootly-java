@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * AddToTimelineTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AddToTimelineTaskParams {
   /**
    * Gets or Sets taskType
@@ -105,28 +105,28 @@ public class AddToTimelineTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_EVENT = "event";
   @SerializedName(SERIALIZED_NAME_EVENT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String event;
 
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String url;
 
   public static final String SERIALIZED_NAME_POST_TO_SLACK_CHANNELS = "post_to_slack_channels";
   @SerializedName(SERIALIZED_NAME_POST_TO_SLACK_CHANNELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels = new ArrayList<>();
 
   public AddToTimelineTaskParams() {
   }
 
-  public AddToTimelineTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public AddToTimelineTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -135,17 +135,17 @@ public class AddToTimelineTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public AddToTimelineTaskParams event(@javax.annotation.Nonnull String event) {
+  public AddToTimelineTaskParams event(@jakarta.annotation.Nonnull String event) {
     this.event = event;
     return this;
   }
@@ -154,17 +154,17 @@ public class AddToTimelineTaskParams {
    * The timeline event description
    * @return event
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getEvent() {
     return event;
   }
 
-  public void setEvent(@javax.annotation.Nonnull String event) {
+  public void setEvent(@jakarta.annotation.Nonnull String event) {
     this.event = event;
   }
 
 
-  public AddToTimelineTaskParams url(@javax.annotation.Nullable String url) {
+  public AddToTimelineTaskParams url(@jakarta.annotation.Nullable String url) {
     this.url = url;
     return this;
   }
@@ -173,17 +173,17 @@ public class AddToTimelineTaskParams {
    * A URL for the timeline event
    * @return url
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUrl() {
     return url;
   }
 
-  public void setUrl(@javax.annotation.Nullable String url) {
+  public void setUrl(@jakarta.annotation.Nullable String url) {
     this.url = url;
   }
 
 
-  public AddToTimelineTaskParams postToSlackChannels(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
+  public AddToTimelineTaskParams postToSlackChannels(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
     this.postToSlackChannels = postToSlackChannels;
     return this;
   }
@@ -200,12 +200,12 @@ public class AddToTimelineTaskParams {
    * Get postToSlackChannels
    * @return postToSlackChannels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AddActionItemTaskParamsPostToSlackChannelsInner> getPostToSlackChannels() {
     return postToSlackChannels;
   }
 
-  public void setPostToSlackChannels(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
+  public void setPostToSlackChannels(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
     this.postToSlackChannels = postToSlackChannels;
   }
 

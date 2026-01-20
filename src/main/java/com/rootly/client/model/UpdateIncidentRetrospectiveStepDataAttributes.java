@@ -49,31 +49,31 @@ import com.rootly.client.JSON;
 /**
  * UpdateIncidentRetrospectiveStepDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateIncidentRetrospectiveStepDataAttributes {
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String title;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_DUE_DATE = "due_date";
   @SerializedName(SERIALIZED_NAME_DUE_DATE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String dueDate;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public static final String SERIALIZED_NAME_SKIPPABLE = "skippable";
   @SerializedName(SERIALIZED_NAME_SKIPPABLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean skippable;
 
   /**
@@ -134,13 +134,13 @@ public class UpdateIncidentRetrospectiveStepDataAttributes {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private StatusEnum status;
 
   public UpdateIncidentRetrospectiveStepDataAttributes() {
   }
 
-  public UpdateIncidentRetrospectiveStepDataAttributes title(@javax.annotation.Nullable String title) {
+  public UpdateIncidentRetrospectiveStepDataAttributes title(@jakarta.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
@@ -149,17 +149,17 @@ public class UpdateIncidentRetrospectiveStepDataAttributes {
    * The name of the incident retrospective step
    * @return title
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nullable String title) {
+  public void setTitle(@jakarta.annotation.Nullable String title) {
     this.title = title;
   }
 
 
-  public UpdateIncidentRetrospectiveStepDataAttributes description(@javax.annotation.Nullable String description) {
+  public UpdateIncidentRetrospectiveStepDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -168,17 +168,17 @@ public class UpdateIncidentRetrospectiveStepDataAttributes {
    * The description of the incident retrospective step
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UpdateIncidentRetrospectiveStepDataAttributes dueDate(@javax.annotation.Nullable String dueDate) {
+  public UpdateIncidentRetrospectiveStepDataAttributes dueDate(@jakarta.annotation.Nullable String dueDate) {
     this.dueDate = dueDate;
     return this;
   }
@@ -187,17 +187,17 @@ public class UpdateIncidentRetrospectiveStepDataAttributes {
    * Due date
    * @return dueDate
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDueDate() {
     return dueDate;
   }
 
-  public void setDueDate(@javax.annotation.Nullable String dueDate) {
+  public void setDueDate(@jakarta.annotation.Nullable String dueDate) {
     this.dueDate = dueDate;
   }
 
 
-  public UpdateIncidentRetrospectiveStepDataAttributes position(@javax.annotation.Nullable Integer position) {
+  public UpdateIncidentRetrospectiveStepDataAttributes position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -206,17 +206,17 @@ public class UpdateIncidentRetrospectiveStepDataAttributes {
    * Position of the step
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 
 
-  public UpdateIncidentRetrospectiveStepDataAttributes skippable(@javax.annotation.Nullable Boolean skippable) {
+  public UpdateIncidentRetrospectiveStepDataAttributes skippable(@jakarta.annotation.Nullable Boolean skippable) {
     this.skippable = skippable;
     return this;
   }
@@ -225,17 +225,17 @@ public class UpdateIncidentRetrospectiveStepDataAttributes {
    * Is the step skippable?
    * @return skippable
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getSkippable() {
     return skippable;
   }
 
-  public void setSkippable(@javax.annotation.Nullable Boolean skippable) {
+  public void setSkippable(@jakarta.annotation.Nullable Boolean skippable) {
     this.skippable = skippable;
   }
 
 
-  public UpdateIncidentRetrospectiveStepDataAttributes status(@javax.annotation.Nullable StatusEnum status) {
+  public UpdateIncidentRetrospectiveStepDataAttributes status(@jakarta.annotation.Nullable StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -244,12 +244,12 @@ public class UpdateIncidentRetrospectiveStepDataAttributes {
    * Status of the incident retrospective step
    * @return status
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nullable StatusEnum status) {
+  public void setStatus(@jakarta.annotation.Nullable StatusEnum status) {
     this.status = status;
   }
 

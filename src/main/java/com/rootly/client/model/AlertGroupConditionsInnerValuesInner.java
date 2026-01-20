@@ -48,22 +48,22 @@ import com.rootly.client.JSON;
 /**
  * AlertGroupConditionsInnerValuesInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AlertGroupConditionsInnerValuesInner {
   public static final String SERIALIZED_NAME_RECORD_ID = "record_id";
   @SerializedName(SERIALIZED_NAME_RECORD_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String recordId;
 
   public static final String SERIALIZED_NAME_RECORD_TYPE = "record_type";
   @SerializedName(SERIALIZED_NAME_RECORD_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String recordType;
 
   public AlertGroupConditionsInnerValuesInner() {
   }
 
-  public AlertGroupConditionsInnerValuesInner recordId(@javax.annotation.Nonnull String recordId) {
+  public AlertGroupConditionsInnerValuesInner recordId(@jakarta.annotation.Nonnull String recordId) {
     this.recordId = recordId;
     return this;
   }
@@ -72,17 +72,17 @@ public class AlertGroupConditionsInnerValuesInner {
    * ID of the Alert Urgency to set.
    * @return recordId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getRecordId() {
     return recordId;
   }
 
-  public void setRecordId(@javax.annotation.Nonnull String recordId) {
+  public void setRecordId(@jakarta.annotation.Nonnull String recordId) {
     this.recordId = recordId;
   }
 
 
-  public AlertGroupConditionsInnerValuesInner recordType(@javax.annotation.Nonnull String recordType) {
+  public AlertGroupConditionsInnerValuesInner recordType(@jakarta.annotation.Nonnull String recordType) {
     this.recordType = recordType;
     return this;
   }
@@ -91,12 +91,12 @@ public class AlertGroupConditionsInnerValuesInner {
    * Should be \&quot;AlertUrgency\&quot;.
    * @return recordType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getRecordType() {
     return recordType;
   }
 
-  public void setRecordType(@javax.annotation.Nonnull String recordType) {
+  public void setRecordType(@jakarta.annotation.Nonnull String recordType) {
     this.recordType = recordType;
   }
 

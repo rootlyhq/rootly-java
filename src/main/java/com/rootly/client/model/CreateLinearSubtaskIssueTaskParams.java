@@ -53,7 +53,7 @@ import com.rootly.client.JSON;
 /**
  * CreateLinearSubtaskIssueTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateLinearSubtaskIssueTaskParams {
   /**
    * Gets or Sets taskType
@@ -107,48 +107,48 @@ public class CreateLinearSubtaskIssueTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_PARENT_ISSUE_ID = "parent_issue_id";
   @SerializedName(SERIALIZED_NAME_PARENT_ISSUE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String parentIssueId;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String title;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private CreateLinearIssueTaskParamsState state;
 
   public static final String SERIALIZED_NAME_PRIORITY = "priority";
   @SerializedName(SERIALIZED_NAME_PRIORITY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CreateJiraIssueTaskParamsPriority priority;
 
   public static final String SERIALIZED_NAME_LABELS = "labels";
   @SerializedName(SERIALIZED_NAME_LABELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AddActionItemTaskParamsPostToSlackChannelsInner> labels = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ASSIGN_USER_EMAIL = "assign_user_email";
   @SerializedName(SERIALIZED_NAME_ASSIGN_USER_EMAIL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String assignUserEmail;
 
   public CreateLinearSubtaskIssueTaskParams() {
   }
 
-  public CreateLinearSubtaskIssueTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public CreateLinearSubtaskIssueTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -157,17 +157,17 @@ public class CreateLinearSubtaskIssueTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public CreateLinearSubtaskIssueTaskParams parentIssueId(@javax.annotation.Nonnull String parentIssueId) {
+  public CreateLinearSubtaskIssueTaskParams parentIssueId(@jakarta.annotation.Nonnull String parentIssueId) {
     this.parentIssueId = parentIssueId;
     return this;
   }
@@ -176,17 +176,17 @@ public class CreateLinearSubtaskIssueTaskParams {
    * The parent issue
    * @return parentIssueId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getParentIssueId() {
     return parentIssueId;
   }
 
-  public void setParentIssueId(@javax.annotation.Nonnull String parentIssueId) {
+  public void setParentIssueId(@jakarta.annotation.Nonnull String parentIssueId) {
     this.parentIssueId = parentIssueId;
   }
 
 
-  public CreateLinearSubtaskIssueTaskParams title(@javax.annotation.Nonnull String title) {
+  public CreateLinearSubtaskIssueTaskParams title(@jakarta.annotation.Nonnull String title) {
     this.title = title;
     return this;
   }
@@ -195,17 +195,17 @@ public class CreateLinearSubtaskIssueTaskParams {
    * The issue title
    * @return title
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nonnull String title) {
+  public void setTitle(@jakarta.annotation.Nonnull String title) {
     this.title = title;
   }
 
 
-  public CreateLinearSubtaskIssueTaskParams description(@javax.annotation.Nullable String description) {
+  public CreateLinearSubtaskIssueTaskParams description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -214,17 +214,17 @@ public class CreateLinearSubtaskIssueTaskParams {
    * The issue description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public CreateLinearSubtaskIssueTaskParams state(@javax.annotation.Nonnull CreateLinearIssueTaskParamsState state) {
+  public CreateLinearSubtaskIssueTaskParams state(@jakarta.annotation.Nonnull CreateLinearIssueTaskParamsState state) {
     this.state = state;
     return this;
   }
@@ -233,17 +233,17 @@ public class CreateLinearSubtaskIssueTaskParams {
    * Get state
    * @return state
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public CreateLinearIssueTaskParamsState getState() {
     return state;
   }
 
-  public void setState(@javax.annotation.Nonnull CreateLinearIssueTaskParamsState state) {
+  public void setState(@jakarta.annotation.Nonnull CreateLinearIssueTaskParamsState state) {
     this.state = state;
   }
 
 
-  public CreateLinearSubtaskIssueTaskParams priority(@javax.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
+  public CreateLinearSubtaskIssueTaskParams priority(@jakarta.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
     this.priority = priority;
     return this;
   }
@@ -252,17 +252,17 @@ public class CreateLinearSubtaskIssueTaskParams {
    * Get priority
    * @return priority
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CreateJiraIssueTaskParamsPriority getPriority() {
     return priority;
   }
 
-  public void setPriority(@javax.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
+  public void setPriority(@jakarta.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
     this.priority = priority;
   }
 
 
-  public CreateLinearSubtaskIssueTaskParams labels(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> labels) {
+  public CreateLinearSubtaskIssueTaskParams labels(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> labels) {
     this.labels = labels;
     return this;
   }
@@ -279,17 +279,17 @@ public class CreateLinearSubtaskIssueTaskParams {
    * Get labels
    * @return labels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AddActionItemTaskParamsPostToSlackChannelsInner> getLabels() {
     return labels;
   }
 
-  public void setLabels(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> labels) {
+  public void setLabels(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> labels) {
     this.labels = labels;
   }
 
 
-  public CreateLinearSubtaskIssueTaskParams assignUserEmail(@javax.annotation.Nullable String assignUserEmail) {
+  public CreateLinearSubtaskIssueTaskParams assignUserEmail(@jakarta.annotation.Nullable String assignUserEmail) {
     this.assignUserEmail = assignUserEmail;
     return this;
   }
@@ -298,12 +298,12 @@ public class CreateLinearSubtaskIssueTaskParams {
    * The assigned user&#39;s email
    * @return assignUserEmail
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getAssignUserEmail() {
     return assignUserEmail;
   }
 
-  public void setAssignUserEmail(@javax.annotation.Nullable String assignUserEmail) {
+  public void setAssignUserEmail(@jakarta.annotation.Nullable String assignUserEmail) {
     this.assignUserEmail = assignUserEmail;
   }
 

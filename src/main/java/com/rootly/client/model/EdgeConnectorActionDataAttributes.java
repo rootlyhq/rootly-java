@@ -53,16 +53,16 @@ import com.rootly.client.JSON;
 /**
  * EdgeConnectorActionDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class EdgeConnectorActionDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String slug;
 
   /**
@@ -119,7 +119,7 @@ public class EdgeConnectorActionDataAttributes {
 
   public static final String SERIALIZED_NAME_ACTION_TYPE = "action_type";
   @SerializedName(SERIALIZED_NAME_ACTION_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private ActionTypeEnum actionType;
 
   /**
@@ -196,43 +196,43 @@ public class EdgeConnectorActionDataAttributes {
 
   public static final String SERIALIZED_NAME_ICON = "icon";
   @SerializedName(SERIALIZED_NAME_ICON)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private IconEnum icon;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_TIMEOUT = "timeout";
   @SerializedName(SERIALIZED_NAME_TIMEOUT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer timeout;
 
   public static final String SERIALIZED_NAME_PARAMETERS = "parameters";
   @SerializedName(SERIALIZED_NAME_PARAMETERS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<EdgeConnectorActionDataAttributesParametersInner> parameters;
 
   public static final String SERIALIZED_NAME_LAST_EXECUTED_AT = "last_executed_at";
   @SerializedName(SERIALIZED_NAME_LAST_EXECUTED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private OffsetDateTime lastExecutedAt;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private OffsetDateTime updatedAt;
 
   public EdgeConnectorActionDataAttributes() {
   }
 
-  public EdgeConnectorActionDataAttributes name(@javax.annotation.Nonnull String name) {
+  public EdgeConnectorActionDataAttributes name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -241,17 +241,17 @@ public class EdgeConnectorActionDataAttributes {
    * Action name
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public EdgeConnectorActionDataAttributes slug(@javax.annotation.Nullable String slug) {
+  public EdgeConnectorActionDataAttributes slug(@jakarta.annotation.Nullable String slug) {
     this.slug = slug;
     return this;
   }
@@ -260,17 +260,17 @@ public class EdgeConnectorActionDataAttributes {
    * Action slug
    * @return slug
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSlug() {
     return slug;
   }
 
-  public void setSlug(@javax.annotation.Nullable String slug) {
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
     this.slug = slug;
   }
 
 
-  public EdgeConnectorActionDataAttributes actionType(@javax.annotation.Nonnull ActionTypeEnum actionType) {
+  public EdgeConnectorActionDataAttributes actionType(@jakarta.annotation.Nonnull ActionTypeEnum actionType) {
     this.actionType = actionType;
     return this;
   }
@@ -279,17 +279,17 @@ public class EdgeConnectorActionDataAttributes {
    * Action type
    * @return actionType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public ActionTypeEnum getActionType() {
     return actionType;
   }
 
-  public void setActionType(@javax.annotation.Nonnull ActionTypeEnum actionType) {
+  public void setActionType(@jakarta.annotation.Nonnull ActionTypeEnum actionType) {
     this.actionType = actionType;
   }
 
 
-  public EdgeConnectorActionDataAttributes icon(@javax.annotation.Nullable IconEnum icon) {
+  public EdgeConnectorActionDataAttributes icon(@jakarta.annotation.Nullable IconEnum icon) {
     this.icon = icon;
     return this;
   }
@@ -298,17 +298,17 @@ public class EdgeConnectorActionDataAttributes {
    * Action icon
    * @return icon
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public IconEnum getIcon() {
     return icon;
   }
 
-  public void setIcon(@javax.annotation.Nullable IconEnum icon) {
+  public void setIcon(@jakarta.annotation.Nullable IconEnum icon) {
     this.icon = icon;
   }
 
 
-  public EdgeConnectorActionDataAttributes description(@javax.annotation.Nullable String description) {
+  public EdgeConnectorActionDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -317,17 +317,17 @@ public class EdgeConnectorActionDataAttributes {
    * Action description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public EdgeConnectorActionDataAttributes timeout(@javax.annotation.Nullable Integer timeout) {
+  public EdgeConnectorActionDataAttributes timeout(@jakarta.annotation.Nullable Integer timeout) {
     this.timeout = timeout;
     return this;
   }
@@ -336,17 +336,17 @@ public class EdgeConnectorActionDataAttributes {
    * Timeout in seconds
    * @return timeout
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getTimeout() {
     return timeout;
   }
 
-  public void setTimeout(@javax.annotation.Nullable Integer timeout) {
+  public void setTimeout(@jakarta.annotation.Nullable Integer timeout) {
     this.timeout = timeout;
   }
 
 
-  public EdgeConnectorActionDataAttributes parameters(@javax.annotation.Nullable List<EdgeConnectorActionDataAttributesParametersInner> parameters) {
+  public EdgeConnectorActionDataAttributes parameters(@jakarta.annotation.Nullable List<EdgeConnectorActionDataAttributesParametersInner> parameters) {
     this.parameters = parameters;
     return this;
   }
@@ -363,17 +363,17 @@ public class EdgeConnectorActionDataAttributes {
    * Parameter definitions
    * @return parameters
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<EdgeConnectorActionDataAttributesParametersInner> getParameters() {
     return parameters;
   }
 
-  public void setParameters(@javax.annotation.Nullable List<EdgeConnectorActionDataAttributesParametersInner> parameters) {
+  public void setParameters(@jakarta.annotation.Nullable List<EdgeConnectorActionDataAttributesParametersInner> parameters) {
     this.parameters = parameters;
   }
 
 
-  public EdgeConnectorActionDataAttributes lastExecutedAt(@javax.annotation.Nullable OffsetDateTime lastExecutedAt) {
+  public EdgeConnectorActionDataAttributes lastExecutedAt(@jakarta.annotation.Nullable OffsetDateTime lastExecutedAt) {
     this.lastExecutedAt = lastExecutedAt;
     return this;
   }
@@ -382,17 +382,17 @@ public class EdgeConnectorActionDataAttributes {
    * Get lastExecutedAt
    * @return lastExecutedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public OffsetDateTime getLastExecutedAt() {
     return lastExecutedAt;
   }
 
-  public void setLastExecutedAt(@javax.annotation.Nullable OffsetDateTime lastExecutedAt) {
+  public void setLastExecutedAt(@jakarta.annotation.Nullable OffsetDateTime lastExecutedAt) {
     this.lastExecutedAt = lastExecutedAt;
   }
 
 
-  public EdgeConnectorActionDataAttributes createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
+  public EdgeConnectorActionDataAttributes createdAt(@jakarta.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -401,17 +401,17 @@ public class EdgeConnectorActionDataAttributes {
    * Get createdAt
    * @return createdAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public EdgeConnectorActionDataAttributes updatedAt(@javax.annotation.Nullable OffsetDateTime updatedAt) {
+  public EdgeConnectorActionDataAttributes updatedAt(@jakarta.annotation.Nullable OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -420,12 +420,12 @@ public class EdgeConnectorActionDataAttributes {
    * Get updatedAt
    * @return updatedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nullable OffsetDateTime updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nullable OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
   }
 

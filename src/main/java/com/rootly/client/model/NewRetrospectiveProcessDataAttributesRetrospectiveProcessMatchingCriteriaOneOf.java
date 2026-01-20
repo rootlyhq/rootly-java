@@ -50,17 +50,17 @@ import com.rootly.client.JSON;
 /**
  * NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteriaOneOf
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteriaOneOf {
   public static final String SERIALIZED_NAME_SEVERITY_IDS = "severity_ids";
   @SerializedName(SERIALIZED_NAME_SEVERITY_IDS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<String> severityIds = new ArrayList<>();
 
   public NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteriaOneOf() {
   }
 
-  public NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteriaOneOf severityIds(@javax.annotation.Nonnull List<String> severityIds) {
+  public NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCriteriaOneOf severityIds(@jakarta.annotation.Nonnull List<String> severityIds) {
     this.severityIds = severityIds;
     return this;
   }
@@ -77,12 +77,12 @@ public class NewRetrospectiveProcessDataAttributesRetrospectiveProcessMatchingCr
    * Severity IDs for retrospective process matching criteria
    * @return severityIds
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<String> getSeverityIds() {
     return severityIds;
   }
 
-  public void setSeverityIds(@javax.annotation.Nonnull List<String> severityIds) {
+  public void setSeverityIds(@jakarta.annotation.Nonnull List<String> severityIds) {
     this.severityIds = severityIds;
   }
 

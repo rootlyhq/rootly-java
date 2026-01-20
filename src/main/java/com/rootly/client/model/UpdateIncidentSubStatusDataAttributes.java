@@ -49,27 +49,27 @@ import com.rootly.client.JSON;
 /**
  * UpdateIncidentSubStatusDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateIncidentSubStatusDataAttributes {
   public static final String SERIALIZED_NAME_SUB_STATUS_ID = "sub_status_id";
   @SerializedName(SERIALIZED_NAME_SUB_STATUS_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String subStatusId;
 
   public static final String SERIALIZED_NAME_ASSIGNED_AT = "assigned_at";
   @SerializedName(SERIALIZED_NAME_ASSIGNED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String assignedAt;
 
   public static final String SERIALIZED_NAME_ASSIGNED_BY_USER_ID = "assigned_by_user_id";
   @SerializedName(SERIALIZED_NAME_ASSIGNED_BY_USER_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer assignedByUserId;
 
   public UpdateIncidentSubStatusDataAttributes() {
   }
 
-  public UpdateIncidentSubStatusDataAttributes subStatusId(@javax.annotation.Nullable String subStatusId) {
+  public UpdateIncidentSubStatusDataAttributes subStatusId(@jakarta.annotation.Nullable String subStatusId) {
     this.subStatusId = subStatusId;
     return this;
   }
@@ -78,17 +78,17 @@ public class UpdateIncidentSubStatusDataAttributes {
    * Note: To change an incident&#39;s sub-status, use the PATCH /incidents/:id endpoint and set the sub_status_id attribute. This endpoint is for modifying the timestamp of when an incident&#39;s sub-status was assigned.
    * @return subStatusId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSubStatusId() {
     return subStatusId;
   }
 
-  public void setSubStatusId(@javax.annotation.Nullable String subStatusId) {
+  public void setSubStatusId(@jakarta.annotation.Nullable String subStatusId) {
     this.subStatusId = subStatusId;
   }
 
 
-  public UpdateIncidentSubStatusDataAttributes assignedAt(@javax.annotation.Nullable String assignedAt) {
+  public UpdateIncidentSubStatusDataAttributes assignedAt(@jakarta.annotation.Nullable String assignedAt) {
     this.assignedAt = assignedAt;
     return this;
   }
@@ -97,17 +97,17 @@ public class UpdateIncidentSubStatusDataAttributes {
    * Get assignedAt
    * @return assignedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getAssignedAt() {
     return assignedAt;
   }
 
-  public void setAssignedAt(@javax.annotation.Nullable String assignedAt) {
+  public void setAssignedAt(@jakarta.annotation.Nullable String assignedAt) {
     this.assignedAt = assignedAt;
   }
 
 
-  public UpdateIncidentSubStatusDataAttributes assignedByUserId(@javax.annotation.Nullable Integer assignedByUserId) {
+  public UpdateIncidentSubStatusDataAttributes assignedByUserId(@jakarta.annotation.Nullable Integer assignedByUserId) {
     this.assignedByUserId = assignedByUserId;
     return this;
   }
@@ -116,12 +116,12 @@ public class UpdateIncidentSubStatusDataAttributes {
    * Get assignedByUserId
    * @return assignedByUserId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getAssignedByUserId() {
     return assignedByUserId;
   }
 
-  public void setAssignedByUserId(@javax.annotation.Nullable Integer assignedByUserId) {
+  public void setAssignedByUserId(@jakarta.annotation.Nullable Integer assignedByUserId) {
     this.assignedByUserId = assignedByUserId;
   }
 

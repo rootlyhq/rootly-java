@@ -49,27 +49,27 @@ import com.rootly.client.JSON;
 /**
  * DuplicateIncidentDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class DuplicateIncidentDataAttributes {
   public static final String SERIALIZED_NAME_DUPLICATE_INCIDENT_ID = "duplicate_incident_id";
   @SerializedName(SERIALIZED_NAME_DUPLICATE_INCIDENT_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String duplicateIncidentId;
 
   public static final String SERIALIZED_NAME_AUTO_CANCEL_INCIDENT = "auto_cancel_incident";
   @SerializedName(SERIALIZED_NAME_AUTO_CANCEL_INCIDENT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean autoCancelIncident = true;
 
   public static final String SERIALIZED_NAME_REASON_FOR_CANCELLATION = "reason_for_cancellation";
   @SerializedName(SERIALIZED_NAME_REASON_FOR_CANCELLATION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String reasonForCancellation;
 
   public DuplicateIncidentDataAttributes() {
   }
 
-  public DuplicateIncidentDataAttributes duplicateIncidentId(@javax.annotation.Nullable String duplicateIncidentId) {
+  public DuplicateIncidentDataAttributes duplicateIncidentId(@jakarta.annotation.Nullable String duplicateIncidentId) {
     this.duplicateIncidentId = duplicateIncidentId;
     return this;
   }
@@ -78,17 +78,17 @@ public class DuplicateIncidentDataAttributes {
    * Get duplicateIncidentId
    * @return duplicateIncidentId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDuplicateIncidentId() {
     return duplicateIncidentId;
   }
 
-  public void setDuplicateIncidentId(@javax.annotation.Nullable String duplicateIncidentId) {
+  public void setDuplicateIncidentId(@jakarta.annotation.Nullable String duplicateIncidentId) {
     this.duplicateIncidentId = duplicateIncidentId;
   }
 
 
-  public DuplicateIncidentDataAttributes autoCancelIncident(@javax.annotation.Nullable Boolean autoCancelIncident) {
+  public DuplicateIncidentDataAttributes autoCancelIncident(@jakarta.annotation.Nullable Boolean autoCancelIncident) {
     this.autoCancelIncident = autoCancelIncident;
     return this;
   }
@@ -97,17 +97,17 @@ public class DuplicateIncidentDataAttributes {
    * Get autoCancelIncident
    * @return autoCancelIncident
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getAutoCancelIncident() {
     return autoCancelIncident;
   }
 
-  public void setAutoCancelIncident(@javax.annotation.Nullable Boolean autoCancelIncident) {
+  public void setAutoCancelIncident(@jakarta.annotation.Nullable Boolean autoCancelIncident) {
     this.autoCancelIncident = autoCancelIncident;
   }
 
 
-  public DuplicateIncidentDataAttributes reasonForCancellation(@javax.annotation.Nullable String reasonForCancellation) {
+  public DuplicateIncidentDataAttributes reasonForCancellation(@jakarta.annotation.Nullable String reasonForCancellation) {
     this.reasonForCancellation = reasonForCancellation;
     return this;
   }
@@ -116,12 +116,12 @@ public class DuplicateIncidentDataAttributes {
    * Why was the incident cancelled?
    * @return reasonForCancellation
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getReasonForCancellation() {
     return reasonForCancellation;
   }
 
-  public void setReasonForCancellation(@javax.annotation.Nullable String reasonForCancellation) {
+  public void setReasonForCancellation(@jakarta.annotation.Nullable String reasonForCancellation) {
     this.reasonForCancellation = reasonForCancellation;
   }
 

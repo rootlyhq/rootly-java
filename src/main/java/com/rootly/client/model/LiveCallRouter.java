@@ -52,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * LiveCallRouter
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class LiveCallRouter {
   /**
    * The kind of the live_call_router
@@ -108,17 +108,17 @@ public class LiveCallRouter {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private KindEnum kind;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   /**
@@ -185,7 +185,7 @@ public class LiveCallRouter {
 
   public static final String SERIALIZED_NAME_COUNTRY_CODE = "country_code";
   @SerializedName(SERIALIZED_NAME_COUNTRY_CODE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CountryCodeEnum countryCode;
 
   /**
@@ -244,22 +244,22 @@ public class LiveCallRouter {
 
   public static final String SERIALIZED_NAME_PHONE_TYPE = "phone_type";
   @SerializedName(SERIALIZED_NAME_PHONE_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private PhoneTypeEnum phoneType;
 
   public static final String SERIALIZED_NAME_PHONE_NUMBER = "phone_number";
   @SerializedName(SERIALIZED_NAME_PHONE_NUMBER)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String phoneNumber;
 
   public static final String SERIALIZED_NAME_VOICEMAIL_GREETING = "voicemail_greeting";
   @SerializedName(SERIALIZED_NAME_VOICEMAIL_GREETING)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String voicemailGreeting;
 
   public static final String SERIALIZED_NAME_CALLER_GREETING = "caller_greeting";
   @SerializedName(SERIALIZED_NAME_CALLER_GREETING)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String callerGreeting;
 
   /**
@@ -326,63 +326,63 @@ public class LiveCallRouter {
 
   public static final String SERIALIZED_NAME_WAITING_MUSIC_URL = "waiting_music_url";
   @SerializedName(SERIALIZED_NAME_WAITING_MUSIC_URL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private WaitingMusicUrlEnum waitingMusicUrl;
 
   public static final String SERIALIZED_NAME_SENT_TO_VOICEMAIL_DELAY = "sent_to_voicemail_delay";
   @SerializedName(SERIALIZED_NAME_SENT_TO_VOICEMAIL_DELAY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer sentToVoicemailDelay;
 
   public static final String SERIALIZED_NAME_SHOULD_REDIRECT_TO_VOICEMAIL_ON_NO_ANSWER = "should_redirect_to_voicemail_on_no_answer";
   @SerializedName(SERIALIZED_NAME_SHOULD_REDIRECT_TO_VOICEMAIL_ON_NO_ANSWER)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean shouldRedirectToVoicemailOnNoAnswer;
 
   public static final String SERIALIZED_NAME_ESCALATION_LEVEL_DELAY_IN_SECONDS = "escalation_level_delay_in_seconds";
   @SerializedName(SERIALIZED_NAME_ESCALATION_LEVEL_DELAY_IN_SECONDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer escalationLevelDelayInSeconds;
 
   public static final String SERIALIZED_NAME_SHOULD_AUTO_RESOLVE_ALERT_ON_CALL_END = "should_auto_resolve_alert_on_call_end";
   @SerializedName(SERIALIZED_NAME_SHOULD_AUTO_RESOLVE_ALERT_ON_CALL_END)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean shouldAutoResolveAlertOnCallEnd;
 
   public static final String SERIALIZED_NAME_ALERT_URGENCY_ID = "alert_urgency_id";
   @SerializedName(SERIALIZED_NAME_ALERT_URGENCY_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String alertUrgencyId;
 
   public static final String SERIALIZED_NAME_CALLING_TREE_PROMPT = "calling_tree_prompt";
   @SerializedName(SERIALIZED_NAME_CALLING_TREE_PROMPT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String callingTreePrompt;
 
   public static final String SERIALIZED_NAME_PAGING_TARGETS = "paging_targets";
   @SerializedName(SERIALIZED_NAME_PAGING_TARGETS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewLiveCallRouterDataAttributesPagingTargetsInner> pagingTargets = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ESCALATION_POLICY_TRIGGER_PARAMS = "escalation_policy_trigger_params";
   @SerializedName(SERIALIZED_NAME_ESCALATION_POLICY_TRIGGER_PARAMS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private UpdateLiveCallRouterDataAttributesEscalationPolicyTriggerParams escalationPolicyTriggerParams;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public LiveCallRouter() {
   }
 
-  public LiveCallRouter kind(@javax.annotation.Nullable KindEnum kind) {
+  public LiveCallRouter kind(@jakarta.annotation.Nullable KindEnum kind) {
     this.kind = kind;
     return this;
   }
@@ -391,17 +391,17 @@ public class LiveCallRouter {
    * The kind of the live_call_router
    * @return kind
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(@javax.annotation.Nullable KindEnum kind) {
+  public void setKind(@jakarta.annotation.Nullable KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public LiveCallRouter enabled(@javax.annotation.Nullable Boolean enabled) {
+  public LiveCallRouter enabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -410,17 +410,17 @@ public class LiveCallRouter {
    * Whether the live_call_router is enabled
    * @return enabled
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getEnabled() {
     return enabled;
   }
 
-  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
+  public void setEnabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public LiveCallRouter name(@javax.annotation.Nonnull String name) {
+  public LiveCallRouter name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -429,17 +429,17 @@ public class LiveCallRouter {
    * The name of the live_call_router
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public LiveCallRouter countryCode(@javax.annotation.Nullable CountryCodeEnum countryCode) {
+  public LiveCallRouter countryCode(@jakarta.annotation.Nullable CountryCodeEnum countryCode) {
     this.countryCode = countryCode;
     return this;
   }
@@ -448,17 +448,17 @@ public class LiveCallRouter {
    * The country code of the live_call_router
    * @return countryCode
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CountryCodeEnum getCountryCode() {
     return countryCode;
   }
 
-  public void setCountryCode(@javax.annotation.Nullable CountryCodeEnum countryCode) {
+  public void setCountryCode(@jakarta.annotation.Nullable CountryCodeEnum countryCode) {
     this.countryCode = countryCode;
   }
 
 
-  public LiveCallRouter phoneType(@javax.annotation.Nullable PhoneTypeEnum phoneType) {
+  public LiveCallRouter phoneType(@jakarta.annotation.Nullable PhoneTypeEnum phoneType) {
     this.phoneType = phoneType;
     return this;
   }
@@ -467,17 +467,17 @@ public class LiveCallRouter {
    * The phone type of the live_call_router
    * @return phoneType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public PhoneTypeEnum getPhoneType() {
     return phoneType;
   }
 
-  public void setPhoneType(@javax.annotation.Nullable PhoneTypeEnum phoneType) {
+  public void setPhoneType(@jakarta.annotation.Nullable PhoneTypeEnum phoneType) {
     this.phoneType = phoneType;
   }
 
 
-  public LiveCallRouter phoneNumber(@javax.annotation.Nullable String phoneNumber) {
+  public LiveCallRouter phoneNumber(@jakarta.annotation.Nullable String phoneNumber) {
     this.phoneNumber = phoneNumber;
     return this;
   }
@@ -486,17 +486,17 @@ public class LiveCallRouter {
    * You can select a phone number using [generate_phone_number](#//api/v1/live_call_routers/generate_phone_number) API and pass that phone number here to register
    * @return phoneNumber
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPhoneNumber() {
     return phoneNumber;
   }
 
-  public void setPhoneNumber(@javax.annotation.Nullable String phoneNumber) {
+  public void setPhoneNumber(@jakarta.annotation.Nullable String phoneNumber) {
     this.phoneNumber = phoneNumber;
   }
 
 
-  public LiveCallRouter voicemailGreeting(@javax.annotation.Nullable String voicemailGreeting) {
+  public LiveCallRouter voicemailGreeting(@jakarta.annotation.Nullable String voicemailGreeting) {
     this.voicemailGreeting = voicemailGreeting;
     return this;
   }
@@ -505,17 +505,17 @@ public class LiveCallRouter {
    * The voicemail greeting of the live_call_router
    * @return voicemailGreeting
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getVoicemailGreeting() {
     return voicemailGreeting;
   }
 
-  public void setVoicemailGreeting(@javax.annotation.Nullable String voicemailGreeting) {
+  public void setVoicemailGreeting(@jakarta.annotation.Nullable String voicemailGreeting) {
     this.voicemailGreeting = voicemailGreeting;
   }
 
 
-  public LiveCallRouter callerGreeting(@javax.annotation.Nullable String callerGreeting) {
+  public LiveCallRouter callerGreeting(@jakarta.annotation.Nullable String callerGreeting) {
     this.callerGreeting = callerGreeting;
     return this;
   }
@@ -524,17 +524,17 @@ public class LiveCallRouter {
    * The caller greeting message of the live_call_router
    * @return callerGreeting
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCallerGreeting() {
     return callerGreeting;
   }
 
-  public void setCallerGreeting(@javax.annotation.Nullable String callerGreeting) {
+  public void setCallerGreeting(@jakarta.annotation.Nullable String callerGreeting) {
     this.callerGreeting = callerGreeting;
   }
 
 
-  public LiveCallRouter waitingMusicUrl(@javax.annotation.Nullable WaitingMusicUrlEnum waitingMusicUrl) {
+  public LiveCallRouter waitingMusicUrl(@jakarta.annotation.Nullable WaitingMusicUrlEnum waitingMusicUrl) {
     this.waitingMusicUrl = waitingMusicUrl;
     return this;
   }
@@ -543,17 +543,17 @@ public class LiveCallRouter {
    * The waiting music URL of the live_call_router
    * @return waitingMusicUrl
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public WaitingMusicUrlEnum getWaitingMusicUrl() {
     return waitingMusicUrl;
   }
 
-  public void setWaitingMusicUrl(@javax.annotation.Nullable WaitingMusicUrlEnum waitingMusicUrl) {
+  public void setWaitingMusicUrl(@jakarta.annotation.Nullable WaitingMusicUrlEnum waitingMusicUrl) {
     this.waitingMusicUrl = waitingMusicUrl;
   }
 
 
-  public LiveCallRouter sentToVoicemailDelay(@javax.annotation.Nullable Integer sentToVoicemailDelay) {
+  public LiveCallRouter sentToVoicemailDelay(@jakarta.annotation.Nullable Integer sentToVoicemailDelay) {
     this.sentToVoicemailDelay = sentToVoicemailDelay;
     return this;
   }
@@ -562,17 +562,17 @@ public class LiveCallRouter {
    * The delay (seconds) after which the caller in redirected to voicemail
    * @return sentToVoicemailDelay
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getSentToVoicemailDelay() {
     return sentToVoicemailDelay;
   }
 
-  public void setSentToVoicemailDelay(@javax.annotation.Nullable Integer sentToVoicemailDelay) {
+  public void setSentToVoicemailDelay(@jakarta.annotation.Nullable Integer sentToVoicemailDelay) {
     this.sentToVoicemailDelay = sentToVoicemailDelay;
   }
 
 
-  public LiveCallRouter shouldRedirectToVoicemailOnNoAnswer(@javax.annotation.Nullable Boolean shouldRedirectToVoicemailOnNoAnswer) {
+  public LiveCallRouter shouldRedirectToVoicemailOnNoAnswer(@jakarta.annotation.Nullable Boolean shouldRedirectToVoicemailOnNoAnswer) {
     this.shouldRedirectToVoicemailOnNoAnswer = shouldRedirectToVoicemailOnNoAnswer;
     return this;
   }
@@ -581,17 +581,17 @@ public class LiveCallRouter {
    * This prompts the caller to choose voicemail or connect live
    * @return shouldRedirectToVoicemailOnNoAnswer
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getShouldRedirectToVoicemailOnNoAnswer() {
     return shouldRedirectToVoicemailOnNoAnswer;
   }
 
-  public void setShouldRedirectToVoicemailOnNoAnswer(@javax.annotation.Nullable Boolean shouldRedirectToVoicemailOnNoAnswer) {
+  public void setShouldRedirectToVoicemailOnNoAnswer(@jakarta.annotation.Nullable Boolean shouldRedirectToVoicemailOnNoAnswer) {
     this.shouldRedirectToVoicemailOnNoAnswer = shouldRedirectToVoicemailOnNoAnswer;
   }
 
 
-  public LiveCallRouter escalationLevelDelayInSeconds(@javax.annotation.Nullable Integer escalationLevelDelayInSeconds) {
+  public LiveCallRouter escalationLevelDelayInSeconds(@jakarta.annotation.Nullable Integer escalationLevelDelayInSeconds) {
     this.escalationLevelDelayInSeconds = escalationLevelDelayInSeconds;
     return this;
   }
@@ -600,17 +600,17 @@ public class LiveCallRouter {
    * This overrides the delay (seconds) in escalation levels
    * @return escalationLevelDelayInSeconds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getEscalationLevelDelayInSeconds() {
     return escalationLevelDelayInSeconds;
   }
 
-  public void setEscalationLevelDelayInSeconds(@javax.annotation.Nullable Integer escalationLevelDelayInSeconds) {
+  public void setEscalationLevelDelayInSeconds(@jakarta.annotation.Nullable Integer escalationLevelDelayInSeconds) {
     this.escalationLevelDelayInSeconds = escalationLevelDelayInSeconds;
   }
 
 
-  public LiveCallRouter shouldAutoResolveAlertOnCallEnd(@javax.annotation.Nullable Boolean shouldAutoResolveAlertOnCallEnd) {
+  public LiveCallRouter shouldAutoResolveAlertOnCallEnd(@jakarta.annotation.Nullable Boolean shouldAutoResolveAlertOnCallEnd) {
     this.shouldAutoResolveAlertOnCallEnd = shouldAutoResolveAlertOnCallEnd;
     return this;
   }
@@ -619,17 +619,17 @@ public class LiveCallRouter {
    * This overrides the delay (seconds) in escalation levels
    * @return shouldAutoResolveAlertOnCallEnd
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getShouldAutoResolveAlertOnCallEnd() {
     return shouldAutoResolveAlertOnCallEnd;
   }
 
-  public void setShouldAutoResolveAlertOnCallEnd(@javax.annotation.Nullable Boolean shouldAutoResolveAlertOnCallEnd) {
+  public void setShouldAutoResolveAlertOnCallEnd(@jakarta.annotation.Nullable Boolean shouldAutoResolveAlertOnCallEnd) {
     this.shouldAutoResolveAlertOnCallEnd = shouldAutoResolveAlertOnCallEnd;
   }
 
 
-  public LiveCallRouter alertUrgencyId(@javax.annotation.Nullable String alertUrgencyId) {
+  public LiveCallRouter alertUrgencyId(@jakarta.annotation.Nullable String alertUrgencyId) {
     this.alertUrgencyId = alertUrgencyId;
     return this;
   }
@@ -638,17 +638,17 @@ public class LiveCallRouter {
    * This is used in escalation paths to determine who to page
    * @return alertUrgencyId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getAlertUrgencyId() {
     return alertUrgencyId;
   }
 
-  public void setAlertUrgencyId(@javax.annotation.Nullable String alertUrgencyId) {
+  public void setAlertUrgencyId(@jakarta.annotation.Nullable String alertUrgencyId) {
     this.alertUrgencyId = alertUrgencyId;
   }
 
 
-  public LiveCallRouter callingTreePrompt(@javax.annotation.Nullable String callingTreePrompt) {
+  public LiveCallRouter callingTreePrompt(@jakarta.annotation.Nullable String callingTreePrompt) {
     this.callingTreePrompt = callingTreePrompt;
     return this;
   }
@@ -657,17 +657,17 @@ public class LiveCallRouter {
    * The audio instructions callers will hear when they call this number, prompting them to select from available options to route their call
    * @return callingTreePrompt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCallingTreePrompt() {
     return callingTreePrompt;
   }
 
-  public void setCallingTreePrompt(@javax.annotation.Nullable String callingTreePrompt) {
+  public void setCallingTreePrompt(@jakarta.annotation.Nullable String callingTreePrompt) {
     this.callingTreePrompt = callingTreePrompt;
   }
 
 
-  public LiveCallRouter pagingTargets(@javax.annotation.Nullable List<NewLiveCallRouterDataAttributesPagingTargetsInner> pagingTargets) {
+  public LiveCallRouter pagingTargets(@jakarta.annotation.Nullable List<NewLiveCallRouterDataAttributesPagingTargetsInner> pagingTargets) {
     this.pagingTargets = pagingTargets;
     return this;
   }
@@ -684,17 +684,17 @@ public class LiveCallRouter {
    * Paging targets that callers can select from when this live call router is configured as a phone tree.
    * @return pagingTargets
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewLiveCallRouterDataAttributesPagingTargetsInner> getPagingTargets() {
     return pagingTargets;
   }
 
-  public void setPagingTargets(@javax.annotation.Nullable List<NewLiveCallRouterDataAttributesPagingTargetsInner> pagingTargets) {
+  public void setPagingTargets(@jakarta.annotation.Nullable List<NewLiveCallRouterDataAttributesPagingTargetsInner> pagingTargets) {
     this.pagingTargets = pagingTargets;
   }
 
 
-  public LiveCallRouter escalationPolicyTriggerParams(@javax.annotation.Nullable UpdateLiveCallRouterDataAttributesEscalationPolicyTriggerParams escalationPolicyTriggerParams) {
+  public LiveCallRouter escalationPolicyTriggerParams(@jakarta.annotation.Nullable UpdateLiveCallRouterDataAttributesEscalationPolicyTriggerParams escalationPolicyTriggerParams) {
     this.escalationPolicyTriggerParams = escalationPolicyTriggerParams;
     return this;
   }
@@ -703,17 +703,17 @@ public class LiveCallRouter {
    * Get escalationPolicyTriggerParams
    * @return escalationPolicyTriggerParams
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public UpdateLiveCallRouterDataAttributesEscalationPolicyTriggerParams getEscalationPolicyTriggerParams() {
     return escalationPolicyTriggerParams;
   }
 
-  public void setEscalationPolicyTriggerParams(@javax.annotation.Nullable UpdateLiveCallRouterDataAttributesEscalationPolicyTriggerParams escalationPolicyTriggerParams) {
+  public void setEscalationPolicyTriggerParams(@jakarta.annotation.Nullable UpdateLiveCallRouterDataAttributesEscalationPolicyTriggerParams escalationPolicyTriggerParams) {
     this.escalationPolicyTriggerParams = escalationPolicyTriggerParams;
   }
 
 
-  public LiveCallRouter createdAt(@javax.annotation.Nonnull String createdAt) {
+  public LiveCallRouter createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -722,17 +722,17 @@ public class LiveCallRouter {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public LiveCallRouter updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public LiveCallRouter updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -741,12 +741,12 @@ public class LiveCallRouter {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

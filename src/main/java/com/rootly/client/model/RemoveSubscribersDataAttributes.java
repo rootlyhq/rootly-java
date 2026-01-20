@@ -51,22 +51,22 @@ import com.rootly.client.JSON;
 /**
  * RemoveSubscribersDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RemoveSubscribersDataAttributes {
   public static final String SERIALIZED_NAME_USER_IDS = "user_ids";
   @SerializedName(SERIALIZED_NAME_USER_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> userIds;
 
   public static final String SERIALIZED_NAME_REMOVE_USERS_WITH_NO_PRIVATE_INCIDENT_ACCESS = "remove_users_with_no_private_incident_access";
   @SerializedName(SERIALIZED_NAME_REMOVE_USERS_WITH_NO_PRIVATE_INCIDENT_ACCESS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean removeUsersWithNoPrivateIncidentAccess = false;
 
   public RemoveSubscribersDataAttributes() {
   }
 
-  public RemoveSubscribersDataAttributes userIds(@javax.annotation.Nullable List<String> userIds) {
+  public RemoveSubscribersDataAttributes userIds(@jakarta.annotation.Nullable List<String> userIds) {
     this.userIds = userIds;
     return this;
   }
@@ -83,17 +83,17 @@ public class RemoveSubscribersDataAttributes {
    * IDs of users you wish to remove from the list of subscribers for this incident
    * @return userIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getUserIds() {
     return userIds;
   }
 
-  public void setUserIds(@javax.annotation.Nullable List<String> userIds) {
+  public void setUserIds(@jakarta.annotation.Nullable List<String> userIds) {
     this.userIds = userIds;
   }
 
 
-  public RemoveSubscribersDataAttributes removeUsersWithNoPrivateIncidentAccess(@javax.annotation.Nullable Boolean removeUsersWithNoPrivateIncidentAccess) {
+  public RemoveSubscribersDataAttributes removeUsersWithNoPrivateIncidentAccess(@jakarta.annotation.Nullable Boolean removeUsersWithNoPrivateIncidentAccess) {
     this.removeUsersWithNoPrivateIncidentAccess = removeUsersWithNoPrivateIncidentAccess;
     return this;
   }
@@ -102,12 +102,12 @@ public class RemoveSubscribersDataAttributes {
    * Users without read permissions for private incidents will be removed from the subscriber list of this incident
    * @return removeUsersWithNoPrivateIncidentAccess
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getRemoveUsersWithNoPrivateIncidentAccess() {
     return removeUsersWithNoPrivateIncidentAccess;
   }
 
-  public void setRemoveUsersWithNoPrivateIncidentAccess(@javax.annotation.Nullable Boolean removeUsersWithNoPrivateIncidentAccess) {
+  public void setRemoveUsersWithNoPrivateIncidentAccess(@jakarta.annotation.Nullable Boolean removeUsersWithNoPrivateIncidentAccess) {
     this.removeUsersWithNoPrivateIncidentAccess = removeUsersWithNoPrivateIncidentAccess;
   }
 

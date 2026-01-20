@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * NewScheduleRotationActiveDayDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewScheduleRotationActiveDayDataAttributes {
   /**
    * Schedule rotation day name for which active times to be created
@@ -117,18 +117,18 @@ public class NewScheduleRotationActiveDayDataAttributes {
 
   public static final String SERIALIZED_NAME_DAY_NAME = "day_name";
   @SerializedName(SERIALIZED_NAME_DAY_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private DayNameEnum dayName;
 
   public static final String SERIALIZED_NAME_ACTIVE_TIME_ATTRIBUTES = "active_time_attributes";
   @SerializedName(SERIALIZED_NAME_ACTIVE_TIME_ATTRIBUTES)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<NewScheduleRotationActiveDayDataAttributesActiveTimeAttributesInner> activeTimeAttributes = new ArrayList<>();
 
   public NewScheduleRotationActiveDayDataAttributes() {
   }
 
-  public NewScheduleRotationActiveDayDataAttributes dayName(@javax.annotation.Nonnull DayNameEnum dayName) {
+  public NewScheduleRotationActiveDayDataAttributes dayName(@jakarta.annotation.Nonnull DayNameEnum dayName) {
     this.dayName = dayName;
     return this;
   }
@@ -137,17 +137,17 @@ public class NewScheduleRotationActiveDayDataAttributes {
    * Schedule rotation day name for which active times to be created
    * @return dayName
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public DayNameEnum getDayName() {
     return dayName;
   }
 
-  public void setDayName(@javax.annotation.Nonnull DayNameEnum dayName) {
+  public void setDayName(@jakarta.annotation.Nonnull DayNameEnum dayName) {
     this.dayName = dayName;
   }
 
 
-  public NewScheduleRotationActiveDayDataAttributes activeTimeAttributes(@javax.annotation.Nonnull List<NewScheduleRotationActiveDayDataAttributesActiveTimeAttributesInner> activeTimeAttributes) {
+  public NewScheduleRotationActiveDayDataAttributes activeTimeAttributes(@jakarta.annotation.Nonnull List<NewScheduleRotationActiveDayDataAttributesActiveTimeAttributesInner> activeTimeAttributes) {
     this.activeTimeAttributes = activeTimeAttributes;
     return this;
   }
@@ -164,12 +164,12 @@ public class NewScheduleRotationActiveDayDataAttributes {
    * Schedule rotation active times per day
    * @return activeTimeAttributes
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<NewScheduleRotationActiveDayDataAttributesActiveTimeAttributesInner> getActiveTimeAttributes() {
     return activeTimeAttributes;
   }
 
-  public void setActiveTimeAttributes(@javax.annotation.Nonnull List<NewScheduleRotationActiveDayDataAttributesActiveTimeAttributesInner> activeTimeAttributes) {
+  public void setActiveTimeAttributes(@jakarta.annotation.Nonnull List<NewScheduleRotationActiveDayDataAttributesActiveTimeAttributesInner> activeTimeAttributes) {
     this.activeTimeAttributes = activeTimeAttributes;
   }
 

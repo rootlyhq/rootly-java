@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateGithubIssueTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateGithubIssueTaskParams {
   /**
    * Gets or Sets taskType
@@ -103,33 +103,33 @@ public class UpdateGithubIssueTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_ISSUE_ID = "issue_id";
   @SerializedName(SERIALIZED_NAME_ISSUE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String issueId;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String title;
 
   public static final String SERIALIZED_NAME_BODY = "body";
   @SerializedName(SERIALIZED_NAME_BODY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String body;
 
   public static final String SERIALIZED_NAME_COMPLETION = "completion";
   @SerializedName(SERIALIZED_NAME_COMPLETION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private AddActionItemTaskParamsPostToSlackChannelsInner completion;
 
   public UpdateGithubIssueTaskParams() {
   }
 
-  public UpdateGithubIssueTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public UpdateGithubIssueTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -138,17 +138,17 @@ public class UpdateGithubIssueTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public UpdateGithubIssueTaskParams issueId(@javax.annotation.Nonnull String issueId) {
+  public UpdateGithubIssueTaskParams issueId(@jakarta.annotation.Nonnull String issueId) {
     this.issueId = issueId;
     return this;
   }
@@ -157,17 +157,17 @@ public class UpdateGithubIssueTaskParams {
    * The issue id
    * @return issueId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getIssueId() {
     return issueId;
   }
 
-  public void setIssueId(@javax.annotation.Nonnull String issueId) {
+  public void setIssueId(@jakarta.annotation.Nonnull String issueId) {
     this.issueId = issueId;
   }
 
 
-  public UpdateGithubIssueTaskParams title(@javax.annotation.Nullable String title) {
+  public UpdateGithubIssueTaskParams title(@jakarta.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
@@ -176,17 +176,17 @@ public class UpdateGithubIssueTaskParams {
    * The issue title
    * @return title
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nullable String title) {
+  public void setTitle(@jakarta.annotation.Nullable String title) {
     this.title = title;
   }
 
 
-  public UpdateGithubIssueTaskParams body(@javax.annotation.Nullable String body) {
+  public UpdateGithubIssueTaskParams body(@jakarta.annotation.Nullable String body) {
     this.body = body;
     return this;
   }
@@ -195,17 +195,17 @@ public class UpdateGithubIssueTaskParams {
    * The issue body
    * @return body
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getBody() {
     return body;
   }
 
-  public void setBody(@javax.annotation.Nullable String body) {
+  public void setBody(@jakarta.annotation.Nullable String body) {
     this.body = body;
   }
 
 
-  public UpdateGithubIssueTaskParams completion(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner completion) {
+  public UpdateGithubIssueTaskParams completion(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner completion) {
     this.completion = completion;
     return this;
   }
@@ -214,12 +214,12 @@ public class UpdateGithubIssueTaskParams {
    * Get completion
    * @return completion
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public AddActionItemTaskParamsPostToSlackChannelsInner getCompletion() {
     return completion;
   }
 
-  public void setCompletion(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner completion) {
+  public void setCompletion(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner completion) {
     this.completion = completion;
   }
 

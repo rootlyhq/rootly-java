@@ -50,7 +50,7 @@ import com.rootly.client.JSON;
 /**
  * CreateAirtableTableRecordTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateAirtableTableRecordTaskParams {
   /**
    * Gets or Sets taskType
@@ -104,28 +104,28 @@ public class CreateAirtableTableRecordTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_BASE = "base";
   @SerializedName(SERIALIZED_NAME_BASE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private AddActionItemTaskParamsPostToSlackChannelsInner base;
 
   public static final String SERIALIZED_NAME_TABLE = "table";
   @SerializedName(SERIALIZED_NAME_TABLE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private AddActionItemTaskParamsPostToSlackChannelsInner table;
 
   public static final String SERIALIZED_NAME_CUSTOM_FIELDS_MAPPING = "custom_fields_mapping";
   @SerializedName(SERIALIZED_NAME_CUSTOM_FIELDS_MAPPING)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String customFieldsMapping;
 
   public CreateAirtableTableRecordTaskParams() {
   }
 
-  public CreateAirtableTableRecordTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public CreateAirtableTableRecordTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -134,17 +134,17 @@ public class CreateAirtableTableRecordTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public CreateAirtableTableRecordTaskParams base(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner base) {
+  public CreateAirtableTableRecordTaskParams base(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner base) {
     this.base = base;
     return this;
   }
@@ -153,17 +153,17 @@ public class CreateAirtableTableRecordTaskParams {
    * Get base
    * @return base
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public AddActionItemTaskParamsPostToSlackChannelsInner getBase() {
     return base;
   }
 
-  public void setBase(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner base) {
+  public void setBase(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner base) {
     this.base = base;
   }
 
 
-  public CreateAirtableTableRecordTaskParams table(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner table) {
+  public CreateAirtableTableRecordTaskParams table(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner table) {
     this.table = table;
     return this;
   }
@@ -172,17 +172,17 @@ public class CreateAirtableTableRecordTaskParams {
    * Get table
    * @return table
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public AddActionItemTaskParamsPostToSlackChannelsInner getTable() {
     return table;
   }
 
-  public void setTable(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner table) {
+  public void setTable(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner table) {
     this.table = table;
   }
 
 
-  public CreateAirtableTableRecordTaskParams customFieldsMapping(@javax.annotation.Nullable String customFieldsMapping) {
+  public CreateAirtableTableRecordTaskParams customFieldsMapping(@jakarta.annotation.Nullable String customFieldsMapping) {
     this.customFieldsMapping = customFieldsMapping;
     return this;
   }
@@ -191,12 +191,12 @@ public class CreateAirtableTableRecordTaskParams {
    * Custom field mappings. Can contain liquid markup and need to be valid JSON
    * @return customFieldsMapping
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCustomFieldsMapping() {
     return customFieldsMapping;
   }
 
-  public void setCustomFieldsMapping(@javax.annotation.Nullable String customFieldsMapping) {
+  public void setCustomFieldsMapping(@jakarta.annotation.Nullable String customFieldsMapping) {
     this.customFieldsMapping = customFieldsMapping;
   }
 

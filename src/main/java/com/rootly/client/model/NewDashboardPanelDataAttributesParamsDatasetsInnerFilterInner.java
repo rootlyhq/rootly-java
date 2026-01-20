@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInner {
   /**
    * Gets or Sets operation
@@ -107,18 +107,18 @@ public class NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInner {
 
   public static final String SERIALIZED_NAME_OPERATION = "operation";
   @SerializedName(SERIALIZED_NAME_OPERATION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private OperationEnum operation;
 
   public static final String SERIALIZED_NAME_RULES = "rules";
   @SerializedName(SERIALIZED_NAME_RULES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInnerRulesInner> rules = new ArrayList<>();
 
   public NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInner() {
   }
 
-  public NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInner operation(@javax.annotation.Nullable OperationEnum operation) {
+  public NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInner operation(@jakarta.annotation.Nullable OperationEnum operation) {
     this.operation = operation;
     return this;
   }
@@ -127,17 +127,17 @@ public class NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInner {
    * Get operation
    * @return operation
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public OperationEnum getOperation() {
     return operation;
   }
 
-  public void setOperation(@javax.annotation.Nullable OperationEnum operation) {
+  public void setOperation(@jakarta.annotation.Nullable OperationEnum operation) {
     this.operation = operation;
   }
 
 
-  public NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInner rules(@javax.annotation.Nullable List<NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInnerRulesInner> rules) {
+  public NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInner rules(@jakarta.annotation.Nullable List<NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInnerRulesInner> rules) {
     this.rules = rules;
     return this;
   }
@@ -154,12 +154,12 @@ public class NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInner {
    * Get rules
    * @return rules
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInnerRulesInner> getRules() {
     return rules;
   }
 
-  public void setRules(@javax.annotation.Nullable List<NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInnerRulesInner> rules) {
+  public void setRules(@jakarta.annotation.Nullable List<NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInnerRulesInner> rules) {
     this.rules = rules;
   }
 

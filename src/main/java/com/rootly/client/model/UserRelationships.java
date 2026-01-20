@@ -50,22 +50,22 @@ import com.rootly.client.JSON;
 /**
  * UserRelationships
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UserRelationships {
   public static final String SERIALIZED_NAME_ROLE = "role";
   @SerializedName(SERIALIZED_NAME_ROLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private RoleRelationship role;
 
   public static final String SERIALIZED_NAME_ON_CALL_ROLE = "on_call_role";
   @SerializedName(SERIALIZED_NAME_ON_CALL_ROLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private OnCallRoleRelationship onCallRole;
 
   public UserRelationships() {
   }
 
-  public UserRelationships role(@javax.annotation.Nullable RoleRelationship role) {
+  public UserRelationships role(@jakarta.annotation.Nullable RoleRelationship role) {
     this.role = role;
     return this;
   }
@@ -74,17 +74,17 @@ public class UserRelationships {
    * Get role
    * @return role
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public RoleRelationship getRole() {
     return role;
   }
 
-  public void setRole(@javax.annotation.Nullable RoleRelationship role) {
+  public void setRole(@jakarta.annotation.Nullable RoleRelationship role) {
     this.role = role;
   }
 
 
-  public UserRelationships onCallRole(@javax.annotation.Nullable OnCallRoleRelationship onCallRole) {
+  public UserRelationships onCallRole(@jakarta.annotation.Nullable OnCallRoleRelationship onCallRole) {
     this.onCallRole = onCallRole;
     return this;
   }
@@ -93,12 +93,12 @@ public class UserRelationships {
    * Get onCallRole
    * @return onCallRole
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public OnCallRoleRelationship getOnCallRole() {
     return onCallRole;
   }
 
-  public void setOnCallRole(@javax.annotation.Nullable OnCallRoleRelationship onCallRole) {
+  public void setOnCallRole(@jakarta.annotation.Nullable OnCallRoleRelationship onCallRole) {
     this.onCallRole = onCallRole;
   }
 

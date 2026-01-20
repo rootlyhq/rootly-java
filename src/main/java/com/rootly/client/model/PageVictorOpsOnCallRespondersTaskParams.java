@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * PageVictorOpsOnCallRespondersTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class PageVictorOpsOnCallRespondersTaskParams {
   /**
    * Gets or Sets taskType
@@ -105,28 +105,28 @@ public class PageVictorOpsOnCallRespondersTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_ESCALATION_POLICIES = "escalation_policies";
   @SerializedName(SERIALIZED_NAME_ESCALATION_POLICIES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<Object> escalationPolicies = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_USERS = "users";
   @SerializedName(SERIALIZED_NAME_USERS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<Object> users = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String title;
 
   public PageVictorOpsOnCallRespondersTaskParams() {
   }
 
-  public PageVictorOpsOnCallRespondersTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public PageVictorOpsOnCallRespondersTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -135,17 +135,17 @@ public class PageVictorOpsOnCallRespondersTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public PageVictorOpsOnCallRespondersTaskParams escalationPolicies(@javax.annotation.Nullable List<Object> escalationPolicies) {
+  public PageVictorOpsOnCallRespondersTaskParams escalationPolicies(@jakarta.annotation.Nullable List<Object> escalationPolicies) {
     this.escalationPolicies = escalationPolicies;
     return this;
   }
@@ -162,17 +162,17 @@ public class PageVictorOpsOnCallRespondersTaskParams {
    * Get escalationPolicies
    * @return escalationPolicies
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<Object> getEscalationPolicies() {
     return escalationPolicies;
   }
 
-  public void setEscalationPolicies(@javax.annotation.Nullable List<Object> escalationPolicies) {
+  public void setEscalationPolicies(@jakarta.annotation.Nullable List<Object> escalationPolicies) {
     this.escalationPolicies = escalationPolicies;
   }
 
 
-  public PageVictorOpsOnCallRespondersTaskParams users(@javax.annotation.Nullable List<Object> users) {
+  public PageVictorOpsOnCallRespondersTaskParams users(@jakarta.annotation.Nullable List<Object> users) {
     this.users = users;
     return this;
   }
@@ -189,17 +189,17 @@ public class PageVictorOpsOnCallRespondersTaskParams {
    * Get users
    * @return users
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<Object> getUsers() {
     return users;
   }
 
-  public void setUsers(@javax.annotation.Nullable List<Object> users) {
+  public void setUsers(@jakarta.annotation.Nullable List<Object> users) {
     this.users = users;
   }
 
 
-  public PageVictorOpsOnCallRespondersTaskParams title(@javax.annotation.Nullable String title) {
+  public PageVictorOpsOnCallRespondersTaskParams title(@jakarta.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
@@ -208,12 +208,12 @@ public class PageVictorOpsOnCallRespondersTaskParams {
    * Alert title.
    * @return title
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nullable String title) {
+  public void setTitle(@jakarta.annotation.Nullable String title) {
     this.title = title;
   }
 

@@ -92,7 +92,7 @@ public class RetrospectiveTemplatesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createPostmortemTemplateCall(@javax.annotation.Nonnull NewPostMortemTemplate newPostMortemTemplate, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createPostmortemTemplateCall(@jakarta.annotation.Nonnull NewPostMortemTemplate newPostMortemTemplate, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -138,7 +138,7 @@ public class RetrospectiveTemplatesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createPostmortemTemplateValidateBeforeCall(@javax.annotation.Nonnull NewPostMortemTemplate newPostMortemTemplate, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createPostmortemTemplateValidateBeforeCall(@jakarta.annotation.Nonnull NewPostMortemTemplate newPostMortemTemplate, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'newPostMortemTemplate' is set
         if (newPostMortemTemplate == null) {
             throw new ApiException("Missing the required parameter 'newPostMortemTemplate' when calling createPostmortemTemplate(Async)");
@@ -163,7 +163,7 @@ public class RetrospectiveTemplatesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public PostMortemTemplateResponse createPostmortemTemplate(@javax.annotation.Nonnull NewPostMortemTemplate newPostMortemTemplate) throws ApiException {
+    public PostMortemTemplateResponse createPostmortemTemplate(@jakarta.annotation.Nonnull NewPostMortemTemplate newPostMortemTemplate) throws ApiException {
         ApiResponse<PostMortemTemplateResponse> localVarResp = createPostmortemTemplateWithHttpInfo(newPostMortemTemplate);
         return localVarResp.getData();
     }
@@ -183,7 +183,7 @@ public class RetrospectiveTemplatesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PostMortemTemplateResponse> createPostmortemTemplateWithHttpInfo(@javax.annotation.Nonnull NewPostMortemTemplate newPostMortemTemplate) throws ApiException {
+    public ApiResponse<PostMortemTemplateResponse> createPostmortemTemplateWithHttpInfo(@jakarta.annotation.Nonnull NewPostMortemTemplate newPostMortemTemplate) throws ApiException {
         okhttp3.Call localVarCall = createPostmortemTemplateValidateBeforeCall(newPostMortemTemplate, null);
         Type localVarReturnType = new TypeToken<PostMortemTemplateResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -205,7 +205,7 @@ public class RetrospectiveTemplatesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createPostmortemTemplateAsync(@javax.annotation.Nonnull NewPostMortemTemplate newPostMortemTemplate, final ApiCallback<PostMortemTemplateResponse> _callback) throws ApiException {
+    public okhttp3.Call createPostmortemTemplateAsync(@jakarta.annotation.Nonnull NewPostMortemTemplate newPostMortemTemplate, final ApiCallback<PostMortemTemplateResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createPostmortemTemplateValidateBeforeCall(newPostMortemTemplate, _callback);
         Type localVarReturnType = new TypeToken<PostMortemTemplateResponse>(){}.getType();
@@ -226,7 +226,7 @@ public class RetrospectiveTemplatesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deletePostmortemTemplateCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deletePostmortemTemplateCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -272,7 +272,7 @@ public class RetrospectiveTemplatesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deletePostmortemTemplateValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deletePostmortemTemplateValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deletePostmortemTemplate(Async)");
@@ -296,7 +296,7 @@ public class RetrospectiveTemplatesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public PostMortemTemplateResponse deletePostmortemTemplate(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public PostMortemTemplateResponse deletePostmortemTemplate(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<PostMortemTemplateResponse> localVarResp = deletePostmortemTemplateWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -315,7 +315,7 @@ public class RetrospectiveTemplatesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PostMortemTemplateResponse> deletePostmortemTemplateWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public ApiResponse<PostMortemTemplateResponse> deletePostmortemTemplateWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = deletePostmortemTemplateValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<PostMortemTemplateResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -336,7 +336,7 @@ public class RetrospectiveTemplatesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deletePostmortemTemplateAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<PostMortemTemplateResponse> _callback) throws ApiException {
+    public okhttp3.Call deletePostmortemTemplateAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<PostMortemTemplateResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deletePostmortemTemplateValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<PostMortemTemplateResponse>(){}.getType();
@@ -357,7 +357,7 @@ public class RetrospectiveTemplatesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPostmortemTemplateCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getPostmortemTemplateCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -403,7 +403,7 @@ public class RetrospectiveTemplatesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getPostmortemTemplateValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getPostmortemTemplateValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getPostmortemTemplate(Async)");
@@ -427,7 +427,7 @@ public class RetrospectiveTemplatesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public PostMortemTemplateResponse getPostmortemTemplate(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public PostMortemTemplateResponse getPostmortemTemplate(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<PostMortemTemplateResponse> localVarResp = getPostmortemTemplateWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -446,7 +446,7 @@ public class RetrospectiveTemplatesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PostMortemTemplateResponse> getPostmortemTemplateWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public ApiResponse<PostMortemTemplateResponse> getPostmortemTemplateWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = getPostmortemTemplateValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<PostMortemTemplateResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -467,7 +467,7 @@ public class RetrospectiveTemplatesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPostmortemTemplateAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<PostMortemTemplateResponse> _callback) throws ApiException {
+    public okhttp3.Call getPostmortemTemplateAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<PostMortemTemplateResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getPostmortemTemplateValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<PostMortemTemplateResponse>(){}.getType();
@@ -489,7 +489,7 @@ public class RetrospectiveTemplatesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listPostmortemTemplatesCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listPostmortemTemplatesCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -546,7 +546,7 @@ public class RetrospectiveTemplatesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listPostmortemTemplatesValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listPostmortemTemplatesValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         return listPostmortemTemplatesCall(include, pageNumber, pageSize, _callback);
 
     }
@@ -566,7 +566,7 @@ public class RetrospectiveTemplatesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public PostMortemTemplateList listPostmortemTemplates(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+    public PostMortemTemplateList listPostmortemTemplates(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
         ApiResponse<PostMortemTemplateList> localVarResp = listPostmortemTemplatesWithHttpInfo(include, pageNumber, pageSize);
         return localVarResp.getData();
     }
@@ -586,7 +586,7 @@ public class RetrospectiveTemplatesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PostMortemTemplateList> listPostmortemTemplatesWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+    public ApiResponse<PostMortemTemplateList> listPostmortemTemplatesWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
         okhttp3.Call localVarCall = listPostmortemTemplatesValidateBeforeCall(include, pageNumber, pageSize, null);
         Type localVarReturnType = new TypeToken<PostMortemTemplateList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -608,7 +608,7 @@ public class RetrospectiveTemplatesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listPostmortemTemplatesAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback<PostMortemTemplateList> _callback) throws ApiException {
+    public okhttp3.Call listPostmortemTemplatesAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback<PostMortemTemplateList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listPostmortemTemplatesValidateBeforeCall(include, pageNumber, pageSize, _callback);
         Type localVarReturnType = new TypeToken<PostMortemTemplateList>(){}.getType();
@@ -630,7 +630,7 @@ public class RetrospectiveTemplatesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePostmortemTemplateCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdatePostMortemTemplate updatePostMortemTemplate, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updatePostmortemTemplateCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdatePostMortemTemplate updatePostMortemTemplate, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -677,7 +677,7 @@ public class RetrospectiveTemplatesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updatePostmortemTemplateValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdatePostMortemTemplate updatePostMortemTemplate, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updatePostmortemTemplateValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdatePostMortemTemplate updatePostMortemTemplate, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updatePostmortemTemplate(Async)");
@@ -707,7 +707,7 @@ public class RetrospectiveTemplatesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public PostMortemTemplateResponse updatePostmortemTemplate(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdatePostMortemTemplate updatePostMortemTemplate) throws ApiException {
+    public PostMortemTemplateResponse updatePostmortemTemplate(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdatePostMortemTemplate updatePostMortemTemplate) throws ApiException {
         ApiResponse<PostMortemTemplateResponse> localVarResp = updatePostmortemTemplateWithHttpInfo(id, updatePostMortemTemplate);
         return localVarResp.getData();
     }
@@ -727,7 +727,7 @@ public class RetrospectiveTemplatesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PostMortemTemplateResponse> updatePostmortemTemplateWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdatePostMortemTemplate updatePostMortemTemplate) throws ApiException {
+    public ApiResponse<PostMortemTemplateResponse> updatePostmortemTemplateWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdatePostMortemTemplate updatePostMortemTemplate) throws ApiException {
         okhttp3.Call localVarCall = updatePostmortemTemplateValidateBeforeCall(id, updatePostMortemTemplate, null);
         Type localVarReturnType = new TypeToken<PostMortemTemplateResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -749,7 +749,7 @@ public class RetrospectiveTemplatesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePostmortemTemplateAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdatePostMortemTemplate updatePostMortemTemplate, final ApiCallback<PostMortemTemplateResponse> _callback) throws ApiException {
+    public okhttp3.Call updatePostmortemTemplateAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdatePostMortemTemplate updatePostMortemTemplate, final ApiCallback<PostMortemTemplateResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updatePostmortemTemplateValidateBeforeCall(id, updatePostMortemTemplate, _callback);
         Type localVarReturnType = new TypeToken<PostMortemTemplateResponse>(){}.getType();

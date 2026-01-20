@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * AutoAssignRoleVictorOpsTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AutoAssignRoleVictorOpsTaskParams {
   /**
    * Gets or Sets taskType
@@ -103,23 +103,23 @@ public class AutoAssignRoleVictorOpsTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_INCIDENT_ROLE_ID = "incident_role_id";
   @SerializedName(SERIALIZED_NAME_INCIDENT_ROLE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String incidentRoleId;
 
   public static final String SERIALIZED_NAME_TEAM = "team";
   @SerializedName(SERIALIZED_NAME_TEAM)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private AddActionItemTaskParamsPostToSlackChannelsInner team;
 
   public AutoAssignRoleVictorOpsTaskParams() {
   }
 
-  public AutoAssignRoleVictorOpsTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public AutoAssignRoleVictorOpsTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -128,17 +128,17 @@ public class AutoAssignRoleVictorOpsTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public AutoAssignRoleVictorOpsTaskParams incidentRoleId(@javax.annotation.Nonnull String incidentRoleId) {
+  public AutoAssignRoleVictorOpsTaskParams incidentRoleId(@jakarta.annotation.Nonnull String incidentRoleId) {
     this.incidentRoleId = incidentRoleId;
     return this;
   }
@@ -147,17 +147,17 @@ public class AutoAssignRoleVictorOpsTaskParams {
    * The role id
    * @return incidentRoleId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getIncidentRoleId() {
     return incidentRoleId;
   }
 
-  public void setIncidentRoleId(@javax.annotation.Nonnull String incidentRoleId) {
+  public void setIncidentRoleId(@jakarta.annotation.Nonnull String incidentRoleId) {
     this.incidentRoleId = incidentRoleId;
   }
 
 
-  public AutoAssignRoleVictorOpsTaskParams team(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner team) {
+  public AutoAssignRoleVictorOpsTaskParams team(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner team) {
     this.team = team;
     return this;
   }
@@ -166,12 +166,12 @@ public class AutoAssignRoleVictorOpsTaskParams {
    * Get team
    * @return team
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public AddActionItemTaskParamsPostToSlackChannelsInner getTeam() {
     return team;
   }
 
-  public void setTeam(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner team) {
+  public void setTeam(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner team) {
     this.team = team;
   }
 

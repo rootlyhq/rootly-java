@@ -51,32 +51,32 @@ import com.rootly.client.JSON;
 /**
  * UpdateIncidentPermissionSetBooleanDataAttributesSeverityParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateIncidentPermissionSetBooleanDataAttributesSeverityParams {
   public static final String SERIALIZED_NAME_FULLY_ENABLED = "fully_enabled";
   @SerializedName(SERIALIZED_NAME_FULLY_ENABLED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean fullyEnabled = true;
 
   public static final String SERIALIZED_NAME_APPLIES_TO_UNASSIGNED = "applies_to_unassigned";
   @SerializedName(SERIALIZED_NAME_APPLIES_TO_UNASSIGNED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean appliesToUnassigned = true;
 
   public static final String SERIALIZED_NAME_CREATE_ENABLED = "create_enabled";
   @SerializedName(SERIALIZED_NAME_CREATE_ENABLED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean createEnabled = false;
 
   public static final String SERIALIZED_NAME_SEVERITY_IDS = "severity_ids";
   @SerializedName(SERIALIZED_NAME_SEVERITY_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> severityIds;
 
   public UpdateIncidentPermissionSetBooleanDataAttributesSeverityParams() {
   }
 
-  public UpdateIncidentPermissionSetBooleanDataAttributesSeverityParams fullyEnabled(@javax.annotation.Nullable Boolean fullyEnabled) {
+  public UpdateIncidentPermissionSetBooleanDataAttributesSeverityParams fullyEnabled(@jakarta.annotation.Nullable Boolean fullyEnabled) {
     this.fullyEnabled = fullyEnabled;
     return this;
   }
@@ -85,17 +85,17 @@ public class UpdateIncidentPermissionSetBooleanDataAttributesSeverityParams {
    * Whether permissions are enabled for any severity incident
    * @return fullyEnabled
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getFullyEnabled() {
     return fullyEnabled;
   }
 
-  public void setFullyEnabled(@javax.annotation.Nullable Boolean fullyEnabled) {
+  public void setFullyEnabled(@jakarta.annotation.Nullable Boolean fullyEnabled) {
     this.fullyEnabled = fullyEnabled;
   }
 
 
-  public UpdateIncidentPermissionSetBooleanDataAttributesSeverityParams appliesToUnassigned(@javax.annotation.Nullable Boolean appliesToUnassigned) {
+  public UpdateIncidentPermissionSetBooleanDataAttributesSeverityParams appliesToUnassigned(@jakarta.annotation.Nullable Boolean appliesToUnassigned) {
     this.appliesToUnassigned = appliesToUnassigned;
     return this;
   }
@@ -104,17 +104,17 @@ public class UpdateIncidentPermissionSetBooleanDataAttributesSeverityParams {
    * Whether permissions are enabled for incident without severity
    * @return appliesToUnassigned
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getAppliesToUnassigned() {
     return appliesToUnassigned;
   }
 
-  public void setAppliesToUnassigned(@javax.annotation.Nullable Boolean appliesToUnassigned) {
+  public void setAppliesToUnassigned(@jakarta.annotation.Nullable Boolean appliesToUnassigned) {
     this.appliesToUnassigned = appliesToUnassigned;
   }
 
 
-  public UpdateIncidentPermissionSetBooleanDataAttributesSeverityParams createEnabled(@javax.annotation.Nullable Boolean createEnabled) {
+  public UpdateIncidentPermissionSetBooleanDataAttributesSeverityParams createEnabled(@jakarta.annotation.Nullable Boolean createEnabled) {
     this.createEnabled = createEnabled;
     return this;
   }
@@ -123,17 +123,17 @@ public class UpdateIncidentPermissionSetBooleanDataAttributesSeverityParams {
    * Whether permissions are enabled when creating incident
    * @return createEnabled
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getCreateEnabled() {
     return createEnabled;
   }
 
-  public void setCreateEnabled(@javax.annotation.Nullable Boolean createEnabled) {
+  public void setCreateEnabled(@jakarta.annotation.Nullable Boolean createEnabled) {
     this.createEnabled = createEnabled;
   }
 
 
-  public UpdateIncidentPermissionSetBooleanDataAttributesSeverityParams severityIds(@javax.annotation.Nullable List<String> severityIds) {
+  public UpdateIncidentPermissionSetBooleanDataAttributesSeverityParams severityIds(@jakarta.annotation.Nullable List<String> severityIds) {
     this.severityIds = severityIds;
     return this;
   }
@@ -150,12 +150,12 @@ public class UpdateIncidentPermissionSetBooleanDataAttributesSeverityParams {
    * Severity ids that determine if an incident is permitted based on matching severity
    * @return severityIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getSeverityIds() {
     return severityIds;
   }
 
-  public void setSeverityIds(@javax.annotation.Nullable List<String> severityIds) {
+  public void setSeverityIds(@jakarta.annotation.Nullable List<String> severityIds) {
     this.severityIds = severityIds;
   }
 

@@ -50,16 +50,16 @@ import com.rootly.client.JSON;
 /**
  * NewWorkflowCustomFieldSelectionDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewWorkflowCustomFieldSelectionDataAttributes {
   public static final String SERIALIZED_NAME_WORKFLOW_ID = "workflow_id";
   @SerializedName(SERIALIZED_NAME_WORKFLOW_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String workflowId;
 
   public static final String SERIALIZED_NAME_CUSTOM_FIELD_ID = "custom_field_id";
   @SerializedName(SERIALIZED_NAME_CUSTOM_FIELD_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Integer customFieldId;
 
   /**
@@ -130,23 +130,23 @@ public class NewWorkflowCustomFieldSelectionDataAttributes {
 
   public static final String SERIALIZED_NAME_INCIDENT_CONDITION = "incident_condition";
   @SerializedName(SERIALIZED_NAME_INCIDENT_CONDITION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private IncidentConditionEnum incidentCondition = IncidentConditionEnum.ANY;
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> values = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SELECTED_OPTION_IDS = "selected_option_ids";
   @SerializedName(SERIALIZED_NAME_SELECTED_OPTION_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<Integer> selectedOptionIds = new ArrayList<>();
 
   public NewWorkflowCustomFieldSelectionDataAttributes() {
   }
 
-  public NewWorkflowCustomFieldSelectionDataAttributes workflowId(@javax.annotation.Nullable String workflowId) {
+  public NewWorkflowCustomFieldSelectionDataAttributes workflowId(@jakarta.annotation.Nullable String workflowId) {
     this.workflowId = workflowId;
     return this;
   }
@@ -155,17 +155,17 @@ public class NewWorkflowCustomFieldSelectionDataAttributes {
    * The workflow for this selection
    * @return workflowId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getWorkflowId() {
     return workflowId;
   }
 
-  public void setWorkflowId(@javax.annotation.Nullable String workflowId) {
+  public void setWorkflowId(@jakarta.annotation.Nullable String workflowId) {
     this.workflowId = workflowId;
   }
 
 
-  public NewWorkflowCustomFieldSelectionDataAttributes customFieldId(@javax.annotation.Nonnull Integer customFieldId) {
+  public NewWorkflowCustomFieldSelectionDataAttributes customFieldId(@jakarta.annotation.Nonnull Integer customFieldId) {
     this.customFieldId = customFieldId;
     return this;
   }
@@ -174,17 +174,17 @@ public class NewWorkflowCustomFieldSelectionDataAttributes {
    * The custom field for this selection
    * @return customFieldId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Integer getCustomFieldId() {
     return customFieldId;
   }
 
-  public void setCustomFieldId(@javax.annotation.Nonnull Integer customFieldId) {
+  public void setCustomFieldId(@jakarta.annotation.Nonnull Integer customFieldId) {
     this.customFieldId = customFieldId;
   }
 
 
-  public NewWorkflowCustomFieldSelectionDataAttributes incidentCondition(@javax.annotation.Nonnull IncidentConditionEnum incidentCondition) {
+  public NewWorkflowCustomFieldSelectionDataAttributes incidentCondition(@jakarta.annotation.Nonnull IncidentConditionEnum incidentCondition) {
     this.incidentCondition = incidentCondition;
     return this;
   }
@@ -193,17 +193,17 @@ public class NewWorkflowCustomFieldSelectionDataAttributes {
    * The trigger condition
    * @return incidentCondition
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public IncidentConditionEnum getIncidentCondition() {
     return incidentCondition;
   }
 
-  public void setIncidentCondition(@javax.annotation.Nonnull IncidentConditionEnum incidentCondition) {
+  public void setIncidentCondition(@jakarta.annotation.Nonnull IncidentConditionEnum incidentCondition) {
     this.incidentCondition = incidentCondition;
   }
 
 
-  public NewWorkflowCustomFieldSelectionDataAttributes values(@javax.annotation.Nullable List<String> values) {
+  public NewWorkflowCustomFieldSelectionDataAttributes values(@jakarta.annotation.Nullable List<String> values) {
     this.values = values;
     return this;
   }
@@ -220,17 +220,17 @@ public class NewWorkflowCustomFieldSelectionDataAttributes {
    * Get values
    * @return values
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getValues() {
     return values;
   }
 
-  public void setValues(@javax.annotation.Nullable List<String> values) {
+  public void setValues(@jakarta.annotation.Nullable List<String> values) {
     this.values = values;
   }
 
 
-  public NewWorkflowCustomFieldSelectionDataAttributes selectedOptionIds(@javax.annotation.Nullable List<Integer> selectedOptionIds) {
+  public NewWorkflowCustomFieldSelectionDataAttributes selectedOptionIds(@jakarta.annotation.Nullable List<Integer> selectedOptionIds) {
     this.selectedOptionIds = selectedOptionIds;
     return this;
   }
@@ -247,12 +247,12 @@ public class NewWorkflowCustomFieldSelectionDataAttributes {
    * Get selectedOptionIds
    * @return selectedOptionIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<Integer> getSelectedOptionIds() {
     return selectedOptionIds;
   }
 
-  public void setSelectedOptionIds(@javax.annotation.Nullable List<Integer> selectedOptionIds) {
+  public void setSelectedOptionIds(@jakarta.annotation.Nullable List<Integer> selectedOptionIds) {
     this.selectedOptionIds = selectedOptionIds;
   }
 

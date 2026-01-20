@@ -52,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * AlertTriggerParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AlertTriggerParams {
   /**
    * Gets or Sets triggerType
@@ -106,7 +106,7 @@ public class AlertTriggerParams {
 
   public static final String SERIALIZED_NAME_TRIGGER_TYPE = "trigger_type";
   @SerializedName(SERIALIZED_NAME_TRIGGER_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private TriggerTypeEnum triggerType;
 
   /**
@@ -163,7 +163,7 @@ public class AlertTriggerParams {
 
   public static final String SERIALIZED_NAME_TRIGGERS = "triggers";
   @SerializedName(SERIALIZED_NAME_TRIGGERS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<TriggersEnum> triggers = new ArrayList<>();
 
   /**
@@ -222,7 +222,7 @@ public class AlertTriggerParams {
 
   public static final String SERIALIZED_NAME_ALERT_CONDITION = "alert_condition";
   @SerializedName(SERIALIZED_NAME_ALERT_CONDITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AlertConditionEnum alertCondition;
 
   /**
@@ -293,17 +293,17 @@ public class AlertTriggerParams {
 
   public static final String SERIALIZED_NAME_ALERT_CONDITION_SOURCE = "alert_condition_source";
   @SerializedName(SERIALIZED_NAME_ALERT_CONDITION_SOURCE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AlertConditionSourceEnum alertConditionSource = AlertConditionSourceEnum.ANY;
 
   public static final String SERIALIZED_NAME_ALERT_CONDITION_SOURCE_USE_REGEXP = "alert_condition_source_use_regexp";
   @SerializedName(SERIALIZED_NAME_ALERT_CONDITION_SOURCE_USE_REGEXP)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean alertConditionSourceUseRegexp = false;
 
   public static final String SERIALIZED_NAME_ALERT_SOURCES = "alert_sources";
   @SerializedName(SERIALIZED_NAME_ALERT_SOURCES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> alertSources = new ArrayList<>();
 
   /**
@@ -374,12 +374,12 @@ public class AlertTriggerParams {
 
   public static final String SERIALIZED_NAME_ALERT_CONDITION_LABEL = "alert_condition_label";
   @SerializedName(SERIALIZED_NAME_ALERT_CONDITION_LABEL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AlertConditionLabelEnum alertConditionLabel = AlertConditionLabelEnum.ANY;
 
   public static final String SERIALIZED_NAME_ALERT_CONDITION_LABEL_USE_REGEXP = "alert_condition_label_use_regexp";
   @SerializedName(SERIALIZED_NAME_ALERT_CONDITION_LABEL_USE_REGEXP)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean alertConditionLabelUseRegexp = false;
 
   /**
@@ -450,22 +450,22 @@ public class AlertTriggerParams {
 
   public static final String SERIALIZED_NAME_ALERT_CONDITION_STATUS = "alert_condition_status";
   @SerializedName(SERIALIZED_NAME_ALERT_CONDITION_STATUS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AlertConditionStatusEnum alertConditionStatus = AlertConditionStatusEnum.ANY;
 
   public static final String SERIALIZED_NAME_ALERT_CONDITION_STATUS_USE_REGEXP = "alert_condition_status_use_regexp";
   @SerializedName(SERIALIZED_NAME_ALERT_CONDITION_STATUS_USE_REGEXP)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean alertConditionStatusUseRegexp = false;
 
   public static final String SERIALIZED_NAME_ALERT_STATUSES = "alert_statuses";
   @SerializedName(SERIALIZED_NAME_ALERT_STATUSES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> alertStatuses = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ALERT_LABELS = "alert_labels";
   @SerializedName(SERIALIZED_NAME_ALERT_LABELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> alertLabels = new ArrayList<>();
 
   /**
@@ -536,33 +536,33 @@ public class AlertTriggerParams {
 
   public static final String SERIALIZED_NAME_ALERT_CONDITION_PAYLOAD = "alert_condition_payload";
   @SerializedName(SERIALIZED_NAME_ALERT_CONDITION_PAYLOAD)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AlertConditionPayloadEnum alertConditionPayload = AlertConditionPayloadEnum.ANY;
 
   public static final String SERIALIZED_NAME_ALERT_CONDITION_PAYLOAD_USE_REGEXP = "alert_condition_payload_use_regexp";
   @SerializedName(SERIALIZED_NAME_ALERT_CONDITION_PAYLOAD_USE_REGEXP)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean alertConditionPayloadUseRegexp = false;
 
   public static final String SERIALIZED_NAME_ALERT_PAYLOAD = "alert_payload";
   @SerializedName(SERIALIZED_NAME_ALERT_PAYLOAD)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> alertPayload = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ALERT_QUERY_PAYLOAD = "alert_query_payload";
   @SerializedName(SERIALIZED_NAME_ALERT_QUERY_PAYLOAD)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String alertQueryPayload;
 
   public static final String SERIALIZED_NAME_ALERT_FIELD_CONDITIONS = "alert_field_conditions";
   @SerializedName(SERIALIZED_NAME_ALERT_FIELD_CONDITIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AlertTriggerParamsAlertFieldConditionsInner> alertFieldConditions = new ArrayList<>();
 
   public AlertTriggerParams() {
   }
 
-  public AlertTriggerParams triggerType(@javax.annotation.Nonnull TriggerTypeEnum triggerType) {
+  public AlertTriggerParams triggerType(@jakarta.annotation.Nonnull TriggerTypeEnum triggerType) {
     this.triggerType = triggerType;
     return this;
   }
@@ -571,17 +571,17 @@ public class AlertTriggerParams {
    * Get triggerType
    * @return triggerType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public TriggerTypeEnum getTriggerType() {
     return triggerType;
   }
 
-  public void setTriggerType(@javax.annotation.Nonnull TriggerTypeEnum triggerType) {
+  public void setTriggerType(@jakarta.annotation.Nonnull TriggerTypeEnum triggerType) {
     this.triggerType = triggerType;
   }
 
 
-  public AlertTriggerParams triggers(@javax.annotation.Nullable List<TriggersEnum> triggers) {
+  public AlertTriggerParams triggers(@jakarta.annotation.Nullable List<TriggersEnum> triggers) {
     this.triggers = triggers;
     return this;
   }
@@ -598,17 +598,17 @@ public class AlertTriggerParams {
    * Get triggers
    * @return triggers
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<TriggersEnum> getTriggers() {
     return triggers;
   }
 
-  public void setTriggers(@javax.annotation.Nullable List<TriggersEnum> triggers) {
+  public void setTriggers(@jakarta.annotation.Nullable List<TriggersEnum> triggers) {
     this.triggers = triggers;
   }
 
 
-  public AlertTriggerParams alertCondition(@javax.annotation.Nullable AlertConditionEnum alertCondition) {
+  public AlertTriggerParams alertCondition(@jakarta.annotation.Nullable AlertConditionEnum alertCondition) {
     this.alertCondition = alertCondition;
     return this;
   }
@@ -617,17 +617,17 @@ public class AlertTriggerParams {
    * Get alertCondition
    * @return alertCondition
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AlertConditionEnum getAlertCondition() {
     return alertCondition;
   }
 
-  public void setAlertCondition(@javax.annotation.Nullable AlertConditionEnum alertCondition) {
+  public void setAlertCondition(@jakarta.annotation.Nullable AlertConditionEnum alertCondition) {
     this.alertCondition = alertCondition;
   }
 
 
-  public AlertTriggerParams alertConditionSource(@javax.annotation.Nullable AlertConditionSourceEnum alertConditionSource) {
+  public AlertTriggerParams alertConditionSource(@jakarta.annotation.Nullable AlertConditionSourceEnum alertConditionSource) {
     this.alertConditionSource = alertConditionSource;
     return this;
   }
@@ -636,17 +636,17 @@ public class AlertTriggerParams {
    * Get alertConditionSource
    * @return alertConditionSource
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AlertConditionSourceEnum getAlertConditionSource() {
     return alertConditionSource;
   }
 
-  public void setAlertConditionSource(@javax.annotation.Nullable AlertConditionSourceEnum alertConditionSource) {
+  public void setAlertConditionSource(@jakarta.annotation.Nullable AlertConditionSourceEnum alertConditionSource) {
     this.alertConditionSource = alertConditionSource;
   }
 
 
-  public AlertTriggerParams alertConditionSourceUseRegexp(@javax.annotation.Nullable Boolean alertConditionSourceUseRegexp) {
+  public AlertTriggerParams alertConditionSourceUseRegexp(@jakarta.annotation.Nullable Boolean alertConditionSourceUseRegexp) {
     this.alertConditionSourceUseRegexp = alertConditionSourceUseRegexp;
     return this;
   }
@@ -655,17 +655,17 @@ public class AlertTriggerParams {
    * Get alertConditionSourceUseRegexp
    * @return alertConditionSourceUseRegexp
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getAlertConditionSourceUseRegexp() {
     return alertConditionSourceUseRegexp;
   }
 
-  public void setAlertConditionSourceUseRegexp(@javax.annotation.Nullable Boolean alertConditionSourceUseRegexp) {
+  public void setAlertConditionSourceUseRegexp(@jakarta.annotation.Nullable Boolean alertConditionSourceUseRegexp) {
     this.alertConditionSourceUseRegexp = alertConditionSourceUseRegexp;
   }
 
 
-  public AlertTriggerParams alertSources(@javax.annotation.Nullable List<String> alertSources) {
+  public AlertTriggerParams alertSources(@jakarta.annotation.Nullable List<String> alertSources) {
     this.alertSources = alertSources;
     return this;
   }
@@ -682,17 +682,17 @@ public class AlertTriggerParams {
    * Get alertSources
    * @return alertSources
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getAlertSources() {
     return alertSources;
   }
 
-  public void setAlertSources(@javax.annotation.Nullable List<String> alertSources) {
+  public void setAlertSources(@jakarta.annotation.Nullable List<String> alertSources) {
     this.alertSources = alertSources;
   }
 
 
-  public AlertTriggerParams alertConditionLabel(@javax.annotation.Nullable AlertConditionLabelEnum alertConditionLabel) {
+  public AlertTriggerParams alertConditionLabel(@jakarta.annotation.Nullable AlertConditionLabelEnum alertConditionLabel) {
     this.alertConditionLabel = alertConditionLabel;
     return this;
   }
@@ -701,17 +701,17 @@ public class AlertTriggerParams {
    * Get alertConditionLabel
    * @return alertConditionLabel
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AlertConditionLabelEnum getAlertConditionLabel() {
     return alertConditionLabel;
   }
 
-  public void setAlertConditionLabel(@javax.annotation.Nullable AlertConditionLabelEnum alertConditionLabel) {
+  public void setAlertConditionLabel(@jakarta.annotation.Nullable AlertConditionLabelEnum alertConditionLabel) {
     this.alertConditionLabel = alertConditionLabel;
   }
 
 
-  public AlertTriggerParams alertConditionLabelUseRegexp(@javax.annotation.Nullable Boolean alertConditionLabelUseRegexp) {
+  public AlertTriggerParams alertConditionLabelUseRegexp(@jakarta.annotation.Nullable Boolean alertConditionLabelUseRegexp) {
     this.alertConditionLabelUseRegexp = alertConditionLabelUseRegexp;
     return this;
   }
@@ -720,17 +720,17 @@ public class AlertTriggerParams {
    * Get alertConditionLabelUseRegexp
    * @return alertConditionLabelUseRegexp
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getAlertConditionLabelUseRegexp() {
     return alertConditionLabelUseRegexp;
   }
 
-  public void setAlertConditionLabelUseRegexp(@javax.annotation.Nullable Boolean alertConditionLabelUseRegexp) {
+  public void setAlertConditionLabelUseRegexp(@jakarta.annotation.Nullable Boolean alertConditionLabelUseRegexp) {
     this.alertConditionLabelUseRegexp = alertConditionLabelUseRegexp;
   }
 
 
-  public AlertTriggerParams alertConditionStatus(@javax.annotation.Nullable AlertConditionStatusEnum alertConditionStatus) {
+  public AlertTriggerParams alertConditionStatus(@jakarta.annotation.Nullable AlertConditionStatusEnum alertConditionStatus) {
     this.alertConditionStatus = alertConditionStatus;
     return this;
   }
@@ -739,17 +739,17 @@ public class AlertTriggerParams {
    * Get alertConditionStatus
    * @return alertConditionStatus
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AlertConditionStatusEnum getAlertConditionStatus() {
     return alertConditionStatus;
   }
 
-  public void setAlertConditionStatus(@javax.annotation.Nullable AlertConditionStatusEnum alertConditionStatus) {
+  public void setAlertConditionStatus(@jakarta.annotation.Nullable AlertConditionStatusEnum alertConditionStatus) {
     this.alertConditionStatus = alertConditionStatus;
   }
 
 
-  public AlertTriggerParams alertConditionStatusUseRegexp(@javax.annotation.Nullable Boolean alertConditionStatusUseRegexp) {
+  public AlertTriggerParams alertConditionStatusUseRegexp(@jakarta.annotation.Nullable Boolean alertConditionStatusUseRegexp) {
     this.alertConditionStatusUseRegexp = alertConditionStatusUseRegexp;
     return this;
   }
@@ -758,17 +758,17 @@ public class AlertTriggerParams {
    * Get alertConditionStatusUseRegexp
    * @return alertConditionStatusUseRegexp
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getAlertConditionStatusUseRegexp() {
     return alertConditionStatusUseRegexp;
   }
 
-  public void setAlertConditionStatusUseRegexp(@javax.annotation.Nullable Boolean alertConditionStatusUseRegexp) {
+  public void setAlertConditionStatusUseRegexp(@jakarta.annotation.Nullable Boolean alertConditionStatusUseRegexp) {
     this.alertConditionStatusUseRegexp = alertConditionStatusUseRegexp;
   }
 
 
-  public AlertTriggerParams alertStatuses(@javax.annotation.Nullable List<String> alertStatuses) {
+  public AlertTriggerParams alertStatuses(@jakarta.annotation.Nullable List<String> alertStatuses) {
     this.alertStatuses = alertStatuses;
     return this;
   }
@@ -785,17 +785,17 @@ public class AlertTriggerParams {
    * Get alertStatuses
    * @return alertStatuses
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getAlertStatuses() {
     return alertStatuses;
   }
 
-  public void setAlertStatuses(@javax.annotation.Nullable List<String> alertStatuses) {
+  public void setAlertStatuses(@jakarta.annotation.Nullable List<String> alertStatuses) {
     this.alertStatuses = alertStatuses;
   }
 
 
-  public AlertTriggerParams alertLabels(@javax.annotation.Nullable List<String> alertLabels) {
+  public AlertTriggerParams alertLabels(@jakarta.annotation.Nullable List<String> alertLabels) {
     this.alertLabels = alertLabels;
     return this;
   }
@@ -812,17 +812,17 @@ public class AlertTriggerParams {
    * Get alertLabels
    * @return alertLabels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getAlertLabels() {
     return alertLabels;
   }
 
-  public void setAlertLabels(@javax.annotation.Nullable List<String> alertLabels) {
+  public void setAlertLabels(@jakarta.annotation.Nullable List<String> alertLabels) {
     this.alertLabels = alertLabels;
   }
 
 
-  public AlertTriggerParams alertConditionPayload(@javax.annotation.Nullable AlertConditionPayloadEnum alertConditionPayload) {
+  public AlertTriggerParams alertConditionPayload(@jakarta.annotation.Nullable AlertConditionPayloadEnum alertConditionPayload) {
     this.alertConditionPayload = alertConditionPayload;
     return this;
   }
@@ -831,17 +831,17 @@ public class AlertTriggerParams {
    * Get alertConditionPayload
    * @return alertConditionPayload
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AlertConditionPayloadEnum getAlertConditionPayload() {
     return alertConditionPayload;
   }
 
-  public void setAlertConditionPayload(@javax.annotation.Nullable AlertConditionPayloadEnum alertConditionPayload) {
+  public void setAlertConditionPayload(@jakarta.annotation.Nullable AlertConditionPayloadEnum alertConditionPayload) {
     this.alertConditionPayload = alertConditionPayload;
   }
 
 
-  public AlertTriggerParams alertConditionPayloadUseRegexp(@javax.annotation.Nullable Boolean alertConditionPayloadUseRegexp) {
+  public AlertTriggerParams alertConditionPayloadUseRegexp(@jakarta.annotation.Nullable Boolean alertConditionPayloadUseRegexp) {
     this.alertConditionPayloadUseRegexp = alertConditionPayloadUseRegexp;
     return this;
   }
@@ -850,17 +850,17 @@ public class AlertTriggerParams {
    * Get alertConditionPayloadUseRegexp
    * @return alertConditionPayloadUseRegexp
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getAlertConditionPayloadUseRegexp() {
     return alertConditionPayloadUseRegexp;
   }
 
-  public void setAlertConditionPayloadUseRegexp(@javax.annotation.Nullable Boolean alertConditionPayloadUseRegexp) {
+  public void setAlertConditionPayloadUseRegexp(@jakarta.annotation.Nullable Boolean alertConditionPayloadUseRegexp) {
     this.alertConditionPayloadUseRegexp = alertConditionPayloadUseRegexp;
   }
 
 
-  public AlertTriggerParams alertPayload(@javax.annotation.Nullable List<String> alertPayload) {
+  public AlertTriggerParams alertPayload(@jakarta.annotation.Nullable List<String> alertPayload) {
     this.alertPayload = alertPayload;
     return this;
   }
@@ -877,17 +877,17 @@ public class AlertTriggerParams {
    * Get alertPayload
    * @return alertPayload
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getAlertPayload() {
     return alertPayload;
   }
 
-  public void setAlertPayload(@javax.annotation.Nullable List<String> alertPayload) {
+  public void setAlertPayload(@jakarta.annotation.Nullable List<String> alertPayload) {
     this.alertPayload = alertPayload;
   }
 
 
-  public AlertTriggerParams alertQueryPayload(@javax.annotation.Nullable String alertQueryPayload) {
+  public AlertTriggerParams alertQueryPayload(@jakarta.annotation.Nullable String alertQueryPayload) {
     this.alertQueryPayload = alertQueryPayload;
     return this;
   }
@@ -896,17 +896,17 @@ public class AlertTriggerParams {
    * You can use jsonpath syntax. eg: $.incident.teams[*]
    * @return alertQueryPayload
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getAlertQueryPayload() {
     return alertQueryPayload;
   }
 
-  public void setAlertQueryPayload(@javax.annotation.Nullable String alertQueryPayload) {
+  public void setAlertQueryPayload(@jakarta.annotation.Nullable String alertQueryPayload) {
     this.alertQueryPayload = alertQueryPayload;
   }
 
 
-  public AlertTriggerParams alertFieldConditions(@javax.annotation.Nullable List<AlertTriggerParamsAlertFieldConditionsInner> alertFieldConditions) {
+  public AlertTriggerParams alertFieldConditions(@jakarta.annotation.Nullable List<AlertTriggerParamsAlertFieldConditionsInner> alertFieldConditions) {
     this.alertFieldConditions = alertFieldConditions;
     return this;
   }
@@ -923,12 +923,12 @@ public class AlertTriggerParams {
    * Get alertFieldConditions
    * @return alertFieldConditions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AlertTriggerParamsAlertFieldConditionsInner> getAlertFieldConditions() {
     return alertFieldConditions;
   }
 
-  public void setAlertFieldConditions(@javax.annotation.Nullable List<AlertTriggerParamsAlertFieldConditionsInner> alertFieldConditions) {
+  public void setAlertFieldConditions(@jakarta.annotation.Nullable List<AlertTriggerParamsAlertFieldConditionsInner> alertFieldConditions) {
     this.alertFieldConditions = alertFieldConditions;
   }
 

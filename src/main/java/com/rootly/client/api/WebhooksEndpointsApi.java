@@ -91,7 +91,7 @@ public class WebhooksEndpointsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createWebhooksEndpointCall(@javax.annotation.Nonnull NewWebhooksEndpoint newWebhooksEndpoint, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createWebhooksEndpointCall(@jakarta.annotation.Nonnull NewWebhooksEndpoint newWebhooksEndpoint, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -137,7 +137,7 @@ public class WebhooksEndpointsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createWebhooksEndpointValidateBeforeCall(@javax.annotation.Nonnull NewWebhooksEndpoint newWebhooksEndpoint, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createWebhooksEndpointValidateBeforeCall(@jakarta.annotation.Nonnull NewWebhooksEndpoint newWebhooksEndpoint, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'newWebhooksEndpoint' is set
         if (newWebhooksEndpoint == null) {
             throw new ApiException("Missing the required parameter 'newWebhooksEndpoint' when calling createWebhooksEndpoint(Async)");
@@ -162,7 +162,7 @@ public class WebhooksEndpointsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public WebhooksEndpointResponse createWebhooksEndpoint(@javax.annotation.Nonnull NewWebhooksEndpoint newWebhooksEndpoint) throws ApiException {
+    public WebhooksEndpointResponse createWebhooksEndpoint(@jakarta.annotation.Nonnull NewWebhooksEndpoint newWebhooksEndpoint) throws ApiException {
         ApiResponse<WebhooksEndpointResponse> localVarResp = createWebhooksEndpointWithHttpInfo(newWebhooksEndpoint);
         return localVarResp.getData();
     }
@@ -182,7 +182,7 @@ public class WebhooksEndpointsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebhooksEndpointResponse> createWebhooksEndpointWithHttpInfo(@javax.annotation.Nonnull NewWebhooksEndpoint newWebhooksEndpoint) throws ApiException {
+    public ApiResponse<WebhooksEndpointResponse> createWebhooksEndpointWithHttpInfo(@jakarta.annotation.Nonnull NewWebhooksEndpoint newWebhooksEndpoint) throws ApiException {
         okhttp3.Call localVarCall = createWebhooksEndpointValidateBeforeCall(newWebhooksEndpoint, null);
         Type localVarReturnType = new TypeToken<WebhooksEndpointResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -204,7 +204,7 @@ public class WebhooksEndpointsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createWebhooksEndpointAsync(@javax.annotation.Nonnull NewWebhooksEndpoint newWebhooksEndpoint, final ApiCallback<WebhooksEndpointResponse> _callback) throws ApiException {
+    public okhttp3.Call createWebhooksEndpointAsync(@jakarta.annotation.Nonnull NewWebhooksEndpoint newWebhooksEndpoint, final ApiCallback<WebhooksEndpointResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createWebhooksEndpointValidateBeforeCall(newWebhooksEndpoint, _callback);
         Type localVarReturnType = new TypeToken<WebhooksEndpointResponse>(){}.getType();
@@ -225,7 +225,7 @@ public class WebhooksEndpointsApi {
         <tr><td> 404 </td><td> hidden endpoint not accessible </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteWebhooksEndpointCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteWebhooksEndpointCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -271,7 +271,7 @@ public class WebhooksEndpointsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteWebhooksEndpointValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteWebhooksEndpointValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteWebhooksEndpoint(Async)");
@@ -295,7 +295,7 @@ public class WebhooksEndpointsApi {
         <tr><td> 404 </td><td> hidden endpoint not accessible </td><td>  -  </td></tr>
      </table>
      */
-    public WebhooksEndpointResponse deleteWebhooksEndpoint(@javax.annotation.Nonnull String id) throws ApiException {
+    public WebhooksEndpointResponse deleteWebhooksEndpoint(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<WebhooksEndpointResponse> localVarResp = deleteWebhooksEndpointWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -314,7 +314,7 @@ public class WebhooksEndpointsApi {
         <tr><td> 404 </td><td> hidden endpoint not accessible </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebhooksEndpointResponse> deleteWebhooksEndpointWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<WebhooksEndpointResponse> deleteWebhooksEndpointWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteWebhooksEndpointValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<WebhooksEndpointResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -335,7 +335,7 @@ public class WebhooksEndpointsApi {
         <tr><td> 404 </td><td> hidden endpoint not accessible </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteWebhooksEndpointAsync(@javax.annotation.Nonnull String id, final ApiCallback<WebhooksEndpointResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteWebhooksEndpointAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<WebhooksEndpointResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteWebhooksEndpointValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<WebhooksEndpointResponse>(){}.getType();
@@ -356,7 +356,7 @@ public class WebhooksEndpointsApi {
         <tr><td> 404 </td><td> hidden endpoint not accessible </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWebhooksEndpointCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getWebhooksEndpointCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -402,7 +402,7 @@ public class WebhooksEndpointsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getWebhooksEndpointValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getWebhooksEndpointValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getWebhooksEndpoint(Async)");
@@ -426,7 +426,7 @@ public class WebhooksEndpointsApi {
         <tr><td> 404 </td><td> hidden endpoint not accessible </td><td>  -  </td></tr>
      </table>
      */
-    public WebhooksEndpointResponse getWebhooksEndpoint(@javax.annotation.Nonnull String id) throws ApiException {
+    public WebhooksEndpointResponse getWebhooksEndpoint(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<WebhooksEndpointResponse> localVarResp = getWebhooksEndpointWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -445,7 +445,7 @@ public class WebhooksEndpointsApi {
         <tr><td> 404 </td><td> hidden endpoint not accessible </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebhooksEndpointResponse> getWebhooksEndpointWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<WebhooksEndpointResponse> getWebhooksEndpointWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getWebhooksEndpointValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<WebhooksEndpointResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -466,7 +466,7 @@ public class WebhooksEndpointsApi {
         <tr><td> 404 </td><td> hidden endpoint not accessible </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWebhooksEndpointAsync(@javax.annotation.Nonnull String id, final ApiCallback<WebhooksEndpointResponse> _callback) throws ApiException {
+    public okhttp3.Call getWebhooksEndpointAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<WebhooksEndpointResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getWebhooksEndpointValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<WebhooksEndpointResponse>(){}.getType();
@@ -490,7 +490,7 @@ public class WebhooksEndpointsApi {
         <tr><td> 200 </td><td> excludes hidden endpoints from listing </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listWebhooksEndpointsCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listWebhooksEndpointsCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -555,7 +555,7 @@ public class WebhooksEndpointsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listWebhooksEndpointsValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listWebhooksEndpointsValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, final ApiCallback _callback) throws ApiException {
         return listWebhooksEndpointsCall(include, pageNumber, pageSize, filterSlug, filterName, _callback);
 
     }
@@ -577,7 +577,7 @@ public class WebhooksEndpointsApi {
         <tr><td> 200 </td><td> excludes hidden endpoints from listing </td><td>  -  </td></tr>
      </table>
      */
-    public WebhooksEndpointList listWebhooksEndpoints(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName) throws ApiException {
+    public WebhooksEndpointList listWebhooksEndpoints(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName) throws ApiException {
         ApiResponse<WebhooksEndpointList> localVarResp = listWebhooksEndpointsWithHttpInfo(include, pageNumber, pageSize, filterSlug, filterName);
         return localVarResp.getData();
     }
@@ -599,7 +599,7 @@ public class WebhooksEndpointsApi {
         <tr><td> 200 </td><td> excludes hidden endpoints from listing </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebhooksEndpointList> listWebhooksEndpointsWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName) throws ApiException {
+    public ApiResponse<WebhooksEndpointList> listWebhooksEndpointsWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName) throws ApiException {
         okhttp3.Call localVarCall = listWebhooksEndpointsValidateBeforeCall(include, pageNumber, pageSize, filterSlug, filterName, null);
         Type localVarReturnType = new TypeToken<WebhooksEndpointList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -623,7 +623,7 @@ public class WebhooksEndpointsApi {
         <tr><td> 200 </td><td> excludes hidden endpoints from listing </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listWebhooksEndpointsAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, final ApiCallback<WebhooksEndpointList> _callback) throws ApiException {
+    public okhttp3.Call listWebhooksEndpointsAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, final ApiCallback<WebhooksEndpointList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listWebhooksEndpointsValidateBeforeCall(include, pageNumber, pageSize, filterSlug, filterName, _callback);
         Type localVarReturnType = new TypeToken<WebhooksEndpointList>(){}.getType();
@@ -645,7 +645,7 @@ public class WebhooksEndpointsApi {
         <tr><td> 404 </td><td> hidden endpoint not accessible </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateWebhooksEndpointCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateWebhooksEndpoint updateWebhooksEndpoint, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateWebhooksEndpointCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateWebhooksEndpoint updateWebhooksEndpoint, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -692,7 +692,7 @@ public class WebhooksEndpointsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateWebhooksEndpointValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateWebhooksEndpoint updateWebhooksEndpoint, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateWebhooksEndpointValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateWebhooksEndpoint updateWebhooksEndpoint, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateWebhooksEndpoint(Async)");
@@ -722,7 +722,7 @@ public class WebhooksEndpointsApi {
         <tr><td> 404 </td><td> hidden endpoint not accessible </td><td>  -  </td></tr>
      </table>
      */
-    public WebhooksEndpointResponse updateWebhooksEndpoint(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateWebhooksEndpoint updateWebhooksEndpoint) throws ApiException {
+    public WebhooksEndpointResponse updateWebhooksEndpoint(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateWebhooksEndpoint updateWebhooksEndpoint) throws ApiException {
         ApiResponse<WebhooksEndpointResponse> localVarResp = updateWebhooksEndpointWithHttpInfo(id, updateWebhooksEndpoint);
         return localVarResp.getData();
     }
@@ -742,7 +742,7 @@ public class WebhooksEndpointsApi {
         <tr><td> 404 </td><td> hidden endpoint not accessible </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebhooksEndpointResponse> updateWebhooksEndpointWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateWebhooksEndpoint updateWebhooksEndpoint) throws ApiException {
+    public ApiResponse<WebhooksEndpointResponse> updateWebhooksEndpointWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateWebhooksEndpoint updateWebhooksEndpoint) throws ApiException {
         okhttp3.Call localVarCall = updateWebhooksEndpointValidateBeforeCall(id, updateWebhooksEndpoint, null);
         Type localVarReturnType = new TypeToken<WebhooksEndpointResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -764,7 +764,7 @@ public class WebhooksEndpointsApi {
         <tr><td> 404 </td><td> hidden endpoint not accessible </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateWebhooksEndpointAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateWebhooksEndpoint updateWebhooksEndpoint, final ApiCallback<WebhooksEndpointResponse> _callback) throws ApiException {
+    public okhttp3.Call updateWebhooksEndpointAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateWebhooksEndpoint updateWebhooksEndpoint, final ApiCallback<WebhooksEndpointResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateWebhooksEndpointValidateBeforeCall(id, updateWebhooksEndpoint, _callback);
         Type localVarReturnType = new TypeToken<WebhooksEndpointResponse>(){}.getType();

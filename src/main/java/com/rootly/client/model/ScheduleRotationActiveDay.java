@@ -51,11 +51,11 @@ import com.rootly.client.JSON;
 /**
  * ScheduleRotationActiveDay
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ScheduleRotationActiveDay {
   public static final String SERIALIZED_NAME_SCHEDULE_ROTATION_ID = "schedule_rotation_id";
   @SerializedName(SERIALIZED_NAME_SCHEDULE_ROTATION_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String scheduleRotationId;
 
   /**
@@ -122,28 +122,28 @@ public class ScheduleRotationActiveDay {
 
   public static final String SERIALIZED_NAME_DAY_NAME = "day_name";
   @SerializedName(SERIALIZED_NAME_DAY_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private DayNameEnum dayName;
 
   public static final String SERIALIZED_NAME_ACTIVE_TIME_ATTRIBUTES = "active_time_attributes";
   @SerializedName(SERIALIZED_NAME_ACTIVE_TIME_ATTRIBUTES)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<NewScheduleRotationActiveDayDataAttributesActiveTimeAttributesInner> activeTimeAttributes = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public ScheduleRotationActiveDay() {
   }
 
-  public ScheduleRotationActiveDay scheduleRotationId(@javax.annotation.Nonnull String scheduleRotationId) {
+  public ScheduleRotationActiveDay scheduleRotationId(@jakarta.annotation.Nonnull String scheduleRotationId) {
     this.scheduleRotationId = scheduleRotationId;
     return this;
   }
@@ -152,17 +152,17 @@ public class ScheduleRotationActiveDay {
    * Get scheduleRotationId
    * @return scheduleRotationId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getScheduleRotationId() {
     return scheduleRotationId;
   }
 
-  public void setScheduleRotationId(@javax.annotation.Nonnull String scheduleRotationId) {
+  public void setScheduleRotationId(@jakarta.annotation.Nonnull String scheduleRotationId) {
     this.scheduleRotationId = scheduleRotationId;
   }
 
 
-  public ScheduleRotationActiveDay dayName(@javax.annotation.Nonnull DayNameEnum dayName) {
+  public ScheduleRotationActiveDay dayName(@jakarta.annotation.Nonnull DayNameEnum dayName) {
     this.dayName = dayName;
     return this;
   }
@@ -171,17 +171,17 @@ public class ScheduleRotationActiveDay {
    * Schedule rotation day name for which active times to be created
    * @return dayName
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public DayNameEnum getDayName() {
     return dayName;
   }
 
-  public void setDayName(@javax.annotation.Nonnull DayNameEnum dayName) {
+  public void setDayName(@jakarta.annotation.Nonnull DayNameEnum dayName) {
     this.dayName = dayName;
   }
 
 
-  public ScheduleRotationActiveDay activeTimeAttributes(@javax.annotation.Nonnull List<NewScheduleRotationActiveDayDataAttributesActiveTimeAttributesInner> activeTimeAttributes) {
+  public ScheduleRotationActiveDay activeTimeAttributes(@jakarta.annotation.Nonnull List<NewScheduleRotationActiveDayDataAttributesActiveTimeAttributesInner> activeTimeAttributes) {
     this.activeTimeAttributes = activeTimeAttributes;
     return this;
   }
@@ -198,17 +198,17 @@ public class ScheduleRotationActiveDay {
    * Schedule rotation active times per day
    * @return activeTimeAttributes
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<NewScheduleRotationActiveDayDataAttributesActiveTimeAttributesInner> getActiveTimeAttributes() {
     return activeTimeAttributes;
   }
 
-  public void setActiveTimeAttributes(@javax.annotation.Nonnull List<NewScheduleRotationActiveDayDataAttributesActiveTimeAttributesInner> activeTimeAttributes) {
+  public void setActiveTimeAttributes(@jakarta.annotation.Nonnull List<NewScheduleRotationActiveDayDataAttributesActiveTimeAttributesInner> activeTimeAttributes) {
     this.activeTimeAttributes = activeTimeAttributes;
   }
 
 
-  public ScheduleRotationActiveDay createdAt(@javax.annotation.Nonnull String createdAt) {
+  public ScheduleRotationActiveDay createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -217,17 +217,17 @@ public class ScheduleRotationActiveDay {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public ScheduleRotationActiveDay updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public ScheduleRotationActiveDay updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -236,12 +236,12 @@ public class ScheduleRotationActiveDay {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

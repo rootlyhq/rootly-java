@@ -50,7 +50,7 @@ import com.rootly.client.JSON;
 /**
  * PublishIncidentTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class PublishIncidentTaskParams {
   /**
    * Gets or Sets taskType
@@ -104,22 +104,22 @@ public class PublishIncidentTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_INCIDENT = "incident";
   @SerializedName(SERIALIZED_NAME_INCIDENT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private AddActionItemTaskParamsPostToSlackChannelsInner incident;
 
   public static final String SERIALIZED_NAME_PUBLIC_TITLE = "public_title";
   @SerializedName(SERIALIZED_NAME_PUBLIC_TITLE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String publicTitle;
 
   public static final String SERIALIZED_NAME_EVENT = "event";
   @SerializedName(SERIALIZED_NAME_EVENT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String event;
 
   /**
@@ -186,38 +186,38 @@ public class PublishIncidentTaskParams {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private StatusEnum status = StatusEnum.RESOLVED;
 
   public static final String SERIALIZED_NAME_NOTIFY_SUBSCRIBERS = "notify_subscribers";
   @SerializedName(SERIALIZED_NAME_NOTIFY_SUBSCRIBERS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean notifySubscribers = false;
 
   public static final String SERIALIZED_NAME_SHOULD_TWEET = "should_tweet";
   @SerializedName(SERIALIZED_NAME_SHOULD_TWEET)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean shouldTweet = false;
 
   public static final String SERIALIZED_NAME_STATUS_PAGE_TEMPLATE = "status_page_template";
   @SerializedName(SERIALIZED_NAME_STATUS_PAGE_TEMPLATE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AddActionItemTaskParamsPostToSlackChannelsInner statusPageTemplate;
 
   public static final String SERIALIZED_NAME_STATUS_PAGE_ID = "status_page_id";
   @SerializedName(SERIALIZED_NAME_STATUS_PAGE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String statusPageId;
 
   public static final String SERIALIZED_NAME_INTEGRATION_PAYLOAD = "integration_payload";
   @SerializedName(SERIALIZED_NAME_INTEGRATION_PAYLOAD)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String integrationPayload;
 
   public PublishIncidentTaskParams() {
   }
 
-  public PublishIncidentTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public PublishIncidentTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -226,17 +226,17 @@ public class PublishIncidentTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public PublishIncidentTaskParams incident(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner incident) {
+  public PublishIncidentTaskParams incident(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner incident) {
     this.incident = incident;
     return this;
   }
@@ -245,17 +245,17 @@ public class PublishIncidentTaskParams {
    * Get incident
    * @return incident
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public AddActionItemTaskParamsPostToSlackChannelsInner getIncident() {
     return incident;
   }
 
-  public void setIncident(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner incident) {
+  public void setIncident(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner incident) {
     this.incident = incident;
   }
 
 
-  public PublishIncidentTaskParams publicTitle(@javax.annotation.Nonnull String publicTitle) {
+  public PublishIncidentTaskParams publicTitle(@jakarta.annotation.Nonnull String publicTitle) {
     this.publicTitle = publicTitle;
     return this;
   }
@@ -264,17 +264,17 @@ public class PublishIncidentTaskParams {
    * Get publicTitle
    * @return publicTitle
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getPublicTitle() {
     return publicTitle;
   }
 
-  public void setPublicTitle(@javax.annotation.Nonnull String publicTitle) {
+  public void setPublicTitle(@jakarta.annotation.Nonnull String publicTitle) {
     this.publicTitle = publicTitle;
   }
 
 
-  public PublishIncidentTaskParams event(@javax.annotation.Nullable String event) {
+  public PublishIncidentTaskParams event(@jakarta.annotation.Nullable String event) {
     this.event = event;
     return this;
   }
@@ -283,17 +283,17 @@ public class PublishIncidentTaskParams {
    * Incident event description
    * @return event
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getEvent() {
     return event;
   }
 
-  public void setEvent(@javax.annotation.Nullable String event) {
+  public void setEvent(@jakarta.annotation.Nullable String event) {
     this.event = event;
   }
 
 
-  public PublishIncidentTaskParams status(@javax.annotation.Nonnull StatusEnum status) {
+  public PublishIncidentTaskParams status(@jakarta.annotation.Nonnull StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -302,17 +302,17 @@ public class PublishIncidentTaskParams {
    * Get status
    * @return status
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nonnull StatusEnum status) {
+  public void setStatus(@jakarta.annotation.Nonnull StatusEnum status) {
     this.status = status;
   }
 
 
-  public PublishIncidentTaskParams notifySubscribers(@javax.annotation.Nullable Boolean notifySubscribers) {
+  public PublishIncidentTaskParams notifySubscribers(@jakarta.annotation.Nullable Boolean notifySubscribers) {
     this.notifySubscribers = notifySubscribers;
     return this;
   }
@@ -321,17 +321,17 @@ public class PublishIncidentTaskParams {
    * When true notifies subscribers of the status page by email/text
    * @return notifySubscribers
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getNotifySubscribers() {
     return notifySubscribers;
   }
 
-  public void setNotifySubscribers(@javax.annotation.Nullable Boolean notifySubscribers) {
+  public void setNotifySubscribers(@jakarta.annotation.Nullable Boolean notifySubscribers) {
     this.notifySubscribers = notifySubscribers;
   }
 
 
-  public PublishIncidentTaskParams shouldTweet(@javax.annotation.Nullable Boolean shouldTweet) {
+  public PublishIncidentTaskParams shouldTweet(@jakarta.annotation.Nullable Boolean shouldTweet) {
     this.shouldTweet = shouldTweet;
     return this;
   }
@@ -340,17 +340,17 @@ public class PublishIncidentTaskParams {
    * For Statuspage.io integrated pages auto publishes a tweet for your update
    * @return shouldTweet
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getShouldTweet() {
     return shouldTweet;
   }
 
-  public void setShouldTweet(@javax.annotation.Nullable Boolean shouldTweet) {
+  public void setShouldTweet(@jakarta.annotation.Nullable Boolean shouldTweet) {
     this.shouldTweet = shouldTweet;
   }
 
 
-  public PublishIncidentTaskParams statusPageTemplate(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner statusPageTemplate) {
+  public PublishIncidentTaskParams statusPageTemplate(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner statusPageTemplate) {
     this.statusPageTemplate = statusPageTemplate;
     return this;
   }
@@ -359,17 +359,17 @@ public class PublishIncidentTaskParams {
    * Get statusPageTemplate
    * @return statusPageTemplate
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AddActionItemTaskParamsPostToSlackChannelsInner getStatusPageTemplate() {
     return statusPageTemplate;
   }
 
-  public void setStatusPageTemplate(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner statusPageTemplate) {
+  public void setStatusPageTemplate(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner statusPageTemplate) {
     this.statusPageTemplate = statusPageTemplate;
   }
 
 
-  public PublishIncidentTaskParams statusPageId(@javax.annotation.Nonnull String statusPageId) {
+  public PublishIncidentTaskParams statusPageId(@jakarta.annotation.Nonnull String statusPageId) {
     this.statusPageId = statusPageId;
     return this;
   }
@@ -378,17 +378,17 @@ public class PublishIncidentTaskParams {
    * Get statusPageId
    * @return statusPageId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getStatusPageId() {
     return statusPageId;
   }
 
-  public void setStatusPageId(@javax.annotation.Nonnull String statusPageId) {
+  public void setStatusPageId(@jakarta.annotation.Nonnull String statusPageId) {
     this.statusPageId = statusPageId;
   }
 
 
-  public PublishIncidentTaskParams integrationPayload(@javax.annotation.Nullable String integrationPayload) {
+  public PublishIncidentTaskParams integrationPayload(@jakarta.annotation.Nullable String integrationPayload) {
     this.integrationPayload = integrationPayload;
     return this;
   }
@@ -397,12 +397,12 @@ public class PublishIncidentTaskParams {
    * Additional API Payload you can pass to statuspage.io for example. Can contain liquid markup and need to be valid JSON
    * @return integrationPayload
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getIntegrationPayload() {
     return integrationPayload;
   }
 
-  public void setIntegrationPayload(@javax.annotation.Nullable String integrationPayload) {
+  public void setIntegrationPayload(@jakarta.annotation.Nullable String integrationPayload) {
     this.integrationPayload = integrationPayload;
   }
 

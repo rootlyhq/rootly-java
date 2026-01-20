@@ -53,62 +53,62 @@ import com.rootly.client.JSON;
 /**
  * IncidentType
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class IncidentType {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String slug;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_COLOR = "color";
   @SerializedName(SERIALIZED_NAME_COLOR)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String color;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public static final String SERIALIZED_NAME_NOTIFY_EMAILS = "notify_emails";
   @SerializedName(SERIALIZED_NAME_NOTIFY_EMAILS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> notifyEmails;
 
   public static final String SERIALIZED_NAME_SLACK_CHANNELS = "slack_channels";
   @SerializedName(SERIALIZED_NAME_SLACK_CHANNELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewEnvironmentDataAttributesSlackChannelsInner> slackChannels;
 
   public static final String SERIALIZED_NAME_SLACK_ALIASES = "slack_aliases";
   @SerializedName(SERIALIZED_NAME_SLACK_ALIASES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public IncidentType() {
   }
 
-  public IncidentType name(@javax.annotation.Nonnull String name) {
+  public IncidentType name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -117,17 +117,17 @@ public class IncidentType {
    * The name of the incident type
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public IncidentType slug(@javax.annotation.Nullable String slug) {
+  public IncidentType slug(@jakarta.annotation.Nullable String slug) {
     this.slug = slug;
     return this;
   }
@@ -136,17 +136,17 @@ public class IncidentType {
    * The slug of the incident type
    * @return slug
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSlug() {
     return slug;
   }
 
-  public void setSlug(@javax.annotation.Nullable String slug) {
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
     this.slug = slug;
   }
 
 
-  public IncidentType description(@javax.annotation.Nullable String description) {
+  public IncidentType description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -155,17 +155,17 @@ public class IncidentType {
    * The description of the incident type
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public IncidentType color(@javax.annotation.Nullable String color) {
+  public IncidentType color(@jakarta.annotation.Nullable String color) {
     this.color = color;
     return this;
   }
@@ -174,17 +174,17 @@ public class IncidentType {
    * The hex color of the incident type
    * @return color
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getColor() {
     return color;
   }
 
-  public void setColor(@javax.annotation.Nullable String color) {
+  public void setColor(@jakarta.annotation.Nullable String color) {
     this.color = color;
   }
 
 
-  public IncidentType position(@javax.annotation.Nullable Integer position) {
+  public IncidentType position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -193,17 +193,17 @@ public class IncidentType {
    * Position of the incident type
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 
 
-  public IncidentType notifyEmails(@javax.annotation.Nullable List<String> notifyEmails) {
+  public IncidentType notifyEmails(@jakarta.annotation.Nullable List<String> notifyEmails) {
     this.notifyEmails = notifyEmails;
     return this;
   }
@@ -220,17 +220,17 @@ public class IncidentType {
    * Emails to attach to the incident type
    * @return notifyEmails
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getNotifyEmails() {
     return notifyEmails;
   }
 
-  public void setNotifyEmails(@javax.annotation.Nullable List<String> notifyEmails) {
+  public void setNotifyEmails(@jakarta.annotation.Nullable List<String> notifyEmails) {
     this.notifyEmails = notifyEmails;
   }
 
 
-  public IncidentType slackChannels(@javax.annotation.Nullable List<NewEnvironmentDataAttributesSlackChannelsInner> slackChannels) {
+  public IncidentType slackChannels(@jakarta.annotation.Nullable List<NewEnvironmentDataAttributesSlackChannelsInner> slackChannels) {
     this.slackChannels = slackChannels;
     return this;
   }
@@ -247,17 +247,17 @@ public class IncidentType {
    * Slack Channels associated with this incident type
    * @return slackChannels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewEnvironmentDataAttributesSlackChannelsInner> getSlackChannels() {
     return slackChannels;
   }
 
-  public void setSlackChannels(@javax.annotation.Nullable List<NewEnvironmentDataAttributesSlackChannelsInner> slackChannels) {
+  public void setSlackChannels(@jakarta.annotation.Nullable List<NewEnvironmentDataAttributesSlackChannelsInner> slackChannels) {
     this.slackChannels = slackChannels;
   }
 
 
-  public IncidentType slackAliases(@javax.annotation.Nullable List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases) {
+  public IncidentType slackAliases(@jakarta.annotation.Nullable List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases) {
     this.slackAliases = slackAliases;
     return this;
   }
@@ -274,17 +274,17 @@ public class IncidentType {
    * Slack Aliases associated with this incident type
    * @return slackAliases
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewEnvironmentDataAttributesSlackAliasesInner> getSlackAliases() {
     return slackAliases;
   }
 
-  public void setSlackAliases(@javax.annotation.Nullable List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases) {
+  public void setSlackAliases(@jakarta.annotation.Nullable List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases) {
     this.slackAliases = slackAliases;
   }
 
 
-  public IncidentType createdAt(@javax.annotation.Nonnull String createdAt) {
+  public IncidentType createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -293,17 +293,17 @@ public class IncidentType {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public IncidentType updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public IncidentType updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -312,12 +312,12 @@ public class IncidentType {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

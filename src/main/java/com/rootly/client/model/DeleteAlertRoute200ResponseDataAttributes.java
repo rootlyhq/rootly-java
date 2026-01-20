@@ -48,17 +48,17 @@ import com.rootly.client.JSON;
 /**
  * DeleteAlertRoute200ResponseDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class DeleteAlertRoute200ResponseDataAttributes {
   public static final String SERIALIZED_NAME_DELETED = "deleted";
   @SerializedName(SERIALIZED_NAME_DELETED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean deleted;
 
   public DeleteAlertRoute200ResponseDataAttributes() {
   }
 
-  public DeleteAlertRoute200ResponseDataAttributes deleted(@javax.annotation.Nullable Boolean deleted) {
+  public DeleteAlertRoute200ResponseDataAttributes deleted(@jakarta.annotation.Nullable Boolean deleted) {
     this.deleted = deleted;
     return this;
   }
@@ -67,12 +67,12 @@ public class DeleteAlertRoute200ResponseDataAttributes {
    * Get deleted
    * @return deleted
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getDeleted() {
     return deleted;
   }
 
-  public void setDeleted(@javax.annotation.Nullable Boolean deleted) {
+  public void setDeleted(@jakarta.annotation.Nullable Boolean deleted) {
     this.deleted = deleted;
   }
 

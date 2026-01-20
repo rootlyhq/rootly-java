@@ -49,27 +49,27 @@ import com.rootly.client.JSON;
 /**
  * UpdatePlaybookTaskDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdatePlaybookTaskDataAttributes {
   public static final String SERIALIZED_NAME_TASK = "task";
   @SerializedName(SERIALIZED_NAME_TASK)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String task;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public UpdatePlaybookTaskDataAttributes() {
   }
 
-  public UpdatePlaybookTaskDataAttributes task(@javax.annotation.Nullable String task) {
+  public UpdatePlaybookTaskDataAttributes task(@jakarta.annotation.Nullable String task) {
     this.task = task;
     return this;
   }
@@ -78,17 +78,17 @@ public class UpdatePlaybookTaskDataAttributes {
    * The task of the task
    * @return task
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTask() {
     return task;
   }
 
-  public void setTask(@javax.annotation.Nullable String task) {
+  public void setTask(@jakarta.annotation.Nullable String task) {
     this.task = task;
   }
 
 
-  public UpdatePlaybookTaskDataAttributes description(@javax.annotation.Nullable String description) {
+  public UpdatePlaybookTaskDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -97,17 +97,17 @@ public class UpdatePlaybookTaskDataAttributes {
    * The description of the task
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UpdatePlaybookTaskDataAttributes position(@javax.annotation.Nullable Integer position) {
+  public UpdatePlaybookTaskDataAttributes position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -116,12 +116,12 @@ public class UpdatePlaybookTaskDataAttributes {
    * The position of the task
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 

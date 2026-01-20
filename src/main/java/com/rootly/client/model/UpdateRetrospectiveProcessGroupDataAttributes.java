@@ -48,22 +48,22 @@ import com.rootly.client.JSON;
 /**
  * UpdateRetrospectiveProcessGroupDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateRetrospectiveProcessGroupDataAttributes {
   public static final String SERIALIZED_NAME_SUB_STATUS_ID = "sub_status_id";
   @SerializedName(SERIALIZED_NAME_SUB_STATUS_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String subStatusId;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public UpdateRetrospectiveProcessGroupDataAttributes() {
   }
 
-  public UpdateRetrospectiveProcessGroupDataAttributes subStatusId(@javax.annotation.Nullable String subStatusId) {
+  public UpdateRetrospectiveProcessGroupDataAttributes subStatusId(@jakarta.annotation.Nullable String subStatusId) {
     this.subStatusId = subStatusId;
     return this;
   }
@@ -72,17 +72,17 @@ public class UpdateRetrospectiveProcessGroupDataAttributes {
    * Get subStatusId
    * @return subStatusId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSubStatusId() {
     return subStatusId;
   }
 
-  public void setSubStatusId(@javax.annotation.Nullable String subStatusId) {
+  public void setSubStatusId(@jakarta.annotation.Nullable String subStatusId) {
     this.subStatusId = subStatusId;
   }
 
 
-  public UpdateRetrospectiveProcessGroupDataAttributes position(@javax.annotation.Nullable Integer position) {
+  public UpdateRetrospectiveProcessGroupDataAttributes position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -91,12 +91,12 @@ public class UpdateRetrospectiveProcessGroupDataAttributes {
    * Get position
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 

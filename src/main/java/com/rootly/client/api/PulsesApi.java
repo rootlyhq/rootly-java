@@ -91,7 +91,7 @@ public class PulsesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createPulseCall(@javax.annotation.Nonnull NewPulse newPulse, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createPulseCall(@jakarta.annotation.Nonnull NewPulse newPulse, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -137,7 +137,7 @@ public class PulsesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createPulseValidateBeforeCall(@javax.annotation.Nonnull NewPulse newPulse, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createPulseValidateBeforeCall(@jakarta.annotation.Nonnull NewPulse newPulse, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'newPulse' is set
         if (newPulse == null) {
             throw new ApiException("Missing the required parameter 'newPulse' when calling createPulse(Async)");
@@ -162,7 +162,7 @@ public class PulsesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public PulseResponse createPulse(@javax.annotation.Nonnull NewPulse newPulse) throws ApiException {
+    public PulseResponse createPulse(@jakarta.annotation.Nonnull NewPulse newPulse) throws ApiException {
         ApiResponse<PulseResponse> localVarResp = createPulseWithHttpInfo(newPulse);
         return localVarResp.getData();
     }
@@ -182,7 +182,7 @@ public class PulsesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PulseResponse> createPulseWithHttpInfo(@javax.annotation.Nonnull NewPulse newPulse) throws ApiException {
+    public ApiResponse<PulseResponse> createPulseWithHttpInfo(@jakarta.annotation.Nonnull NewPulse newPulse) throws ApiException {
         okhttp3.Call localVarCall = createPulseValidateBeforeCall(newPulse, null);
         Type localVarReturnType = new TypeToken<PulseResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -204,7 +204,7 @@ public class PulsesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createPulseAsync(@javax.annotation.Nonnull NewPulse newPulse, final ApiCallback<PulseResponse> _callback) throws ApiException {
+    public okhttp3.Call createPulseAsync(@jakarta.annotation.Nonnull NewPulse newPulse, final ApiCallback<PulseResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createPulseValidateBeforeCall(newPulse, _callback);
         Type localVarReturnType = new TypeToken<PulseResponse>(){}.getType();
@@ -225,7 +225,7 @@ public class PulsesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPulseCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getPulseCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -271,7 +271,7 @@ public class PulsesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getPulseValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getPulseValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getPulse(Async)");
@@ -295,7 +295,7 @@ public class PulsesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public PulseResponse getPulse(@javax.annotation.Nonnull String id) throws ApiException {
+    public PulseResponse getPulse(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<PulseResponse> localVarResp = getPulseWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -314,7 +314,7 @@ public class PulsesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PulseResponse> getPulseWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<PulseResponse> getPulseWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getPulseValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<PulseResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -335,7 +335,7 @@ public class PulsesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPulseAsync(@javax.annotation.Nonnull String id, final ApiCallback<PulseResponse> _callback) throws ApiException {
+    public okhttp3.Call getPulseAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<PulseResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getPulseValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<PulseResponse>(){}.getType();
@@ -374,7 +374,7 @@ public class PulsesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listPulsesCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable String filterSource, @javax.annotation.Nullable String filterServices, @javax.annotation.Nullable String filterEnvironments, @javax.annotation.Nullable String filterLabels, @javax.annotation.Nullable String filterRefs, @javax.annotation.Nullable String filterStartedAtGt, @javax.annotation.Nullable String filterStartedAtGte, @javax.annotation.Nullable String filterStartedAtLt, @javax.annotation.Nullable String filterStartedAtLte, @javax.annotation.Nullable String filterEndedAtGt, @javax.annotation.Nullable String filterEndedAtGte, @javax.annotation.Nullable String filterEndedAtLt, @javax.annotation.Nullable String filterEndedAtLte, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listPulsesCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterRefs, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterEndedAtGt, @jakarta.annotation.Nullable String filterEndedAtGte, @jakarta.annotation.Nullable String filterEndedAtLt, @jakarta.annotation.Nullable String filterEndedAtLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -499,7 +499,7 @@ public class PulsesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listPulsesValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable String filterSource, @javax.annotation.Nullable String filterServices, @javax.annotation.Nullable String filterEnvironments, @javax.annotation.Nullable String filterLabels, @javax.annotation.Nullable String filterRefs, @javax.annotation.Nullable String filterStartedAtGt, @javax.annotation.Nullable String filterStartedAtGte, @javax.annotation.Nullable String filterStartedAtLt, @javax.annotation.Nullable String filterStartedAtLte, @javax.annotation.Nullable String filterEndedAtGt, @javax.annotation.Nullable String filterEndedAtGte, @javax.annotation.Nullable String filterEndedAtLt, @javax.annotation.Nullable String filterEndedAtLte, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listPulsesValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterRefs, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterEndedAtGt, @jakarta.annotation.Nullable String filterEndedAtGte, @jakarta.annotation.Nullable String filterEndedAtLt, @jakarta.annotation.Nullable String filterEndedAtLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         return listPulsesCall(include, filterSource, filterServices, filterEnvironments, filterLabels, filterRefs, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize, _callback);
 
     }
@@ -536,7 +536,7 @@ public class PulsesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public PulseList listPulses(@javax.annotation.Nullable String include, @javax.annotation.Nullable String filterSource, @javax.annotation.Nullable String filterServices, @javax.annotation.Nullable String filterEnvironments, @javax.annotation.Nullable String filterLabels, @javax.annotation.Nullable String filterRefs, @javax.annotation.Nullable String filterStartedAtGt, @javax.annotation.Nullable String filterStartedAtGte, @javax.annotation.Nullable String filterStartedAtLt, @javax.annotation.Nullable String filterStartedAtLte, @javax.annotation.Nullable String filterEndedAtGt, @javax.annotation.Nullable String filterEndedAtGte, @javax.annotation.Nullable String filterEndedAtLt, @javax.annotation.Nullable String filterEndedAtLte, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+    public PulseList listPulses(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterRefs, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterEndedAtGt, @jakarta.annotation.Nullable String filterEndedAtGte, @jakarta.annotation.Nullable String filterEndedAtLt, @jakarta.annotation.Nullable String filterEndedAtLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
         ApiResponse<PulseList> localVarResp = listPulsesWithHttpInfo(include, filterSource, filterServices, filterEnvironments, filterLabels, filterRefs, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize);
         return localVarResp.getData();
     }
@@ -573,7 +573,7 @@ public class PulsesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PulseList> listPulsesWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable String filterSource, @javax.annotation.Nullable String filterServices, @javax.annotation.Nullable String filterEnvironments, @javax.annotation.Nullable String filterLabels, @javax.annotation.Nullable String filterRefs, @javax.annotation.Nullable String filterStartedAtGt, @javax.annotation.Nullable String filterStartedAtGte, @javax.annotation.Nullable String filterStartedAtLt, @javax.annotation.Nullable String filterStartedAtLte, @javax.annotation.Nullable String filterEndedAtGt, @javax.annotation.Nullable String filterEndedAtGte, @javax.annotation.Nullable String filterEndedAtLt, @javax.annotation.Nullable String filterEndedAtLte, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+    public ApiResponse<PulseList> listPulsesWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterRefs, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterEndedAtGt, @jakarta.annotation.Nullable String filterEndedAtGte, @jakarta.annotation.Nullable String filterEndedAtLt, @jakarta.annotation.Nullable String filterEndedAtLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
         okhttp3.Call localVarCall = listPulsesValidateBeforeCall(include, filterSource, filterServices, filterEnvironments, filterLabels, filterRefs, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize, null);
         Type localVarReturnType = new TypeToken<PulseList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -612,7 +612,7 @@ public class PulsesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listPulsesAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable String filterSource, @javax.annotation.Nullable String filterServices, @javax.annotation.Nullable String filterEnvironments, @javax.annotation.Nullable String filterLabels, @javax.annotation.Nullable String filterRefs, @javax.annotation.Nullable String filterStartedAtGt, @javax.annotation.Nullable String filterStartedAtGte, @javax.annotation.Nullable String filterStartedAtLt, @javax.annotation.Nullable String filterStartedAtLte, @javax.annotation.Nullable String filterEndedAtGt, @javax.annotation.Nullable String filterEndedAtGte, @javax.annotation.Nullable String filterEndedAtLt, @javax.annotation.Nullable String filterEndedAtLte, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback<PulseList> _callback) throws ApiException {
+    public okhttp3.Call listPulsesAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterRefs, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterEndedAtGt, @jakarta.annotation.Nullable String filterEndedAtGte, @jakarta.annotation.Nullable String filterEndedAtLt, @jakarta.annotation.Nullable String filterEndedAtLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback<PulseList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listPulsesValidateBeforeCall(include, filterSource, filterServices, filterEnvironments, filterLabels, filterRefs, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize, _callback);
         Type localVarReturnType = new TypeToken<PulseList>(){}.getType();
@@ -634,7 +634,7 @@ public class PulsesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePulseCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdatePulse updatePulse, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updatePulseCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdatePulse updatePulse, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -681,7 +681,7 @@ public class PulsesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updatePulseValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdatePulse updatePulse, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updatePulseValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdatePulse updatePulse, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updatePulse(Async)");
@@ -711,7 +711,7 @@ public class PulsesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public PulseResponse updatePulse(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdatePulse updatePulse) throws ApiException {
+    public PulseResponse updatePulse(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdatePulse updatePulse) throws ApiException {
         ApiResponse<PulseResponse> localVarResp = updatePulseWithHttpInfo(id, updatePulse);
         return localVarResp.getData();
     }
@@ -731,7 +731,7 @@ public class PulsesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PulseResponse> updatePulseWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdatePulse updatePulse) throws ApiException {
+    public ApiResponse<PulseResponse> updatePulseWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdatePulse updatePulse) throws ApiException {
         okhttp3.Call localVarCall = updatePulseValidateBeforeCall(id, updatePulse, null);
         Type localVarReturnType = new TypeToken<PulseResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -753,7 +753,7 @@ public class PulsesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePulseAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdatePulse updatePulse, final ApiCallback<PulseResponse> _callback) throws ApiException {
+    public okhttp3.Call updatePulseAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdatePulse updatePulse, final ApiCallback<PulseResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updatePulseValidateBeforeCall(id, updatePulse, _callback);
         Type localVarReturnType = new TypeToken<PulseResponse>(){}.getType();

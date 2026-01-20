@@ -50,17 +50,17 @@ import com.rootly.client.JSON;
 /**
  * AttachAlertDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AttachAlertDataAttributes {
   public static final String SERIALIZED_NAME_ALERT_IDS = "alert_ids";
   @SerializedName(SERIALIZED_NAME_ALERT_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> alertIds;
 
   public AttachAlertDataAttributes() {
   }
 
-  public AttachAlertDataAttributes alertIds(@javax.annotation.Nullable List<String> alertIds) {
+  public AttachAlertDataAttributes alertIds(@jakarta.annotation.Nullable List<String> alertIds) {
     this.alertIds = alertIds;
     return this;
   }
@@ -77,12 +77,12 @@ public class AttachAlertDataAttributes {
    * Alert Id to attach to the incident
    * @return alertIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getAlertIds() {
     return alertIds;
   }
 
-  public void setAlertIds(@javax.annotation.Nullable List<String> alertIds) {
+  public void setAlertIds(@jakarta.annotation.Nullable List<String> alertIds) {
     this.alertIds = alertIds;
   }
 

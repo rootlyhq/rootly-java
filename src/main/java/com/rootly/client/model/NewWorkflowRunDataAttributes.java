@@ -66,7 +66,7 @@ import com.google.gson.JsonParseException;
 
 import com.rootly.client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewWorkflowRunDataAttributes extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(NewWorkflowRunDataAttributes.class.getName());
 

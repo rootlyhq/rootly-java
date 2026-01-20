@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * RedisClientTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RedisClientTaskParams {
   /**
    * Gets or Sets taskType
@@ -105,43 +105,43 @@ public class RedisClientTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String url;
 
   public static final String SERIALIZED_NAME_COMMANDS = "commands";
   @SerializedName(SERIALIZED_NAME_COMMANDS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String commands;
 
   public static final String SERIALIZED_NAME_EVENT_URL = "event_url";
   @SerializedName(SERIALIZED_NAME_EVENT_URL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String eventUrl;
 
   public static final String SERIALIZED_NAME_EVENT_MESSAGE = "event_message";
   @SerializedName(SERIALIZED_NAME_EVENT_MESSAGE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String eventMessage;
 
   public static final String SERIALIZED_NAME_POST_TO_INCIDENT_TIMELINE = "post_to_incident_timeline";
   @SerializedName(SERIALIZED_NAME_POST_TO_INCIDENT_TIMELINE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean postToIncidentTimeline;
 
   public static final String SERIALIZED_NAME_POST_TO_SLACK_CHANNELS = "post_to_slack_channels";
   @SerializedName(SERIALIZED_NAME_POST_TO_SLACK_CHANNELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels = new ArrayList<>();
 
   public RedisClientTaskParams() {
   }
 
-  public RedisClientTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public RedisClientTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -150,17 +150,17 @@ public class RedisClientTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public RedisClientTaskParams url(@javax.annotation.Nonnull String url) {
+  public RedisClientTaskParams url(@jakarta.annotation.Nonnull String url) {
     this.url = url;
     return this;
   }
@@ -169,17 +169,17 @@ public class RedisClientTaskParams {
    * Get url
    * @return url
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUrl() {
     return url;
   }
 
-  public void setUrl(@javax.annotation.Nonnull String url) {
+  public void setUrl(@jakarta.annotation.Nonnull String url) {
     this.url = url;
   }
 
 
-  public RedisClientTaskParams commands(@javax.annotation.Nonnull String commands) {
+  public RedisClientTaskParams commands(@jakarta.annotation.Nonnull String commands) {
     this.commands = commands;
     return this;
   }
@@ -188,17 +188,17 @@ public class RedisClientTaskParams {
    * Get commands
    * @return commands
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCommands() {
     return commands;
   }
 
-  public void setCommands(@javax.annotation.Nonnull String commands) {
+  public void setCommands(@jakarta.annotation.Nonnull String commands) {
     this.commands = commands;
   }
 
 
-  public RedisClientTaskParams eventUrl(@javax.annotation.Nullable String eventUrl) {
+  public RedisClientTaskParams eventUrl(@jakarta.annotation.Nullable String eventUrl) {
     this.eventUrl = eventUrl;
     return this;
   }
@@ -207,17 +207,17 @@ public class RedisClientTaskParams {
    * Get eventUrl
    * @return eventUrl
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getEventUrl() {
     return eventUrl;
   }
 
-  public void setEventUrl(@javax.annotation.Nullable String eventUrl) {
+  public void setEventUrl(@jakarta.annotation.Nullable String eventUrl) {
     this.eventUrl = eventUrl;
   }
 
 
-  public RedisClientTaskParams eventMessage(@javax.annotation.Nullable String eventMessage) {
+  public RedisClientTaskParams eventMessage(@jakarta.annotation.Nullable String eventMessage) {
     this.eventMessage = eventMessage;
     return this;
   }
@@ -226,17 +226,17 @@ public class RedisClientTaskParams {
    * Get eventMessage
    * @return eventMessage
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getEventMessage() {
     return eventMessage;
   }
 
-  public void setEventMessage(@javax.annotation.Nullable String eventMessage) {
+  public void setEventMessage(@jakarta.annotation.Nullable String eventMessage) {
     this.eventMessage = eventMessage;
   }
 
 
-  public RedisClientTaskParams postToIncidentTimeline(@javax.annotation.Nullable Boolean postToIncidentTimeline) {
+  public RedisClientTaskParams postToIncidentTimeline(@jakarta.annotation.Nullable Boolean postToIncidentTimeline) {
     this.postToIncidentTimeline = postToIncidentTimeline;
     return this;
   }
@@ -245,17 +245,17 @@ public class RedisClientTaskParams {
    * Get postToIncidentTimeline
    * @return postToIncidentTimeline
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getPostToIncidentTimeline() {
     return postToIncidentTimeline;
   }
 
-  public void setPostToIncidentTimeline(@javax.annotation.Nullable Boolean postToIncidentTimeline) {
+  public void setPostToIncidentTimeline(@jakarta.annotation.Nullable Boolean postToIncidentTimeline) {
     this.postToIncidentTimeline = postToIncidentTimeline;
   }
 
 
-  public RedisClientTaskParams postToSlackChannels(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
+  public RedisClientTaskParams postToSlackChannels(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
     this.postToSlackChannels = postToSlackChannels;
     return this;
   }
@@ -272,12 +272,12 @@ public class RedisClientTaskParams {
    * Get postToSlackChannels
    * @return postToSlackChannels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AddActionItemTaskParamsPostToSlackChannelsInner> getPostToSlackChannels() {
     return postToSlackChannels;
   }
 
-  public void setPostToSlackChannels(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
+  public void setPostToSlackChannels(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
     this.postToSlackChannels = postToSlackChannels;
   }
 

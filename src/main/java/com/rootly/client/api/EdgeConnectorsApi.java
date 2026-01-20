@@ -89,7 +89,7 @@ public class EdgeConnectorsApi {
         <tr><td> 200 </td><td> Filters by status </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1EdgeConnectorsGetCall(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String status, @javax.annotation.Nullable String name, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1EdgeConnectorsGetCall(@jakarta.annotation.Nullable Integer page, @jakarta.annotation.Nullable Integer perPage, @jakarta.annotation.Nullable String status, @jakarta.annotation.Nullable String name, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -149,7 +149,7 @@ public class EdgeConnectorsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1EdgeConnectorsGetValidateBeforeCall(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String status, @javax.annotation.Nullable String name, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1EdgeConnectorsGetValidateBeforeCall(@jakarta.annotation.Nullable Integer page, @jakarta.annotation.Nullable Integer perPage, @jakarta.annotation.Nullable String status, @jakarta.annotation.Nullable String name, final ApiCallback _callback) throws ApiException {
         return v1EdgeConnectorsGetCall(page, perPage, status, name, _callback);
 
     }
@@ -169,7 +169,7 @@ public class EdgeConnectorsApi {
         <tr><td> 200 </td><td> Filters by status </td><td>  -  </td></tr>
      </table>
      */
-    public void v1EdgeConnectorsGet(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String status, @javax.annotation.Nullable String name) throws ApiException {
+    public void v1EdgeConnectorsGet(@jakarta.annotation.Nullable Integer page, @jakarta.annotation.Nullable Integer perPage, @jakarta.annotation.Nullable String status, @jakarta.annotation.Nullable String name) throws ApiException {
         v1EdgeConnectorsGetWithHttpInfo(page, perPage, status, name);
     }
 
@@ -189,7 +189,7 @@ public class EdgeConnectorsApi {
         <tr><td> 200 </td><td> Filters by status </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> v1EdgeConnectorsGetWithHttpInfo(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String status, @javax.annotation.Nullable String name) throws ApiException {
+    public ApiResponse<Void> v1EdgeConnectorsGetWithHttpInfo(@jakarta.annotation.Nullable Integer page, @jakarta.annotation.Nullable Integer perPage, @jakarta.annotation.Nullable String status, @jakarta.annotation.Nullable String name) throws ApiException {
         okhttp3.Call localVarCall = v1EdgeConnectorsGetValidateBeforeCall(page, perPage, status, name, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -211,7 +211,7 @@ public class EdgeConnectorsApi {
         <tr><td> 200 </td><td> Filters by status </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1EdgeConnectorsGetAsync(@javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer perPage, @javax.annotation.Nullable String status, @javax.annotation.Nullable String name, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call v1EdgeConnectorsGetAsync(@jakarta.annotation.Nullable Integer page, @jakarta.annotation.Nullable Integer perPage, @jakarta.annotation.Nullable String status, @jakarta.annotation.Nullable String name, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1EdgeConnectorsGetValidateBeforeCall(page, perPage, status, name, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -230,7 +230,7 @@ public class EdgeConnectorsApi {
         <tr><td> 200 </td><td> Edge connector deleted </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1EdgeConnectorsIdDeleteCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1EdgeConnectorsIdDeleteCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -275,7 +275,7 @@ public class EdgeConnectorsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1EdgeConnectorsIdDeleteValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1EdgeConnectorsIdDeleteValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling v1EdgeConnectorsIdDelete(Async)");
@@ -297,7 +297,7 @@ public class EdgeConnectorsApi {
         <tr><td> 200 </td><td> Edge connector deleted </td><td>  -  </td></tr>
      </table>
      */
-    public void v1EdgeConnectorsIdDelete(@javax.annotation.Nonnull String id) throws ApiException {
+    public void v1EdgeConnectorsIdDelete(@jakarta.annotation.Nonnull String id) throws ApiException {
         v1EdgeConnectorsIdDeleteWithHttpInfo(id);
     }
 
@@ -314,7 +314,7 @@ public class EdgeConnectorsApi {
         <tr><td> 200 </td><td> Edge connector deleted </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> v1EdgeConnectorsIdDeleteWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<Void> v1EdgeConnectorsIdDeleteWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = v1EdgeConnectorsIdDeleteValidateBeforeCall(id, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -333,7 +333,7 @@ public class EdgeConnectorsApi {
         <tr><td> 200 </td><td> Edge connector deleted </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1EdgeConnectorsIdDeleteAsync(@javax.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call v1EdgeConnectorsIdDeleteAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1EdgeConnectorsIdDeleteValidateBeforeCall(id, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -353,7 +353,7 @@ public class EdgeConnectorsApi {
         <tr><td> 404 </td><td> Edge connector not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1EdgeConnectorsIdGetCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1EdgeConnectorsIdGetCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -398,7 +398,7 @@ public class EdgeConnectorsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1EdgeConnectorsIdGetValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1EdgeConnectorsIdGetValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling v1EdgeConnectorsIdGet(Async)");
@@ -421,7 +421,7 @@ public class EdgeConnectorsApi {
         <tr><td> 404 </td><td> Edge connector not found </td><td>  -  </td></tr>
      </table>
      */
-    public void v1EdgeConnectorsIdGet(@javax.annotation.Nonnull String id) throws ApiException {
+    public void v1EdgeConnectorsIdGet(@jakarta.annotation.Nonnull String id) throws ApiException {
         v1EdgeConnectorsIdGetWithHttpInfo(id);
     }
 
@@ -439,7 +439,7 @@ public class EdgeConnectorsApi {
         <tr><td> 404 </td><td> Edge connector not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> v1EdgeConnectorsIdGetWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<Void> v1EdgeConnectorsIdGetWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = v1EdgeConnectorsIdGetValidateBeforeCall(id, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -459,7 +459,7 @@ public class EdgeConnectorsApi {
         <tr><td> 404 </td><td> Edge connector not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1EdgeConnectorsIdGetAsync(@javax.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call v1EdgeConnectorsIdGetAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1EdgeConnectorsIdGetValidateBeforeCall(id, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -480,7 +480,7 @@ public class EdgeConnectorsApi {
         <tr><td> 422 </td><td> Invalid parameters </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1EdgeConnectorsIdPatchCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable V1EdgeConnectorsIdPatchRequest v1EdgeConnectorsIdPatchRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1EdgeConnectorsIdPatchCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable V1EdgeConnectorsIdPatchRequest v1EdgeConnectorsIdPatchRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -526,7 +526,7 @@ public class EdgeConnectorsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1EdgeConnectorsIdPatchValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable V1EdgeConnectorsIdPatchRequest v1EdgeConnectorsIdPatchRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1EdgeConnectorsIdPatchValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable V1EdgeConnectorsIdPatchRequest v1EdgeConnectorsIdPatchRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling v1EdgeConnectorsIdPatch(Async)");
@@ -550,7 +550,7 @@ public class EdgeConnectorsApi {
         <tr><td> 422 </td><td> Invalid parameters </td><td>  -  </td></tr>
      </table>
      */
-    public void v1EdgeConnectorsIdPatch(@javax.annotation.Nonnull String id, @javax.annotation.Nullable V1EdgeConnectorsIdPatchRequest v1EdgeConnectorsIdPatchRequest) throws ApiException {
+    public void v1EdgeConnectorsIdPatch(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable V1EdgeConnectorsIdPatchRequest v1EdgeConnectorsIdPatchRequest) throws ApiException {
         v1EdgeConnectorsIdPatchWithHttpInfo(id, v1EdgeConnectorsIdPatchRequest);
     }
 
@@ -569,7 +569,7 @@ public class EdgeConnectorsApi {
         <tr><td> 422 </td><td> Invalid parameters </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> v1EdgeConnectorsIdPatchWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable V1EdgeConnectorsIdPatchRequest v1EdgeConnectorsIdPatchRequest) throws ApiException {
+    public ApiResponse<Void> v1EdgeConnectorsIdPatchWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable V1EdgeConnectorsIdPatchRequest v1EdgeConnectorsIdPatchRequest) throws ApiException {
         okhttp3.Call localVarCall = v1EdgeConnectorsIdPatchValidateBeforeCall(id, v1EdgeConnectorsIdPatchRequest, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -590,7 +590,7 @@ public class EdgeConnectorsApi {
         <tr><td> 422 </td><td> Invalid parameters </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1EdgeConnectorsIdPatchAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nullable V1EdgeConnectorsIdPatchRequest v1EdgeConnectorsIdPatchRequest, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call v1EdgeConnectorsIdPatchAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable V1EdgeConnectorsIdPatchRequest v1EdgeConnectorsIdPatchRequest, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1EdgeConnectorsIdPatchValidateBeforeCall(id, v1EdgeConnectorsIdPatchRequest, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -610,7 +610,7 @@ public class EdgeConnectorsApi {
         <tr><td> 422 </td><td> Invalid parameters </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1EdgeConnectorsPostCall(@javax.annotation.Nullable V1EdgeConnectorsPostRequest v1EdgeConnectorsPostRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1EdgeConnectorsPostCall(@jakarta.annotation.Nullable V1EdgeConnectorsPostRequest v1EdgeConnectorsPostRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -655,7 +655,7 @@ public class EdgeConnectorsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1EdgeConnectorsPostValidateBeforeCall(@javax.annotation.Nullable V1EdgeConnectorsPostRequest v1EdgeConnectorsPostRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1EdgeConnectorsPostValidateBeforeCall(@jakarta.annotation.Nullable V1EdgeConnectorsPostRequest v1EdgeConnectorsPostRequest, final ApiCallback _callback) throws ApiException {
         return v1EdgeConnectorsPostCall(v1EdgeConnectorsPostRequest, _callback);
 
     }
@@ -673,7 +673,7 @@ public class EdgeConnectorsApi {
         <tr><td> 422 </td><td> Invalid parameters </td><td>  -  </td></tr>
      </table>
      */
-    public void v1EdgeConnectorsPost(@javax.annotation.Nullable V1EdgeConnectorsPostRequest v1EdgeConnectorsPostRequest) throws ApiException {
+    public void v1EdgeConnectorsPost(@jakarta.annotation.Nullable V1EdgeConnectorsPostRequest v1EdgeConnectorsPostRequest) throws ApiException {
         v1EdgeConnectorsPostWithHttpInfo(v1EdgeConnectorsPostRequest);
     }
 
@@ -691,7 +691,7 @@ public class EdgeConnectorsApi {
         <tr><td> 422 </td><td> Invalid parameters </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> v1EdgeConnectorsPostWithHttpInfo(@javax.annotation.Nullable V1EdgeConnectorsPostRequest v1EdgeConnectorsPostRequest) throws ApiException {
+    public ApiResponse<Void> v1EdgeConnectorsPostWithHttpInfo(@jakarta.annotation.Nullable V1EdgeConnectorsPostRequest v1EdgeConnectorsPostRequest) throws ApiException {
         okhttp3.Call localVarCall = v1EdgeConnectorsPostValidateBeforeCall(v1EdgeConnectorsPostRequest, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -711,7 +711,7 @@ public class EdgeConnectorsApi {
         <tr><td> 422 </td><td> Invalid parameters </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1EdgeConnectorsPostAsync(@javax.annotation.Nullable V1EdgeConnectorsPostRequest v1EdgeConnectorsPostRequest, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call v1EdgeConnectorsPostAsync(@jakarta.annotation.Nullable V1EdgeConnectorsPostRequest v1EdgeConnectorsPostRequest, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1EdgeConnectorsPostValidateBeforeCall(v1EdgeConnectorsPostRequest, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);

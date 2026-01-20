@@ -51,21 +51,21 @@ import com.rootly.client.JSON;
 /**
  * UpdateIncidentPermissionSetDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateIncidentPermissionSetDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String slug;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   /**
@@ -126,7 +126,7 @@ public class UpdateIncidentPermissionSetDataAttributes {
 
   public static final String SERIALIZED_NAME_PRIVATE_INCIDENT_PERMISSIONS = "private_incident_permissions";
   @SerializedName(SERIALIZED_NAME_PRIVATE_INCIDENT_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<PrivateIncidentPermissionsEnum> privateIncidentPermissions = new ArrayList<>();
 
   /**
@@ -187,13 +187,13 @@ public class UpdateIncidentPermissionSetDataAttributes {
 
   public static final String SERIALIZED_NAME_PUBLIC_INCIDENT_PERMISSIONS = "public_incident_permissions";
   @SerializedName(SERIALIZED_NAME_PUBLIC_INCIDENT_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<PublicIncidentPermissionsEnum> publicIncidentPermissions = new ArrayList<>();
 
   public UpdateIncidentPermissionSetDataAttributes() {
   }
 
-  public UpdateIncidentPermissionSetDataAttributes name(@javax.annotation.Nullable String name) {
+  public UpdateIncidentPermissionSetDataAttributes name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -202,17 +202,17 @@ public class UpdateIncidentPermissionSetDataAttributes {
    * The incident permission set name.
    * @return name
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public UpdateIncidentPermissionSetDataAttributes slug(@javax.annotation.Nullable String slug) {
+  public UpdateIncidentPermissionSetDataAttributes slug(@jakarta.annotation.Nullable String slug) {
     this.slug = slug;
     return this;
   }
@@ -221,17 +221,17 @@ public class UpdateIncidentPermissionSetDataAttributes {
    * The incident permission set slug.
    * @return slug
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSlug() {
     return slug;
   }
 
-  public void setSlug(@javax.annotation.Nullable String slug) {
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
     this.slug = slug;
   }
 
 
-  public UpdateIncidentPermissionSetDataAttributes description(@javax.annotation.Nullable String description) {
+  public UpdateIncidentPermissionSetDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -240,17 +240,17 @@ public class UpdateIncidentPermissionSetDataAttributes {
    * The incident permission set description.
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UpdateIncidentPermissionSetDataAttributes privateIncidentPermissions(@javax.annotation.Nullable List<PrivateIncidentPermissionsEnum> privateIncidentPermissions) {
+  public UpdateIncidentPermissionSetDataAttributes privateIncidentPermissions(@jakarta.annotation.Nullable List<PrivateIncidentPermissionsEnum> privateIncidentPermissions) {
     this.privateIncidentPermissions = privateIncidentPermissions;
     return this;
   }
@@ -267,17 +267,17 @@ public class UpdateIncidentPermissionSetDataAttributes {
    * Get privateIncidentPermissions
    * @return privateIncidentPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<PrivateIncidentPermissionsEnum> getPrivateIncidentPermissions() {
     return privateIncidentPermissions;
   }
 
-  public void setPrivateIncidentPermissions(@javax.annotation.Nullable List<PrivateIncidentPermissionsEnum> privateIncidentPermissions) {
+  public void setPrivateIncidentPermissions(@jakarta.annotation.Nullable List<PrivateIncidentPermissionsEnum> privateIncidentPermissions) {
     this.privateIncidentPermissions = privateIncidentPermissions;
   }
 
 
-  public UpdateIncidentPermissionSetDataAttributes publicIncidentPermissions(@javax.annotation.Nullable List<PublicIncidentPermissionsEnum> publicIncidentPermissions) {
+  public UpdateIncidentPermissionSetDataAttributes publicIncidentPermissions(@jakarta.annotation.Nullable List<PublicIncidentPermissionsEnum> publicIncidentPermissions) {
     this.publicIncidentPermissions = publicIncidentPermissions;
     return this;
   }
@@ -294,12 +294,12 @@ public class UpdateIncidentPermissionSetDataAttributes {
    * Get publicIncidentPermissions
    * @return publicIncidentPermissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<PublicIncidentPermissionsEnum> getPublicIncidentPermissions() {
     return publicIncidentPermissions;
   }
 
-  public void setPublicIncidentPermissions(@javax.annotation.Nullable List<PublicIncidentPermissionsEnum> publicIncidentPermissions) {
+  public void setPublicIncidentPermissions(@jakarta.annotation.Nullable List<PublicIncidentPermissionsEnum> publicIncidentPermissions) {
     this.publicIncidentPermissions = publicIncidentPermissions;
   }
 

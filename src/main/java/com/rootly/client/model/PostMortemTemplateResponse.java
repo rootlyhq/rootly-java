@@ -49,17 +49,17 @@ import com.rootly.client.JSON;
 /**
  * PostMortemTemplateResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class PostMortemTemplateResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private PostMortemTemplateResponseData data;
 
   public PostMortemTemplateResponse() {
   }
 
-  public PostMortemTemplateResponse data(@javax.annotation.Nonnull PostMortemTemplateResponseData data) {
+  public PostMortemTemplateResponse data(@jakarta.annotation.Nonnull PostMortemTemplateResponseData data) {
     this.data = data;
     return this;
   }
@@ -68,12 +68,12 @@ public class PostMortemTemplateResponse {
    * Get data
    * @return data
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public PostMortemTemplateResponseData getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nonnull PostMortemTemplateResponseData data) {
+  public void setData(@jakarta.annotation.Nonnull PostMortemTemplateResponseData data) {
     this.data = data;
   }
 

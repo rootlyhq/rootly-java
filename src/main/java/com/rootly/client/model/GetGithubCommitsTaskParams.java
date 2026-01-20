@@ -50,7 +50,7 @@ import com.rootly.client.JSON;
 /**
  * GetGithubCommitsTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class GetGithubCommitsTaskParams {
   /**
    * Gets or Sets taskType
@@ -104,48 +104,48 @@ public class GetGithubCommitsTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_SERVICE_IDS = "service_ids";
   @SerializedName(SERIALIZED_NAME_SERVICE_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> serviceIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_GITHUB_REPOSITORY_NAMES = "github_repository_names";
   @SerializedName(SERIALIZED_NAME_GITHUB_REPOSITORY_NAMES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> githubRepositoryNames = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String branch;
 
   public static final String SERIALIZED_NAME_PAST_DURATION = "past_duration";
   @SerializedName(SERIALIZED_NAME_PAST_DURATION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String pastDuration;
 
   public static final String SERIALIZED_NAME_SERVICES_IMPACTED_BY_INCIDENT = "services_impacted_by_incident";
   @SerializedName(SERIALIZED_NAME_SERVICES_IMPACTED_BY_INCIDENT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean servicesImpactedByIncident;
 
   public static final String SERIALIZED_NAME_POST_TO_INCIDENT_TIMELINE = "post_to_incident_timeline";
   @SerializedName(SERIALIZED_NAME_POST_TO_INCIDENT_TIMELINE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean postToIncidentTimeline;
 
   public static final String SERIALIZED_NAME_POST_TO_SLACK_CHANNELS = "post_to_slack_channels";
   @SerializedName(SERIALIZED_NAME_POST_TO_SLACK_CHANNELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<Object> postToSlackChannels = new ArrayList<>();
 
   public GetGithubCommitsTaskParams() {
   }
 
-  public GetGithubCommitsTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public GetGithubCommitsTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -154,17 +154,17 @@ public class GetGithubCommitsTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public GetGithubCommitsTaskParams serviceIds(@javax.annotation.Nullable List<String> serviceIds) {
+  public GetGithubCommitsTaskParams serviceIds(@jakarta.annotation.Nullable List<String> serviceIds) {
     this.serviceIds = serviceIds;
     return this;
   }
@@ -181,17 +181,17 @@ public class GetGithubCommitsTaskParams {
    * Get serviceIds
    * @return serviceIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getServiceIds() {
     return serviceIds;
   }
 
-  public void setServiceIds(@javax.annotation.Nullable List<String> serviceIds) {
+  public void setServiceIds(@jakarta.annotation.Nullable List<String> serviceIds) {
     this.serviceIds = serviceIds;
   }
 
 
-  public GetGithubCommitsTaskParams githubRepositoryNames(@javax.annotation.Nullable List<String> githubRepositoryNames) {
+  public GetGithubCommitsTaskParams githubRepositoryNames(@jakarta.annotation.Nullable List<String> githubRepositoryNames) {
     this.githubRepositoryNames = githubRepositoryNames;
     return this;
   }
@@ -208,17 +208,17 @@ public class GetGithubCommitsTaskParams {
    * Get githubRepositoryNames
    * @return githubRepositoryNames
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getGithubRepositoryNames() {
     return githubRepositoryNames;
   }
 
-  public void setGithubRepositoryNames(@javax.annotation.Nullable List<String> githubRepositoryNames) {
+  public void setGithubRepositoryNames(@jakarta.annotation.Nullable List<String> githubRepositoryNames) {
     this.githubRepositoryNames = githubRepositoryNames;
   }
 
 
-  public GetGithubCommitsTaskParams branch(@javax.annotation.Nonnull String branch) {
+  public GetGithubCommitsTaskParams branch(@jakarta.annotation.Nonnull String branch) {
     this.branch = branch;
     return this;
   }
@@ -227,17 +227,17 @@ public class GetGithubCommitsTaskParams {
    * The branch
    * @return branch
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getBranch() {
     return branch;
   }
 
-  public void setBranch(@javax.annotation.Nonnull String branch) {
+  public void setBranch(@jakarta.annotation.Nonnull String branch) {
     this.branch = branch;
   }
 
 
-  public GetGithubCommitsTaskParams pastDuration(@javax.annotation.Nonnull String pastDuration) {
+  public GetGithubCommitsTaskParams pastDuration(@jakarta.annotation.Nonnull String pastDuration) {
     this.pastDuration = pastDuration;
     return this;
   }
@@ -246,17 +246,17 @@ public class GetGithubCommitsTaskParams {
    * How far back to fetch commits (in format &#39;1 minute&#39;, &#39;30 days&#39;, &#39;3 months&#39;, etc.)
    * @return pastDuration
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getPastDuration() {
     return pastDuration;
   }
 
-  public void setPastDuration(@javax.annotation.Nonnull String pastDuration) {
+  public void setPastDuration(@jakarta.annotation.Nonnull String pastDuration) {
     this.pastDuration = pastDuration;
   }
 
 
-  public GetGithubCommitsTaskParams servicesImpactedByIncident(@javax.annotation.Nullable Boolean servicesImpactedByIncident) {
+  public GetGithubCommitsTaskParams servicesImpactedByIncident(@jakarta.annotation.Nullable Boolean servicesImpactedByIncident) {
     this.servicesImpactedByIncident = servicesImpactedByIncident;
     return this;
   }
@@ -265,17 +265,17 @@ public class GetGithubCommitsTaskParams {
    * Get servicesImpactedByIncident
    * @return servicesImpactedByIncident
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getServicesImpactedByIncident() {
     return servicesImpactedByIncident;
   }
 
-  public void setServicesImpactedByIncident(@javax.annotation.Nullable Boolean servicesImpactedByIncident) {
+  public void setServicesImpactedByIncident(@jakarta.annotation.Nullable Boolean servicesImpactedByIncident) {
     this.servicesImpactedByIncident = servicesImpactedByIncident;
   }
 
 
-  public GetGithubCommitsTaskParams postToIncidentTimeline(@javax.annotation.Nullable Boolean postToIncidentTimeline) {
+  public GetGithubCommitsTaskParams postToIncidentTimeline(@jakarta.annotation.Nullable Boolean postToIncidentTimeline) {
     this.postToIncidentTimeline = postToIncidentTimeline;
     return this;
   }
@@ -284,17 +284,17 @@ public class GetGithubCommitsTaskParams {
    * Get postToIncidentTimeline
    * @return postToIncidentTimeline
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getPostToIncidentTimeline() {
     return postToIncidentTimeline;
   }
 
-  public void setPostToIncidentTimeline(@javax.annotation.Nullable Boolean postToIncidentTimeline) {
+  public void setPostToIncidentTimeline(@jakarta.annotation.Nullable Boolean postToIncidentTimeline) {
     this.postToIncidentTimeline = postToIncidentTimeline;
   }
 
 
-  public GetGithubCommitsTaskParams postToSlackChannels(@javax.annotation.Nullable List<Object> postToSlackChannels) {
+  public GetGithubCommitsTaskParams postToSlackChannels(@jakarta.annotation.Nullable List<Object> postToSlackChannels) {
     this.postToSlackChannels = postToSlackChannels;
     return this;
   }
@@ -311,12 +311,12 @@ public class GetGithubCommitsTaskParams {
    * Get postToSlackChannels
    * @return postToSlackChannels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<Object> getPostToSlackChannels() {
     return postToSlackChannels;
   }
 
-  public void setPostToSlackChannels(@javax.annotation.Nullable List<Object> postToSlackChannels) {
+  public void setPostToSlackChannels(@jakarta.annotation.Nullable List<Object> postToSlackChannels) {
     this.postToSlackChannels = postToSlackChannels;
   }
 

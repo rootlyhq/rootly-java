@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * RunCommandHerokuTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RunCommandHerokuTaskParams {
   /**
    * Gets or Sets taskType
@@ -105,17 +105,17 @@ public class RunCommandHerokuTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_COMMAND = "command";
   @SerializedName(SERIALIZED_NAME_COMMAND)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String command;
 
   public static final String SERIALIZED_NAME_APP_NAME = "app_name";
   @SerializedName(SERIALIZED_NAME_APP_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String appName;
 
   /**
@@ -172,23 +172,23 @@ public class RunCommandHerokuTaskParams {
 
   public static final String SERIALIZED_NAME_SIZE = "size";
   @SerializedName(SERIALIZED_NAME_SIZE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private SizeEnum size;
 
   public static final String SERIALIZED_NAME_POST_TO_INCIDENT_TIMELINE = "post_to_incident_timeline";
   @SerializedName(SERIALIZED_NAME_POST_TO_INCIDENT_TIMELINE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean postToIncidentTimeline;
 
   public static final String SERIALIZED_NAME_POST_TO_SLACK_CHANNELS = "post_to_slack_channels";
   @SerializedName(SERIALIZED_NAME_POST_TO_SLACK_CHANNELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels = new ArrayList<>();
 
   public RunCommandHerokuTaskParams() {
   }
 
-  public RunCommandHerokuTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public RunCommandHerokuTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -197,17 +197,17 @@ public class RunCommandHerokuTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public RunCommandHerokuTaskParams command(@javax.annotation.Nonnull String command) {
+  public RunCommandHerokuTaskParams command(@jakarta.annotation.Nonnull String command) {
     this.command = command;
     return this;
   }
@@ -216,17 +216,17 @@ public class RunCommandHerokuTaskParams {
    * Get command
    * @return command
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCommand() {
     return command;
   }
 
-  public void setCommand(@javax.annotation.Nonnull String command) {
+  public void setCommand(@jakarta.annotation.Nonnull String command) {
     this.command = command;
   }
 
 
-  public RunCommandHerokuTaskParams appName(@javax.annotation.Nonnull String appName) {
+  public RunCommandHerokuTaskParams appName(@jakarta.annotation.Nonnull String appName) {
     this.appName = appName;
     return this;
   }
@@ -235,17 +235,17 @@ public class RunCommandHerokuTaskParams {
    * Get appName
    * @return appName
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getAppName() {
     return appName;
   }
 
-  public void setAppName(@javax.annotation.Nonnull String appName) {
+  public void setAppName(@jakarta.annotation.Nonnull String appName) {
     this.appName = appName;
   }
 
 
-  public RunCommandHerokuTaskParams size(@javax.annotation.Nonnull SizeEnum size) {
+  public RunCommandHerokuTaskParams size(@jakarta.annotation.Nonnull SizeEnum size) {
     this.size = size;
     return this;
   }
@@ -254,17 +254,17 @@ public class RunCommandHerokuTaskParams {
    * Get size
    * @return size
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public SizeEnum getSize() {
     return size;
   }
 
-  public void setSize(@javax.annotation.Nonnull SizeEnum size) {
+  public void setSize(@jakarta.annotation.Nonnull SizeEnum size) {
     this.size = size;
   }
 
 
-  public RunCommandHerokuTaskParams postToIncidentTimeline(@javax.annotation.Nullable Boolean postToIncidentTimeline) {
+  public RunCommandHerokuTaskParams postToIncidentTimeline(@jakarta.annotation.Nullable Boolean postToIncidentTimeline) {
     this.postToIncidentTimeline = postToIncidentTimeline;
     return this;
   }
@@ -273,17 +273,17 @@ public class RunCommandHerokuTaskParams {
    * Get postToIncidentTimeline
    * @return postToIncidentTimeline
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getPostToIncidentTimeline() {
     return postToIncidentTimeline;
   }
 
-  public void setPostToIncidentTimeline(@javax.annotation.Nullable Boolean postToIncidentTimeline) {
+  public void setPostToIncidentTimeline(@jakarta.annotation.Nullable Boolean postToIncidentTimeline) {
     this.postToIncidentTimeline = postToIncidentTimeline;
   }
 
 
-  public RunCommandHerokuTaskParams postToSlackChannels(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
+  public RunCommandHerokuTaskParams postToSlackChannels(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
     this.postToSlackChannels = postToSlackChannels;
     return this;
   }
@@ -300,12 +300,12 @@ public class RunCommandHerokuTaskParams {
    * Get postToSlackChannels
    * @return postToSlackChannels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AddActionItemTaskParamsPostToSlackChannelsInner> getPostToSlackChannels() {
     return postToSlackChannels;
   }
 
-  public void setPostToSlackChannels(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
+  public void setPostToSlackChannels(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
     this.postToSlackChannels = postToSlackChannels;
   }
 

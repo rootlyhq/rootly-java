@@ -94,7 +94,7 @@ public class DeprecatedIncidentCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call createIncidentCustomFieldSelectionCall(@javax.annotation.Nonnull String incidentId, @javax.annotation.Nonnull NewIncidentCustomFieldSelection newIncidentCustomFieldSelection, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createIncidentCustomFieldSelectionCall(@jakarta.annotation.Nonnull String incidentId, @jakarta.annotation.Nonnull NewIncidentCustomFieldSelection newIncidentCustomFieldSelection, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -142,7 +142,7 @@ public class DeprecatedIncidentCustomFieldSelectionsApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createIncidentCustomFieldSelectionValidateBeforeCall(@javax.annotation.Nonnull String incidentId, @javax.annotation.Nonnull NewIncidentCustomFieldSelection newIncidentCustomFieldSelection, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createIncidentCustomFieldSelectionValidateBeforeCall(@jakarta.annotation.Nonnull String incidentId, @jakarta.annotation.Nonnull NewIncidentCustomFieldSelection newIncidentCustomFieldSelection, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'incidentId' is set
         if (incidentId == null) {
             throw new ApiException("Missing the required parameter 'incidentId' when calling createIncidentCustomFieldSelection(Async)");
@@ -175,7 +175,7 @@ public class DeprecatedIncidentCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public IncidentCustomFieldSelectionResponse createIncidentCustomFieldSelection(@javax.annotation.Nonnull String incidentId, @javax.annotation.Nonnull NewIncidentCustomFieldSelection newIncidentCustomFieldSelection) throws ApiException {
+    public IncidentCustomFieldSelectionResponse createIncidentCustomFieldSelection(@jakarta.annotation.Nonnull String incidentId, @jakarta.annotation.Nonnull NewIncidentCustomFieldSelection newIncidentCustomFieldSelection) throws ApiException {
         ApiResponse<IncidentCustomFieldSelectionResponse> localVarResp = createIncidentCustomFieldSelectionWithHttpInfo(incidentId, newIncidentCustomFieldSelection);
         return localVarResp.getData();
     }
@@ -198,7 +198,7 @@ public class DeprecatedIncidentCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<IncidentCustomFieldSelectionResponse> createIncidentCustomFieldSelectionWithHttpInfo(@javax.annotation.Nonnull String incidentId, @javax.annotation.Nonnull NewIncidentCustomFieldSelection newIncidentCustomFieldSelection) throws ApiException {
+    public ApiResponse<IncidentCustomFieldSelectionResponse> createIncidentCustomFieldSelectionWithHttpInfo(@jakarta.annotation.Nonnull String incidentId, @jakarta.annotation.Nonnull NewIncidentCustomFieldSelection newIncidentCustomFieldSelection) throws ApiException {
         okhttp3.Call localVarCall = createIncidentCustomFieldSelectionValidateBeforeCall(incidentId, newIncidentCustomFieldSelection, null);
         Type localVarReturnType = new TypeToken<IncidentCustomFieldSelectionResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -223,7 +223,7 @@ public class DeprecatedIncidentCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call createIncidentCustomFieldSelectionAsync(@javax.annotation.Nonnull String incidentId, @javax.annotation.Nonnull NewIncidentCustomFieldSelection newIncidentCustomFieldSelection, final ApiCallback<IncidentCustomFieldSelectionResponse> _callback) throws ApiException {
+    public okhttp3.Call createIncidentCustomFieldSelectionAsync(@jakarta.annotation.Nonnull String incidentId, @jakarta.annotation.Nonnull NewIncidentCustomFieldSelection newIncidentCustomFieldSelection, final ApiCallback<IncidentCustomFieldSelectionResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createIncidentCustomFieldSelectionValidateBeforeCall(incidentId, newIncidentCustomFieldSelection, _callback);
         Type localVarReturnType = new TypeToken<IncidentCustomFieldSelectionResponse>(){}.getType();
@@ -246,7 +246,7 @@ public class DeprecatedIncidentCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call deleteIncidentCustomFieldSelectionCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteIncidentCustomFieldSelectionCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -293,7 +293,7 @@ public class DeprecatedIncidentCustomFieldSelectionsApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteIncidentCustomFieldSelectionValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteIncidentCustomFieldSelectionValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteIncidentCustomFieldSelection(Async)");
@@ -319,7 +319,7 @@ public class DeprecatedIncidentCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public IncidentCustomFieldSelectionResponse deleteIncidentCustomFieldSelection(@javax.annotation.Nonnull String id) throws ApiException {
+    public IncidentCustomFieldSelectionResponse deleteIncidentCustomFieldSelection(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<IncidentCustomFieldSelectionResponse> localVarResp = deleteIncidentCustomFieldSelectionWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -340,7 +340,7 @@ public class DeprecatedIncidentCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<IncidentCustomFieldSelectionResponse> deleteIncidentCustomFieldSelectionWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<IncidentCustomFieldSelectionResponse> deleteIncidentCustomFieldSelectionWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteIncidentCustomFieldSelectionValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<IncidentCustomFieldSelectionResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -363,7 +363,7 @@ public class DeprecatedIncidentCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call deleteIncidentCustomFieldSelectionAsync(@javax.annotation.Nonnull String id, final ApiCallback<IncidentCustomFieldSelectionResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteIncidentCustomFieldSelectionAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<IncidentCustomFieldSelectionResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteIncidentCustomFieldSelectionValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<IncidentCustomFieldSelectionResponse>(){}.getType();
@@ -386,7 +386,7 @@ public class DeprecatedIncidentCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call getIncidentCustomFieldSelectionCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getIncidentCustomFieldSelectionCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -433,7 +433,7 @@ public class DeprecatedIncidentCustomFieldSelectionsApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getIncidentCustomFieldSelectionValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getIncidentCustomFieldSelectionValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getIncidentCustomFieldSelection(Async)");
@@ -459,7 +459,7 @@ public class DeprecatedIncidentCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public IncidentCustomFieldSelectionResponse getIncidentCustomFieldSelection(@javax.annotation.Nonnull String id) throws ApiException {
+    public IncidentCustomFieldSelectionResponse getIncidentCustomFieldSelection(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<IncidentCustomFieldSelectionResponse> localVarResp = getIncidentCustomFieldSelectionWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -480,7 +480,7 @@ public class DeprecatedIncidentCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<IncidentCustomFieldSelectionResponse> getIncidentCustomFieldSelectionWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<IncidentCustomFieldSelectionResponse> getIncidentCustomFieldSelectionWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getIncidentCustomFieldSelectionValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<IncidentCustomFieldSelectionResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -503,7 +503,7 @@ public class DeprecatedIncidentCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call getIncidentCustomFieldSelectionAsync(@javax.annotation.Nonnull String id, final ApiCallback<IncidentCustomFieldSelectionResponse> _callback) throws ApiException {
+    public okhttp3.Call getIncidentCustomFieldSelectionAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<IncidentCustomFieldSelectionResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getIncidentCustomFieldSelectionValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<IncidentCustomFieldSelectionResponse>(){}.getType();
@@ -528,7 +528,7 @@ public class DeprecatedIncidentCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call listIncidentCustomFieldSelectionsCall(@javax.annotation.Nonnull String incidentId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listIncidentCustomFieldSelectionsCall(@jakarta.annotation.Nonnull String incidentId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -587,7 +587,7 @@ public class DeprecatedIncidentCustomFieldSelectionsApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listIncidentCustomFieldSelectionsValidateBeforeCall(@javax.annotation.Nonnull String incidentId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listIncidentCustomFieldSelectionsValidateBeforeCall(@jakarta.annotation.Nonnull String incidentId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'incidentId' is set
         if (incidentId == null) {
             throw new ApiException("Missing the required parameter 'incidentId' when calling listIncidentCustomFieldSelections(Async)");
@@ -615,7 +615,7 @@ public class DeprecatedIncidentCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public IncidentCustomFieldSelectionList listIncidentCustomFieldSelections(@javax.annotation.Nonnull String incidentId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+    public IncidentCustomFieldSelectionList listIncidentCustomFieldSelections(@jakarta.annotation.Nonnull String incidentId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
         ApiResponse<IncidentCustomFieldSelectionList> localVarResp = listIncidentCustomFieldSelectionsWithHttpInfo(incidentId, include, pageNumber, pageSize);
         return localVarResp.getData();
     }
@@ -638,7 +638,7 @@ public class DeprecatedIncidentCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<IncidentCustomFieldSelectionList> listIncidentCustomFieldSelectionsWithHttpInfo(@javax.annotation.Nonnull String incidentId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+    public ApiResponse<IncidentCustomFieldSelectionList> listIncidentCustomFieldSelectionsWithHttpInfo(@jakarta.annotation.Nonnull String incidentId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
         okhttp3.Call localVarCall = listIncidentCustomFieldSelectionsValidateBeforeCall(incidentId, include, pageNumber, pageSize, null);
         Type localVarReturnType = new TypeToken<IncidentCustomFieldSelectionList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -663,7 +663,7 @@ public class DeprecatedIncidentCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call listIncidentCustomFieldSelectionsAsync(@javax.annotation.Nonnull String incidentId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback<IncidentCustomFieldSelectionList> _callback) throws ApiException {
+    public okhttp3.Call listIncidentCustomFieldSelectionsAsync(@jakarta.annotation.Nonnull String incidentId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback<IncidentCustomFieldSelectionList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listIncidentCustomFieldSelectionsValidateBeforeCall(incidentId, include, pageNumber, pageSize, _callback);
         Type localVarReturnType = new TypeToken<IncidentCustomFieldSelectionList>(){}.getType();
@@ -687,7 +687,7 @@ public class DeprecatedIncidentCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call updateIncidentCustomFieldSelectionCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateIncidentCustomFieldSelection updateIncidentCustomFieldSelection, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateIncidentCustomFieldSelectionCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateIncidentCustomFieldSelection updateIncidentCustomFieldSelection, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -735,7 +735,7 @@ public class DeprecatedIncidentCustomFieldSelectionsApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateIncidentCustomFieldSelectionValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateIncidentCustomFieldSelection updateIncidentCustomFieldSelection, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateIncidentCustomFieldSelectionValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateIncidentCustomFieldSelection updateIncidentCustomFieldSelection, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateIncidentCustomFieldSelection(Async)");
@@ -767,7 +767,7 @@ public class DeprecatedIncidentCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public IncidentCustomFieldSelectionResponse updateIncidentCustomFieldSelection(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateIncidentCustomFieldSelection updateIncidentCustomFieldSelection) throws ApiException {
+    public IncidentCustomFieldSelectionResponse updateIncidentCustomFieldSelection(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateIncidentCustomFieldSelection updateIncidentCustomFieldSelection) throws ApiException {
         ApiResponse<IncidentCustomFieldSelectionResponse> localVarResp = updateIncidentCustomFieldSelectionWithHttpInfo(id, updateIncidentCustomFieldSelection);
         return localVarResp.getData();
     }
@@ -789,7 +789,7 @@ public class DeprecatedIncidentCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<IncidentCustomFieldSelectionResponse> updateIncidentCustomFieldSelectionWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateIncidentCustomFieldSelection updateIncidentCustomFieldSelection) throws ApiException {
+    public ApiResponse<IncidentCustomFieldSelectionResponse> updateIncidentCustomFieldSelectionWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateIncidentCustomFieldSelection updateIncidentCustomFieldSelection) throws ApiException {
         okhttp3.Call localVarCall = updateIncidentCustomFieldSelectionValidateBeforeCall(id, updateIncidentCustomFieldSelection, null);
         Type localVarReturnType = new TypeToken<IncidentCustomFieldSelectionResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -813,7 +813,7 @@ public class DeprecatedIncidentCustomFieldSelectionsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call updateIncidentCustomFieldSelectionAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateIncidentCustomFieldSelection updateIncidentCustomFieldSelection, final ApiCallback<IncidentCustomFieldSelectionResponse> _callback) throws ApiException {
+    public okhttp3.Call updateIncidentCustomFieldSelectionAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateIncidentCustomFieldSelection updateIncidentCustomFieldSelection, final ApiCallback<IncidentCustomFieldSelectionResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateIncidentCustomFieldSelectionValidateBeforeCall(id, updateIncidentCustomFieldSelection, _callback);
         Type localVarReturnType = new TypeToken<IncidentCustomFieldSelectionResponse>(){}.getType();

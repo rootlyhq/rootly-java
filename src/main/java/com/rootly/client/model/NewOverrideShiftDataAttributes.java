@@ -49,27 +49,27 @@ import com.rootly.client.JSON;
 /**
  * NewOverrideShiftDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewOverrideShiftDataAttributes {
   public static final String SERIALIZED_NAME_STARTS_AT = "starts_at";
   @SerializedName(SERIALIZED_NAME_STARTS_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private OffsetDateTime startsAt;
 
   public static final String SERIALIZED_NAME_ENDS_AT = "ends_at";
   @SerializedName(SERIALIZED_NAME_ENDS_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private OffsetDateTime endsAt;
 
   public static final String SERIALIZED_NAME_USER_ID = "user_id";
   @SerializedName(SERIALIZED_NAME_USER_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Integer userId;
 
   public NewOverrideShiftDataAttributes() {
   }
 
-  public NewOverrideShiftDataAttributes startsAt(@javax.annotation.Nonnull OffsetDateTime startsAt) {
+  public NewOverrideShiftDataAttributes startsAt(@jakarta.annotation.Nonnull OffsetDateTime startsAt) {
     this.startsAt = startsAt;
     return this;
   }
@@ -78,17 +78,17 @@ public class NewOverrideShiftDataAttributes {
    * Start datetime of override shift
    * @return startsAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public OffsetDateTime getStartsAt() {
     return startsAt;
   }
 
-  public void setStartsAt(@javax.annotation.Nonnull OffsetDateTime startsAt) {
+  public void setStartsAt(@jakarta.annotation.Nonnull OffsetDateTime startsAt) {
     this.startsAt = startsAt;
   }
 
 
-  public NewOverrideShiftDataAttributes endsAt(@javax.annotation.Nonnull OffsetDateTime endsAt) {
+  public NewOverrideShiftDataAttributes endsAt(@jakarta.annotation.Nonnull OffsetDateTime endsAt) {
     this.endsAt = endsAt;
     return this;
   }
@@ -97,17 +97,17 @@ public class NewOverrideShiftDataAttributes {
    * End datetime of override shift
    * @return endsAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public OffsetDateTime getEndsAt() {
     return endsAt;
   }
 
-  public void setEndsAt(@javax.annotation.Nonnull OffsetDateTime endsAt) {
+  public void setEndsAt(@jakarta.annotation.Nonnull OffsetDateTime endsAt) {
     this.endsAt = endsAt;
   }
 
 
-  public NewOverrideShiftDataAttributes userId(@javax.annotation.Nonnull Integer userId) {
+  public NewOverrideShiftDataAttributes userId(@jakarta.annotation.Nonnull Integer userId) {
     this.userId = userId;
     return this;
   }
@@ -116,12 +116,12 @@ public class NewOverrideShiftDataAttributes {
    * Override shift user
    * @return userId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Integer getUserId() {
     return userId;
   }
 
-  public void setUserId(@javax.annotation.Nonnull Integer userId) {
+  public void setUserId(@jakarta.annotation.Nonnull Integer userId) {
     this.userId = userId;
   }
 

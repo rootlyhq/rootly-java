@@ -48,11 +48,11 @@ import com.rootly.client.JSON;
 /**
  * NewFormFieldPositionDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewFormFieldPositionDataAttributes {
   public static final String SERIALIZED_NAME_FORM_FIELD_ID = "form_field_id";
   @SerializedName(SERIALIZED_NAME_FORM_FIELD_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String formFieldId;
 
   /**
@@ -139,18 +139,18 @@ public class NewFormFieldPositionDataAttributes {
 
   public static final String SERIALIZED_NAME_FORM = "form";
   @SerializedName(SERIALIZED_NAME_FORM)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private FormEnum form;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Integer position;
 
   public NewFormFieldPositionDataAttributes() {
   }
 
-  public NewFormFieldPositionDataAttributes formFieldId(@javax.annotation.Nonnull String formFieldId) {
+  public NewFormFieldPositionDataAttributes formFieldId(@jakarta.annotation.Nonnull String formFieldId) {
     this.formFieldId = formFieldId;
     return this;
   }
@@ -159,17 +159,17 @@ public class NewFormFieldPositionDataAttributes {
    * The ID of the form field.
    * @return formFieldId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getFormFieldId() {
     return formFieldId;
   }
 
-  public void setFormFieldId(@javax.annotation.Nonnull String formFieldId) {
+  public void setFormFieldId(@jakarta.annotation.Nonnull String formFieldId) {
     this.formFieldId = formFieldId;
   }
 
 
-  public NewFormFieldPositionDataAttributes form(@javax.annotation.Nonnull FormEnum form) {
+  public NewFormFieldPositionDataAttributes form(@jakarta.annotation.Nonnull FormEnum form) {
     this.form = form;
     return this;
   }
@@ -178,17 +178,17 @@ public class NewFormFieldPositionDataAttributes {
    * The form for the position
    * @return form
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public FormEnum getForm() {
     return form;
   }
 
-  public void setForm(@javax.annotation.Nonnull FormEnum form) {
+  public void setForm(@jakarta.annotation.Nonnull FormEnum form) {
     this.form = form;
   }
 
 
-  public NewFormFieldPositionDataAttributes position(@javax.annotation.Nonnull Integer position) {
+  public NewFormFieldPositionDataAttributes position(@jakarta.annotation.Nonnull Integer position) {
     this.position = position;
     return this;
   }
@@ -197,12 +197,12 @@ public class NewFormFieldPositionDataAttributes {
    * The position of the form_field_position
    * @return position
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nonnull Integer position) {
+  public void setPosition(@jakarta.annotation.Nonnull Integer position) {
     this.position = position;
   }
 

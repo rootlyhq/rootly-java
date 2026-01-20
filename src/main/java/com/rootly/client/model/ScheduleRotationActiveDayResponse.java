@@ -49,17 +49,17 @@ import com.rootly.client.JSON;
 /**
  * ScheduleRotationActiveDayResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ScheduleRotationActiveDayResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ScheduleRotationActiveDayResponseData data;
 
   public ScheduleRotationActiveDayResponse() {
   }
 
-  public ScheduleRotationActiveDayResponse data(@javax.annotation.Nullable ScheduleRotationActiveDayResponseData data) {
+  public ScheduleRotationActiveDayResponse data(@jakarta.annotation.Nullable ScheduleRotationActiveDayResponseData data) {
     this.data = data;
     return this;
   }
@@ -68,12 +68,12 @@ public class ScheduleRotationActiveDayResponse {
    * Get data
    * @return data
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ScheduleRotationActiveDayResponseData getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nullable ScheduleRotationActiveDayResponseData data) {
+  public void setData(@jakarta.annotation.Nullable ScheduleRotationActiveDayResponseData data) {
     this.data = data;
   }
 

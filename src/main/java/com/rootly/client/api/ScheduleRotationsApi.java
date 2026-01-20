@@ -92,7 +92,7 @@ public class ScheduleRotationsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createScheduleRotationCall(@javax.annotation.Nonnull String scheduleId, @javax.annotation.Nonnull NewScheduleRotation newScheduleRotation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createScheduleRotationCall(@jakarta.annotation.Nonnull String scheduleId, @jakarta.annotation.Nonnull NewScheduleRotation newScheduleRotation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -139,7 +139,7 @@ public class ScheduleRotationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createScheduleRotationValidateBeforeCall(@javax.annotation.Nonnull String scheduleId, @javax.annotation.Nonnull NewScheduleRotation newScheduleRotation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createScheduleRotationValidateBeforeCall(@jakarta.annotation.Nonnull String scheduleId, @jakarta.annotation.Nonnull NewScheduleRotation newScheduleRotation, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'scheduleId' is set
         if (scheduleId == null) {
             throw new ApiException("Missing the required parameter 'scheduleId' when calling createScheduleRotation(Async)");
@@ -170,7 +170,7 @@ public class ScheduleRotationsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ScheduleRotationResponse createScheduleRotation(@javax.annotation.Nonnull String scheduleId, @javax.annotation.Nonnull NewScheduleRotation newScheduleRotation) throws ApiException {
+    public ScheduleRotationResponse createScheduleRotation(@jakarta.annotation.Nonnull String scheduleId, @jakarta.annotation.Nonnull NewScheduleRotation newScheduleRotation) throws ApiException {
         ApiResponse<ScheduleRotationResponse> localVarResp = createScheduleRotationWithHttpInfo(scheduleId, newScheduleRotation);
         return localVarResp.getData();
     }
@@ -191,7 +191,7 @@ public class ScheduleRotationsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ScheduleRotationResponse> createScheduleRotationWithHttpInfo(@javax.annotation.Nonnull String scheduleId, @javax.annotation.Nonnull NewScheduleRotation newScheduleRotation) throws ApiException {
+    public ApiResponse<ScheduleRotationResponse> createScheduleRotationWithHttpInfo(@jakarta.annotation.Nonnull String scheduleId, @jakarta.annotation.Nonnull NewScheduleRotation newScheduleRotation) throws ApiException {
         okhttp3.Call localVarCall = createScheduleRotationValidateBeforeCall(scheduleId, newScheduleRotation, null);
         Type localVarReturnType = new TypeToken<ScheduleRotationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -214,7 +214,7 @@ public class ScheduleRotationsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createScheduleRotationAsync(@javax.annotation.Nonnull String scheduleId, @javax.annotation.Nonnull NewScheduleRotation newScheduleRotation, final ApiCallback<ScheduleRotationResponse> _callback) throws ApiException {
+    public okhttp3.Call createScheduleRotationAsync(@jakarta.annotation.Nonnull String scheduleId, @jakarta.annotation.Nonnull NewScheduleRotation newScheduleRotation, final ApiCallback<ScheduleRotationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createScheduleRotationValidateBeforeCall(scheduleId, newScheduleRotation, _callback);
         Type localVarReturnType = new TypeToken<ScheduleRotationResponse>(){}.getType();
@@ -235,7 +235,7 @@ public class ScheduleRotationsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteScheduleRotationCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteScheduleRotationCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -281,7 +281,7 @@ public class ScheduleRotationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteScheduleRotationValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteScheduleRotationValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteScheduleRotation(Async)");
@@ -305,7 +305,7 @@ public class ScheduleRotationsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ScheduleRotationResponse deleteScheduleRotation(@javax.annotation.Nonnull String id) throws ApiException {
+    public ScheduleRotationResponse deleteScheduleRotation(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<ScheduleRotationResponse> localVarResp = deleteScheduleRotationWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -324,7 +324,7 @@ public class ScheduleRotationsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ScheduleRotationResponse> deleteScheduleRotationWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<ScheduleRotationResponse> deleteScheduleRotationWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteScheduleRotationValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<ScheduleRotationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -345,7 +345,7 @@ public class ScheduleRotationsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteScheduleRotationAsync(@javax.annotation.Nonnull String id, final ApiCallback<ScheduleRotationResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteScheduleRotationAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<ScheduleRotationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteScheduleRotationValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<ScheduleRotationResponse>(){}.getType();
@@ -366,7 +366,7 @@ public class ScheduleRotationsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getScheduleRotationCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getScheduleRotationCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -412,7 +412,7 @@ public class ScheduleRotationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getScheduleRotationValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getScheduleRotationValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getScheduleRotation(Async)");
@@ -436,7 +436,7 @@ public class ScheduleRotationsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ScheduleRotationResponse getScheduleRotation(@javax.annotation.Nonnull String id) throws ApiException {
+    public ScheduleRotationResponse getScheduleRotation(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<ScheduleRotationResponse> localVarResp = getScheduleRotationWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -455,7 +455,7 @@ public class ScheduleRotationsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ScheduleRotationResponse> getScheduleRotationWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<ScheduleRotationResponse> getScheduleRotationWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getScheduleRotationValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<ScheduleRotationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -476,7 +476,7 @@ public class ScheduleRotationsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getScheduleRotationAsync(@javax.annotation.Nonnull String id, final ApiCallback<ScheduleRotationResponse> _callback) throws ApiException {
+    public okhttp3.Call getScheduleRotationAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<ScheduleRotationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getScheduleRotationValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<ScheduleRotationResponse>(){}.getType();
@@ -500,7 +500,7 @@ public class ScheduleRotationsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listScheduleRotationsCall(@javax.annotation.Nonnull String scheduleId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listScheduleRotationsCall(@jakarta.annotation.Nonnull String scheduleId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -562,7 +562,7 @@ public class ScheduleRotationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listScheduleRotationsValidateBeforeCall(@javax.annotation.Nonnull String scheduleId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listScheduleRotationsValidateBeforeCall(@jakarta.annotation.Nonnull String scheduleId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'scheduleId' is set
         if (scheduleId == null) {
             throw new ApiException("Missing the required parameter 'scheduleId' when calling listScheduleRotations(Async)");
@@ -589,7 +589,7 @@ public class ScheduleRotationsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ScheduleRotationList listScheduleRotations(@javax.annotation.Nonnull String scheduleId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort) throws ApiException {
+    public ScheduleRotationList listScheduleRotations(@jakarta.annotation.Nonnull String scheduleId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String sort) throws ApiException {
         ApiResponse<ScheduleRotationList> localVarResp = listScheduleRotationsWithHttpInfo(scheduleId, include, pageNumber, pageSize, sort);
         return localVarResp.getData();
     }
@@ -611,7 +611,7 @@ public class ScheduleRotationsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ScheduleRotationList> listScheduleRotationsWithHttpInfo(@javax.annotation.Nonnull String scheduleId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort) throws ApiException {
+    public ApiResponse<ScheduleRotationList> listScheduleRotationsWithHttpInfo(@jakarta.annotation.Nonnull String scheduleId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String sort) throws ApiException {
         okhttp3.Call localVarCall = listScheduleRotationsValidateBeforeCall(scheduleId, include, pageNumber, pageSize, sort, null);
         Type localVarReturnType = new TypeToken<ScheduleRotationList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -635,7 +635,7 @@ public class ScheduleRotationsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listScheduleRotationsAsync(@javax.annotation.Nonnull String scheduleId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String sort, final ApiCallback<ScheduleRotationList> _callback) throws ApiException {
+    public okhttp3.Call listScheduleRotationsAsync(@jakarta.annotation.Nonnull String scheduleId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String sort, final ApiCallback<ScheduleRotationList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listScheduleRotationsValidateBeforeCall(scheduleId, include, pageNumber, pageSize, sort, _callback);
         Type localVarReturnType = new TypeToken<ScheduleRotationList>(){}.getType();
@@ -657,7 +657,7 @@ public class ScheduleRotationsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateScheduleRotationCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateScheduleRotation updateScheduleRotation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateScheduleRotationCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateScheduleRotation updateScheduleRotation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -704,7 +704,7 @@ public class ScheduleRotationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateScheduleRotationValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateScheduleRotation updateScheduleRotation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateScheduleRotationValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateScheduleRotation updateScheduleRotation, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateScheduleRotation(Async)");
@@ -734,7 +734,7 @@ public class ScheduleRotationsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ScheduleRotationResponse updateScheduleRotation(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateScheduleRotation updateScheduleRotation) throws ApiException {
+    public ScheduleRotationResponse updateScheduleRotation(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateScheduleRotation updateScheduleRotation) throws ApiException {
         ApiResponse<ScheduleRotationResponse> localVarResp = updateScheduleRotationWithHttpInfo(id, updateScheduleRotation);
         return localVarResp.getData();
     }
@@ -754,7 +754,7 @@ public class ScheduleRotationsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ScheduleRotationResponse> updateScheduleRotationWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateScheduleRotation updateScheduleRotation) throws ApiException {
+    public ApiResponse<ScheduleRotationResponse> updateScheduleRotationWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateScheduleRotation updateScheduleRotation) throws ApiException {
         okhttp3.Call localVarCall = updateScheduleRotationValidateBeforeCall(id, updateScheduleRotation, null);
         Type localVarReturnType = new TypeToken<ScheduleRotationResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -776,7 +776,7 @@ public class ScheduleRotationsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateScheduleRotationAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateScheduleRotation updateScheduleRotation, final ApiCallback<ScheduleRotationResponse> _callback) throws ApiException {
+    public okhttp3.Call updateScheduleRotationAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateScheduleRotation updateScheduleRotation, final ApiCallback<ScheduleRotationResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateScheduleRotationValidateBeforeCall(id, updateScheduleRotation, _callback);
         Type localVarReturnType = new TypeToken<ScheduleRotationResponse>(){}.getType();

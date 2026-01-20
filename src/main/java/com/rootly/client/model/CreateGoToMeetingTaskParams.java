@@ -52,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * CreateGoToMeetingTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateGoToMeetingTaskParams {
   /**
    * Gets or Sets taskType
@@ -106,12 +106,12 @@ public class CreateGoToMeetingTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_SUBJECT = "subject";
   @SerializedName(SERIALIZED_NAME_SUBJECT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String subject;
 
   /**
@@ -172,28 +172,28 @@ public class CreateGoToMeetingTaskParams {
 
   public static final String SERIALIZED_NAME_CONFERENCE_CALL_INFO = "conference_call_info";
   @SerializedName(SERIALIZED_NAME_CONFERENCE_CALL_INFO)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ConferenceCallInfoEnum conferenceCallInfo = ConferenceCallInfoEnum.VOIP;
 
   public static final String SERIALIZED_NAME_PASSWORD_REQUIRED = "password_required";
   @SerializedName(SERIALIZED_NAME_PASSWORD_REQUIRED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean passwordRequired;
 
   public static final String SERIALIZED_NAME_POST_TO_INCIDENT_TIMELINE = "post_to_incident_timeline";
   @SerializedName(SERIALIZED_NAME_POST_TO_INCIDENT_TIMELINE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean postToIncidentTimeline;
 
   public static final String SERIALIZED_NAME_POST_TO_SLACK_CHANNELS = "post_to_slack_channels";
   @SerializedName(SERIALIZED_NAME_POST_TO_SLACK_CHANNELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels = new ArrayList<>();
 
   public CreateGoToMeetingTaskParams() {
   }
 
-  public CreateGoToMeetingTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public CreateGoToMeetingTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -202,17 +202,17 @@ public class CreateGoToMeetingTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public CreateGoToMeetingTaskParams subject(@javax.annotation.Nonnull String subject) {
+  public CreateGoToMeetingTaskParams subject(@jakarta.annotation.Nonnull String subject) {
     this.subject = subject;
     return this;
   }
@@ -221,17 +221,17 @@ public class CreateGoToMeetingTaskParams {
    * The meeting subject
    * @return subject
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getSubject() {
     return subject;
   }
 
-  public void setSubject(@javax.annotation.Nonnull String subject) {
+  public void setSubject(@jakarta.annotation.Nonnull String subject) {
     this.subject = subject;
   }
 
 
-  public CreateGoToMeetingTaskParams conferenceCallInfo(@javax.annotation.Nullable ConferenceCallInfoEnum conferenceCallInfo) {
+  public CreateGoToMeetingTaskParams conferenceCallInfo(@jakarta.annotation.Nullable ConferenceCallInfoEnum conferenceCallInfo) {
     this.conferenceCallInfo = conferenceCallInfo;
     return this;
   }
@@ -240,17 +240,17 @@ public class CreateGoToMeetingTaskParams {
    * Get conferenceCallInfo
    * @return conferenceCallInfo
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ConferenceCallInfoEnum getConferenceCallInfo() {
     return conferenceCallInfo;
   }
 
-  public void setConferenceCallInfo(@javax.annotation.Nullable ConferenceCallInfoEnum conferenceCallInfo) {
+  public void setConferenceCallInfo(@jakarta.annotation.Nullable ConferenceCallInfoEnum conferenceCallInfo) {
     this.conferenceCallInfo = conferenceCallInfo;
   }
 
 
-  public CreateGoToMeetingTaskParams passwordRequired(@javax.annotation.Nullable Boolean passwordRequired) {
+  public CreateGoToMeetingTaskParams passwordRequired(@jakarta.annotation.Nullable Boolean passwordRequired) {
     this.passwordRequired = passwordRequired;
     return this;
   }
@@ -259,17 +259,17 @@ public class CreateGoToMeetingTaskParams {
    * Get passwordRequired
    * @return passwordRequired
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getPasswordRequired() {
     return passwordRequired;
   }
 
-  public void setPasswordRequired(@javax.annotation.Nullable Boolean passwordRequired) {
+  public void setPasswordRequired(@jakarta.annotation.Nullable Boolean passwordRequired) {
     this.passwordRequired = passwordRequired;
   }
 
 
-  public CreateGoToMeetingTaskParams postToIncidentTimeline(@javax.annotation.Nullable Boolean postToIncidentTimeline) {
+  public CreateGoToMeetingTaskParams postToIncidentTimeline(@jakarta.annotation.Nullable Boolean postToIncidentTimeline) {
     this.postToIncidentTimeline = postToIncidentTimeline;
     return this;
   }
@@ -278,17 +278,17 @@ public class CreateGoToMeetingTaskParams {
    * Get postToIncidentTimeline
    * @return postToIncidentTimeline
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getPostToIncidentTimeline() {
     return postToIncidentTimeline;
   }
 
-  public void setPostToIncidentTimeline(@javax.annotation.Nullable Boolean postToIncidentTimeline) {
+  public void setPostToIncidentTimeline(@jakarta.annotation.Nullable Boolean postToIncidentTimeline) {
     this.postToIncidentTimeline = postToIncidentTimeline;
   }
 
 
-  public CreateGoToMeetingTaskParams postToSlackChannels(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
+  public CreateGoToMeetingTaskParams postToSlackChannels(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
     this.postToSlackChannels = postToSlackChannels;
     return this;
   }
@@ -305,12 +305,12 @@ public class CreateGoToMeetingTaskParams {
    * Get postToSlackChannels
    * @return postToSlackChannels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AddActionItemTaskParamsPostToSlackChannelsInner> getPostToSlackChannels() {
     return postToSlackChannels;
   }
 
-  public void setPostToSlackChannels(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
+  public void setPostToSlackChannels(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
     this.postToSlackChannels = postToSlackChannels;
   }
 

@@ -50,7 +50,7 @@ import com.rootly.client.JSON;
 /**
  * CreateConfluencePageTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateConfluencePageTaskParams {
   /**
    * Gets or Sets taskType
@@ -104,53 +104,53 @@ public class CreateConfluencePageTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_INTEGRATION = "integration";
   @SerializedName(SERIALIZED_NAME_INTEGRATION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CreateConfluencePageTaskParamsIntegration integration;
 
   public static final String SERIALIZED_NAME_SPACE = "space";
   @SerializedName(SERIALIZED_NAME_SPACE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private AddActionItemTaskParamsPostToSlackChannelsInner space;
 
   public static final String SERIALIZED_NAME_ANCESTOR = "ancestor";
   @SerializedName(SERIALIZED_NAME_ANCESTOR)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AddActionItemTaskParamsPostToSlackChannelsInner ancestor;
 
   public static final String SERIALIZED_NAME_TEMPLATE = "template";
   @SerializedName(SERIALIZED_NAME_TEMPLATE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AddActionItemTaskParamsPostToSlackChannelsInner template;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String title;
 
   public static final String SERIALIZED_NAME_CONTENT = "content";
   @SerializedName(SERIALIZED_NAME_CONTENT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String content;
 
   public static final String SERIALIZED_NAME_POST_MORTEM_TEMPLATE_ID = "post_mortem_template_id";
   @SerializedName(SERIALIZED_NAME_POST_MORTEM_TEMPLATE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String postMortemTemplateId;
 
   public static final String SERIALIZED_NAME_MARK_POST_MORTEM_AS_PUBLISHED = "mark_post_mortem_as_published";
   @SerializedName(SERIALIZED_NAME_MARK_POST_MORTEM_AS_PUBLISHED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean markPostMortemAsPublished = true;
 
   public CreateConfluencePageTaskParams() {
   }
 
-  public CreateConfluencePageTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public CreateConfluencePageTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -159,17 +159,17 @@ public class CreateConfluencePageTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public CreateConfluencePageTaskParams integration(@javax.annotation.Nullable CreateConfluencePageTaskParamsIntegration integration) {
+  public CreateConfluencePageTaskParams integration(@jakarta.annotation.Nullable CreateConfluencePageTaskParamsIntegration integration) {
     this.integration = integration;
     return this;
   }
@@ -178,17 +178,17 @@ public class CreateConfluencePageTaskParams {
    * Get integration
    * @return integration
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CreateConfluencePageTaskParamsIntegration getIntegration() {
     return integration;
   }
 
-  public void setIntegration(@javax.annotation.Nullable CreateConfluencePageTaskParamsIntegration integration) {
+  public void setIntegration(@jakarta.annotation.Nullable CreateConfluencePageTaskParamsIntegration integration) {
     this.integration = integration;
   }
 
 
-  public CreateConfluencePageTaskParams space(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner space) {
+  public CreateConfluencePageTaskParams space(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner space) {
     this.space = space;
     return this;
   }
@@ -197,17 +197,17 @@ public class CreateConfluencePageTaskParams {
    * Get space
    * @return space
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public AddActionItemTaskParamsPostToSlackChannelsInner getSpace() {
     return space;
   }
 
-  public void setSpace(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner space) {
+  public void setSpace(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner space) {
     this.space = space;
   }
 
 
-  public CreateConfluencePageTaskParams ancestor(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner ancestor) {
+  public CreateConfluencePageTaskParams ancestor(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner ancestor) {
     this.ancestor = ancestor;
     return this;
   }
@@ -216,17 +216,17 @@ public class CreateConfluencePageTaskParams {
    * Get ancestor
    * @return ancestor
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AddActionItemTaskParamsPostToSlackChannelsInner getAncestor() {
     return ancestor;
   }
 
-  public void setAncestor(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner ancestor) {
+  public void setAncestor(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner ancestor) {
     this.ancestor = ancestor;
   }
 
 
-  public CreateConfluencePageTaskParams template(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner template) {
+  public CreateConfluencePageTaskParams template(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner template) {
     this.template = template;
     return this;
   }
@@ -235,17 +235,17 @@ public class CreateConfluencePageTaskParams {
    * Get template
    * @return template
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AddActionItemTaskParamsPostToSlackChannelsInner getTemplate() {
     return template;
   }
 
-  public void setTemplate(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner template) {
+  public void setTemplate(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner template) {
     this.template = template;
   }
 
 
-  public CreateConfluencePageTaskParams title(@javax.annotation.Nonnull String title) {
+  public CreateConfluencePageTaskParams title(@jakarta.annotation.Nonnull String title) {
     this.title = title;
     return this;
   }
@@ -254,17 +254,17 @@ public class CreateConfluencePageTaskParams {
    * The page title
    * @return title
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nonnull String title) {
+  public void setTitle(@jakarta.annotation.Nonnull String title) {
     this.title = title;
   }
 
 
-  public CreateConfluencePageTaskParams content(@javax.annotation.Nullable String content) {
+  public CreateConfluencePageTaskParams content(@jakarta.annotation.Nullable String content) {
     this.content = content;
     return this;
   }
@@ -273,17 +273,17 @@ public class CreateConfluencePageTaskParams {
    * The page content
    * @return content
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getContent() {
     return content;
   }
 
-  public void setContent(@javax.annotation.Nullable String content) {
+  public void setContent(@jakarta.annotation.Nullable String content) {
     this.content = content;
   }
 
 
-  public CreateConfluencePageTaskParams postMortemTemplateId(@javax.annotation.Nullable String postMortemTemplateId) {
+  public CreateConfluencePageTaskParams postMortemTemplateId(@jakarta.annotation.Nullable String postMortemTemplateId) {
     this.postMortemTemplateId = postMortemTemplateId;
     return this;
   }
@@ -292,17 +292,17 @@ public class CreateConfluencePageTaskParams {
    * The Retrospective template to use
    * @return postMortemTemplateId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPostMortemTemplateId() {
     return postMortemTemplateId;
   }
 
-  public void setPostMortemTemplateId(@javax.annotation.Nullable String postMortemTemplateId) {
+  public void setPostMortemTemplateId(@jakarta.annotation.Nullable String postMortemTemplateId) {
     this.postMortemTemplateId = postMortemTemplateId;
   }
 
 
-  public CreateConfluencePageTaskParams markPostMortemAsPublished(@javax.annotation.Nullable Boolean markPostMortemAsPublished) {
+  public CreateConfluencePageTaskParams markPostMortemAsPublished(@jakarta.annotation.Nullable Boolean markPostMortemAsPublished) {
     this.markPostMortemAsPublished = markPostMortemAsPublished;
     return this;
   }
@@ -311,12 +311,12 @@ public class CreateConfluencePageTaskParams {
    * Get markPostMortemAsPublished
    * @return markPostMortemAsPublished
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getMarkPostMortemAsPublished() {
     return markPostMortemAsPublished;
   }
 
-  public void setMarkPostMortemAsPublished(@javax.annotation.Nullable Boolean markPostMortemAsPublished) {
+  public void setMarkPostMortemAsPublished(@jakarta.annotation.Nullable Boolean markPostMortemAsPublished) {
     this.markPostMortemAsPublished = markPostMortemAsPublished;
   }
 

@@ -48,22 +48,22 @@ import com.rootly.client.JSON;
 /**
  * CreateCodaPageTaskParamsTemplate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateCodaPageTaskParamsTemplate {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String name;
 
   public CreateCodaPageTaskParamsTemplate() {
   }
 
-  public CreateCodaPageTaskParamsTemplate id(@javax.annotation.Nullable String id) {
+  public CreateCodaPageTaskParamsTemplate id(@jakarta.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -72,17 +72,17 @@ public class CreateCodaPageTaskParamsTemplate {
    * Combined doc_id/page_id in format &#39;doc_id/page_id&#39;
    * @return id
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getId() {
     return id;
   }
 
-  public void setId(@javax.annotation.Nullable String id) {
+  public void setId(@jakarta.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public CreateCodaPageTaskParamsTemplate name(@javax.annotation.Nullable String name) {
+  public CreateCodaPageTaskParamsTemplate name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -91,12 +91,12 @@ public class CreateCodaPageTaskParamsTemplate {
    * Get name
    * @return name
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 

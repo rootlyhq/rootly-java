@@ -50,7 +50,7 @@ import com.rootly.client.JSON;
 /**
  * InviteToSlackChannelPagerdutyTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class InviteToSlackChannelPagerdutyTaskParams {
   /**
    * Gets or Sets taskType
@@ -104,33 +104,33 @@ public class InviteToSlackChannelPagerdutyTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_CHANNELS = "channels";
   @SerializedName(SERIALIZED_NAME_CHANNELS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<Object> channels = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ESCALATION_POLICY = "escalation_policy";
   @SerializedName(SERIALIZED_NAME_ESCALATION_POLICY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Object escalationPolicy;
 
   public static final String SERIALIZED_NAME_SCHEDULE = "schedule";
   @SerializedName(SERIALIZED_NAME_SCHEDULE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Object schedule;
 
   public static final String SERIALIZED_NAME_SERVICE = "service";
   @SerializedName(SERIALIZED_NAME_SERVICE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Object service;
 
   public InviteToSlackChannelPagerdutyTaskParams() {
   }
 
-  public InviteToSlackChannelPagerdutyTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public InviteToSlackChannelPagerdutyTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -139,17 +139,17 @@ public class InviteToSlackChannelPagerdutyTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public InviteToSlackChannelPagerdutyTaskParams channels(@javax.annotation.Nonnull List<Object> channels) {
+  public InviteToSlackChannelPagerdutyTaskParams channels(@jakarta.annotation.Nonnull List<Object> channels) {
     this.channels = channels;
     return this;
   }
@@ -166,17 +166,17 @@ public class InviteToSlackChannelPagerdutyTaskParams {
    * Get channels
    * @return channels
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<Object> getChannels() {
     return channels;
   }
 
-  public void setChannels(@javax.annotation.Nonnull List<Object> channels) {
+  public void setChannels(@jakarta.annotation.Nonnull List<Object> channels) {
     this.channels = channels;
   }
 
 
-  public InviteToSlackChannelPagerdutyTaskParams escalationPolicy(@javax.annotation.Nullable Object escalationPolicy) {
+  public InviteToSlackChannelPagerdutyTaskParams escalationPolicy(@jakarta.annotation.Nullable Object escalationPolicy) {
     this.escalationPolicy = escalationPolicy;
     return this;
   }
@@ -185,17 +185,17 @@ public class InviteToSlackChannelPagerdutyTaskParams {
    * Get escalationPolicy
    * @return escalationPolicy
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Object getEscalationPolicy() {
     return escalationPolicy;
   }
 
-  public void setEscalationPolicy(@javax.annotation.Nullable Object escalationPolicy) {
+  public void setEscalationPolicy(@jakarta.annotation.Nullable Object escalationPolicy) {
     this.escalationPolicy = escalationPolicy;
   }
 
 
-  public InviteToSlackChannelPagerdutyTaskParams schedule(@javax.annotation.Nullable Object schedule) {
+  public InviteToSlackChannelPagerdutyTaskParams schedule(@jakarta.annotation.Nullable Object schedule) {
     this.schedule = schedule;
     return this;
   }
@@ -204,17 +204,17 @@ public class InviteToSlackChannelPagerdutyTaskParams {
    * Get schedule
    * @return schedule
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Object getSchedule() {
     return schedule;
   }
 
-  public void setSchedule(@javax.annotation.Nullable Object schedule) {
+  public void setSchedule(@jakarta.annotation.Nullable Object schedule) {
     this.schedule = schedule;
   }
 
 
-  public InviteToSlackChannelPagerdutyTaskParams service(@javax.annotation.Nullable Object service) {
+  public InviteToSlackChannelPagerdutyTaskParams service(@jakarta.annotation.Nullable Object service) {
     this.service = service;
     return this;
   }
@@ -223,12 +223,12 @@ public class InviteToSlackChannelPagerdutyTaskParams {
    * Get service
    * @return service
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Object getService() {
     return service;
   }
 
-  public void setService(@javax.annotation.Nullable Object service) {
+  public void setService(@jakarta.annotation.Nullable Object service) {
     this.service = service;
   }
 

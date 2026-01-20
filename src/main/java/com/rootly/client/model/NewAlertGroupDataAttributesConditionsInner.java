@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * NewAlertGroupDataAttributesConditionsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewAlertGroupDataAttributesConditionsInner {
   /**
    * The type of the property field
@@ -109,12 +109,12 @@ public class NewAlertGroupDataAttributesConditionsInner {
 
   public static final String SERIALIZED_NAME_PROPERTY_FIELD_TYPE = "property_field_type";
   @SerializedName(SERIALIZED_NAME_PROPERTY_FIELD_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private PropertyFieldTypeEnum propertyFieldType;
 
   public static final String SERIALIZED_NAME_PROPERTY_FIELD_NAME = "property_field_name";
   @SerializedName(SERIALIZED_NAME_PROPERTY_FIELD_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String propertyFieldName;
 
   /**
@@ -185,22 +185,22 @@ public class NewAlertGroupDataAttributesConditionsInner {
 
   public static final String SERIALIZED_NAME_PROPERTY_FIELD_CONDITION_TYPE = "property_field_condition_type";
   @SerializedName(SERIALIZED_NAME_PROPERTY_FIELD_CONDITION_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private PropertyFieldConditionTypeEnum propertyFieldConditionType;
 
   public static final String SERIALIZED_NAME_PROPERTY_FIELD_VALUE = "property_field_value";
   @SerializedName(SERIALIZED_NAME_PROPERTY_FIELD_VALUE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String propertyFieldValue;
 
   public static final String SERIALIZED_NAME_PROPERTY_FIELD_VALUES = "property_field_values";
   @SerializedName(SERIALIZED_NAME_PROPERTY_FIELD_VALUES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> propertyFieldValues = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ALERT_URGENCY_IDS = "alert_urgency_ids";
   @SerializedName(SERIALIZED_NAME_ALERT_URGENCY_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> alertUrgencyIds;
 
   /**
@@ -255,18 +255,18 @@ public class NewAlertGroupDataAttributesConditionsInner {
 
   public static final String SERIALIZED_NAME_CONDITIONABLE_TYPE = "conditionable_type";
   @SerializedName(SERIALIZED_NAME_CONDITIONABLE_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ConditionableTypeEnum conditionableType;
 
   public static final String SERIALIZED_NAME_CONDITIONABLE_ID = "conditionable_id";
   @SerializedName(SERIALIZED_NAME_CONDITIONABLE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String conditionableId;
 
   public NewAlertGroupDataAttributesConditionsInner() {
   }
 
-  public NewAlertGroupDataAttributesConditionsInner propertyFieldType(@javax.annotation.Nonnull PropertyFieldTypeEnum propertyFieldType) {
+  public NewAlertGroupDataAttributesConditionsInner propertyFieldType(@jakarta.annotation.Nonnull PropertyFieldTypeEnum propertyFieldType) {
     this.propertyFieldType = propertyFieldType;
     return this;
   }
@@ -275,17 +275,17 @@ public class NewAlertGroupDataAttributesConditionsInner {
    * The type of the property field
    * @return propertyFieldType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public PropertyFieldTypeEnum getPropertyFieldType() {
     return propertyFieldType;
   }
 
-  public void setPropertyFieldType(@javax.annotation.Nonnull PropertyFieldTypeEnum propertyFieldType) {
+  public void setPropertyFieldType(@jakarta.annotation.Nonnull PropertyFieldTypeEnum propertyFieldType) {
     this.propertyFieldType = propertyFieldType;
   }
 
 
-  public NewAlertGroupDataAttributesConditionsInner propertyFieldName(@javax.annotation.Nullable String propertyFieldName) {
+  public NewAlertGroupDataAttributesConditionsInner propertyFieldName(@jakarta.annotation.Nullable String propertyFieldName) {
     this.propertyFieldName = propertyFieldName;
     return this;
   }
@@ -294,17 +294,17 @@ public class NewAlertGroupDataAttributesConditionsInner {
    * The name of the property field. If the property field type is selected as &#39;attribute&#39;, then the allowed property field names are &#39;summary&#39; (for Title), &#39;description&#39;, &#39;alert_urgency&#39; and &#39;external_url&#39; (for Alert Source URL). If the property field type is selected as &#39;payload&#39;, then the property field name should be supplied in JSON Path syntax.
    * @return propertyFieldName
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPropertyFieldName() {
     return propertyFieldName;
   }
 
-  public void setPropertyFieldName(@javax.annotation.Nullable String propertyFieldName) {
+  public void setPropertyFieldName(@jakarta.annotation.Nullable String propertyFieldName) {
     this.propertyFieldName = propertyFieldName;
   }
 
 
-  public NewAlertGroupDataAttributesConditionsInner propertyFieldConditionType(@javax.annotation.Nonnull PropertyFieldConditionTypeEnum propertyFieldConditionType) {
+  public NewAlertGroupDataAttributesConditionsInner propertyFieldConditionType(@jakarta.annotation.Nonnull PropertyFieldConditionTypeEnum propertyFieldConditionType) {
     this.propertyFieldConditionType = propertyFieldConditionType;
     return this;
   }
@@ -313,17 +313,17 @@ public class NewAlertGroupDataAttributesConditionsInner {
    * The condition type of the property field
    * @return propertyFieldConditionType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public PropertyFieldConditionTypeEnum getPropertyFieldConditionType() {
     return propertyFieldConditionType;
   }
 
-  public void setPropertyFieldConditionType(@javax.annotation.Nonnull PropertyFieldConditionTypeEnum propertyFieldConditionType) {
+  public void setPropertyFieldConditionType(@jakarta.annotation.Nonnull PropertyFieldConditionTypeEnum propertyFieldConditionType) {
     this.propertyFieldConditionType = propertyFieldConditionType;
   }
 
 
-  public NewAlertGroupDataAttributesConditionsInner propertyFieldValue(@javax.annotation.Nullable String propertyFieldValue) {
+  public NewAlertGroupDataAttributesConditionsInner propertyFieldValue(@jakarta.annotation.Nullable String propertyFieldValue) {
     this.propertyFieldValue = propertyFieldValue;
     return this;
   }
@@ -332,17 +332,17 @@ public class NewAlertGroupDataAttributesConditionsInner {
    * The value of the property field. Can be null if the property field condition type is &#39;is_one_of&#39; or &#39;is_not_one_of&#39;
    * @return propertyFieldValue
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPropertyFieldValue() {
     return propertyFieldValue;
   }
 
-  public void setPropertyFieldValue(@javax.annotation.Nullable String propertyFieldValue) {
+  public void setPropertyFieldValue(@jakarta.annotation.Nullable String propertyFieldValue) {
     this.propertyFieldValue = propertyFieldValue;
   }
 
 
-  public NewAlertGroupDataAttributesConditionsInner propertyFieldValues(@javax.annotation.Nullable List<String> propertyFieldValues) {
+  public NewAlertGroupDataAttributesConditionsInner propertyFieldValues(@jakarta.annotation.Nullable List<String> propertyFieldValues) {
     this.propertyFieldValues = propertyFieldValues;
     return this;
   }
@@ -359,17 +359,17 @@ public class NewAlertGroupDataAttributesConditionsInner {
    * The values of the property field. Need to be passed if the property field condition type is &#39;is_one_of&#39; or &#39;is_not_one_of&#39; except for when property field name is &#39;alert_urgency&#39;
    * @return propertyFieldValues
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getPropertyFieldValues() {
     return propertyFieldValues;
   }
 
-  public void setPropertyFieldValues(@javax.annotation.Nullable List<String> propertyFieldValues) {
+  public void setPropertyFieldValues(@jakarta.annotation.Nullable List<String> propertyFieldValues) {
     this.propertyFieldValues = propertyFieldValues;
   }
 
 
-  public NewAlertGroupDataAttributesConditionsInner alertUrgencyIds(@javax.annotation.Nullable List<String> alertUrgencyIds) {
+  public NewAlertGroupDataAttributesConditionsInner alertUrgencyIds(@jakarta.annotation.Nullable List<String> alertUrgencyIds) {
     this.alertUrgencyIds = alertUrgencyIds;
     return this;
   }
@@ -386,17 +386,17 @@ public class NewAlertGroupDataAttributesConditionsInner {
    * The Alert Urgency IDs to check in the condition. Only need to be set when the property field type is &#39;attribute&#39;, the property field name is &#39;alert_urgency&#39; and the property field condition type is &#39;is_one_of&#39; or &#39;is_not_one_of&#39;
    * @return alertUrgencyIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getAlertUrgencyIds() {
     return alertUrgencyIds;
   }
 
-  public void setAlertUrgencyIds(@javax.annotation.Nullable List<String> alertUrgencyIds) {
+  public void setAlertUrgencyIds(@jakarta.annotation.Nullable List<String> alertUrgencyIds) {
     this.alertUrgencyIds = alertUrgencyIds;
   }
 
 
-  public NewAlertGroupDataAttributesConditionsInner conditionableType(@javax.annotation.Nullable ConditionableTypeEnum conditionableType) {
+  public NewAlertGroupDataAttributesConditionsInner conditionableType(@jakarta.annotation.Nullable ConditionableTypeEnum conditionableType) {
     this.conditionableType = conditionableType;
     return this;
   }
@@ -405,17 +405,17 @@ public class NewAlertGroupDataAttributesConditionsInner {
    * The type of the conditionable
    * @return conditionableType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ConditionableTypeEnum getConditionableType() {
     return conditionableType;
   }
 
-  public void setConditionableType(@javax.annotation.Nullable ConditionableTypeEnum conditionableType) {
+  public void setConditionableType(@jakarta.annotation.Nullable ConditionableTypeEnum conditionableType) {
     this.conditionableType = conditionableType;
   }
 
 
-  public NewAlertGroupDataAttributesConditionsInner conditionableId(@javax.annotation.Nullable String conditionableId) {
+  public NewAlertGroupDataAttributesConditionsInner conditionableId(@jakarta.annotation.Nullable String conditionableId) {
     this.conditionableId = conditionableId;
     return this;
   }
@@ -424,12 +424,12 @@ public class NewAlertGroupDataAttributesConditionsInner {
    * The ID of the conditionable. If conditionable_type is AlertField, this is the ID of the alert field.
    * @return conditionableId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getConditionableId() {
     return conditionableId;
   }
 
-  public void setConditionableId(@javax.annotation.Nullable String conditionableId) {
+  public void setConditionableId(@jakarta.annotation.Nullable String conditionableId) {
     this.conditionableId = conditionableId;
   }
 

@@ -49,17 +49,17 @@ import com.rootly.client.JSON;
 /**
  * UnassignRoleFromUser
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UnassignRoleFromUser {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private UnassignRoleFromUserData data;
 
   public UnassignRoleFromUser() {
   }
 
-  public UnassignRoleFromUser data(@javax.annotation.Nonnull UnassignRoleFromUserData data) {
+  public UnassignRoleFromUser data(@jakarta.annotation.Nonnull UnassignRoleFromUserData data) {
     this.data = data;
     return this;
   }
@@ -68,12 +68,12 @@ public class UnassignRoleFromUser {
    * Get data
    * @return data
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public UnassignRoleFromUserData getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nonnull UnassignRoleFromUserData data) {
+  public void setData(@jakarta.annotation.Nonnull UnassignRoleFromUserData data) {
     this.data = data;
   }
 

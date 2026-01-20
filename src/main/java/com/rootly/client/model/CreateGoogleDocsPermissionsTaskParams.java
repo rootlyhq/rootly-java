@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * CreateGoogleDocsPermissionsTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateGoogleDocsPermissionsTaskParams {
   /**
    * Gets or Sets taskType
@@ -103,33 +103,33 @@ public class CreateGoogleDocsPermissionsTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_FILE_ID = "file_id";
   @SerializedName(SERIALIZED_NAME_FILE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String fileId;
 
   public static final String SERIALIZED_NAME_PERMISSIONS = "permissions";
   @SerializedName(SERIALIZED_NAME_PERMISSIONS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String permissions;
 
   public static final String SERIALIZED_NAME_SEND_NOTIFICATION_EMAIL = "send_notification_email";
   @SerializedName(SERIALIZED_NAME_SEND_NOTIFICATION_EMAIL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean sendNotificationEmail;
 
   public static final String SERIALIZED_NAME_EMAIL_MESSAGE = "email_message";
   @SerializedName(SERIALIZED_NAME_EMAIL_MESSAGE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String emailMessage;
 
   public CreateGoogleDocsPermissionsTaskParams() {
   }
 
-  public CreateGoogleDocsPermissionsTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public CreateGoogleDocsPermissionsTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -138,17 +138,17 @@ public class CreateGoogleDocsPermissionsTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public CreateGoogleDocsPermissionsTaskParams fileId(@javax.annotation.Nonnull String fileId) {
+  public CreateGoogleDocsPermissionsTaskParams fileId(@jakarta.annotation.Nonnull String fileId) {
     this.fileId = fileId;
     return this;
   }
@@ -157,17 +157,17 @@ public class CreateGoogleDocsPermissionsTaskParams {
    * The Google Doc file ID
    * @return fileId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getFileId() {
     return fileId;
   }
 
-  public void setFileId(@javax.annotation.Nonnull String fileId) {
+  public void setFileId(@jakarta.annotation.Nonnull String fileId) {
     this.fileId = fileId;
   }
 
 
-  public CreateGoogleDocsPermissionsTaskParams permissions(@javax.annotation.Nonnull String permissions) {
+  public CreateGoogleDocsPermissionsTaskParams permissions(@jakarta.annotation.Nonnull String permissions) {
     this.permissions = permissions;
     return this;
   }
@@ -176,17 +176,17 @@ public class CreateGoogleDocsPermissionsTaskParams {
    * Page permissions JSON
    * @return permissions
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getPermissions() {
     return permissions;
   }
 
-  public void setPermissions(@javax.annotation.Nonnull String permissions) {
+  public void setPermissions(@jakarta.annotation.Nonnull String permissions) {
     this.permissions = permissions;
   }
 
 
-  public CreateGoogleDocsPermissionsTaskParams sendNotificationEmail(@javax.annotation.Nullable Boolean sendNotificationEmail) {
+  public CreateGoogleDocsPermissionsTaskParams sendNotificationEmail(@jakarta.annotation.Nullable Boolean sendNotificationEmail) {
     this.sendNotificationEmail = sendNotificationEmail;
     return this;
   }
@@ -195,17 +195,17 @@ public class CreateGoogleDocsPermissionsTaskParams {
    * Get sendNotificationEmail
    * @return sendNotificationEmail
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getSendNotificationEmail() {
     return sendNotificationEmail;
   }
 
-  public void setSendNotificationEmail(@javax.annotation.Nullable Boolean sendNotificationEmail) {
+  public void setSendNotificationEmail(@jakarta.annotation.Nullable Boolean sendNotificationEmail) {
     this.sendNotificationEmail = sendNotificationEmail;
   }
 
 
-  public CreateGoogleDocsPermissionsTaskParams emailMessage(@javax.annotation.Nullable String emailMessage) {
+  public CreateGoogleDocsPermissionsTaskParams emailMessage(@jakarta.annotation.Nullable String emailMessage) {
     this.emailMessage = emailMessage;
     return this;
   }
@@ -214,12 +214,12 @@ public class CreateGoogleDocsPermissionsTaskParams {
    * Email message notification
    * @return emailMessage
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getEmailMessage() {
     return emailMessage;
   }
 
-  public void setEmailMessage(@javax.annotation.Nullable String emailMessage) {
+  public void setEmailMessage(@jakarta.annotation.Nullable String emailMessage) {
     this.emailMessage = emailMessage;
   }
 

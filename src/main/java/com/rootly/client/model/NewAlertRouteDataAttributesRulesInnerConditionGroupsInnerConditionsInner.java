@@ -52,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditionsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditionsInner {
   /**
    * Gets or Sets propertyFieldConditionType
@@ -120,12 +120,12 @@ public class NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditions
 
   public static final String SERIALIZED_NAME_PROPERTY_FIELD_CONDITION_TYPE = "property_field_condition_type";
   @SerializedName(SERIALIZED_NAME_PROPERTY_FIELD_CONDITION_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private PropertyFieldConditionTypeEnum propertyFieldConditionType;
 
   public static final String SERIALIZED_NAME_PROPERTY_FIELD_NAME = "property_field_name";
   @SerializedName(SERIALIZED_NAME_PROPERTY_FIELD_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String propertyFieldName;
 
   /**
@@ -184,22 +184,22 @@ public class NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditions
 
   public static final String SERIALIZED_NAME_PROPERTY_FIELD_TYPE = "property_field_type";
   @SerializedName(SERIALIZED_NAME_PROPERTY_FIELD_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private PropertyFieldTypeEnum propertyFieldType;
 
   public static final String SERIALIZED_NAME_PROPERTY_FIELD_VALUE = "property_field_value";
   @SerializedName(SERIALIZED_NAME_PROPERTY_FIELD_VALUE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String propertyFieldValue;
 
   public static final String SERIALIZED_NAME_PROPERTY_FIELD_VALUES = "property_field_values";
   @SerializedName(SERIALIZED_NAME_PROPERTY_FIELD_VALUES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> propertyFieldValues;
 
   public static final String SERIALIZED_NAME_ALERT_URGENCY_IDS = "alert_urgency_ids";
   @SerializedName(SERIALIZED_NAME_ALERT_URGENCY_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> alertUrgencyIds;
 
   /**
@@ -254,18 +254,18 @@ public class NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditions
 
   public static final String SERIALIZED_NAME_CONDITIONABLE_TYPE = "conditionable_type";
   @SerializedName(SERIALIZED_NAME_CONDITIONABLE_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ConditionableTypeEnum conditionableType;
 
   public static final String SERIALIZED_NAME_CONDITIONABLE_ID = "conditionable_id";
   @SerializedName(SERIALIZED_NAME_CONDITIONABLE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private UUID conditionableId;
 
   public NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditionsInner() {
   }
 
-  public NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditionsInner propertyFieldConditionType(@javax.annotation.Nonnull PropertyFieldConditionTypeEnum propertyFieldConditionType) {
+  public NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditionsInner propertyFieldConditionType(@jakarta.annotation.Nonnull PropertyFieldConditionTypeEnum propertyFieldConditionType) {
     this.propertyFieldConditionType = propertyFieldConditionType;
     return this;
   }
@@ -274,17 +274,17 @@ public class NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditions
    * Get propertyFieldConditionType
    * @return propertyFieldConditionType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public PropertyFieldConditionTypeEnum getPropertyFieldConditionType() {
     return propertyFieldConditionType;
   }
 
-  public void setPropertyFieldConditionType(@javax.annotation.Nonnull PropertyFieldConditionTypeEnum propertyFieldConditionType) {
+  public void setPropertyFieldConditionType(@jakarta.annotation.Nonnull PropertyFieldConditionTypeEnum propertyFieldConditionType) {
     this.propertyFieldConditionType = propertyFieldConditionType;
   }
 
 
-  public NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditionsInner propertyFieldName(@javax.annotation.Nullable String propertyFieldName) {
+  public NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditionsInner propertyFieldName(@jakarta.annotation.Nullable String propertyFieldName) {
     this.propertyFieldName = propertyFieldName;
     return this;
   }
@@ -293,17 +293,17 @@ public class NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditions
    * The name of the property field
    * @return propertyFieldName
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPropertyFieldName() {
     return propertyFieldName;
   }
 
-  public void setPropertyFieldName(@javax.annotation.Nullable String propertyFieldName) {
+  public void setPropertyFieldName(@jakarta.annotation.Nullable String propertyFieldName) {
     this.propertyFieldName = propertyFieldName;
   }
 
 
-  public NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditionsInner propertyFieldType(@javax.annotation.Nonnull PropertyFieldTypeEnum propertyFieldType) {
+  public NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditionsInner propertyFieldType(@jakarta.annotation.Nonnull PropertyFieldTypeEnum propertyFieldType) {
     this.propertyFieldType = propertyFieldType;
     return this;
   }
@@ -312,17 +312,17 @@ public class NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditions
    * Get propertyFieldType
    * @return propertyFieldType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public PropertyFieldTypeEnum getPropertyFieldType() {
     return propertyFieldType;
   }
 
-  public void setPropertyFieldType(@javax.annotation.Nonnull PropertyFieldTypeEnum propertyFieldType) {
+  public void setPropertyFieldType(@jakarta.annotation.Nonnull PropertyFieldTypeEnum propertyFieldType) {
     this.propertyFieldType = propertyFieldType;
   }
 
 
-  public NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditionsInner propertyFieldValue(@javax.annotation.Nullable String propertyFieldValue) {
+  public NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditionsInner propertyFieldValue(@jakarta.annotation.Nullable String propertyFieldValue) {
     this.propertyFieldValue = propertyFieldValue;
     return this;
   }
@@ -331,17 +331,17 @@ public class NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditions
    * The value of the property field
    * @return propertyFieldValue
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPropertyFieldValue() {
     return propertyFieldValue;
   }
 
-  public void setPropertyFieldValue(@javax.annotation.Nullable String propertyFieldValue) {
+  public void setPropertyFieldValue(@jakarta.annotation.Nullable String propertyFieldValue) {
     this.propertyFieldValue = propertyFieldValue;
   }
 
 
-  public NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditionsInner propertyFieldValues(@javax.annotation.Nullable List<String> propertyFieldValues) {
+  public NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditionsInner propertyFieldValues(@jakarta.annotation.Nullable List<String> propertyFieldValues) {
     this.propertyFieldValues = propertyFieldValues;
     return this;
   }
@@ -358,17 +358,17 @@ public class NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditions
    * Get propertyFieldValues
    * @return propertyFieldValues
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getPropertyFieldValues() {
     return propertyFieldValues;
   }
 
-  public void setPropertyFieldValues(@javax.annotation.Nullable List<String> propertyFieldValues) {
+  public void setPropertyFieldValues(@jakarta.annotation.Nullable List<String> propertyFieldValues) {
     this.propertyFieldValues = propertyFieldValues;
   }
 
 
-  public NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditionsInner alertUrgencyIds(@javax.annotation.Nullable List<String> alertUrgencyIds) {
+  public NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditionsInner alertUrgencyIds(@jakarta.annotation.Nullable List<String> alertUrgencyIds) {
     this.alertUrgencyIds = alertUrgencyIds;
     return this;
   }
@@ -385,17 +385,17 @@ public class NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditions
    * The Alert Urgency IDs to check in the condition
    * @return alertUrgencyIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getAlertUrgencyIds() {
     return alertUrgencyIds;
   }
 
-  public void setAlertUrgencyIds(@javax.annotation.Nullable List<String> alertUrgencyIds) {
+  public void setAlertUrgencyIds(@jakarta.annotation.Nullable List<String> alertUrgencyIds) {
     this.alertUrgencyIds = alertUrgencyIds;
   }
 
 
-  public NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditionsInner conditionableType(@javax.annotation.Nullable ConditionableTypeEnum conditionableType) {
+  public NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditionsInner conditionableType(@jakarta.annotation.Nullable ConditionableTypeEnum conditionableType) {
     this.conditionableType = conditionableType;
     return this;
   }
@@ -404,17 +404,17 @@ public class NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditions
    * The type of the conditionable
    * @return conditionableType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ConditionableTypeEnum getConditionableType() {
     return conditionableType;
   }
 
-  public void setConditionableType(@javax.annotation.Nullable ConditionableTypeEnum conditionableType) {
+  public void setConditionableType(@jakarta.annotation.Nullable ConditionableTypeEnum conditionableType) {
     this.conditionableType = conditionableType;
   }
 
 
-  public NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditionsInner conditionableId(@javax.annotation.Nullable UUID conditionableId) {
+  public NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditionsInner conditionableId(@jakarta.annotation.Nullable UUID conditionableId) {
     this.conditionableId = conditionableId;
     return this;
   }
@@ -423,12 +423,12 @@ public class NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditions
    * The ID of the conditionable
    * @return conditionableId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public UUID getConditionableId() {
     return conditionableId;
   }
 
-  public void setConditionableId(@javax.annotation.Nullable UUID conditionableId) {
+  public void setConditionableId(@jakarta.annotation.Nullable UUID conditionableId) {
     this.conditionableId = conditionableId;
   }
 

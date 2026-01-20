@@ -49,27 +49,27 @@ import com.rootly.client.JSON;
 /**
  * NewAlertUrgencyDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewAlertUrgencyDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String description;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public NewAlertUrgencyDataAttributes() {
   }
 
-  public NewAlertUrgencyDataAttributes name(@javax.annotation.Nonnull String name) {
+  public NewAlertUrgencyDataAttributes name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -78,17 +78,17 @@ public class NewAlertUrgencyDataAttributes {
    * The name of the alert urgency
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public NewAlertUrgencyDataAttributes description(@javax.annotation.Nonnull String description) {
+  public NewAlertUrgencyDataAttributes description(@jakarta.annotation.Nonnull String description) {
     this.description = description;
     return this;
   }
@@ -97,17 +97,17 @@ public class NewAlertUrgencyDataAttributes {
    * The description of the alert urgency
    * @return description
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nonnull String description) {
+  public void setDescription(@jakarta.annotation.Nonnull String description) {
     this.description = description;
   }
 
 
-  public NewAlertUrgencyDataAttributes position(@javax.annotation.Nullable Integer position) {
+  public NewAlertUrgencyDataAttributes position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -116,12 +116,12 @@ public class NewAlertUrgencyDataAttributes {
    * Position of the alert urgency
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 

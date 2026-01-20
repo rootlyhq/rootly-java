@@ -49,47 +49,47 @@ import com.rootly.client.JSON;
 /**
  * UpdateIncidentRoleDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateIncidentRoleDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_SUMMARY = "summary";
   @SerializedName(SERIALIZED_NAME_SUMMARY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String summary;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public static final String SERIALIZED_NAME_OPTIONAL = "optional";
   @SerializedName(SERIALIZED_NAME_OPTIONAL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean optional;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_ALLOW_MULTI_USER_ASSIGNMENT = "allow_multi_user_assignment";
   @SerializedName(SERIALIZED_NAME_ALLOW_MULTI_USER_ASSIGNMENT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean allowMultiUserAssignment;
 
   public UpdateIncidentRoleDataAttributes() {
   }
 
-  public UpdateIncidentRoleDataAttributes name(@javax.annotation.Nullable String name) {
+  public UpdateIncidentRoleDataAttributes name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -98,17 +98,17 @@ public class UpdateIncidentRoleDataAttributes {
    * The name of the incident role
    * @return name
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public UpdateIncidentRoleDataAttributes summary(@javax.annotation.Nullable String summary) {
+  public UpdateIncidentRoleDataAttributes summary(@jakarta.annotation.Nullable String summary) {
     this.summary = summary;
     return this;
   }
@@ -117,17 +117,17 @@ public class UpdateIncidentRoleDataAttributes {
    * The summary of the incident role
    * @return summary
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSummary() {
     return summary;
   }
 
-  public void setSummary(@javax.annotation.Nullable String summary) {
+  public void setSummary(@jakarta.annotation.Nullable String summary) {
     this.summary = summary;
   }
 
 
-  public UpdateIncidentRoleDataAttributes description(@javax.annotation.Nullable String description) {
+  public UpdateIncidentRoleDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -136,17 +136,17 @@ public class UpdateIncidentRoleDataAttributes {
    * The description of the incident role
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UpdateIncidentRoleDataAttributes position(@javax.annotation.Nullable Integer position) {
+  public UpdateIncidentRoleDataAttributes position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -155,17 +155,17 @@ public class UpdateIncidentRoleDataAttributes {
    * Position of the incident role
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 
 
-  public UpdateIncidentRoleDataAttributes optional(@javax.annotation.Nullable Boolean optional) {
+  public UpdateIncidentRoleDataAttributes optional(@jakarta.annotation.Nullable Boolean optional) {
     this.optional = optional;
     return this;
   }
@@ -174,17 +174,17 @@ public class UpdateIncidentRoleDataAttributes {
    * Get optional
    * @return optional
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getOptional() {
     return optional;
   }
 
-  public void setOptional(@javax.annotation.Nullable Boolean optional) {
+  public void setOptional(@jakarta.annotation.Nullable Boolean optional) {
     this.optional = optional;
   }
 
 
-  public UpdateIncidentRoleDataAttributes enabled(@javax.annotation.Nullable Boolean enabled) {
+  public UpdateIncidentRoleDataAttributes enabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -193,17 +193,17 @@ public class UpdateIncidentRoleDataAttributes {
    * Get enabled
    * @return enabled
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getEnabled() {
     return enabled;
   }
 
-  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
+  public void setEnabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public UpdateIncidentRoleDataAttributes allowMultiUserAssignment(@javax.annotation.Nullable Boolean allowMultiUserAssignment) {
+  public UpdateIncidentRoleDataAttributes allowMultiUserAssignment(@jakarta.annotation.Nullable Boolean allowMultiUserAssignment) {
     this.allowMultiUserAssignment = allowMultiUserAssignment;
     return this;
   }
@@ -212,12 +212,12 @@ public class UpdateIncidentRoleDataAttributes {
    * Get allowMultiUserAssignment
    * @return allowMultiUserAssignment
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getAllowMultiUserAssignment() {
     return allowMultiUserAssignment;
   }
 
-  public void setAllowMultiUserAssignment(@javax.annotation.Nullable Boolean allowMultiUserAssignment) {
+  public void setAllowMultiUserAssignment(@jakarta.annotation.Nullable Boolean allowMultiUserAssignment) {
     this.allowMultiUserAssignment = allowMultiUserAssignment;
   }
 

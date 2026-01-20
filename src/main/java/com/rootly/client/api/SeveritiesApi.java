@@ -92,7 +92,7 @@ public class SeveritiesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createSeverityCall(@javax.annotation.Nonnull NewSeverity newSeverity, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createSeverityCall(@jakarta.annotation.Nonnull NewSeverity newSeverity, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -138,7 +138,7 @@ public class SeveritiesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createSeverityValidateBeforeCall(@javax.annotation.Nonnull NewSeverity newSeverity, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createSeverityValidateBeforeCall(@jakarta.annotation.Nonnull NewSeverity newSeverity, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'newSeverity' is set
         if (newSeverity == null) {
             throw new ApiException("Missing the required parameter 'newSeverity' when calling createSeverity(Async)");
@@ -163,7 +163,7 @@ public class SeveritiesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public SeverityResponse createSeverity(@javax.annotation.Nonnull NewSeverity newSeverity) throws ApiException {
+    public SeverityResponse createSeverity(@jakarta.annotation.Nonnull NewSeverity newSeverity) throws ApiException {
         ApiResponse<SeverityResponse> localVarResp = createSeverityWithHttpInfo(newSeverity);
         return localVarResp.getData();
     }
@@ -183,7 +183,7 @@ public class SeveritiesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SeverityResponse> createSeverityWithHttpInfo(@javax.annotation.Nonnull NewSeverity newSeverity) throws ApiException {
+    public ApiResponse<SeverityResponse> createSeverityWithHttpInfo(@jakarta.annotation.Nonnull NewSeverity newSeverity) throws ApiException {
         okhttp3.Call localVarCall = createSeverityValidateBeforeCall(newSeverity, null);
         Type localVarReturnType = new TypeToken<SeverityResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -205,7 +205,7 @@ public class SeveritiesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createSeverityAsync(@javax.annotation.Nonnull NewSeverity newSeverity, final ApiCallback<SeverityResponse> _callback) throws ApiException {
+    public okhttp3.Call createSeverityAsync(@jakarta.annotation.Nonnull NewSeverity newSeverity, final ApiCallback<SeverityResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createSeverityValidateBeforeCall(newSeverity, _callback);
         Type localVarReturnType = new TypeToken<SeverityResponse>(){}.getType();
@@ -226,7 +226,7 @@ public class SeveritiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteSeverityCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteSeverityCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -272,7 +272,7 @@ public class SeveritiesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteSeverityValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteSeverityValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteSeverity(Async)");
@@ -296,7 +296,7 @@ public class SeveritiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public SeverityResponse deleteSeverity(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public SeverityResponse deleteSeverity(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<SeverityResponse> localVarResp = deleteSeverityWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -315,7 +315,7 @@ public class SeveritiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SeverityResponse> deleteSeverityWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public ApiResponse<SeverityResponse> deleteSeverityWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = deleteSeverityValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<SeverityResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -336,7 +336,7 @@ public class SeveritiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteSeverityAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<SeverityResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteSeverityAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<SeverityResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteSeverityValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<SeverityResponse>(){}.getType();
@@ -357,7 +357,7 @@ public class SeveritiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSeverityCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getSeverityCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -403,7 +403,7 @@ public class SeveritiesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSeverityValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getSeverityValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getSeverity(Async)");
@@ -427,7 +427,7 @@ public class SeveritiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public SeverityResponse getSeverity(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public SeverityResponse getSeverity(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<SeverityResponse> localVarResp = getSeverityWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -446,7 +446,7 @@ public class SeveritiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SeverityResponse> getSeverityWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public ApiResponse<SeverityResponse> getSeverityWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = getSeverityValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<SeverityResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -467,7 +467,7 @@ public class SeveritiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSeverityAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<SeverityResponse> _callback) throws ApiException {
+    public okhttp3.Call getSeverityAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<SeverityResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getSeverityValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<SeverityResponse>(){}.getType();
@@ -499,7 +499,7 @@ public class SeveritiesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listSeveritiesCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSeverity, @javax.annotation.Nullable String filterColor, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listSeveritiesCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSeverity, @jakarta.annotation.Nullable String filterColor, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -596,7 +596,7 @@ public class SeveritiesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listSeveritiesValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSeverity, @javax.annotation.Nullable String filterColor, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listSeveritiesValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSeverity, @jakarta.annotation.Nullable String filterColor, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         return listSeveritiesCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterSeverity, filterColor, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
 
     }
@@ -626,7 +626,7 @@ public class SeveritiesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public SeverityList listSeverities(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSeverity, @javax.annotation.Nullable String filterColor, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+    public SeverityList listSeverities(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSeverity, @jakarta.annotation.Nullable String filterColor, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
         ApiResponse<SeverityList> localVarResp = listSeveritiesWithHttpInfo(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterSeverity, filterColor, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
         return localVarResp.getData();
     }
@@ -656,7 +656,7 @@ public class SeveritiesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SeverityList> listSeveritiesWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSeverity, @javax.annotation.Nullable String filterColor, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+    public ApiResponse<SeverityList> listSeveritiesWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSeverity, @jakarta.annotation.Nullable String filterColor, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
         okhttp3.Call localVarCall = listSeveritiesValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterSeverity, filterColor, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, null);
         Type localVarReturnType = new TypeToken<SeverityList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -688,7 +688,7 @@ public class SeveritiesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listSeveritiesAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSeverity, @javax.annotation.Nullable String filterColor, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback<SeverityList> _callback) throws ApiException {
+    public okhttp3.Call listSeveritiesAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSeverity, @jakarta.annotation.Nullable String filterColor, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback<SeverityList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listSeveritiesValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterSeverity, filterColor, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
         Type localVarReturnType = new TypeToken<SeverityList>(){}.getType();
@@ -710,7 +710,7 @@ public class SeveritiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateSeverityCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateSeverity updateSeverity, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateSeverityCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateSeverity updateSeverity, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -757,7 +757,7 @@ public class SeveritiesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateSeverityValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateSeverity updateSeverity, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateSeverityValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateSeverity updateSeverity, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateSeverity(Async)");
@@ -787,7 +787,7 @@ public class SeveritiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public SeverityResponse updateSeverity(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateSeverity updateSeverity) throws ApiException {
+    public SeverityResponse updateSeverity(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateSeverity updateSeverity) throws ApiException {
         ApiResponse<SeverityResponse> localVarResp = updateSeverityWithHttpInfo(id, updateSeverity);
         return localVarResp.getData();
     }
@@ -807,7 +807,7 @@ public class SeveritiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SeverityResponse> updateSeverityWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateSeverity updateSeverity) throws ApiException {
+    public ApiResponse<SeverityResponse> updateSeverityWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateSeverity updateSeverity) throws ApiException {
         okhttp3.Call localVarCall = updateSeverityValidateBeforeCall(id, updateSeverity, null);
         Type localVarReturnType = new TypeToken<SeverityResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -829,7 +829,7 @@ public class SeveritiesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateSeverityAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateSeverity updateSeverity, final ApiCallback<SeverityResponse> _callback) throws ApiException {
+    public okhttp3.Call updateSeverityAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateSeverity updateSeverity, final ApiCallback<SeverityResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateSeverityValidateBeforeCall(id, updateSeverity, _callback);
         Type localVarReturnType = new TypeToken<SeverityResponse>(){}.getType();

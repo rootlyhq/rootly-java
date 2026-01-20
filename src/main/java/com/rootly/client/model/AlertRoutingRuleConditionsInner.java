@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * AlertRoutingRuleConditionsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AlertRoutingRuleConditionsInner {
   /**
    * The type of the property field
@@ -107,12 +107,12 @@ public class AlertRoutingRuleConditionsInner {
 
   public static final String SERIALIZED_NAME_PROPERTY_FIELD_TYPE = "property_field_type";
   @SerializedName(SERIALIZED_NAME_PROPERTY_FIELD_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private PropertyFieldTypeEnum propertyFieldType;
 
   public static final String SERIALIZED_NAME_PROPERTY_FIELD_NAME = "property_field_name";
   @SerializedName(SERIALIZED_NAME_PROPERTY_FIELD_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String propertyFieldName;
 
   /**
@@ -181,23 +181,23 @@ public class AlertRoutingRuleConditionsInner {
 
   public static final String SERIALIZED_NAME_PROPERTY_FIELD_CONDITION_TYPE = "property_field_condition_type";
   @SerializedName(SERIALIZED_NAME_PROPERTY_FIELD_CONDITION_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private PropertyFieldConditionTypeEnum propertyFieldConditionType;
 
   public static final String SERIALIZED_NAME_PROPERTY_FIELD_VALUE = "property_field_value";
   @SerializedName(SERIALIZED_NAME_PROPERTY_FIELD_VALUE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String propertyFieldValue;
 
   public static final String SERIALIZED_NAME_PROPERTY_FIELD_VALUES = "property_field_values";
   @SerializedName(SERIALIZED_NAME_PROPERTY_FIELD_VALUES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> propertyFieldValues = new ArrayList<>();
 
   public AlertRoutingRuleConditionsInner() {
   }
 
-  public AlertRoutingRuleConditionsInner propertyFieldType(@javax.annotation.Nonnull PropertyFieldTypeEnum propertyFieldType) {
+  public AlertRoutingRuleConditionsInner propertyFieldType(@jakarta.annotation.Nonnull PropertyFieldTypeEnum propertyFieldType) {
     this.propertyFieldType = propertyFieldType;
     return this;
   }
@@ -206,17 +206,17 @@ public class AlertRoutingRuleConditionsInner {
    * The type of the property field
    * @return propertyFieldType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public PropertyFieldTypeEnum getPropertyFieldType() {
     return propertyFieldType;
   }
 
-  public void setPropertyFieldType(@javax.annotation.Nonnull PropertyFieldTypeEnum propertyFieldType) {
+  public void setPropertyFieldType(@jakarta.annotation.Nonnull PropertyFieldTypeEnum propertyFieldType) {
     this.propertyFieldType = propertyFieldType;
   }
 
 
-  public AlertRoutingRuleConditionsInner propertyFieldName(@javax.annotation.Nonnull String propertyFieldName) {
+  public AlertRoutingRuleConditionsInner propertyFieldName(@jakarta.annotation.Nonnull String propertyFieldName) {
     this.propertyFieldName = propertyFieldName;
     return this;
   }
@@ -225,17 +225,17 @@ public class AlertRoutingRuleConditionsInner {
    * The name of the property field. If the property field type is selected as &#39;attribute&#39;, then the allowed property field names are &#39;summary&#39; (for Title), &#39;description&#39;, &#39;alert_urgency&#39; and &#39;external_url&#39; (for Alert Source URL). If the property field type is selected as &#39;payload&#39;, then the property field name should be supplied in JSON Path syntax.
    * @return propertyFieldName
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getPropertyFieldName() {
     return propertyFieldName;
   }
 
-  public void setPropertyFieldName(@javax.annotation.Nonnull String propertyFieldName) {
+  public void setPropertyFieldName(@jakarta.annotation.Nonnull String propertyFieldName) {
     this.propertyFieldName = propertyFieldName;
   }
 
 
-  public AlertRoutingRuleConditionsInner propertyFieldConditionType(@javax.annotation.Nonnull PropertyFieldConditionTypeEnum propertyFieldConditionType) {
+  public AlertRoutingRuleConditionsInner propertyFieldConditionType(@jakarta.annotation.Nonnull PropertyFieldConditionTypeEnum propertyFieldConditionType) {
     this.propertyFieldConditionType = propertyFieldConditionType;
     return this;
   }
@@ -244,17 +244,17 @@ public class AlertRoutingRuleConditionsInner {
    * The condition type of the property field
    * @return propertyFieldConditionType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public PropertyFieldConditionTypeEnum getPropertyFieldConditionType() {
     return propertyFieldConditionType;
   }
 
-  public void setPropertyFieldConditionType(@javax.annotation.Nonnull PropertyFieldConditionTypeEnum propertyFieldConditionType) {
+  public void setPropertyFieldConditionType(@jakarta.annotation.Nonnull PropertyFieldConditionTypeEnum propertyFieldConditionType) {
     this.propertyFieldConditionType = propertyFieldConditionType;
   }
 
 
-  public AlertRoutingRuleConditionsInner propertyFieldValue(@javax.annotation.Nullable String propertyFieldValue) {
+  public AlertRoutingRuleConditionsInner propertyFieldValue(@jakarta.annotation.Nullable String propertyFieldValue) {
     this.propertyFieldValue = propertyFieldValue;
     return this;
   }
@@ -263,17 +263,17 @@ public class AlertRoutingRuleConditionsInner {
    * The value of the property field. Can be null if the property field condition type is &#39;is_one_of&#39; or &#39;is_not_one_of&#39;
    * @return propertyFieldValue
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPropertyFieldValue() {
     return propertyFieldValue;
   }
 
-  public void setPropertyFieldValue(@javax.annotation.Nullable String propertyFieldValue) {
+  public void setPropertyFieldValue(@jakarta.annotation.Nullable String propertyFieldValue) {
     this.propertyFieldValue = propertyFieldValue;
   }
 
 
-  public AlertRoutingRuleConditionsInner propertyFieldValues(@javax.annotation.Nullable List<String> propertyFieldValues) {
+  public AlertRoutingRuleConditionsInner propertyFieldValues(@jakarta.annotation.Nullable List<String> propertyFieldValues) {
     this.propertyFieldValues = propertyFieldValues;
     return this;
   }
@@ -290,12 +290,12 @@ public class AlertRoutingRuleConditionsInner {
    * The values of the property field. Used if the property field condition type is &#39;is_one_of&#39; or &#39;is_not_one_of&#39; except for when property field name is &#39;alert_urgency&#39;
    * @return propertyFieldValues
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getPropertyFieldValues() {
     return propertyFieldValues;
   }
 
-  public void setPropertyFieldValues(@javax.annotation.Nullable List<String> propertyFieldValues) {
+  public void setPropertyFieldValues(@jakarta.annotation.Nullable List<String> propertyFieldValues) {
     this.propertyFieldValues = propertyFieldValues;
   }
 

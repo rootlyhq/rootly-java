@@ -51,41 +51,41 @@ import com.rootly.client.JSON;
 /**
  * UserNotificationRule
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UserNotificationRule {
   public static final String SERIALIZED_NAME_USER_ID = "user_id";
   @SerializedName(SERIALIZED_NAME_USER_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer userId;
 
   public static final String SERIALIZED_NAME_DELAY = "delay";
   @SerializedName(SERIALIZED_NAME_DELAY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer delay;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public static final String SERIALIZED_NAME_USER_EMAIL_ADDRESS_ID = "user_email_address_id";
   @SerializedName(SERIALIZED_NAME_USER_EMAIL_ADDRESS_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String userEmailAddressId;
 
   public static final String SERIALIZED_NAME_USER_CALL_NUMBER_ID = "user_call_number_id";
   @SerializedName(SERIALIZED_NAME_USER_CALL_NUMBER_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String userCallNumberId;
 
   public static final String SERIALIZED_NAME_USER_SMS_NUMBER_ID = "user_sms_number_id";
   @SerializedName(SERIALIZED_NAME_USER_SMS_NUMBER_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String userSmsNumberId;
 
   public static final String SERIALIZED_NAME_USER_DEVICE_ID = "user_device_id";
   @SerializedName(SERIALIZED_NAME_USER_DEVICE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String userDeviceId;
 
   /**
@@ -150,23 +150,23 @@ public class UserNotificationRule {
 
   public static final String SERIALIZED_NAME_ENABLED_CONTACT_TYPES = "enabled_contact_types";
   @SerializedName(SERIALIZED_NAME_ENABLED_CONTACT_TYPES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<EnabledContactTypesEnum> enabledContactTypes = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String updatedAt;
 
   public UserNotificationRule() {
   }
 
-  public UserNotificationRule userId(@javax.annotation.Nullable Integer userId) {
+  public UserNotificationRule userId(@jakarta.annotation.Nullable Integer userId) {
     this.userId = userId;
     return this;
   }
@@ -175,17 +175,17 @@ public class UserNotificationRule {
    * Get userId
    * @return userId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getUserId() {
     return userId;
   }
 
-  public void setUserId(@javax.annotation.Nullable Integer userId) {
+  public void setUserId(@jakarta.annotation.Nullable Integer userId) {
     this.userId = userId;
   }
 
 
-  public UserNotificationRule delay(@javax.annotation.Nullable Integer delay) {
+  public UserNotificationRule delay(@jakarta.annotation.Nullable Integer delay) {
     this.delay = delay;
     return this;
   }
@@ -194,17 +194,17 @@ public class UserNotificationRule {
    * Delay after which rule gets triggered
    * @return delay
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getDelay() {
     return delay;
   }
 
-  public void setDelay(@javax.annotation.Nullable Integer delay) {
+  public void setDelay(@jakarta.annotation.Nullable Integer delay) {
     this.delay = delay;
   }
 
 
-  public UserNotificationRule position(@javax.annotation.Nullable Integer position) {
+  public UserNotificationRule position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -213,17 +213,17 @@ public class UserNotificationRule {
    * Position of the rule
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 
 
-  public UserNotificationRule userEmailAddressId(@javax.annotation.Nullable String userEmailAddressId) {
+  public UserNotificationRule userEmailAddressId(@jakarta.annotation.Nullable String userEmailAddressId) {
     this.userEmailAddressId = userEmailAddressId;
     return this;
   }
@@ -232,17 +232,17 @@ public class UserNotificationRule {
    * User email address to which notification to be sent
    * @return userEmailAddressId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUserEmailAddressId() {
     return userEmailAddressId;
   }
 
-  public void setUserEmailAddressId(@javax.annotation.Nullable String userEmailAddressId) {
+  public void setUserEmailAddressId(@jakarta.annotation.Nullable String userEmailAddressId) {
     this.userEmailAddressId = userEmailAddressId;
   }
 
 
-  public UserNotificationRule userCallNumberId(@javax.annotation.Nullable String userCallNumberId) {
+  public UserNotificationRule userCallNumberId(@jakarta.annotation.Nullable String userCallNumberId) {
     this.userCallNumberId = userCallNumberId;
     return this;
   }
@@ -251,17 +251,17 @@ public class UserNotificationRule {
    * User phone number to which notification to be sent
    * @return userCallNumberId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUserCallNumberId() {
     return userCallNumberId;
   }
 
-  public void setUserCallNumberId(@javax.annotation.Nullable String userCallNumberId) {
+  public void setUserCallNumberId(@jakarta.annotation.Nullable String userCallNumberId) {
     this.userCallNumberId = userCallNumberId;
   }
 
 
-  public UserNotificationRule userSmsNumberId(@javax.annotation.Nullable String userSmsNumberId) {
+  public UserNotificationRule userSmsNumberId(@jakarta.annotation.Nullable String userSmsNumberId) {
     this.userSmsNumberId = userSmsNumberId;
     return this;
   }
@@ -270,17 +270,17 @@ public class UserNotificationRule {
    * User sms number to which notification to be sent
    * @return userSmsNumberId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUserSmsNumberId() {
     return userSmsNumberId;
   }
 
-  public void setUserSmsNumberId(@javax.annotation.Nullable String userSmsNumberId) {
+  public void setUserSmsNumberId(@jakarta.annotation.Nullable String userSmsNumberId) {
     this.userSmsNumberId = userSmsNumberId;
   }
 
 
-  public UserNotificationRule userDeviceId(@javax.annotation.Nullable String userDeviceId) {
+  public UserNotificationRule userDeviceId(@jakarta.annotation.Nullable String userDeviceId) {
     this.userDeviceId = userDeviceId;
     return this;
   }
@@ -289,17 +289,17 @@ public class UserNotificationRule {
    * User device to which notification to be sent
    * @return userDeviceId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUserDeviceId() {
     return userDeviceId;
   }
 
-  public void setUserDeviceId(@javax.annotation.Nullable String userDeviceId) {
+  public void setUserDeviceId(@jakarta.annotation.Nullable String userDeviceId) {
     this.userDeviceId = userDeviceId;
   }
 
 
-  public UserNotificationRule enabledContactTypes(@javax.annotation.Nullable List<EnabledContactTypesEnum> enabledContactTypes) {
+  public UserNotificationRule enabledContactTypes(@jakarta.annotation.Nullable List<EnabledContactTypesEnum> enabledContactTypes) {
     this.enabledContactTypes = enabledContactTypes;
     return this;
   }
@@ -316,17 +316,17 @@ public class UserNotificationRule {
    * Contact types for which notification needs to be enabled
    * @return enabledContactTypes
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<EnabledContactTypesEnum> getEnabledContactTypes() {
     return enabledContactTypes;
   }
 
-  public void setEnabledContactTypes(@javax.annotation.Nullable List<EnabledContactTypesEnum> enabledContactTypes) {
+  public void setEnabledContactTypes(@jakarta.annotation.Nullable List<EnabledContactTypesEnum> enabledContactTypes) {
     this.enabledContactTypes = enabledContactTypes;
   }
 
 
-  public UserNotificationRule createdAt(@javax.annotation.Nullable String createdAt) {
+  public UserNotificationRule createdAt(@jakarta.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -335,17 +335,17 @@ public class UserNotificationRule {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nullable String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public UserNotificationRule updatedAt(@javax.annotation.Nullable String updatedAt) {
+  public UserNotificationRule updatedAt(@jakarta.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -354,12 +354,12 @@ public class UserNotificationRule {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nullable String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

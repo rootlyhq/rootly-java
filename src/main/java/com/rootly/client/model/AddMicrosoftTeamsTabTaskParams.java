@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * AddMicrosoftTeamsTabTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AddMicrosoftTeamsTabTaskParams {
   /**
    * Gets or Sets taskType
@@ -103,38 +103,38 @@ public class AddMicrosoftTeamsTabTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_PLAYBOOK_ID = "playbook_id";
   @SerializedName(SERIALIZED_NAME_PLAYBOOK_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String playbookId;
 
   public static final String SERIALIZED_NAME_TEAM = "team";
   @SerializedName(SERIALIZED_NAME_TEAM)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Object team;
 
   public static final String SERIALIZED_NAME_CHANNEL = "channel";
   @SerializedName(SERIALIZED_NAME_CHANNEL)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Object channel;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String title;
 
   public static final String SERIALIZED_NAME_LINK = "link";
   @SerializedName(SERIALIZED_NAME_LINK)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String link;
 
   public AddMicrosoftTeamsTabTaskParams() {
   }
 
-  public AddMicrosoftTeamsTabTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public AddMicrosoftTeamsTabTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -143,17 +143,17 @@ public class AddMicrosoftTeamsTabTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public AddMicrosoftTeamsTabTaskParams playbookId(@javax.annotation.Nullable String playbookId) {
+  public AddMicrosoftTeamsTabTaskParams playbookId(@jakarta.annotation.Nullable String playbookId) {
     this.playbookId = playbookId;
     return this;
   }
@@ -162,17 +162,17 @@ public class AddMicrosoftTeamsTabTaskParams {
    * The playbook id if tab is of an incident playbook
    * @return playbookId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPlaybookId() {
     return playbookId;
   }
 
-  public void setPlaybookId(@javax.annotation.Nullable String playbookId) {
+  public void setPlaybookId(@jakarta.annotation.Nullable String playbookId) {
     this.playbookId = playbookId;
   }
 
 
-  public AddMicrosoftTeamsTabTaskParams team(@javax.annotation.Nonnull Object team) {
+  public AddMicrosoftTeamsTabTaskParams team(@jakarta.annotation.Nonnull Object team) {
     this.team = team;
     return this;
   }
@@ -181,17 +181,17 @@ public class AddMicrosoftTeamsTabTaskParams {
    * Get team
    * @return team
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Object getTeam() {
     return team;
   }
 
-  public void setTeam(@javax.annotation.Nonnull Object team) {
+  public void setTeam(@jakarta.annotation.Nonnull Object team) {
     this.team = team;
   }
 
 
-  public AddMicrosoftTeamsTabTaskParams channel(@javax.annotation.Nonnull Object channel) {
+  public AddMicrosoftTeamsTabTaskParams channel(@jakarta.annotation.Nonnull Object channel) {
     this.channel = channel;
     return this;
   }
@@ -200,17 +200,17 @@ public class AddMicrosoftTeamsTabTaskParams {
    * Get channel
    * @return channel
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Object getChannel() {
     return channel;
   }
 
-  public void setChannel(@javax.annotation.Nonnull Object channel) {
+  public void setChannel(@jakarta.annotation.Nonnull Object channel) {
     this.channel = channel;
   }
 
 
-  public AddMicrosoftTeamsTabTaskParams title(@javax.annotation.Nullable String title) {
+  public AddMicrosoftTeamsTabTaskParams title(@jakarta.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
@@ -219,17 +219,17 @@ public class AddMicrosoftTeamsTabTaskParams {
    * The tab title. Required if not a playbook tab
    * @return title
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nullable String title) {
+  public void setTitle(@jakarta.annotation.Nullable String title) {
     this.title = title;
   }
 
 
-  public AddMicrosoftTeamsTabTaskParams link(@javax.annotation.Nullable String link) {
+  public AddMicrosoftTeamsTabTaskParams link(@jakarta.annotation.Nullable String link) {
     this.link = link;
     return this;
   }
@@ -238,12 +238,12 @@ public class AddMicrosoftTeamsTabTaskParams {
    * The tab link. Required if not a playbook tab
    * @return link
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getLink() {
     return link;
   }
 
-  public void setLink(@javax.annotation.Nullable String link) {
+  public void setLink(@jakarta.annotation.Nullable String link) {
     this.link = link;
   }
 

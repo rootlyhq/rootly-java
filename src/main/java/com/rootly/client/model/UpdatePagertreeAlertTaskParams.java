@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * UpdatePagertreeAlertTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdatePagertreeAlertTaskParams {
   /**
    * Gets or Sets taskType
@@ -105,22 +105,22 @@ public class UpdatePagertreeAlertTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_PAGERTREE_ALERT_ID = "pagertree_alert_id";
   @SerializedName(SERIALIZED_NAME_PAGERTREE_ALERT_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String pagertreeAlertId;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String title;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   /**
@@ -183,7 +183,7 @@ public class UpdatePagertreeAlertTaskParams {
 
   public static final String SERIALIZED_NAME_URGENCY = "urgency";
   @SerializedName(SERIALIZED_NAME_URGENCY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private UrgencyEnum urgency;
 
   /**
@@ -246,28 +246,28 @@ public class UpdatePagertreeAlertTaskParams {
 
   public static final String SERIALIZED_NAME_SEVERITY = "severity";
   @SerializedName(SERIALIZED_NAME_SEVERITY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private SeverityEnum severity;
 
   public static final String SERIALIZED_NAME_TEAMS = "teams";
   @SerializedName(SERIALIZED_NAME_TEAMS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AddActionItemTaskParamsPostToSlackChannelsInner> teams = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_USERS = "users";
   @SerializedName(SERIALIZED_NAME_USERS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AddActionItemTaskParamsPostToSlackChannelsInner> users = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_INCIDENT = "incident";
   @SerializedName(SERIALIZED_NAME_INCIDENT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean incident;
 
   public UpdatePagertreeAlertTaskParams() {
   }
 
-  public UpdatePagertreeAlertTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public UpdatePagertreeAlertTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -276,17 +276,17 @@ public class UpdatePagertreeAlertTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public UpdatePagertreeAlertTaskParams pagertreeAlertId(@javax.annotation.Nullable String pagertreeAlertId) {
+  public UpdatePagertreeAlertTaskParams pagertreeAlertId(@jakarta.annotation.Nullable String pagertreeAlertId) {
     this.pagertreeAlertId = pagertreeAlertId;
     return this;
   }
@@ -295,17 +295,17 @@ public class UpdatePagertreeAlertTaskParams {
    * The prefix ID of the Pagertree alert
    * @return pagertreeAlertId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPagertreeAlertId() {
     return pagertreeAlertId;
   }
 
-  public void setPagertreeAlertId(@javax.annotation.Nullable String pagertreeAlertId) {
+  public void setPagertreeAlertId(@jakarta.annotation.Nullable String pagertreeAlertId) {
     this.pagertreeAlertId = pagertreeAlertId;
   }
 
 
-  public UpdatePagertreeAlertTaskParams title(@javax.annotation.Nullable String title) {
+  public UpdatePagertreeAlertTaskParams title(@jakarta.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
@@ -314,17 +314,17 @@ public class UpdatePagertreeAlertTaskParams {
    * Title of alert as text
    * @return title
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nullable String title) {
+  public void setTitle(@jakarta.annotation.Nullable String title) {
     this.title = title;
   }
 
 
-  public UpdatePagertreeAlertTaskParams description(@javax.annotation.Nullable String description) {
+  public UpdatePagertreeAlertTaskParams description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -333,17 +333,17 @@ public class UpdatePagertreeAlertTaskParams {
    * Description of alert as text
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UpdatePagertreeAlertTaskParams urgency(@javax.annotation.Nullable UrgencyEnum urgency) {
+  public UpdatePagertreeAlertTaskParams urgency(@jakarta.annotation.Nullable UrgencyEnum urgency) {
     this.urgency = urgency;
     return this;
   }
@@ -352,17 +352,17 @@ public class UpdatePagertreeAlertTaskParams {
    * Get urgency
    * @return urgency
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public UrgencyEnum getUrgency() {
     return urgency;
   }
 
-  public void setUrgency(@javax.annotation.Nullable UrgencyEnum urgency) {
+  public void setUrgency(@jakarta.annotation.Nullable UrgencyEnum urgency) {
     this.urgency = urgency;
   }
 
 
-  public UpdatePagertreeAlertTaskParams severity(@javax.annotation.Nullable SeverityEnum severity) {
+  public UpdatePagertreeAlertTaskParams severity(@jakarta.annotation.Nullable SeverityEnum severity) {
     this.severity = severity;
     return this;
   }
@@ -371,17 +371,17 @@ public class UpdatePagertreeAlertTaskParams {
    * Get severity
    * @return severity
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public SeverityEnum getSeverity() {
     return severity;
   }
 
-  public void setSeverity(@javax.annotation.Nullable SeverityEnum severity) {
+  public void setSeverity(@jakarta.annotation.Nullable SeverityEnum severity) {
     this.severity = severity;
   }
 
 
-  public UpdatePagertreeAlertTaskParams teams(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> teams) {
+  public UpdatePagertreeAlertTaskParams teams(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> teams) {
     this.teams = teams;
     return this;
   }
@@ -398,17 +398,17 @@ public class UpdatePagertreeAlertTaskParams {
    * Get teams
    * @return teams
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AddActionItemTaskParamsPostToSlackChannelsInner> getTeams() {
     return teams;
   }
 
-  public void setTeams(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> teams) {
+  public void setTeams(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> teams) {
     this.teams = teams;
   }
 
 
-  public UpdatePagertreeAlertTaskParams users(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> users) {
+  public UpdatePagertreeAlertTaskParams users(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> users) {
     this.users = users;
     return this;
   }
@@ -425,17 +425,17 @@ public class UpdatePagertreeAlertTaskParams {
    * Get users
    * @return users
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AddActionItemTaskParamsPostToSlackChannelsInner> getUsers() {
     return users;
   }
 
-  public void setUsers(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> users) {
+  public void setUsers(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> users) {
     this.users = users;
   }
 
 
-  public UpdatePagertreeAlertTaskParams incident(@javax.annotation.Nullable Boolean incident) {
+  public UpdatePagertreeAlertTaskParams incident(@jakarta.annotation.Nullable Boolean incident) {
     this.incident = incident;
     return this;
   }
@@ -444,12 +444,12 @@ public class UpdatePagertreeAlertTaskParams {
    * Setting to true makes an alert a Pagertree incident
    * @return incident
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getIncident() {
     return incident;
   }
 
-  public void setIncident(@javax.annotation.Nullable Boolean incident) {
+  public void setIncident(@jakarta.annotation.Nullable Boolean incident) {
     this.incident = incident;
   }
 

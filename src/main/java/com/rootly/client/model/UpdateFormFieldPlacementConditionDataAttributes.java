@@ -50,7 +50,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateFormFieldPlacementConditionDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateFormFieldPlacementConditionDataAttributes {
   /**
    * The resource or attribute the condition applies.
@@ -106,17 +106,17 @@ public class UpdateFormFieldPlacementConditionDataAttributes {
 
   public static final String SERIALIZED_NAME_CONDITIONED = "conditioned";
   @SerializedName(SERIALIZED_NAME_CONDITIONED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ConditionedEnum conditioned;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public static final String SERIALIZED_NAME_FORM_FIELD_ID = "form_field_id";
   @SerializedName(SERIALIZED_NAME_FORM_FIELD_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String formFieldId;
 
   /**
@@ -177,18 +177,18 @@ public class UpdateFormFieldPlacementConditionDataAttributes {
 
   public static final String SERIALIZED_NAME_COMPARISON = "comparison";
   @SerializedName(SERIALIZED_NAME_COMPARISON)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ComparisonEnum comparison;
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> values = new ArrayList<>();
 
   public UpdateFormFieldPlacementConditionDataAttributes() {
   }
 
-  public UpdateFormFieldPlacementConditionDataAttributes conditioned(@javax.annotation.Nullable ConditionedEnum conditioned) {
+  public UpdateFormFieldPlacementConditionDataAttributes conditioned(@jakarta.annotation.Nullable ConditionedEnum conditioned) {
     this.conditioned = conditioned;
     return this;
   }
@@ -197,17 +197,17 @@ public class UpdateFormFieldPlacementConditionDataAttributes {
    * The resource or attribute the condition applies.
    * @return conditioned
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ConditionedEnum getConditioned() {
     return conditioned;
   }
 
-  public void setConditioned(@javax.annotation.Nullable ConditionedEnum conditioned) {
+  public void setConditioned(@jakarta.annotation.Nullable ConditionedEnum conditioned) {
     this.conditioned = conditioned;
   }
 
 
-  public UpdateFormFieldPlacementConditionDataAttributes position(@javax.annotation.Nullable Integer position) {
+  public UpdateFormFieldPlacementConditionDataAttributes position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -216,17 +216,17 @@ public class UpdateFormFieldPlacementConditionDataAttributes {
    * The condition position.
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 
 
-  public UpdateFormFieldPlacementConditionDataAttributes formFieldId(@javax.annotation.Nullable String formFieldId) {
+  public UpdateFormFieldPlacementConditionDataAttributes formFieldId(@jakarta.annotation.Nullable String formFieldId) {
     this.formFieldId = formFieldId;
     return this;
   }
@@ -235,17 +235,17 @@ public class UpdateFormFieldPlacementConditionDataAttributes {
    * The condition field.
    * @return formFieldId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getFormFieldId() {
     return formFieldId;
   }
 
-  public void setFormFieldId(@javax.annotation.Nullable String formFieldId) {
+  public void setFormFieldId(@jakarta.annotation.Nullable String formFieldId) {
     this.formFieldId = formFieldId;
   }
 
 
-  public UpdateFormFieldPlacementConditionDataAttributes comparison(@javax.annotation.Nullable ComparisonEnum comparison) {
+  public UpdateFormFieldPlacementConditionDataAttributes comparison(@jakarta.annotation.Nullable ComparisonEnum comparison) {
     this.comparison = comparison;
     return this;
   }
@@ -254,17 +254,17 @@ public class UpdateFormFieldPlacementConditionDataAttributes {
    * The condition comparison.
    * @return comparison
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ComparisonEnum getComparison() {
     return comparison;
   }
 
-  public void setComparison(@javax.annotation.Nullable ComparisonEnum comparison) {
+  public void setComparison(@jakarta.annotation.Nullable ComparisonEnum comparison) {
     this.comparison = comparison;
   }
 
 
-  public UpdateFormFieldPlacementConditionDataAttributes values(@javax.annotation.Nullable List<String> values) {
+  public UpdateFormFieldPlacementConditionDataAttributes values(@jakarta.annotation.Nullable List<String> values) {
     this.values = values;
     return this;
   }
@@ -281,12 +281,12 @@ public class UpdateFormFieldPlacementConditionDataAttributes {
    * The values for comparison.
    * @return values
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getValues() {
     return values;
   }
 
-  public void setValues(@javax.annotation.Nullable List<String> values) {
+  public void setValues(@jakarta.annotation.Nullable List<String> values) {
     this.values = values;
   }
 

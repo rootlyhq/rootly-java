@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * NewSecretDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewSecretDataAttributes {
   /**
    * The kind of the secret
@@ -105,38 +105,38 @@ public class NewSecretDataAttributes {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private KindEnum kind;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_SECRET = "secret";
   @SerializedName(SERIALIZED_NAME_SECRET)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String secret;
 
   public static final String SERIALIZED_NAME_HASHICORP_VAULT_MOUNT = "hashicorp_vault_mount";
   @SerializedName(SERIALIZED_NAME_HASHICORP_VAULT_MOUNT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String hashicorpVaultMount = "secret";
 
   public static final String SERIALIZED_NAME_HASHICORP_VAULT_PATH = "hashicorp_vault_path";
   @SerializedName(SERIALIZED_NAME_HASHICORP_VAULT_PATH)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String hashicorpVaultPath;
 
   public static final String SERIALIZED_NAME_HASHICORP_VAULT_VERSION = "hashicorp_vault_version";
   @SerializedName(SERIALIZED_NAME_HASHICORP_VAULT_VERSION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String hashicorpVaultVersion = "0";
 
   public NewSecretDataAttributes() {
   }
 
-  public NewSecretDataAttributes kind(@javax.annotation.Nullable KindEnum kind) {
+  public NewSecretDataAttributes kind(@jakarta.annotation.Nullable KindEnum kind) {
     this.kind = kind;
     return this;
   }
@@ -145,17 +145,17 @@ public class NewSecretDataAttributes {
    * The kind of the secret
    * @return kind
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(@javax.annotation.Nullable KindEnum kind) {
+  public void setKind(@jakarta.annotation.Nullable KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public NewSecretDataAttributes name(@javax.annotation.Nonnull String name) {
+  public NewSecretDataAttributes name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -164,17 +164,17 @@ public class NewSecretDataAttributes {
    * The name of the secret
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public NewSecretDataAttributes secret(@javax.annotation.Nonnull String secret) {
+  public NewSecretDataAttributes secret(@jakarta.annotation.Nonnull String secret) {
     this.secret = secret;
     return this;
   }
@@ -183,17 +183,17 @@ public class NewSecretDataAttributes {
    * The secret
    * @return secret
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getSecret() {
     return secret;
   }
 
-  public void setSecret(@javax.annotation.Nonnull String secret) {
+  public void setSecret(@jakarta.annotation.Nonnull String secret) {
     this.secret = secret;
   }
 
 
-  public NewSecretDataAttributes hashicorpVaultMount(@javax.annotation.Nullable String hashicorpVaultMount) {
+  public NewSecretDataAttributes hashicorpVaultMount(@jakarta.annotation.Nullable String hashicorpVaultMount) {
     this.hashicorpVaultMount = hashicorpVaultMount;
     return this;
   }
@@ -202,17 +202,17 @@ public class NewSecretDataAttributes {
    * The HashiCorp Vault secret mount path
    * @return hashicorpVaultMount
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getHashicorpVaultMount() {
     return hashicorpVaultMount;
   }
 
-  public void setHashicorpVaultMount(@javax.annotation.Nullable String hashicorpVaultMount) {
+  public void setHashicorpVaultMount(@jakarta.annotation.Nullable String hashicorpVaultMount) {
     this.hashicorpVaultMount = hashicorpVaultMount;
   }
 
 
-  public NewSecretDataAttributes hashicorpVaultPath(@javax.annotation.Nullable String hashicorpVaultPath) {
+  public NewSecretDataAttributes hashicorpVaultPath(@jakarta.annotation.Nullable String hashicorpVaultPath) {
     this.hashicorpVaultPath = hashicorpVaultPath;
     return this;
   }
@@ -221,17 +221,17 @@ public class NewSecretDataAttributes {
    * The HashiCorp Vault secret path
    * @return hashicorpVaultPath
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getHashicorpVaultPath() {
     return hashicorpVaultPath;
   }
 
-  public void setHashicorpVaultPath(@javax.annotation.Nullable String hashicorpVaultPath) {
+  public void setHashicorpVaultPath(@jakarta.annotation.Nullable String hashicorpVaultPath) {
     this.hashicorpVaultPath = hashicorpVaultPath;
   }
 
 
-  public NewSecretDataAttributes hashicorpVaultVersion(@javax.annotation.Nullable String hashicorpVaultVersion) {
+  public NewSecretDataAttributes hashicorpVaultVersion(@jakarta.annotation.Nullable String hashicorpVaultVersion) {
     this.hashicorpVaultVersion = hashicorpVaultVersion;
     return this;
   }
@@ -240,12 +240,12 @@ public class NewSecretDataAttributes {
    * The HashiCorp Vault secret version
    * @return hashicorpVaultVersion
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getHashicorpVaultVersion() {
     return hashicorpVaultVersion;
   }
 
-  public void setHashicorpVaultVersion(@javax.annotation.Nullable String hashicorpVaultVersion) {
+  public void setHashicorpVaultVersion(@jakarta.annotation.Nullable String hashicorpVaultVersion) {
     this.hashicorpVaultVersion = hashicorpVaultVersion;
   }
 

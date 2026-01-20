@@ -91,7 +91,7 @@ public class OnCallRolesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createOnCallRoleCall(@javax.annotation.Nonnull NewOnCallRole newOnCallRole, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createOnCallRoleCall(@jakarta.annotation.Nonnull NewOnCallRole newOnCallRole, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -137,7 +137,7 @@ public class OnCallRolesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createOnCallRoleValidateBeforeCall(@javax.annotation.Nonnull NewOnCallRole newOnCallRole, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createOnCallRoleValidateBeforeCall(@jakarta.annotation.Nonnull NewOnCallRole newOnCallRole, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'newOnCallRole' is set
         if (newOnCallRole == null) {
             throw new ApiException("Missing the required parameter 'newOnCallRole' when calling createOnCallRole(Async)");
@@ -162,7 +162,7 @@ public class OnCallRolesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public OnCallRoleResponse createOnCallRole(@javax.annotation.Nonnull NewOnCallRole newOnCallRole) throws ApiException {
+    public OnCallRoleResponse createOnCallRole(@jakarta.annotation.Nonnull NewOnCallRole newOnCallRole) throws ApiException {
         ApiResponse<OnCallRoleResponse> localVarResp = createOnCallRoleWithHttpInfo(newOnCallRole);
         return localVarResp.getData();
     }
@@ -182,7 +182,7 @@ public class OnCallRolesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OnCallRoleResponse> createOnCallRoleWithHttpInfo(@javax.annotation.Nonnull NewOnCallRole newOnCallRole) throws ApiException {
+    public ApiResponse<OnCallRoleResponse> createOnCallRoleWithHttpInfo(@jakarta.annotation.Nonnull NewOnCallRole newOnCallRole) throws ApiException {
         okhttp3.Call localVarCall = createOnCallRoleValidateBeforeCall(newOnCallRole, null);
         Type localVarReturnType = new TypeToken<OnCallRoleResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -204,7 +204,7 @@ public class OnCallRolesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createOnCallRoleAsync(@javax.annotation.Nonnull NewOnCallRole newOnCallRole, final ApiCallback<OnCallRoleResponse> _callback) throws ApiException {
+    public okhttp3.Call createOnCallRoleAsync(@jakarta.annotation.Nonnull NewOnCallRole newOnCallRole, final ApiCallback<OnCallRoleResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createOnCallRoleValidateBeforeCall(newOnCallRole, _callback);
         Type localVarReturnType = new TypeToken<OnCallRoleResponse>(){}.getType();
@@ -225,7 +225,7 @@ public class OnCallRolesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteOnCallRoleCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteOnCallRoleCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -271,7 +271,7 @@ public class OnCallRolesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteOnCallRoleValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteOnCallRoleValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteOnCallRole(Async)");
@@ -295,7 +295,7 @@ public class OnCallRolesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public OnCallRoleResponse deleteOnCallRole(@javax.annotation.Nonnull String id) throws ApiException {
+    public OnCallRoleResponse deleteOnCallRole(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<OnCallRoleResponse> localVarResp = deleteOnCallRoleWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -314,7 +314,7 @@ public class OnCallRolesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OnCallRoleResponse> deleteOnCallRoleWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<OnCallRoleResponse> deleteOnCallRoleWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteOnCallRoleValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<OnCallRoleResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -335,7 +335,7 @@ public class OnCallRolesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteOnCallRoleAsync(@javax.annotation.Nonnull String id, final ApiCallback<OnCallRoleResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteOnCallRoleAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<OnCallRoleResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteOnCallRoleValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<OnCallRoleResponse>(){}.getType();
@@ -356,7 +356,7 @@ public class OnCallRolesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getOnCallRoleCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getOnCallRoleCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -402,7 +402,7 @@ public class OnCallRolesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getOnCallRoleValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getOnCallRoleValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getOnCallRole(Async)");
@@ -426,7 +426,7 @@ public class OnCallRolesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public OnCallRoleResponse getOnCallRole(@javax.annotation.Nonnull String id) throws ApiException {
+    public OnCallRoleResponse getOnCallRole(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<OnCallRoleResponse> localVarResp = getOnCallRoleWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -445,7 +445,7 @@ public class OnCallRolesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OnCallRoleResponse> getOnCallRoleWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<OnCallRoleResponse> getOnCallRoleWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getOnCallRoleValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<OnCallRoleResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -466,7 +466,7 @@ public class OnCallRolesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getOnCallRoleAsync(@javax.annotation.Nonnull String id, final ApiCallback<OnCallRoleResponse> _callback) throws ApiException {
+    public okhttp3.Call getOnCallRoleAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<OnCallRoleResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getOnCallRoleValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<OnCallRoleResponse>(){}.getType();
@@ -496,7 +496,7 @@ public class OnCallRolesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listOnCallRolesCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listOnCallRolesCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -585,7 +585,7 @@ public class OnCallRolesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listOnCallRolesValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listOnCallRolesValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         return listOnCallRolesCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
 
     }
@@ -613,7 +613,7 @@ public class OnCallRolesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public OnCallRoleList listOnCallRoles(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+    public OnCallRoleList listOnCallRoles(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
         ApiResponse<OnCallRoleList> localVarResp = listOnCallRolesWithHttpInfo(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
         return localVarResp.getData();
     }
@@ -641,7 +641,7 @@ public class OnCallRolesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OnCallRoleList> listOnCallRolesWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+    public ApiResponse<OnCallRoleList> listOnCallRolesWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
         okhttp3.Call localVarCall = listOnCallRolesValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, null);
         Type localVarReturnType = new TypeToken<OnCallRoleList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -671,7 +671,7 @@ public class OnCallRolesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listOnCallRolesAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback<OnCallRoleList> _callback) throws ApiException {
+    public okhttp3.Call listOnCallRolesAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback<OnCallRoleList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listOnCallRolesValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
         Type localVarReturnType = new TypeToken<OnCallRoleList>(){}.getType();
@@ -693,7 +693,7 @@ public class OnCallRolesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateOnCallRoleCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateOnCallRole updateOnCallRole, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateOnCallRoleCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateOnCallRole updateOnCallRole, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -740,7 +740,7 @@ public class OnCallRolesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateOnCallRoleValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateOnCallRole updateOnCallRole, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateOnCallRoleValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateOnCallRole updateOnCallRole, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateOnCallRole(Async)");
@@ -770,7 +770,7 @@ public class OnCallRolesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public OnCallRoleResponse updateOnCallRole(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateOnCallRole updateOnCallRole) throws ApiException {
+    public OnCallRoleResponse updateOnCallRole(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateOnCallRole updateOnCallRole) throws ApiException {
         ApiResponse<OnCallRoleResponse> localVarResp = updateOnCallRoleWithHttpInfo(id, updateOnCallRole);
         return localVarResp.getData();
     }
@@ -790,7 +790,7 @@ public class OnCallRolesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OnCallRoleResponse> updateOnCallRoleWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateOnCallRole updateOnCallRole) throws ApiException {
+    public ApiResponse<OnCallRoleResponse> updateOnCallRoleWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateOnCallRole updateOnCallRole) throws ApiException {
         okhttp3.Call localVarCall = updateOnCallRoleValidateBeforeCall(id, updateOnCallRole, null);
         Type localVarReturnType = new TypeToken<OnCallRoleResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -812,7 +812,7 @@ public class OnCallRolesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateOnCallRoleAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateOnCallRole updateOnCallRole, final ApiCallback<OnCallRoleResponse> _callback) throws ApiException {
+    public okhttp3.Call updateOnCallRoleAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateOnCallRole updateOnCallRole, final ApiCallback<OnCallRoleResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateOnCallRoleValidateBeforeCall(id, updateOnCallRole, _callback);
         Type localVarReturnType = new TypeToken<OnCallRoleResponse>(){}.getType();

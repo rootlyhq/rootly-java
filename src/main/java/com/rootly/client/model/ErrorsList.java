@@ -51,17 +51,17 @@ import com.rootly.client.JSON;
 /**
  * ErrorsList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ErrorsList {
   public static final String SERIALIZED_NAME_ERRORS = "errors";
   @SerializedName(SERIALIZED_NAME_ERRORS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<ErrorsListErrorsInner> errors = new ArrayList<>();
 
   public ErrorsList() {
   }
 
-  public ErrorsList errors(@javax.annotation.Nullable List<ErrorsListErrorsInner> errors) {
+  public ErrorsList errors(@jakarta.annotation.Nullable List<ErrorsListErrorsInner> errors) {
     this.errors = errors;
     return this;
   }
@@ -78,12 +78,12 @@ public class ErrorsList {
    * Get errors
    * @return errors
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<ErrorsListErrorsInner> getErrors() {
     return errors;
   }
 
-  public void setErrors(@javax.annotation.Nullable List<ErrorsListErrorsInner> errors) {
+  public void setErrors(@jakarta.annotation.Nullable List<ErrorsListErrorsInner> errors) {
     this.errors = errors;
   }
 

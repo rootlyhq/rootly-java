@@ -51,22 +51,22 @@ import com.rootly.client.JSON;
 /**
  * NewAlertRouteDataAttributesRulesInnerConditionGroupsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewAlertRouteDataAttributesRulesInnerConditionGroupsInner {
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public static final String SERIALIZED_NAME_CONDITIONS = "conditions";
   @SerializedName(SERIALIZED_NAME_CONDITIONS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditionsInner> conditions = new ArrayList<>();
 
   public NewAlertRouteDataAttributesRulesInnerConditionGroupsInner() {
   }
 
-  public NewAlertRouteDataAttributesRulesInnerConditionGroupsInner position(@javax.annotation.Nullable Integer position) {
+  public NewAlertRouteDataAttributesRulesInnerConditionGroupsInner position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -75,17 +75,17 @@ public class NewAlertRouteDataAttributesRulesInnerConditionGroupsInner {
    * The position of the condition group
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 
 
-  public NewAlertRouteDataAttributesRulesInnerConditionGroupsInner conditions(@javax.annotation.Nonnull List<NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditionsInner> conditions) {
+  public NewAlertRouteDataAttributesRulesInnerConditionGroupsInner conditions(@jakarta.annotation.Nonnull List<NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditionsInner> conditions) {
     this.conditions = conditions;
     return this;
   }
@@ -102,12 +102,12 @@ public class NewAlertRouteDataAttributesRulesInnerConditionGroupsInner {
    * Get conditions
    * @return conditions
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditionsInner> getConditions() {
     return conditions;
   }
 
-  public void setConditions(@javax.annotation.Nonnull List<NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditionsInner> conditions) {
+  public void setConditions(@jakarta.annotation.Nonnull List<NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditionsInner> conditions) {
     this.conditions = conditions;
   }
 

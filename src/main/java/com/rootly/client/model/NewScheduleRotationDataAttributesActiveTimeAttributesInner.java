@@ -48,22 +48,22 @@ import com.rootly.client.JSON;
 /**
  * NewScheduleRotationDataAttributesActiveTimeAttributesInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewScheduleRotationDataAttributesActiveTimeAttributesInner {
   public static final String SERIALIZED_NAME_START_TIME = "start_time";
   @SerializedName(SERIALIZED_NAME_START_TIME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String startTime;
 
   public static final String SERIALIZED_NAME_END_TIME = "end_time";
   @SerializedName(SERIALIZED_NAME_END_TIME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String endTime;
 
   public NewScheduleRotationDataAttributesActiveTimeAttributesInner() {
   }
 
-  public NewScheduleRotationDataAttributesActiveTimeAttributesInner startTime(@javax.annotation.Nonnull String startTime) {
+  public NewScheduleRotationDataAttributesActiveTimeAttributesInner startTime(@jakarta.annotation.Nonnull String startTime) {
     this.startTime = startTime;
     return this;
   }
@@ -72,17 +72,17 @@ public class NewScheduleRotationDataAttributesActiveTimeAttributesInner {
    * Start time for schedule rotation active time
    * @return startTime
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getStartTime() {
     return startTime;
   }
 
-  public void setStartTime(@javax.annotation.Nonnull String startTime) {
+  public void setStartTime(@jakarta.annotation.Nonnull String startTime) {
     this.startTime = startTime;
   }
 
 
-  public NewScheduleRotationDataAttributesActiveTimeAttributesInner endTime(@javax.annotation.Nonnull String endTime) {
+  public NewScheduleRotationDataAttributesActiveTimeAttributesInner endTime(@jakarta.annotation.Nonnull String endTime) {
     this.endTime = endTime;
     return this;
   }
@@ -91,12 +91,12 @@ public class NewScheduleRotationDataAttributesActiveTimeAttributesInner {
    * End time for schedule rotation active time
    * @return endTime
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getEndTime() {
     return endTime;
   }
 
-  public void setEndTime(@javax.annotation.Nonnull String endTime) {
+  public void setEndTime(@jakarta.annotation.Nonnull String endTime) {
     this.endTime = endTime;
   }
 

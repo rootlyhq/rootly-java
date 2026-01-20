@@ -48,11 +48,11 @@ import com.rootly.client.JSON;
 /**
  * V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequestAction
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequestAction {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String name;
 
   /**
@@ -109,18 +109,18 @@ public class V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequestAction {
 
   public static final String SERIALIZED_NAME_ACTION_TYPE = "action_type";
   @SerializedName(SERIALIZED_NAME_ACTION_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ActionTypeEnum actionType;
 
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Object metadata;
 
   public V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequestAction() {
   }
 
-  public V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequestAction name(@javax.annotation.Nullable String name) {
+  public V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequestAction name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -129,17 +129,17 @@ public class V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequestAction {
    * Get name
    * @return name
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequestAction actionType(@javax.annotation.Nullable ActionTypeEnum actionType) {
+  public V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequestAction actionType(@jakarta.annotation.Nullable ActionTypeEnum actionType) {
     this.actionType = actionType;
     return this;
   }
@@ -148,17 +148,17 @@ public class V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequestAction {
    * Get actionType
    * @return actionType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ActionTypeEnum getActionType() {
     return actionType;
   }
 
-  public void setActionType(@javax.annotation.Nullable ActionTypeEnum actionType) {
+  public void setActionType(@jakarta.annotation.Nullable ActionTypeEnum actionType) {
     this.actionType = actionType;
   }
 
 
-  public V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequestAction metadata(@javax.annotation.Nullable Object metadata) {
+  public V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequestAction metadata(@jakarta.annotation.Nullable Object metadata) {
     this.metadata = metadata;
     return this;
   }
@@ -167,12 +167,12 @@ public class V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequestAction {
    * Get metadata
    * @return metadata
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Object getMetadata() {
     return metadata;
   }
 
-  public void setMetadata(@javax.annotation.Nullable Object metadata) {
+  public void setMetadata(@jakarta.annotation.Nullable Object metadata) {
     this.metadata = metadata;
   }
 

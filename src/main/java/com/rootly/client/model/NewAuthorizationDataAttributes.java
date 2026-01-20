@@ -50,11 +50,11 @@ import com.rootly.client.JSON;
 /**
  * NewAuthorizationDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewAuthorizationDataAttributes {
   public static final String SERIALIZED_NAME_AUTHORIZABLE_ID = "authorizable_id";
   @SerializedName(SERIALIZED_NAME_AUTHORIZABLE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String authorizableId;
 
   /**
@@ -109,12 +109,12 @@ public class NewAuthorizationDataAttributes {
 
   public static final String SERIALIZED_NAME_AUTHORIZABLE_TYPE = "authorizable_type";
   @SerializedName(SERIALIZED_NAME_AUTHORIZABLE_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private AuthorizableTypeEnum authorizableType;
 
   public static final String SERIALIZED_NAME_GRANTEE_ID = "grantee_id";
   @SerializedName(SERIALIZED_NAME_GRANTEE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String granteeId;
 
   /**
@@ -171,7 +171,7 @@ public class NewAuthorizationDataAttributes {
 
   public static final String SERIALIZED_NAME_GRANTEE_TYPE = "grantee_type";
   @SerializedName(SERIALIZED_NAME_GRANTEE_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private GranteeTypeEnum granteeType;
 
   /**
@@ -232,13 +232,13 @@ public class NewAuthorizationDataAttributes {
 
   public static final String SERIALIZED_NAME_PERMISSIONS = "permissions";
   @SerializedName(SERIALIZED_NAME_PERMISSIONS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<PermissionsEnum> permissions = new ArrayList<>();
 
   public NewAuthorizationDataAttributes() {
   }
 
-  public NewAuthorizationDataAttributes authorizableId(@javax.annotation.Nonnull String authorizableId) {
+  public NewAuthorizationDataAttributes authorizableId(@jakarta.annotation.Nonnull String authorizableId) {
     this.authorizableId = authorizableId;
     return this;
   }
@@ -247,17 +247,17 @@ public class NewAuthorizationDataAttributes {
    * The id of the resource being accessed.
    * @return authorizableId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getAuthorizableId() {
     return authorizableId;
   }
 
-  public void setAuthorizableId(@javax.annotation.Nonnull String authorizableId) {
+  public void setAuthorizableId(@jakarta.annotation.Nonnull String authorizableId) {
     this.authorizableId = authorizableId;
   }
 
 
-  public NewAuthorizationDataAttributes authorizableType(@javax.annotation.Nonnull AuthorizableTypeEnum authorizableType) {
+  public NewAuthorizationDataAttributes authorizableType(@jakarta.annotation.Nonnull AuthorizableTypeEnum authorizableType) {
     this.authorizableType = authorizableType;
     return this;
   }
@@ -266,17 +266,17 @@ public class NewAuthorizationDataAttributes {
    * The type of resource being accessed.
    * @return authorizableType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public AuthorizableTypeEnum getAuthorizableType() {
     return authorizableType;
   }
 
-  public void setAuthorizableType(@javax.annotation.Nonnull AuthorizableTypeEnum authorizableType) {
+  public void setAuthorizableType(@jakarta.annotation.Nonnull AuthorizableTypeEnum authorizableType) {
     this.authorizableType = authorizableType;
   }
 
 
-  public NewAuthorizationDataAttributes granteeId(@javax.annotation.Nonnull String granteeId) {
+  public NewAuthorizationDataAttributes granteeId(@jakarta.annotation.Nonnull String granteeId) {
     this.granteeId = granteeId;
     return this;
   }
@@ -285,17 +285,17 @@ public class NewAuthorizationDataAttributes {
    * The resource id granted access.
    * @return granteeId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getGranteeId() {
     return granteeId;
   }
 
-  public void setGranteeId(@javax.annotation.Nonnull String granteeId) {
+  public void setGranteeId(@jakarta.annotation.Nonnull String granteeId) {
     this.granteeId = granteeId;
   }
 
 
-  public NewAuthorizationDataAttributes granteeType(@javax.annotation.Nonnull GranteeTypeEnum granteeType) {
+  public NewAuthorizationDataAttributes granteeType(@jakarta.annotation.Nonnull GranteeTypeEnum granteeType) {
     this.granteeType = granteeType;
     return this;
   }
@@ -304,17 +304,17 @@ public class NewAuthorizationDataAttributes {
    * The type of resource granted access.
    * @return granteeType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public GranteeTypeEnum getGranteeType() {
     return granteeType;
   }
 
-  public void setGranteeType(@javax.annotation.Nonnull GranteeTypeEnum granteeType) {
+  public void setGranteeType(@jakarta.annotation.Nonnull GranteeTypeEnum granteeType) {
     this.granteeType = granteeType;
   }
 
 
-  public NewAuthorizationDataAttributes permissions(@javax.annotation.Nonnull List<PermissionsEnum> permissions) {
+  public NewAuthorizationDataAttributes permissions(@jakarta.annotation.Nonnull List<PermissionsEnum> permissions) {
     this.permissions = permissions;
     return this;
   }
@@ -331,12 +331,12 @@ public class NewAuthorizationDataAttributes {
    * Get permissions
    * @return permissions
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<PermissionsEnum> getPermissions() {
     return permissions;
   }
 
-  public void setPermissions(@javax.annotation.Nonnull List<PermissionsEnum> permissions) {
+  public void setPermissions(@jakarta.annotation.Nonnull List<PermissionsEnum> permissions) {
     this.permissions = permissions;
   }
 

@@ -49,37 +49,37 @@ import com.rootly.client.JSON;
 /**
  * UpdateCommunicationsTemplateDataAttributesCommunicationTemplateStagesAttributesInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateCommunicationsTemplateDataAttributesCommunicationTemplateStagesAttributesInner {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_SMS_CONTENT = "sms_content";
   @SerializedName(SERIALIZED_NAME_SMS_CONTENT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String smsContent;
 
   public static final String SERIALIZED_NAME_EMAIL_SUBJECT = "email_subject";
   @SerializedName(SERIALIZED_NAME_EMAIL_SUBJECT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String emailSubject;
 
   public static final String SERIALIZED_NAME_EMAIL_BODY = "email_body";
   @SerializedName(SERIALIZED_NAME_EMAIL_BODY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String emailBody;
 
   public static final String SERIALIZED_NAME_SLACK_CONTENT = "slack_content";
   @SerializedName(SERIALIZED_NAME_SLACK_CONTENT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String slackContent;
 
   public UpdateCommunicationsTemplateDataAttributesCommunicationTemplateStagesAttributesInner() {
   }
 
-  public UpdateCommunicationsTemplateDataAttributesCommunicationTemplateStagesAttributesInner id(@javax.annotation.Nullable String id) {
+  public UpdateCommunicationsTemplateDataAttributesCommunicationTemplateStagesAttributesInner id(@jakarta.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -88,17 +88,17 @@ public class UpdateCommunicationsTemplateDataAttributesCommunicationTemplateStag
    * ID of the communication template stage
    * @return id
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getId() {
     return id;
   }
 
-  public void setId(@javax.annotation.Nullable String id) {
+  public void setId(@jakarta.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public UpdateCommunicationsTemplateDataAttributesCommunicationTemplateStagesAttributesInner smsContent(@javax.annotation.Nullable String smsContent) {
+  public UpdateCommunicationsTemplateDataAttributesCommunicationTemplateStagesAttributesInner smsContent(@jakarta.annotation.Nullable String smsContent) {
     this.smsContent = smsContent;
     return this;
   }
@@ -107,17 +107,17 @@ public class UpdateCommunicationsTemplateDataAttributesCommunicationTemplateStag
    * SMS content for the stage
    * @return smsContent
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSmsContent() {
     return smsContent;
   }
 
-  public void setSmsContent(@javax.annotation.Nullable String smsContent) {
+  public void setSmsContent(@jakarta.annotation.Nullable String smsContent) {
     this.smsContent = smsContent;
   }
 
 
-  public UpdateCommunicationsTemplateDataAttributesCommunicationTemplateStagesAttributesInner emailSubject(@javax.annotation.Nullable String emailSubject) {
+  public UpdateCommunicationsTemplateDataAttributesCommunicationTemplateStagesAttributesInner emailSubject(@jakarta.annotation.Nullable String emailSubject) {
     this.emailSubject = emailSubject;
     return this;
   }
@@ -126,17 +126,17 @@ public class UpdateCommunicationsTemplateDataAttributesCommunicationTemplateStag
    * Email subject for the stage
    * @return emailSubject
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getEmailSubject() {
     return emailSubject;
   }
 
-  public void setEmailSubject(@javax.annotation.Nullable String emailSubject) {
+  public void setEmailSubject(@jakarta.annotation.Nullable String emailSubject) {
     this.emailSubject = emailSubject;
   }
 
 
-  public UpdateCommunicationsTemplateDataAttributesCommunicationTemplateStagesAttributesInner emailBody(@javax.annotation.Nullable String emailBody) {
+  public UpdateCommunicationsTemplateDataAttributesCommunicationTemplateStagesAttributesInner emailBody(@jakarta.annotation.Nullable String emailBody) {
     this.emailBody = emailBody;
     return this;
   }
@@ -145,17 +145,17 @@ public class UpdateCommunicationsTemplateDataAttributesCommunicationTemplateStag
    * Email body for the stage
    * @return emailBody
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getEmailBody() {
     return emailBody;
   }
 
-  public void setEmailBody(@javax.annotation.Nullable String emailBody) {
+  public void setEmailBody(@jakarta.annotation.Nullable String emailBody) {
     this.emailBody = emailBody;
   }
 
 
-  public UpdateCommunicationsTemplateDataAttributesCommunicationTemplateStagesAttributesInner slackContent(@javax.annotation.Nullable String slackContent) {
+  public UpdateCommunicationsTemplateDataAttributesCommunicationTemplateStagesAttributesInner slackContent(@jakarta.annotation.Nullable String slackContent) {
     this.slackContent = slackContent;
     return this;
   }
@@ -164,12 +164,12 @@ public class UpdateCommunicationsTemplateDataAttributesCommunicationTemplateStag
    * Slack content for the stage
    * @return slackContent
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSlackContent() {
     return slackContent;
   }
 
-  public void setSlackContent(@javax.annotation.Nullable String slackContent) {
+  public void setSlackContent(@jakarta.annotation.Nullable String slackContent) {
     this.slackContent = slackContent;
   }
 

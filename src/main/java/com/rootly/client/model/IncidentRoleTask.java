@@ -49,21 +49,21 @@ import com.rootly.client.JSON;
 /**
  * IncidentRoleTask
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class IncidentRoleTask {
   public static final String SERIALIZED_NAME_INCIDENT_ROLE_ID = "incident_role_id";
   @SerializedName(SERIALIZED_NAME_INCIDENT_ROLE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String incidentRoleId;
 
   public static final String SERIALIZED_NAME_TASK = "task";
   @SerializedName(SERIALIZED_NAME_TASK)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String task;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   /**
@@ -122,23 +122,23 @@ public class IncidentRoleTask {
 
   public static final String SERIALIZED_NAME_PRIORITY = "priority";
   @SerializedName(SERIALIZED_NAME_PRIORITY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private PriorityEnum priority;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public IncidentRoleTask() {
   }
 
-  public IncidentRoleTask incidentRoleId(@javax.annotation.Nullable String incidentRoleId) {
+  public IncidentRoleTask incidentRoleId(@jakarta.annotation.Nullable String incidentRoleId) {
     this.incidentRoleId = incidentRoleId;
     return this;
   }
@@ -147,17 +147,17 @@ public class IncidentRoleTask {
    * Get incidentRoleId
    * @return incidentRoleId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getIncidentRoleId() {
     return incidentRoleId;
   }
 
-  public void setIncidentRoleId(@javax.annotation.Nullable String incidentRoleId) {
+  public void setIncidentRoleId(@jakarta.annotation.Nullable String incidentRoleId) {
     this.incidentRoleId = incidentRoleId;
   }
 
 
-  public IncidentRoleTask task(@javax.annotation.Nonnull String task) {
+  public IncidentRoleTask task(@jakarta.annotation.Nonnull String task) {
     this.task = task;
     return this;
   }
@@ -166,17 +166,17 @@ public class IncidentRoleTask {
    * The task of the incident task
    * @return task
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getTask() {
     return task;
   }
 
-  public void setTask(@javax.annotation.Nonnull String task) {
+  public void setTask(@jakarta.annotation.Nonnull String task) {
     this.task = task;
   }
 
 
-  public IncidentRoleTask description(@javax.annotation.Nullable String description) {
+  public IncidentRoleTask description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -185,17 +185,17 @@ public class IncidentRoleTask {
    * The description of incident task
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public IncidentRoleTask priority(@javax.annotation.Nullable PriorityEnum priority) {
+  public IncidentRoleTask priority(@jakarta.annotation.Nullable PriorityEnum priority) {
     this.priority = priority;
     return this;
   }
@@ -204,17 +204,17 @@ public class IncidentRoleTask {
    * The priority of the incident task
    * @return priority
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public PriorityEnum getPriority() {
     return priority;
   }
 
-  public void setPriority(@javax.annotation.Nullable PriorityEnum priority) {
+  public void setPriority(@jakarta.annotation.Nullable PriorityEnum priority) {
     this.priority = priority;
   }
 
 
-  public IncidentRoleTask createdAt(@javax.annotation.Nonnull String createdAt) {
+  public IncidentRoleTask createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -223,17 +223,17 @@ public class IncidentRoleTask {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public IncidentRoleTask updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public IncidentRoleTask updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -242,12 +242,12 @@ public class IncidentRoleTask {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

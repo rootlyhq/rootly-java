@@ -87,7 +87,7 @@ public class WebhooksDeliveriesApi {
         <tr><td> 200 </td><td> webhooks_delivery delivered </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deliverWebhooksDeliveryCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deliverWebhooksDeliveryCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -133,7 +133,7 @@ public class WebhooksDeliveriesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deliverWebhooksDeliveryValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deliverWebhooksDeliveryValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deliverWebhooksDelivery(Async)");
@@ -156,7 +156,7 @@ public class WebhooksDeliveriesApi {
         <tr><td> 200 </td><td> webhooks_delivery delivered </td><td>  -  </td></tr>
      </table>
      */
-    public WebhooksDeliveryResponse deliverWebhooksDelivery(@javax.annotation.Nonnull String id) throws ApiException {
+    public WebhooksDeliveryResponse deliverWebhooksDelivery(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<WebhooksDeliveryResponse> localVarResp = deliverWebhooksDeliveryWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -174,7 +174,7 @@ public class WebhooksDeliveriesApi {
         <tr><td> 200 </td><td> webhooks_delivery delivered </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebhooksDeliveryResponse> deliverWebhooksDeliveryWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<WebhooksDeliveryResponse> deliverWebhooksDeliveryWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deliverWebhooksDeliveryValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<WebhooksDeliveryResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -194,7 +194,7 @@ public class WebhooksDeliveriesApi {
         <tr><td> 200 </td><td> webhooks_delivery delivered </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deliverWebhooksDeliveryAsync(@javax.annotation.Nonnull String id, final ApiCallback<WebhooksDeliveryResponse> _callback) throws ApiException {
+    public okhttp3.Call deliverWebhooksDeliveryAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<WebhooksDeliveryResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deliverWebhooksDeliveryValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<WebhooksDeliveryResponse>(){}.getType();
@@ -215,7 +215,7 @@ public class WebhooksDeliveriesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWebhooksDeliveryCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getWebhooksDeliveryCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -261,7 +261,7 @@ public class WebhooksDeliveriesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getWebhooksDeliveryValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getWebhooksDeliveryValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getWebhooksDelivery(Async)");
@@ -285,7 +285,7 @@ public class WebhooksDeliveriesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public WebhooksDeliveryResponse getWebhooksDelivery(@javax.annotation.Nonnull String id) throws ApiException {
+    public WebhooksDeliveryResponse getWebhooksDelivery(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<WebhooksDeliveryResponse> localVarResp = getWebhooksDeliveryWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -304,7 +304,7 @@ public class WebhooksDeliveriesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebhooksDeliveryResponse> getWebhooksDeliveryWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<WebhooksDeliveryResponse> getWebhooksDeliveryWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getWebhooksDeliveryValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<WebhooksDeliveryResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -325,7 +325,7 @@ public class WebhooksDeliveriesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWebhooksDeliveryAsync(@javax.annotation.Nonnull String id, final ApiCallback<WebhooksDeliveryResponse> _callback) throws ApiException {
+    public okhttp3.Call getWebhooksDeliveryAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<WebhooksDeliveryResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getWebhooksDeliveryValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<WebhooksDeliveryResponse>(){}.getType();
@@ -348,7 +348,7 @@ public class WebhooksDeliveriesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listWebhooksDeliveriesCall(@javax.annotation.Nonnull String endpointId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listWebhooksDeliveriesCall(@jakarta.annotation.Nonnull String endpointId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -406,7 +406,7 @@ public class WebhooksDeliveriesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listWebhooksDeliveriesValidateBeforeCall(@javax.annotation.Nonnull String endpointId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listWebhooksDeliveriesValidateBeforeCall(@jakarta.annotation.Nonnull String endpointId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'endpointId' is set
         if (endpointId == null) {
             throw new ApiException("Missing the required parameter 'endpointId' when calling listWebhooksDeliveries(Async)");
@@ -432,7 +432,7 @@ public class WebhooksDeliveriesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public WebhooksDeliveryList listWebhooksDeliveries(@javax.annotation.Nonnull String endpointId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+    public WebhooksDeliveryList listWebhooksDeliveries(@jakarta.annotation.Nonnull String endpointId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
         ApiResponse<WebhooksDeliveryList> localVarResp = listWebhooksDeliveriesWithHttpInfo(endpointId, include, pageNumber, pageSize);
         return localVarResp.getData();
     }
@@ -453,7 +453,7 @@ public class WebhooksDeliveriesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebhooksDeliveryList> listWebhooksDeliveriesWithHttpInfo(@javax.annotation.Nonnull String endpointId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+    public ApiResponse<WebhooksDeliveryList> listWebhooksDeliveriesWithHttpInfo(@jakarta.annotation.Nonnull String endpointId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
         okhttp3.Call localVarCall = listWebhooksDeliveriesValidateBeforeCall(endpointId, include, pageNumber, pageSize, null);
         Type localVarReturnType = new TypeToken<WebhooksDeliveryList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -476,7 +476,7 @@ public class WebhooksDeliveriesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listWebhooksDeliveriesAsync(@javax.annotation.Nonnull String endpointId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback<WebhooksDeliveryList> _callback) throws ApiException {
+    public okhttp3.Call listWebhooksDeliveriesAsync(@jakarta.annotation.Nonnull String endpointId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback<WebhooksDeliveryList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listWebhooksDeliveriesValidateBeforeCall(endpointId, include, pageNumber, pageSize, _callback);
         Type localVarReturnType = new TypeToken<WebhooksDeliveryList>(){}.getType();

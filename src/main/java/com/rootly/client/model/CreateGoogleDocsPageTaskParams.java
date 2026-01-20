@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * CreateGoogleDocsPageTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateGoogleDocsPageTaskParams {
   /**
    * Gets or Sets taskType
@@ -103,53 +103,53 @@ public class CreateGoogleDocsPageTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_POST_MORTEM_TEMPLATE_ID = "post_mortem_template_id";
   @SerializedName(SERIALIZED_NAME_POST_MORTEM_TEMPLATE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String postMortemTemplateId;
 
   public static final String SERIALIZED_NAME_MARK_POST_MORTEM_AS_PUBLISHED = "mark_post_mortem_as_published";
   @SerializedName(SERIALIZED_NAME_MARK_POST_MORTEM_AS_PUBLISHED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean markPostMortemAsPublished = true;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String title;
 
   public static final String SERIALIZED_NAME_DRIVE = "drive";
   @SerializedName(SERIALIZED_NAME_DRIVE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AddActionItemTaskParamsPostToSlackChannelsInner drive;
 
   public static final String SERIALIZED_NAME_PARENT_FOLDER = "parent_folder";
   @SerializedName(SERIALIZED_NAME_PARENT_FOLDER)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AddActionItemTaskParamsPostToSlackChannelsInner parentFolder;
 
   public static final String SERIALIZED_NAME_CONTENT = "content";
   @SerializedName(SERIALIZED_NAME_CONTENT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String content;
 
   public static final String SERIALIZED_NAME_TEMPLATE_ID = "template_id";
   @SerializedName(SERIALIZED_NAME_TEMPLATE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String templateId;
 
   public static final String SERIALIZED_NAME_PERMISSIONS = "permissions";
   @SerializedName(SERIALIZED_NAME_PERMISSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String permissions;
 
   public CreateGoogleDocsPageTaskParams() {
   }
 
-  public CreateGoogleDocsPageTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public CreateGoogleDocsPageTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -158,17 +158,17 @@ public class CreateGoogleDocsPageTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public CreateGoogleDocsPageTaskParams postMortemTemplateId(@javax.annotation.Nullable String postMortemTemplateId) {
+  public CreateGoogleDocsPageTaskParams postMortemTemplateId(@jakarta.annotation.Nullable String postMortemTemplateId) {
     this.postMortemTemplateId = postMortemTemplateId;
     return this;
   }
@@ -177,17 +177,17 @@ public class CreateGoogleDocsPageTaskParams {
    * Retrospective template to use when creating page, if desired
    * @return postMortemTemplateId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPostMortemTemplateId() {
     return postMortemTemplateId;
   }
 
-  public void setPostMortemTemplateId(@javax.annotation.Nullable String postMortemTemplateId) {
+  public void setPostMortemTemplateId(@jakarta.annotation.Nullable String postMortemTemplateId) {
     this.postMortemTemplateId = postMortemTemplateId;
   }
 
 
-  public CreateGoogleDocsPageTaskParams markPostMortemAsPublished(@javax.annotation.Nullable Boolean markPostMortemAsPublished) {
+  public CreateGoogleDocsPageTaskParams markPostMortemAsPublished(@jakarta.annotation.Nullable Boolean markPostMortemAsPublished) {
     this.markPostMortemAsPublished = markPostMortemAsPublished;
     return this;
   }
@@ -196,17 +196,17 @@ public class CreateGoogleDocsPageTaskParams {
    * Get markPostMortemAsPublished
    * @return markPostMortemAsPublished
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getMarkPostMortemAsPublished() {
     return markPostMortemAsPublished;
   }
 
-  public void setMarkPostMortemAsPublished(@javax.annotation.Nullable Boolean markPostMortemAsPublished) {
+  public void setMarkPostMortemAsPublished(@jakarta.annotation.Nullable Boolean markPostMortemAsPublished) {
     this.markPostMortemAsPublished = markPostMortemAsPublished;
   }
 
 
-  public CreateGoogleDocsPageTaskParams title(@javax.annotation.Nonnull String title) {
+  public CreateGoogleDocsPageTaskParams title(@jakarta.annotation.Nonnull String title) {
     this.title = title;
     return this;
   }
@@ -215,17 +215,17 @@ public class CreateGoogleDocsPageTaskParams {
    * The page title
    * @return title
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nonnull String title) {
+  public void setTitle(@jakarta.annotation.Nonnull String title) {
     this.title = title;
   }
 
 
-  public CreateGoogleDocsPageTaskParams drive(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner drive) {
+  public CreateGoogleDocsPageTaskParams drive(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner drive) {
     this.drive = drive;
     return this;
   }
@@ -234,17 +234,17 @@ public class CreateGoogleDocsPageTaskParams {
    * Get drive
    * @return drive
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AddActionItemTaskParamsPostToSlackChannelsInner getDrive() {
     return drive;
   }
 
-  public void setDrive(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner drive) {
+  public void setDrive(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner drive) {
     this.drive = drive;
   }
 
 
-  public CreateGoogleDocsPageTaskParams parentFolder(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner parentFolder) {
+  public CreateGoogleDocsPageTaskParams parentFolder(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner parentFolder) {
     this.parentFolder = parentFolder;
     return this;
   }
@@ -253,17 +253,17 @@ public class CreateGoogleDocsPageTaskParams {
    * Get parentFolder
    * @return parentFolder
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AddActionItemTaskParamsPostToSlackChannelsInner getParentFolder() {
     return parentFolder;
   }
 
-  public void setParentFolder(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner parentFolder) {
+  public void setParentFolder(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner parentFolder) {
     this.parentFolder = parentFolder;
   }
 
 
-  public CreateGoogleDocsPageTaskParams content(@javax.annotation.Nullable String content) {
+  public CreateGoogleDocsPageTaskParams content(@jakarta.annotation.Nullable String content) {
     this.content = content;
     return this;
   }
@@ -272,17 +272,17 @@ public class CreateGoogleDocsPageTaskParams {
    * The page content
    * @return content
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getContent() {
     return content;
   }
 
-  public void setContent(@javax.annotation.Nullable String content) {
+  public void setContent(@jakarta.annotation.Nullable String content) {
     this.content = content;
   }
 
 
-  public CreateGoogleDocsPageTaskParams templateId(@javax.annotation.Nullable String templateId) {
+  public CreateGoogleDocsPageTaskParams templateId(@jakarta.annotation.Nullable String templateId) {
     this.templateId = templateId;
     return this;
   }
@@ -291,17 +291,17 @@ public class CreateGoogleDocsPageTaskParams {
    * The Google Doc file ID to use as a template
    * @return templateId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTemplateId() {
     return templateId;
   }
 
-  public void setTemplateId(@javax.annotation.Nullable String templateId) {
+  public void setTemplateId(@jakarta.annotation.Nullable String templateId) {
     this.templateId = templateId;
   }
 
 
-  public CreateGoogleDocsPageTaskParams permissions(@javax.annotation.Nullable String permissions) {
+  public CreateGoogleDocsPageTaskParams permissions(@jakarta.annotation.Nullable String permissions) {
     this.permissions = permissions;
     return this;
   }
@@ -310,12 +310,12 @@ public class CreateGoogleDocsPageTaskParams {
    * Page permissions JSON
    * @return permissions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPermissions() {
     return permissions;
   }
 
-  public void setPermissions(@javax.annotation.Nullable String permissions) {
+  public void setPermissions(@jakarta.annotation.Nullable String permissions) {
     this.permissions = permissions;
   }
 

@@ -92,7 +92,7 @@ public class EnvironmentsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createEnvironmentCall(@javax.annotation.Nonnull NewEnvironment newEnvironment, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createEnvironmentCall(@jakarta.annotation.Nonnull NewEnvironment newEnvironment, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -138,7 +138,7 @@ public class EnvironmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createEnvironmentValidateBeforeCall(@javax.annotation.Nonnull NewEnvironment newEnvironment, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createEnvironmentValidateBeforeCall(@jakarta.annotation.Nonnull NewEnvironment newEnvironment, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'newEnvironment' is set
         if (newEnvironment == null) {
             throw new ApiException("Missing the required parameter 'newEnvironment' when calling createEnvironment(Async)");
@@ -163,7 +163,7 @@ public class EnvironmentsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public EnvironmentResponse createEnvironment(@javax.annotation.Nonnull NewEnvironment newEnvironment) throws ApiException {
+    public EnvironmentResponse createEnvironment(@jakarta.annotation.Nonnull NewEnvironment newEnvironment) throws ApiException {
         ApiResponse<EnvironmentResponse> localVarResp = createEnvironmentWithHttpInfo(newEnvironment);
         return localVarResp.getData();
     }
@@ -183,7 +183,7 @@ public class EnvironmentsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<EnvironmentResponse> createEnvironmentWithHttpInfo(@javax.annotation.Nonnull NewEnvironment newEnvironment) throws ApiException {
+    public ApiResponse<EnvironmentResponse> createEnvironmentWithHttpInfo(@jakarta.annotation.Nonnull NewEnvironment newEnvironment) throws ApiException {
         okhttp3.Call localVarCall = createEnvironmentValidateBeforeCall(newEnvironment, null);
         Type localVarReturnType = new TypeToken<EnvironmentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -205,7 +205,7 @@ public class EnvironmentsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createEnvironmentAsync(@javax.annotation.Nonnull NewEnvironment newEnvironment, final ApiCallback<EnvironmentResponse> _callback) throws ApiException {
+    public okhttp3.Call createEnvironmentAsync(@jakarta.annotation.Nonnull NewEnvironment newEnvironment, final ApiCallback<EnvironmentResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createEnvironmentValidateBeforeCall(newEnvironment, _callback);
         Type localVarReturnType = new TypeToken<EnvironmentResponse>(){}.getType();
@@ -226,7 +226,7 @@ public class EnvironmentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteEnvironmentCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteEnvironmentCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -272,7 +272,7 @@ public class EnvironmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteEnvironmentValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteEnvironmentValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteEnvironment(Async)");
@@ -296,7 +296,7 @@ public class EnvironmentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public EnvironmentResponse deleteEnvironment(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public EnvironmentResponse deleteEnvironment(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<EnvironmentResponse> localVarResp = deleteEnvironmentWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -315,7 +315,7 @@ public class EnvironmentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<EnvironmentResponse> deleteEnvironmentWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public ApiResponse<EnvironmentResponse> deleteEnvironmentWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = deleteEnvironmentValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<EnvironmentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -336,7 +336,7 @@ public class EnvironmentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteEnvironmentAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<EnvironmentResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteEnvironmentAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<EnvironmentResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteEnvironmentValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<EnvironmentResponse>(){}.getType();
@@ -357,7 +357,7 @@ public class EnvironmentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getEnvironmentCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getEnvironmentCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -403,7 +403,7 @@ public class EnvironmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getEnvironmentValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getEnvironmentValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getEnvironment(Async)");
@@ -427,7 +427,7 @@ public class EnvironmentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public EnvironmentResponse getEnvironment(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public EnvironmentResponse getEnvironment(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<EnvironmentResponse> localVarResp = getEnvironmentWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -446,7 +446,7 @@ public class EnvironmentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<EnvironmentResponse> getEnvironmentWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public ApiResponse<EnvironmentResponse> getEnvironmentWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = getEnvironmentValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<EnvironmentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -467,7 +467,7 @@ public class EnvironmentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getEnvironmentAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<EnvironmentResponse> _callback) throws ApiException {
+    public okhttp3.Call getEnvironmentAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<EnvironmentResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getEnvironmentValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<EnvironmentResponse>(){}.getType();
@@ -498,7 +498,7 @@ public class EnvironmentsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listEnvironmentsCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterColor, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listEnvironmentsCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterColor, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -591,7 +591,7 @@ public class EnvironmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listEnvironmentsValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterColor, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listEnvironmentsValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterColor, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         return listEnvironmentsCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterColor, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
 
     }
@@ -620,7 +620,7 @@ public class EnvironmentsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public EnvironmentList listEnvironments(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterColor, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+    public EnvironmentList listEnvironments(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterColor, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
         ApiResponse<EnvironmentList> localVarResp = listEnvironmentsWithHttpInfo(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterColor, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
         return localVarResp.getData();
     }
@@ -649,7 +649,7 @@ public class EnvironmentsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<EnvironmentList> listEnvironmentsWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterColor, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+    public ApiResponse<EnvironmentList> listEnvironmentsWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterColor, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
         okhttp3.Call localVarCall = listEnvironmentsValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterColor, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, null);
         Type localVarReturnType = new TypeToken<EnvironmentList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -680,7 +680,7 @@ public class EnvironmentsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listEnvironmentsAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterColor, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback<EnvironmentList> _callback) throws ApiException {
+    public okhttp3.Call listEnvironmentsAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterColor, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback<EnvironmentList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listEnvironmentsValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterColor, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
         Type localVarReturnType = new TypeToken<EnvironmentList>(){}.getType();
@@ -702,7 +702,7 @@ public class EnvironmentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateEnvironmentCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateEnvironment updateEnvironment, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateEnvironmentCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateEnvironment updateEnvironment, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -749,7 +749,7 @@ public class EnvironmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateEnvironmentValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateEnvironment updateEnvironment, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateEnvironmentValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateEnvironment updateEnvironment, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateEnvironment(Async)");
@@ -779,7 +779,7 @@ public class EnvironmentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public EnvironmentResponse updateEnvironment(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateEnvironment updateEnvironment) throws ApiException {
+    public EnvironmentResponse updateEnvironment(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateEnvironment updateEnvironment) throws ApiException {
         ApiResponse<EnvironmentResponse> localVarResp = updateEnvironmentWithHttpInfo(id, updateEnvironment);
         return localVarResp.getData();
     }
@@ -799,7 +799,7 @@ public class EnvironmentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<EnvironmentResponse> updateEnvironmentWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateEnvironment updateEnvironment) throws ApiException {
+    public ApiResponse<EnvironmentResponse> updateEnvironmentWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateEnvironment updateEnvironment) throws ApiException {
         okhttp3.Call localVarCall = updateEnvironmentValidateBeforeCall(id, updateEnvironment, null);
         Type localVarReturnType = new TypeToken<EnvironmentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -821,7 +821,7 @@ public class EnvironmentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateEnvironmentAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateEnvironment updateEnvironment, final ApiCallback<EnvironmentResponse> _callback) throws ApiException {
+    public okhttp3.Call updateEnvironmentAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateEnvironment updateEnvironment, final ApiCallback<EnvironmentResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateEnvironmentValidateBeforeCall(id, updateEnvironment, _callback);
         Type localVarReturnType = new TypeToken<EnvironmentResponse>(){}.getType();

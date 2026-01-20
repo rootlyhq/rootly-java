@@ -49,17 +49,17 @@ import com.rootly.client.JSON;
 /**
  * UpdateScheduleRotationUser
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateScheduleRotationUser {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private UpdateScheduleRotationUserData data;
 
   public UpdateScheduleRotationUser() {
   }
 
-  public UpdateScheduleRotationUser data(@javax.annotation.Nonnull UpdateScheduleRotationUserData data) {
+  public UpdateScheduleRotationUser data(@jakarta.annotation.Nonnull UpdateScheduleRotationUserData data) {
     this.data = data;
     return this;
   }
@@ -68,12 +68,12 @@ public class UpdateScheduleRotationUser {
    * Get data
    * @return data
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public UpdateScheduleRotationUserData getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nonnull UpdateScheduleRotationUserData data) {
+  public void setData(@jakarta.annotation.Nonnull UpdateScheduleRotationUserData data) {
     this.data = data;
   }
 

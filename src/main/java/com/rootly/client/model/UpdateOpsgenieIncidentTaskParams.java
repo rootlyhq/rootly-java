@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateOpsgenieIncidentTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateOpsgenieIncidentTaskParams {
   /**
    * Gets or Sets taskType
@@ -103,22 +103,22 @@ public class UpdateOpsgenieIncidentTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_OPSGENIE_INCIDENT_ID = "opsgenie_incident_id";
   @SerializedName(SERIALIZED_NAME_OPSGENIE_INCIDENT_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String opsgenieIncidentId;
 
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String message;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   /**
@@ -179,7 +179,7 @@ public class UpdateOpsgenieIncidentTaskParams {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private StatusEnum status;
 
   /**
@@ -244,13 +244,13 @@ public class UpdateOpsgenieIncidentTaskParams {
 
   public static final String SERIALIZED_NAME_PRIORITY = "priority";
   @SerializedName(SERIALIZED_NAME_PRIORITY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private PriorityEnum priority;
 
   public UpdateOpsgenieIncidentTaskParams() {
   }
 
-  public UpdateOpsgenieIncidentTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public UpdateOpsgenieIncidentTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -259,17 +259,17 @@ public class UpdateOpsgenieIncidentTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public UpdateOpsgenieIncidentTaskParams opsgenieIncidentId(@javax.annotation.Nonnull String opsgenieIncidentId) {
+  public UpdateOpsgenieIncidentTaskParams opsgenieIncidentId(@jakarta.annotation.Nonnull String opsgenieIncidentId) {
     this.opsgenieIncidentId = opsgenieIncidentId;
     return this;
   }
@@ -278,17 +278,17 @@ public class UpdateOpsgenieIncidentTaskParams {
    * The Opsgenie incident ID, this can also be a Rootly incident variable ex. {{ incident.opsgenie_incident_id }}
    * @return opsgenieIncidentId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getOpsgenieIncidentId() {
     return opsgenieIncidentId;
   }
 
-  public void setOpsgenieIncidentId(@javax.annotation.Nonnull String opsgenieIncidentId) {
+  public void setOpsgenieIncidentId(@jakarta.annotation.Nonnull String opsgenieIncidentId) {
     this.opsgenieIncidentId = opsgenieIncidentId;
   }
 
 
-  public UpdateOpsgenieIncidentTaskParams message(@javax.annotation.Nullable String message) {
+  public UpdateOpsgenieIncidentTaskParams message(@jakarta.annotation.Nullable String message) {
     this.message = message;
     return this;
   }
@@ -297,17 +297,17 @@ public class UpdateOpsgenieIncidentTaskParams {
    * Message of the alert
    * @return message
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getMessage() {
     return message;
   }
 
-  public void setMessage(@javax.annotation.Nullable String message) {
+  public void setMessage(@jakarta.annotation.Nullable String message) {
     this.message = message;
   }
 
 
-  public UpdateOpsgenieIncidentTaskParams description(@javax.annotation.Nullable String description) {
+  public UpdateOpsgenieIncidentTaskParams description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -316,17 +316,17 @@ public class UpdateOpsgenieIncidentTaskParams {
    * Description field of the alert that is generally used to provide a detailed information about the alert
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UpdateOpsgenieIncidentTaskParams status(@javax.annotation.Nullable StatusEnum status) {
+  public UpdateOpsgenieIncidentTaskParams status(@jakarta.annotation.Nullable StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -335,17 +335,17 @@ public class UpdateOpsgenieIncidentTaskParams {
    * Get status
    * @return status
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nullable StatusEnum status) {
+  public void setStatus(@jakarta.annotation.Nullable StatusEnum status) {
     this.status = status;
   }
 
 
-  public UpdateOpsgenieIncidentTaskParams priority(@javax.annotation.Nullable PriorityEnum priority) {
+  public UpdateOpsgenieIncidentTaskParams priority(@jakarta.annotation.Nullable PriorityEnum priority) {
     this.priority = priority;
     return this;
   }
@@ -354,12 +354,12 @@ public class UpdateOpsgenieIncidentTaskParams {
    * Get priority
    * @return priority
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public PriorityEnum getPriority() {
     return priority;
   }
 
-  public void setPriority(@javax.annotation.Nullable PriorityEnum priority) {
+  public void setPriority(@jakarta.annotation.Nullable PriorityEnum priority) {
     this.priority = priority;
   }
 

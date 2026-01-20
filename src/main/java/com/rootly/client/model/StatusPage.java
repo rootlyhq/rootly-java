@@ -51,51 +51,51 @@ import com.rootly.client.JSON;
 /**
  * StatusPage
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class StatusPage {
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String title;
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String slug;
 
   public static final String SERIALIZED_NAME_PUBLIC_TITLE = "public_title";
   @SerializedName(SERIALIZED_NAME_PUBLIC_TITLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String publicTitle;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_PUBLIC_DESCRIPTION = "public_description";
   @SerializedName(SERIALIZED_NAME_PUBLIC_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String publicDescription;
 
   public static final String SERIALIZED_NAME_HEADER_COLOR = "header_color";
   @SerializedName(SERIALIZED_NAME_HEADER_COLOR)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String headerColor;
 
   public static final String SERIALIZED_NAME_FOOTER_COLOR = "footer_color";
   @SerializedName(SERIALIZED_NAME_FOOTER_COLOR)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String footerColor;
 
   public static final String SERIALIZED_NAME_ALLOW_SEARCH_ENGINE_INDEX = "allow_search_engine_index";
   @SerializedName(SERIALIZED_NAME_ALLOW_SEARCH_ENGINE_INDEX)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean allowSearchEngineIndex;
 
   public static final String SERIALIZED_NAME_SHOW_UPTIME = "show_uptime";
   @SerializedName(SERIALIZED_NAME_SHOW_UPTIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean showUptime;
 
   /**
@@ -154,17 +154,17 @@ public class StatusPage {
 
   public static final String SERIALIZED_NAME_SHOW_UPTIME_LAST_DAYS = "show_uptime_last_days";
   @SerializedName(SERIALIZED_NAME_SHOW_UPTIME_LAST_DAYS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ShowUptimeLastDaysEnum showUptimeLastDays;
 
   public static final String SERIALIZED_NAME_SUCCESS_MESSAGE = "success_message";
   @SerializedName(SERIALIZED_NAME_SUCCESS_MESSAGE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String successMessage;
 
   public static final String SERIALIZED_NAME_FAILURE_MESSAGE = "failure_message";
   @SerializedName(SERIALIZED_NAME_FAILURE_MESSAGE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String failureMessage;
 
   /**
@@ -223,38 +223,38 @@ public class StatusPage {
 
   public static final String SERIALIZED_NAME_AUTHENTICATION_METHOD = "authentication_method";
   @SerializedName(SERIALIZED_NAME_AUTHENTICATION_METHOD)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AuthenticationMethodEnum authenticationMethod = AuthenticationMethodEnum.NONE;
 
   public static final String SERIALIZED_NAME_AUTHENTICATION_ENABLED = "authentication_enabled";
   @Deprecated
   @SerializedName(SERIALIZED_NAME_AUTHENTICATION_ENABLED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean authenticationEnabled = false;
 
   public static final String SERIALIZED_NAME_AUTHENTICATION_PASSWORD = "authentication_password";
   @SerializedName(SERIALIZED_NAME_AUTHENTICATION_PASSWORD)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String authenticationPassword;
 
   public static final String SERIALIZED_NAME_SAML_IDP_SSO_SERVICE_URL = "saml_idp_sso_service_url";
   @SerializedName(SERIALIZED_NAME_SAML_IDP_SSO_SERVICE_URL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String samlIdpSsoServiceUrl;
 
   public static final String SERIALIZED_NAME_SAML_IDP_SLO_SERVICE_URL = "saml_idp_slo_service_url";
   @SerializedName(SERIALIZED_NAME_SAML_IDP_SLO_SERVICE_URL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String samlIdpSloServiceUrl;
 
   public static final String SERIALIZED_NAME_SAML_IDP_CERT = "saml_idp_cert";
   @SerializedName(SERIALIZED_NAME_SAML_IDP_CERT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String samlIdpCert;
 
   public static final String SERIALIZED_NAME_SAML_IDP_CERT_FINGERPRINT = "saml_idp_cert_fingerprint";
   @SerializedName(SERIALIZED_NAME_SAML_IDP_CERT_FINGERPRINT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String samlIdpCertFingerprint;
 
   /**
@@ -315,73 +315,73 @@ public class StatusPage {
 
   public static final String SERIALIZED_NAME_SAML_NAME_IDENTIFIER_FORMAT = "saml_name_identifier_format";
   @SerializedName(SERIALIZED_NAME_SAML_NAME_IDENTIFIER_FORMAT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private SamlNameIdentifierFormatEnum samlNameIdentifierFormat;
 
   public static final String SERIALIZED_NAME_WEBSITE_URL = "website_url";
   @SerializedName(SERIALIZED_NAME_WEBSITE_URL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String websiteUrl;
 
   public static final String SERIALIZED_NAME_WEBSITE_PRIVACY_URL = "website_privacy_url";
   @SerializedName(SERIALIZED_NAME_WEBSITE_PRIVACY_URL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String websitePrivacyUrl;
 
   public static final String SERIALIZED_NAME_WEBSITE_SUPPORT_URL = "website_support_url";
   @SerializedName(SERIALIZED_NAME_WEBSITE_SUPPORT_URL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String websiteSupportUrl;
 
   public static final String SERIALIZED_NAME_GA_TRACKING_ID = "ga_tracking_id";
   @SerializedName(SERIALIZED_NAME_GA_TRACKING_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String gaTrackingId;
 
   public static final String SERIALIZED_NAME_TIME_ZONE = "time_zone";
   @SerializedName(SERIALIZED_NAME_TIME_ZONE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String timeZone = "Etc/UTC";
 
   public static final String SERIALIZED_NAME_PUBLIC = "public";
   @SerializedName(SERIALIZED_NAME_PUBLIC)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean _public;
 
   public static final String SERIALIZED_NAME_SERVICE_IDS = "service_ids";
   @SerializedName(SERIALIZED_NAME_SERVICE_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> serviceIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_FUNCTIONALITY_IDS = "functionality_ids";
   @SerializedName(SERIALIZED_NAME_FUNCTIONALITY_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> functionalityIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_EXTERNAL_DOMAIN_NAMES = "external_domain_names";
   @SerializedName(SERIALIZED_NAME_EXTERNAL_DOMAIN_NAMES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> externalDomainNames = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public StatusPage() {
   }
 
-  public StatusPage title(@javax.annotation.Nonnull String title) {
+  public StatusPage title(@jakarta.annotation.Nonnull String title) {
     this.title = title;
     return this;
   }
@@ -390,17 +390,17 @@ public class StatusPage {
    * The title of the status page
    * @return title
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nonnull String title) {
+  public void setTitle(@jakarta.annotation.Nonnull String title) {
     this.title = title;
   }
 
 
-  public StatusPage slug(@javax.annotation.Nullable String slug) {
+  public StatusPage slug(@jakarta.annotation.Nullable String slug) {
     this.slug = slug;
     return this;
   }
@@ -409,17 +409,17 @@ public class StatusPage {
    * The slug of the status page
    * @return slug
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSlug() {
     return slug;
   }
 
-  public void setSlug(@javax.annotation.Nullable String slug) {
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
     this.slug = slug;
   }
 
 
-  public StatusPage publicTitle(@javax.annotation.Nullable String publicTitle) {
+  public StatusPage publicTitle(@jakarta.annotation.Nullable String publicTitle) {
     this.publicTitle = publicTitle;
     return this;
   }
@@ -428,17 +428,17 @@ public class StatusPage {
    * The public title of the status page
    * @return publicTitle
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPublicTitle() {
     return publicTitle;
   }
 
-  public void setPublicTitle(@javax.annotation.Nullable String publicTitle) {
+  public void setPublicTitle(@jakarta.annotation.Nullable String publicTitle) {
     this.publicTitle = publicTitle;
   }
 
 
-  public StatusPage description(@javax.annotation.Nullable String description) {
+  public StatusPage description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -447,17 +447,17 @@ public class StatusPage {
    * The description of the status page
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public StatusPage publicDescription(@javax.annotation.Nullable String publicDescription) {
+  public StatusPage publicDescription(@jakarta.annotation.Nullable String publicDescription) {
     this.publicDescription = publicDescription;
     return this;
   }
@@ -466,17 +466,17 @@ public class StatusPage {
    * The public description of the status page
    * @return publicDescription
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPublicDescription() {
     return publicDescription;
   }
 
-  public void setPublicDescription(@javax.annotation.Nullable String publicDescription) {
+  public void setPublicDescription(@jakarta.annotation.Nullable String publicDescription) {
     this.publicDescription = publicDescription;
   }
 
 
-  public StatusPage headerColor(@javax.annotation.Nullable String headerColor) {
+  public StatusPage headerColor(@jakarta.annotation.Nullable String headerColor) {
     this.headerColor = headerColor;
     return this;
   }
@@ -485,17 +485,17 @@ public class StatusPage {
    * The color of the header. Eg. \&quot;#0061F2\&quot;
    * @return headerColor
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getHeaderColor() {
     return headerColor;
   }
 
-  public void setHeaderColor(@javax.annotation.Nullable String headerColor) {
+  public void setHeaderColor(@jakarta.annotation.Nullable String headerColor) {
     this.headerColor = headerColor;
   }
 
 
-  public StatusPage footerColor(@javax.annotation.Nullable String footerColor) {
+  public StatusPage footerColor(@jakarta.annotation.Nullable String footerColor) {
     this.footerColor = footerColor;
     return this;
   }
@@ -504,17 +504,17 @@ public class StatusPage {
    * The color of the footer. Eg. \&quot;#1F2F41\&quot;
    * @return footerColor
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getFooterColor() {
     return footerColor;
   }
 
-  public void setFooterColor(@javax.annotation.Nullable String footerColor) {
+  public void setFooterColor(@jakarta.annotation.Nullable String footerColor) {
     this.footerColor = footerColor;
   }
 
 
-  public StatusPage allowSearchEngineIndex(@javax.annotation.Nullable Boolean allowSearchEngineIndex) {
+  public StatusPage allowSearchEngineIndex(@jakarta.annotation.Nullable Boolean allowSearchEngineIndex) {
     this.allowSearchEngineIndex = allowSearchEngineIndex;
     return this;
   }
@@ -523,17 +523,17 @@ public class StatusPage {
    * Allow search engines to include your public status page in search results
    * @return allowSearchEngineIndex
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getAllowSearchEngineIndex() {
     return allowSearchEngineIndex;
   }
 
-  public void setAllowSearchEngineIndex(@javax.annotation.Nullable Boolean allowSearchEngineIndex) {
+  public void setAllowSearchEngineIndex(@jakarta.annotation.Nullable Boolean allowSearchEngineIndex) {
     this.allowSearchEngineIndex = allowSearchEngineIndex;
   }
 
 
-  public StatusPage showUptime(@javax.annotation.Nullable Boolean showUptime) {
+  public StatusPage showUptime(@jakarta.annotation.Nullable Boolean showUptime) {
     this.showUptime = showUptime;
     return this;
   }
@@ -542,17 +542,17 @@ public class StatusPage {
    * Show uptime
    * @return showUptime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getShowUptime() {
     return showUptime;
   }
 
-  public void setShowUptime(@javax.annotation.Nullable Boolean showUptime) {
+  public void setShowUptime(@jakarta.annotation.Nullable Boolean showUptime) {
     this.showUptime = showUptime;
   }
 
 
-  public StatusPage showUptimeLastDays(@javax.annotation.Nullable ShowUptimeLastDaysEnum showUptimeLastDays) {
+  public StatusPage showUptimeLastDays(@jakarta.annotation.Nullable ShowUptimeLastDaysEnum showUptimeLastDays) {
     this.showUptimeLastDays = showUptimeLastDays;
     return this;
   }
@@ -561,17 +561,17 @@ public class StatusPage {
    * Show uptime over x days
    * @return showUptimeLastDays
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ShowUptimeLastDaysEnum getShowUptimeLastDays() {
     return showUptimeLastDays;
   }
 
-  public void setShowUptimeLastDays(@javax.annotation.Nullable ShowUptimeLastDaysEnum showUptimeLastDays) {
+  public void setShowUptimeLastDays(@jakarta.annotation.Nullable ShowUptimeLastDaysEnum showUptimeLastDays) {
     this.showUptimeLastDays = showUptimeLastDays;
   }
 
 
-  public StatusPage successMessage(@javax.annotation.Nullable String successMessage) {
+  public StatusPage successMessage(@jakarta.annotation.Nullable String successMessage) {
     this.successMessage = successMessage;
     return this;
   }
@@ -580,17 +580,17 @@ public class StatusPage {
    * Message showing when all components are operational
    * @return successMessage
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSuccessMessage() {
     return successMessage;
   }
 
-  public void setSuccessMessage(@javax.annotation.Nullable String successMessage) {
+  public void setSuccessMessage(@jakarta.annotation.Nullable String successMessage) {
     this.successMessage = successMessage;
   }
 
 
-  public StatusPage failureMessage(@javax.annotation.Nullable String failureMessage) {
+  public StatusPage failureMessage(@jakarta.annotation.Nullable String failureMessage) {
     this.failureMessage = failureMessage;
     return this;
   }
@@ -599,17 +599,17 @@ public class StatusPage {
    * Message showing when at least one component is not operational
    * @return failureMessage
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getFailureMessage() {
     return failureMessage;
   }
 
-  public void setFailureMessage(@javax.annotation.Nullable String failureMessage) {
+  public void setFailureMessage(@jakarta.annotation.Nullable String failureMessage) {
     this.failureMessage = failureMessage;
   }
 
 
-  public StatusPage authenticationMethod(@javax.annotation.Nullable AuthenticationMethodEnum authenticationMethod) {
+  public StatusPage authenticationMethod(@jakarta.annotation.Nullable AuthenticationMethodEnum authenticationMethod) {
     this.authenticationMethod = authenticationMethod;
     return this;
   }
@@ -618,18 +618,18 @@ public class StatusPage {
    * Authentication method
    * @return authenticationMethod
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AuthenticationMethodEnum getAuthenticationMethod() {
     return authenticationMethod;
   }
 
-  public void setAuthenticationMethod(@javax.annotation.Nullable AuthenticationMethodEnum authenticationMethod) {
+  public void setAuthenticationMethod(@jakarta.annotation.Nullable AuthenticationMethodEnum authenticationMethod) {
     this.authenticationMethod = authenticationMethod;
   }
 
 
   @Deprecated
-  public StatusPage authenticationEnabled(@javax.annotation.Nullable Boolean authenticationEnabled) {
+  public StatusPage authenticationEnabled(@jakarta.annotation.Nullable Boolean authenticationEnabled) {
     this.authenticationEnabled = authenticationEnabled;
     return this;
   }
@@ -640,18 +640,18 @@ public class StatusPage {
    * @deprecated
    */
   @Deprecated
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getAuthenticationEnabled() {
     return authenticationEnabled;
   }
 
   @Deprecated
-  public void setAuthenticationEnabled(@javax.annotation.Nullable Boolean authenticationEnabled) {
+  public void setAuthenticationEnabled(@jakarta.annotation.Nullable Boolean authenticationEnabled) {
     this.authenticationEnabled = authenticationEnabled;
   }
 
 
-  public StatusPage authenticationPassword(@javax.annotation.Nullable String authenticationPassword) {
+  public StatusPage authenticationPassword(@jakarta.annotation.Nullable String authenticationPassword) {
     this.authenticationPassword = authenticationPassword;
     return this;
   }
@@ -660,17 +660,17 @@ public class StatusPage {
    * Authentication password
    * @return authenticationPassword
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getAuthenticationPassword() {
     return authenticationPassword;
   }
 
-  public void setAuthenticationPassword(@javax.annotation.Nullable String authenticationPassword) {
+  public void setAuthenticationPassword(@jakarta.annotation.Nullable String authenticationPassword) {
     this.authenticationPassword = authenticationPassword;
   }
 
 
-  public StatusPage samlIdpSsoServiceUrl(@javax.annotation.Nullable String samlIdpSsoServiceUrl) {
+  public StatusPage samlIdpSsoServiceUrl(@jakarta.annotation.Nullable String samlIdpSsoServiceUrl) {
     this.samlIdpSsoServiceUrl = samlIdpSsoServiceUrl;
     return this;
   }
@@ -679,17 +679,17 @@ public class StatusPage {
    * SAML IdP SSO service URL
    * @return samlIdpSsoServiceUrl
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSamlIdpSsoServiceUrl() {
     return samlIdpSsoServiceUrl;
   }
 
-  public void setSamlIdpSsoServiceUrl(@javax.annotation.Nullable String samlIdpSsoServiceUrl) {
+  public void setSamlIdpSsoServiceUrl(@jakarta.annotation.Nullable String samlIdpSsoServiceUrl) {
     this.samlIdpSsoServiceUrl = samlIdpSsoServiceUrl;
   }
 
 
-  public StatusPage samlIdpSloServiceUrl(@javax.annotation.Nullable String samlIdpSloServiceUrl) {
+  public StatusPage samlIdpSloServiceUrl(@jakarta.annotation.Nullable String samlIdpSloServiceUrl) {
     this.samlIdpSloServiceUrl = samlIdpSloServiceUrl;
     return this;
   }
@@ -698,17 +698,17 @@ public class StatusPage {
    * SAML IdP SLO service URL
    * @return samlIdpSloServiceUrl
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSamlIdpSloServiceUrl() {
     return samlIdpSloServiceUrl;
   }
 
-  public void setSamlIdpSloServiceUrl(@javax.annotation.Nullable String samlIdpSloServiceUrl) {
+  public void setSamlIdpSloServiceUrl(@jakarta.annotation.Nullable String samlIdpSloServiceUrl) {
     this.samlIdpSloServiceUrl = samlIdpSloServiceUrl;
   }
 
 
-  public StatusPage samlIdpCert(@javax.annotation.Nullable String samlIdpCert) {
+  public StatusPage samlIdpCert(@jakarta.annotation.Nullable String samlIdpCert) {
     this.samlIdpCert = samlIdpCert;
     return this;
   }
@@ -717,17 +717,17 @@ public class StatusPage {
    * SAML IdP certificate
    * @return samlIdpCert
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSamlIdpCert() {
     return samlIdpCert;
   }
 
-  public void setSamlIdpCert(@javax.annotation.Nullable String samlIdpCert) {
+  public void setSamlIdpCert(@jakarta.annotation.Nullable String samlIdpCert) {
     this.samlIdpCert = samlIdpCert;
   }
 
 
-  public StatusPage samlIdpCertFingerprint(@javax.annotation.Nullable String samlIdpCertFingerprint) {
+  public StatusPage samlIdpCertFingerprint(@jakarta.annotation.Nullable String samlIdpCertFingerprint) {
     this.samlIdpCertFingerprint = samlIdpCertFingerprint;
     return this;
   }
@@ -736,17 +736,17 @@ public class StatusPage {
    * SAML IdP certificate fingerprint
    * @return samlIdpCertFingerprint
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSamlIdpCertFingerprint() {
     return samlIdpCertFingerprint;
   }
 
-  public void setSamlIdpCertFingerprint(@javax.annotation.Nullable String samlIdpCertFingerprint) {
+  public void setSamlIdpCertFingerprint(@jakarta.annotation.Nullable String samlIdpCertFingerprint) {
     this.samlIdpCertFingerprint = samlIdpCertFingerprint;
   }
 
 
-  public StatusPage samlNameIdentifierFormat(@javax.annotation.Nullable SamlNameIdentifierFormatEnum samlNameIdentifierFormat) {
+  public StatusPage samlNameIdentifierFormat(@jakarta.annotation.Nullable SamlNameIdentifierFormatEnum samlNameIdentifierFormat) {
     this.samlNameIdentifierFormat = samlNameIdentifierFormat;
     return this;
   }
@@ -755,17 +755,17 @@ public class StatusPage {
    * SAML name identifier format
    * @return samlNameIdentifierFormat
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public SamlNameIdentifierFormatEnum getSamlNameIdentifierFormat() {
     return samlNameIdentifierFormat;
   }
 
-  public void setSamlNameIdentifierFormat(@javax.annotation.Nullable SamlNameIdentifierFormatEnum samlNameIdentifierFormat) {
+  public void setSamlNameIdentifierFormat(@jakarta.annotation.Nullable SamlNameIdentifierFormatEnum samlNameIdentifierFormat) {
     this.samlNameIdentifierFormat = samlNameIdentifierFormat;
   }
 
 
-  public StatusPage websiteUrl(@javax.annotation.Nullable String websiteUrl) {
+  public StatusPage websiteUrl(@jakarta.annotation.Nullable String websiteUrl) {
     this.websiteUrl = websiteUrl;
     return this;
   }
@@ -774,17 +774,17 @@ public class StatusPage {
    * Website URL
    * @return websiteUrl
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getWebsiteUrl() {
     return websiteUrl;
   }
 
-  public void setWebsiteUrl(@javax.annotation.Nullable String websiteUrl) {
+  public void setWebsiteUrl(@jakarta.annotation.Nullable String websiteUrl) {
     this.websiteUrl = websiteUrl;
   }
 
 
-  public StatusPage websitePrivacyUrl(@javax.annotation.Nullable String websitePrivacyUrl) {
+  public StatusPage websitePrivacyUrl(@jakarta.annotation.Nullable String websitePrivacyUrl) {
     this.websitePrivacyUrl = websitePrivacyUrl;
     return this;
   }
@@ -793,17 +793,17 @@ public class StatusPage {
    * Website Privacy URL
    * @return websitePrivacyUrl
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getWebsitePrivacyUrl() {
     return websitePrivacyUrl;
   }
 
-  public void setWebsitePrivacyUrl(@javax.annotation.Nullable String websitePrivacyUrl) {
+  public void setWebsitePrivacyUrl(@jakarta.annotation.Nullable String websitePrivacyUrl) {
     this.websitePrivacyUrl = websitePrivacyUrl;
   }
 
 
-  public StatusPage websiteSupportUrl(@javax.annotation.Nullable String websiteSupportUrl) {
+  public StatusPage websiteSupportUrl(@jakarta.annotation.Nullable String websiteSupportUrl) {
     this.websiteSupportUrl = websiteSupportUrl;
     return this;
   }
@@ -812,17 +812,17 @@ public class StatusPage {
    * Website Support URL
    * @return websiteSupportUrl
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getWebsiteSupportUrl() {
     return websiteSupportUrl;
   }
 
-  public void setWebsiteSupportUrl(@javax.annotation.Nullable String websiteSupportUrl) {
+  public void setWebsiteSupportUrl(@jakarta.annotation.Nullable String websiteSupportUrl) {
     this.websiteSupportUrl = websiteSupportUrl;
   }
 
 
-  public StatusPage gaTrackingId(@javax.annotation.Nullable String gaTrackingId) {
+  public StatusPage gaTrackingId(@jakarta.annotation.Nullable String gaTrackingId) {
     this.gaTrackingId = gaTrackingId;
     return this;
   }
@@ -831,17 +831,17 @@ public class StatusPage {
    * Google Analytics tracking ID
    * @return gaTrackingId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getGaTrackingId() {
     return gaTrackingId;
   }
 
-  public void setGaTrackingId(@javax.annotation.Nullable String gaTrackingId) {
+  public void setGaTrackingId(@jakarta.annotation.Nullable String gaTrackingId) {
     this.gaTrackingId = gaTrackingId;
   }
 
 
-  public StatusPage timeZone(@javax.annotation.Nullable String timeZone) {
+  public StatusPage timeZone(@jakarta.annotation.Nullable String timeZone) {
     this.timeZone = timeZone;
     return this;
   }
@@ -850,17 +850,17 @@ public class StatusPage {
    * A valid IANA time zone name.
    * @return timeZone
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTimeZone() {
     return timeZone;
   }
 
-  public void setTimeZone(@javax.annotation.Nullable String timeZone) {
+  public void setTimeZone(@jakarta.annotation.Nullable String timeZone) {
     this.timeZone = timeZone;
   }
 
 
-  public StatusPage _public(@javax.annotation.Nullable Boolean _public) {
+  public StatusPage _public(@jakarta.annotation.Nullable Boolean _public) {
     this._public = _public;
     return this;
   }
@@ -869,17 +869,17 @@ public class StatusPage {
    * Make the status page accessible to the public
    * @return _public
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getPublic() {
     return _public;
   }
 
-  public void setPublic(@javax.annotation.Nullable Boolean _public) {
+  public void setPublic(@jakarta.annotation.Nullable Boolean _public) {
     this._public = _public;
   }
 
 
-  public StatusPage serviceIds(@javax.annotation.Nullable List<String> serviceIds) {
+  public StatusPage serviceIds(@jakarta.annotation.Nullable List<String> serviceIds) {
     this.serviceIds = serviceIds;
     return this;
   }
@@ -896,17 +896,17 @@ public class StatusPage {
    * Services attached to the status page
    * @return serviceIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getServiceIds() {
     return serviceIds;
   }
 
-  public void setServiceIds(@javax.annotation.Nullable List<String> serviceIds) {
+  public void setServiceIds(@jakarta.annotation.Nullable List<String> serviceIds) {
     this.serviceIds = serviceIds;
   }
 
 
-  public StatusPage functionalityIds(@javax.annotation.Nullable List<String> functionalityIds) {
+  public StatusPage functionalityIds(@jakarta.annotation.Nullable List<String> functionalityIds) {
     this.functionalityIds = functionalityIds;
     return this;
   }
@@ -923,17 +923,17 @@ public class StatusPage {
    * Functionalities attached to the status page
    * @return functionalityIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getFunctionalityIds() {
     return functionalityIds;
   }
 
-  public void setFunctionalityIds(@javax.annotation.Nullable List<String> functionalityIds) {
+  public void setFunctionalityIds(@jakarta.annotation.Nullable List<String> functionalityIds) {
     this.functionalityIds = functionalityIds;
   }
 
 
-  public StatusPage externalDomainNames(@javax.annotation.Nullable List<String> externalDomainNames) {
+  public StatusPage externalDomainNames(@jakarta.annotation.Nullable List<String> externalDomainNames) {
     this.externalDomainNames = externalDomainNames;
     return this;
   }
@@ -950,17 +950,17 @@ public class StatusPage {
    * External domain names attached to the status page
    * @return externalDomainNames
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getExternalDomainNames() {
     return externalDomainNames;
   }
 
-  public void setExternalDomainNames(@javax.annotation.Nullable List<String> externalDomainNames) {
+  public void setExternalDomainNames(@jakarta.annotation.Nullable List<String> externalDomainNames) {
     this.externalDomainNames = externalDomainNames;
   }
 
 
-  public StatusPage enabled(@javax.annotation.Nullable Boolean enabled) {
+  public StatusPage enabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -969,17 +969,17 @@ public class StatusPage {
    * Enabled / Disable the status page
    * @return enabled
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getEnabled() {
     return enabled;
   }
 
-  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
+  public void setEnabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public StatusPage createdAt(@javax.annotation.Nonnull String createdAt) {
+  public StatusPage createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -988,17 +988,17 @@ public class StatusPage {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public StatusPage updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public StatusPage updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -1007,12 +1007,12 @@ public class StatusPage {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

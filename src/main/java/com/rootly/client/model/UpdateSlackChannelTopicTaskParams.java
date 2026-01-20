@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateSlackChannelTopicTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateSlackChannelTopicTaskParams {
   /**
    * Gets or Sets taskType
@@ -103,23 +103,23 @@ public class UpdateSlackChannelTopicTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_CHANNEL = "channel";
   @SerializedName(SERIALIZED_NAME_CHANNEL)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private AddActionItemTaskParamsPostToSlackChannelsInner channel;
 
   public static final String SERIALIZED_NAME_TOPIC = "topic";
   @SerializedName(SERIALIZED_NAME_TOPIC)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String topic;
 
   public UpdateSlackChannelTopicTaskParams() {
   }
 
-  public UpdateSlackChannelTopicTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public UpdateSlackChannelTopicTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -128,17 +128,17 @@ public class UpdateSlackChannelTopicTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public UpdateSlackChannelTopicTaskParams channel(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner channel) {
+  public UpdateSlackChannelTopicTaskParams channel(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner channel) {
     this.channel = channel;
     return this;
   }
@@ -147,17 +147,17 @@ public class UpdateSlackChannelTopicTaskParams {
    * Get channel
    * @return channel
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public AddActionItemTaskParamsPostToSlackChannelsInner getChannel() {
     return channel;
   }
 
-  public void setChannel(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner channel) {
+  public void setChannel(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner channel) {
     this.channel = channel;
   }
 
 
-  public UpdateSlackChannelTopicTaskParams topic(@javax.annotation.Nonnull String topic) {
+  public UpdateSlackChannelTopicTaskParams topic(@jakarta.annotation.Nonnull String topic) {
     this.topic = topic;
     return this;
   }
@@ -166,12 +166,12 @@ public class UpdateSlackChannelTopicTaskParams {
    * Get topic
    * @return topic
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getTopic() {
     return topic;
   }
 
-  public void setTopic(@javax.annotation.Nonnull String topic) {
+  public void setTopic(@jakarta.annotation.Nonnull String topic) {
     this.topic = topic;
   }
 

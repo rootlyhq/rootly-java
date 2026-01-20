@@ -91,7 +91,7 @@ public class RetrospectiveProcessGroupsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createRetrospectiveProcessGroupCall(@javax.annotation.Nonnull String retrospectiveProcessId, @javax.annotation.Nonnull NewRetrospectiveProcessGroup newRetrospectiveProcessGroup, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createRetrospectiveProcessGroupCall(@jakarta.annotation.Nonnull String retrospectiveProcessId, @jakarta.annotation.Nonnull NewRetrospectiveProcessGroup newRetrospectiveProcessGroup, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -138,7 +138,7 @@ public class RetrospectiveProcessGroupsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createRetrospectiveProcessGroupValidateBeforeCall(@javax.annotation.Nonnull String retrospectiveProcessId, @javax.annotation.Nonnull NewRetrospectiveProcessGroup newRetrospectiveProcessGroup, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createRetrospectiveProcessGroupValidateBeforeCall(@jakarta.annotation.Nonnull String retrospectiveProcessId, @jakarta.annotation.Nonnull NewRetrospectiveProcessGroup newRetrospectiveProcessGroup, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'retrospectiveProcessId' is set
         if (retrospectiveProcessId == null) {
             throw new ApiException("Missing the required parameter 'retrospectiveProcessId' when calling createRetrospectiveProcessGroup(Async)");
@@ -168,7 +168,7 @@ public class RetrospectiveProcessGroupsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public RetrospectiveProcessGroupResponse createRetrospectiveProcessGroup(@javax.annotation.Nonnull String retrospectiveProcessId, @javax.annotation.Nonnull NewRetrospectiveProcessGroup newRetrospectiveProcessGroup) throws ApiException {
+    public RetrospectiveProcessGroupResponse createRetrospectiveProcessGroup(@jakarta.annotation.Nonnull String retrospectiveProcessId, @jakarta.annotation.Nonnull NewRetrospectiveProcessGroup newRetrospectiveProcessGroup) throws ApiException {
         ApiResponse<RetrospectiveProcessGroupResponse> localVarResp = createRetrospectiveProcessGroupWithHttpInfo(retrospectiveProcessId, newRetrospectiveProcessGroup);
         return localVarResp.getData();
     }
@@ -188,7 +188,7 @@ public class RetrospectiveProcessGroupsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RetrospectiveProcessGroupResponse> createRetrospectiveProcessGroupWithHttpInfo(@javax.annotation.Nonnull String retrospectiveProcessId, @javax.annotation.Nonnull NewRetrospectiveProcessGroup newRetrospectiveProcessGroup) throws ApiException {
+    public ApiResponse<RetrospectiveProcessGroupResponse> createRetrospectiveProcessGroupWithHttpInfo(@jakarta.annotation.Nonnull String retrospectiveProcessId, @jakarta.annotation.Nonnull NewRetrospectiveProcessGroup newRetrospectiveProcessGroup) throws ApiException {
         okhttp3.Call localVarCall = createRetrospectiveProcessGroupValidateBeforeCall(retrospectiveProcessId, newRetrospectiveProcessGroup, null);
         Type localVarReturnType = new TypeToken<RetrospectiveProcessGroupResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -210,7 +210,7 @@ public class RetrospectiveProcessGroupsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createRetrospectiveProcessGroupAsync(@javax.annotation.Nonnull String retrospectiveProcessId, @javax.annotation.Nonnull NewRetrospectiveProcessGroup newRetrospectiveProcessGroup, final ApiCallback<RetrospectiveProcessGroupResponse> _callback) throws ApiException {
+    public okhttp3.Call createRetrospectiveProcessGroupAsync(@jakarta.annotation.Nonnull String retrospectiveProcessId, @jakarta.annotation.Nonnull NewRetrospectiveProcessGroup newRetrospectiveProcessGroup, final ApiCallback<RetrospectiveProcessGroupResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createRetrospectiveProcessGroupValidateBeforeCall(retrospectiveProcessId, newRetrospectiveProcessGroup, _callback);
         Type localVarReturnType = new TypeToken<RetrospectiveProcessGroupResponse>(){}.getType();
@@ -231,7 +231,7 @@ public class RetrospectiveProcessGroupsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteRetrospectiveProcessGroupCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteRetrospectiveProcessGroupCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -277,7 +277,7 @@ public class RetrospectiveProcessGroupsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteRetrospectiveProcessGroupValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteRetrospectiveProcessGroupValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteRetrospectiveProcessGroup(Async)");
@@ -301,7 +301,7 @@ public class RetrospectiveProcessGroupsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public RetrospectiveProcessGroupResponse deleteRetrospectiveProcessGroup(@javax.annotation.Nonnull String id) throws ApiException {
+    public RetrospectiveProcessGroupResponse deleteRetrospectiveProcessGroup(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<RetrospectiveProcessGroupResponse> localVarResp = deleteRetrospectiveProcessGroupWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -320,7 +320,7 @@ public class RetrospectiveProcessGroupsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RetrospectiveProcessGroupResponse> deleteRetrospectiveProcessGroupWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<RetrospectiveProcessGroupResponse> deleteRetrospectiveProcessGroupWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteRetrospectiveProcessGroupValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<RetrospectiveProcessGroupResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -341,7 +341,7 @@ public class RetrospectiveProcessGroupsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteRetrospectiveProcessGroupAsync(@javax.annotation.Nonnull String id, final ApiCallback<RetrospectiveProcessGroupResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteRetrospectiveProcessGroupAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<RetrospectiveProcessGroupResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteRetrospectiveProcessGroupValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<RetrospectiveProcessGroupResponse>(){}.getType();
@@ -362,7 +362,7 @@ public class RetrospectiveProcessGroupsApi {
         <tr><td> 200 </td><td> sub_status found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRetrospectiveProcessGroupCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getRetrospectiveProcessGroupCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -412,7 +412,7 @@ public class RetrospectiveProcessGroupsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRetrospectiveProcessGroupValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getRetrospectiveProcessGroupValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getRetrospectiveProcessGroup(Async)");
@@ -436,7 +436,7 @@ public class RetrospectiveProcessGroupsApi {
         <tr><td> 200 </td><td> sub_status found </td><td>  -  </td></tr>
      </table>
      */
-    public RetrospectiveProcessGroupResponse getRetrospectiveProcessGroup(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include) throws ApiException {
+    public RetrospectiveProcessGroupResponse getRetrospectiveProcessGroup(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include) throws ApiException {
         ApiResponse<RetrospectiveProcessGroupResponse> localVarResp = getRetrospectiveProcessGroupWithHttpInfo(id, include);
         return localVarResp.getData();
     }
@@ -455,7 +455,7 @@ public class RetrospectiveProcessGroupsApi {
         <tr><td> 200 </td><td> sub_status found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RetrospectiveProcessGroupResponse> getRetrospectiveProcessGroupWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include) throws ApiException {
+    public ApiResponse<RetrospectiveProcessGroupResponse> getRetrospectiveProcessGroupWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include) throws ApiException {
         okhttp3.Call localVarCall = getRetrospectiveProcessGroupValidateBeforeCall(id, include, null);
         Type localVarReturnType = new TypeToken<RetrospectiveProcessGroupResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -476,7 +476,7 @@ public class RetrospectiveProcessGroupsApi {
         <tr><td> 200 </td><td> sub_status found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRetrospectiveProcessGroupAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include, final ApiCallback<RetrospectiveProcessGroupResponse> _callback) throws ApiException {
+    public okhttp3.Call getRetrospectiveProcessGroupAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include, final ApiCallback<RetrospectiveProcessGroupResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getRetrospectiveProcessGroupValidateBeforeCall(id, include, _callback);
         Type localVarReturnType = new TypeToken<RetrospectiveProcessGroupResponse>(){}.getType();
@@ -505,7 +505,7 @@ public class RetrospectiveProcessGroupsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listRetrospectiveProcessGroupsCall(@javax.annotation.Nonnull String retrospectiveProcessId, @javax.annotation.Nullable String include, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSubStatusId, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listRetrospectiveProcessGroupsCall(@jakarta.annotation.Nonnull String retrospectiveProcessId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSubStatusId, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -587,7 +587,7 @@ public class RetrospectiveProcessGroupsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listRetrospectiveProcessGroupsValidateBeforeCall(@javax.annotation.Nonnull String retrospectiveProcessId, @javax.annotation.Nullable String include, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSubStatusId, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listRetrospectiveProcessGroupsValidateBeforeCall(@jakarta.annotation.Nonnull String retrospectiveProcessId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSubStatusId, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'retrospectiveProcessId' is set
         if (retrospectiveProcessId == null) {
             throw new ApiException("Missing the required parameter 'retrospectiveProcessId' when calling listRetrospectiveProcessGroups(Async)");
@@ -619,7 +619,7 @@ public class RetrospectiveProcessGroupsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public RetrospectiveProcessGroupList listRetrospectiveProcessGroups(@javax.annotation.Nonnull String retrospectiveProcessId, @javax.annotation.Nullable String include, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSubStatusId, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte) throws ApiException {
+    public RetrospectiveProcessGroupList listRetrospectiveProcessGroups(@jakarta.annotation.Nonnull String retrospectiveProcessId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSubStatusId, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte) throws ApiException {
         ApiResponse<RetrospectiveProcessGroupList> localVarResp = listRetrospectiveProcessGroupsWithHttpInfo(retrospectiveProcessId, include, sort, pageNumber, pageSize, filterSubStatusId, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
         return localVarResp.getData();
     }
@@ -646,7 +646,7 @@ public class RetrospectiveProcessGroupsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RetrospectiveProcessGroupList> listRetrospectiveProcessGroupsWithHttpInfo(@javax.annotation.Nonnull String retrospectiveProcessId, @javax.annotation.Nullable String include, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSubStatusId, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte) throws ApiException {
+    public ApiResponse<RetrospectiveProcessGroupList> listRetrospectiveProcessGroupsWithHttpInfo(@jakarta.annotation.Nonnull String retrospectiveProcessId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSubStatusId, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte) throws ApiException {
         okhttp3.Call localVarCall = listRetrospectiveProcessGroupsValidateBeforeCall(retrospectiveProcessId, include, sort, pageNumber, pageSize, filterSubStatusId, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, null);
         Type localVarReturnType = new TypeToken<RetrospectiveProcessGroupList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -675,7 +675,7 @@ public class RetrospectiveProcessGroupsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listRetrospectiveProcessGroupsAsync(@javax.annotation.Nonnull String retrospectiveProcessId, @javax.annotation.Nullable String include, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSubStatusId, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback<RetrospectiveProcessGroupList> _callback) throws ApiException {
+    public okhttp3.Call listRetrospectiveProcessGroupsAsync(@jakarta.annotation.Nonnull String retrospectiveProcessId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSubStatusId, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback<RetrospectiveProcessGroupList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listRetrospectiveProcessGroupsValidateBeforeCall(retrospectiveProcessId, include, sort, pageNumber, pageSize, filterSubStatusId, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, _callback);
         Type localVarReturnType = new TypeToken<RetrospectiveProcessGroupList>(){}.getType();
@@ -696,7 +696,7 @@ public class RetrospectiveProcessGroupsApi {
         <tr><td> 200 </td><td> retrospective_process_group updated </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateRetrospectiveProcessGroupCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateRetrospectiveProcessGroup updateRetrospectiveProcessGroup, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateRetrospectiveProcessGroupCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateRetrospectiveProcessGroup updateRetrospectiveProcessGroup, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -743,7 +743,7 @@ public class RetrospectiveProcessGroupsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateRetrospectiveProcessGroupValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateRetrospectiveProcessGroup updateRetrospectiveProcessGroup, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateRetrospectiveProcessGroupValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateRetrospectiveProcessGroup updateRetrospectiveProcessGroup, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateRetrospectiveProcessGroup(Async)");
@@ -772,7 +772,7 @@ public class RetrospectiveProcessGroupsApi {
         <tr><td> 200 </td><td> retrospective_process_group updated </td><td>  -  </td></tr>
      </table>
      */
-    public RetrospectiveProcessGroupResponse updateRetrospectiveProcessGroup(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateRetrospectiveProcessGroup updateRetrospectiveProcessGroup) throws ApiException {
+    public RetrospectiveProcessGroupResponse updateRetrospectiveProcessGroup(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateRetrospectiveProcessGroup updateRetrospectiveProcessGroup) throws ApiException {
         ApiResponse<RetrospectiveProcessGroupResponse> localVarResp = updateRetrospectiveProcessGroupWithHttpInfo(id, updateRetrospectiveProcessGroup);
         return localVarResp.getData();
     }
@@ -791,7 +791,7 @@ public class RetrospectiveProcessGroupsApi {
         <tr><td> 200 </td><td> retrospective_process_group updated </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<RetrospectiveProcessGroupResponse> updateRetrospectiveProcessGroupWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateRetrospectiveProcessGroup updateRetrospectiveProcessGroup) throws ApiException {
+    public ApiResponse<RetrospectiveProcessGroupResponse> updateRetrospectiveProcessGroupWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateRetrospectiveProcessGroup updateRetrospectiveProcessGroup) throws ApiException {
         okhttp3.Call localVarCall = updateRetrospectiveProcessGroupValidateBeforeCall(id, updateRetrospectiveProcessGroup, null);
         Type localVarReturnType = new TypeToken<RetrospectiveProcessGroupResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -812,7 +812,7 @@ public class RetrospectiveProcessGroupsApi {
         <tr><td> 200 </td><td> retrospective_process_group updated </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateRetrospectiveProcessGroupAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateRetrospectiveProcessGroup updateRetrospectiveProcessGroup, final ApiCallback<RetrospectiveProcessGroupResponse> _callback) throws ApiException {
+    public okhttp3.Call updateRetrospectiveProcessGroupAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateRetrospectiveProcessGroup updateRetrospectiveProcessGroup, final ApiCallback<RetrospectiveProcessGroupResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateRetrospectiveProcessGroupValidateBeforeCall(id, updateRetrospectiveProcessGroup, _callback);
         Type localVarReturnType = new TypeToken<RetrospectiveProcessGroupResponse>(){}.getType();

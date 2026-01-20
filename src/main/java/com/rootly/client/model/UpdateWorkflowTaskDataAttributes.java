@@ -49,37 +49,37 @@ import com.rootly.client.JSON;
 /**
  * UpdateWorkflowTaskDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateWorkflowTaskDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public static final String SERIALIZED_NAME_SKIP_ON_FAILURE = "skip_on_failure";
   @SerializedName(SERIALIZED_NAME_SKIP_ON_FAILURE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean skipOnFailure;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean enabled = true;
 
   public static final String SERIALIZED_NAME_TASK_PARAMS = "task_params";
   @SerializedName(SERIALIZED_NAME_TASK_PARAMS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private UpdateWorkflowTaskDataAttributesTaskParams taskParams;
 
   public UpdateWorkflowTaskDataAttributes() {
   }
 
-  public UpdateWorkflowTaskDataAttributes name(@javax.annotation.Nullable String name) {
+  public UpdateWorkflowTaskDataAttributes name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -88,17 +88,17 @@ public class UpdateWorkflowTaskDataAttributes {
    * Name of the workflow task
    * @return name
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public UpdateWorkflowTaskDataAttributes position(@javax.annotation.Nullable Integer position) {
+  public UpdateWorkflowTaskDataAttributes position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -107,17 +107,17 @@ public class UpdateWorkflowTaskDataAttributes {
    * The position of the workflow task
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 
 
-  public UpdateWorkflowTaskDataAttributes skipOnFailure(@javax.annotation.Nullable Boolean skipOnFailure) {
+  public UpdateWorkflowTaskDataAttributes skipOnFailure(@jakarta.annotation.Nullable Boolean skipOnFailure) {
     this.skipOnFailure = skipOnFailure;
     return this;
   }
@@ -126,17 +126,17 @@ public class UpdateWorkflowTaskDataAttributes {
    * Skip workflow task if any failures
    * @return skipOnFailure
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getSkipOnFailure() {
     return skipOnFailure;
   }
 
-  public void setSkipOnFailure(@javax.annotation.Nullable Boolean skipOnFailure) {
+  public void setSkipOnFailure(@jakarta.annotation.Nullable Boolean skipOnFailure) {
     this.skipOnFailure = skipOnFailure;
   }
 
 
-  public UpdateWorkflowTaskDataAttributes enabled(@javax.annotation.Nullable Boolean enabled) {
+  public UpdateWorkflowTaskDataAttributes enabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -145,17 +145,17 @@ public class UpdateWorkflowTaskDataAttributes {
    * Enable/disable workflow task
    * @return enabled
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getEnabled() {
     return enabled;
   }
 
-  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
+  public void setEnabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public UpdateWorkflowTaskDataAttributes taskParams(@javax.annotation.Nullable UpdateWorkflowTaskDataAttributesTaskParams taskParams) {
+  public UpdateWorkflowTaskDataAttributes taskParams(@jakarta.annotation.Nullable UpdateWorkflowTaskDataAttributesTaskParams taskParams) {
     this.taskParams = taskParams;
     return this;
   }
@@ -164,12 +164,12 @@ public class UpdateWorkflowTaskDataAttributes {
    * Get taskParams
    * @return taskParams
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public UpdateWorkflowTaskDataAttributesTaskParams getTaskParams() {
     return taskParams;
   }
 
-  public void setTaskParams(@javax.annotation.Nullable UpdateWorkflowTaskDataAttributesTaskParams taskParams) {
+  public void setTaskParams(@jakarta.annotation.Nullable UpdateWorkflowTaskDataAttributesTaskParams taskParams) {
     this.taskParams = taskParams;
   }
 

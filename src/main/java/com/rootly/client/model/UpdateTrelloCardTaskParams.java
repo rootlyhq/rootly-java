@@ -54,7 +54,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateTrelloCardTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateTrelloCardTaskParams {
   /**
    * Gets or Sets taskType
@@ -108,53 +108,53 @@ public class UpdateTrelloCardTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_CARD_ID = "card_id";
   @SerializedName(SERIALIZED_NAME_CARD_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String cardId;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String title;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_DUE_DATE = "due_date";
   @SerializedName(SERIALIZED_NAME_DUE_DATE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String dueDate;
 
   public static final String SERIALIZED_NAME_BOARD = "board";
   @SerializedName(SERIALIZED_NAME_BOARD)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CreateTrelloCardTaskParamsBoard board;
 
   public static final String SERIALIZED_NAME_LIST = "list";
   @SerializedName(SERIALIZED_NAME_LIST)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CreateTrelloCardTaskParamsList _list;
 
   public static final String SERIALIZED_NAME_LABELS = "labels";
   @SerializedName(SERIALIZED_NAME_LABELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AddActionItemTaskParamsPostToSlackChannelsInner> labels = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ARCHIVATION = "archivation";
   @SerializedName(SERIALIZED_NAME_ARCHIVATION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private CreateTrelloCardTaskParamsArchivation archivation;
 
   public UpdateTrelloCardTaskParams() {
   }
 
-  public UpdateTrelloCardTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public UpdateTrelloCardTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -163,17 +163,17 @@ public class UpdateTrelloCardTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public UpdateTrelloCardTaskParams cardId(@javax.annotation.Nonnull String cardId) {
+  public UpdateTrelloCardTaskParams cardId(@jakarta.annotation.Nonnull String cardId) {
     this.cardId = cardId;
     return this;
   }
@@ -182,17 +182,17 @@ public class UpdateTrelloCardTaskParams {
    * The card id
    * @return cardId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCardId() {
     return cardId;
   }
 
-  public void setCardId(@javax.annotation.Nonnull String cardId) {
+  public void setCardId(@jakarta.annotation.Nonnull String cardId) {
     this.cardId = cardId;
   }
 
 
-  public UpdateTrelloCardTaskParams title(@javax.annotation.Nullable String title) {
+  public UpdateTrelloCardTaskParams title(@jakarta.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
@@ -201,17 +201,17 @@ public class UpdateTrelloCardTaskParams {
    * The card title
    * @return title
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nullable String title) {
+  public void setTitle(@jakarta.annotation.Nullable String title) {
     this.title = title;
   }
 
 
-  public UpdateTrelloCardTaskParams description(@javax.annotation.Nullable String description) {
+  public UpdateTrelloCardTaskParams description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -220,17 +220,17 @@ public class UpdateTrelloCardTaskParams {
    * The card description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UpdateTrelloCardTaskParams dueDate(@javax.annotation.Nullable String dueDate) {
+  public UpdateTrelloCardTaskParams dueDate(@jakarta.annotation.Nullable String dueDate) {
     this.dueDate = dueDate;
     return this;
   }
@@ -239,17 +239,17 @@ public class UpdateTrelloCardTaskParams {
    * The due date
    * @return dueDate
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDueDate() {
     return dueDate;
   }
 
-  public void setDueDate(@javax.annotation.Nullable String dueDate) {
+  public void setDueDate(@jakarta.annotation.Nullable String dueDate) {
     this.dueDate = dueDate;
   }
 
 
-  public UpdateTrelloCardTaskParams board(@javax.annotation.Nullable CreateTrelloCardTaskParamsBoard board) {
+  public UpdateTrelloCardTaskParams board(@jakarta.annotation.Nullable CreateTrelloCardTaskParamsBoard board) {
     this.board = board;
     return this;
   }
@@ -258,17 +258,17 @@ public class UpdateTrelloCardTaskParams {
    * Get board
    * @return board
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CreateTrelloCardTaskParamsBoard getBoard() {
     return board;
   }
 
-  public void setBoard(@javax.annotation.Nullable CreateTrelloCardTaskParamsBoard board) {
+  public void setBoard(@jakarta.annotation.Nullable CreateTrelloCardTaskParamsBoard board) {
     this.board = board;
   }
 
 
-  public UpdateTrelloCardTaskParams _list(@javax.annotation.Nullable CreateTrelloCardTaskParamsList _list) {
+  public UpdateTrelloCardTaskParams _list(@jakarta.annotation.Nullable CreateTrelloCardTaskParamsList _list) {
     this._list = _list;
     return this;
   }
@@ -277,17 +277,17 @@ public class UpdateTrelloCardTaskParams {
    * Get _list
    * @return _list
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CreateTrelloCardTaskParamsList getList() {
     return _list;
   }
 
-  public void setList(@javax.annotation.Nullable CreateTrelloCardTaskParamsList _list) {
+  public void setList(@jakarta.annotation.Nullable CreateTrelloCardTaskParamsList _list) {
     this._list = _list;
   }
 
 
-  public UpdateTrelloCardTaskParams labels(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> labels) {
+  public UpdateTrelloCardTaskParams labels(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> labels) {
     this.labels = labels;
     return this;
   }
@@ -304,17 +304,17 @@ public class UpdateTrelloCardTaskParams {
    * Get labels
    * @return labels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AddActionItemTaskParamsPostToSlackChannelsInner> getLabels() {
     return labels;
   }
 
-  public void setLabels(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> labels) {
+  public void setLabels(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> labels) {
     this.labels = labels;
   }
 
 
-  public UpdateTrelloCardTaskParams archivation(@javax.annotation.Nonnull CreateTrelloCardTaskParamsArchivation archivation) {
+  public UpdateTrelloCardTaskParams archivation(@jakarta.annotation.Nonnull CreateTrelloCardTaskParamsArchivation archivation) {
     this.archivation = archivation;
     return this;
   }
@@ -323,12 +323,12 @@ public class UpdateTrelloCardTaskParams {
    * Get archivation
    * @return archivation
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public CreateTrelloCardTaskParamsArchivation getArchivation() {
     return archivation;
   }
 
-  public void setArchivation(@javax.annotation.Nonnull CreateTrelloCardTaskParamsArchivation archivation) {
+  public void setArchivation(@jakarta.annotation.Nonnull CreateTrelloCardTaskParamsArchivation archivation) {
     this.archivation = archivation;
   }
 

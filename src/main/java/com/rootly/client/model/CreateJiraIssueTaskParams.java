@@ -53,7 +53,7 @@ import com.rootly.client.JSON;
 /**
  * CreateJiraIssueTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateJiraIssueTaskParams {
   /**
    * Gets or Sets taskType
@@ -107,78 +107,78 @@ public class CreateJiraIssueTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_INTEGRATION = "integration";
   @SerializedName(SERIALIZED_NAME_INTEGRATION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CreateJiraIssueTaskParamsIntegration integration;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String title;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_LABELS = "labels";
   @SerializedName(SERIALIZED_NAME_LABELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String labels;
 
   public static final String SERIALIZED_NAME_ASSIGN_USER_EMAIL = "assign_user_email";
   @SerializedName(SERIALIZED_NAME_ASSIGN_USER_EMAIL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String assignUserEmail;
 
   public static final String SERIALIZED_NAME_REPORTER_USER_EMAIL = "reporter_user_email";
   @SerializedName(SERIALIZED_NAME_REPORTER_USER_EMAIL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String reporterUserEmail;
 
   public static final String SERIALIZED_NAME_PROJECT_KEY = "project_key";
   @SerializedName(SERIALIZED_NAME_PROJECT_KEY)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String projectKey;
 
   public static final String SERIALIZED_NAME_DUE_DATE = "due_date";
   @SerializedName(SERIALIZED_NAME_DUE_DATE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String dueDate;
 
   public static final String SERIALIZED_NAME_ISSUE_TYPE = "issue_type";
   @SerializedName(SERIALIZED_NAME_ISSUE_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private CreateJiraIssueTaskParamsIssueType issueType;
 
   public static final String SERIALIZED_NAME_PRIORITY = "priority";
   @SerializedName(SERIALIZED_NAME_PRIORITY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CreateJiraIssueTaskParamsPriority priority;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CreateJiraIssueTaskParamsStatus status;
 
   public static final String SERIALIZED_NAME_CUSTOM_FIELDS_MAPPING = "custom_fields_mapping";
   @SerializedName(SERIALIZED_NAME_CUSTOM_FIELDS_MAPPING)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String customFieldsMapping;
 
   public static final String SERIALIZED_NAME_UPDATE_PAYLOAD = "update_payload";
   @SerializedName(SERIALIZED_NAME_UPDATE_PAYLOAD)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String updatePayload;
 
   public CreateJiraIssueTaskParams() {
   }
 
-  public CreateJiraIssueTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public CreateJiraIssueTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -187,17 +187,17 @@ public class CreateJiraIssueTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public CreateJiraIssueTaskParams integration(@javax.annotation.Nullable CreateJiraIssueTaskParamsIntegration integration) {
+  public CreateJiraIssueTaskParams integration(@jakarta.annotation.Nullable CreateJiraIssueTaskParamsIntegration integration) {
     this.integration = integration;
     return this;
   }
@@ -206,17 +206,17 @@ public class CreateJiraIssueTaskParams {
    * Get integration
    * @return integration
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CreateJiraIssueTaskParamsIntegration getIntegration() {
     return integration;
   }
 
-  public void setIntegration(@javax.annotation.Nullable CreateJiraIssueTaskParamsIntegration integration) {
+  public void setIntegration(@jakarta.annotation.Nullable CreateJiraIssueTaskParamsIntegration integration) {
     this.integration = integration;
   }
 
 
-  public CreateJiraIssueTaskParams title(@javax.annotation.Nonnull String title) {
+  public CreateJiraIssueTaskParams title(@jakarta.annotation.Nonnull String title) {
     this.title = title;
     return this;
   }
@@ -225,17 +225,17 @@ public class CreateJiraIssueTaskParams {
    * The issue title
    * @return title
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nonnull String title) {
+  public void setTitle(@jakarta.annotation.Nonnull String title) {
     this.title = title;
   }
 
 
-  public CreateJiraIssueTaskParams description(@javax.annotation.Nullable String description) {
+  public CreateJiraIssueTaskParams description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -244,17 +244,17 @@ public class CreateJiraIssueTaskParams {
    * The issue description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public CreateJiraIssueTaskParams labels(@javax.annotation.Nullable String labels) {
+  public CreateJiraIssueTaskParams labels(@jakarta.annotation.Nullable String labels) {
     this.labels = labels;
     return this;
   }
@@ -263,17 +263,17 @@ public class CreateJiraIssueTaskParams {
    * The issue labels
    * @return labels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getLabels() {
     return labels;
   }
 
-  public void setLabels(@javax.annotation.Nullable String labels) {
+  public void setLabels(@jakarta.annotation.Nullable String labels) {
     this.labels = labels;
   }
 
 
-  public CreateJiraIssueTaskParams assignUserEmail(@javax.annotation.Nullable String assignUserEmail) {
+  public CreateJiraIssueTaskParams assignUserEmail(@jakarta.annotation.Nullable String assignUserEmail) {
     this.assignUserEmail = assignUserEmail;
     return this;
   }
@@ -282,17 +282,17 @@ public class CreateJiraIssueTaskParams {
    * The assigned user&#39;s email
    * @return assignUserEmail
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getAssignUserEmail() {
     return assignUserEmail;
   }
 
-  public void setAssignUserEmail(@javax.annotation.Nullable String assignUserEmail) {
+  public void setAssignUserEmail(@jakarta.annotation.Nullable String assignUserEmail) {
     this.assignUserEmail = assignUserEmail;
   }
 
 
-  public CreateJiraIssueTaskParams reporterUserEmail(@javax.annotation.Nullable String reporterUserEmail) {
+  public CreateJiraIssueTaskParams reporterUserEmail(@jakarta.annotation.Nullable String reporterUserEmail) {
     this.reporterUserEmail = reporterUserEmail;
     return this;
   }
@@ -301,17 +301,17 @@ public class CreateJiraIssueTaskParams {
    * The reporter user&#39;s email
    * @return reporterUserEmail
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getReporterUserEmail() {
     return reporterUserEmail;
   }
 
-  public void setReporterUserEmail(@javax.annotation.Nullable String reporterUserEmail) {
+  public void setReporterUserEmail(@jakarta.annotation.Nullable String reporterUserEmail) {
     this.reporterUserEmail = reporterUserEmail;
   }
 
 
-  public CreateJiraIssueTaskParams projectKey(@javax.annotation.Nonnull String projectKey) {
+  public CreateJiraIssueTaskParams projectKey(@jakarta.annotation.Nonnull String projectKey) {
     this.projectKey = projectKey;
     return this;
   }
@@ -320,17 +320,17 @@ public class CreateJiraIssueTaskParams {
    * The project key
    * @return projectKey
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getProjectKey() {
     return projectKey;
   }
 
-  public void setProjectKey(@javax.annotation.Nonnull String projectKey) {
+  public void setProjectKey(@jakarta.annotation.Nonnull String projectKey) {
     this.projectKey = projectKey;
   }
 
 
-  public CreateJiraIssueTaskParams dueDate(@javax.annotation.Nullable String dueDate) {
+  public CreateJiraIssueTaskParams dueDate(@jakarta.annotation.Nullable String dueDate) {
     this.dueDate = dueDate;
     return this;
   }
@@ -339,17 +339,17 @@ public class CreateJiraIssueTaskParams {
    * The due date
    * @return dueDate
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDueDate() {
     return dueDate;
   }
 
-  public void setDueDate(@javax.annotation.Nullable String dueDate) {
+  public void setDueDate(@jakarta.annotation.Nullable String dueDate) {
     this.dueDate = dueDate;
   }
 
 
-  public CreateJiraIssueTaskParams issueType(@javax.annotation.Nonnull CreateJiraIssueTaskParamsIssueType issueType) {
+  public CreateJiraIssueTaskParams issueType(@jakarta.annotation.Nonnull CreateJiraIssueTaskParamsIssueType issueType) {
     this.issueType = issueType;
     return this;
   }
@@ -358,17 +358,17 @@ public class CreateJiraIssueTaskParams {
    * Get issueType
    * @return issueType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public CreateJiraIssueTaskParamsIssueType getIssueType() {
     return issueType;
   }
 
-  public void setIssueType(@javax.annotation.Nonnull CreateJiraIssueTaskParamsIssueType issueType) {
+  public void setIssueType(@jakarta.annotation.Nonnull CreateJiraIssueTaskParamsIssueType issueType) {
     this.issueType = issueType;
   }
 
 
-  public CreateJiraIssueTaskParams priority(@javax.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
+  public CreateJiraIssueTaskParams priority(@jakarta.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
     this.priority = priority;
     return this;
   }
@@ -377,17 +377,17 @@ public class CreateJiraIssueTaskParams {
    * Get priority
    * @return priority
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CreateJiraIssueTaskParamsPriority getPriority() {
     return priority;
   }
 
-  public void setPriority(@javax.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
+  public void setPriority(@jakarta.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
     this.priority = priority;
   }
 
 
-  public CreateJiraIssueTaskParams status(@javax.annotation.Nullable CreateJiraIssueTaskParamsStatus status) {
+  public CreateJiraIssueTaskParams status(@jakarta.annotation.Nullable CreateJiraIssueTaskParamsStatus status) {
     this.status = status;
     return this;
   }
@@ -396,17 +396,17 @@ public class CreateJiraIssueTaskParams {
    * Get status
    * @return status
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CreateJiraIssueTaskParamsStatus getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nullable CreateJiraIssueTaskParamsStatus status) {
+  public void setStatus(@jakarta.annotation.Nullable CreateJiraIssueTaskParamsStatus status) {
     this.status = status;
   }
 
 
-  public CreateJiraIssueTaskParams customFieldsMapping(@javax.annotation.Nullable String customFieldsMapping) {
+  public CreateJiraIssueTaskParams customFieldsMapping(@jakarta.annotation.Nullable String customFieldsMapping) {
     this.customFieldsMapping = customFieldsMapping;
     return this;
   }
@@ -415,17 +415,17 @@ public class CreateJiraIssueTaskParams {
    * Custom field mappings. Can contain liquid markup and need to be valid JSON
    * @return customFieldsMapping
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCustomFieldsMapping() {
     return customFieldsMapping;
   }
 
-  public void setCustomFieldsMapping(@javax.annotation.Nullable String customFieldsMapping) {
+  public void setCustomFieldsMapping(@jakarta.annotation.Nullable String customFieldsMapping) {
     this.customFieldsMapping = customFieldsMapping;
   }
 
 
-  public CreateJiraIssueTaskParams updatePayload(@javax.annotation.Nullable String updatePayload) {
+  public CreateJiraIssueTaskParams updatePayload(@jakarta.annotation.Nullable String updatePayload) {
     this.updatePayload = updatePayload;
     return this;
   }
@@ -434,12 +434,12 @@ public class CreateJiraIssueTaskParams {
    * Update payload. Can contain liquid markup and need to be valid JSON
    * @return updatePayload
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUpdatePayload() {
     return updatePayload;
   }
 
-  public void setUpdatePayload(@javax.annotation.Nullable String updatePayload) {
+  public void setUpdatePayload(@jakarta.annotation.Nullable String updatePayload) {
     this.updatePayload = updatePayload;
   }
 

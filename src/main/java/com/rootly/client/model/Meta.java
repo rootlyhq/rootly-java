@@ -48,37 +48,37 @@ import com.rootly.client.JSON;
 /**
  * Meta
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Meta {
   public static final String SERIALIZED_NAME_CURRENT_PAGE = "current_page";
   @SerializedName(SERIALIZED_NAME_CURRENT_PAGE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Integer currentPage;
 
   public static final String SERIALIZED_NAME_NEXT_PAGE = "next_page";
   @SerializedName(SERIALIZED_NAME_NEXT_PAGE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer nextPage;
 
   public static final String SERIALIZED_NAME_PREV_PAGE = "prev_page";
   @SerializedName(SERIALIZED_NAME_PREV_PAGE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer prevPage;
 
   public static final String SERIALIZED_NAME_TOTAL_COUNT = "total_count";
   @SerializedName(SERIALIZED_NAME_TOTAL_COUNT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Integer totalCount;
 
   public static final String SERIALIZED_NAME_TOTAL_PAGES = "total_pages";
   @SerializedName(SERIALIZED_NAME_TOTAL_PAGES)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Integer totalPages;
 
   public Meta() {
   }
 
-  public Meta currentPage(@javax.annotation.Nonnull Integer currentPage) {
+  public Meta currentPage(@jakarta.annotation.Nonnull Integer currentPage) {
     this.currentPage = currentPage;
     return this;
   }
@@ -87,17 +87,17 @@ public class Meta {
    * Get currentPage
    * @return currentPage
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Integer getCurrentPage() {
     return currentPage;
   }
 
-  public void setCurrentPage(@javax.annotation.Nonnull Integer currentPage) {
+  public void setCurrentPage(@jakarta.annotation.Nonnull Integer currentPage) {
     this.currentPage = currentPage;
   }
 
 
-  public Meta nextPage(@javax.annotation.Nullable Integer nextPage) {
+  public Meta nextPage(@jakarta.annotation.Nullable Integer nextPage) {
     this.nextPage = nextPage;
     return this;
   }
@@ -106,17 +106,17 @@ public class Meta {
    * Get nextPage
    * @return nextPage
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getNextPage() {
     return nextPage;
   }
 
-  public void setNextPage(@javax.annotation.Nullable Integer nextPage) {
+  public void setNextPage(@jakarta.annotation.Nullable Integer nextPage) {
     this.nextPage = nextPage;
   }
 
 
-  public Meta prevPage(@javax.annotation.Nullable Integer prevPage) {
+  public Meta prevPage(@jakarta.annotation.Nullable Integer prevPage) {
     this.prevPage = prevPage;
     return this;
   }
@@ -125,17 +125,17 @@ public class Meta {
    * Get prevPage
    * @return prevPage
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPrevPage() {
     return prevPage;
   }
 
-  public void setPrevPage(@javax.annotation.Nullable Integer prevPage) {
+  public void setPrevPage(@jakarta.annotation.Nullable Integer prevPage) {
     this.prevPage = prevPage;
   }
 
 
-  public Meta totalCount(@javax.annotation.Nonnull Integer totalCount) {
+  public Meta totalCount(@jakarta.annotation.Nonnull Integer totalCount) {
     this.totalCount = totalCount;
     return this;
   }
@@ -144,17 +144,17 @@ public class Meta {
    * Get totalCount
    * @return totalCount
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Integer getTotalCount() {
     return totalCount;
   }
 
-  public void setTotalCount(@javax.annotation.Nonnull Integer totalCount) {
+  public void setTotalCount(@jakarta.annotation.Nonnull Integer totalCount) {
     this.totalCount = totalCount;
   }
 
 
-  public Meta totalPages(@javax.annotation.Nonnull Integer totalPages) {
+  public Meta totalPages(@jakarta.annotation.Nonnull Integer totalPages) {
     this.totalPages = totalPages;
     return this;
   }
@@ -163,12 +163,12 @@ public class Meta {
    * Get totalPages
    * @return totalPages
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Integer getTotalPages() {
     return totalPages;
   }
 
-  public void setTotalPages(@javax.annotation.Nonnull Integer totalPages) {
+  public void setTotalPages(@jakarta.annotation.Nonnull Integer totalPages) {
     this.totalPages = totalPages;
   }
 

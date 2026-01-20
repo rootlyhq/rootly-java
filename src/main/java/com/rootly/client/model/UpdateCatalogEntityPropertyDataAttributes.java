@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateCatalogEntityPropertyDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateCatalogEntityPropertyDataAttributes {
   /**
    * Gets or Sets key
@@ -104,18 +104,18 @@ public class UpdateCatalogEntityPropertyDataAttributes {
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private KeyEnum key;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String value;
 
   public UpdateCatalogEntityPropertyDataAttributes() {
   }
 
-  public UpdateCatalogEntityPropertyDataAttributes key(@javax.annotation.Nullable KeyEnum key) {
+  public UpdateCatalogEntityPropertyDataAttributes key(@jakarta.annotation.Nullable KeyEnum key) {
     this.key = key;
     return this;
   }
@@ -124,17 +124,17 @@ public class UpdateCatalogEntityPropertyDataAttributes {
    * Get key
    * @return key
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public KeyEnum getKey() {
     return key;
   }
 
-  public void setKey(@javax.annotation.Nullable KeyEnum key) {
+  public void setKey(@jakarta.annotation.Nullable KeyEnum key) {
     this.key = key;
   }
 
 
-  public UpdateCatalogEntityPropertyDataAttributes value(@javax.annotation.Nullable String value) {
+  public UpdateCatalogEntityPropertyDataAttributes value(@jakarta.annotation.Nullable String value) {
     this.value = value;
     return this;
   }
@@ -143,12 +143,12 @@ public class UpdateCatalogEntityPropertyDataAttributes {
    * Get value
    * @return value
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getValue() {
     return value;
   }
 
-  public void setValue(@javax.annotation.Nullable String value) {
+  public void setValue(@jakarta.annotation.Nullable String value) {
     this.value = value;
   }
 

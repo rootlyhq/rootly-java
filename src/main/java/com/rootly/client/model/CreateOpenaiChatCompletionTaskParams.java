@@ -50,7 +50,7 @@ import com.rootly.client.JSON;
 /**
  * CreateOpenaiChatCompletionTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateOpenaiChatCompletionTaskParams {
   /**
    * Gets or Sets taskType
@@ -104,37 +104,37 @@ public class CreateOpenaiChatCompletionTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_MODEL = "model";
   @SerializedName(SERIALIZED_NAME_MODEL)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private CreateOpenaiChatCompletionTaskParamsModel model;
 
   public static final String SERIALIZED_NAME_SYSTEM_PROMPT = "system_prompt";
   @SerializedName(SERIALIZED_NAME_SYSTEM_PROMPT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String systemPrompt;
 
   public static final String SERIALIZED_NAME_PROMPT = "prompt";
   @SerializedName(SERIALIZED_NAME_PROMPT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String prompt;
 
   public static final String SERIALIZED_NAME_TEMPERATURE = "temperature";
   @SerializedName(SERIALIZED_NAME_TEMPERATURE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private BigDecimal temperature;
 
   public static final String SERIALIZED_NAME_MAX_TOKENS = "max_tokens";
   @SerializedName(SERIALIZED_NAME_MAX_TOKENS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer maxTokens;
 
   public static final String SERIALIZED_NAME_TOP_P = "top_p";
   @SerializedName(SERIALIZED_NAME_TOP_P)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private BigDecimal topP;
 
   /**
@@ -195,7 +195,7 @@ public class CreateOpenaiChatCompletionTaskParams {
 
   public static final String SERIALIZED_NAME_REASONING_EFFORT = "reasoning_effort";
   @SerializedName(SERIALIZED_NAME_REASONING_EFFORT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ReasoningEffortEnum reasoningEffort;
 
   /**
@@ -254,13 +254,13 @@ public class CreateOpenaiChatCompletionTaskParams {
 
   public static final String SERIALIZED_NAME_REASONING_SUMMARY = "reasoning_summary";
   @SerializedName(SERIALIZED_NAME_REASONING_SUMMARY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ReasoningSummaryEnum reasoningSummary;
 
   public CreateOpenaiChatCompletionTaskParams() {
   }
 
-  public CreateOpenaiChatCompletionTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public CreateOpenaiChatCompletionTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -269,17 +269,17 @@ public class CreateOpenaiChatCompletionTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public CreateOpenaiChatCompletionTaskParams model(@javax.annotation.Nonnull CreateOpenaiChatCompletionTaskParamsModel model) {
+  public CreateOpenaiChatCompletionTaskParams model(@jakarta.annotation.Nonnull CreateOpenaiChatCompletionTaskParamsModel model) {
     this.model = model;
     return this;
   }
@@ -288,17 +288,17 @@ public class CreateOpenaiChatCompletionTaskParams {
    * Get model
    * @return model
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public CreateOpenaiChatCompletionTaskParamsModel getModel() {
     return model;
   }
 
-  public void setModel(@javax.annotation.Nonnull CreateOpenaiChatCompletionTaskParamsModel model) {
+  public void setModel(@jakarta.annotation.Nonnull CreateOpenaiChatCompletionTaskParamsModel model) {
     this.model = model;
   }
 
 
-  public CreateOpenaiChatCompletionTaskParams systemPrompt(@javax.annotation.Nullable String systemPrompt) {
+  public CreateOpenaiChatCompletionTaskParams systemPrompt(@jakarta.annotation.Nullable String systemPrompt) {
     this.systemPrompt = systemPrompt;
     return this;
   }
@@ -307,17 +307,17 @@ public class CreateOpenaiChatCompletionTaskParams {
    * The system prompt to send to OpenAI (optional)
    * @return systemPrompt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSystemPrompt() {
     return systemPrompt;
   }
 
-  public void setSystemPrompt(@javax.annotation.Nullable String systemPrompt) {
+  public void setSystemPrompt(@jakarta.annotation.Nullable String systemPrompt) {
     this.systemPrompt = systemPrompt;
   }
 
 
-  public CreateOpenaiChatCompletionTaskParams prompt(@javax.annotation.Nonnull String prompt) {
+  public CreateOpenaiChatCompletionTaskParams prompt(@jakarta.annotation.Nonnull String prompt) {
     this.prompt = prompt;
     return this;
   }
@@ -326,17 +326,17 @@ public class CreateOpenaiChatCompletionTaskParams {
    * The prompt to send to OpenAI
    * @return prompt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getPrompt() {
     return prompt;
   }
 
-  public void setPrompt(@javax.annotation.Nonnull String prompt) {
+  public void setPrompt(@jakarta.annotation.Nonnull String prompt) {
     this.prompt = prompt;
   }
 
 
-  public CreateOpenaiChatCompletionTaskParams temperature(@javax.annotation.Nullable BigDecimal temperature) {
+  public CreateOpenaiChatCompletionTaskParams temperature(@jakarta.annotation.Nullable BigDecimal temperature) {
     this.temperature = temperature;
     return this;
   }
@@ -347,17 +347,17 @@ public class CreateOpenaiChatCompletionTaskParams {
    * maximum: 2.0
    * @return temperature
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public BigDecimal getTemperature() {
     return temperature;
   }
 
-  public void setTemperature(@javax.annotation.Nullable BigDecimal temperature) {
+  public void setTemperature(@jakarta.annotation.Nullable BigDecimal temperature) {
     this.temperature = temperature;
   }
 
 
-  public CreateOpenaiChatCompletionTaskParams maxTokens(@javax.annotation.Nullable Integer maxTokens) {
+  public CreateOpenaiChatCompletionTaskParams maxTokens(@jakarta.annotation.Nullable Integer maxTokens) {
     this.maxTokens = maxTokens;
     return this;
   }
@@ -367,17 +367,17 @@ public class CreateOpenaiChatCompletionTaskParams {
    * minimum: 1
    * @return maxTokens
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getMaxTokens() {
     return maxTokens;
   }
 
-  public void setMaxTokens(@javax.annotation.Nullable Integer maxTokens) {
+  public void setMaxTokens(@jakarta.annotation.Nullable Integer maxTokens) {
     this.maxTokens = maxTokens;
   }
 
 
-  public CreateOpenaiChatCompletionTaskParams topP(@javax.annotation.Nullable BigDecimal topP) {
+  public CreateOpenaiChatCompletionTaskParams topP(@jakarta.annotation.Nullable BigDecimal topP) {
     this.topP = topP;
     return this;
   }
@@ -388,17 +388,17 @@ public class CreateOpenaiChatCompletionTaskParams {
    * maximum: 1.0
    * @return topP
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public BigDecimal getTopP() {
     return topP;
   }
 
-  public void setTopP(@javax.annotation.Nullable BigDecimal topP) {
+  public void setTopP(@jakarta.annotation.Nullable BigDecimal topP) {
     this.topP = topP;
   }
 
 
-  public CreateOpenaiChatCompletionTaskParams reasoningEffort(@javax.annotation.Nullable ReasoningEffortEnum reasoningEffort) {
+  public CreateOpenaiChatCompletionTaskParams reasoningEffort(@jakarta.annotation.Nullable ReasoningEffortEnum reasoningEffort) {
     this.reasoningEffort = reasoningEffort;
     return this;
   }
@@ -407,17 +407,17 @@ public class CreateOpenaiChatCompletionTaskParams {
    * Constrains effort on reasoning for GPT-5 and o-series models
    * @return reasoningEffort
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ReasoningEffortEnum getReasoningEffort() {
     return reasoningEffort;
   }
 
-  public void setReasoningEffort(@javax.annotation.Nullable ReasoningEffortEnum reasoningEffort) {
+  public void setReasoningEffort(@jakarta.annotation.Nullable ReasoningEffortEnum reasoningEffort) {
     this.reasoningEffort = reasoningEffort;
   }
 
 
-  public CreateOpenaiChatCompletionTaskParams reasoningSummary(@javax.annotation.Nullable ReasoningSummaryEnum reasoningSummary) {
+  public CreateOpenaiChatCompletionTaskParams reasoningSummary(@jakarta.annotation.Nullable ReasoningSummaryEnum reasoningSummary) {
     this.reasoningSummary = reasoningSummary;
     return this;
   }
@@ -426,12 +426,12 @@ public class CreateOpenaiChatCompletionTaskParams {
    * Summary of the reasoning performed by the model for GPT-5 and o-series models
    * @return reasoningSummary
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ReasoningSummaryEnum getReasoningSummary() {
     return reasoningSummary;
   }
 
-  public void setReasoningSummary(@javax.annotation.Nullable ReasoningSummaryEnum reasoningSummary) {
+  public void setReasoningSummary(@jakarta.annotation.Nullable ReasoningSummaryEnum reasoningSummary) {
     this.reasoningSummary = reasoningSummary;
   }
 

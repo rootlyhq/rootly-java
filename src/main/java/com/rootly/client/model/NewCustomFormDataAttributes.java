@@ -49,37 +49,37 @@ import com.rootly.client.JSON;
 /**
  * NewCustomFormDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewCustomFormDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String slug;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_COMMAND = "command";
   @SerializedName(SERIALIZED_NAME_COMMAND)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String command;
 
   public NewCustomFormDataAttributes() {
   }
 
-  public NewCustomFormDataAttributes name(@javax.annotation.Nonnull String name) {
+  public NewCustomFormDataAttributes name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -88,17 +88,17 @@ public class NewCustomFormDataAttributes {
    * The name of the custom form.
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public NewCustomFormDataAttributes slug(@javax.annotation.Nullable String slug) {
+  public NewCustomFormDataAttributes slug(@jakarta.annotation.Nullable String slug) {
     this.slug = slug;
     return this;
   }
@@ -107,17 +107,17 @@ public class NewCustomFormDataAttributes {
    * The custom form slug. Add this to form_field.shown or form_field.required to associate form fields with custom forms.
    * @return slug
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSlug() {
     return slug;
   }
 
-  public void setSlug(@javax.annotation.Nullable String slug) {
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
     this.slug = slug;
   }
 
 
-  public NewCustomFormDataAttributes description(@javax.annotation.Nullable String description) {
+  public NewCustomFormDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -126,17 +126,17 @@ public class NewCustomFormDataAttributes {
    * Get description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public NewCustomFormDataAttributes enabled(@javax.annotation.Nullable Boolean enabled) {
+  public NewCustomFormDataAttributes enabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -145,17 +145,17 @@ public class NewCustomFormDataAttributes {
    * Get enabled
    * @return enabled
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getEnabled() {
     return enabled;
   }
 
-  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
+  public void setEnabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public NewCustomFormDataAttributes command(@javax.annotation.Nonnull String command) {
+  public NewCustomFormDataAttributes command(@jakarta.annotation.Nonnull String command) {
     this.command = command;
     return this;
   }
@@ -164,12 +164,12 @@ public class NewCustomFormDataAttributes {
    * The Slack command used to trigger this form.
    * @return command
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCommand() {
     return command;
   }
 
-  public void setCommand(@javax.annotation.Nonnull String command) {
+  public void setCommand(@jakarta.annotation.Nonnull String command) {
     this.command = command;
   }
 

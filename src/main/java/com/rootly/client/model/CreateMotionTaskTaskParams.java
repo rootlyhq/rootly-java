@@ -52,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * CreateMotionTaskTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateMotionTaskTaskParams {
   /**
    * Gets or Sets taskType
@@ -106,58 +106,58 @@ public class CreateMotionTaskTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_WORKSPACE = "workspace";
   @SerializedName(SERIALIZED_NAME_WORKSPACE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private AddActionItemTaskParamsPostToSlackChannelsInner workspace;
 
   public static final String SERIALIZED_NAME_PROJECT = "project";
   @SerializedName(SERIALIZED_NAME_PROJECT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AddActionItemTaskParamsPostToSlackChannelsInner project;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AddActionItemTaskParamsPostToSlackChannelsInner status;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String title;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_LABELS = "labels";
   @SerializedName(SERIALIZED_NAME_LABELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> labels = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PRIORITY = "priority";
   @SerializedName(SERIALIZED_NAME_PRIORITY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CreateJiraIssueTaskParamsPriority priority;
 
   public static final String SERIALIZED_NAME_DURATION = "duration";
   @SerializedName(SERIALIZED_NAME_DURATION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String duration;
 
   public static final String SERIALIZED_NAME_DUE_DATE = "due_date";
   @SerializedName(SERIALIZED_NAME_DUE_DATE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String dueDate;
 
   public CreateMotionTaskTaskParams() {
   }
 
-  public CreateMotionTaskTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public CreateMotionTaskTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -166,17 +166,17 @@ public class CreateMotionTaskTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public CreateMotionTaskTaskParams workspace(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner workspace) {
+  public CreateMotionTaskTaskParams workspace(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner workspace) {
     this.workspace = workspace;
     return this;
   }
@@ -185,17 +185,17 @@ public class CreateMotionTaskTaskParams {
    * Get workspace
    * @return workspace
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public AddActionItemTaskParamsPostToSlackChannelsInner getWorkspace() {
     return workspace;
   }
 
-  public void setWorkspace(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner workspace) {
+  public void setWorkspace(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner workspace) {
     this.workspace = workspace;
   }
 
 
-  public CreateMotionTaskTaskParams project(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner project) {
+  public CreateMotionTaskTaskParams project(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner project) {
     this.project = project;
     return this;
   }
@@ -204,17 +204,17 @@ public class CreateMotionTaskTaskParams {
    * Get project
    * @return project
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AddActionItemTaskParamsPostToSlackChannelsInner getProject() {
     return project;
   }
 
-  public void setProject(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner project) {
+  public void setProject(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner project) {
     this.project = project;
   }
 
 
-  public CreateMotionTaskTaskParams status(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner status) {
+  public CreateMotionTaskTaskParams status(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner status) {
     this.status = status;
     return this;
   }
@@ -223,17 +223,17 @@ public class CreateMotionTaskTaskParams {
    * Get status
    * @return status
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AddActionItemTaskParamsPostToSlackChannelsInner getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner status) {
+  public void setStatus(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner status) {
     this.status = status;
   }
 
 
-  public CreateMotionTaskTaskParams title(@javax.annotation.Nonnull String title) {
+  public CreateMotionTaskTaskParams title(@jakarta.annotation.Nonnull String title) {
     this.title = title;
     return this;
   }
@@ -242,17 +242,17 @@ public class CreateMotionTaskTaskParams {
    * The task title
    * @return title
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nonnull String title) {
+  public void setTitle(@jakarta.annotation.Nonnull String title) {
     this.title = title;
   }
 
 
-  public CreateMotionTaskTaskParams description(@javax.annotation.Nullable String description) {
+  public CreateMotionTaskTaskParams description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -261,17 +261,17 @@ public class CreateMotionTaskTaskParams {
    * The task description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public CreateMotionTaskTaskParams labels(@javax.annotation.Nullable List<String> labels) {
+  public CreateMotionTaskTaskParams labels(@jakarta.annotation.Nullable List<String> labels) {
     this.labels = labels;
     return this;
   }
@@ -288,17 +288,17 @@ public class CreateMotionTaskTaskParams {
    * Get labels
    * @return labels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getLabels() {
     return labels;
   }
 
-  public void setLabels(@javax.annotation.Nullable List<String> labels) {
+  public void setLabels(@jakarta.annotation.Nullable List<String> labels) {
     this.labels = labels;
   }
 
 
-  public CreateMotionTaskTaskParams priority(@javax.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
+  public CreateMotionTaskTaskParams priority(@jakarta.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
     this.priority = priority;
     return this;
   }
@@ -307,17 +307,17 @@ public class CreateMotionTaskTaskParams {
    * Get priority
    * @return priority
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CreateJiraIssueTaskParamsPriority getPriority() {
     return priority;
   }
 
-  public void setPriority(@javax.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
+  public void setPriority(@jakarta.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
     this.priority = priority;
   }
 
 
-  public CreateMotionTaskTaskParams duration(@javax.annotation.Nullable String duration) {
+  public CreateMotionTaskTaskParams duration(@jakarta.annotation.Nullable String duration) {
     this.duration = duration;
     return this;
   }
@@ -326,17 +326,17 @@ public class CreateMotionTaskTaskParams {
    * The duration. Eg.  \&quot;NONE\&quot;, \&quot;REMINDER\&quot;, or a integer greater than 0.
    * @return duration
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDuration() {
     return duration;
   }
 
-  public void setDuration(@javax.annotation.Nullable String duration) {
+  public void setDuration(@jakarta.annotation.Nullable String duration) {
     this.duration = duration;
   }
 
 
-  public CreateMotionTaskTaskParams dueDate(@javax.annotation.Nullable String dueDate) {
+  public CreateMotionTaskTaskParams dueDate(@jakarta.annotation.Nullable String dueDate) {
     this.dueDate = dueDate;
     return this;
   }
@@ -345,12 +345,12 @@ public class CreateMotionTaskTaskParams {
    * The due date
    * @return dueDate
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDueDate() {
     return dueDate;
   }
 
-  public void setDueDate(@javax.annotation.Nullable String dueDate) {
+  public void setDueDate(@jakarta.annotation.Nullable String dueDate) {
     this.dueDate = dueDate;
   }
 

@@ -53,122 +53,122 @@ import com.rootly.client.JSON;
 /**
  * Functionality
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Functionality {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String slug;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_PUBLIC_DESCRIPTION = "public_description";
   @SerializedName(SERIALIZED_NAME_PUBLIC_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String publicDescription;
 
   public static final String SERIALIZED_NAME_NOTIFY_EMAILS = "notify_emails";
   @SerializedName(SERIALIZED_NAME_NOTIFY_EMAILS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> notifyEmails;
 
   public static final String SERIALIZED_NAME_COLOR = "color";
   @SerializedName(SERIALIZED_NAME_COLOR)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String color;
 
   public static final String SERIALIZED_NAME_BACKSTAGE_ID = "backstage_id";
   @SerializedName(SERIALIZED_NAME_BACKSTAGE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String backstageId;
 
   public static final String SERIALIZED_NAME_EXTERNAL_ID = "external_id";
   @SerializedName(SERIALIZED_NAME_EXTERNAL_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String externalId;
 
   public static final String SERIALIZED_NAME_PAGERDUTY_ID = "pagerduty_id";
   @SerializedName(SERIALIZED_NAME_PAGERDUTY_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String pagerdutyId;
 
   public static final String SERIALIZED_NAME_OPSGENIE_ID = "opsgenie_id";
   @SerializedName(SERIALIZED_NAME_OPSGENIE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String opsgenieId;
 
   public static final String SERIALIZED_NAME_OPSGENIE_TEAM_ID = "opsgenie_team_id";
   @SerializedName(SERIALIZED_NAME_OPSGENIE_TEAM_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String opsgenieTeamId;
 
   public static final String SERIALIZED_NAME_CORTEX_ID = "cortex_id";
   @SerializedName(SERIALIZED_NAME_CORTEX_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String cortexId;
 
   public static final String SERIALIZED_NAME_SERVICE_NOW_CI_SYS_ID = "service_now_ci_sys_id";
   @SerializedName(SERIALIZED_NAME_SERVICE_NOW_CI_SYS_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String serviceNowCiSysId;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_IDS = "environment_ids";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> environmentIds;
 
   public static final String SERIALIZED_NAME_SERVICE_IDS = "service_ids";
   @SerializedName(SERIALIZED_NAME_SERVICE_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> serviceIds;
 
   public static final String SERIALIZED_NAME_OWNER_GROUP_IDS = "owner_group_ids";
   @SerializedName(SERIALIZED_NAME_OWNER_GROUP_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> ownerGroupIds;
 
   public static final String SERIALIZED_NAME_OWNER_USER_IDS = "owner_user_ids";
   @SerializedName(SERIALIZED_NAME_OWNER_USER_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<Integer> ownerUserIds;
 
   public static final String SERIALIZED_NAME_SLACK_CHANNELS = "slack_channels";
   @SerializedName(SERIALIZED_NAME_SLACK_CHANNELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewEnvironmentDataAttributesSlackChannelsInner> slackChannels;
 
   public static final String SERIALIZED_NAME_SLACK_ALIASES = "slack_aliases";
   @SerializedName(SERIALIZED_NAME_SLACK_ALIASES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public Functionality() {
   }
 
-  public Functionality name(@javax.annotation.Nonnull String name) {
+  public Functionality name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -177,17 +177,17 @@ public class Functionality {
    * The name of the functionality
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public Functionality slug(@javax.annotation.Nullable String slug) {
+  public Functionality slug(@jakarta.annotation.Nullable String slug) {
     this.slug = slug;
     return this;
   }
@@ -196,17 +196,17 @@ public class Functionality {
    * The slug of the functionality
    * @return slug
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSlug() {
     return slug;
   }
 
-  public void setSlug(@javax.annotation.Nullable String slug) {
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
     this.slug = slug;
   }
 
 
-  public Functionality description(@javax.annotation.Nullable String description) {
+  public Functionality description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -215,17 +215,17 @@ public class Functionality {
    * The description of the functionality
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public Functionality publicDescription(@javax.annotation.Nullable String publicDescription) {
+  public Functionality publicDescription(@jakarta.annotation.Nullable String publicDescription) {
     this.publicDescription = publicDescription;
     return this;
   }
@@ -234,17 +234,17 @@ public class Functionality {
    * The public description of the functionality
    * @return publicDescription
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPublicDescription() {
     return publicDescription;
   }
 
-  public void setPublicDescription(@javax.annotation.Nullable String publicDescription) {
+  public void setPublicDescription(@jakarta.annotation.Nullable String publicDescription) {
     this.publicDescription = publicDescription;
   }
 
 
-  public Functionality notifyEmails(@javax.annotation.Nullable List<String> notifyEmails) {
+  public Functionality notifyEmails(@jakarta.annotation.Nullable List<String> notifyEmails) {
     this.notifyEmails = notifyEmails;
     return this;
   }
@@ -261,17 +261,17 @@ public class Functionality {
    * Emails attached to the functionality
    * @return notifyEmails
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getNotifyEmails() {
     return notifyEmails;
   }
 
-  public void setNotifyEmails(@javax.annotation.Nullable List<String> notifyEmails) {
+  public void setNotifyEmails(@jakarta.annotation.Nullable List<String> notifyEmails) {
     this.notifyEmails = notifyEmails;
   }
 
 
-  public Functionality color(@javax.annotation.Nullable String color) {
+  public Functionality color(@jakarta.annotation.Nullable String color) {
     this.color = color;
     return this;
   }
@@ -280,17 +280,17 @@ public class Functionality {
    * The hex color of the functionality
    * @return color
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getColor() {
     return color;
   }
 
-  public void setColor(@javax.annotation.Nullable String color) {
+  public void setColor(@jakarta.annotation.Nullable String color) {
     this.color = color;
   }
 
 
-  public Functionality backstageId(@javax.annotation.Nullable String backstageId) {
+  public Functionality backstageId(@jakarta.annotation.Nullable String backstageId) {
     this.backstageId = backstageId;
     return this;
   }
@@ -299,17 +299,17 @@ public class Functionality {
    * The Backstage entity id associated to this functionality. eg: :namespace/:kind/:entity_name
    * @return backstageId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getBackstageId() {
     return backstageId;
   }
 
-  public void setBackstageId(@javax.annotation.Nullable String backstageId) {
+  public void setBackstageId(@jakarta.annotation.Nullable String backstageId) {
     this.backstageId = backstageId;
   }
 
 
-  public Functionality externalId(@javax.annotation.Nullable String externalId) {
+  public Functionality externalId(@jakarta.annotation.Nullable String externalId) {
     this.externalId = externalId;
     return this;
   }
@@ -318,17 +318,17 @@ public class Functionality {
    * The external id associated to this functionality
    * @return externalId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getExternalId() {
     return externalId;
   }
 
-  public void setExternalId(@javax.annotation.Nullable String externalId) {
+  public void setExternalId(@jakarta.annotation.Nullable String externalId) {
     this.externalId = externalId;
   }
 
 
-  public Functionality pagerdutyId(@javax.annotation.Nullable String pagerdutyId) {
+  public Functionality pagerdutyId(@jakarta.annotation.Nullable String pagerdutyId) {
     this.pagerdutyId = pagerdutyId;
     return this;
   }
@@ -337,17 +337,17 @@ public class Functionality {
    * The PagerDuty service id associated to this functionality
    * @return pagerdutyId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPagerdutyId() {
     return pagerdutyId;
   }
 
-  public void setPagerdutyId(@javax.annotation.Nullable String pagerdutyId) {
+  public void setPagerdutyId(@jakarta.annotation.Nullable String pagerdutyId) {
     this.pagerdutyId = pagerdutyId;
   }
 
 
-  public Functionality opsgenieId(@javax.annotation.Nullable String opsgenieId) {
+  public Functionality opsgenieId(@jakarta.annotation.Nullable String opsgenieId) {
     this.opsgenieId = opsgenieId;
     return this;
   }
@@ -356,17 +356,17 @@ public class Functionality {
    * The Opsgenie service id associated to this functionality
    * @return opsgenieId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getOpsgenieId() {
     return opsgenieId;
   }
 
-  public void setOpsgenieId(@javax.annotation.Nullable String opsgenieId) {
+  public void setOpsgenieId(@jakarta.annotation.Nullable String opsgenieId) {
     this.opsgenieId = opsgenieId;
   }
 
 
-  public Functionality opsgenieTeamId(@javax.annotation.Nullable String opsgenieTeamId) {
+  public Functionality opsgenieTeamId(@jakarta.annotation.Nullable String opsgenieTeamId) {
     this.opsgenieTeamId = opsgenieTeamId;
     return this;
   }
@@ -375,17 +375,17 @@ public class Functionality {
    * The Opsgenie team id associated to this functionality
    * @return opsgenieTeamId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getOpsgenieTeamId() {
     return opsgenieTeamId;
   }
 
-  public void setOpsgenieTeamId(@javax.annotation.Nullable String opsgenieTeamId) {
+  public void setOpsgenieTeamId(@jakarta.annotation.Nullable String opsgenieTeamId) {
     this.opsgenieTeamId = opsgenieTeamId;
   }
 
 
-  public Functionality cortexId(@javax.annotation.Nullable String cortexId) {
+  public Functionality cortexId(@jakarta.annotation.Nullable String cortexId) {
     this.cortexId = cortexId;
     return this;
   }
@@ -394,17 +394,17 @@ public class Functionality {
    * The Cortex group id associated to this functionality
    * @return cortexId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCortexId() {
     return cortexId;
   }
 
-  public void setCortexId(@javax.annotation.Nullable String cortexId) {
+  public void setCortexId(@jakarta.annotation.Nullable String cortexId) {
     this.cortexId = cortexId;
   }
 
 
-  public Functionality serviceNowCiSysId(@javax.annotation.Nullable String serviceNowCiSysId) {
+  public Functionality serviceNowCiSysId(@jakarta.annotation.Nullable String serviceNowCiSysId) {
     this.serviceNowCiSysId = serviceNowCiSysId;
     return this;
   }
@@ -413,17 +413,17 @@ public class Functionality {
    * The Service Now CI sys id associated to this functionality
    * @return serviceNowCiSysId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getServiceNowCiSysId() {
     return serviceNowCiSysId;
   }
 
-  public void setServiceNowCiSysId(@javax.annotation.Nullable String serviceNowCiSysId) {
+  public void setServiceNowCiSysId(@jakarta.annotation.Nullable String serviceNowCiSysId) {
     this.serviceNowCiSysId = serviceNowCiSysId;
   }
 
 
-  public Functionality position(@javax.annotation.Nullable Integer position) {
+  public Functionality position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -432,17 +432,17 @@ public class Functionality {
    * Position of the functionality
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 
 
-  public Functionality environmentIds(@javax.annotation.Nullable List<String> environmentIds) {
+  public Functionality environmentIds(@jakarta.annotation.Nullable List<String> environmentIds) {
     this.environmentIds = environmentIds;
     return this;
   }
@@ -459,17 +459,17 @@ public class Functionality {
    * Environments associated with this functionality
    * @return environmentIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getEnvironmentIds() {
     return environmentIds;
   }
 
-  public void setEnvironmentIds(@javax.annotation.Nullable List<String> environmentIds) {
+  public void setEnvironmentIds(@jakarta.annotation.Nullable List<String> environmentIds) {
     this.environmentIds = environmentIds;
   }
 
 
-  public Functionality serviceIds(@javax.annotation.Nullable List<String> serviceIds) {
+  public Functionality serviceIds(@jakarta.annotation.Nullable List<String> serviceIds) {
     this.serviceIds = serviceIds;
     return this;
   }
@@ -486,17 +486,17 @@ public class Functionality {
    * Services associated with this functionality
    * @return serviceIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getServiceIds() {
     return serviceIds;
   }
 
-  public void setServiceIds(@javax.annotation.Nullable List<String> serviceIds) {
+  public void setServiceIds(@jakarta.annotation.Nullable List<String> serviceIds) {
     this.serviceIds = serviceIds;
   }
 
 
-  public Functionality ownerGroupIds(@javax.annotation.Nullable List<String> ownerGroupIds) {
+  public Functionality ownerGroupIds(@jakarta.annotation.Nullable List<String> ownerGroupIds) {
     this.ownerGroupIds = ownerGroupIds;
     return this;
   }
@@ -513,17 +513,17 @@ public class Functionality {
    * Owner Teams associated with this functionality
    * @return ownerGroupIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getOwnerGroupIds() {
     return ownerGroupIds;
   }
 
-  public void setOwnerGroupIds(@javax.annotation.Nullable List<String> ownerGroupIds) {
+  public void setOwnerGroupIds(@jakarta.annotation.Nullable List<String> ownerGroupIds) {
     this.ownerGroupIds = ownerGroupIds;
   }
 
 
-  public Functionality ownerUserIds(@javax.annotation.Nullable List<Integer> ownerUserIds) {
+  public Functionality ownerUserIds(@jakarta.annotation.Nullable List<Integer> ownerUserIds) {
     this.ownerUserIds = ownerUserIds;
     return this;
   }
@@ -540,17 +540,17 @@ public class Functionality {
    * Owner Users associated with this functionality
    * @return ownerUserIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<Integer> getOwnerUserIds() {
     return ownerUserIds;
   }
 
-  public void setOwnerUserIds(@javax.annotation.Nullable List<Integer> ownerUserIds) {
+  public void setOwnerUserIds(@jakarta.annotation.Nullable List<Integer> ownerUserIds) {
     this.ownerUserIds = ownerUserIds;
   }
 
 
-  public Functionality slackChannels(@javax.annotation.Nullable List<NewEnvironmentDataAttributesSlackChannelsInner> slackChannels) {
+  public Functionality slackChannels(@jakarta.annotation.Nullable List<NewEnvironmentDataAttributesSlackChannelsInner> slackChannels) {
     this.slackChannels = slackChannels;
     return this;
   }
@@ -567,17 +567,17 @@ public class Functionality {
    * Slack Channels associated with this functionality
    * @return slackChannels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewEnvironmentDataAttributesSlackChannelsInner> getSlackChannels() {
     return slackChannels;
   }
 
-  public void setSlackChannels(@javax.annotation.Nullable List<NewEnvironmentDataAttributesSlackChannelsInner> slackChannels) {
+  public void setSlackChannels(@jakarta.annotation.Nullable List<NewEnvironmentDataAttributesSlackChannelsInner> slackChannels) {
     this.slackChannels = slackChannels;
   }
 
 
-  public Functionality slackAliases(@javax.annotation.Nullable List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases) {
+  public Functionality slackAliases(@jakarta.annotation.Nullable List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases) {
     this.slackAliases = slackAliases;
     return this;
   }
@@ -594,17 +594,17 @@ public class Functionality {
    * Slack Aliases associated with this functionality
    * @return slackAliases
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewEnvironmentDataAttributesSlackAliasesInner> getSlackAliases() {
     return slackAliases;
   }
 
-  public void setSlackAliases(@javax.annotation.Nullable List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases) {
+  public void setSlackAliases(@jakarta.annotation.Nullable List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases) {
     this.slackAliases = slackAliases;
   }
 
 
-  public Functionality createdAt(@javax.annotation.Nonnull String createdAt) {
+  public Functionality createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -613,17 +613,17 @@ public class Functionality {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public Functionality updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public Functionality updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -632,12 +632,12 @@ public class Functionality {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

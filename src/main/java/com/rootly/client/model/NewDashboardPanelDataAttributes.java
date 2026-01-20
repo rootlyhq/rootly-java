@@ -51,27 +51,27 @@ import com.rootly.client.JSON;
 /**
  * NewDashboardPanelDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewDashboardPanelDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_PARAMS = "params";
   @SerializedName(SERIALIZED_NAME_PARAMS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private NewDashboardPanelDataAttributesParams params;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private NewDashboardPanelDataAttributesPosition position;
 
   public NewDashboardPanelDataAttributes() {
   }
 
-  public NewDashboardPanelDataAttributes name(@javax.annotation.Nullable String name) {
+  public NewDashboardPanelDataAttributes name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -80,17 +80,17 @@ public class NewDashboardPanelDataAttributes {
    * The name of the dashboard_panel
    * @return name
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public NewDashboardPanelDataAttributes params(@javax.annotation.Nonnull NewDashboardPanelDataAttributesParams params) {
+  public NewDashboardPanelDataAttributes params(@jakarta.annotation.Nonnull NewDashboardPanelDataAttributesParams params) {
     this.params = params;
     return this;
   }
@@ -99,17 +99,17 @@ public class NewDashboardPanelDataAttributes {
    * Get params
    * @return params
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public NewDashboardPanelDataAttributesParams getParams() {
     return params;
   }
 
-  public void setParams(@javax.annotation.Nonnull NewDashboardPanelDataAttributesParams params) {
+  public void setParams(@jakarta.annotation.Nonnull NewDashboardPanelDataAttributesParams params) {
     this.params = params;
   }
 
 
-  public NewDashboardPanelDataAttributes position(@javax.annotation.Nullable NewDashboardPanelDataAttributesPosition position) {
+  public NewDashboardPanelDataAttributes position(@jakarta.annotation.Nullable NewDashboardPanelDataAttributesPosition position) {
     this.position = position;
     return this;
   }
@@ -118,12 +118,12 @@ public class NewDashboardPanelDataAttributes {
    * Get position
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public NewDashboardPanelDataAttributesPosition getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable NewDashboardPanelDataAttributesPosition position) {
+  public void setPosition(@jakarta.annotation.Nullable NewDashboardPanelDataAttributesPosition position) {
     this.position = position;
   }
 

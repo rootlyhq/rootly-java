@@ -48,11 +48,11 @@ import com.rootly.client.JSON;
 /**
  * NewIncidentEventDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewIncidentEventDataAttributes {
   public static final String SERIALIZED_NAME_EVENT = "event";
   @SerializedName(SERIALIZED_NAME_EVENT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String event;
 
   /**
@@ -109,13 +109,13 @@ public class NewIncidentEventDataAttributes {
 
   public static final String SERIALIZED_NAME_VISIBILITY = "visibility";
   @SerializedName(SERIALIZED_NAME_VISIBILITY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private VisibilityEnum visibility;
 
   public NewIncidentEventDataAttributes() {
   }
 
-  public NewIncidentEventDataAttributes event(@javax.annotation.Nonnull String event) {
+  public NewIncidentEventDataAttributes event(@jakarta.annotation.Nonnull String event) {
     this.event = event;
     return this;
   }
@@ -124,17 +124,17 @@ public class NewIncidentEventDataAttributes {
    * The summary of the incident event
    * @return event
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getEvent() {
     return event;
   }
 
-  public void setEvent(@javax.annotation.Nonnull String event) {
+  public void setEvent(@jakarta.annotation.Nonnull String event) {
     this.event = event;
   }
 
 
-  public NewIncidentEventDataAttributes visibility(@javax.annotation.Nullable VisibilityEnum visibility) {
+  public NewIncidentEventDataAttributes visibility(@jakarta.annotation.Nullable VisibilityEnum visibility) {
     this.visibility = visibility;
     return this;
   }
@@ -143,12 +143,12 @@ public class NewIncidentEventDataAttributes {
    * The visibility of the incident action item
    * @return visibility
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public VisibilityEnum getVisibility() {
     return visibility;
   }
 
-  public void setVisibility(@javax.annotation.Nullable VisibilityEnum visibility) {
+  public void setVisibility(@jakarta.annotation.Nullable VisibilityEnum visibility) {
     this.visibility = visibility;
   }
 

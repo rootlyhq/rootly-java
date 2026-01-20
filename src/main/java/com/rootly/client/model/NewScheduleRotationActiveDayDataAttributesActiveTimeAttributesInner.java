@@ -48,22 +48,22 @@ import com.rootly.client.JSON;
 /**
  * NewScheduleRotationActiveDayDataAttributesActiveTimeAttributesInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewScheduleRotationActiveDayDataAttributesActiveTimeAttributesInner {
   public static final String SERIALIZED_NAME_START_TIME = "start_time";
   @SerializedName(SERIALIZED_NAME_START_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String startTime;
 
   public static final String SERIALIZED_NAME_END_TIME = "end_time";
   @SerializedName(SERIALIZED_NAME_END_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String endTime;
 
   public NewScheduleRotationActiveDayDataAttributesActiveTimeAttributesInner() {
   }
 
-  public NewScheduleRotationActiveDayDataAttributesActiveTimeAttributesInner startTime(@javax.annotation.Nullable String startTime) {
+  public NewScheduleRotationActiveDayDataAttributesActiveTimeAttributesInner startTime(@jakarta.annotation.Nullable String startTime) {
     this.startTime = startTime;
     return this;
   }
@@ -72,17 +72,17 @@ public class NewScheduleRotationActiveDayDataAttributesActiveTimeAttributesInner
    * Start time for schedule rotation active time
    * @return startTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getStartTime() {
     return startTime;
   }
 
-  public void setStartTime(@javax.annotation.Nullable String startTime) {
+  public void setStartTime(@jakarta.annotation.Nullable String startTime) {
     this.startTime = startTime;
   }
 
 
-  public NewScheduleRotationActiveDayDataAttributesActiveTimeAttributesInner endTime(@javax.annotation.Nullable String endTime) {
+  public NewScheduleRotationActiveDayDataAttributesActiveTimeAttributesInner endTime(@jakarta.annotation.Nullable String endTime) {
     this.endTime = endTime;
     return this;
   }
@@ -91,12 +91,12 @@ public class NewScheduleRotationActiveDayDataAttributesActiveTimeAttributesInner
    * End time for schedule rotation active time
    * @return endTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getEndTime() {
     return endTime;
   }
 
-  public void setEndTime(@javax.annotation.Nullable String endTime) {
+  public void setEndTime(@jakarta.annotation.Nullable String endTime) {
     this.endTime = endTime;
   }
 

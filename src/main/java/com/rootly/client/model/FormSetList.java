@@ -53,27 +53,27 @@ import com.rootly.client.JSON;
 /**
  * FormSetList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class FormSetList {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<FormSetResponseData> data = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Links links;
 
   public static final String SERIALIZED_NAME_META = "meta";
   @SerializedName(SERIALIZED_NAME_META)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Meta meta;
 
   public FormSetList() {
   }
 
-  public FormSetList data(@javax.annotation.Nonnull List<FormSetResponseData> data) {
+  public FormSetList data(@jakarta.annotation.Nonnull List<FormSetResponseData> data) {
     this.data = data;
     return this;
   }
@@ -90,17 +90,17 @@ public class FormSetList {
    * Get data
    * @return data
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<FormSetResponseData> getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nonnull List<FormSetResponseData> data) {
+  public void setData(@jakarta.annotation.Nonnull List<FormSetResponseData> data) {
     this.data = data;
   }
 
 
-  public FormSetList links(@javax.annotation.Nonnull Links links) {
+  public FormSetList links(@jakarta.annotation.Nonnull Links links) {
     this.links = links;
     return this;
   }
@@ -109,17 +109,17 @@ public class FormSetList {
    * Get links
    * @return links
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Links getLinks() {
     return links;
   }
 
-  public void setLinks(@javax.annotation.Nonnull Links links) {
+  public void setLinks(@jakarta.annotation.Nonnull Links links) {
     this.links = links;
   }
 
 
-  public FormSetList meta(@javax.annotation.Nonnull Meta meta) {
+  public FormSetList meta(@jakarta.annotation.Nonnull Meta meta) {
     this.meta = meta;
     return this;
   }
@@ -128,12 +128,12 @@ public class FormSetList {
    * Get meta
    * @return meta
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Meta getMeta() {
     return meta;
   }
 
-  public void setMeta(@javax.annotation.Nonnull Meta meta) {
+  public void setMeta(@jakarta.annotation.Nonnull Meta meta) {
     this.meta = meta;
   }
 

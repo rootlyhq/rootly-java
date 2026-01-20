@@ -48,11 +48,11 @@ import com.rootly.client.JSON;
 /**
  * UpdateIncidentFeedbackDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateIncidentFeedbackDataAttributes {
   public static final String SERIALIZED_NAME_FEEDBACK = "feedback";
   @SerializedName(SERIALIZED_NAME_FEEDBACK)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String feedback;
 
   /**
@@ -115,18 +115,18 @@ public class UpdateIncidentFeedbackDataAttributes {
 
   public static final String SERIALIZED_NAME_RATING = "rating";
   @SerializedName(SERIALIZED_NAME_RATING)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private RatingEnum rating;
 
   public static final String SERIALIZED_NAME_ANONYMOUS = "anonymous";
   @SerializedName(SERIALIZED_NAME_ANONYMOUS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean anonymous;
 
   public UpdateIncidentFeedbackDataAttributes() {
   }
 
-  public UpdateIncidentFeedbackDataAttributes feedback(@javax.annotation.Nullable String feedback) {
+  public UpdateIncidentFeedbackDataAttributes feedback(@jakarta.annotation.Nullable String feedback) {
     this.feedback = feedback;
     return this;
   }
@@ -135,17 +135,17 @@ public class UpdateIncidentFeedbackDataAttributes {
    * The feedback of the incident feedback
    * @return feedback
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getFeedback() {
     return feedback;
   }
 
-  public void setFeedback(@javax.annotation.Nullable String feedback) {
+  public void setFeedback(@jakarta.annotation.Nullable String feedback) {
     this.feedback = feedback;
   }
 
 
-  public UpdateIncidentFeedbackDataAttributes rating(@javax.annotation.Nullable RatingEnum rating) {
+  public UpdateIncidentFeedbackDataAttributes rating(@jakarta.annotation.Nullable RatingEnum rating) {
     this.rating = rating;
     return this;
   }
@@ -154,17 +154,17 @@ public class UpdateIncidentFeedbackDataAttributes {
    * The rating of the incident feedback
    * @return rating
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public RatingEnum getRating() {
     return rating;
   }
 
-  public void setRating(@javax.annotation.Nullable RatingEnum rating) {
+  public void setRating(@jakarta.annotation.Nullable RatingEnum rating) {
     this.rating = rating;
   }
 
 
-  public UpdateIncidentFeedbackDataAttributes anonymous(@javax.annotation.Nullable Boolean anonymous) {
+  public UpdateIncidentFeedbackDataAttributes anonymous(@jakarta.annotation.Nullable Boolean anonymous) {
     this.anonymous = anonymous;
     return this;
   }
@@ -173,12 +173,12 @@ public class UpdateIncidentFeedbackDataAttributes {
    * Is the feedback anonymous?
    * @return anonymous
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getAnonymous() {
     return anonymous;
   }
 
-  public void setAnonymous(@javax.annotation.Nullable Boolean anonymous) {
+  public void setAnonymous(@jakarta.annotation.Nullable Boolean anonymous) {
     this.anonymous = anonymous;
   }
 

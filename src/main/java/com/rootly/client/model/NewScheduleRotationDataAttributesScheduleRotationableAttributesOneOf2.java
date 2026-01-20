@@ -48,11 +48,11 @@ import com.rootly.client.JSON;
 /**
  * NewScheduleRotationDataAttributesScheduleRotationableAttributesOneOf2
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewScheduleRotationDataAttributesScheduleRotationableAttributesOneOf2 {
   public static final String SERIALIZED_NAME_HANDOFF_TIME = "handoff_time";
   @SerializedName(SERIALIZED_NAME_HANDOFF_TIME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String handoffTime;
 
   /**
@@ -109,13 +109,13 @@ public class NewScheduleRotationDataAttributesScheduleRotationableAttributesOneO
 
   public static final String SERIALIZED_NAME_HANDOFF_DAY = "handoff_day";
   @SerializedName(SERIALIZED_NAME_HANDOFF_DAY)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private HandoffDayEnum handoffDay;
 
   public NewScheduleRotationDataAttributesScheduleRotationableAttributesOneOf2() {
   }
 
-  public NewScheduleRotationDataAttributesScheduleRotationableAttributesOneOf2 handoffTime(@javax.annotation.Nonnull String handoffTime) {
+  public NewScheduleRotationDataAttributesScheduleRotationableAttributesOneOf2 handoffTime(@jakarta.annotation.Nonnull String handoffTime) {
     this.handoffTime = handoffTime;
     return this;
   }
@@ -124,17 +124,17 @@ public class NewScheduleRotationDataAttributesScheduleRotationableAttributesOneO
    * Hand off time for monthly rotation
    * @return handoffTime
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getHandoffTime() {
     return handoffTime;
   }
 
-  public void setHandoffTime(@javax.annotation.Nonnull String handoffTime) {
+  public void setHandoffTime(@jakarta.annotation.Nonnull String handoffTime) {
     this.handoffTime = handoffTime;
   }
 
 
-  public NewScheduleRotationDataAttributesScheduleRotationableAttributesOneOf2 handoffDay(@javax.annotation.Nonnull HandoffDayEnum handoffDay) {
+  public NewScheduleRotationDataAttributesScheduleRotationableAttributesOneOf2 handoffDay(@jakarta.annotation.Nonnull HandoffDayEnum handoffDay) {
     this.handoffDay = handoffDay;
     return this;
   }
@@ -143,12 +143,12 @@ public class NewScheduleRotationDataAttributesScheduleRotationableAttributesOneO
    * Hand off day for monthly rotation
    * @return handoffDay
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public HandoffDayEnum getHandoffDay() {
     return handoffDay;
   }
 
-  public void setHandoffDay(@javax.annotation.Nonnull HandoffDayEnum handoffDay) {
+  public void setHandoffDay(@jakarta.annotation.Nonnull HandoffDayEnum handoffDay) {
     this.handoffDay = handoffDay;
   }
 

@@ -101,7 +101,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addSubscribersToIncidentCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull AddSubscribers addSubscribers, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call addSubscribersToIncidentCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull AddSubscribers addSubscribers, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -148,7 +148,7 @@ public class IncidentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call addSubscribersToIncidentValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull AddSubscribers addSubscribers, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call addSubscribersToIncidentValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull AddSubscribers addSubscribers, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling addSubscribersToIncident(Async)");
@@ -178,7 +178,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentResponse addSubscribersToIncident(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull AddSubscribers addSubscribers) throws ApiException {
+    public IncidentResponse addSubscribersToIncident(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull AddSubscribers addSubscribers) throws ApiException {
         ApiResponse<IncidentResponse> localVarResp = addSubscribersToIncidentWithHttpInfo(id, addSubscribers);
         return localVarResp.getData();
     }
@@ -198,7 +198,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentResponse> addSubscribersToIncidentWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull AddSubscribers addSubscribers) throws ApiException {
+    public ApiResponse<IncidentResponse> addSubscribersToIncidentWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull AddSubscribers addSubscribers) throws ApiException {
         okhttp3.Call localVarCall = addSubscribersToIncidentValidateBeforeCall(id, addSubscribers, null);
         Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -220,7 +220,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addSubscribersToIncidentAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull AddSubscribers addSubscribers, final ApiCallback<IncidentResponse> _callback) throws ApiException {
+    public okhttp3.Call addSubscribersToIncidentAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull AddSubscribers addSubscribers, final ApiCallback<IncidentResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = addSubscribersToIncidentValidateBeforeCall(id, addSubscribers, _callback);
         Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
@@ -242,7 +242,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call assignUserToIncidentCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull AssignRoleToUser assignRoleToUser, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call assignUserToIncidentCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull AssignRoleToUser assignRoleToUser, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -289,7 +289,7 @@ public class IncidentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call assignUserToIncidentValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull AssignRoleToUser assignRoleToUser, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call assignUserToIncidentValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull AssignRoleToUser assignRoleToUser, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling assignUserToIncident(Async)");
@@ -319,7 +319,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentResponse assignUserToIncident(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull AssignRoleToUser assignRoleToUser) throws ApiException {
+    public IncidentResponse assignUserToIncident(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull AssignRoleToUser assignRoleToUser) throws ApiException {
         ApiResponse<IncidentResponse> localVarResp = assignUserToIncidentWithHttpInfo(id, assignRoleToUser);
         return localVarResp.getData();
     }
@@ -339,7 +339,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentResponse> assignUserToIncidentWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull AssignRoleToUser assignRoleToUser) throws ApiException {
+    public ApiResponse<IncidentResponse> assignUserToIncidentWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull AssignRoleToUser assignRoleToUser) throws ApiException {
         okhttp3.Call localVarCall = assignUserToIncidentValidateBeforeCall(id, assignRoleToUser, null);
         Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -361,7 +361,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call assignUserToIncidentAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull AssignRoleToUser assignRoleToUser, final ApiCallback<IncidentResponse> _callback) throws ApiException {
+    public okhttp3.Call assignUserToIncidentAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull AssignRoleToUser assignRoleToUser, final ApiCallback<IncidentResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = assignUserToIncidentValidateBeforeCall(id, assignRoleToUser, _callback);
         Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
@@ -383,7 +383,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call cancelIncidentCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull CancelIncident cancelIncident, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call cancelIncidentCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull CancelIncident cancelIncident, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -430,7 +430,7 @@ public class IncidentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call cancelIncidentValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull CancelIncident cancelIncident, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call cancelIncidentValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull CancelIncident cancelIncident, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling cancelIncident(Async)");
@@ -460,7 +460,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentResponse cancelIncident(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull CancelIncident cancelIncident) throws ApiException {
+    public IncidentResponse cancelIncident(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull CancelIncident cancelIncident) throws ApiException {
         ApiResponse<IncidentResponse> localVarResp = cancelIncidentWithHttpInfo(id, cancelIncident);
         return localVarResp.getData();
     }
@@ -480,7 +480,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentResponse> cancelIncidentWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull CancelIncident cancelIncident) throws ApiException {
+    public ApiResponse<IncidentResponse> cancelIncidentWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull CancelIncident cancelIncident) throws ApiException {
         okhttp3.Call localVarCall = cancelIncidentValidateBeforeCall(id, cancelIncident, null);
         Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -502,7 +502,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call cancelIncidentAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull CancelIncident cancelIncident, final ApiCallback<IncidentResponse> _callback) throws ApiException {
+    public okhttp3.Call cancelIncidentAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull CancelIncident cancelIncident, final ApiCallback<IncidentResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = cancelIncidentValidateBeforeCall(id, cancelIncident, _callback);
         Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
@@ -524,7 +524,7 @@ public class IncidentsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createIncidentCall(@javax.annotation.Nonnull NewIncident newIncident, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createIncidentCall(@jakarta.annotation.Nonnull NewIncident newIncident, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -570,7 +570,7 @@ public class IncidentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createIncidentValidateBeforeCall(@javax.annotation.Nonnull NewIncident newIncident, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createIncidentValidateBeforeCall(@jakarta.annotation.Nonnull NewIncident newIncident, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'newIncident' is set
         if (newIncident == null) {
             throw new ApiException("Missing the required parameter 'newIncident' when calling createIncident(Async)");
@@ -595,7 +595,7 @@ public class IncidentsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentResponse createIncident(@javax.annotation.Nonnull NewIncident newIncident) throws ApiException {
+    public IncidentResponse createIncident(@jakarta.annotation.Nonnull NewIncident newIncident) throws ApiException {
         ApiResponse<IncidentResponse> localVarResp = createIncidentWithHttpInfo(newIncident);
         return localVarResp.getData();
     }
@@ -615,7 +615,7 @@ public class IncidentsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentResponse> createIncidentWithHttpInfo(@javax.annotation.Nonnull NewIncident newIncident) throws ApiException {
+    public ApiResponse<IncidentResponse> createIncidentWithHttpInfo(@jakarta.annotation.Nonnull NewIncident newIncident) throws ApiException {
         okhttp3.Call localVarCall = createIncidentValidateBeforeCall(newIncident, null);
         Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -637,7 +637,7 @@ public class IncidentsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createIncidentAsync(@javax.annotation.Nonnull NewIncident newIncident, final ApiCallback<IncidentResponse> _callback) throws ApiException {
+    public okhttp3.Call createIncidentAsync(@jakarta.annotation.Nonnull NewIncident newIncident, final ApiCallback<IncidentResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createIncidentValidateBeforeCall(newIncident, _callback);
         Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
@@ -658,7 +658,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteIncidentCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteIncidentCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -704,7 +704,7 @@ public class IncidentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteIncidentValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteIncidentValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteIncident(Async)");
@@ -728,7 +728,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentResponse deleteIncident(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public IncidentResponse deleteIncident(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<IncidentResponse> localVarResp = deleteIncidentWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -747,7 +747,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentResponse> deleteIncidentWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+    public ApiResponse<IncidentResponse> deleteIncidentWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = deleteIncidentValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -768,7 +768,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteIncidentAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<IncidentResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteIncidentAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<IncidentResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteIncidentValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
@@ -790,7 +790,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getIncidentCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getIncidentCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -840,7 +840,7 @@ public class IncidentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getIncidentValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getIncidentValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getIncident(Async)");
@@ -865,7 +865,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentResponse getIncident(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nullable String include) throws ApiException {
+    public IncidentResponse getIncident(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nullable String include) throws ApiException {
         ApiResponse<IncidentResponse> localVarResp = getIncidentWithHttpInfo(id, include);
         return localVarResp.getData();
     }
@@ -885,7 +885,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentResponse> getIncidentWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nullable String include) throws ApiException {
+    public ApiResponse<IncidentResponse> getIncidentWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nullable String include) throws ApiException {
         okhttp3.Call localVarCall = getIncidentValidateBeforeCall(id, include, null);
         Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -907,7 +907,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getIncidentAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nullable String include, final ApiCallback<IncidentResponse> _callback) throws ApiException {
+    public okhttp3.Call getIncidentAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nullable String include, final ApiCallback<IncidentResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getIncidentValidateBeforeCall(id, include, _callback);
         Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
@@ -987,7 +987,7 @@ public class IncidentsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listIncidentsCall(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable String filterPrivate, @javax.annotation.Nullable Integer filterUserId, @javax.annotation.Nullable String filterSeverity, @javax.annotation.Nullable String filterSeverityId, @javax.annotation.Nullable String filterLabels, @javax.annotation.Nullable String filterTypes, @javax.annotation.Nullable String filterTypeIds, @javax.annotation.Nullable String filterEnvironments, @javax.annotation.Nullable String filterEnvironmentIds, @javax.annotation.Nullable String filterFunctionalities, @javax.annotation.Nullable String filterFunctionalityIds, @javax.annotation.Nullable String filterServices, @javax.annotation.Nullable String filterServiceIds, @javax.annotation.Nullable String filterTeams, @javax.annotation.Nullable String filterTeamIds, @javax.annotation.Nullable String filterCause, @javax.annotation.Nullable String filterCauseIds, @javax.annotation.Nullable String filterCustomFieldSelectedOptionIds, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String filterUpdatedAtGt, @javax.annotation.Nullable String filterUpdatedAtGte, @javax.annotation.Nullable String filterUpdatedAtLt, @javax.annotation.Nullable String filterUpdatedAtLte, @javax.annotation.Nullable String filterStartedAtGt, @javax.annotation.Nullable String filterStartedAtGte, @javax.annotation.Nullable String filterStartedAtLt, @javax.annotation.Nullable String filterStartedAtLte, @javax.annotation.Nullable String filterDetectedAtGt, @javax.annotation.Nullable String filterDetectedAtGte, @javax.annotation.Nullable String filterDetectedAtLt, @javax.annotation.Nullable String filterDetectedAtLte, @javax.annotation.Nullable String filterAcknowledgedAtGt, @javax.annotation.Nullable String filterAcknowledgedAtGte, @javax.annotation.Nullable String filterAcknowledgedAtLt, @javax.annotation.Nullable String filterAcknowledgedAtLte, @javax.annotation.Nullable String filterMitigatedAtGt, @javax.annotation.Nullable String filterMitigatedAtGte, @javax.annotation.Nullable String filterMitigatedAtLt, @javax.annotation.Nullable String filterMitigatedAtLte, @javax.annotation.Nullable String filterResolvedAtGt, @javax.annotation.Nullable String filterResolvedAtGte, @javax.annotation.Nullable String filterResolvedAtLt, @javax.annotation.Nullable String filterResolvedAtLte, @javax.annotation.Nullable String filterClosedAtGt, @javax.annotation.Nullable String filterClosedAtGte, @javax.annotation.Nullable String filterClosedAtLt, @javax.annotation.Nullable String filterClosedAtLte, @javax.annotation.Nullable String filterInTriageAtGt, @javax.annotation.Nullable String filterInTriageAtGte, @javax.annotation.Nullable String filterInTriageAtLt, @javax.annotation.Nullable String filterInTriageAtLte, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listIncidentsCall(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterPrivate, @jakarta.annotation.Nullable Integer filterUserId, @jakarta.annotation.Nullable String filterSeverity, @jakarta.annotation.Nullable String filterSeverityId, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterTypes, @jakarta.annotation.Nullable String filterTypeIds, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterEnvironmentIds, @jakarta.annotation.Nullable String filterFunctionalities, @jakarta.annotation.Nullable String filterFunctionalityIds, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterServiceIds, @jakarta.annotation.Nullable String filterTeams, @jakarta.annotation.Nullable String filterTeamIds, @jakarta.annotation.Nullable String filterCause, @jakarta.annotation.Nullable String filterCauseIds, @jakarta.annotation.Nullable String filterCustomFieldSelectedOptionIds, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUpdatedAtGt, @jakarta.annotation.Nullable String filterUpdatedAtGte, @jakarta.annotation.Nullable String filterUpdatedAtLt, @jakarta.annotation.Nullable String filterUpdatedAtLte, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterDetectedAtGt, @jakarta.annotation.Nullable String filterDetectedAtGte, @jakarta.annotation.Nullable String filterDetectedAtLt, @jakarta.annotation.Nullable String filterDetectedAtLte, @jakarta.annotation.Nullable String filterAcknowledgedAtGt, @jakarta.annotation.Nullable String filterAcknowledgedAtGte, @jakarta.annotation.Nullable String filterAcknowledgedAtLt, @jakarta.annotation.Nullable String filterAcknowledgedAtLte, @jakarta.annotation.Nullable String filterMitigatedAtGt, @jakarta.annotation.Nullable String filterMitigatedAtGte, @jakarta.annotation.Nullable String filterMitigatedAtLt, @jakarta.annotation.Nullable String filterMitigatedAtLte, @jakarta.annotation.Nullable String filterResolvedAtGt, @jakarta.annotation.Nullable String filterResolvedAtGte, @jakarta.annotation.Nullable String filterResolvedAtLt, @jakarta.annotation.Nullable String filterResolvedAtLte, @jakarta.annotation.Nullable String filterClosedAtGt, @jakarta.annotation.Nullable String filterClosedAtGte, @jakarta.annotation.Nullable String filterClosedAtLt, @jakarta.annotation.Nullable String filterClosedAtLte, @jakarta.annotation.Nullable String filterInTriageAtGt, @jakarta.annotation.Nullable String filterInTriageAtGte, @jakarta.annotation.Nullable String filterInTriageAtLt, @jakarta.annotation.Nullable String filterInTriageAtLte, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1276,7 +1276,7 @@ public class IncidentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listIncidentsValidateBeforeCall(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable String filterPrivate, @javax.annotation.Nullable Integer filterUserId, @javax.annotation.Nullable String filterSeverity, @javax.annotation.Nullable String filterSeverityId, @javax.annotation.Nullable String filterLabels, @javax.annotation.Nullable String filterTypes, @javax.annotation.Nullable String filterTypeIds, @javax.annotation.Nullable String filterEnvironments, @javax.annotation.Nullable String filterEnvironmentIds, @javax.annotation.Nullable String filterFunctionalities, @javax.annotation.Nullable String filterFunctionalityIds, @javax.annotation.Nullable String filterServices, @javax.annotation.Nullable String filterServiceIds, @javax.annotation.Nullable String filterTeams, @javax.annotation.Nullable String filterTeamIds, @javax.annotation.Nullable String filterCause, @javax.annotation.Nullable String filterCauseIds, @javax.annotation.Nullable String filterCustomFieldSelectedOptionIds, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String filterUpdatedAtGt, @javax.annotation.Nullable String filterUpdatedAtGte, @javax.annotation.Nullable String filterUpdatedAtLt, @javax.annotation.Nullable String filterUpdatedAtLte, @javax.annotation.Nullable String filterStartedAtGt, @javax.annotation.Nullable String filterStartedAtGte, @javax.annotation.Nullable String filterStartedAtLt, @javax.annotation.Nullable String filterStartedAtLte, @javax.annotation.Nullable String filterDetectedAtGt, @javax.annotation.Nullable String filterDetectedAtGte, @javax.annotation.Nullable String filterDetectedAtLt, @javax.annotation.Nullable String filterDetectedAtLte, @javax.annotation.Nullable String filterAcknowledgedAtGt, @javax.annotation.Nullable String filterAcknowledgedAtGte, @javax.annotation.Nullable String filterAcknowledgedAtLt, @javax.annotation.Nullable String filterAcknowledgedAtLte, @javax.annotation.Nullable String filterMitigatedAtGt, @javax.annotation.Nullable String filterMitigatedAtGte, @javax.annotation.Nullable String filterMitigatedAtLt, @javax.annotation.Nullable String filterMitigatedAtLte, @javax.annotation.Nullable String filterResolvedAtGt, @javax.annotation.Nullable String filterResolvedAtGte, @javax.annotation.Nullable String filterResolvedAtLt, @javax.annotation.Nullable String filterResolvedAtLte, @javax.annotation.Nullable String filterClosedAtGt, @javax.annotation.Nullable String filterClosedAtGte, @javax.annotation.Nullable String filterClosedAtLt, @javax.annotation.Nullable String filterClosedAtLte, @javax.annotation.Nullable String filterInTriageAtGt, @javax.annotation.Nullable String filterInTriageAtGte, @javax.annotation.Nullable String filterInTriageAtLt, @javax.annotation.Nullable String filterInTriageAtLte, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listIncidentsValidateBeforeCall(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterPrivate, @jakarta.annotation.Nullable Integer filterUserId, @jakarta.annotation.Nullable String filterSeverity, @jakarta.annotation.Nullable String filterSeverityId, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterTypes, @jakarta.annotation.Nullable String filterTypeIds, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterEnvironmentIds, @jakarta.annotation.Nullable String filterFunctionalities, @jakarta.annotation.Nullable String filterFunctionalityIds, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterServiceIds, @jakarta.annotation.Nullable String filterTeams, @jakarta.annotation.Nullable String filterTeamIds, @jakarta.annotation.Nullable String filterCause, @jakarta.annotation.Nullable String filterCauseIds, @jakarta.annotation.Nullable String filterCustomFieldSelectedOptionIds, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUpdatedAtGt, @jakarta.annotation.Nullable String filterUpdatedAtGte, @jakarta.annotation.Nullable String filterUpdatedAtLt, @jakarta.annotation.Nullable String filterUpdatedAtLte, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterDetectedAtGt, @jakarta.annotation.Nullable String filterDetectedAtGte, @jakarta.annotation.Nullable String filterDetectedAtLt, @jakarta.annotation.Nullable String filterDetectedAtLte, @jakarta.annotation.Nullable String filterAcknowledgedAtGt, @jakarta.annotation.Nullable String filterAcknowledgedAtGte, @jakarta.annotation.Nullable String filterAcknowledgedAtLt, @jakarta.annotation.Nullable String filterAcknowledgedAtLte, @jakarta.annotation.Nullable String filterMitigatedAtGt, @jakarta.annotation.Nullable String filterMitigatedAtGte, @jakarta.annotation.Nullable String filterMitigatedAtLt, @jakarta.annotation.Nullable String filterMitigatedAtLte, @jakarta.annotation.Nullable String filterResolvedAtGt, @jakarta.annotation.Nullable String filterResolvedAtGte, @jakarta.annotation.Nullable String filterResolvedAtLt, @jakarta.annotation.Nullable String filterResolvedAtLte, @jakarta.annotation.Nullable String filterClosedAtGt, @jakarta.annotation.Nullable String filterClosedAtGte, @jakarta.annotation.Nullable String filterClosedAtLt, @jakarta.annotation.Nullable String filterClosedAtLte, @jakarta.annotation.Nullable String filterInTriageAtGt, @jakarta.annotation.Nullable String filterInTriageAtGte, @jakarta.annotation.Nullable String filterInTriageAtLt, @jakarta.annotation.Nullable String filterInTriageAtLte, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         return listIncidentsCall(pageNumber, pageSize, filterSearch, filterKind, filterStatus, filterPrivate, filterUserId, filterSeverity, filterSeverityId, filterLabels, filterTypes, filterTypeIds, filterEnvironments, filterEnvironmentIds, filterFunctionalities, filterFunctionalityIds, filterServices, filterServiceIds, filterTeams, filterTeamIds, filterCause, filterCauseIds, filterCustomFieldSelectedOptionIds, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUpdatedAtGt, filterUpdatedAtGte, filterUpdatedAtLt, filterUpdatedAtLte, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterDetectedAtGt, filterDetectedAtGte, filterDetectedAtLt, filterDetectedAtLte, filterAcknowledgedAtGt, filterAcknowledgedAtGte, filterAcknowledgedAtLt, filterAcknowledgedAtLte, filterMitigatedAtGt, filterMitigatedAtGte, filterMitigatedAtLt, filterMitigatedAtLte, filterResolvedAtGt, filterResolvedAtGte, filterResolvedAtLt, filterResolvedAtLte, filterClosedAtGt, filterClosedAtGte, filterClosedAtLt, filterClosedAtLte, filterInTriageAtGt, filterInTriageAtGte, filterInTriageAtLt, filterInTriageAtLte, sort, include, _callback);
 
     }
@@ -1354,7 +1354,7 @@ public class IncidentsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentList listIncidents(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable String filterPrivate, @javax.annotation.Nullable Integer filterUserId, @javax.annotation.Nullable String filterSeverity, @javax.annotation.Nullable String filterSeverityId, @javax.annotation.Nullable String filterLabels, @javax.annotation.Nullable String filterTypes, @javax.annotation.Nullable String filterTypeIds, @javax.annotation.Nullable String filterEnvironments, @javax.annotation.Nullable String filterEnvironmentIds, @javax.annotation.Nullable String filterFunctionalities, @javax.annotation.Nullable String filterFunctionalityIds, @javax.annotation.Nullable String filterServices, @javax.annotation.Nullable String filterServiceIds, @javax.annotation.Nullable String filterTeams, @javax.annotation.Nullable String filterTeamIds, @javax.annotation.Nullable String filterCause, @javax.annotation.Nullable String filterCauseIds, @javax.annotation.Nullable String filterCustomFieldSelectedOptionIds, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String filterUpdatedAtGt, @javax.annotation.Nullable String filterUpdatedAtGte, @javax.annotation.Nullable String filterUpdatedAtLt, @javax.annotation.Nullable String filterUpdatedAtLte, @javax.annotation.Nullable String filterStartedAtGt, @javax.annotation.Nullable String filterStartedAtGte, @javax.annotation.Nullable String filterStartedAtLt, @javax.annotation.Nullable String filterStartedAtLte, @javax.annotation.Nullable String filterDetectedAtGt, @javax.annotation.Nullable String filterDetectedAtGte, @javax.annotation.Nullable String filterDetectedAtLt, @javax.annotation.Nullable String filterDetectedAtLte, @javax.annotation.Nullable String filterAcknowledgedAtGt, @javax.annotation.Nullable String filterAcknowledgedAtGte, @javax.annotation.Nullable String filterAcknowledgedAtLt, @javax.annotation.Nullable String filterAcknowledgedAtLte, @javax.annotation.Nullable String filterMitigatedAtGt, @javax.annotation.Nullable String filterMitigatedAtGte, @javax.annotation.Nullable String filterMitigatedAtLt, @javax.annotation.Nullable String filterMitigatedAtLte, @javax.annotation.Nullable String filterResolvedAtGt, @javax.annotation.Nullable String filterResolvedAtGte, @javax.annotation.Nullable String filterResolvedAtLt, @javax.annotation.Nullable String filterResolvedAtLte, @javax.annotation.Nullable String filterClosedAtGt, @javax.annotation.Nullable String filterClosedAtGte, @javax.annotation.Nullable String filterClosedAtLt, @javax.annotation.Nullable String filterClosedAtLte, @javax.annotation.Nullable String filterInTriageAtGt, @javax.annotation.Nullable String filterInTriageAtGte, @javax.annotation.Nullable String filterInTriageAtLt, @javax.annotation.Nullable String filterInTriageAtLte, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String include) throws ApiException {
+    public IncidentList listIncidents(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterPrivate, @jakarta.annotation.Nullable Integer filterUserId, @jakarta.annotation.Nullable String filterSeverity, @jakarta.annotation.Nullable String filterSeverityId, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterTypes, @jakarta.annotation.Nullable String filterTypeIds, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterEnvironmentIds, @jakarta.annotation.Nullable String filterFunctionalities, @jakarta.annotation.Nullable String filterFunctionalityIds, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterServiceIds, @jakarta.annotation.Nullable String filterTeams, @jakarta.annotation.Nullable String filterTeamIds, @jakarta.annotation.Nullable String filterCause, @jakarta.annotation.Nullable String filterCauseIds, @jakarta.annotation.Nullable String filterCustomFieldSelectedOptionIds, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUpdatedAtGt, @jakarta.annotation.Nullable String filterUpdatedAtGte, @jakarta.annotation.Nullable String filterUpdatedAtLt, @jakarta.annotation.Nullable String filterUpdatedAtLte, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterDetectedAtGt, @jakarta.annotation.Nullable String filterDetectedAtGte, @jakarta.annotation.Nullable String filterDetectedAtLt, @jakarta.annotation.Nullable String filterDetectedAtLte, @jakarta.annotation.Nullable String filterAcknowledgedAtGt, @jakarta.annotation.Nullable String filterAcknowledgedAtGte, @jakarta.annotation.Nullable String filterAcknowledgedAtLt, @jakarta.annotation.Nullable String filterAcknowledgedAtLte, @jakarta.annotation.Nullable String filterMitigatedAtGt, @jakarta.annotation.Nullable String filterMitigatedAtGte, @jakarta.annotation.Nullable String filterMitigatedAtLt, @jakarta.annotation.Nullable String filterMitigatedAtLte, @jakarta.annotation.Nullable String filterResolvedAtGt, @jakarta.annotation.Nullable String filterResolvedAtGte, @jakarta.annotation.Nullable String filterResolvedAtLt, @jakarta.annotation.Nullable String filterResolvedAtLte, @jakarta.annotation.Nullable String filterClosedAtGt, @jakarta.annotation.Nullable String filterClosedAtGte, @jakarta.annotation.Nullable String filterClosedAtLt, @jakarta.annotation.Nullable String filterClosedAtLte, @jakarta.annotation.Nullable String filterInTriageAtGt, @jakarta.annotation.Nullable String filterInTriageAtGte, @jakarta.annotation.Nullable String filterInTriageAtLt, @jakarta.annotation.Nullable String filterInTriageAtLte, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable String include) throws ApiException {
         ApiResponse<IncidentList> localVarResp = listIncidentsWithHttpInfo(pageNumber, pageSize, filterSearch, filterKind, filterStatus, filterPrivate, filterUserId, filterSeverity, filterSeverityId, filterLabels, filterTypes, filterTypeIds, filterEnvironments, filterEnvironmentIds, filterFunctionalities, filterFunctionalityIds, filterServices, filterServiceIds, filterTeams, filterTeamIds, filterCause, filterCauseIds, filterCustomFieldSelectedOptionIds, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUpdatedAtGt, filterUpdatedAtGte, filterUpdatedAtLt, filterUpdatedAtLte, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterDetectedAtGt, filterDetectedAtGte, filterDetectedAtLt, filterDetectedAtLte, filterAcknowledgedAtGt, filterAcknowledgedAtGte, filterAcknowledgedAtLt, filterAcknowledgedAtLte, filterMitigatedAtGt, filterMitigatedAtGte, filterMitigatedAtLt, filterMitigatedAtLte, filterResolvedAtGt, filterResolvedAtGte, filterResolvedAtLt, filterResolvedAtLte, filterClosedAtGt, filterClosedAtGte, filterClosedAtLt, filterClosedAtLte, filterInTriageAtGt, filterInTriageAtGte, filterInTriageAtLt, filterInTriageAtLte, sort, include);
         return localVarResp.getData();
     }
@@ -1432,7 +1432,7 @@ public class IncidentsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentList> listIncidentsWithHttpInfo(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable String filterPrivate, @javax.annotation.Nullable Integer filterUserId, @javax.annotation.Nullable String filterSeverity, @javax.annotation.Nullable String filterSeverityId, @javax.annotation.Nullable String filterLabels, @javax.annotation.Nullable String filterTypes, @javax.annotation.Nullable String filterTypeIds, @javax.annotation.Nullable String filterEnvironments, @javax.annotation.Nullable String filterEnvironmentIds, @javax.annotation.Nullable String filterFunctionalities, @javax.annotation.Nullable String filterFunctionalityIds, @javax.annotation.Nullable String filterServices, @javax.annotation.Nullable String filterServiceIds, @javax.annotation.Nullable String filterTeams, @javax.annotation.Nullable String filterTeamIds, @javax.annotation.Nullable String filterCause, @javax.annotation.Nullable String filterCauseIds, @javax.annotation.Nullable String filterCustomFieldSelectedOptionIds, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String filterUpdatedAtGt, @javax.annotation.Nullable String filterUpdatedAtGte, @javax.annotation.Nullable String filterUpdatedAtLt, @javax.annotation.Nullable String filterUpdatedAtLte, @javax.annotation.Nullable String filterStartedAtGt, @javax.annotation.Nullable String filterStartedAtGte, @javax.annotation.Nullable String filterStartedAtLt, @javax.annotation.Nullable String filterStartedAtLte, @javax.annotation.Nullable String filterDetectedAtGt, @javax.annotation.Nullable String filterDetectedAtGte, @javax.annotation.Nullable String filterDetectedAtLt, @javax.annotation.Nullable String filterDetectedAtLte, @javax.annotation.Nullable String filterAcknowledgedAtGt, @javax.annotation.Nullable String filterAcknowledgedAtGte, @javax.annotation.Nullable String filterAcknowledgedAtLt, @javax.annotation.Nullable String filterAcknowledgedAtLte, @javax.annotation.Nullable String filterMitigatedAtGt, @javax.annotation.Nullable String filterMitigatedAtGte, @javax.annotation.Nullable String filterMitigatedAtLt, @javax.annotation.Nullable String filterMitigatedAtLte, @javax.annotation.Nullable String filterResolvedAtGt, @javax.annotation.Nullable String filterResolvedAtGte, @javax.annotation.Nullable String filterResolvedAtLt, @javax.annotation.Nullable String filterResolvedAtLte, @javax.annotation.Nullable String filterClosedAtGt, @javax.annotation.Nullable String filterClosedAtGte, @javax.annotation.Nullable String filterClosedAtLt, @javax.annotation.Nullable String filterClosedAtLte, @javax.annotation.Nullable String filterInTriageAtGt, @javax.annotation.Nullable String filterInTriageAtGte, @javax.annotation.Nullable String filterInTriageAtLt, @javax.annotation.Nullable String filterInTriageAtLte, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String include) throws ApiException {
+    public ApiResponse<IncidentList> listIncidentsWithHttpInfo(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterPrivate, @jakarta.annotation.Nullable Integer filterUserId, @jakarta.annotation.Nullable String filterSeverity, @jakarta.annotation.Nullable String filterSeverityId, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterTypes, @jakarta.annotation.Nullable String filterTypeIds, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterEnvironmentIds, @jakarta.annotation.Nullable String filterFunctionalities, @jakarta.annotation.Nullable String filterFunctionalityIds, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterServiceIds, @jakarta.annotation.Nullable String filterTeams, @jakarta.annotation.Nullable String filterTeamIds, @jakarta.annotation.Nullable String filterCause, @jakarta.annotation.Nullable String filterCauseIds, @jakarta.annotation.Nullable String filterCustomFieldSelectedOptionIds, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUpdatedAtGt, @jakarta.annotation.Nullable String filterUpdatedAtGte, @jakarta.annotation.Nullable String filterUpdatedAtLt, @jakarta.annotation.Nullable String filterUpdatedAtLte, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterDetectedAtGt, @jakarta.annotation.Nullable String filterDetectedAtGte, @jakarta.annotation.Nullable String filterDetectedAtLt, @jakarta.annotation.Nullable String filterDetectedAtLte, @jakarta.annotation.Nullable String filterAcknowledgedAtGt, @jakarta.annotation.Nullable String filterAcknowledgedAtGte, @jakarta.annotation.Nullable String filterAcknowledgedAtLt, @jakarta.annotation.Nullable String filterAcknowledgedAtLte, @jakarta.annotation.Nullable String filterMitigatedAtGt, @jakarta.annotation.Nullable String filterMitigatedAtGte, @jakarta.annotation.Nullable String filterMitigatedAtLt, @jakarta.annotation.Nullable String filterMitigatedAtLte, @jakarta.annotation.Nullable String filterResolvedAtGt, @jakarta.annotation.Nullable String filterResolvedAtGte, @jakarta.annotation.Nullable String filterResolvedAtLt, @jakarta.annotation.Nullable String filterResolvedAtLte, @jakarta.annotation.Nullable String filterClosedAtGt, @jakarta.annotation.Nullable String filterClosedAtGte, @jakarta.annotation.Nullable String filterClosedAtLt, @jakarta.annotation.Nullable String filterClosedAtLte, @jakarta.annotation.Nullable String filterInTriageAtGt, @jakarta.annotation.Nullable String filterInTriageAtGte, @jakarta.annotation.Nullable String filterInTriageAtLt, @jakarta.annotation.Nullable String filterInTriageAtLte, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable String include) throws ApiException {
         okhttp3.Call localVarCall = listIncidentsValidateBeforeCall(pageNumber, pageSize, filterSearch, filterKind, filterStatus, filterPrivate, filterUserId, filterSeverity, filterSeverityId, filterLabels, filterTypes, filterTypeIds, filterEnvironments, filterEnvironmentIds, filterFunctionalities, filterFunctionalityIds, filterServices, filterServiceIds, filterTeams, filterTeamIds, filterCause, filterCauseIds, filterCustomFieldSelectedOptionIds, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUpdatedAtGt, filterUpdatedAtGte, filterUpdatedAtLt, filterUpdatedAtLte, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterDetectedAtGt, filterDetectedAtGte, filterDetectedAtLt, filterDetectedAtLte, filterAcknowledgedAtGt, filterAcknowledgedAtGte, filterAcknowledgedAtLt, filterAcknowledgedAtLte, filterMitigatedAtGt, filterMitigatedAtGte, filterMitigatedAtLt, filterMitigatedAtLte, filterResolvedAtGt, filterResolvedAtGte, filterResolvedAtLt, filterResolvedAtLte, filterClosedAtGt, filterClosedAtGte, filterClosedAtLt, filterClosedAtLte, filterInTriageAtGt, filterInTriageAtGte, filterInTriageAtLt, filterInTriageAtLte, sort, include, null);
         Type localVarReturnType = new TypeToken<IncidentList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1512,7 +1512,7 @@ public class IncidentsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listIncidentsAsync(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable String filterPrivate, @javax.annotation.Nullable Integer filterUserId, @javax.annotation.Nullable String filterSeverity, @javax.annotation.Nullable String filterSeverityId, @javax.annotation.Nullable String filterLabels, @javax.annotation.Nullable String filterTypes, @javax.annotation.Nullable String filterTypeIds, @javax.annotation.Nullable String filterEnvironments, @javax.annotation.Nullable String filterEnvironmentIds, @javax.annotation.Nullable String filterFunctionalities, @javax.annotation.Nullable String filterFunctionalityIds, @javax.annotation.Nullable String filterServices, @javax.annotation.Nullable String filterServiceIds, @javax.annotation.Nullable String filterTeams, @javax.annotation.Nullable String filterTeamIds, @javax.annotation.Nullable String filterCause, @javax.annotation.Nullable String filterCauseIds, @javax.annotation.Nullable String filterCustomFieldSelectedOptionIds, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String filterUpdatedAtGt, @javax.annotation.Nullable String filterUpdatedAtGte, @javax.annotation.Nullable String filterUpdatedAtLt, @javax.annotation.Nullable String filterUpdatedAtLte, @javax.annotation.Nullable String filterStartedAtGt, @javax.annotation.Nullable String filterStartedAtGte, @javax.annotation.Nullable String filterStartedAtLt, @javax.annotation.Nullable String filterStartedAtLte, @javax.annotation.Nullable String filterDetectedAtGt, @javax.annotation.Nullable String filterDetectedAtGte, @javax.annotation.Nullable String filterDetectedAtLt, @javax.annotation.Nullable String filterDetectedAtLte, @javax.annotation.Nullable String filterAcknowledgedAtGt, @javax.annotation.Nullable String filterAcknowledgedAtGte, @javax.annotation.Nullable String filterAcknowledgedAtLt, @javax.annotation.Nullable String filterAcknowledgedAtLte, @javax.annotation.Nullable String filterMitigatedAtGt, @javax.annotation.Nullable String filterMitigatedAtGte, @javax.annotation.Nullable String filterMitigatedAtLt, @javax.annotation.Nullable String filterMitigatedAtLte, @javax.annotation.Nullable String filterResolvedAtGt, @javax.annotation.Nullable String filterResolvedAtGte, @javax.annotation.Nullable String filterResolvedAtLt, @javax.annotation.Nullable String filterResolvedAtLte, @javax.annotation.Nullable String filterClosedAtGt, @javax.annotation.Nullable String filterClosedAtGte, @javax.annotation.Nullable String filterClosedAtLt, @javax.annotation.Nullable String filterClosedAtLte, @javax.annotation.Nullable String filterInTriageAtGt, @javax.annotation.Nullable String filterInTriageAtGte, @javax.annotation.Nullable String filterInTriageAtLt, @javax.annotation.Nullable String filterInTriageAtLte, @javax.annotation.Nullable String sort, @javax.annotation.Nullable String include, final ApiCallback<IncidentList> _callback) throws ApiException {
+    public okhttp3.Call listIncidentsAsync(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterPrivate, @jakarta.annotation.Nullable Integer filterUserId, @jakarta.annotation.Nullable String filterSeverity, @jakarta.annotation.Nullable String filterSeverityId, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterTypes, @jakarta.annotation.Nullable String filterTypeIds, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterEnvironmentIds, @jakarta.annotation.Nullable String filterFunctionalities, @jakarta.annotation.Nullable String filterFunctionalityIds, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterServiceIds, @jakarta.annotation.Nullable String filterTeams, @jakarta.annotation.Nullable String filterTeamIds, @jakarta.annotation.Nullable String filterCause, @jakarta.annotation.Nullable String filterCauseIds, @jakarta.annotation.Nullable String filterCustomFieldSelectedOptionIds, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUpdatedAtGt, @jakarta.annotation.Nullable String filterUpdatedAtGte, @jakarta.annotation.Nullable String filterUpdatedAtLt, @jakarta.annotation.Nullable String filterUpdatedAtLte, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterDetectedAtGt, @jakarta.annotation.Nullable String filterDetectedAtGte, @jakarta.annotation.Nullable String filterDetectedAtLt, @jakarta.annotation.Nullable String filterDetectedAtLte, @jakarta.annotation.Nullable String filterAcknowledgedAtGt, @jakarta.annotation.Nullable String filterAcknowledgedAtGte, @jakarta.annotation.Nullable String filterAcknowledgedAtLt, @jakarta.annotation.Nullable String filterAcknowledgedAtLte, @jakarta.annotation.Nullable String filterMitigatedAtGt, @jakarta.annotation.Nullable String filterMitigatedAtGte, @jakarta.annotation.Nullable String filterMitigatedAtLt, @jakarta.annotation.Nullable String filterMitigatedAtLte, @jakarta.annotation.Nullable String filterResolvedAtGt, @jakarta.annotation.Nullable String filterResolvedAtGte, @jakarta.annotation.Nullable String filterResolvedAtLt, @jakarta.annotation.Nullable String filterResolvedAtLte, @jakarta.annotation.Nullable String filterClosedAtGt, @jakarta.annotation.Nullable String filterClosedAtGte, @jakarta.annotation.Nullable String filterClosedAtLt, @jakarta.annotation.Nullable String filterClosedAtLte, @jakarta.annotation.Nullable String filterInTriageAtGt, @jakarta.annotation.Nullable String filterInTriageAtGte, @jakarta.annotation.Nullable String filterInTriageAtLt, @jakarta.annotation.Nullable String filterInTriageAtLte, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable String include, final ApiCallback<IncidentList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listIncidentsValidateBeforeCall(pageNumber, pageSize, filterSearch, filterKind, filterStatus, filterPrivate, filterUserId, filterSeverity, filterSeverityId, filterLabels, filterTypes, filterTypeIds, filterEnvironments, filterEnvironmentIds, filterFunctionalities, filterFunctionalityIds, filterServices, filterServiceIds, filterTeams, filterTeamIds, filterCause, filterCauseIds, filterCustomFieldSelectedOptionIds, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUpdatedAtGt, filterUpdatedAtGte, filterUpdatedAtLt, filterUpdatedAtLte, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterDetectedAtGt, filterDetectedAtGte, filterDetectedAtLt, filterDetectedAtLte, filterAcknowledgedAtGt, filterAcknowledgedAtGte, filterAcknowledgedAtLt, filterAcknowledgedAtLte, filterMitigatedAtGt, filterMitigatedAtGte, filterMitigatedAtLt, filterMitigatedAtLte, filterResolvedAtGt, filterResolvedAtGte, filterResolvedAtLt, filterResolvedAtLte, filterClosedAtGt, filterClosedAtGte, filterClosedAtLt, filterClosedAtLte, filterInTriageAtGt, filterInTriageAtGte, filterInTriageAtLt, filterInTriageAtLte, sort, include, _callback);
         Type localVarReturnType = new TypeToken<IncidentList>(){}.getType();
@@ -1534,7 +1534,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call markAsDuplicateIncidentCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull ResolveIncident resolveIncident, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call markAsDuplicateIncidentCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull ResolveIncident resolveIncident, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1581,7 +1581,7 @@ public class IncidentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call markAsDuplicateIncidentValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull ResolveIncident resolveIncident, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call markAsDuplicateIncidentValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull ResolveIncident resolveIncident, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling markAsDuplicateIncident(Async)");
@@ -1611,7 +1611,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentResponse markAsDuplicateIncident(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull ResolveIncident resolveIncident) throws ApiException {
+    public IncidentResponse markAsDuplicateIncident(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull ResolveIncident resolveIncident) throws ApiException {
         ApiResponse<IncidentResponse> localVarResp = markAsDuplicateIncidentWithHttpInfo(id, resolveIncident);
         return localVarResp.getData();
     }
@@ -1631,7 +1631,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentResponse> markAsDuplicateIncidentWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull ResolveIncident resolveIncident) throws ApiException {
+    public ApiResponse<IncidentResponse> markAsDuplicateIncidentWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull ResolveIncident resolveIncident) throws ApiException {
         okhttp3.Call localVarCall = markAsDuplicateIncidentValidateBeforeCall(id, resolveIncident, null);
         Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1653,7 +1653,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call markAsDuplicateIncidentAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull ResolveIncident resolveIncident, final ApiCallback<IncidentResponse> _callback) throws ApiException {
+    public okhttp3.Call markAsDuplicateIncidentAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull ResolveIncident resolveIncident, final ApiCallback<IncidentResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = markAsDuplicateIncidentValidateBeforeCall(id, resolveIncident, _callback);
         Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
@@ -1675,7 +1675,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call mitigateIncidentCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull MitigateIncident mitigateIncident, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call mitigateIncidentCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull MitigateIncident mitigateIncident, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1722,7 +1722,7 @@ public class IncidentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call mitigateIncidentValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull MitigateIncident mitigateIncident, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call mitigateIncidentValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull MitigateIncident mitigateIncident, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling mitigateIncident(Async)");
@@ -1752,7 +1752,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentResponse mitigateIncident(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull MitigateIncident mitigateIncident) throws ApiException {
+    public IncidentResponse mitigateIncident(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull MitigateIncident mitigateIncident) throws ApiException {
         ApiResponse<IncidentResponse> localVarResp = mitigateIncidentWithHttpInfo(id, mitigateIncident);
         return localVarResp.getData();
     }
@@ -1772,7 +1772,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentResponse> mitigateIncidentWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull MitigateIncident mitigateIncident) throws ApiException {
+    public ApiResponse<IncidentResponse> mitigateIncidentWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull MitigateIncident mitigateIncident) throws ApiException {
         okhttp3.Call localVarCall = mitigateIncidentValidateBeforeCall(id, mitigateIncident, null);
         Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1794,7 +1794,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call mitigateIncidentAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull MitigateIncident mitigateIncident, final ApiCallback<IncidentResponse> _callback) throws ApiException {
+    public okhttp3.Call mitigateIncidentAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull MitigateIncident mitigateIncident, final ApiCallback<IncidentResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = mitigateIncidentValidateBeforeCall(id, mitigateIncident, _callback);
         Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
@@ -1816,7 +1816,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeAssignedUserFromIncidentCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UnassignRoleFromUser unassignRoleFromUser, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call removeAssignedUserFromIncidentCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UnassignRoleFromUser unassignRoleFromUser, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1863,7 +1863,7 @@ public class IncidentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call removeAssignedUserFromIncidentValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UnassignRoleFromUser unassignRoleFromUser, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call removeAssignedUserFromIncidentValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UnassignRoleFromUser unassignRoleFromUser, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling removeAssignedUserFromIncident(Async)");
@@ -1893,7 +1893,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentResponse removeAssignedUserFromIncident(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UnassignRoleFromUser unassignRoleFromUser) throws ApiException {
+    public IncidentResponse removeAssignedUserFromIncident(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UnassignRoleFromUser unassignRoleFromUser) throws ApiException {
         ApiResponse<IncidentResponse> localVarResp = removeAssignedUserFromIncidentWithHttpInfo(id, unassignRoleFromUser);
         return localVarResp.getData();
     }
@@ -1913,7 +1913,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentResponse> removeAssignedUserFromIncidentWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UnassignRoleFromUser unassignRoleFromUser) throws ApiException {
+    public ApiResponse<IncidentResponse> removeAssignedUserFromIncidentWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UnassignRoleFromUser unassignRoleFromUser) throws ApiException {
         okhttp3.Call localVarCall = removeAssignedUserFromIncidentValidateBeforeCall(id, unassignRoleFromUser, null);
         Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1935,7 +1935,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeAssignedUserFromIncidentAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UnassignRoleFromUser unassignRoleFromUser, final ApiCallback<IncidentResponse> _callback) throws ApiException {
+    public okhttp3.Call removeAssignedUserFromIncidentAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UnassignRoleFromUser unassignRoleFromUser, final ApiCallback<IncidentResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = removeAssignedUserFromIncidentValidateBeforeCall(id, unassignRoleFromUser, _callback);
         Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
@@ -1957,7 +1957,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeSubscribersToIncidentCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull RemoveSubscribers removeSubscribers, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call removeSubscribersToIncidentCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull RemoveSubscribers removeSubscribers, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2004,7 +2004,7 @@ public class IncidentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call removeSubscribersToIncidentValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull RemoveSubscribers removeSubscribers, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call removeSubscribersToIncidentValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull RemoveSubscribers removeSubscribers, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling removeSubscribersToIncident(Async)");
@@ -2034,7 +2034,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentResponse removeSubscribersToIncident(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull RemoveSubscribers removeSubscribers) throws ApiException {
+    public IncidentResponse removeSubscribersToIncident(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull RemoveSubscribers removeSubscribers) throws ApiException {
         ApiResponse<IncidentResponse> localVarResp = removeSubscribersToIncidentWithHttpInfo(id, removeSubscribers);
         return localVarResp.getData();
     }
@@ -2054,7 +2054,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentResponse> removeSubscribersToIncidentWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull RemoveSubscribers removeSubscribers) throws ApiException {
+    public ApiResponse<IncidentResponse> removeSubscribersToIncidentWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull RemoveSubscribers removeSubscribers) throws ApiException {
         okhttp3.Call localVarCall = removeSubscribersToIncidentValidateBeforeCall(id, removeSubscribers, null);
         Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2076,7 +2076,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeSubscribersToIncidentAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull RemoveSubscribers removeSubscribers, final ApiCallback<IncidentResponse> _callback) throws ApiException {
+    public okhttp3.Call removeSubscribersToIncidentAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull RemoveSubscribers removeSubscribers, final ApiCallback<IncidentResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = removeSubscribersToIncidentValidateBeforeCall(id, removeSubscribers, _callback);
         Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
@@ -2098,7 +2098,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call resolveIncidentCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull ResolveIncident resolveIncident, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call resolveIncidentCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull ResolveIncident resolveIncident, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2145,7 +2145,7 @@ public class IncidentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call resolveIncidentValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull ResolveIncident resolveIncident, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call resolveIncidentValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull ResolveIncident resolveIncident, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling resolveIncident(Async)");
@@ -2175,7 +2175,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentResponse resolveIncident(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull ResolveIncident resolveIncident) throws ApiException {
+    public IncidentResponse resolveIncident(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull ResolveIncident resolveIncident) throws ApiException {
         ApiResponse<IncidentResponse> localVarResp = resolveIncidentWithHttpInfo(id, resolveIncident);
         return localVarResp.getData();
     }
@@ -2195,7 +2195,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentResponse> resolveIncidentWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull ResolveIncident resolveIncident) throws ApiException {
+    public ApiResponse<IncidentResponse> resolveIncidentWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull ResolveIncident resolveIncident) throws ApiException {
         okhttp3.Call localVarCall = resolveIncidentValidateBeforeCall(id, resolveIncident, null);
         Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2217,7 +2217,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call resolveIncidentAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull ResolveIncident resolveIncident, final ApiCallback<IncidentResponse> _callback) throws ApiException {
+    public okhttp3.Call resolveIncidentAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull ResolveIncident resolveIncident, final ApiCallback<IncidentResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = resolveIncidentValidateBeforeCall(id, resolveIncident, _callback);
         Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
@@ -2239,7 +2239,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call restartIncidentCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull RestartIncident restartIncident, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call restartIncidentCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull RestartIncident restartIncident, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2286,7 +2286,7 @@ public class IncidentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call restartIncidentValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull RestartIncident restartIncident, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call restartIncidentValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull RestartIncident restartIncident, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling restartIncident(Async)");
@@ -2316,7 +2316,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentResponse restartIncident(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull RestartIncident restartIncident) throws ApiException {
+    public IncidentResponse restartIncident(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull RestartIncident restartIncident) throws ApiException {
         ApiResponse<IncidentResponse> localVarResp = restartIncidentWithHttpInfo(id, restartIncident);
         return localVarResp.getData();
     }
@@ -2336,7 +2336,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentResponse> restartIncidentWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull RestartIncident restartIncident) throws ApiException {
+    public ApiResponse<IncidentResponse> restartIncidentWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull RestartIncident restartIncident) throws ApiException {
         okhttp3.Call localVarCall = restartIncidentValidateBeforeCall(id, restartIncident, null);
         Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2358,7 +2358,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call restartIncidentAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull RestartIncident restartIncident, final ApiCallback<IncidentResponse> _callback) throws ApiException {
+    public okhttp3.Call restartIncidentAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull RestartIncident restartIncident, final ApiCallback<IncidentResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = restartIncidentValidateBeforeCall(id, restartIncident, _callback);
         Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
@@ -2380,7 +2380,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call triageIncidentCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull InTriageIncident inTriageIncident, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call triageIncidentCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull InTriageIncident inTriageIncident, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2427,7 +2427,7 @@ public class IncidentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call triageIncidentValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull InTriageIncident inTriageIncident, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call triageIncidentValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull InTriageIncident inTriageIncident, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling triageIncident(Async)");
@@ -2457,7 +2457,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentResponse triageIncident(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull InTriageIncident inTriageIncident) throws ApiException {
+    public IncidentResponse triageIncident(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull InTriageIncident inTriageIncident) throws ApiException {
         ApiResponse<IncidentResponse> localVarResp = triageIncidentWithHttpInfo(id, inTriageIncident);
         return localVarResp.getData();
     }
@@ -2477,7 +2477,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentResponse> triageIncidentWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull InTriageIncident inTriageIncident) throws ApiException {
+    public ApiResponse<IncidentResponse> triageIncidentWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull InTriageIncident inTriageIncident) throws ApiException {
         okhttp3.Call localVarCall = triageIncidentValidateBeforeCall(id, inTriageIncident, null);
         Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2499,7 +2499,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call triageIncidentAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull InTriageIncident inTriageIncident, final ApiCallback<IncidentResponse> _callback) throws ApiException {
+    public okhttp3.Call triageIncidentAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull InTriageIncident inTriageIncident, final ApiCallback<IncidentResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = triageIncidentValidateBeforeCall(id, inTriageIncident, _callback);
         Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
@@ -2521,7 +2521,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateIncidentCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateIncident updateIncident, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateIncidentCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateIncident updateIncident, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2568,7 +2568,7 @@ public class IncidentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateIncidentValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateIncident updateIncident, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateIncidentValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateIncident updateIncident, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateIncident(Async)");
@@ -2598,7 +2598,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentResponse updateIncident(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateIncident updateIncident) throws ApiException {
+    public IncidentResponse updateIncident(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateIncident updateIncident) throws ApiException {
         ApiResponse<IncidentResponse> localVarResp = updateIncidentWithHttpInfo(id, updateIncident);
         return localVarResp.getData();
     }
@@ -2618,7 +2618,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentResponse> updateIncidentWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateIncident updateIncident) throws ApiException {
+    public ApiResponse<IncidentResponse> updateIncidentWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateIncident updateIncident) throws ApiException {
         okhttp3.Call localVarCall = updateIncidentValidateBeforeCall(id, updateIncident, null);
         Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2640,7 +2640,7 @@ public class IncidentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateIncidentAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateIncident updateIncident, final ApiCallback<IncidentResponse> _callback) throws ApiException {
+    public okhttp3.Call updateIncidentAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateIncident updateIncident, final ApiCallback<IncidentResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateIncidentValidateBeforeCall(id, updateIncident, _callback);
         Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();

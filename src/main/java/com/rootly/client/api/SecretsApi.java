@@ -91,7 +91,7 @@ public class SecretsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createSecretCall(@javax.annotation.Nonnull NewSecret newSecret, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createSecretCall(@jakarta.annotation.Nonnull NewSecret newSecret, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -137,7 +137,7 @@ public class SecretsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createSecretValidateBeforeCall(@javax.annotation.Nonnull NewSecret newSecret, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createSecretValidateBeforeCall(@jakarta.annotation.Nonnull NewSecret newSecret, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'newSecret' is set
         if (newSecret == null) {
             throw new ApiException("Missing the required parameter 'newSecret' when calling createSecret(Async)");
@@ -162,7 +162,7 @@ public class SecretsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public SecretResponse createSecret(@javax.annotation.Nonnull NewSecret newSecret) throws ApiException {
+    public SecretResponse createSecret(@jakarta.annotation.Nonnull NewSecret newSecret) throws ApiException {
         ApiResponse<SecretResponse> localVarResp = createSecretWithHttpInfo(newSecret);
         return localVarResp.getData();
     }
@@ -182,7 +182,7 @@ public class SecretsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SecretResponse> createSecretWithHttpInfo(@javax.annotation.Nonnull NewSecret newSecret) throws ApiException {
+    public ApiResponse<SecretResponse> createSecretWithHttpInfo(@jakarta.annotation.Nonnull NewSecret newSecret) throws ApiException {
         okhttp3.Call localVarCall = createSecretValidateBeforeCall(newSecret, null);
         Type localVarReturnType = new TypeToken<SecretResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -204,7 +204,7 @@ public class SecretsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createSecretAsync(@javax.annotation.Nonnull NewSecret newSecret, final ApiCallback<SecretResponse> _callback) throws ApiException {
+    public okhttp3.Call createSecretAsync(@jakarta.annotation.Nonnull NewSecret newSecret, final ApiCallback<SecretResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createSecretValidateBeforeCall(newSecret, _callback);
         Type localVarReturnType = new TypeToken<SecretResponse>(){}.getType();
@@ -225,7 +225,7 @@ public class SecretsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteSecretCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteSecretCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -271,7 +271,7 @@ public class SecretsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteSecretValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteSecretValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteSecret(Async)");
@@ -295,7 +295,7 @@ public class SecretsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public SecretResponse deleteSecret(@javax.annotation.Nonnull String id) throws ApiException {
+    public SecretResponse deleteSecret(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<SecretResponse> localVarResp = deleteSecretWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -314,7 +314,7 @@ public class SecretsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SecretResponse> deleteSecretWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<SecretResponse> deleteSecretWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteSecretValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<SecretResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -335,7 +335,7 @@ public class SecretsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteSecretAsync(@javax.annotation.Nonnull String id, final ApiCallback<SecretResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteSecretAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<SecretResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteSecretValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<SecretResponse>(){}.getType();
@@ -356,7 +356,7 @@ public class SecretsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSecretCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getSecretCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -402,7 +402,7 @@ public class SecretsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSecretValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getSecretValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getSecret(Async)");
@@ -426,7 +426,7 @@ public class SecretsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public SecretResponse getSecret(@javax.annotation.Nonnull String id) throws ApiException {
+    public SecretResponse getSecret(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<SecretResponse> localVarResp = getSecretWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -445,7 +445,7 @@ public class SecretsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SecretResponse> getSecretWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<SecretResponse> getSecretWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getSecretValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<SecretResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -466,7 +466,7 @@ public class SecretsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSecretAsync(@javax.annotation.Nonnull String id, final ApiCallback<SecretResponse> _callback) throws ApiException {
+    public okhttp3.Call getSecretAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<SecretResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getSecretValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<SecretResponse>(){}.getType();
@@ -488,7 +488,7 @@ public class SecretsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listSecretsCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listSecretsCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -545,7 +545,7 @@ public class SecretsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listSecretsValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listSecretsValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         return listSecretsCall(include, pageNumber, pageSize, _callback);
 
     }
@@ -565,7 +565,7 @@ public class SecretsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public SecretList listSecrets(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+    public SecretList listSecrets(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
         ApiResponse<SecretList> localVarResp = listSecretsWithHttpInfo(include, pageNumber, pageSize);
         return localVarResp.getData();
     }
@@ -585,7 +585,7 @@ public class SecretsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SecretList> listSecretsWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+    public ApiResponse<SecretList> listSecretsWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
         okhttp3.Call localVarCall = listSecretsValidateBeforeCall(include, pageNumber, pageSize, null);
         Type localVarReturnType = new TypeToken<SecretList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -607,7 +607,7 @@ public class SecretsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listSecretsAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback<SecretList> _callback) throws ApiException {
+    public okhttp3.Call listSecretsAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback<SecretList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listSecretsValidateBeforeCall(include, pageNumber, pageSize, _callback);
         Type localVarReturnType = new TypeToken<SecretList>(){}.getType();
@@ -629,7 +629,7 @@ public class SecretsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateSecretCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateSecret updateSecret, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateSecretCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateSecret updateSecret, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -676,7 +676,7 @@ public class SecretsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateSecretValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateSecret updateSecret, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateSecretValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateSecret updateSecret, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateSecret(Async)");
@@ -706,7 +706,7 @@ public class SecretsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public SecretResponse updateSecret(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateSecret updateSecret) throws ApiException {
+    public SecretResponse updateSecret(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateSecret updateSecret) throws ApiException {
         ApiResponse<SecretResponse> localVarResp = updateSecretWithHttpInfo(id, updateSecret);
         return localVarResp.getData();
     }
@@ -726,7 +726,7 @@ public class SecretsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SecretResponse> updateSecretWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateSecret updateSecret) throws ApiException {
+    public ApiResponse<SecretResponse> updateSecretWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateSecret updateSecret) throws ApiException {
         okhttp3.Call localVarCall = updateSecretValidateBeforeCall(id, updateSecret, null);
         Type localVarReturnType = new TypeToken<SecretResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -748,7 +748,7 @@ public class SecretsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateSecretAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateSecret updateSecret, final ApiCallback<SecretResponse> _callback) throws ApiException {
+    public okhttp3.Call updateSecretAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateSecret updateSecret, final ApiCallback<SecretResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateSecretValidateBeforeCall(id, updateSecret, _callback);
         Type localVarReturnType = new TypeToken<SecretResponse>(){}.getType();

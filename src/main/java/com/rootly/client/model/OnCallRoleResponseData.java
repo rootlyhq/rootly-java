@@ -49,11 +49,11 @@ import com.rootly.client.JSON;
 /**
  * OnCallRoleResponseData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class OnCallRoleResponseData {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String id;
 
   /**
@@ -108,18 +108,18 @@ public class OnCallRoleResponseData {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private OnCallRole attributes;
 
   public OnCallRoleResponseData() {
   }
 
-  public OnCallRoleResponseData id(@javax.annotation.Nonnull String id) {
+  public OnCallRoleResponseData id(@jakarta.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
@@ -128,17 +128,17 @@ public class OnCallRoleResponseData {
    * Unique ID of the on_call_role
    * @return id
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(@javax.annotation.Nonnull String id) {
+  public void setId(@jakarta.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public OnCallRoleResponseData type(@javax.annotation.Nonnull TypeEnum type) {
+  public OnCallRoleResponseData type(@jakarta.annotation.Nonnull TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -147,17 +147,17 @@ public class OnCallRoleResponseData {
    * Get type
    * @return type
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public TypeEnum getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nonnull TypeEnum type) {
+  public void setType(@jakarta.annotation.Nonnull TypeEnum type) {
     this.type = type;
   }
 
 
-  public OnCallRoleResponseData attributes(@javax.annotation.Nonnull OnCallRole attributes) {
+  public OnCallRoleResponseData attributes(@jakarta.annotation.Nonnull OnCallRole attributes) {
     this.attributes = attributes;
     return this;
   }
@@ -166,12 +166,12 @@ public class OnCallRoleResponseData {
    * Get attributes
    * @return attributes
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public OnCallRole getAttributes() {
     return attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nonnull OnCallRole attributes) {
+  public void setAttributes(@jakarta.annotation.Nonnull OnCallRole attributes) {
     this.attributes = attributes;
   }
 

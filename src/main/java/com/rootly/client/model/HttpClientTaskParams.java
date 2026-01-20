@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * HttpClientTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class HttpClientTaskParams {
   /**
    * Gets or Sets taskType
@@ -105,37 +105,37 @@ public class HttpClientTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_HEADERS = "headers";
   @SerializedName(SERIALIZED_NAME_HEADERS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String headers;
 
   public static final String SERIALIZED_NAME_PARAMS = "params";
   @SerializedName(SERIALIZED_NAME_PARAMS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String params;
 
   public static final String SERIALIZED_NAME_BODY = "body";
   @SerializedName(SERIALIZED_NAME_BODY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String body;
 
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String url;
 
   public static final String SERIALIZED_NAME_EVENT_URL = "event_url";
   @SerializedName(SERIALIZED_NAME_EVENT_URL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String eventUrl;
 
   public static final String SERIALIZED_NAME_EVENT_MESSAGE = "event_message";
   @SerializedName(SERIALIZED_NAME_EVENT_MESSAGE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String eventMessage;
 
   /**
@@ -200,28 +200,28 @@ public class HttpClientTaskParams {
 
   public static final String SERIALIZED_NAME_METHOD = "method";
   @SerializedName(SERIALIZED_NAME_METHOD)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private MethodEnum method = MethodEnum.GET;
 
   public static final String SERIALIZED_NAME_SUCCEED_ON_STATUS = "succeed_on_status";
   @SerializedName(SERIALIZED_NAME_SUCCEED_ON_STATUS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String succeedOnStatus;
 
   public static final String SERIALIZED_NAME_POST_TO_INCIDENT_TIMELINE = "post_to_incident_timeline";
   @SerializedName(SERIALIZED_NAME_POST_TO_INCIDENT_TIMELINE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean postToIncidentTimeline;
 
   public static final String SERIALIZED_NAME_POST_TO_SLACK_CHANNELS = "post_to_slack_channels";
   @SerializedName(SERIALIZED_NAME_POST_TO_SLACK_CHANNELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels = new ArrayList<>();
 
   public HttpClientTaskParams() {
   }
 
-  public HttpClientTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public HttpClientTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -230,17 +230,17 @@ public class HttpClientTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public HttpClientTaskParams headers(@javax.annotation.Nullable String headers) {
+  public HttpClientTaskParams headers(@jakarta.annotation.Nullable String headers) {
     this.headers = headers;
     return this;
   }
@@ -249,17 +249,17 @@ public class HttpClientTaskParams {
    * JSON map of HTTP headers
    * @return headers
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getHeaders() {
     return headers;
   }
 
-  public void setHeaders(@javax.annotation.Nullable String headers) {
+  public void setHeaders(@jakarta.annotation.Nullable String headers) {
     this.headers = headers;
   }
 
 
-  public HttpClientTaskParams params(@javax.annotation.Nullable String params) {
+  public HttpClientTaskParams params(@jakarta.annotation.Nullable String params) {
     this.params = params;
     return this;
   }
@@ -268,17 +268,17 @@ public class HttpClientTaskParams {
    * JSON map of HTTP query parameters
    * @return params
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getParams() {
     return params;
   }
 
-  public void setParams(@javax.annotation.Nullable String params) {
+  public void setParams(@jakarta.annotation.Nullable String params) {
     this.params = params;
   }
 
 
-  public HttpClientTaskParams body(@javax.annotation.Nullable String body) {
+  public HttpClientTaskParams body(@jakarta.annotation.Nullable String body) {
     this.body = body;
     return this;
   }
@@ -287,17 +287,17 @@ public class HttpClientTaskParams {
    * HTTP body
    * @return body
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getBody() {
     return body;
   }
 
-  public void setBody(@javax.annotation.Nullable String body) {
+  public void setBody(@jakarta.annotation.Nullable String body) {
     this.body = body;
   }
 
 
-  public HttpClientTaskParams url(@javax.annotation.Nonnull String url) {
+  public HttpClientTaskParams url(@jakarta.annotation.Nonnull String url) {
     this.url = url;
     return this;
   }
@@ -306,17 +306,17 @@ public class HttpClientTaskParams {
    * URL endpoint
    * @return url
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUrl() {
     return url;
   }
 
-  public void setUrl(@javax.annotation.Nonnull String url) {
+  public void setUrl(@jakarta.annotation.Nonnull String url) {
     this.url = url;
   }
 
 
-  public HttpClientTaskParams eventUrl(@javax.annotation.Nullable String eventUrl) {
+  public HttpClientTaskParams eventUrl(@jakarta.annotation.Nullable String eventUrl) {
     this.eventUrl = eventUrl;
     return this;
   }
@@ -325,17 +325,17 @@ public class HttpClientTaskParams {
    * Get eventUrl
    * @return eventUrl
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getEventUrl() {
     return eventUrl;
   }
 
-  public void setEventUrl(@javax.annotation.Nullable String eventUrl) {
+  public void setEventUrl(@jakarta.annotation.Nullable String eventUrl) {
     this.eventUrl = eventUrl;
   }
 
 
-  public HttpClientTaskParams eventMessage(@javax.annotation.Nullable String eventMessage) {
+  public HttpClientTaskParams eventMessage(@jakarta.annotation.Nullable String eventMessage) {
     this.eventMessage = eventMessage;
     return this;
   }
@@ -344,17 +344,17 @@ public class HttpClientTaskParams {
    * Get eventMessage
    * @return eventMessage
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getEventMessage() {
     return eventMessage;
   }
 
-  public void setEventMessage(@javax.annotation.Nullable String eventMessage) {
+  public void setEventMessage(@jakarta.annotation.Nullable String eventMessage) {
     this.eventMessage = eventMessage;
   }
 
 
-  public HttpClientTaskParams method(@javax.annotation.Nullable MethodEnum method) {
+  public HttpClientTaskParams method(@jakarta.annotation.Nullable MethodEnum method) {
     this.method = method;
     return this;
   }
@@ -363,17 +363,17 @@ public class HttpClientTaskParams {
    * HTTP method
    * @return method
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public MethodEnum getMethod() {
     return method;
   }
 
-  public void setMethod(@javax.annotation.Nullable MethodEnum method) {
+  public void setMethod(@jakarta.annotation.Nullable MethodEnum method) {
     this.method = method;
   }
 
 
-  public HttpClientTaskParams succeedOnStatus(@javax.annotation.Nonnull String succeedOnStatus) {
+  public HttpClientTaskParams succeedOnStatus(@jakarta.annotation.Nonnull String succeedOnStatus) {
     this.succeedOnStatus = succeedOnStatus;
     return this;
   }
@@ -382,17 +382,17 @@ public class HttpClientTaskParams {
    * HTTP status code expected. Can be a regular expression. Eg: 200, 200|203, 20[0-3]
    * @return succeedOnStatus
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getSucceedOnStatus() {
     return succeedOnStatus;
   }
 
-  public void setSucceedOnStatus(@javax.annotation.Nonnull String succeedOnStatus) {
+  public void setSucceedOnStatus(@jakarta.annotation.Nonnull String succeedOnStatus) {
     this.succeedOnStatus = succeedOnStatus;
   }
 
 
-  public HttpClientTaskParams postToIncidentTimeline(@javax.annotation.Nullable Boolean postToIncidentTimeline) {
+  public HttpClientTaskParams postToIncidentTimeline(@jakarta.annotation.Nullable Boolean postToIncidentTimeline) {
     this.postToIncidentTimeline = postToIncidentTimeline;
     return this;
   }
@@ -401,17 +401,17 @@ public class HttpClientTaskParams {
    * Get postToIncidentTimeline
    * @return postToIncidentTimeline
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getPostToIncidentTimeline() {
     return postToIncidentTimeline;
   }
 
-  public void setPostToIncidentTimeline(@javax.annotation.Nullable Boolean postToIncidentTimeline) {
+  public void setPostToIncidentTimeline(@jakarta.annotation.Nullable Boolean postToIncidentTimeline) {
     this.postToIncidentTimeline = postToIncidentTimeline;
   }
 
 
-  public HttpClientTaskParams postToSlackChannels(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
+  public HttpClientTaskParams postToSlackChannels(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
     this.postToSlackChannels = postToSlackChannels;
     return this;
   }
@@ -428,12 +428,12 @@ public class HttpClientTaskParams {
    * Get postToSlackChannels
    * @return postToSlackChannels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AddActionItemTaskParamsPostToSlackChannelsInner> getPostToSlackChannels() {
     return postToSlackChannels;
   }
 
-  public void setPostToSlackChannels(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
+  public void setPostToSlackChannels(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
     this.postToSlackChannels = postToSlackChannels;
   }
 

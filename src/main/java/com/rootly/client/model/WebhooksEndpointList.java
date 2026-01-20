@@ -53,27 +53,27 @@ import com.rootly.client.JSON;
 /**
  * WebhooksEndpointList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class WebhooksEndpointList {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<WebhooksEndpointResponseData> data = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Links links;
 
   public static final String SERIALIZED_NAME_META = "meta";
   @SerializedName(SERIALIZED_NAME_META)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Meta meta;
 
   public WebhooksEndpointList() {
   }
 
-  public WebhooksEndpointList data(@javax.annotation.Nonnull List<WebhooksEndpointResponseData> data) {
+  public WebhooksEndpointList data(@jakarta.annotation.Nonnull List<WebhooksEndpointResponseData> data) {
     this.data = data;
     return this;
   }
@@ -90,17 +90,17 @@ public class WebhooksEndpointList {
    * Get data
    * @return data
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<WebhooksEndpointResponseData> getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nonnull List<WebhooksEndpointResponseData> data) {
+  public void setData(@jakarta.annotation.Nonnull List<WebhooksEndpointResponseData> data) {
     this.data = data;
   }
 
 
-  public WebhooksEndpointList links(@javax.annotation.Nullable Links links) {
+  public WebhooksEndpointList links(@jakarta.annotation.Nullable Links links) {
     this.links = links;
     return this;
   }
@@ -109,17 +109,17 @@ public class WebhooksEndpointList {
    * Get links
    * @return links
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Links getLinks() {
     return links;
   }
 
-  public void setLinks(@javax.annotation.Nullable Links links) {
+  public void setLinks(@jakarta.annotation.Nullable Links links) {
     this.links = links;
   }
 
 
-  public WebhooksEndpointList meta(@javax.annotation.Nullable Meta meta) {
+  public WebhooksEndpointList meta(@jakarta.annotation.Nullable Meta meta) {
     this.meta = meta;
     return this;
   }
@@ -128,12 +128,12 @@ public class WebhooksEndpointList {
    * Get meta
    * @return meta
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Meta getMeta() {
     return meta;
   }
 
-  public void setMeta(@javax.annotation.Nullable Meta meta) {
+  public void setMeta(@jakarta.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
 

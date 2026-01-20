@@ -48,27 +48,27 @@ import com.rootly.client.JSON;
 /**
  * NewCommunicationsGroupDataAttributesCommunicationExternalGroupMembersInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewCommunicationsGroupDataAttributesCommunicationExternalGroupMembersInner {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String email;
 
   public static final String SERIALIZED_NAME_PHONE_NUMBER = "phone_number";
   @SerializedName(SERIALIZED_NAME_PHONE_NUMBER)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String phoneNumber;
 
   public NewCommunicationsGroupDataAttributesCommunicationExternalGroupMembersInner() {
   }
 
-  public NewCommunicationsGroupDataAttributesCommunicationExternalGroupMembersInner name(@javax.annotation.Nullable String name) {
+  public NewCommunicationsGroupDataAttributesCommunicationExternalGroupMembersInner name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -77,17 +77,17 @@ public class NewCommunicationsGroupDataAttributesCommunicationExternalGroupMembe
    * Name of the external member
    * @return name
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public NewCommunicationsGroupDataAttributesCommunicationExternalGroupMembersInner email(@javax.annotation.Nullable String email) {
+  public NewCommunicationsGroupDataAttributesCommunicationExternalGroupMembersInner email(@jakarta.annotation.Nullable String email) {
     this.email = email;
     return this;
   }
@@ -96,17 +96,17 @@ public class NewCommunicationsGroupDataAttributesCommunicationExternalGroupMembe
    * Email of the external member
    * @return email
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getEmail() {
     return email;
   }
 
-  public void setEmail(@javax.annotation.Nullable String email) {
+  public void setEmail(@jakarta.annotation.Nullable String email) {
     this.email = email;
   }
 
 
-  public NewCommunicationsGroupDataAttributesCommunicationExternalGroupMembersInner phoneNumber(@javax.annotation.Nullable String phoneNumber) {
+  public NewCommunicationsGroupDataAttributesCommunicationExternalGroupMembersInner phoneNumber(@jakarta.annotation.Nullable String phoneNumber) {
     this.phoneNumber = phoneNumber;
     return this;
   }
@@ -115,12 +115,12 @@ public class NewCommunicationsGroupDataAttributesCommunicationExternalGroupMembe
    * Phone number of the external member
    * @return phoneNumber
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPhoneNumber() {
     return phoneNumber;
   }
 
-  public void setPhoneNumber(@javax.annotation.Nullable String phoneNumber) {
+  public void setPhoneNumber(@jakarta.annotation.Nullable String phoneNumber) {
     this.phoneNumber = phoneNumber;
   }
 

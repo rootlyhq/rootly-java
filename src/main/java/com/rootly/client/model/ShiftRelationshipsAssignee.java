@@ -50,17 +50,17 @@ import com.rootly.client.JSON;
 /**
  * Assignee can be either a User or Schedule
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ShiftRelationshipsAssignee {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ShiftRelationshipsAssigneeData data;
 
   public ShiftRelationshipsAssignee() {
   }
 
-  public ShiftRelationshipsAssignee data(@javax.annotation.Nullable ShiftRelationshipsAssigneeData data) {
+  public ShiftRelationshipsAssignee data(@jakarta.annotation.Nullable ShiftRelationshipsAssigneeData data) {
     this.data = data;
     return this;
   }
@@ -69,12 +69,12 @@ public class ShiftRelationshipsAssignee {
    * Get data
    * @return data
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ShiftRelationshipsAssigneeData getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nullable ShiftRelationshipsAssigneeData data) {
+  public void setData(@jakarta.annotation.Nullable ShiftRelationshipsAssigneeData data) {
     this.data = data;
   }
 

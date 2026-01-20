@@ -49,11 +49,11 @@ import com.rootly.client.JSON;
 /**
  * EscalationPolicyPathResponseData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class EscalationPolicyPathResponseData {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String id;
 
   /**
@@ -108,18 +108,18 @@ public class EscalationPolicyPathResponseData {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private EscalationPolicyPath attributes;
 
   public EscalationPolicyPathResponseData() {
   }
 
-  public EscalationPolicyPathResponseData id(@javax.annotation.Nonnull String id) {
+  public EscalationPolicyPathResponseData id(@jakarta.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
@@ -128,17 +128,17 @@ public class EscalationPolicyPathResponseData {
    * Unique ID of the escalation policy path
    * @return id
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(@javax.annotation.Nonnull String id) {
+  public void setId(@jakarta.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public EscalationPolicyPathResponseData type(@javax.annotation.Nullable TypeEnum type) {
+  public EscalationPolicyPathResponseData type(@jakarta.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -147,17 +147,17 @@ public class EscalationPolicyPathResponseData {
    * Get type
    * @return type
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TypeEnum getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nullable TypeEnum type) {
+  public void setType(@jakarta.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
 
-  public EscalationPolicyPathResponseData attributes(@javax.annotation.Nonnull EscalationPolicyPath attributes) {
+  public EscalationPolicyPathResponseData attributes(@jakarta.annotation.Nonnull EscalationPolicyPath attributes) {
     this.attributes = attributes;
     return this;
   }
@@ -166,12 +166,12 @@ public class EscalationPolicyPathResponseData {
    * Get attributes
    * @return attributes
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public EscalationPolicyPath getAttributes() {
     return attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nonnull EscalationPolicyPath attributes) {
+  public void setAttributes(@jakarta.annotation.Nonnull EscalationPolicyPath attributes) {
     this.attributes = attributes;
   }
 

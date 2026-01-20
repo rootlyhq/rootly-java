@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesInner {
   /**
    * Select the field on which the condition to be evaluated
@@ -114,18 +114,18 @@ public class NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttri
 
   public static final String SERIALIZED_NAME_FIELD = "field";
   @SerializedName(SERIALIZED_NAME_FIELD)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private FieldEnum field;
 
   public static final String SERIALIZED_NAME_JSON_PATH = "json_path";
   @SerializedName(SERIALIZED_NAME_JSON_PATH)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String jsonPath;
 
   public NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesInner() {
   }
 
-  public NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesInner field(@javax.annotation.Nullable FieldEnum field) {
+  public NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesInner field(@jakarta.annotation.Nullable FieldEnum field) {
     this.field = field;
     return this;
   }
@@ -134,17 +134,17 @@ public class NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttri
    * Select the field on which the condition to be evaluated
    * @return field
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public FieldEnum getField() {
     return field;
   }
 
-  public void setField(@javax.annotation.Nullable FieldEnum field) {
+  public void setField(@jakarta.annotation.Nullable FieldEnum field) {
     this.field = field;
   }
 
 
-  public NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesInner jsonPath(@javax.annotation.Nullable String jsonPath) {
+  public NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesInner jsonPath(@jakarta.annotation.Nullable String jsonPath) {
     this.jsonPath = jsonPath;
     return this;
   }
@@ -153,12 +153,12 @@ public class NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttri
    * JSON path expression to extract a specific value from the alert&#39;s payload for evaluation
    * @return jsonPath
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getJsonPath() {
     return jsonPath;
   }
 
-  public void setJsonPath(@javax.annotation.Nullable String jsonPath) {
+  public void setJsonPath(@jakarta.annotation.Nullable String jsonPath) {
     this.jsonPath = jsonPath;
   }
 

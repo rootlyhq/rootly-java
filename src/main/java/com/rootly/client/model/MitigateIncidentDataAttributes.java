@@ -49,17 +49,17 @@ import com.rootly.client.JSON;
 /**
  * MitigateIncidentDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class MitigateIncidentDataAttributes {
   public static final String SERIALIZED_NAME_MITIGATION_MESSAGE = "mitigation_message";
   @SerializedName(SERIALIZED_NAME_MITIGATION_MESSAGE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String mitigationMessage;
 
   public MitigateIncidentDataAttributes() {
   }
 
-  public MitigateIncidentDataAttributes mitigationMessage(@javax.annotation.Nullable String mitigationMessage) {
+  public MitigateIncidentDataAttributes mitigationMessage(@jakarta.annotation.Nullable String mitigationMessage) {
     this.mitigationMessage = mitigationMessage;
     return this;
   }
@@ -68,12 +68,12 @@ public class MitigateIncidentDataAttributes {
    * How was the incident mitigated?
    * @return mitigationMessage
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getMitigationMessage() {
     return mitigationMessage;
   }
 
-  public void setMitigationMessage(@javax.annotation.Nullable String mitigationMessage) {
+  public void setMitigationMessage(@jakarta.annotation.Nullable String mitigationMessage) {
     this.mitigationMessage = mitigationMessage;
   }
 

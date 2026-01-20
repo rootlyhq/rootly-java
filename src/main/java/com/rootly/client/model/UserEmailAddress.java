@@ -48,37 +48,37 @@ import com.rootly.client.JSON;
 /**
  * UserEmailAddress
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UserEmailAddress {
   public static final String SERIALIZED_NAME_USER_ID = "user_id";
   @SerializedName(SERIALIZED_NAME_USER_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer userId;
 
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String email;
 
   public static final String SERIALIZED_NAME_PRIMARY = "primary";
   @SerializedName(SERIALIZED_NAME_PRIMARY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean primary;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String updatedAt;
 
   public UserEmailAddress() {
   }
 
-  public UserEmailAddress userId(@javax.annotation.Nullable Integer userId) {
+  public UserEmailAddress userId(@jakarta.annotation.Nullable Integer userId) {
     this.userId = userId;
     return this;
   }
@@ -87,17 +87,17 @@ public class UserEmailAddress {
    * Get userId
    * @return userId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getUserId() {
     return userId;
   }
 
-  public void setUserId(@javax.annotation.Nullable Integer userId) {
+  public void setUserId(@jakarta.annotation.Nullable Integer userId) {
     this.userId = userId;
   }
 
 
-  public UserEmailAddress email(@javax.annotation.Nullable String email) {
+  public UserEmailAddress email(@jakarta.annotation.Nullable String email) {
     this.email = email;
     return this;
   }
@@ -106,17 +106,17 @@ public class UserEmailAddress {
    * Email address
    * @return email
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getEmail() {
     return email;
   }
 
-  public void setEmail(@javax.annotation.Nullable String email) {
+  public void setEmail(@jakarta.annotation.Nullable String email) {
     this.email = email;
   }
 
 
-  public UserEmailAddress primary(@javax.annotation.Nullable Boolean primary) {
+  public UserEmailAddress primary(@jakarta.annotation.Nullable Boolean primary) {
     this.primary = primary;
     return this;
   }
@@ -125,17 +125,17 @@ public class UserEmailAddress {
    * Whether this is the primary email address
    * @return primary
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getPrimary() {
     return primary;
   }
 
-  public void setPrimary(@javax.annotation.Nullable Boolean primary) {
+  public void setPrimary(@jakarta.annotation.Nullable Boolean primary) {
     this.primary = primary;
   }
 
 
-  public UserEmailAddress createdAt(@javax.annotation.Nullable String createdAt) {
+  public UserEmailAddress createdAt(@jakarta.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -144,17 +144,17 @@ public class UserEmailAddress {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nullable String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public UserEmailAddress updatedAt(@javax.annotation.Nullable String updatedAt) {
+  public UserEmailAddress updatedAt(@jakarta.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -163,12 +163,12 @@ public class UserEmailAddress {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nullable String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

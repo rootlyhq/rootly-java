@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * WorkflowGroup
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class WorkflowGroup {
   /**
    * The kind of the workflow group
@@ -113,43 +113,43 @@ public class WorkflowGroup {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private KindEnum kind;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String slug;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_ICON = "icon";
   @SerializedName(SERIALIZED_NAME_ICON)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String icon;
 
   public static final String SERIALIZED_NAME_EXPANDED = "expanded";
   @SerializedName(SERIALIZED_NAME_EXPANDED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean expanded;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Integer position;
 
   public WorkflowGroup() {
   }
 
-  public WorkflowGroup kind(@javax.annotation.Nullable KindEnum kind) {
+  public WorkflowGroup kind(@jakarta.annotation.Nullable KindEnum kind) {
     this.kind = kind;
     return this;
   }
@@ -158,17 +158,17 @@ public class WorkflowGroup {
    * The kind of the workflow group
    * @return kind
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(@javax.annotation.Nullable KindEnum kind) {
+  public void setKind(@jakarta.annotation.Nullable KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public WorkflowGroup name(@javax.annotation.Nonnull String name) {
+  public WorkflowGroup name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -177,17 +177,17 @@ public class WorkflowGroup {
    * The name of the workflow group.
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public WorkflowGroup slug(@javax.annotation.Nullable String slug) {
+  public WorkflowGroup slug(@jakarta.annotation.Nullable String slug) {
     this.slug = slug;
     return this;
   }
@@ -196,17 +196,17 @@ public class WorkflowGroup {
    * The slug of the workflow group.
    * @return slug
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSlug() {
     return slug;
   }
 
-  public void setSlug(@javax.annotation.Nullable String slug) {
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
     this.slug = slug;
   }
 
 
-  public WorkflowGroup description(@javax.annotation.Nullable String description) {
+  public WorkflowGroup description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -215,17 +215,17 @@ public class WorkflowGroup {
    * A description of the workflow group.
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public WorkflowGroup icon(@javax.annotation.Nullable String icon) {
+  public WorkflowGroup icon(@jakarta.annotation.Nullable String icon) {
     this.icon = icon;
     return this;
   }
@@ -234,17 +234,17 @@ public class WorkflowGroup {
    * An emoji icon displayed next to the workflow group.
    * @return icon
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getIcon() {
     return icon;
   }
 
-  public void setIcon(@javax.annotation.Nullable String icon) {
+  public void setIcon(@jakarta.annotation.Nullable String icon) {
     this.icon = icon;
   }
 
 
-  public WorkflowGroup expanded(@javax.annotation.Nullable Boolean expanded) {
+  public WorkflowGroup expanded(@jakarta.annotation.Nullable Boolean expanded) {
     this.expanded = expanded;
     return this;
   }
@@ -253,17 +253,17 @@ public class WorkflowGroup {
    * Whether the group is expanded or collapsed.
    * @return expanded
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getExpanded() {
     return expanded;
   }
 
-  public void setExpanded(@javax.annotation.Nullable Boolean expanded) {
+  public void setExpanded(@jakarta.annotation.Nullable Boolean expanded) {
     this.expanded = expanded;
   }
 
 
-  public WorkflowGroup position(@javax.annotation.Nonnull Integer position) {
+  public WorkflowGroup position(@jakarta.annotation.Nonnull Integer position) {
     this.position = position;
     return this;
   }
@@ -272,12 +272,12 @@ public class WorkflowGroup {
    * The position of the workflow group
    * @return position
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nonnull Integer position) {
+  public void setPosition(@jakarta.annotation.Nonnull Integer position) {
     this.position = position;
   }
 

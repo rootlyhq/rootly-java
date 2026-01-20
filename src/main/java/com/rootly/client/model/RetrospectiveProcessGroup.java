@@ -48,27 +48,27 @@ import com.rootly.client.JSON;
 /**
  * RetrospectiveProcessGroup
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RetrospectiveProcessGroup {
   public static final String SERIALIZED_NAME_RETROSPECTIVE_PROCESS_ID = "retrospective_process_id";
   @SerializedName(SERIALIZED_NAME_RETROSPECTIVE_PROCESS_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String retrospectiveProcessId;
 
   public static final String SERIALIZED_NAME_SUB_STATUS_ID = "sub_status_id";
   @SerializedName(SERIALIZED_NAME_SUB_STATUS_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String subStatusId;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Integer position;
 
   public RetrospectiveProcessGroup() {
   }
 
-  public RetrospectiveProcessGroup retrospectiveProcessId(@javax.annotation.Nonnull String retrospectiveProcessId) {
+  public RetrospectiveProcessGroup retrospectiveProcessId(@jakarta.annotation.Nonnull String retrospectiveProcessId) {
     this.retrospectiveProcessId = retrospectiveProcessId;
     return this;
   }
@@ -77,17 +77,17 @@ public class RetrospectiveProcessGroup {
    * Get retrospectiveProcessId
    * @return retrospectiveProcessId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getRetrospectiveProcessId() {
     return retrospectiveProcessId;
   }
 
-  public void setRetrospectiveProcessId(@javax.annotation.Nonnull String retrospectiveProcessId) {
+  public void setRetrospectiveProcessId(@jakarta.annotation.Nonnull String retrospectiveProcessId) {
     this.retrospectiveProcessId = retrospectiveProcessId;
   }
 
 
-  public RetrospectiveProcessGroup subStatusId(@javax.annotation.Nonnull String subStatusId) {
+  public RetrospectiveProcessGroup subStatusId(@jakarta.annotation.Nonnull String subStatusId) {
     this.subStatusId = subStatusId;
     return this;
   }
@@ -96,17 +96,17 @@ public class RetrospectiveProcessGroup {
    * Get subStatusId
    * @return subStatusId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getSubStatusId() {
     return subStatusId;
   }
 
-  public void setSubStatusId(@javax.annotation.Nonnull String subStatusId) {
+  public void setSubStatusId(@jakarta.annotation.Nonnull String subStatusId) {
     this.subStatusId = subStatusId;
   }
 
 
-  public RetrospectiveProcessGroup position(@javax.annotation.Nonnull Integer position) {
+  public RetrospectiveProcessGroup position(@jakarta.annotation.Nonnull Integer position) {
     this.position = position;
     return this;
   }
@@ -115,12 +115,12 @@ public class RetrospectiveProcessGroup {
    * Get position
    * @return position
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nonnull Integer position) {
+  public void setPosition(@jakarta.annotation.Nonnull Integer position) {
     this.position = position;
   }
 

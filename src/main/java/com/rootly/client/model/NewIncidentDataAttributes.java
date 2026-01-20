@@ -51,11 +51,11 @@ import com.rootly.client.JSON;
 /**
  * NewIncidentDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewIncidentDataAttributes {
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String title;
 
   /**
@@ -126,137 +126,137 @@ public class NewIncidentDataAttributes {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private KindEnum kind = KindEnum.NORMAL;
 
   public static final String SERIALIZED_NAME_PARENT_INCIDENT_ID = "parent_incident_id";
   @SerializedName(SERIALIZED_NAME_PARENT_INCIDENT_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String parentIncidentId;
 
   public static final String SERIALIZED_NAME_DUPLICATE_INCIDENT_ID = "duplicate_incident_id";
   @SerializedName(SERIALIZED_NAME_DUPLICATE_INCIDENT_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String duplicateIncidentId;
 
   public static final String SERIALIZED_NAME_PRIVATE = "private";
   @SerializedName(SERIALIZED_NAME_PRIVATE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean _private = false;
 
   public static final String SERIALIZED_NAME_SUMMARY = "summary";
   @SerializedName(SERIALIZED_NAME_SUMMARY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String summary;
 
   public static final String SERIALIZED_NAME_USER_ID = "user_id";
   @SerializedName(SERIALIZED_NAME_USER_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String userId;
 
   public static final String SERIALIZED_NAME_SEVERITY_ID = "severity_id";
   @SerializedName(SERIALIZED_NAME_SEVERITY_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String severityId;
 
   public static final String SERIALIZED_NAME_PUBLIC_TITLE = "public_title";
   @SerializedName(SERIALIZED_NAME_PUBLIC_TITLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String publicTitle;
 
   public static final String SERIALIZED_NAME_ALERT_IDS = "alert_ids";
   @SerializedName(SERIALIZED_NAME_ALERT_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> alertIds;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_IDS = "environment_ids";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> environmentIds;
 
   public static final String SERIALIZED_NAME_INCIDENT_TYPE_IDS = "incident_type_ids";
   @SerializedName(SERIALIZED_NAME_INCIDENT_TYPE_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> incidentTypeIds;
 
   public static final String SERIALIZED_NAME_SERVICE_IDS = "service_ids";
   @SerializedName(SERIALIZED_NAME_SERVICE_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> serviceIds;
 
   public static final String SERIALIZED_NAME_FUNCTIONALITY_IDS = "functionality_ids";
   @SerializedName(SERIALIZED_NAME_FUNCTIONALITY_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> functionalityIds;
 
   public static final String SERIALIZED_NAME_GROUP_IDS = "group_ids";
   @SerializedName(SERIALIZED_NAME_GROUP_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> groupIds;
 
   public static final String SERIALIZED_NAME_CAUSE_IDS = "cause_ids";
   @SerializedName(SERIALIZED_NAME_CAUSE_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> causeIds;
 
   public static final String SERIALIZED_NAME_MUTED_SERVICE_IDS = "muted_service_ids";
   @SerializedName(SERIALIZED_NAME_MUTED_SERVICE_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> mutedServiceIds;
 
   public static final String SERIALIZED_NAME_LABELS = "labels";
   @SerializedName(SERIALIZED_NAME_LABELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Object labels;
 
   public static final String SERIALIZED_NAME_SLACK_CHANNEL_NAME = "slack_channel_name";
   @SerializedName(SERIALIZED_NAME_SLACK_CHANNEL_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String slackChannelName;
 
   public static final String SERIALIZED_NAME_SLACK_CHANNEL_ID = "slack_channel_id";
   @SerializedName(SERIALIZED_NAME_SLACK_CHANNEL_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String slackChannelId;
 
   public static final String SERIALIZED_NAME_SLACK_CHANNEL_URL = "slack_channel_url";
   @SerializedName(SERIALIZED_NAME_SLACK_CHANNEL_URL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String slackChannelUrl;
 
   public static final String SERIALIZED_NAME_SLACK_CHANNEL_ARCHIVED = "slack_channel_archived";
   @SerializedName(SERIALIZED_NAME_SLACK_CHANNEL_ARCHIVED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean slackChannelArchived;
 
   public static final String SERIALIZED_NAME_GOOGLE_DRIVE_PARENT_ID = "google_drive_parent_id";
   @SerializedName(SERIALIZED_NAME_GOOGLE_DRIVE_PARENT_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String googleDriveParentId;
 
   public static final String SERIALIZED_NAME_GOOGLE_DRIVE_URL = "google_drive_url";
   @SerializedName(SERIALIZED_NAME_GOOGLE_DRIVE_URL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String googleDriveUrl;
 
   public static final String SERIALIZED_NAME_JIRA_ISSUE_KEY = "jira_issue_key";
   @SerializedName(SERIALIZED_NAME_JIRA_ISSUE_KEY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String jiraIssueKey;
 
   public static final String SERIALIZED_NAME_JIRA_ISSUE_ID = "jira_issue_id";
   @SerializedName(SERIALIZED_NAME_JIRA_ISSUE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String jiraIssueId;
 
   public static final String SERIALIZED_NAME_JIRA_ISSUE_URL = "jira_issue_url";
   @SerializedName(SERIALIZED_NAME_JIRA_ISSUE_URL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String jiraIssueUrl;
 
   public static final String SERIALIZED_NAME_NOTIFY_EMAILS = "notify_emails";
   @SerializedName(SERIALIZED_NAME_NOTIFY_EMAILS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> notifyEmails;
 
   /**
@@ -331,68 +331,68 @@ public class NewIncidentDataAttributes {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private StatusEnum status;
 
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String url;
 
   public static final String SERIALIZED_NAME_SCHEDULED_FOR = "scheduled_for";
   @SerializedName(SERIALIZED_NAME_SCHEDULED_FOR)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String scheduledFor;
 
   public static final String SERIALIZED_NAME_SCHEDULED_UNTIL = "scheduled_until";
   @SerializedName(SERIALIZED_NAME_SCHEDULED_UNTIL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String scheduledUntil;
 
   public static final String SERIALIZED_NAME_IN_TRIAGE_AT = "in_triage_at";
   @SerializedName(SERIALIZED_NAME_IN_TRIAGE_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String inTriageAt;
 
   public static final String SERIALIZED_NAME_STARTED_AT = "started_at";
   @SerializedName(SERIALIZED_NAME_STARTED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String startedAt;
 
   public static final String SERIALIZED_NAME_DETECTED_AT = "detected_at";
   @SerializedName(SERIALIZED_NAME_DETECTED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String detectedAt;
 
   public static final String SERIALIZED_NAME_ACKNOWLEDGED_AT = "acknowledged_at";
   @SerializedName(SERIALIZED_NAME_ACKNOWLEDGED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String acknowledgedAt;
 
   public static final String SERIALIZED_NAME_MITIGATED_AT = "mitigated_at";
   @SerializedName(SERIALIZED_NAME_MITIGATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String mitigatedAt;
 
   public static final String SERIALIZED_NAME_RESOLVED_AT = "resolved_at";
   @SerializedName(SERIALIZED_NAME_RESOLVED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String resolvedAt;
 
   public static final String SERIALIZED_NAME_CLOSED_AT = "closed_at";
   @SerializedName(SERIALIZED_NAME_CLOSED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String closedAt;
 
   public static final String SERIALIZED_NAME_CANCELLED_AT = "cancelled_at";
   @SerializedName(SERIALIZED_NAME_CANCELLED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String cancelledAt;
 
   public NewIncidentDataAttributes() {
   }
 
-  public NewIncidentDataAttributes title(@javax.annotation.Nullable String title) {
+  public NewIncidentDataAttributes title(@jakarta.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
@@ -401,17 +401,17 @@ public class NewIncidentDataAttributes {
    * The title of the incident. We will autogenerate one if null
    * @return title
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nullable String title) {
+  public void setTitle(@jakarta.annotation.Nullable String title) {
     this.title = title;
   }
 
 
-  public NewIncidentDataAttributes kind(@javax.annotation.Nullable KindEnum kind) {
+  public NewIncidentDataAttributes kind(@jakarta.annotation.Nullable KindEnum kind) {
     this.kind = kind;
     return this;
   }
@@ -420,17 +420,17 @@ public class NewIncidentDataAttributes {
    * The kind of the incident
    * @return kind
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(@javax.annotation.Nullable KindEnum kind) {
+  public void setKind(@jakarta.annotation.Nullable KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public NewIncidentDataAttributes parentIncidentId(@javax.annotation.Nullable String parentIncidentId) {
+  public NewIncidentDataAttributes parentIncidentId(@jakarta.annotation.Nullable String parentIncidentId) {
     this.parentIncidentId = parentIncidentId;
     return this;
   }
@@ -439,17 +439,17 @@ public class NewIncidentDataAttributes {
    * ID of parent incident
    * @return parentIncidentId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getParentIncidentId() {
     return parentIncidentId;
   }
 
-  public void setParentIncidentId(@javax.annotation.Nullable String parentIncidentId) {
+  public void setParentIncidentId(@jakarta.annotation.Nullable String parentIncidentId) {
     this.parentIncidentId = parentIncidentId;
   }
 
 
-  public NewIncidentDataAttributes duplicateIncidentId(@javax.annotation.Nullable String duplicateIncidentId) {
+  public NewIncidentDataAttributes duplicateIncidentId(@jakarta.annotation.Nullable String duplicateIncidentId) {
     this.duplicateIncidentId = duplicateIncidentId;
     return this;
   }
@@ -458,17 +458,17 @@ public class NewIncidentDataAttributes {
    * ID of duplicated incident
    * @return duplicateIncidentId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDuplicateIncidentId() {
     return duplicateIncidentId;
   }
 
-  public void setDuplicateIncidentId(@javax.annotation.Nullable String duplicateIncidentId) {
+  public void setDuplicateIncidentId(@jakarta.annotation.Nullable String duplicateIncidentId) {
     this.duplicateIncidentId = duplicateIncidentId;
   }
 
 
-  public NewIncidentDataAttributes _private(@javax.annotation.Nullable Boolean _private) {
+  public NewIncidentDataAttributes _private(@jakarta.annotation.Nullable Boolean _private) {
     this._private = _private;
     return this;
   }
@@ -477,17 +477,17 @@ public class NewIncidentDataAttributes {
    * Create an incident as private. Once an incident is made as private it cannot be undone
    * @return _private
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getPrivate() {
     return _private;
   }
 
-  public void setPrivate(@javax.annotation.Nullable Boolean _private) {
+  public void setPrivate(@jakarta.annotation.Nullable Boolean _private) {
     this._private = _private;
   }
 
 
-  public NewIncidentDataAttributes summary(@javax.annotation.Nullable String summary) {
+  public NewIncidentDataAttributes summary(@jakarta.annotation.Nullable String summary) {
     this.summary = summary;
     return this;
   }
@@ -496,17 +496,17 @@ public class NewIncidentDataAttributes {
    * The summary of the incident
    * @return summary
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSummary() {
     return summary;
   }
 
-  public void setSummary(@javax.annotation.Nullable String summary) {
+  public void setSummary(@jakarta.annotation.Nullable String summary) {
     this.summary = summary;
   }
 
 
-  public NewIncidentDataAttributes userId(@javax.annotation.Nullable String userId) {
+  public NewIncidentDataAttributes userId(@jakarta.annotation.Nullable String userId) {
     this.userId = userId;
     return this;
   }
@@ -515,17 +515,17 @@ public class NewIncidentDataAttributes {
    * User ID of the creator of the incident. Default to the user attached to the Api Key
    * @return userId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUserId() {
     return userId;
   }
 
-  public void setUserId(@javax.annotation.Nullable String userId) {
+  public void setUserId(@jakarta.annotation.Nullable String userId) {
     this.userId = userId;
   }
 
 
-  public NewIncidentDataAttributes severityId(@javax.annotation.Nullable String severityId) {
+  public NewIncidentDataAttributes severityId(@jakarta.annotation.Nullable String severityId) {
     this.severityId = severityId;
     return this;
   }
@@ -534,17 +534,17 @@ public class NewIncidentDataAttributes {
    * The Severity ID to attach to the incident
    * @return severityId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSeverityId() {
     return severityId;
   }
 
-  public void setSeverityId(@javax.annotation.Nullable String severityId) {
+  public void setSeverityId(@jakarta.annotation.Nullable String severityId) {
     this.severityId = severityId;
   }
 
 
-  public NewIncidentDataAttributes publicTitle(@javax.annotation.Nullable String publicTitle) {
+  public NewIncidentDataAttributes publicTitle(@jakarta.annotation.Nullable String publicTitle) {
     this.publicTitle = publicTitle;
     return this;
   }
@@ -553,17 +553,17 @@ public class NewIncidentDataAttributes {
    * The public title of the incident
    * @return publicTitle
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPublicTitle() {
     return publicTitle;
   }
 
-  public void setPublicTitle(@javax.annotation.Nullable String publicTitle) {
+  public void setPublicTitle(@jakarta.annotation.Nullable String publicTitle) {
     this.publicTitle = publicTitle;
   }
 
 
-  public NewIncidentDataAttributes alertIds(@javax.annotation.Nullable List<String> alertIds) {
+  public NewIncidentDataAttributes alertIds(@jakarta.annotation.Nullable List<String> alertIds) {
     this.alertIds = alertIds;
     return this;
   }
@@ -580,17 +580,17 @@ public class NewIncidentDataAttributes {
    * The Alert IDs to attach to the incident
    * @return alertIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getAlertIds() {
     return alertIds;
   }
 
-  public void setAlertIds(@javax.annotation.Nullable List<String> alertIds) {
+  public void setAlertIds(@jakarta.annotation.Nullable List<String> alertIds) {
     this.alertIds = alertIds;
   }
 
 
-  public NewIncidentDataAttributes environmentIds(@javax.annotation.Nullable List<String> environmentIds) {
+  public NewIncidentDataAttributes environmentIds(@jakarta.annotation.Nullable List<String> environmentIds) {
     this.environmentIds = environmentIds;
     return this;
   }
@@ -607,17 +607,17 @@ public class NewIncidentDataAttributes {
    * The Environment IDs to attach to the incident
    * @return environmentIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getEnvironmentIds() {
     return environmentIds;
   }
 
-  public void setEnvironmentIds(@javax.annotation.Nullable List<String> environmentIds) {
+  public void setEnvironmentIds(@jakarta.annotation.Nullable List<String> environmentIds) {
     this.environmentIds = environmentIds;
   }
 
 
-  public NewIncidentDataAttributes incidentTypeIds(@javax.annotation.Nullable List<String> incidentTypeIds) {
+  public NewIncidentDataAttributes incidentTypeIds(@jakarta.annotation.Nullable List<String> incidentTypeIds) {
     this.incidentTypeIds = incidentTypeIds;
     return this;
   }
@@ -634,17 +634,17 @@ public class NewIncidentDataAttributes {
    * The Incident Type IDs to attach to the incident
    * @return incidentTypeIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getIncidentTypeIds() {
     return incidentTypeIds;
   }
 
-  public void setIncidentTypeIds(@javax.annotation.Nullable List<String> incidentTypeIds) {
+  public void setIncidentTypeIds(@jakarta.annotation.Nullable List<String> incidentTypeIds) {
     this.incidentTypeIds = incidentTypeIds;
   }
 
 
-  public NewIncidentDataAttributes serviceIds(@javax.annotation.Nullable List<String> serviceIds) {
+  public NewIncidentDataAttributes serviceIds(@jakarta.annotation.Nullable List<String> serviceIds) {
     this.serviceIds = serviceIds;
     return this;
   }
@@ -661,17 +661,17 @@ public class NewIncidentDataAttributes {
    * The Service IDs to attach to the incident
    * @return serviceIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getServiceIds() {
     return serviceIds;
   }
 
-  public void setServiceIds(@javax.annotation.Nullable List<String> serviceIds) {
+  public void setServiceIds(@jakarta.annotation.Nullable List<String> serviceIds) {
     this.serviceIds = serviceIds;
   }
 
 
-  public NewIncidentDataAttributes functionalityIds(@javax.annotation.Nullable List<String> functionalityIds) {
+  public NewIncidentDataAttributes functionalityIds(@jakarta.annotation.Nullable List<String> functionalityIds) {
     this.functionalityIds = functionalityIds;
     return this;
   }
@@ -688,17 +688,17 @@ public class NewIncidentDataAttributes {
    * The Functionality IDs to attach to the incident
    * @return functionalityIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getFunctionalityIds() {
     return functionalityIds;
   }
 
-  public void setFunctionalityIds(@javax.annotation.Nullable List<String> functionalityIds) {
+  public void setFunctionalityIds(@jakarta.annotation.Nullable List<String> functionalityIds) {
     this.functionalityIds = functionalityIds;
   }
 
 
-  public NewIncidentDataAttributes groupIds(@javax.annotation.Nullable List<String> groupIds) {
+  public NewIncidentDataAttributes groupIds(@jakarta.annotation.Nullable List<String> groupIds) {
     this.groupIds = groupIds;
     return this;
   }
@@ -715,17 +715,17 @@ public class NewIncidentDataAttributes {
    * The Team IDs to attach to the incident
    * @return groupIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getGroupIds() {
     return groupIds;
   }
 
-  public void setGroupIds(@javax.annotation.Nullable List<String> groupIds) {
+  public void setGroupIds(@jakarta.annotation.Nullable List<String> groupIds) {
     this.groupIds = groupIds;
   }
 
 
-  public NewIncidentDataAttributes causeIds(@javax.annotation.Nullable List<String> causeIds) {
+  public NewIncidentDataAttributes causeIds(@jakarta.annotation.Nullable List<String> causeIds) {
     this.causeIds = causeIds;
     return this;
   }
@@ -742,17 +742,17 @@ public class NewIncidentDataAttributes {
    * The Cause IDs to attach to the incident
    * @return causeIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getCauseIds() {
     return causeIds;
   }
 
-  public void setCauseIds(@javax.annotation.Nullable List<String> causeIds) {
+  public void setCauseIds(@jakarta.annotation.Nullable List<String> causeIds) {
     this.causeIds = causeIds;
   }
 
 
-  public NewIncidentDataAttributes mutedServiceIds(@javax.annotation.Nullable List<String> mutedServiceIds) {
+  public NewIncidentDataAttributes mutedServiceIds(@jakarta.annotation.Nullable List<String> mutedServiceIds) {
     this.mutedServiceIds = mutedServiceIds;
     return this;
   }
@@ -769,17 +769,17 @@ public class NewIncidentDataAttributes {
    * The Service IDs to mute alerts for during maintenance. Alerts for these services will still be triggered and attached to the incident, but won&#39;t page responders.
    * @return mutedServiceIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getMutedServiceIds() {
     return mutedServiceIds;
   }
 
-  public void setMutedServiceIds(@javax.annotation.Nullable List<String> mutedServiceIds) {
+  public void setMutedServiceIds(@jakarta.annotation.Nullable List<String> mutedServiceIds) {
     this.mutedServiceIds = mutedServiceIds;
   }
 
 
-  public NewIncidentDataAttributes labels(@javax.annotation.Nullable Object labels) {
+  public NewIncidentDataAttributes labels(@jakarta.annotation.Nullable Object labels) {
     this.labels = labels;
     return this;
   }
@@ -788,17 +788,17 @@ public class NewIncidentDataAttributes {
    * Labels to attach to the incidents. eg: {\&quot;platform\&quot;:\&quot;osx\&quot;, \&quot;version\&quot;: \&quot;1.29\&quot;}
    * @return labels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Object getLabels() {
     return labels;
   }
 
-  public void setLabels(@javax.annotation.Nullable Object labels) {
+  public void setLabels(@jakarta.annotation.Nullable Object labels) {
     this.labels = labels;
   }
 
 
-  public NewIncidentDataAttributes slackChannelName(@javax.annotation.Nullable String slackChannelName) {
+  public NewIncidentDataAttributes slackChannelName(@jakarta.annotation.Nullable String slackChannelName) {
     this.slackChannelName = slackChannelName;
     return this;
   }
@@ -807,17 +807,17 @@ public class NewIncidentDataAttributes {
    * Slack channel name
    * @return slackChannelName
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSlackChannelName() {
     return slackChannelName;
   }
 
-  public void setSlackChannelName(@javax.annotation.Nullable String slackChannelName) {
+  public void setSlackChannelName(@jakarta.annotation.Nullable String slackChannelName) {
     this.slackChannelName = slackChannelName;
   }
 
 
-  public NewIncidentDataAttributes slackChannelId(@javax.annotation.Nullable String slackChannelId) {
+  public NewIncidentDataAttributes slackChannelId(@jakarta.annotation.Nullable String slackChannelId) {
     this.slackChannelId = slackChannelId;
     return this;
   }
@@ -826,17 +826,17 @@ public class NewIncidentDataAttributes {
    * Slack channel id
    * @return slackChannelId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSlackChannelId() {
     return slackChannelId;
   }
 
-  public void setSlackChannelId(@javax.annotation.Nullable String slackChannelId) {
+  public void setSlackChannelId(@jakarta.annotation.Nullable String slackChannelId) {
     this.slackChannelId = slackChannelId;
   }
 
 
-  public NewIncidentDataAttributes slackChannelUrl(@javax.annotation.Nullable String slackChannelUrl) {
+  public NewIncidentDataAttributes slackChannelUrl(@jakarta.annotation.Nullable String slackChannelUrl) {
     this.slackChannelUrl = slackChannelUrl;
     return this;
   }
@@ -845,17 +845,17 @@ public class NewIncidentDataAttributes {
    * Slack channel url
    * @return slackChannelUrl
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSlackChannelUrl() {
     return slackChannelUrl;
   }
 
-  public void setSlackChannelUrl(@javax.annotation.Nullable String slackChannelUrl) {
+  public void setSlackChannelUrl(@jakarta.annotation.Nullable String slackChannelUrl) {
     this.slackChannelUrl = slackChannelUrl;
   }
 
 
-  public NewIncidentDataAttributes slackChannelArchived(@javax.annotation.Nullable Boolean slackChannelArchived) {
+  public NewIncidentDataAttributes slackChannelArchived(@jakarta.annotation.Nullable Boolean slackChannelArchived) {
     this.slackChannelArchived = slackChannelArchived;
     return this;
   }
@@ -864,17 +864,17 @@ public class NewIncidentDataAttributes {
    * Whether the Slack channel is archived
    * @return slackChannelArchived
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getSlackChannelArchived() {
     return slackChannelArchived;
   }
 
-  public void setSlackChannelArchived(@javax.annotation.Nullable Boolean slackChannelArchived) {
+  public void setSlackChannelArchived(@jakarta.annotation.Nullable Boolean slackChannelArchived) {
     this.slackChannelArchived = slackChannelArchived;
   }
 
 
-  public NewIncidentDataAttributes googleDriveParentId(@javax.annotation.Nullable String googleDriveParentId) {
+  public NewIncidentDataAttributes googleDriveParentId(@jakarta.annotation.Nullable String googleDriveParentId) {
     this.googleDriveParentId = googleDriveParentId;
     return this;
   }
@@ -883,17 +883,17 @@ public class NewIncidentDataAttributes {
    * Google Drive parent folder ID
    * @return googleDriveParentId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getGoogleDriveParentId() {
     return googleDriveParentId;
   }
 
-  public void setGoogleDriveParentId(@javax.annotation.Nullable String googleDriveParentId) {
+  public void setGoogleDriveParentId(@jakarta.annotation.Nullable String googleDriveParentId) {
     this.googleDriveParentId = googleDriveParentId;
   }
 
 
-  public NewIncidentDataAttributes googleDriveUrl(@javax.annotation.Nullable String googleDriveUrl) {
+  public NewIncidentDataAttributes googleDriveUrl(@jakarta.annotation.Nullable String googleDriveUrl) {
     this.googleDriveUrl = googleDriveUrl;
     return this;
   }
@@ -902,17 +902,17 @@ public class NewIncidentDataAttributes {
    * Google Drive URL
    * @return googleDriveUrl
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getGoogleDriveUrl() {
     return googleDriveUrl;
   }
 
-  public void setGoogleDriveUrl(@javax.annotation.Nullable String googleDriveUrl) {
+  public void setGoogleDriveUrl(@jakarta.annotation.Nullable String googleDriveUrl) {
     this.googleDriveUrl = googleDriveUrl;
   }
 
 
-  public NewIncidentDataAttributes jiraIssueKey(@javax.annotation.Nullable String jiraIssueKey) {
+  public NewIncidentDataAttributes jiraIssueKey(@jakarta.annotation.Nullable String jiraIssueKey) {
     this.jiraIssueKey = jiraIssueKey;
     return this;
   }
@@ -921,17 +921,17 @@ public class NewIncidentDataAttributes {
    * Jira issue key
    * @return jiraIssueKey
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getJiraIssueKey() {
     return jiraIssueKey;
   }
 
-  public void setJiraIssueKey(@javax.annotation.Nullable String jiraIssueKey) {
+  public void setJiraIssueKey(@jakarta.annotation.Nullable String jiraIssueKey) {
     this.jiraIssueKey = jiraIssueKey;
   }
 
 
-  public NewIncidentDataAttributes jiraIssueId(@javax.annotation.Nullable String jiraIssueId) {
+  public NewIncidentDataAttributes jiraIssueId(@jakarta.annotation.Nullable String jiraIssueId) {
     this.jiraIssueId = jiraIssueId;
     return this;
   }
@@ -940,17 +940,17 @@ public class NewIncidentDataAttributes {
    * Jira issue ID
    * @return jiraIssueId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getJiraIssueId() {
     return jiraIssueId;
   }
 
-  public void setJiraIssueId(@javax.annotation.Nullable String jiraIssueId) {
+  public void setJiraIssueId(@jakarta.annotation.Nullable String jiraIssueId) {
     this.jiraIssueId = jiraIssueId;
   }
 
 
-  public NewIncidentDataAttributes jiraIssueUrl(@javax.annotation.Nullable String jiraIssueUrl) {
+  public NewIncidentDataAttributes jiraIssueUrl(@jakarta.annotation.Nullable String jiraIssueUrl) {
     this.jiraIssueUrl = jiraIssueUrl;
     return this;
   }
@@ -959,17 +959,17 @@ public class NewIncidentDataAttributes {
    * Jira issue URL
    * @return jiraIssueUrl
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getJiraIssueUrl() {
     return jiraIssueUrl;
   }
 
-  public void setJiraIssueUrl(@javax.annotation.Nullable String jiraIssueUrl) {
+  public void setJiraIssueUrl(@jakarta.annotation.Nullable String jiraIssueUrl) {
     this.jiraIssueUrl = jiraIssueUrl;
   }
 
 
-  public NewIncidentDataAttributes notifyEmails(@javax.annotation.Nullable List<String> notifyEmails) {
+  public NewIncidentDataAttributes notifyEmails(@jakarta.annotation.Nullable List<String> notifyEmails) {
     this.notifyEmails = notifyEmails;
     return this;
   }
@@ -986,17 +986,17 @@ public class NewIncidentDataAttributes {
    * Emails you want to notify
    * @return notifyEmails
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getNotifyEmails() {
     return notifyEmails;
   }
 
-  public void setNotifyEmails(@javax.annotation.Nullable List<String> notifyEmails) {
+  public void setNotifyEmails(@jakarta.annotation.Nullable List<String> notifyEmails) {
     this.notifyEmails = notifyEmails;
   }
 
 
-  public NewIncidentDataAttributes status(@javax.annotation.Nullable StatusEnum status) {
+  public NewIncidentDataAttributes status(@jakarta.annotation.Nullable StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -1005,17 +1005,17 @@ public class NewIncidentDataAttributes {
    * The status of the incident
    * @return status
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nullable StatusEnum status) {
+  public void setStatus(@jakarta.annotation.Nullable StatusEnum status) {
     this.status = status;
   }
 
 
-  public NewIncidentDataAttributes url(@javax.annotation.Nullable String url) {
+  public NewIncidentDataAttributes url(@jakarta.annotation.Nullable String url) {
     this.url = url;
     return this;
   }
@@ -1024,17 +1024,17 @@ public class NewIncidentDataAttributes {
    * The url to the incident
    * @return url
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUrl() {
     return url;
   }
 
-  public void setUrl(@javax.annotation.Nullable String url) {
+  public void setUrl(@jakarta.annotation.Nullable String url) {
     this.url = url;
   }
 
 
-  public NewIncidentDataAttributes scheduledFor(@javax.annotation.Nullable String scheduledFor) {
+  public NewIncidentDataAttributes scheduledFor(@jakarta.annotation.Nullable String scheduledFor) {
     this.scheduledFor = scheduledFor;
     return this;
   }
@@ -1043,17 +1043,17 @@ public class NewIncidentDataAttributes {
    * Date of when the maintenance begins
    * @return scheduledFor
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getScheduledFor() {
     return scheduledFor;
   }
 
-  public void setScheduledFor(@javax.annotation.Nullable String scheduledFor) {
+  public void setScheduledFor(@jakarta.annotation.Nullable String scheduledFor) {
     this.scheduledFor = scheduledFor;
   }
 
 
-  public NewIncidentDataAttributes scheduledUntil(@javax.annotation.Nullable String scheduledUntil) {
+  public NewIncidentDataAttributes scheduledUntil(@jakarta.annotation.Nullable String scheduledUntil) {
     this.scheduledUntil = scheduledUntil;
     return this;
   }
@@ -1062,17 +1062,17 @@ public class NewIncidentDataAttributes {
    * Date of when the maintenance ends
    * @return scheduledUntil
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getScheduledUntil() {
     return scheduledUntil;
   }
 
-  public void setScheduledUntil(@javax.annotation.Nullable String scheduledUntil) {
+  public void setScheduledUntil(@jakarta.annotation.Nullable String scheduledUntil) {
     this.scheduledUntil = scheduledUntil;
   }
 
 
-  public NewIncidentDataAttributes inTriageAt(@javax.annotation.Nullable String inTriageAt) {
+  public NewIncidentDataAttributes inTriageAt(@jakarta.annotation.Nullable String inTriageAt) {
     this.inTriageAt = inTriageAt;
     return this;
   }
@@ -1081,17 +1081,17 @@ public class NewIncidentDataAttributes {
    * Date of triage
    * @return inTriageAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getInTriageAt() {
     return inTriageAt;
   }
 
-  public void setInTriageAt(@javax.annotation.Nullable String inTriageAt) {
+  public void setInTriageAt(@jakarta.annotation.Nullable String inTriageAt) {
     this.inTriageAt = inTriageAt;
   }
 
 
-  public NewIncidentDataAttributes startedAt(@javax.annotation.Nullable String startedAt) {
+  public NewIncidentDataAttributes startedAt(@jakarta.annotation.Nullable String startedAt) {
     this.startedAt = startedAt;
     return this;
   }
@@ -1100,17 +1100,17 @@ public class NewIncidentDataAttributes {
    * Date of start
    * @return startedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getStartedAt() {
     return startedAt;
   }
 
-  public void setStartedAt(@javax.annotation.Nullable String startedAt) {
+  public void setStartedAt(@jakarta.annotation.Nullable String startedAt) {
     this.startedAt = startedAt;
   }
 
 
-  public NewIncidentDataAttributes detectedAt(@javax.annotation.Nullable String detectedAt) {
+  public NewIncidentDataAttributes detectedAt(@jakarta.annotation.Nullable String detectedAt) {
     this.detectedAt = detectedAt;
     return this;
   }
@@ -1119,17 +1119,17 @@ public class NewIncidentDataAttributes {
    * Date of detection
    * @return detectedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDetectedAt() {
     return detectedAt;
   }
 
-  public void setDetectedAt(@javax.annotation.Nullable String detectedAt) {
+  public void setDetectedAt(@jakarta.annotation.Nullable String detectedAt) {
     this.detectedAt = detectedAt;
   }
 
 
-  public NewIncidentDataAttributes acknowledgedAt(@javax.annotation.Nullable String acknowledgedAt) {
+  public NewIncidentDataAttributes acknowledgedAt(@jakarta.annotation.Nullable String acknowledgedAt) {
     this.acknowledgedAt = acknowledgedAt;
     return this;
   }
@@ -1138,17 +1138,17 @@ public class NewIncidentDataAttributes {
    * Date of acknowledgment
    * @return acknowledgedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getAcknowledgedAt() {
     return acknowledgedAt;
   }
 
-  public void setAcknowledgedAt(@javax.annotation.Nullable String acknowledgedAt) {
+  public void setAcknowledgedAt(@jakarta.annotation.Nullable String acknowledgedAt) {
     this.acknowledgedAt = acknowledgedAt;
   }
 
 
-  public NewIncidentDataAttributes mitigatedAt(@javax.annotation.Nullable String mitigatedAt) {
+  public NewIncidentDataAttributes mitigatedAt(@jakarta.annotation.Nullable String mitigatedAt) {
     this.mitigatedAt = mitigatedAt;
     return this;
   }
@@ -1157,17 +1157,17 @@ public class NewIncidentDataAttributes {
    * Date of mitigation
    * @return mitigatedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getMitigatedAt() {
     return mitigatedAt;
   }
 
-  public void setMitigatedAt(@javax.annotation.Nullable String mitigatedAt) {
+  public void setMitigatedAt(@jakarta.annotation.Nullable String mitigatedAt) {
     this.mitigatedAt = mitigatedAt;
   }
 
 
-  public NewIncidentDataAttributes resolvedAt(@javax.annotation.Nullable String resolvedAt) {
+  public NewIncidentDataAttributes resolvedAt(@jakarta.annotation.Nullable String resolvedAt) {
     this.resolvedAt = resolvedAt;
     return this;
   }
@@ -1176,17 +1176,17 @@ public class NewIncidentDataAttributes {
    * Date of resolution
    * @return resolvedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getResolvedAt() {
     return resolvedAt;
   }
 
-  public void setResolvedAt(@javax.annotation.Nullable String resolvedAt) {
+  public void setResolvedAt(@jakarta.annotation.Nullable String resolvedAt) {
     this.resolvedAt = resolvedAt;
   }
 
 
-  public NewIncidentDataAttributes closedAt(@javax.annotation.Nullable String closedAt) {
+  public NewIncidentDataAttributes closedAt(@jakarta.annotation.Nullable String closedAt) {
     this.closedAt = closedAt;
     return this;
   }
@@ -1195,17 +1195,17 @@ public class NewIncidentDataAttributes {
    * Date of closure
    * @return closedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getClosedAt() {
     return closedAt;
   }
 
-  public void setClosedAt(@javax.annotation.Nullable String closedAt) {
+  public void setClosedAt(@jakarta.annotation.Nullable String closedAt) {
     this.closedAt = closedAt;
   }
 
 
-  public NewIncidentDataAttributes cancelledAt(@javax.annotation.Nullable String cancelledAt) {
+  public NewIncidentDataAttributes cancelledAt(@jakarta.annotation.Nullable String cancelledAt) {
     this.cancelledAt = cancelledAt;
     return this;
   }
@@ -1214,12 +1214,12 @@ public class NewIncidentDataAttributes {
    * Date of cancellation
    * @return cancelledAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCancelledAt() {
     return cancelledAt;
   }
 
-  public void setCancelledAt(@javax.annotation.Nullable String cancelledAt) {
+  public void setCancelledAt(@jakarta.annotation.Nullable String cancelledAt) {
     this.cancelledAt = cancelledAt;
   }
 

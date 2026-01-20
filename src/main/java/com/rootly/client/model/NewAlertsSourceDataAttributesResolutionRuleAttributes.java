@@ -52,11 +52,11 @@ import com.rootly.client.JSON;
 /**
  * Provide additional attributes for email alerts source
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewAlertsSourceDataAttributesResolutionRuleAttributes {
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean enabled;
 
   /**
@@ -113,7 +113,7 @@ public class NewAlertsSourceDataAttributesResolutionRuleAttributes {
 
   public static final String SERIALIZED_NAME_CONDITION_TYPE = "condition_type";
   @SerializedName(SERIALIZED_NAME_CONDITION_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ConditionTypeEnum conditionType;
 
   /**
@@ -168,12 +168,12 @@ public class NewAlertsSourceDataAttributesResolutionRuleAttributes {
 
   public static final String SERIALIZED_NAME_IDENTIFIER_MATCHABLE_TYPE = "identifier_matchable_type";
   @SerializedName(SERIALIZED_NAME_IDENTIFIER_MATCHABLE_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private IdentifierMatchableTypeEnum identifierMatchableType;
 
   public static final String SERIALIZED_NAME_IDENTIFIER_MATCHABLE_ID = "identifier_matchable_id";
   @SerializedName(SERIALIZED_NAME_IDENTIFIER_MATCHABLE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String identifierMatchableId;
 
   /**
@@ -230,28 +230,28 @@ public class NewAlertsSourceDataAttributesResolutionRuleAttributes {
 
   public static final String SERIALIZED_NAME_IDENTIFIER_REFERENCE_KIND = "identifier_reference_kind";
   @SerializedName(SERIALIZED_NAME_IDENTIFIER_REFERENCE_KIND)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private IdentifierReferenceKindEnum identifierReferenceKind;
 
   public static final String SERIALIZED_NAME_IDENTIFIER_JSON_PATH = "identifier_json_path";
   @SerializedName(SERIALIZED_NAME_IDENTIFIER_JSON_PATH)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String identifierJsonPath;
 
   public static final String SERIALIZED_NAME_IDENTIFIER_VALUE_REGEX = "identifier_value_regex";
   @SerializedName(SERIALIZED_NAME_IDENTIFIER_VALUE_REGEX)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String identifierValueRegex;
 
   public static final String SERIALIZED_NAME_CONDITIONS_ATTRIBUTES = "conditions_attributes";
   @SerializedName(SERIALIZED_NAME_CONDITIONS_ATTRIBUTES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewAlertsSourceDataAttributesResolutionRuleAttributesConditionsAttributesInner> conditionsAttributes = new ArrayList<>();
 
   public NewAlertsSourceDataAttributesResolutionRuleAttributes() {
   }
 
-  public NewAlertsSourceDataAttributesResolutionRuleAttributes enabled(@javax.annotation.Nullable Boolean enabled) {
+  public NewAlertsSourceDataAttributesResolutionRuleAttributes enabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -260,17 +260,17 @@ public class NewAlertsSourceDataAttributesResolutionRuleAttributes {
    * Set this to true to enable the auto resolution rule
    * @return enabled
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getEnabled() {
     return enabled;
   }
 
-  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
+  public void setEnabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public NewAlertsSourceDataAttributesResolutionRuleAttributes conditionType(@javax.annotation.Nullable ConditionTypeEnum conditionType) {
+  public NewAlertsSourceDataAttributesResolutionRuleAttributes conditionType(@jakarta.annotation.Nullable ConditionTypeEnum conditionType) {
     this.conditionType = conditionType;
     return this;
   }
@@ -279,17 +279,17 @@ public class NewAlertsSourceDataAttributesResolutionRuleAttributes {
    * The type of condition to evaluate to apply auto resolution rule
    * @return conditionType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ConditionTypeEnum getConditionType() {
     return conditionType;
   }
 
-  public void setConditionType(@javax.annotation.Nullable ConditionTypeEnum conditionType) {
+  public void setConditionType(@jakarta.annotation.Nullable ConditionTypeEnum conditionType) {
     this.conditionType = conditionType;
   }
 
 
-  public NewAlertsSourceDataAttributesResolutionRuleAttributes identifierMatchableType(@javax.annotation.Nullable IdentifierMatchableTypeEnum identifierMatchableType) {
+  public NewAlertsSourceDataAttributesResolutionRuleAttributes identifierMatchableType(@jakarta.annotation.Nullable IdentifierMatchableTypeEnum identifierMatchableType) {
     this.identifierMatchableType = identifierMatchableType;
     return this;
   }
@@ -298,17 +298,17 @@ public class NewAlertsSourceDataAttributesResolutionRuleAttributes {
    * The type of the identifier matchable
    * @return identifierMatchableType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public IdentifierMatchableTypeEnum getIdentifierMatchableType() {
     return identifierMatchableType;
   }
 
-  public void setIdentifierMatchableType(@javax.annotation.Nullable IdentifierMatchableTypeEnum identifierMatchableType) {
+  public void setIdentifierMatchableType(@jakarta.annotation.Nullable IdentifierMatchableTypeEnum identifierMatchableType) {
     this.identifierMatchableType = identifierMatchableType;
   }
 
 
-  public NewAlertsSourceDataAttributesResolutionRuleAttributes identifierMatchableId(@javax.annotation.Nullable String identifierMatchableId) {
+  public NewAlertsSourceDataAttributesResolutionRuleAttributes identifierMatchableId(@jakarta.annotation.Nullable String identifierMatchableId) {
     this.identifierMatchableId = identifierMatchableId;
     return this;
   }
@@ -317,17 +317,17 @@ public class NewAlertsSourceDataAttributesResolutionRuleAttributes {
    * The ID of the identifier matchable. If identifier_matchable_type is AlertField, this is the ID of the alert field.
    * @return identifierMatchableId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getIdentifierMatchableId() {
     return identifierMatchableId;
   }
 
-  public void setIdentifierMatchableId(@javax.annotation.Nullable String identifierMatchableId) {
+  public void setIdentifierMatchableId(@jakarta.annotation.Nullable String identifierMatchableId) {
     this.identifierMatchableId = identifierMatchableId;
   }
 
 
-  public NewAlertsSourceDataAttributesResolutionRuleAttributes identifierReferenceKind(@javax.annotation.Nullable IdentifierReferenceKindEnum identifierReferenceKind) {
+  public NewAlertsSourceDataAttributesResolutionRuleAttributes identifierReferenceKind(@jakarta.annotation.Nullable IdentifierReferenceKindEnum identifierReferenceKind) {
     this.identifierReferenceKind = identifierReferenceKind;
     return this;
   }
@@ -336,17 +336,17 @@ public class NewAlertsSourceDataAttributesResolutionRuleAttributes {
    * The kind of the identifier reference
    * @return identifierReferenceKind
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public IdentifierReferenceKindEnum getIdentifierReferenceKind() {
     return identifierReferenceKind;
   }
 
-  public void setIdentifierReferenceKind(@javax.annotation.Nullable IdentifierReferenceKindEnum identifierReferenceKind) {
+  public void setIdentifierReferenceKind(@jakarta.annotation.Nullable IdentifierReferenceKindEnum identifierReferenceKind) {
     this.identifierReferenceKind = identifierReferenceKind;
   }
 
 
-  public NewAlertsSourceDataAttributesResolutionRuleAttributes identifierJsonPath(@javax.annotation.Nullable String identifierJsonPath) {
+  public NewAlertsSourceDataAttributesResolutionRuleAttributes identifierJsonPath(@jakarta.annotation.Nullable String identifierJsonPath) {
     this.identifierJsonPath = identifierJsonPath;
     return this;
   }
@@ -355,17 +355,17 @@ public class NewAlertsSourceDataAttributesResolutionRuleAttributes {
    * JSON path expression to extract unique alert identifier used to match triggered alerts with resolving alerts
    * @return identifierJsonPath
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getIdentifierJsonPath() {
     return identifierJsonPath;
   }
 
-  public void setIdentifierJsonPath(@javax.annotation.Nullable String identifierJsonPath) {
+  public void setIdentifierJsonPath(@jakarta.annotation.Nullable String identifierJsonPath) {
     this.identifierJsonPath = identifierJsonPath;
   }
 
 
-  public NewAlertsSourceDataAttributesResolutionRuleAttributes identifierValueRegex(@javax.annotation.Nullable String identifierValueRegex) {
+  public NewAlertsSourceDataAttributesResolutionRuleAttributes identifierValueRegex(@jakarta.annotation.Nullable String identifierValueRegex) {
     this.identifierValueRegex = identifierValueRegex;
     return this;
   }
@@ -374,17 +374,17 @@ public class NewAlertsSourceDataAttributesResolutionRuleAttributes {
    * Regex group to further specify the part of the string used as a unique identifier
    * @return identifierValueRegex
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getIdentifierValueRegex() {
     return identifierValueRegex;
   }
 
-  public void setIdentifierValueRegex(@javax.annotation.Nullable String identifierValueRegex) {
+  public void setIdentifierValueRegex(@jakarta.annotation.Nullable String identifierValueRegex) {
     this.identifierValueRegex = identifierValueRegex;
   }
 
 
-  public NewAlertsSourceDataAttributesResolutionRuleAttributes conditionsAttributes(@javax.annotation.Nullable List<NewAlertsSourceDataAttributesResolutionRuleAttributesConditionsAttributesInner> conditionsAttributes) {
+  public NewAlertsSourceDataAttributesResolutionRuleAttributes conditionsAttributes(@jakarta.annotation.Nullable List<NewAlertsSourceDataAttributesResolutionRuleAttributesConditionsAttributesInner> conditionsAttributes) {
     this.conditionsAttributes = conditionsAttributes;
     return this;
   }
@@ -401,12 +401,12 @@ public class NewAlertsSourceDataAttributesResolutionRuleAttributes {
    * List of conditions to evaluate for auto resolution
    * @return conditionsAttributes
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewAlertsSourceDataAttributesResolutionRuleAttributesConditionsAttributesInner> getConditionsAttributes() {
     return conditionsAttributes;
   }
 
-  public void setConditionsAttributes(@javax.annotation.Nullable List<NewAlertsSourceDataAttributesResolutionRuleAttributesConditionsAttributesInner> conditionsAttributes) {
+  public void setConditionsAttributes(@jakarta.annotation.Nullable List<NewAlertsSourceDataAttributesResolutionRuleAttributesConditionsAttributesInner> conditionsAttributes) {
     this.conditionsAttributes = conditionsAttributes;
   }
 

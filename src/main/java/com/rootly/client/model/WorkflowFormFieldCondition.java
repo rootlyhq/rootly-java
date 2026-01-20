@@ -50,16 +50,16 @@ import com.rootly.client.JSON;
 /**
  * WorkflowFormFieldCondition
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class WorkflowFormFieldCondition {
   public static final String SERIALIZED_NAME_WORKFLOW_ID = "workflow_id";
   @SerializedName(SERIALIZED_NAME_WORKFLOW_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String workflowId;
 
   public static final String SERIALIZED_NAME_FORM_FIELD_ID = "form_field_id";
   @SerializedName(SERIALIZED_NAME_FORM_FIELD_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String formFieldId;
 
   /**
@@ -130,48 +130,48 @@ public class WorkflowFormFieldCondition {
 
   public static final String SERIALIZED_NAME_INCIDENT_CONDITION = "incident_condition";
   @SerializedName(SERIALIZED_NAME_INCIDENT_CONDITION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private IncidentConditionEnum incidentCondition = IncidentConditionEnum.ANY;
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> values = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SELECTED_CATALOG_ENTITY_IDS = "selected_catalog_entity_ids";
   @SerializedName(SERIALIZED_NAME_SELECTED_CATALOG_ENTITY_IDS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<String> selectedCatalogEntityIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SELECTED_FUNCTIONALITY_IDS = "selected_functionality_ids";
   @SerializedName(SERIALIZED_NAME_SELECTED_FUNCTIONALITY_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> selectedFunctionalityIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SELECTED_GROUP_IDS = "selected_group_ids";
   @SerializedName(SERIALIZED_NAME_SELECTED_GROUP_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> selectedGroupIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SELECTED_OPTION_IDS = "selected_option_ids";
   @SerializedName(SERIALIZED_NAME_SELECTED_OPTION_IDS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<String> selectedOptionIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SELECTED_SERVICE_IDS = "selected_service_ids";
   @SerializedName(SERIALIZED_NAME_SELECTED_SERVICE_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> selectedServiceIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SELECTED_USER_IDS = "selected_user_ids";
   @SerializedName(SERIALIZED_NAME_SELECTED_USER_IDS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<Integer> selectedUserIds = new ArrayList<>();
 
   public WorkflowFormFieldCondition() {
   }
 
-  public WorkflowFormFieldCondition workflowId(@javax.annotation.Nonnull String workflowId) {
+  public WorkflowFormFieldCondition workflowId(@jakarta.annotation.Nonnull String workflowId) {
     this.workflowId = workflowId;
     return this;
   }
@@ -180,17 +180,17 @@ public class WorkflowFormFieldCondition {
    * The workflow for this condition
    * @return workflowId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getWorkflowId() {
     return workflowId;
   }
 
-  public void setWorkflowId(@javax.annotation.Nonnull String workflowId) {
+  public void setWorkflowId(@jakarta.annotation.Nonnull String workflowId) {
     this.workflowId = workflowId;
   }
 
 
-  public WorkflowFormFieldCondition formFieldId(@javax.annotation.Nonnull String formFieldId) {
+  public WorkflowFormFieldCondition formFieldId(@jakarta.annotation.Nonnull String formFieldId) {
     this.formFieldId = formFieldId;
     return this;
   }
@@ -199,17 +199,17 @@ public class WorkflowFormFieldCondition {
    * The custom field for this condition
    * @return formFieldId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getFormFieldId() {
     return formFieldId;
   }
 
-  public void setFormFieldId(@javax.annotation.Nonnull String formFieldId) {
+  public void setFormFieldId(@jakarta.annotation.Nonnull String formFieldId) {
     this.formFieldId = formFieldId;
   }
 
 
-  public WorkflowFormFieldCondition incidentCondition(@javax.annotation.Nonnull IncidentConditionEnum incidentCondition) {
+  public WorkflowFormFieldCondition incidentCondition(@jakarta.annotation.Nonnull IncidentConditionEnum incidentCondition) {
     this.incidentCondition = incidentCondition;
     return this;
   }
@@ -218,17 +218,17 @@ public class WorkflowFormFieldCondition {
    * The trigger condition
    * @return incidentCondition
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public IncidentConditionEnum getIncidentCondition() {
     return incidentCondition;
   }
 
-  public void setIncidentCondition(@javax.annotation.Nonnull IncidentConditionEnum incidentCondition) {
+  public void setIncidentCondition(@jakarta.annotation.Nonnull IncidentConditionEnum incidentCondition) {
     this.incidentCondition = incidentCondition;
   }
 
 
-  public WorkflowFormFieldCondition values(@javax.annotation.Nullable List<String> values) {
+  public WorkflowFormFieldCondition values(@jakarta.annotation.Nullable List<String> values) {
     this.values = values;
     return this;
   }
@@ -245,17 +245,17 @@ public class WorkflowFormFieldCondition {
    * Get values
    * @return values
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getValues() {
     return values;
   }
 
-  public void setValues(@javax.annotation.Nullable List<String> values) {
+  public void setValues(@jakarta.annotation.Nullable List<String> values) {
     this.values = values;
   }
 
 
-  public WorkflowFormFieldCondition selectedCatalogEntityIds(@javax.annotation.Nonnull List<String> selectedCatalogEntityIds) {
+  public WorkflowFormFieldCondition selectedCatalogEntityIds(@jakarta.annotation.Nonnull List<String> selectedCatalogEntityIds) {
     this.selectedCatalogEntityIds = selectedCatalogEntityIds;
     return this;
   }
@@ -272,17 +272,17 @@ public class WorkflowFormFieldCondition {
    * Get selectedCatalogEntityIds
    * @return selectedCatalogEntityIds
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<String> getSelectedCatalogEntityIds() {
     return selectedCatalogEntityIds;
   }
 
-  public void setSelectedCatalogEntityIds(@javax.annotation.Nonnull List<String> selectedCatalogEntityIds) {
+  public void setSelectedCatalogEntityIds(@jakarta.annotation.Nonnull List<String> selectedCatalogEntityIds) {
     this.selectedCatalogEntityIds = selectedCatalogEntityIds;
   }
 
 
-  public WorkflowFormFieldCondition selectedFunctionalityIds(@javax.annotation.Nullable List<String> selectedFunctionalityIds) {
+  public WorkflowFormFieldCondition selectedFunctionalityIds(@jakarta.annotation.Nullable List<String> selectedFunctionalityIds) {
     this.selectedFunctionalityIds = selectedFunctionalityIds;
     return this;
   }
@@ -299,17 +299,17 @@ public class WorkflowFormFieldCondition {
    * Get selectedFunctionalityIds
    * @return selectedFunctionalityIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getSelectedFunctionalityIds() {
     return selectedFunctionalityIds;
   }
 
-  public void setSelectedFunctionalityIds(@javax.annotation.Nullable List<String> selectedFunctionalityIds) {
+  public void setSelectedFunctionalityIds(@jakarta.annotation.Nullable List<String> selectedFunctionalityIds) {
     this.selectedFunctionalityIds = selectedFunctionalityIds;
   }
 
 
-  public WorkflowFormFieldCondition selectedGroupIds(@javax.annotation.Nullable List<String> selectedGroupIds) {
+  public WorkflowFormFieldCondition selectedGroupIds(@jakarta.annotation.Nullable List<String> selectedGroupIds) {
     this.selectedGroupIds = selectedGroupIds;
     return this;
   }
@@ -326,17 +326,17 @@ public class WorkflowFormFieldCondition {
    * Get selectedGroupIds
    * @return selectedGroupIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getSelectedGroupIds() {
     return selectedGroupIds;
   }
 
-  public void setSelectedGroupIds(@javax.annotation.Nullable List<String> selectedGroupIds) {
+  public void setSelectedGroupIds(@jakarta.annotation.Nullable List<String> selectedGroupIds) {
     this.selectedGroupIds = selectedGroupIds;
   }
 
 
-  public WorkflowFormFieldCondition selectedOptionIds(@javax.annotation.Nonnull List<String> selectedOptionIds) {
+  public WorkflowFormFieldCondition selectedOptionIds(@jakarta.annotation.Nonnull List<String> selectedOptionIds) {
     this.selectedOptionIds = selectedOptionIds;
     return this;
   }
@@ -353,17 +353,17 @@ public class WorkflowFormFieldCondition {
    * Get selectedOptionIds
    * @return selectedOptionIds
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<String> getSelectedOptionIds() {
     return selectedOptionIds;
   }
 
-  public void setSelectedOptionIds(@javax.annotation.Nonnull List<String> selectedOptionIds) {
+  public void setSelectedOptionIds(@jakarta.annotation.Nonnull List<String> selectedOptionIds) {
     this.selectedOptionIds = selectedOptionIds;
   }
 
 
-  public WorkflowFormFieldCondition selectedServiceIds(@javax.annotation.Nullable List<String> selectedServiceIds) {
+  public WorkflowFormFieldCondition selectedServiceIds(@jakarta.annotation.Nullable List<String> selectedServiceIds) {
     this.selectedServiceIds = selectedServiceIds;
     return this;
   }
@@ -380,17 +380,17 @@ public class WorkflowFormFieldCondition {
    * Get selectedServiceIds
    * @return selectedServiceIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getSelectedServiceIds() {
     return selectedServiceIds;
   }
 
-  public void setSelectedServiceIds(@javax.annotation.Nullable List<String> selectedServiceIds) {
+  public void setSelectedServiceIds(@jakarta.annotation.Nullable List<String> selectedServiceIds) {
     this.selectedServiceIds = selectedServiceIds;
   }
 
 
-  public WorkflowFormFieldCondition selectedUserIds(@javax.annotation.Nonnull List<Integer> selectedUserIds) {
+  public WorkflowFormFieldCondition selectedUserIds(@jakarta.annotation.Nonnull List<Integer> selectedUserIds) {
     this.selectedUserIds = selectedUserIds;
     return this;
   }
@@ -407,12 +407,12 @@ public class WorkflowFormFieldCondition {
    * Get selectedUserIds
    * @return selectedUserIds
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<Integer> getSelectedUserIds() {
     return selectedUserIds;
   }
 
-  public void setSelectedUserIds(@javax.annotation.Nonnull List<Integer> selectedUserIds) {
+  public void setSelectedUserIds(@jakarta.annotation.Nonnull List<Integer> selectedUserIds) {
     this.selectedUserIds = selectedUserIds;
   }
 

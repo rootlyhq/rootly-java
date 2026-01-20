@@ -51,31 +51,31 @@ import com.rootly.client.JSON;
 /**
  * CustomField
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CustomField {
   public static final String SERIALIZED_NAME_LABEL = "label";
   @SerializedName(SERIALIZED_NAME_LABEL)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String label;
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String kind;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String slug;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   /**
@@ -144,7 +144,7 @@ public class CustomField {
 
   public static final String SERIALIZED_NAME_SHOWN = "shown";
   @SerializedName(SERIALIZED_NAME_SHOWN)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<ShownEnum> shown = new ArrayList<>();
 
   /**
@@ -211,33 +211,33 @@ public class CustomField {
 
   public static final String SERIALIZED_NAME_REQUIRED = "required";
   @SerializedName(SERIALIZED_NAME_REQUIRED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<RequiredEnum> required;
 
   public static final String SERIALIZED_NAME_DEFAULT = "default";
   @SerializedName(SERIALIZED_NAME_DEFAULT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String _default;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Integer position;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public CustomField() {
   }
 
-  public CustomField label(@javax.annotation.Nonnull String label) {
+  public CustomField label(@jakarta.annotation.Nonnull String label) {
     this.label = label;
     return this;
   }
@@ -246,17 +246,17 @@ public class CustomField {
    * The name of the custom_field
    * @return label
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getLabel() {
     return label;
   }
 
-  public void setLabel(@javax.annotation.Nonnull String label) {
+  public void setLabel(@jakarta.annotation.Nonnull String label) {
     this.label = label;
   }
 
 
-  public CustomField kind(@javax.annotation.Nullable String kind) {
+  public CustomField kind(@jakarta.annotation.Nullable String kind) {
     this.kind = kind;
     return this;
   }
@@ -265,17 +265,17 @@ public class CustomField {
    * The kind of the custom_field
    * @return kind
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getKind() {
     return kind;
   }
 
-  public void setKind(@javax.annotation.Nullable String kind) {
+  public void setKind(@jakarta.annotation.Nullable String kind) {
     this.kind = kind;
   }
 
 
-  public CustomField enabled(@javax.annotation.Nullable Boolean enabled) {
+  public CustomField enabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -284,17 +284,17 @@ public class CustomField {
    * Whether the custom_field is enabled
    * @return enabled
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getEnabled() {
     return enabled;
   }
 
-  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
+  public void setEnabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public CustomField slug(@javax.annotation.Nonnull String slug) {
+  public CustomField slug(@jakarta.annotation.Nonnull String slug) {
     this.slug = slug;
     return this;
   }
@@ -303,17 +303,17 @@ public class CustomField {
    * The slug of the custom_field
    * @return slug
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getSlug() {
     return slug;
   }
 
-  public void setSlug(@javax.annotation.Nonnull String slug) {
+  public void setSlug(@jakarta.annotation.Nonnull String slug) {
     this.slug = slug;
   }
 
 
-  public CustomField description(@javax.annotation.Nullable String description) {
+  public CustomField description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -322,17 +322,17 @@ public class CustomField {
    * The description of the custom_field
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public CustomField shown(@javax.annotation.Nonnull List<ShownEnum> shown) {
+  public CustomField shown(@jakarta.annotation.Nonnull List<ShownEnum> shown) {
     this.shown = shown;
     return this;
   }
@@ -349,17 +349,17 @@ public class CustomField {
    * Get shown
    * @return shown
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<ShownEnum> getShown() {
     return shown;
   }
 
-  public void setShown(@javax.annotation.Nonnull List<ShownEnum> shown) {
+  public void setShown(@jakarta.annotation.Nonnull List<ShownEnum> shown) {
     this.shown = shown;
   }
 
 
-  public CustomField required(@javax.annotation.Nullable List<RequiredEnum> required) {
+  public CustomField required(@jakarta.annotation.Nullable List<RequiredEnum> required) {
     this.required = required;
     return this;
   }
@@ -376,17 +376,17 @@ public class CustomField {
    * Get required
    * @return required
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<RequiredEnum> getRequired() {
     return required;
   }
 
-  public void setRequired(@javax.annotation.Nullable List<RequiredEnum> required) {
+  public void setRequired(@jakarta.annotation.Nullable List<RequiredEnum> required) {
     this.required = required;
   }
 
 
-  public CustomField _default(@javax.annotation.Nullable String _default) {
+  public CustomField _default(@jakarta.annotation.Nullable String _default) {
     this._default = _default;
     return this;
   }
@@ -395,17 +395,17 @@ public class CustomField {
    * The default value for text field kinds
    * @return _default
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDefault() {
     return _default;
   }
 
-  public void setDefault(@javax.annotation.Nullable String _default) {
+  public void setDefault(@jakarta.annotation.Nullable String _default) {
     this._default = _default;
   }
 
 
-  public CustomField position(@javax.annotation.Nonnull Integer position) {
+  public CustomField position(@jakarta.annotation.Nonnull Integer position) {
     this.position = position;
     return this;
   }
@@ -414,17 +414,17 @@ public class CustomField {
    * The position of the custom_field
    * @return position
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nonnull Integer position) {
+  public void setPosition(@jakarta.annotation.Nonnull Integer position) {
     this.position = position;
   }
 
 
-  public CustomField createdAt(@javax.annotation.Nonnull String createdAt) {
+  public CustomField createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -433,17 +433,17 @@ public class CustomField {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public CustomField updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public CustomField updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -452,12 +452,12 @@ public class CustomField {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

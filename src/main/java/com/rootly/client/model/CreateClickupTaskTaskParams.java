@@ -50,7 +50,7 @@ import com.rootly.client.JSON;
 /**
  * CreateClickupTaskTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateClickupTaskTaskParams {
   /**
    * Gets or Sets taskType
@@ -104,48 +104,48 @@ public class CreateClickupTaskTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String title;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String tags;
 
   public static final String SERIALIZED_NAME_PRIORITY = "priority";
   @SerializedName(SERIALIZED_NAME_PRIORITY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CreateJiraIssueTaskParamsPriority priority;
 
   public static final String SERIALIZED_NAME_DUE_DATE = "due_date";
   @SerializedName(SERIALIZED_NAME_DUE_DATE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String dueDate;
 
   public static final String SERIALIZED_NAME_CUSTOM_FIELDS_MAPPING = "custom_fields_mapping";
   @SerializedName(SERIALIZED_NAME_CUSTOM_FIELDS_MAPPING)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String customFieldsMapping;
 
   public static final String SERIALIZED_NAME_TASK_PAYLOAD = "task_payload";
   @SerializedName(SERIALIZED_NAME_TASK_PAYLOAD)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String taskPayload;
 
   public CreateClickupTaskTaskParams() {
   }
 
-  public CreateClickupTaskTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public CreateClickupTaskTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -154,17 +154,17 @@ public class CreateClickupTaskTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public CreateClickupTaskTaskParams title(@javax.annotation.Nonnull String title) {
+  public CreateClickupTaskTaskParams title(@jakarta.annotation.Nonnull String title) {
     this.title = title;
     return this;
   }
@@ -173,17 +173,17 @@ public class CreateClickupTaskTaskParams {
    * The task title
    * @return title
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nonnull String title) {
+  public void setTitle(@jakarta.annotation.Nonnull String title) {
     this.title = title;
   }
 
 
-  public CreateClickupTaskTaskParams description(@javax.annotation.Nullable String description) {
+  public CreateClickupTaskTaskParams description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -192,17 +192,17 @@ public class CreateClickupTaskTaskParams {
    * The task description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public CreateClickupTaskTaskParams tags(@javax.annotation.Nullable String tags) {
+  public CreateClickupTaskTaskParams tags(@jakarta.annotation.Nullable String tags) {
     this.tags = tags;
     return this;
   }
@@ -211,17 +211,17 @@ public class CreateClickupTaskTaskParams {
    * The task tags
    * @return tags
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTags() {
     return tags;
   }
 
-  public void setTags(@javax.annotation.Nullable String tags) {
+  public void setTags(@jakarta.annotation.Nullable String tags) {
     this.tags = tags;
   }
 
 
-  public CreateClickupTaskTaskParams priority(@javax.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
+  public CreateClickupTaskTaskParams priority(@jakarta.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
     this.priority = priority;
     return this;
   }
@@ -230,17 +230,17 @@ public class CreateClickupTaskTaskParams {
    * Get priority
    * @return priority
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CreateJiraIssueTaskParamsPriority getPriority() {
     return priority;
   }
 
-  public void setPriority(@javax.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
+  public void setPriority(@jakarta.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
     this.priority = priority;
   }
 
 
-  public CreateClickupTaskTaskParams dueDate(@javax.annotation.Nullable String dueDate) {
+  public CreateClickupTaskTaskParams dueDate(@jakarta.annotation.Nullable String dueDate) {
     this.dueDate = dueDate;
     return this;
   }
@@ -249,17 +249,17 @@ public class CreateClickupTaskTaskParams {
    * The due date
    * @return dueDate
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDueDate() {
     return dueDate;
   }
 
-  public void setDueDate(@javax.annotation.Nullable String dueDate) {
+  public void setDueDate(@jakarta.annotation.Nullable String dueDate) {
     this.dueDate = dueDate;
   }
 
 
-  public CreateClickupTaskTaskParams customFieldsMapping(@javax.annotation.Nullable String customFieldsMapping) {
+  public CreateClickupTaskTaskParams customFieldsMapping(@jakarta.annotation.Nullable String customFieldsMapping) {
     this.customFieldsMapping = customFieldsMapping;
     return this;
   }
@@ -268,17 +268,17 @@ public class CreateClickupTaskTaskParams {
    * Custom field mappings. Can contain liquid markup and need to be valid JSON
    * @return customFieldsMapping
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCustomFieldsMapping() {
     return customFieldsMapping;
   }
 
-  public void setCustomFieldsMapping(@javax.annotation.Nullable String customFieldsMapping) {
+  public void setCustomFieldsMapping(@jakarta.annotation.Nullable String customFieldsMapping) {
     this.customFieldsMapping = customFieldsMapping;
   }
 
 
-  public CreateClickupTaskTaskParams taskPayload(@javax.annotation.Nullable String taskPayload) {
+  public CreateClickupTaskTaskParams taskPayload(@jakarta.annotation.Nullable String taskPayload) {
     this.taskPayload = taskPayload;
     return this;
   }
@@ -287,12 +287,12 @@ public class CreateClickupTaskTaskParams {
    * Additional ClickUp task attributes. Will be merged into whatever was specified in this tasks current parameters. Can contain liquid markup and need to be valid JSON
    * @return taskPayload
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTaskPayload() {
     return taskPayload;
   }
 
-  public void setTaskPayload(@javax.annotation.Nullable String taskPayload) {
+  public void setTaskPayload(@jakarta.annotation.Nullable String taskPayload) {
     this.taskPayload = taskPayload;
   }
 

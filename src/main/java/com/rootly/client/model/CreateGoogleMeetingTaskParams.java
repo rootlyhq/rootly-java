@@ -52,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * CreateGoogleMeetingTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateGoogleMeetingTaskParams {
   /**
    * Gets or Sets taskType
@@ -106,17 +106,17 @@ public class CreateGoogleMeetingTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_SUMMARY = "summary";
   @SerializedName(SERIALIZED_NAME_SUMMARY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String summary;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   /**
@@ -177,28 +177,28 @@ public class CreateGoogleMeetingTaskParams {
 
   public static final String SERIALIZED_NAME_CONFERENCE_SOLUTION_KEY = "conference_solution_key";
   @SerializedName(SERIALIZED_NAME_CONFERENCE_SOLUTION_KEY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ConferenceSolutionKeyEnum conferenceSolutionKey;
 
   public static final String SERIALIZED_NAME_RECORD_MEETING = "record_meeting";
   @SerializedName(SERIALIZED_NAME_RECORD_MEETING)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean recordMeeting;
 
   public static final String SERIALIZED_NAME_POST_TO_INCIDENT_TIMELINE = "post_to_incident_timeline";
   @SerializedName(SERIALIZED_NAME_POST_TO_INCIDENT_TIMELINE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean postToIncidentTimeline;
 
   public static final String SERIALIZED_NAME_POST_TO_SLACK_CHANNELS = "post_to_slack_channels";
   @SerializedName(SERIALIZED_NAME_POST_TO_SLACK_CHANNELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels = new ArrayList<>();
 
   public CreateGoogleMeetingTaskParams() {
   }
 
-  public CreateGoogleMeetingTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public CreateGoogleMeetingTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -207,17 +207,17 @@ public class CreateGoogleMeetingTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public CreateGoogleMeetingTaskParams summary(@javax.annotation.Nullable String summary) {
+  public CreateGoogleMeetingTaskParams summary(@jakarta.annotation.Nullable String summary) {
     this.summary = summary;
     return this;
   }
@@ -226,17 +226,17 @@ public class CreateGoogleMeetingTaskParams {
    * [DEPRECATED] The meeting summary
    * @return summary
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSummary() {
     return summary;
   }
 
-  public void setSummary(@javax.annotation.Nullable String summary) {
+  public void setSummary(@jakarta.annotation.Nullable String summary) {
     this.summary = summary;
   }
 
 
-  public CreateGoogleMeetingTaskParams description(@javax.annotation.Nullable String description) {
+  public CreateGoogleMeetingTaskParams description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -245,17 +245,17 @@ public class CreateGoogleMeetingTaskParams {
    * [DEPRECATED] The meeting description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public CreateGoogleMeetingTaskParams conferenceSolutionKey(@javax.annotation.Nullable ConferenceSolutionKeyEnum conferenceSolutionKey) {
+  public CreateGoogleMeetingTaskParams conferenceSolutionKey(@jakarta.annotation.Nullable ConferenceSolutionKeyEnum conferenceSolutionKey) {
     this.conferenceSolutionKey = conferenceSolutionKey;
     return this;
   }
@@ -264,17 +264,17 @@ public class CreateGoogleMeetingTaskParams {
    * [DEPRECATED] Sets the video conference type attached to the meeting
    * @return conferenceSolutionKey
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ConferenceSolutionKeyEnum getConferenceSolutionKey() {
     return conferenceSolutionKey;
   }
 
-  public void setConferenceSolutionKey(@javax.annotation.Nullable ConferenceSolutionKeyEnum conferenceSolutionKey) {
+  public void setConferenceSolutionKey(@jakarta.annotation.Nullable ConferenceSolutionKeyEnum conferenceSolutionKey) {
     this.conferenceSolutionKey = conferenceSolutionKey;
   }
 
 
-  public CreateGoogleMeetingTaskParams recordMeeting(@javax.annotation.Nullable Boolean recordMeeting) {
+  public CreateGoogleMeetingTaskParams recordMeeting(@jakarta.annotation.Nullable Boolean recordMeeting) {
     this.recordMeeting = recordMeeting;
     return this;
   }
@@ -283,17 +283,17 @@ public class CreateGoogleMeetingTaskParams {
    * Rootly AI will record the meeting and automatically generate a transcript and summary from your meeting
    * @return recordMeeting
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getRecordMeeting() {
     return recordMeeting;
   }
 
-  public void setRecordMeeting(@javax.annotation.Nullable Boolean recordMeeting) {
+  public void setRecordMeeting(@jakarta.annotation.Nullable Boolean recordMeeting) {
     this.recordMeeting = recordMeeting;
   }
 
 
-  public CreateGoogleMeetingTaskParams postToIncidentTimeline(@javax.annotation.Nullable Boolean postToIncidentTimeline) {
+  public CreateGoogleMeetingTaskParams postToIncidentTimeline(@jakarta.annotation.Nullable Boolean postToIncidentTimeline) {
     this.postToIncidentTimeline = postToIncidentTimeline;
     return this;
   }
@@ -302,17 +302,17 @@ public class CreateGoogleMeetingTaskParams {
    * Get postToIncidentTimeline
    * @return postToIncidentTimeline
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getPostToIncidentTimeline() {
     return postToIncidentTimeline;
   }
 
-  public void setPostToIncidentTimeline(@javax.annotation.Nullable Boolean postToIncidentTimeline) {
+  public void setPostToIncidentTimeline(@jakarta.annotation.Nullable Boolean postToIncidentTimeline) {
     this.postToIncidentTimeline = postToIncidentTimeline;
   }
 
 
-  public CreateGoogleMeetingTaskParams postToSlackChannels(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
+  public CreateGoogleMeetingTaskParams postToSlackChannels(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
     this.postToSlackChannels = postToSlackChannels;
     return this;
   }
@@ -329,12 +329,12 @@ public class CreateGoogleMeetingTaskParams {
    * Get postToSlackChannels
    * @return postToSlackChannels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AddActionItemTaskParamsPostToSlackChannelsInner> getPostToSlackChannels() {
     return postToSlackChannels;
   }
 
-  public void setPostToSlackChannels(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
+  public void setPostToSlackChannels(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels) {
     this.postToSlackChannels = postToSlackChannels;
   }
 

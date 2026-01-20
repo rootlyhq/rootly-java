@@ -91,7 +91,7 @@ public class WorkflowRunsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createWorkflowRunCall(@javax.annotation.Nonnull String workflowId, @javax.annotation.Nonnull NewWorkflowRun newWorkflowRun, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createWorkflowRunCall(@jakarta.annotation.Nonnull String workflowId, @jakarta.annotation.Nonnull NewWorkflowRun newWorkflowRun, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -138,7 +138,7 @@ public class WorkflowRunsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createWorkflowRunValidateBeforeCall(@javax.annotation.Nonnull String workflowId, @javax.annotation.Nonnull NewWorkflowRun newWorkflowRun, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createWorkflowRunValidateBeforeCall(@jakarta.annotation.Nonnull String workflowId, @jakarta.annotation.Nonnull NewWorkflowRun newWorkflowRun, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'workflowId' is set
         if (workflowId == null) {
             throw new ApiException("Missing the required parameter 'workflowId' when calling createWorkflowRun(Async)");
@@ -169,7 +169,7 @@ public class WorkflowRunsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public WorkflowRunResponse createWorkflowRun(@javax.annotation.Nonnull String workflowId, @javax.annotation.Nonnull NewWorkflowRun newWorkflowRun) throws ApiException {
+    public WorkflowRunResponse createWorkflowRun(@jakarta.annotation.Nonnull String workflowId, @jakarta.annotation.Nonnull NewWorkflowRun newWorkflowRun) throws ApiException {
         ApiResponse<WorkflowRunResponse> localVarResp = createWorkflowRunWithHttpInfo(workflowId, newWorkflowRun);
         return localVarResp.getData();
     }
@@ -190,7 +190,7 @@ public class WorkflowRunsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WorkflowRunResponse> createWorkflowRunWithHttpInfo(@javax.annotation.Nonnull String workflowId, @javax.annotation.Nonnull NewWorkflowRun newWorkflowRun) throws ApiException {
+    public ApiResponse<WorkflowRunResponse> createWorkflowRunWithHttpInfo(@jakarta.annotation.Nonnull String workflowId, @jakarta.annotation.Nonnull NewWorkflowRun newWorkflowRun) throws ApiException {
         okhttp3.Call localVarCall = createWorkflowRunValidateBeforeCall(workflowId, newWorkflowRun, null);
         Type localVarReturnType = new TypeToken<WorkflowRunResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -213,7 +213,7 @@ public class WorkflowRunsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createWorkflowRunAsync(@javax.annotation.Nonnull String workflowId, @javax.annotation.Nonnull NewWorkflowRun newWorkflowRun, final ApiCallback<WorkflowRunResponse> _callback) throws ApiException {
+    public okhttp3.Call createWorkflowRunAsync(@jakarta.annotation.Nonnull String workflowId, @jakarta.annotation.Nonnull NewWorkflowRun newWorkflowRun, final ApiCallback<WorkflowRunResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createWorkflowRunValidateBeforeCall(workflowId, newWorkflowRun, _callback);
         Type localVarReturnType = new TypeToken<WorkflowRunResponse>(){}.getType();
@@ -240,7 +240,7 @@ public class WorkflowRunsApi {
         <tr><td> 200 </td><td> success with date filters using gte with timezone </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listWorkflowRunsCall(@javax.annotation.Nonnull String workflowId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listWorkflowRunsCall(@jakarta.annotation.Nonnull String workflowId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -314,7 +314,7 @@ public class WorkflowRunsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listWorkflowRunsValidateBeforeCall(@javax.annotation.Nonnull String workflowId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listWorkflowRunsValidateBeforeCall(@jakarta.annotation.Nonnull String workflowId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'workflowId' is set
         if (workflowId == null) {
             throw new ApiException("Missing the required parameter 'workflowId' when calling listWorkflowRuns(Async)");
@@ -344,7 +344,7 @@ public class WorkflowRunsApi {
         <tr><td> 200 </td><td> success with date filters using gte with timezone </td><td>  -  </td></tr>
      </table>
      */
-    public WorkflowRunsList listWorkflowRuns(@javax.annotation.Nonnull String workflowId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte) throws ApiException {
+    public WorkflowRunsList listWorkflowRuns(@jakarta.annotation.Nonnull String workflowId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte) throws ApiException {
         ApiResponse<WorkflowRunsList> localVarResp = listWorkflowRunsWithHttpInfo(workflowId, include, pageNumber, pageSize, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
         return localVarResp.getData();
     }
@@ -369,7 +369,7 @@ public class WorkflowRunsApi {
         <tr><td> 200 </td><td> success with date filters using gte with timezone </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WorkflowRunsList> listWorkflowRunsWithHttpInfo(@javax.annotation.Nonnull String workflowId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte) throws ApiException {
+    public ApiResponse<WorkflowRunsList> listWorkflowRunsWithHttpInfo(@jakarta.annotation.Nonnull String workflowId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte) throws ApiException {
         okhttp3.Call localVarCall = listWorkflowRunsValidateBeforeCall(workflowId, include, pageNumber, pageSize, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, null);
         Type localVarReturnType = new TypeToken<WorkflowRunsList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -396,7 +396,7 @@ public class WorkflowRunsApi {
         <tr><td> 200 </td><td> success with date filters using gte with timezone </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listWorkflowRunsAsync(@javax.annotation.Nonnull String workflowId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback<WorkflowRunsList> _callback) throws ApiException {
+    public okhttp3.Call listWorkflowRunsAsync(@jakarta.annotation.Nonnull String workflowId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback<WorkflowRunsList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listWorkflowRunsValidateBeforeCall(workflowId, include, pageNumber, pageSize, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, _callback);
         Type localVarReturnType = new TypeToken<WorkflowRunsList>(){}.getType();

@@ -91,7 +91,7 @@ public class AlertUrgenciesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createAlertUrgencyCall(@javax.annotation.Nonnull NewAlertUrgency newAlertUrgency, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createAlertUrgencyCall(@jakarta.annotation.Nonnull NewAlertUrgency newAlertUrgency, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -137,7 +137,7 @@ public class AlertUrgenciesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createAlertUrgencyValidateBeforeCall(@javax.annotation.Nonnull NewAlertUrgency newAlertUrgency, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createAlertUrgencyValidateBeforeCall(@jakarta.annotation.Nonnull NewAlertUrgency newAlertUrgency, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'newAlertUrgency' is set
         if (newAlertUrgency == null) {
             throw new ApiException("Missing the required parameter 'newAlertUrgency' when calling createAlertUrgency(Async)");
@@ -162,7 +162,7 @@ public class AlertUrgenciesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public AlertUrgencyResponse createAlertUrgency(@javax.annotation.Nonnull NewAlertUrgency newAlertUrgency) throws ApiException {
+    public AlertUrgencyResponse createAlertUrgency(@jakarta.annotation.Nonnull NewAlertUrgency newAlertUrgency) throws ApiException {
         ApiResponse<AlertUrgencyResponse> localVarResp = createAlertUrgencyWithHttpInfo(newAlertUrgency);
         return localVarResp.getData();
     }
@@ -182,7 +182,7 @@ public class AlertUrgenciesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertUrgencyResponse> createAlertUrgencyWithHttpInfo(@javax.annotation.Nonnull NewAlertUrgency newAlertUrgency) throws ApiException {
+    public ApiResponse<AlertUrgencyResponse> createAlertUrgencyWithHttpInfo(@jakarta.annotation.Nonnull NewAlertUrgency newAlertUrgency) throws ApiException {
         okhttp3.Call localVarCall = createAlertUrgencyValidateBeforeCall(newAlertUrgency, null);
         Type localVarReturnType = new TypeToken<AlertUrgencyResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -204,7 +204,7 @@ public class AlertUrgenciesApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createAlertUrgencyAsync(@javax.annotation.Nonnull NewAlertUrgency newAlertUrgency, final ApiCallback<AlertUrgencyResponse> _callback) throws ApiException {
+    public okhttp3.Call createAlertUrgencyAsync(@jakarta.annotation.Nonnull NewAlertUrgency newAlertUrgency, final ApiCallback<AlertUrgencyResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createAlertUrgencyValidateBeforeCall(newAlertUrgency, _callback);
         Type localVarReturnType = new TypeToken<AlertUrgencyResponse>(){}.getType();
@@ -225,7 +225,7 @@ public class AlertUrgenciesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteAlertUrgencyCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteAlertUrgencyCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -271,7 +271,7 @@ public class AlertUrgenciesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteAlertUrgencyValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteAlertUrgencyValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteAlertUrgency(Async)");
@@ -295,7 +295,7 @@ public class AlertUrgenciesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public AlertUrgencyResponse deleteAlertUrgency(@javax.annotation.Nonnull String id) throws ApiException {
+    public AlertUrgencyResponse deleteAlertUrgency(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<AlertUrgencyResponse> localVarResp = deleteAlertUrgencyWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -314,7 +314,7 @@ public class AlertUrgenciesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertUrgencyResponse> deleteAlertUrgencyWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<AlertUrgencyResponse> deleteAlertUrgencyWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteAlertUrgencyValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<AlertUrgencyResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -335,7 +335,7 @@ public class AlertUrgenciesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteAlertUrgencyAsync(@javax.annotation.Nonnull String id, final ApiCallback<AlertUrgencyResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteAlertUrgencyAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<AlertUrgencyResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteAlertUrgencyValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<AlertUrgencyResponse>(){}.getType();
@@ -356,7 +356,7 @@ public class AlertUrgenciesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAlertUrgencyCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getAlertUrgencyCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -402,7 +402,7 @@ public class AlertUrgenciesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAlertUrgencyValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAlertUrgencyValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getAlertUrgency(Async)");
@@ -426,7 +426,7 @@ public class AlertUrgenciesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public AlertUrgencyResponse getAlertUrgency(@javax.annotation.Nonnull String id) throws ApiException {
+    public AlertUrgencyResponse getAlertUrgency(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<AlertUrgencyResponse> localVarResp = getAlertUrgencyWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -445,7 +445,7 @@ public class AlertUrgenciesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertUrgencyResponse> getAlertUrgencyWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<AlertUrgencyResponse> getAlertUrgencyWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getAlertUrgencyValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<AlertUrgencyResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -466,7 +466,7 @@ public class AlertUrgenciesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAlertUrgencyAsync(@javax.annotation.Nonnull String id, final ApiCallback<AlertUrgencyResponse> _callback) throws ApiException {
+    public okhttp3.Call getAlertUrgencyAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<AlertUrgencyResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getAlertUrgencyValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<AlertUrgencyResponse>(){}.getType();
@@ -495,7 +495,7 @@ public class AlertUrgenciesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAlertUrgenciesCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listAlertUrgenciesCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -580,7 +580,7 @@ public class AlertUrgenciesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listAlertUrgenciesValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listAlertUrgenciesValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         return listAlertUrgenciesCall(include, pageNumber, pageSize, filterSearch, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
 
     }
@@ -607,7 +607,7 @@ public class AlertUrgenciesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public AlertUrgencyList listAlertUrgencies(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+    public AlertUrgencyList listAlertUrgencies(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
         ApiResponse<AlertUrgencyList> localVarResp = listAlertUrgenciesWithHttpInfo(include, pageNumber, pageSize, filterSearch, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
         return localVarResp.getData();
     }
@@ -634,7 +634,7 @@ public class AlertUrgenciesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertUrgencyList> listAlertUrgenciesWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+    public ApiResponse<AlertUrgencyList> listAlertUrgenciesWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
         okhttp3.Call localVarCall = listAlertUrgenciesValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, null);
         Type localVarReturnType = new TypeToken<AlertUrgencyList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -663,7 +663,7 @@ public class AlertUrgenciesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAlertUrgenciesAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback<AlertUrgencyList> _callback) throws ApiException {
+    public okhttp3.Call listAlertUrgenciesAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback<AlertUrgencyList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listAlertUrgenciesValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
         Type localVarReturnType = new TypeToken<AlertUrgencyList>(){}.getType();
@@ -685,7 +685,7 @@ public class AlertUrgenciesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateAlertUrgencyCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateAlertUrgency updateAlertUrgency, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateAlertUrgencyCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateAlertUrgency updateAlertUrgency, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -732,7 +732,7 @@ public class AlertUrgenciesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateAlertUrgencyValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateAlertUrgency updateAlertUrgency, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateAlertUrgencyValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateAlertUrgency updateAlertUrgency, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateAlertUrgency(Async)");
@@ -762,7 +762,7 @@ public class AlertUrgenciesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public AlertUrgencyResponse updateAlertUrgency(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateAlertUrgency updateAlertUrgency) throws ApiException {
+    public AlertUrgencyResponse updateAlertUrgency(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateAlertUrgency updateAlertUrgency) throws ApiException {
         ApiResponse<AlertUrgencyResponse> localVarResp = updateAlertUrgencyWithHttpInfo(id, updateAlertUrgency);
         return localVarResp.getData();
     }
@@ -782,7 +782,7 @@ public class AlertUrgenciesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertUrgencyResponse> updateAlertUrgencyWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateAlertUrgency updateAlertUrgency) throws ApiException {
+    public ApiResponse<AlertUrgencyResponse> updateAlertUrgencyWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateAlertUrgency updateAlertUrgency) throws ApiException {
         okhttp3.Call localVarCall = updateAlertUrgencyValidateBeforeCall(id, updateAlertUrgency, null);
         Type localVarReturnType = new TypeToken<AlertUrgencyResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -804,7 +804,7 @@ public class AlertUrgenciesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateAlertUrgencyAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateAlertUrgency updateAlertUrgency, final ApiCallback<AlertUrgencyResponse> _callback) throws ApiException {
+    public okhttp3.Call updateAlertUrgencyAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateAlertUrgency updateAlertUrgency, final ApiCallback<AlertUrgencyResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateAlertUrgencyValidateBeforeCall(id, updateAlertUrgency, _callback);
         Type localVarReturnType = new TypeToken<AlertUrgencyResponse>(){}.getType();

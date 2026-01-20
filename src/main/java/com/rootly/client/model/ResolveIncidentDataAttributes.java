@@ -49,17 +49,17 @@ import com.rootly.client.JSON;
 /**
  * ResolveIncidentDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ResolveIncidentDataAttributes {
   public static final String SERIALIZED_NAME_RESOLUTION_MESSAGE = "resolution_message";
   @SerializedName(SERIALIZED_NAME_RESOLUTION_MESSAGE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String resolutionMessage;
 
   public ResolveIncidentDataAttributes() {
   }
 
-  public ResolveIncidentDataAttributes resolutionMessage(@javax.annotation.Nullable String resolutionMessage) {
+  public ResolveIncidentDataAttributes resolutionMessage(@jakarta.annotation.Nullable String resolutionMessage) {
     this.resolutionMessage = resolutionMessage;
     return this;
   }
@@ -68,12 +68,12 @@ public class ResolveIncidentDataAttributes {
    * How was the incident resolved?
    * @return resolutionMessage
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getResolutionMessage() {
     return resolutionMessage;
   }
 
-  public void setResolutionMessage(@javax.annotation.Nullable String resolutionMessage) {
+  public void setResolutionMessage(@jakarta.annotation.Nullable String resolutionMessage) {
     this.resolutionMessage = resolutionMessage;
   }
 

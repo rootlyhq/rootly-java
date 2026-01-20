@@ -49,11 +49,11 @@ import com.rootly.client.JSON;
 /**
  * NewIncidentPermissionSetResourceDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewIncidentPermissionSetResourceDataAttributes {
   public static final String SERIALIZED_NAME_INCIDENT_PERMISSION_SET_ID = "incident_permission_set_id";
   @SerializedName(SERIALIZED_NAME_INCIDENT_PERMISSION_SET_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String incidentPermissionSetId;
 
   /**
@@ -114,33 +114,33 @@ public class NewIncidentPermissionSetResourceDataAttributes {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private KindEnum kind;
 
   public static final String SERIALIZED_NAME_PRIVATE = "private";
   @SerializedName(SERIALIZED_NAME_PRIVATE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean _private;
 
   public static final String SERIALIZED_NAME_RESOURCE_ID = "resource_id";
   @SerializedName(SERIALIZED_NAME_RESOURCE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String resourceId;
 
   public static final String SERIALIZED_NAME_RESOURCE_TYPE = "resource_type";
   @SerializedName(SERIALIZED_NAME_RESOURCE_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String resourceType;
 
   public static final String SERIALIZED_NAME_SEVERITY_PARAMS = "severity_params";
   @SerializedName(SERIALIZED_NAME_SEVERITY_PARAMS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private NewIncidentPermissionSetBooleanDataAttributesSeverityParams severityParams;
 
   public NewIncidentPermissionSetResourceDataAttributes() {
   }
 
-  public NewIncidentPermissionSetResourceDataAttributes incidentPermissionSetId(@javax.annotation.Nonnull String incidentPermissionSetId) {
+  public NewIncidentPermissionSetResourceDataAttributes incidentPermissionSetId(@jakarta.annotation.Nonnull String incidentPermissionSetId) {
     this.incidentPermissionSetId = incidentPermissionSetId;
     return this;
   }
@@ -149,17 +149,17 @@ public class NewIncidentPermissionSetResourceDataAttributes {
    * Get incidentPermissionSetId
    * @return incidentPermissionSetId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getIncidentPermissionSetId() {
     return incidentPermissionSetId;
   }
 
-  public void setIncidentPermissionSetId(@javax.annotation.Nonnull String incidentPermissionSetId) {
+  public void setIncidentPermissionSetId(@jakarta.annotation.Nonnull String incidentPermissionSetId) {
     this.incidentPermissionSetId = incidentPermissionSetId;
   }
 
 
-  public NewIncidentPermissionSetResourceDataAttributes kind(@javax.annotation.Nonnull KindEnum kind) {
+  public NewIncidentPermissionSetResourceDataAttributes kind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
     return this;
   }
@@ -168,17 +168,17 @@ public class NewIncidentPermissionSetResourceDataAttributes {
    * Get kind
    * @return kind
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(@javax.annotation.Nonnull KindEnum kind) {
+  public void setKind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public NewIncidentPermissionSetResourceDataAttributes _private(@javax.annotation.Nullable Boolean _private) {
+  public NewIncidentPermissionSetResourceDataAttributes _private(@jakarta.annotation.Nullable Boolean _private) {
     this._private = _private;
     return this;
   }
@@ -187,17 +187,17 @@ public class NewIncidentPermissionSetResourceDataAttributes {
    * Get _private
    * @return _private
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getPrivate() {
     return _private;
   }
 
-  public void setPrivate(@javax.annotation.Nullable Boolean _private) {
+  public void setPrivate(@jakarta.annotation.Nullable Boolean _private) {
     this._private = _private;
   }
 
 
-  public NewIncidentPermissionSetResourceDataAttributes resourceId(@javax.annotation.Nullable String resourceId) {
+  public NewIncidentPermissionSetResourceDataAttributes resourceId(@jakarta.annotation.Nullable String resourceId) {
     this.resourceId = resourceId;
     return this;
   }
@@ -206,17 +206,17 @@ public class NewIncidentPermissionSetResourceDataAttributes {
    * Get resourceId
    * @return resourceId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getResourceId() {
     return resourceId;
   }
 
-  public void setResourceId(@javax.annotation.Nullable String resourceId) {
+  public void setResourceId(@jakarta.annotation.Nullable String resourceId) {
     this.resourceId = resourceId;
   }
 
 
-  public NewIncidentPermissionSetResourceDataAttributes resourceType(@javax.annotation.Nullable String resourceType) {
+  public NewIncidentPermissionSetResourceDataAttributes resourceType(@jakarta.annotation.Nullable String resourceType) {
     this.resourceType = resourceType;
     return this;
   }
@@ -225,17 +225,17 @@ public class NewIncidentPermissionSetResourceDataAttributes {
    * Get resourceType
    * @return resourceType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getResourceType() {
     return resourceType;
   }
 
-  public void setResourceType(@javax.annotation.Nullable String resourceType) {
+  public void setResourceType(@jakarta.annotation.Nullable String resourceType) {
     this.resourceType = resourceType;
   }
 
 
-  public NewIncidentPermissionSetResourceDataAttributes severityParams(@javax.annotation.Nullable NewIncidentPermissionSetBooleanDataAttributesSeverityParams severityParams) {
+  public NewIncidentPermissionSetResourceDataAttributes severityParams(@jakarta.annotation.Nullable NewIncidentPermissionSetBooleanDataAttributesSeverityParams severityParams) {
     this.severityParams = severityParams;
     return this;
   }
@@ -244,12 +244,12 @@ public class NewIncidentPermissionSetResourceDataAttributes {
    * Get severityParams
    * @return severityParams
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public NewIncidentPermissionSetBooleanDataAttributesSeverityParams getSeverityParams() {
     return severityParams;
   }
 
-  public void setSeverityParams(@javax.annotation.Nullable NewIncidentPermissionSetBooleanDataAttributesSeverityParams severityParams) {
+  public void setSeverityParams(@jakarta.annotation.Nullable NewIncidentPermissionSetBooleanDataAttributesSeverityParams severityParams) {
     this.severityParams = severityParams;
   }
 

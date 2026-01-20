@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * CreateWatsonxChatCompletionTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateWatsonxChatCompletionTaskParams {
   /**
    * Gets or Sets taskType
@@ -103,33 +103,33 @@ public class CreateWatsonxChatCompletionTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_MODEL = "model";
   @SerializedName(SERIALIZED_NAME_MODEL)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private CreateWatsonxChatCompletionTaskParamsModel model;
 
   public static final String SERIALIZED_NAME_SYSTEM_PROMPT = "system_prompt";
   @SerializedName(SERIALIZED_NAME_SYSTEM_PROMPT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String systemPrompt;
 
   public static final String SERIALIZED_NAME_PROMPT = "prompt";
   @SerializedName(SERIALIZED_NAME_PROMPT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String prompt;
 
   public static final String SERIALIZED_NAME_PROJECT_ID = "project_id";
   @SerializedName(SERIALIZED_NAME_PROJECT_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String projectId;
 
   public CreateWatsonxChatCompletionTaskParams() {
   }
 
-  public CreateWatsonxChatCompletionTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public CreateWatsonxChatCompletionTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -138,17 +138,17 @@ public class CreateWatsonxChatCompletionTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public CreateWatsonxChatCompletionTaskParams model(@javax.annotation.Nonnull CreateWatsonxChatCompletionTaskParamsModel model) {
+  public CreateWatsonxChatCompletionTaskParams model(@jakarta.annotation.Nonnull CreateWatsonxChatCompletionTaskParamsModel model) {
     this.model = model;
     return this;
   }
@@ -157,17 +157,17 @@ public class CreateWatsonxChatCompletionTaskParams {
    * Get model
    * @return model
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public CreateWatsonxChatCompletionTaskParamsModel getModel() {
     return model;
   }
 
-  public void setModel(@javax.annotation.Nonnull CreateWatsonxChatCompletionTaskParamsModel model) {
+  public void setModel(@jakarta.annotation.Nonnull CreateWatsonxChatCompletionTaskParamsModel model) {
     this.model = model;
   }
 
 
-  public CreateWatsonxChatCompletionTaskParams systemPrompt(@javax.annotation.Nullable String systemPrompt) {
+  public CreateWatsonxChatCompletionTaskParams systemPrompt(@jakarta.annotation.Nullable String systemPrompt) {
     this.systemPrompt = systemPrompt;
     return this;
   }
@@ -176,17 +176,17 @@ public class CreateWatsonxChatCompletionTaskParams {
    * The system prompt to send to WatsonX (optional)
    * @return systemPrompt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSystemPrompt() {
     return systemPrompt;
   }
 
-  public void setSystemPrompt(@javax.annotation.Nullable String systemPrompt) {
+  public void setSystemPrompt(@jakarta.annotation.Nullable String systemPrompt) {
     this.systemPrompt = systemPrompt;
   }
 
 
-  public CreateWatsonxChatCompletionTaskParams prompt(@javax.annotation.Nonnull String prompt) {
+  public CreateWatsonxChatCompletionTaskParams prompt(@jakarta.annotation.Nonnull String prompt) {
     this.prompt = prompt;
     return this;
   }
@@ -195,17 +195,17 @@ public class CreateWatsonxChatCompletionTaskParams {
    * The prompt to send to WatsonX
    * @return prompt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getPrompt() {
     return prompt;
   }
 
-  public void setPrompt(@javax.annotation.Nonnull String prompt) {
+  public void setPrompt(@jakarta.annotation.Nonnull String prompt) {
     this.prompt = prompt;
   }
 
 
-  public CreateWatsonxChatCompletionTaskParams projectId(@javax.annotation.Nonnull String projectId) {
+  public CreateWatsonxChatCompletionTaskParams projectId(@jakarta.annotation.Nonnull String projectId) {
     this.projectId = projectId;
     return this;
   }
@@ -214,12 +214,12 @@ public class CreateWatsonxChatCompletionTaskParams {
    * Get projectId
    * @return projectId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getProjectId() {
     return projectId;
   }
 
-  public void setProjectId(@javax.annotation.Nonnull String projectId) {
+  public void setProjectId(@jakarta.annotation.Nonnull String projectId) {
     this.projectId = projectId;
   }
 

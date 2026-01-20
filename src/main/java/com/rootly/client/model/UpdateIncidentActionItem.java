@@ -49,17 +49,17 @@ import com.rootly.client.JSON;
 /**
  * UpdateIncidentActionItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateIncidentActionItem {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private UpdateIncidentActionItemData data;
 
   public UpdateIncidentActionItem() {
   }
 
-  public UpdateIncidentActionItem data(@javax.annotation.Nonnull UpdateIncidentActionItemData data) {
+  public UpdateIncidentActionItem data(@jakarta.annotation.Nonnull UpdateIncidentActionItemData data) {
     this.data = data;
     return this;
   }
@@ -68,12 +68,12 @@ public class UpdateIncidentActionItem {
    * Get data
    * @return data
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public UpdateIncidentActionItemData getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nonnull UpdateIncidentActionItemData data) {
+  public void setData(@jakarta.annotation.Nonnull UpdateIncidentActionItemData data) {
     this.data = data;
   }
 

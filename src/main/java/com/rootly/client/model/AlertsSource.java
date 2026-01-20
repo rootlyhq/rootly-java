@@ -56,11 +56,11 @@ import com.rootly.client.JSON;
 /**
  * AlertsSource
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AlertsSource {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   /**
@@ -155,17 +155,17 @@ public class AlertsSource {
 
   public static final String SERIALIZED_NAME_SOURCE_TYPE = "source_type";
   @SerializedName(SERIALIZED_NAME_SOURCE_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private SourceTypeEnum sourceType;
 
   public static final String SERIALIZED_NAME_ALERT_URGENCY_ID = "alert_urgency_id";
   @SerializedName(SERIALIZED_NAME_ALERT_URGENCY_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String alertUrgencyId;
 
   public static final String SERIALIZED_NAME_DEDUPLICATE_ALERTS_BY_KEY = "deduplicate_alerts_by_key";
   @SerializedName(SERIALIZED_NAME_DEDUPLICATE_ALERTS_BY_KEY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean deduplicateAlertsByKey;
 
   /**
@@ -220,47 +220,47 @@ public class AlertsSource {
 
   public static final String SERIALIZED_NAME_DEDUPLICATION_KEY_KIND = "deduplication_key_kind";
   @SerializedName(SERIALIZED_NAME_DEDUPLICATION_KEY_KIND)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private DeduplicationKeyKindEnum deduplicationKeyKind;
 
   public static final String SERIALIZED_NAME_DEDUPLICATION_KEY_PATH = "deduplication_key_path";
   @SerializedName(SERIALIZED_NAME_DEDUPLICATION_KEY_PATH)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String deduplicationKeyPath;
 
   public static final String SERIALIZED_NAME_DEDUPLICATION_KEY_REGEXP = "deduplication_key_regexp";
   @SerializedName(SERIALIZED_NAME_DEDUPLICATION_KEY_REGEXP)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String deduplicationKeyRegexp;
 
   public static final String SERIALIZED_NAME_OWNER_GROUP_IDS = "owner_group_ids";
   @SerializedName(SERIALIZED_NAME_OWNER_GROUP_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> ownerGroupIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ALERT_TEMPLATE_ATTRIBUTES = "alert_template_attributes";
   @SerializedName(SERIALIZED_NAME_ALERT_TEMPLATE_ATTRIBUTES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private NewAlertsSourceDataAttributesAlertTemplateAttributes alertTemplateAttributes;
 
   public static final String SERIALIZED_NAME_ALERT_SOURCE_URGENCY_RULES_ATTRIBUTES = "alert_source_urgency_rules_attributes";
   @SerializedName(SERIALIZED_NAME_ALERT_SOURCE_URGENCY_RULES_ATTRIBUTES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner> alertSourceUrgencyRulesAttributes = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SOURCEABLE_ATTRIBUTES = "sourceable_attributes";
   @SerializedName(SERIALIZED_NAME_SOURCEABLE_ATTRIBUTES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private NewAlertsSourceDataAttributesSourceableAttributes sourceableAttributes;
 
   public static final String SERIALIZED_NAME_RESOLUTION_RULE_ATTRIBUTES = "resolution_rule_attributes";
   @SerializedName(SERIALIZED_NAME_RESOLUTION_RULE_ATTRIBUTES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private NewAlertsSourceDataAttributesResolutionRuleAttributes resolutionRuleAttributes;
 
   public static final String SERIALIZED_NAME_ALERT_SOURCE_FIELDS_ATTRIBUTES = "alert_source_fields_attributes";
   @SerializedName(SERIALIZED_NAME_ALERT_SOURCE_FIELDS_ATTRIBUTES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner> alertSourceFieldsAttributes = new ArrayList<>();
 
   /**
@@ -319,38 +319,38 @@ public class AlertsSource {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private StatusEnum status;
 
   public static final String SERIALIZED_NAME_SECRET = "secret";
   @SerializedName(SERIALIZED_NAME_SECRET)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String secret;
 
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String email;
 
   public static final String SERIALIZED_NAME_WEBHOOK_ENDPOINT = "webhook_endpoint";
   @SerializedName(SERIALIZED_NAME_WEBHOOK_ENDPOINT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String webhookEndpoint;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public AlertsSource() {
   }
 
-  public AlertsSource name(@javax.annotation.Nonnull String name) {
+  public AlertsSource name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -359,17 +359,17 @@ public class AlertsSource {
    * The name of the alert source
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public AlertsSource sourceType(@javax.annotation.Nullable SourceTypeEnum sourceType) {
+  public AlertsSource sourceType(@jakarta.annotation.Nullable SourceTypeEnum sourceType) {
     this.sourceType = sourceType;
     return this;
   }
@@ -378,17 +378,17 @@ public class AlertsSource {
    * The alert source type
    * @return sourceType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public SourceTypeEnum getSourceType() {
     return sourceType;
   }
 
-  public void setSourceType(@javax.annotation.Nullable SourceTypeEnum sourceType) {
+  public void setSourceType(@jakarta.annotation.Nullable SourceTypeEnum sourceType) {
     this.sourceType = sourceType;
   }
 
 
-  public AlertsSource alertUrgencyId(@javax.annotation.Nullable String alertUrgencyId) {
+  public AlertsSource alertUrgencyId(@jakarta.annotation.Nullable String alertUrgencyId) {
     this.alertUrgencyId = alertUrgencyId;
     return this;
   }
@@ -397,17 +397,17 @@ public class AlertsSource {
    * ID for the default alert urgency assigned to this alert source
    * @return alertUrgencyId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getAlertUrgencyId() {
     return alertUrgencyId;
   }
 
-  public void setAlertUrgencyId(@javax.annotation.Nullable String alertUrgencyId) {
+  public void setAlertUrgencyId(@jakarta.annotation.Nullable String alertUrgencyId) {
     this.alertUrgencyId = alertUrgencyId;
   }
 
 
-  public AlertsSource deduplicateAlertsByKey(@javax.annotation.Nullable Boolean deduplicateAlertsByKey) {
+  public AlertsSource deduplicateAlertsByKey(@jakarta.annotation.Nullable Boolean deduplicateAlertsByKey) {
     this.deduplicateAlertsByKey = deduplicateAlertsByKey;
     return this;
   }
@@ -416,17 +416,17 @@ public class AlertsSource {
    * Toggle alert deduplication using deduplication key. If enabled, deduplication_key_kind and deduplication_key_path are required.
    * @return deduplicateAlertsByKey
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getDeduplicateAlertsByKey() {
     return deduplicateAlertsByKey;
   }
 
-  public void setDeduplicateAlertsByKey(@javax.annotation.Nullable Boolean deduplicateAlertsByKey) {
+  public void setDeduplicateAlertsByKey(@jakarta.annotation.Nullable Boolean deduplicateAlertsByKey) {
     this.deduplicateAlertsByKey = deduplicateAlertsByKey;
   }
 
 
-  public AlertsSource deduplicationKeyKind(@javax.annotation.Nullable DeduplicationKeyKindEnum deduplicationKeyKind) {
+  public AlertsSource deduplicationKeyKind(@jakarta.annotation.Nullable DeduplicationKeyKindEnum deduplicationKeyKind) {
     this.deduplicationKeyKind = deduplicationKeyKind;
     return this;
   }
@@ -435,17 +435,17 @@ public class AlertsSource {
    * Kind of deduplication key.
    * @return deduplicationKeyKind
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public DeduplicationKeyKindEnum getDeduplicationKeyKind() {
     return deduplicationKeyKind;
   }
 
-  public void setDeduplicationKeyKind(@javax.annotation.Nullable DeduplicationKeyKindEnum deduplicationKeyKind) {
+  public void setDeduplicationKeyKind(@jakarta.annotation.Nullable DeduplicationKeyKindEnum deduplicationKeyKind) {
     this.deduplicationKeyKind = deduplicationKeyKind;
   }
 
 
-  public AlertsSource deduplicationKeyPath(@javax.annotation.Nullable String deduplicationKeyPath) {
+  public AlertsSource deduplicationKeyPath(@jakarta.annotation.Nullable String deduplicationKeyPath) {
     this.deduplicationKeyPath = deduplicationKeyPath;
     return this;
   }
@@ -454,17 +454,17 @@ public class AlertsSource {
    * Path to deduplication key. This is a JSON Path to extract the deduplication key from the request body.
    * @return deduplicationKeyPath
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDeduplicationKeyPath() {
     return deduplicationKeyPath;
   }
 
-  public void setDeduplicationKeyPath(@javax.annotation.Nullable String deduplicationKeyPath) {
+  public void setDeduplicationKeyPath(@jakarta.annotation.Nullable String deduplicationKeyPath) {
     this.deduplicationKeyPath = deduplicationKeyPath;
   }
 
 
-  public AlertsSource deduplicationKeyRegexp(@javax.annotation.Nullable String deduplicationKeyRegexp) {
+  public AlertsSource deduplicationKeyRegexp(@jakarta.annotation.Nullable String deduplicationKeyRegexp) {
     this.deduplicationKeyRegexp = deduplicationKeyRegexp;
     return this;
   }
@@ -473,17 +473,17 @@ public class AlertsSource {
    * Regular expression to extract key from value found at key path.
    * @return deduplicationKeyRegexp
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDeduplicationKeyRegexp() {
     return deduplicationKeyRegexp;
   }
 
-  public void setDeduplicationKeyRegexp(@javax.annotation.Nullable String deduplicationKeyRegexp) {
+  public void setDeduplicationKeyRegexp(@jakarta.annotation.Nullable String deduplicationKeyRegexp) {
     this.deduplicationKeyRegexp = deduplicationKeyRegexp;
   }
 
 
-  public AlertsSource ownerGroupIds(@javax.annotation.Nullable List<String> ownerGroupIds) {
+  public AlertsSource ownerGroupIds(@jakarta.annotation.Nullable List<String> ownerGroupIds) {
     this.ownerGroupIds = ownerGroupIds;
     return this;
   }
@@ -500,17 +500,17 @@ public class AlertsSource {
    * List of team IDs that will own the alert source
    * @return ownerGroupIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getOwnerGroupIds() {
     return ownerGroupIds;
   }
 
-  public void setOwnerGroupIds(@javax.annotation.Nullable List<String> ownerGroupIds) {
+  public void setOwnerGroupIds(@jakarta.annotation.Nullable List<String> ownerGroupIds) {
     this.ownerGroupIds = ownerGroupIds;
   }
 
 
-  public AlertsSource alertTemplateAttributes(@javax.annotation.Nullable NewAlertsSourceDataAttributesAlertTemplateAttributes alertTemplateAttributes) {
+  public AlertsSource alertTemplateAttributes(@jakarta.annotation.Nullable NewAlertsSourceDataAttributesAlertTemplateAttributes alertTemplateAttributes) {
     this.alertTemplateAttributes = alertTemplateAttributes;
     return this;
   }
@@ -519,17 +519,17 @@ public class AlertsSource {
    * Get alertTemplateAttributes
    * @return alertTemplateAttributes
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public NewAlertsSourceDataAttributesAlertTemplateAttributes getAlertTemplateAttributes() {
     return alertTemplateAttributes;
   }
 
-  public void setAlertTemplateAttributes(@javax.annotation.Nullable NewAlertsSourceDataAttributesAlertTemplateAttributes alertTemplateAttributes) {
+  public void setAlertTemplateAttributes(@jakarta.annotation.Nullable NewAlertsSourceDataAttributesAlertTemplateAttributes alertTemplateAttributes) {
     this.alertTemplateAttributes = alertTemplateAttributes;
   }
 
 
-  public AlertsSource alertSourceUrgencyRulesAttributes(@javax.annotation.Nullable List<NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner> alertSourceUrgencyRulesAttributes) {
+  public AlertsSource alertSourceUrgencyRulesAttributes(@jakarta.annotation.Nullable List<NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner> alertSourceUrgencyRulesAttributes) {
     this.alertSourceUrgencyRulesAttributes = alertSourceUrgencyRulesAttributes;
     return this;
   }
@@ -546,17 +546,17 @@ public class AlertsSource {
    * List of rules that define the conditions under which the alert urgency will be set automatically based on the alert payload
    * @return alertSourceUrgencyRulesAttributes
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner> getAlertSourceUrgencyRulesAttributes() {
     return alertSourceUrgencyRulesAttributes;
   }
 
-  public void setAlertSourceUrgencyRulesAttributes(@javax.annotation.Nullable List<NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner> alertSourceUrgencyRulesAttributes) {
+  public void setAlertSourceUrgencyRulesAttributes(@jakarta.annotation.Nullable List<NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner> alertSourceUrgencyRulesAttributes) {
     this.alertSourceUrgencyRulesAttributes = alertSourceUrgencyRulesAttributes;
   }
 
 
-  public AlertsSource sourceableAttributes(@javax.annotation.Nullable NewAlertsSourceDataAttributesSourceableAttributes sourceableAttributes) {
+  public AlertsSource sourceableAttributes(@jakarta.annotation.Nullable NewAlertsSourceDataAttributesSourceableAttributes sourceableAttributes) {
     this.sourceableAttributes = sourceableAttributes;
     return this;
   }
@@ -565,17 +565,17 @@ public class AlertsSource {
    * Get sourceableAttributes
    * @return sourceableAttributes
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public NewAlertsSourceDataAttributesSourceableAttributes getSourceableAttributes() {
     return sourceableAttributes;
   }
 
-  public void setSourceableAttributes(@javax.annotation.Nullable NewAlertsSourceDataAttributesSourceableAttributes sourceableAttributes) {
+  public void setSourceableAttributes(@jakarta.annotation.Nullable NewAlertsSourceDataAttributesSourceableAttributes sourceableAttributes) {
     this.sourceableAttributes = sourceableAttributes;
   }
 
 
-  public AlertsSource resolutionRuleAttributes(@javax.annotation.Nullable NewAlertsSourceDataAttributesResolutionRuleAttributes resolutionRuleAttributes) {
+  public AlertsSource resolutionRuleAttributes(@jakarta.annotation.Nullable NewAlertsSourceDataAttributesResolutionRuleAttributes resolutionRuleAttributes) {
     this.resolutionRuleAttributes = resolutionRuleAttributes;
     return this;
   }
@@ -584,17 +584,17 @@ public class AlertsSource {
    * Get resolutionRuleAttributes
    * @return resolutionRuleAttributes
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public NewAlertsSourceDataAttributesResolutionRuleAttributes getResolutionRuleAttributes() {
     return resolutionRuleAttributes;
   }
 
-  public void setResolutionRuleAttributes(@javax.annotation.Nullable NewAlertsSourceDataAttributesResolutionRuleAttributes resolutionRuleAttributes) {
+  public void setResolutionRuleAttributes(@jakarta.annotation.Nullable NewAlertsSourceDataAttributesResolutionRuleAttributes resolutionRuleAttributes) {
     this.resolutionRuleAttributes = resolutionRuleAttributes;
   }
 
 
-  public AlertsSource alertSourceFieldsAttributes(@javax.annotation.Nullable List<NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner> alertSourceFieldsAttributes) {
+  public AlertsSource alertSourceFieldsAttributes(@jakarta.annotation.Nullable List<NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner> alertSourceFieldsAttributes) {
     this.alertSourceFieldsAttributes = alertSourceFieldsAttributes;
     return this;
   }
@@ -611,17 +611,17 @@ public class AlertsSource {
    * List of alert fields to be added to the alert source. Note: This attribute requires the alert field feature to be enabled on your account. Contact Rootly customer support if you need assistance with this feature.
    * @return alertSourceFieldsAttributes
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner> getAlertSourceFieldsAttributes() {
     return alertSourceFieldsAttributes;
   }
 
-  public void setAlertSourceFieldsAttributes(@javax.annotation.Nullable List<NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner> alertSourceFieldsAttributes) {
+  public void setAlertSourceFieldsAttributes(@jakarta.annotation.Nullable List<NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner> alertSourceFieldsAttributes) {
     this.alertSourceFieldsAttributes = alertSourceFieldsAttributes;
   }
 
 
-  public AlertsSource status(@javax.annotation.Nonnull StatusEnum status) {
+  public AlertsSource status(@jakarta.annotation.Nonnull StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -630,17 +630,17 @@ public class AlertsSource {
    * The status of the alert source
    * @return status
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nonnull StatusEnum status) {
+  public void setStatus(@jakarta.annotation.Nonnull StatusEnum status) {
     this.status = status;
   }
 
 
-  public AlertsSource secret(@javax.annotation.Nonnull String secret) {
+  public AlertsSource secret(@jakarta.annotation.Nonnull String secret) {
     this.secret = secret;
     return this;
   }
@@ -649,17 +649,17 @@ public class AlertsSource {
    * The secret used to authenticate non-email alert sources
    * @return secret
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getSecret() {
     return secret;
   }
 
-  public void setSecret(@javax.annotation.Nonnull String secret) {
+  public void setSecret(@jakarta.annotation.Nonnull String secret) {
     this.secret = secret;
   }
 
 
-  public AlertsSource email(@javax.annotation.Nullable String email) {
+  public AlertsSource email(@jakarta.annotation.Nullable String email) {
     this.email = email;
     return this;
   }
@@ -668,17 +668,17 @@ public class AlertsSource {
    * The email generated for email alert sources
    * @return email
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getEmail() {
     return email;
   }
 
-  public void setEmail(@javax.annotation.Nullable String email) {
+  public void setEmail(@jakarta.annotation.Nullable String email) {
     this.email = email;
   }
 
 
-  public AlertsSource webhookEndpoint(@javax.annotation.Nullable String webhookEndpoint) {
+  public AlertsSource webhookEndpoint(@jakarta.annotation.Nullable String webhookEndpoint) {
     this.webhookEndpoint = webhookEndpoint;
     return this;
   }
@@ -687,17 +687,17 @@ public class AlertsSource {
    * The webhook URL generated for non-email alert sources
    * @return webhookEndpoint
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getWebhookEndpoint() {
     return webhookEndpoint;
   }
 
-  public void setWebhookEndpoint(@javax.annotation.Nullable String webhookEndpoint) {
+  public void setWebhookEndpoint(@jakarta.annotation.Nullable String webhookEndpoint) {
     this.webhookEndpoint = webhookEndpoint;
   }
 
 
-  public AlertsSource createdAt(@javax.annotation.Nonnull String createdAt) {
+  public AlertsSource createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -706,17 +706,17 @@ public class AlertsSource {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public AlertsSource updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public AlertsSource updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -725,12 +725,12 @@ public class AlertsSource {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

@@ -49,32 +49,32 @@ import com.rootly.client.JSON;
 /**
  * ErrorsListErrorsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ErrorsListErrorsInner {
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String title;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String status;
 
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String code;
 
   public static final String SERIALIZED_NAME_DETAIL = "detail";
   @SerializedName(SERIALIZED_NAME_DETAIL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String detail;
 
   public ErrorsListErrorsInner() {
   }
 
-  public ErrorsListErrorsInner title(@javax.annotation.Nonnull String title) {
+  public ErrorsListErrorsInner title(@jakarta.annotation.Nonnull String title) {
     this.title = title;
     return this;
   }
@@ -83,17 +83,17 @@ public class ErrorsListErrorsInner {
    * Get title
    * @return title
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nonnull String title) {
+  public void setTitle(@jakarta.annotation.Nonnull String title) {
     this.title = title;
   }
 
 
-  public ErrorsListErrorsInner status(@javax.annotation.Nonnull String status) {
+  public ErrorsListErrorsInner status(@jakarta.annotation.Nonnull String status) {
     this.status = status;
     return this;
   }
@@ -102,17 +102,17 @@ public class ErrorsListErrorsInner {
    * Get status
    * @return status
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nonnull String status) {
+  public void setStatus(@jakarta.annotation.Nonnull String status) {
     this.status = status;
   }
 
 
-  public ErrorsListErrorsInner code(@javax.annotation.Nullable String code) {
+  public ErrorsListErrorsInner code(@jakarta.annotation.Nullable String code) {
     this.code = code;
     return this;
   }
@@ -121,17 +121,17 @@ public class ErrorsListErrorsInner {
    * Get code
    * @return code
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCode() {
     return code;
   }
 
-  public void setCode(@javax.annotation.Nullable String code) {
+  public void setCode(@jakarta.annotation.Nullable String code) {
     this.code = code;
   }
 
 
-  public ErrorsListErrorsInner detail(@javax.annotation.Nullable String detail) {
+  public ErrorsListErrorsInner detail(@jakarta.annotation.Nullable String detail) {
     this.detail = detail;
     return this;
   }
@@ -140,12 +140,12 @@ public class ErrorsListErrorsInner {
    * Get detail
    * @return detail
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDetail() {
     return detail;
   }
 
-  public void setDetail(@javax.annotation.Nullable String detail) {
+  public void setDetail(@jakarta.annotation.Nullable String detail) {
     this.detail = detail;
   }
 

@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * CreateServiceNowIncidentTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateServiceNowIncidentTaskParams {
   /**
    * Gets or Sets taskType
@@ -105,38 +105,38 @@ public class CreateServiceNowIncidentTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String title;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_PRIORITY = "priority";
   @SerializedName(SERIALIZED_NAME_PRIORITY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CreateJiraIssueTaskParamsPriority priority;
 
   public static final String SERIALIZED_NAME_COMPLETION = "completion";
   @SerializedName(SERIALIZED_NAME_COMPLETION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CreateServiceNowIncidentTaskParamsCompletion completion;
 
   public static final String SERIALIZED_NAME_CUSTOM_FIELDS_MAPPING = "custom_fields_mapping";
   @SerializedName(SERIALIZED_NAME_CUSTOM_FIELDS_MAPPING)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String customFieldsMapping;
 
   public CreateServiceNowIncidentTaskParams() {
   }
 
-  public CreateServiceNowIncidentTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public CreateServiceNowIncidentTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -145,17 +145,17 @@ public class CreateServiceNowIncidentTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public CreateServiceNowIncidentTaskParams title(@javax.annotation.Nonnull String title) {
+  public CreateServiceNowIncidentTaskParams title(@jakarta.annotation.Nonnull String title) {
     this.title = title;
     return this;
   }
@@ -164,17 +164,17 @@ public class CreateServiceNowIncidentTaskParams {
    * The incident title
    * @return title
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nonnull String title) {
+  public void setTitle(@jakarta.annotation.Nonnull String title) {
     this.title = title;
   }
 
 
-  public CreateServiceNowIncidentTaskParams description(@javax.annotation.Nullable String description) {
+  public CreateServiceNowIncidentTaskParams description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -183,17 +183,17 @@ public class CreateServiceNowIncidentTaskParams {
    * The incident description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public CreateServiceNowIncidentTaskParams priority(@javax.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
+  public CreateServiceNowIncidentTaskParams priority(@jakarta.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
     this.priority = priority;
     return this;
   }
@@ -202,17 +202,17 @@ public class CreateServiceNowIncidentTaskParams {
    * Get priority
    * @return priority
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CreateJiraIssueTaskParamsPriority getPriority() {
     return priority;
   }
 
-  public void setPriority(@javax.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
+  public void setPriority(@jakarta.annotation.Nullable CreateJiraIssueTaskParamsPriority priority) {
     this.priority = priority;
   }
 
 
-  public CreateServiceNowIncidentTaskParams completion(@javax.annotation.Nullable CreateServiceNowIncidentTaskParamsCompletion completion) {
+  public CreateServiceNowIncidentTaskParams completion(@jakarta.annotation.Nullable CreateServiceNowIncidentTaskParamsCompletion completion) {
     this.completion = completion;
     return this;
   }
@@ -221,17 +221,17 @@ public class CreateServiceNowIncidentTaskParams {
    * Get completion
    * @return completion
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CreateServiceNowIncidentTaskParamsCompletion getCompletion() {
     return completion;
   }
 
-  public void setCompletion(@javax.annotation.Nullable CreateServiceNowIncidentTaskParamsCompletion completion) {
+  public void setCompletion(@jakarta.annotation.Nullable CreateServiceNowIncidentTaskParamsCompletion completion) {
     this.completion = completion;
   }
 
 
-  public CreateServiceNowIncidentTaskParams customFieldsMapping(@javax.annotation.Nullable String customFieldsMapping) {
+  public CreateServiceNowIncidentTaskParams customFieldsMapping(@jakarta.annotation.Nullable String customFieldsMapping) {
     this.customFieldsMapping = customFieldsMapping;
     return this;
   }
@@ -240,12 +240,12 @@ public class CreateServiceNowIncidentTaskParams {
    * Custom field mappings. Can contain liquid markup and need to be valid JSON
    * @return customFieldsMapping
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCustomFieldsMapping() {
     return customFieldsMapping;
   }
 
-  public void setCustomFieldsMapping(@javax.annotation.Nullable String customFieldsMapping) {
+  public void setCustomFieldsMapping(@jakarta.annotation.Nullable String customFieldsMapping) {
     this.customFieldsMapping = customFieldsMapping;
   }
 

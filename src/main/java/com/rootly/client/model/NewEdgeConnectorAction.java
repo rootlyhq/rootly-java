@@ -49,17 +49,17 @@ import com.rootly.client.JSON;
 /**
  * NewEdgeConnectorAction
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewEdgeConnectorAction {
   public static final String SERIALIZED_NAME_ACTION = "action";
   @SerializedName(SERIALIZED_NAME_ACTION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private NewEdgeConnectorActionAction action;
 
   public NewEdgeConnectorAction() {
   }
 
-  public NewEdgeConnectorAction action(@javax.annotation.Nonnull NewEdgeConnectorActionAction action) {
+  public NewEdgeConnectorAction action(@jakarta.annotation.Nonnull NewEdgeConnectorActionAction action) {
     this.action = action;
     return this;
   }
@@ -68,12 +68,12 @@ public class NewEdgeConnectorAction {
    * Get action
    * @return action
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public NewEdgeConnectorActionAction getAction() {
     return action;
   }
 
-  public void setAction(@javax.annotation.Nonnull NewEdgeConnectorActionAction action) {
+  public void setAction(@jakarta.annotation.Nonnull NewEdgeConnectorActionAction action) {
     this.action = action;
   }
 

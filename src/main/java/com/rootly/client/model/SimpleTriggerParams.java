@@ -50,7 +50,7 @@ import com.rootly.client.JSON;
 /**
  * SimpleTriggerParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SimpleTriggerParams {
   /**
    * Gets or Sets triggerType
@@ -104,7 +104,7 @@ public class SimpleTriggerParams {
 
   public static final String SERIALIZED_NAME_TRIGGER_TYPE = "trigger_type";
   @SerializedName(SERIALIZED_NAME_TRIGGER_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private TriggerTypeEnum triggerType;
 
   /**
@@ -159,13 +159,13 @@ public class SimpleTriggerParams {
 
   public static final String SERIALIZED_NAME_TRIGGERS = "triggers";
   @SerializedName(SERIALIZED_NAME_TRIGGERS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<TriggersEnum> triggers = new ArrayList<>();
 
   public SimpleTriggerParams() {
   }
 
-  public SimpleTriggerParams triggerType(@javax.annotation.Nonnull TriggerTypeEnum triggerType) {
+  public SimpleTriggerParams triggerType(@jakarta.annotation.Nonnull TriggerTypeEnum triggerType) {
     this.triggerType = triggerType;
     return this;
   }
@@ -174,17 +174,17 @@ public class SimpleTriggerParams {
    * Get triggerType
    * @return triggerType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public TriggerTypeEnum getTriggerType() {
     return triggerType;
   }
 
-  public void setTriggerType(@javax.annotation.Nonnull TriggerTypeEnum triggerType) {
+  public void setTriggerType(@jakarta.annotation.Nonnull TriggerTypeEnum triggerType) {
     this.triggerType = triggerType;
   }
 
 
-  public SimpleTriggerParams triggers(@javax.annotation.Nullable List<TriggersEnum> triggers) {
+  public SimpleTriggerParams triggers(@jakarta.annotation.Nullable List<TriggersEnum> triggers) {
     this.triggers = triggers;
     return this;
   }
@@ -201,12 +201,12 @@ public class SimpleTriggerParams {
    * Get triggers
    * @return triggers
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<TriggersEnum> getTriggers() {
     return triggers;
   }
 
-  public void setTriggers(@javax.annotation.Nullable List<TriggersEnum> triggers) {
+  public void setTriggers(@jakarta.annotation.Nullable List<TriggersEnum> triggers) {
     this.triggers = triggers;
   }
 

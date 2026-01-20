@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateShortcutStoryTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateShortcutStoryTaskParams {
   /**
    * Gets or Sets taskType
@@ -103,43 +103,43 @@ public class UpdateShortcutStoryTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_STORY_ID = "story_id";
   @SerializedName(SERIALIZED_NAME_STORY_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String storyId;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String title;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_LABELS = "labels";
   @SerializedName(SERIALIZED_NAME_LABELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String labels;
 
   public static final String SERIALIZED_NAME_DUE_DATE = "due_date";
   @SerializedName(SERIALIZED_NAME_DUE_DATE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String dueDate;
 
   public static final String SERIALIZED_NAME_ARCHIVATION = "archivation";
   @SerializedName(SERIALIZED_NAME_ARCHIVATION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private CreateTrelloCardTaskParamsArchivation archivation;
 
   public UpdateShortcutStoryTaskParams() {
   }
 
-  public UpdateShortcutStoryTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public UpdateShortcutStoryTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -148,17 +148,17 @@ public class UpdateShortcutStoryTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public UpdateShortcutStoryTaskParams storyId(@javax.annotation.Nonnull String storyId) {
+  public UpdateShortcutStoryTaskParams storyId(@jakarta.annotation.Nonnull String storyId) {
     this.storyId = storyId;
     return this;
   }
@@ -167,17 +167,17 @@ public class UpdateShortcutStoryTaskParams {
    * The story id
    * @return storyId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getStoryId() {
     return storyId;
   }
 
-  public void setStoryId(@javax.annotation.Nonnull String storyId) {
+  public void setStoryId(@jakarta.annotation.Nonnull String storyId) {
     this.storyId = storyId;
   }
 
 
-  public UpdateShortcutStoryTaskParams title(@javax.annotation.Nullable String title) {
+  public UpdateShortcutStoryTaskParams title(@jakarta.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
@@ -186,17 +186,17 @@ public class UpdateShortcutStoryTaskParams {
    * The incident title
    * @return title
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nullable String title) {
+  public void setTitle(@jakarta.annotation.Nullable String title) {
     this.title = title;
   }
 
 
-  public UpdateShortcutStoryTaskParams description(@javax.annotation.Nullable String description) {
+  public UpdateShortcutStoryTaskParams description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -205,17 +205,17 @@ public class UpdateShortcutStoryTaskParams {
    * The incident description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UpdateShortcutStoryTaskParams labels(@javax.annotation.Nullable String labels) {
+  public UpdateShortcutStoryTaskParams labels(@jakarta.annotation.Nullable String labels) {
     this.labels = labels;
     return this;
   }
@@ -224,17 +224,17 @@ public class UpdateShortcutStoryTaskParams {
    * The story labels
    * @return labels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getLabels() {
     return labels;
   }
 
-  public void setLabels(@javax.annotation.Nullable String labels) {
+  public void setLabels(@jakarta.annotation.Nullable String labels) {
     this.labels = labels;
   }
 
 
-  public UpdateShortcutStoryTaskParams dueDate(@javax.annotation.Nullable String dueDate) {
+  public UpdateShortcutStoryTaskParams dueDate(@jakarta.annotation.Nullable String dueDate) {
     this.dueDate = dueDate;
     return this;
   }
@@ -243,17 +243,17 @@ public class UpdateShortcutStoryTaskParams {
    * The due date
    * @return dueDate
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDueDate() {
     return dueDate;
   }
 
-  public void setDueDate(@javax.annotation.Nullable String dueDate) {
+  public void setDueDate(@jakarta.annotation.Nullable String dueDate) {
     this.dueDate = dueDate;
   }
 
 
-  public UpdateShortcutStoryTaskParams archivation(@javax.annotation.Nonnull CreateTrelloCardTaskParamsArchivation archivation) {
+  public UpdateShortcutStoryTaskParams archivation(@jakarta.annotation.Nonnull CreateTrelloCardTaskParamsArchivation archivation) {
     this.archivation = archivation;
     return this;
   }
@@ -262,12 +262,12 @@ public class UpdateShortcutStoryTaskParams {
    * Get archivation
    * @return archivation
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public CreateTrelloCardTaskParamsArchivation getArchivation() {
     return archivation;
   }
 
-  public void setArchivation(@javax.annotation.Nonnull CreateTrelloCardTaskParamsArchivation archivation) {
+  public void setArchivation(@jakarta.annotation.Nonnull CreateTrelloCardTaskParamsArchivation archivation) {
     this.archivation = archivation;
   }
 

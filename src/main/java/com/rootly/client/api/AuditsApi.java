@@ -96,7 +96,7 @@ public class AuditsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAuditsCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String filterUserId, @javax.annotation.Nullable String filterApiKeyId, @javax.annotation.Nullable String filterSource, @javax.annotation.Nullable String filterItemType, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listAuditsCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUserId, @jakarta.annotation.Nullable String filterApiKeyId, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterItemType, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -189,7 +189,7 @@ public class AuditsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listAuditsValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String filterUserId, @javax.annotation.Nullable String filterApiKeyId, @javax.annotation.Nullable String filterSource, @javax.annotation.Nullable String filterItemType, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listAuditsValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUserId, @jakarta.annotation.Nullable String filterApiKeyId, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterItemType, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         return listAuditsCall(include, pageNumber, pageSize, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUserId, filterApiKeyId, filterSource, filterItemType, sort, _callback);
 
     }
@@ -218,7 +218,7 @@ public class AuditsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public AuditsList listAudits(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String filterUserId, @javax.annotation.Nullable String filterApiKeyId, @javax.annotation.Nullable String filterSource, @javax.annotation.Nullable String filterItemType, @javax.annotation.Nullable String sort) throws ApiException {
+    public AuditsList listAudits(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUserId, @jakarta.annotation.Nullable String filterApiKeyId, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterItemType, @jakarta.annotation.Nullable String sort) throws ApiException {
         ApiResponse<AuditsList> localVarResp = listAuditsWithHttpInfo(include, pageNumber, pageSize, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUserId, filterApiKeyId, filterSource, filterItemType, sort);
         return localVarResp.getData();
     }
@@ -247,7 +247,7 @@ public class AuditsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AuditsList> listAuditsWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String filterUserId, @javax.annotation.Nullable String filterApiKeyId, @javax.annotation.Nullable String filterSource, @javax.annotation.Nullable String filterItemType, @javax.annotation.Nullable String sort) throws ApiException {
+    public ApiResponse<AuditsList> listAuditsWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUserId, @jakarta.annotation.Nullable String filterApiKeyId, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterItemType, @jakarta.annotation.Nullable String sort) throws ApiException {
         okhttp3.Call localVarCall = listAuditsValidateBeforeCall(include, pageNumber, pageSize, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUserId, filterApiKeyId, filterSource, filterItemType, sort, null);
         Type localVarReturnType = new TypeToken<AuditsList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -278,7 +278,7 @@ public class AuditsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAuditsAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String filterUserId, @javax.annotation.Nullable String filterApiKeyId, @javax.annotation.Nullable String filterSource, @javax.annotation.Nullable String filterItemType, @javax.annotation.Nullable String sort, final ApiCallback<AuditsList> _callback) throws ApiException {
+    public okhttp3.Call listAuditsAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUserId, @jakarta.annotation.Nullable String filterApiKeyId, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterItemType, @jakarta.annotation.Nullable String sort, final ApiCallback<AuditsList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listAuditsValidateBeforeCall(include, pageNumber, pageSize, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUserId, filterApiKeyId, filterSource, filterItemType, sort, _callback);
         Type localVarReturnType = new TypeToken<AuditsList>(){}.getType();

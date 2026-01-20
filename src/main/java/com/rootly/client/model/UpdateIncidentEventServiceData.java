@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateIncidentEventServiceData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateIncidentEventServiceData {
   /**
    * Gets or Sets type
@@ -103,18 +103,18 @@ public class UpdateIncidentEventServiceData {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private UpdateIncidentEventServiceDataAttributes attributes;
 
   public UpdateIncidentEventServiceData() {
   }
 
-  public UpdateIncidentEventServiceData type(@javax.annotation.Nonnull TypeEnum type) {
+  public UpdateIncidentEventServiceData type(@jakarta.annotation.Nonnull TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -123,17 +123,17 @@ public class UpdateIncidentEventServiceData {
    * Get type
    * @return type
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public TypeEnum getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nonnull TypeEnum type) {
+  public void setType(@jakarta.annotation.Nonnull TypeEnum type) {
     this.type = type;
   }
 
 
-  public UpdateIncidentEventServiceData attributes(@javax.annotation.Nonnull UpdateIncidentEventServiceDataAttributes attributes) {
+  public UpdateIncidentEventServiceData attributes(@jakarta.annotation.Nonnull UpdateIncidentEventServiceDataAttributes attributes) {
     this.attributes = attributes;
     return this;
   }
@@ -142,12 +142,12 @@ public class UpdateIncidentEventServiceData {
    * Get attributes
    * @return attributes
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public UpdateIncidentEventServiceDataAttributes getAttributes() {
     return attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nonnull UpdateIncidentEventServiceDataAttributes attributes) {
+  public void setAttributes(@jakarta.annotation.Nonnull UpdateIncidentEventServiceDataAttributes attributes) {
     this.attributes = attributes;
   }
 

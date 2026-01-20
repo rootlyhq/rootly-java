@@ -51,21 +51,21 @@ import com.rootly.client.JSON;
 /**
  * UpdateCustomFieldDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateCustomFieldDataAttributes {
   public static final String SERIALIZED_NAME_LABEL = "label";
   @SerializedName(SERIALIZED_NAME_LABEL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String label;
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String slug;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   /**
@@ -134,7 +134,7 @@ public class UpdateCustomFieldDataAttributes {
 
   public static final String SERIALIZED_NAME_SHOWN = "shown";
   @SerializedName(SERIALIZED_NAME_SHOWN)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<ShownEnum> shown = new ArrayList<>();
 
   /**
@@ -201,23 +201,23 @@ public class UpdateCustomFieldDataAttributes {
 
   public static final String SERIALIZED_NAME_REQUIRED = "required";
   @SerializedName(SERIALIZED_NAME_REQUIRED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<RequiredEnum> required;
 
   public static final String SERIALIZED_NAME_DEFAULT = "default";
   @SerializedName(SERIALIZED_NAME_DEFAULT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String _default;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public UpdateCustomFieldDataAttributes() {
   }
 
-  public UpdateCustomFieldDataAttributes label(@javax.annotation.Nullable String label) {
+  public UpdateCustomFieldDataAttributes label(@jakarta.annotation.Nullable String label) {
     this.label = label;
     return this;
   }
@@ -226,17 +226,17 @@ public class UpdateCustomFieldDataAttributes {
    * The name of the custom_field
    * @return label
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getLabel() {
     return label;
   }
 
-  public void setLabel(@javax.annotation.Nullable String label) {
+  public void setLabel(@jakarta.annotation.Nullable String label) {
     this.label = label;
   }
 
 
-  public UpdateCustomFieldDataAttributes slug(@javax.annotation.Nullable String slug) {
+  public UpdateCustomFieldDataAttributes slug(@jakarta.annotation.Nullable String slug) {
     this.slug = slug;
     return this;
   }
@@ -245,17 +245,17 @@ public class UpdateCustomFieldDataAttributes {
    * The slug of the custom_field
    * @return slug
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSlug() {
     return slug;
   }
 
-  public void setSlug(@javax.annotation.Nullable String slug) {
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
     this.slug = slug;
   }
 
 
-  public UpdateCustomFieldDataAttributes description(@javax.annotation.Nullable String description) {
+  public UpdateCustomFieldDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -264,17 +264,17 @@ public class UpdateCustomFieldDataAttributes {
    * The description of the custom_field
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UpdateCustomFieldDataAttributes shown(@javax.annotation.Nullable List<ShownEnum> shown) {
+  public UpdateCustomFieldDataAttributes shown(@jakarta.annotation.Nullable List<ShownEnum> shown) {
     this.shown = shown;
     return this;
   }
@@ -291,17 +291,17 @@ public class UpdateCustomFieldDataAttributes {
    * Get shown
    * @return shown
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<ShownEnum> getShown() {
     return shown;
   }
 
-  public void setShown(@javax.annotation.Nullable List<ShownEnum> shown) {
+  public void setShown(@jakarta.annotation.Nullable List<ShownEnum> shown) {
     this.shown = shown;
   }
 
 
-  public UpdateCustomFieldDataAttributes required(@javax.annotation.Nullable List<RequiredEnum> required) {
+  public UpdateCustomFieldDataAttributes required(@jakarta.annotation.Nullable List<RequiredEnum> required) {
     this.required = required;
     return this;
   }
@@ -318,17 +318,17 @@ public class UpdateCustomFieldDataAttributes {
    * Get required
    * @return required
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<RequiredEnum> getRequired() {
     return required;
   }
 
-  public void setRequired(@javax.annotation.Nullable List<RequiredEnum> required) {
+  public void setRequired(@jakarta.annotation.Nullable List<RequiredEnum> required) {
     this.required = required;
   }
 
 
-  public UpdateCustomFieldDataAttributes _default(@javax.annotation.Nullable String _default) {
+  public UpdateCustomFieldDataAttributes _default(@jakarta.annotation.Nullable String _default) {
     this._default = _default;
     return this;
   }
@@ -337,17 +337,17 @@ public class UpdateCustomFieldDataAttributes {
    * The default value for text field kinds
    * @return _default
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDefault() {
     return _default;
   }
 
-  public void setDefault(@javax.annotation.Nullable String _default) {
+  public void setDefault(@jakarta.annotation.Nullable String _default) {
     this._default = _default;
   }
 
 
-  public UpdateCustomFieldDataAttributes position(@javax.annotation.Nullable Integer position) {
+  public UpdateCustomFieldDataAttributes position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -356,12 +356,12 @@ public class UpdateCustomFieldDataAttributes {
    * The position of the custom_field
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 

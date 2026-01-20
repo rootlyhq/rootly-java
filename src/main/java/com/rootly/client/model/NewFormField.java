@@ -49,17 +49,17 @@ import com.rootly.client.JSON;
 /**
  * NewFormField
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewFormField {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private NewFormFieldData data;
 
   public NewFormField() {
   }
 
-  public NewFormField data(@javax.annotation.Nonnull NewFormFieldData data) {
+  public NewFormField data(@jakarta.annotation.Nonnull NewFormFieldData data) {
     this.data = data;
     return this;
   }
@@ -68,12 +68,12 @@ public class NewFormField {
    * Get data
    * @return data
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public NewFormFieldData getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nonnull NewFormFieldData data) {
+  public void setData(@jakarta.annotation.Nonnull NewFormFieldData data) {
     this.data = data;
   }
 

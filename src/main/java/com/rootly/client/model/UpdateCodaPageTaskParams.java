@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateCodaPageTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateCodaPageTaskParams {
   /**
    * Gets or Sets taskType
@@ -103,43 +103,43 @@ public class UpdateCodaPageTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_DOC_ID = "doc_id";
   @SerializedName(SERIALIZED_NAME_DOC_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String docId;
 
   public static final String SERIALIZED_NAME_PAGE_ID = "page_id";
   @SerializedName(SERIALIZED_NAME_PAGE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String pageId;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String title;
 
   public static final String SERIALIZED_NAME_SUBTITLE = "subtitle";
   @SerializedName(SERIALIZED_NAME_SUBTITLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String subtitle;
 
   public static final String SERIALIZED_NAME_CONTENT = "content";
   @SerializedName(SERIALIZED_NAME_CONTENT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String content;
 
   public static final String SERIALIZED_NAME_TEMPLATE = "template";
   @SerializedName(SERIALIZED_NAME_TEMPLATE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CreateCodaPageTaskParamsTemplate template;
 
   public UpdateCodaPageTaskParams() {
   }
 
-  public UpdateCodaPageTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public UpdateCodaPageTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -148,17 +148,17 @@ public class UpdateCodaPageTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public UpdateCodaPageTaskParams docId(@javax.annotation.Nullable String docId) {
+  public UpdateCodaPageTaskParams docId(@jakarta.annotation.Nullable String docId) {
     this.docId = docId;
     return this;
   }
@@ -167,17 +167,17 @@ public class UpdateCodaPageTaskParams {
    * The Coda doc id
    * @return docId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDocId() {
     return docId;
   }
 
-  public void setDocId(@javax.annotation.Nullable String docId) {
+  public void setDocId(@jakarta.annotation.Nullable String docId) {
     this.docId = docId;
   }
 
 
-  public UpdateCodaPageTaskParams pageId(@javax.annotation.Nonnull String pageId) {
+  public UpdateCodaPageTaskParams pageId(@jakarta.annotation.Nonnull String pageId) {
     this.pageId = pageId;
     return this;
   }
@@ -186,17 +186,17 @@ public class UpdateCodaPageTaskParams {
    * The Coda page id
    * @return pageId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getPageId() {
     return pageId;
   }
 
-  public void setPageId(@javax.annotation.Nonnull String pageId) {
+  public void setPageId(@jakarta.annotation.Nonnull String pageId) {
     this.pageId = pageId;
   }
 
 
-  public UpdateCodaPageTaskParams title(@javax.annotation.Nullable String title) {
+  public UpdateCodaPageTaskParams title(@jakarta.annotation.Nullable String title) {
     this.title = title;
     return this;
   }
@@ -205,17 +205,17 @@ public class UpdateCodaPageTaskParams {
    * The Coda page title
    * @return title
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nullable String title) {
+  public void setTitle(@jakarta.annotation.Nullable String title) {
     this.title = title;
   }
 
 
-  public UpdateCodaPageTaskParams subtitle(@javax.annotation.Nullable String subtitle) {
+  public UpdateCodaPageTaskParams subtitle(@jakarta.annotation.Nullable String subtitle) {
     this.subtitle = subtitle;
     return this;
   }
@@ -224,17 +224,17 @@ public class UpdateCodaPageTaskParams {
    * The Coda page subtitle
    * @return subtitle
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSubtitle() {
     return subtitle;
   }
 
-  public void setSubtitle(@javax.annotation.Nullable String subtitle) {
+  public void setSubtitle(@jakarta.annotation.Nullable String subtitle) {
     this.subtitle = subtitle;
   }
 
 
-  public UpdateCodaPageTaskParams content(@javax.annotation.Nullable String content) {
+  public UpdateCodaPageTaskParams content(@jakarta.annotation.Nullable String content) {
     this.content = content;
     return this;
   }
@@ -243,17 +243,17 @@ public class UpdateCodaPageTaskParams {
    * The Coda page content
    * @return content
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getContent() {
     return content;
   }
 
-  public void setContent(@javax.annotation.Nullable String content) {
+  public void setContent(@jakarta.annotation.Nullable String content) {
     this.content = content;
   }
 
 
-  public UpdateCodaPageTaskParams template(@javax.annotation.Nullable CreateCodaPageTaskParamsTemplate template) {
+  public UpdateCodaPageTaskParams template(@jakarta.annotation.Nullable CreateCodaPageTaskParamsTemplate template) {
     this.template = template;
     return this;
   }
@@ -262,12 +262,12 @@ public class UpdateCodaPageTaskParams {
    * Get template
    * @return template
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CreateCodaPageTaskParamsTemplate getTemplate() {
     return template;
   }
 
-  public void setTemplate(@javax.annotation.Nullable CreateCodaPageTaskParamsTemplate template) {
+  public void setTemplate(@jakarta.annotation.Nullable CreateCodaPageTaskParamsTemplate template) {
     this.template = template;
   }
 

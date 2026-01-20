@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * CreateSlackChannelTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateSlackChannelTaskParams {
   /**
    * Gets or Sets taskType
@@ -103,17 +103,17 @@ public class CreateSlackChannelTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_WORKSPACE = "workspace";
   @SerializedName(SERIALIZED_NAME_WORKSPACE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private AddActionItemTaskParamsPostToSlackChannelsInner workspace;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String title;
 
   /**
@@ -172,13 +172,13 @@ public class CreateSlackChannelTaskParams {
 
   public static final String SERIALIZED_NAME_PRIVATE = "private";
   @SerializedName(SERIALIZED_NAME_PRIVATE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private PrivateEnum _private = PrivateEnum.AUTO;
 
   public CreateSlackChannelTaskParams() {
   }
 
-  public CreateSlackChannelTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public CreateSlackChannelTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -187,17 +187,17 @@ public class CreateSlackChannelTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public CreateSlackChannelTaskParams workspace(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner workspace) {
+  public CreateSlackChannelTaskParams workspace(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner workspace) {
     this.workspace = workspace;
     return this;
   }
@@ -206,17 +206,17 @@ public class CreateSlackChannelTaskParams {
    * Get workspace
    * @return workspace
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public AddActionItemTaskParamsPostToSlackChannelsInner getWorkspace() {
     return workspace;
   }
 
-  public void setWorkspace(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner workspace) {
+  public void setWorkspace(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner workspace) {
     this.workspace = workspace;
   }
 
 
-  public CreateSlackChannelTaskParams title(@javax.annotation.Nonnull String title) {
+  public CreateSlackChannelTaskParams title(@jakarta.annotation.Nonnull String title) {
     this.title = title;
     return this;
   }
@@ -225,17 +225,17 @@ public class CreateSlackChannelTaskParams {
    * Slack channel title
    * @return title
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nonnull String title) {
+  public void setTitle(@jakarta.annotation.Nonnull String title) {
     this.title = title;
   }
 
 
-  public CreateSlackChannelTaskParams _private(@javax.annotation.Nullable PrivateEnum _private) {
+  public CreateSlackChannelTaskParams _private(@jakarta.annotation.Nullable PrivateEnum _private) {
     this._private = _private;
     return this;
   }
@@ -244,12 +244,12 @@ public class CreateSlackChannelTaskParams {
    * Get _private
    * @return _private
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public PrivateEnum getPrivate() {
     return _private;
   }
 
-  public void setPrivate(@javax.annotation.Nullable PrivateEnum _private) {
+  public void setPrivate(@jakarta.annotation.Nullable PrivateEnum _private) {
     this._private = _private;
   }
 

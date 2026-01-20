@@ -54,62 +54,62 @@ import com.rootly.client.JSON;
 /**
  * NewPulseDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewPulseDataAttributes {
   public static final String SERIALIZED_NAME_SOURCE = "source";
   @SerializedName(SERIALIZED_NAME_SOURCE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String source;
 
   public static final String SERIALIZED_NAME_SUMMARY = "summary";
   @SerializedName(SERIALIZED_NAME_SUMMARY)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String summary;
 
   public static final String SERIALIZED_NAME_SERVICE_IDS = "service_ids";
   @SerializedName(SERIALIZED_NAME_SERVICE_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> serviceIds;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_IDS = "environment_ids";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> environmentIds;
 
   public static final String SERIALIZED_NAME_STARTED_AT = "started_at";
   @SerializedName(SERIALIZED_NAME_STARTED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private OffsetDateTime startedAt;
 
   public static final String SERIALIZED_NAME_ENDED_AT = "ended_at";
   @SerializedName(SERIALIZED_NAME_ENDED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private OffsetDateTime endedAt;
 
   public static final String SERIALIZED_NAME_EXTERNAL_URL = "external_url";
   @SerializedName(SERIALIZED_NAME_EXTERNAL_URL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String externalUrl;
 
   public static final String SERIALIZED_NAME_LABELS = "labels";
   @SerializedName(SERIALIZED_NAME_LABELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewPulseDataAttributesLabelsInner> labels = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_REFS = "refs";
   @SerializedName(SERIALIZED_NAME_REFS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewPulseDataAttributesRefsInner> refs = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Object data;
 
   public NewPulseDataAttributes() {
   }
 
-  public NewPulseDataAttributes source(@javax.annotation.Nullable String source) {
+  public NewPulseDataAttributes source(@jakarta.annotation.Nullable String source) {
     this.source = source;
     return this;
   }
@@ -118,17 +118,17 @@ public class NewPulseDataAttributes {
    * The source of the pulse (eg: k8s)
    * @return source
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSource() {
     return source;
   }
 
-  public void setSource(@javax.annotation.Nullable String source) {
+  public void setSource(@jakarta.annotation.Nullable String source) {
     this.source = source;
   }
 
 
-  public NewPulseDataAttributes summary(@javax.annotation.Nonnull String summary) {
+  public NewPulseDataAttributes summary(@jakarta.annotation.Nonnull String summary) {
     this.summary = summary;
     return this;
   }
@@ -137,17 +137,17 @@ public class NewPulseDataAttributes {
    * The summary of the pulse
    * @return summary
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getSummary() {
     return summary;
   }
 
-  public void setSummary(@javax.annotation.Nonnull String summary) {
+  public void setSummary(@jakarta.annotation.Nonnull String summary) {
     this.summary = summary;
   }
 
 
-  public NewPulseDataAttributes serviceIds(@javax.annotation.Nullable List<String> serviceIds) {
+  public NewPulseDataAttributes serviceIds(@jakarta.annotation.Nullable List<String> serviceIds) {
     this.serviceIds = serviceIds;
     return this;
   }
@@ -164,17 +164,17 @@ public class NewPulseDataAttributes {
    * The Service IDs to attach to the pulse
    * @return serviceIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getServiceIds() {
     return serviceIds;
   }
 
-  public void setServiceIds(@javax.annotation.Nullable List<String> serviceIds) {
+  public void setServiceIds(@jakarta.annotation.Nullable List<String> serviceIds) {
     this.serviceIds = serviceIds;
   }
 
 
-  public NewPulseDataAttributes environmentIds(@javax.annotation.Nullable List<String> environmentIds) {
+  public NewPulseDataAttributes environmentIds(@jakarta.annotation.Nullable List<String> environmentIds) {
     this.environmentIds = environmentIds;
     return this;
   }
@@ -191,17 +191,17 @@ public class NewPulseDataAttributes {
    * The Environment IDs to attach to the pulse
    * @return environmentIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getEnvironmentIds() {
     return environmentIds;
   }
 
-  public void setEnvironmentIds(@javax.annotation.Nullable List<String> environmentIds) {
+  public void setEnvironmentIds(@jakarta.annotation.Nullable List<String> environmentIds) {
     this.environmentIds = environmentIds;
   }
 
 
-  public NewPulseDataAttributes startedAt(@javax.annotation.Nullable OffsetDateTime startedAt) {
+  public NewPulseDataAttributes startedAt(@jakarta.annotation.Nullable OffsetDateTime startedAt) {
     this.startedAt = startedAt;
     return this;
   }
@@ -210,17 +210,17 @@ public class NewPulseDataAttributes {
    * Pulse start datetime
    * @return startedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public OffsetDateTime getStartedAt() {
     return startedAt;
   }
 
-  public void setStartedAt(@javax.annotation.Nullable OffsetDateTime startedAt) {
+  public void setStartedAt(@jakarta.annotation.Nullable OffsetDateTime startedAt) {
     this.startedAt = startedAt;
   }
 
 
-  public NewPulseDataAttributes endedAt(@javax.annotation.Nullable OffsetDateTime endedAt) {
+  public NewPulseDataAttributes endedAt(@jakarta.annotation.Nullable OffsetDateTime endedAt) {
     this.endedAt = endedAt;
     return this;
   }
@@ -229,17 +229,17 @@ public class NewPulseDataAttributes {
    * Pulse end datetime
    * @return endedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public OffsetDateTime getEndedAt() {
     return endedAt;
   }
 
-  public void setEndedAt(@javax.annotation.Nullable OffsetDateTime endedAt) {
+  public void setEndedAt(@jakarta.annotation.Nullable OffsetDateTime endedAt) {
     this.endedAt = endedAt;
   }
 
 
-  public NewPulseDataAttributes externalUrl(@javax.annotation.Nullable String externalUrl) {
+  public NewPulseDataAttributes externalUrl(@jakarta.annotation.Nullable String externalUrl) {
     this.externalUrl = externalUrl;
     return this;
   }
@@ -248,17 +248,17 @@ public class NewPulseDataAttributes {
    * The external url of the pulse
    * @return externalUrl
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getExternalUrl() {
     return externalUrl;
   }
 
-  public void setExternalUrl(@javax.annotation.Nullable String externalUrl) {
+  public void setExternalUrl(@jakarta.annotation.Nullable String externalUrl) {
     this.externalUrl = externalUrl;
   }
 
 
-  public NewPulseDataAttributes labels(@javax.annotation.Nullable List<NewPulseDataAttributesLabelsInner> labels) {
+  public NewPulseDataAttributes labels(@jakarta.annotation.Nullable List<NewPulseDataAttributesLabelsInner> labels) {
     this.labels = labels;
     return this;
   }
@@ -275,17 +275,17 @@ public class NewPulseDataAttributes {
    * Get labels
    * @return labels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewPulseDataAttributesLabelsInner> getLabels() {
     return labels;
   }
 
-  public void setLabels(@javax.annotation.Nullable List<NewPulseDataAttributesLabelsInner> labels) {
+  public void setLabels(@jakarta.annotation.Nullable List<NewPulseDataAttributesLabelsInner> labels) {
     this.labels = labels;
   }
 
 
-  public NewPulseDataAttributes refs(@javax.annotation.Nullable List<NewPulseDataAttributesRefsInner> refs) {
+  public NewPulseDataAttributes refs(@jakarta.annotation.Nullable List<NewPulseDataAttributesRefsInner> refs) {
     this.refs = refs;
     return this;
   }
@@ -302,17 +302,17 @@ public class NewPulseDataAttributes {
    * Get refs
    * @return refs
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewPulseDataAttributesRefsInner> getRefs() {
     return refs;
   }
 
-  public void setRefs(@javax.annotation.Nullable List<NewPulseDataAttributesRefsInner> refs) {
+  public void setRefs(@jakarta.annotation.Nullable List<NewPulseDataAttributesRefsInner> refs) {
     this.refs = refs;
   }
 
 
-  public NewPulseDataAttributes data(@javax.annotation.Nullable Object data) {
+  public NewPulseDataAttributes data(@jakarta.annotation.Nullable Object data) {
     this.data = data;
     return this;
   }
@@ -321,12 +321,12 @@ public class NewPulseDataAttributes {
    * Additional data
    * @return data
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Object getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nullable Object data) {
+  public void setData(@jakarta.annotation.Nullable Object data) {
     this.data = data;
   }
 

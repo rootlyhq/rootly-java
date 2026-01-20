@@ -50,42 +50,42 @@ import com.rootly.client.JSON;
 /**
  * FormSet
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class FormSet {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String slug;
 
   public static final String SERIALIZED_NAME_IS_DEFAULT = "is_default";
   @SerializedName(SERIALIZED_NAME_IS_DEFAULT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Boolean isDefault;
 
   public static final String SERIALIZED_NAME_FORMS = "forms";
   @SerializedName(SERIALIZED_NAME_FORMS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<String> forms = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public FormSet() {
   }
 
-  public FormSet name(@javax.annotation.Nonnull String name) {
+  public FormSet name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -94,17 +94,17 @@ public class FormSet {
    * The name of the form set
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public FormSet slug(@javax.annotation.Nonnull String slug) {
+  public FormSet slug(@jakarta.annotation.Nonnull String slug) {
     this.slug = slug;
     return this;
   }
@@ -113,17 +113,17 @@ public class FormSet {
    * The slug of the form set
    * @return slug
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getSlug() {
     return slug;
   }
 
-  public void setSlug(@javax.annotation.Nonnull String slug) {
+  public void setSlug(@jakarta.annotation.Nonnull String slug) {
     this.slug = slug;
   }
 
 
-  public FormSet isDefault(@javax.annotation.Nonnull Boolean isDefault) {
+  public FormSet isDefault(@jakarta.annotation.Nonnull Boolean isDefault) {
     this.isDefault = isDefault;
     return this;
   }
@@ -132,17 +132,17 @@ public class FormSet {
    * Whether the form set is default
    * @return isDefault
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Boolean getIsDefault() {
     return isDefault;
   }
 
-  public void setIsDefault(@javax.annotation.Nonnull Boolean isDefault) {
+  public void setIsDefault(@jakarta.annotation.Nonnull Boolean isDefault) {
     this.isDefault = isDefault;
   }
 
 
-  public FormSet forms(@javax.annotation.Nonnull List<String> forms) {
+  public FormSet forms(@jakarta.annotation.Nonnull List<String> forms) {
     this.forms = forms;
     return this;
   }
@@ -159,17 +159,17 @@ public class FormSet {
    * The forms included in the form set. Add custom forms using the custom form&#39;s &#x60;slug&#x60; field. Or choose a built-in form: &#x60;web_new_incident_form&#x60;, &#x60;web_update_incident_form&#x60;, &#x60;web_incident_post_mortem_form&#x60;, &#x60;web_incident_mitigation_form&#x60;, &#x60;web_incident_resolution_form&#x60;, &#x60;web_incident_cancellation_form&#x60;, &#x60;web_scheduled_incident_form&#x60;, &#x60;web_update_scheduled_incident_form&#x60;, &#x60;slack_new_incident_form&#x60;, &#x60;slack_update_incident_form&#x60;, &#x60;slack_update_incident_status_form&#x60;, &#x60;slack_incident_mitigation_form&#x60;, &#x60;slack_incident_resolution_form&#x60;, &#x60;slack_incident_cancellation_form&#x60;, &#x60;slack_scheduled_incident_form&#x60;, &#x60;slack_update_scheduled_incident_form&#x60;
    * @return forms
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<String> getForms() {
     return forms;
   }
 
-  public void setForms(@javax.annotation.Nonnull List<String> forms) {
+  public void setForms(@jakarta.annotation.Nonnull List<String> forms) {
     this.forms = forms;
   }
 
 
-  public FormSet createdAt(@javax.annotation.Nonnull String createdAt) {
+  public FormSet createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -178,17 +178,17 @@ public class FormSet {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public FormSet updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public FormSet updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -197,12 +197,12 @@ public class FormSet {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

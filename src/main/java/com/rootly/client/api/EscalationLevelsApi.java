@@ -88,7 +88,7 @@ public class EscalationLevelsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteEscalationLevelCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteEscalationLevelCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -134,7 +134,7 @@ public class EscalationLevelsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteEscalationLevelValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteEscalationLevelValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteEscalationLevel(Async)");
@@ -158,7 +158,7 @@ public class EscalationLevelsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public EscalationPolicyLevelResponse deleteEscalationLevel(@javax.annotation.Nonnull String id) throws ApiException {
+    public EscalationPolicyLevelResponse deleteEscalationLevel(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<EscalationPolicyLevelResponse> localVarResp = deleteEscalationLevelWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -177,7 +177,7 @@ public class EscalationLevelsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<EscalationPolicyLevelResponse> deleteEscalationLevelWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<EscalationPolicyLevelResponse> deleteEscalationLevelWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteEscalationLevelValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<EscalationPolicyLevelResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -198,7 +198,7 @@ public class EscalationLevelsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteEscalationLevelAsync(@javax.annotation.Nonnull String id, final ApiCallback<EscalationPolicyLevelResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteEscalationLevelAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<EscalationPolicyLevelResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteEscalationLevelValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<EscalationPolicyLevelResponse>(){}.getType();
@@ -219,7 +219,7 @@ public class EscalationLevelsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getEscalationLevelCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getEscalationLevelCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -265,7 +265,7 @@ public class EscalationLevelsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getEscalationLevelValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getEscalationLevelValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getEscalationLevel(Async)");
@@ -289,7 +289,7 @@ public class EscalationLevelsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public EscalationPolicyLevelResponse getEscalationLevel(@javax.annotation.Nonnull String id) throws ApiException {
+    public EscalationPolicyLevelResponse getEscalationLevel(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<EscalationPolicyLevelResponse> localVarResp = getEscalationLevelWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -308,7 +308,7 @@ public class EscalationLevelsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<EscalationPolicyLevelResponse> getEscalationLevelWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<EscalationPolicyLevelResponse> getEscalationLevelWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getEscalationLevelValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<EscalationPolicyLevelResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -329,7 +329,7 @@ public class EscalationLevelsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getEscalationLevelAsync(@javax.annotation.Nonnull String id, final ApiCallback<EscalationPolicyLevelResponse> _callback) throws ApiException {
+    public okhttp3.Call getEscalationLevelAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<EscalationPolicyLevelResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getEscalationLevelValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<EscalationPolicyLevelResponse>(){}.getType();
@@ -351,7 +351,7 @@ public class EscalationLevelsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateEscalationLevelCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateEscalationPolicyLevel updateEscalationPolicyLevel, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateEscalationLevelCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateEscalationPolicyLevel updateEscalationPolicyLevel, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -398,7 +398,7 @@ public class EscalationLevelsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateEscalationLevelValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateEscalationPolicyLevel updateEscalationPolicyLevel, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateEscalationLevelValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateEscalationPolicyLevel updateEscalationPolicyLevel, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateEscalationLevel(Async)");
@@ -428,7 +428,7 @@ public class EscalationLevelsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public EscalationPolicyLevelResponse updateEscalationLevel(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateEscalationPolicyLevel updateEscalationPolicyLevel) throws ApiException {
+    public EscalationPolicyLevelResponse updateEscalationLevel(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateEscalationPolicyLevel updateEscalationPolicyLevel) throws ApiException {
         ApiResponse<EscalationPolicyLevelResponse> localVarResp = updateEscalationLevelWithHttpInfo(id, updateEscalationPolicyLevel);
         return localVarResp.getData();
     }
@@ -448,7 +448,7 @@ public class EscalationLevelsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<EscalationPolicyLevelResponse> updateEscalationLevelWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateEscalationPolicyLevel updateEscalationPolicyLevel) throws ApiException {
+    public ApiResponse<EscalationPolicyLevelResponse> updateEscalationLevelWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateEscalationPolicyLevel updateEscalationPolicyLevel) throws ApiException {
         okhttp3.Call localVarCall = updateEscalationLevelValidateBeforeCall(id, updateEscalationPolicyLevel, null);
         Type localVarReturnType = new TypeToken<EscalationPolicyLevelResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -470,7 +470,7 @@ public class EscalationLevelsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateEscalationLevelAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateEscalationPolicyLevel updateEscalationPolicyLevel, final ApiCallback<EscalationPolicyLevelResponse> _callback) throws ApiException {
+    public okhttp3.Call updateEscalationLevelAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateEscalationPolicyLevel updateEscalationPolicyLevel, final ApiCallback<EscalationPolicyLevelResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateEscalationLevelValidateBeforeCall(id, updateEscalationPolicyLevel, _callback);
         Type localVarReturnType = new TypeToken<EscalationPolicyLevelResponse>(){}.getType();

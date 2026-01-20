@@ -49,22 +49,22 @@ import com.rootly.client.JSON;
 /**
  * ResolveAlertDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ResolveAlertDataAttributes {
   public static final String SERIALIZED_NAME_RESOLUTION_MESSAGE = "resolution_message";
   @SerializedName(SERIALIZED_NAME_RESOLUTION_MESSAGE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String resolutionMessage;
 
   public static final String SERIALIZED_NAME_RESOLVE_RELATED_INCIDENTS = "resolve_related_incidents";
   @SerializedName(SERIALIZED_NAME_RESOLVE_RELATED_INCIDENTS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean resolveRelatedIncidents;
 
   public ResolveAlertDataAttributes() {
   }
 
-  public ResolveAlertDataAttributes resolutionMessage(@javax.annotation.Nullable String resolutionMessage) {
+  public ResolveAlertDataAttributes resolutionMessage(@jakarta.annotation.Nullable String resolutionMessage) {
     this.resolutionMessage = resolutionMessage;
     return this;
   }
@@ -73,17 +73,17 @@ public class ResolveAlertDataAttributes {
    * How was the alert resolved?
    * @return resolutionMessage
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getResolutionMessage() {
     return resolutionMessage;
   }
 
-  public void setResolutionMessage(@javax.annotation.Nullable String resolutionMessage) {
+  public void setResolutionMessage(@jakarta.annotation.Nullable String resolutionMessage) {
     this.resolutionMessage = resolutionMessage;
   }
 
 
-  public ResolveAlertDataAttributes resolveRelatedIncidents(@javax.annotation.Nullable Boolean resolveRelatedIncidents) {
+  public ResolveAlertDataAttributes resolveRelatedIncidents(@jakarta.annotation.Nullable Boolean resolveRelatedIncidents) {
     this.resolveRelatedIncidents = resolveRelatedIncidents;
     return this;
   }
@@ -92,12 +92,12 @@ public class ResolveAlertDataAttributes {
    * Resolve all associated incidents
    * @return resolveRelatedIncidents
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getResolveRelatedIncidents() {
     return resolveRelatedIncidents;
   }
 
-  public void setResolveRelatedIncidents(@javax.annotation.Nullable Boolean resolveRelatedIncidents) {
+  public void setResolveRelatedIncidents(@jakarta.annotation.Nullable Boolean resolveRelatedIncidents) {
     this.resolveRelatedIncidents = resolveRelatedIncidents;
   }
 

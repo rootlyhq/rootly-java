@@ -48,26 +48,26 @@ import com.rootly.client.JSON;
 /**
  * UpdateFormFieldPlacementDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateFormFieldPlacementDataAttributes {
   public static final String SERIALIZED_NAME_FORM_SET_ID = "form_set_id";
   @SerializedName(SERIALIZED_NAME_FORM_SET_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String formSetId;
 
   public static final String SERIALIZED_NAME_FORM = "form";
   @SerializedName(SERIALIZED_NAME_FORM)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String form;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public static final String SERIALIZED_NAME_REQUIRED = "required";
   @SerializedName(SERIALIZED_NAME_REQUIRED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean required;
 
   /**
@@ -124,7 +124,7 @@ public class UpdateFormFieldPlacementDataAttributes {
 
   public static final String SERIALIZED_NAME_REQUIRED_OPERATOR = "required_operator";
   @SerializedName(SERIALIZED_NAME_REQUIRED_OPERATOR)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private RequiredOperatorEnum requiredOperator;
 
   /**
@@ -181,18 +181,18 @@ public class UpdateFormFieldPlacementDataAttributes {
 
   public static final String SERIALIZED_NAME_PLACEMENT_OPERATOR = "placement_operator";
   @SerializedName(SERIALIZED_NAME_PLACEMENT_OPERATOR)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private PlacementOperatorEnum placementOperator;
 
   public static final String SERIALIZED_NAME_NON_EDITABLE = "non_editable";
   @SerializedName(SERIALIZED_NAME_NON_EDITABLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean nonEditable;
 
   public UpdateFormFieldPlacementDataAttributes() {
   }
 
-  public UpdateFormFieldPlacementDataAttributes formSetId(@javax.annotation.Nullable String formSetId) {
+  public UpdateFormFieldPlacementDataAttributes formSetId(@jakarta.annotation.Nullable String formSetId) {
     this.formSetId = formSetId;
     return this;
   }
@@ -201,17 +201,17 @@ public class UpdateFormFieldPlacementDataAttributes {
    * The form set this field is placed in.
    * @return formSetId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getFormSetId() {
     return formSetId;
   }
 
-  public void setFormSetId(@javax.annotation.Nullable String formSetId) {
+  public void setFormSetId(@jakarta.annotation.Nullable String formSetId) {
     this.formSetId = formSetId;
   }
 
 
-  public UpdateFormFieldPlacementDataAttributes form(@javax.annotation.Nullable String form) {
+  public UpdateFormFieldPlacementDataAttributes form(@jakarta.annotation.Nullable String form) {
     this.form = form;
     return this;
   }
@@ -220,17 +220,17 @@ public class UpdateFormFieldPlacementDataAttributes {
    * The form this field is placed on.
    * @return form
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getForm() {
     return form;
   }
 
-  public void setForm(@javax.annotation.Nullable String form) {
+  public void setForm(@jakarta.annotation.Nullable String form) {
     this.form = form;
   }
 
 
-  public UpdateFormFieldPlacementDataAttributes position(@javax.annotation.Nullable Integer position) {
+  public UpdateFormFieldPlacementDataAttributes position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -239,17 +239,17 @@ public class UpdateFormFieldPlacementDataAttributes {
    * The position of the field placement.
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 
 
-  public UpdateFormFieldPlacementDataAttributes required(@javax.annotation.Nullable Boolean required) {
+  public UpdateFormFieldPlacementDataAttributes required(@jakarta.annotation.Nullable Boolean required) {
     this.required = required;
     return this;
   }
@@ -258,17 +258,17 @@ public class UpdateFormFieldPlacementDataAttributes {
    * Whether the field is unconditionally required on this form.
    * @return required
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getRequired() {
     return required;
   }
 
-  public void setRequired(@javax.annotation.Nullable Boolean required) {
+  public void setRequired(@jakarta.annotation.Nullable Boolean required) {
     this.required = required;
   }
 
 
-  public UpdateFormFieldPlacementDataAttributes requiredOperator(@javax.annotation.Nullable RequiredOperatorEnum requiredOperator) {
+  public UpdateFormFieldPlacementDataAttributes requiredOperator(@jakarta.annotation.Nullable RequiredOperatorEnum requiredOperator) {
     this.requiredOperator = requiredOperator;
     return this;
   }
@@ -277,17 +277,17 @@ public class UpdateFormFieldPlacementDataAttributes {
    * Logical operator when evaluating multiple form_field_placement_conditions with conditioned&#x3D;required
    * @return requiredOperator
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public RequiredOperatorEnum getRequiredOperator() {
     return requiredOperator;
   }
 
-  public void setRequiredOperator(@javax.annotation.Nullable RequiredOperatorEnum requiredOperator) {
+  public void setRequiredOperator(@jakarta.annotation.Nullable RequiredOperatorEnum requiredOperator) {
     this.requiredOperator = requiredOperator;
   }
 
 
-  public UpdateFormFieldPlacementDataAttributes placementOperator(@javax.annotation.Nullable PlacementOperatorEnum placementOperator) {
+  public UpdateFormFieldPlacementDataAttributes placementOperator(@jakarta.annotation.Nullable PlacementOperatorEnum placementOperator) {
     this.placementOperator = placementOperator;
     return this;
   }
@@ -296,17 +296,17 @@ public class UpdateFormFieldPlacementDataAttributes {
    * Logical operator when evaluating multiple form_field_placement_conditions with conditioned&#x3D;placement
    * @return placementOperator
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public PlacementOperatorEnum getPlacementOperator() {
     return placementOperator;
   }
 
-  public void setPlacementOperator(@javax.annotation.Nullable PlacementOperatorEnum placementOperator) {
+  public void setPlacementOperator(@jakarta.annotation.Nullable PlacementOperatorEnum placementOperator) {
     this.placementOperator = placementOperator;
   }
 
 
-  public UpdateFormFieldPlacementDataAttributes nonEditable(@javax.annotation.Nullable Boolean nonEditable) {
+  public UpdateFormFieldPlacementDataAttributes nonEditable(@jakarta.annotation.Nullable Boolean nonEditable) {
     this.nonEditable = nonEditable;
     return this;
   }
@@ -315,12 +315,12 @@ public class UpdateFormFieldPlacementDataAttributes {
    * Whether the field is read-only and cannot be edited by users.
    * @return nonEditable
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getNonEditable() {
     return nonEditable;
   }
 
-  public void setNonEditable(@javax.annotation.Nullable Boolean nonEditable) {
+  public void setNonEditable(@jakarta.annotation.Nullable Boolean nonEditable) {
     this.nonEditable = nonEditable;
   }
 

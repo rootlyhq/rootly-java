@@ -50,11 +50,11 @@ import com.rootly.client.JSON;
 /**
  * Authorization
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Authorization {
   public static final String SERIALIZED_NAME_AUTHORIZABLE_ID = "authorizable_id";
   @SerializedName(SERIALIZED_NAME_AUTHORIZABLE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String authorizableId;
 
   /**
@@ -109,12 +109,12 @@ public class Authorization {
 
   public static final String SERIALIZED_NAME_AUTHORIZABLE_TYPE = "authorizable_type";
   @SerializedName(SERIALIZED_NAME_AUTHORIZABLE_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private AuthorizableTypeEnum authorizableType;
 
   public static final String SERIALIZED_NAME_GRANTEE_ID = "grantee_id";
   @SerializedName(SERIALIZED_NAME_GRANTEE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String granteeId;
 
   /**
@@ -171,7 +171,7 @@ public class Authorization {
 
   public static final String SERIALIZED_NAME_GRANTEE_TYPE = "grantee_type";
   @SerializedName(SERIALIZED_NAME_GRANTEE_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private GranteeTypeEnum granteeType;
 
   /**
@@ -232,23 +232,23 @@ public class Authorization {
 
   public static final String SERIALIZED_NAME_PERMISSIONS = "permissions";
   @SerializedName(SERIALIZED_NAME_PERMISSIONS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<PermissionsEnum> permissions = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public Authorization() {
   }
 
-  public Authorization authorizableId(@javax.annotation.Nonnull String authorizableId) {
+  public Authorization authorizableId(@jakarta.annotation.Nonnull String authorizableId) {
     this.authorizableId = authorizableId;
     return this;
   }
@@ -257,17 +257,17 @@ public class Authorization {
    * The id of the resource being accessed.
    * @return authorizableId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getAuthorizableId() {
     return authorizableId;
   }
 
-  public void setAuthorizableId(@javax.annotation.Nonnull String authorizableId) {
+  public void setAuthorizableId(@jakarta.annotation.Nonnull String authorizableId) {
     this.authorizableId = authorizableId;
   }
 
 
-  public Authorization authorizableType(@javax.annotation.Nonnull AuthorizableTypeEnum authorizableType) {
+  public Authorization authorizableType(@jakarta.annotation.Nonnull AuthorizableTypeEnum authorizableType) {
     this.authorizableType = authorizableType;
     return this;
   }
@@ -276,17 +276,17 @@ public class Authorization {
    * The type of resource being accessed.
    * @return authorizableType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public AuthorizableTypeEnum getAuthorizableType() {
     return authorizableType;
   }
 
-  public void setAuthorizableType(@javax.annotation.Nonnull AuthorizableTypeEnum authorizableType) {
+  public void setAuthorizableType(@jakarta.annotation.Nonnull AuthorizableTypeEnum authorizableType) {
     this.authorizableType = authorizableType;
   }
 
 
-  public Authorization granteeId(@javax.annotation.Nonnull String granteeId) {
+  public Authorization granteeId(@jakarta.annotation.Nonnull String granteeId) {
     this.granteeId = granteeId;
     return this;
   }
@@ -295,17 +295,17 @@ public class Authorization {
    * The resource id granted access.
    * @return granteeId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getGranteeId() {
     return granteeId;
   }
 
-  public void setGranteeId(@javax.annotation.Nonnull String granteeId) {
+  public void setGranteeId(@jakarta.annotation.Nonnull String granteeId) {
     this.granteeId = granteeId;
   }
 
 
-  public Authorization granteeType(@javax.annotation.Nonnull GranteeTypeEnum granteeType) {
+  public Authorization granteeType(@jakarta.annotation.Nonnull GranteeTypeEnum granteeType) {
     this.granteeType = granteeType;
     return this;
   }
@@ -314,17 +314,17 @@ public class Authorization {
    * The type of resource granted access.
    * @return granteeType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public GranteeTypeEnum getGranteeType() {
     return granteeType;
   }
 
-  public void setGranteeType(@javax.annotation.Nonnull GranteeTypeEnum granteeType) {
+  public void setGranteeType(@jakarta.annotation.Nonnull GranteeTypeEnum granteeType) {
     this.granteeType = granteeType;
   }
 
 
-  public Authorization permissions(@javax.annotation.Nonnull List<PermissionsEnum> permissions) {
+  public Authorization permissions(@jakarta.annotation.Nonnull List<PermissionsEnum> permissions) {
     this.permissions = permissions;
     return this;
   }
@@ -341,17 +341,17 @@ public class Authorization {
    * Get permissions
    * @return permissions
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<PermissionsEnum> getPermissions() {
     return permissions;
   }
 
-  public void setPermissions(@javax.annotation.Nonnull List<PermissionsEnum> permissions) {
+  public void setPermissions(@jakarta.annotation.Nonnull List<PermissionsEnum> permissions) {
     this.permissions = permissions;
   }
 
 
-  public Authorization createdAt(@javax.annotation.Nonnull String createdAt) {
+  public Authorization createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -360,17 +360,17 @@ public class Authorization {
    * Get createdAt
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public Authorization updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public Authorization updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -379,12 +379,12 @@ public class Authorization {
    * Get updatedAt
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

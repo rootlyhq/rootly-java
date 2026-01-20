@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * NewDashboardPanelDataAttributesParamsLegend
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewDashboardPanelDataAttributesParamsLegend {
   /**
    * Gets or Sets groups
@@ -104,13 +104,13 @@ public class NewDashboardPanelDataAttributesParamsLegend {
 
   public static final String SERIALIZED_NAME_GROUPS = "groups";
   @SerializedName(SERIALIZED_NAME_GROUPS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private GroupsEnum groups = GroupsEnum.ALL;
 
   public NewDashboardPanelDataAttributesParamsLegend() {
   }
 
-  public NewDashboardPanelDataAttributesParamsLegend groups(@javax.annotation.Nullable GroupsEnum groups) {
+  public NewDashboardPanelDataAttributesParamsLegend groups(@jakarta.annotation.Nullable GroupsEnum groups) {
     this.groups = groups;
     return this;
   }
@@ -119,12 +119,12 @@ public class NewDashboardPanelDataAttributesParamsLegend {
    * Get groups
    * @return groups
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public GroupsEnum getGroups() {
     return groups;
   }
 
-  public void setGroups(@javax.annotation.Nullable GroupsEnum groups) {
+  public void setGroups(@jakarta.annotation.Nullable GroupsEnum groups) {
     this.groups = groups;
   }
 

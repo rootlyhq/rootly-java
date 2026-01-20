@@ -91,7 +91,7 @@ public class LiveCallRoutersApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createLiveCallRouterCall(@javax.annotation.Nonnull NewLiveCallRouter newLiveCallRouter, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createLiveCallRouterCall(@jakarta.annotation.Nonnull NewLiveCallRouter newLiveCallRouter, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -137,7 +137,7 @@ public class LiveCallRoutersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createLiveCallRouterValidateBeforeCall(@javax.annotation.Nonnull NewLiveCallRouter newLiveCallRouter, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createLiveCallRouterValidateBeforeCall(@jakarta.annotation.Nonnull NewLiveCallRouter newLiveCallRouter, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'newLiveCallRouter' is set
         if (newLiveCallRouter == null) {
             throw new ApiException("Missing the required parameter 'newLiveCallRouter' when calling createLiveCallRouter(Async)");
@@ -162,7 +162,7 @@ public class LiveCallRoutersApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public LiveCallRouterResponse createLiveCallRouter(@javax.annotation.Nonnull NewLiveCallRouter newLiveCallRouter) throws ApiException {
+    public LiveCallRouterResponse createLiveCallRouter(@jakarta.annotation.Nonnull NewLiveCallRouter newLiveCallRouter) throws ApiException {
         ApiResponse<LiveCallRouterResponse> localVarResp = createLiveCallRouterWithHttpInfo(newLiveCallRouter);
         return localVarResp.getData();
     }
@@ -182,7 +182,7 @@ public class LiveCallRoutersApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<LiveCallRouterResponse> createLiveCallRouterWithHttpInfo(@javax.annotation.Nonnull NewLiveCallRouter newLiveCallRouter) throws ApiException {
+    public ApiResponse<LiveCallRouterResponse> createLiveCallRouterWithHttpInfo(@jakarta.annotation.Nonnull NewLiveCallRouter newLiveCallRouter) throws ApiException {
         okhttp3.Call localVarCall = createLiveCallRouterValidateBeforeCall(newLiveCallRouter, null);
         Type localVarReturnType = new TypeToken<LiveCallRouterResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -204,7 +204,7 @@ public class LiveCallRoutersApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createLiveCallRouterAsync(@javax.annotation.Nonnull NewLiveCallRouter newLiveCallRouter, final ApiCallback<LiveCallRouterResponse> _callback) throws ApiException {
+    public okhttp3.Call createLiveCallRouterAsync(@jakarta.annotation.Nonnull NewLiveCallRouter newLiveCallRouter, final ApiCallback<LiveCallRouterResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createLiveCallRouterValidateBeforeCall(newLiveCallRouter, _callback);
         Type localVarReturnType = new TypeToken<LiveCallRouterResponse>(){}.getType();
@@ -225,7 +225,7 @@ public class LiveCallRoutersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteLiveCallRouterCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteLiveCallRouterCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -271,7 +271,7 @@ public class LiveCallRoutersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteLiveCallRouterValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteLiveCallRouterValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteLiveCallRouter(Async)");
@@ -295,7 +295,7 @@ public class LiveCallRoutersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public LiveCallRouterResponse deleteLiveCallRouter(@javax.annotation.Nonnull String id) throws ApiException {
+    public LiveCallRouterResponse deleteLiveCallRouter(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<LiveCallRouterResponse> localVarResp = deleteLiveCallRouterWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -314,7 +314,7 @@ public class LiveCallRoutersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<LiveCallRouterResponse> deleteLiveCallRouterWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<LiveCallRouterResponse> deleteLiveCallRouterWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteLiveCallRouterValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<LiveCallRouterResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -335,7 +335,7 @@ public class LiveCallRoutersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteLiveCallRouterAsync(@javax.annotation.Nonnull String id, final ApiCallback<LiveCallRouterResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteLiveCallRouterAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<LiveCallRouterResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteLiveCallRouterValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<LiveCallRouterResponse>(){}.getType();
@@ -357,7 +357,7 @@ public class LiveCallRoutersApi {
         <tr><td> 422 </td><td> live_call_router without required params </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call generatePhoneNumberLiveCallRouterCall(@javax.annotation.Nonnull String countryCode, @javax.annotation.Nonnull String phoneType, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call generatePhoneNumberLiveCallRouterCall(@jakarta.annotation.Nonnull String countryCode, @jakarta.annotation.Nonnull String phoneType, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -410,7 +410,7 @@ public class LiveCallRoutersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call generatePhoneNumberLiveCallRouterValidateBeforeCall(@javax.annotation.Nonnull String countryCode, @javax.annotation.Nonnull String phoneType, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call generatePhoneNumberLiveCallRouterValidateBeforeCall(@jakarta.annotation.Nonnull String countryCode, @jakarta.annotation.Nonnull String phoneType, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'countryCode' is set
         if (countryCode == null) {
             throw new ApiException("Missing the required parameter 'countryCode' when calling generatePhoneNumberLiveCallRouter(Async)");
@@ -439,7 +439,7 @@ public class LiveCallRoutersApi {
         <tr><td> 422 </td><td> live_call_router without required params </td><td>  -  </td></tr>
      </table>
      */
-    public void generatePhoneNumberLiveCallRouter(@javax.annotation.Nonnull String countryCode, @javax.annotation.Nonnull String phoneType) throws ApiException {
+    public void generatePhoneNumberLiveCallRouter(@jakarta.annotation.Nonnull String countryCode, @jakarta.annotation.Nonnull String phoneType) throws ApiException {
         generatePhoneNumberLiveCallRouterWithHttpInfo(countryCode, phoneType);
     }
 
@@ -458,7 +458,7 @@ public class LiveCallRoutersApi {
         <tr><td> 422 </td><td> live_call_router without required params </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> generatePhoneNumberLiveCallRouterWithHttpInfo(@javax.annotation.Nonnull String countryCode, @javax.annotation.Nonnull String phoneType) throws ApiException {
+    public ApiResponse<Void> generatePhoneNumberLiveCallRouterWithHttpInfo(@jakarta.annotation.Nonnull String countryCode, @jakarta.annotation.Nonnull String phoneType) throws ApiException {
         okhttp3.Call localVarCall = generatePhoneNumberLiveCallRouterValidateBeforeCall(countryCode, phoneType, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -479,7 +479,7 @@ public class LiveCallRoutersApi {
         <tr><td> 422 </td><td> live_call_router without required params </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call generatePhoneNumberLiveCallRouterAsync(@javax.annotation.Nonnull String countryCode, @javax.annotation.Nonnull String phoneType, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call generatePhoneNumberLiveCallRouterAsync(@jakarta.annotation.Nonnull String countryCode, @jakarta.annotation.Nonnull String phoneType, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = generatePhoneNumberLiveCallRouterValidateBeforeCall(countryCode, phoneType, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -499,7 +499,7 @@ public class LiveCallRoutersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getLiveCallRouterCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getLiveCallRouterCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -545,7 +545,7 @@ public class LiveCallRoutersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getLiveCallRouterValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getLiveCallRouterValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getLiveCallRouter(Async)");
@@ -569,7 +569,7 @@ public class LiveCallRoutersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public LiveCallRouterResponse getLiveCallRouter(@javax.annotation.Nonnull String id) throws ApiException {
+    public LiveCallRouterResponse getLiveCallRouter(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<LiveCallRouterResponse> localVarResp = getLiveCallRouterWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -588,7 +588,7 @@ public class LiveCallRoutersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<LiveCallRouterResponse> getLiveCallRouterWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<LiveCallRouterResponse> getLiveCallRouterWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getLiveCallRouterValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<LiveCallRouterResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -609,7 +609,7 @@ public class LiveCallRoutersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getLiveCallRouterAsync(@javax.annotation.Nonnull String id, final ApiCallback<LiveCallRouterResponse> _callback) throws ApiException {
+    public okhttp3.Call getLiveCallRouterAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<LiveCallRouterResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getLiveCallRouterValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<LiveCallRouterResponse>(){}.getType();
@@ -639,7 +639,7 @@ public class LiveCallRoutersApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listLiveCallRoutersCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listLiveCallRoutersCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -728,7 +728,7 @@ public class LiveCallRoutersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listLiveCallRoutersValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listLiveCallRoutersValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         return listLiveCallRoutersCall(include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
 
     }
@@ -756,7 +756,7 @@ public class LiveCallRoutersApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public LiveCallRouterList listLiveCallRouters(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+    public LiveCallRouterList listLiveCallRouters(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
         ApiResponse<LiveCallRouterList> localVarResp = listLiveCallRoutersWithHttpInfo(include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
         return localVarResp.getData();
     }
@@ -784,7 +784,7 @@ public class LiveCallRoutersApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<LiveCallRouterList> listLiveCallRoutersWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+    public ApiResponse<LiveCallRouterList> listLiveCallRoutersWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
         okhttp3.Call localVarCall = listLiveCallRoutersValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, null);
         Type localVarReturnType = new TypeToken<LiveCallRouterList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -814,7 +814,7 @@ public class LiveCallRoutersApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listLiveCallRoutersAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback<LiveCallRouterList> _callback) throws ApiException {
+    public okhttp3.Call listLiveCallRoutersAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback<LiveCallRouterList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listLiveCallRoutersValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
         Type localVarReturnType = new TypeToken<LiveCallRouterList>(){}.getType();
@@ -836,7 +836,7 @@ public class LiveCallRoutersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateLiveCallRouterCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateLiveCallRouter updateLiveCallRouter, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateLiveCallRouterCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateLiveCallRouter updateLiveCallRouter, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -883,7 +883,7 @@ public class LiveCallRoutersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateLiveCallRouterValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateLiveCallRouter updateLiveCallRouter, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateLiveCallRouterValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateLiveCallRouter updateLiveCallRouter, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateLiveCallRouter(Async)");
@@ -913,7 +913,7 @@ public class LiveCallRoutersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public LiveCallRouterResponse updateLiveCallRouter(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateLiveCallRouter updateLiveCallRouter) throws ApiException {
+    public LiveCallRouterResponse updateLiveCallRouter(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateLiveCallRouter updateLiveCallRouter) throws ApiException {
         ApiResponse<LiveCallRouterResponse> localVarResp = updateLiveCallRouterWithHttpInfo(id, updateLiveCallRouter);
         return localVarResp.getData();
     }
@@ -933,7 +933,7 @@ public class LiveCallRoutersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<LiveCallRouterResponse> updateLiveCallRouterWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateLiveCallRouter updateLiveCallRouter) throws ApiException {
+    public ApiResponse<LiveCallRouterResponse> updateLiveCallRouterWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateLiveCallRouter updateLiveCallRouter) throws ApiException {
         okhttp3.Call localVarCall = updateLiveCallRouterValidateBeforeCall(id, updateLiveCallRouter, null);
         Type localVarReturnType = new TypeToken<LiveCallRouterResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -955,7 +955,7 @@ public class LiveCallRoutersApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateLiveCallRouterAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateLiveCallRouter updateLiveCallRouter, final ApiCallback<LiveCallRouterResponse> _callback) throws ApiException {
+    public okhttp3.Call updateLiveCallRouterAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateLiveCallRouter updateLiveCallRouter, final ApiCallback<LiveCallRouterResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateLiveCallRouterValidateBeforeCall(id, updateLiveCallRouter, _callback);
         Type localVarReturnType = new TypeToken<LiveCallRouterResponse>(){}.getType();

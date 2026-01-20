@@ -93,7 +93,7 @@ public class OverrideShiftsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createOverrideShiftCall(@javax.annotation.Nonnull String scheduleId, @javax.annotation.Nonnull NewOverrideShift newOverrideShift, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createOverrideShiftCall(@jakarta.annotation.Nonnull String scheduleId, @jakarta.annotation.Nonnull NewOverrideShift newOverrideShift, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -140,7 +140,7 @@ public class OverrideShiftsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createOverrideShiftValidateBeforeCall(@javax.annotation.Nonnull String scheduleId, @javax.annotation.Nonnull NewOverrideShift newOverrideShift, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createOverrideShiftValidateBeforeCall(@jakarta.annotation.Nonnull String scheduleId, @jakarta.annotation.Nonnull NewOverrideShift newOverrideShift, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'scheduleId' is set
         if (scheduleId == null) {
             throw new ApiException("Missing the required parameter 'scheduleId' when calling createOverrideShift(Async)");
@@ -171,7 +171,7 @@ public class OverrideShiftsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public OverrideShiftResponse createOverrideShift(@javax.annotation.Nonnull String scheduleId, @javax.annotation.Nonnull NewOverrideShift newOverrideShift) throws ApiException {
+    public OverrideShiftResponse createOverrideShift(@jakarta.annotation.Nonnull String scheduleId, @jakarta.annotation.Nonnull NewOverrideShift newOverrideShift) throws ApiException {
         ApiResponse<OverrideShiftResponse> localVarResp = createOverrideShiftWithHttpInfo(scheduleId, newOverrideShift);
         return localVarResp.getData();
     }
@@ -192,7 +192,7 @@ public class OverrideShiftsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OverrideShiftResponse> createOverrideShiftWithHttpInfo(@javax.annotation.Nonnull String scheduleId, @javax.annotation.Nonnull NewOverrideShift newOverrideShift) throws ApiException {
+    public ApiResponse<OverrideShiftResponse> createOverrideShiftWithHttpInfo(@jakarta.annotation.Nonnull String scheduleId, @jakarta.annotation.Nonnull NewOverrideShift newOverrideShift) throws ApiException {
         okhttp3.Call localVarCall = createOverrideShiftValidateBeforeCall(scheduleId, newOverrideShift, null);
         Type localVarReturnType = new TypeToken<OverrideShiftResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -215,7 +215,7 @@ public class OverrideShiftsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createOverrideShiftAsync(@javax.annotation.Nonnull String scheduleId, @javax.annotation.Nonnull NewOverrideShift newOverrideShift, final ApiCallback<OverrideShiftResponse> _callback) throws ApiException {
+    public okhttp3.Call createOverrideShiftAsync(@jakarta.annotation.Nonnull String scheduleId, @jakarta.annotation.Nonnull NewOverrideShift newOverrideShift, final ApiCallback<OverrideShiftResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createOverrideShiftValidateBeforeCall(scheduleId, newOverrideShift, _callback);
         Type localVarReturnType = new TypeToken<OverrideShiftResponse>(){}.getType();
@@ -236,7 +236,7 @@ public class OverrideShiftsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteOnCallShadowCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteOnCallShadowCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -282,7 +282,7 @@ public class OverrideShiftsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteOnCallShadowValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteOnCallShadowValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteOnCallShadow(Async)");
@@ -306,7 +306,7 @@ public class OverrideShiftsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public OnCallShadowResponse deleteOnCallShadow(@javax.annotation.Nonnull String id) throws ApiException {
+    public OnCallShadowResponse deleteOnCallShadow(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<OnCallShadowResponse> localVarResp = deleteOnCallShadowWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -325,7 +325,7 @@ public class OverrideShiftsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OnCallShadowResponse> deleteOnCallShadowWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<OnCallShadowResponse> deleteOnCallShadowWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteOnCallShadowValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<OnCallShadowResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -346,7 +346,7 @@ public class OverrideShiftsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteOnCallShadowAsync(@javax.annotation.Nonnull String id, final ApiCallback<OnCallShadowResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteOnCallShadowAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<OnCallShadowResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteOnCallShadowValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<OnCallShadowResponse>(){}.getType();
@@ -367,7 +367,7 @@ public class OverrideShiftsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteOverrideShiftCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteOverrideShiftCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -413,7 +413,7 @@ public class OverrideShiftsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteOverrideShiftValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteOverrideShiftValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteOverrideShift(Async)");
@@ -437,7 +437,7 @@ public class OverrideShiftsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public OverrideShiftResponse deleteOverrideShift(@javax.annotation.Nonnull String id) throws ApiException {
+    public OverrideShiftResponse deleteOverrideShift(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<OverrideShiftResponse> localVarResp = deleteOverrideShiftWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -456,7 +456,7 @@ public class OverrideShiftsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OverrideShiftResponse> deleteOverrideShiftWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<OverrideShiftResponse> deleteOverrideShiftWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteOverrideShiftValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<OverrideShiftResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -477,7 +477,7 @@ public class OverrideShiftsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteOverrideShiftAsync(@javax.annotation.Nonnull String id, final ApiCallback<OverrideShiftResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteOverrideShiftAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<OverrideShiftResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteOverrideShiftValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<OverrideShiftResponse>(){}.getType();
@@ -498,7 +498,7 @@ public class OverrideShiftsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getOverrideShiftCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getOverrideShiftCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -544,7 +544,7 @@ public class OverrideShiftsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getOverrideShiftValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getOverrideShiftValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getOverrideShift(Async)");
@@ -568,7 +568,7 @@ public class OverrideShiftsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public OverrideShiftResponse getOverrideShift(@javax.annotation.Nonnull String id) throws ApiException {
+    public OverrideShiftResponse getOverrideShift(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<OverrideShiftResponse> localVarResp = getOverrideShiftWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -587,7 +587,7 @@ public class OverrideShiftsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OverrideShiftResponse> getOverrideShiftWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<OverrideShiftResponse> getOverrideShiftWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getOverrideShiftValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<OverrideShiftResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -608,7 +608,7 @@ public class OverrideShiftsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getOverrideShiftAsync(@javax.annotation.Nonnull String id, final ApiCallback<OverrideShiftResponse> _callback) throws ApiException {
+    public okhttp3.Call getOverrideShiftAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<OverrideShiftResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getOverrideShiftValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<OverrideShiftResponse>(){}.getType();
@@ -631,7 +631,7 @@ public class OverrideShiftsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listOverrideShiftsCall(@javax.annotation.Nonnull String scheduleId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listOverrideShiftsCall(@jakarta.annotation.Nonnull String scheduleId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -689,7 +689,7 @@ public class OverrideShiftsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listOverrideShiftsValidateBeforeCall(@javax.annotation.Nonnull String scheduleId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listOverrideShiftsValidateBeforeCall(@jakarta.annotation.Nonnull String scheduleId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'scheduleId' is set
         if (scheduleId == null) {
             throw new ApiException("Missing the required parameter 'scheduleId' when calling listOverrideShifts(Async)");
@@ -715,7 +715,7 @@ public class OverrideShiftsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public OverrideShiftList listOverrideShifts(@javax.annotation.Nonnull String scheduleId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+    public OverrideShiftList listOverrideShifts(@jakarta.annotation.Nonnull String scheduleId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
         ApiResponse<OverrideShiftList> localVarResp = listOverrideShiftsWithHttpInfo(scheduleId, include, pageNumber, pageSize);
         return localVarResp.getData();
     }
@@ -736,7 +736,7 @@ public class OverrideShiftsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OverrideShiftList> listOverrideShiftsWithHttpInfo(@javax.annotation.Nonnull String scheduleId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+    public ApiResponse<OverrideShiftList> listOverrideShiftsWithHttpInfo(@jakarta.annotation.Nonnull String scheduleId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
         okhttp3.Call localVarCall = listOverrideShiftsValidateBeforeCall(scheduleId, include, pageNumber, pageSize, null);
         Type localVarReturnType = new TypeToken<OverrideShiftList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -759,7 +759,7 @@ public class OverrideShiftsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listOverrideShiftsAsync(@javax.annotation.Nonnull String scheduleId, @javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback<OverrideShiftList> _callback) throws ApiException {
+    public okhttp3.Call listOverrideShiftsAsync(@jakarta.annotation.Nonnull String scheduleId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback<OverrideShiftList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listOverrideShiftsValidateBeforeCall(scheduleId, include, pageNumber, pageSize, _callback);
         Type localVarReturnType = new TypeToken<OverrideShiftList>(){}.getType();
@@ -781,7 +781,7 @@ public class OverrideShiftsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateOverrideShiftCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateOverrideShift updateOverrideShift, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateOverrideShiftCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateOverrideShift updateOverrideShift, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -828,7 +828,7 @@ public class OverrideShiftsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateOverrideShiftValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateOverrideShift updateOverrideShift, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateOverrideShiftValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateOverrideShift updateOverrideShift, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateOverrideShift(Async)");
@@ -858,7 +858,7 @@ public class OverrideShiftsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public OverrideShiftResponse updateOverrideShift(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateOverrideShift updateOverrideShift) throws ApiException {
+    public OverrideShiftResponse updateOverrideShift(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateOverrideShift updateOverrideShift) throws ApiException {
         ApiResponse<OverrideShiftResponse> localVarResp = updateOverrideShiftWithHttpInfo(id, updateOverrideShift);
         return localVarResp.getData();
     }
@@ -878,7 +878,7 @@ public class OverrideShiftsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OverrideShiftResponse> updateOverrideShiftWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateOverrideShift updateOverrideShift) throws ApiException {
+    public ApiResponse<OverrideShiftResponse> updateOverrideShiftWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateOverrideShift updateOverrideShift) throws ApiException {
         okhttp3.Call localVarCall = updateOverrideShiftValidateBeforeCall(id, updateOverrideShift, null);
         Type localVarReturnType = new TypeToken<OverrideShiftResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -900,7 +900,7 @@ public class OverrideShiftsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateOverrideShiftAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateOverrideShift updateOverrideShift, final ApiCallback<OverrideShiftResponse> _callback) throws ApiException {
+    public okhttp3.Call updateOverrideShiftAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateOverrideShift updateOverrideShift, final ApiCallback<OverrideShiftResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateOverrideShiftValidateBeforeCall(id, updateOverrideShift, _callback);
         Type localVarReturnType = new TypeToken<OverrideShiftResponse>(){}.getType();
