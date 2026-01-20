@@ -28,4 +28,5 @@ pom.xml
 LICENSE
 README.md
 CLAUDE.md
+PUBLISHING.md
 .github/dependabot.yml

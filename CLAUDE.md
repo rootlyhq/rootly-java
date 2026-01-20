@@ -157,7 +157,17 @@ The project uses **Spotless** with **Google Java Format (AOSP style)**:
 GitHub Actions workflows:
 - **test.yml** - Runs tests on all branches using JDK 17
 - **maven.yml** - Maven-based build pipeline
-- **publish.yml** - Publishes artifacts
+- **publish.yml** - Publishes artifacts to Maven Central and GitHub Packages (triggered on releases)
+
+## Publishing
+
+See [PUBLISHING.md](PUBLISHING.md) for detailed instructions on publishing releases to Maven Central and GitHub Packages.
+
+Quick overview:
+1. Update version: `make bump-patch` (or bump-minor/bump-major)
+2. Push tag: `make push-tag`
+3. Create GitHub release: `gh release create v0.0.2`
+4. Workflow automatically publishes to both registries
 
 ## Important Notes
 
