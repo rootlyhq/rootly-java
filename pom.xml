@@ -36,7 +36,7 @@
            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>3.14.1</version>
                 <configuration>
                     <fork>true</fork>
                     <meminitial>128m</meminitial>
@@ -50,7 +50,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
-                <version>3.4.1</version>
+                <version>3.6.2</version>
                 <executions>
                     <execution>
                         <id>enforce-maven</id>
@@ -93,7 +93,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.6.1</version>
+                <version>3.9.0</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
@@ -110,7 +110,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.3.0</version>
+                <version>3.5.0</version>
                 <executions>
                     <execution>
                         <goals>
@@ -124,7 +124,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
-                <version>3.5.0</version>
+                <version>3.6.1</version>
                 <executions>
                     <execution>
                         <id>add_sources</id>
@@ -155,7 +155,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.6.3</version>
+                <version>3.12.0</version>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
@@ -178,7 +178,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>3.3.0</version>
+                <version>3.4.0</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
@@ -241,7 +241,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>3.2.1</version>
+                        <version>3.2.8</version>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
@@ -331,7 +331,7 @@
         <jakarta-annotation-version>3.0.0</jakarta-annotation-version>
         <beanvalidation-version>2.0.2</beanvalidation-version>
         <junit-version>5.11.4</junit-version>
-        <junit-platform-runner.version>1.11.4</junit-platform-runner.version>
+        <junit-platform-runner.version>1.14.2</junit-platform-runner.version>
         <jakarta.ws.rs-api-version>4.0.0</jakarta.ws.rs-api-version>
         <jsr311-api-version>1.1.1</jsr311-api-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
