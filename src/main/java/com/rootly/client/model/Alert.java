@@ -57,7 +57,7 @@ import com.rootly.client.JSON;
 /**
  * Alert
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Alert {
   public static final String SERIALIZED_NAME_SHORT_ID = "short_id";
   @SerializedName(SERIALIZED_NAME_SHORT_ID)

@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * NewCustomFieldDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewCustomFieldDataAttributes {
   public static final String SERIALIZED_NAME_LABEL = "label";
   @SerializedName(SERIALIZED_NAME_LABEL)

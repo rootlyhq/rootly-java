@@ -20,11 +20,10 @@ build-docker:
 		-o /local \
 		--additional-properties=artifactId=rootly,projectName=rootly,invokerPackage=com.rootly.client,apiPackage=com.rootly.client.api,modelPackage=com.rootly.client.model,withXml=false,useJakartaEe=true \
 		--skip-validate-spec \
-		--library okhttp-gson \
-		--global-property apiTests=false,modelTests=false
+		--library okhttp-gson
 	@echo "Removing problematic validateJsonElement calls..."
-	find ./src/main/java -type f -name '*.java' -exec sed -i '' '/Object\.validateJsonElement/d' {} +
-	find ./src/main/java -type f -name '*.java' -exec sed -i '' '/UUID\.validateJsonElement/d' {} +
+	find ./src/main/java ./src/test/java -type f -name '*.java' -exec sed -i '' '/Object\.validateJsonElement/d' {} + 2>/dev/null || true
+	find ./src/main/java ./src/test/java -type f -name '*.java' -exec sed -i '' '/UUID\.validateJsonElement/d' {} + 2>/dev/null || true
 	@echo "✓ Client generation complete!"
 
 # Generate client using local openapi-generator (requires Java and openapi-generator installed)
@@ -38,11 +37,10 @@ build-local:
 		-o . \
 		--additional-properties=artifactId=rootly,projectName=rootly,invokerPackage=com.rootly.client,apiPackage=com.rootly.client.api,modelPackage=com.rootly.client.model,withXml=false,useJakartaEe=true \
 		--skip-validate-spec \
-		--library okhttp-gson \
-		--global-property apiTests=false,modelTests=false
+		--library okhttp-gson
 	@echo "Removing problematic validateJsonElement calls..."
-	find ./src/main/java -type f -name '*.java' -exec sed -i '' '/Object\.validateJsonElement/d' {} +
-	find ./src/main/java -type f -name '*.java' -exec sed -i '' '/UUID\.validateJsonElement/d' {} +
+	find ./src/main/java ./src/test/java -type f -name '*.java' -exec sed -i '' '/Object\.validateJsonElement/d' {} + 2>/dev/null || true
+	find ./src/main/java ./src/test/java -type f -name '*.java' -exec sed -i '' '/UUID\.validateJsonElement/d' {} + 2>/dev/null || true
 	@echo "✓ Client generation complete!"
 
 # Upgrade all dependencies to latest versions

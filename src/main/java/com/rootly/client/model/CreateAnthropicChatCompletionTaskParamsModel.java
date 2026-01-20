@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * The Anthropic model. eg: claude-3-5-sonnet-20241022
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateAnthropicChatCompletionTaskParamsModel {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)

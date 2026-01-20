@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * Update an alert event. Note: Only alert events with kind&#x3D;&#39;note&#39; can be updated. You cannot change the kind field.
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:40:32.014316463Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateAlertEvent {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
