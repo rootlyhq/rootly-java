@@ -63,15 +63,30 @@ mvn spotless:check
 The SDK is **auto-generated** from the Rootly OpenAPI specification. To regenerate the code:
 
 ```bash
+# Using Docker (recommended - default)
 make build
+
+# Using local openapi-generator (requires Java + openapi-generator installed)
+make build-local
 ```
 
-This command:
+**Docker-based generation (default):**
+- Uses `openapitools/openapi-generator-cli:v7.13.0` Docker image
+- No local Java installation required
+- Ensures consistent builds across all environments
+- Automatically downloads the OpenAPI spec and generates code
+
+The generation process:
 1. Fetches the OpenAPI spec from `https://rootly-heroku.s3.amazonaws.com/swagger/v1/swagger.json`
-2. Generates Java code using OpenAPI Generator
+2. Generates Java code using OpenAPI Generator v7.13.0
 3. Removes problematic `Object.validateJsonElement` calls via sed
 
-**Important:** The `build.gradle` file is protected from regeneration via `.openapi-generator-ignore`.
+**Protected files:** These files are protected from regeneration via `.openapi-generator-ignore`:
+- `build.gradle` - Custom Gradle configuration
+- `LICENSE` - MIT license
+- `README.md` - User-friendly documentation
+- `CLAUDE.md` - This file
+- `.github/dependabot.yml` - Dependency management
 
 ## Architecture
 
