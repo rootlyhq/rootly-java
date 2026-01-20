@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * NewAlertGroupDataAttributesAttributesInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T17:46:55.918190357Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:02:29.657522921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewAlertGroupDataAttributesAttributesInner {
   public static final String SERIALIZED_NAME_JSON_PATH = "json_path";
   @SerializedName(SERIALIZED_NAME_JSON_PATH)
