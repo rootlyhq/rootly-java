@@ -1,4 +1,4 @@
-.PHONY: build build-docker build-local
+.PHONY: build build-docker build-local upgrade-deps
 
 # Default target uses Docker (recommended - no Java installation required)
 build: build-docker
@@ -30,3 +30,11 @@ build-local:
 	@echo "Removing problematic validateJsonElement calls..."
 	find ./src/main/java ./src/test/java -type f -name '*.java' -exec sed -i '' '/Object\.validateJsonElement/d' {} +
 	@echo "✓ Client generation complete!"
+
+# Upgrade all dependencies to latest versions
+upgrade-deps:
+	@echo "Upgrading dependencies using Maven versions plugin..."
+	docker run --rm -v "$${PWD}:/workspace" -w /workspace maven:3.9-eclipse-temurin-17 \
+		mvn versions:use-latest-versions -DallowMajorUpdates=false -DprocessDependencyManagement=false
+	@echo "✓ Dependencies upgraded in pom.xml"
+	@echo "⚠️  Remember to manually sync versions to build.gradle"
