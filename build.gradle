@@ -106,18 +106,18 @@ ext {
 }
 
 dependencies {
-    implementation 'io.swagger:swagger-annotations:1.6.14'
+    implementation 'io.swagger:swagger-annotations:1.6.16'
     implementation "com.google.code.findbugs:jsr305:3.0.2"
     implementation 'com.squareup.okhttp3:okhttp:4.12.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.12.0'
-    implementation 'com.google.code.gson:gson:2.11.0'
+    implementation 'com.google.code.gson:gson:2.13.2'
     implementation 'io.gsonfire:gson-fire:1.9.0'
     implementation 'jakarta.ws.rs:jakarta.ws.rs-api:4.0.0'
-    implementation 'org.openapitools:jackson-databind-nullable:0.2.6'
-    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.17.2'
+    implementation 'org.openapitools:jackson-databind-nullable:0.2.8'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.20.0'
     implementation "jakarta.annotation:jakarta.annotation-api:$jakarta_annotation_version"
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.11.4'
-    testImplementation 'org.mockito:mockito-core:5.14.2'
+    testImplementation 'org.mockito:mockito-core:5.21.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.11.4'
 }
 
