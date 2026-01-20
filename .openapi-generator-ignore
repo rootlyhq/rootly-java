@@ -22,4 +22,9 @@
 # Then explicitly reverse the ignore rule for a single file:
 #!docs/README.md
 
+# Protect custom files from regeneration
 build.gradle
+LICENSE
+README.md
+CLAUDE.md
+.github/dependabot.yml
