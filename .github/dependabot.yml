@@ -12,6 +12,11 @@ updates:
     labels:
       - "dependencies"
       - "java"
+    groups:
+      maven-minor-patch:
+        update-types:
+          - "minor"
+          - "patch"
 
   # Enable version updates for Gradle dependencies
   - package-ecosystem: "gradle"
@@ -25,6 +30,11 @@ updates:
     labels:
       - "dependencies"
       - "java"
+    groups:
+      gradle-minor-patch:
+        update-types:
+          - "minor"
+          - "patch"
 
   # Enable version updates for GitHub Actions
   - package-ecosystem: "github-actions"
@@ -38,3 +48,8 @@ updates:
     labels:
       - "dependencies"
       - "github-actions"
+    groups:
+      github-actions-minor-patch:
+        update-types:
+          - "minor"
+          - "patch"
