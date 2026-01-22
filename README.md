@@ -12,7 +12,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.rootly.client</groupId>
   <artifactId>rootly</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.4</version>
 </dependency>
 ```
 
@@ -22,7 +22,7 @@ Add this dependency to your project's build file:
 
 ```groovy
 dependencies {
-    implementation 'com.rootly.client:rootly:0.0.1'
+    implementation 'com.rootly.client:rootly:0.0.4'
 }
 ```
 
