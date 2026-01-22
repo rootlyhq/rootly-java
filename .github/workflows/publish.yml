@@ -43,6 +43,6 @@ jobs:
           distribution: 'temurin'
 
       - name: Publish to GitHub Packages
-        run: mvn --batch-mode deploy -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/${{ github.repository }}
+        run: mvn --batch-mode deploy -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/${{ github.repository }} -Dcentral.publishing.skip=true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
