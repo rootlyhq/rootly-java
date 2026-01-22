@@ -75,7 +75,7 @@ bump-patch: ## Bump patch version (0.0.1 -> 0.0.2)
 	sed -i '' "s|<version>$(CURRENT_VERSION)</version>|<version>$$NEW_VERSION</version>|" pom.xml; \
 	sed -i '' "s|version = '$(CURRENT_VERSION)'|version = '$$NEW_VERSION'|" build.gradle; \
 	git add pom.xml build.gradle; \
-	git commit -m "Bump version to $$NEW_VERSION [skip ci]"; \
+	git commit -m "Bump version to $$NEW_VERSION"; \
 	git tag -a $$NEW_TAG -m "Release $$NEW_TAG"; \
 	echo "✓ Created tag $$NEW_TAG (use 'make push-tag' to push)"
 
@@ -91,7 +91,7 @@ bump-minor: ## Bump minor version (0.0.1 -> 0.1.0)
 	sed -i '' "s|<version>$(CURRENT_VERSION)</version>|<version>$$NEW_VERSION</version>|" pom.xml; \
 	sed -i '' "s|version = '$(CURRENT_VERSION)'|version = '$$NEW_VERSION'|" build.gradle; \
 	git add pom.xml build.gradle; \
-	git commit -m "Bump version to $$NEW_VERSION [skip ci]"; \
+	git commit -m "Bump version to $$NEW_VERSION"; \
 	git tag -a $$NEW_TAG -m "Release $$NEW_TAG"; \
 	echo "✓ Created tag $$NEW_TAG (use 'make push-tag' to push)"
 
@@ -107,7 +107,7 @@ bump-major: ## Bump major version (0.0.1 -> 1.0.0)
 	sed -i '' "s|<version>$(CURRENT_VERSION)</version>|<version>$$NEW_VERSION</version>|" pom.xml; \
 	sed -i '' "s|version = '$(CURRENT_VERSION)'|version = '$$NEW_VERSION'|" build.gradle; \
 	git add pom.xml build.gradle; \
-	git commit -m "Bump version to $$NEW_VERSION [skip ci]"; \
+	git commit -m "Bump version to $$NEW_VERSION"; \
 	git tag -a $$NEW_TAG -m "Release $$NEW_TAG"; \
 	echo "✓ Created tag $$NEW_TAG (use 'make push-tag' to push)"
 
