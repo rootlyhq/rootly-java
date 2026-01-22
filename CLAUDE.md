@@ -160,8 +160,7 @@ The project uses **Spotless** with **Google Java Format (AOSP style)**:
 GitHub Actions workflows:
 - **test.yml** - Runs tests on all branches using JDK 17
 - **maven.yml** - Maven-based build pipeline
-- **publish.yml** - Publishes artifacts to Maven Central and GitHub Packages (triggered on tag push)
-- **release.yml** - Creates GitHub releases with changelog notes (triggered on tag push)
+- **publish.yml** - Publishes artifacts to Maven Central and GitHub Packages, then creates GitHub release (triggered on tag push)
 
 ## Publishing & Releases
 
@@ -186,9 +185,12 @@ make push-tag
 
 **Automated workflow (triggered by `make push-tag`):**
 1. `make bump-patch` (or minor/major) - Updates version in both pom.xml and build.gradle, commits, and creates tag locally
-2. `make push-tag` - Pushes the tag to GitHub, which automatically triggers:
-   - **publish.yml** - Runs tests, signs artifacts, publishes to Maven Central and GitHub Packages
-   - **release.yml** - Creates GitHub release with changelog notes
+2. `make push-tag` - Pushes the tag to GitHub, which automatically triggers **publish.yml**:
+   - Runs tests
+   - Signs artifacts with GPG
+   - Publishes to Maven Central
+   - Publishes to GitHub Packages
+   - Creates GitHub release with changelog notes (only if all publishing succeeds)
 
 **One-command releases:**
 ```bash

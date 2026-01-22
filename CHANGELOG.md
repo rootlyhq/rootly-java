@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.2] - 2026-01-22
+
+### Fixed
+- Fixed GPG key format in GitHub Actions (use ASCII armored format instead of base64)
+- Fixed GitHub Packages deployment by skipping Maven Central plugin during GitHub Packages publish
+
+### Changed
+- Merged release workflow into publish workflow for atomic releases
+- GitHub releases now only created after successful publishing to both registries
+- Updated publishing documentation with correct GPG key export instructions
+
 ## [0.0.1] - 2026-01-20
 
 ### Added

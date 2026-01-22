@@ -119,13 +119,17 @@ make release-minor   # 0.0.1 -> 0.1.0
 make release-major   # 0.0.1 -> 1.0.0
 ```
 
-### Step 3: Monitor the Workflows
+### Step 3: Monitor the Workflow
 
-Two workflows run automatically on tag push:
-- **publish.yml** - Publishes to Maven Central and GitHub Packages
-- **release.yml** - Creates GitHub release with changelog
+The **publish.yml** workflow runs automatically on tag push and performs these steps in order:
+1. Runs all tests
+2. Publishes to Maven Central (with GPG signing)
+3. Publishes to GitHub Packages
+4. Creates GitHub release with changelog notes (only if steps 1-3 succeed)
 
 Check the Actions tab: https://github.com/rootlyhq/rootly-java/actions
+
+**Important:** The GitHub release is only created after successful publishing to both registries, ensuring atomic releases.
 
 ### Step 4: Verify Publication
 
