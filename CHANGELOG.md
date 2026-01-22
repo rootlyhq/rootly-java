@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.3] - 2026-01-22
+
+### Fixed
+- Fixed GitHub Packages deployment by using correct `-DskipBundling=true` parameter to skip central-publishing plugin
+
+### Changed
+- Removed `[skip ci]` from version bump commits to allow workflow triggers
+
 ## [0.0.2] - 2026-01-22
 
 ### Fixed
