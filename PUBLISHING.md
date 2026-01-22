@@ -83,9 +83,9 @@ rm gpg-key.txt
 
 ## Publishing Process
 
-The publish workflow runs automatically when you create a GitHub release.
+The publish workflow runs automatically when you push a version tag.
 
-### Step 1: Update Version
+### Step 1: Update Version and Create Tag
 
 ```bash
 # Using Makefile (recommended)
@@ -93,44 +93,41 @@ make bump-patch   # 0.0.1 -> 0.0.2
 make bump-minor   # 0.0.1 -> 0.1.0
 make bump-major   # 0.0.1 -> 1.0.0
 
-# Manual update
-sed -i '' 's/<version>0.0.1<\/version>/<version>0.0.2<\/version>/' pom.xml
-sed -i '' "s/version = '0.0.1'/version = '0.0.2'/" build.gradle
-git add pom.xml build.gradle
-git commit -m "Bump version to 0.0.2"
+# This updates pom.xml and build.gradle, commits, and creates a tag locally
 ```
 
-### Step 2: Push Changes
+### Step 2: Push Tag (Triggers Everything)
 
 ```bash
-git push origin master
+make push-tag
 ```
 
-### Step 3: Create a GitHub Release
-
-```bash
-# Using GitHub CLI (recommended)
-gh release create v0.0.2 \
-  --title "Release 0.0.2" \
-  --notes "Release notes here"
-
-# Or via GitHub UI:
-# Go to https://github.com/rootlyhq/rootly-java/releases/new
-```
-
-### Step 4: Monitor the Workflow
-
-The publish workflow will automatically:
-
+**This single command automatically triggers:**
 1. ✅ Run all tests
 2. ✅ Sign artifacts with GPG
 3. ✅ Deploy to Maven Central Portal
 4. ✅ Auto-publish to Maven Central (no manual UI steps needed!)
 5. ✅ Deploy to GitHub Packages
+6. ✅ Create GitHub release with changelog notes
+
+### One-Command Release (Recommended)
+
+```bash
+# Combines bump + push (fully automated!)
+make release-patch   # 0.0.1 -> 0.0.2
+make release-minor   # 0.0.1 -> 0.1.0
+make release-major   # 0.0.1 -> 1.0.0
+```
+
+### Step 3: Monitor the Workflows
+
+Two workflows run automatically on tag push:
+- **publish.yml** - Publishes to Maven Central and GitHub Packages
+- **release.yml** - Creates GitHub release with changelog
 
 Check the Actions tab: https://github.com/rootlyhq/rootly-java/actions
 
-### Step 5: Verify Publication
+### Step 4: Verify Publication
 
 **Maven Central** (available within 30 minutes):
 - Search: https://central.sonatype.com/artifact/com.rootly.client/rootly

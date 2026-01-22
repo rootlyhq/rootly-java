@@ -160,7 +160,8 @@ The project uses **Spotless** with **Google Java Format (AOSP style)**:
 GitHub Actions workflows:
 - **test.yml** - Runs tests on all branches using JDK 17
 - **maven.yml** - Maven-based build pipeline
-- **publish.yml** - Publishes artifacts to Maven Central and GitHub Packages (triggered on releases)
+- **publish.yml** - Publishes artifacts to Maven Central and GitHub Packages (triggered on tag push)
+- **release.yml** - Creates GitHub releases with changelog notes (triggered on tag push)
 
 ## Publishing & Releases
 
@@ -179,36 +180,33 @@ make bump-patch   # 0.0.1 -> 0.0.2
 make bump-minor   # 0.0.1 -> 0.1.0
 make bump-major   # 0.0.1 -> 1.0.0
 
-# Push the tag to trigger release workflow
+# Push the tag to trigger automated workflows
 make push-tag
-
-# Create GitHub release (triggers publish.yml workflow)
-gh release create v0.0.2 --title "Release 0.0.2" --notes "Release notes here"
 ```
 
-**Automated workflow:**
-1. `make bump-patch` (or minor/major) - Updates version in both pom.xml and build.gradle, commits, and creates tag
-2. `make push-tag` - Pushes the tag to GitHub
-3. `gh release create` - Creates GitHub release which automatically triggers the publish workflow
-4. The workflow publishes to both Maven Central and GitHub Packages
+**Automated workflow (triggered by `make push-tag`):**
+1. `make bump-patch` (or minor/major) - Updates version in both pom.xml and build.gradle, commits, and creates tag locally
+2. `make push-tag` - Pushes the tag to GitHub, which automatically triggers:
+   - **publish.yml** - Runs tests, signs artifacts, publishes to Maven Central and GitHub Packages
+   - **release.yml** - Creates GitHub release with changelog notes
 
 **One-command releases:**
 ```bash
-# These combine bump + push-tag
-make release-patch   # Bump patch and push tag
-make release-minor   # Bump minor and push tag
-make release-major   # Bump major and push tag
-
-# Then create the GitHub release
-gh release create v0.0.2
+# These combine bump + push-tag (fully automated!)
+make release-patch   # Bump patch and push tag → triggers publish + release
+make release-minor   # Bump minor and push tag → triggers publish + release
+make release-major   # Bump major and push tag → triggers publish + release
 ```
 
-**What happens during publish:**
+**What happens automatically:**
 - Runs all tests
 - Signs artifacts with GPG
 - Deploys to Maven Central Portal (auto-publishes)
 - Deploys to GitHub Packages
+- Creates GitHub release with changelog notes from CHANGELOG.md
 - Available in Maven Central within 30 minutes
+
+**No manual steps needed!** Just run `make release-patch` and everything is automated.
 
 ### Version Management
 
