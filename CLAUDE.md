@@ -83,9 +83,12 @@ The generation process:
 
 **Protected files:** These files are protected from regeneration via `.openapi-generator-ignore`:
 - `build.gradle` - Custom Gradle configuration
+- `pom.xml` - Custom Maven configuration
 - `LICENSE` - MIT license
 - `README.md` - User-friendly documentation
 - `CLAUDE.md` - This file
+- `PUBLISHING.md` - Publishing documentation
+- `CHANGELOG.md` - Version history
 - `.github/dependabot.yml` - Dependency management
 
 ## Architecture
@@ -159,15 +162,61 @@ GitHub Actions workflows:
 - **maven.yml** - Maven-based build pipeline
 - **publish.yml** - Publishes artifacts to Maven Central and GitHub Packages (triggered on releases)
 
-## Publishing
+## Publishing & Releases
 
 See [PUBLISHING.md](PUBLISHING.md) for detailed instructions on publishing releases to Maven Central and GitHub Packages.
 
-Quick overview:
-1. Update version: `make bump-patch` (or bump-minor/bump-major)
-2. Push tag: `make push-tag`
-3. Create GitHub release: `gh release create v0.0.2`
-4. Workflow automatically publishes to both registries
+### Release Process
+
+The release process uses Makefile targets to automate version bumping and tagging:
+
+```bash
+# Check current version
+make version
+
+# Bump version (updates pom.xml and build.gradle, creates tag)
+make bump-patch   # 0.0.1 -> 0.0.2
+make bump-minor   # 0.0.1 -> 0.1.0
+make bump-major   # 0.0.1 -> 1.0.0
+
+# Push the tag to trigger release workflow
+make push-tag
+
+# Create GitHub release (triggers publish.yml workflow)
+gh release create v0.0.2 --title "Release 0.0.2" --notes "Release notes here"
+```
+
+**Automated workflow:**
+1. `make bump-patch` (or minor/major) - Updates version in both pom.xml and build.gradle, commits, and creates tag
+2. `make push-tag` - Pushes the tag to GitHub
+3. `gh release create` - Creates GitHub release which automatically triggers the publish workflow
+4. The workflow publishes to both Maven Central and GitHub Packages
+
+**One-command releases:**
+```bash
+# These combine bump + push-tag
+make release-patch   # Bump patch and push tag
+make release-minor   # Bump minor and push tag
+make release-major   # Bump major and push tag
+
+# Then create the GitHub release
+gh release create v0.0.2
+```
+
+**What happens during publish:**
+- Runs all tests
+- Signs artifacts with GPG
+- Deploys to Maven Central Portal (auto-publishes)
+- Deploys to GitHub Packages
+- Available in Maven Central within 30 minutes
+
+### Version Management
+
+Version is tracked in two files (automatically updated by Makefile):
+- `pom.xml` - Line 7: `<version>0.0.1</version>`
+- `build.gradle` - Line 7: `version = '0.0.1'`
+
+Git tags follow semver format: `v0.0.1`, `v0.1.0`, `v1.0.0`
 
 ## Important Notes
 
