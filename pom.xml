@@ -5,7 +5,7 @@
     <artifactId>rootly</artifactId>
     <packaging>jar</packaging>
     <name>rootly-java</name>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
     <url>https://github.com/rootlyhq/rootly-java</url>
     <description>Java client library for Rootly incident management platform</description>
     <scm>
