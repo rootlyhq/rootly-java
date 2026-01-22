@@ -53,9 +53,9 @@ gpg --keyserver keyserver.ubuntu.com --send-keys ABCD1234EFGH5678
 gpg --keyserver keys.openpgp.org --send-keys ABCD1234EFGH5678
 gpg --keyserver pgp.mit.edu --send-keys ABCD1234EFGH5678
 
-# Export private key in base64 for GitHub Secrets
-gpg --export-secret-keys ABCD1234EFGH5678 | base64
-# Copy the entire base64 output
+# Export private key for GitHub Secrets (ASCII armored format)
+gpg --armor --export-secret-keys ABCD1234EFGH5678
+# Copy the entire output (including BEGIN/END lines)
 ```
 
 ### 4. Configure GitHub Secrets
@@ -66,7 +66,7 @@ Add these secrets to your GitHub repository (Settings → Secrets and variables 
 |-------------|-------------|------------|
 | `MAVEN_CENTRAL_USERNAME` | Maven Central Portal username | From token generation at central.sonatype.com/account |
 | `MAVEN_CENTRAL_PASSWORD` | Maven Central Portal password | From token generation at central.sonatype.com/account |
-| `GPG_PRIVATE_KEY` | GPG private key in base64 | Run: `gpg --export-secret-keys YOUR_KEY_ID \| base64` |
+| `GPG_PRIVATE_KEY` | GPG private key (ASCII armored) | Run: `gpg --armor --export-secret-keys YOUR_KEY_ID` |
 | `GPG_PASSPHRASE` | Passphrase for GPG key | The passphrase you set when creating the GPG key |
 
 ```bash
@@ -75,8 +75,8 @@ gh secret set MAVEN_CENTRAL_USERNAME --body "your-token-username"
 gh secret set MAVEN_CENTRAL_PASSWORD --body "your-token-password"
 gh secret set GPG_PASSPHRASE --body "your-gpg-passphrase"
 
-# For GPG_PRIVATE_KEY (multiline):
-gpg --export-secret-keys ABCD1234EFGH5678 | base64 > gpg-key.txt
+# For GPG_PRIVATE_KEY (multiline - ASCII armored format):
+gpg --armor --export-secret-keys ABCD1234EFGH5678 > gpg-key.txt
 gh secret set GPG_PRIVATE_KEY < gpg-key.txt
 rm gpg-key.txt
 ```
