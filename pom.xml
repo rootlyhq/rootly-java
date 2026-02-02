@@ -43,7 +43,7 @@
            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.14.1</version>
+                <version>3.15.0</version>
                 <configuration>
                     <fork>true</fork>
                     <meminitial>128m</meminitial>
@@ -248,7 +248,7 @@
                     <plugin>
                         <groupId>org.sonatype.central</groupId>
                         <artifactId>central-publishing-maven-plugin</artifactId>
-                        <version>0.7.0</version>
+                        <version>0.10.0</version>
                         <extensions>true</extensions>
                         <configuration>
                             <publishingServerId>central</publishingServerId>
@@ -348,11 +348,11 @@
         <jackson-databind-nullable-version>0.2.8</jackson-databind-nullable-version>
         <jakarta-annotation-version>3.0.0</jakarta-annotation-version>
         <beanvalidation-version>2.0.2</beanvalidation-version>
-        <junit-version>5.11.4</junit-version>
+        <junit-version>5.14.2</junit-version>
         <junit-platform-runner.version>1.14.2</junit-platform-runner.version>
         <jakarta.ws.rs-api-version>4.0.0</jakarta.ws.rs-api-version>
         <jsr311-api-version>1.1.1</jsr311-api-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spotless.version>2.43.0</spotless.version>
+        <spotless.version>2.46.1</spotless.version>
     </properties>
 </project>
