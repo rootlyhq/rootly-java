@@ -24,6 +24,12 @@ build-docker:
 	@echo "Removing problematic validateJsonElement calls..."
 	find ./src/main/java ./src/test/java -type f -name '*.java' -exec sed -i '' '/Object\.validateJsonElement/d' {} + 2>/dev/null || true
 	find ./src/main/java ./src/test/java -type f -name '*.java' -exec sed -i '' '/UUID\.validateJsonElement/d' {} + 2>/dev/null || true
+	@echo "Replacing removed ISO8601Utils with java.time equivalents..."
+	sed -i '' 's/import com.google.gson.internal.bind.util.ISO8601Utils;/import java.time.Instant;\nimport java.time.ZoneOffset;/' src/main/java/com/rootly/client/JSON.java 2>/dev/null || true
+	sed -i '' 's/ISO8601Utils.format(date, true)/DateTimeFormatter.ISO_INSTANT.format(date.toInstant())/' src/main/java/com/rootly/client/JSON.java 2>/dev/null || true
+	sed -i '' 's/ISO8601Utils.parse(date, new ParsePosition(0))/Date.from(Instant.parse(date))/' src/main/java/com/rootly/client/JSON.java 2>/dev/null || true
+	sed -i '' 's/catch (ParseException e)/catch (ParseException | java.time.format.DateTimeParseException e)/' src/main/java/com/rootly/client/JSON.java 2>/dev/null || true
+	sed -i '' '/import java.text.ParsePosition;/d' src/main/java/com/rootly/client/JSON.java 2>/dev/null || true
 	@echo "✓ Client generation complete!"
 
 # Generate client using local openapi-generator (requires Java and openapi-generator installed)
@@ -41,6 +47,12 @@ build-local:
 	@echo "Removing problematic validateJsonElement calls..."
 	find ./src/main/java ./src/test/java -type f -name '*.java' -exec sed -i '' '/Object\.validateJsonElement/d' {} + 2>/dev/null || true
 	find ./src/main/java ./src/test/java -type f -name '*.java' -exec sed -i '' '/UUID\.validateJsonElement/d' {} + 2>/dev/null || true
+	@echo "Replacing removed ISO8601Utils with java.time equivalents..."
+	sed -i '' 's/import com.google.gson.internal.bind.util.ISO8601Utils;/import java.time.Instant;\nimport java.time.ZoneOffset;/' src/main/java/com/rootly/client/JSON.java 2>/dev/null || true
+	sed -i '' 's/ISO8601Utils.format(date, true)/DateTimeFormatter.ISO_INSTANT.format(date.toInstant())/' src/main/java/com/rootly/client/JSON.java 2>/dev/null || true
+	sed -i '' 's/ISO8601Utils.parse(date, new ParsePosition(0))/Date.from(Instant.parse(date))/' src/main/java/com/rootly/client/JSON.java 2>/dev/null || true
+	sed -i '' 's/catch (ParseException e)/catch (ParseException | java.time.format.DateTimeParseException e)/' src/main/java/com/rootly/client/JSON.java 2>/dev/null || true
+	sed -i '' '/import java.text.ParsePosition;/d' src/main/java/com/rootly/client/JSON.java 2>/dev/null || true
 	@echo "✓ Client generation complete!"
 
 # Upgrade all dependencies to latest versions
