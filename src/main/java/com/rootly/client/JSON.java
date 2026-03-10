@@ -17,7 +17,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapter;
-import com.google.gson.internal.bind.util.ISO8601Utils;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.google.gson.JsonElement;
@@ -34,9 +33,10 @@ import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
 import java.text.DateFormat;
 import java.text.ParseException;
-import java.text.ParsePosition;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Locale;
@@ -1619,8 +1619,8 @@ public class JSON {
                         if (dateFormat != null) {
                             return new java.sql.Date(dateFormat.parse(date).getTime());
                         }
-                        return new java.sql.Date(ISO8601Utils.parse(date, new ParsePosition(0)).getTime());
-                    } catch (ParseException e) {
+                        return new java.sql.Date(Date.from(Instant.parse(date)).getTime());
+                    } catch (ParseException | java.time.format.DateTimeParseException e) {
                         throw new JsonParseException(e);
                     }
             }
@@ -1654,7 +1654,7 @@ public class JSON {
                 if (dateFormat != null) {
                     value = dateFormat.format(date);
                 } else {
-                    value = ISO8601Utils.format(date, true);
+                    value = DateTimeFormatter.ISO_INSTANT.format(date.toInstant());
                 }
                 out.value(value);
             }
@@ -1673,8 +1673,8 @@ public class JSON {
                             if (dateFormat != null) {
                                 return dateFormat.parse(date);
                             }
-                            return ISO8601Utils.parse(date, new ParsePosition(0));
-                        } catch (ParseException e) {
+                            return Date.from(Instant.parse(date));
+                        } catch (ParseException | java.time.format.DateTimeParseException e) {
                             throw new JsonParseException(e);
                         }
                 }
