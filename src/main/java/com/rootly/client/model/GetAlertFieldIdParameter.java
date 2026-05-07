@@ -100,7 +100,6 @@ public class GetAlertFieldIdParameter extends AbstractOpenApiSchema {
                     // deserialize UUID
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        UUID.validateJsonElement(jsonElement);
                         actualAdapter = adapterUUID;
                         GetAlertFieldIdParameter ret = new GetAlertFieldIdParameter();
                         ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
@@ -221,7 +220,6 @@ public class GetAlertFieldIdParameter extends AbstractOpenApiSchema {
         ArrayList<String> errorMessages = new ArrayList<>();
         // validate the json string with UUID
         try {
-            UUID.validateJsonElement(jsonElement);
             return;
         } catch (Exception e) {
             errorMessages.add(String.format("Deserialization for UUID failed with `%s`.", e.getMessage()));
