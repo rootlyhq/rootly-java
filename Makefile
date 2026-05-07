@@ -9,4 +9,4 @@ build:
 		--skip-validate-spec \
 		--library okhttp-gson 
 
-	find ./src/main/java ./src/test/java -type f -name '*.java' -exec sed -i '' '/Object\.validateJsonElement/d' {} + 
+	find ./src/main/java ./src/test/java -type f -name '*.java' -exec sed -i '' '/Object\.validateJsonElement/d;/UUID\.validateJsonElement/d' {} +
