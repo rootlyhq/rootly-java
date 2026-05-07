@@ -1,6 +1,8 @@
 .PHONY: build
 
 build:
+	rm -rf ./src/test/java/com/rootly/client/api/ ./src/test/java/com/rootly/client/model/
+
 	openapi-generator generate \
 		-i https://rootly-heroku.s3.amazonaws.com/swagger/v1/swagger.json \
 		-g java \
