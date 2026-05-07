@@ -7,8 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**id** | **String** | Slack channel ID |  [optional] |
-|**name** | **String** | Slack channel name |  [optional] |
+|**id** | **String** | Slack user group ID |  [optional] |
+|**name** | **String** | Slack user group name |  [optional] |
 
 
 

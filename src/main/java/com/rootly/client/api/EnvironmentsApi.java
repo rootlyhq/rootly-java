@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -27,9 +27,13 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import com.rootly.client.model.CatalogPropertyList;
+import com.rootly.client.model.CatalogPropertyResponse;
 import com.rootly.client.model.EnvironmentList;
 import com.rootly.client.model.EnvironmentResponse;
 import com.rootly.client.model.ErrorsList;
+import com.rootly.client.model.GetAlertFieldIdParameter;
+import com.rootly.client.model.NewCatalogProperty;
 import com.rootly.client.model.NewEnvironment;
 import com.rootly.client.model.UpdateEnvironment;
 
@@ -212,6 +216,141 @@ public class EnvironmentsApi {
         return localVarCall;
     }
     /**
+     * Build call for createEnvironmentCatalogProperty
+     * @param newCatalogProperty  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> catalog_property created ignores wrong catalog_type attribute </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> exceeds max fields per catalog </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call createEnvironmentCatalogPropertyCall(@javax.annotation.Nonnull NewCatalogProperty newCatalogProperty, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = newCatalogProperty;
+
+        // create path and map variables
+        String localVarPath = "/v1/environments/properties";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/vnd.api+json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/vnd.api+json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "bearer_auth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call createEnvironmentCatalogPropertyValidateBeforeCall(@javax.annotation.Nonnull NewCatalogProperty newCatalogProperty, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'newCatalogProperty' is set
+        if (newCatalogProperty == null) {
+            throw new ApiException("Missing the required parameter 'newCatalogProperty' when calling createEnvironmentCatalogProperty(Async)");
+        }
+
+        return createEnvironmentCatalogPropertyCall(newCatalogProperty, _callback);
+
+    }
+
+    /**
+     * Creates a Catalog Property
+     * Creates a new Catalog Property from provided data
+     * @param newCatalogProperty  (required)
+     * @return CatalogPropertyResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> catalog_property created ignores wrong catalog_type attribute </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> exceeds max fields per catalog </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
+     </table>
+     */
+    public CatalogPropertyResponse createEnvironmentCatalogProperty(@javax.annotation.Nonnull NewCatalogProperty newCatalogProperty) throws ApiException {
+        ApiResponse<CatalogPropertyResponse> localVarResp = createEnvironmentCatalogPropertyWithHttpInfo(newCatalogProperty);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Creates a Catalog Property
+     * Creates a new Catalog Property from provided data
+     * @param newCatalogProperty  (required)
+     * @return ApiResponse&lt;CatalogPropertyResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> catalog_property created ignores wrong catalog_type attribute </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> exceeds max fields per catalog </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<CatalogPropertyResponse> createEnvironmentCatalogPropertyWithHttpInfo(@javax.annotation.Nonnull NewCatalogProperty newCatalogProperty) throws ApiException {
+        okhttp3.Call localVarCall = createEnvironmentCatalogPropertyValidateBeforeCall(newCatalogProperty, null);
+        Type localVarReturnType = new TypeToken<CatalogPropertyResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Creates a Catalog Property (asynchronously)
+     * Creates a new Catalog Property from provided data
+     * @param newCatalogProperty  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> catalog_property created ignores wrong catalog_type attribute </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> exceeds max fields per catalog </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call createEnvironmentCatalogPropertyAsync(@javax.annotation.Nonnull NewCatalogProperty newCatalogProperty, final ApiCallback<CatalogPropertyResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = createEnvironmentCatalogPropertyValidateBeforeCall(newCatalogProperty, _callback);
+        Type localVarReturnType = new TypeToken<CatalogPropertyResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for deleteEnvironment
      * @param id  (required)
      * @param _callback Callback for upload/download progress
@@ -225,7 +364,7 @@ public class EnvironmentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteEnvironmentCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteEnvironmentCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -271,7 +410,7 @@ public class EnvironmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteEnvironmentValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteEnvironmentValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteEnvironment(Async)");
@@ -295,7 +434,7 @@ public class EnvironmentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public EnvironmentResponse deleteEnvironment(@javax.annotation.Nonnull String id) throws ApiException {
+    public EnvironmentResponse deleteEnvironment(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<EnvironmentResponse> localVarResp = deleteEnvironmentWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -314,7 +453,7 @@ public class EnvironmentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<EnvironmentResponse> deleteEnvironmentWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<EnvironmentResponse> deleteEnvironmentWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = deleteEnvironmentValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<EnvironmentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -335,7 +474,7 @@ public class EnvironmentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteEnvironmentAsync(@javax.annotation.Nonnull String id, final ApiCallback<EnvironmentResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteEnvironmentAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<EnvironmentResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteEnvironmentValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<EnvironmentResponse>(){}.getType();
@@ -352,11 +491,11 @@ public class EnvironmentsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> environment found </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> environment found by slug </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getEnvironmentCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getEnvironmentCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -402,7 +541,7 @@ public class EnvironmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getEnvironmentValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getEnvironmentValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getEnvironment(Async)");
@@ -422,11 +561,11 @@ public class EnvironmentsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> environment found </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> environment found by slug </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public EnvironmentResponse getEnvironment(@javax.annotation.Nonnull String id) throws ApiException {
+    public EnvironmentResponse getEnvironment(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<EnvironmentResponse> localVarResp = getEnvironmentWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -441,11 +580,11 @@ public class EnvironmentsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> environment found </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> environment found by slug </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<EnvironmentResponse> getEnvironmentWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<EnvironmentResponse> getEnvironmentWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = getEnvironmentValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<EnvironmentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -462,14 +601,219 @@ public class EnvironmentsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> environment found </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> environment found by slug </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getEnvironmentAsync(@javax.annotation.Nonnull String id, final ApiCallback<EnvironmentResponse> _callback) throws ApiException {
+    public okhttp3.Call getEnvironmentAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<EnvironmentResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getEnvironmentValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<EnvironmentResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for listEnvironmentCatalogProperties
+     * @param include comma separated if needed. eg: catalog (optional)
+     * @param sort comma separated if needed. eg: created_at,updated_at (optional)
+     * @param pageNumber  (optional)
+     * @param pageSize  (optional)
+     * @param filterSlug  (optional)
+     * @param filterName  (optional)
+     * @param filterKind  (optional)
+     * @param filterCreatedAtGt  (optional)
+     * @param filterCreatedAtGte  (optional)
+     * @param filterCreatedAtLt  (optional)
+     * @param filterCreatedAtLte  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listEnvironmentCatalogPropertiesCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v1/environments/properties";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (include != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("include", include));
+        }
+
+        if (sort != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort", sort));
+        }
+
+        if (pageNumber != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page[number]", pageNumber));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page[size]", pageSize));
+        }
+
+        if (filterSlug != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug]", filterSlug));
+        }
+
+        if (filterName != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name]", filterName));
+        }
+
+        if (filterKind != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[kind]", filterKind));
+        }
+
+        if (filterCreatedAtGt != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[created_at][gt]", filterCreatedAtGt));
+        }
+
+        if (filterCreatedAtGte != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[created_at][gte]", filterCreatedAtGte));
+        }
+
+        if (filterCreatedAtLt != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[created_at][lt]", filterCreatedAtLt));
+        }
+
+        if (filterCreatedAtLte != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[created_at][lte]", filterCreatedAtLte));
+        }
+
+        final String[] localVarAccepts = {
+            "application/vnd.api+json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "bearer_auth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listEnvironmentCatalogPropertiesValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
+        return listEnvironmentCatalogPropertiesCall(include, sort, pageNumber, pageSize, filterSlug, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, _callback);
+
+    }
+
+    /**
+     * List Catalog Properties
+     * List Environment Catalog Properties
+     * @param include comma separated if needed. eg: catalog (optional)
+     * @param sort comma separated if needed. eg: created_at,updated_at (optional)
+     * @param pageNumber  (optional)
+     * @param pageSize  (optional)
+     * @param filterSlug  (optional)
+     * @param filterName  (optional)
+     * @param filterKind  (optional)
+     * @param filterCreatedAtGt  (optional)
+     * @param filterCreatedAtGte  (optional)
+     * @param filterCreatedAtLt  (optional)
+     * @param filterCreatedAtLte  (optional)
+     * @return CatalogPropertyList
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
+     </table>
+     */
+    public CatalogPropertyList listEnvironmentCatalogProperties(@javax.annotation.Nullable String include, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte) throws ApiException {
+        ApiResponse<CatalogPropertyList> localVarResp = listEnvironmentCatalogPropertiesWithHttpInfo(include, sort, pageNumber, pageSize, filterSlug, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List Catalog Properties
+     * List Environment Catalog Properties
+     * @param include comma separated if needed. eg: catalog (optional)
+     * @param sort comma separated if needed. eg: created_at,updated_at (optional)
+     * @param pageNumber  (optional)
+     * @param pageSize  (optional)
+     * @param filterSlug  (optional)
+     * @param filterName  (optional)
+     * @param filterKind  (optional)
+     * @param filterCreatedAtGt  (optional)
+     * @param filterCreatedAtGte  (optional)
+     * @param filterCreatedAtLt  (optional)
+     * @param filterCreatedAtLte  (optional)
+     * @return ApiResponse&lt;CatalogPropertyList&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<CatalogPropertyList> listEnvironmentCatalogPropertiesWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte) throws ApiException {
+        okhttp3.Call localVarCall = listEnvironmentCatalogPropertiesValidateBeforeCall(include, sort, pageNumber, pageSize, filterSlug, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, null);
+        Type localVarReturnType = new TypeToken<CatalogPropertyList>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List Catalog Properties (asynchronously)
+     * List Environment Catalog Properties
+     * @param include comma separated if needed. eg: catalog (optional)
+     * @param sort comma separated if needed. eg: created_at,updated_at (optional)
+     * @param pageNumber  (optional)
+     * @param pageSize  (optional)
+     * @param filterSlug  (optional)
+     * @param filterName  (optional)
+     * @param filterKind  (optional)
+     * @param filterCreatedAtGt  (optional)
+     * @param filterCreatedAtGte  (optional)
+     * @param filterCreatedAtLt  (optional)
+     * @param filterCreatedAtLte  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listEnvironmentCatalogPropertiesAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback<CatalogPropertyList> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listEnvironmentCatalogPropertiesValidateBeforeCall(include, sort, pageNumber, pageSize, filterSlug, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, _callback);
+        Type localVarReturnType = new TypeToken<CatalogPropertyList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -701,7 +1045,7 @@ public class EnvironmentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateEnvironmentCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateEnvironment updateEnvironment, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateEnvironmentCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateEnvironment updateEnvironment, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -748,7 +1092,7 @@ public class EnvironmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateEnvironmentValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateEnvironment updateEnvironment, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateEnvironmentValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateEnvironment updateEnvironment, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateEnvironment(Async)");
@@ -778,7 +1122,7 @@ public class EnvironmentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public EnvironmentResponse updateEnvironment(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateEnvironment updateEnvironment) throws ApiException {
+    public EnvironmentResponse updateEnvironment(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateEnvironment updateEnvironment) throws ApiException {
         ApiResponse<EnvironmentResponse> localVarResp = updateEnvironmentWithHttpInfo(id, updateEnvironment);
         return localVarResp.getData();
     }
@@ -798,7 +1142,7 @@ public class EnvironmentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<EnvironmentResponse> updateEnvironmentWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateEnvironment updateEnvironment) throws ApiException {
+    public ApiResponse<EnvironmentResponse> updateEnvironmentWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateEnvironment updateEnvironment) throws ApiException {
         okhttp3.Call localVarCall = updateEnvironmentValidateBeforeCall(id, updateEnvironment, null);
         Type localVarReturnType = new TypeToken<EnvironmentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -820,7 +1164,7 @@ public class EnvironmentsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateEnvironmentAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateEnvironment updateEnvironment, final ApiCallback<EnvironmentResponse> _callback) throws ApiException {
+    public okhttp3.Call updateEnvironmentAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateEnvironment updateEnvironment, final ApiCallback<EnvironmentResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateEnvironmentValidateBeforeCall(id, updateEnvironment, _callback);
         Type localVarReturnType = new TypeToken<EnvironmentResponse>(){}.getType();

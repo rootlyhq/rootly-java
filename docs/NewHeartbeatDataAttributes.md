@@ -10,11 +10,12 @@
 |**name** | **String** | The name of the heartbeat |  |
 |**description** | **String** | The description of the heartbeat |  [optional] |
 |**alertSummary** | **String** | Summary of alerts triggered when heartbeat expires. |  |
+|**alertDescription** | **String** | Description of alerts triggered when heartbeat expires. |  [optional] |
 |**alertUrgencyId** | **String** | Urgency of alerts triggered when heartbeat expires. |  [optional] |
 |**interval** | **Integer** |  |  |
 |**intervalUnit** | [**IntervalUnitEnum**](#IntervalUnitEnum) |  |  |
 |**notificationTargetId** | **String** |  |  |
-|**notificationTargetType** | [**NotificationTargetTypeEnum**](#NotificationTargetTypeEnum) |  |  |
+|**notificationTargetType** | [**NotificationTargetTypeEnum**](#NotificationTargetTypeEnum) | The type of the notification target. Please contact support if you encounter issues using &#x60;Functionality&#x60; as a target type. |  |
 |**enabled** | **Boolean** | Whether to trigger alerts when heartbeat is expired. |  [optional] |
 
 
@@ -23,9 +24,9 @@
 
 | Name | Value |
 |---- | -----|
-| SECONDS | &quot;seconds&quot; |
 | MINUTES | &quot;minutes&quot; |
 | HOURS | &quot;hours&quot; |
+| DAYS | &quot;days&quot; |
 
 
 
@@ -37,6 +38,7 @@
 | GROUP | &quot;Group&quot; |
 | SERVICE | &quot;Service&quot; |
 | ESCALATION_POLICY | &quot;EscalationPolicy&quot; |
+| FUNCTIONALITY | &quot;Functionality&quot; |
 
 
 

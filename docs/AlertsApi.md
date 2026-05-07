@@ -7,10 +7,12 @@ All URIs are relative to *https://api.rootly.com*
 | [**acknowledgeAlert**](AlertsApi.md#acknowledgeAlert) | **POST** /v1/alerts/{id}/acknowledge | Acknowledges an alert |
 | [**attachAlert**](AlertsApi.md#attachAlert) | **POST** /v1/incidents/{incident_id}/alerts | Attach alerts to an incident |
 | [**createAlert**](AlertsApi.md#createAlert) | **POST** /v1/alerts | Creates an alert |
+| [**escalateAlert**](AlertsApi.md#escalateAlert) | **POST** /v1/alerts/{id}/escalate | Escalates an alert |
 | [**getAlert**](AlertsApi.md#getAlert) | **GET** /v1/alerts/{id} | Retrieves an alert |
 | [**listAlerts**](AlertsApi.md#listAlerts) | **GET** /v1/alerts | List alerts |
 | [**listIncidentAlerts**](AlertsApi.md#listIncidentAlerts) | **GET** /v1/incidents/{incident_id}/alerts | List Incident alerts |
 | [**resolveAlert**](AlertsApi.md#resolveAlert) | **POST** /v1/alerts/{id}/resolve | Resolves an alert |
+| [**snoozeAlert**](AlertsApi.md#snoozeAlert) | **POST** /v1/alerts/{id}/snooze | Snoozes an alert |
 | [**updateAlert**](AlertsApi.md#updateAlert) | **PATCH** /v1/alerts/{id} | Update alert |
 
 
@@ -81,6 +83,7 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | alert acknowledged |  -  |
 | **404** | resource not found |  -  |
+| **400** | cannot acknowledge open alert |  -  |
 
 <a id="attachAlert"></a>
 # **attachAlert**
@@ -221,9 +224,81 @@ public class Example {
 | **422** | invalid request |  -  |
 | **401** | resource not found |  -  |
 
+<a id="escalateAlert"></a>
+# **escalateAlert**
+> AlertResponse escalateAlert(id, escalateAlert)
+
+Escalates an alert
+
+Escalates a specific alert to the next or specified level in its escalation policy
+
+### Example
+```java
+// Import classes:
+import com.rootly.client.ApiClient;
+import com.rootly.client.ApiException;
+import com.rootly.client.Configuration;
+import com.rootly.client.auth.*;
+import com.rootly.client.models.*;
+import com.rootly.client.api.AlertsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.rootly.com");
+    
+    // Configure HTTP bearer authorization: bearer_auth
+    HttpBearerAuth bearer_auth = (HttpBearerAuth) defaultClient.getAuthentication("bearer_auth");
+    bearer_auth.setBearerToken("BEARER TOKEN");
+
+    AlertsApi apiInstance = new AlertsApi(defaultClient);
+    String id = "id_example"; // String | 
+    EscalateAlert escalateAlert = new EscalateAlert(); // EscalateAlert | 
+    try {
+      AlertResponse result = apiInstance.escalateAlert(id, escalateAlert);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AlertsApi#escalateAlert");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **String**|  | |
+| **escalateAlert** | [**EscalateAlert**](EscalateAlert.md)|  | [optional] |
+
+### Return type
+
+[**AlertResponse**](AlertResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/vnd.api+json
+ - **Accept**: application/vnd.api+json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | escalates to different EP defaults to level 1 |  -  |
+| **422** | escalation_policy_level exceeds max |  -  |
+| **404** | cannot escalate grouped member alert |  -  |
+| **400** | malformed escalation_policy_id |  -  |
+
 <a id="getAlert"></a>
 # **getAlert**
-> AlertResponse getAlert(id)
+> AlertResponse getAlert(id, include)
 
 Retrieves an alert
 
@@ -250,8 +325,9 @@ public class Example {
 
     AlertsApi apiInstance = new AlertsApi(defaultClient);
     String id = "id_example"; // String | 
+    String include = "environments"; // String | comma separated if needed. eg: environments,services,groups
     try {
-      AlertResponse result = apiInstance.getAlert(id);
+      AlertResponse result = apiInstance.getAlert(id, include);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AlertsApi#getAlert");
@@ -269,6 +345,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **String**|  | |
+| **include** | **String**| comma separated if needed. eg: environments,services,groups | [optional] [enum: environments, services, groups, responders, incidents, events, alert_urgency, heartbeat, live_call_router, alert_group, group_leader_alert, group_member_alerts, alert_field_values, alerting_targets, escalation_policies, alert_call_recording, alert_urgency] |
 
 ### Return type
 
@@ -286,12 +363,12 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | alert found |  -  |
+| **200** | alert found with group_member_alerts included |  -  |
 | **404** | resource not found |  -  |
 
 <a id="listAlerts"></a>
 # **listAlerts**
-> AlertList listAlerts(include, filterStatus, pageNumber, pageSize)
+> AlertList listAlerts(include, filterStatus, filterSource, filterServices, filterEnvironments, filterGroups, filterLabels, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUpdatedAtGt, filterUpdatedAtGte, filterUpdatedAtLt, filterUpdatedAtLte, pageAfter, pageNumber, pageSize)
 
 List alerts
 
@@ -317,12 +394,34 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     AlertsApi apiInstance = new AlertsApi(defaultClient);
-    String include = "include_example"; // String | 
+    String include = "environments"; // String | comma separated if needed. eg: environments,services,groups
     String filterStatus = "filterStatus_example"; // String | 
+    String filterSource = "filterSource_example"; // String | 
+    String filterServices = "filterServices_example"; // String | 
+    String filterEnvironments = "filterEnvironments_example"; // String | 
+    String filterGroups = "filterGroups_example"; // String | 
+    String filterLabels = "filterLabels_example"; // String | 
+    String filterStartedAtGt = "filterStartedAtGt_example"; // String | 
+    String filterStartedAtGte = "filterStartedAtGte_example"; // String | 
+    String filterStartedAtLt = "filterStartedAtLt_example"; // String | 
+    String filterStartedAtLte = "filterStartedAtLte_example"; // String | 
+    String filterEndedAtGt = "filterEndedAtGt_example"; // String | 
+    String filterEndedAtGte = "filterEndedAtGte_example"; // String | 
+    String filterEndedAtLt = "filterEndedAtLt_example"; // String | 
+    String filterEndedAtLte = "filterEndedAtLte_example"; // String | 
+    String filterCreatedAtGt = "filterCreatedAtGt_example"; // String | 
+    String filterCreatedAtGte = "filterCreatedAtGte_example"; // String | 
+    String filterCreatedAtLt = "filterCreatedAtLt_example"; // String | 
+    String filterCreatedAtLte = "filterCreatedAtLte_example"; // String | 
+    String filterUpdatedAtGt = "filterUpdatedAtGt_example"; // String | 
+    String filterUpdatedAtGte = "filterUpdatedAtGte_example"; // String | 
+    String filterUpdatedAtLt = "filterUpdatedAtLt_example"; // String | 
+    String filterUpdatedAtLte = "filterUpdatedAtLte_example"; // String | 
+    String pageAfter = "pageAfter_example"; // String | The cursor to fetch results using cursor pagination. A cursor is provided in meta.next_cursor in the response.
     Integer pageNumber = 56; // Integer | 
     Integer pageSize = 56; // Integer | 
     try {
-      AlertList result = apiInstance.listAlerts(include, filterStatus, pageNumber, pageSize);
+      AlertList result = apiInstance.listAlerts(include, filterStatus, filterSource, filterServices, filterEnvironments, filterGroups, filterLabels, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUpdatedAtGt, filterUpdatedAtGte, filterUpdatedAtLt, filterUpdatedAtLte, pageAfter, pageNumber, pageSize);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AlertsApi#listAlerts");
@@ -339,8 +438,30 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **include** | **String**|  | [optional] |
+| **include** | **String**| comma separated if needed. eg: environments,services,groups | [optional] [enum: environments, services, groups, responders, incidents, events, alert_urgency, heartbeat, live_call_router, alert_group, group_leader_alert, group_member_alerts, alert_field_values, alerting_targets, escalation_policies, alert_call_recording, alert_urgency] |
 | **filterStatus** | **String**|  | [optional] |
+| **filterSource** | **String**|  | [optional] |
+| **filterServices** | **String**|  | [optional] |
+| **filterEnvironments** | **String**|  | [optional] |
+| **filterGroups** | **String**|  | [optional] |
+| **filterLabels** | **String**|  | [optional] |
+| **filterStartedAtGt** | **String**|  | [optional] |
+| **filterStartedAtGte** | **String**|  | [optional] |
+| **filterStartedAtLt** | **String**|  | [optional] |
+| **filterStartedAtLte** | **String**|  | [optional] |
+| **filterEndedAtGt** | **String**|  | [optional] |
+| **filterEndedAtGte** | **String**|  | [optional] |
+| **filterEndedAtLt** | **String**|  | [optional] |
+| **filterEndedAtLte** | **String**|  | [optional] |
+| **filterCreatedAtGt** | **String**|  | [optional] |
+| **filterCreatedAtGte** | **String**|  | [optional] |
+| **filterCreatedAtLt** | **String**|  | [optional] |
+| **filterCreatedAtLte** | **String**|  | [optional] |
+| **filterUpdatedAtGt** | **String**|  | [optional] |
+| **filterUpdatedAtGte** | **String**|  | [optional] |
+| **filterUpdatedAtLt** | **String**|  | [optional] |
+| **filterUpdatedAtLte** | **String**|  | [optional] |
+| **pageAfter** | **String**| The cursor to fetch results using cursor pagination. A cursor is provided in meta.next_cursor in the response. | [optional] |
 | **pageNumber** | **Integer**|  | [optional] |
 | **pageSize** | **Integer**|  | [optional] |
 
@@ -360,11 +481,11 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | filter by status |  -  |
+| **200** | returns grouping attributes |  -  |
 
 <a id="listIncidentAlerts"></a>
 # **listIncidentAlerts**
-> AlertList listIncidentAlerts(incidentId, include, filterSource, filterServices, filterEnvironments, filterGroups, filterLabels, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize)
+> AlertList listIncidentAlerts(incidentId, include)
 
 List Incident alerts
 
@@ -391,28 +512,9 @@ public class Example {
 
     AlertsApi apiInstance = new AlertsApi(defaultClient);
     String incidentId = "incidentId_example"; // String | 
-    String include = "include_example"; // String | 
-    String filterSource = "filterSource_example"; // String | 
-    String filterServices = "filterServices_example"; // String | 
-    String filterEnvironments = "filterEnvironments_example"; // String | 
-    String filterGroups = "filterGroups_example"; // String | 
-    String filterLabels = "filterLabels_example"; // String | 
-    String filterStartedAtGt = "filterStartedAtGt_example"; // String | 
-    String filterStartedAtGte = "filterStartedAtGte_example"; // String | 
-    String filterStartedAtLt = "filterStartedAtLt_example"; // String | 
-    String filterStartedAtLte = "filterStartedAtLte_example"; // String | 
-    String filterEndedAtGt = "filterEndedAtGt_example"; // String | 
-    String filterEndedAtGte = "filterEndedAtGte_example"; // String | 
-    String filterEndedAtLt = "filterEndedAtLt_example"; // String | 
-    String filterEndedAtLte = "filterEndedAtLte_example"; // String | 
-    String filterCreatedAtGt = "filterCreatedAtGt_example"; // String | 
-    String filterCreatedAtGte = "filterCreatedAtGte_example"; // String | 
-    String filterCreatedAtLt = "filterCreatedAtLt_example"; // String | 
-    String filterCreatedAtLte = "filterCreatedAtLte_example"; // String | 
-    Integer pageNumber = 56; // Integer | 
-    Integer pageSize = 56; // Integer | 
+    String include = "environments"; // String | comma separated if needed. eg: environments,services,groups
     try {
-      AlertList result = apiInstance.listIncidentAlerts(incidentId, include, filterSource, filterServices, filterEnvironments, filterGroups, filterLabels, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize);
+      AlertList result = apiInstance.listIncidentAlerts(incidentId, include);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AlertsApi#listIncidentAlerts");
@@ -430,26 +532,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **incidentId** | **String**|  | |
-| **include** | **String**|  | [optional] |
-| **filterSource** | **String**|  | [optional] |
-| **filterServices** | **String**|  | [optional] |
-| **filterEnvironments** | **String**|  | [optional] |
-| **filterGroups** | **String**|  | [optional] |
-| **filterLabels** | **String**|  | [optional] |
-| **filterStartedAtGt** | **String**|  | [optional] |
-| **filterStartedAtGte** | **String**|  | [optional] |
-| **filterStartedAtLt** | **String**|  | [optional] |
-| **filterStartedAtLte** | **String**|  | [optional] |
-| **filterEndedAtGt** | **String**|  | [optional] |
-| **filterEndedAtGte** | **String**|  | [optional] |
-| **filterEndedAtLt** | **String**|  | [optional] |
-| **filterEndedAtLte** | **String**|  | [optional] |
-| **filterCreatedAtGt** | **String**|  | [optional] |
-| **filterCreatedAtGte** | **String**|  | [optional] |
-| **filterCreatedAtLt** | **String**|  | [optional] |
-| **filterCreatedAtLte** | **String**|  | [optional] |
-| **pageNumber** | **Integer**|  | [optional] |
-| **pageSize** | **Integer**|  | [optional] |
+| **include** | **String**| comma separated if needed. eg: environments,services,groups | [optional] [enum: environments, services, groups, responders, incidents, events, alert_urgency, heartbeat, live_call_router, alert_group, group_leader_alert, group_member_alerts, alert_field_values, alerting_targets, escalation_policies, alert_call_recording, alert_urgency] |
 
 ### Return type
 
@@ -536,8 +619,80 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | resolve acknowledged |  -  |
+| **200** | resolves open alert |  -  |
 | **404** | resource not found |  -  |
+
+<a id="snoozeAlert"></a>
+# **snoozeAlert**
+> AlertResponse snoozeAlert(id, snoozeAlert)
+
+Snoozes an alert
+
+Snoozes a specific alert by id, extending the acknowledgment timeout
+
+### Example
+```java
+// Import classes:
+import com.rootly.client.ApiClient;
+import com.rootly.client.ApiException;
+import com.rootly.client.Configuration;
+import com.rootly.client.auth.*;
+import com.rootly.client.models.*;
+import com.rootly.client.api.AlertsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.rootly.com");
+    
+    // Configure HTTP bearer authorization: bearer_auth
+    HttpBearerAuth bearer_auth = (HttpBearerAuth) defaultClient.getAuthentication("bearer_auth");
+    bearer_auth.setBearerToken("BEARER TOKEN");
+
+    AlertsApi apiInstance = new AlertsApi(defaultClient);
+    String id = "id_example"; // String | 
+    SnoozeAlert snoozeAlert = new SnoozeAlert(); // SnoozeAlert | 
+    try {
+      AlertResponse result = apiInstance.snoozeAlert(id, snoozeAlert);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AlertsApi#snoozeAlert");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **String**|  | |
+| **snoozeAlert** | [**SnoozeAlert**](SnoozeAlert.md)|  | |
+
+### Return type
+
+[**AlertResponse**](AlertResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/vnd.api+json
+ - **Accept**: application/vnd.api+json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | alert snoozed |  -  |
+| **404** | resource not found |  -  |
+| **400** | invalid delay_minutes |  -  |
+| **422** | snooze service failure |  -  |
 
 <a id="updateAlert"></a>
 # **updateAlert**
@@ -606,6 +761,6 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | alert updated |  -  |
+| **200** | updates one field value and preserves others |  -  |
 | **422** | invalid request |  -  |
 

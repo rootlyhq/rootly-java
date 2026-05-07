@@ -48,6 +48,7 @@
 | GENIUS_WORKFLOW_RUN_COMPLETED | &quot;genius_workflow_run.completed&quot; |
 | GENIUS_WORKFLOW_RUN_FAILED | &quot;genius_workflow_run.failed&quot; |
 | GENIUS_WORKFLOW_RUN_CANCELED | &quot;genius_workflow_run.canceled&quot; |
+| AUDIT_LOG_CREATED | &quot;audit_log.created&quot; |
 
 
 

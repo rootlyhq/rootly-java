@@ -17,7 +17,7 @@ All URIs are relative to *https://api.rootly.com*
 
 Creates an alert group
 
-Creates a new alert group
+Creates a new alert group. **Note**: For enhanced functionality and future compatibility, consider using the advanced alert grouping with &#x60;conditions&#x60; field instead of the legacy &#x60;group_by_alert_title&#x60;, &#x60;group_by_alert_urgency&#x60;, and &#x60;attributes&#x60; fields.
 
 ### Example
 ```java
@@ -76,7 +76,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | alert group created |  -  |
+| **201** | alert group created with conditions |  -  |
 | **422** | invalid request |  -  |
 | **401** | responds with unauthorized for invalid token |  -  |
 
@@ -108,7 +108,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     AlertGroupsApi apiInstance = new AlertGroupsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       AlertGroupResponse result = apiInstance.deleteAlertGroup(id);
       System.out.println(result);
@@ -127,7 +127,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -176,7 +176,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     AlertGroupsApi apiInstance = new AlertGroupsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       AlertGroupResponse result = apiInstance.getAlertGroup(id);
       System.out.println(result);
@@ -195,7 +195,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -213,7 +213,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | alert group found |  -  |
+| **200** | alert_group found by slug |  -  |
 | **404** | resource not found |  -  |
 
 <a id="listAlertGroups"></a>
@@ -289,7 +289,7 @@ public class Example {
 
 Update an alert group
 
-Update a specific alert group by id
+Update a specific alert group by id. **Note**: For enhanced functionality and future compatibility, consider using the advanced alert grouping with &#x60;conditions&#x60; field instead of the legacy &#x60;group_by_alert_title&#x60;, &#x60;group_by_alert_urgency&#x60;, and &#x60;attributes&#x60; fields.
 
 ### Example
 ```java
@@ -311,7 +311,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     AlertGroupsApi apiInstance = new AlertGroupsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     UpdateAlertGroup updateAlertGroup = new UpdateAlertGroup(); // UpdateAlertGroup | 
     try {
       AlertGroupResponse result = apiInstance.updateAlertGroup(id, updateAlertGroup);
@@ -331,7 +331,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **updateAlertGroup** | [**UpdateAlertGroup**](UpdateAlertGroup.md)|  | |
 
 ### Return type
@@ -350,6 +350,6 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | alert group updated |  -  |
+| **200** | alert group updated with conditions |  -  |
 | **404** | resource not found |  -  |
 

@@ -11,7 +11,7 @@ All URIs are relative to *https://api.rootly.com*
 
 <a id="listIncidentPostMortems"></a>
 # **listIncidentPostMortems**
-> IncidentPostMortemList listIncidentPostMortems(include, pageNumber, pageSize, filterSearch, filterStatus, filterSeverity, filterType, filterUserId, filterEnvironments, filterFunctionalities, filterServices, filterTeams, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterMitigatedAtGt, filterMitigatedAtGte, filterMitigatedAtLt, filterMitigatedAtLte, filterResolvedAtGt, filterResolvedAtGte, filterResolvedAtLt, filterResolvedAtLte, sort)
+> IncidentPostMortemList listIncidentPostMortems(include, pageNumber, pageSize, filterSearch, filterStatus, filterSeverity, filterType, filterUserId, filterTypes, filterTypeIds, filterEnvironments, filterEnvironmentIds, filterFunctionalities, filterFunctionalityIds, filterServices, filterServiceIds, filterTeams, filterTeamIds, filterCauses, filterCauseIds, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterMitigatedAtGt, filterMitigatedAtGte, filterMitigatedAtLt, filterMitigatedAtLte, filterResolvedAtGt, filterResolvedAtGte, filterResolvedAtLt, filterResolvedAtLte, sort)
 
 List incident retrospectives
 
@@ -45,10 +45,18 @@ public class Example {
     String filterSeverity = "filterSeverity_example"; // String | 
     String filterType = "filterType_example"; // String | 
     Integer filterUserId = 56; // Integer | 
-    String filterEnvironments = "filterEnvironments_example"; // String | 
-    String filterFunctionalities = "filterFunctionalities_example"; // String | 
-    String filterServices = "filterServices_example"; // String | 
-    String filterTeams = "filterTeams_example"; // String | 
+    String filterTypes = "filterTypes_example"; // String | Filter by incident type slugs
+    String filterTypeIds = "filterTypeIds_example"; // String | Filter by incident type IDs (UUIDs)
+    String filterEnvironments = "filterEnvironments_example"; // String | Filter by environment slugs
+    String filterEnvironmentIds = "filterEnvironmentIds_example"; // String | Filter by environment IDs (UUIDs)
+    String filterFunctionalities = "filterFunctionalities_example"; // String | Filter by functionality slugs
+    String filterFunctionalityIds = "filterFunctionalityIds_example"; // String | Filter by functionality IDs (UUIDs)
+    String filterServices = "filterServices_example"; // String | Filter by service slugs
+    String filterServiceIds = "filterServiceIds_example"; // String | Filter by service IDs (UUIDs)
+    String filterTeams = "filterTeams_example"; // String | Filter by team/group slugs
+    String filterTeamIds = "filterTeamIds_example"; // String | Filter by team/group IDs (UUIDs)
+    String filterCauses = "filterCauses_example"; // String | Filter by cause slugs
+    String filterCauseIds = "filterCauseIds_example"; // String | Filter by cause IDs (UUIDs)
     String filterCreatedAtGt = "filterCreatedAtGt_example"; // String | 
     String filterCreatedAtGte = "filterCreatedAtGte_example"; // String | 
     String filterCreatedAtLt = "filterCreatedAtLt_example"; // String | 
@@ -67,7 +75,7 @@ public class Example {
     String filterResolvedAtLte = "filterResolvedAtLte_example"; // String | 
     String sort = "sort_example"; // String | 
     try {
-      IncidentPostMortemList result = apiInstance.listIncidentPostMortems(include, pageNumber, pageSize, filterSearch, filterStatus, filterSeverity, filterType, filterUserId, filterEnvironments, filterFunctionalities, filterServices, filterTeams, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterMitigatedAtGt, filterMitigatedAtGte, filterMitigatedAtLt, filterMitigatedAtLte, filterResolvedAtGt, filterResolvedAtGte, filterResolvedAtLt, filterResolvedAtLte, sort);
+      IncidentPostMortemList result = apiInstance.listIncidentPostMortems(include, pageNumber, pageSize, filterSearch, filterStatus, filterSeverity, filterType, filterUserId, filterTypes, filterTypeIds, filterEnvironments, filterEnvironmentIds, filterFunctionalities, filterFunctionalityIds, filterServices, filterServiceIds, filterTeams, filterTeamIds, filterCauses, filterCauseIds, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterMitigatedAtGt, filterMitigatedAtGte, filterMitigatedAtLt, filterMitigatedAtLte, filterResolvedAtGt, filterResolvedAtGte, filterResolvedAtLt, filterResolvedAtLte, sort);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling IncidentRetrospectivesApi#listIncidentPostMortems");
@@ -92,10 +100,18 @@ public class Example {
 | **filterSeverity** | **String**|  | [optional] |
 | **filterType** | **String**|  | [optional] |
 | **filterUserId** | **Integer**|  | [optional] |
-| **filterEnvironments** | **String**|  | [optional] |
-| **filterFunctionalities** | **String**|  | [optional] |
-| **filterServices** | **String**|  | [optional] |
-| **filterTeams** | **String**|  | [optional] |
+| **filterTypes** | **String**| Filter by incident type slugs | [optional] |
+| **filterTypeIds** | **String**| Filter by incident type IDs (UUIDs) | [optional] |
+| **filterEnvironments** | **String**| Filter by environment slugs | [optional] |
+| **filterEnvironmentIds** | **String**| Filter by environment IDs (UUIDs) | [optional] |
+| **filterFunctionalities** | **String**| Filter by functionality slugs | [optional] |
+| **filterFunctionalityIds** | **String**| Filter by functionality IDs (UUIDs) | [optional] |
+| **filterServices** | **String**| Filter by service slugs | [optional] |
+| **filterServiceIds** | **String**| Filter by service IDs (UUIDs) | [optional] |
+| **filterTeams** | **String**| Filter by team/group slugs | [optional] |
+| **filterTeamIds** | **String**| Filter by team/group IDs (UUIDs) | [optional] |
+| **filterCauses** | **String**| Filter by cause slugs | [optional] |
+| **filterCauseIds** | **String**| Filter by cause IDs (UUIDs) | [optional] |
 | **filterCreatedAtGt** | **String**|  | [optional] |
 | **filterCreatedAtGte** | **String**|  | [optional] |
 | **filterCreatedAtLt** | **String**|  | [optional] |
@@ -160,7 +176,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     IncidentRetrospectivesApi apiInstance = new IncidentRetrospectivesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       IncidentPostMortemResponse result = apiInstance.listIncidentPostmortem(id);
       System.out.println(result);
@@ -179,7 +195,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -228,7 +244,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     IncidentRetrospectivesApi apiInstance = new IncidentRetrospectivesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     UpdateIncidentPostMortem updateIncidentPostMortem = new UpdateIncidentPostMortem(); // UpdateIncidentPostMortem | 
     try {
       IncidentPostMortemResponse result = apiInstance.updateIncidentPostmortem(id, updateIncidentPostMortem);
@@ -248,7 +264,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **updateIncidentPostMortem** | [**UpdateIncidentPostMortem**](UpdateIncidentPostMortem.md)|  | |
 
 ### Return type

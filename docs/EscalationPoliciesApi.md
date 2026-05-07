@@ -220,7 +220,7 @@ public class Example {
 
 <a id="listEscalationPolicies"></a>
 # **listEscalationPolicies**
-> EscalationPolicyList listEscalationPolicies(include, filterSearch, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize)
+> EscalationPolicyList listEscalationPolicies(include, filterSearch, filterName, filterTeamIds, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize)
 
 List escalation policies
 
@@ -249,6 +249,7 @@ public class Example {
     String include = "escalation_policy_levels"; // String | comma separated if needed. eg: escalation_policy_levels,escalation_policy_paths
     String filterSearch = "filterSearch_example"; // String | 
     String filterName = "filterName_example"; // String | 
+    String filterTeamIds = "filterTeamIds_example"; // String | Filter escalation policies by associated team IDs. Comma-separate multiple values.
     String filterCreatedAtGt = "filterCreatedAtGt_example"; // String | 
     String filterCreatedAtGte = "filterCreatedAtGte_example"; // String | 
     String filterCreatedAtLt = "filterCreatedAtLt_example"; // String | 
@@ -256,7 +257,7 @@ public class Example {
     Integer pageNumber = 56; // Integer | 
     Integer pageSize = 56; // Integer | 
     try {
-      EscalationPolicyList result = apiInstance.listEscalationPolicies(include, filterSearch, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize);
+      EscalationPolicyList result = apiInstance.listEscalationPolicies(include, filterSearch, filterName, filterTeamIds, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EscalationPoliciesApi#listEscalationPolicies");
@@ -276,6 +277,7 @@ public class Example {
 | **include** | **String**| comma separated if needed. eg: escalation_policy_levels,escalation_policy_paths | [optional] [enum: escalation_policy_levels, escalation_policy_paths, groups, services] |
 | **filterSearch** | **String**|  | [optional] |
 | **filterName** | **String**|  | [optional] |
+| **filterTeamIds** | **String**| Filter escalation policies by associated team IDs. Comma-separate multiple values. | [optional] |
 | **filterCreatedAtGt** | **String**|  | [optional] |
 | **filterCreatedAtGte** | **String**|  | [optional] |
 | **filterCreatedAtLt** | **String**|  | [optional] |

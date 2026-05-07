@@ -9,6 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**data** | [**List&lt;SecretResponseData&gt;**](SecretResponseData.md) |  |  |
 |**links** | [**Links**](Links.md) |  |  [optional] |
+|**meta** | [**Meta**](Meta.md) |  |  [optional] |
 
 
 

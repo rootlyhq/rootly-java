@@ -12,7 +12,7 @@
 |**services** | [**List&lt;Service&gt;**](Service.md) | Services attached to the pulse |  [optional] |
 |**environments** | [**List&lt;Environment&gt;**](Environment.md) | Environments attached to the pulse |  [optional] |
 |**externalUrl** | **String** | The external url of the pulse |  [optional] |
-|**labels** | [**List&lt;NewAlertDataAttributesLabelsInner&gt;**](NewAlertDataAttributesLabelsInner.md) |  |  [optional] |
+|**labels** | [**List&lt;NewPulseDataAttributesLabelsInner&gt;**](NewPulseDataAttributesLabelsInner.md) |  |  [optional] |
 |**refs** | [**List&lt;NewPulseDataAttributesRefsInner&gt;**](NewPulseDataAttributesRefsInner.md) |  |  [optional] |
 |**data** | **Object** | Additional data |  [optional] |
 |**createdAt** | **String** | Date of creation |  |

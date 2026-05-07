@@ -11,7 +11,7 @@
 |**escalationPolicyPathId** | **String** | The ID of the dynamic escalation policy path the level will belong to. If nothing is specified it will add the level to your default path. |  [optional] |
 |**pagingStrategyConfigurationStrategy** | [**PagingStrategyConfigurationStrategyEnum**](#PagingStrategyConfigurationStrategyEnum) |  |  [optional] |
 |**pagingStrategyConfigurationScheduleStrategy** | [**PagingStrategyConfigurationScheduleStrategyEnum**](#PagingStrategyConfigurationScheduleStrategyEnum) |  |  [optional] |
-|**delay** | **Integer** | Delay before notification targets will be alerted. |  |
+|**delay** | **Integer** | Delay before notifying targets in the next Escalation Level. |  |
 |**position** | **Integer** | Position of the escalation policy level |  |
 |**createdAt** | **String** | Date of creation |  [optional] |
 |**updatedAt** | **String** | Date of last update |  [optional] |

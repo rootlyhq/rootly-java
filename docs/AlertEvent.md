@@ -32,6 +32,7 @@
 | NOTE | &quot;note&quot; |
 | NOISE | &quot;noise&quot; |
 | MAINTENANCE | &quot;maintenance&quot; |
+| DEFERRAL | &quot;deferral&quot; |
 
 
 
@@ -40,11 +41,14 @@
 | Name | Value |
 |---- | -----|
 | CREATED | &quot;created&quot; |
+| ESCALATION_POLICY_PAGED | &quot;escalation_policy_paged&quot; |
+| IGNORED_ALERT_REQUEST | &quot;ignored_alert_request&quot; |
 | EMAILED | &quot;emailed&quot; |
 | SLACKED | &quot;slacked&quot; |
 | CALLED | &quot;called&quot; |
 | TEXTED | &quot;texted&quot; |
 | NOTIFIED | &quot;notified&quot; |
+| SKIPPED | &quot;skipped&quot; |
 | OPENED | &quot;opened&quot; |
 | RETRIGGERED | &quot;retriggered&quot; |
 | ANSWERED | &quot;answered&quot; |
@@ -55,12 +59,14 @@
 | ATTACHED | &quot;attached&quot; |
 | SNOOZED | &quot;snoozed&quot; |
 | TRIGGERED | &quot;triggered&quot; |
+| OPEN | &quot;open&quot; |
 | UPDATED | &quot;updated&quot; |
 | ADDED | &quot;added&quot; |
 | REMOVED | &quot;removed&quot; |
 | MARKED | &quot;marked&quot; |
 | NOT_MARKED | &quot;not_marked&quot; |
 | MUTED | &quot;muted&quot; |
+| DEFERRED | &quot;deferred&quot; |
 
 
 

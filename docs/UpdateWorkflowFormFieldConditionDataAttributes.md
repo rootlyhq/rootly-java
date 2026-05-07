@@ -15,6 +15,9 @@
 |**selectedOptionIds** | **List&lt;String&gt;** |  |  [optional] |
 |**selectedServiceIds** | **List&lt;String&gt;** |  |  [optional] |
 |**selectedUserIds** | **List&lt;Integer&gt;** |  |  [optional] |
+|**selectedCauseIds** | **List&lt;String&gt;** |  |  [optional] |
+|**selectedEnvironmentIds** | **List&lt;String&gt;** |  |  [optional] |
+|**selectedIncidentTypeIds** | **List&lt;String&gt;** |  |  [optional] |
 
 
 
@@ -23,6 +26,7 @@
 | Name | Value |
 |---- | -----|
 | IS | &quot;IS&quot; |
+| IS_NOT | &quot;IS NOT&quot; |
 | ANY | &quot;ANY&quot; |
 | CONTAINS | &quot;CONTAINS&quot; |
 | CONTAINS_ALL | &quot;CONTAINS_ALL&quot; |

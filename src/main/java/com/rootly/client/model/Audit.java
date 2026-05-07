@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * Audit
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:27:13.146665190Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Audit {
   public static final String SERIALIZED_NAME_EVENT = "event";
   @SerializedName(SERIALIZED_NAME_EVENT)
@@ -61,7 +61,21 @@ public class Audit {
    */
   @JsonAdapter(ItemTypeEnum.Adapter.class)
   public enum ItemTypeEnum {
+    ALERT_ROUTE("AlertRoute"),
+    
+    ALERT_ROUTING_RULE("AlertRoutingRule"),
+    
+    ALERTS_SOURCE("Alerts::Source"),
+    
     API_KEY("ApiKey"),
+    
+    CATALOG("Catalog"),
+    
+    CATALOG_ENTITY("CatalogEntity"),
+    
+    CATALOG_ENTITY_PROPERTY("CatalogEntityProperty"),
+    
+    CATALOG_FIELD("CatalogField"),
     
     CAUSE("Cause"),
     
@@ -72,6 +86,10 @@ public class Audit {
     CUSTOM_FORM("CustomForm"),
     
     DASHBOARD("Dashboard"),
+    
+    EDGE_CONNECTOR("EdgeConnector"),
+    
+    EDGE_CONNECTOR_ACTION("EdgeConnector::Action"),
     
     ENVIRONMENT("Environment"),
     
@@ -93,9 +111,13 @@ public class Audit {
     
     GROUP("Group"),
     
+    GROUP_USER("GroupUser"),
+    
     HEARTBEAT("Heartbeat"),
     
     INCIDENT("Incident"),
+    
+    LOGIN_ACTIVITY("LoginActivity"),
     
     INCIDENT_ACTION_ITEM("IncidentActionItem"),
     
@@ -104,6 +126,8 @@ public class Audit {
     INCIDENT_FORM_FIELD_SELECTION("IncidentFormFieldSelection"),
     
     INCIDENT_FORM_FIELD_SELECTION_USER("IncidentFormFieldSelectionUser"),
+    
+    INCIDENT_PERMISSION_SET("IncidentPermissionSet"),
     
     INCIDENT_POST_MORTEM("IncidentPostMortem"),
     
@@ -117,7 +141,33 @@ public class Audit {
     
     INCIDENT_TYPE("IncidentType"),
     
+    INTEGRATIONS_DATADOG_ACCOUNT("Integrations::DatadogAccount"),
+    
+    INTEGRATIONS_GITHUB_ACCOUNT("Integrations::GithubAccount"),
+    
+    INTEGRATIONS_GOOGLE_MEET_ACCOUNT("Integrations::GoogleMeetAccount"),
+    
+    INTEGRATIONS_JIRA_ACCOUNT("Integrations::JiraAccount"),
+    
+    INTEGRATIONS_MICROSOFT_TEAMS_ACCOUNT("Integrations::MicrosoftTeamsAccount"),
+    
+    INTEGRATIONS_OPSGENIE_ACCOUNT("Integrations::OpsgenieAccount"),
+    
+    INTEGRATIONS_PAGERDUTY_ACCOUNT("Integrations::PagerdutyAccount"),
+    
+    INTEGRATIONS_SERVICE_NOW_ACCOUNT("Integrations::ServiceNowAccount"),
+    
+    INTEGRATIONS_SLACK_ACCOUNT("Integrations::SlackAccount"),
+    
+    INTEGRATIONS_STATUS_PAGE_IO_ACCOUNT("Integrations::StatusPageIoAccount"),
+    
+    INTEGRATIONS_ZENDESK_ACCOUNT("Integrations::ZendeskAccount"),
+    
+    INTEGRATIONS_ZOOM_ACCOUNT("Integrations::ZoomAccount"),
+    
     LIVE_CALL_ROUTER("LiveCallRouter"),
+    
+    MEMBERSHIP("Membership"),
     
     ON_CALL_ROLE("OnCallRole"),
     
@@ -128,6 +178,8 @@ public class Audit {
     ROLE("Role"),
     
     SCHEDULE("Schedule"),
+    
+    SECRET("Secret"),
     
     SERVICE("Service"),
     
@@ -182,6 +234,11 @@ public class Audit {
   @SerializedName(SERIALIZED_NAME_ITEM_TYPE)
   @javax.annotation.Nullable
   private ItemTypeEnum itemType;
+
+  public static final String SERIALIZED_NAME_ITEM_TYPE_DISPLAY = "item_type_display";
+  @SerializedName(SERIALIZED_NAME_ITEM_TYPE_DISPLAY)
+  @javax.annotation.Nullable
+  private String itemTypeDisplay;
 
   public static final String SERIALIZED_NAME_OBJECT = "object";
   @SerializedName(SERIALIZED_NAME_OBJECT)
@@ -251,6 +308,25 @@ public class Audit {
 
   public void setItemType(@javax.annotation.Nullable ItemTypeEnum itemType) {
     this.itemType = itemType;
+  }
+
+
+  public Audit itemTypeDisplay(@javax.annotation.Nullable String itemTypeDisplay) {
+    this.itemTypeDisplay = itemTypeDisplay;
+    return this;
+  }
+
+  /**
+   * Human-friendly display name for the item type
+   * @return itemTypeDisplay
+   */
+  @javax.annotation.Nullable
+  public String getItemTypeDisplay() {
+    return itemTypeDisplay;
+  }
+
+  public void setItemTypeDisplay(@javax.annotation.Nullable String itemTypeDisplay) {
+    this.itemTypeDisplay = itemTypeDisplay;
   }
 
 
@@ -380,6 +456,7 @@ public class Audit {
     Audit audit = (Audit) o;
     return Objects.equals(this.event, audit.event) &&
         Objects.equals(this.itemType, audit.itemType) &&
+        Objects.equals(this.itemTypeDisplay, audit.itemTypeDisplay) &&
         Objects.equals(this._object, audit._object) &&
         Objects.equals(this.objectChanges, audit.objectChanges) &&
         Objects.equals(this.userId, audit.userId) &&
@@ -394,7 +471,7 @@ public class Audit {
 
   @Override
   public int hashCode() {
-    return Objects.hash(event, itemType, _object, objectChanges, userId, createdAt, itemId, id);
+    return Objects.hash(event, itemType, itemTypeDisplay, _object, objectChanges, userId, createdAt, itemId, id);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -410,6 +487,7 @@ public class Audit {
     sb.append("class Audit {\n");
     sb.append("    event: ").append(toIndentedString(event)).append("\n");
     sb.append("    itemType: ").append(toIndentedString(itemType)).append("\n");
+    sb.append("    itemTypeDisplay: ").append(toIndentedString(itemTypeDisplay)).append("\n");
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
     sb.append("    objectChanges: ").append(toIndentedString(objectChanges)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
@@ -440,6 +518,7 @@ public class Audit {
     openapiFields = new HashSet<String>();
     openapiFields.add("event");
     openapiFields.add("item_type");
+    openapiFields.add("item_type_display");
     openapiFields.add("object");
     openapiFields.add("object_changes");
     openapiFields.add("user_id");
@@ -490,6 +569,9 @@ public class Audit {
       // validate the optional field `item_type`
       if (jsonObj.get("item_type") != null && !jsonObj.get("item_type").isJsonNull()) {
         ItemTypeEnum.validateJsonElement(jsonObj.get("item_type"));
+      }
+      if ((jsonObj.get("item_type_display") != null && !jsonObj.get("item_type_display").isJsonNull()) && !jsonObj.get("item_type_display").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `item_type_display` to be a primitive type in the JSON string but got `%s`", jsonObj.get("item_type_display").toString()));
       }
       if (!jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));

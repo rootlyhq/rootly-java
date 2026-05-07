@@ -8,6 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**title** | **String** | Title of the template |  |
+|**updateTitle** | **String** | Title that will be used for the status page update |  [optional] |
 |**body** | **String** | Description of the event the template will populate |  |
 |**updateStatus** | [**UpdateStatusEnum**](#UpdateStatusEnum) | Status of the event the template will populate |  [optional] |
 |**kind** | [**KindEnum**](#KindEnum) | The kind of the status page template |  [optional] |
@@ -27,7 +28,6 @@
 | RESOLVED | &quot;resolved&quot; |
 | SCHEDULED | &quot;scheduled&quot; |
 | IN_PROGRESS | &quot;in_progress&quot; |
-| VERIFYING | &quot;verifying&quot; |
 | COMPLETED | &quot;completed&quot; |
 
 

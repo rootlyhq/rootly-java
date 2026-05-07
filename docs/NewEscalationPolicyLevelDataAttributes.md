@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**delay** | **Integer** | Delay before notification targets will be alerted. |  [optional] |
+|**delay** | **Integer** | Delay before notifying targets in the next Escalation Level. |  [optional] |
 |**position** | **Integer** | Position of the escalation policy level |  |
 |**pagingStrategyConfigurationStrategy** | [**PagingStrategyConfigurationStrategyEnum**](#PagingStrategyConfigurationStrategyEnum) |  |  [optional] |
 |**pagingStrategyConfigurationScheduleStrategy** | [**PagingStrategyConfigurationScheduleStrategyEnum**](#PagingStrategyConfigurationScheduleStrategyEnum) |  |  [optional] |

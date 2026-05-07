@@ -12,18 +12,20 @@
 |**status** | [**StatusEnum**](#StatusEnum) | Only available for organizations with Rootly On-Call enabled. Can be one of open, triggered. |  [optional] |
 |**summary** | **String** | The summary of the alert |  |
 |**description** | **String** | The description of the alert |  [optional] |
-|**serviceIds** | **List&lt;String&gt;** | The Service ID&#39;s to attach to the alert. If your organization has On-Call enabled and your notification target is a Service. This field will be automatically set for you. |  [optional] |
-|**groupIds** | **List&lt;String&gt;** | The Group ID&#39;s to attach to the alert. If your organization has On-Call enabled and your notification target is a Group. This field will be automatically set for you. |  [optional] |
-|**environmentIds** | **List&lt;String&gt;** | The Environment ID&#39;s to attach to the alert |  [optional] |
+|**serviceIds** | **List&lt;String&gt;** | The Service IDs to attach to the alert. If your organization has On-Call enabled and your notification target is a Service. This field will be automatically set for you. |  [optional] |
+|**groupIds** | **List&lt;String&gt;** | The Group IDs to attach to the alert. If your organization has On-Call enabled and your notification target is a Group. This field will be automatically set for you. |  [optional] |
+|**environmentIds** | **List&lt;String&gt;** | The Environment IDs to attach to the alert |  [optional] |
 |**startedAt** | **OffsetDateTime** | Alert start datetime |  [optional] |
 |**endedAt** | **OffsetDateTime** | Alert end datetime |  [optional] |
 |**externalId** | **String** | External ID |  [optional] |
 |**externalUrl** | **String** | External Url |  [optional] |
 |**alertUrgencyId** | **String** | The ID of the alert urgency |  [optional] |
-|**notificationTargetType** | [**NotificationTargetTypeEnum**](#NotificationTargetTypeEnum) | Only available for organizations with Rootly On-Call enabled. Can be one of Group, Service, EscalationPolicy, User. |  [optional] |
+|**notificationTargetType** | [**NotificationTargetTypeEnum**](#NotificationTargetTypeEnum) | Only available for organizations with Rootly On-Call enabled. Can be one of Group, Service, EscalationPolicy, Functionality, User. Please contact support if you encounter issues using &#x60;Functionality&#x60; as a notification target type. |  [optional] |
 |**notificationTargetId** | **String** | Only available for organizations with Rootly On-Call enabled. The _identifier_ of the notification target object. |  [optional] |
 |**labels** | [**List&lt;NewAlertDataAttributesLabelsInner&gt;**](NewAlertDataAttributesLabelsInner.md) |  |  [optional] |
 |**data** | **Object** | Additional data |  [optional] |
+|**deduplicationKey** | **String** | Alerts sharing the same deduplication key are treated as a single alert. |  [optional] |
+|**alertFieldValuesAttributes** | [**List&lt;NewAlertDataAttributesAlertFieldValuesAttributesInner&gt;**](NewAlertDataAttributesAlertFieldValuesAttributesInner.md) | Custom alert field values to create with the alert |  [optional] |
 
 
 
@@ -43,16 +45,19 @@
 | ROOTLY | &quot;rootly&quot; |
 | MANUAL | &quot;manual&quot; |
 | API | &quot;api&quot; |
+| HEARTBEAT | &quot;heartbeat&quot; |
 | WEB | &quot;web&quot; |
 | SLACK | &quot;slack&quot; |
 | EMAIL | &quot;email&quot; |
 | WORKFLOW | &quot;workflow&quot; |
 | LIVE_CALL_ROUTING | &quot;live_call_routing&quot; |
+| MOBILE | &quot;mobile&quot; |
 | PAGERDUTY | &quot;pagerduty&quot; |
 | OPSGENIE | &quot;opsgenie&quot; |
 | VICTOROPS | &quot;victorops&quot; |
 | PAGERTREE | &quot;pagertree&quot; |
 | DATADOG | &quot;datadog&quot; |
+| DYNATRACE | &quot;dynatrace&quot; |
 | NOBL9 | &quot;nobl9&quot; |
 | ZENDESK | &quot;zendesk&quot; |
 | ASANA | &quot;asana&quot; |
@@ -68,6 +73,7 @@
 | GOOGLE_CLOUD | &quot;google_cloud&quot; |
 | GENERIC_WEBHOOK | &quot;generic_webhook&quot; |
 | CLOUD_WATCH | &quot;cloud_watch&quot; |
+| AWS_SNS | &quot;aws_sns&quot; |
 | AZURE | &quot;azure&quot; |
 | SPLUNK | &quot;splunk&quot; |
 | CHRONOSPHERE | &quot;chronosphere&quot; |
@@ -101,6 +107,7 @@
 | GROUP | &quot;Group&quot; |
 | ESCALATION_POLICY | &quot;EscalationPolicy&quot; |
 | SERVICE | &quot;Service&quot; |
+| FUNCTIONALITY | &quot;Functionality&quot; |
 
 
 

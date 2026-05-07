@@ -5,10 +5,12 @@ All URIs are relative to *https://api.rootly.com*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**createService**](ServicesApi.md#createService) | **POST** /v1/services | Creates a service |
+| [**createServiceCatalogProperty**](ServicesApi.md#createServiceCatalogProperty) | **POST** /v1/services/properties | Creates a Catalog Property |
 | [**deleteService**](ServicesApi.md#deleteService) | **DELETE** /v1/services/{id} | Delete a service |
 | [**getService**](ServicesApi.md#getService) | **GET** /v1/services/{id} | Retrieves a service |
 | [**getServiceIncidentsChart**](ServicesApi.md#getServiceIncidentsChart) | **GET** /v1/services/{id}/incidents_chart | Get service incidents chart |
 | [**getServiceUptimeChart**](ServicesApi.md#getServiceUptimeChart) | **GET** /v1/services/{id}/uptime_chart | Get service uptime chart |
+| [**listServiceCatalogProperties**](ServicesApi.md#listServiceCatalogProperties) | **GET** /v1/services/properties | List Catalog Properties |
 | [**listServices**](ServicesApi.md#listServices) | **GET** /v1/services | List services |
 | [**updateService**](ServicesApi.md#updateService) | **PUT** /v1/services/{id} | Update a service |
 
@@ -82,6 +84,75 @@ public class Example {
 | **422** | invalid request |  -  |
 | **401** | responds with unauthorized for invalid token |  -  |
 
+<a id="createServiceCatalogProperty"></a>
+# **createServiceCatalogProperty**
+> CatalogPropertyResponse createServiceCatalogProperty(newCatalogProperty)
+
+Creates a Catalog Property
+
+Creates a new Catalog Property from provided data
+
+### Example
+```java
+// Import classes:
+import com.rootly.client.ApiClient;
+import com.rootly.client.ApiException;
+import com.rootly.client.Configuration;
+import com.rootly.client.auth.*;
+import com.rootly.client.models.*;
+import com.rootly.client.api.ServicesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.rootly.com");
+    
+    // Configure HTTP bearer authorization: bearer_auth
+    HttpBearerAuth bearer_auth = (HttpBearerAuth) defaultClient.getAuthentication("bearer_auth");
+    bearer_auth.setBearerToken("BEARER TOKEN");
+
+    ServicesApi apiInstance = new ServicesApi(defaultClient);
+    NewCatalogProperty newCatalogProperty = new NewCatalogProperty(); // NewCatalogProperty | 
+    try {
+      CatalogPropertyResponse result = apiInstance.createServiceCatalogProperty(newCatalogProperty);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ServicesApi#createServiceCatalogProperty");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **newCatalogProperty** | [**NewCatalogProperty**](NewCatalogProperty.md)|  | |
+
+### Return type
+
+[**CatalogPropertyResponse**](CatalogPropertyResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/vnd.api+json
+ - **Accept**: application/vnd.api+json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | catalog_property created ignores wrong catalog_type attribute |  -  |
+| **422** | exceeds max fields per catalog |  -  |
+| **401** | responds with unauthorized for invalid token |  -  |
+
 <a id="deleteService"></a>
 # **deleteService**
 > ServiceResponse deleteService(id)
@@ -110,7 +181,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     ServicesApi apiInstance = new ServicesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       ServiceResponse result = apiInstance.deleteService(id);
       System.out.println(result);
@@ -129,7 +200,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -178,7 +249,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     ServicesApi apiInstance = new ServicesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       ServiceResponse result = apiInstance.getService(id);
       System.out.println(result);
@@ -197,7 +268,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -215,7 +286,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | service found |  -  |
+| **200** | service found by slug |  -  |
 | **404** | resource not found |  -  |
 
 <a id="getServiceIncidentsChart"></a>
@@ -246,7 +317,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     ServicesApi apiInstance = new ServicesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     String period = "period_example"; // String | 
     try {
       Object result = apiInstance.getServiceIncidentsChart(id, period);
@@ -266,7 +337,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **period** | **String**|  | |
 
 ### Return type
@@ -316,7 +387,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     ServicesApi apiInstance = new ServicesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     String period = "period_example"; // String | 
     try {
       Object result = apiInstance.getServiceUptimeChart(id, period);
@@ -336,7 +407,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **period** | **String**|  | [optional] |
 
 ### Return type
@@ -358,9 +429,96 @@ public class Example {
 | **200** | success |  -  |
 | **404** | resource not found |  -  |
 
+<a id="listServiceCatalogProperties"></a>
+# **listServiceCatalogProperties**
+> CatalogPropertyList listServiceCatalogProperties(include, sort, pageNumber, pageSize, filterSlug, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte)
+
+List Catalog Properties
+
+List Service Catalog Properties
+
+### Example
+```java
+// Import classes:
+import com.rootly.client.ApiClient;
+import com.rootly.client.ApiException;
+import com.rootly.client.Configuration;
+import com.rootly.client.auth.*;
+import com.rootly.client.models.*;
+import com.rootly.client.api.ServicesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.rootly.com");
+    
+    // Configure HTTP bearer authorization: bearer_auth
+    HttpBearerAuth bearer_auth = (HttpBearerAuth) defaultClient.getAuthentication("bearer_auth");
+    bearer_auth.setBearerToken("BEARER TOKEN");
+
+    ServicesApi apiInstance = new ServicesApi(defaultClient);
+    String include = "catalog"; // String | comma separated if needed. eg: catalog
+    String sort = "created_at"; // String | comma separated if needed. eg: created_at,updated_at
+    Integer pageNumber = 56; // Integer | 
+    Integer pageSize = 56; // Integer | 
+    String filterSlug = "filterSlug_example"; // String | 
+    String filterName = "filterName_example"; // String | 
+    String filterKind = "filterKind_example"; // String | 
+    String filterCreatedAtGt = "filterCreatedAtGt_example"; // String | 
+    String filterCreatedAtGte = "filterCreatedAtGte_example"; // String | 
+    String filterCreatedAtLt = "filterCreatedAtLt_example"; // String | 
+    String filterCreatedAtLte = "filterCreatedAtLte_example"; // String | 
+    try {
+      CatalogPropertyList result = apiInstance.listServiceCatalogProperties(include, sort, pageNumber, pageSize, filterSlug, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling ServicesApi#listServiceCatalogProperties");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **include** | **String**| comma separated if needed. eg: catalog | [optional] [enum: catalog] |
+| **sort** | **String**| comma separated if needed. eg: created_at,updated_at | [optional] [enum: created_at, -created_at, updated_at, -updated_at, position, -position] |
+| **pageNumber** | **Integer**|  | [optional] |
+| **pageSize** | **Integer**|  | [optional] |
+| **filterSlug** | **String**|  | [optional] |
+| **filterName** | **String**|  | [optional] |
+| **filterKind** | **String**|  | [optional] |
+| **filterCreatedAtGt** | **String**|  | [optional] |
+| **filterCreatedAtGte** | **String**|  | [optional] |
+| **filterCreatedAtLt** | **String**|  | [optional] |
+| **filterCreatedAtLte** | **String**|  | [optional] |
+
+### Return type
+
+[**CatalogPropertyList**](CatalogPropertyList.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.api+json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | success |  -  |
+
 <a id="listServices"></a>
 # **listServices**
-> ServiceList listServices(include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort)
+> ServiceList listServices(include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterAlertBroadcastEnabled, filterIncidentBroadcastEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort)
 
 List services
 
@@ -396,13 +554,15 @@ public class Example {
     String filterCortexId = "filterCortexId_example"; // String | 
     String filterOpslevelId = "filterOpslevelId_example"; // String | 
     String filterExternalId = "filterExternalId_example"; // String | 
+    Boolean filterAlertBroadcastEnabled = true; // Boolean | 
+    Boolean filterIncidentBroadcastEnabled = true; // Boolean | 
     String filterCreatedAtGt = "filterCreatedAtGt_example"; // String | 
     String filterCreatedAtGte = "filterCreatedAtGte_example"; // String | 
     String filterCreatedAtLt = "filterCreatedAtLt_example"; // String | 
     String filterCreatedAtLte = "filterCreatedAtLte_example"; // String | 
     String sort = "sort_example"; // String | 
     try {
-      ServiceList result = apiInstance.listServices(include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
+      ServiceList result = apiInstance.listServices(include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterAlertBroadcastEnabled, filterIncidentBroadcastEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ServicesApi#listServices");
@@ -429,6 +589,8 @@ public class Example {
 | **filterCortexId** | **String**|  | [optional] |
 | **filterOpslevelId** | **String**|  | [optional] |
 | **filterExternalId** | **String**|  | [optional] |
+| **filterAlertBroadcastEnabled** | **Boolean**|  | [optional] |
+| **filterIncidentBroadcastEnabled** | **Boolean**|  | [optional] |
 | **filterCreatedAtGt** | **String**|  | [optional] |
 | **filterCreatedAtGte** | **String**|  | [optional] |
 | **filterCreatedAtLt** | **String**|  | [optional] |
@@ -481,7 +643,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     ServicesApi apiInstance = new ServicesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     UpdateService updateService = new UpdateService(); // UpdateService | 
     try {
       ServiceResponse result = apiInstance.updateService(id, updateService);
@@ -501,7 +663,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **updateService** | [**UpdateService**](UpdateService.md)|  | |
 
 ### Return type

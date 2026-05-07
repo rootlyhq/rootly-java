@@ -2,7 +2,7 @@
 
 Rootly API v1
 - API version: v1
-  - Build date: 2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]
+  - Build date: 2026-05-07T08:27:13.146665190Z[Etc/UTC]
   - Generator version: 7.13.0
 
 # How to generate an API Key?
@@ -26,13 +26,14 @@ We use standard HTTP Authentication over HTTPS to authorize your requests.
 <br/>
 
 # Rate limiting
-- There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments.
-- There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments.
-- The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event.
-- Additional headers will be returned giving you information about the limit:
-  - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.
-  - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.
-  - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.
+- There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments.
+- There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments.
+- When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}`
+- **X-RateLimit headers** are included in every API response, providing real-time rate limit information:
+  - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)
+  - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window
+  - **X-RateLimit-Used** - The number of requests already made in the current window
+  - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds
 
 # Pagination
 - Pagination is supported for all endpoints that return a collection of items.
@@ -167,21 +168,32 @@ Class | Method | HTTP request | Description
 *AlertEventsApi* | [**getAlertEvent**](docs/AlertEventsApi.md#getAlertEvent) | **GET** /v1/alert_events/{id} | Retrieve alert event
 *AlertEventsApi* | [**listAlertEvents**](docs/AlertEventsApi.md#listAlertEvents) | **GET** /v1/alerts/{alert_id}/events | List alert events
 *AlertEventsApi* | [**updateAlertEvent**](docs/AlertEventsApi.md#updateAlertEvent) | **PATCH** /v1/alert_events/{id} | Update alert event
+*AlertFieldsApi* | [**createAlertField**](docs/AlertFieldsApi.md#createAlertField) | **POST** /v1/alert_fields | Creates an alert field
+*AlertFieldsApi* | [**deleteAlertField**](docs/AlertFieldsApi.md#deleteAlertField) | **DELETE** /v1/alert_fields/{id} | Delete an alert field
+*AlertFieldsApi* | [**getAlertField**](docs/AlertFieldsApi.md#getAlertField) | **GET** /v1/alert_fields/{id} | Retrieves an alert field
+*AlertFieldsApi* | [**listAlertFields**](docs/AlertFieldsApi.md#listAlertFields) | **GET** /v1/alert_fields | List alert fields
+*AlertFieldsApi* | [**updateAlertField**](docs/AlertFieldsApi.md#updateAlertField) | **PUT** /v1/alert_fields/{id} | Update an alert field
 *AlertGroupsApi* | [**createAlertGroup**](docs/AlertGroupsApi.md#createAlertGroup) | **POST** /v1/alert_groups | Creates an alert group
 *AlertGroupsApi* | [**deleteAlertGroup**](docs/AlertGroupsApi.md#deleteAlertGroup) | **DELETE** /v1/alert_groups/{id} | Delete an alert group
 *AlertGroupsApi* | [**getAlertGroup**](docs/AlertGroupsApi.md#getAlertGroup) | **GET** /v1/alert_groups/{id} | Retrieves an alert group
 *AlertGroupsApi* | [**listAlertGroups**](docs/AlertGroupsApi.md#listAlertGroups) | **GET** /v1/alert_groups | List alert groups
 *AlertGroupsApi* | [**updateAlertGroup**](docs/AlertGroupsApi.md#updateAlertGroup) | **PATCH** /v1/alert_groups/{id} | Update an alert group
+*AlertRoutesApi* | [**createAlertRoute**](docs/AlertRoutesApi.md#createAlertRoute) | **POST** /v1/alert_routes | Creates an alert route
+*AlertRoutesApi* | [**deleteAlertRoute**](docs/AlertRoutesApi.md#deleteAlertRoute) | **DELETE** /v1/alert_routes/{id} | Delete an alert route
+*AlertRoutesApi* | [**getAlertRoute**](docs/AlertRoutesApi.md#getAlertRoute) | **GET** /v1/alert_routes/{id} | Get an alert route
+*AlertRoutesApi* | [**listAlertRoutes**](docs/AlertRoutesApi.md#listAlertRoutes) | **GET** /v1/alert_routes | List alert routes
+*AlertRoutesApi* | [**patchAlertRoute**](docs/AlertRoutesApi.md#patchAlertRoute) | **PATCH** /v1/alert_routes/{id} | Update an alert route
+*AlertRoutesApi* | [**updateAlertRoute**](docs/AlertRoutesApi.md#updateAlertRoute) | **PUT** /v1/alert_routes/{id} | Update an alert route
 *AlertRoutingRulesApi* | [**createAlertRoutingRule**](docs/AlertRoutingRulesApi.md#createAlertRoutingRule) | **POST** /v1/alert_routing_rules | Creates an alert routing rule
 *AlertRoutingRulesApi* | [**deleteAlertRoutingRule**](docs/AlertRoutingRulesApi.md#deleteAlertRoutingRule) | **DELETE** /v1/alert_routing_rules/{id} | Delete an alert routing rule
 *AlertRoutingRulesApi* | [**getAlertRoutingRule**](docs/AlertRoutingRulesApi.md#getAlertRoutingRule) | **GET** /v1/alert_routing_rules/{id} | Retrieves an alert routing rule
 *AlertRoutingRulesApi* | [**listAlertRoutingRules**](docs/AlertRoutingRulesApi.md#listAlertRoutingRules) | **GET** /v1/alert_routing_rules | List alert routing rules
 *AlertRoutingRulesApi* | [**updateAlertRoutingRule**](docs/AlertRoutingRulesApi.md#updateAlertRoutingRule) | **PUT** /v1/alert_routing_rules/{id} | Update an alert routing rule
-*AlertSourcesApi* | [**createAlertSource**](docs/AlertSourcesApi.md#createAlertSource) | **POST** /v1/alert_sources | Creates an alert source
-*AlertSourcesApi* | [**deleteAlertSource**](docs/AlertSourcesApi.md#deleteAlertSource) | **DELETE** /v1/alert_sources/{id} | Delete an alert source
-*AlertSourcesApi* | [**getAlertSource**](docs/AlertSourcesApi.md#getAlertSource) | **GET** /v1/alert_sources/{id} | Retrieves an alert source
-*AlertSourcesApi* | [**listAlertSources**](docs/AlertSourcesApi.md#listAlertSources) | **GET** /v1/alert_sources | List alert sources
-*AlertSourcesApi* | [**updateAlertSource**](docs/AlertSourcesApi.md#updateAlertSource) | **PUT** /v1/alert_sources/{id} | Update an alert source
+*AlertSourcesApi* | [**createAlertsSource**](docs/AlertSourcesApi.md#createAlertsSource) | **POST** /v1/alert_sources | Creates an alert source
+*AlertSourcesApi* | [**deleteAlertsSource**](docs/AlertSourcesApi.md#deleteAlertsSource) | **DELETE** /v1/alert_sources/{id} | Delete an alert source
+*AlertSourcesApi* | [**getAlertsSource**](docs/AlertSourcesApi.md#getAlertsSource) | **GET** /v1/alert_sources/{id} | Retrieves an alert source
+*AlertSourcesApi* | [**listAlertsSources**](docs/AlertSourcesApi.md#listAlertsSources) | **GET** /v1/alert_sources | List alert sources
+*AlertSourcesApi* | [**updateAlertsSource**](docs/AlertSourcesApi.md#updateAlertsSource) | **PUT** /v1/alert_sources/{id} | Update an alert source
 *AlertUrgenciesApi* | [**createAlertUrgency**](docs/AlertUrgenciesApi.md#createAlertUrgency) | **POST** /v1/alert_urgencies | Creates an alert urgency
 *AlertUrgenciesApi* | [**deleteAlertUrgency**](docs/AlertUrgenciesApi.md#deleteAlertUrgency) | **DELETE** /v1/alert_urgencies/{id} | Delete an alert urgency
 *AlertUrgenciesApi* | [**getAlertUrgency**](docs/AlertUrgenciesApi.md#getAlertUrgency) | **GET** /v1/alert_urgencies/{id} | Retrieves an alert urgency
@@ -190,42 +202,80 @@ Class | Method | HTTP request | Description
 *AlertsApi* | [**acknowledgeAlert**](docs/AlertsApi.md#acknowledgeAlert) | **POST** /v1/alerts/{id}/acknowledge | Acknowledges an alert
 *AlertsApi* | [**attachAlert**](docs/AlertsApi.md#attachAlert) | **POST** /v1/incidents/{incident_id}/alerts | Attach alerts to an incident
 *AlertsApi* | [**createAlert**](docs/AlertsApi.md#createAlert) | **POST** /v1/alerts | Creates an alert
+*AlertsApi* | [**escalateAlert**](docs/AlertsApi.md#escalateAlert) | **POST** /v1/alerts/{id}/escalate | Escalates an alert
 *AlertsApi* | [**getAlert**](docs/AlertsApi.md#getAlert) | **GET** /v1/alerts/{id} | Retrieves an alert
 *AlertsApi* | [**listAlerts**](docs/AlertsApi.md#listAlerts) | **GET** /v1/alerts | List alerts
 *AlertsApi* | [**listIncidentAlerts**](docs/AlertsApi.md#listIncidentAlerts) | **GET** /v1/incidents/{incident_id}/alerts | List Incident alerts
 *AlertsApi* | [**resolveAlert**](docs/AlertsApi.md#resolveAlert) | **POST** /v1/alerts/{id}/resolve | Resolves an alert
+*AlertsApi* | [**snoozeAlert**](docs/AlertsApi.md#snoozeAlert) | **POST** /v1/alerts/{id}/snooze | Snoozes an alert
 *AlertsApi* | [**updateAlert**](docs/AlertsApi.md#updateAlert) | **PATCH** /v1/alerts/{id} | Update alert
+*ApiKeysApi* | [**createApiKey**](docs/ApiKeysApi.md#createApiKey) | **POST** /v1/api_keys | Creates an API key
+*ApiKeysApi* | [**deleteApiKey**](docs/ApiKeysApi.md#deleteApiKey) | **DELETE** /v1/api_keys/{id} | Revoke an API key
+*ApiKeysApi* | [**getApiKey**](docs/ApiKeysApi.md#getApiKey) | **GET** /v1/api_keys/{id} | Retrieves an API key
+*ApiKeysApi* | [**listApiKeys**](docs/ApiKeysApi.md#listApiKeys) | **GET** /v1/api_keys | List API keys
+*ApiKeysApi* | [**rotateApiKey**](docs/ApiKeysApi.md#rotateApiKey) | **POST** /v1/api_keys/{id}/rotate | Rotate an API key
+*ApiKeysApi* | [**updateApiKey**](docs/ApiKeysApi.md#updateApiKey) | **PUT** /v1/api_keys/{id} | Update an API key
 *AuditsApi* | [**listAudits**](docs/AuditsApi.md#listAudits) | **GET** /v1/audits | List audits
 *AuthorizationsApi* | [**createAuthorization**](docs/AuthorizationsApi.md#createAuthorization) | **POST** /v1/authorizations | Creates an authorization
 *AuthorizationsApi* | [**deleteAuthorization**](docs/AuthorizationsApi.md#deleteAuthorization) | **DELETE** /v1/authorizations/{id} | Delete an authorization
 *AuthorizationsApi* | [**getAuthorization**](docs/AuthorizationsApi.md#getAuthorization) | **GET** /v1/authorizations/{id} | Retrieves an authorization
 *AuthorizationsApi* | [**listAuthorizations**](docs/AuthorizationsApi.md#listAuthorizations) | **GET** /v1/authorizations | List authorizations
 *AuthorizationsApi* | [**updateAuthorization**](docs/AuthorizationsApi.md#updateAuthorization) | **PUT** /v1/authorizations/{id} | Update an authorization
+*CatalogChecklistTemplatesApi* | [**createCatalogChecklistTemplate**](docs/CatalogChecklistTemplatesApi.md#createCatalogChecklistTemplate) | **POST** /v1/catalog_checklist_templates | Creates a catalog checklist template
+*CatalogChecklistTemplatesApi* | [**deleteCatalogChecklistTemplate**](docs/CatalogChecklistTemplatesApi.md#deleteCatalogChecklistTemplate) | **DELETE** /v1/catalog_checklist_templates/{id} | Delete a catalog checklist template
+*CatalogChecklistTemplatesApi* | [**getCatalogChecklistTemplate**](docs/CatalogChecklistTemplatesApi.md#getCatalogChecklistTemplate) | **GET** /v1/catalog_checklist_templates/{id} | Retrieves a catalog checklist template
+*CatalogChecklistTemplatesApi* | [**listCatalogChecklistTemplates**](docs/CatalogChecklistTemplatesApi.md#listCatalogChecklistTemplates) | **GET** /v1/catalog_checklist_templates | List catalog checklist templates
+*CatalogChecklistTemplatesApi* | [**triggerCatalogChecklistTemplate**](docs/CatalogChecklistTemplatesApi.md#triggerCatalogChecklistTemplate) | **POST** /v1/catalog_checklist_templates/{id}/trigger | Trigger an audit for a catalog checklist template
+*CatalogChecklistTemplatesApi* | [**updateCatalogChecklistTemplate**](docs/CatalogChecklistTemplatesApi.md#updateCatalogChecklistTemplate) | **PUT** /v1/catalog_checklist_templates/{id} | Update a catalog checklist template
 *CatalogEntitiesApi* | [**createCatalogEntity**](docs/CatalogEntitiesApi.md#createCatalogEntity) | **POST** /v1/catalogs/{catalog_id}/entities | Creates a Catalog Entity
 *CatalogEntitiesApi* | [**deleteCatalogEntity**](docs/CatalogEntitiesApi.md#deleteCatalogEntity) | **DELETE** /v1/catalog_entities/{id} | Delete a Catalog Entity
 *CatalogEntitiesApi* | [**getCatalogEntity**](docs/CatalogEntitiesApi.md#getCatalogEntity) | **GET** /v1/catalog_entities/{id} | Retrieves a Catalog Entity
 *CatalogEntitiesApi* | [**listCatalogEntities**](docs/CatalogEntitiesApi.md#listCatalogEntities) | **GET** /v1/catalogs/{catalog_id}/entities | List Catalog Entities
 *CatalogEntitiesApi* | [**updateCatalogEntity**](docs/CatalogEntitiesApi.md#updateCatalogEntity) | **PUT** /v1/catalog_entities/{id} | Update a Catalog Entity
+*CatalogEntityChecklistsApi* | [**getCatalogEntityChecklist**](docs/CatalogEntityChecklistsApi.md#getCatalogEntityChecklist) | **GET** /v1/catalog_entity_checklists/{id} | Retrieves a catalog entity checklist
+*CatalogEntityChecklistsApi* | [**listCatalogEntityChecklists**](docs/CatalogEntityChecklistsApi.md#listCatalogEntityChecklists) | **GET** /v1/catalog_entity_checklists | List catalog entity checklists
 *CatalogEntityPropertiesApi* | [**createCatalogEntityProperty**](docs/CatalogEntityPropertiesApi.md#createCatalogEntityProperty) | **POST** /v1/catalog_entities/{catalog_entity_id}/properties | Creates a Catalog Entity Property
 *CatalogEntityPropertiesApi* | [**deleteCatalogEntityProperty**](docs/CatalogEntityPropertiesApi.md#deleteCatalogEntityProperty) | **DELETE** /v1/catalog_entity_properties/{id} | Delete a Catalog Entity Property
 *CatalogEntityPropertiesApi* | [**getCatalogEntityProperty**](docs/CatalogEntityPropertiesApi.md#getCatalogEntityProperty) | **GET** /v1/catalog_entity_properties/{id} | Retrieves a Catalog Entity Property
 *CatalogEntityPropertiesApi* | [**listCatalogEntityProperties**](docs/CatalogEntityPropertiesApi.md#listCatalogEntityProperties) | **GET** /v1/catalog_entities/{catalog_entity_id}/properties | List catalog properties
 *CatalogEntityPropertiesApi* | [**updateCatalogEntityProperty**](docs/CatalogEntityPropertiesApi.md#updateCatalogEntityProperty) | **PUT** /v1/catalog_entity_properties/{id} | Update a Catalog Entity Property
-*CatalogFieldsApi* | [**createCatalogField**](docs/CatalogFieldsApi.md#createCatalogField) | **POST** /v1/catalogs/{catalog_id}/fields | Creates a Catalog Field
-*CatalogFieldsApi* | [**deleteCatalogField**](docs/CatalogFieldsApi.md#deleteCatalogField) | **DELETE** /v1/catalog_fields/{id} | Delete a catalog_field
-*CatalogFieldsApi* | [**getCatalogField**](docs/CatalogFieldsApi.md#getCatalogField) | **GET** /v1/catalog_fields/{id} | Retrieves a Catalog Field
-*CatalogFieldsApi* | [**listCatalogFields**](docs/CatalogFieldsApi.md#listCatalogFields) | **GET** /v1/catalogs/{catalog_id}/fields | List Catalog Fields
-*CatalogFieldsApi* | [**updateCatalogField**](docs/CatalogFieldsApi.md#updateCatalogField) | **PUT** /v1/catalog_fields/{id} | Update a catalog_field
+*CatalogPropertiesApi* | [**createCatalogProperty**](docs/CatalogPropertiesApi.md#createCatalogProperty) | **POST** /v1/catalogs/{catalog_id}/properties | Creates a Catalog Property (alias for field)
+*CatalogPropertiesApi* | [**deleteCatalogProperty**](docs/CatalogPropertiesApi.md#deleteCatalogProperty) | **DELETE** /v1/catalog_properties/{id} | Delete a catalog_property
+*CatalogPropertiesApi* | [**getCatalogProperty**](docs/CatalogPropertiesApi.md#getCatalogProperty) | **GET** /v1/catalog_properties/{id} | Retrieves a Catalog Property (alias for field)
+*CatalogPropertiesApi* | [**listCatalogProperties**](docs/CatalogPropertiesApi.md#listCatalogProperties) | **GET** /v1/catalogs/{catalog_id}/properties | List Catalog Properties (alias for fields)
+*CatalogPropertiesApi* | [**updateCatalogProperty**](docs/CatalogPropertiesApi.md#updateCatalogProperty) | **PUT** /v1/catalog_properties/{id} | Update a catalog_property (alias for field)
 *CatalogsApi* | [**createCatalog**](docs/CatalogsApi.md#createCatalog) | **POST** /v1/catalogs | Creates a catalog
 *CatalogsApi* | [**deleteCatalog**](docs/CatalogsApi.md#deleteCatalog) | **DELETE** /v1/catalogs/{id} | Delete a catalog
 *CatalogsApi* | [**getCatalog**](docs/CatalogsApi.md#getCatalog) | **GET** /v1/catalogs/{id} | Retrieves a catalog
 *CatalogsApi* | [**listCatalogs**](docs/CatalogsApi.md#listCatalogs) | **GET** /v1/catalogs | List catalogs
 *CatalogsApi* | [**updateCatalog**](docs/CatalogsApi.md#updateCatalog) | **PUT** /v1/catalogs/{id} | Update a catalog
 *CausesApi* | [**createCause**](docs/CausesApi.md#createCause) | **POST** /v1/causes | Creates a cause
+*CausesApi* | [**createCauseCatalogProperty**](docs/CausesApi.md#createCauseCatalogProperty) | **POST** /v1/causes/properties | Creates a Catalog Property
 *CausesApi* | [**deleteCause**](docs/CausesApi.md#deleteCause) | **DELETE** /v1/causes/{id} | Delete a cause
 *CausesApi* | [**getCause**](docs/CausesApi.md#getCause) | **GET** /v1/causes/{id} | Retrieves a cause
+*CausesApi* | [**listCauseCatalogProperties**](docs/CausesApi.md#listCauseCatalogProperties) | **GET** /v1/causes/properties | List Catalog Properties
 *CausesApi* | [**listCauses**](docs/CausesApi.md#listCauses) | **GET** /v1/causes | List causes
 *CausesApi* | [**updateCause**](docs/CausesApi.md#updateCause) | **PUT** /v1/causes/{id} | Update a cause
+*CommunicationsGroupsApi* | [**createCommunicationsGroup**](docs/CommunicationsGroupsApi.md#createCommunicationsGroup) | **POST** /v1/communications/groups | Creates a communications group
+*CommunicationsGroupsApi* | [**deleteCommunicationsGroup**](docs/CommunicationsGroupsApi.md#deleteCommunicationsGroup) | **DELETE** /v1/communications/groups/{id} | Deletes a communications group
+*CommunicationsGroupsApi* | [**getCommunicationsGroup**](docs/CommunicationsGroupsApi.md#getCommunicationsGroup) | **GET** /v1/communications/groups/{id} | Shows a communications group
+*CommunicationsGroupsApi* | [**listCommunicationsGroups**](docs/CommunicationsGroupsApi.md#listCommunicationsGroups) | **GET** /v1/communications/groups | Lists communications groups
+*CommunicationsGroupsApi* | [**updateCommunicationsGroup**](docs/CommunicationsGroupsApi.md#updateCommunicationsGroup) | **PATCH** /v1/communications/groups/{id} | Updates a communications group
+*CommunicationsStagesApi* | [**createCommunicationsStage**](docs/CommunicationsStagesApi.md#createCommunicationsStage) | **POST** /v1/communications/stages | Creates a communications stage
+*CommunicationsStagesApi* | [**deleteCommunicationsStage**](docs/CommunicationsStagesApi.md#deleteCommunicationsStage) | **DELETE** /v1/communications/stages/{id} | Deletes a communications stage
+*CommunicationsStagesApi* | [**getCommunicationsStage**](docs/CommunicationsStagesApi.md#getCommunicationsStage) | **GET** /v1/communications/stages/{id} | Shows a communications stage
+*CommunicationsStagesApi* | [**listCommunicationsStages**](docs/CommunicationsStagesApi.md#listCommunicationsStages) | **GET** /v1/communications/stages | Lists communications stages
+*CommunicationsStagesApi* | [**updateCommunicationsStage**](docs/CommunicationsStagesApi.md#updateCommunicationsStage) | **PATCH** /v1/communications/stages/{id} | Updates a communications stage
+*CommunicationsTemplatesApi* | [**createCommunicationsTemplate**](docs/CommunicationsTemplatesApi.md#createCommunicationsTemplate) | **POST** /v1/communications/templates | Creates a communications template
+*CommunicationsTemplatesApi* | [**deleteCommunicationsTemplate**](docs/CommunicationsTemplatesApi.md#deleteCommunicationsTemplate) | **DELETE** /v1/communications/templates/{id} | Deletes a communications template
+*CommunicationsTemplatesApi* | [**getCommunicationsTemplate**](docs/CommunicationsTemplatesApi.md#getCommunicationsTemplate) | **GET** /v1/communications/templates/{id} | Shows a communications template
+*CommunicationsTemplatesApi* | [**listCommunicationsTemplates**](docs/CommunicationsTemplatesApi.md#listCommunicationsTemplates) | **GET** /v1/communications/templates | Lists communications templates
+*CommunicationsTemplatesApi* | [**updateCommunicationsTemplate**](docs/CommunicationsTemplatesApi.md#updateCommunicationsTemplate) | **PATCH** /v1/communications/templates/{id} | Updates a communications template
+*CommunicationsTypesApi* | [**createCommunicationsType**](docs/CommunicationsTypesApi.md#createCommunicationsType) | **POST** /v1/communications/types | Creates a communications type
+*CommunicationsTypesApi* | [**deleteCommunicationsType**](docs/CommunicationsTypesApi.md#deleteCommunicationsType) | **DELETE** /v1/communications/types/{id} | Deletes a communications type
+*CommunicationsTypesApi* | [**getCommunicationsType**](docs/CommunicationsTypesApi.md#getCommunicationsType) | **GET** /v1/communications/types/{id} | Shows a communications type
+*CommunicationsTypesApi* | [**listCommunicationsTypes**](docs/CommunicationsTypesApi.md#listCommunicationsTypes) | **GET** /v1/communications/types | Lists communications types
+*CommunicationsTypesApi* | [**updateCommunicationsType**](docs/CommunicationsTypesApi.md#updateCommunicationsType) | **PATCH** /v1/communications/types/{id} | Updates a communications type
 *CustomFormsApi* | [**createCustomForm**](docs/CustomFormsApi.md#createCustomForm) | **POST** /v1/custom_forms | Creates a custom form
 *CustomFormsApi* | [**deleteCustomForm**](docs/CustomFormsApi.md#deleteCustomForm) | **DELETE** /v1/custom_forms/{id} | Delete a custom form
 *CustomFormsApi* | [**getCustomForm**](docs/CustomFormsApi.md#getCustomForm) | **GET** /v1/custom_forms/{id} | Retrieves a custom form
@@ -264,9 +314,21 @@ Class | Method | HTTP request | Description
 *DeprecatedWorkflowCustomFieldSelectionsApi* | [**getWorkflowCustomFieldSelection**](docs/DeprecatedWorkflowCustomFieldSelectionsApi.md#getWorkflowCustomFieldSelection) | **GET** /v1/workflow_custom_field_selections/{id} | [DEPRECATED] Retrieves a workflow custom field selection
 *DeprecatedWorkflowCustomFieldSelectionsApi* | [**listWorkflowCustomFieldSelections**](docs/DeprecatedWorkflowCustomFieldSelectionsApi.md#listWorkflowCustomFieldSelections) | **GET** /v1/workflows/{workflow_id}/custom_field_selections | [DEPRECATED] List workflow custom field selections
 *DeprecatedWorkflowCustomFieldSelectionsApi* | [**updateWorkflowCustomFieldSelection**](docs/DeprecatedWorkflowCustomFieldSelectionsApi.md#updateWorkflowCustomFieldSelection) | **PUT** /v1/workflow_custom_field_selections/{id} | [DEPRECATED] Update a workflow custom field selection
+*EdgeConnectorActionsApi* | [**createEdgeConnectorAction**](docs/EdgeConnectorActionsApi.md#createEdgeConnectorAction) | **POST** /v1/edge_connectors/{edge_connector_id}/actions | Create edge connector action
+*EdgeConnectorActionsApi* | [**deleteEdgeConnectorAction**](docs/EdgeConnectorActionsApi.md#deleteEdgeConnectorAction) | **DELETE** /v1/edge_connectors/{edge_connector_id}/actions/{id} | Delete edge connector action
+*EdgeConnectorActionsApi* | [**getEdgeConnectorAction**](docs/EdgeConnectorActionsApi.md#getEdgeConnectorAction) | **GET** /v1/edge_connectors/{edge_connector_id}/actions/{id} | Show edge connector action
+*EdgeConnectorActionsApi* | [**listEdgeConnectorActions**](docs/EdgeConnectorActionsApi.md#listEdgeConnectorActions) | **GET** /v1/edge_connectors/{edge_connector_id}/actions | List edge connector actions
+*EdgeConnectorActionsApi* | [**updateEdgeConnectorAction**](docs/EdgeConnectorActionsApi.md#updateEdgeConnectorAction) | **PATCH** /v1/edge_connectors/{edge_connector_id}/actions/{id} | Update edge connector action
+*EdgeConnectorsApi* | [**createEdgeConnector**](docs/EdgeConnectorsApi.md#createEdgeConnector) | **POST** /v1/edge_connectors | Create edge connector
+*EdgeConnectorsApi* | [**deleteEdgeConnector**](docs/EdgeConnectorsApi.md#deleteEdgeConnector) | **DELETE** /v1/edge_connectors/{id} | Delete edge connector
+*EdgeConnectorsApi* | [**getEdgeConnector**](docs/EdgeConnectorsApi.md#getEdgeConnector) | **GET** /v1/edge_connectors/{id} | Show edge connector
+*EdgeConnectorsApi* | [**listEdgeConnectors**](docs/EdgeConnectorsApi.md#listEdgeConnectors) | **GET** /v1/edge_connectors | List edge connectors
+*EdgeConnectorsApi* | [**updateEdgeConnector**](docs/EdgeConnectorsApi.md#updateEdgeConnector) | **PATCH** /v1/edge_connectors/{id} | Update edge connector
 *EnvironmentsApi* | [**createEnvironment**](docs/EnvironmentsApi.md#createEnvironment) | **POST** /v1/environments | Creates an environment
+*EnvironmentsApi* | [**createEnvironmentCatalogProperty**](docs/EnvironmentsApi.md#createEnvironmentCatalogProperty) | **POST** /v1/environments/properties | Creates a Catalog Property
 *EnvironmentsApi* | [**deleteEnvironment**](docs/EnvironmentsApi.md#deleteEnvironment) | **DELETE** /v1/environments/{id} | Delete an environment
 *EnvironmentsApi* | [**getEnvironment**](docs/EnvironmentsApi.md#getEnvironment) | **GET** /v1/environments/{id} | Retrieves an environment
+*EnvironmentsApi* | [**listEnvironmentCatalogProperties**](docs/EnvironmentsApi.md#listEnvironmentCatalogProperties) | **GET** /v1/environments/properties | List Catalog Properties
 *EnvironmentsApi* | [**listEnvironments**](docs/EnvironmentsApi.md#listEnvironments) | **GET** /v1/environments | List environments
 *EnvironmentsApi* | [**updateEnvironment**](docs/EnvironmentsApi.md#updateEnvironment) | **PUT** /v1/environments/{id} | Update an environment
 *EscalationLevelsApi* | [**deleteEscalationLevel**](docs/EscalationLevelsApi.md#deleteEscalationLevel) | **DELETE** /v1/escalation_levels/{id} | Delete an escalation level
@@ -322,11 +384,13 @@ Class | Method | HTTP request | Description
 *FormSetsApi* | [**listFormSets**](docs/FormSetsApi.md#listFormSets) | **GET** /v1/form_sets | List Form Sets
 *FormSetsApi* | [**updateFormSet**](docs/FormSetsApi.md#updateFormSet) | **PUT** /v1/form_sets/{id} | Update a Form Set
 *FunctionalitiesApi* | [**createFunctionality**](docs/FunctionalitiesApi.md#createFunctionality) | **POST** /v1/functionalities | Creates a functionality
+*FunctionalitiesApi* | [**createFunctionalityCatalogProperty**](docs/FunctionalitiesApi.md#createFunctionalityCatalogProperty) | **POST** /v1/functionalities/properties | Creates a Catalog Property
 *FunctionalitiesApi* | [**deleteFunctionality**](docs/FunctionalitiesApi.md#deleteFunctionality) | **DELETE** /v1/functionalities/{id} | Delete a functionality
 *FunctionalitiesApi* | [**getFunctionality**](docs/FunctionalitiesApi.md#getFunctionality) | **GET** /v1/functionalities/{id} | Retrieves a functionality
 *FunctionalitiesApi* | [**getFunctionalityIncidentsChart**](docs/FunctionalitiesApi.md#getFunctionalityIncidentsChart) | **GET** /v1/functionalities/{id}/incidents_chart | Get functionality incidents chart
 *FunctionalitiesApi* | [**getFunctionalityUptimeChart**](docs/FunctionalitiesApi.md#getFunctionalityUptimeChart) | **GET** /v1/functionalities/{id}/uptime_chart | Get functionality uptime chart
 *FunctionalitiesApi* | [**listFunctionalities**](docs/FunctionalitiesApi.md#listFunctionalities) | **GET** /v1/functionalities | List functionalities
+*FunctionalitiesApi* | [**listFunctionalityCatalogProperties**](docs/FunctionalitiesApi.md#listFunctionalityCatalogProperties) | **GET** /v1/functionalities/properties | List Catalog Properties
 *FunctionalitiesApi* | [**updateFunctionality**](docs/FunctionalitiesApi.md#updateFunctionality) | **PUT** /v1/functionalities/{id} | Update a functionality
 *HeartbeatsApi* | [**createHeartbeat**](docs/HeartbeatsApi.md#createHeartbeat) | **POST** /v1/heartbeats | Creates a heartbeat
 *HeartbeatsApi* | [**deleteHeartbeat**](docs/HeartbeatsApi.md#deleteHeartbeat) | **DELETE** /v1/heartbeats/{id} | Delete a heartbeat
@@ -405,8 +469,10 @@ Class | Method | HTTP request | Description
 *IncidentSubStatusesApi* | [**listIncidentSubStatuses**](docs/IncidentSubStatusesApi.md#listIncidentSubStatuses) | **GET** /v1/incidents/{incident_id}/sub_statuses | List incident_sub_statuses
 *IncidentSubStatusesApi* | [**updateIncidentSubStatus**](docs/IncidentSubStatusesApi.md#updateIncidentSubStatus) | **PUT** /v1/incident_sub_statuses/{id} | Update incident_sub_status
 *IncidentTypesApi* | [**createIncidentType**](docs/IncidentTypesApi.md#createIncidentType) | **POST** /v1/incident_types | Creates an incident type
+*IncidentTypesApi* | [**createIncidentTypeCatalogProperty**](docs/IncidentTypesApi.md#createIncidentTypeCatalogProperty) | **POST** /v1/incident_types/properties | Creates a Catalog Property
 *IncidentTypesApi* | [**deleteIncidentType**](docs/IncidentTypesApi.md#deleteIncidentType) | **DELETE** /v1/incident_types/{id} | Delete an incident type
 *IncidentTypesApi* | [**getIncidentType**](docs/IncidentTypesApi.md#getIncidentType) | **GET** /v1/incident_types/{id} | Retrieves an incident type
+*IncidentTypesApi* | [**listIncidentTypeCatalogProperties**](docs/IncidentTypesApi.md#listIncidentTypeCatalogProperties) | **GET** /v1/incident_types/properties | List Catalog Properties
 *IncidentTypesApi* | [**listIncidentTypes**](docs/IncidentTypesApi.md#listIncidentTypes) | **GET** /v1/incident_types | List incident types
 *IncidentTypesApi* | [**updateIncidentType**](docs/IncidentTypesApi.md#updateIncidentType) | **PUT** /v1/incident_types/{id} | Update an incident type
 *IncidentsApi* | [**addSubscribersToIncident**](docs/IncidentsApi.md#addSubscribersToIncident) | **POST** /v1/incidents/{id}/add_subscribers | Add subscribers to incident
@@ -414,6 +480,7 @@ Class | Method | HTTP request | Description
 *IncidentsApi* | [**cancelIncident**](docs/IncidentsApi.md#cancelIncident) | **PUT** /v1/incidents/{id}/cancel | Cancel an incident
 *IncidentsApi* | [**createIncident**](docs/IncidentsApi.md#createIncident) | **POST** /v1/incidents | Creates an incident
 *IncidentsApi* | [**deleteIncident**](docs/IncidentsApi.md#deleteIncident) | **DELETE** /v1/incidents/{id} | Delete an incident
+*IncidentsApi* | [**detachFromParentIncident**](docs/IncidentsApi.md#detachFromParentIncident) | **PUT** /v1/incidents/{id}/detach_from_parent | Detach an incident from its parent
 *IncidentsApi* | [**getIncident**](docs/IncidentsApi.md#getIncident) | **GET** /v1/incidents/{id} | Retrieves an incident
 *IncidentsApi* | [**listIncidents**](docs/IncidentsApi.md#listIncidents) | **GET** /v1/incidents | List incidents
 *IncidentsApi* | [**markAsDuplicateIncident**](docs/IncidentsApi.md#markAsDuplicateIncident) | **PUT** /v1/incidents/{id}/duplicate | Mark an incident as a duplicate
@@ -423,6 +490,7 @@ Class | Method | HTTP request | Description
 *IncidentsApi* | [**resolveIncident**](docs/IncidentsApi.md#resolveIncident) | **PUT** /v1/incidents/{id}/resolve | Resolve an incident
 *IncidentsApi* | [**restartIncident**](docs/IncidentsApi.md#restartIncident) | **PUT** /v1/incidents/{id}/restart | Restart an incident
 *IncidentsApi* | [**triageIncident**](docs/IncidentsApi.md#triageIncident) | **PUT** /v1/incidents/{id}/in_triage | Triage an incident
+*IncidentsApi* | [**unmarkAsDuplicateIncident**](docs/IncidentsApi.md#unmarkAsDuplicateIncident) | **PUT** /v1/incidents/{id}/unmark_as_duplicate | Remove duplicate marking from an incident
 *IncidentsApi* | [**updateIncident**](docs/IncidentsApi.md#updateIncident) | **PUT** /v1/incidents/{id} | Update an incident
 *IpRangesApi* | [**getIpRanges**](docs/IpRangesApi.md#getIpRanges) | **GET** /v1/ip_ranges | Retrieves IP ranges
 *LiveCallRoutersApi* | [**createLiveCallRouter**](docs/LiveCallRoutersApi.md#createLiveCallRouter) | **POST** /v1/live_call_routers | Creates a Live Call Router
@@ -431,6 +499,20 @@ Class | Method | HTTP request | Description
 *LiveCallRoutersApi* | [**getLiveCallRouter**](docs/LiveCallRoutersApi.md#getLiveCallRouter) | **GET** /v1/live_call_routers/{id} | Retrieves a Live Call Router
 *LiveCallRoutersApi* | [**listLiveCallRouters**](docs/LiveCallRoutersApi.md#listLiveCallRouters) | **GET** /v1/live_call_routers | List Live Call Routers
 *LiveCallRoutersApi* | [**updateLiveCallRouter**](docs/LiveCallRoutersApi.md#updateLiveCallRouter) | **PUT** /v1/live_call_routers/{id} | Update a Live Call Router
+*MeetingRecordingsApi* | [**createMeetingRecording**](docs/MeetingRecordingsApi.md#createMeetingRecording) | **POST** /v1/incidents/{incident_id}/meeting_recordings | Create meeting recording
+*MeetingRecordingsApi* | [**deleteMeetingRecording**](docs/MeetingRecordingsApi.md#deleteMeetingRecording) | **DELETE** /v1/meeting_recordings/{id} | Delete a meeting recording
+*MeetingRecordingsApi* | [**deleteMeetingRecordingVideo**](docs/MeetingRecordingsApi.md#deleteMeetingRecordingVideo) | **DELETE** /v1/meeting_recordings/{id}/delete_video | Delete video from a meeting recording
+*MeetingRecordingsApi* | [**getMeetingRecording**](docs/MeetingRecordingsApi.md#getMeetingRecording) | **GET** /v1/meeting_recordings/{id} | Get a meeting recording
+*MeetingRecordingsApi* | [**leaveMeetingRecording**](docs/MeetingRecordingsApi.md#leaveMeetingRecording) | **POST** /v1/meeting_recordings/{id}/leave | Leave a meeting call
+*MeetingRecordingsApi* | [**listMeetingRecordings**](docs/MeetingRecordingsApi.md#listMeetingRecordings) | **GET** /v1/incidents/{incident_id}/meeting_recordings | List meeting recordings
+*MeetingRecordingsApi* | [**pauseMeetingRecording**](docs/MeetingRecordingsApi.md#pauseMeetingRecording) | **POST** /v1/meeting_recordings/{id}/pause | Pause a meeting recording
+*MeetingRecordingsApi* | [**resumeMeetingRecording**](docs/MeetingRecordingsApi.md#resumeMeetingRecording) | **POST** /v1/meeting_recordings/{id}/resume | Resume a meeting recording
+*MeetingRecordingsApi* | [**stopMeetingRecording**](docs/MeetingRecordingsApi.md#stopMeetingRecording) | **POST** /v1/meeting_recordings/{id}/stop | Stop a meeting recording
+*OnCallPayReportsApi* | [**createOnCallPayReport**](docs/OnCallPayReportsApi.md#createOnCallPayReport) | **POST** /v1/on_call_pay_reports | Creates an On-Call Pay Report
+*OnCallPayReportsApi* | [**getOnCallPayReport**](docs/OnCallPayReportsApi.md#getOnCallPayReport) | **GET** /v1/on_call_pay_reports/{id} | Retrieves an On-Call Pay Report
+*OnCallPayReportsApi* | [**listOnCallPayReports**](docs/OnCallPayReportsApi.md#listOnCallPayReports) | **GET** /v1/on_call_pay_reports | List On-Call Pay Reports
+*OnCallPayReportsApi* | [**regenerateOnCallPayReport**](docs/OnCallPayReportsApi.md#regenerateOnCallPayReport) | **POST** /v1/on_call_pay_reports/{id}/regenerate | Regenerate an On-Call Pay Report
+*OnCallPayReportsApi* | [**updateOnCallPayReport**](docs/OnCallPayReportsApi.md#updateOnCallPayReport) | **PUT** /v1/on_call_pay_reports/{id} | Update an On-Call Pay Report
 *OnCallRolesApi* | [**createOnCallRole**](docs/OnCallRolesApi.md#createOnCallRole) | **POST** /v1/on_call_roles | Creates an On-Call Role
 *OnCallRolesApi* | [**deleteOnCallRole**](docs/OnCallRolesApi.md#deleteOnCallRole) | **DELETE** /v1/on_call_roles/{id} | Delete an On-Call Role
 *OnCallRolesApi* | [**getOnCallRole**](docs/OnCallRolesApi.md#getOnCallRole) | **GET** /v1/on_call_roles/{id} | Retrieves an On-Call Role
@@ -440,6 +522,7 @@ Class | Method | HTTP request | Description
 *OnCallShadowsApi* | [**getOnCallShadow**](docs/OnCallShadowsApi.md#getOnCallShadow) | **GET** /v1/on_call_shadows/{id} | Retrieves an On Call Shadow configuration by ID
 *OnCallShadowsApi* | [**listOnCallShadows**](docs/OnCallShadowsApi.md#listOnCallShadows) | **GET** /v1/schedules/{schedule_id}/on_call_shadows | List On Call Shadows for Shift
 *OnCallShadowsApi* | [**updateOnCallShadow**](docs/OnCallShadowsApi.md#updateOnCallShadow) | **PUT** /v1/on_call_shadows/{id} | Update an On Call Shadow configuration
+*OnCallsApi* | [**listOncalls**](docs/OnCallsApi.md#listOncalls) | **GET** /v1/oncalls | List on-calls
 *OverrideShiftsApi* | [**createOverrideShift**](docs/OverrideShiftsApi.md#createOverrideShift) | **POST** /v1/schedules/{schedule_id}/override_shifts | creates an override shift
 *OverrideShiftsApi* | [**deleteOnCallShadow**](docs/OverrideShiftsApi.md#deleteOnCallShadow) | **DELETE** /v1/on_call_shadows/{id} | Delete an on call shadow configuration
 *OverrideShiftsApi* | [**deleteOverrideShift**](docs/OverrideShiftsApi.md#deleteOverrideShift) | **DELETE** /v1/override_shifts/{id} | Delete an override shift
@@ -519,10 +602,12 @@ Class | Method | HTTP request | Description
 *SecretsApi* | [**listSecrets**](docs/SecretsApi.md#listSecrets) | **GET** /v1/secrets | List secrets
 *SecretsApi* | [**updateSecret**](docs/SecretsApi.md#updateSecret) | **PUT** /v1/secrets/{id} | Update a secret
 *ServicesApi* | [**createService**](docs/ServicesApi.md#createService) | **POST** /v1/services | Creates a service
+*ServicesApi* | [**createServiceCatalogProperty**](docs/ServicesApi.md#createServiceCatalogProperty) | **POST** /v1/services/properties | Creates a Catalog Property
 *ServicesApi* | [**deleteService**](docs/ServicesApi.md#deleteService) | **DELETE** /v1/services/{id} | Delete a service
 *ServicesApi* | [**getService**](docs/ServicesApi.md#getService) | **GET** /v1/services/{id} | Retrieves a service
 *ServicesApi* | [**getServiceIncidentsChart**](docs/ServicesApi.md#getServiceIncidentsChart) | **GET** /v1/services/{id}/incidents_chart | Get service incidents chart
 *ServicesApi* | [**getServiceUptimeChart**](docs/ServicesApi.md#getServiceUptimeChart) | **GET** /v1/services/{id}/uptime_chart | Get service uptime chart
+*ServicesApi* | [**listServiceCatalogProperties**](docs/ServicesApi.md#listServiceCatalogProperties) | **GET** /v1/services/properties | List Catalog Properties
 *ServicesApi* | [**listServices**](docs/ServicesApi.md#listServices) | **GET** /v1/services | List services
 *ServicesApi* | [**updateService**](docs/ServicesApi.md#updateService) | **PUT** /v1/services/{id} | Update a service
 *SeveritiesApi* | [**createSeverity**](docs/SeveritiesApi.md#createSeverity) | **POST** /v1/severities | Creates a severity
@@ -532,6 +617,11 @@ Class | Method | HTTP request | Description
 *SeveritiesApi* | [**updateSeverity**](docs/SeveritiesApi.md#updateSeverity) | **PUT** /v1/severities/{id} | Update a severity
 *ShiftsApi* | [**getScheduleShifts**](docs/ShiftsApi.md#getScheduleShifts) | **GET** /v1/schedules/{id}/shifts | Retrieves a schedule shifts
 *ShiftsApi* | [**listShifts**](docs/ShiftsApi.md#listShifts) | **GET** /v1/shifts | List shifts
+*SlasApi* | [**createSLA**](docs/SlasApi.md#createSLA) | **POST** /v1/slas | Creates an SLA
+*SlasApi* | [**deleteSLA**](docs/SlasApi.md#deleteSLA) | **DELETE** /v1/slas/{id} | Delete an SLA
+*SlasApi* | [**getSLA**](docs/SlasApi.md#getSLA) | **GET** /v1/slas/{id} | Retrieves an SLA
+*SlasApi* | [**listSLAs**](docs/SlasApi.md#listSLAs) | **GET** /v1/slas | List SLAs
+*SlasApi* | [**updateSLA**](docs/SlasApi.md#updateSLA) | **PUT** /v1/slas/{id} | Update an SLA
 *StatusPageTemplatesApi* | [**createStatusPageTemplate**](docs/StatusPageTemplatesApi.md#createStatusPageTemplate) | **POST** /v1/status-pages/{status_page_id}/templates | Creates a status page template
 *StatusPageTemplatesApi* | [**deleteStatusPageTemplate**](docs/StatusPageTemplatesApi.md#deleteStatusPageTemplate) | **DELETE** /v1/templates/{id} | Delete a incident event
 *StatusPageTemplatesApi* | [**getStatusPageTemplate**](docs/StatusPageTemplatesApi.md#getStatusPageTemplate) | **GET** /v1/templates/{id} | Retrieves a status page template
@@ -542,22 +632,38 @@ Class | Method | HTTP request | Description
 *StatusPagesApi* | [**getStatusPage**](docs/StatusPagesApi.md#getStatusPage) | **GET** /v1/status-pages/{id} | Retrieves a status page
 *StatusPagesApi* | [**listStatusPages**](docs/StatusPagesApi.md#listStatusPages) | **GET** /v1/status-pages | List status pages
 *StatusPagesApi* | [**updateStatusPage**](docs/StatusPagesApi.md#updateStatusPage) | **PUT** /v1/status-pages/{id} | Update a status page
+*StatusesApi* | [**getStatus**](docs/StatusesApi.md#getStatus) | **GET** /v1/statuses/{id} | Retrieves a Status
+*StatusesApi* | [**listStatuses**](docs/StatusesApi.md#listStatuses) | **GET** /v1/statuses | List Statuses
 *SubStatusesApi* | [**createSubStatus**](docs/SubStatusesApi.md#createSubStatus) | **POST** /v1/sub_statuses | Creates a Sub-Status
 *SubStatusesApi* | [**deleteSubStatus**](docs/SubStatusesApi.md#deleteSubStatus) | **DELETE** /v1/sub_statuses/{id} | Delete a Sub-Status
 *SubStatusesApi* | [**getSubStatus**](docs/SubStatusesApi.md#getSubStatus) | **GET** /v1/sub_statuses/{id} | Retrieves a Sub-Status
 *SubStatusesApi* | [**listSubStatuses**](docs/SubStatusesApi.md#listSubStatuses) | **GET** /v1/sub_statuses | List Sub-Statuses
 *SubStatusesApi* | [**updateSubStatus**](docs/SubStatusesApi.md#updateSubStatus) | **PUT** /v1/sub_statuses/{id} | Update a Sub-Status
+*TeamsApi* | [**createGroupCatalogProperty**](docs/TeamsApi.md#createGroupCatalogProperty) | **POST** /v1/teams/properties | Creates a Catalog Property
 *TeamsApi* | [**createTeam**](docs/TeamsApi.md#createTeam) | **POST** /v1/teams | Creates a team
 *TeamsApi* | [**deleteTeam**](docs/TeamsApi.md#deleteTeam) | **DELETE** /v1/teams/{id} | Delete a team
 *TeamsApi* | [**getTeam**](docs/TeamsApi.md#getTeam) | **GET** /v1/teams/{id} | Retrieves a team
 *TeamsApi* | [**getTeamIncidentsChart**](docs/TeamsApi.md#getTeamIncidentsChart) | **GET** /v1/teams/{id}/incidents_chart | Get team incidents chart
+*TeamsApi* | [**listGroupCatalogProperties**](docs/TeamsApi.md#listGroupCatalogProperties) | **GET** /v1/teams/properties | List Catalog Properties
 *TeamsApi* | [**listTeams**](docs/TeamsApi.md#listTeams) | **GET** /v1/teams | List teams
 *TeamsApi* | [**updateTeam**](docs/TeamsApi.md#updateTeam) | **PUT** /v1/teams/{id} | Update a team
+*UserEmailAddressesApi* | [**createUserEmailAddress**](docs/UserEmailAddressesApi.md#createUserEmailAddress) | **POST** /v1/users/{user_id}/email_addresses | Creates a user email address
+*UserEmailAddressesApi* | [**deleteUserEmailAddress**](docs/UserEmailAddressesApi.md#deleteUserEmailAddress) | **DELETE** /v1/email_addresses/{id} | Delete user email address
+*UserEmailAddressesApi* | [**getUserEmailAddresses**](docs/UserEmailAddressesApi.md#getUserEmailAddresses) | **GET** /v1/users/{user_id}/email_addresses | Retrieves user email addresses
+*UserEmailAddressesApi* | [**resendUserEmailAddressVerification**](docs/UserEmailAddressesApi.md#resendUserEmailAddressVerification) | **POST** /v1/email_addresses/{id}/resend_verification | Resends verification email
+*UserEmailAddressesApi* | [**showUserEmailAddress**](docs/UserEmailAddressesApi.md#showUserEmailAddress) | **GET** /v1/email_addresses/{id} | Show user email address
+*UserEmailAddressesApi* | [**updateUserEmailAddress**](docs/UserEmailAddressesApi.md#updateUserEmailAddress) | **PUT** /v1/email_addresses/{id} | Update user email address
+*UserEmailAddressesApi* | [**verifyUserEmailAddress**](docs/UserEmailAddressesApi.md#verifyUserEmailAddress) | **POST** /v1/email_addresses/{id}/verify | Verifies an email address with token
 *UserNotificationRulesApi* | [**createUserNotificationRule**](docs/UserNotificationRulesApi.md#createUserNotificationRule) | **POST** /v1/users/{user_id}/notification_rules | Creates an user notification rule
 *UserNotificationRulesApi* | [**deleteUserNotificationRule**](docs/UserNotificationRulesApi.md#deleteUserNotificationRule) | **DELETE** /v1/notification_rules/{id} | Delete an user notification rule
 *UserNotificationRulesApi* | [**getUserNotificationRule**](docs/UserNotificationRulesApi.md#getUserNotificationRule) | **GET** /v1/notification_rules/{id} | Retrieves an user notification rule
 *UserNotificationRulesApi* | [**listUserNotificationRules**](docs/UserNotificationRulesApi.md#listUserNotificationRules) | **GET** /v1/users/{user_id}/notification_rules | List user notification rules
 *UserNotificationRulesApi* | [**updateUserNotificationRule**](docs/UserNotificationRulesApi.md#updateUserNotificationRule) | **PUT** /v1/notification_rules/{id} | Update an user notification rule
+*UserPhoneNumbersApi* | [**createUserPhoneNumber**](docs/UserPhoneNumbersApi.md#createUserPhoneNumber) | **POST** /v1/users/{user_id}/phone_numbers | Creates a user phone number
+*UserPhoneNumbersApi* | [**deleteUserPhoneNumber**](docs/UserPhoneNumbersApi.md#deleteUserPhoneNumber) | **DELETE** /v1/phone_numbers/{id} | Delete user phone number
+*UserPhoneNumbersApi* | [**getUserPhoneNumbers**](docs/UserPhoneNumbersApi.md#getUserPhoneNumbers) | **GET** /v1/users/{user_id}/phone_numbers | Retrieves user phone numbers
+*UserPhoneNumbersApi* | [**showUserPhoneNumber**](docs/UserPhoneNumbersApi.md#showUserPhoneNumber) | **GET** /v1/phone_numbers/{id} | Show user phone number
+*UserPhoneNumbersApi* | [**updateUserPhoneNumber**](docs/UserPhoneNumbersApi.md#updateUserPhoneNumber) | **PUT** /v1/phone_numbers/{id} | Update user phone number
 *UsersApi* | [**deleteUser**](docs/UsersApi.md#deleteUser) | **DELETE** /v1/users/{id} | Delete an user
 *UsersApi* | [**getCurrentUser**](docs/UsersApi.md#getCurrentUser) | **GET** /v1/users/me | Get current user
 *UsersApi* | [**getUser**](docs/UsersApi.md#getUser) | **GET** /v1/users/{id} | Retrieves an user
@@ -601,6 +707,7 @@ Class | Method | HTTP request | Description
  - [AddActionItemTaskParams](docs/AddActionItemTaskParams.md)
  - [AddActionItemTaskParamsAssignedToUser](docs/AddActionItemTaskParamsAssignedToUser.md)
  - [AddActionItemTaskParamsPostToSlackChannelsInner](docs/AddActionItemTaskParamsPostToSlackChannelsInner.md)
+ - [AddMicrosoftTeamsChatTabTaskParams](docs/AddMicrosoftTeamsChatTabTaskParams.md)
  - [AddMicrosoftTeamsTabTaskParams](docs/AddMicrosoftTeamsTabTaskParams.md)
  - [AddRoleTaskParams](docs/AddRoleTaskParams.md)
  - [AddRoleTaskParamsAssignedToUser](docs/AddRoleTaskParamsAssignedToUser.md)
@@ -615,20 +722,39 @@ Class | Method | HTTP request | Description
  - [AlertEventList](docs/AlertEventList.md)
  - [AlertEventResponse](docs/AlertEventResponse.md)
  - [AlertEventResponseData](docs/AlertEventResponseData.md)
+ - [AlertField](docs/AlertField.md)
+ - [AlertFieldList](docs/AlertFieldList.md)
+ - [AlertFieldListDataInner](docs/AlertFieldListDataInner.md)
+ - [AlertFieldResponse](docs/AlertFieldResponse.md)
+ - [AlertFieldResponseData](docs/AlertFieldResponseData.md)
  - [AlertGroup](docs/AlertGroup.md)
+ - [AlertGroupConditionsInner](docs/AlertGroupConditionsInner.md)
+ - [AlertGroupConditionsInnerValuesInner](docs/AlertGroupConditionsInnerValuesInner.md)
  - [AlertGroupList](docs/AlertGroupList.md)
  - [AlertGroupResponse](docs/AlertGroupResponse.md)
  - [AlertGroupResponseData](docs/AlertGroupResponseData.md)
  - [AlertList](docs/AlertList.md)
  - [AlertResponse](docs/AlertResponse.md)
  - [AlertResponseData](docs/AlertResponseData.md)
+ - [AlertRoute](docs/AlertRoute.md)
+ - [AlertRouteList](docs/AlertRouteList.md)
+ - [AlertRouteResponse](docs/AlertRouteResponse.md)
+ - [AlertRouteResponseData](docs/AlertRouteResponseData.md)
  - [AlertRoutingRule](docs/AlertRoutingRule.md)
+ - [AlertRoutingRuleCondition](docs/AlertRoutingRuleCondition.md)
+ - [AlertRoutingRuleConditionGroup](docs/AlertRoutingRuleConditionGroup.md)
+ - [AlertRoutingRuleConditionGroupsInner](docs/AlertRoutingRuleConditionGroupsInner.md)
+ - [AlertRoutingRuleConditionGroupsInnerConditionsInner](docs/AlertRoutingRuleConditionGroupsInnerConditionsInner.md)
  - [AlertRoutingRuleConditionsInner](docs/AlertRoutingRuleConditionsInner.md)
  - [AlertRoutingRuleDestination](docs/AlertRoutingRuleDestination.md)
  - [AlertRoutingRuleList](docs/AlertRoutingRuleList.md)
  - [AlertRoutingRuleResponse](docs/AlertRoutingRuleResponse.md)
  - [AlertRoutingRuleResponseData](docs/AlertRoutingRuleResponseData.md)
+ - [AlertRoutingRuleTarget](docs/AlertRoutingRuleTarget.md)
  - [AlertTriggerParams](docs/AlertTriggerParams.md)
+ - [AlertTriggerParamsAlertFieldConditionsInner](docs/AlertTriggerParamsAlertFieldConditionsInner.md)
+ - [AlertTriggerParamsAlertPayloadConditions](docs/AlertTriggerParamsAlertPayloadConditions.md)
+ - [AlertTriggerParamsAlertPayloadConditionsConditionsInner](docs/AlertTriggerParamsAlertPayloadConditionsConditionsInner.md)
  - [AlertUrgency](docs/AlertUrgency.md)
  - [AlertUrgencyList](docs/AlertUrgencyList.md)
  - [AlertUrgencyResponse](docs/AlertUrgencyResponse.md)
@@ -637,6 +763,13 @@ Class | Method | HTTP request | Description
  - [AlertsSourceList](docs/AlertsSourceList.md)
  - [AlertsSourceResponse](docs/AlertsSourceResponse.md)
  - [AlertsSourceResponseData](docs/AlertsSourceResponseData.md)
+ - [ApiKey](docs/ApiKey.md)
+ - [ApiKeyList](docs/ApiKeyList.md)
+ - [ApiKeyResponse](docs/ApiKeyResponse.md)
+ - [ApiKeyResponseData](docs/ApiKeyResponseData.md)
+ - [ApiKeyWithTokenResponse](docs/ApiKeyWithTokenResponse.md)
+ - [ApiKeyWithTokenResponseData](docs/ApiKeyWithTokenResponseData.md)
+ - [ApiKeyWithTokenResponseDataAttributes](docs/ApiKeyWithTokenResponseDataAttributes.md)
  - [ArchiveMicrosoftTeamsChannelsTaskParams](docs/ArchiveMicrosoftTeamsChannelsTaskParams.md)
  - [ArchiveSlackChannelsTaskParams](docs/ArchiveSlackChannelsTaskParams.md)
  - [AssignRoleToUser](docs/AssignRoleToUser.md)
@@ -657,12 +790,29 @@ Class | Method | HTTP request | Description
  - [AutoAssignRolePagerdutyTaskParams](docs/AutoAssignRolePagerdutyTaskParams.md)
  - [AutoAssignRoleRootlyTaskParams](docs/AutoAssignRoleRootlyTaskParams.md)
  - [AutoAssignRoleVictorOpsTaskParams](docs/AutoAssignRoleVictorOpsTaskParams.md)
+ - [BuiltinField](docs/BuiltinField.md)
  - [CallPeopleTaskParams](docs/CallPeopleTaskParams.md)
  - [CancelIncident](docs/CancelIncident.md)
  - [CancelIncidentData](docs/CancelIncidentData.md)
  - [CancelIncidentDataAttributes](docs/CancelIncidentDataAttributes.md)
  - [Catalog](docs/Catalog.md)
+ - [CatalogChecklistTemplate](docs/CatalogChecklistTemplate.md)
+ - [CatalogChecklistTemplateFieldsInner](docs/CatalogChecklistTemplateFieldsInner.md)
+ - [CatalogChecklistTemplateList](docs/CatalogChecklistTemplateList.md)
+ - [CatalogChecklistTemplateOwnersInner](docs/CatalogChecklistTemplateOwnersInner.md)
+ - [CatalogChecklistTemplateResponse](docs/CatalogChecklistTemplateResponse.md)
+ - [CatalogChecklistTemplateResponseData](docs/CatalogChecklistTemplateResponseData.md)
  - [CatalogEntity](docs/CatalogEntity.md)
+ - [CatalogEntityChecklist](docs/CatalogEntityChecklist.md)
+ - [CatalogEntityChecklistChecklistFieldsInner](docs/CatalogEntityChecklistChecklistFieldsInner.md)
+ - [CatalogEntityChecklistChecklistFieldsInnerData](docs/CatalogEntityChecklistChecklistFieldsInnerData.md)
+ - [CatalogEntityChecklistChecklistFieldsInnerDataAttributes](docs/CatalogEntityChecklistChecklistFieldsInnerDataAttributes.md)
+ - [CatalogEntityChecklistChecklistOwnersInner](docs/CatalogEntityChecklistChecklistOwnersInner.md)
+ - [CatalogEntityChecklistChecklistOwnersInnerData](docs/CatalogEntityChecklistChecklistOwnersInnerData.md)
+ - [CatalogEntityChecklistChecklistOwnersInnerDataAttributes](docs/CatalogEntityChecklistChecklistOwnersInnerDataAttributes.md)
+ - [CatalogEntityChecklistList](docs/CatalogEntityChecklistList.md)
+ - [CatalogEntityChecklistResponse](docs/CatalogEntityChecklistResponse.md)
+ - [CatalogEntityChecklistResponseData](docs/CatalogEntityChecklistResponseData.md)
  - [CatalogEntityList](docs/CatalogEntityList.md)
  - [CatalogEntityProperty](docs/CatalogEntityProperty.md)
  - [CatalogEntityPropertyList](docs/CatalogEntityPropertyList.md)
@@ -675,6 +825,10 @@ Class | Method | HTTP request | Description
  - [CatalogFieldResponse](docs/CatalogFieldResponse.md)
  - [CatalogFieldResponseData](docs/CatalogFieldResponseData.md)
  - [CatalogList](docs/CatalogList.md)
+ - [CatalogProperty](docs/CatalogProperty.md)
+ - [CatalogPropertyList](docs/CatalogPropertyList.md)
+ - [CatalogPropertyResponse](docs/CatalogPropertyResponse.md)
+ - [CatalogPropertyResponseData](docs/CatalogPropertyResponseData.md)
  - [CatalogResponse](docs/CatalogResponse.md)
  - [CatalogResponseData](docs/CatalogResponseData.md)
  - [Cause](docs/Cause.md)
@@ -682,22 +836,58 @@ Class | Method | HTTP request | Description
  - [CauseResponse](docs/CauseResponse.md)
  - [CauseResponseData](docs/CauseResponseData.md)
  - [ChangeSlackChannelPrivacyTaskParams](docs/ChangeSlackChannelPrivacyTaskParams.md)
+ - [CommunicationsGroup](docs/CommunicationsGroup.md)
+ - [CommunicationsGroupCommunicationExternalGroupMembersInner](docs/CommunicationsGroupCommunicationExternalGroupMembersInner.md)
+ - [CommunicationsGroupResponse](docs/CommunicationsGroupResponse.md)
+ - [CommunicationsGroupResponseData](docs/CommunicationsGroupResponseData.md)
+ - [CommunicationsGroupsResponse](docs/CommunicationsGroupsResponse.md)
+ - [CommunicationsStage](docs/CommunicationsStage.md)
+ - [CommunicationsStageResponse](docs/CommunicationsStageResponse.md)
+ - [CommunicationsStageResponseData](docs/CommunicationsStageResponseData.md)
+ - [CommunicationsStagesResponse](docs/CommunicationsStagesResponse.md)
+ - [CommunicationsTemplate](docs/CommunicationsTemplate.md)
+ - [CommunicationsTemplateCommunicationTemplateStagesInner](docs/CommunicationsTemplateCommunicationTemplateStagesInner.md)
+ - [CommunicationsTemplateCommunicationTemplateStagesInnerData](docs/CommunicationsTemplateCommunicationTemplateStagesInnerData.md)
+ - [CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributes](docs/CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributes.md)
+ - [CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributesCommunicationStage](docs/CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributesCommunicationStage.md)
+ - [CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributesCommunicationTemplate](docs/CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributesCommunicationTemplate.md)
+ - [CommunicationsTemplateCommunicationType](docs/CommunicationsTemplateCommunicationType.md)
+ - [CommunicationsTemplateResponse](docs/CommunicationsTemplateResponse.md)
+ - [CommunicationsTemplateResponseData](docs/CommunicationsTemplateResponseData.md)
+ - [CommunicationsTemplatesResponse](docs/CommunicationsTemplatesResponse.md)
+ - [CommunicationsType](docs/CommunicationsType.md)
+ - [CommunicationsTypeResponse](docs/CommunicationsTypeResponse.md)
+ - [CommunicationsTypeResponseData](docs/CommunicationsTypeResponseData.md)
+ - [CommunicationsTypesResponse](docs/CommunicationsTypesResponse.md)
  - [CreateAirtableTableRecordTaskParams](docs/CreateAirtableTableRecordTaskParams.md)
+ - [CreateAnthropicChatCompletionTaskParams](docs/CreateAnthropicChatCompletionTaskParams.md)
+ - [CreateAnthropicChatCompletionTaskParamsModel](docs/CreateAnthropicChatCompletionTaskParamsModel.md)
  - [CreateAsanaSubtaskTaskParams](docs/CreateAsanaSubtaskTaskParams.md)
  - [CreateAsanaTaskTaskParams](docs/CreateAsanaTaskTaskParams.md)
  - [CreateClickupTaskTaskParams](docs/CreateClickupTaskTaskParams.md)
  - [CreateCodaPageTaskParams](docs/CreateCodaPageTaskParams.md)
+ - [CreateCodaPageTaskParamsDoc](docs/CreateCodaPageTaskParamsDoc.md)
  - [CreateCodaPageTaskParamsTemplate](docs/CreateCodaPageTaskParamsTemplate.md)
  - [CreateConfluencePageTaskParams](docs/CreateConfluencePageTaskParams.md)
  - [CreateConfluencePageTaskParamsIntegration](docs/CreateConfluencePageTaskParamsIntegration.md)
  - [CreateDatadogNotebookTaskParams](docs/CreateDatadogNotebookTaskParams.md)
  - [CreateDropboxPaperPageTaskParams](docs/CreateDropboxPaperPageTaskParams.md)
+ - [CreateEdgeConnectorActionRequest](docs/CreateEdgeConnectorActionRequest.md)
+ - [CreateEdgeConnectorActionRequestAction](docs/CreateEdgeConnectorActionRequestAction.md)
+ - [CreateEdgeConnectorActionRequestActionMetadata](docs/CreateEdgeConnectorActionRequestActionMetadata.md)
+ - [CreateEdgeConnectorActionRequestActionMetadataParametersInner](docs/CreateEdgeConnectorActionRequestActionMetadataParametersInner.md)
+ - [CreateEdgeConnectorRequest](docs/CreateEdgeConnectorRequest.md)
+ - [CreateEdgeConnectorRequestData](docs/CreateEdgeConnectorRequestData.md)
+ - [CreateEdgeConnectorRequestDataAttributes](docs/CreateEdgeConnectorRequestDataAttributes.md)
  - [CreateGithubIssueTaskParams](docs/CreateGithubIssueTaskParams.md)
+ - [CreateGithubIssueTaskParamsIssueType](docs/CreateGithubIssueTaskParamsIssueType.md)
  - [CreateGitlabIssueTaskParams](docs/CreateGitlabIssueTaskParams.md)
  - [CreateGoToMeetingTaskParams](docs/CreateGoToMeetingTaskParams.md)
  - [CreateGoogleCalendarEventTaskParams](docs/CreateGoogleCalendarEventTaskParams.md)
  - [CreateGoogleDocsPageTaskParams](docs/CreateGoogleDocsPageTaskParams.md)
  - [CreateGoogleDocsPermissionsTaskParams](docs/CreateGoogleDocsPermissionsTaskParams.md)
+ - [CreateGoogleGeminiChatCompletionTaskParams](docs/CreateGoogleGeminiChatCompletionTaskParams.md)
+ - [CreateGoogleGeminiChatCompletionTaskParamsModel](docs/CreateGoogleGeminiChatCompletionTaskParamsModel.md)
  - [CreateGoogleMeetingTaskParams](docs/CreateGoogleMeetingTaskParams.md)
  - [CreateIncidentPostmortemTaskParams](docs/CreateIncidentPostmortemTaskParams.md)
  - [CreateIncidentPostmortemTaskParamsTemplate](docs/CreateIncidentPostmortemTaskParamsTemplate.md)
@@ -708,6 +898,7 @@ Class | Method | HTTP request | Description
  - [CreateJiraIssueTaskParamsPriority](docs/CreateJiraIssueTaskParamsPriority.md)
  - [CreateJiraIssueTaskParamsStatus](docs/CreateJiraIssueTaskParamsStatus.md)
  - [CreateJiraSubtaskTaskParams](docs/CreateJiraSubtaskTaskParams.md)
+ - [CreateJsmopsAlertTaskParams](docs/CreateJsmopsAlertTaskParams.md)
  - [CreateLinearIssueCommentTaskParams](docs/CreateLinearIssueCommentTaskParams.md)
  - [CreateLinearIssueTaskParams](docs/CreateLinearIssueTaskParams.md)
  - [CreateLinearIssueTaskParamsProject](docs/CreateLinearIssueTaskParamsProject.md)
@@ -715,10 +906,16 @@ Class | Method | HTTP request | Description
  - [CreateLinearIssueTaskParamsTeam](docs/CreateLinearIssueTaskParamsTeam.md)
  - [CreateLinearSubtaskIssueTaskParams](docs/CreateLinearSubtaskIssueTaskParams.md)
  - [CreateMicrosoftTeamsChannelTaskParams](docs/CreateMicrosoftTeamsChannelTaskParams.md)
+ - [CreateMicrosoftTeamsChatTaskParams](docs/CreateMicrosoftTeamsChatTaskParams.md)
+ - [CreateMicrosoftTeamsChatTaskParamsMembersInner](docs/CreateMicrosoftTeamsChatTaskParamsMembersInner.md)
  - [CreateMicrosoftTeamsMeetingTaskParams](docs/CreateMicrosoftTeamsMeetingTaskParams.md)
+ - [CreateMistralChatCompletionTaskParams](docs/CreateMistralChatCompletionTaskParams.md)
+ - [CreateMistralChatCompletionTaskParamsModel](docs/CreateMistralChatCompletionTaskParamsModel.md)
  - [CreateMotionTaskTaskParams](docs/CreateMotionTaskTaskParams.md)
  - [CreateNotionPageTaskParams](docs/CreateNotionPageTaskParams.md)
  - [CreateNotionPageTaskParamsParentPage](docs/CreateNotionPageTaskParamsParentPage.md)
+ - [CreateOpenaiChatCompletionTaskParams](docs/CreateOpenaiChatCompletionTaskParams.md)
+ - [CreateOpenaiChatCompletionTaskParamsModel](docs/CreateOpenaiChatCompletionTaskParamsModel.md)
  - [CreateOpsgenieAlertTaskParams](docs/CreateOpsgenieAlertTaskParams.md)
  - [CreateOutlookEventTaskParams](docs/CreateOutlookEventTaskParams.md)
  - [CreatePagerdutyStatusUpdateTaskParams](docs/CreatePagerdutyStatusUpdateTaskParams.md)
@@ -730,10 +927,13 @@ Class | Method | HTTP request | Description
  - [CreateShortcutStoryTaskParams](docs/CreateShortcutStoryTaskParams.md)
  - [CreateShortcutTaskTaskParams](docs/CreateShortcutTaskTaskParams.md)
  - [CreateSlackChannelTaskParams](docs/CreateSlackChannelTaskParams.md)
+ - [CreateSubIncidentTaskParams](docs/CreateSubIncidentTaskParams.md)
  - [CreateTrelloCardTaskParams](docs/CreateTrelloCardTaskParams.md)
  - [CreateTrelloCardTaskParamsArchivation](docs/CreateTrelloCardTaskParamsArchivation.md)
  - [CreateTrelloCardTaskParamsBoard](docs/CreateTrelloCardTaskParamsBoard.md)
  - [CreateTrelloCardTaskParamsList](docs/CreateTrelloCardTaskParamsList.md)
+ - [CreateWatsonxChatCompletionTaskParams](docs/CreateWatsonxChatCompletionTaskParams.md)
+ - [CreateWatsonxChatCompletionTaskParamsModel](docs/CreateWatsonxChatCompletionTaskParamsModel.md)
  - [CreateWebexMeetingTaskParams](docs/CreateWebexMeetingTaskParams.md)
  - [CreateZendeskJiraLinkTaskParams](docs/CreateZendeskJiraLinkTaskParams.md)
  - [CreateZendeskTicketTaskParams](docs/CreateZendeskTicketTaskParams.md)
@@ -758,15 +958,28 @@ Class | Method | HTTP request | Description
  - [DashboardPanelResponseData](docs/DashboardPanelResponseData.md)
  - [DashboardResponse](docs/DashboardResponse.md)
  - [DashboardResponseData](docs/DashboardResponseData.md)
+ - [DeleteAlertRoute200Response](docs/DeleteAlertRoute200Response.md)
+ - [DeleteAlertRoute200ResponseData](docs/DeleteAlertRoute200ResponseData.md)
+ - [DeleteAlertRoute200ResponseDataAttributes](docs/DeleteAlertRoute200ResponseDataAttributes.md)
  - [DuplicateIncident](docs/DuplicateIncident.md)
  - [DuplicateIncidentData](docs/DuplicateIncidentData.md)
  - [DuplicateIncidentDataAttributes](docs/DuplicateIncidentDataAttributes.md)
+ - [EdgeConnector](docs/EdgeConnector.md)
+ - [EdgeConnectorAction](docs/EdgeConnectorAction.md)
+ - [EdgeConnectorActionData](docs/EdgeConnectorActionData.md)
+ - [EdgeConnectorActionDataAttributes](docs/EdgeConnectorActionDataAttributes.md)
+ - [EdgeConnectorActionDataAttributesParametersInner](docs/EdgeConnectorActionDataAttributesParametersInner.md)
+ - [EdgeConnectorData](docs/EdgeConnectorData.md)
+ - [EdgeConnectorDataAttributes](docs/EdgeConnectorDataAttributes.md)
  - [Environment](docs/Environment.md)
  - [EnvironmentList](docs/EnvironmentList.md)
  - [EnvironmentResponse](docs/EnvironmentResponse.md)
  - [EnvironmentResponseData](docs/EnvironmentResponseData.md)
  - [ErrorsList](docs/ErrorsList.md)
  - [ErrorsListErrorsInner](docs/ErrorsListErrorsInner.md)
+ - [EscalateAlert](docs/EscalateAlert.md)
+ - [EscalateAlertData](docs/EscalateAlertData.md)
+ - [EscalateAlertDataAttributes](docs/EscalateAlertDataAttributes.md)
  - [EscalationPolicy](docs/EscalationPolicy.md)
  - [EscalationPolicyLevel](docs/EscalationPolicyLevel.md)
  - [EscalationPolicyLevelList](docs/EscalationPolicyLevelList.md)
@@ -779,8 +992,6 @@ Class | Method | HTTP request | Description
  - [EscalationPolicyPathListDataInner](docs/EscalationPolicyPathListDataInner.md)
  - [EscalationPolicyPathResponse](docs/EscalationPolicyPathResponse.md)
  - [EscalationPolicyPathResponseData](docs/EscalationPolicyPathResponseData.md)
- - [EscalationPolicyPathRulesInner](docs/EscalationPolicyPathRulesInner.md)
- - [EscalationPolicyPathRulesInnerAnyOf](docs/EscalationPolicyPathRulesInnerAnyOf.md)
  - [EscalationPolicyResponse](docs/EscalationPolicyResponse.md)
  - [EscalationPolicyResponseData](docs/EscalationPolicyResponseData.md)
  - [FormField](docs/FormField.md)
@@ -815,15 +1026,13 @@ Class | Method | HTTP request | Description
  - [FunctionalityList](docs/FunctionalityList.md)
  - [FunctionalityResponse](docs/FunctionalityResponse.md)
  - [FunctionalityResponseData](docs/FunctionalityResponseData.md)
- - [GeniusCreateOpenaiChatCompletionTaskParams](docs/GeniusCreateOpenaiChatCompletionTaskParams.md)
- - [GeniusCreateOpenaiChatCompletionTaskParamsModel](docs/GeniusCreateOpenaiChatCompletionTaskParamsModel.md)
- - [GeniusCreateWatsonxChatCompletionTaskParams](docs/GeniusCreateWatsonxChatCompletionTaskParams.md)
- - [GeniusCreateWatsonxChatCompletionTaskParamsModel](docs/GeniusCreateWatsonxChatCompletionTaskParamsModel.md)
+ - [GetAlertFieldIdParameter](docs/GetAlertFieldIdParameter.md)
  - [GetAlertsTaskParams](docs/GetAlertsTaskParams.md)
  - [GetGithubCommitsTaskParams](docs/GetGithubCommitsTaskParams.md)
  - [GetGitlabCommitsTaskParams](docs/GetGitlabCommitsTaskParams.md)
  - [GetPulsesTaskParams](docs/GetPulsesTaskParams.md)
  - [GetPulsesTaskParamsParentMessageThreadTask](docs/GetPulsesTaskParamsParentMessageThreadTask.md)
+ - [GetTeamIdParameter](docs/GetTeamIdParameter.md)
  - [Heartbeat](docs/Heartbeat.md)
  - [HeartbeatList](docs/HeartbeatList.md)
  - [HeartbeatResponse](docs/HeartbeatResponse.md)
@@ -903,6 +1112,7 @@ Class | Method | HTTP request | Description
  - [IncidentTypeList](docs/IncidentTypeList.md)
  - [IncidentTypeResponse](docs/IncidentTypeResponse.md)
  - [IncidentTypeResponseData](docs/IncidentTypeResponseData.md)
+ - [IncidentZoomMeetingGlobalDialInNumbersInner](docs/IncidentZoomMeetingGlobalDialInNumbersInner.md)
  - [InviteToMicrosoftTeamsChannelTaskParams](docs/InviteToMicrosoftTeamsChannelTaskParams.md)
  - [InviteToSlackChannelOpsgenieTaskParams](docs/InviteToSlackChannelOpsgenieTaskParams.md)
  - [InviteToSlackChannelPagerdutyTaskParams](docs/InviteToSlackChannelPagerdutyTaskParams.md)
@@ -917,56 +1127,101 @@ Class | Method | HTTP request | Description
  - [LiveCallRouterList](docs/LiveCallRouterList.md)
  - [LiveCallRouterResponse](docs/LiveCallRouterResponse.md)
  - [LiveCallRouterResponseData](docs/LiveCallRouterResponseData.md)
+ - [MeetingRecording](docs/MeetingRecording.md)
+ - [MeetingRecordingList](docs/MeetingRecordingList.md)
+ - [MeetingRecordingListDataInner](docs/MeetingRecordingListDataInner.md)
+ - [Meta](docs/Meta.md)
  - [MitigateIncident](docs/MitigateIncident.md)
  - [MitigateIncidentData](docs/MitigateIncidentData.md)
  - [MitigateIncidentDataAttributes](docs/MitigateIncidentDataAttributes.md)
  - [NewAlert](docs/NewAlert.md)
  - [NewAlertData](docs/NewAlertData.md)
  - [NewAlertDataAttributes](docs/NewAlertDataAttributes.md)
+ - [NewAlertDataAttributesAlertFieldValuesAttributesInner](docs/NewAlertDataAttributesAlertFieldValuesAttributesInner.md)
  - [NewAlertDataAttributesLabelsInner](docs/NewAlertDataAttributesLabelsInner.md)
+ - [NewAlertDataAttributesLabelsInnerValue](docs/NewAlertDataAttributesLabelsInnerValue.md)
  - [NewAlertEvent](docs/NewAlertEvent.md)
  - [NewAlertEventData](docs/NewAlertEventData.md)
  - [NewAlertEventDataAttributes](docs/NewAlertEventDataAttributes.md)
+ - [NewAlertField](docs/NewAlertField.md)
+ - [NewAlertFieldData](docs/NewAlertFieldData.md)
+ - [NewAlertFieldDataAttributes](docs/NewAlertFieldDataAttributes.md)
  - [NewAlertGroup](docs/NewAlertGroup.md)
  - [NewAlertGroupData](docs/NewAlertGroupData.md)
  - [NewAlertGroupDataAttributes](docs/NewAlertGroupDataAttributes.md)
  - [NewAlertGroupDataAttributesAttributesInner](docs/NewAlertGroupDataAttributesAttributesInner.md)
+ - [NewAlertGroupDataAttributesConditionsInner](docs/NewAlertGroupDataAttributesConditionsInner.md)
  - [NewAlertGroupDataAttributesTargetsInner](docs/NewAlertGroupDataAttributesTargetsInner.md)
+ - [NewAlertRoute](docs/NewAlertRoute.md)
+ - [NewAlertRouteData](docs/NewAlertRouteData.md)
+ - [NewAlertRouteDataAttributes](docs/NewAlertRouteDataAttributes.md)
+ - [NewAlertRouteDataAttributesRulesInner](docs/NewAlertRouteDataAttributesRulesInner.md)
+ - [NewAlertRouteDataAttributesRulesInnerConditionGroupsInner](docs/NewAlertRouteDataAttributesRulesInnerConditionGroupsInner.md)
+ - [NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditionsInner](docs/NewAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditionsInner.md)
+ - [NewAlertRouteDataAttributesRulesInnerDestinationsInner](docs/NewAlertRouteDataAttributesRulesInnerDestinationsInner.md)
  - [NewAlertRoutingRule](docs/NewAlertRoutingRule.md)
  - [NewAlertRoutingRuleData](docs/NewAlertRoutingRuleData.md)
  - [NewAlertRoutingRuleDataAttributes](docs/NewAlertRoutingRuleDataAttributes.md)
  - [NewAlertRoutingRuleDataAttributesConditionsInner](docs/NewAlertRoutingRuleDataAttributesConditionsInner.md)
- - [NewAlertRoutingRuleDataAttributesDestination](docs/NewAlertRoutingRuleDataAttributesDestination.md)
  - [NewAlertUrgency](docs/NewAlertUrgency.md)
  - [NewAlertUrgencyData](docs/NewAlertUrgencyData.md)
  - [NewAlertUrgencyDataAttributes](docs/NewAlertUrgencyDataAttributes.md)
  - [NewAlertsSource](docs/NewAlertsSource.md)
  - [NewAlertsSourceData](docs/NewAlertsSourceData.md)
  - [NewAlertsSourceDataAttributes](docs/NewAlertsSourceDataAttributes.md)
+ - [NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner](docs/NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner.md)
  - [NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner](docs/NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner.md)
  - [NewAlertsSourceDataAttributesAlertTemplateAttributes](docs/NewAlertsSourceDataAttributesAlertTemplateAttributes.md)
  - [NewAlertsSourceDataAttributesResolutionRuleAttributes](docs/NewAlertsSourceDataAttributesResolutionRuleAttributes.md)
  - [NewAlertsSourceDataAttributesResolutionRuleAttributesConditionsAttributesInner](docs/NewAlertsSourceDataAttributesResolutionRuleAttributesConditionsAttributesInner.md)
  - [NewAlertsSourceDataAttributesSourceableAttributes](docs/NewAlertsSourceDataAttributesSourceableAttributes.md)
  - [NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesInner](docs/NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesInner.md)
+ - [NewApiKey](docs/NewApiKey.md)
+ - [NewApiKeyData](docs/NewApiKeyData.md)
+ - [NewApiKeyDataAttributes](docs/NewApiKeyDataAttributes.md)
  - [NewAuthorization](docs/NewAuthorization.md)
  - [NewAuthorizationData](docs/NewAuthorizationData.md)
  - [NewAuthorizationDataAttributes](docs/NewAuthorizationDataAttributes.md)
  - [NewCatalog](docs/NewCatalog.md)
+ - [NewCatalogChecklistTemplate](docs/NewCatalogChecklistTemplate.md)
+ - [NewCatalogChecklistTemplateData](docs/NewCatalogChecklistTemplateData.md)
+ - [NewCatalogChecklistTemplateDataAttributes](docs/NewCatalogChecklistTemplateDataAttributes.md)
+ - [NewCatalogChecklistTemplateDataAttributesFieldsInner](docs/NewCatalogChecklistTemplateDataAttributesFieldsInner.md)
+ - [NewCatalogChecklistTemplateDataAttributesOwnersInner](docs/NewCatalogChecklistTemplateDataAttributesOwnersInner.md)
  - [NewCatalogData](docs/NewCatalogData.md)
  - [NewCatalogDataAttributes](docs/NewCatalogDataAttributes.md)
  - [NewCatalogEntity](docs/NewCatalogEntity.md)
  - [NewCatalogEntityData](docs/NewCatalogEntityData.md)
  - [NewCatalogEntityDataAttributes](docs/NewCatalogEntityDataAttributes.md)
+ - [NewCatalogEntityDataAttributesPropertiesInner](docs/NewCatalogEntityDataAttributesPropertiesInner.md)
  - [NewCatalogEntityProperty](docs/NewCatalogEntityProperty.md)
  - [NewCatalogEntityPropertyData](docs/NewCatalogEntityPropertyData.md)
  - [NewCatalogEntityPropertyDataAttributes](docs/NewCatalogEntityPropertyDataAttributes.md)
  - [NewCatalogField](docs/NewCatalogField.md)
  - [NewCatalogFieldData](docs/NewCatalogFieldData.md)
  - [NewCatalogFieldDataAttributes](docs/NewCatalogFieldDataAttributes.md)
+ - [NewCatalogProperty](docs/NewCatalogProperty.md)
+ - [NewCatalogPropertyData](docs/NewCatalogPropertyData.md)
+ - [NewCatalogPropertyDataAttributes](docs/NewCatalogPropertyDataAttributes.md)
  - [NewCause](docs/NewCause.md)
  - [NewCauseData](docs/NewCauseData.md)
  - [NewCauseDataAttributes](docs/NewCauseDataAttributes.md)
+ - [NewCauseDataAttributesPropertiesInner](docs/NewCauseDataAttributesPropertiesInner.md)
+ - [NewCommunicationsGroup](docs/NewCommunicationsGroup.md)
+ - [NewCommunicationsGroupData](docs/NewCommunicationsGroupData.md)
+ - [NewCommunicationsGroupDataAttributes](docs/NewCommunicationsGroupDataAttributes.md)
+ - [NewCommunicationsGroupDataAttributesCommunicationExternalGroupMembersInner](docs/NewCommunicationsGroupDataAttributesCommunicationExternalGroupMembersInner.md)
+ - [NewCommunicationsGroupDataAttributesCommunicationGroupConditionsInner](docs/NewCommunicationsGroupDataAttributesCommunicationGroupConditionsInner.md)
+ - [NewCommunicationsStage](docs/NewCommunicationsStage.md)
+ - [NewCommunicationsStageData](docs/NewCommunicationsStageData.md)
+ - [NewCommunicationsStageDataAttributes](docs/NewCommunicationsStageDataAttributes.md)
+ - [NewCommunicationsTemplate](docs/NewCommunicationsTemplate.md)
+ - [NewCommunicationsTemplateData](docs/NewCommunicationsTemplateData.md)
+ - [NewCommunicationsTemplateDataAttributes](docs/NewCommunicationsTemplateDataAttributes.md)
+ - [NewCommunicationsTemplateDataAttributesCommunicationTemplateStagesAttributesInner](docs/NewCommunicationsTemplateDataAttributesCommunicationTemplateStagesAttributesInner.md)
+ - [NewCommunicationsType](docs/NewCommunicationsType.md)
+ - [NewCommunicationsTypeData](docs/NewCommunicationsTypeData.md)
+ - [NewCommunicationsTypeDataAttributes](docs/NewCommunicationsTypeDataAttributes.md)
  - [NewCustomField](docs/NewCustomField.md)
  - [NewCustomFieldData](docs/NewCustomFieldData.md)
  - [NewCustomFieldDataAttributes](docs/NewCustomFieldDataAttributes.md)
@@ -988,8 +1243,15 @@ Class | Method | HTTP request | Description
  - [NewDashboardPanelDataAttributesParamsDatasetsInnerAggregate](docs/NewDashboardPanelDataAttributesParamsDatasetsInnerAggregate.md)
  - [NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInner](docs/NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInner.md)
  - [NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInnerRulesInner](docs/NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInnerRulesInner.md)
+ - [NewDashboardPanelDataAttributesParamsDatasetsInnerGroupBy](docs/NewDashboardPanelDataAttributesParamsDatasetsInnerGroupBy.md)
+ - [NewDashboardPanelDataAttributesParamsDatasetsInnerGroupByOneOf](docs/NewDashboardPanelDataAttributesParamsDatasetsInnerGroupByOneOf.md)
  - [NewDashboardPanelDataAttributesParamsLegend](docs/NewDashboardPanelDataAttributesParamsLegend.md)
  - [NewDashboardPanelDataAttributesPosition](docs/NewDashboardPanelDataAttributesPosition.md)
+ - [NewEdgeConnector](docs/NewEdgeConnector.md)
+ - [NewEdgeConnectorAction](docs/NewEdgeConnectorAction.md)
+ - [NewEdgeConnectorActionAction](docs/NewEdgeConnectorActionAction.md)
+ - [NewEdgeConnectorActionActionMetadata](docs/NewEdgeConnectorActionActionMetadata.md)
+ - [NewEdgeConnectorEdgeConnector](docs/NewEdgeConnectorEdgeConnector.md)
  - [NewEnvironment](docs/NewEnvironment.md)
  - [NewEnvironmentData](docs/NewEnvironmentData.md)
  - [NewEnvironmentDataAttributes](docs/NewEnvironmentDataAttributes.md)
@@ -1007,9 +1269,14 @@ Class | Method | HTTP request | Description
  - [NewEscalationPolicyPathData](docs/NewEscalationPolicyPathData.md)
  - [NewEscalationPolicyPathDataAttributes](docs/NewEscalationPolicyPathDataAttributes.md)
  - [NewEscalationPolicyPathDataAttributesRulesInner](docs/NewEscalationPolicyPathDataAttributesRulesInner.md)
- - [NewEscalationPolicyPathDataAttributesRulesInnerAnyOf](docs/NewEscalationPolicyPathDataAttributesRulesInnerAnyOf.md)
- - [NewEscalationPolicyPathDataAttributesRulesInnerAnyOf1](docs/NewEscalationPolicyPathDataAttributesRulesInnerAnyOf1.md)
- - [NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2](docs/NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2.md)
+ - [NewEscalationPolicyPathDataAttributesRulesInnerOneOf](docs/NewEscalationPolicyPathDataAttributesRulesInnerOneOf.md)
+ - [NewEscalationPolicyPathDataAttributesRulesInnerOneOf1](docs/NewEscalationPolicyPathDataAttributesRulesInnerOneOf1.md)
+ - [NewEscalationPolicyPathDataAttributesRulesInnerOneOf2](docs/NewEscalationPolicyPathDataAttributesRulesInnerOneOf2.md)
+ - [NewEscalationPolicyPathDataAttributesRulesInnerOneOf3](docs/NewEscalationPolicyPathDataAttributesRulesInnerOneOf3.md)
+ - [NewEscalationPolicyPathDataAttributesRulesInnerOneOf4](docs/NewEscalationPolicyPathDataAttributesRulesInnerOneOf4.md)
+ - [NewEscalationPolicyPathDataAttributesRulesInnerOneOf5](docs/NewEscalationPolicyPathDataAttributesRulesInnerOneOf5.md)
+ - [NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner](docs/NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner.md)
+ - [NewEscalationPolicyPathDataAttributesTimeRestrictionsInner](docs/NewEscalationPolicyPathDataAttributesTimeRestrictionsInner.md)
  - [NewFormField](docs/NewFormField.md)
  - [NewFormFieldData](docs/NewFormFieldData.md)
  - [NewFormFieldDataAttributes](docs/NewFormFieldDataAttributes.md)
@@ -1090,6 +1357,10 @@ Class | Method | HTTP request | Description
  - [NewLiveCallRouterData](docs/NewLiveCallRouterData.md)
  - [NewLiveCallRouterDataAttributes](docs/NewLiveCallRouterDataAttributes.md)
  - [NewLiveCallRouterDataAttributesEscalationPolicyTriggerParams](docs/NewLiveCallRouterDataAttributesEscalationPolicyTriggerParams.md)
+ - [NewLiveCallRouterDataAttributesPagingTargetsInner](docs/NewLiveCallRouterDataAttributesPagingTargetsInner.md)
+ - [NewOnCallPayReport](docs/NewOnCallPayReport.md)
+ - [NewOnCallPayReportData](docs/NewOnCallPayReportData.md)
+ - [NewOnCallPayReportDataAttributes](docs/NewOnCallPayReportDataAttributes.md)
  - [NewOnCallRole](docs/NewOnCallRole.md)
  - [NewOnCallRoleData](docs/NewOnCallRoleData.md)
  - [NewOnCallRoleDataAttributes](docs/NewOnCallRoleDataAttributes.md)
@@ -1111,6 +1382,7 @@ Class | Method | HTTP request | Description
  - [NewPulse](docs/NewPulse.md)
  - [NewPulseData](docs/NewPulseData.md)
  - [NewPulseDataAttributes](docs/NewPulseDataAttributes.md)
+ - [NewPulseDataAttributesLabelsInner](docs/NewPulseDataAttributesLabelsInner.md)
  - [NewPulseDataAttributesRefsInner](docs/NewPulseDataAttributesRefsInner.md)
  - [NewRetrospectiveProcess](docs/NewRetrospectiveProcess.md)
  - [NewRetrospectiveProcessData](docs/NewRetrospectiveProcessData.md)
@@ -1134,6 +1406,7 @@ Class | Method | HTTP request | Description
  - [NewSchedule](docs/NewSchedule.md)
  - [NewScheduleData](docs/NewScheduleData.md)
  - [NewScheduleDataAttributes](docs/NewScheduleDataAttributes.md)
+ - [NewScheduleDataAttributesSlackChannel](docs/NewScheduleDataAttributesSlackChannel.md)
  - [NewScheduleDataAttributesSlackUserGroup](docs/NewScheduleDataAttributesSlackUserGroup.md)
  - [NewScheduleRotation](docs/NewScheduleRotation.md)
  - [NewScheduleRotationActiveDay](docs/NewScheduleRotationActiveDay.md)
@@ -1143,6 +1416,7 @@ Class | Method | HTTP request | Description
  - [NewScheduleRotationData](docs/NewScheduleRotationData.md)
  - [NewScheduleRotationDataAttributes](docs/NewScheduleRotationDataAttributes.md)
  - [NewScheduleRotationDataAttributesActiveTimeAttributesInner](docs/NewScheduleRotationDataAttributesActiveTimeAttributesInner.md)
+ - [NewScheduleRotationDataAttributesScheduleRotationMembersInner](docs/NewScheduleRotationDataAttributesScheduleRotationMembersInner.md)
  - [NewScheduleRotationDataAttributesScheduleRotationableAttributes](docs/NewScheduleRotationDataAttributesScheduleRotationableAttributes.md)
  - [NewScheduleRotationDataAttributesScheduleRotationableAttributesOneOf](docs/NewScheduleRotationDataAttributesScheduleRotationableAttributesOneOf.md)
  - [NewScheduleRotationDataAttributesScheduleRotationableAttributesOneOf1](docs/NewScheduleRotationDataAttributesScheduleRotationableAttributesOneOf1.md)
@@ -1157,9 +1431,16 @@ Class | Method | HTTP request | Description
  - [NewService](docs/NewService.md)
  - [NewServiceData](docs/NewServiceData.md)
  - [NewServiceDataAttributes](docs/NewServiceDataAttributes.md)
+ - [NewServiceDataAttributesAlertBroadcastChannel](docs/NewServiceDataAttributesAlertBroadcastChannel.md)
+ - [NewServiceDataAttributesIncidentBroadcastChannel](docs/NewServiceDataAttributesIncidentBroadcastChannel.md)
  - [NewSeverity](docs/NewSeverity.md)
  - [NewSeverityData](docs/NewSeverityData.md)
  - [NewSeverityDataAttributes](docs/NewSeverityDataAttributes.md)
+ - [NewSla](docs/NewSla.md)
+ - [NewSlaData](docs/NewSlaData.md)
+ - [NewSlaDataAttributes](docs/NewSlaDataAttributes.md)
+ - [NewSlaDataAttributesConditionsInner](docs/NewSlaDataAttributesConditionsInner.md)
+ - [NewSlaDataAttributesNotificationConfigurationsInner](docs/NewSlaDataAttributesNotificationConfigurationsInner.md)
  - [NewStatusPage](docs/NewStatusPage.md)
  - [NewStatusPageData](docs/NewStatusPageData.md)
  - [NewStatusPageDataAttributes](docs/NewStatusPageDataAttributes.md)
@@ -1172,9 +1453,15 @@ Class | Method | HTTP request | Description
  - [NewTeam](docs/NewTeam.md)
  - [NewTeamData](docs/NewTeamData.md)
  - [NewTeamDataAttributes](docs/NewTeamDataAttributes.md)
+ - [NewUserEmailAddress](docs/NewUserEmailAddress.md)
+ - [NewUserEmailAddressData](docs/NewUserEmailAddressData.md)
+ - [NewUserEmailAddressDataAttributes](docs/NewUserEmailAddressDataAttributes.md)
  - [NewUserNotificationRule](docs/NewUserNotificationRule.md)
  - [NewUserNotificationRuleData](docs/NewUserNotificationRuleData.md)
  - [NewUserNotificationRuleDataAttributes](docs/NewUserNotificationRuleDataAttributes.md)
+ - [NewUserPhoneNumber](docs/NewUserPhoneNumber.md)
+ - [NewUserPhoneNumberData](docs/NewUserPhoneNumberData.md)
+ - [NewUserPhoneNumberDataAttributes](docs/NewUserPhoneNumberDataAttributes.md)
  - [NewWebhooksEndpoint](docs/NewWebhooksEndpoint.md)
  - [NewWebhooksEndpointData](docs/NewWebhooksEndpointData.md)
  - [NewWebhooksEndpointDataAttributes](docs/NewWebhooksEndpointDataAttributes.md)
@@ -1204,6 +1491,10 @@ Class | Method | HTTP request | Description
  - [NewWorkflowTaskData](docs/NewWorkflowTaskData.md)
  - [NewWorkflowTaskDataAttributes](docs/NewWorkflowTaskDataAttributes.md)
  - [NewWorkflowTaskDataAttributesTaskParams](docs/NewWorkflowTaskDataAttributesTaskParams.md)
+ - [OnCallPayReport](docs/OnCallPayReport.md)
+ - [OnCallPayReportList](docs/OnCallPayReportList.md)
+ - [OnCallPayReportResponse](docs/OnCallPayReportResponse.md)
+ - [OnCallPayReportResponseData](docs/OnCallPayReportResponseData.md)
  - [OnCallRole](docs/OnCallRole.md)
  - [OnCallRoleList](docs/OnCallRoleList.md)
  - [OnCallRoleRelationship](docs/OnCallRoleRelationship.md)
@@ -1219,10 +1510,19 @@ Class | Method | HTTP request | Description
  - [OverrideShiftList](docs/OverrideShiftList.md)
  - [OverrideShiftResponse](docs/OverrideShiftResponse.md)
  - [OverrideShiftResponseData](docs/OverrideShiftResponseData.md)
+ - [PageJsmopsOnCallRespondersTaskParams](docs/PageJsmopsOnCallRespondersTaskParams.md)
  - [PageOpsgenieOnCallRespondersTaskParams](docs/PageOpsgenieOnCallRespondersTaskParams.md)
  - [PagePagerdutyOnCallRespondersTaskParams](docs/PagePagerdutyOnCallRespondersTaskParams.md)
  - [PageRootlyOnCallRespondersTaskParams](docs/PageRootlyOnCallRespondersTaskParams.md)
  - [PageVictorOpsOnCallRespondersTaskParams](docs/PageVictorOpsOnCallRespondersTaskParams.md)
+ - [PatchAlertRoute](docs/PatchAlertRoute.md)
+ - [PatchAlertRouteData](docs/PatchAlertRouteData.md)
+ - [PatchAlertRouteDataAttributes](docs/PatchAlertRouteDataAttributes.md)
+ - [PatchAlertRouteDataAttributesRulesInner](docs/PatchAlertRouteDataAttributesRulesInner.md)
+ - [PatchAlertRouteDataAttributesRulesInnerConditionGroupsInner](docs/PatchAlertRouteDataAttributesRulesInnerConditionGroupsInner.md)
+ - [PatchAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditionsInner](docs/PatchAlertRouteDataAttributesRulesInnerConditionGroupsInnerConditionsInner.md)
+ - [PatchAlertRouteDataAttributesRulesInnerDestinationsInner](docs/PatchAlertRouteDataAttributesRulesInnerDestinationsInner.md)
+ - [PhoneVerificationResponse](docs/PhoneVerificationResponse.md)
  - [Playbook](docs/Playbook.md)
  - [PlaybookList](docs/PlaybookList.md)
  - [PlaybookResponse](docs/PlaybookResponse.md)
@@ -1286,6 +1586,9 @@ Class | Method | HTTP request | Description
  - [RoleRelationshipData](docs/RoleRelationshipData.md)
  - [RoleResponse](docs/RoleResponse.md)
  - [RoleResponseData](docs/RoleResponseData.md)
+ - [RotateApiKey](docs/RotateApiKey.md)
+ - [RotateApiKeyData](docs/RotateApiKeyData.md)
+ - [RotateApiKeyDataAttributes](docs/RotateApiKeyDataAttributes.md)
  - [RunCommandHerokuTaskParams](docs/RunCommandHerokuTaskParams.md)
  - [Schedule](docs/Schedule.md)
  - [ScheduleList](docs/ScheduleList.md)
@@ -1305,6 +1608,7 @@ Class | Method | HTTP request | Description
  - [ScheduleRotationUserList](docs/ScheduleRotationUserList.md)
  - [ScheduleRotationUserListDataInner](docs/ScheduleRotationUserListDataInner.md)
  - [ScheduleRotationUserResponse](docs/ScheduleRotationUserResponse.md)
+ - [ScheduleSlackChannel](docs/ScheduleSlackChannel.md)
  - [ScheduleSlackUserGroup](docs/ScheduleSlackUserGroup.md)
  - [Secret](docs/Secret.md)
  - [SecretList](docs/SecretList.md)
@@ -1313,12 +1617,15 @@ Class | Method | HTTP request | Description
  - [SendDashboardReportTaskParams](docs/SendDashboardReportTaskParams.md)
  - [SendEmailTaskParams](docs/SendEmailTaskParams.md)
  - [SendMicrosoftTeamsBlocksTaskParams](docs/SendMicrosoftTeamsBlocksTaskParams.md)
+ - [SendMicrosoftTeamsChatMessageTaskParams](docs/SendMicrosoftTeamsChatMessageTaskParams.md)
  - [SendMicrosoftTeamsMessageTaskParams](docs/SendMicrosoftTeamsMessageTaskParams.md)
  - [SendSlackBlocksTaskParams](docs/SendSlackBlocksTaskParams.md)
  - [SendSlackMessageTaskParams](docs/SendSlackMessageTaskParams.md)
  - [SendSmsTaskParams](docs/SendSmsTaskParams.md)
  - [SendWhatsappMessageTaskParams](docs/SendWhatsappMessageTaskParams.md)
  - [Service](docs/Service.md)
+ - [ServiceAlertBroadcastChannel](docs/ServiceAlertBroadcastChannel.md)
+ - [ServiceIncidentBroadcastChannel](docs/ServiceIncidentBroadcastChannel.md)
  - [ServiceList](docs/ServiceList.md)
  - [ServiceResponse](docs/ServiceResponse.md)
  - [ServiceResponseData](docs/ServiceResponseData.md)
@@ -1332,11 +1639,29 @@ Class | Method | HTTP request | Description
  - [ShiftOverride](docs/ShiftOverride.md)
  - [ShiftOverrideResponse](docs/ShiftOverrideResponse.md)
  - [ShiftOverrideResponseData](docs/ShiftOverrideResponseData.md)
+ - [ShiftRelationships](docs/ShiftRelationships.md)
+ - [ShiftRelationshipsAssignee](docs/ShiftRelationshipsAssignee.md)
+ - [ShiftRelationshipsAssigneeData](docs/ShiftRelationshipsAssigneeData.md)
+ - [ShiftRelationshipsShiftOverride](docs/ShiftRelationshipsShiftOverride.md)
+ - [ShiftRelationshipsShiftOverrideData](docs/ShiftRelationshipsShiftOverrideData.md)
+ - [ShiftRelationshipsUser](docs/ShiftRelationshipsUser.md)
+ - [ShiftRelationshipsUserData](docs/ShiftRelationshipsUserData.md)
  - [SimpleTriggerParams](docs/SimpleTriggerParams.md)
+ - [Sla](docs/Sla.md)
+ - [SlaConditionsInner](docs/SlaConditionsInner.md)
+ - [SlaList](docs/SlaList.md)
+ - [SlaNotificationConfigurationsInner](docs/SlaNotificationConfigurationsInner.md)
+ - [SlaResponse](docs/SlaResponse.md)
+ - [SlaResponseData](docs/SlaResponseData.md)
  - [SnapshotDatadogGraphTaskParams](docs/SnapshotDatadogGraphTaskParams.md)
  - [SnapshotGrafanaDashboardTaskParams](docs/SnapshotGrafanaDashboardTaskParams.md)
  - [SnapshotLookerLookTaskParams](docs/SnapshotLookerLookTaskParams.md)
  - [SnapshotNewRelicGraphTaskParams](docs/SnapshotNewRelicGraphTaskParams.md)
+ - [SnoozeAlert](docs/SnoozeAlert.md)
+ - [SnoozeAlertData](docs/SnoozeAlertData.md)
+ - [SnoozeAlertDataAttributes](docs/SnoozeAlertDataAttributes.md)
+ - [Status](docs/Status.md)
+ - [StatusList](docs/StatusList.md)
  - [StatusPage](docs/StatusPage.md)
  - [StatusPageList](docs/StatusPageList.md)
  - [StatusPageResponse](docs/StatusPageResponse.md)
@@ -1346,6 +1671,8 @@ Class | Method | HTTP request | Description
  - [StatusPageTemplateListDataInner](docs/StatusPageTemplateListDataInner.md)
  - [StatusPageTemplateResponse](docs/StatusPageTemplateResponse.md)
  - [StatusPageTemplateResponseData](docs/StatusPageTemplateResponseData.md)
+ - [StatusResponse](docs/StatusResponse.md)
+ - [StatusResponseData](docs/StatusResponseData.md)
  - [SubStatus](docs/SubStatus.md)
  - [SubStatusList](docs/SubStatusList.md)
  - [SubStatusResponse](docs/SubStatusResponse.md)
@@ -1354,6 +1681,9 @@ Class | Method | HTTP request | Description
  - [TeamList](docs/TeamList.md)
  - [TeamResponse](docs/TeamResponse.md)
  - [TeamResponseData](docs/TeamResponseData.md)
+ - [TiptapBlockSchema](docs/TiptapBlockSchema.md)
+ - [TiptapBlockSchemaFollowupComponent](docs/TiptapBlockSchemaFollowupComponent.md)
+ - [TiptapBlockSchemaTimelineComponent](docs/TiptapBlockSchemaTimelineComponent.md)
  - [TriggerWorkflowTaskParams](docs/TriggerWorkflowTaskParams.md)
  - [TweetTwitterMessageTaskParams](docs/TweetTwitterMessageTaskParams.md)
  - [UnassignRoleFromUser](docs/UnassignRoleFromUser.md)
@@ -1367,9 +1697,15 @@ Class | Method | HTTP request | Description
  - [UpdateAlertEvent](docs/UpdateAlertEvent.md)
  - [UpdateAlertEventData](docs/UpdateAlertEventData.md)
  - [UpdateAlertEventDataAttributes](docs/UpdateAlertEventDataAttributes.md)
+ - [UpdateAlertField](docs/UpdateAlertField.md)
+ - [UpdateAlertFieldData](docs/UpdateAlertFieldData.md)
+ - [UpdateAlertFieldDataAttributes](docs/UpdateAlertFieldDataAttributes.md)
  - [UpdateAlertGroup](docs/UpdateAlertGroup.md)
  - [UpdateAlertGroupData](docs/UpdateAlertGroupData.md)
  - [UpdateAlertGroupDataAttributes](docs/UpdateAlertGroupDataAttributes.md)
+ - [UpdateAlertRoute](docs/UpdateAlertRoute.md)
+ - [UpdateAlertRouteData](docs/UpdateAlertRouteData.md)
+ - [UpdateAlertRouteDataAttributes](docs/UpdateAlertRouteDataAttributes.md)
  - [UpdateAlertRoutingRule](docs/UpdateAlertRoutingRule.md)
  - [UpdateAlertRoutingRuleData](docs/UpdateAlertRoutingRuleData.md)
  - [UpdateAlertRoutingRuleDataAttributes](docs/UpdateAlertRoutingRuleDataAttributes.md)
@@ -1381,12 +1717,18 @@ Class | Method | HTTP request | Description
  - [UpdateAlertsSource](docs/UpdateAlertsSource.md)
  - [UpdateAlertsSourceData](docs/UpdateAlertsSourceData.md)
  - [UpdateAlertsSourceDataAttributes](docs/UpdateAlertsSourceDataAttributes.md)
+ - [UpdateApiKey](docs/UpdateApiKey.md)
+ - [UpdateApiKeyData](docs/UpdateApiKeyData.md)
+ - [UpdateApiKeyDataAttributes](docs/UpdateApiKeyDataAttributes.md)
  - [UpdateAsanaTaskTaskParams](docs/UpdateAsanaTaskTaskParams.md)
  - [UpdateAttachedAlertsTaskParams](docs/UpdateAttachedAlertsTaskParams.md)
  - [UpdateAuthorization](docs/UpdateAuthorization.md)
  - [UpdateAuthorizationData](docs/UpdateAuthorizationData.md)
  - [UpdateAuthorizationDataAttributes](docs/UpdateAuthorizationDataAttributes.md)
  - [UpdateCatalog](docs/UpdateCatalog.md)
+ - [UpdateCatalogChecklistTemplate](docs/UpdateCatalogChecklistTemplate.md)
+ - [UpdateCatalogChecklistTemplateData](docs/UpdateCatalogChecklistTemplateData.md)
+ - [UpdateCatalogChecklistTemplateDataAttributes](docs/UpdateCatalogChecklistTemplateDataAttributes.md)
  - [UpdateCatalogData](docs/UpdateCatalogData.md)
  - [UpdateCatalogDataAttributes](docs/UpdateCatalogDataAttributes.md)
  - [UpdateCatalogEntity](docs/UpdateCatalogEntity.md)
@@ -1398,11 +1740,31 @@ Class | Method | HTTP request | Description
  - [UpdateCatalogField](docs/UpdateCatalogField.md)
  - [UpdateCatalogFieldData](docs/UpdateCatalogFieldData.md)
  - [UpdateCatalogFieldDataAttributes](docs/UpdateCatalogFieldDataAttributes.md)
+ - [UpdateCatalogProperty](docs/UpdateCatalogProperty.md)
+ - [UpdateCatalogPropertyData](docs/UpdateCatalogPropertyData.md)
+ - [UpdateCatalogPropertyDataAttributes](docs/UpdateCatalogPropertyDataAttributes.md)
  - [UpdateCause](docs/UpdateCause.md)
  - [UpdateCauseData](docs/UpdateCauseData.md)
  - [UpdateCauseDataAttributes](docs/UpdateCauseDataAttributes.md)
  - [UpdateClickupTaskTaskParams](docs/UpdateClickupTaskTaskParams.md)
  - [UpdateCodaPageTaskParams](docs/UpdateCodaPageTaskParams.md)
+ - [UpdateCommunicationsGroup](docs/UpdateCommunicationsGroup.md)
+ - [UpdateCommunicationsGroupData](docs/UpdateCommunicationsGroupData.md)
+ - [UpdateCommunicationsGroupDataAttributes](docs/UpdateCommunicationsGroupDataAttributes.md)
+ - [UpdateCommunicationsGroupDataAttributesCommunicationExternalGroupMembersInner](docs/UpdateCommunicationsGroupDataAttributesCommunicationExternalGroupMembersInner.md)
+ - [UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsInner](docs/UpdateCommunicationsGroupDataAttributesCommunicationGroupConditionsInner.md)
+ - [UpdateCommunicationsStage](docs/UpdateCommunicationsStage.md)
+ - [UpdateCommunicationsStageData](docs/UpdateCommunicationsStageData.md)
+ - [UpdateCommunicationsStageDataAttributes](docs/UpdateCommunicationsStageDataAttributes.md)
+ - [UpdateCommunicationsTemplate](docs/UpdateCommunicationsTemplate.md)
+ - [UpdateCommunicationsTemplateData](docs/UpdateCommunicationsTemplateData.md)
+ - [UpdateCommunicationsTemplateDataAttributes](docs/UpdateCommunicationsTemplateDataAttributes.md)
+ - [UpdateCommunicationsTemplateDataAttributesCommunicationTemplateStagesAttributesInner](docs/UpdateCommunicationsTemplateDataAttributesCommunicationTemplateStagesAttributesInner.md)
+ - [UpdateCommunicationsType](docs/UpdateCommunicationsType.md)
+ - [UpdateCommunicationsTypeData](docs/UpdateCommunicationsTypeData.md)
+ - [UpdateCommunicationsTypeDataAttributes](docs/UpdateCommunicationsTypeDataAttributes.md)
+ - [UpdateConfluencePageTaskParams](docs/UpdateConfluencePageTaskParams.md)
+ - [UpdateConfluencePageTaskParamsTemplate](docs/UpdateConfluencePageTaskParamsTemplate.md)
  - [UpdateCustomField](docs/UpdateCustomField.md)
  - [UpdateCustomFieldData](docs/UpdateCustomFieldData.md)
  - [UpdateCustomFieldDataAttributes](docs/UpdateCustomFieldDataAttributes.md)
@@ -1418,6 +1780,16 @@ Class | Method | HTTP request | Description
  - [UpdateDashboardPanel](docs/UpdateDashboardPanel.md)
  - [UpdateDashboardPanelData](docs/UpdateDashboardPanelData.md)
  - [UpdateDashboardPanelDataAttributes](docs/UpdateDashboardPanelDataAttributes.md)
+ - [UpdateDatadogNotebookTaskParams](docs/UpdateDatadogNotebookTaskParams.md)
+ - [UpdateDatadogNotebookTaskParamsTemplate](docs/UpdateDatadogNotebookTaskParamsTemplate.md)
+ - [UpdateDropboxPaperPageTaskParams](docs/UpdateDropboxPaperPageTaskParams.md)
+ - [UpdateEdgeConnector](docs/UpdateEdgeConnector.md)
+ - [UpdateEdgeConnectorAction](docs/UpdateEdgeConnectorAction.md)
+ - [UpdateEdgeConnectorActionRequest](docs/UpdateEdgeConnectorActionRequest.md)
+ - [UpdateEdgeConnectorActionRequestAction](docs/UpdateEdgeConnectorActionRequestAction.md)
+ - [UpdateEdgeConnectorRequest](docs/UpdateEdgeConnectorRequest.md)
+ - [UpdateEdgeConnectorRequestData](docs/UpdateEdgeConnectorRequestData.md)
+ - [UpdateEdgeConnectorRequestDataAttributes](docs/UpdateEdgeConnectorRequestDataAttributes.md)
  - [UpdateEnvironment](docs/UpdateEnvironment.md)
  - [UpdateEnvironmentData](docs/UpdateEnvironmentData.md)
  - [UpdateEnvironmentDataAttributes](docs/UpdateEnvironmentDataAttributes.md)
@@ -1432,6 +1804,7 @@ Class | Method | HTTP request | Description
  - [UpdateEscalationPolicyPathData](docs/UpdateEscalationPolicyPathData.md)
  - [UpdateEscalationPolicyPathDataAttributes](docs/UpdateEscalationPolicyPathDataAttributes.md)
  - [UpdateEscalationPolicyPathDataAttributesRulesInner](docs/UpdateEscalationPolicyPathDataAttributesRulesInner.md)
+ - [UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner](docs/UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner.md)
  - [UpdateFormField](docs/UpdateFormField.md)
  - [UpdateFormFieldData](docs/UpdateFormFieldData.md)
  - [UpdateFormFieldDataAttributes](docs/UpdateFormFieldDataAttributes.md)
@@ -1457,6 +1830,7 @@ Class | Method | HTTP request | Description
  - [UpdateFunctionalityData](docs/UpdateFunctionalityData.md)
  - [UpdateFunctionalityDataAttributes](docs/UpdateFunctionalityDataAttributes.md)
  - [UpdateGithubIssueTaskParams](docs/UpdateGithubIssueTaskParams.md)
+ - [UpdateGithubIssueTaskParamsRepository](docs/UpdateGithubIssueTaskParamsRepository.md)
  - [UpdateGitlabIssueTaskParams](docs/UpdateGitlabIssueTaskParams.md)
  - [UpdateGoogleCalendarEventTaskParams](docs/UpdateGoogleCalendarEventTaskParams.md)
  - [UpdateGoogleDocsPageTaskParams](docs/UpdateGoogleDocsPageTaskParams.md)
@@ -1523,12 +1897,16 @@ Class | Method | HTTP request | Description
  - [UpdateIncidentTypeDataAttributes](docs/UpdateIncidentTypeDataAttributes.md)
  - [UpdateJiraIssueTaskParams](docs/UpdateJiraIssueTaskParams.md)
  - [UpdateLinearIssueTaskParams](docs/UpdateLinearIssueTaskParams.md)
+ - [UpdateLinearIssueTaskParamsState](docs/UpdateLinearIssueTaskParamsState.md)
  - [UpdateLiveCallRouter](docs/UpdateLiveCallRouter.md)
  - [UpdateLiveCallRouterData](docs/UpdateLiveCallRouterData.md)
  - [UpdateLiveCallRouterDataAttributes](docs/UpdateLiveCallRouterDataAttributes.md)
  - [UpdateLiveCallRouterDataAttributesEscalationPolicyTriggerParams](docs/UpdateLiveCallRouterDataAttributesEscalationPolicyTriggerParams.md)
  - [UpdateMotionTaskTaskParams](docs/UpdateMotionTaskTaskParams.md)
  - [UpdateNotionPageTaskParams](docs/UpdateNotionPageTaskParams.md)
+ - [UpdateOnCallPayReport](docs/UpdateOnCallPayReport.md)
+ - [UpdateOnCallPayReportData](docs/UpdateOnCallPayReportData.md)
+ - [UpdateOnCallPayReportDataAttributes](docs/UpdateOnCallPayReportDataAttributes.md)
  - [UpdateOnCallRole](docs/UpdateOnCallRole.md)
  - [UpdateOnCallRoleData](docs/UpdateOnCallRoleData.md)
  - [UpdateOnCallRoleDataAttributes](docs/UpdateOnCallRoleDataAttributes.md)
@@ -1554,6 +1932,7 @@ Class | Method | HTTP request | Description
  - [UpdatePulse](docs/UpdatePulse.md)
  - [UpdatePulseData](docs/UpdatePulseData.md)
  - [UpdatePulseDataAttributes](docs/UpdatePulseDataAttributes.md)
+ - [UpdateQuipPageTaskParams](docs/UpdateQuipPageTaskParams.md)
  - [UpdateRetrospectiveConfiguration](docs/UpdateRetrospectiveConfiguration.md)
  - [UpdateRetrospectiveConfigurationData](docs/UpdateRetrospectiveConfigurationData.md)
  - [UpdateRetrospectiveConfigurationDataAttributes](docs/UpdateRetrospectiveConfigurationDataAttributes.md)
@@ -1594,8 +1973,12 @@ Class | Method | HTTP request | Description
  - [UpdateSeverity](docs/UpdateSeverity.md)
  - [UpdateSeverityData](docs/UpdateSeverityData.md)
  - [UpdateSeverityDataAttributes](docs/UpdateSeverityDataAttributes.md)
+ - [UpdateSharepointPageTaskParams](docs/UpdateSharepointPageTaskParams.md)
  - [UpdateShortcutStoryTaskParams](docs/UpdateShortcutStoryTaskParams.md)
  - [UpdateShortcutTaskTaskParams](docs/UpdateShortcutTaskTaskParams.md)
+ - [UpdateSla](docs/UpdateSla.md)
+ - [UpdateSlaData](docs/UpdateSlaData.md)
+ - [UpdateSlaDataAttributes](docs/UpdateSlaDataAttributes.md)
  - [UpdateSlackChannelTopicTaskParams](docs/UpdateSlackChannelTopicTaskParams.md)
  - [UpdateStatusPage](docs/UpdateStatusPage.md)
  - [UpdateStatusPageData](docs/UpdateStatusPageData.md)
@@ -1614,9 +1997,15 @@ Class | Method | HTTP request | Description
  - [UpdateUser](docs/UpdateUser.md)
  - [UpdateUserData](docs/UpdateUserData.md)
  - [UpdateUserDataAttributes](docs/UpdateUserDataAttributes.md)
+ - [UpdateUserEmailAddress](docs/UpdateUserEmailAddress.md)
+ - [UpdateUserEmailAddressData](docs/UpdateUserEmailAddressData.md)
+ - [UpdateUserEmailAddressDataAttributes](docs/UpdateUserEmailAddressDataAttributes.md)
  - [UpdateUserNotificationRule](docs/UpdateUserNotificationRule.md)
  - [UpdateUserNotificationRuleData](docs/UpdateUserNotificationRuleData.md)
  - [UpdateUserNotificationRuleDataAttributes](docs/UpdateUserNotificationRuleDataAttributes.md)
+ - [UpdateUserPhoneNumber](docs/UpdateUserPhoneNumber.md)
+ - [UpdateUserPhoneNumberData](docs/UpdateUserPhoneNumberData.md)
+ - [UpdateUserPhoneNumberDataAttributes](docs/UpdateUserPhoneNumberDataAttributes.md)
  - [UpdateVictorOpsIncidentTaskParams](docs/UpdateVictorOpsIncidentTaskParams.md)
  - [UpdateWebhooksEndpoint](docs/UpdateWebhooksEndpoint.md)
  - [UpdateWebhooksEndpointData](docs/UpdateWebhooksEndpointData.md)
@@ -1639,14 +2028,24 @@ Class | Method | HTTP request | Description
  - [UpdateWorkflowTaskDataAttributesTaskParams](docs/UpdateWorkflowTaskDataAttributesTaskParams.md)
  - [UpdateZendeskTicketTaskParams](docs/UpdateZendeskTicketTaskParams.md)
  - [User](docs/User.md)
+ - [UserEmailAddress](docs/UserEmailAddress.md)
+ - [UserEmailAddressList](docs/UserEmailAddressList.md)
+ - [UserEmailAddressResponse](docs/UserEmailAddressResponse.md)
+ - [UserEmailAddressResponseData](docs/UserEmailAddressResponseData.md)
+ - [UserFlatResponse](docs/UserFlatResponse.md)
  - [UserList](docs/UserList.md)
  - [UserNotificationRule](docs/UserNotificationRule.md)
  - [UserNotificationRuleList](docs/UserNotificationRuleList.md)
  - [UserNotificationRuleResponse](docs/UserNotificationRuleResponse.md)
  - [UserNotificationRuleResponseData](docs/UserNotificationRuleResponseData.md)
+ - [UserPhoneNumber](docs/UserPhoneNumber.md)
+ - [UserPhoneNumberList](docs/UserPhoneNumberList.md)
+ - [UserPhoneNumberResponse](docs/UserPhoneNumberResponse.md)
+ - [UserPhoneNumberResponseData](docs/UserPhoneNumberResponseData.md)
  - [UserRelationships](docs/UserRelationships.md)
  - [UserResponse](docs/UserResponse.md)
  - [UserResponseData](docs/UserResponseData.md)
+ - [VerifyPhoneNumberRequest](docs/VerifyPhoneNumberRequest.md)
  - [WebhooksDelivery](docs/WebhooksDelivery.md)
  - [WebhooksDeliveryList](docs/WebhooksDeliveryList.md)
  - [WebhooksDeliveryResponse](docs/WebhooksDeliveryResponse.md)

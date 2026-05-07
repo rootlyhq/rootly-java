@@ -64,6 +64,7 @@
 | NORMAL_SUB | &quot;normal_sub&quot; |
 | BACKFILLED | &quot;backfilled&quot; |
 | SCHEDULED | &quot;scheduled&quot; |
+| SCHEDULED_SUB | &quot;scheduled_sub&quot; |
 
 
 
@@ -100,6 +101,7 @@
 | Name | Value |
 |---- | -----|
 | IS | &quot;IS&quot; |
+| IS_NOT | &quot;IS NOT&quot; |
 | ANY | &quot;ANY&quot; |
 | CONTAINS | &quot;CONTAINS&quot; |
 | CONTAINS_ALL | &quot;CONTAINS_ALL&quot; |
@@ -115,6 +117,7 @@
 | Name | Value |
 |---- | -----|
 | IS | &quot;IS&quot; |
+| IS_NOT | &quot;IS NOT&quot; |
 | ANY | &quot;ANY&quot; |
 | CONTAINS | &quot;CONTAINS&quot; |
 | CONTAINS_ALL | &quot;CONTAINS_ALL&quot; |
@@ -130,6 +133,7 @@
 | Name | Value |
 |---- | -----|
 | IS | &quot;IS&quot; |
+| IS_NOT | &quot;IS NOT&quot; |
 | ANY | &quot;ANY&quot; |
 | CONTAINS | &quot;CONTAINS&quot; |
 | CONTAINS_ALL | &quot;CONTAINS_ALL&quot; |
@@ -145,6 +149,7 @@
 | Name | Value |
 |---- | -----|
 | IS | &quot;IS&quot; |
+| IS_NOT | &quot;IS NOT&quot; |
 | ANY | &quot;ANY&quot; |
 | CONTAINS | &quot;CONTAINS&quot; |
 | CONTAINS_ALL | &quot;CONTAINS_ALL&quot; |
@@ -160,6 +165,7 @@
 | Name | Value |
 |---- | -----|
 | IS | &quot;IS&quot; |
+| IS_NOT | &quot;IS NOT&quot; |
 | ANY | &quot;ANY&quot; |
 | CONTAINS | &quot;CONTAINS&quot; |
 | CONTAINS_ALL | &quot;CONTAINS_ALL&quot; |
@@ -175,6 +181,7 @@
 | Name | Value |
 |---- | -----|
 | IS | &quot;IS&quot; |
+| IS_NOT | &quot;IS NOT&quot; |
 | ANY | &quot;ANY&quot; |
 | CONTAINS | &quot;CONTAINS&quot; |
 | CONTAINS_ALL | &quot;CONTAINS_ALL&quot; |
@@ -190,6 +197,7 @@
 | Name | Value |
 |---- | -----|
 | IS | &quot;IS&quot; |
+| IS_NOT | &quot;IS NOT&quot; |
 | ANY | &quot;ANY&quot; |
 | CONTAINS | &quot;CONTAINS&quot; |
 | CONTAINS_ALL | &quot;CONTAINS_ALL&quot; |
@@ -205,6 +213,7 @@
 | Name | Value |
 |---- | -----|
 | IS | &quot;IS&quot; |
+| IS_NOT | &quot;IS NOT&quot; |
 | ANY | &quot;ANY&quot; |
 | CONTAINS | &quot;CONTAINS&quot; |
 | CONTAINS_ALL | &quot;CONTAINS_ALL&quot; |
@@ -220,6 +229,7 @@
 | Name | Value |
 |---- | -----|
 | IS | &quot;IS&quot; |
+| IS_NOT | &quot;IS NOT&quot; |
 | ANY | &quot;ANY&quot; |
 | CONTAINS | &quot;CONTAINS&quot; |
 | CONTAINS_ALL | &quot;CONTAINS_ALL&quot; |
@@ -235,6 +245,7 @@
 | Name | Value |
 |---- | -----|
 | IS | &quot;IS&quot; |
+| IS_NOT | &quot;IS NOT&quot; |
 | ANY | &quot;ANY&quot; |
 | CONTAINS | &quot;CONTAINS&quot; |
 | CONTAINS_ALL | &quot;CONTAINS_ALL&quot; |
@@ -250,6 +261,7 @@
 | Name | Value |
 |---- | -----|
 | IS | &quot;IS&quot; |
+| IS_NOT | &quot;IS NOT&quot; |
 | ANY | &quot;ANY&quot; |
 | CONTAINS | &quot;CONTAINS&quot; |
 | CONTAINS_ALL | &quot;CONTAINS_ALL&quot; |
@@ -337,6 +349,7 @@
 | Name | Value |
 |---- | -----|
 | IS | &quot;IS&quot; |
+| IS_NOT | &quot;IS NOT&quot; |
 | ANY | &quot;ANY&quot; |
 | CONTAINS | &quot;CONTAINS&quot; |
 | CONTAINS_ALL | &quot;CONTAINS_ALL&quot; |
@@ -361,6 +374,7 @@
 | Name | Value |
 |---- | -----|
 | IS | &quot;IS&quot; |
+| IS_NOT | &quot;IS NOT&quot; |
 | ANY | &quot;ANY&quot; |
 | CONTAINS | &quot;CONTAINS&quot; |
 | CONTAINS_ALL | &quot;CONTAINS_ALL&quot; |
@@ -387,6 +401,7 @@
 | Name | Value |
 |---- | -----|
 | IS | &quot;IS&quot; |
+| IS_NOT | &quot;IS NOT&quot; |
 | ANY | &quot;ANY&quot; |
 | CONTAINS | &quot;CONTAINS&quot; |
 | CONTAINS_ALL | &quot;CONTAINS_ALL&quot; |
@@ -412,6 +427,7 @@
 | Name | Value |
 |---- | -----|
 | IS | &quot;IS&quot; |
+| IS_NOT | &quot;IS NOT&quot; |
 | ANY | &quot;ANY&quot; |
 | CONTAINS | &quot;CONTAINS&quot; |
 | CONTAINS_ALL | &quot;CONTAINS_ALL&quot; |

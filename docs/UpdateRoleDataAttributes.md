@@ -8,8 +8,9 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**name** | **String** | The role name. |  [optional] |
-|**slug** | **String** | The role slug. |  [optional] |
 |**incidentPermissionSetId** | **String** | Associated incident permissions set. |  [optional] |
+|**isDeletable** | **Boolean** | Whether the role can be deleted. |  [optional] |
+|**isEditable** | **Boolean** | Whether the role can be edited. |  [optional] |
 |**apiKeysPermissions** | [**List&lt;ApiKeysPermissionsEnum&gt;**](#List&lt;ApiKeysPermissionsEnum&gt;) |  |  [optional] |
 |**auditsPermissions** | [**List&lt;AuditsPermissionsEnum&gt;**](#List&lt;AuditsPermissionsEnum&gt;) |  |  [optional] |
 |**billingPermissions** | [**List&lt;BillingPermissionsEnum&gt;**](#List&lt;BillingPermissionsEnum&gt;) |  |  [optional] |
@@ -34,6 +35,13 @@
 |**statusPagesPermissions** | [**List&lt;StatusPagesPermissionsEnum&gt;**](#List&lt;StatusPagesPermissionsEnum&gt;) |  |  [optional] |
 |**webhooksPermissions** | [**List&lt;WebhooksPermissionsEnum&gt;**](#List&lt;WebhooksPermissionsEnum&gt;) |  |  [optional] |
 |**workflowsPermissions** | [**List&lt;WorkflowsPermissionsEnum&gt;**](#List&lt;WorkflowsPermissionsEnum&gt;) |  |  [optional] |
+|**catalogsPermissions** | [**List&lt;CatalogsPermissionsEnum&gt;**](#List&lt;CatalogsPermissionsEnum&gt;) |  |  [optional] |
+|**subStatusesPermissions** | [**List&lt;SubStatusesPermissionsEnum&gt;**](#List&lt;SubStatusesPermissionsEnum&gt;) |  |  [optional] |
+|**edgeConnectorPermissions** | [**List&lt;EdgeConnectorPermissionsEnum&gt;**](#List&lt;EdgeConnectorPermissionsEnum&gt;) |  |  [optional] |
+|**slasPermissions** | [**List&lt;SlasPermissionsEnum&gt;**](#List&lt;SlasPermissionsEnum&gt;) |  |  [optional] |
+|**pagingPermissions** | [**List&lt;PagingPermissionsEnum&gt;**](#List&lt;PagingPermissionsEnum&gt;) |  |  [optional] |
+|**incidentCommunicationPermissions** | [**List&lt;IncidentCommunicationPermissionsEnum&gt;**](#List&lt;IncidentCommunicationPermissionsEnum&gt;) |  |  [optional] |
+|**communicationPermissions** | [**List&lt;CommunicationPermissionsEnum&gt;**](#List&lt;CommunicationPermissionsEnum&gt;) |  |  [optional] |
 
 
 
@@ -291,6 +299,84 @@
 
 
 ## Enum: List&lt;WorkflowsPermissionsEnum&gt;
+
+| Name | Value |
+|---- | -----|
+| CREATE | &quot;create&quot; |
+| READ | &quot;read&quot; |
+| UPDATE | &quot;update&quot; |
+| DELETE | &quot;delete&quot; |
+
+
+
+## Enum: List&lt;CatalogsPermissionsEnum&gt;
+
+| Name | Value |
+|---- | -----|
+| CREATE | &quot;create&quot; |
+| READ | &quot;read&quot; |
+| UPDATE | &quot;update&quot; |
+| DELETE | &quot;delete&quot; |
+
+
+
+## Enum: List&lt;SubStatusesPermissionsEnum&gt;
+
+| Name | Value |
+|---- | -----|
+| CREATE | &quot;create&quot; |
+| READ | &quot;read&quot; |
+| UPDATE | &quot;update&quot; |
+| DELETE | &quot;delete&quot; |
+
+
+
+## Enum: List&lt;EdgeConnectorPermissionsEnum&gt;
+
+| Name | Value |
+|---- | -----|
+| CREATE | &quot;create&quot; |
+| READ | &quot;read&quot; |
+| UPDATE | &quot;update&quot; |
+| DELETE | &quot;delete&quot; |
+
+
+
+## Enum: List&lt;SlasPermissionsEnum&gt;
+
+| Name | Value |
+|---- | -----|
+| CREATE | &quot;create&quot; |
+| READ | &quot;read&quot; |
+| UPDATE | &quot;update&quot; |
+| DELETE | &quot;delete&quot; |
+
+
+
+## Enum: List&lt;PagingPermissionsEnum&gt;
+
+| Name | Value |
+|---- | -----|
+| CREATE | &quot;create&quot; |
+| READ | &quot;read&quot; |
+| UPDATE | &quot;update&quot; |
+| DELETE | &quot;delete&quot; |
+
+
+
+## Enum: List&lt;IncidentCommunicationPermissionsEnum&gt;
+
+| Name | Value |
+|---- | -----|
+| CREATE | &quot;create&quot; |
+| READ | &quot;read&quot; |
+| UPDATE | &quot;update&quot; |
+| DELETE | &quot;delete&quot; |
+| SEND | &quot;send&quot; |
+
+
+
+## Enum: List&lt;CommunicationPermissionsEnum&gt;
 
 | Name | Value |
 |---- | -----|

@@ -12,7 +12,8 @@
 |**serviceTarget** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
 |**userTarget** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
 |**groupTarget** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
-|**alertUrgencyId** | **String** | Alert urgency ID |  [optional] |
+|**functionalityTarget** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
+|**alertUrgencyId** | **String** | Alert urgency ID |  |
 |**summary** | **String** | Alert title |  |
 |**description** | **String** | Alert description |  [optional] |
 |**escalationNote** | **String** |  |  [optional] |

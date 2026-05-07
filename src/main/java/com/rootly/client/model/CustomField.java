@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -20,10 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,57 +48,18 @@ import com.rootly.client.JSON;
 /**
  * CustomField
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:27:13.146665190Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CustomField {
-  public static final String SERIALIZED_NAME_LABEL = "label";
-  @SerializedName(SERIALIZED_NAME_LABEL)
-  @javax.annotation.Nonnull
-  private String label;
-
-  public static final String SERIALIZED_NAME_KIND = "kind";
-  @SerializedName(SERIALIZED_NAME_KIND)
-  @javax.annotation.Nullable
-  private String kind;
-
-  public static final String SERIALIZED_NAME_ENABLED = "enabled";
-  @SerializedName(SERIALIZED_NAME_ENABLED)
-  @javax.annotation.Nullable
-  private Boolean enabled;
-
-  public static final String SERIALIZED_NAME_SLUG = "slug";
-  @SerializedName(SERIALIZED_NAME_SLUG)
-  @javax.annotation.Nonnull
-  private String slug;
-
-  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
-  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
-  private String description;
-
   /**
-   * Where the custom_field is shown
+   * Gets or Sets fieldSource
    */
-  @JsonAdapter(ShownEnum.Adapter.class)
-  public enum ShownEnum {
-    INCIDENT_FORM("incident_form"),
-    
-    INCIDENT_MITIGATION_FORM("incident_mitigation_form"),
-    
-    INCIDENT_RESOLUTION_FORM("incident_resolution_form"),
-    
-    INCIDENT_POST_MORTEM_FORM("incident_post_mortem_form"),
-    
-    INCIDENT_SLACK_FORM("incident_slack_form"),
-    
-    INCIDENT_MITIGATION_SLACK_FORM("incident_mitigation_slack_form"),
-    
-    INCIDENT_RESOLUTION_SLACK_FORM("incident_resolution_slack_form"),
-    
-    INCIDENT_POST_MORTEM("incident_post_mortem");
+  @JsonAdapter(FieldSourceEnum.Adapter.class)
+  public enum FieldSourceEnum {
+    CUSTOM("custom");
 
     private String value;
 
-    ShownEnum(String value) {
+    FieldSourceEnum(String value) {
       this.value = value;
     }
 
@@ -114,8 +72,8 @@ public class CustomField {
       return String.valueOf(value);
     }
 
-    public static ShownEnum fromValue(String value) {
-      for (ShownEnum b : ShownEnum.values()) {
+    public static FieldSourceEnum fromValue(String value) {
+      for (FieldSourceEnum b : FieldSourceEnum.values()) {
         if (b.value.equals(value)) {
           return b;
         }
@@ -123,342 +81,97 @@ public class CustomField {
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
-    public static class Adapter extends TypeAdapter<ShownEnum> {
+    public static class Adapter extends TypeAdapter<FieldSourceEnum> {
       @Override
-      public void write(final JsonWriter jsonWriter, final ShownEnum enumeration) throws IOException {
+      public void write(final JsonWriter jsonWriter, final FieldSourceEnum enumeration) throws IOException {
         jsonWriter.value(enumeration.getValue());
       }
 
       @Override
-      public ShownEnum read(final JsonReader jsonReader) throws IOException {
+      public FieldSourceEnum read(final JsonReader jsonReader) throws IOException {
         String value =  jsonReader.nextString();
-        return ShownEnum.fromValue(value);
+        return FieldSourceEnum.fromValue(value);
       }
     }
 
     public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       String value = jsonElement.getAsString();
-      ShownEnum.fromValue(value);
+      FieldSourceEnum.fromValue(value);
     }
   }
 
-  public static final String SERIALIZED_NAME_SHOWN = "shown";
-  @SerializedName(SERIALIZED_NAME_SHOWN)
+  public static final String SERIALIZED_NAME_FIELD_SOURCE = "field_source";
+  @SerializedName(SERIALIZED_NAME_FIELD_SOURCE)
   @javax.annotation.Nonnull
-  private List<ShownEnum> shown = new ArrayList<>();
+  private FieldSourceEnum fieldSource;
 
-  /**
-   * Where the custom_field is required
-   */
-  @JsonAdapter(RequiredEnum.Adapter.class)
-  public enum RequiredEnum {
-    INCIDENT_FORM("incident_form"),
-    
-    INCIDENT_MITIGATION_FORM("incident_mitigation_form"),
-    
-    INCIDENT_RESOLUTION_FORM("incident_resolution_form"),
-    
-    INCIDENT_POST_MORTEM_FORM("incident_post_mortem_form"),
-    
-    INCIDENT_SLACK_FORM("incident_slack_form"),
-    
-    INCIDENT_MITIGATION_SLACK_FORM("incident_mitigation_slack_form"),
-    
-    INCIDENT_RESOLUTION_SLACK_FORM("incident_resolution_slack_form");
+  public static final String SERIALIZED_NAME_CATALOG_PROPERTY_ID = "catalog_property_id";
+  @SerializedName(SERIALIZED_NAME_CATALOG_PROPERTY_ID)
+  @javax.annotation.Nonnull
+  private String catalogPropertyId;
 
-    private String value;
-
-    RequiredEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static RequiredEnum fromValue(String value) {
-      for (RequiredEnum b : RequiredEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<RequiredEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final RequiredEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public RequiredEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return RequiredEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      RequiredEnum.fromValue(value);
-    }
-  }
-
-  public static final String SERIALIZED_NAME_REQUIRED = "required";
-  @SerializedName(SERIALIZED_NAME_REQUIRED)
+  public static final String SERIALIZED_NAME_FIELD_KEY = "field_key";
+  @SerializedName(SERIALIZED_NAME_FIELD_KEY)
   @javax.annotation.Nullable
-  private List<RequiredEnum> required;
-
-  public static final String SERIALIZED_NAME_DEFAULT = "default";
-  @SerializedName(SERIALIZED_NAME_DEFAULT)
-  @javax.annotation.Nullable
-  private String _default;
-
-  public static final String SERIALIZED_NAME_POSITION = "position";
-  @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nonnull
-  private Integer position;
-
-  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
-  @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
-  private String createdAt;
-
-  public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
-  @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
-  private String updatedAt;
+  private String fieldKey;
 
   public CustomField() {
   }
 
-  public CustomField label(@javax.annotation.Nonnull String label) {
-    this.label = label;
+  public CustomField fieldSource(@javax.annotation.Nonnull FieldSourceEnum fieldSource) {
+    this.fieldSource = fieldSource;
     return this;
   }
 
   /**
-   * The name of the custom_field
-   * @return label
+   * Get fieldSource
+   * @return fieldSource
    */
   @javax.annotation.Nonnull
-  public String getLabel() {
-    return label;
+  public FieldSourceEnum getFieldSource() {
+    return fieldSource;
   }
 
-  public void setLabel(@javax.annotation.Nonnull String label) {
-    this.label = label;
+  public void setFieldSource(@javax.annotation.Nonnull FieldSourceEnum fieldSource) {
+    this.fieldSource = fieldSource;
   }
 
 
-  public CustomField kind(@javax.annotation.Nullable String kind) {
-    this.kind = kind;
+  public CustomField catalogPropertyId(@javax.annotation.Nonnull String catalogPropertyId) {
+    this.catalogPropertyId = catalogPropertyId;
     return this;
   }
 
   /**
-   * The kind of the custom_field
-   * @return kind
+   * ID of the catalog property
+   * @return catalogPropertyId
+   */
+  @javax.annotation.Nonnull
+  public String getCatalogPropertyId() {
+    return catalogPropertyId;
+  }
+
+  public void setCatalogPropertyId(@javax.annotation.Nonnull String catalogPropertyId) {
+    this.catalogPropertyId = catalogPropertyId;
+  }
+
+
+  public CustomField fieldKey(@javax.annotation.Nullable String fieldKey) {
+    this.fieldKey = fieldKey;
+    return this;
+  }
+
+  /**
+   * Ignored for custom fields (auto-derived from catalog property)
+   * @return fieldKey
    */
   @javax.annotation.Nullable
-  public String getKind() {
-    return kind;
+  public String getFieldKey() {
+    return fieldKey;
   }
 
-  public void setKind(@javax.annotation.Nullable String kind) {
-    this.kind = kind;
-  }
-
-
-  public CustomField enabled(@javax.annotation.Nullable Boolean enabled) {
-    this.enabled = enabled;
-    return this;
-  }
-
-  /**
-   * Whether the custom_field is enabled
-   * @return enabled
-   */
-  @javax.annotation.Nullable
-  public Boolean getEnabled() {
-    return enabled;
-  }
-
-  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
-    this.enabled = enabled;
-  }
-
-
-  public CustomField slug(@javax.annotation.Nonnull String slug) {
-    this.slug = slug;
-    return this;
-  }
-
-  /**
-   * The slug of the custom_field
-   * @return slug
-   */
-  @javax.annotation.Nonnull
-  public String getSlug() {
-    return slug;
-  }
-
-  public void setSlug(@javax.annotation.Nonnull String slug) {
-    this.slug = slug;
-  }
-
-
-  public CustomField description(@javax.annotation.Nullable String description) {
-    this.description = description;
-    return this;
-  }
-
-  /**
-   * The description of the custom_field
-   * @return description
-   */
-  @javax.annotation.Nullable
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(@javax.annotation.Nullable String description) {
-    this.description = description;
-  }
-
-
-  public CustomField shown(@javax.annotation.Nonnull List<ShownEnum> shown) {
-    this.shown = shown;
-    return this;
-  }
-
-  public CustomField addShownItem(ShownEnum shownItem) {
-    if (this.shown == null) {
-      this.shown = new ArrayList<>();
-    }
-    this.shown.add(shownItem);
-    return this;
-  }
-
-  /**
-   * Get shown
-   * @return shown
-   */
-  @javax.annotation.Nonnull
-  public List<ShownEnum> getShown() {
-    return shown;
-  }
-
-  public void setShown(@javax.annotation.Nonnull List<ShownEnum> shown) {
-    this.shown = shown;
-  }
-
-
-  public CustomField required(@javax.annotation.Nullable List<RequiredEnum> required) {
-    this.required = required;
-    return this;
-  }
-
-  public CustomField addRequiredItem(RequiredEnum requiredItem) {
-    if (this.required == null) {
-      this.required = new ArrayList<>();
-    }
-    this.required.add(requiredItem);
-    return this;
-  }
-
-  /**
-   * Get required
-   * @return required
-   */
-  @javax.annotation.Nullable
-  public List<RequiredEnum> getRequired() {
-    return required;
-  }
-
-  public void setRequired(@javax.annotation.Nullable List<RequiredEnum> required) {
-    this.required = required;
-  }
-
-
-  public CustomField _default(@javax.annotation.Nullable String _default) {
-    this._default = _default;
-    return this;
-  }
-
-  /**
-   * The default value for text field kinds
-   * @return _default
-   */
-  @javax.annotation.Nullable
-  public String getDefault() {
-    return _default;
-  }
-
-  public void setDefault(@javax.annotation.Nullable String _default) {
-    this._default = _default;
-  }
-
-
-  public CustomField position(@javax.annotation.Nonnull Integer position) {
-    this.position = position;
-    return this;
-  }
-
-  /**
-   * The position of the custom_field
-   * @return position
-   */
-  @javax.annotation.Nonnull
-  public Integer getPosition() {
-    return position;
-  }
-
-  public void setPosition(@javax.annotation.Nonnull Integer position) {
-    this.position = position;
-  }
-
-
-  public CustomField createdAt(@javax.annotation.Nonnull String createdAt) {
-    this.createdAt = createdAt;
-    return this;
-  }
-
-  /**
-   * Date of creation
-   * @return createdAt
-   */
-  @javax.annotation.Nonnull
-  public String getCreatedAt() {
-    return createdAt;
-  }
-
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
-    this.createdAt = createdAt;
-  }
-
-
-  public CustomField updatedAt(@javax.annotation.Nonnull String updatedAt) {
-    this.updatedAt = updatedAt;
-    return this;
-  }
-
-  /**
-   * Date of last update
-   * @return updatedAt
-   */
-  @javax.annotation.Nonnull
-  public String getUpdatedAt() {
-    return updatedAt;
-  }
-
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
-    this.updatedAt = updatedAt;
+  public void setFieldKey(@javax.annotation.Nullable String fieldKey) {
+    this.fieldKey = fieldKey;
   }
 
 
@@ -472,50 +185,23 @@ public class CustomField {
       return false;
     }
     CustomField customField = (CustomField) o;
-    return Objects.equals(this.label, customField.label) &&
-        Objects.equals(this.kind, customField.kind) &&
-        Objects.equals(this.enabled, customField.enabled) &&
-        Objects.equals(this.slug, customField.slug) &&
-        Objects.equals(this.description, customField.description) &&
-        Objects.equals(this.shown, customField.shown) &&
-        Objects.equals(this.required, customField.required) &&
-        Objects.equals(this._default, customField._default) &&
-        Objects.equals(this.position, customField.position) &&
-        Objects.equals(this.createdAt, customField.createdAt) &&
-        Objects.equals(this.updatedAt, customField.updatedAt);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+    return Objects.equals(this.fieldSource, customField.fieldSource) &&
+        Objects.equals(this.catalogPropertyId, customField.catalogPropertyId) &&
+        Objects.equals(this.fieldKey, customField.fieldKey);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(label, kind, enabled, slug, description, shown, required, _default, position, createdAt, updatedAt);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(fieldSource, catalogPropertyId, fieldKey);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CustomField {\n");
-    sb.append("    label: ").append(toIndentedString(label)).append("\n");
-    sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
-    sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
-    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    shown: ").append(toIndentedString(shown)).append("\n");
-    sb.append("    required: ").append(toIndentedString(required)).append("\n");
-    sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
-    sb.append("    position: ").append(toIndentedString(position)).append("\n");
-    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-    sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+    sb.append("    fieldSource: ").append(toIndentedString(fieldSource)).append("\n");
+    sb.append("    catalogPropertyId: ").append(toIndentedString(catalogPropertyId)).append("\n");
+    sb.append("    fieldKey: ").append(toIndentedString(fieldKey)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -538,27 +224,14 @@ public class CustomField {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("label");
-    openapiFields.add("kind");
-    openapiFields.add("enabled");
-    openapiFields.add("slug");
-    openapiFields.add("description");
-    openapiFields.add("shown");
-    openapiFields.add("required");
-    openapiFields.add("default");
-    openapiFields.add("position");
-    openapiFields.add("created_at");
-    openapiFields.add("updated_at");
+    openapiFields.add("field_source");
+    openapiFields.add("catalog_property_id");
+    openapiFields.add("field_key");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("label");
-    openapiRequiredFields.add("slug");
-    openapiRequiredFields.add("shown");
-    openapiRequiredFields.add("required");
-    openapiRequiredFields.add("position");
-    openapiRequiredFields.add("created_at");
-    openapiRequiredFields.add("updated_at");
+    openapiRequiredFields.add("field_source");
+    openapiRequiredFields.add("catalog_property_id");
   }
 
   /**
@@ -589,38 +262,16 @@ public class CustomField {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("label").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `label` to be a primitive type in the JSON string but got `%s`", jsonObj.get("label").toString()));
+      if (!jsonObj.get("field_source").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `field_source` to be a primitive type in the JSON string but got `%s`", jsonObj.get("field_source").toString()));
       }
-      if ((jsonObj.get("kind") != null && !jsonObj.get("kind").isJsonNull()) && !jsonObj.get("kind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
+      // validate the required field `field_source`
+      FieldSourceEnum.validateJsonElement(jsonObj.get("field_source"));
+      if (!jsonObj.get("catalog_property_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `catalog_property_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("catalog_property_id").toString()));
       }
-      if (!jsonObj.get("slug").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
-      }
-      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
-      }
-      // ensure the required json array is present
-      if (jsonObj.get("shown") == null) {
-        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
-      } else if (!jsonObj.get("shown").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `shown` to be an array in the JSON string but got `%s`", jsonObj.get("shown").toString()));
-      }
-      // ensure the required json array is present
-      if (jsonObj.get("required") == null) {
-        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
-      } else if (!jsonObj.get("required").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `required` to be an array in the JSON string but got `%s`", jsonObj.get("required").toString()));
-      }
-      if ((jsonObj.get("default") != null && !jsonObj.get("default").isJsonNull()) && !jsonObj.get("default").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `default` to be a primitive type in the JSON string but got `%s`", jsonObj.get("default").toString()));
-      }
-      if (!jsonObj.get("created_at").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));
-      }
-      if (!jsonObj.get("updated_at").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `updated_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updated_at").toString()));
+      if ((jsonObj.get("field_key") != null && !jsonObj.get("field_key").isJsonNull()) && !jsonObj.get("field_key").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `field_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("field_key").toString()));
       }
   }
 

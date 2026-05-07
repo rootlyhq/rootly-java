@@ -15,6 +15,7 @@
 |**createdAt** | **String** | Date of creation |  [optional] |
 |**updatedAt** | **String** | Date of last update |  [optional] |
 |**shiftOverride** | [**ShiftOverrideResponse**](ShiftOverrideResponse.md) | Override metadata |  [optional] |
+|**userId** | **Integer** | Override shift user |  [optional] |
 |**user** | [**UserResponse**](UserResponse.md) | User metadata |  [optional] |
 
 

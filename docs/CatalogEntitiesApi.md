@@ -78,8 +78,8 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | catalog_entity created |  -  |
-| **422** | invalid request |  -  |
+| **201** | catalog_entity created with fields attribute |  -  |
+| **422** | rejects entity with invalid catalog_field_id |  -  |
 | **401** | responds with unauthorized for invalid token |  -  |
 
 <a id="deleteCatalogEntity"></a>
@@ -110,7 +110,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     CatalogEntitiesApi apiInstance = new CatalogEntitiesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       CatalogEntityResponse result = apiInstance.deleteCatalogEntity(id);
       System.out.println(result);
@@ -129,7 +129,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -178,7 +178,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     CatalogEntitiesApi apiInstance = new CatalogEntitiesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     String include = "catalog"; // String | comma separated if needed. eg: catalog,properties
     try {
       CatalogEntityResponse result = apiInstance.getCatalogEntity(id, include);
@@ -198,7 +198,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **include** | **String**| comma separated if needed. eg: catalog,properties | [optional] [enum: catalog, properties] |
 
 ### Return type
@@ -217,12 +217,12 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | catalog_entity found |  -  |
+| **200** | catalog_entity found by slug |  -  |
 | **404** | resource not found |  -  |
 
 <a id="listCatalogEntities"></a>
 # **listCatalogEntities**
-> CatalogEntityList listCatalogEntities(catalogId, include, sort, pageNumber, pageSize, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte)
+> CatalogEntityList listCatalogEntities(catalogId, include, sort, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterBackstageId, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte)
 
 List Catalog Entities
 
@@ -253,14 +253,16 @@ public class Example {
     String sort = "created_at"; // String | comma separated if needed. eg: created_at,updated_at
     Integer pageNumber = 56; // Integer | 
     Integer pageSize = 56; // Integer | 
+    String filterSearch = "filterSearch_example"; // String | 
     String filterSlug = "filterSlug_example"; // String | 
     String filterName = "filterName_example"; // String | 
+    String filterBackstageId = "filterBackstageId_example"; // String | 
     String filterCreatedAtGt = "filterCreatedAtGt_example"; // String | 
     String filterCreatedAtGte = "filterCreatedAtGte_example"; // String | 
     String filterCreatedAtLt = "filterCreatedAtLt_example"; // String | 
     String filterCreatedAtLte = "filterCreatedAtLte_example"; // String | 
     try {
-      CatalogEntityList result = apiInstance.listCatalogEntities(catalogId, include, sort, pageNumber, pageSize, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
+      CatalogEntityList result = apiInstance.listCatalogEntities(catalogId, include, sort, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterBackstageId, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CatalogEntitiesApi#listCatalogEntities");
@@ -282,8 +284,10 @@ public class Example {
 | **sort** | **String**| comma separated if needed. eg: created_at,updated_at | [optional] [enum: created_at, -created_at, updated_at, -updated_at, position, -position] |
 | **pageNumber** | **Integer**|  | [optional] |
 | **pageSize** | **Integer**|  | [optional] |
+| **filterSearch** | **String**|  | [optional] |
 | **filterSlug** | **String**|  | [optional] |
 | **filterName** | **String**|  | [optional] |
+| **filterBackstageId** | **String**|  | [optional] |
 | **filterCreatedAtGt** | **String**|  | [optional] |
 | **filterCreatedAtGte** | **String**|  | [optional] |
 | **filterCreatedAtLt** | **String**|  | [optional] |
@@ -335,7 +339,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     CatalogEntitiesApi apiInstance = new CatalogEntitiesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     UpdateCatalogEntity updateCatalogEntity = new UpdateCatalogEntity(); // UpdateCatalogEntity | 
     try {
       CatalogEntityResponse result = apiInstance.updateCatalogEntity(id, updateCatalogEntity);
@@ -355,7 +359,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **updateCatalogEntity** | [**UpdateCatalogEntity**](UpdateCatalogEntity.md)|  | |
 
 ### Return type
@@ -374,6 +378,6 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | catalog_entity updated |  -  |
+| **200** | catalog_entity update replaces existing properties |  -  |
 | **404** | resource not found |  -  |
 

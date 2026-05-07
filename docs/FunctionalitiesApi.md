@@ -5,11 +5,13 @@ All URIs are relative to *https://api.rootly.com*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**createFunctionality**](FunctionalitiesApi.md#createFunctionality) | **POST** /v1/functionalities | Creates a functionality |
+| [**createFunctionalityCatalogProperty**](FunctionalitiesApi.md#createFunctionalityCatalogProperty) | **POST** /v1/functionalities/properties | Creates a Catalog Property |
 | [**deleteFunctionality**](FunctionalitiesApi.md#deleteFunctionality) | **DELETE** /v1/functionalities/{id} | Delete a functionality |
 | [**getFunctionality**](FunctionalitiesApi.md#getFunctionality) | **GET** /v1/functionalities/{id} | Retrieves a functionality |
 | [**getFunctionalityIncidentsChart**](FunctionalitiesApi.md#getFunctionalityIncidentsChart) | **GET** /v1/functionalities/{id}/incidents_chart | Get functionality incidents chart |
 | [**getFunctionalityUptimeChart**](FunctionalitiesApi.md#getFunctionalityUptimeChart) | **GET** /v1/functionalities/{id}/uptime_chart | Get functionality uptime chart |
 | [**listFunctionalities**](FunctionalitiesApi.md#listFunctionalities) | **GET** /v1/functionalities | List functionalities |
+| [**listFunctionalityCatalogProperties**](FunctionalitiesApi.md#listFunctionalityCatalogProperties) | **GET** /v1/functionalities/properties | List Catalog Properties |
 | [**updateFunctionality**](FunctionalitiesApi.md#updateFunctionality) | **PUT** /v1/functionalities/{id} | Update a functionality |
 
 
@@ -82,6 +84,75 @@ public class Example {
 | **422** | invalid request |  -  |
 | **401** | responds with unauthorized for invalid token |  -  |
 
+<a id="createFunctionalityCatalogProperty"></a>
+# **createFunctionalityCatalogProperty**
+> CatalogPropertyResponse createFunctionalityCatalogProperty(newCatalogProperty)
+
+Creates a Catalog Property
+
+Creates a new Catalog Property from provided data
+
+### Example
+```java
+// Import classes:
+import com.rootly.client.ApiClient;
+import com.rootly.client.ApiException;
+import com.rootly.client.Configuration;
+import com.rootly.client.auth.*;
+import com.rootly.client.models.*;
+import com.rootly.client.api.FunctionalitiesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.rootly.com");
+    
+    // Configure HTTP bearer authorization: bearer_auth
+    HttpBearerAuth bearer_auth = (HttpBearerAuth) defaultClient.getAuthentication("bearer_auth");
+    bearer_auth.setBearerToken("BEARER TOKEN");
+
+    FunctionalitiesApi apiInstance = new FunctionalitiesApi(defaultClient);
+    NewCatalogProperty newCatalogProperty = new NewCatalogProperty(); // NewCatalogProperty | 
+    try {
+      CatalogPropertyResponse result = apiInstance.createFunctionalityCatalogProperty(newCatalogProperty);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling FunctionalitiesApi#createFunctionalityCatalogProperty");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **newCatalogProperty** | [**NewCatalogProperty**](NewCatalogProperty.md)|  | |
+
+### Return type
+
+[**CatalogPropertyResponse**](CatalogPropertyResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/vnd.api+json
+ - **Accept**: application/vnd.api+json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | catalog_property created ignores wrong catalog_type attribute |  -  |
+| **422** | exceeds max fields per catalog |  -  |
+| **401** | responds with unauthorized for invalid token |  -  |
+
 <a id="deleteFunctionality"></a>
 # **deleteFunctionality**
 > FunctionalityResponse deleteFunctionality(id)
@@ -110,7 +181,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     FunctionalitiesApi apiInstance = new FunctionalitiesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       FunctionalityResponse result = apiInstance.deleteFunctionality(id);
       System.out.println(result);
@@ -129,7 +200,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -178,7 +249,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     FunctionalitiesApi apiInstance = new FunctionalitiesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       FunctionalityResponse result = apiInstance.getFunctionality(id);
       System.out.println(result);
@@ -197,7 +268,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -246,7 +317,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     FunctionalitiesApi apiInstance = new FunctionalitiesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     String period = "period_example"; // String | 
     try {
       Object result = apiInstance.getFunctionalityIncidentsChart(id, period);
@@ -266,7 +337,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **period** | **String**|  | |
 
 ### Return type
@@ -316,7 +387,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     FunctionalitiesApi apiInstance = new FunctionalitiesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     String period = "period_example"; // String | 
     try {
       Object result = apiInstance.getFunctionalityUptimeChart(id, period);
@@ -336,7 +407,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **period** | **String**|  | [optional] |
 
 ### Return type
@@ -453,6 +524,93 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | success |  -  |
 
+<a id="listFunctionalityCatalogProperties"></a>
+# **listFunctionalityCatalogProperties**
+> CatalogPropertyList listFunctionalityCatalogProperties(include, sort, pageNumber, pageSize, filterSlug, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte)
+
+List Catalog Properties
+
+List Functionality Catalog Properties
+
+### Example
+```java
+// Import classes:
+import com.rootly.client.ApiClient;
+import com.rootly.client.ApiException;
+import com.rootly.client.Configuration;
+import com.rootly.client.auth.*;
+import com.rootly.client.models.*;
+import com.rootly.client.api.FunctionalitiesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.rootly.com");
+    
+    // Configure HTTP bearer authorization: bearer_auth
+    HttpBearerAuth bearer_auth = (HttpBearerAuth) defaultClient.getAuthentication("bearer_auth");
+    bearer_auth.setBearerToken("BEARER TOKEN");
+
+    FunctionalitiesApi apiInstance = new FunctionalitiesApi(defaultClient);
+    String include = "catalog"; // String | comma separated if needed. eg: catalog
+    String sort = "created_at"; // String | comma separated if needed. eg: created_at,updated_at
+    Integer pageNumber = 56; // Integer | 
+    Integer pageSize = 56; // Integer | 
+    String filterSlug = "filterSlug_example"; // String | 
+    String filterName = "filterName_example"; // String | 
+    String filterKind = "filterKind_example"; // String | 
+    String filterCreatedAtGt = "filterCreatedAtGt_example"; // String | 
+    String filterCreatedAtGte = "filterCreatedAtGte_example"; // String | 
+    String filterCreatedAtLt = "filterCreatedAtLt_example"; // String | 
+    String filterCreatedAtLte = "filterCreatedAtLte_example"; // String | 
+    try {
+      CatalogPropertyList result = apiInstance.listFunctionalityCatalogProperties(include, sort, pageNumber, pageSize, filterSlug, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling FunctionalitiesApi#listFunctionalityCatalogProperties");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **include** | **String**| comma separated if needed. eg: catalog | [optional] [enum: catalog] |
+| **sort** | **String**| comma separated if needed. eg: created_at,updated_at | [optional] [enum: created_at, -created_at, updated_at, -updated_at, position, -position] |
+| **pageNumber** | **Integer**|  | [optional] |
+| **pageSize** | **Integer**|  | [optional] |
+| **filterSlug** | **String**|  | [optional] |
+| **filterName** | **String**|  | [optional] |
+| **filterKind** | **String**|  | [optional] |
+| **filterCreatedAtGt** | **String**|  | [optional] |
+| **filterCreatedAtGte** | **String**|  | [optional] |
+| **filterCreatedAtLt** | **String**|  | [optional] |
+| **filterCreatedAtLte** | **String**|  | [optional] |
+
+### Return type
+
+[**CatalogPropertyList**](CatalogPropertyList.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.api+json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | success |  -  |
+
 <a id="updateFunctionality"></a>
 # **updateFunctionality**
 > FunctionalityResponse updateFunctionality(id, updateFunctionality)
@@ -481,7 +639,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     FunctionalitiesApi apiInstance = new FunctionalitiesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     UpdateFunctionality updateFunctionality = new UpdateFunctionality(); // UpdateFunctionality | 
     try {
       FunctionalityResponse result = apiInstance.updateFunctionality(id, updateFunctionality);
@@ -501,7 +659,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **updateFunctionality** | [**UpdateFunctionality**](UpdateFunctionality.md)|  | |
 
 ### Return type

@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**delay** | **Integer** | Delay before notification targets will be alerted. |  [optional] |
+|**delay** | **Integer** | Delay before notifying targets in the next Escalation Level. |  [optional] |
 |**position** | **Integer** | Position of the escalation policy level |  [optional] |
 |**escalationPolicyPathId** | **String** | The ID of the dynamic escalation policy path the level will belong to. If nothing is specified it will add the level to your default path. |  [optional] |
 |**pagingStrategyConfigurationStrategy** | [**PagingStrategyConfigurationStrategyEnum**](#PagingStrategyConfigurationStrategyEnum) |  |  [optional] |

@@ -24,10 +24,12 @@
 |**showUptimeLastDays** | [**ShowUptimeLastDaysEnum**](#ShowUptimeLastDaysEnum) | Show uptime over x days |  [optional] |
 |**environmentIds** | **List&lt;String&gt;** | Environments associated with this functionality |  [optional] |
 |**serviceIds** | **List&lt;String&gt;** | Services associated with this functionality |  [optional] |
-|**ownersGroupIds** | **List&lt;String&gt;** | Owner Teams associated with this functionality |  [optional] |
-|**ownersUserIds** | **List&lt;Integer&gt;** | Owner Users associated with this functionality |  [optional] |
+|**ownerGroupIds** | **List&lt;String&gt;** | Owner Teams associated with this functionality |  [optional] |
+|**ownerUserIds** | **List&lt;Integer&gt;** | Owner Users associated with this functionality |  [optional] |
+|**escalationPolicyId** | **String** | The escalation policy id of the functionality |  [optional] |
 |**slackChannels** | [**List&lt;NewEnvironmentDataAttributesSlackChannelsInner&gt;**](NewEnvironmentDataAttributesSlackChannelsInner.md) | Slack Channels associated with this functionality |  [optional] |
 |**slackAliases** | [**List&lt;NewEnvironmentDataAttributesSlackAliasesInner&gt;**](NewEnvironmentDataAttributesSlackAliasesInner.md) | Slack Aliases associated with this functionality |  [optional] |
+|**properties** | [**List&lt;NewCauseDataAttributesPropertiesInner&gt;**](NewCauseDataAttributesPropertiesInner.md) | Array of property values for this functionality. |  [optional] |
 
 
 

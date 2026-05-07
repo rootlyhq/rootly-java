@@ -108,7 +108,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     CatalogsApi apiInstance = new CatalogsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       CatalogResponse result = apiInstance.deleteCatalog(id);
       System.out.println(result);
@@ -127,7 +127,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -176,7 +176,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     CatalogsApi apiInstance = new CatalogsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       CatalogResponse result = apiInstance.getCatalog(id);
       System.out.println(result);
@@ -195,7 +195,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -213,12 +213,12 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | catalog found |  -  |
+| **200** | catalog found by slug |  -  |
 | **404** | resource not found |  -  |
 
 <a id="listCatalogs"></a>
 # **listCatalogs**
-> CatalogList listCatalogs(include, sort, pageNumber, pageSize, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte)
+> CatalogList listCatalogs(include, sort, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte)
 
 List catalogs
 
@@ -248,6 +248,7 @@ public class Example {
     String sort = "created_at"; // String | comma separated if needed. eg: created_at,updated_at
     Integer pageNumber = 56; // Integer | 
     Integer pageSize = 56; // Integer | 
+    String filterSearch = "filterSearch_example"; // String | 
     String filterSlug = "filterSlug_example"; // String | 
     String filterName = "filterName_example"; // String | 
     String filterCreatedAtGt = "filterCreatedAtGt_example"; // String | 
@@ -255,7 +256,7 @@ public class Example {
     String filterCreatedAtLt = "filterCreatedAtLt_example"; // String | 
     String filterCreatedAtLte = "filterCreatedAtLte_example"; // String | 
     try {
-      CatalogList result = apiInstance.listCatalogs(include, sort, pageNumber, pageSize, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
+      CatalogList result = apiInstance.listCatalogs(include, sort, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CatalogsApi#listCatalogs");
@@ -276,6 +277,7 @@ public class Example {
 | **sort** | **String**| comma separated if needed. eg: created_at,updated_at | [optional] [enum: created_at, -created_at, updated_at, -updated_at, position, -position] |
 | **pageNumber** | **Integer**|  | [optional] |
 | **pageSize** | **Integer**|  | [optional] |
+| **filterSearch** | **String**|  | [optional] |
 | **filterSlug** | **String**|  | [optional] |
 | **filterName** | **String**|  | [optional] |
 | **filterCreatedAtGt** | **String**|  | [optional] |
@@ -329,7 +331,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     CatalogsApi apiInstance = new CatalogsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     UpdateCatalog updateCatalog = new UpdateCatalog(); // UpdateCatalog | 
     try {
       CatalogResponse result = apiInstance.updateCatalog(id, updateCatalog);
@@ -349,7 +351,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **updateCatalog** | [**UpdateCatalog**](UpdateCatalog.md)|  | |
 
 ### Return type

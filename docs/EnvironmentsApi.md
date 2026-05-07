@@ -5,8 +5,10 @@ All URIs are relative to *https://api.rootly.com*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**createEnvironment**](EnvironmentsApi.md#createEnvironment) | **POST** /v1/environments | Creates an environment |
+| [**createEnvironmentCatalogProperty**](EnvironmentsApi.md#createEnvironmentCatalogProperty) | **POST** /v1/environments/properties | Creates a Catalog Property |
 | [**deleteEnvironment**](EnvironmentsApi.md#deleteEnvironment) | **DELETE** /v1/environments/{id} | Delete an environment |
 | [**getEnvironment**](EnvironmentsApi.md#getEnvironment) | **GET** /v1/environments/{id} | Retrieves an environment |
+| [**listEnvironmentCatalogProperties**](EnvironmentsApi.md#listEnvironmentCatalogProperties) | **GET** /v1/environments/properties | List Catalog Properties |
 | [**listEnvironments**](EnvironmentsApi.md#listEnvironments) | **GET** /v1/environments | List environments |
 | [**updateEnvironment**](EnvironmentsApi.md#updateEnvironment) | **PUT** /v1/environments/{id} | Update an environment |
 
@@ -80,6 +82,75 @@ public class Example {
 | **422** | invalid request |  -  |
 | **401** | responds with unauthorized for invalid token |  -  |
 
+<a id="createEnvironmentCatalogProperty"></a>
+# **createEnvironmentCatalogProperty**
+> CatalogPropertyResponse createEnvironmentCatalogProperty(newCatalogProperty)
+
+Creates a Catalog Property
+
+Creates a new Catalog Property from provided data
+
+### Example
+```java
+// Import classes:
+import com.rootly.client.ApiClient;
+import com.rootly.client.ApiException;
+import com.rootly.client.Configuration;
+import com.rootly.client.auth.*;
+import com.rootly.client.models.*;
+import com.rootly.client.api.EnvironmentsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.rootly.com");
+    
+    // Configure HTTP bearer authorization: bearer_auth
+    HttpBearerAuth bearer_auth = (HttpBearerAuth) defaultClient.getAuthentication("bearer_auth");
+    bearer_auth.setBearerToken("BEARER TOKEN");
+
+    EnvironmentsApi apiInstance = new EnvironmentsApi(defaultClient);
+    NewCatalogProperty newCatalogProperty = new NewCatalogProperty(); // NewCatalogProperty | 
+    try {
+      CatalogPropertyResponse result = apiInstance.createEnvironmentCatalogProperty(newCatalogProperty);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling EnvironmentsApi#createEnvironmentCatalogProperty");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **newCatalogProperty** | [**NewCatalogProperty**](NewCatalogProperty.md)|  | |
+
+### Return type
+
+[**CatalogPropertyResponse**](CatalogPropertyResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/vnd.api+json
+ - **Accept**: application/vnd.api+json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | catalog_property created ignores wrong catalog_type attribute |  -  |
+| **422** | exceeds max fields per catalog |  -  |
+| **401** | responds with unauthorized for invalid token |  -  |
+
 <a id="deleteEnvironment"></a>
 # **deleteEnvironment**
 > EnvironmentResponse deleteEnvironment(id)
@@ -108,7 +179,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     EnvironmentsApi apiInstance = new EnvironmentsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       EnvironmentResponse result = apiInstance.deleteEnvironment(id);
       System.out.println(result);
@@ -127,7 +198,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -176,7 +247,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     EnvironmentsApi apiInstance = new EnvironmentsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       EnvironmentResponse result = apiInstance.getEnvironment(id);
       System.out.println(result);
@@ -195,7 +266,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -213,8 +284,95 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | environment found |  -  |
+| **200** | environment found by slug |  -  |
 | **404** | resource not found |  -  |
+
+<a id="listEnvironmentCatalogProperties"></a>
+# **listEnvironmentCatalogProperties**
+> CatalogPropertyList listEnvironmentCatalogProperties(include, sort, pageNumber, pageSize, filterSlug, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte)
+
+List Catalog Properties
+
+List Environment Catalog Properties
+
+### Example
+```java
+// Import classes:
+import com.rootly.client.ApiClient;
+import com.rootly.client.ApiException;
+import com.rootly.client.Configuration;
+import com.rootly.client.auth.*;
+import com.rootly.client.models.*;
+import com.rootly.client.api.EnvironmentsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.rootly.com");
+    
+    // Configure HTTP bearer authorization: bearer_auth
+    HttpBearerAuth bearer_auth = (HttpBearerAuth) defaultClient.getAuthentication("bearer_auth");
+    bearer_auth.setBearerToken("BEARER TOKEN");
+
+    EnvironmentsApi apiInstance = new EnvironmentsApi(defaultClient);
+    String include = "catalog"; // String | comma separated if needed. eg: catalog
+    String sort = "created_at"; // String | comma separated if needed. eg: created_at,updated_at
+    Integer pageNumber = 56; // Integer | 
+    Integer pageSize = 56; // Integer | 
+    String filterSlug = "filterSlug_example"; // String | 
+    String filterName = "filterName_example"; // String | 
+    String filterKind = "filterKind_example"; // String | 
+    String filterCreatedAtGt = "filterCreatedAtGt_example"; // String | 
+    String filterCreatedAtGte = "filterCreatedAtGte_example"; // String | 
+    String filterCreatedAtLt = "filterCreatedAtLt_example"; // String | 
+    String filterCreatedAtLte = "filterCreatedAtLte_example"; // String | 
+    try {
+      CatalogPropertyList result = apiInstance.listEnvironmentCatalogProperties(include, sort, pageNumber, pageSize, filterSlug, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling EnvironmentsApi#listEnvironmentCatalogProperties");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **include** | **String**| comma separated if needed. eg: catalog | [optional] [enum: catalog] |
+| **sort** | **String**| comma separated if needed. eg: created_at,updated_at | [optional] [enum: created_at, -created_at, updated_at, -updated_at, position, -position] |
+| **pageNumber** | **Integer**|  | [optional] |
+| **pageSize** | **Integer**|  | [optional] |
+| **filterSlug** | **String**|  | [optional] |
+| **filterName** | **String**|  | [optional] |
+| **filterKind** | **String**|  | [optional] |
+| **filterCreatedAtGt** | **String**|  | [optional] |
+| **filterCreatedAtGte** | **String**|  | [optional] |
+| **filterCreatedAtLt** | **String**|  | [optional] |
+| **filterCreatedAtLte** | **String**|  | [optional] |
+
+### Return type
+
+[**CatalogPropertyList**](CatalogPropertyList.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.api+json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | success |  -  |
 
 <a id="listEnvironments"></a>
 # **listEnvironments**
@@ -333,7 +491,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     EnvironmentsApi apiInstance = new EnvironmentsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     UpdateEnvironment updateEnvironment = new UpdateEnvironment(); // UpdateEnvironment | 
     try {
       EnvironmentResponse result = apiInstance.updateEnvironment(id, updateEnvironment);
@@ -353,7 +511,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **updateEnvironment** | [**UpdateEnvironment**](UpdateEnvironment.md)|  | |
 
 ### Return type

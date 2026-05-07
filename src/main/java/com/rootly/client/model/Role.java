@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * Role
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:27:13.146665190Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Role {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -60,7 +60,7 @@ public class Role {
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String slug;
 
   public static final String SERIALIZED_NAME_INCIDENT_PERMISSION_SET_ID = "incident_permission_set_id";
@@ -1658,6 +1658,435 @@ public class Role {
   @javax.annotation.Nullable
   private List<WorkflowsPermissionsEnum> workflowsPermissions = new ArrayList<>();
 
+  /**
+   * Gets or Sets catalogsPermissions
+   */
+  @JsonAdapter(CatalogsPermissionsEnum.Adapter.class)
+  public enum CatalogsPermissionsEnum {
+    CREATE("create"),
+    
+    READ("read"),
+    
+    UPDATE("update"),
+    
+    DELETE("delete");
+
+    private String value;
+
+    CatalogsPermissionsEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static CatalogsPermissionsEnum fromValue(String value) {
+      for (CatalogsPermissionsEnum b : CatalogsPermissionsEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<CatalogsPermissionsEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final CatalogsPermissionsEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public CatalogsPermissionsEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return CatalogsPermissionsEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      CatalogsPermissionsEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_CATALOGS_PERMISSIONS = "catalogs_permissions";
+  @SerializedName(SERIALIZED_NAME_CATALOGS_PERMISSIONS)
+  @javax.annotation.Nullable
+  private List<CatalogsPermissionsEnum> catalogsPermissions = new ArrayList<>();
+
+  /**
+   * Gets or Sets subStatusesPermissions
+   */
+  @JsonAdapter(SubStatusesPermissionsEnum.Adapter.class)
+  public enum SubStatusesPermissionsEnum {
+    CREATE("create"),
+    
+    READ("read"),
+    
+    UPDATE("update"),
+    
+    DELETE("delete");
+
+    private String value;
+
+    SubStatusesPermissionsEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static SubStatusesPermissionsEnum fromValue(String value) {
+      for (SubStatusesPermissionsEnum b : SubStatusesPermissionsEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<SubStatusesPermissionsEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final SubStatusesPermissionsEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public SubStatusesPermissionsEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return SubStatusesPermissionsEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      SubStatusesPermissionsEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_SUB_STATUSES_PERMISSIONS = "sub_statuses_permissions";
+  @SerializedName(SERIALIZED_NAME_SUB_STATUSES_PERMISSIONS)
+  @javax.annotation.Nullable
+  private List<SubStatusesPermissionsEnum> subStatusesPermissions = new ArrayList<>();
+
+  /**
+   * Gets or Sets edgeConnectorPermissions
+   */
+  @JsonAdapter(EdgeConnectorPermissionsEnum.Adapter.class)
+  public enum EdgeConnectorPermissionsEnum {
+    CREATE("create"),
+    
+    READ("read"),
+    
+    UPDATE("update"),
+    
+    DELETE("delete");
+
+    private String value;
+
+    EdgeConnectorPermissionsEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static EdgeConnectorPermissionsEnum fromValue(String value) {
+      for (EdgeConnectorPermissionsEnum b : EdgeConnectorPermissionsEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<EdgeConnectorPermissionsEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final EdgeConnectorPermissionsEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public EdgeConnectorPermissionsEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return EdgeConnectorPermissionsEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      EdgeConnectorPermissionsEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_EDGE_CONNECTOR_PERMISSIONS = "edge_connector_permissions";
+  @SerializedName(SERIALIZED_NAME_EDGE_CONNECTOR_PERMISSIONS)
+  @javax.annotation.Nullable
+  private List<EdgeConnectorPermissionsEnum> edgeConnectorPermissions = new ArrayList<>();
+
+  /**
+   * Gets or Sets slasPermissions
+   */
+  @JsonAdapter(SlasPermissionsEnum.Adapter.class)
+  public enum SlasPermissionsEnum {
+    CREATE("create"),
+    
+    READ("read"),
+    
+    UPDATE("update"),
+    
+    DELETE("delete");
+
+    private String value;
+
+    SlasPermissionsEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static SlasPermissionsEnum fromValue(String value) {
+      for (SlasPermissionsEnum b : SlasPermissionsEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<SlasPermissionsEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final SlasPermissionsEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public SlasPermissionsEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return SlasPermissionsEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      SlasPermissionsEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_SLAS_PERMISSIONS = "slas_permissions";
+  @SerializedName(SERIALIZED_NAME_SLAS_PERMISSIONS)
+  @javax.annotation.Nullable
+  private List<SlasPermissionsEnum> slasPermissions = new ArrayList<>();
+
+  /**
+   * Gets or Sets pagingPermissions
+   */
+  @JsonAdapter(PagingPermissionsEnum.Adapter.class)
+  public enum PagingPermissionsEnum {
+    CREATE("create"),
+    
+    READ("read"),
+    
+    UPDATE("update"),
+    
+    DELETE("delete");
+
+    private String value;
+
+    PagingPermissionsEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static PagingPermissionsEnum fromValue(String value) {
+      for (PagingPermissionsEnum b : PagingPermissionsEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<PagingPermissionsEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final PagingPermissionsEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public PagingPermissionsEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return PagingPermissionsEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      PagingPermissionsEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_PAGING_PERMISSIONS = "paging_permissions";
+  @SerializedName(SERIALIZED_NAME_PAGING_PERMISSIONS)
+  @javax.annotation.Nullable
+  private List<PagingPermissionsEnum> pagingPermissions = new ArrayList<>();
+
+  /**
+   * Gets or Sets incidentCommunicationPermissions
+   */
+  @JsonAdapter(IncidentCommunicationPermissionsEnum.Adapter.class)
+  public enum IncidentCommunicationPermissionsEnum {
+    CREATE("create"),
+    
+    READ("read"),
+    
+    UPDATE("update"),
+    
+    DELETE("delete"),
+    
+    SEND("send");
+
+    private String value;
+
+    IncidentCommunicationPermissionsEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static IncidentCommunicationPermissionsEnum fromValue(String value) {
+      for (IncidentCommunicationPermissionsEnum b : IncidentCommunicationPermissionsEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<IncidentCommunicationPermissionsEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final IncidentCommunicationPermissionsEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public IncidentCommunicationPermissionsEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return IncidentCommunicationPermissionsEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      IncidentCommunicationPermissionsEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_INCIDENT_COMMUNICATION_PERMISSIONS = "incident_communication_permissions";
+  @SerializedName(SERIALIZED_NAME_INCIDENT_COMMUNICATION_PERMISSIONS)
+  @javax.annotation.Nullable
+  private List<IncidentCommunicationPermissionsEnum> incidentCommunicationPermissions = new ArrayList<>();
+
+  /**
+   * Gets or Sets communicationPermissions
+   */
+  @JsonAdapter(CommunicationPermissionsEnum.Adapter.class)
+  public enum CommunicationPermissionsEnum {
+    CREATE("create"),
+    
+    READ("read"),
+    
+    UPDATE("update"),
+    
+    DELETE("delete");
+
+    private String value;
+
+    CommunicationPermissionsEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static CommunicationPermissionsEnum fromValue(String value) {
+      for (CommunicationPermissionsEnum b : CommunicationPermissionsEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<CommunicationPermissionsEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final CommunicationPermissionsEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public CommunicationPermissionsEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return CommunicationPermissionsEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      CommunicationPermissionsEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_COMMUNICATION_PERMISSIONS = "communication_permissions";
+  @SerializedName(SERIALIZED_NAME_COMMUNICATION_PERMISSIONS)
+  @javax.annotation.Nullable
+  private List<CommunicationPermissionsEnum> communicationPermissions = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   @javax.annotation.Nonnull
@@ -1690,7 +2119,7 @@ public class Role {
   }
 
 
-  public Role slug(@javax.annotation.Nonnull String slug) {
+  public Role slug(@javax.annotation.Nullable String slug) {
     this.slug = slug;
     return this;
   }
@@ -1699,12 +2128,12 @@ public class Role {
    * The role slug.
    * @return slug
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getSlug() {
     return slug;
   }
 
-  public void setSlug(@javax.annotation.Nonnull String slug) {
+  public void setSlug(@javax.annotation.Nullable String slug) {
     this.slug = slug;
   }
 
@@ -2468,6 +2897,195 @@ public class Role {
   }
 
 
+  public Role catalogsPermissions(@javax.annotation.Nullable List<CatalogsPermissionsEnum> catalogsPermissions) {
+    this.catalogsPermissions = catalogsPermissions;
+    return this;
+  }
+
+  public Role addCatalogsPermissionsItem(CatalogsPermissionsEnum catalogsPermissionsItem) {
+    if (this.catalogsPermissions == null) {
+      this.catalogsPermissions = new ArrayList<>();
+    }
+    this.catalogsPermissions.add(catalogsPermissionsItem);
+    return this;
+  }
+
+  /**
+   * Get catalogsPermissions
+   * @return catalogsPermissions
+   */
+  @javax.annotation.Nullable
+  public List<CatalogsPermissionsEnum> getCatalogsPermissions() {
+    return catalogsPermissions;
+  }
+
+  public void setCatalogsPermissions(@javax.annotation.Nullable List<CatalogsPermissionsEnum> catalogsPermissions) {
+    this.catalogsPermissions = catalogsPermissions;
+  }
+
+
+  public Role subStatusesPermissions(@javax.annotation.Nullable List<SubStatusesPermissionsEnum> subStatusesPermissions) {
+    this.subStatusesPermissions = subStatusesPermissions;
+    return this;
+  }
+
+  public Role addSubStatusesPermissionsItem(SubStatusesPermissionsEnum subStatusesPermissionsItem) {
+    if (this.subStatusesPermissions == null) {
+      this.subStatusesPermissions = new ArrayList<>();
+    }
+    this.subStatusesPermissions.add(subStatusesPermissionsItem);
+    return this;
+  }
+
+  /**
+   * Get subStatusesPermissions
+   * @return subStatusesPermissions
+   */
+  @javax.annotation.Nullable
+  public List<SubStatusesPermissionsEnum> getSubStatusesPermissions() {
+    return subStatusesPermissions;
+  }
+
+  public void setSubStatusesPermissions(@javax.annotation.Nullable List<SubStatusesPermissionsEnum> subStatusesPermissions) {
+    this.subStatusesPermissions = subStatusesPermissions;
+  }
+
+
+  public Role edgeConnectorPermissions(@javax.annotation.Nullable List<EdgeConnectorPermissionsEnum> edgeConnectorPermissions) {
+    this.edgeConnectorPermissions = edgeConnectorPermissions;
+    return this;
+  }
+
+  public Role addEdgeConnectorPermissionsItem(EdgeConnectorPermissionsEnum edgeConnectorPermissionsItem) {
+    if (this.edgeConnectorPermissions == null) {
+      this.edgeConnectorPermissions = new ArrayList<>();
+    }
+    this.edgeConnectorPermissions.add(edgeConnectorPermissionsItem);
+    return this;
+  }
+
+  /**
+   * Get edgeConnectorPermissions
+   * @return edgeConnectorPermissions
+   */
+  @javax.annotation.Nullable
+  public List<EdgeConnectorPermissionsEnum> getEdgeConnectorPermissions() {
+    return edgeConnectorPermissions;
+  }
+
+  public void setEdgeConnectorPermissions(@javax.annotation.Nullable List<EdgeConnectorPermissionsEnum> edgeConnectorPermissions) {
+    this.edgeConnectorPermissions = edgeConnectorPermissions;
+  }
+
+
+  public Role slasPermissions(@javax.annotation.Nullable List<SlasPermissionsEnum> slasPermissions) {
+    this.slasPermissions = slasPermissions;
+    return this;
+  }
+
+  public Role addSlasPermissionsItem(SlasPermissionsEnum slasPermissionsItem) {
+    if (this.slasPermissions == null) {
+      this.slasPermissions = new ArrayList<>();
+    }
+    this.slasPermissions.add(slasPermissionsItem);
+    return this;
+  }
+
+  /**
+   * Get slasPermissions
+   * @return slasPermissions
+   */
+  @javax.annotation.Nullable
+  public List<SlasPermissionsEnum> getSlasPermissions() {
+    return slasPermissions;
+  }
+
+  public void setSlasPermissions(@javax.annotation.Nullable List<SlasPermissionsEnum> slasPermissions) {
+    this.slasPermissions = slasPermissions;
+  }
+
+
+  public Role pagingPermissions(@javax.annotation.Nullable List<PagingPermissionsEnum> pagingPermissions) {
+    this.pagingPermissions = pagingPermissions;
+    return this;
+  }
+
+  public Role addPagingPermissionsItem(PagingPermissionsEnum pagingPermissionsItem) {
+    if (this.pagingPermissions == null) {
+      this.pagingPermissions = new ArrayList<>();
+    }
+    this.pagingPermissions.add(pagingPermissionsItem);
+    return this;
+  }
+
+  /**
+   * Get pagingPermissions
+   * @return pagingPermissions
+   */
+  @javax.annotation.Nullable
+  public List<PagingPermissionsEnum> getPagingPermissions() {
+    return pagingPermissions;
+  }
+
+  public void setPagingPermissions(@javax.annotation.Nullable List<PagingPermissionsEnum> pagingPermissions) {
+    this.pagingPermissions = pagingPermissions;
+  }
+
+
+  public Role incidentCommunicationPermissions(@javax.annotation.Nullable List<IncidentCommunicationPermissionsEnum> incidentCommunicationPermissions) {
+    this.incidentCommunicationPermissions = incidentCommunicationPermissions;
+    return this;
+  }
+
+  public Role addIncidentCommunicationPermissionsItem(IncidentCommunicationPermissionsEnum incidentCommunicationPermissionsItem) {
+    if (this.incidentCommunicationPermissions == null) {
+      this.incidentCommunicationPermissions = new ArrayList<>();
+    }
+    this.incidentCommunicationPermissions.add(incidentCommunicationPermissionsItem);
+    return this;
+  }
+
+  /**
+   * Get incidentCommunicationPermissions
+   * @return incidentCommunicationPermissions
+   */
+  @javax.annotation.Nullable
+  public List<IncidentCommunicationPermissionsEnum> getIncidentCommunicationPermissions() {
+    return incidentCommunicationPermissions;
+  }
+
+  public void setIncidentCommunicationPermissions(@javax.annotation.Nullable List<IncidentCommunicationPermissionsEnum> incidentCommunicationPermissions) {
+    this.incidentCommunicationPermissions = incidentCommunicationPermissions;
+  }
+
+
+  public Role communicationPermissions(@javax.annotation.Nullable List<CommunicationPermissionsEnum> communicationPermissions) {
+    this.communicationPermissions = communicationPermissions;
+    return this;
+  }
+
+  public Role addCommunicationPermissionsItem(CommunicationPermissionsEnum communicationPermissionsItem) {
+    if (this.communicationPermissions == null) {
+      this.communicationPermissions = new ArrayList<>();
+    }
+    this.communicationPermissions.add(communicationPermissionsItem);
+    return this;
+  }
+
+  /**
+   * Get communicationPermissions
+   * @return communicationPermissions
+   */
+  @javax.annotation.Nullable
+  public List<CommunicationPermissionsEnum> getCommunicationPermissions() {
+    return communicationPermissions;
+  }
+
+  public void setCommunicationPermissions(@javax.annotation.Nullable List<CommunicationPermissionsEnum> communicationPermissions) {
+    this.communicationPermissions = communicationPermissions;
+  }
+
+
   public Role createdAt(@javax.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
@@ -2547,6 +3165,13 @@ public class Role {
         Objects.equals(this.statusPagesPermissions, role.statusPagesPermissions) &&
         Objects.equals(this.webhooksPermissions, role.webhooksPermissions) &&
         Objects.equals(this.workflowsPermissions, role.workflowsPermissions) &&
+        Objects.equals(this.catalogsPermissions, role.catalogsPermissions) &&
+        Objects.equals(this.subStatusesPermissions, role.subStatusesPermissions) &&
+        Objects.equals(this.edgeConnectorPermissions, role.edgeConnectorPermissions) &&
+        Objects.equals(this.slasPermissions, role.slasPermissions) &&
+        Objects.equals(this.pagingPermissions, role.pagingPermissions) &&
+        Objects.equals(this.incidentCommunicationPermissions, role.incidentCommunicationPermissions) &&
+        Objects.equals(this.communicationPermissions, role.communicationPermissions) &&
         Objects.equals(this.createdAt, role.createdAt) &&
         Objects.equals(this.updatedAt, role.updatedAt);
   }
@@ -2557,7 +3182,7 @@ public class Role {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, slug, incidentPermissionSetId, isDeletable, isEditable, alertsPermissions, apiKeysPermissions, auditsPermissions, billingPermissions, environmentsPermissions, formFieldsPermissions, functionalitiesPermissions, groupsPermissions, incidentCausesPermissions, incidentFeedbacksPermissions, incidentRolesPermissions, incidentTypesPermissions, incidentsPermissions, integrationsPermissions, invitationsPermissions, playbooksPermissions, privateIncidentsPermissions, pulsesPermissions, retrospectivePermissions, rolesPermissions, secretsPermissions, servicesPermissions, severitiesPermissions, statusPagesPermissions, webhooksPermissions, workflowsPermissions, createdAt, updatedAt);
+    return Objects.hash(name, slug, incidentPermissionSetId, isDeletable, isEditable, alertsPermissions, apiKeysPermissions, auditsPermissions, billingPermissions, environmentsPermissions, formFieldsPermissions, functionalitiesPermissions, groupsPermissions, incidentCausesPermissions, incidentFeedbacksPermissions, incidentRolesPermissions, incidentTypesPermissions, incidentsPermissions, integrationsPermissions, invitationsPermissions, playbooksPermissions, privateIncidentsPermissions, pulsesPermissions, retrospectivePermissions, rolesPermissions, secretsPermissions, servicesPermissions, severitiesPermissions, statusPagesPermissions, webhooksPermissions, workflowsPermissions, catalogsPermissions, subStatusesPermissions, edgeConnectorPermissions, slasPermissions, pagingPermissions, incidentCommunicationPermissions, communicationPermissions, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -2602,6 +3227,13 @@ public class Role {
     sb.append("    statusPagesPermissions: ").append(toIndentedString(statusPagesPermissions)).append("\n");
     sb.append("    webhooksPermissions: ").append(toIndentedString(webhooksPermissions)).append("\n");
     sb.append("    workflowsPermissions: ").append(toIndentedString(workflowsPermissions)).append("\n");
+    sb.append("    catalogsPermissions: ").append(toIndentedString(catalogsPermissions)).append("\n");
+    sb.append("    subStatusesPermissions: ").append(toIndentedString(subStatusesPermissions)).append("\n");
+    sb.append("    edgeConnectorPermissions: ").append(toIndentedString(edgeConnectorPermissions)).append("\n");
+    sb.append("    slasPermissions: ").append(toIndentedString(slasPermissions)).append("\n");
+    sb.append("    pagingPermissions: ").append(toIndentedString(pagingPermissions)).append("\n");
+    sb.append("    incidentCommunicationPermissions: ").append(toIndentedString(incidentCommunicationPermissions)).append("\n");
+    sb.append("    communicationPermissions: ").append(toIndentedString(communicationPermissions)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -2657,13 +3289,19 @@ public class Role {
     openapiFields.add("status_pages_permissions");
     openapiFields.add("webhooks_permissions");
     openapiFields.add("workflows_permissions");
+    openapiFields.add("catalogs_permissions");
+    openapiFields.add("sub_statuses_permissions");
+    openapiFields.add("edge_connector_permissions");
+    openapiFields.add("slas_permissions");
+    openapiFields.add("paging_permissions");
+    openapiFields.add("incident_communication_permissions");
+    openapiFields.add("communication_permissions");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
     openapiRequiredFields.add("name");
-    openapiRequiredFields.add("slug");
     openapiRequiredFields.add("created_at");
     openapiRequiredFields.add("updated_at");
   }
@@ -2699,7 +3337,7 @@ public class Role {
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
-      if (!jsonObj.get("slug").isJsonPrimitive()) {
+      if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
       }
       if ((jsonObj.get("incident_permission_set_id") != null && !jsonObj.get("incident_permission_set_id").isJsonNull()) && !jsonObj.get("incident_permission_set_id").isJsonPrimitive()) {
@@ -2808,6 +3446,34 @@ public class Role {
       // ensure the optional json data is an array if present
       if (jsonObj.get("workflows_permissions") != null && !jsonObj.get("workflows_permissions").isJsonNull() && !jsonObj.get("workflows_permissions").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `workflows_permissions` to be an array in the JSON string but got `%s`", jsonObj.get("workflows_permissions").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("catalogs_permissions") != null && !jsonObj.get("catalogs_permissions").isJsonNull() && !jsonObj.get("catalogs_permissions").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `catalogs_permissions` to be an array in the JSON string but got `%s`", jsonObj.get("catalogs_permissions").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("sub_statuses_permissions") != null && !jsonObj.get("sub_statuses_permissions").isJsonNull() && !jsonObj.get("sub_statuses_permissions").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `sub_statuses_permissions` to be an array in the JSON string but got `%s`", jsonObj.get("sub_statuses_permissions").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("edge_connector_permissions") != null && !jsonObj.get("edge_connector_permissions").isJsonNull() && !jsonObj.get("edge_connector_permissions").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `edge_connector_permissions` to be an array in the JSON string but got `%s`", jsonObj.get("edge_connector_permissions").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("slas_permissions") != null && !jsonObj.get("slas_permissions").isJsonNull() && !jsonObj.get("slas_permissions").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `slas_permissions` to be an array in the JSON string but got `%s`", jsonObj.get("slas_permissions").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("paging_permissions") != null && !jsonObj.get("paging_permissions").isJsonNull() && !jsonObj.get("paging_permissions").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `paging_permissions` to be an array in the JSON string but got `%s`", jsonObj.get("paging_permissions").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("incident_communication_permissions") != null && !jsonObj.get("incident_communication_permissions").isJsonNull() && !jsonObj.get("incident_communication_permissions").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `incident_communication_permissions` to be an array in the JSON string but got `%s`", jsonObj.get("incident_communication_permissions").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("communication_permissions") != null && !jsonObj.get("communication_permissions").isJsonNull() && !jsonObj.get("communication_permissions").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `communication_permissions` to be an array in the JSON string but got `%s`", jsonObj.get("communication_permissions").toString()));
       }
       if (!jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));
