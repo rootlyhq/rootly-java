@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * A hash where [id] is the task id of the parent task that sent a message, and [name] is the name of the parent task
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:27:13.146665190Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class GetPulsesTaskParamsParentMessageThreadTask {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)

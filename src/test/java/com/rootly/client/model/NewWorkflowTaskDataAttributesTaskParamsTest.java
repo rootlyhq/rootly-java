@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.rootly.client.model.AddActionItemTaskParams;
 import com.rootly.client.model.AddActionItemTaskParamsPostToSlackChannelsInner;
+import com.rootly.client.model.AddMicrosoftTeamsChatTabTaskParams;
 import com.rootly.client.model.AddMicrosoftTeamsTabTaskParams;
 import com.rootly.client.model.AddRoleTaskParams;
 import com.rootly.client.model.AddRoleTaskParamsAssignedToUser;
@@ -36,10 +37,13 @@ import com.rootly.client.model.AutoAssignRoleVictorOpsTaskParams;
 import com.rootly.client.model.CallPeopleTaskParams;
 import com.rootly.client.model.ChangeSlackChannelPrivacyTaskParams;
 import com.rootly.client.model.CreateAirtableTableRecordTaskParams;
+import com.rootly.client.model.CreateAnthropicChatCompletionTaskParams;
+import com.rootly.client.model.CreateAnthropicChatCompletionTaskParamsModel;
 import com.rootly.client.model.CreateAsanaSubtaskTaskParams;
 import com.rootly.client.model.CreateAsanaTaskTaskParams;
 import com.rootly.client.model.CreateClickupTaskTaskParams;
 import com.rootly.client.model.CreateCodaPageTaskParams;
+import com.rootly.client.model.CreateCodaPageTaskParamsDoc;
 import com.rootly.client.model.CreateConfluencePageTaskParams;
 import com.rootly.client.model.CreateDatadogNotebookTaskParams;
 import com.rootly.client.model.CreateDropboxPaperPageTaskParams;
@@ -49,25 +53,29 @@ import com.rootly.client.model.CreateGoToMeetingTaskParams;
 import com.rootly.client.model.CreateGoogleCalendarEventTaskParams;
 import com.rootly.client.model.CreateGoogleDocsPageTaskParams;
 import com.rootly.client.model.CreateGoogleDocsPermissionsTaskParams;
+import com.rootly.client.model.CreateGoogleGeminiChatCompletionTaskParams;
 import com.rootly.client.model.CreateGoogleMeetingTaskParams;
 import com.rootly.client.model.CreateIncidentPostmortemTaskParams;
-import com.rootly.client.model.CreateIncidentPostmortemTaskParamsTemplate;
 import com.rootly.client.model.CreateIncidentTaskParams;
 import com.rootly.client.model.CreateJiraIssueTaskParams;
 import com.rootly.client.model.CreateJiraIssueTaskParamsIntegration;
 import com.rootly.client.model.CreateJiraIssueTaskParamsIssueType;
 import com.rootly.client.model.CreateJiraIssueTaskParamsPriority;
 import com.rootly.client.model.CreateJiraSubtaskTaskParams;
+import com.rootly.client.model.CreateJsmopsAlertTaskParams;
 import com.rootly.client.model.CreateLinearIssueCommentTaskParams;
 import com.rootly.client.model.CreateLinearIssueTaskParams;
 import com.rootly.client.model.CreateLinearIssueTaskParamsProject;
-import com.rootly.client.model.CreateLinearIssueTaskParamsState;
 import com.rootly.client.model.CreateLinearSubtaskIssueTaskParams;
 import com.rootly.client.model.CreateMicrosoftTeamsChannelTaskParams;
+import com.rootly.client.model.CreateMicrosoftTeamsChatTaskParams;
+import com.rootly.client.model.CreateMicrosoftTeamsChatTaskParamsMembersInner;
 import com.rootly.client.model.CreateMicrosoftTeamsMeetingTaskParams;
+import com.rootly.client.model.CreateMistralChatCompletionTaskParams;
 import com.rootly.client.model.CreateMotionTaskTaskParams;
 import com.rootly.client.model.CreateNotionPageTaskParams;
 import com.rootly.client.model.CreateNotionPageTaskParamsParentPage;
+import com.rootly.client.model.CreateOpenaiChatCompletionTaskParams;
 import com.rootly.client.model.CreateOpsgenieAlertTaskParams;
 import com.rootly.client.model.CreateOutlookEventTaskParams;
 import com.rootly.client.model.CreatePagerdutyStatusUpdateTaskParams;
@@ -79,17 +87,16 @@ import com.rootly.client.model.CreateSharepointPageTaskParams;
 import com.rootly.client.model.CreateShortcutStoryTaskParams;
 import com.rootly.client.model.CreateShortcutTaskTaskParams;
 import com.rootly.client.model.CreateSlackChannelTaskParams;
+import com.rootly.client.model.CreateSubIncidentTaskParams;
 import com.rootly.client.model.CreateTrelloCardTaskParams;
 import com.rootly.client.model.CreateTrelloCardTaskParamsArchivation;
 import com.rootly.client.model.CreateTrelloCardTaskParamsBoard;
 import com.rootly.client.model.CreateTrelloCardTaskParamsList;
+import com.rootly.client.model.CreateWatsonxChatCompletionTaskParams;
 import com.rootly.client.model.CreateWebexMeetingTaskParams;
 import com.rootly.client.model.CreateZendeskJiraLinkTaskParams;
 import com.rootly.client.model.CreateZendeskTicketTaskParams;
 import com.rootly.client.model.CreateZoomMeetingTaskParams;
-import com.rootly.client.model.GeniusCreateOpenaiChatCompletionTaskParams;
-import com.rootly.client.model.GeniusCreateWatsonxChatCompletionTaskParams;
-import com.rootly.client.model.GeniusCreateWatsonxChatCompletionTaskParamsModel;
 import com.rootly.client.model.GetAlertsTaskParams;
 import com.rootly.client.model.GetGithubCommitsTaskParams;
 import com.rootly.client.model.GetGitlabCommitsTaskParams;
@@ -101,6 +108,7 @@ import com.rootly.client.model.InviteToSlackChannelPagerdutyTaskParams;
 import com.rootly.client.model.InviteToSlackChannelRootlyTaskParams;
 import com.rootly.client.model.InviteToSlackChannelTaskParams;
 import com.rootly.client.model.InviteToSlackChannelVictorOpsTaskParams;
+import com.rootly.client.model.PageJsmopsOnCallRespondersTaskParams;
 import com.rootly.client.model.PageOpsgenieOnCallRespondersTaskParams;
 import com.rootly.client.model.PagePagerdutyOnCallRespondersTaskParams;
 import com.rootly.client.model.PageRootlyOnCallRespondersTaskParams;
@@ -115,6 +123,7 @@ import com.rootly.client.model.RunCommandHerokuTaskParams;
 import com.rootly.client.model.SendDashboardReportTaskParams;
 import com.rootly.client.model.SendEmailTaskParams;
 import com.rootly.client.model.SendMicrosoftTeamsBlocksTaskParams;
+import com.rootly.client.model.SendMicrosoftTeamsChatMessageTaskParams;
 import com.rootly.client.model.SendMicrosoftTeamsMessageTaskParams;
 import com.rootly.client.model.SendSlackBlocksTaskParams;
 import com.rootly.client.model.SendSlackMessageTaskParams;
@@ -132,7 +141,12 @@ import com.rootly.client.model.UpdateAsanaTaskTaskParams;
 import com.rootly.client.model.UpdateAttachedAlertsTaskParams;
 import com.rootly.client.model.UpdateClickupTaskTaskParams;
 import com.rootly.client.model.UpdateCodaPageTaskParams;
+import com.rootly.client.model.UpdateConfluencePageTaskParams;
+import com.rootly.client.model.UpdateDatadogNotebookTaskParams;
+import com.rootly.client.model.UpdateDatadogNotebookTaskParamsTemplate;
+import com.rootly.client.model.UpdateDropboxPaperPageTaskParams;
 import com.rootly.client.model.UpdateGithubIssueTaskParams;
+import com.rootly.client.model.UpdateGithubIssueTaskParamsRepository;
 import com.rootly.client.model.UpdateGitlabIssueTaskParams;
 import com.rootly.client.model.UpdateGoogleCalendarEventTaskParams;
 import com.rootly.client.model.UpdateGoogleDocsPageTaskParams;
@@ -141,13 +155,16 @@ import com.rootly.client.model.UpdateIncidentStatusTimestampTaskParams;
 import com.rootly.client.model.UpdateIncidentTaskParams;
 import com.rootly.client.model.UpdateJiraIssueTaskParams;
 import com.rootly.client.model.UpdateLinearIssueTaskParams;
+import com.rootly.client.model.UpdateLinearIssueTaskParamsState;
 import com.rootly.client.model.UpdateMotionTaskTaskParams;
 import com.rootly.client.model.UpdateNotionPageTaskParams;
 import com.rootly.client.model.UpdateOpsgenieAlertTaskParams;
 import com.rootly.client.model.UpdateOpsgenieIncidentTaskParams;
 import com.rootly.client.model.UpdatePagerdutyIncidentTaskParams;
 import com.rootly.client.model.UpdatePagertreeAlertTaskParams;
+import com.rootly.client.model.UpdateQuipPageTaskParams;
 import com.rootly.client.model.UpdateServiceNowIncidentTaskParams;
+import com.rootly.client.model.UpdateSharepointPageTaskParams;
 import com.rootly.client.model.UpdateShortcutStoryTaskParams;
 import com.rootly.client.model.UpdateShortcutTaskTaskParams;
 import com.rootly.client.model.UpdateSlackChannelTopicTaskParams;
@@ -156,6 +173,7 @@ import com.rootly.client.model.UpdateTrelloCardTaskParams;
 import com.rootly.client.model.UpdateVictorOpsIncidentTaskParams;
 import com.rootly.client.model.UpdateZendeskTicketTaskParams;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -706,6 +724,14 @@ public class NewWorkflowTaskDataAttributesTaskParamsTest {
     }
 
     /**
+     * Test the property 'doc'
+     */
+    @Test
+    public void docTest() {
+        // TODO: test doc
+    }
+
+    /**
      * Test the property 'namespace'
      */
     @Test
@@ -738,6 +764,14 @@ public class NewWorkflowTaskDataAttributesTaskParamsTest {
     }
 
     /**
+     * Test the property 'labels'
+     */
+    @Test
+    public void labelsTest() {
+        // TODO: test labels
+    }
+
+    /**
      * Test the property 'issueType'
      */
     @Test
@@ -746,11 +780,11 @@ public class NewWorkflowTaskDataAttributesTaskParamsTest {
     }
 
     /**
-     * Test the property 'labels'
+     * Test the property 'parentIssueNumber'
      */
     @Test
-    public void labelsTest() {
-        // TODO: test labels
+    public void parentIssueNumberTest() {
+        // TODO: test parentIssueNumber
     }
 
     /**
@@ -807,6 +841,14 @@ public class NewWorkflowTaskDataAttributesTaskParamsTest {
     @Test
     public void excludeWeekendsTest() {
         // TODO: test excludeWeekends
+    }
+
+    /**
+     * Test the property 'enableOnlineMeeting'
+     */
+    @Test
+    public void enableOnlineMeetingTest() {
+        // TODO: test enableOnlineMeeting
     }
 
     /**
@@ -978,6 +1020,14 @@ public class NewWorkflowTaskDataAttributesTaskParamsTest {
     }
 
     /**
+     * Test the property 'recordingMode'
+     */
+    @Test
+    public void recordingModeTest() {
+        // TODO: test recordingMode
+    }
+
+    /**
      * Test the property 'subject'
      */
     @Test
@@ -1122,6 +1172,38 @@ public class NewWorkflowTaskDataAttributesTaskParamsTest {
     }
 
     /**
+     * Test the property 'topic'
+     */
+    @Test
+    public void topicTest() {
+        // TODO: test topic
+    }
+
+    /**
+     * Test the property 'chatType'
+     */
+    @Test
+    public void chatTypeTest() {
+        // TODO: test chatType
+    }
+
+    /**
+     * Test the property 'members'
+     */
+    @Test
+    public void membersTest() {
+        // TODO: test members
+    }
+
+    /**
+     * Test the property 'chat'
+     */
+    @Test
+    public void chatTest() {
+        // TODO: test chat
+    }
+
+    /**
      * Test the property 'emails'
      */
     @Test
@@ -1159,6 +1241,14 @@ public class NewWorkflowTaskDataAttributesTaskParamsTest {
     @Test
     public void textTest() {
         // TODO: test text
+    }
+
+    /**
+     * Test the property 'chats'
+     */
+    @Test
+    public void chatsTest() {
+        // TODO: test chats
     }
 
     /**
@@ -1215,14 +1305,6 @@ public class NewWorkflowTaskDataAttributesTaskParamsTest {
     @Test
     public void _listTest() {
         // TODO: test _list
-    }
-
-    /**
-     * Test the property 'topic'
-     */
-    @Test
-    public void topicTest() {
-        // TODO: test topic
     }
 
     /**
@@ -1503,6 +1585,14 @@ public class NewWorkflowTaskDataAttributesTaskParamsTest {
     @Test
     public void opsgenieIncidentIdTest() {
         // TODO: test opsgenieIncidentId
+    }
+
+    /**
+     * Test the property 'functionalityTarget'
+     */
+    @Test
+    public void functionalityTargetTest() {
+        // TODO: test functionalityTarget
     }
 
     /**
@@ -1834,6 +1924,14 @@ public class NewWorkflowTaskDataAttributesTaskParamsTest {
     }
 
     /**
+     * Test the property 'labelsMode'
+     */
+    @Test
+    public void labelsModeTest() {
+        // TODO: test labelsMode
+    }
+
+    /**
      * Test the property 'startedAt'
      */
     @Test
@@ -1970,11 +2068,59 @@ public class NewWorkflowTaskDataAttributesTaskParamsTest {
     }
 
     /**
+     * Test the property 'systemPrompt'
+     */
+    @Test
+    public void systemPromptTest() {
+        // TODO: test systemPrompt
+    }
+
+    /**
      * Test the property 'prompt'
      */
     @Test
     public void promptTest() {
         // TODO: test prompt
+    }
+
+    /**
+     * Test the property 'temperature'
+     */
+    @Test
+    public void temperatureTest() {
+        // TODO: test temperature
+    }
+
+    /**
+     * Test the property 'maxTokens'
+     */
+    @Test
+    public void maxTokensTest() {
+        // TODO: test maxTokens
+    }
+
+    /**
+     * Test the property 'topP'
+     */
+    @Test
+    public void topPTest() {
+        // TODO: test topP
+    }
+
+    /**
+     * Test the property 'reasoningEffort'
+     */
+    @Test
+    public void reasoningEffortTest() {
+        // TODO: test reasoningEffort
+    }
+
+    /**
+     * Test the property 'reasoningSummary'
+     */
+    @Test
+    public void reasoningSummaryTest() {
+        // TODO: test reasoningSummary
     }
 
     /**

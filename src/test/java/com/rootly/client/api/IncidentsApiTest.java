@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -18,6 +18,7 @@ import com.rootly.client.model.AddSubscribers;
 import com.rootly.client.model.AssignRoleToUser;
 import com.rootly.client.model.CancelIncident;
 import com.rootly.client.model.ErrorsList;
+import com.rootly.client.model.GetAlertFieldIdParameter;
 import com.rootly.client.model.InTriageIncident;
 import com.rootly.client.model.IncidentList;
 import com.rootly.client.model.IncidentResponse;
@@ -53,7 +54,7 @@ public class IncidentsApiTest {
      */
     @Test
     public void addSubscribersToIncidentTest() throws ApiException {
-        String id = null;
+        GetAlertFieldIdParameter id = null;
         AddSubscribers addSubscribers = null;
         IncidentResponse response = api.addSubscribersToIncident(id, addSubscribers);
         // TODO: test validations
@@ -68,7 +69,7 @@ public class IncidentsApiTest {
      */
     @Test
     public void assignUserToIncidentTest() throws ApiException {
-        String id = null;
+        GetAlertFieldIdParameter id = null;
         AssignRoleToUser assignRoleToUser = null;
         IncidentResponse response = api.assignUserToIncident(id, assignRoleToUser);
         // TODO: test validations
@@ -83,7 +84,7 @@ public class IncidentsApiTest {
      */
     @Test
     public void cancelIncidentTest() throws ApiException {
-        String id = null;
+        GetAlertFieldIdParameter id = null;
         CancelIncident cancelIncident = null;
         IncidentResponse response = api.cancelIncident(id, cancelIncident);
         // TODO: test validations
@@ -112,8 +113,22 @@ public class IncidentsApiTest {
      */
     @Test
     public void deleteIncidentTest() throws ApiException {
-        String id = null;
+        GetAlertFieldIdParameter id = null;
         IncidentResponse response = api.deleteIncident(id);
+        // TODO: test validations
+    }
+
+    /**
+     * Detach an incident from its parent
+     *
+     * Detach a sub-incident from its parent incident
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void detachFromParentIncidentTest() throws ApiException {
+        GetAlertFieldIdParameter id = null;
+        IncidentResponse response = api.detachFromParentIncident(id);
         // TODO: test validations
     }
 
@@ -126,7 +141,7 @@ public class IncidentsApiTest {
      */
     @Test
     public void getIncidentTest() throws ApiException {
-        String id = null;
+        GetAlertFieldIdParameter id = null;
         String include = null;
         IncidentResponse response = api.getIncident(id, include);
         // TODO: test validations
@@ -157,13 +172,17 @@ public class IncidentsApiTest {
         String filterEnvironmentIds = null;
         String filterFunctionalities = null;
         String filterFunctionalityIds = null;
+        String filterFunctionalityNames = null;
         String filterServices = null;
         String filterServiceIds = null;
+        String filterServiceNames = null;
         String filterTeams = null;
         String filterTeamIds = null;
+        String filterTeamNames = null;
         String filterCause = null;
         String filterCauseIds = null;
         String filterCustomFieldSelectedOptionIds = null;
+        String filterSlackChannelId = null;
         String filterCreatedAtGt = null;
         String filterCreatedAtGte = null;
         String filterCreatedAtLt = null;
@@ -202,7 +221,7 @@ public class IncidentsApiTest {
         String filterInTriageAtLte = null;
         String sort = null;
         String include = null;
-        IncidentList response = api.listIncidents(pageNumber, pageSize, filterSearch, filterKind, filterStatus, filterPrivate, filterUserId, filterSeverity, filterSeverityId, filterLabels, filterTypes, filterTypeIds, filterEnvironments, filterEnvironmentIds, filterFunctionalities, filterFunctionalityIds, filterServices, filterServiceIds, filterTeams, filterTeamIds, filterCause, filterCauseIds, filterCustomFieldSelectedOptionIds, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUpdatedAtGt, filterUpdatedAtGte, filterUpdatedAtLt, filterUpdatedAtLte, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterDetectedAtGt, filterDetectedAtGte, filterDetectedAtLt, filterDetectedAtLte, filterAcknowledgedAtGt, filterAcknowledgedAtGte, filterAcknowledgedAtLt, filterAcknowledgedAtLte, filterMitigatedAtGt, filterMitigatedAtGte, filterMitigatedAtLt, filterMitigatedAtLte, filterResolvedAtGt, filterResolvedAtGte, filterResolvedAtLt, filterResolvedAtLte, filterClosedAtGt, filterClosedAtGte, filterClosedAtLt, filterClosedAtLte, filterInTriageAtGt, filterInTriageAtGte, filterInTriageAtLt, filterInTriageAtLte, sort, include);
+        IncidentList response = api.listIncidents(pageNumber, pageSize, filterSearch, filterKind, filterStatus, filterPrivate, filterUserId, filterSeverity, filterSeverityId, filterLabels, filterTypes, filterTypeIds, filterEnvironments, filterEnvironmentIds, filterFunctionalities, filterFunctionalityIds, filterFunctionalityNames, filterServices, filterServiceIds, filterServiceNames, filterTeams, filterTeamIds, filterTeamNames, filterCause, filterCauseIds, filterCustomFieldSelectedOptionIds, filterSlackChannelId, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUpdatedAtGt, filterUpdatedAtGte, filterUpdatedAtLt, filterUpdatedAtLte, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterDetectedAtGt, filterDetectedAtGte, filterDetectedAtLt, filterDetectedAtLte, filterAcknowledgedAtGt, filterAcknowledgedAtGte, filterAcknowledgedAtLt, filterAcknowledgedAtLte, filterMitigatedAtGt, filterMitigatedAtGte, filterMitigatedAtLt, filterMitigatedAtLte, filterResolvedAtGt, filterResolvedAtGte, filterResolvedAtLt, filterResolvedAtLte, filterClosedAtGt, filterClosedAtGte, filterClosedAtLt, filterClosedAtLte, filterInTriageAtGt, filterInTriageAtGte, filterInTriageAtLt, filterInTriageAtLte, sort, include);
         // TODO: test validations
     }
 
@@ -215,7 +234,7 @@ public class IncidentsApiTest {
      */
     @Test
     public void markAsDuplicateIncidentTest() throws ApiException {
-        String id = null;
+        GetAlertFieldIdParameter id = null;
         ResolveIncident resolveIncident = null;
         IncidentResponse response = api.markAsDuplicateIncident(id, resolveIncident);
         // TODO: test validations
@@ -230,7 +249,7 @@ public class IncidentsApiTest {
      */
     @Test
     public void mitigateIncidentTest() throws ApiException {
-        String id = null;
+        GetAlertFieldIdParameter id = null;
         MitigateIncident mitigateIncident = null;
         IncidentResponse response = api.mitigateIncident(id, mitigateIncident);
         // TODO: test validations
@@ -245,7 +264,7 @@ public class IncidentsApiTest {
      */
     @Test
     public void removeAssignedUserFromIncidentTest() throws ApiException {
-        String id = null;
+        GetAlertFieldIdParameter id = null;
         UnassignRoleFromUser unassignRoleFromUser = null;
         IncidentResponse response = api.removeAssignedUserFromIncident(id, unassignRoleFromUser);
         // TODO: test validations
@@ -260,7 +279,7 @@ public class IncidentsApiTest {
      */
     @Test
     public void removeSubscribersToIncidentTest() throws ApiException {
-        String id = null;
+        GetAlertFieldIdParameter id = null;
         RemoveSubscribers removeSubscribers = null;
         IncidentResponse response = api.removeSubscribersToIncident(id, removeSubscribers);
         // TODO: test validations
@@ -275,7 +294,7 @@ public class IncidentsApiTest {
      */
     @Test
     public void resolveIncidentTest() throws ApiException {
-        String id = null;
+        GetAlertFieldIdParameter id = null;
         ResolveIncident resolveIncident = null;
         IncidentResponse response = api.resolveIncident(id, resolveIncident);
         // TODO: test validations
@@ -290,7 +309,7 @@ public class IncidentsApiTest {
      */
     @Test
     public void restartIncidentTest() throws ApiException {
-        String id = null;
+        GetAlertFieldIdParameter id = null;
         RestartIncident restartIncident = null;
         IncidentResponse response = api.restartIncident(id, restartIncident);
         // TODO: test validations
@@ -305,9 +324,23 @@ public class IncidentsApiTest {
      */
     @Test
     public void triageIncidentTest() throws ApiException {
-        String id = null;
+        GetAlertFieldIdParameter id = null;
         InTriageIncident inTriageIncident = null;
         IncidentResponse response = api.triageIncident(id, inTriageIncident);
+        // TODO: test validations
+    }
+
+    /**
+     * Remove duplicate marking from an incident
+     *
+     * Remove the duplicate marking from an incident
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void unmarkAsDuplicateIncidentTest() throws ApiException {
+        GetAlertFieldIdParameter id = null;
+        IncidentResponse response = api.unmarkAsDuplicateIncident(id);
         // TODO: test validations
     }
 
@@ -320,7 +353,7 @@ public class IncidentsApiTest {
      */
     @Test
     public void updateIncidentTest() throws ApiException {
-        String id = null;
+        GetAlertFieldIdParameter id = null;
         UpdateIncident updateIncident = null;
         IncidentResponse response = api.updateIncident(id, updateIncident);
         // TODO: test validations

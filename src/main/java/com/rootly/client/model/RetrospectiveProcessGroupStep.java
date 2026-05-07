@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * RetrospectiveProcessGroupStep
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:27:13.146665190Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RetrospectiveProcessGroupStep {
   public static final String SERIALIZED_NAME_RETROSPECTIVE_PROCESS_GROUP_ID = "retrospective_process_group_id";
   @SerializedName(SERIALIZED_NAME_RETROSPECTIVE_PROCESS_GROUP_ID)

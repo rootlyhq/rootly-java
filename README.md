@@ -2,7 +2,7 @@
 
 Rootly API v1
 - API version: v1
-  - Build date: 2026-05-07T08:27:13.146665190Z[Etc/UTC]
+  - Build date: 2026-05-07T08:36:28.586343560Z[Etc/UTC]
   - Generator version: 7.13.0
 
 # How to generate an API Key?
