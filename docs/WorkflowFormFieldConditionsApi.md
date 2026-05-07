@@ -78,7 +78,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | workflow_form_field_condition created |  -  |
+| **201** | workflow_form_field_condition created with environment ids for non-environment form field |  -  |
 | **401** | responds with unauthorized for invalid token |  -  |
 
 <a id="deleteWorkflowFormFieldCondition"></a>
@@ -214,7 +214,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | workflow_form_field_condition found |  -  |
+| **200** | includes native field ids |  -  |
 | **404** | resource not found |  -  |
 
 <a id="listWorkflowFormFieldConditions"></a>

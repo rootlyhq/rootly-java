@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * FormField
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class FormField {
   /**
    * The kind of the form field
@@ -113,6 +113,8 @@ public class FormField {
     RESOLVED_AT("resolved_at"),
     
     CLOSED_AT("closed_at"),
+    
+    CUSTOM_SUB_STATUS("custom_sub_status"),
     
     MANUAL_STARTING_DATETIME_FIELD("manual_starting_datetime_field");
 
@@ -252,7 +254,13 @@ public class FormField {
     
     USER("user"),
     
-    CATALOG_ENTITY("catalog_entity");
+    CATALOG_ENTITY("catalog_entity"),
+    
+    ENVIRONMENT("environment"),
+    
+    CAUSE("cause"),
+    
+    INCIDENT_TYPE("incident_type");
 
     private String value;
 
@@ -314,7 +322,7 @@ public class FormField {
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String slug;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
@@ -346,6 +354,11 @@ public class FormField {
   @SerializedName(SERIALIZED_NAME_DEFAULT_VALUES)
   @javax.annotation.Nonnull
   private List<String> defaultValues = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_AUTO_SET_BY_CATALOG_PROPERTY_ID = "auto_set_by_catalog_property_id";
+  @SerializedName(SERIALIZED_NAME_AUTO_SET_BY_CATALOG_PROPERTY_ID)
+  @javax.annotation.Nullable
+  private String autoSetByCatalogPropertyId;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -455,7 +468,7 @@ public class FormField {
   }
 
 
-  public FormField slug(@javax.annotation.Nonnull String slug) {
+  public FormField slug(@javax.annotation.Nullable String slug) {
     this.slug = slug;
     return this;
   }
@@ -464,12 +477,12 @@ public class FormField {
    * The slug of the form field
    * @return slug
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getSlug() {
     return slug;
   }
 
-  public void setSlug(@javax.annotation.Nonnull String slug) {
+  public void setSlug(@javax.annotation.Nullable String slug) {
     this.slug = slug;
   }
 
@@ -612,6 +625,25 @@ public class FormField {
   }
 
 
+  public FormField autoSetByCatalogPropertyId(@javax.annotation.Nullable String autoSetByCatalogPropertyId) {
+    this.autoSetByCatalogPropertyId = autoSetByCatalogPropertyId;
+    return this;
+  }
+
+  /**
+   * Catalog property ID to auto-set this form field. Only reference-kind catalog properties are supported.
+   * @return autoSetByCatalogPropertyId
+   */
+  @javax.annotation.Nullable
+  public String getAutoSetByCatalogPropertyId() {
+    return autoSetByCatalogPropertyId;
+  }
+
+  public void setAutoSetByCatalogPropertyId(@javax.annotation.Nullable String autoSetByCatalogPropertyId) {
+    this.autoSetByCatalogPropertyId = autoSetByCatalogPropertyId;
+  }
+
+
   public FormField createdAt(@javax.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
@@ -672,6 +704,7 @@ public class FormField {
         Objects.equals(this.showOnIncidentDetails, formField.showOnIncidentDetails) &&
         Objects.equals(this.enabled, formField.enabled) &&
         Objects.equals(this.defaultValues, formField.defaultValues) &&
+        Objects.equals(this.autoSetByCatalogPropertyId, formField.autoSetByCatalogPropertyId) &&
         Objects.equals(this.createdAt, formField.createdAt) &&
         Objects.equals(this.updatedAt, formField.updatedAt);
   }
@@ -682,7 +715,7 @@ public class FormField {
 
   @Override
   public int hashCode() {
-    return Objects.hash(kind, inputKind, valueKind, valueKindCatalogId, name, slug, description, shown, required, showOnIncidentDetails, enabled, defaultValues, createdAt, updatedAt);
+    return Objects.hash(kind, inputKind, valueKind, valueKindCatalogId, name, slug, description, shown, required, showOnIncidentDetails, enabled, defaultValues, autoSetByCatalogPropertyId, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -708,6 +741,7 @@ public class FormField {
     sb.append("    showOnIncidentDetails: ").append(toIndentedString(showOnIncidentDetails)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    defaultValues: ").append(toIndentedString(defaultValues)).append("\n");
+    sb.append("    autoSetByCatalogPropertyId: ").append(toIndentedString(autoSetByCatalogPropertyId)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -744,6 +778,7 @@ public class FormField {
     openapiFields.add("show_on_incident_details");
     openapiFields.add("enabled");
     openapiFields.add("default_values");
+    openapiFields.add("auto_set_by_catalog_property_id");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
 
@@ -753,7 +788,6 @@ public class FormField {
     openapiRequiredFields.add("input_kind");
     openapiRequiredFields.add("value_kind");
     openapiRequiredFields.add("name");
-    openapiRequiredFields.add("slug");
     openapiRequiredFields.add("shown");
     openapiRequiredFields.add("required");
     openapiRequiredFields.add("default_values");
@@ -810,7 +844,7 @@ public class FormField {
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
-      if (!jsonObj.get("slug").isJsonPrimitive()) {
+      if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
@@ -833,6 +867,9 @@ public class FormField {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("default_values").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `default_values` to be an array in the JSON string but got `%s`", jsonObj.get("default_values").toString()));
+      }
+      if ((jsonObj.get("auto_set_by_catalog_property_id") != null && !jsonObj.get("auto_set_by_catalog_property_id").isJsonNull()) && !jsonObj.get("auto_set_by_catalog_property_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `auto_set_by_catalog_property_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("auto_set_by_catalog_property_id").toString()));
       }
       if (!jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));

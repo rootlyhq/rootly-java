@@ -9,6 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**data** | [**List&lt;OverrideShiftResponseData&gt;**](OverrideShiftResponseData.md) |  |  |
 |**links** | [**Links**](Links.md) |  |  |
+|**meta** | [**Meta**](Meta.md) |  |  |
 
 
 

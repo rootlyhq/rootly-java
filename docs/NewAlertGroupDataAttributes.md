@@ -11,10 +11,11 @@
 |**description** | **String** | The description of the alert urgency |  [optional] |
 |**timeWindow** | **Integer** | The length of time an Alert Group should stay open and accept new alerts |  [optional] |
 |**targets** | [**List&lt;NewAlertGroupDataAttributesTargetsInner&gt;**](NewAlertGroupDataAttributesTargetsInner.md) |  |  [optional] |
-|**attributes** | [**List&lt;NewAlertGroupDataAttributesAttributesInner&gt;**](NewAlertGroupDataAttributesAttributesInner.md) |  |  [optional] |
-|**groupByAlertTitle** | [**GroupByAlertTitleEnum**](#GroupByAlertTitleEnum) | Whether the alerts should be grouped by titles. |  [optional] |
-|**groupByAlertUrgency** | [**GroupByAlertUrgencyEnum**](#GroupByAlertUrgencyEnum) | Whether the alerts should be grouped by urgencies. |  [optional] |
+|**attributes** | [**List&lt;NewAlertGroupDataAttributesAttributesInner&gt;**](NewAlertGroupDataAttributesAttributesInner.md) | This field is deprecated. Please use the &#x60;conditions&#x60; field instead, &#x60;attributes&#x60; will be removed in the future. |  [optional] |
+|**groupByAlertTitle** | [**GroupByAlertTitleEnum**](#GroupByAlertTitleEnum) | [DEPRECATED] Whether the alerts should be grouped by titles. This field is deprecated. Please use the &#x60;conditions&#x60; field with advanced alert grouping instead. |  [optional] |
+|**groupByAlertUrgency** | [**GroupByAlertUrgencyEnum**](#GroupByAlertUrgencyEnum) | [DEPRECATED] Whether the alerts should be grouped by urgencies. This field is deprecated. Please use the &#x60;conditions&#x60; field with advanced alert grouping instead. |  [optional] |
 |**conditionType** | [**ConditionTypeEnum**](#ConditionTypeEnum) | Group alerts when ANY or ALL of the fields are matching. |  [optional] |
+|**conditions** | [**List&lt;NewAlertGroupDataAttributesConditionsInner&gt;**](NewAlertGroupDataAttributesConditionsInner.md) |  |  [optional] |
 
 
 

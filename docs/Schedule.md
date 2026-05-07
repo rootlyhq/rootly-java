@@ -11,8 +11,11 @@
 |**description** | **String** | The description of the schedule |  [optional] |
 |**allTimeCoverage** | **Boolean** | 24/7 coverage of the schedule |  [optional] |
 |**slackUserGroup** | [**ScheduleSlackUserGroup**](ScheduleSlackUserGroup.md) |  |  [optional] |
+|**slackChannel** | [**ScheduleSlackChannel**](ScheduleSlackChannel.md) |  |  [optional] |
 |**ownerGroupIds** | **List&lt;String&gt;** | Owning teams. |  [optional] |
-|**ownerUserId** | **Integer** | ID of user assigned as owner of the schedule |  [optional] |
+|**ownerUserId** | **Integer** | ID of user assigned as owner of the schedule |  |
+|**shiftStartNotificationsEnabled** | **Boolean** | Whether shift-start notifications are enabled |  [optional] |
+|**shiftUpdateNotificationsEnabled** | **Boolean** | Whether shift-update notifications are enabled |  [optional] |
 |**createdAt** | **String** | Date of creation |  |
 |**updatedAt** | **String** | Date of last update |  |
 

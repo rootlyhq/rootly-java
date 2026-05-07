@@ -25,7 +25,6 @@
 | RESOLVED | &quot;resolved&quot; |
 | SCHEDULED | &quot;scheduled&quot; |
 | IN_PROGRESS | &quot;in_progress&quot; |
-| VERIFYING | &quot;verifying&quot; |
 | COMPLETED | &quot;completed&quot; |
 
 

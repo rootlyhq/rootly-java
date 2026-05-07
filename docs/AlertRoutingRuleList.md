@@ -9,6 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**data** | [**List&lt;AlertRoutingRuleResponseData&gt;**](AlertRoutingRuleResponseData.md) |  |  |
 |**links** | [**Links**](Links.md) |  |  |
+|**meta** | [**Meta**](Meta.md) |  |  |
 
 
 

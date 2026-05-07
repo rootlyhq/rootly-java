@@ -78,7 +78,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | form_field_placement created |  -  |
+| **201** | form_field_placement created with non_editable true |  -  |
 | **422** | invalid request |  -  |
 | **401** | responds with unauthorized for invalid token |  -  |
 
@@ -360,6 +360,6 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | form_field_placement updated |  -  |
+| **200** | form_field_placement updated with non_editable |  -  |
 | **404** | resource not found |  -  |
 

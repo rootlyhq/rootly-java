@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -28,6 +28,7 @@ import java.io.IOException;
 
 
 import com.rootly.client.model.ErrorsList;
+import com.rootly.client.model.GetAlertFieldIdParameter;
 import com.rootly.client.model.IncidentPostMortemList;
 import com.rootly.client.model.IncidentPostMortemResponse;
 import com.rootly.client.model.UpdateIncidentPostMortem;
@@ -85,10 +86,18 @@ public class IncidentRetrospectivesApi {
      * @param filterSeverity  (optional)
      * @param filterType  (optional)
      * @param filterUserId  (optional)
-     * @param filterEnvironments  (optional)
-     * @param filterFunctionalities  (optional)
-     * @param filterServices  (optional)
-     * @param filterTeams  (optional)
+     * @param filterTypes Filter by incident type slugs (optional)
+     * @param filterTypeIds Filter by incident type IDs (UUIDs) (optional)
+     * @param filterEnvironments Filter by environment slugs (optional)
+     * @param filterEnvironmentIds Filter by environment IDs (UUIDs) (optional)
+     * @param filterFunctionalities Filter by functionality slugs (optional)
+     * @param filterFunctionalityIds Filter by functionality IDs (UUIDs) (optional)
+     * @param filterServices Filter by service slugs (optional)
+     * @param filterServiceIds Filter by service IDs (UUIDs) (optional)
+     * @param filterTeams Filter by team/group slugs (optional)
+     * @param filterTeamIds Filter by team/group IDs (UUIDs) (optional)
+     * @param filterCauses Filter by cause slugs (optional)
+     * @param filterCauseIds Filter by cause IDs (UUIDs) (optional)
      * @param filterCreatedAtGt  (optional)
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
@@ -116,7 +125,7 @@ public class IncidentRetrospectivesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listIncidentPostMortemsCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable String filterSeverity, @javax.annotation.Nullable String filterType, @javax.annotation.Nullable Integer filterUserId, @javax.annotation.Nullable String filterEnvironments, @javax.annotation.Nullable String filterFunctionalities, @javax.annotation.Nullable String filterServices, @javax.annotation.Nullable String filterTeams, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String filterStartedAtGt, @javax.annotation.Nullable String filterStartedAtGte, @javax.annotation.Nullable String filterStartedAtLt, @javax.annotation.Nullable String filterStartedAtLte, @javax.annotation.Nullable String filterMitigatedAtGt, @javax.annotation.Nullable String filterMitigatedAtGte, @javax.annotation.Nullable String filterMitigatedAtLt, @javax.annotation.Nullable String filterMitigatedAtLte, @javax.annotation.Nullable String filterResolvedAtGt, @javax.annotation.Nullable String filterResolvedAtGte, @javax.annotation.Nullable String filterResolvedAtLt, @javax.annotation.Nullable String filterResolvedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listIncidentPostMortemsCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable String filterSeverity, @javax.annotation.Nullable String filterType, @javax.annotation.Nullable Integer filterUserId, @javax.annotation.Nullable String filterTypes, @javax.annotation.Nullable String filterTypeIds, @javax.annotation.Nullable String filterEnvironments, @javax.annotation.Nullable String filterEnvironmentIds, @javax.annotation.Nullable String filterFunctionalities, @javax.annotation.Nullable String filterFunctionalityIds, @javax.annotation.Nullable String filterServices, @javax.annotation.Nullable String filterServiceIds, @javax.annotation.Nullable String filterTeams, @javax.annotation.Nullable String filterTeamIds, @javax.annotation.Nullable String filterCauses, @javax.annotation.Nullable String filterCauseIds, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String filterStartedAtGt, @javax.annotation.Nullable String filterStartedAtGte, @javax.annotation.Nullable String filterStartedAtLt, @javax.annotation.Nullable String filterStartedAtLte, @javax.annotation.Nullable String filterMitigatedAtGt, @javax.annotation.Nullable String filterMitigatedAtGte, @javax.annotation.Nullable String filterMitigatedAtLt, @javax.annotation.Nullable String filterMitigatedAtLte, @javax.annotation.Nullable String filterResolvedAtGt, @javax.annotation.Nullable String filterResolvedAtGte, @javax.annotation.Nullable String filterResolvedAtLt, @javax.annotation.Nullable String filterResolvedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -173,20 +182,52 @@ public class IncidentRetrospectivesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[user_id]", filterUserId));
         }
 
+        if (filterTypes != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[types]", filterTypes));
+        }
+
+        if (filterTypeIds != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[type_ids]", filterTypeIds));
+        }
+
         if (filterEnvironments != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[environments]", filterEnvironments));
+        }
+
+        if (filterEnvironmentIds != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[environment_ids]", filterEnvironmentIds));
         }
 
         if (filterFunctionalities != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[functionalities]", filterFunctionalities));
         }
 
+        if (filterFunctionalityIds != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[functionality_ids]", filterFunctionalityIds));
+        }
+
         if (filterServices != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[services]", filterServices));
         }
 
+        if (filterServiceIds != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[service_ids]", filterServiceIds));
+        }
+
         if (filterTeams != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[teams]", filterTeams));
+        }
+
+        if (filterTeamIds != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[team_ids]", filterTeamIds));
+        }
+
+        if (filterCauses != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[causes]", filterCauses));
+        }
+
+        if (filterCauseIds != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[cause_ids]", filterCauseIds));
         }
 
         if (filterCreatedAtGt != null) {
@@ -277,8 +318,8 @@ public class IncidentRetrospectivesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listIncidentPostMortemsValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable String filterSeverity, @javax.annotation.Nullable String filterType, @javax.annotation.Nullable Integer filterUserId, @javax.annotation.Nullable String filterEnvironments, @javax.annotation.Nullable String filterFunctionalities, @javax.annotation.Nullable String filterServices, @javax.annotation.Nullable String filterTeams, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String filterStartedAtGt, @javax.annotation.Nullable String filterStartedAtGte, @javax.annotation.Nullable String filterStartedAtLt, @javax.annotation.Nullable String filterStartedAtLte, @javax.annotation.Nullable String filterMitigatedAtGt, @javax.annotation.Nullable String filterMitigatedAtGte, @javax.annotation.Nullable String filterMitigatedAtLt, @javax.annotation.Nullable String filterMitigatedAtLte, @javax.annotation.Nullable String filterResolvedAtGt, @javax.annotation.Nullable String filterResolvedAtGte, @javax.annotation.Nullable String filterResolvedAtLt, @javax.annotation.Nullable String filterResolvedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
-        return listIncidentPostMortemsCall(include, pageNumber, pageSize, filterSearch, filterStatus, filterSeverity, filterType, filterUserId, filterEnvironments, filterFunctionalities, filterServices, filterTeams, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterMitigatedAtGt, filterMitigatedAtGte, filterMitigatedAtLt, filterMitigatedAtLte, filterResolvedAtGt, filterResolvedAtGte, filterResolvedAtLt, filterResolvedAtLte, sort, _callback);
+    private okhttp3.Call listIncidentPostMortemsValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable String filterSeverity, @javax.annotation.Nullable String filterType, @javax.annotation.Nullable Integer filterUserId, @javax.annotation.Nullable String filterTypes, @javax.annotation.Nullable String filterTypeIds, @javax.annotation.Nullable String filterEnvironments, @javax.annotation.Nullable String filterEnvironmentIds, @javax.annotation.Nullable String filterFunctionalities, @javax.annotation.Nullable String filterFunctionalityIds, @javax.annotation.Nullable String filterServices, @javax.annotation.Nullable String filterServiceIds, @javax.annotation.Nullable String filterTeams, @javax.annotation.Nullable String filterTeamIds, @javax.annotation.Nullable String filterCauses, @javax.annotation.Nullable String filterCauseIds, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String filterStartedAtGt, @javax.annotation.Nullable String filterStartedAtGte, @javax.annotation.Nullable String filterStartedAtLt, @javax.annotation.Nullable String filterStartedAtLte, @javax.annotation.Nullable String filterMitigatedAtGt, @javax.annotation.Nullable String filterMitigatedAtGte, @javax.annotation.Nullable String filterMitigatedAtLt, @javax.annotation.Nullable String filterMitigatedAtLte, @javax.annotation.Nullable String filterResolvedAtGt, @javax.annotation.Nullable String filterResolvedAtGte, @javax.annotation.Nullable String filterResolvedAtLt, @javax.annotation.Nullable String filterResolvedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+        return listIncidentPostMortemsCall(include, pageNumber, pageSize, filterSearch, filterStatus, filterSeverity, filterType, filterUserId, filterTypes, filterTypeIds, filterEnvironments, filterEnvironmentIds, filterFunctionalities, filterFunctionalityIds, filterServices, filterServiceIds, filterTeams, filterTeamIds, filterCauses, filterCauseIds, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterMitigatedAtGt, filterMitigatedAtGte, filterMitigatedAtLt, filterMitigatedAtLte, filterResolvedAtGt, filterResolvedAtGte, filterResolvedAtLt, filterResolvedAtLte, sort, _callback);
 
     }
 
@@ -293,10 +334,18 @@ public class IncidentRetrospectivesApi {
      * @param filterSeverity  (optional)
      * @param filterType  (optional)
      * @param filterUserId  (optional)
-     * @param filterEnvironments  (optional)
-     * @param filterFunctionalities  (optional)
-     * @param filterServices  (optional)
-     * @param filterTeams  (optional)
+     * @param filterTypes Filter by incident type slugs (optional)
+     * @param filterTypeIds Filter by incident type IDs (UUIDs) (optional)
+     * @param filterEnvironments Filter by environment slugs (optional)
+     * @param filterEnvironmentIds Filter by environment IDs (UUIDs) (optional)
+     * @param filterFunctionalities Filter by functionality slugs (optional)
+     * @param filterFunctionalityIds Filter by functionality IDs (UUIDs) (optional)
+     * @param filterServices Filter by service slugs (optional)
+     * @param filterServiceIds Filter by service IDs (UUIDs) (optional)
+     * @param filterTeams Filter by team/group slugs (optional)
+     * @param filterTeamIds Filter by team/group IDs (UUIDs) (optional)
+     * @param filterCauses Filter by cause slugs (optional)
+     * @param filterCauseIds Filter by cause IDs (UUIDs) (optional)
      * @param filterCreatedAtGt  (optional)
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
@@ -323,8 +372,8 @@ public class IncidentRetrospectivesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentPostMortemList listIncidentPostMortems(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable String filterSeverity, @javax.annotation.Nullable String filterType, @javax.annotation.Nullable Integer filterUserId, @javax.annotation.Nullable String filterEnvironments, @javax.annotation.Nullable String filterFunctionalities, @javax.annotation.Nullable String filterServices, @javax.annotation.Nullable String filterTeams, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String filterStartedAtGt, @javax.annotation.Nullable String filterStartedAtGte, @javax.annotation.Nullable String filterStartedAtLt, @javax.annotation.Nullable String filterStartedAtLte, @javax.annotation.Nullable String filterMitigatedAtGt, @javax.annotation.Nullable String filterMitigatedAtGte, @javax.annotation.Nullable String filterMitigatedAtLt, @javax.annotation.Nullable String filterMitigatedAtLte, @javax.annotation.Nullable String filterResolvedAtGt, @javax.annotation.Nullable String filterResolvedAtGte, @javax.annotation.Nullable String filterResolvedAtLt, @javax.annotation.Nullable String filterResolvedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
-        ApiResponse<IncidentPostMortemList> localVarResp = listIncidentPostMortemsWithHttpInfo(include, pageNumber, pageSize, filterSearch, filterStatus, filterSeverity, filterType, filterUserId, filterEnvironments, filterFunctionalities, filterServices, filterTeams, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterMitigatedAtGt, filterMitigatedAtGte, filterMitigatedAtLt, filterMitigatedAtLte, filterResolvedAtGt, filterResolvedAtGte, filterResolvedAtLt, filterResolvedAtLte, sort);
+    public IncidentPostMortemList listIncidentPostMortems(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable String filterSeverity, @javax.annotation.Nullable String filterType, @javax.annotation.Nullable Integer filterUserId, @javax.annotation.Nullable String filterTypes, @javax.annotation.Nullable String filterTypeIds, @javax.annotation.Nullable String filterEnvironments, @javax.annotation.Nullable String filterEnvironmentIds, @javax.annotation.Nullable String filterFunctionalities, @javax.annotation.Nullable String filterFunctionalityIds, @javax.annotation.Nullable String filterServices, @javax.annotation.Nullable String filterServiceIds, @javax.annotation.Nullable String filterTeams, @javax.annotation.Nullable String filterTeamIds, @javax.annotation.Nullable String filterCauses, @javax.annotation.Nullable String filterCauseIds, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String filterStartedAtGt, @javax.annotation.Nullable String filterStartedAtGte, @javax.annotation.Nullable String filterStartedAtLt, @javax.annotation.Nullable String filterStartedAtLte, @javax.annotation.Nullable String filterMitigatedAtGt, @javax.annotation.Nullable String filterMitigatedAtGte, @javax.annotation.Nullable String filterMitigatedAtLt, @javax.annotation.Nullable String filterMitigatedAtLte, @javax.annotation.Nullable String filterResolvedAtGt, @javax.annotation.Nullable String filterResolvedAtGte, @javax.annotation.Nullable String filterResolvedAtLt, @javax.annotation.Nullable String filterResolvedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+        ApiResponse<IncidentPostMortemList> localVarResp = listIncidentPostMortemsWithHttpInfo(include, pageNumber, pageSize, filterSearch, filterStatus, filterSeverity, filterType, filterUserId, filterTypes, filterTypeIds, filterEnvironments, filterEnvironmentIds, filterFunctionalities, filterFunctionalityIds, filterServices, filterServiceIds, filterTeams, filterTeamIds, filterCauses, filterCauseIds, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterMitigatedAtGt, filterMitigatedAtGte, filterMitigatedAtLt, filterMitigatedAtLte, filterResolvedAtGt, filterResolvedAtGte, filterResolvedAtLt, filterResolvedAtLte, sort);
         return localVarResp.getData();
     }
 
@@ -339,10 +388,18 @@ public class IncidentRetrospectivesApi {
      * @param filterSeverity  (optional)
      * @param filterType  (optional)
      * @param filterUserId  (optional)
-     * @param filterEnvironments  (optional)
-     * @param filterFunctionalities  (optional)
-     * @param filterServices  (optional)
-     * @param filterTeams  (optional)
+     * @param filterTypes Filter by incident type slugs (optional)
+     * @param filterTypeIds Filter by incident type IDs (UUIDs) (optional)
+     * @param filterEnvironments Filter by environment slugs (optional)
+     * @param filterEnvironmentIds Filter by environment IDs (UUIDs) (optional)
+     * @param filterFunctionalities Filter by functionality slugs (optional)
+     * @param filterFunctionalityIds Filter by functionality IDs (UUIDs) (optional)
+     * @param filterServices Filter by service slugs (optional)
+     * @param filterServiceIds Filter by service IDs (UUIDs) (optional)
+     * @param filterTeams Filter by team/group slugs (optional)
+     * @param filterTeamIds Filter by team/group IDs (UUIDs) (optional)
+     * @param filterCauses Filter by cause slugs (optional)
+     * @param filterCauseIds Filter by cause IDs (UUIDs) (optional)
      * @param filterCreatedAtGt  (optional)
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
@@ -369,8 +426,8 @@ public class IncidentRetrospectivesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentPostMortemList> listIncidentPostMortemsWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable String filterSeverity, @javax.annotation.Nullable String filterType, @javax.annotation.Nullable Integer filterUserId, @javax.annotation.Nullable String filterEnvironments, @javax.annotation.Nullable String filterFunctionalities, @javax.annotation.Nullable String filterServices, @javax.annotation.Nullable String filterTeams, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String filterStartedAtGt, @javax.annotation.Nullable String filterStartedAtGte, @javax.annotation.Nullable String filterStartedAtLt, @javax.annotation.Nullable String filterStartedAtLte, @javax.annotation.Nullable String filterMitigatedAtGt, @javax.annotation.Nullable String filterMitigatedAtGte, @javax.annotation.Nullable String filterMitigatedAtLt, @javax.annotation.Nullable String filterMitigatedAtLte, @javax.annotation.Nullable String filterResolvedAtGt, @javax.annotation.Nullable String filterResolvedAtGte, @javax.annotation.Nullable String filterResolvedAtLt, @javax.annotation.Nullable String filterResolvedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
-        okhttp3.Call localVarCall = listIncidentPostMortemsValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterStatus, filterSeverity, filterType, filterUserId, filterEnvironments, filterFunctionalities, filterServices, filterTeams, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterMitigatedAtGt, filterMitigatedAtGte, filterMitigatedAtLt, filterMitigatedAtLte, filterResolvedAtGt, filterResolvedAtGte, filterResolvedAtLt, filterResolvedAtLte, sort, null);
+    public ApiResponse<IncidentPostMortemList> listIncidentPostMortemsWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable String filterSeverity, @javax.annotation.Nullable String filterType, @javax.annotation.Nullable Integer filterUserId, @javax.annotation.Nullable String filterTypes, @javax.annotation.Nullable String filterTypeIds, @javax.annotation.Nullable String filterEnvironments, @javax.annotation.Nullable String filterEnvironmentIds, @javax.annotation.Nullable String filterFunctionalities, @javax.annotation.Nullable String filterFunctionalityIds, @javax.annotation.Nullable String filterServices, @javax.annotation.Nullable String filterServiceIds, @javax.annotation.Nullable String filterTeams, @javax.annotation.Nullable String filterTeamIds, @javax.annotation.Nullable String filterCauses, @javax.annotation.Nullable String filterCauseIds, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String filterStartedAtGt, @javax.annotation.Nullable String filterStartedAtGte, @javax.annotation.Nullable String filterStartedAtLt, @javax.annotation.Nullable String filterStartedAtLte, @javax.annotation.Nullable String filterMitigatedAtGt, @javax.annotation.Nullable String filterMitigatedAtGte, @javax.annotation.Nullable String filterMitigatedAtLt, @javax.annotation.Nullable String filterMitigatedAtLte, @javax.annotation.Nullable String filterResolvedAtGt, @javax.annotation.Nullable String filterResolvedAtGte, @javax.annotation.Nullable String filterResolvedAtLt, @javax.annotation.Nullable String filterResolvedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+        okhttp3.Call localVarCall = listIncidentPostMortemsValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterStatus, filterSeverity, filterType, filterUserId, filterTypes, filterTypeIds, filterEnvironments, filterEnvironmentIds, filterFunctionalities, filterFunctionalityIds, filterServices, filterServiceIds, filterTeams, filterTeamIds, filterCauses, filterCauseIds, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterMitigatedAtGt, filterMitigatedAtGte, filterMitigatedAtLt, filterMitigatedAtLte, filterResolvedAtGt, filterResolvedAtGte, filterResolvedAtLt, filterResolvedAtLte, sort, null);
         Type localVarReturnType = new TypeToken<IncidentPostMortemList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -386,10 +443,18 @@ public class IncidentRetrospectivesApi {
      * @param filterSeverity  (optional)
      * @param filterType  (optional)
      * @param filterUserId  (optional)
-     * @param filterEnvironments  (optional)
-     * @param filterFunctionalities  (optional)
-     * @param filterServices  (optional)
-     * @param filterTeams  (optional)
+     * @param filterTypes Filter by incident type slugs (optional)
+     * @param filterTypeIds Filter by incident type IDs (UUIDs) (optional)
+     * @param filterEnvironments Filter by environment slugs (optional)
+     * @param filterEnvironmentIds Filter by environment IDs (UUIDs) (optional)
+     * @param filterFunctionalities Filter by functionality slugs (optional)
+     * @param filterFunctionalityIds Filter by functionality IDs (UUIDs) (optional)
+     * @param filterServices Filter by service slugs (optional)
+     * @param filterServiceIds Filter by service IDs (UUIDs) (optional)
+     * @param filterTeams Filter by team/group slugs (optional)
+     * @param filterTeamIds Filter by team/group IDs (UUIDs) (optional)
+     * @param filterCauses Filter by cause slugs (optional)
+     * @param filterCauseIds Filter by cause IDs (UUIDs) (optional)
      * @param filterCreatedAtGt  (optional)
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
@@ -417,9 +482,9 @@ public class IncidentRetrospectivesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listIncidentPostMortemsAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable String filterSeverity, @javax.annotation.Nullable String filterType, @javax.annotation.Nullable Integer filterUserId, @javax.annotation.Nullable String filterEnvironments, @javax.annotation.Nullable String filterFunctionalities, @javax.annotation.Nullable String filterServices, @javax.annotation.Nullable String filterTeams, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String filterStartedAtGt, @javax.annotation.Nullable String filterStartedAtGte, @javax.annotation.Nullable String filterStartedAtLt, @javax.annotation.Nullable String filterStartedAtLte, @javax.annotation.Nullable String filterMitigatedAtGt, @javax.annotation.Nullable String filterMitigatedAtGte, @javax.annotation.Nullable String filterMitigatedAtLt, @javax.annotation.Nullable String filterMitigatedAtLte, @javax.annotation.Nullable String filterResolvedAtGt, @javax.annotation.Nullable String filterResolvedAtGte, @javax.annotation.Nullable String filterResolvedAtLt, @javax.annotation.Nullable String filterResolvedAtLte, @javax.annotation.Nullable String sort, final ApiCallback<IncidentPostMortemList> _callback) throws ApiException {
+    public okhttp3.Call listIncidentPostMortemsAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable String filterSeverity, @javax.annotation.Nullable String filterType, @javax.annotation.Nullable Integer filterUserId, @javax.annotation.Nullable String filterTypes, @javax.annotation.Nullable String filterTypeIds, @javax.annotation.Nullable String filterEnvironments, @javax.annotation.Nullable String filterEnvironmentIds, @javax.annotation.Nullable String filterFunctionalities, @javax.annotation.Nullable String filterFunctionalityIds, @javax.annotation.Nullable String filterServices, @javax.annotation.Nullable String filterServiceIds, @javax.annotation.Nullable String filterTeams, @javax.annotation.Nullable String filterTeamIds, @javax.annotation.Nullable String filterCauses, @javax.annotation.Nullable String filterCauseIds, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String filterStartedAtGt, @javax.annotation.Nullable String filterStartedAtGte, @javax.annotation.Nullable String filterStartedAtLt, @javax.annotation.Nullable String filterStartedAtLte, @javax.annotation.Nullable String filterMitigatedAtGt, @javax.annotation.Nullable String filterMitigatedAtGte, @javax.annotation.Nullable String filterMitigatedAtLt, @javax.annotation.Nullable String filterMitigatedAtLte, @javax.annotation.Nullable String filterResolvedAtGt, @javax.annotation.Nullable String filterResolvedAtGte, @javax.annotation.Nullable String filterResolvedAtLt, @javax.annotation.Nullable String filterResolvedAtLte, @javax.annotation.Nullable String sort, final ApiCallback<IncidentPostMortemList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listIncidentPostMortemsValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterStatus, filterSeverity, filterType, filterUserId, filterEnvironments, filterFunctionalities, filterServices, filterTeams, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterMitigatedAtGt, filterMitigatedAtGte, filterMitigatedAtLt, filterMitigatedAtLte, filterResolvedAtGt, filterResolvedAtGte, filterResolvedAtLt, filterResolvedAtLte, sort, _callback);
+        okhttp3.Call localVarCall = listIncidentPostMortemsValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterStatus, filterSeverity, filterType, filterUserId, filterTypes, filterTypeIds, filterEnvironments, filterEnvironmentIds, filterFunctionalities, filterFunctionalityIds, filterServices, filterServiceIds, filterTeams, filterTeamIds, filterCauses, filterCauseIds, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterMitigatedAtGt, filterMitigatedAtGte, filterMitigatedAtLt, filterMitigatedAtLte, filterResolvedAtGt, filterResolvedAtGte, filterResolvedAtLt, filterResolvedAtLte, sort, _callback);
         Type localVarReturnType = new TypeToken<IncidentPostMortemList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -438,7 +503,7 @@ public class IncidentRetrospectivesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listIncidentPostmortemCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listIncidentPostmortemCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -484,7 +549,7 @@ public class IncidentRetrospectivesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listIncidentPostmortemValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listIncidentPostmortemValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling listIncidentPostmortem(Async)");
@@ -508,7 +573,7 @@ public class IncidentRetrospectivesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentPostMortemResponse listIncidentPostmortem(@javax.annotation.Nonnull String id) throws ApiException {
+    public IncidentPostMortemResponse listIncidentPostmortem(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         ApiResponse<IncidentPostMortemResponse> localVarResp = listIncidentPostmortemWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -527,7 +592,7 @@ public class IncidentRetrospectivesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentPostMortemResponse> listIncidentPostmortemWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<IncidentPostMortemResponse> listIncidentPostmortemWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
         okhttp3.Call localVarCall = listIncidentPostmortemValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<IncidentPostMortemResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -548,7 +613,7 @@ public class IncidentRetrospectivesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listIncidentPostmortemAsync(@javax.annotation.Nonnull String id, final ApiCallback<IncidentPostMortemResponse> _callback) throws ApiException {
+    public okhttp3.Call listIncidentPostmortemAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<IncidentPostMortemResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listIncidentPostmortemValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<IncidentPostMortemResponse>(){}.getType();
@@ -570,7 +635,7 @@ public class IncidentRetrospectivesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateIncidentPostmortemCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateIncidentPostMortem updateIncidentPostMortem, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateIncidentPostmortemCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateIncidentPostMortem updateIncidentPostMortem, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -617,7 +682,7 @@ public class IncidentRetrospectivesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateIncidentPostmortemValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateIncidentPostMortem updateIncidentPostMortem, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateIncidentPostmortemValidateBeforeCall(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateIncidentPostMortem updateIncidentPostMortem, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateIncidentPostmortem(Async)");
@@ -647,7 +712,7 @@ public class IncidentRetrospectivesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentPostMortemResponse updateIncidentPostmortem(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateIncidentPostMortem updateIncidentPostMortem) throws ApiException {
+    public IncidentPostMortemResponse updateIncidentPostmortem(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateIncidentPostMortem updateIncidentPostMortem) throws ApiException {
         ApiResponse<IncidentPostMortemResponse> localVarResp = updateIncidentPostmortemWithHttpInfo(id, updateIncidentPostMortem);
         return localVarResp.getData();
     }
@@ -667,7 +732,7 @@ public class IncidentRetrospectivesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentPostMortemResponse> updateIncidentPostmortemWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateIncidentPostMortem updateIncidentPostMortem) throws ApiException {
+    public ApiResponse<IncidentPostMortemResponse> updateIncidentPostmortemWithHttpInfo(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateIncidentPostMortem updateIncidentPostMortem) throws ApiException {
         okhttp3.Call localVarCall = updateIncidentPostmortemValidateBeforeCall(id, updateIncidentPostMortem, null);
         Type localVarReturnType = new TypeToken<IncidentPostMortemResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -689,7 +754,7 @@ public class IncidentRetrospectivesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateIncidentPostmortemAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateIncidentPostMortem updateIncidentPostMortem, final ApiCallback<IncidentPostMortemResponse> _callback) throws ApiException {
+    public okhttp3.Call updateIncidentPostmortemAsync(@javax.annotation.Nonnull GetAlertFieldIdParameter id, @javax.annotation.Nonnull UpdateIncidentPostMortem updateIncidentPostMortem, final ApiCallback<IncidentPostMortemResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateIncidentPostmortemValidateBeforeCall(id, updateIncidentPostMortem, _callback);
         Type localVarReturnType = new TypeToken<IncidentPostMortemResponse>(){}.getType();

@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -105,6 +105,22 @@ public class NewIncidentDataAttributesTest {
     }
 
     /**
+     * Test the property 'publicTitle'
+     */
+    @Test
+    public void publicTitleTest() {
+        // TODO: test publicTitle
+    }
+
+    /**
+     * Test the property 'alertIds'
+     */
+    @Test
+    public void alertIdsTest() {
+        // TODO: test alertIds
+    }
+
+    /**
      * Test the property 'environmentIds'
      */
     @Test
@@ -153,6 +169,14 @@ public class NewIncidentDataAttributesTest {
     }
 
     /**
+     * Test the property 'mutedServiceIds'
+     */
+    @Test
+    public void mutedServiceIdsTest() {
+        // TODO: test mutedServiceIds
+    }
+
+    /**
      * Test the property 'labels'
      */
     @Test
@@ -166,6 +190,70 @@ public class NewIncidentDataAttributesTest {
     @Test
     public void slackChannelNameTest() {
         // TODO: test slackChannelName
+    }
+
+    /**
+     * Test the property 'slackChannelId'
+     */
+    @Test
+    public void slackChannelIdTest() {
+        // TODO: test slackChannelId
+    }
+
+    /**
+     * Test the property 'slackChannelUrl'
+     */
+    @Test
+    public void slackChannelUrlTest() {
+        // TODO: test slackChannelUrl
+    }
+
+    /**
+     * Test the property 'slackChannelArchived'
+     */
+    @Test
+    public void slackChannelArchivedTest() {
+        // TODO: test slackChannelArchived
+    }
+
+    /**
+     * Test the property 'googleDriveParentId'
+     */
+    @Test
+    public void googleDriveParentIdTest() {
+        // TODO: test googleDriveParentId
+    }
+
+    /**
+     * Test the property 'googleDriveUrl'
+     */
+    @Test
+    public void googleDriveUrlTest() {
+        // TODO: test googleDriveUrl
+    }
+
+    /**
+     * Test the property 'jiraIssueKey'
+     */
+    @Test
+    public void jiraIssueKeyTest() {
+        // TODO: test jiraIssueKey
+    }
+
+    /**
+     * Test the property 'jiraIssueId'
+     */
+    @Test
+    public void jiraIssueIdTest() {
+        // TODO: test jiraIssueId
+    }
+
+    /**
+     * Test the property 'jiraIssueUrl'
+     */
+    @Test
+    public void jiraIssueUrlTest() {
+        // TODO: test jiraIssueUrl
     }
 
     /**
@@ -254,6 +342,14 @@ public class NewIncidentDataAttributesTest {
     @Test
     public void resolvedAtTest() {
         // TODO: test resolvedAt
+    }
+
+    /**
+     * Test the property 'closedAt'
+     */
+    @Test
+    public void closedAtTest() {
+        // TODO: test closedAt
     }
 
     /**

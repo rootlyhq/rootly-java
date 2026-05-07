@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -20,8 +20,12 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.rootly.client.model.AddActionItemTaskParamsPostToSlackChannelsInner;
+import com.rootly.client.model.CreateGithubIssueTaskParamsIssueType;
+import com.rootly.client.model.UpdateGithubIssueTaskParamsRepository;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,7 +53,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateGithubIssueTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateGithubIssueTaskParams {
   /**
    * Gets or Sets taskType
@@ -111,6 +115,11 @@ public class UpdateGithubIssueTaskParams {
   @javax.annotation.Nonnull
   private String issueId;
 
+  public static final String SERIALIZED_NAME_REPOSITORY = "repository";
+  @SerializedName(SERIALIZED_NAME_REPOSITORY)
+  @javax.annotation.Nullable
+  private UpdateGithubIssueTaskParamsRepository repository;
+
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
   @javax.annotation.Nullable
@@ -120,6 +129,73 @@ public class UpdateGithubIssueTaskParams {
   @SerializedName(SERIALIZED_NAME_BODY)
   @javax.annotation.Nullable
   private String body;
+
+  public static final String SERIALIZED_NAME_LABELS = "labels";
+  @SerializedName(SERIALIZED_NAME_LABELS)
+  @javax.annotation.Nullable
+  private List<AddActionItemTaskParamsPostToSlackChannelsInner> labels = new ArrayList<>();
+
+  /**
+   * How to apply labels. &#39;replace&#39; (default) overwrites all existing labels. &#39;append&#39; adds to existing labels without removing them.
+   */
+  @JsonAdapter(LabelsModeEnum.Adapter.class)
+  public enum LabelsModeEnum {
+    REPLACE("replace"),
+    
+    APPEND("append");
+
+    private String value;
+
+    LabelsModeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static LabelsModeEnum fromValue(String value) {
+      for (LabelsModeEnum b : LabelsModeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<LabelsModeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final LabelsModeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public LabelsModeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return LabelsModeEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      LabelsModeEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_LABELS_MODE = "labels_mode";
+  @SerializedName(SERIALIZED_NAME_LABELS_MODE)
+  @javax.annotation.Nullable
+  private LabelsModeEnum labelsMode = LabelsModeEnum.REPLACE;
+
+  public static final String SERIALIZED_NAME_ISSUE_TYPE = "issue_type";
+  @SerializedName(SERIALIZED_NAME_ISSUE_TYPE)
+  @javax.annotation.Nullable
+  private CreateGithubIssueTaskParamsIssueType issueType;
 
   public static final String SERIALIZED_NAME_COMPLETION = "completion";
   @SerializedName(SERIALIZED_NAME_COMPLETION)
@@ -167,6 +243,25 @@ public class UpdateGithubIssueTaskParams {
   }
 
 
+  public UpdateGithubIssueTaskParams repository(@javax.annotation.Nullable UpdateGithubIssueTaskParamsRepository repository) {
+    this.repository = repository;
+    return this;
+  }
+
+  /**
+   * Get repository
+   * @return repository
+   */
+  @javax.annotation.Nullable
+  public UpdateGithubIssueTaskParamsRepository getRepository() {
+    return repository;
+  }
+
+  public void setRepository(@javax.annotation.Nullable UpdateGithubIssueTaskParamsRepository repository) {
+    this.repository = repository;
+  }
+
+
   public UpdateGithubIssueTaskParams title(@javax.annotation.Nullable String title) {
     this.title = title;
     return this;
@@ -205,6 +300,71 @@ public class UpdateGithubIssueTaskParams {
   }
 
 
+  public UpdateGithubIssueTaskParams labels(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> labels) {
+    this.labels = labels;
+    return this;
+  }
+
+  public UpdateGithubIssueTaskParams addLabelsItem(AddActionItemTaskParamsPostToSlackChannelsInner labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<>();
+    }
+    this.labels.add(labelsItem);
+    return this;
+  }
+
+  /**
+   * The issue labels
+   * @return labels
+   */
+  @javax.annotation.Nullable
+  public List<AddActionItemTaskParamsPostToSlackChannelsInner> getLabels() {
+    return labels;
+  }
+
+  public void setLabels(@javax.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> labels) {
+    this.labels = labels;
+  }
+
+
+  public UpdateGithubIssueTaskParams labelsMode(@javax.annotation.Nullable LabelsModeEnum labelsMode) {
+    this.labelsMode = labelsMode;
+    return this;
+  }
+
+  /**
+   * How to apply labels. &#39;replace&#39; (default) overwrites all existing labels. &#39;append&#39; adds to existing labels without removing them.
+   * @return labelsMode
+   */
+  @javax.annotation.Nullable
+  public LabelsModeEnum getLabelsMode() {
+    return labelsMode;
+  }
+
+  public void setLabelsMode(@javax.annotation.Nullable LabelsModeEnum labelsMode) {
+    this.labelsMode = labelsMode;
+  }
+
+
+  public UpdateGithubIssueTaskParams issueType(@javax.annotation.Nullable CreateGithubIssueTaskParamsIssueType issueType) {
+    this.issueType = issueType;
+    return this;
+  }
+
+  /**
+   * Get issueType
+   * @return issueType
+   */
+  @javax.annotation.Nullable
+  public CreateGithubIssueTaskParamsIssueType getIssueType() {
+    return issueType;
+  }
+
+  public void setIssueType(@javax.annotation.Nullable CreateGithubIssueTaskParamsIssueType issueType) {
+    this.issueType = issueType;
+  }
+
+
   public UpdateGithubIssueTaskParams completion(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner completion) {
     this.completion = completion;
     return this;
@@ -236,14 +396,18 @@ public class UpdateGithubIssueTaskParams {
     UpdateGithubIssueTaskParams updateGithubIssueTaskParams = (UpdateGithubIssueTaskParams) o;
     return Objects.equals(this.taskType, updateGithubIssueTaskParams.taskType) &&
         Objects.equals(this.issueId, updateGithubIssueTaskParams.issueId) &&
+        Objects.equals(this.repository, updateGithubIssueTaskParams.repository) &&
         Objects.equals(this.title, updateGithubIssueTaskParams.title) &&
         Objects.equals(this.body, updateGithubIssueTaskParams.body) &&
+        Objects.equals(this.labels, updateGithubIssueTaskParams.labels) &&
+        Objects.equals(this.labelsMode, updateGithubIssueTaskParams.labelsMode) &&
+        Objects.equals(this.issueType, updateGithubIssueTaskParams.issueType) &&
         Objects.equals(this.completion, updateGithubIssueTaskParams.completion);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(taskType, issueId, title, body, completion);
+    return Objects.hash(taskType, issueId, repository, title, body, labels, labelsMode, issueType, completion);
   }
 
   @Override
@@ -252,8 +416,12 @@ public class UpdateGithubIssueTaskParams {
     sb.append("class UpdateGithubIssueTaskParams {\n");
     sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
     sb.append("    issueId: ").append(toIndentedString(issueId)).append("\n");
+    sb.append("    repository: ").append(toIndentedString(repository)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    body: ").append(toIndentedString(body)).append("\n");
+    sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
+    sb.append("    labelsMode: ").append(toIndentedString(labelsMode)).append("\n");
+    sb.append("    issueType: ").append(toIndentedString(issueType)).append("\n");
     sb.append("    completion: ").append(toIndentedString(completion)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -279,8 +447,12 @@ public class UpdateGithubIssueTaskParams {
     openapiFields = new HashSet<String>();
     openapiFields.add("task_type");
     openapiFields.add("issue_id");
+    openapiFields.add("repository");
     openapiFields.add("title");
     openapiFields.add("body");
+    openapiFields.add("labels");
+    openapiFields.add("labels_mode");
+    openapiFields.add("issue_type");
     openapiFields.add("completion");
 
     // a set of required properties/fields (JSON key names)
@@ -327,11 +499,40 @@ public class UpdateGithubIssueTaskParams {
       if (!jsonObj.get("issue_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `issue_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("issue_id").toString()));
       }
+      // validate the optional field `repository`
+      if (jsonObj.get("repository") != null && !jsonObj.get("repository").isJsonNull()) {
+        UpdateGithubIssueTaskParamsRepository.validateJsonElement(jsonObj.get("repository"));
+      }
       if ((jsonObj.get("title") != null && !jsonObj.get("title").isJsonNull()) && !jsonObj.get("title").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
       }
       if ((jsonObj.get("body") != null && !jsonObj.get("body").isJsonNull()) && !jsonObj.get("body").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `body` to be a primitive type in the JSON string but got `%s`", jsonObj.get("body").toString()));
+      }
+      if (jsonObj.get("labels") != null && !jsonObj.get("labels").isJsonNull()) {
+        JsonArray jsonArraylabels = jsonObj.getAsJsonArray("labels");
+        if (jsonArraylabels != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("labels").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `labels` to be an array in the JSON string but got `%s`", jsonObj.get("labels").toString()));
+          }
+
+          // validate the optional field `labels` (array)
+          for (int i = 0; i < jsonArraylabels.size(); i++) {
+            AddActionItemTaskParamsPostToSlackChannelsInner.validateJsonElement(jsonArraylabels.get(i));
+          };
+        }
+      }
+      if ((jsonObj.get("labels_mode") != null && !jsonObj.get("labels_mode").isJsonNull()) && !jsonObj.get("labels_mode").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `labels_mode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("labels_mode").toString()));
+      }
+      // validate the optional field `labels_mode`
+      if (jsonObj.get("labels_mode") != null && !jsonObj.get("labels_mode").isJsonNull()) {
+        LabelsModeEnum.validateJsonElement(jsonObj.get("labels_mode"));
+      }
+      // validate the optional field `issue_type`
+      if (jsonObj.get("issue_type") != null && !jsonObj.get("issue_type").isJsonNull()) {
+        CreateGithubIssueTaskParamsIssueType.validateJsonElement(jsonObj.get("issue_type"));
       }
       // validate the required field `completion`
       AddActionItemTaskParamsPostToSlackChannelsInner.validateJsonElement(jsonObj.get("completion"));

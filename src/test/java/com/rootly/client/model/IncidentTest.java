@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonWriter;
 import com.rootly.client.model.EnvironmentResponse;
 import com.rootly.client.model.FunctionalityResponse;
 import com.rootly.client.model.IncidentTypeResponse;
+import com.rootly.client.model.IncidentZoomMeetingGlobalDialInNumbersInner;
 import com.rootly.client.model.ServiceResponse;
 import com.rootly.client.model.SeverityResponse;
 import com.rootly.client.model.TeamResponse;
@@ -44,6 +45,22 @@ public class IncidentTest {
     @Test
     public void testIncident() {
         // TODO: test Incident
+    }
+
+    /**
+     * Test the property 'id'
+     */
+    @Test
+    public void idTest() {
+        // TODO: test id
+    }
+
+    /**
+     * Test the property 'sequentialId'
+     */
+    @Test
+    public void sequentialIdTest() {
+        // TODO: test sequentialId
     }
 
     /**
@@ -100,6 +117,54 @@ public class IncidentTest {
     @Test
     public void _privateTest() {
         // TODO: test _private
+    }
+
+    /**
+     * Test the property 'source'
+     */
+    @Test
+    public void sourceTest() {
+        // TODO: test source
+    }
+
+    /**
+     * Test the property 'status'
+     */
+    @Test
+    public void statusTest() {
+        // TODO: test status
+    }
+
+    /**
+     * Test the property 'url'
+     */
+    @Test
+    public void urlTest() {
+        // TODO: test url
+    }
+
+    /**
+     * Test the property 'shortUrl'
+     */
+    @Test
+    public void shortUrlTest() {
+        // TODO: test shortUrl
+    }
+
+    /**
+     * Test the property 'publicTitle'
+     */
+    @Test
+    public void publicTitleTest() {
+        // TODO: test publicTitle
+    }
+
+    /**
+     * Test the property 'user'
+     */
+    @Test
+    public void userTest() {
+        // TODO: test user
     }
 
     /**
@@ -183,6 +248,566 @@ public class IncidentTest {
     }
 
     /**
+     * Test the property 'slackChannelShortUrl'
+     */
+    @Test
+    public void slackChannelShortUrlTest() {
+        // TODO: test slackChannelShortUrl
+    }
+
+    /**
+     * Test the property 'slackChannelDeepLink'
+     */
+    @Test
+    public void slackChannelDeepLinkTest() {
+        // TODO: test slackChannelDeepLink
+    }
+
+    /**
+     * Test the property 'slackChannelArchived'
+     */
+    @Test
+    public void slackChannelArchivedTest() {
+        // TODO: test slackChannelArchived
+    }
+
+    /**
+     * Test the property 'slackLastMessageTs'
+     */
+    @Test
+    public void slackLastMessageTsTest() {
+        // TODO: test slackLastMessageTs
+    }
+
+    /**
+     * Test the property 'zoomMeetingId'
+     */
+    @Test
+    public void zoomMeetingIdTest() {
+        // TODO: test zoomMeetingId
+    }
+
+    /**
+     * Test the property 'zoomMeetingStartUrl'
+     */
+    @Test
+    public void zoomMeetingStartUrlTest() {
+        // TODO: test zoomMeetingStartUrl
+    }
+
+    /**
+     * Test the property 'zoomMeetingJoinUrl'
+     */
+    @Test
+    public void zoomMeetingJoinUrlTest() {
+        // TODO: test zoomMeetingJoinUrl
+    }
+
+    /**
+     * Test the property 'zoomMeetingPassword'
+     */
+    @Test
+    public void zoomMeetingPasswordTest() {
+        // TODO: test zoomMeetingPassword
+    }
+
+    /**
+     * Test the property 'zoomMeetingPstnPassword'
+     */
+    @Test
+    public void zoomMeetingPstnPasswordTest() {
+        // TODO: test zoomMeetingPstnPassword
+    }
+
+    /**
+     * Test the property 'zoomMeetingH323Password'
+     */
+    @Test
+    public void zoomMeetingH323PasswordTest() {
+        // TODO: test zoomMeetingH323Password
+    }
+
+    /**
+     * Test the property 'zoomMeetingGlobalDialInNumbers'
+     */
+    @Test
+    public void zoomMeetingGlobalDialInNumbersTest() {
+        // TODO: test zoomMeetingGlobalDialInNumbers
+    }
+
+    /**
+     * Test the property 'googleDriveId'
+     */
+    @Test
+    public void googleDriveIdTest() {
+        // TODO: test googleDriveId
+    }
+
+    /**
+     * Test the property 'googleDriveParentId'
+     */
+    @Test
+    public void googleDriveParentIdTest() {
+        // TODO: test googleDriveParentId
+    }
+
+    /**
+     * Test the property 'googleDriveUrl'
+     */
+    @Test
+    public void googleDriveUrlTest() {
+        // TODO: test googleDriveUrl
+    }
+
+    /**
+     * Test the property 'googleMeetingId'
+     */
+    @Test
+    public void googleMeetingIdTest() {
+        // TODO: test googleMeetingId
+    }
+
+    /**
+     * Test the property 'googleMeetingUrl'
+     */
+    @Test
+    public void googleMeetingUrlTest() {
+        // TODO: test googleMeetingUrl
+    }
+
+    /**
+     * Test the property 'jiraIssueKey'
+     */
+    @Test
+    public void jiraIssueKeyTest() {
+        // TODO: test jiraIssueKey
+    }
+
+    /**
+     * Test the property 'jiraIssueId'
+     */
+    @Test
+    public void jiraIssueIdTest() {
+        // TODO: test jiraIssueId
+    }
+
+    /**
+     * Test the property 'jiraIssueUrl'
+     */
+    @Test
+    public void jiraIssueUrlTest() {
+        // TODO: test jiraIssueUrl
+    }
+
+    /**
+     * Test the property 'githubIssueId'
+     */
+    @Test
+    public void githubIssueIdTest() {
+        // TODO: test githubIssueId
+    }
+
+    /**
+     * Test the property 'githubIssueUrl'
+     */
+    @Test
+    public void githubIssueUrlTest() {
+        // TODO: test githubIssueUrl
+    }
+
+    /**
+     * Test the property 'gitlabIssueId'
+     */
+    @Test
+    public void gitlabIssueIdTest() {
+        // TODO: test gitlabIssueId
+    }
+
+    /**
+     * Test the property 'gitlabIssueUrl'
+     */
+    @Test
+    public void gitlabIssueUrlTest() {
+        // TODO: test gitlabIssueUrl
+    }
+
+    /**
+     * Test the property 'asanaTaskId'
+     */
+    @Test
+    public void asanaTaskIdTest() {
+        // TODO: test asanaTaskId
+    }
+
+    /**
+     * Test the property 'asanaTaskUrl'
+     */
+    @Test
+    public void asanaTaskUrlTest() {
+        // TODO: test asanaTaskUrl
+    }
+
+    /**
+     * Test the property 'linearIssueId'
+     */
+    @Test
+    public void linearIssueIdTest() {
+        // TODO: test linearIssueId
+    }
+
+    /**
+     * Test the property 'linearIssueUrl'
+     */
+    @Test
+    public void linearIssueUrlTest() {
+        // TODO: test linearIssueUrl
+    }
+
+    /**
+     * Test the property 'trelloCardId'
+     */
+    @Test
+    public void trelloCardIdTest() {
+        // TODO: test trelloCardId
+    }
+
+    /**
+     * Test the property 'trelloCardUrl'
+     */
+    @Test
+    public void trelloCardUrlTest() {
+        // TODO: test trelloCardUrl
+    }
+
+    /**
+     * Test the property 'zendeskTicketId'
+     */
+    @Test
+    public void zendeskTicketIdTest() {
+        // TODO: test zendeskTicketId
+    }
+
+    /**
+     * Test the property 'zendeskTicketUrl'
+     */
+    @Test
+    public void zendeskTicketUrlTest() {
+        // TODO: test zendeskTicketUrl
+    }
+
+    /**
+     * Test the property 'pagerdutyIncidentId'
+     */
+    @Test
+    public void pagerdutyIncidentIdTest() {
+        // TODO: test pagerdutyIncidentId
+    }
+
+    /**
+     * Test the property 'pagerdutyIncidentNumber'
+     */
+    @Test
+    public void pagerdutyIncidentNumberTest() {
+        // TODO: test pagerdutyIncidentNumber
+    }
+
+    /**
+     * Test the property 'pagerdutyIncidentUrl'
+     */
+    @Test
+    public void pagerdutyIncidentUrlTest() {
+        // TODO: test pagerdutyIncidentUrl
+    }
+
+    /**
+     * Test the property 'opsgenieIncidentId'
+     */
+    @Test
+    public void opsgenieIncidentIdTest() {
+        // TODO: test opsgenieIncidentId
+    }
+
+    /**
+     * Test the property 'opsgenieIncidentUrl'
+     */
+    @Test
+    public void opsgenieIncidentUrlTest() {
+        // TODO: test opsgenieIncidentUrl
+    }
+
+    /**
+     * Test the property 'opsgenieAlertId'
+     */
+    @Test
+    public void opsgenieAlertIdTest() {
+        // TODO: test opsgenieAlertId
+    }
+
+    /**
+     * Test the property 'opsgenieAlertUrl'
+     */
+    @Test
+    public void opsgenieAlertUrlTest() {
+        // TODO: test opsgenieAlertUrl
+    }
+
+    /**
+     * Test the property 'serviceNowIncidentId'
+     */
+    @Test
+    public void serviceNowIncidentIdTest() {
+        // TODO: test serviceNowIncidentId
+    }
+
+    /**
+     * Test the property 'serviceNowIncidentKey'
+     */
+    @Test
+    public void serviceNowIncidentKeyTest() {
+        // TODO: test serviceNowIncidentKey
+    }
+
+    /**
+     * Test the property 'serviceNowIncidentUrl'
+     */
+    @Test
+    public void serviceNowIncidentUrlTest() {
+        // TODO: test serviceNowIncidentUrl
+    }
+
+    /**
+     * Test the property 'mattermostChannelId'
+     */
+    @Test
+    public void mattermostChannelIdTest() {
+        // TODO: test mattermostChannelId
+    }
+
+    /**
+     * Test the property 'mattermostChannelName'
+     */
+    @Test
+    public void mattermostChannelNameTest() {
+        // TODO: test mattermostChannelName
+    }
+
+    /**
+     * Test the property 'mattermostChannelUrl'
+     */
+    @Test
+    public void mattermostChannelUrlTest() {
+        // TODO: test mattermostChannelUrl
+    }
+
+    /**
+     * Test the property 'confluencePageId'
+     */
+    @Test
+    public void confluencePageIdTest() {
+        // TODO: test confluencePageId
+    }
+
+    /**
+     * Test the property 'confluencePageUrl'
+     */
+    @Test
+    public void confluencePageUrlTest() {
+        // TODO: test confluencePageUrl
+    }
+
+    /**
+     * Test the property 'datadogNotebookId'
+     */
+    @Test
+    public void datadogNotebookIdTest() {
+        // TODO: test datadogNotebookId
+    }
+
+    /**
+     * Test the property 'datadogNotebookUrl'
+     */
+    @Test
+    public void datadogNotebookUrlTest() {
+        // TODO: test datadogNotebookUrl
+    }
+
+    /**
+     * Test the property 'shortcutStoryId'
+     */
+    @Test
+    public void shortcutStoryIdTest() {
+        // TODO: test shortcutStoryId
+    }
+
+    /**
+     * Test the property 'shortcutStoryUrl'
+     */
+    @Test
+    public void shortcutStoryUrlTest() {
+        // TODO: test shortcutStoryUrl
+    }
+
+    /**
+     * Test the property 'shortcutTaskId'
+     */
+    @Test
+    public void shortcutTaskIdTest() {
+        // TODO: test shortcutTaskId
+    }
+
+    /**
+     * Test the property 'shortcutTaskUrl'
+     */
+    @Test
+    public void shortcutTaskUrlTest() {
+        // TODO: test shortcutTaskUrl
+    }
+
+    /**
+     * Test the property 'motionTaskId'
+     */
+    @Test
+    public void motionTaskIdTest() {
+        // TODO: test motionTaskId
+    }
+
+    /**
+     * Test the property 'motionTaskUrl'
+     */
+    @Test
+    public void motionTaskUrlTest() {
+        // TODO: test motionTaskUrl
+    }
+
+    /**
+     * Test the property 'clickupTaskId'
+     */
+    @Test
+    public void clickupTaskIdTest() {
+        // TODO: test clickupTaskId
+    }
+
+    /**
+     * Test the property 'clickupTaskUrl'
+     */
+    @Test
+    public void clickupTaskUrlTest() {
+        // TODO: test clickupTaskUrl
+    }
+
+    /**
+     * Test the property 'victorOpsIncidentId'
+     */
+    @Test
+    public void victorOpsIncidentIdTest() {
+        // TODO: test victorOpsIncidentId
+    }
+
+    /**
+     * Test the property 'victorOpsIncidentUrl'
+     */
+    @Test
+    public void victorOpsIncidentUrlTest() {
+        // TODO: test victorOpsIncidentUrl
+    }
+
+    /**
+     * Test the property 'quipPageId'
+     */
+    @Test
+    public void quipPageIdTest() {
+        // TODO: test quipPageId
+    }
+
+    /**
+     * Test the property 'quipPageUrl'
+     */
+    @Test
+    public void quipPageUrlTest() {
+        // TODO: test quipPageUrl
+    }
+
+    /**
+     * Test the property 'sharepointPageId'
+     */
+    @Test
+    public void sharepointPageIdTest() {
+        // TODO: test sharepointPageId
+    }
+
+    /**
+     * Test the property 'sharepointPageUrl'
+     */
+    @Test
+    public void sharepointPageUrlTest() {
+        // TODO: test sharepointPageUrl
+    }
+
+    /**
+     * Test the property 'airtableBaseKey'
+     */
+    @Test
+    public void airtableBaseKeyTest() {
+        // TODO: test airtableBaseKey
+    }
+
+    /**
+     * Test the property 'airtableTableName'
+     */
+    @Test
+    public void airtableTableNameTest() {
+        // TODO: test airtableTableName
+    }
+
+    /**
+     * Test the property 'airtableRecordId'
+     */
+    @Test
+    public void airtableRecordIdTest() {
+        // TODO: test airtableRecordId
+    }
+
+    /**
+     * Test the property 'airtableRecordUrl'
+     */
+    @Test
+    public void airtableRecordUrlTest() {
+        // TODO: test airtableRecordUrl
+    }
+
+    /**
+     * Test the property 'freshserviceTicketId'
+     */
+    @Test
+    public void freshserviceTicketIdTest() {
+        // TODO: test freshserviceTicketId
+    }
+
+    /**
+     * Test the property 'freshserviceTicketUrl'
+     */
+    @Test
+    public void freshserviceTicketUrlTest() {
+        // TODO: test freshserviceTicketUrl
+    }
+
+    /**
+     * Test the property 'freshserviceTaskId'
+     */
+    @Test
+    public void freshserviceTaskIdTest() {
+        // TODO: test freshserviceTaskId
+    }
+
+    /**
+     * Test the property 'freshserviceTaskUrl'
+     */
+    @Test
+    public void freshserviceTaskUrlTest() {
+        // TODO: test freshserviceTaskUrl
+    }
+
+    /**
      * Test the property 'mitigationMessage'
      */
     @Test
@@ -223,11 +848,67 @@ public class IncidentTest {
     }
 
     /**
+     * Test the property 'mutedServiceIds'
+     */
+    @Test
+    public void mutedServiceIdsTest() {
+        // TODO: test mutedServiceIds
+    }
+
+    /**
      * Test the property 'retrospectiveProgressStatus'
      */
     @Test
     public void retrospectiveProgressStatusTest() {
         // TODO: test retrospectiveProgressStatus
+    }
+
+    /**
+     * Test the property 'inTriageBy'
+     */
+    @Test
+    public void inTriageByTest() {
+        // TODO: test inTriageBy
+    }
+
+    /**
+     * Test the property 'startedBy'
+     */
+    @Test
+    public void startedByTest() {
+        // TODO: test startedBy
+    }
+
+    /**
+     * Test the property 'mitigatedBy'
+     */
+    @Test
+    public void mitigatedByTest() {
+        // TODO: test mitigatedBy
+    }
+
+    /**
+     * Test the property 'resolvedBy'
+     */
+    @Test
+    public void resolvedByTest() {
+        // TODO: test resolvedBy
+    }
+
+    /**
+     * Test the property 'closedBy'
+     */
+    @Test
+    public void closedByTest() {
+        // TODO: test closedBy
+    }
+
+    /**
+     * Test the property 'cancelledBy'
+     */
+    @Test
+    public void cancelledByTest() {
+        // TODO: test cancelledBy
     }
 
     /**
@@ -276,6 +957,14 @@ public class IncidentTest {
     @Test
     public void resolvedAtTest() {
         // TODO: test resolvedAt
+    }
+
+    /**
+     * Test the property 'closedAt'
+     */
+    @Test
+    public void closedAtTest() {
+        // TODO: test closedAt
     }
 
     /**

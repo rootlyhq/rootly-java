@@ -108,7 +108,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     SeveritiesApi apiInstance = new SeveritiesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       SeverityResponse result = apiInstance.deleteSeverity(id);
       System.out.println(result);
@@ -127,7 +127,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -176,7 +176,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     SeveritiesApi apiInstance = new SeveritiesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       SeverityResponse result = apiInstance.getSeverity(id);
       System.out.println(result);
@@ -195,7 +195,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -335,7 +335,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     SeveritiesApi apiInstance = new SeveritiesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     UpdateSeverity updateSeverity = new UpdateSeverity(); // UpdateSeverity | 
     try {
       SeverityResponse result = apiInstance.updateSeverity(id, updateSeverity);
@@ -355,7 +355,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **updateSeverity** | [**UpdateSeverity**](UpdateSeverity.md)|  | |
 
 ### Return type

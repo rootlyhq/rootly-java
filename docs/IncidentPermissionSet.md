@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**name** | **String** | The incident permission set name. |  |
-|**slug** | **String** | The incident permission set slug. |  |
+|**slug** | **String** | The incident permission set slug. |  [optional] |
 |**description** | **String** | The incident permission set description. |  [optional] |
 |**privateIncidentPermissions** | [**List&lt;PrivateIncidentPermissionsEnum&gt;**](#List&lt;PrivateIncidentPermissionsEnum&gt;) |  |  [optional] |
 |**publicIncidentPermissions** | [**List&lt;PublicIncidentPermissionsEnum&gt;**](#List&lt;PublicIncidentPermissionsEnum&gt;) |  |  [optional] |

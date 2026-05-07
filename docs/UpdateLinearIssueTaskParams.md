@@ -11,7 +11,7 @@
 |**issueId** | **String** | The issue id |  |
 |**title** | **String** | The issue title |  [optional] |
 |**description** | **String** | The issue description |  [optional] |
-|**state** | [**CreateLinearIssueTaskParamsState**](CreateLinearIssueTaskParamsState.md) |  |  [optional] |
+|**state** | [**UpdateLinearIssueTaskParamsState**](UpdateLinearIssueTaskParamsState.md) |  |  [optional] |
 |**project** | [**CreateLinearIssueTaskParamsProject**](CreateLinearIssueTaskParamsProject.md) |  |  [optional] |
 |**labels** | [**List&lt;AddActionItemTaskParamsPostToSlackChannelsInner&gt;**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
 |**priority** | [**CreateJiraIssueTaskParamsPriority**](CreateJiraIssueTaskParamsPriority.md) |  |  [optional] |

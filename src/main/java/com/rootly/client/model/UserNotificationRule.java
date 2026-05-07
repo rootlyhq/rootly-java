@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * UserNotificationRule
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UserNotificationRule {
   public static final String SERIALIZED_NAME_USER_ID = "user_id";
   @SerializedName(SERIALIZED_NAME_USER_ID)
@@ -101,7 +101,9 @@ public class UserNotificationRule {
     
     DEVICE("device"),
     
-    NON_CRITICAL_DEVICE("non_critical_device");
+    NON_CRITICAL_DEVICE("non_critical_device"),
+    
+    SLACK("slack");
 
     private String value;
 
@@ -150,6 +152,63 @@ public class UserNotificationRule {
   @SerializedName(SERIALIZED_NAME_ENABLED_CONTACT_TYPES)
   @javax.annotation.Nullable
   private List<EnabledContactTypesEnum> enabledContactTypes = new ArrayList<>();
+
+  /**
+   * Type of notification rule (audible or quiet). Audible notifications use sound/vibration to alert users, while quiet notifications are silent.
+   */
+  @JsonAdapter(NotificationTypeEnum.Adapter.class)
+  public enum NotificationTypeEnum {
+    AUDIBLE("audible"),
+    
+    QUIET("quiet");
+
+    private String value;
+
+    NotificationTypeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static NotificationTypeEnum fromValue(String value) {
+      for (NotificationTypeEnum b : NotificationTypeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<NotificationTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final NotificationTypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public NotificationTypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return NotificationTypeEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      NotificationTypeEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_NOTIFICATION_TYPE = "notification_type";
+  @SerializedName(SERIALIZED_NAME_NOTIFICATION_TYPE)
+  @javax.annotation.Nullable
+  private NotificationTypeEnum notificationType;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -324,6 +383,25 @@ public class UserNotificationRule {
   }
 
 
+  public UserNotificationRule notificationType(@javax.annotation.Nullable NotificationTypeEnum notificationType) {
+    this.notificationType = notificationType;
+    return this;
+  }
+
+  /**
+   * Type of notification rule (audible or quiet). Audible notifications use sound/vibration to alert users, while quiet notifications are silent.
+   * @return notificationType
+   */
+  @javax.annotation.Nullable
+  public NotificationTypeEnum getNotificationType() {
+    return notificationType;
+  }
+
+  public void setNotificationType(@javax.annotation.Nullable NotificationTypeEnum notificationType) {
+    this.notificationType = notificationType;
+  }
+
+
   public UserNotificationRule createdAt(@javax.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
     return this;
@@ -380,6 +458,7 @@ public class UserNotificationRule {
         Objects.equals(this.userSmsNumberId, userNotificationRule.userSmsNumberId) &&
         Objects.equals(this.userDeviceId, userNotificationRule.userDeviceId) &&
         Objects.equals(this.enabledContactTypes, userNotificationRule.enabledContactTypes) &&
+        Objects.equals(this.notificationType, userNotificationRule.notificationType) &&
         Objects.equals(this.createdAt, userNotificationRule.createdAt) &&
         Objects.equals(this.updatedAt, userNotificationRule.updatedAt);
   }
@@ -390,7 +469,7 @@ public class UserNotificationRule {
 
   @Override
   public int hashCode() {
-    return Objects.hash(userId, delay, position, userEmailAddressId, userCallNumberId, userSmsNumberId, userDeviceId, enabledContactTypes, createdAt, updatedAt);
+    return Objects.hash(userId, delay, position, userEmailAddressId, userCallNumberId, userSmsNumberId, userDeviceId, enabledContactTypes, notificationType, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -412,6 +491,7 @@ public class UserNotificationRule {
     sb.append("    userSmsNumberId: ").append(toIndentedString(userSmsNumberId)).append("\n");
     sb.append("    userDeviceId: ").append(toIndentedString(userDeviceId)).append("\n");
     sb.append("    enabledContactTypes: ").append(toIndentedString(enabledContactTypes)).append("\n");
+    sb.append("    notificationType: ").append(toIndentedString(notificationType)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -444,6 +524,7 @@ public class UserNotificationRule {
     openapiFields.add("user_sms_number_id");
     openapiFields.add("user_device_id");
     openapiFields.add("enabled_contact_types");
+    openapiFields.add("notification_type");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
 
@@ -487,6 +568,13 @@ public class UserNotificationRule {
       // ensure the optional json data is an array if present
       if (jsonObj.get("enabled_contact_types") != null && !jsonObj.get("enabled_contact_types").isJsonNull() && !jsonObj.get("enabled_contact_types").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `enabled_contact_types` to be an array in the JSON string but got `%s`", jsonObj.get("enabled_contact_types").toString()));
+      }
+      if ((jsonObj.get("notification_type") != null && !jsonObj.get("notification_type").isJsonNull()) && !jsonObj.get("notification_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `notification_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("notification_type").toString()));
+      }
+      // validate the optional field `notification_type`
+      if (jsonObj.get("notification_type") != null && !jsonObj.get("notification_type").isJsonNull()) {
+        NotificationTypeEnum.validateJsonElement(jsonObj.get("notification_type"));
       }
       if ((jsonObj.get("created_at") != null && !jsonObj.get("created_at").isJsonNull()) && !jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));

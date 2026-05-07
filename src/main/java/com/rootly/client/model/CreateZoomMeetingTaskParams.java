@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * CreateZoomMeetingTaskParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateZoomMeetingTaskParams {
   /**
    * Gets or Sets taskType
@@ -191,6 +192,67 @@ public class CreateZoomMeetingTaskParams {
   @SerializedName(SERIALIZED_NAME_RECORD_MEETING)
   @javax.annotation.Nullable
   private Boolean recordMeeting;
+
+  /**
+   * The video layout for the bot&#39;s recording (e.g. speaker_view, gallery_view, gallery_view_v2, audio_only)
+   */
+  @JsonAdapter(RecordingModeEnum.Adapter.class)
+  public enum RecordingModeEnum {
+    SPEAKER_VIEW("speaker_view"),
+    
+    GALLERY_VIEW("gallery_view"),
+    
+    GALLERY_VIEW_V2("gallery_view_v2"),
+    
+    AUDIO_ONLY("audio_only");
+
+    private String value;
+
+    RecordingModeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static RecordingModeEnum fromValue(String value) {
+      for (RecordingModeEnum b : RecordingModeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<RecordingModeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final RecordingModeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public RecordingModeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return RecordingModeEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      RecordingModeEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_RECORDING_MODE = "recording_mode";
+  @SerializedName(SERIALIZED_NAME_RECORDING_MODE)
+  @javax.annotation.Nullable
+  private RecordingModeEnum recordingMode;
 
   public static final String SERIALIZED_NAME_POST_TO_INCIDENT_TIMELINE = "post_to_incident_timeline";
   @SerializedName(SERIALIZED_NAME_POST_TO_INCIDENT_TIMELINE)
@@ -346,6 +408,25 @@ public class CreateZoomMeetingTaskParams {
   }
 
 
+  public CreateZoomMeetingTaskParams recordingMode(@javax.annotation.Nullable RecordingModeEnum recordingMode) {
+    this.recordingMode = recordingMode;
+    return this;
+  }
+
+  /**
+   * The video layout for the bot&#39;s recording (e.g. speaker_view, gallery_view, gallery_view_v2, audio_only)
+   * @return recordingMode
+   */
+  @javax.annotation.Nullable
+  public RecordingModeEnum getRecordingMode() {
+    return recordingMode;
+  }
+
+  public void setRecordingMode(@javax.annotation.Nullable RecordingModeEnum recordingMode) {
+    this.recordingMode = recordingMode;
+  }
+
+
   public CreateZoomMeetingTaskParams postToIncidentTimeline(@javax.annotation.Nullable Boolean postToIncidentTimeline) {
     this.postToIncidentTimeline = postToIncidentTimeline;
     return this;
@@ -409,13 +490,25 @@ public class CreateZoomMeetingTaskParams {
         Objects.equals(this.alternativeHosts, createZoomMeetingTaskParams.alternativeHosts) &&
         Objects.equals(this.autoRecording, createZoomMeetingTaskParams.autoRecording) &&
         Objects.equals(this.recordMeeting, createZoomMeetingTaskParams.recordMeeting) &&
+        Objects.equals(this.recordingMode, createZoomMeetingTaskParams.recordingMode) &&
         Objects.equals(this.postToIncidentTimeline, createZoomMeetingTaskParams.postToIncidentTimeline) &&
         Objects.equals(this.postToSlackChannels, createZoomMeetingTaskParams.postToSlackChannels);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(taskType, topic, password, createAsEmail, alternativeHosts, autoRecording, recordMeeting, postToIncidentTimeline, postToSlackChannels);
+    return Objects.hash(taskType, topic, password, createAsEmail, alternativeHosts, autoRecording, recordMeeting, recordingMode, postToIncidentTimeline, postToSlackChannels);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -429,6 +522,7 @@ public class CreateZoomMeetingTaskParams {
     sb.append("    alternativeHosts: ").append(toIndentedString(alternativeHosts)).append("\n");
     sb.append("    autoRecording: ").append(toIndentedString(autoRecording)).append("\n");
     sb.append("    recordMeeting: ").append(toIndentedString(recordMeeting)).append("\n");
+    sb.append("    recordingMode: ").append(toIndentedString(recordingMode)).append("\n");
     sb.append("    postToIncidentTimeline: ").append(toIndentedString(postToIncidentTimeline)).append("\n");
     sb.append("    postToSlackChannels: ").append(toIndentedString(postToSlackChannels)).append("\n");
     sb.append("}");
@@ -460,6 +554,7 @@ public class CreateZoomMeetingTaskParams {
     openapiFields.add("alternative_hosts");
     openapiFields.add("auto_recording");
     openapiFields.add("record_meeting");
+    openapiFields.add("recording_mode");
     openapiFields.add("post_to_incident_timeline");
     openapiFields.add("post_to_slack_channels");
 
@@ -522,6 +617,13 @@ public class CreateZoomMeetingTaskParams {
       // validate the optional field `auto_recording`
       if (jsonObj.get("auto_recording") != null && !jsonObj.get("auto_recording").isJsonNull()) {
         AutoRecordingEnum.validateJsonElement(jsonObj.get("auto_recording"));
+      }
+      if ((jsonObj.get("recording_mode") != null && !jsonObj.get("recording_mode").isJsonNull()) && !jsonObj.get("recording_mode").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `recording_mode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("recording_mode").toString()));
+      }
+      // validate the optional field `recording_mode`
+      if (jsonObj.get("recording_mode") != null && !jsonObj.get("recording_mode").isJsonNull()) {
+        RecordingModeEnum.validateJsonElement(jsonObj.get("recording_mode"));
       }
       if (jsonObj.get("post_to_slack_channels") != null && !jsonObj.get("post_to_slack_channels").isJsonNull()) {
         JsonArray jsonArraypostToSlackChannels = jsonObj.getAsJsonArray("post_to_slack_channels");

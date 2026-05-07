@@ -16,7 +16,7 @@
 
 | Name | Value |
 |---- | -----|
-| CATALOG_FIELDS | &quot;catalog_fields&quot; |
+| CATALOG_PROPERTIES | &quot;catalog_properties&quot; |
 
 
 

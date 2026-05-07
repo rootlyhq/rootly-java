@@ -26,8 +26,10 @@
 | RESOLVED | &quot;resolved&quot; |
 | CLOSED | &quot;closed&quot; |
 | CANCELLED | &quot;cancelled&quot; |
+| PLANNING | &quot;planning&quot; |
 | SCHEDULED | &quot;scheduled&quot; |
 | IN_PROGRESS | &quot;in_progress&quot; |
+| VERIFYING | &quot;verifying&quot; |
 | COMPLETED | &quot;completed&quot; |
 
 

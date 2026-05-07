@@ -78,7 +78,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | heartbeat created |  -  |
-| **422** | invalid request |  -  |
+| **422** | interval less than 60 seconds |  -  |
 | **401** | responds with unauthorized for invalid token |  -  |
 
 <a id="deleteHeartbeat"></a>
@@ -109,7 +109,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     HeartbeatsApi apiInstance = new HeartbeatsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       HeartbeatResponse result = apiInstance.deleteHeartbeat(id);
       System.out.println(result);
@@ -128,7 +128,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -177,7 +177,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     HeartbeatsApi apiInstance = new HeartbeatsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       HeartbeatResponse result = apiInstance.getHeartbeat(id);
       System.out.println(result);
@@ -196,7 +196,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -214,7 +214,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | heartbeat found |  -  |
+| **200** | heartbeat found by slug |  -  |
 | **404** | resource not found |  -  |
 
 <a id="listHeartbeats"></a>
@@ -300,7 +300,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | success |  -  |
+| **200** | filter by name |  -  |
 
 <a id="pingHeartbeat"></a>
 # **pingHeartbeat**
@@ -397,7 +397,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     HeartbeatsApi apiInstance = new HeartbeatsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     UpdateHeartbeat updateHeartbeat = new UpdateHeartbeat(); // UpdateHeartbeat | 
     try {
       HeartbeatResponse result = apiInstance.updateHeartbeat(id, updateHeartbeat);
@@ -417,7 +417,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **updateHeartbeat** | [**UpdateHeartbeat**](UpdateHeartbeat.md)|  | |
 
 ### Return type
@@ -438,4 +438,5 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | heartbeat updated |  -  |
 | **404** | resource not found |  -  |
+| **422** | invalid enum value |  -  |
 

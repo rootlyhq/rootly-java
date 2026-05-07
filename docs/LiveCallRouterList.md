@@ -9,6 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**data** | [**List&lt;LiveCallRouterResponseData&gt;**](LiveCallRouterResponseData.md) |  |  |
 |**links** | [**Links**](Links.md) |  |  |
+|**meta** | [**Meta**](Meta.md) |  |  |
 
 
 

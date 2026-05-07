@@ -108,7 +108,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     IncidentPermissionSetsApi apiInstance = new IncidentPermissionSetsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       IncidentPermissionSetResponse result = apiInstance.deleteIncidentPermissionSet(id);
       System.out.println(result);
@@ -127,7 +127,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -176,7 +176,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     IncidentPermissionSetsApi apiInstance = new IncidentPermissionSetsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       IncidentPermissionSetResponse result = apiInstance.getIncidentPermissionSet(id);
       System.out.println(result);
@@ -195,7 +195,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -331,7 +331,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     IncidentPermissionSetsApi apiInstance = new IncidentPermissionSetsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     UpdateIncidentPermissionSet updateIncidentPermissionSet = new UpdateIncidentPermissionSet(); // UpdateIncidentPermissionSet | 
     try {
       IncidentPermissionSetResponse result = apiInstance.updateIncidentPermissionSet(id, updateIncidentPermissionSet);
@@ -351,7 +351,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **updateIncidentPermissionSet** | [**UpdateIncidentPermissionSet**](UpdateIncidentPermissionSet.md)|  | |
 
 ### Return type

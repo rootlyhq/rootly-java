@@ -17,7 +17,7 @@ All URIs are relative to *https://api.rootly.com*
 
 Creates a Catalog Entity Property
 
-Creates a new Catalog Entity Property from provided data
+**Deprecated:** This endpoint is deprecated, please use the &#x60;fields&#x60; attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.  Creates a new Catalog Entity Property from provided data.
 
 ### Example
 ```java
@@ -88,7 +88,7 @@ public class Example {
 
 Delete a Catalog Entity Property
 
-Delete a specific Catalog Entity Property by id
+**Deprecated:** This endpoint is deprecated, please use the &#x60;fields&#x60; attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.  Delete a specific Catalog Entity Property by id.
 
 ### Example
 ```java
@@ -156,7 +156,7 @@ public class Example {
 
 Retrieves a Catalog Entity Property
 
-Retrieves a specific Catalog Entity Property by id
+**Deprecated:** This endpoint is deprecated, please use &#x60;include&#x3D;fields&#x60; on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to retrieve field values instead.  Retrieves a specific Catalog Entity Property by id.
 
 ### Example
 ```java
@@ -226,7 +226,7 @@ public class Example {
 
 List catalog properties
 
-List Catalog Entity Properties
+**Deprecated:** This endpoint is deprecated, please use &#x60;include&#x3D;fields&#x60; on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to retrieve field values instead.  List Catalog Entity Properties.
 
 ### Example
 ```java
@@ -313,7 +313,7 @@ public class Example {
 
 Update a Catalog Entity Property
 
-Update a specific Catalog Entity Property by id
+**Deprecated:** This endpoint is deprecated, please use the &#x60;fields&#x60; attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.  Update a specific Catalog Entity Property by id.
 
 ### Example
 ```java

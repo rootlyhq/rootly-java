@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -91,7 +91,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call createCatalogEntityPropertyCall(@javax.annotation.Nonnull String catalogEntityId, @javax.annotation.Nonnull NewCatalogEntityProperty newCatalogEntityProperty, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
@@ -138,6 +140,7 @@ public class CatalogEntityPropertiesApi {
         return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
+    @Deprecated
     @SuppressWarnings("rawtypes")
     private okhttp3.Call createCatalogEntityPropertyValidateBeforeCall(@javax.annotation.Nonnull String catalogEntityId, @javax.annotation.Nonnull NewCatalogEntityProperty newCatalogEntityProperty, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'catalogEntityId' is set
@@ -156,7 +159,7 @@ public class CatalogEntityPropertiesApi {
 
     /**
      * Creates a Catalog Entity Property
-     * Creates a new Catalog Entity Property from provided data
+     * **Deprecated:** This endpoint is deprecated, please use the &#x60;fields&#x60; attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.  Creates a new Catalog Entity Property from provided data.
      * @param catalogEntityId  (required)
      * @param newCatalogEntityProperty  (required)
      * @return CatalogEntityPropertyResponse
@@ -169,7 +172,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public CatalogEntityPropertyResponse createCatalogEntityProperty(@javax.annotation.Nonnull String catalogEntityId, @javax.annotation.Nonnull NewCatalogEntityProperty newCatalogEntityProperty) throws ApiException {
         ApiResponse<CatalogEntityPropertyResponse> localVarResp = createCatalogEntityPropertyWithHttpInfo(catalogEntityId, newCatalogEntityProperty);
         return localVarResp.getData();
@@ -177,7 +182,7 @@ public class CatalogEntityPropertiesApi {
 
     /**
      * Creates a Catalog Entity Property
-     * Creates a new Catalog Entity Property from provided data
+     * **Deprecated:** This endpoint is deprecated, please use the &#x60;fields&#x60; attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.  Creates a new Catalog Entity Property from provided data.
      * @param catalogEntityId  (required)
      * @param newCatalogEntityProperty  (required)
      * @return ApiResponse&lt;CatalogEntityPropertyResponse&gt;
@@ -190,7 +195,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public ApiResponse<CatalogEntityPropertyResponse> createCatalogEntityPropertyWithHttpInfo(@javax.annotation.Nonnull String catalogEntityId, @javax.annotation.Nonnull NewCatalogEntityProperty newCatalogEntityProperty) throws ApiException {
         okhttp3.Call localVarCall = createCatalogEntityPropertyValidateBeforeCall(catalogEntityId, newCatalogEntityProperty, null);
         Type localVarReturnType = new TypeToken<CatalogEntityPropertyResponse>(){}.getType();
@@ -199,7 +206,7 @@ public class CatalogEntityPropertiesApi {
 
     /**
      * Creates a Catalog Entity Property (asynchronously)
-     * Creates a new Catalog Entity Property from provided data
+     * **Deprecated:** This endpoint is deprecated, please use the &#x60;fields&#x60; attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.  Creates a new Catalog Entity Property from provided data.
      * @param catalogEntityId  (required)
      * @param newCatalogEntityProperty  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -213,7 +220,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call createCatalogEntityPropertyAsync(@javax.annotation.Nonnull String catalogEntityId, @javax.annotation.Nonnull NewCatalogEntityProperty newCatalogEntityProperty, final ApiCallback<CatalogEntityPropertyResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createCatalogEntityPropertyValidateBeforeCall(catalogEntityId, newCatalogEntityProperty, _callback);
@@ -234,7 +243,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 200 </td><td> catalog_entity_property deleted </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call deleteCatalogEntityPropertyCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
@@ -280,6 +291,7 @@ public class CatalogEntityPropertiesApi {
         return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
+    @Deprecated
     @SuppressWarnings("rawtypes")
     private okhttp3.Call deleteCatalogEntityPropertyValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
@@ -293,7 +305,7 @@ public class CatalogEntityPropertiesApi {
 
     /**
      * Delete a Catalog Entity Property
-     * Delete a specific Catalog Entity Property by id
+     * **Deprecated:** This endpoint is deprecated, please use the &#x60;fields&#x60; attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.  Delete a specific Catalog Entity Property by id.
      * @param id  (required)
      * @return CatalogEntityPropertyResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -304,7 +316,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 200 </td><td> catalog_entity_property deleted </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public CatalogEntityPropertyResponse deleteCatalogEntityProperty(@javax.annotation.Nonnull String id) throws ApiException {
         ApiResponse<CatalogEntityPropertyResponse> localVarResp = deleteCatalogEntityPropertyWithHttpInfo(id);
         return localVarResp.getData();
@@ -312,7 +326,7 @@ public class CatalogEntityPropertiesApi {
 
     /**
      * Delete a Catalog Entity Property
-     * Delete a specific Catalog Entity Property by id
+     * **Deprecated:** This endpoint is deprecated, please use the &#x60;fields&#x60; attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.  Delete a specific Catalog Entity Property by id.
      * @param id  (required)
      * @return ApiResponse&lt;CatalogEntityPropertyResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -323,7 +337,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 200 </td><td> catalog_entity_property deleted </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public ApiResponse<CatalogEntityPropertyResponse> deleteCatalogEntityPropertyWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteCatalogEntityPropertyValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<CatalogEntityPropertyResponse>(){}.getType();
@@ -332,7 +348,7 @@ public class CatalogEntityPropertiesApi {
 
     /**
      * Delete a Catalog Entity Property (asynchronously)
-     * Delete a specific Catalog Entity Property by id
+     * **Deprecated:** This endpoint is deprecated, please use the &#x60;fields&#x60; attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.  Delete a specific Catalog Entity Property by id.
      * @param id  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -344,7 +360,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 200 </td><td> catalog_entity_property deleted </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call deleteCatalogEntityPropertyAsync(@javax.annotation.Nonnull String id, final ApiCallback<CatalogEntityPropertyResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteCatalogEntityPropertyValidateBeforeCall(id, _callback);
@@ -366,7 +384,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 200 </td><td> catalog_entity_property found </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call getCatalogEntityPropertyCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
@@ -416,6 +436,7 @@ public class CatalogEntityPropertiesApi {
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
+    @Deprecated
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getCatalogEntityPropertyValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
@@ -429,7 +450,7 @@ public class CatalogEntityPropertiesApi {
 
     /**
      * Retrieves a Catalog Entity Property
-     * Retrieves a specific Catalog Entity Property by id
+     * **Deprecated:** This endpoint is deprecated, please use &#x60;include&#x3D;fields&#x60; on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to retrieve field values instead.  Retrieves a specific Catalog Entity Property by id.
      * @param id  (required)
      * @param include comma separated if needed. eg: catalog_entity,catalog_field (optional)
      * @return CatalogEntityPropertyResponse
@@ -441,7 +462,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 200 </td><td> catalog_entity_property found </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public CatalogEntityPropertyResponse getCatalogEntityProperty(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include) throws ApiException {
         ApiResponse<CatalogEntityPropertyResponse> localVarResp = getCatalogEntityPropertyWithHttpInfo(id, include);
         return localVarResp.getData();
@@ -449,7 +472,7 @@ public class CatalogEntityPropertiesApi {
 
     /**
      * Retrieves a Catalog Entity Property
-     * Retrieves a specific Catalog Entity Property by id
+     * **Deprecated:** This endpoint is deprecated, please use &#x60;include&#x3D;fields&#x60; on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to retrieve field values instead.  Retrieves a specific Catalog Entity Property by id.
      * @param id  (required)
      * @param include comma separated if needed. eg: catalog_entity,catalog_field (optional)
      * @return ApiResponse&lt;CatalogEntityPropertyResponse&gt;
@@ -461,7 +484,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 200 </td><td> catalog_entity_property found </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public ApiResponse<CatalogEntityPropertyResponse> getCatalogEntityPropertyWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include) throws ApiException {
         okhttp3.Call localVarCall = getCatalogEntityPropertyValidateBeforeCall(id, include, null);
         Type localVarReturnType = new TypeToken<CatalogEntityPropertyResponse>(){}.getType();
@@ -470,7 +495,7 @@ public class CatalogEntityPropertiesApi {
 
     /**
      * Retrieves a Catalog Entity Property (asynchronously)
-     * Retrieves a specific Catalog Entity Property by id
+     * **Deprecated:** This endpoint is deprecated, please use &#x60;include&#x3D;fields&#x60; on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to retrieve field values instead.  Retrieves a specific Catalog Entity Property by id.
      * @param id  (required)
      * @param include comma separated if needed. eg: catalog_entity,catalog_field (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -483,7 +508,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 200 </td><td> catalog_entity_property found </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call getCatalogEntityPropertyAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include, final ApiCallback<CatalogEntityPropertyResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCatalogEntityPropertyValidateBeforeCall(id, include, _callback);
@@ -513,7 +540,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call listCatalogEntityPropertiesCall(@javax.annotation.Nonnull String catalogEntityId, @javax.annotation.Nullable String include, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterCatalogFieldId, @javax.annotation.Nullable String filterKey, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
@@ -599,6 +628,7 @@ public class CatalogEntityPropertiesApi {
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
+    @Deprecated
     @SuppressWarnings("rawtypes")
     private okhttp3.Call listCatalogEntityPropertiesValidateBeforeCall(@javax.annotation.Nonnull String catalogEntityId, @javax.annotation.Nullable String include, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterCatalogFieldId, @javax.annotation.Nullable String filterKey, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'catalogEntityId' is set
@@ -612,7 +642,7 @@ public class CatalogEntityPropertiesApi {
 
     /**
      * List catalog properties
-     * List Catalog Entity Properties
+     * **Deprecated:** This endpoint is deprecated, please use &#x60;include&#x3D;fields&#x60; on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to retrieve field values instead.  List Catalog Entity Properties.
      * @param catalogEntityId  (required)
      * @param include comma separated if needed. eg: catalog_entity,catalog_field (optional)
      * @param sort comma separated if needed. eg: created_at,updated_at (optional)
@@ -632,7 +662,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public CatalogEntityPropertyList listCatalogEntityProperties(@javax.annotation.Nonnull String catalogEntityId, @javax.annotation.Nullable String include, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterCatalogFieldId, @javax.annotation.Nullable String filterKey, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte) throws ApiException {
         ApiResponse<CatalogEntityPropertyList> localVarResp = listCatalogEntityPropertiesWithHttpInfo(catalogEntityId, include, sort, pageNumber, pageSize, filterCatalogFieldId, filterKey, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
         return localVarResp.getData();
@@ -640,7 +672,7 @@ public class CatalogEntityPropertiesApi {
 
     /**
      * List catalog properties
-     * List Catalog Entity Properties
+     * **Deprecated:** This endpoint is deprecated, please use &#x60;include&#x3D;fields&#x60; on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to retrieve field values instead.  List Catalog Entity Properties.
      * @param catalogEntityId  (required)
      * @param include comma separated if needed. eg: catalog_entity,catalog_field (optional)
      * @param sort comma separated if needed. eg: created_at,updated_at (optional)
@@ -660,7 +692,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public ApiResponse<CatalogEntityPropertyList> listCatalogEntityPropertiesWithHttpInfo(@javax.annotation.Nonnull String catalogEntityId, @javax.annotation.Nullable String include, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterCatalogFieldId, @javax.annotation.Nullable String filterKey, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte) throws ApiException {
         okhttp3.Call localVarCall = listCatalogEntityPropertiesValidateBeforeCall(catalogEntityId, include, sort, pageNumber, pageSize, filterCatalogFieldId, filterKey, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, null);
         Type localVarReturnType = new TypeToken<CatalogEntityPropertyList>(){}.getType();
@@ -669,7 +703,7 @@ public class CatalogEntityPropertiesApi {
 
     /**
      * List catalog properties (asynchronously)
-     * List Catalog Entity Properties
+     * **Deprecated:** This endpoint is deprecated, please use &#x60;include&#x3D;fields&#x60; on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to retrieve field values instead.  List Catalog Entity Properties.
      * @param catalogEntityId  (required)
      * @param include comma separated if needed. eg: catalog_entity,catalog_field (optional)
      * @param sort comma separated if needed. eg: created_at,updated_at (optional)
@@ -690,7 +724,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call listCatalogEntityPropertiesAsync(@javax.annotation.Nonnull String catalogEntityId, @javax.annotation.Nullable String include, @javax.annotation.Nullable String sort, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterCatalogFieldId, @javax.annotation.Nullable String filterKey, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback<CatalogEntityPropertyList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listCatalogEntityPropertiesValidateBeforeCall(catalogEntityId, include, sort, pageNumber, pageSize, filterCatalogFieldId, filterKey, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, _callback);
@@ -712,7 +748,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 200 </td><td> catalog_entity_property updated </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call updateCatalogEntityPropertyCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateCatalogEntityProperty updateCatalogEntityProperty, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
@@ -759,6 +797,7 @@ public class CatalogEntityPropertiesApi {
         return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
+    @Deprecated
     @SuppressWarnings("rawtypes")
     private okhttp3.Call updateCatalogEntityPropertyValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateCatalogEntityProperty updateCatalogEntityProperty, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
@@ -777,7 +816,7 @@ public class CatalogEntityPropertiesApi {
 
     /**
      * Update a Catalog Entity Property
-     * Update a specific Catalog Entity Property by id
+     * **Deprecated:** This endpoint is deprecated, please use the &#x60;fields&#x60; attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.  Update a specific Catalog Entity Property by id.
      * @param id  (required)
      * @param updateCatalogEntityProperty  (required)
      * @return CatalogEntityPropertyResponse
@@ -789,7 +828,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 200 </td><td> catalog_entity_property updated </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public CatalogEntityPropertyResponse updateCatalogEntityProperty(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateCatalogEntityProperty updateCatalogEntityProperty) throws ApiException {
         ApiResponse<CatalogEntityPropertyResponse> localVarResp = updateCatalogEntityPropertyWithHttpInfo(id, updateCatalogEntityProperty);
         return localVarResp.getData();
@@ -797,7 +838,7 @@ public class CatalogEntityPropertiesApi {
 
     /**
      * Update a Catalog Entity Property
-     * Update a specific Catalog Entity Property by id
+     * **Deprecated:** This endpoint is deprecated, please use the &#x60;fields&#x60; attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.  Update a specific Catalog Entity Property by id.
      * @param id  (required)
      * @param updateCatalogEntityProperty  (required)
      * @return ApiResponse&lt;CatalogEntityPropertyResponse&gt;
@@ -809,7 +850,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 200 </td><td> catalog_entity_property updated </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public ApiResponse<CatalogEntityPropertyResponse> updateCatalogEntityPropertyWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateCatalogEntityProperty updateCatalogEntityProperty) throws ApiException {
         okhttp3.Call localVarCall = updateCatalogEntityPropertyValidateBeforeCall(id, updateCatalogEntityProperty, null);
         Type localVarReturnType = new TypeToken<CatalogEntityPropertyResponse>(){}.getType();
@@ -818,7 +861,7 @@ public class CatalogEntityPropertiesApi {
 
     /**
      * Update a Catalog Entity Property (asynchronously)
-     * Update a specific Catalog Entity Property by id
+     * **Deprecated:** This endpoint is deprecated, please use the &#x60;fields&#x60; attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.  Update a specific Catalog Entity Property by id.
      * @param id  (required)
      * @param updateCatalogEntityProperty  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -831,7 +874,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 200 </td><td> catalog_entity_property updated </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call updateCatalogEntityPropertyAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateCatalogEntityProperty updateCatalogEntityProperty, final ApiCallback<CatalogEntityPropertyResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateCatalogEntityPropertyValidateBeforeCall(id, updateCatalogEntityProperty, _callback);

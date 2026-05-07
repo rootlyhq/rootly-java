@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**id** | **String** | Unique ID of the form_field_option |  |
+|**id** | **String** | Unique ID of the form field option |  |
 |**type** | [**TypeEnum**](#TypeEnum) |  |  |
 |**attributes** | [**FormFieldOption**](FormFieldOption.md) |  |  |
 

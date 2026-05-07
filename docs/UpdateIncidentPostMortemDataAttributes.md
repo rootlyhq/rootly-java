@@ -22,7 +22,7 @@
 |**showGroupsImpacted** | **Boolean** | Show groups impacted of the incident retrospective |  [optional] |
 |**showAlertsAttached** | **Boolean** | Show alerts attached to the incident |  [optional] |
 |**showActionItems** | **Boolean** | Show action items (follow-ups) in the incident retrospective |  [optional] |
-|**causeIds** | **List&lt;String&gt;** | The Cause ID&#39;s to attach to the incident retrospective |  [optional] |
+|**causeIds** | **List&lt;String&gt;** | The Cause IDs to attach to the incident retrospective |  [optional] |
 
 
 

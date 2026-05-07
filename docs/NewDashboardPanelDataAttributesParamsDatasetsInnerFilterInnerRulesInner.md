@@ -35,6 +35,8 @@
 | NOT_EXISTS | &quot;not_exists&quot; |
 | CONTAINS | &quot;contains&quot; |
 | NOT_CONTAINS | &quot;not_contains&quot; |
+| ASSIGNED | &quot;assigned&quot; |
+| UNASSIGNED | &quot;unassigned&quot; |
 
 
 

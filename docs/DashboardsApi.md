@@ -110,7 +110,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     DashboardsApi apiInstance = new DashboardsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       DashboardResponse result = apiInstance.deleteDashboard(id);
       System.out.println(result);
@@ -129,7 +129,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -178,7 +178,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     DashboardsApi apiInstance = new DashboardsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       DashboardResponse result = apiInstance.duplicateDashboard(id);
       System.out.println(result);
@@ -197,7 +197,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -246,7 +246,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     DashboardsApi apiInstance = new DashboardsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     String include = "panels"; // String | comma separated if needed. eg: panels
     try {
       DashboardResponse result = apiInstance.getDashboard(id, include);
@@ -266,7 +266,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **include** | **String**| comma separated if needed. eg: panels | [optional] [enum: panels] |
 
 ### Return type
@@ -285,7 +285,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | dashboard found |  -  |
+| **200** | dashboard found by slug |  -  |
 | **404** | resource not found |  -  |
 
 <a id="listDashboards"></a>
@@ -387,7 +387,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     DashboardsApi apiInstance = new DashboardsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       DashboardResponse result = apiInstance.setDefaultDashboard(id);
       System.out.println(result);
@@ -406,7 +406,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -424,7 +424,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | dashboard created |  -  |
+| **200** | dashboard found by slug |  -  |
 | **401** | responds with unauthorized for invalid token |  -  |
 
 <a id="updateDashboard"></a>
@@ -455,7 +455,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     DashboardsApi apiInstance = new DashboardsApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     UpdateDashboard updateDashboard = new UpdateDashboard(); // UpdateDashboard | 
     try {
       DashboardResponse result = apiInstance.updateDashboard(id, updateDashboard);
@@ -475,7 +475,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **updateDashboard** | [**UpdateDashboard**](UpdateDashboard.md)|  | |
 
 ### Return type

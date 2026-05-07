@@ -10,7 +10,7 @@
 |**name** | **String** |  |  [optional] |
 |**collection** | [**CollectionEnum**](#CollectionEnum) |  |  [optional] |
 |**filter** | [**List&lt;NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInner&gt;**](NewDashboardPanelDataAttributesParamsDatasetsInnerFilterInner.md) |  |  [optional] |
-|**groupBy** | **String** |  |  [optional] |
+|**groupBy** | [**NewDashboardPanelDataAttributesParamsDatasetsInnerGroupBy**](NewDashboardPanelDataAttributesParamsDatasetsInnerGroupBy.md) |  |  [optional] |
 |**aggregate** | [**NewDashboardPanelDataAttributesParamsDatasetsInnerAggregate**](NewDashboardPanelDataAttributesParamsDatasetsInnerAggregate.md) |  |  [optional] |
 
 

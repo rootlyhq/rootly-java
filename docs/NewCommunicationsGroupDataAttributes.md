@@ -1,0 +1,32 @@
+
+
+# NewCommunicationsGroupDataAttributes
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**name** | **String** | The name of the communications group |  |
+|**description** | **String** | The description of the communications group |  [optional] |
+|**communicationTypeId** | **String** | The communication type ID |  |
+|**isPrivate** | **Boolean** | Whether the group is private |  [optional] |
+|**conditionType** | [**ConditionTypeEnum**](#ConditionTypeEnum) | Condition type |  [optional] |
+|**smsChannel** | **Boolean** | SMS channel enabled |  [optional] |
+|**emailChannel** | **Boolean** | Email channel enabled |  [optional] |
+|**memberIds** | **List&lt;Integer&gt;** | Array of member user IDs |  [optional] |
+|**slackChannelIds** | **List&lt;String&gt;** | Array of Slack channel IDs |  [optional] |
+|**communicationGroupConditions** | [**List&lt;NewCommunicationsGroupDataAttributesCommunicationGroupConditionsInner&gt;**](NewCommunicationsGroupDataAttributesCommunicationGroupConditionsInner.md) | Group conditions attributes |  [optional] |
+|**communicationExternalGroupMembers** | [**List&lt;NewCommunicationsGroupDataAttributesCommunicationExternalGroupMembersInner&gt;**](NewCommunicationsGroupDataAttributesCommunicationExternalGroupMembersInner.md) | External group members attributes |  [optional] |
+
+
+
+## Enum: ConditionTypeEnum
+
+| Name | Value |
+|---- | -----|
+| ANY | &quot;any&quot; |
+| ALL | &quot;all&quot; |
+
+
+

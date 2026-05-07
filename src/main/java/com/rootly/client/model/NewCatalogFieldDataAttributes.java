@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * NewCatalogFieldDataAttributes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewCatalogFieldDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -63,7 +63,25 @@ public class NewCatalogFieldDataAttributes {
   public enum KindEnum {
     TEXT("text"),
     
-    REFERENCE("reference");
+    REFERENCE("reference"),
+    
+    BOOLEAN("boolean"),
+    
+    REFERENCE2("reference"),
+    
+    SERVICE("service"),
+    
+    FUNCTIONALITY("functionality"),
+    
+    ENVIRONMENT("environment"),
+    
+    GROUP("group"),
+    
+    CAUSE("cause"),
+    
+    INCIDENT_TYPE("incident_type"),
+    
+    USER("user");
 
     private String value;
 
@@ -127,6 +145,78 @@ public class NewCatalogFieldDataAttributes {
   @SerializedName(SERIALIZED_NAME_POSITION)
   @javax.annotation.Nullable
   private Integer position;
+
+  public static final String SERIALIZED_NAME_REQUIRED = "required";
+  @SerializedName(SERIALIZED_NAME_REQUIRED)
+  @javax.annotation.Nullable
+  private Boolean required;
+
+  /**
+   * The type of catalog the field belongs to.
+   */
+  @JsonAdapter(CatalogTypeEnum.Adapter.class)
+  public enum CatalogTypeEnum {
+    CATALOG("catalog"),
+    
+    CAUSE("cause"),
+    
+    ENVIRONMENT("environment"),
+    
+    FUNCTIONALITY("functionality"),
+    
+    INCIDENT_TYPE("incident_type"),
+    
+    SERVICE("service"),
+    
+    TEAM("team");
+
+    private String value;
+
+    CatalogTypeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static CatalogTypeEnum fromValue(String value) {
+      for (CatalogTypeEnum b : CatalogTypeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<CatalogTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final CatalogTypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public CatalogTypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return CatalogTypeEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      CatalogTypeEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_CATALOG_TYPE = "catalog_type";
+  @SerializedName(SERIALIZED_NAME_CATALOG_TYPE)
+  @javax.annotation.Nullable
+  private CatalogTypeEnum catalogType;
 
   public NewCatalogFieldDataAttributes() {
   }
@@ -226,6 +316,44 @@ public class NewCatalogFieldDataAttributes {
   }
 
 
+  public NewCatalogFieldDataAttributes required(@javax.annotation.Nullable Boolean required) {
+    this.required = required;
+    return this;
+  }
+
+  /**
+   * Whether the field is required.
+   * @return required
+   */
+  @javax.annotation.Nullable
+  public Boolean getRequired() {
+    return required;
+  }
+
+  public void setRequired(@javax.annotation.Nullable Boolean required) {
+    this.required = required;
+  }
+
+
+  public NewCatalogFieldDataAttributes catalogType(@javax.annotation.Nullable CatalogTypeEnum catalogType) {
+    this.catalogType = catalogType;
+    return this;
+  }
+
+  /**
+   * The type of catalog the field belongs to.
+   * @return catalogType
+   */
+  @javax.annotation.Nullable
+  public CatalogTypeEnum getCatalogType() {
+    return catalogType;
+  }
+
+  public void setCatalogType(@javax.annotation.Nullable CatalogTypeEnum catalogType) {
+    this.catalogType = catalogType;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -240,7 +368,9 @@ public class NewCatalogFieldDataAttributes {
         Objects.equals(this.kind, newCatalogFieldDataAttributes.kind) &&
         Objects.equals(this.kindCatalogId, newCatalogFieldDataAttributes.kindCatalogId) &&
         Objects.equals(this.multiple, newCatalogFieldDataAttributes.multiple) &&
-        Objects.equals(this.position, newCatalogFieldDataAttributes.position);
+        Objects.equals(this.position, newCatalogFieldDataAttributes.position) &&
+        Objects.equals(this.required, newCatalogFieldDataAttributes.required) &&
+        Objects.equals(this.catalogType, newCatalogFieldDataAttributes.catalogType);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -249,7 +379,7 @@ public class NewCatalogFieldDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, kind, kindCatalogId, multiple, position);
+    return Objects.hash(name, kind, kindCatalogId, multiple, position, required, catalogType);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -268,6 +398,8 @@ public class NewCatalogFieldDataAttributes {
     sb.append("    kindCatalogId: ").append(toIndentedString(kindCatalogId)).append("\n");
     sb.append("    multiple: ").append(toIndentedString(multiple)).append("\n");
     sb.append("    position: ").append(toIndentedString(position)).append("\n");
+    sb.append("    required: ").append(toIndentedString(required)).append("\n");
+    sb.append("    catalogType: ").append(toIndentedString(catalogType)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -295,6 +427,8 @@ public class NewCatalogFieldDataAttributes {
     openapiFields.add("kind_catalog_id");
     openapiFields.add("multiple");
     openapiFields.add("position");
+    openapiFields.add("required");
+    openapiFields.add("catalog_type");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -340,6 +474,13 @@ public class NewCatalogFieldDataAttributes {
       KindEnum.validateJsonElement(jsonObj.get("kind"));
       if ((jsonObj.get("kind_catalog_id") != null && !jsonObj.get("kind_catalog_id").isJsonNull()) && !jsonObj.get("kind_catalog_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `kind_catalog_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind_catalog_id").toString()));
+      }
+      if ((jsonObj.get("catalog_type") != null && !jsonObj.get("catalog_type").isJsonNull()) && !jsonObj.get("catalog_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `catalog_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("catalog_type").toString()));
+      }
+      // validate the optional field `catalog_type`
+      if (jsonObj.get("catalog_type") != null && !jsonObj.get("catalog_type").isJsonNull()) {
+        CatalogTypeEnum.validateJsonElement(jsonObj.get("catalog_type"));
       }
   }
 

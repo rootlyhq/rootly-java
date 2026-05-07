@@ -18,6 +18,7 @@
 |**showOnIncidentDetails** | **Boolean** | Whether the form field is shown on the incident details panel |  [optional] |
 |**enabled** | **Boolean** | Whether the form field is enabled |  [optional] |
 |**defaultValues** | **List&lt;String&gt;** |  |  [optional] |
+|**autoSetByCatalogPropertyId** | **String** | Catalog property ID to auto-set this form field. Only reference-kind catalog properties are supported. |  [optional] |
 
 
 
@@ -53,6 +54,7 @@
 | MITIGATED_AT | &quot;mitigated_at&quot; |
 | RESOLVED_AT | &quot;resolved_at&quot; |
 | CLOSED_AT | &quot;closed_at&quot; |
+| CUSTOM_SUB_STATUS | &quot;custom_sub_status&quot; |
 | MANUAL_STARTING_DATETIME_FIELD | &quot;manual_starting_datetime_field&quot; |
 
 
@@ -84,6 +86,9 @@
 | FUNCTIONALITY | &quot;functionality&quot; |
 | USER | &quot;user&quot; |
 | CATALOG_ENTITY | &quot;catalog_entity&quot; |
+| ENVIRONMENT | &quot;environment&quot; |
+| CAUSE | &quot;cause&quot; |
+| INCIDENT_TYPE | &quot;incident_type&quot; |
 
 
 

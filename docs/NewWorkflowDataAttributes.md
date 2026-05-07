@@ -8,7 +8,6 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**name** | **String** | The title of the workflow |  |
-|**slug** | **String** | The slug of the workflow |  [optional] |
 |**description** | **String** | The description of the workflow |  [optional] |
 |**command** | **String** | Workflow command |  [optional] |
 |**commandFeedbackEnabled** | **Boolean** | This will notify you back when the workflow is starting |  [optional] |

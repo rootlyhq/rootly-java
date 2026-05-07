@@ -8,6 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**taskType** | [**TaskTypeEnum**](#TaskTypeEnum) |  |  [optional] |
+|**integration** | [**CreateJiraIssueTaskParamsIntegration**](CreateJiraIssueTaskParamsIntegration.md) |  |  [optional] |
 |**issueId** | **String** | The issue id |  |
 |**title** | **String** | The issue title |  [optional] |
 |**description** | **String** | The issue description |  [optional] |

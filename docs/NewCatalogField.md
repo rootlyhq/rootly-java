@@ -2,6 +2,7 @@
 
 # NewCatalogField
 
+A catalog can have a maximum of 50 fields.
 
 ## Properties
 

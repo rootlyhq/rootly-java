@@ -1,6 +1,6 @@
 /*
  * Rootly API v1
- * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of approximately **3000** **GET** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of approximately **3000** **PUT**, **POST**, **PATCH** or **DELETE** calls **per API key** every **60 seconds**. The limit is calculated over a **60-second sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - The response to the API call will return 429 HTTP status code - Request Limit Exceeded and Rootly will not ingest the event. - Additional headers will be returned giving you information about the limit:   - **RateLimit-Limit** - The maximum number of requests that the consumer is permitted to make.   - **RateLimit-Remaining** - The number of requests remaining in the current rate limit window.   - **RateLimit-Reset** - The time at which the current rate limit window resets in UTC epoch seconds.  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
+ * # How to generate an API Key? - **Organization dropdown** > **Organization Settings** > **API Keys**  # JSON:API Specification Rootly is using **JSON:API** (https://jsonapi.org) specification: - JSON:API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests. - JSON:API is designed to minimize both the number of requests and the amount of data transmitted between clients and servers. This efficiency is achieved without compromising readability, flexibility, or discoverability. - JSON:API requires use of the JSON:API media type (**application/vnd.api+json**) for exchanging data.  # Authentication and Requests We use standard HTTP Authentication over HTTPS to authorize your requests. ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents ```  <br/>  # Rate limiting - There is a default limit of **5** **GET**, **HEAD**, and **OPTIONS** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - There is a default limit of **3** **POST**, **PUT**, **PATCH** or **DELETE** calls **per API key** every **60 seconds** (0 hours). The limit is calculated over a **0-hour sliding window** looking back from the current time. While the limit can be configured to support higher thresholds, you must first contact your **Rootly Customer Success Manager** to make any adjustments. - When rate limits are exceeded, the API will return a **429 Too Many Requests** HTTP status code with the response: `{\"error\": \"Rate limit exceeded. Try again later.\"}` - **X-RateLimit headers** are included in every API response, providing real-time rate limit information:   - **X-RateLimit-Limit** - The maximum number of requests permitted and the time window (e.g., \"1000, 1000;window=3600\" for 1000 requests per hour)   - **X-RateLimit-Remaining** - The number of requests remaining in the current rate limit window   - **X-RateLimit-Used** - The number of requests already made in the current window   - **X-RateLimit-Reset** - The time at which the current rate limit window resets, in UTC epoch seconds  # Pagination - Pagination is supported for all endpoints that return a collection of items. - Pagination is controlled by the **page** query parameter  ## Example ```   curl --request GET \\ --header 'Content-Type: application/vnd.api+json' \\ --header 'Authorization: Bearer YOUR-TOKEN' \\ --url https://api.rootly.com/v1/incidents?page[number]=1&page[size]=10 ```  
  *
  * The version of the OpenAPI document: v1
  * 
@@ -19,10 +19,13 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.AlertTriggerParamsAlertFieldConditionsInner;
+import com.rootly.client.model.AlertTriggerParamsAlertPayloadConditions;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -51,7 +54,7 @@ import com.rootly.client.JSON;
 /**
  * AlertTriggerParams
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T07:13:31.203496-07:00[America/Los_Angeles]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AlertTriggerParams {
   /**
    * Gets or Sets triggerType
@@ -231,6 +234,8 @@ public class AlertTriggerParams {
   public enum AlertConditionSourceEnum {
     IS("IS"),
     
+    IS_NOT("IS NOT"),
+    
     ANY("ANY"),
     
     CONTAINS("CONTAINS"),
@@ -310,6 +315,8 @@ public class AlertTriggerParams {
   public enum AlertConditionLabelEnum {
     IS("IS"),
     
+    IS_NOT("IS NOT"),
+    
     ANY("ANY"),
     
     CONTAINS("CONTAINS"),
@@ -383,6 +390,8 @@ public class AlertTriggerParams {
   @JsonAdapter(AlertConditionStatusEnum.Adapter.class)
   public enum AlertConditionStatusEnum {
     IS("IS"),
+    
+    IS_NOT("IS NOT"),
     
     ANY("ANY"),
     
@@ -462,11 +471,89 @@ public class AlertTriggerParams {
   private List<String> alertLabels = new ArrayList<>();
 
   /**
+   * Gets or Sets alertConditionUrgency
+   */
+  @JsonAdapter(AlertConditionUrgencyEnum.Adapter.class)
+  public enum AlertConditionUrgencyEnum {
+    IS("IS"),
+    
+    IS_NOT("IS NOT"),
+    
+    ANY("ANY"),
+    
+    CONTAINS("CONTAINS"),
+    
+    CONTAINS_ALL("CONTAINS_ALL"),
+    
+    CONTAINS_NONE("CONTAINS_NONE"),
+    
+    NONE("NONE"),
+    
+    SET("SET"),
+    
+    UNSET("UNSET");
+
+    private String value;
+
+    AlertConditionUrgencyEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static AlertConditionUrgencyEnum fromValue(String value) {
+      for (AlertConditionUrgencyEnum b : AlertConditionUrgencyEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<AlertConditionUrgencyEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final AlertConditionUrgencyEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public AlertConditionUrgencyEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return AlertConditionUrgencyEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      AlertConditionUrgencyEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_ALERT_CONDITION_URGENCY = "alert_condition_urgency";
+  @SerializedName(SERIALIZED_NAME_ALERT_CONDITION_URGENCY)
+  @javax.annotation.Nullable
+  private AlertConditionUrgencyEnum alertConditionUrgency = AlertConditionUrgencyEnum.ANY;
+
+  public static final String SERIALIZED_NAME_ALERT_URGENCY_IDS = "alert_urgency_ids";
+  @SerializedName(SERIALIZED_NAME_ALERT_URGENCY_IDS)
+  @javax.annotation.Nullable
+  private List<UUID> alertUrgencyIds = new ArrayList<>();
+
+  /**
    * Gets or Sets alertConditionPayload
    */
   @JsonAdapter(AlertConditionPayloadEnum.Adapter.class)
   public enum AlertConditionPayloadEnum {
     IS("IS"),
+    
+    IS_NOT("IS NOT"),
     
     ANY("ANY"),
     
@@ -544,6 +631,16 @@ public class AlertTriggerParams {
   @SerializedName(SERIALIZED_NAME_ALERT_QUERY_PAYLOAD)
   @javax.annotation.Nullable
   private String alertQueryPayload;
+
+  public static final String SERIALIZED_NAME_ALERT_FIELD_CONDITIONS = "alert_field_conditions";
+  @SerializedName(SERIALIZED_NAME_ALERT_FIELD_CONDITIONS)
+  @javax.annotation.Nullable
+  private List<AlertTriggerParamsAlertFieldConditionsInner> alertFieldConditions = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_ALERT_PAYLOAD_CONDITIONS = "alert_payload_conditions";
+  @SerializedName(SERIALIZED_NAME_ALERT_PAYLOAD_CONDITIONS)
+  @javax.annotation.Nullable
+  private AlertTriggerParamsAlertPayloadConditions alertPayloadConditions;
 
   public AlertTriggerParams() {
   }
@@ -808,6 +905,52 @@ public class AlertTriggerParams {
   }
 
 
+  public AlertTriggerParams alertConditionUrgency(@javax.annotation.Nullable AlertConditionUrgencyEnum alertConditionUrgency) {
+    this.alertConditionUrgency = alertConditionUrgency;
+    return this;
+  }
+
+  /**
+   * Get alertConditionUrgency
+   * @return alertConditionUrgency
+   */
+  @javax.annotation.Nullable
+  public AlertConditionUrgencyEnum getAlertConditionUrgency() {
+    return alertConditionUrgency;
+  }
+
+  public void setAlertConditionUrgency(@javax.annotation.Nullable AlertConditionUrgencyEnum alertConditionUrgency) {
+    this.alertConditionUrgency = alertConditionUrgency;
+  }
+
+
+  public AlertTriggerParams alertUrgencyIds(@javax.annotation.Nullable List<UUID> alertUrgencyIds) {
+    this.alertUrgencyIds = alertUrgencyIds;
+    return this;
+  }
+
+  public AlertTriggerParams addAlertUrgencyIdsItem(UUID alertUrgencyIdsItem) {
+    if (this.alertUrgencyIds == null) {
+      this.alertUrgencyIds = new ArrayList<>();
+    }
+    this.alertUrgencyIds.add(alertUrgencyIdsItem);
+    return this;
+  }
+
+  /**
+   * Get alertUrgencyIds
+   * @return alertUrgencyIds
+   */
+  @javax.annotation.Nullable
+  public List<UUID> getAlertUrgencyIds() {
+    return alertUrgencyIds;
+  }
+
+  public void setAlertUrgencyIds(@javax.annotation.Nullable List<UUID> alertUrgencyIds) {
+    this.alertUrgencyIds = alertUrgencyIds;
+  }
+
+
   public AlertTriggerParams alertConditionPayload(@javax.annotation.Nullable AlertConditionPayloadEnum alertConditionPayload) {
     this.alertConditionPayload = alertConditionPayload;
     return this;
@@ -892,6 +1035,52 @@ public class AlertTriggerParams {
   }
 
 
+  public AlertTriggerParams alertFieldConditions(@javax.annotation.Nullable List<AlertTriggerParamsAlertFieldConditionsInner> alertFieldConditions) {
+    this.alertFieldConditions = alertFieldConditions;
+    return this;
+  }
+
+  public AlertTriggerParams addAlertFieldConditionsItem(AlertTriggerParamsAlertFieldConditionsInner alertFieldConditionsItem) {
+    if (this.alertFieldConditions == null) {
+      this.alertFieldConditions = new ArrayList<>();
+    }
+    this.alertFieldConditions.add(alertFieldConditionsItem);
+    return this;
+  }
+
+  /**
+   * Get alertFieldConditions
+   * @return alertFieldConditions
+   */
+  @javax.annotation.Nullable
+  public List<AlertTriggerParamsAlertFieldConditionsInner> getAlertFieldConditions() {
+    return alertFieldConditions;
+  }
+
+  public void setAlertFieldConditions(@javax.annotation.Nullable List<AlertTriggerParamsAlertFieldConditionsInner> alertFieldConditions) {
+    this.alertFieldConditions = alertFieldConditions;
+  }
+
+
+  public AlertTriggerParams alertPayloadConditions(@javax.annotation.Nullable AlertTriggerParamsAlertPayloadConditions alertPayloadConditions) {
+    this.alertPayloadConditions = alertPayloadConditions;
+    return this;
+  }
+
+  /**
+   * Get alertPayloadConditions
+   * @return alertPayloadConditions
+   */
+  @javax.annotation.Nullable
+  public AlertTriggerParamsAlertPayloadConditions getAlertPayloadConditions() {
+    return alertPayloadConditions;
+  }
+
+  public void setAlertPayloadConditions(@javax.annotation.Nullable AlertTriggerParamsAlertPayloadConditions alertPayloadConditions) {
+    this.alertPayloadConditions = alertPayloadConditions;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -914,10 +1103,14 @@ public class AlertTriggerParams {
         Objects.equals(this.alertConditionStatusUseRegexp, alertTriggerParams.alertConditionStatusUseRegexp) &&
         Objects.equals(this.alertStatuses, alertTriggerParams.alertStatuses) &&
         Objects.equals(this.alertLabels, alertTriggerParams.alertLabels) &&
+        Objects.equals(this.alertConditionUrgency, alertTriggerParams.alertConditionUrgency) &&
+        Objects.equals(this.alertUrgencyIds, alertTriggerParams.alertUrgencyIds) &&
         Objects.equals(this.alertConditionPayload, alertTriggerParams.alertConditionPayload) &&
         Objects.equals(this.alertConditionPayloadUseRegexp, alertTriggerParams.alertConditionPayloadUseRegexp) &&
         Objects.equals(this.alertPayload, alertTriggerParams.alertPayload) &&
-        Objects.equals(this.alertQueryPayload, alertTriggerParams.alertQueryPayload);
+        Objects.equals(this.alertQueryPayload, alertTriggerParams.alertQueryPayload) &&
+        Objects.equals(this.alertFieldConditions, alertTriggerParams.alertFieldConditions) &&
+        Objects.equals(this.alertPayloadConditions, alertTriggerParams.alertPayloadConditions);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -926,7 +1119,7 @@ public class AlertTriggerParams {
 
   @Override
   public int hashCode() {
-    return Objects.hash(triggerType, triggers, alertCondition, alertConditionSource, alertConditionSourceUseRegexp, alertSources, alertConditionLabel, alertConditionLabelUseRegexp, alertConditionStatus, alertConditionStatusUseRegexp, alertStatuses, alertLabels, alertConditionPayload, alertConditionPayloadUseRegexp, alertPayload, alertQueryPayload);
+    return Objects.hash(triggerType, triggers, alertCondition, alertConditionSource, alertConditionSourceUseRegexp, alertSources, alertConditionLabel, alertConditionLabelUseRegexp, alertConditionStatus, alertConditionStatusUseRegexp, alertStatuses, alertLabels, alertConditionUrgency, alertUrgencyIds, alertConditionPayload, alertConditionPayloadUseRegexp, alertPayload, alertQueryPayload, alertFieldConditions, alertPayloadConditions);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -952,10 +1145,14 @@ public class AlertTriggerParams {
     sb.append("    alertConditionStatusUseRegexp: ").append(toIndentedString(alertConditionStatusUseRegexp)).append("\n");
     sb.append("    alertStatuses: ").append(toIndentedString(alertStatuses)).append("\n");
     sb.append("    alertLabels: ").append(toIndentedString(alertLabels)).append("\n");
+    sb.append("    alertConditionUrgency: ").append(toIndentedString(alertConditionUrgency)).append("\n");
+    sb.append("    alertUrgencyIds: ").append(toIndentedString(alertUrgencyIds)).append("\n");
     sb.append("    alertConditionPayload: ").append(toIndentedString(alertConditionPayload)).append("\n");
     sb.append("    alertConditionPayloadUseRegexp: ").append(toIndentedString(alertConditionPayloadUseRegexp)).append("\n");
     sb.append("    alertPayload: ").append(toIndentedString(alertPayload)).append("\n");
     sb.append("    alertQueryPayload: ").append(toIndentedString(alertQueryPayload)).append("\n");
+    sb.append("    alertFieldConditions: ").append(toIndentedString(alertFieldConditions)).append("\n");
+    sb.append("    alertPayloadConditions: ").append(toIndentedString(alertPayloadConditions)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -990,10 +1187,14 @@ public class AlertTriggerParams {
     openapiFields.add("alert_condition_status_use_regexp");
     openapiFields.add("alert_statuses");
     openapiFields.add("alert_labels");
+    openapiFields.add("alert_condition_urgency");
+    openapiFields.add("alert_urgency_ids");
     openapiFields.add("alert_condition_payload");
     openapiFields.add("alert_condition_payload_use_regexp");
     openapiFields.add("alert_payload");
     openapiFields.add("alert_query_payload");
+    openapiFields.add("alert_field_conditions");
+    openapiFields.add("alert_payload_conditions");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -1077,6 +1278,17 @@ public class AlertTriggerParams {
       if (jsonObj.get("alert_labels") != null && !jsonObj.get("alert_labels").isJsonNull() && !jsonObj.get("alert_labels").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `alert_labels` to be an array in the JSON string but got `%s`", jsonObj.get("alert_labels").toString()));
       }
+      if ((jsonObj.get("alert_condition_urgency") != null && !jsonObj.get("alert_condition_urgency").isJsonNull()) && !jsonObj.get("alert_condition_urgency").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `alert_condition_urgency` to be a primitive type in the JSON string but got `%s`", jsonObj.get("alert_condition_urgency").toString()));
+      }
+      // validate the optional field `alert_condition_urgency`
+      if (jsonObj.get("alert_condition_urgency") != null && !jsonObj.get("alert_condition_urgency").isJsonNull()) {
+        AlertConditionUrgencyEnum.validateJsonElement(jsonObj.get("alert_condition_urgency"));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("alert_urgency_ids") != null && !jsonObj.get("alert_urgency_ids").isJsonNull() && !jsonObj.get("alert_urgency_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `alert_urgency_ids` to be an array in the JSON string but got `%s`", jsonObj.get("alert_urgency_ids").toString()));
+      }
       if ((jsonObj.get("alert_condition_payload") != null && !jsonObj.get("alert_condition_payload").isJsonNull()) && !jsonObj.get("alert_condition_payload").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `alert_condition_payload` to be a primitive type in the JSON string but got `%s`", jsonObj.get("alert_condition_payload").toString()));
       }
@@ -1090,6 +1302,24 @@ public class AlertTriggerParams {
       }
       if ((jsonObj.get("alert_query_payload") != null && !jsonObj.get("alert_query_payload").isJsonNull()) && !jsonObj.get("alert_query_payload").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `alert_query_payload` to be a primitive type in the JSON string but got `%s`", jsonObj.get("alert_query_payload").toString()));
+      }
+      if (jsonObj.get("alert_field_conditions") != null && !jsonObj.get("alert_field_conditions").isJsonNull()) {
+        JsonArray jsonArrayalertFieldConditions = jsonObj.getAsJsonArray("alert_field_conditions");
+        if (jsonArrayalertFieldConditions != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("alert_field_conditions").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `alert_field_conditions` to be an array in the JSON string but got `%s`", jsonObj.get("alert_field_conditions").toString()));
+          }
+
+          // validate the optional field `alert_field_conditions` (array)
+          for (int i = 0; i < jsonArrayalertFieldConditions.size(); i++) {
+            AlertTriggerParamsAlertFieldConditionsInner.validateJsonElement(jsonArrayalertFieldConditions.get(i));
+          };
+        }
+      }
+      // validate the optional field `alert_payload_conditions`
+      if (jsonObj.get("alert_payload_conditions") != null && !jsonObj.get("alert_payload_conditions").isJsonNull()) {
+        AlertTriggerParamsAlertPayloadConditions.validateJsonElement(jsonObj.get("alert_payload_conditions"));
       }
   }
 

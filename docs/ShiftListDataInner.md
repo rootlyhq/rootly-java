@@ -10,6 +10,7 @@
 |**id** | **String** | Unique ID of the shift |  |
 |**type** | [**TypeEnum**](#TypeEnum) |  |  |
 |**attributes** | [**Shift**](Shift.md) |  |  |
+|**relationships** | [**ShiftRelationships**](ShiftRelationships.md) |  |  [optional] |
 
 
 

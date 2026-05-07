@@ -11,6 +11,7 @@
 |**title** | **String** | The Notion page title |  |
 |**parentPage** | [**CreateNotionPageTaskParamsParentPage**](CreateNotionPageTaskParamsParentPage.md) |  |  |
 |**postMortemTemplateId** | **String** | Retrospective template to use when creating page task, if desired |  [optional] |
+|**content** | **String** | Custom page content with liquid templating support. When provided, only this content will be rendered (no default sections) |  [optional] |
 |**markPostMortemAsPublished** | **Boolean** |  |  [optional] |
 |**showTimelineAsTable** | **Boolean** |  |  [optional] |
 |**showActionItemsAsTable** | **Boolean** |  |  [optional] |

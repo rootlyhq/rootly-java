@@ -11,6 +11,7 @@
 |**slug** | **String** | The slug of the cause |  [optional] |
 |**description** | **String** | The description of the cause |  [optional] |
 |**position** | **Integer** | Position of the cause |  [optional] |
+|**properties** | [**List&lt;NewCauseDataAttributesPropertiesInner&gt;**](NewCauseDataAttributesPropertiesInner.md) | Array of property values for this cause. |  [optional] |
 |**createdAt** | **String** | Date of creation |  |
 |**updatedAt** | **String** | Date of last update |  |
 

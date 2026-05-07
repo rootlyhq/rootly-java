@@ -1,6 +1,8 @@
 .PHONY: build
 
 build:
+	rm -rf ./src/test/java/com/rootly/client/api/ ./src/test/java/com/rootly/client/model/
+
 	openapi-generator generate \
 		-i https://rootly-heroku.s3.amazonaws.com/swagger/v1/swagger.json \
 		-g java \
@@ -9,4 +11,4 @@ build:
 		--skip-validate-spec \
 		--library okhttp-gson 
 
-	find ./src/main/java ./src/test/java -type f -name '*.java' -exec sed -i '' '/Object\.validateJsonElement/d' {} + 
+	find ./src/main/java ./src/test/java -type f -name '*.java' -exec sed -i '' '/Object\.validateJsonElement/d;/UUID\.validateJsonElement/d' {} +

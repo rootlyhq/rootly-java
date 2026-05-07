@@ -12,13 +12,14 @@
 |**valueKind** | [**ValueKindEnum**](#ValueKindEnum) | The value kind of the form field |  |
 |**valueKindCatalogId** | **String** | The ID of the catalog used when value_kind is &#x60;catalog_entity&#x60; |  [optional] |
 |**name** | **String** | The name of the form field |  |
-|**slug** | **String** | The slug of the form field |  |
+|**slug** | **String** | The slug of the form field |  [optional] |
 |**description** | **String** | The description of the form field |  [optional] |
 |**shown** | **List&lt;String&gt;** |  |  |
 |**required** | **List&lt;String&gt;** |  |  |
 |**showOnIncidentDetails** | **Boolean** | Whether the form field is shown on the incident details panel |  [optional] |
 |**enabled** | **Boolean** | Whether the form field is enabled |  [optional] |
 |**defaultValues** | **List&lt;String&gt;** |  |  |
+|**autoSetByCatalogPropertyId** | **String** | Catalog property ID to auto-set this form field. Only reference-kind catalog properties are supported. |  [optional] |
 |**createdAt** | **String** | Date of creation |  |
 |**updatedAt** | **String** | Date of last update |  |
 
@@ -56,6 +57,7 @@
 | MITIGATED_AT | &quot;mitigated_at&quot; |
 | RESOLVED_AT | &quot;resolved_at&quot; |
 | CLOSED_AT | &quot;closed_at&quot; |
+| CUSTOM_SUB_STATUS | &quot;custom_sub_status&quot; |
 | MANUAL_STARTING_DATETIME_FIELD | &quot;manual_starting_datetime_field&quot; |
 
 
@@ -87,6 +89,9 @@
 | FUNCTIONALITY | &quot;functionality&quot; |
 | USER | &quot;user&quot; |
 | CATALOG_ENTITY | &quot;catalog_entity&quot; |
+| ENVIRONMENT | &quot;environment&quot; |
+| CAUSE | &quot;cause&quot; |
+| INCIDENT_TYPE | &quot;incident_type&quot; |
 
 
 

@@ -108,7 +108,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     IncidentRolesApi apiInstance = new IncidentRolesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       IncidentRoleResponse result = apiInstance.deleteIncidentRole(id);
       System.out.println(result);
@@ -127,7 +127,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -176,7 +176,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     IncidentRolesApi apiInstance = new IncidentRolesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
       IncidentRoleResponse result = apiInstance.getIncidentRole(id);
       System.out.println(result);
@@ -195,7 +195,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 
 ### Return type
 
@@ -218,7 +218,7 @@ public class Example {
 
 <a id="listIncidentRoles"></a>
 # **listIncidentRoles**
-> IncidentRoleList listIncidentRoles(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort)
+> IncidentRoleList listIncidentRoles(pageNumber, pageSize, filterSearch, filterSlug, filterName, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort)
 
 List incident roles
 
@@ -244,7 +244,6 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     IncidentRolesApi apiInstance = new IncidentRolesApi(defaultClient);
-    String include = "include_example"; // String | 
     Integer pageNumber = 56; // Integer | 
     Integer pageSize = 56; // Integer | 
     String filterSearch = "filterSearch_example"; // String | 
@@ -257,7 +256,7 @@ public class Example {
     String filterCreatedAtLte = "filterCreatedAtLte_example"; // String | 
     String sort = "sort_example"; // String | 
     try {
-      IncidentRoleList result = apiInstance.listIncidentRoles(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
+      IncidentRoleList result = apiInstance.listIncidentRoles(pageNumber, pageSize, filterSearch, filterSlug, filterName, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling IncidentRolesApi#listIncidentRoles");
@@ -274,7 +273,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **include** | **String**|  | [optional] |
 | **pageNumber** | **Integer**|  | [optional] |
 | **pageSize** | **Integer**|  | [optional] |
 | **filterSearch** | **String**|  | [optional] |
@@ -333,7 +331,7 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     IncidentRolesApi apiInstance = new IncidentRolesApi(defaultClient);
-    String id = "id_example"; // String | 
+    GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     UpdateIncidentRole updateIncidentRole = new UpdateIncidentRole(); // UpdateIncidentRole | 
     try {
       IncidentRoleResponse result = apiInstance.updateIncidentRole(id, updateIncidentRole);
@@ -353,7 +351,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | [**GetAlertFieldIdParameter**](.md)|  | |
 | **updateIncidentRole** | [**UpdateIncidentRole**](UpdateIncidentRole.md)|  | |
 
 ### Return type

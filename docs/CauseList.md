@@ -9,6 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**data** | [**List&lt;CauseResponseData&gt;**](CauseResponseData.md) |  |  |
 |**links** | [**Links**](Links.md) |  |  |
+|**meta** | [**Meta**](Meta.md) |  |  |
 
 
 

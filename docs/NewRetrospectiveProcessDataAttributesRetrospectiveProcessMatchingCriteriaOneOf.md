@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**severityIds** | **List&lt;String&gt;** | Severity ID&#39;s for retrospective process matching criteria |  |
+|**severityIds** | **List&lt;String&gt;** | Severity IDs for retrospective process matching criteria |  |
 
 
 
