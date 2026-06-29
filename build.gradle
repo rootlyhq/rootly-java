@@ -83,8 +83,8 @@ if(hasProperty('target') && target == 'android') {
     apply plugin: 'java'
     apply plugin: 'maven-publish'
 
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 
     publishing {
         publications {
@@ -116,9 +116,9 @@ dependencies {
     implementation 'org.openapitools:jackson-databind-nullable:0.2.10'
     implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.20.0'
     implementation "jakarta.annotation:jakarta.annotation-api:$jakarta_annotation_version"
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.14.4'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:6.1.1'
     testImplementation 'org.mockito:mockito-core:5.23.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.14.4'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:6.1.1'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher:6.1.1'
 }
 
@@ -146,7 +146,7 @@ spotless {
         // don't need to set target, it is inferred from java
 
         // apply a specific flavor of google-java-format
-        googleJavaFormat('1.8').aosp().reflowLongStrings()
+        googleJavaFormat('1.22.0').aosp().reflowLongStrings()
 
         removeUnusedImports()
         importOrder()
