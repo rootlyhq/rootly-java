@@ -83,8 +83,10 @@ if(hasProperty('target') && target == 'android') {
     apply plugin: 'java'
     apply plugin: 'maven-publish'
 
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    java {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
 
     publishing {
         publications {
@@ -96,7 +98,7 @@ if(hasProperty('target') && target == 'android') {
     }
 
     task execute(type:JavaExec) {
-       main = System.getProperty('mainClass')
+       mainClass.set(System.getProperty('mainClass'))
        classpath = sourceSets.main.runtimeClasspath
     }
 }
@@ -146,7 +148,7 @@ spotless {
         // don't need to set target, it is inferred from java
 
         // apply a specific flavor of google-java-format
-        googleJavaFormat('1.8').aosp().reflowLongStrings()
+        googleJavaFormat('1.22.0').aosp().reflowLongStrings()
 
         removeUnusedImports()
         importOrder()
