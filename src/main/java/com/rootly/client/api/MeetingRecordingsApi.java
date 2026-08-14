@@ -27,7 +27,11 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import com.rootly.client.model.ImportMeetingRecording;
 import com.rootly.client.model.MeetingRecordingList;
+import com.rootly.client.model.MeetingRecordingResponse;
+import com.rootly.client.model.StartSessionRequest;
+import com.rootly.client.model.StartSessionResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -87,7 +91,7 @@ public class MeetingRecordingsApi {
         <tr><td> 422 </td><td> validation error (e.g. bot already active) </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createMeetingRecordingCall(@javax.annotation.Nonnull String incidentId, @javax.annotation.Nullable String platform, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createMeetingRecordingCall(@jakarta.annotation.Nonnull String incidentId, @jakarta.annotation.Nullable String platform, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -118,6 +122,7 @@ public class MeetingRecordingsApi {
         }
 
         final String[] localVarAccepts = {
+            "application/vnd.api+json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -136,7 +141,7 @@ public class MeetingRecordingsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createMeetingRecordingValidateBeforeCall(@javax.annotation.Nonnull String incidentId, @javax.annotation.Nullable String platform, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createMeetingRecordingValidateBeforeCall(@jakarta.annotation.Nonnull String incidentId, @jakarta.annotation.Nullable String platform, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'incidentId' is set
         if (incidentId == null) {
             throw new ApiException("Missing the required parameter 'incidentId' when calling createMeetingRecording(Async)");
@@ -151,6 +156,7 @@ public class MeetingRecordingsApi {
      * Invite a recording bot to the incident&#39;s meeting. If no previous recordings exist for the platform, a new bot is invited (session 1). If previous sessions exist, a new session is created (re-invite). The bot joins the meeting, records audio/video, and generates a transcript when the session ends.
      * @param incidentId Incident UUID (required)
      * @param platform Meeting platform (optional)
+     * @return MeetingRecordingResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -160,8 +166,9 @@ public class MeetingRecordingsApi {
         <tr><td> 422 </td><td> validation error (e.g. bot already active) </td><td>  -  </td></tr>
      </table>
      */
-    public void createMeetingRecording(@javax.annotation.Nonnull String incidentId, @javax.annotation.Nullable String platform) throws ApiException {
-        createMeetingRecordingWithHttpInfo(incidentId, platform);
+    public MeetingRecordingResponse createMeetingRecording(@jakarta.annotation.Nonnull String incidentId, @jakarta.annotation.Nullable String platform) throws ApiException {
+        ApiResponse<MeetingRecordingResponse> localVarResp = createMeetingRecordingWithHttpInfo(incidentId, platform);
+        return localVarResp.getData();
     }
 
     /**
@@ -169,7 +176,7 @@ public class MeetingRecordingsApi {
      * Invite a recording bot to the incident&#39;s meeting. If no previous recordings exist for the platform, a new bot is invited (session 1). If previous sessions exist, a new session is created (re-invite). The bot joins the meeting, records audio/video, and generates a transcript when the session ends.
      * @param incidentId Incident UUID (required)
      * @param platform Meeting platform (optional)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;MeetingRecordingResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -179,9 +186,10 @@ public class MeetingRecordingsApi {
         <tr><td> 422 </td><td> validation error (e.g. bot already active) </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> createMeetingRecordingWithHttpInfo(@javax.annotation.Nonnull String incidentId, @javax.annotation.Nullable String platform) throws ApiException {
+    public ApiResponse<MeetingRecordingResponse> createMeetingRecordingWithHttpInfo(@jakarta.annotation.Nonnull String incidentId, @jakarta.annotation.Nullable String platform) throws ApiException {
         okhttp3.Call localVarCall = createMeetingRecordingValidateBeforeCall(incidentId, platform, null);
-        return localVarApiClient.execute(localVarCall);
+        Type localVarReturnType = new TypeToken<MeetingRecordingResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
@@ -200,10 +208,11 @@ public class MeetingRecordingsApi {
         <tr><td> 422 </td><td> validation error (e.g. bot already active) </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createMeetingRecordingAsync(@javax.annotation.Nonnull String incidentId, @javax.annotation.Nullable String platform, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call createMeetingRecordingAsync(@jakarta.annotation.Nonnull String incidentId, @jakarta.annotation.Nullable String platform, final ApiCallback<MeetingRecordingResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createMeetingRecordingValidateBeforeCall(incidentId, platform, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
+        Type localVarReturnType = new TypeToken<MeetingRecordingResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
@@ -220,7 +229,7 @@ public class MeetingRecordingsApi {
         <tr><td> 422 </td><td> cannot delete active recording </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteMeetingRecordingCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteMeetingRecordingCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -247,6 +256,7 @@ public class MeetingRecordingsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
+            "application/vnd.api+json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -265,7 +275,7 @@ public class MeetingRecordingsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteMeetingRecordingValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteMeetingRecordingValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteMeetingRecording(Async)");
@@ -279,6 +289,7 @@ public class MeetingRecordingsApi {
      * Delete a meeting recording
      * Delete a meeting recording. Only completed or failed recordings can be deleted. Active recordings (pending, recording, paused) must be stopped first.
      * @param id Meeting Recording UUID (required)
+     * @return MeetingRecordingResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -288,15 +299,16 @@ public class MeetingRecordingsApi {
         <tr><td> 422 </td><td> cannot delete active recording </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteMeetingRecording(@javax.annotation.Nonnull String id) throws ApiException {
-        deleteMeetingRecordingWithHttpInfo(id);
+    public MeetingRecordingResponse deleteMeetingRecording(@jakarta.annotation.Nonnull String id) throws ApiException {
+        ApiResponse<MeetingRecordingResponse> localVarResp = deleteMeetingRecordingWithHttpInfo(id);
+        return localVarResp.getData();
     }
 
     /**
      * Delete a meeting recording
      * Delete a meeting recording. Only completed or failed recordings can be deleted. Active recordings (pending, recording, paused) must be stopped first.
      * @param id Meeting Recording UUID (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;MeetingRecordingResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -306,9 +318,10 @@ public class MeetingRecordingsApi {
         <tr><td> 422 </td><td> cannot delete active recording </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteMeetingRecordingWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<MeetingRecordingResponse> deleteMeetingRecordingWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteMeetingRecordingValidateBeforeCall(id, null);
-        return localVarApiClient.execute(localVarCall);
+        Type localVarReturnType = new TypeToken<MeetingRecordingResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
@@ -326,10 +339,11 @@ public class MeetingRecordingsApi {
         <tr><td> 422 </td><td> cannot delete active recording </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteMeetingRecordingAsync(@javax.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteMeetingRecordingAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<MeetingRecordingResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteMeetingRecordingValidateBeforeCall(id, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
+        Type localVarReturnType = new TypeToken<MeetingRecordingResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
@@ -346,7 +360,7 @@ public class MeetingRecordingsApi {
         <tr><td> 422 </td><td> cannot delete video (active recording or no video) </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteMeetingRecordingVideoCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteMeetingRecordingVideoCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -373,6 +387,7 @@ public class MeetingRecordingsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
+            "application/vnd.api+json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -391,7 +406,7 @@ public class MeetingRecordingsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteMeetingRecordingVideoValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteMeetingRecordingVideoValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteMeetingRecordingVideo(Async)");
@@ -405,6 +420,7 @@ public class MeetingRecordingsApi {
      * Delete video from a meeting recording
      * Delete only the video file from a meeting recording. The transcript, summary, and all metadata are preserved. Only non-active recordings with an attached video can have their video deleted.
      * @param id Meeting Recording UUID (required)
+     * @return MeetingRecordingResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -414,15 +430,16 @@ public class MeetingRecordingsApi {
         <tr><td> 422 </td><td> cannot delete video (active recording or no video) </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteMeetingRecordingVideo(@javax.annotation.Nonnull String id) throws ApiException {
-        deleteMeetingRecordingVideoWithHttpInfo(id);
+    public MeetingRecordingResponse deleteMeetingRecordingVideo(@jakarta.annotation.Nonnull String id) throws ApiException {
+        ApiResponse<MeetingRecordingResponse> localVarResp = deleteMeetingRecordingVideoWithHttpInfo(id);
+        return localVarResp.getData();
     }
 
     /**
      * Delete video from a meeting recording
      * Delete only the video file from a meeting recording. The transcript, summary, and all metadata are preserved. Only non-active recordings with an attached video can have their video deleted.
      * @param id Meeting Recording UUID (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;MeetingRecordingResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -432,9 +449,10 @@ public class MeetingRecordingsApi {
         <tr><td> 422 </td><td> cannot delete video (active recording or no video) </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteMeetingRecordingVideoWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<MeetingRecordingResponse> deleteMeetingRecordingVideoWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteMeetingRecordingVideoValidateBeforeCall(id, null);
-        return localVarApiClient.execute(localVarCall);
+        Type localVarReturnType = new TypeToken<MeetingRecordingResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
@@ -452,15 +470,147 @@ public class MeetingRecordingsApi {
         <tr><td> 422 </td><td> cannot delete video (active recording or no video) </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteMeetingRecordingVideoAsync(@javax.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteMeetingRecordingVideoAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<MeetingRecordingResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteMeetingRecordingVideoValidateBeforeCall(id, _callback);
+        Type localVarReturnType = new TypeToken<MeetingRecordingResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for deleteStandaloneMeetingRecording
+     * @param id Meeting Recording UUID (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> recording deleted </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> cannot delete active recording </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> recording not found or not owned by user </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteStandaloneMeetingRecordingCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v1/meeting_recordings/{id}/delete_session"
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "bearer_auth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call deleteStandaloneMeetingRecordingValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling deleteStandaloneMeetingRecording(Async)");
+        }
+
+        return deleteStandaloneMeetingRecordingCall(id, _callback);
+
+    }
+
+    /**
+     * Delete a standalone meeting recording
+     * Delete a standalone meeting recording (not linked to an incident). Only the recording owner can delete it. Active recordings (pending, recording, paused) must be stopped first. Returns 404 for incident-linked recordings or recordings owned by another user.
+     * @param id Meeting Recording UUID (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> recording deleted </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> cannot delete active recording </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> recording not found or not owned by user </td><td>  -  </td></tr>
+     </table>
+     */
+    public void deleteStandaloneMeetingRecording(@jakarta.annotation.Nonnull String id) throws ApiException {
+        deleteStandaloneMeetingRecordingWithHttpInfo(id);
+    }
+
+    /**
+     * Delete a standalone meeting recording
+     * Delete a standalone meeting recording (not linked to an incident). Only the recording owner can delete it. Active recordings (pending, recording, paused) must be stopped first. Returns 404 for incident-linked recordings or recordings owned by another user.
+     * @param id Meeting Recording UUID (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> recording deleted </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> cannot delete active recording </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> recording not found or not owned by user </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> deleteStandaloneMeetingRecordingWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
+        okhttp3.Call localVarCall = deleteStandaloneMeetingRecordingValidateBeforeCall(id, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Delete a standalone meeting recording (asynchronously)
+     * Delete a standalone meeting recording (not linked to an incident). Only the recording owner can delete it. Active recordings (pending, recording, paused) must be stopped first. Returns 404 for incident-linked recordings or recordings owned by another user.
+     * @param id Meeting Recording UUID (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> recording deleted </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> cannot delete active recording </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> recording not found or not owned by user </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteStandaloneMeetingRecordingAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = deleteStandaloneMeetingRecordingValidateBeforeCall(id, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for getMeetingRecording
      * @param id Meeting Recording UUID (required)
+     * @param include comma separated if needed. eg: transcript (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -472,7 +622,7 @@ public class MeetingRecordingsApi {
         <tr><td> 404 </td><td> meeting recording not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMeetingRecordingCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getMeetingRecordingCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -498,7 +648,12 @@ public class MeetingRecordingsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (include != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("include", include));
+        }
+
         final String[] localVarAccepts = {
+            "application/vnd.api+json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -517,13 +672,13 @@ public class MeetingRecordingsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getMeetingRecordingValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getMeetingRecordingValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getMeetingRecording(Async)");
         }
 
-        return getMeetingRecordingCall(id, _callback);
+        return getMeetingRecordingCall(id, include, _callback);
 
     }
 
@@ -531,6 +686,8 @@ public class MeetingRecordingsApi {
      * Get a meeting recording
      * Retrieve a single meeting recording session including its status, duration, speaker count, word count, and transcript summary.
      * @param id Meeting Recording UUID (required)
+     * @param include comma separated if needed. eg: transcript (optional)
+     * @return MeetingRecordingResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -540,15 +697,17 @@ public class MeetingRecordingsApi {
         <tr><td> 404 </td><td> meeting recording not found </td><td>  -  </td></tr>
      </table>
      */
-    public void getMeetingRecording(@javax.annotation.Nonnull String id) throws ApiException {
-        getMeetingRecordingWithHttpInfo(id);
+    public MeetingRecordingResponse getMeetingRecording(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include) throws ApiException {
+        ApiResponse<MeetingRecordingResponse> localVarResp = getMeetingRecordingWithHttpInfo(id, include);
+        return localVarResp.getData();
     }
 
     /**
      * Get a meeting recording
      * Retrieve a single meeting recording session including its status, duration, speaker count, word count, and transcript summary.
      * @param id Meeting Recording UUID (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @param include comma separated if needed. eg: transcript (optional)
+     * @return ApiResponse&lt;MeetingRecordingResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -558,15 +717,17 @@ public class MeetingRecordingsApi {
         <tr><td> 404 </td><td> meeting recording not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> getMeetingRecordingWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
-        okhttp3.Call localVarCall = getMeetingRecordingValidateBeforeCall(id, null);
-        return localVarApiClient.execute(localVarCall);
+    public ApiResponse<MeetingRecordingResponse> getMeetingRecordingWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include) throws ApiException {
+        okhttp3.Call localVarCall = getMeetingRecordingValidateBeforeCall(id, include, null);
+        Type localVarReturnType = new TypeToken<MeetingRecordingResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Get a meeting recording (asynchronously)
      * Retrieve a single meeting recording session including its status, duration, speaker count, word count, and transcript summary.
      * @param id Meeting Recording UUID (required)
+     * @param include comma separated if needed. eg: transcript (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -578,10 +739,147 @@ public class MeetingRecordingsApi {
         <tr><td> 404 </td><td> meeting recording not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getMeetingRecordingAsync(@javax.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call getMeetingRecordingAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include, final ApiCallback<MeetingRecordingResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getMeetingRecordingValidateBeforeCall(id, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
+        okhttp3.Call localVarCall = getMeetingRecordingValidateBeforeCall(id, include, _callback);
+        Type localVarReturnType = new TypeToken<MeetingRecordingResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for importMeetingRecording
+     * @param incidentId Incident UUID (required)
+     * @param importMeetingRecording  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> recording imported </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> validation error (e.g. unsupported source, duplicate recording) </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call importMeetingRecordingCall(@jakarta.annotation.Nonnull String incidentId, @jakarta.annotation.Nullable ImportMeetingRecording importMeetingRecording, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = importMeetingRecording;
+
+        // create path and map variables
+        String localVarPath = "/v1/incidents/{incident_id}/meeting_recordings/import"
+            .replace("{" + "incident_id" + "}", localVarApiClient.escapeString(incidentId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/vnd.api+json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/vnd.api+json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "bearer_auth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call importMeetingRecordingValidateBeforeCall(@jakarta.annotation.Nonnull String incidentId, @jakarta.annotation.Nullable ImportMeetingRecording importMeetingRecording, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'incidentId' is set
+        if (incidentId == null) {
+            throw new ApiException("Missing the required parameter 'incidentId' when calling importMeetingRecording(Async)");
+        }
+
+        return importMeetingRecordingCall(incidentId, importMeetingRecording, _callback);
+
+    }
+
+    /**
+     * Import a meeting recording
+     * Import an externally captured meeting recording and attach it to an incident. Video and transcript are fetched asynchronously. The existing POST /v1/incidents/{incident_id}/meeting_recordings endpoint invites a bot — this endpoint handles recordings that were captured outside of the bot flow.
+     * @param incidentId Incident UUID (required)
+     * @param importMeetingRecording  (optional)
+     * @return MeetingRecordingResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> recording imported </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> validation error (e.g. unsupported source, duplicate recording) </td><td>  -  </td></tr>
+     </table>
+     */
+    public MeetingRecordingResponse importMeetingRecording(@jakarta.annotation.Nonnull String incidentId, @jakarta.annotation.Nullable ImportMeetingRecording importMeetingRecording) throws ApiException {
+        ApiResponse<MeetingRecordingResponse> localVarResp = importMeetingRecordingWithHttpInfo(incidentId, importMeetingRecording);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Import a meeting recording
+     * Import an externally captured meeting recording and attach it to an incident. Video and transcript are fetched asynchronously. The existing POST /v1/incidents/{incident_id}/meeting_recordings endpoint invites a bot — this endpoint handles recordings that were captured outside of the bot flow.
+     * @param incidentId Incident UUID (required)
+     * @param importMeetingRecording  (optional)
+     * @return ApiResponse&lt;MeetingRecordingResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> recording imported </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> validation error (e.g. unsupported source, duplicate recording) </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<MeetingRecordingResponse> importMeetingRecordingWithHttpInfo(@jakarta.annotation.Nonnull String incidentId, @jakarta.annotation.Nullable ImportMeetingRecording importMeetingRecording) throws ApiException {
+        okhttp3.Call localVarCall = importMeetingRecordingValidateBeforeCall(incidentId, importMeetingRecording, null);
+        Type localVarReturnType = new TypeToken<MeetingRecordingResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Import a meeting recording (asynchronously)
+     * Import an externally captured meeting recording and attach it to an incident. Video and transcript are fetched asynchronously. The existing POST /v1/incidents/{incident_id}/meeting_recordings endpoint invites a bot — this endpoint handles recordings that were captured outside of the bot flow.
+     * @param incidentId Incident UUID (required)
+     * @param importMeetingRecording  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> recording imported </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> validation error (e.g. unsupported source, duplicate recording) </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call importMeetingRecordingAsync(@jakarta.annotation.Nonnull String incidentId, @jakarta.annotation.Nullable ImportMeetingRecording importMeetingRecording, final ApiCallback<MeetingRecordingResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = importMeetingRecordingValidateBeforeCall(incidentId, importMeetingRecording, _callback);
+        Type localVarReturnType = new TypeToken<MeetingRecordingResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
@@ -598,7 +896,7 @@ public class MeetingRecordingsApi {
         <tr><td> 422 </td><td> bot is not in a call </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call leaveMeetingRecordingCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call leaveMeetingRecordingCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -625,6 +923,7 @@ public class MeetingRecordingsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
+            "application/vnd.api+json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -643,7 +942,7 @@ public class MeetingRecordingsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call leaveMeetingRecordingValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call leaveMeetingRecordingValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling leaveMeetingRecording(Async)");
@@ -657,6 +956,7 @@ public class MeetingRecordingsApi {
      * Leave a meeting call
      * Remove the recording bot from the meeting entirely. Unlike stop, this immediately disconnects the bot. The session will transition to analyzing and then completed once transcript processing finishes.
      * @param id Meeting Recording UUID (required)
+     * @return MeetingRecordingResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -666,15 +966,16 @@ public class MeetingRecordingsApi {
         <tr><td> 422 </td><td> bot is not in a call </td><td>  -  </td></tr>
      </table>
      */
-    public void leaveMeetingRecording(@javax.annotation.Nonnull String id) throws ApiException {
-        leaveMeetingRecordingWithHttpInfo(id);
+    public MeetingRecordingResponse leaveMeetingRecording(@jakarta.annotation.Nonnull String id) throws ApiException {
+        ApiResponse<MeetingRecordingResponse> localVarResp = leaveMeetingRecordingWithHttpInfo(id);
+        return localVarResp.getData();
     }
 
     /**
      * Leave a meeting call
      * Remove the recording bot from the meeting entirely. Unlike stop, this immediately disconnects the bot. The session will transition to analyzing and then completed once transcript processing finishes.
      * @param id Meeting Recording UUID (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;MeetingRecordingResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -684,9 +985,10 @@ public class MeetingRecordingsApi {
         <tr><td> 422 </td><td> bot is not in a call </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> leaveMeetingRecordingWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<MeetingRecordingResponse> leaveMeetingRecordingWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = leaveMeetingRecordingValidateBeforeCall(id, null);
-        return localVarApiClient.execute(localVarCall);
+        Type localVarReturnType = new TypeToken<MeetingRecordingResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
@@ -704,10 +1006,152 @@ public class MeetingRecordingsApi {
         <tr><td> 422 </td><td> bot is not in a call </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call leaveMeetingRecordingAsync(@javax.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call leaveMeetingRecordingAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<MeetingRecordingResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = leaveMeetingRecordingValidateBeforeCall(id, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
+        Type localVarReturnType = new TypeToken<MeetingRecordingResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for listAllMeetingRecordings
+     * @param status Filter by status (optional)
+     * @param platform Filter by platform (optional)
+     * @param createdBy Filter by creator type (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> meeting recordings found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listAllMeetingRecordingsCall(@jakarta.annotation.Nullable String status, @jakarta.annotation.Nullable String platform, @jakarta.annotation.Nullable String createdBy, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v1/meeting_recordings";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (status != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("status", status));
+        }
+
+        if (platform != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("platform", platform));
+        }
+
+        if (createdBy != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("created_by", createdBy));
+        }
+
+        final String[] localVarAccepts = {
+            "application/vnd.api+json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "bearer_auth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listAllMeetingRecordingsValidateBeforeCall(@jakarta.annotation.Nullable String status, @jakarta.annotation.Nullable String platform, @jakarta.annotation.Nullable String createdBy, final ApiCallback _callback) throws ApiException {
+        return listAllMeetingRecordingsCall(status, platform, createdBy, _callback);
+
+    }
+
+    /**
+     * List all meeting recordings
+     * List meeting recordings across the organization. Returns the current user&#39;s standalone recordings plus incident-backed recordings the user can access. Supports filtering by status, platform, and created_by.
+     * @param status Filter by status (optional)
+     * @param platform Filter by platform (optional)
+     * @param createdBy Filter by creator type (optional)
+     * @return MeetingRecordingList
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> meeting recordings found </td><td>  -  </td></tr>
+     </table>
+     */
+    public MeetingRecordingList listAllMeetingRecordings(@jakarta.annotation.Nullable String status, @jakarta.annotation.Nullable String platform, @jakarta.annotation.Nullable String createdBy) throws ApiException {
+        ApiResponse<MeetingRecordingList> localVarResp = listAllMeetingRecordingsWithHttpInfo(status, platform, createdBy);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List all meeting recordings
+     * List meeting recordings across the organization. Returns the current user&#39;s standalone recordings plus incident-backed recordings the user can access. Supports filtering by status, platform, and created_by.
+     * @param status Filter by status (optional)
+     * @param platform Filter by platform (optional)
+     * @param createdBy Filter by creator type (optional)
+     * @return ApiResponse&lt;MeetingRecordingList&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> meeting recordings found </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<MeetingRecordingList> listAllMeetingRecordingsWithHttpInfo(@jakarta.annotation.Nullable String status, @jakarta.annotation.Nullable String platform, @jakarta.annotation.Nullable String createdBy) throws ApiException {
+        okhttp3.Call localVarCall = listAllMeetingRecordingsValidateBeforeCall(status, platform, createdBy, null);
+        Type localVarReturnType = new TypeToken<MeetingRecordingList>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List all meeting recordings (asynchronously)
+     * List meeting recordings across the organization. Returns the current user&#39;s standalone recordings plus incident-backed recordings the user can access. Supports filtering by status, platform, and created_by.
+     * @param status Filter by status (optional)
+     * @param platform Filter by platform (optional)
+     * @param createdBy Filter by creator type (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> meeting recordings found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listAllMeetingRecordingsAsync(@jakarta.annotation.Nullable String status, @jakarta.annotation.Nullable String platform, @jakarta.annotation.Nullable String createdBy, final ApiCallback<MeetingRecordingList> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listAllMeetingRecordingsValidateBeforeCall(status, platform, createdBy, _callback);
+        Type localVarReturnType = new TypeToken<MeetingRecordingList>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
@@ -726,7 +1170,7 @@ public class MeetingRecordingsApi {
         <tr><td> 404 </td><td> incident not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listMeetingRecordingsCall(@javax.annotation.Nonnull String incidentId, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listMeetingRecordingsCall(@jakarta.annotation.Nonnull String incidentId, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -780,7 +1224,7 @@ public class MeetingRecordingsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listMeetingRecordingsValidateBeforeCall(@javax.annotation.Nonnull String incidentId, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listMeetingRecordingsValidateBeforeCall(@jakarta.annotation.Nonnull String incidentId, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'incidentId' is set
         if (incidentId == null) {
             throw new ApiException("Missing the required parameter 'incidentId' when calling listMeetingRecordings(Async)");
@@ -806,7 +1250,7 @@ public class MeetingRecordingsApi {
         <tr><td> 404 </td><td> incident not found </td><td>  -  </td></tr>
      </table>
      */
-    public MeetingRecordingList listMeetingRecordings(@javax.annotation.Nonnull String incidentId, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+    public MeetingRecordingList listMeetingRecordings(@jakarta.annotation.Nonnull String incidentId, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
         ApiResponse<MeetingRecordingList> localVarResp = listMeetingRecordingsWithHttpInfo(incidentId, pageNumber, pageSize);
         return localVarResp.getData();
     }
@@ -827,7 +1271,7 @@ public class MeetingRecordingsApi {
         <tr><td> 404 </td><td> incident not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<MeetingRecordingList> listMeetingRecordingsWithHttpInfo(@javax.annotation.Nonnull String incidentId, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+    public ApiResponse<MeetingRecordingList> listMeetingRecordingsWithHttpInfo(@jakarta.annotation.Nonnull String incidentId, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
         okhttp3.Call localVarCall = listMeetingRecordingsValidateBeforeCall(incidentId, pageNumber, pageSize, null);
         Type localVarReturnType = new TypeToken<MeetingRecordingList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -850,7 +1294,7 @@ public class MeetingRecordingsApi {
         <tr><td> 404 </td><td> incident not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listMeetingRecordingsAsync(@javax.annotation.Nonnull String incidentId, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback<MeetingRecordingList> _callback) throws ApiException {
+    public okhttp3.Call listMeetingRecordingsAsync(@jakarta.annotation.Nonnull String incidentId, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback<MeetingRecordingList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listMeetingRecordingsValidateBeforeCall(incidentId, pageNumber, pageSize, _callback);
         Type localVarReturnType = new TypeToken<MeetingRecordingList>(){}.getType();
@@ -871,7 +1315,7 @@ public class MeetingRecordingsApi {
         <tr><td> 422 </td><td> recording is not active </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call pauseMeetingRecordingCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call pauseMeetingRecordingCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -898,6 +1342,7 @@ public class MeetingRecordingsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
+            "application/vnd.api+json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -916,7 +1361,7 @@ public class MeetingRecordingsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call pauseMeetingRecordingValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call pauseMeetingRecordingValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling pauseMeetingRecording(Async)");
@@ -930,6 +1375,7 @@ public class MeetingRecordingsApi {
      * Pause a meeting recording
      * Pause an active recording session. The bot remains in the meeting but stops capturing audio/video. Use the resume endpoint to continue recording.
      * @param id Meeting Recording UUID (required)
+     * @return MeetingRecordingResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -939,15 +1385,16 @@ public class MeetingRecordingsApi {
         <tr><td> 422 </td><td> recording is not active </td><td>  -  </td></tr>
      </table>
      */
-    public void pauseMeetingRecording(@javax.annotation.Nonnull String id) throws ApiException {
-        pauseMeetingRecordingWithHttpInfo(id);
+    public MeetingRecordingResponse pauseMeetingRecording(@jakarta.annotation.Nonnull String id) throws ApiException {
+        ApiResponse<MeetingRecordingResponse> localVarResp = pauseMeetingRecordingWithHttpInfo(id);
+        return localVarResp.getData();
     }
 
     /**
      * Pause a meeting recording
      * Pause an active recording session. The bot remains in the meeting but stops capturing audio/video. Use the resume endpoint to continue recording.
      * @param id Meeting Recording UUID (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;MeetingRecordingResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -957,9 +1404,10 @@ public class MeetingRecordingsApi {
         <tr><td> 422 </td><td> recording is not active </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> pauseMeetingRecordingWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<MeetingRecordingResponse> pauseMeetingRecordingWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = pauseMeetingRecordingValidateBeforeCall(id, null);
-        return localVarApiClient.execute(localVarCall);
+        Type localVarReturnType = new TypeToken<MeetingRecordingResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
@@ -977,10 +1425,11 @@ public class MeetingRecordingsApi {
         <tr><td> 422 </td><td> recording is not active </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call pauseMeetingRecordingAsync(@javax.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call pauseMeetingRecordingAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<MeetingRecordingResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = pauseMeetingRecordingValidateBeforeCall(id, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
+        Type localVarReturnType = new TypeToken<MeetingRecordingResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
@@ -997,7 +1446,7 @@ public class MeetingRecordingsApi {
         <tr><td> 422 </td><td> recording is not paused </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call resumeMeetingRecordingCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call resumeMeetingRecordingCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1024,6 +1473,7 @@ public class MeetingRecordingsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
+            "application/vnd.api+json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -1042,7 +1492,7 @@ public class MeetingRecordingsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call resumeMeetingRecordingValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call resumeMeetingRecordingValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling resumeMeetingRecording(Async)");
@@ -1056,6 +1506,7 @@ public class MeetingRecordingsApi {
      * Resume a meeting recording
      * Resume a paused recording session. The bot continues capturing audio/video from the meeting.
      * @param id Meeting Recording UUID (required)
+     * @return MeetingRecordingResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1065,15 +1516,16 @@ public class MeetingRecordingsApi {
         <tr><td> 422 </td><td> recording is not paused </td><td>  -  </td></tr>
      </table>
      */
-    public void resumeMeetingRecording(@javax.annotation.Nonnull String id) throws ApiException {
-        resumeMeetingRecordingWithHttpInfo(id);
+    public MeetingRecordingResponse resumeMeetingRecording(@jakarta.annotation.Nonnull String id) throws ApiException {
+        ApiResponse<MeetingRecordingResponse> localVarResp = resumeMeetingRecordingWithHttpInfo(id);
+        return localVarResp.getData();
     }
 
     /**
      * Resume a meeting recording
      * Resume a paused recording session. The bot continues capturing audio/video from the meeting.
      * @param id Meeting Recording UUID (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;MeetingRecordingResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1083,9 +1535,10 @@ public class MeetingRecordingsApi {
         <tr><td> 422 </td><td> recording is not paused </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> resumeMeetingRecordingWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<MeetingRecordingResponse> resumeMeetingRecordingWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = resumeMeetingRecordingValidateBeforeCall(id, null);
-        return localVarApiClient.execute(localVarCall);
+        Type localVarReturnType = new TypeToken<MeetingRecordingResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
@@ -1103,10 +1556,137 @@ public class MeetingRecordingsApi {
         <tr><td> 422 </td><td> recording is not paused </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call resumeMeetingRecordingAsync(@javax.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call resumeMeetingRecordingAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<MeetingRecordingResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = resumeMeetingRecordingValidateBeforeCall(id, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
+        Type localVarReturnType = new TypeToken<MeetingRecordingResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for startRecordingSession
+     * @param startSessionRequest  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> session created </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> invalid platform </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call startRecordingSessionCall(@jakarta.annotation.Nullable StartSessionRequest startSessionRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = startSessionRequest;
+
+        // create path and map variables
+        String localVarPath = "/v1/meeting_recordings/start_session";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/vnd.api+json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/vnd.api+json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "bearer_auth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call startRecordingSessionValidateBeforeCall(@jakarta.annotation.Nullable StartSessionRequest startSessionRequest, final ApiCallback _callback) throws ApiException {
+        return startRecordingSessionCall(startSessionRequest, _callback);
+
+    }
+
+    /**
+     * Start a recording session
+     * Start a new desktop recording session. The server creates a recording record and returns a stream token the desktop client uses to send audio. No provider-specific configuration is needed from the client.
+     * @param startSessionRequest  (optional)
+     * @return StartSessionResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> session created </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> invalid platform </td><td>  -  </td></tr>
+     </table>
+     */
+    public StartSessionResponse startRecordingSession(@jakarta.annotation.Nullable StartSessionRequest startSessionRequest) throws ApiException {
+        ApiResponse<StartSessionResponse> localVarResp = startRecordingSessionWithHttpInfo(startSessionRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Start a recording session
+     * Start a new desktop recording session. The server creates a recording record and returns a stream token the desktop client uses to send audio. No provider-specific configuration is needed from the client.
+     * @param startSessionRequest  (optional)
+     * @return ApiResponse&lt;StartSessionResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> session created </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> invalid platform </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<StartSessionResponse> startRecordingSessionWithHttpInfo(@jakarta.annotation.Nullable StartSessionRequest startSessionRequest) throws ApiException {
+        okhttp3.Call localVarCall = startRecordingSessionValidateBeforeCall(startSessionRequest, null);
+        Type localVarReturnType = new TypeToken<StartSessionResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Start a recording session (asynchronously)
+     * Start a new desktop recording session. The server creates a recording record and returns a stream token the desktop client uses to send audio. No provider-specific configuration is needed from the client.
+     * @param startSessionRequest  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> session created </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> invalid platform </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call startRecordingSessionAsync(@jakarta.annotation.Nullable StartSessionRequest startSessionRequest, final ApiCallback<StartSessionResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = startRecordingSessionValidateBeforeCall(startSessionRequest, _callback);
+        Type localVarReturnType = new TypeToken<StartSessionResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
@@ -1123,7 +1703,7 @@ public class MeetingRecordingsApi {
         <tr><td> 422 </td><td> recording cannot be stopped </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call stopMeetingRecordingCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call stopMeetingRecordingCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1150,6 +1730,7 @@ public class MeetingRecordingsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
+            "application/vnd.api+json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -1168,7 +1749,7 @@ public class MeetingRecordingsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call stopMeetingRecordingValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call stopMeetingRecordingValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling stopMeetingRecording(Async)");
@@ -1182,6 +1763,7 @@ public class MeetingRecordingsApi {
      * Stop a meeting recording
      * Stop an active or paused recording. The bot finishes processing, generates a transcript, and the session status transitions to completed. This is irreversible — to record again, create a new session.
      * @param id Meeting Recording UUID (required)
+     * @return MeetingRecordingResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1191,15 +1773,16 @@ public class MeetingRecordingsApi {
         <tr><td> 422 </td><td> recording cannot be stopped </td><td>  -  </td></tr>
      </table>
      */
-    public void stopMeetingRecording(@javax.annotation.Nonnull String id) throws ApiException {
-        stopMeetingRecordingWithHttpInfo(id);
+    public MeetingRecordingResponse stopMeetingRecording(@jakarta.annotation.Nonnull String id) throws ApiException {
+        ApiResponse<MeetingRecordingResponse> localVarResp = stopMeetingRecordingWithHttpInfo(id);
+        return localVarResp.getData();
     }
 
     /**
      * Stop a meeting recording
      * Stop an active or paused recording. The bot finishes processing, generates a transcript, and the session status transitions to completed. This is irreversible — to record again, create a new session.
      * @param id Meeting Recording UUID (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;MeetingRecordingResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1209,9 +1792,10 @@ public class MeetingRecordingsApi {
         <tr><td> 422 </td><td> recording cannot be stopped </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> stopMeetingRecordingWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<MeetingRecordingResponse> stopMeetingRecordingWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = stopMeetingRecordingValidateBeforeCall(id, null);
-        return localVarApiClient.execute(localVarCall);
+        Type localVarReturnType = new TypeToken<MeetingRecordingResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
@@ -1229,10 +1813,11 @@ public class MeetingRecordingsApi {
         <tr><td> 422 </td><td> recording cannot be stopped </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call stopMeetingRecordingAsync(@javax.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call stopMeetingRecordingAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<MeetingRecordingResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = stopMeetingRecordingValidateBeforeCall(id, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
+        Type localVarReturnType = new TypeToken<MeetingRecordingResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
 }

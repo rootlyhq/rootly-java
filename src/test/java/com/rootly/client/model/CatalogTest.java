@@ -47,6 +47,14 @@ public class CatalogTest {
     }
 
     /**
+     * Test the property 'slug'
+     */
+    @Test
+    public void slugTest() {
+        // TODO: test slug
+    }
+
+    /**
      * Test the property 'description'
      */
     @Test
@@ -68,6 +76,22 @@ public class CatalogTest {
     @Test
     public void positionTest() {
         // TODO: test position
+    }
+
+    /**
+     * Test the property 'externalId'
+     */
+    @Test
+    public void externalIdTest() {
+        // TODO: test externalId
+    }
+
+    /**
+     * Test the property 'managedBy'
+     */
+    @Test
+    public void managedByTest() {
+        // TODO: test managedBy
     }
 
     /**

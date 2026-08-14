@@ -41,19 +41,19 @@ public class UpdateIncidentPermissionSetDataAttributesTest {
     }
 
     /**
-     * Test the property 'name'
-     */
-    @Test
-    public void nameTest() {
-        // TODO: test name
-    }
-
-    /**
      * Test the property 'slug'
      */
     @Test
     public void slugTest() {
         // TODO: test slug
+    }
+
+    /**
+     * Test the property 'name'
+     */
+    @Test
+    public void nameTest() {
+        // TODO: test name
     }
 
     /**

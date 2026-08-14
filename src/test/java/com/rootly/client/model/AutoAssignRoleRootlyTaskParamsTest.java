@@ -19,6 +19,11 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.rootly.client.model.AddActionItemTaskParamsPostToSlackChannelsInner;
+import com.rootly.client.model.AutoAssignRoleRootlyTaskParamsOneOf;
+import com.rootly.client.model.AutoAssignRoleRootlyTaskParamsOneOf1;
+import com.rootly.client.model.AutoAssignRoleRootlyTaskParamsOneOf2;
+import com.rootly.client.model.AutoAssignRoleRootlyTaskParamsOneOf3;
+import com.rootly.client.model.AutoAssignRoleRootlyTaskParamsOneOf4;
 import java.io.IOException;
 import java.util.Arrays;
 import org.junit.jupiter.api.Disabled;
@@ -36,22 +41,6 @@ public class AutoAssignRoleRootlyTaskParamsTest {
     @Test
     public void testAutoAssignRoleRootlyTaskParams() {
         // TODO: test AutoAssignRoleRootlyTaskParams
-    }
-
-    /**
-     * Test the property 'taskType'
-     */
-    @Test
-    public void taskTypeTest() {
-        // TODO: test taskType
-    }
-
-    /**
-     * Test the property 'incidentRoleId'
-     */
-    @Test
-    public void incidentRoleIdTest() {
-        // TODO: test incidentRoleId
     }
 
     /**

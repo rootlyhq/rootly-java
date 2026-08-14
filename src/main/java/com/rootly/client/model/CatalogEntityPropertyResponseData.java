@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * CatalogEntityPropertyResponseData
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CatalogEntityPropertyResponseData {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -112,6 +112,7 @@ public class CatalogEntityPropertyResponseData {
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
+  @Deprecated
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
   @jakarta.annotation.Nonnull
   private CatalogEntityProperty attributes;
@@ -157,6 +158,7 @@ public class CatalogEntityPropertyResponseData {
   }
 
 
+  @Deprecated
   public CatalogEntityPropertyResponseData attributes(@jakarta.annotation.Nonnull CatalogEntityProperty attributes) {
     this.attributes = attributes;
     return this;
@@ -165,12 +167,15 @@ public class CatalogEntityPropertyResponseData {
   /**
    * Get attributes
    * @return attributes
+   * @deprecated
    */
+  @Deprecated
   @jakarta.annotation.Nonnull
   public CatalogEntityProperty getAttributes() {
     return attributes;
   }
 
+  @Deprecated
   public void setAttributes(@jakarta.annotation.Nonnull CatalogEntityProperty attributes) {
     this.attributes = attributes;
   }

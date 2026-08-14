@@ -14,7 +14,11 @@
 package com.rootly.client.api;
 
 import com.rootly.client.ApiException;
+import com.rootly.client.model.ImportMeetingRecording;
 import com.rootly.client.model.MeetingRecordingList;
+import com.rootly.client.model.MeetingRecordingResponse;
+import com.rootly.client.model.StartSessionRequest;
+import com.rootly.client.model.StartSessionResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -42,7 +46,7 @@ public class MeetingRecordingsApiTest {
     public void createMeetingRecordingTest() throws ApiException {
         String incidentId = null;
         String platform = null;
-        api.createMeetingRecording(incidentId, platform);
+        MeetingRecordingResponse response = api.createMeetingRecording(incidentId, platform);
         // TODO: test validations
     }
 
@@ -56,7 +60,7 @@ public class MeetingRecordingsApiTest {
     @Test
     public void deleteMeetingRecordingTest() throws ApiException {
         String id = null;
-        api.deleteMeetingRecording(id);
+        MeetingRecordingResponse response = api.deleteMeetingRecording(id);
         // TODO: test validations
     }
 
@@ -70,7 +74,21 @@ public class MeetingRecordingsApiTest {
     @Test
     public void deleteMeetingRecordingVideoTest() throws ApiException {
         String id = null;
-        api.deleteMeetingRecordingVideo(id);
+        MeetingRecordingResponse response = api.deleteMeetingRecordingVideo(id);
+        // TODO: test validations
+    }
+
+    /**
+     * Delete a standalone meeting recording
+     *
+     * Delete a standalone meeting recording (not linked to an incident). Only the recording owner can delete it. Active recordings (pending, recording, paused) must be stopped first. Returns 404 for incident-linked recordings or recordings owned by another user.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void deleteStandaloneMeetingRecordingTest() throws ApiException {
+        String id = null;
+        api.deleteStandaloneMeetingRecording(id);
         // TODO: test validations
     }
 
@@ -84,7 +102,23 @@ public class MeetingRecordingsApiTest {
     @Test
     public void getMeetingRecordingTest() throws ApiException {
         String id = null;
-        api.getMeetingRecording(id);
+        String include = null;
+        MeetingRecordingResponse response = api.getMeetingRecording(id, include);
+        // TODO: test validations
+    }
+
+    /**
+     * Import a meeting recording
+     *
+     * Import an externally captured meeting recording and attach it to an incident. Video and transcript are fetched asynchronously. The existing POST /v1/incidents/{incident_id}/meeting_recordings endpoint invites a bot — this endpoint handles recordings that were captured outside of the bot flow.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void importMeetingRecordingTest() throws ApiException {
+        String incidentId = null;
+        ImportMeetingRecording importMeetingRecording = null;
+        MeetingRecordingResponse response = api.importMeetingRecording(incidentId, importMeetingRecording);
         // TODO: test validations
     }
 
@@ -98,7 +132,23 @@ public class MeetingRecordingsApiTest {
     @Test
     public void leaveMeetingRecordingTest() throws ApiException {
         String id = null;
-        api.leaveMeetingRecording(id);
+        MeetingRecordingResponse response = api.leaveMeetingRecording(id);
+        // TODO: test validations
+    }
+
+    /**
+     * List all meeting recordings
+     *
+     * List meeting recordings across the organization. Returns the current user&#39;s standalone recordings plus incident-backed recordings the user can access. Supports filtering by status, platform, and created_by.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void listAllMeetingRecordingsTest() throws ApiException {
+        String status = null;
+        String platform = null;
+        String createdBy = null;
+        MeetingRecordingList response = api.listAllMeetingRecordings(status, platform, createdBy);
         // TODO: test validations
     }
 
@@ -128,7 +178,7 @@ public class MeetingRecordingsApiTest {
     @Test
     public void pauseMeetingRecordingTest() throws ApiException {
         String id = null;
-        api.pauseMeetingRecording(id);
+        MeetingRecordingResponse response = api.pauseMeetingRecording(id);
         // TODO: test validations
     }
 
@@ -142,7 +192,21 @@ public class MeetingRecordingsApiTest {
     @Test
     public void resumeMeetingRecordingTest() throws ApiException {
         String id = null;
-        api.resumeMeetingRecording(id);
+        MeetingRecordingResponse response = api.resumeMeetingRecording(id);
+        // TODO: test validations
+    }
+
+    /**
+     * Start a recording session
+     *
+     * Start a new desktop recording session. The server creates a recording record and returns a stream token the desktop client uses to send audio. No provider-specific configuration is needed from the client.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void startRecordingSessionTest() throws ApiException {
+        StartSessionRequest startSessionRequest = null;
+        StartSessionResponse response = api.startRecordingSession(startSessionRequest);
         // TODO: test validations
     }
 
@@ -156,7 +220,7 @@ public class MeetingRecordingsApiTest {
     @Test
     public void stopMeetingRecordingTest() throws ApiException {
         String id = null;
-        api.stopMeetingRecording(id);
+        MeetingRecordingResponse response = api.stopMeetingRecording(id);
         // TODO: test validations
     }
 

@@ -14,10 +14,13 @@
 package com.rootly.client.api;
 
 import com.rootly.client.ApiException;
+import com.rootly.client.model.CatalogPropertyList;
+import com.rootly.client.model.CatalogPropertyResponse;
 import com.rootly.client.model.CauseList;
 import com.rootly.client.model.CauseResponse;
 import com.rootly.client.model.ErrorsList;
 import com.rootly.client.model.GetAlertFieldIdParameter;
+import com.rootly.client.model.NewCatalogProperty;
 import com.rootly.client.model.NewCause;
 import com.rootly.client.model.UpdateCause;
 import org.junit.jupiter.api.Disabled;
@@ -51,6 +54,20 @@ public class CausesApiTest {
     }
 
     /**
+     * Creates a Catalog Property
+     *
+     * Creates a new Catalog Property from provided data
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void createCauseCatalogPropertyTest() throws ApiException {
+        NewCatalogProperty newCatalogProperty = null;
+        CatalogPropertyResponse response = api.createCauseCatalogProperty(newCatalogProperty);
+        // TODO: test validations
+    }
+
+    /**
      * Delete a cause
      *
      * Delete a specific cause by id
@@ -79,6 +96,30 @@ public class CausesApiTest {
     }
 
     /**
+     * List Catalog Properties
+     *
+     * List Cause Catalog Properties
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void listCauseCatalogPropertiesTest() throws ApiException {
+        String include = null;
+        String sort = null;
+        Integer pageNumber = null;
+        Integer pageSize = null;
+        String filterSlug = null;
+        String filterName = null;
+        String filterKind = null;
+        String filterCreatedAtGt = null;
+        String filterCreatedAtGte = null;
+        String filterCreatedAtLt = null;
+        String filterCreatedAtLte = null;
+        CatalogPropertyList response = api.listCauseCatalogProperties(include, sort, pageNumber, pageSize, filterSlug, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
+        // TODO: test validations
+    }
+
+    /**
      * List causes
      *
      * List causes
@@ -97,7 +138,15 @@ public class CausesApiTest {
         String filterCreatedAtGte = null;
         String filterCreatedAtLt = null;
         String filterCreatedAtLte = null;
-        CauseList response = api.listCauses(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
+        String filterSlugEq = null;
+        String filterSlugNotEq = null;
+        String filterSlugIn = null;
+        String filterSlugNotIn = null;
+        String filterNameEq = null;
+        String filterNameNotEq = null;
+        String filterNameIn = null;
+        String filterNameNotIn = null;
+        CauseList response = api.listCauses(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn);
         // TODO: test validations
     }
 

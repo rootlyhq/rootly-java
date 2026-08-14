@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**taskType** | [**TaskTypeEnum**](#TaskTypeEnum) |  |  [optional] |
-|**channel** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
+|**channel** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
 |**privacy** | [**PrivacyEnum**](#PrivacyEnum) |  |  |
 
 
@@ -17,7 +17,7 @@
 
 | Name | Value |
 |---- | -----|
-| RENAME_SLACK_CHANNEL | &quot;rename_slack_channel&quot; |
+| CHANGE_SLACK_CHANNEL_PRIVACY | &quot;change_slack_channel_privacy&quot; |
 
 
 

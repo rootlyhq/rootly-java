@@ -113,11 +113,35 @@ public class MeetingRecordingTest {
     }
 
     /**
-     * Test the property 'hasVideo'
+     * Test the property 'title'
      */
     @Test
-    public void hasVideoTest() {
-        // TODO: test hasVideo
+    public void titleTest() {
+        // TODO: test title
+    }
+
+    /**
+     * Test the property 'meetingUrl'
+     */
+    @Test
+    public void meetingUrlTest() {
+        // TODO: test meetingUrl
+    }
+
+    /**
+     * Test the property 'videoUrl'
+     */
+    @Test
+    public void videoUrlTest() {
+        // TODO: test videoUrl
+    }
+
+    /**
+     * Test the property 'createdBy'
+     */
+    @Test
+    public void createdByTest() {
+        // TODO: test createdBy
     }
 
     /**

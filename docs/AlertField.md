@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**slug** | **String** | The slug of the alert field |  [optional] |
+|**slug** | **String** | The slug of the alert field |  [optional] [readonly] |
 |**name** | **String** | The name of the alert field |  |
 |**kind** | **String** | The kind of alert field |  |
 |**createdAt** | **String** | Date of creation |  |

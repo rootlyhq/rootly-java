@@ -48,22 +48,22 @@ import com.rootly.client.JSON;
 /**
  * EscalateAlertDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class EscalateAlertDataAttributes {
   public static final String SERIALIZED_NAME_ESCALATION_POLICY_ID = "escalation_policy_id";
   @SerializedName(SERIALIZED_NAME_ESCALATION_POLICY_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String escalationPolicyId;
 
   public static final String SERIALIZED_NAME_ESCALATION_POLICY_LEVEL = "escalation_policy_level";
   @SerializedName(SERIALIZED_NAME_ESCALATION_POLICY_LEVEL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer escalationPolicyLevel;
 
   public EscalateAlertDataAttributes() {
   }
 
-  public EscalateAlertDataAttributes escalationPolicyId(@javax.annotation.Nullable String escalationPolicyId) {
+  public EscalateAlertDataAttributes escalationPolicyId(@jakarta.annotation.Nullable String escalationPolicyId) {
     this.escalationPolicyId = escalationPolicyId;
     return this;
   }
@@ -72,17 +72,17 @@ public class EscalateAlertDataAttributes {
    * The ID of the escalation policy to escalate to. If omitted, uses the alert&#39;s current escalation policy from metadata. Required for resolved alerts whose metadata may have been cleared.
    * @return escalationPolicyId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getEscalationPolicyId() {
     return escalationPolicyId;
   }
 
-  public void setEscalationPolicyId(@javax.annotation.Nullable String escalationPolicyId) {
+  public void setEscalationPolicyId(@jakarta.annotation.Nullable String escalationPolicyId) {
     this.escalationPolicyId = escalationPolicyId;
   }
 
 
-  public EscalateAlertDataAttributes escalationPolicyLevel(@javax.annotation.Nullable Integer escalationPolicyLevel) {
+  public EscalateAlertDataAttributes escalationPolicyLevel(@jakarta.annotation.Nullable Integer escalationPolicyLevel) {
     this.escalationPolicyLevel = escalationPolicyLevel;
     return this;
   }
@@ -92,12 +92,12 @@ public class EscalateAlertDataAttributes {
    * minimum: 1
    * @return escalationPolicyLevel
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getEscalationPolicyLevel() {
     return escalationPolicyLevel;
   }
 
-  public void setEscalationPolicyLevel(@javax.annotation.Nullable Integer escalationPolicyLevel) {
+  public void setEscalationPolicyLevel(@jakarta.annotation.Nullable Integer escalationPolicyLevel) {
     this.escalationPolicyLevel = escalationPolicyLevel;
   }
 

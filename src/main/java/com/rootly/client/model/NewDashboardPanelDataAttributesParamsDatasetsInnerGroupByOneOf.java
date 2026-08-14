@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * NewDashboardPanelDataAttributesParamsDatasetsInnerGroupByOneOf
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewDashboardPanelDataAttributesParamsDatasetsInnerGroupByOneOf {
   /**
    * Gets or Sets key
@@ -57,7 +57,9 @@ public class NewDashboardPanelDataAttributesParamsDatasetsInnerGroupByOneOf {
   public enum KeyEnum {
     CUSTOM_FIELD("custom_field"),
     
-    INCIDENT_ROLE("incident_role");
+    INCIDENT_ROLE("incident_role"),
+    
+    ALERT_FIELD("alert_field");
 
     private String value;
 

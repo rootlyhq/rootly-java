@@ -14,12 +14,23 @@
 package com.rootly.client.api;
 
 import com.rootly.client.ApiException;
+import com.rootly.client.model.BulkDeleteServices422Response;
+import com.rootly.client.model.BulkDestroyServices;
+import com.rootly.client.model.BulkDestroyServicesResponse;
+import com.rootly.client.model.BulkUpsertServices;
+import com.rootly.client.model.BulkUpsertServices422Response;
+import com.rootly.client.model.BulkUpsertServicesResponse;
+import com.rootly.client.model.CatalogPropertyList;
+import com.rootly.client.model.CatalogPropertyResponse;
 import com.rootly.client.model.ErrorsList;
 import com.rootly.client.model.GetAlertFieldIdParameter;
+import com.rootly.client.model.IncidentsChartResponse;
+import com.rootly.client.model.NewCatalogProperty;
 import com.rootly.client.model.NewService;
 import com.rootly.client.model.ServiceList;
 import com.rootly.client.model.ServiceResponse;
 import com.rootly.client.model.UpdateService;
+import com.rootly.client.model.UptimeChartResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -37,6 +48,34 @@ public class ServicesApiTest {
     private final ServicesApi api = new ServicesApi();
 
     /**
+     * Bulk delete Services
+     *
+     * Delete services by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void bulkDeleteServicesTest() throws ApiException {
+        BulkDestroyServices bulkDestroyServices = null;
+        BulkDestroyServicesResponse response = api.bulkDeleteServices(bulkDestroyServices);
+        // TODO: test validations
+    }
+
+    /**
+     * Bulk upsert Services
+     *
+     * Create or update multiple services by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void bulkUpsertServicesTest() throws ApiException {
+        BulkUpsertServices bulkUpsertServices = null;
+        BulkUpsertServicesResponse response = api.bulkUpsertServices(bulkUpsertServices);
+        // TODO: test validations
+    }
+
+    /**
      * Creates a service
      *
      * Creates a new service from provided data
@@ -47,6 +86,20 @@ public class ServicesApiTest {
     public void createServiceTest() throws ApiException {
         NewService newService = null;
         ServiceResponse response = api.createService(newService);
+        // TODO: test validations
+    }
+
+    /**
+     * Creates a Catalog Property
+     *
+     * Creates a new Catalog Property from provided data
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void createServiceCatalogPropertyTest() throws ApiException {
+        NewCatalogProperty newCatalogProperty = null;
+        CatalogPropertyResponse response = api.createServiceCatalogProperty(newCatalogProperty);
         // TODO: test validations
     }
 
@@ -89,7 +142,7 @@ public class ServicesApiTest {
     public void getServiceIncidentsChartTest() throws ApiException {
         GetAlertFieldIdParameter id = null;
         String period = null;
-        Object response = api.getServiceIncidentsChart(id, period);
+        IncidentsChartResponse response = api.getServiceIncidentsChart(id, period);
         // TODO: test validations
     }
 
@@ -104,7 +157,31 @@ public class ServicesApiTest {
     public void getServiceUptimeChartTest() throws ApiException {
         GetAlertFieldIdParameter id = null;
         String period = null;
-        Object response = api.getServiceUptimeChart(id, period);
+        UptimeChartResponse response = api.getServiceUptimeChart(id, period);
+        // TODO: test validations
+    }
+
+    /**
+     * List Catalog Properties
+     *
+     * List Service Catalog Properties
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void listServiceCatalogPropertiesTest() throws ApiException {
+        String include = null;
+        String sort = null;
+        Integer pageNumber = null;
+        Integer pageSize = null;
+        String filterSlug = null;
+        String filterName = null;
+        String filterKind = null;
+        String filterCreatedAtGt = null;
+        String filterCreatedAtGte = null;
+        String filterCreatedAtLt = null;
+        String filterCreatedAtLte = null;
+        CatalogPropertyList response = api.listServiceCatalogProperties(include, sort, pageNumber, pageSize, filterSlug, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
         // TODO: test validations
     }
 
@@ -133,8 +210,24 @@ public class ServicesApiTest {
         String filterCreatedAtGte = null;
         String filterCreatedAtLt = null;
         String filterCreatedAtLte = null;
+        String filterNameEq = null;
+        String filterNameNotEq = null;
+        String filterNameIn = null;
+        String filterNameNotIn = null;
+        String filterSlugEq = null;
+        String filterSlugNotEq = null;
+        String filterSlugIn = null;
+        String filterSlugNotIn = null;
+        String filterAlertBroadcastEnabledEq = null;
+        String filterAlertBroadcastEnabledNotEq = null;
+        String filterAlertBroadcastEnabledIn = null;
+        String filterAlertBroadcastEnabledNotIn = null;
+        String filterIncidentBroadcastEnabledEq = null;
+        String filterIncidentBroadcastEnabledNotEq = null;
+        String filterIncidentBroadcastEnabledIn = null;
+        String filterIncidentBroadcastEnabledNotIn = null;
         String sort = null;
-        ServiceList response = api.listServices(include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterAlertBroadcastEnabled, filterIncidentBroadcastEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
+        ServiceList response = api.listServices(include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterAlertBroadcastEnabled, filterIncidentBroadcastEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterAlertBroadcastEnabledEq, filterAlertBroadcastEnabledNotEq, filterAlertBroadcastEnabledIn, filterAlertBroadcastEnabledNotIn, filterIncidentBroadcastEnabledEq, filterIncidentBroadcastEnabledNotEq, filterIncidentBroadcastEnabledIn, filterIncidentBroadcastEnabledNotIn, sort);
         // TODO: test validations
     }
 

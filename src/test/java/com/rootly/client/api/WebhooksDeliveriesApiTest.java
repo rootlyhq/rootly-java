@@ -15,6 +15,7 @@ package com.rootly.client.api;
 
 import com.rootly.client.ApiException;
 import com.rootly.client.model.ErrorsList;
+import java.time.OffsetDateTime;
 import com.rootly.client.model.WebhooksDeliveryList;
 import com.rootly.client.model.WebhooksDeliveryResponse;
 import org.junit.jupiter.api.Disabled;
@@ -74,7 +75,16 @@ public class WebhooksDeliveriesApiTest {
         String include = null;
         Integer pageNumber = null;
         Integer pageSize = null;
-        WebhooksDeliveryList response = api.listWebhooksDeliveries(endpointId, include, pageNumber, pageSize);
+        String filterStatus = null;
+        OffsetDateTime filterCreatedAtGt = null;
+        OffsetDateTime filterCreatedAtGte = null;
+        OffsetDateTime filterCreatedAtLt = null;
+        OffsetDateTime filterCreatedAtLte = null;
+        OffsetDateTime filterDeliveredAtGt = null;
+        OffsetDateTime filterDeliveredAtGte = null;
+        OffsetDateTime filterDeliveredAtLt = null;
+        OffsetDateTime filterDeliveredAtLte = null;
+        WebhooksDeliveryList response = api.listWebhooksDeliveries(endpointId, include, pageNumber, pageSize, filterStatus, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterDeliveredAtGt, filterDeliveredAtGte, filterDeliveredAtLt, filterDeliveredAtLte);
         // TODO: test validations
     }
 

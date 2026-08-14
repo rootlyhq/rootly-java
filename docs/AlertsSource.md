@@ -8,6 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**name** | **String** | The name of the alert source |  |
+|**enabled** | **Boolean** | Whether the alert source is enabled. Disabled sources do not create alerts from incoming events. |  [optional] |
 |**sourceType** | [**SourceTypeEnum**](#SourceTypeEnum) | The alert source type |  [optional] |
 |**alertUrgencyId** | **String** | ID for the default alert urgency assigned to this alert source |  [optional] |
 |**deduplicateAlertsByKey** | **Boolean** | Toggle alert deduplication using deduplication key. If enabled, deduplication_key_kind and deduplication_key_path are required. |  [optional] |
@@ -17,7 +18,7 @@
 |**ownerGroupIds** | **List&lt;String&gt;** | List of team IDs that will own the alert source |  [optional] |
 |**alertTemplateAttributes** | [**NewAlertsSourceDataAttributesAlertTemplateAttributes**](NewAlertsSourceDataAttributesAlertTemplateAttributes.md) |  |  [optional] |
 |**alertSourceUrgencyRulesAttributes** | [**List&lt;NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner&gt;**](NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner.md) | List of rules that define the conditions under which the alert urgency will be set automatically based on the alert payload |  [optional] |
-|**sourceableAttributes** | [**NewAlertsSourceDataAttributesSourceableAttributes**](NewAlertsSourceDataAttributesSourceableAttributes.md) |  |  [optional] |
+|**sourceableAttributes** | [**AlertsSourceSourceableAttributes**](AlertsSourceSourceableAttributes.md) |  |  [optional] |
 |**resolutionRuleAttributes** | [**NewAlertsSourceDataAttributesResolutionRuleAttributes**](NewAlertsSourceDataAttributesResolutionRuleAttributes.md) |  |  [optional] |
 |**alertSourceFieldsAttributes** | [**List&lt;NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner&gt;**](NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner.md) | List of alert fields to be added to the alert source. Note: This attribute requires the alert field feature to be enabled on your account. Contact Rootly customer support if you need assistance with this feature. |  [optional] |
 |**status** | [**StatusEnum**](#StatusEnum) | The status of the alert source |  |
@@ -36,13 +37,16 @@
 | EMAIL | &quot;email&quot; |
 | APP_DYNAMICS | &quot;app_dynamics&quot; |
 | CATCHPOINT | &quot;catchpoint&quot; |
+| CLOUDFLARE | &quot;cloudflare&quot; |
 | DATADOG | &quot;datadog&quot; |
+| DYNATRACE | &quot;dynatrace&quot; |
 | ALERTMANAGER | &quot;alertmanager&quot; |
 | GOOGLE_CLOUD | &quot;google_cloud&quot; |
 | GRAFANA | &quot;grafana&quot; |
 | SENTRY | &quot;sentry&quot; |
 | GENERIC_WEBHOOK | &quot;generic_webhook&quot; |
 | CLOUD_WATCH | &quot;cloud_watch&quot; |
+| AWS_SNS | &quot;aws_sns&quot; |
 | CHECKLY | &quot;checkly&quot; |
 | AZURE | &quot;azure&quot; |
 | NEW_RELIC | &quot;new_relic&quot; |

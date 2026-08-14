@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonWriter;
 import com.rootly.client.model.EnvironmentResponse;
 import com.rootly.client.model.FunctionalityResponse;
 import com.rootly.client.model.IncidentTypeResponse;
+import com.rootly.client.model.IncidentZoomMeetingGlobalDialInNumbersInner;
 import com.rootly.client.model.ServiceResponse;
 import com.rootly.client.model.SeverityResponse;
 import com.rootly.client.model.TeamResponse;
@@ -372,6 +373,142 @@ public class IncidentTest {
     @Test
     public void googleMeetingUrlTest() {
         // TODO: test googleMeetingUrl
+    }
+
+    /**
+     * Test the property 'microsoftTeamsMeetingId'
+     */
+    @Test
+    public void microsoftTeamsMeetingIdTest() {
+        // TODO: test microsoftTeamsMeetingId
+    }
+
+    /**
+     * Test the property 'microsoftTeamsMeetingUrl'
+     */
+    @Test
+    public void microsoftTeamsMeetingUrlTest() {
+        // TODO: test microsoftTeamsMeetingUrl
+    }
+
+    /**
+     * Test the property 'microsoftTeamsChannelId'
+     */
+    @Test
+    public void microsoftTeamsChannelIdTest() {
+        // TODO: test microsoftTeamsChannelId
+    }
+
+    /**
+     * Test the property 'microsoftTeamsChannelName'
+     */
+    @Test
+    public void microsoftTeamsChannelNameTest() {
+        // TODO: test microsoftTeamsChannelName
+    }
+
+    /**
+     * Test the property 'microsoftTeamsChannelUrl'
+     */
+    @Test
+    public void microsoftTeamsChannelUrlTest() {
+        // TODO: test microsoftTeamsChannelUrl
+    }
+
+    /**
+     * Test the property 'microsoftTeamsChannelShortUrl'
+     */
+    @Test
+    public void microsoftTeamsChannelShortUrlTest() {
+        // TODO: test microsoftTeamsChannelShortUrl
+    }
+
+    /**
+     * Test the property 'microsoftTeamsChatId'
+     */
+    @Test
+    public void microsoftTeamsChatIdTest() {
+        // TODO: test microsoftTeamsChatId
+    }
+
+    /**
+     * Test the property 'microsoftTeamsChatUrl'
+     */
+    @Test
+    public void microsoftTeamsChatUrlTest() {
+        // TODO: test microsoftTeamsChatUrl
+    }
+
+    /**
+     * Test the property 'microsoftTeamsTeamId'
+     */
+    @Test
+    public void microsoftTeamsTeamIdTest() {
+        // TODO: test microsoftTeamsTeamId
+    }
+
+    /**
+     * Test the property 'googleChatSpaceId'
+     */
+    @Test
+    public void googleChatSpaceIdTest() {
+        // TODO: test googleChatSpaceId
+    }
+
+    /**
+     * Test the property 'googleChatSpaceName'
+     */
+    @Test
+    public void googleChatSpaceNameTest() {
+        // TODO: test googleChatSpaceName
+    }
+
+    /**
+     * Test the property 'googleChatSpaceUrl'
+     */
+    @Test
+    public void googleChatSpaceUrlTest() {
+        // TODO: test googleChatSpaceUrl
+    }
+
+    /**
+     * Test the property 'googleChatSpaceShortUrl'
+     */
+    @Test
+    public void googleChatSpaceShortUrlTest() {
+        // TODO: test googleChatSpaceShortUrl
+    }
+
+    /**
+     * Test the property 'googleChatSpaceArchived'
+     */
+    @Test
+    public void googleChatSpaceArchivedTest() {
+        // TODO: test googleChatSpaceArchived
+    }
+
+    /**
+     * Test the property 'googleChatSpaceDomainId'
+     */
+    @Test
+    public void googleChatSpaceDomainIdTest() {
+        // TODO: test googleChatSpaceDomainId
+    }
+
+    /**
+     * Test the property 'webexMeetingId'
+     */
+    @Test
+    public void webexMeetingIdTest() {
+        // TODO: test webexMeetingId
+    }
+
+    /**
+     * Test the property 'webexMeetingUrl'
+     */
+    @Test
+    public void webexMeetingUrlTest() {
+        // TODO: test webexMeetingUrl
     }
 
     /**

@@ -20,435 +20,392 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.rootly.client.model.AddActionItemTaskParamsPostToSlackChannelsInner;
+import com.rootly.client.model.AutoAssignRoleRootlyTaskParamsOneOf;
+import com.rootly.client.model.AutoAssignRoleRootlyTaskParamsOneOf1;
+import com.rootly.client.model.AutoAssignRoleRootlyTaskParamsOneOf2;
+import com.rootly.client.model.AutoAssignRoleRootlyTaskParamsOneOf3;
+import com.rootly.client.model.AutoAssignRoleRootlyTaskParamsOneOf4;
 import java.io.IOException;
 import java.util.Arrays;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.TypeAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
 
-import java.util.HashMap;
+
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonParseException;
 
 import com.rootly.client.JSON;
 
-/**
- * AutoAssignRoleRootlyTaskParams
- */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
-public class AutoAssignRoleRootlyTaskParams {
-  /**
-   * Gets or Sets taskType
-   */
-  @JsonAdapter(TaskTypeEnum.Adapter.class)
-  public enum TaskTypeEnum {
-    AUTO_ASSIGN_ROLE_ROOTLY("auto_assign_role_rootly");
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+public class AutoAssignRoleRootlyTaskParams extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(AutoAssignRoleRootlyTaskParams.class.getName());
 
-    private String value;
+    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+        @SuppressWarnings("unchecked")
+        @Override
+        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+            if (!AutoAssignRoleRootlyTaskParams.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'AutoAssignRoleRootlyTaskParams' and its subtypes
+            }
+            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<AutoAssignRoleRootlyTaskParamsOneOf> adapterAutoAssignRoleRootlyTaskParamsOneOf = gson.getDelegateAdapter(this, TypeToken.get(AutoAssignRoleRootlyTaskParamsOneOf.class));
+            final TypeAdapter<AutoAssignRoleRootlyTaskParamsOneOf1> adapterAutoAssignRoleRootlyTaskParamsOneOf1 = gson.getDelegateAdapter(this, TypeToken.get(AutoAssignRoleRootlyTaskParamsOneOf1.class));
+            final TypeAdapter<AutoAssignRoleRootlyTaskParamsOneOf2> adapterAutoAssignRoleRootlyTaskParamsOneOf2 = gson.getDelegateAdapter(this, TypeToken.get(AutoAssignRoleRootlyTaskParamsOneOf2.class));
+            final TypeAdapter<AutoAssignRoleRootlyTaskParamsOneOf3> adapterAutoAssignRoleRootlyTaskParamsOneOf3 = gson.getDelegateAdapter(this, TypeToken.get(AutoAssignRoleRootlyTaskParamsOneOf3.class));
+            final TypeAdapter<AutoAssignRoleRootlyTaskParamsOneOf4> adapterAutoAssignRoleRootlyTaskParamsOneOf4 = gson.getDelegateAdapter(this, TypeToken.get(AutoAssignRoleRootlyTaskParamsOneOf4.class));
 
-    TaskTypeEnum(String value) {
-      this.value = value;
+            return (TypeAdapter<T>) new TypeAdapter<AutoAssignRoleRootlyTaskParams>() {
+                @Override
+                public void write(JsonWriter out, AutoAssignRoleRootlyTaskParams value) throws IOException {
+                    if (value == null || value.getActualInstance() == null) {
+                        elementAdapter.write(out, null);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `AutoAssignRoleRootlyTaskParamsOneOf`
+                    if (value.getActualInstance() instanceof AutoAssignRoleRootlyTaskParamsOneOf) {
+                        JsonElement element = adapterAutoAssignRoleRootlyTaskParamsOneOf.toJsonTree((AutoAssignRoleRootlyTaskParamsOneOf)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `AutoAssignRoleRootlyTaskParamsOneOf1`
+                    if (value.getActualInstance() instanceof AutoAssignRoleRootlyTaskParamsOneOf1) {
+                        JsonElement element = adapterAutoAssignRoleRootlyTaskParamsOneOf1.toJsonTree((AutoAssignRoleRootlyTaskParamsOneOf1)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `AutoAssignRoleRootlyTaskParamsOneOf2`
+                    if (value.getActualInstance() instanceof AutoAssignRoleRootlyTaskParamsOneOf2) {
+                        JsonElement element = adapterAutoAssignRoleRootlyTaskParamsOneOf2.toJsonTree((AutoAssignRoleRootlyTaskParamsOneOf2)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `AutoAssignRoleRootlyTaskParamsOneOf3`
+                    if (value.getActualInstance() instanceof AutoAssignRoleRootlyTaskParamsOneOf3) {
+                        JsonElement element = adapterAutoAssignRoleRootlyTaskParamsOneOf3.toJsonTree((AutoAssignRoleRootlyTaskParamsOneOf3)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `AutoAssignRoleRootlyTaskParamsOneOf4`
+                    if (value.getActualInstance() instanceof AutoAssignRoleRootlyTaskParamsOneOf4) {
+                        JsonElement element = adapterAutoAssignRoleRootlyTaskParamsOneOf4.toJsonTree((AutoAssignRoleRootlyTaskParamsOneOf4)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AutoAssignRoleRootlyTaskParamsOneOf, AutoAssignRoleRootlyTaskParamsOneOf1, AutoAssignRoleRootlyTaskParamsOneOf2, AutoAssignRoleRootlyTaskParamsOneOf3, AutoAssignRoleRootlyTaskParamsOneOf4");
+                }
+
+                @Override
+                public AutoAssignRoleRootlyTaskParams read(JsonReader in) throws IOException {
+                    Object deserialized = null;
+                    JsonElement jsonElement = elementAdapter.read(in);
+
+                    int match = 0;
+                    ArrayList<String> errorMessages = new ArrayList<>();
+                    TypeAdapter actualAdapter = elementAdapter;
+
+                    // deserialize AutoAssignRoleRootlyTaskParamsOneOf
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        AutoAssignRoleRootlyTaskParamsOneOf.validateJsonElement(jsonElement);
+                        actualAdapter = adapterAutoAssignRoleRootlyTaskParamsOneOf;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'AutoAssignRoleRootlyTaskParamsOneOf'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for AutoAssignRoleRootlyTaskParamsOneOf failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'AutoAssignRoleRootlyTaskParamsOneOf'", e);
+                    }
+                    // deserialize AutoAssignRoleRootlyTaskParamsOneOf1
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        AutoAssignRoleRootlyTaskParamsOneOf1.validateJsonElement(jsonElement);
+                        actualAdapter = adapterAutoAssignRoleRootlyTaskParamsOneOf1;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'AutoAssignRoleRootlyTaskParamsOneOf1'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for AutoAssignRoleRootlyTaskParamsOneOf1 failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'AutoAssignRoleRootlyTaskParamsOneOf1'", e);
+                    }
+                    // deserialize AutoAssignRoleRootlyTaskParamsOneOf2
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        AutoAssignRoleRootlyTaskParamsOneOf2.validateJsonElement(jsonElement);
+                        actualAdapter = adapterAutoAssignRoleRootlyTaskParamsOneOf2;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'AutoAssignRoleRootlyTaskParamsOneOf2'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for AutoAssignRoleRootlyTaskParamsOneOf2 failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'AutoAssignRoleRootlyTaskParamsOneOf2'", e);
+                    }
+                    // deserialize AutoAssignRoleRootlyTaskParamsOneOf3
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        AutoAssignRoleRootlyTaskParamsOneOf3.validateJsonElement(jsonElement);
+                        actualAdapter = adapterAutoAssignRoleRootlyTaskParamsOneOf3;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'AutoAssignRoleRootlyTaskParamsOneOf3'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for AutoAssignRoleRootlyTaskParamsOneOf3 failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'AutoAssignRoleRootlyTaskParamsOneOf3'", e);
+                    }
+                    // deserialize AutoAssignRoleRootlyTaskParamsOneOf4
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        AutoAssignRoleRootlyTaskParamsOneOf4.validateJsonElement(jsonElement);
+                        actualAdapter = adapterAutoAssignRoleRootlyTaskParamsOneOf4;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'AutoAssignRoleRootlyTaskParamsOneOf4'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for AutoAssignRoleRootlyTaskParamsOneOf4 failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'AutoAssignRoleRootlyTaskParamsOneOf4'", e);
+                    }
+
+                    if (match == 1) {
+                        AutoAssignRoleRootlyTaskParams ret = new AutoAssignRoleRootlyTaskParams();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
+                        return ret;
+                    }
+
+                    throw new IOException(String.format("Failed deserialization for AutoAssignRoleRootlyTaskParams: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
+                }
+            }.nullSafe();
+        }
     }
 
-    public String getValue() {
-      return value;
+    // store a list of schema names defined in oneOf
+    public static final Map<String, Class<?>> schemas = new HashMap<String, Class<?>>();
+
+    public AutoAssignRoleRootlyTaskParams() {
+        super("oneOf", Boolean.FALSE);
+    }
+
+    public AutoAssignRoleRootlyTaskParams(Object o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    static {
+        schemas.put("AutoAssignRoleRootlyTaskParamsOneOf", AutoAssignRoleRootlyTaskParamsOneOf.class);
+        schemas.put("AutoAssignRoleRootlyTaskParamsOneOf1", AutoAssignRoleRootlyTaskParamsOneOf1.class);
+        schemas.put("AutoAssignRoleRootlyTaskParamsOneOf2", AutoAssignRoleRootlyTaskParamsOneOf2.class);
+        schemas.put("AutoAssignRoleRootlyTaskParamsOneOf3", AutoAssignRoleRootlyTaskParamsOneOf3.class);
+        schemas.put("AutoAssignRoleRootlyTaskParamsOneOf4", AutoAssignRoleRootlyTaskParamsOneOf4.class);
     }
 
     @Override
-    public String toString() {
-      return String.valueOf(value);
+    public Map<String, Class<?>> getSchemas() {
+        return AutoAssignRoleRootlyTaskParams.schemas;
     }
 
-    public static TaskTypeEnum fromValue(String value) {
-      for (TaskTypeEnum b : TaskTypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
+    /**
+     * Set the instance that matches the oneOf child schema, check
+     * the instance parameter is valid against the oneOf child schemas:
+     * AutoAssignRoleRootlyTaskParamsOneOf, AutoAssignRoleRootlyTaskParamsOneOf1, AutoAssignRoleRootlyTaskParamsOneOf2, AutoAssignRoleRootlyTaskParamsOneOf3, AutoAssignRoleRootlyTaskParamsOneOf4
+     *
+     * It could be an instance of the 'oneOf' schemas.
+     */
+    @Override
+    public void setActualInstance(Object instance) {
+        if (instance instanceof AutoAssignRoleRootlyTaskParamsOneOf) {
+            super.setActualInstance(instance);
+            return;
         }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
 
-    public static class Adapter extends TypeAdapter<TaskTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final TaskTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public TaskTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return TaskTypeEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      TaskTypeEnum.fromValue(value);
-    }
-  }
-
-  public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
-  @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @jakarta.annotation.Nullable
-  private TaskTypeEnum taskType;
-
-  public static final String SERIALIZED_NAME_INCIDENT_ROLE_ID = "incident_role_id";
-  @SerializedName(SERIALIZED_NAME_INCIDENT_ROLE_ID)
-  @jakarta.annotation.Nonnull
-  private String incidentRoleId;
-
-  public static final String SERIALIZED_NAME_ESCALATION_POLICY_TARGET = "escalation_policy_target";
-  @SerializedName(SERIALIZED_NAME_ESCALATION_POLICY_TARGET)
-  @jakarta.annotation.Nullable
-  private AddActionItemTaskParamsPostToSlackChannelsInner escalationPolicyTarget;
-
-  public static final String SERIALIZED_NAME_SERVICE_TARGET = "service_target";
-  @SerializedName(SERIALIZED_NAME_SERVICE_TARGET)
-  @jakarta.annotation.Nullable
-  private AddActionItemTaskParamsPostToSlackChannelsInner serviceTarget;
-
-  public static final String SERIALIZED_NAME_USER_TARGET = "user_target";
-  @SerializedName(SERIALIZED_NAME_USER_TARGET)
-  @jakarta.annotation.Nullable
-  private AddActionItemTaskParamsPostToSlackChannelsInner userTarget;
-
-  public static final String SERIALIZED_NAME_GROUP_TARGET = "group_target";
-  @SerializedName(SERIALIZED_NAME_GROUP_TARGET)
-  @jakarta.annotation.Nullable
-  private AddActionItemTaskParamsPostToSlackChannelsInner groupTarget;
-
-  public static final String SERIALIZED_NAME_SCHEDULE_TARGET = "schedule_target";
-  @SerializedName(SERIALIZED_NAME_SCHEDULE_TARGET)
-  @jakarta.annotation.Nullable
-  private AddActionItemTaskParamsPostToSlackChannelsInner scheduleTarget;
-
-  public AutoAssignRoleRootlyTaskParams() {
-  }
-
-  public AutoAssignRoleRootlyTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
-    this.taskType = taskType;
-    return this;
-  }
-
-  /**
-   * Get taskType
-   * @return taskType
-   */
-  @jakarta.annotation.Nullable
-  public TaskTypeEnum getTaskType() {
-    return taskType;
-  }
-
-  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
-    this.taskType = taskType;
-  }
-
-
-  public AutoAssignRoleRootlyTaskParams incidentRoleId(@jakarta.annotation.Nonnull String incidentRoleId) {
-    this.incidentRoleId = incidentRoleId;
-    return this;
-  }
-
-  /**
-   * The role id
-   * @return incidentRoleId
-   */
-  @jakarta.annotation.Nonnull
-  public String getIncidentRoleId() {
-    return incidentRoleId;
-  }
-
-  public void setIncidentRoleId(@jakarta.annotation.Nonnull String incidentRoleId) {
-    this.incidentRoleId = incidentRoleId;
-  }
-
-
-  public AutoAssignRoleRootlyTaskParams escalationPolicyTarget(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner escalationPolicyTarget) {
-    this.escalationPolicyTarget = escalationPolicyTarget;
-    return this;
-  }
-
-  /**
-   * Get escalationPolicyTarget
-   * @return escalationPolicyTarget
-   */
-  @jakarta.annotation.Nullable
-  public AddActionItemTaskParamsPostToSlackChannelsInner getEscalationPolicyTarget() {
-    return escalationPolicyTarget;
-  }
-
-  public void setEscalationPolicyTarget(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner escalationPolicyTarget) {
-    this.escalationPolicyTarget = escalationPolicyTarget;
-  }
-
-
-  public AutoAssignRoleRootlyTaskParams serviceTarget(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner serviceTarget) {
-    this.serviceTarget = serviceTarget;
-    return this;
-  }
-
-  /**
-   * Get serviceTarget
-   * @return serviceTarget
-   */
-  @jakarta.annotation.Nullable
-  public AddActionItemTaskParamsPostToSlackChannelsInner getServiceTarget() {
-    return serviceTarget;
-  }
-
-  public void setServiceTarget(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner serviceTarget) {
-    this.serviceTarget = serviceTarget;
-  }
-
-
-  public AutoAssignRoleRootlyTaskParams userTarget(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner userTarget) {
-    this.userTarget = userTarget;
-    return this;
-  }
-
-  /**
-   * Get userTarget
-   * @return userTarget
-   */
-  @jakarta.annotation.Nullable
-  public AddActionItemTaskParamsPostToSlackChannelsInner getUserTarget() {
-    return userTarget;
-  }
-
-  public void setUserTarget(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner userTarget) {
-    this.userTarget = userTarget;
-  }
-
-
-  public AutoAssignRoleRootlyTaskParams groupTarget(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner groupTarget) {
-    this.groupTarget = groupTarget;
-    return this;
-  }
-
-  /**
-   * Get groupTarget
-   * @return groupTarget
-   */
-  @jakarta.annotation.Nullable
-  public AddActionItemTaskParamsPostToSlackChannelsInner getGroupTarget() {
-    return groupTarget;
-  }
-
-  public void setGroupTarget(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner groupTarget) {
-    this.groupTarget = groupTarget;
-  }
-
-
-  public AutoAssignRoleRootlyTaskParams scheduleTarget(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner scheduleTarget) {
-    this.scheduleTarget = scheduleTarget;
-    return this;
-  }
-
-  /**
-   * Get scheduleTarget
-   * @return scheduleTarget
-   */
-  @jakarta.annotation.Nullable
-  public AddActionItemTaskParamsPostToSlackChannelsInner getScheduleTarget() {
-    return scheduleTarget;
-  }
-
-  public void setScheduleTarget(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner scheduleTarget) {
-    this.scheduleTarget = scheduleTarget;
-  }
-
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    AutoAssignRoleRootlyTaskParams autoAssignRoleRootlyTaskParams = (AutoAssignRoleRootlyTaskParams) o;
-    return Objects.equals(this.taskType, autoAssignRoleRootlyTaskParams.taskType) &&
-        Objects.equals(this.incidentRoleId, autoAssignRoleRootlyTaskParams.incidentRoleId) &&
-        Objects.equals(this.escalationPolicyTarget, autoAssignRoleRootlyTaskParams.escalationPolicyTarget) &&
-        Objects.equals(this.serviceTarget, autoAssignRoleRootlyTaskParams.serviceTarget) &&
-        Objects.equals(this.userTarget, autoAssignRoleRootlyTaskParams.userTarget) &&
-        Objects.equals(this.groupTarget, autoAssignRoleRootlyTaskParams.groupTarget) &&
-        Objects.equals(this.scheduleTarget, autoAssignRoleRootlyTaskParams.scheduleTarget);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(taskType, incidentRoleId, escalationPolicyTarget, serviceTarget, userTarget, groupTarget, scheduleTarget);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class AutoAssignRoleRootlyTaskParams {\n");
-    sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
-    sb.append("    incidentRoleId: ").append(toIndentedString(incidentRoleId)).append("\n");
-    sb.append("    escalationPolicyTarget: ").append(toIndentedString(escalationPolicyTarget)).append("\n");
-    sb.append("    serviceTarget: ").append(toIndentedString(serviceTarget)).append("\n");
-    sb.append("    userTarget: ").append(toIndentedString(userTarget)).append("\n");
-    sb.append("    groupTarget: ").append(toIndentedString(groupTarget)).append("\n");
-    sb.append("    scheduleTarget: ").append(toIndentedString(scheduleTarget)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("task_type");
-    openapiFields.add("incident_role_id");
-    openapiFields.add("escalation_policy_target");
-    openapiFields.add("service_target");
-    openapiFields.add("user_target");
-    openapiFields.add("group_target");
-    openapiFields.add("schedule_target");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("incident_role_id");
-  }
-
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to AutoAssignRoleRootlyTaskParams
-   */
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      if (jsonElement == null) {
-        if (!AutoAssignRoleRootlyTaskParams.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AutoAssignRoleRootlyTaskParams is not found in the empty JSON string", AutoAssignRoleRootlyTaskParams.openapiRequiredFields.toString()));
+        if (instance instanceof AutoAssignRoleRootlyTaskParamsOneOf1) {
+            super.setActualInstance(instance);
+            return;
         }
-      }
 
-      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!AutoAssignRoleRootlyTaskParams.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AutoAssignRoleRootlyTaskParams` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (instance instanceof AutoAssignRoleRootlyTaskParamsOneOf2) {
+            super.setActualInstance(instance);
+            return;
         }
-      }
 
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : AutoAssignRoleRootlyTaskParams.openapiRequiredFields) {
-        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        if (instance instanceof AutoAssignRoleRootlyTaskParamsOneOf3) {
+            super.setActualInstance(instance);
+            return;
         }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("task_type") != null && !jsonObj.get("task_type").isJsonNull()) && !jsonObj.get("task_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `task_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("task_type").toString()));
-      }
-      // validate the optional field `task_type`
-      if (jsonObj.get("task_type") != null && !jsonObj.get("task_type").isJsonNull()) {
-        TaskTypeEnum.validateJsonElement(jsonObj.get("task_type"));
-      }
-      if (!jsonObj.get("incident_role_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `incident_role_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("incident_role_id").toString()));
-      }
-      // validate the optional field `escalation_policy_target`
-      if (jsonObj.get("escalation_policy_target") != null && !jsonObj.get("escalation_policy_target").isJsonNull()) {
-        AddActionItemTaskParamsPostToSlackChannelsInner.validateJsonElement(jsonObj.get("escalation_policy_target"));
-      }
-      // validate the optional field `service_target`
-      if (jsonObj.get("service_target") != null && !jsonObj.get("service_target").isJsonNull()) {
-        AddActionItemTaskParamsPostToSlackChannelsInner.validateJsonElement(jsonObj.get("service_target"));
-      }
-      // validate the optional field `user_target`
-      if (jsonObj.get("user_target") != null && !jsonObj.get("user_target").isJsonNull()) {
-        AddActionItemTaskParamsPostToSlackChannelsInner.validateJsonElement(jsonObj.get("user_target"));
-      }
-      // validate the optional field `group_target`
-      if (jsonObj.get("group_target") != null && !jsonObj.get("group_target").isJsonNull()) {
-        AddActionItemTaskParamsPostToSlackChannelsInner.validateJsonElement(jsonObj.get("group_target"));
-      }
-      // validate the optional field `schedule_target`
-      if (jsonObj.get("schedule_target") != null && !jsonObj.get("schedule_target").isJsonNull()) {
-        AddActionItemTaskParamsPostToSlackChannelsInner.validateJsonElement(jsonObj.get("schedule_target"));
-      }
-  }
 
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+        if (instance instanceof AutoAssignRoleRootlyTaskParamsOneOf4) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        throw new RuntimeException("Invalid instance type. Must be AutoAssignRoleRootlyTaskParamsOneOf, AutoAssignRoleRootlyTaskParamsOneOf1, AutoAssignRoleRootlyTaskParamsOneOf2, AutoAssignRoleRootlyTaskParamsOneOf3, AutoAssignRoleRootlyTaskParamsOneOf4");
+    }
+
+    /**
+     * Get the actual instance, which can be the following:
+     * AutoAssignRoleRootlyTaskParamsOneOf, AutoAssignRoleRootlyTaskParamsOneOf1, AutoAssignRoleRootlyTaskParamsOneOf2, AutoAssignRoleRootlyTaskParamsOneOf3, AutoAssignRoleRootlyTaskParamsOneOf4
+     *
+     * @return The actual instance (AutoAssignRoleRootlyTaskParamsOneOf, AutoAssignRoleRootlyTaskParamsOneOf1, AutoAssignRoleRootlyTaskParamsOneOf2, AutoAssignRoleRootlyTaskParamsOneOf3, AutoAssignRoleRootlyTaskParamsOneOf4)
+     */
     @SuppressWarnings("unchecked")
     @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!AutoAssignRoleRootlyTaskParams.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'AutoAssignRoleRootlyTaskParams' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<AutoAssignRoleRootlyTaskParams> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(AutoAssignRoleRootlyTaskParams.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<AutoAssignRoleRootlyTaskParams>() {
-           @Override
-           public void write(JsonWriter out, AutoAssignRoleRootlyTaskParams value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public AutoAssignRoleRootlyTaskParams read(JsonReader in) throws IOException {
-             JsonElement jsonElement = elementAdapter.read(in);
-             validateJsonElement(jsonElement);
-             return thisAdapter.fromJsonTree(jsonElement);
-           }
-
-       }.nullSafe();
+    public Object getActualInstance() {
+        return super.getActualInstance();
     }
-  }
 
-  /**
-   * Create an instance of AutoAssignRoleRootlyTaskParams given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of AutoAssignRoleRootlyTaskParams
-   * @throws IOException if the JSON string is invalid with respect to AutoAssignRoleRootlyTaskParams
-   */
-  public static AutoAssignRoleRootlyTaskParams fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, AutoAssignRoleRootlyTaskParams.class);
-  }
+    /**
+     * Get the actual instance of `AutoAssignRoleRootlyTaskParamsOneOf`. If the actual instance is not `AutoAssignRoleRootlyTaskParamsOneOf`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `AutoAssignRoleRootlyTaskParamsOneOf`
+     * @throws ClassCastException if the instance is not `AutoAssignRoleRootlyTaskParamsOneOf`
+     */
+    public AutoAssignRoleRootlyTaskParamsOneOf getAutoAssignRoleRootlyTaskParamsOneOf() throws ClassCastException {
+        return (AutoAssignRoleRootlyTaskParamsOneOf)super.getActualInstance();
+    }
 
-  /**
-   * Convert an instance of AutoAssignRoleRootlyTaskParams to an JSON string
-   *
-   * @return JSON string
-   */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
+    /**
+     * Get the actual instance of `AutoAssignRoleRootlyTaskParamsOneOf1`. If the actual instance is not `AutoAssignRoleRootlyTaskParamsOneOf1`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `AutoAssignRoleRootlyTaskParamsOneOf1`
+     * @throws ClassCastException if the instance is not `AutoAssignRoleRootlyTaskParamsOneOf1`
+     */
+    public AutoAssignRoleRootlyTaskParamsOneOf1 getAutoAssignRoleRootlyTaskParamsOneOf1() throws ClassCastException {
+        return (AutoAssignRoleRootlyTaskParamsOneOf1)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `AutoAssignRoleRootlyTaskParamsOneOf2`. If the actual instance is not `AutoAssignRoleRootlyTaskParamsOneOf2`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `AutoAssignRoleRootlyTaskParamsOneOf2`
+     * @throws ClassCastException if the instance is not `AutoAssignRoleRootlyTaskParamsOneOf2`
+     */
+    public AutoAssignRoleRootlyTaskParamsOneOf2 getAutoAssignRoleRootlyTaskParamsOneOf2() throws ClassCastException {
+        return (AutoAssignRoleRootlyTaskParamsOneOf2)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `AutoAssignRoleRootlyTaskParamsOneOf3`. If the actual instance is not `AutoAssignRoleRootlyTaskParamsOneOf3`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `AutoAssignRoleRootlyTaskParamsOneOf3`
+     * @throws ClassCastException if the instance is not `AutoAssignRoleRootlyTaskParamsOneOf3`
+     */
+    public AutoAssignRoleRootlyTaskParamsOneOf3 getAutoAssignRoleRootlyTaskParamsOneOf3() throws ClassCastException {
+        return (AutoAssignRoleRootlyTaskParamsOneOf3)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `AutoAssignRoleRootlyTaskParamsOneOf4`. If the actual instance is not `AutoAssignRoleRootlyTaskParamsOneOf4`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `AutoAssignRoleRootlyTaskParamsOneOf4`
+     * @throws ClassCastException if the instance is not `AutoAssignRoleRootlyTaskParamsOneOf4`
+     */
+    public AutoAssignRoleRootlyTaskParamsOneOf4 getAutoAssignRoleRootlyTaskParamsOneOf4() throws ClassCastException {
+        return (AutoAssignRoleRootlyTaskParamsOneOf4)super.getActualInstance();
+    }
+
+    /**
+     * Validates the JSON Element and throws an exception if issues found
+     *
+     * @param jsonElement JSON Element
+     * @throws IOException if the JSON Element is invalid with respect to AutoAssignRoleRootlyTaskParams
+     */
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+        // validate oneOf schemas one by one
+        int validCount = 0;
+        ArrayList<String> errorMessages = new ArrayList<>();
+        // validate the json string with AutoAssignRoleRootlyTaskParamsOneOf
+        try {
+            AutoAssignRoleRootlyTaskParamsOneOf.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for AutoAssignRoleRootlyTaskParamsOneOf failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with AutoAssignRoleRootlyTaskParamsOneOf1
+        try {
+            AutoAssignRoleRootlyTaskParamsOneOf1.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for AutoAssignRoleRootlyTaskParamsOneOf1 failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with AutoAssignRoleRootlyTaskParamsOneOf2
+        try {
+            AutoAssignRoleRootlyTaskParamsOneOf2.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for AutoAssignRoleRootlyTaskParamsOneOf2 failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with AutoAssignRoleRootlyTaskParamsOneOf3
+        try {
+            AutoAssignRoleRootlyTaskParamsOneOf3.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for AutoAssignRoleRootlyTaskParamsOneOf3 failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with AutoAssignRoleRootlyTaskParamsOneOf4
+        try {
+            AutoAssignRoleRootlyTaskParamsOneOf4.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for AutoAssignRoleRootlyTaskParamsOneOf4 failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        if (validCount != 1) {
+            throw new IOException(String.format("The JSON string is invalid for AutoAssignRoleRootlyTaskParams with oneOf schemas: AutoAssignRoleRootlyTaskParamsOneOf, AutoAssignRoleRootlyTaskParamsOneOf1, AutoAssignRoleRootlyTaskParamsOneOf2, AutoAssignRoleRootlyTaskParamsOneOf3, AutoAssignRoleRootlyTaskParamsOneOf4. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+        }
+    }
+
+    /**
+     * Create an instance of AutoAssignRoleRootlyTaskParams given an JSON string
+     *
+     * @param jsonString JSON string
+     * @return An instance of AutoAssignRoleRootlyTaskParams
+     * @throws IOException if the JSON string is invalid with respect to AutoAssignRoleRootlyTaskParams
+     */
+    public static AutoAssignRoleRootlyTaskParams fromJson(String jsonString) throws IOException {
+        return JSON.getGson().fromJson(jsonString, AutoAssignRoleRootlyTaskParams.class);
+    }
+
+    /**
+     * Convert an instance of AutoAssignRoleRootlyTaskParams to an JSON string
+     *
+     * @return JSON string
+     */
+    public String toJson() {
+        return JSON.getGson().toJson(this);
+    }
 }
 

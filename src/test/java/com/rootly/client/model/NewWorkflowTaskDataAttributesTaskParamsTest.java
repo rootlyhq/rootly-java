@@ -20,20 +20,25 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.rootly.client.model.AddActionItemTaskParams;
 import com.rootly.client.model.AddActionItemTaskParamsPostToSlackChannelsInner;
+import com.rootly.client.model.AddMicrosoftTeamsChatTabTaskParams;
 import com.rootly.client.model.AddMicrosoftTeamsTabTaskParams;
 import com.rootly.client.model.AddRoleTaskParams;
 import com.rootly.client.model.AddRoleTaskParamsAssignedToUser;
 import com.rootly.client.model.AddSlackBookmarkTaskParams;
 import com.rootly.client.model.AddTeamTaskParams;
 import com.rootly.client.model.AddToTimelineTaskParams;
+import com.rootly.client.model.ArchiveGoogleChatSpacesTaskParams;
 import com.rootly.client.model.ArchiveMicrosoftTeamsChannelsTaskParams;
 import com.rootly.client.model.ArchiveSlackChannelsTaskParams;
 import com.rootly.client.model.AttachDatadogDashboardsTaskParams;
+import com.rootly.client.model.AttachRetrospectivePdfToFreshserviceTicketTaskParams;
+import com.rootly.client.model.AttachRetrospectivePdfToJiraIssueTaskParams;
 import com.rootly.client.model.AutoAssignRoleOpsgenieTaskParams;
 import com.rootly.client.model.AutoAssignRolePagerdutyTaskParams;
 import com.rootly.client.model.AutoAssignRoleRootlyTaskParams;
 import com.rootly.client.model.AutoAssignRoleVictorOpsTaskParams;
 import com.rootly.client.model.CallPeopleTaskParams;
+import com.rootly.client.model.ChangeGoogleChatSpacePrivacyTaskParams;
 import com.rootly.client.model.ChangeSlackChannelPrivacyTaskParams;
 import com.rootly.client.model.CreateAirtableTableRecordTaskParams;
 import com.rootly.client.model.CreateAnthropicChatCompletionTaskParams;
@@ -50,6 +55,7 @@ import com.rootly.client.model.CreateGithubIssueTaskParams;
 import com.rootly.client.model.CreateGitlabIssueTaskParams;
 import com.rootly.client.model.CreateGoToMeetingTaskParams;
 import com.rootly.client.model.CreateGoogleCalendarEventTaskParams;
+import com.rootly.client.model.CreateGoogleChatSpaceTaskParams;
 import com.rootly.client.model.CreateGoogleDocsPageTaskParams;
 import com.rootly.client.model.CreateGoogleDocsPermissionsTaskParams;
 import com.rootly.client.model.CreateGoogleGeminiChatCompletionTaskParams;
@@ -61,6 +67,7 @@ import com.rootly.client.model.CreateJiraIssueTaskParamsIntegration;
 import com.rootly.client.model.CreateJiraIssueTaskParamsIssueType;
 import com.rootly.client.model.CreateJiraIssueTaskParamsPriority;
 import com.rootly.client.model.CreateJiraSubtaskTaskParams;
+import com.rootly.client.model.CreateJsmopsAlertTaskParams;
 import com.rootly.client.model.CreateLinearIssueCommentTaskParams;
 import com.rootly.client.model.CreateLinearIssueTaskParams;
 import com.rootly.client.model.CreateLinearIssueTaskParamsProject;
@@ -100,12 +107,15 @@ import com.rootly.client.model.GetGithubCommitsTaskParams;
 import com.rootly.client.model.GetGitlabCommitsTaskParams;
 import com.rootly.client.model.GetPulsesTaskParams;
 import com.rootly.client.model.HttpClientTaskParams;
+import com.rootly.client.model.InviteToGoogleChatSpaceTaskParams;
+import com.rootly.client.model.InviteToMicrosoftTeamsChannelRootlyTaskParams;
 import com.rootly.client.model.InviteToMicrosoftTeamsChannelTaskParams;
 import com.rootly.client.model.InviteToSlackChannelOpsgenieTaskParams;
 import com.rootly.client.model.InviteToSlackChannelPagerdutyTaskParams;
 import com.rootly.client.model.InviteToSlackChannelRootlyTaskParams;
 import com.rootly.client.model.InviteToSlackChannelTaskParams;
 import com.rootly.client.model.InviteToSlackChannelVictorOpsTaskParams;
+import com.rootly.client.model.PageJsmopsOnCallRespondersTaskParams;
 import com.rootly.client.model.PageOpsgenieOnCallRespondersTaskParams;
 import com.rootly.client.model.PagePagerdutyOnCallRespondersTaskParams;
 import com.rootly.client.model.PageRootlyOnCallRespondersTaskParams;
@@ -114,12 +124,16 @@ import com.rootly.client.model.PrintTaskParams;
 import com.rootly.client.model.PublishIncidentTaskParams;
 import com.rootly.client.model.RedisClientTaskParams;
 import com.rootly.client.model.RemoveGoogleDocsPermissionsTaskParams;
+import com.rootly.client.model.RenameGoogleChatSpaceTaskParams;
 import com.rootly.client.model.RenameMicrosoftTeamsChannelTaskParams;
 import com.rootly.client.model.RenameSlackChannelTaskParams;
 import com.rootly.client.model.RunCommandHerokuTaskParams;
 import com.rootly.client.model.SendDashboardReportTaskParams;
 import com.rootly.client.model.SendEmailTaskParams;
+import com.rootly.client.model.SendGoogleChatAttachmentsTaskParams;
+import com.rootly.client.model.SendGoogleChatMessageTaskParams;
 import com.rootly.client.model.SendMicrosoftTeamsBlocksTaskParams;
+import com.rootly.client.model.SendMicrosoftTeamsChatMessageTaskParams;
 import com.rootly.client.model.SendMicrosoftTeamsMessageTaskParams;
 import com.rootly.client.model.SendSlackBlocksTaskParams;
 import com.rootly.client.model.SendSlackMessageTaskParams;
@@ -142,8 +156,10 @@ import com.rootly.client.model.UpdateDatadogNotebookTaskParams;
 import com.rootly.client.model.UpdateDatadogNotebookTaskParamsTemplate;
 import com.rootly.client.model.UpdateDropboxPaperPageTaskParams;
 import com.rootly.client.model.UpdateGithubIssueTaskParams;
+import com.rootly.client.model.UpdateGithubIssueTaskParamsRepository;
 import com.rootly.client.model.UpdateGitlabIssueTaskParams;
 import com.rootly.client.model.UpdateGoogleCalendarEventTaskParams;
+import com.rootly.client.model.UpdateGoogleChatSpaceDescriptionTaskParams;
 import com.rootly.client.model.UpdateGoogleDocsPageTaskParams;
 import com.rootly.client.model.UpdateIncidentPostmortemTaskParams;
 import com.rootly.client.model.UpdateIncidentStatusTimestampTaskParams;
@@ -703,6 +719,38 @@ public class NewWorkflowTaskDataAttributesTaskParamsTest {
     }
 
     /**
+     * Test the property 'includeOverview'
+     */
+    @Test
+    public void includeOverviewTest() {
+        // TODO: test includeOverview
+    }
+
+    /**
+     * Test the property 'includeTimeline'
+     */
+    @Test
+    public void includeTimelineTest() {
+        // TODO: test includeTimeline
+    }
+
+    /**
+     * Test the property 'includeFollowUps'
+     */
+    @Test
+    public void includeFollowUpsTest() {
+        // TODO: test includeFollowUps
+    }
+
+    /**
+     * Test the property 'createAsLiveDoc'
+     */
+    @Test
+    public void createAsLiveDocTest() {
+        // TODO: test createAsLiveDoc
+    }
+
+    /**
      * Test the property 'subtitle'
      */
     @Test
@@ -759,6 +807,14 @@ public class NewWorkflowTaskDataAttributesTaskParamsTest {
     }
 
     /**
+     * Test the property 'labels'
+     */
+    @Test
+    public void labelsTest() {
+        // TODO: test labels
+    }
+
+    /**
      * Test the property 'issueType'
      */
     @Test
@@ -767,11 +823,11 @@ public class NewWorkflowTaskDataAttributesTaskParamsTest {
     }
 
     /**
-     * Test the property 'labels'
+     * Test the property 'parentIssueNumber'
      */
     @Test
-    public void labelsTest() {
-        // TODO: test labels
+    public void parentIssueNumberTest() {
+        // TODO: test parentIssueNumber
     }
 
     /**
@@ -1007,6 +1063,14 @@ public class NewWorkflowTaskDataAttributesTaskParamsTest {
     }
 
     /**
+     * Test the property 'recordingMode'
+     */
+    @Test
+    public void recordingModeTest() {
+        // TODO: test recordingMode
+    }
+
+    /**
      * Test the property 'subject'
      */
     @Test
@@ -1111,6 +1175,22 @@ public class NewWorkflowTaskDataAttributesTaskParamsTest {
     }
 
     /**
+     * Test the property 'retryCount'
+     */
+    @Test
+    public void retryCountTest() {
+        // TODO: test retryCount
+    }
+
+    /**
+     * Test the property 'retryWaitTime'
+     */
+    @Test
+    public void retryWaitTimeTest() {
+        // TODO: test retryWaitTime
+    }
+
+    /**
      * Test the property 'parentIssueId'
      */
     @Test
@@ -1127,6 +1207,30 @@ public class NewWorkflowTaskDataAttributesTaskParamsTest {
     }
 
     /**
+     * Test the property 'issueId'
+     */
+    @Test
+    public void issueIdTest() {
+        // TODO: test issueId
+    }
+
+    /**
+     * Test the property 'filename'
+     */
+    @Test
+    public void filenameTest() {
+        // TODO: test filename
+    }
+
+    /**
+     * Test the property 'ticketId'
+     */
+    @Test
+    public void ticketIdTest() {
+        // TODO: test ticketId
+    }
+
+    /**
      * Test the property 'state'
      */
     @Test
@@ -1140,14 +1244,6 @@ public class NewWorkflowTaskDataAttributesTaskParamsTest {
     @Test
     public void projectTest() {
         // TODO: test project
-    }
-
-    /**
-     * Test the property 'issueId'
-     */
-    @Test
-    public void issueIdTest() {
-        // TODO: test issueId
     }
 
     /**
@@ -1172,6 +1268,54 @@ public class NewWorkflowTaskDataAttributesTaskParamsTest {
     @Test
     public void membersTest() {
         // TODO: test members
+    }
+
+    /**
+     * Test the property 'chat'
+     */
+    @Test
+    public void chatTest() {
+        // TODO: test chat
+    }
+
+    /**
+     * Test the property 'audience'
+     */
+    @Test
+    public void audienceTest() {
+        // TODO: test audience
+    }
+
+    /**
+     * Test the property 'spaces'
+     */
+    @Test
+    public void spacesTest() {
+        // TODO: test spaces
+    }
+
+    /**
+     * Test the property 'text'
+     */
+    @Test
+    public void textTest() {
+        // TODO: test text
+    }
+
+    /**
+     * Test the property 'threadKey'
+     */
+    @Test
+    public void threadKeyTest() {
+        // TODO: test threadKey
+    }
+
+    /**
+     * Test the property 'attachments'
+     */
+    @Test
+    public void attachmentsTest() {
+        // TODO: test attachments
     }
 
     /**
@@ -1207,19 +1351,11 @@ public class NewWorkflowTaskDataAttributesTaskParamsTest {
     }
 
     /**
-     * Test the property 'text'
+     * Test the property 'chats'
      */
     @Test
-    public void textTest() {
-        // TODO: test text
-    }
-
-    /**
-     * Test the property 'attachments'
-     */
-    @Test
-    public void attachmentsTest() {
-        // TODO: test attachments
+    public void chatsTest() {
+        // TODO: test chats
     }
 
     /**
@@ -1364,6 +1500,14 @@ public class NewWorkflowTaskDataAttributesTaskParamsTest {
     @Test
     public void autoRecordingTest() {
         // TODO: test autoRecording
+    }
+
+    /**
+     * Test the property 'enableZoomBotAutoJoin'
+     */
+    @Test
+    public void enableZoomBotAutoJoinTest() {
+        // TODO: test enableZoomBotAutoJoin
     }
 
     /**
@@ -1551,6 +1695,14 @@ public class NewWorkflowTaskDataAttributesTaskParamsTest {
     }
 
     /**
+     * Test the property 'functionalityTarget'
+     */
+    @Test
+    public void functionalityTargetTest() {
+        // TODO: test functionalityTarget
+    }
+
+    /**
      * Test the property 'alertUrgencyId'
      */
     @Test
@@ -1564,6 +1716,14 @@ public class NewWorkflowTaskDataAttributesTaskParamsTest {
     @Test
     public void escalationNoteTest() {
         // TODO: test escalationNote
+    }
+
+    /**
+     * Test the property 'createNewAlert'
+     */
+    @Test
+    public void createNewAlertTest() {
+        // TODO: test createNewAlert
     }
 
     /**
@@ -1636,6 +1796,14 @@ public class NewWorkflowTaskDataAttributesTaskParamsTest {
     @Test
     public void statusPageIdTest() {
         // TODO: test statusPageId
+    }
+
+    /**
+     * Test the property 'statusPageIds'
+     */
+    @Test
+    public void statusPageIdsTest() {
+        // TODO: test statusPageIds
     }
 
     /**
@@ -1879,6 +2047,14 @@ public class NewWorkflowTaskDataAttributesTaskParamsTest {
     }
 
     /**
+     * Test the property 'labelsMode'
+     */
+    @Test
+    public void labelsModeTest() {
+        // TODO: test labelsMode
+    }
+
+    /**
      * Test the property 'startedAt'
      */
     @Test
@@ -1964,14 +2140,6 @@ public class NewWorkflowTaskDataAttributesTaskParamsTest {
     @Test
     public void cardIdTest() {
         // TODO: test cardId
-    }
-
-    /**
-     * Test the property 'ticketId'
-     */
-    @Test
-    public void ticketIdTest() {
-        // TODO: test ticketId
     }
 
     /**

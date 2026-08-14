@@ -19,9 +19,9 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.CommunicationsTemplateCommunicationTemplateStagesInnerData;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,152 +49,32 @@ import com.rootly.client.JSON;
 /**
  * CommunicationsTemplateCommunicationTemplateStagesInner
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CommunicationsTemplateCommunicationTemplateStagesInner {
-  public static final String SERIALIZED_NAME_ID = "id";
-  @SerializedName(SERIALIZED_NAME_ID)
+  public static final String SERIALIZED_NAME_DATA = "data";
+  @SerializedName(SERIALIZED_NAME_DATA)
   @jakarta.annotation.Nullable
-  private String id;
-
-  public static final String SERIALIZED_NAME_COMMUNICATION_STAGE_ID = "communication_stage_id";
-  @SerializedName(SERIALIZED_NAME_COMMUNICATION_STAGE_ID)
-  @jakarta.annotation.Nullable
-  private String communicationStageId;
-
-  public static final String SERIALIZED_NAME_SMS_CONTENT = "sms_content";
-  @SerializedName(SERIALIZED_NAME_SMS_CONTENT)
-  @jakarta.annotation.Nullable
-  private String smsContent;
-
-  public static final String SERIALIZED_NAME_EMAIL_SUBJECT = "email_subject";
-  @SerializedName(SERIALIZED_NAME_EMAIL_SUBJECT)
-  @jakarta.annotation.Nullable
-  private String emailSubject;
-
-  public static final String SERIALIZED_NAME_EMAIL_BODY = "email_body";
-  @SerializedName(SERIALIZED_NAME_EMAIL_BODY)
-  @jakarta.annotation.Nullable
-  private String emailBody;
-
-  public static final String SERIALIZED_NAME_SLACK_CONTENT = "slack_content";
-  @SerializedName(SERIALIZED_NAME_SLACK_CONTENT)
-  @jakarta.annotation.Nullable
-  private String slackContent;
+  private CommunicationsTemplateCommunicationTemplateStagesInnerData data;
 
   public CommunicationsTemplateCommunicationTemplateStagesInner() {
   }
 
-  public CommunicationsTemplateCommunicationTemplateStagesInner id(@jakarta.annotation.Nullable String id) {
-    this.id = id;
+  public CommunicationsTemplateCommunicationTemplateStagesInner data(@jakarta.annotation.Nullable CommunicationsTemplateCommunicationTemplateStagesInnerData data) {
+    this.data = data;
     return this;
   }
 
   /**
-   * ID of the communication template stage
-   * @return id
+   * Get data
+   * @return data
    */
   @jakarta.annotation.Nullable
-  public String getId() {
-    return id;
+  public CommunicationsTemplateCommunicationTemplateStagesInnerData getData() {
+    return data;
   }
 
-  public void setId(@jakarta.annotation.Nullable String id) {
-    this.id = id;
-  }
-
-
-  public CommunicationsTemplateCommunicationTemplateStagesInner communicationStageId(@jakarta.annotation.Nullable String communicationStageId) {
-    this.communicationStageId = communicationStageId;
-    return this;
-  }
-
-  /**
-   * The communication stage ID
-   * @return communicationStageId
-   */
-  @jakarta.annotation.Nullable
-  public String getCommunicationStageId() {
-    return communicationStageId;
-  }
-
-  public void setCommunicationStageId(@jakarta.annotation.Nullable String communicationStageId) {
-    this.communicationStageId = communicationStageId;
-  }
-
-
-  public CommunicationsTemplateCommunicationTemplateStagesInner smsContent(@jakarta.annotation.Nullable String smsContent) {
-    this.smsContent = smsContent;
-    return this;
-  }
-
-  /**
-   * SMS content for the stage
-   * @return smsContent
-   */
-  @jakarta.annotation.Nullable
-  public String getSmsContent() {
-    return smsContent;
-  }
-
-  public void setSmsContent(@jakarta.annotation.Nullable String smsContent) {
-    this.smsContent = smsContent;
-  }
-
-
-  public CommunicationsTemplateCommunicationTemplateStagesInner emailSubject(@jakarta.annotation.Nullable String emailSubject) {
-    this.emailSubject = emailSubject;
-    return this;
-  }
-
-  /**
-   * Email subject for the stage
-   * @return emailSubject
-   */
-  @jakarta.annotation.Nullable
-  public String getEmailSubject() {
-    return emailSubject;
-  }
-
-  public void setEmailSubject(@jakarta.annotation.Nullable String emailSubject) {
-    this.emailSubject = emailSubject;
-  }
-
-
-  public CommunicationsTemplateCommunicationTemplateStagesInner emailBody(@jakarta.annotation.Nullable String emailBody) {
-    this.emailBody = emailBody;
-    return this;
-  }
-
-  /**
-   * Email body for the stage
-   * @return emailBody
-   */
-  @jakarta.annotation.Nullable
-  public String getEmailBody() {
-    return emailBody;
-  }
-
-  public void setEmailBody(@jakarta.annotation.Nullable String emailBody) {
-    this.emailBody = emailBody;
-  }
-
-
-  public CommunicationsTemplateCommunicationTemplateStagesInner slackContent(@jakarta.annotation.Nullable String slackContent) {
-    this.slackContent = slackContent;
-    return this;
-  }
-
-  /**
-   * Slack content for the stage
-   * @return slackContent
-   */
-  @jakarta.annotation.Nullable
-  public String getSlackContent() {
-    return slackContent;
-  }
-
-  public void setSlackContent(@jakarta.annotation.Nullable String slackContent) {
-    this.slackContent = slackContent;
+  public void setData(@jakarta.annotation.Nullable CommunicationsTemplateCommunicationTemplateStagesInnerData data) {
+    this.data = data;
   }
 
 
@@ -208,40 +88,19 @@ public class CommunicationsTemplateCommunicationTemplateStagesInner {
       return false;
     }
     CommunicationsTemplateCommunicationTemplateStagesInner communicationsTemplateCommunicationTemplateStagesInner = (CommunicationsTemplateCommunicationTemplateStagesInner) o;
-    return Objects.equals(this.id, communicationsTemplateCommunicationTemplateStagesInner.id) &&
-        Objects.equals(this.communicationStageId, communicationsTemplateCommunicationTemplateStagesInner.communicationStageId) &&
-        Objects.equals(this.smsContent, communicationsTemplateCommunicationTemplateStagesInner.smsContent) &&
-        Objects.equals(this.emailSubject, communicationsTemplateCommunicationTemplateStagesInner.emailSubject) &&
-        Objects.equals(this.emailBody, communicationsTemplateCommunicationTemplateStagesInner.emailBody) &&
-        Objects.equals(this.slackContent, communicationsTemplateCommunicationTemplateStagesInner.slackContent);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+    return Objects.equals(this.data, communicationsTemplateCommunicationTemplateStagesInner.data);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, communicationStageId, smsContent, emailSubject, emailBody, slackContent);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(data);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CommunicationsTemplateCommunicationTemplateStagesInner {\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    communicationStageId: ").append(toIndentedString(communicationStageId)).append("\n");
-    sb.append("    smsContent: ").append(toIndentedString(smsContent)).append("\n");
-    sb.append("    emailSubject: ").append(toIndentedString(emailSubject)).append("\n");
-    sb.append("    emailBody: ").append(toIndentedString(emailBody)).append("\n");
-    sb.append("    slackContent: ").append(toIndentedString(slackContent)).append("\n");
+    sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -264,12 +123,7 @@ public class CommunicationsTemplateCommunicationTemplateStagesInner {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("id");
-    openapiFields.add("communication_stage_id");
-    openapiFields.add("sms_content");
-    openapiFields.add("email_subject");
-    openapiFields.add("email_body");
-    openapiFields.add("slack_content");
+    openapiFields.add("data");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -296,23 +150,9 @@ public class CommunicationsTemplateCommunicationTemplateStagesInner {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
-      }
-      if ((jsonObj.get("communication_stage_id") != null && !jsonObj.get("communication_stage_id").isJsonNull()) && !jsonObj.get("communication_stage_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `communication_stage_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("communication_stage_id").toString()));
-      }
-      if ((jsonObj.get("sms_content") != null && !jsonObj.get("sms_content").isJsonNull()) && !jsonObj.get("sms_content").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `sms_content` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sms_content").toString()));
-      }
-      if ((jsonObj.get("email_subject") != null && !jsonObj.get("email_subject").isJsonNull()) && !jsonObj.get("email_subject").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `email_subject` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email_subject").toString()));
-      }
-      if ((jsonObj.get("email_body") != null && !jsonObj.get("email_body").isJsonNull()) && !jsonObj.get("email_body").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `email_body` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email_body").toString()));
-      }
-      if ((jsonObj.get("slack_content") != null && !jsonObj.get("slack_content").isJsonNull()) && !jsonObj.get("slack_content").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `slack_content` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slack_content").toString()));
+      // validate the optional field `data`
+      if (jsonObj.get("data") != null && !jsonObj.get("data").isJsonNull()) {
+        CommunicationsTemplateCommunicationTemplateStagesInnerData.validateJsonElement(jsonObj.get("data"));
       }
   }
 

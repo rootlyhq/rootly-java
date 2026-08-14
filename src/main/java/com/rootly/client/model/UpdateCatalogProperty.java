@@ -49,17 +49,17 @@ import com.rootly.client.JSON;
 /**
  * UpdateCatalogProperty
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateCatalogProperty {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private UpdateCatalogPropertyData data;
 
   public UpdateCatalogProperty() {
   }
 
-  public UpdateCatalogProperty data(@javax.annotation.Nonnull UpdateCatalogPropertyData data) {
+  public UpdateCatalogProperty data(@jakarta.annotation.Nonnull UpdateCatalogPropertyData data) {
     this.data = data;
     return this;
   }
@@ -68,12 +68,12 @@ public class UpdateCatalogProperty {
    * Get data
    * @return data
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public UpdateCatalogPropertyData getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nonnull UpdateCatalogPropertyData data) {
+  public void setData(@jakarta.annotation.Nonnull UpdateCatalogPropertyData data) {
     this.data = data;
   }
 

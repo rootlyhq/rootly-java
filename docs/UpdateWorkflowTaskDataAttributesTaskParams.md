@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**taskType** | [**TaskTypeEnum**](#TaskTypeEnum) |  |  [optional] |
-|**attributeToQueryBy** | [**AttributeToQueryByEnum**](#AttributeToQueryByEnum) | [\&quot;(incident) kind can only match [:id, :slug, :sequential_id, :pagerduty_incident_id, :opsgenie_incident_id, :victor_ops_incident_id, :jira_issue_id, :asana_task_id, :shortcut_task_id, :linear_issue_id, :zendesk_ticket_id, :motion_task_id, :trello_card_id, :airtable_record_id, :shortcut_story_id, :github_issue_id, :freshservice_ticket_id, :freshservice_task_id, :clickup_task_id]\&quot;, \&quot;(post_mortem) kind can only match [:id]\&quot;, \&quot;(action_item) kind can only match [:id, :jira_issue_id, :asana_task_id, :shortcut_task_id, :linear_issue_id, :zendesk_ticket_id, :motion_task_id, :trello_card_id, :airtable_record_id, :shortcut_story_id, :github_issue_id, :freshservice_ticket_id, :freshservice_task_id, :clickup_task_id]\&quot;, \&quot;(pulse) kind can only match [:id]\&quot;, \&quot;(alert) kind can only match [:id]\&quot;] |  |
+|**attributeToQueryBy** | [**AttributeToQueryByEnum**](#AttributeToQueryByEnum) | [\&quot;(incident) kind can only match [:id, :slug, :sequential_id, :pagerduty_incident_id, :opsgenie_incident_id, :victor_ops_incident_id, :jira_issue_id, :asana_task_id, :shortcut_task_id, :linear_issue_id, :zendesk_ticket_id, :motion_task_id, :trello_card_id, :airtable_record_id, :shortcut_story_id, :github_issue_id, :freshservice_ticket_id, :freshservice_task_id, :clickup_task_id]\&quot;, \&quot;(action_item) kind can only match [:id, :jira_issue_id, :asana_task_id, :shortcut_task_id, :linear_issue_id, :zendesk_ticket_id, :motion_task_id, :trello_card_id, :airtable_record_id, :shortcut_story_id, :github_issue_id, :freshservice_ticket_id, :freshservice_task_id, :clickup_task_id]\&quot;, \&quot;(post_mortem) kind can only match [:id]\&quot;, \&quot;(pulse) kind can only match [:id]\&quot;, \&quot;(alert) kind can only match [:id]\&quot;] |  |
 |**queryValue** | **String** | Value that attribute_to_query_by to uses to match against |  |
 |**incidentRoleId** | **String** | The role id |  |
 |**assignedToUserId** | **String** | [DEPRECATED] Use assigned_to_user attribute instead. The user id this role is assigned to |  [optional] |
@@ -22,24 +22,24 @@
 |**customFieldsMapping** | **String** | Custom field mappings. Can contain liquid markup and need to be valid JSON |  [optional] |
 |**postToSlackChannels** | [**List&lt;AddActionItemTaskParamsPostToSlackChannelsInner&gt;**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
 |**groupIds** | **List&lt;String&gt;** | Array of group/team UUIDs |  [optional] |
-|**playbookId** | **String** | The playbook id if tab is of an incident playbook |  [optional] |
+|**playbookId** | **String** |  |  |
 |**channel** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
 |**title** | **String** | The task title |  |
-|**link** | **String** | The tab link. Required if not a playbook tab |  [optional] |
+|**link** | **String** | The tab link |  |
 |**emoji** | **String** | The bookmark emoji |  [optional] |
 |**groupId** | **String** | The team id |  |
 |**event** | **String** | Incident event description |  |
 |**url** | **String** |  |  |
-|**channels** | [**List&lt;Object&gt;**](Object.md) |  |  |
+|**channels** | [**List&lt;AddActionItemTaskParamsPostToSlackChannelsInner&gt;**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
 |**dashboards** | [**List&lt;AddActionItemTaskParamsPostToSlackChannelsInner&gt;**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
-|**schedule** | [**Object**](Object.md) |  |  |
-|**escalationPolicyTarget** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
-|**serviceTarget** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
-|**userTarget** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
-|**groupTarget** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
-|**scheduleTarget** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
+|**schedule** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
+|**escalationPolicyTarget** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
+|**serviceTarget** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
+|**userTarget** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
+|**groupTarget** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
+|**scheduleTarget** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
 |**service** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
-|**escalationPolicy** | [**Object**](Object.md) |  |  [optional] |
+|**escalationPolicy** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
 |**pagerdutyIncidentId** | **String** | PagerDuty incident id |  |
 |**resolution** | **String** | A message outlining the incident&#39;s resolution in PagerDuty |  [optional] |
 |**escalationLevel** | **Integer** | Escalation level of policy attached to incident |  [optional] |
@@ -47,7 +47,7 @@
 |**message** | **String** |  |  |
 |**severity** | [**SeverityEnum**](#SeverityEnum) |  |  [optional] |
 |**teams** | [**List&lt;AddActionItemTaskParamsPostToSlackChannelsInner&gt;**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
-|**users** | [**List&lt;Object&gt;**](Object.md) |  |  [optional] |
+|**users** | [**List&lt;AddActionItemTaskParamsPostToSlackChannelsInner&gt;**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
 |**incident** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
 |**pagertreeAlertId** | **String** | The prefix ID of the Pagertree alert |  [optional] |
 |**team** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
@@ -71,15 +71,20 @@
 |**template** | [**UpdateDatadogNotebookTaskParamsTemplate**](UpdateDatadogNotebookTaskParamsTemplate.md) |  |  [optional] |
 |**postMortemTemplateId** | **String** | Retrospective template to use when updating notebook, if desired |  [optional] |
 |**markPostMortemAsPublished** | **Boolean** |  |  [optional] |
+|**includeOverview** | **Boolean** |  |  [optional] |
+|**includeTimeline** | **Boolean** |  |  [optional] |
+|**includeFollowUps** | **Boolean** |  |  [optional] |
+|**createAsLiveDoc** | **Boolean** |  |  [optional] |
 |**subtitle** | **String** | The Coda page subtitle |  [optional] |
 |**folderId** | **String** | The Coda folder id |  [optional] |
 |**doc** | [**CreateCodaPageTaskParamsDoc**](CreateCodaPageTaskParamsDoc.md) |  |  [optional] |
 |**namespace** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
 |**parentFolder** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
 |**body** | **String** | The issue body |  |
-|**repository** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
-|**issueType** | [**IssueTypeEnum**](#IssueTypeEnum) | The issue type |  |
+|**repository** | [**UpdateGithubIssueTaskParamsRepository**](UpdateGithubIssueTaskParamsRepository.md) |  |  |
 |**labels** | **List&lt;String&gt;** |  |  [optional] |
+|**issueType** | [**IssueTypeEnum**](#IssueTypeEnum) | The issue type |  |
+|**parentIssueNumber** | **String** | The parent issue number for sub-issue linking |  [optional] |
 |**calendar** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
 |**attendees** | **List&lt;String&gt;** | Emails of attendees |  [optional] |
 |**timeZone** | **String** | A valid IANA time zone name. |  [optional] |
@@ -109,12 +114,13 @@
 |**value** | **String** |  |  |
 |**parentFolderId** | **String** | The parent folder id |  [optional] |
 |**recordMeeting** | **Boolean** | Rootly AI will record the meeting and automatically generate a transcript and summary from your meeting |  [optional] |
+|**recordingMode** | [**RecordingModeEnum**](#RecordingModeEnum) | The video layout for the bot&#39;s recording (e.g. speaker_view, gallery_view, gallery_view_v2, audio_only) |  [optional] |
 |**subject** | **String** | The ticket subject |  |
 |**conferenceCallInfo** | [**ConferenceCallInfoEnum**](#ConferenceCallInfoEnum) |  |  [optional] |
 |**passwordRequired** | **Boolean** |  |  [optional] |
 |**severityId** | **String** |  |  [optional] |
 |**incidentTypeIds** | **List&lt;String&gt;** |  |  [optional] |
-|**serviceIds** | **List&lt;String&gt;** | Array of service UUIDs |  [optional] |
+|**serviceIds** | **List&lt;String&gt;** | Array of service UUIDs |  |
 |**functionalityIds** | **List&lt;String&gt;** | Array of functionality UUIDs |  [optional] |
 |**environmentIds** | **List&lt;String&gt;** |  |  [optional] |
 |**_private** | **Boolean** |  |  [optional] |
@@ -122,23 +128,32 @@
 |**reporterUserEmail** | **String** | The reporter user&#39;s email |  [optional] |
 |**projectKey** | **String** | The project key |  |
 |**updatePayload** | **String** | Update payload. Can contain liquid markup and need to be valid JSON |  [optional] |
+|**retryCount** | **Integer** | Number of times to retry on rate-limit (HTTP 429) responses (0-4). 0 disables retry. |  [optional] |
+|**retryWaitTime** | **Integer** | Seconds to wait before each retry (1-15). Retry-After header is honored when present and &lt;&#x3D; 90s, taking the larger of retry_wait_time and the header value. |  [optional] |
 |**parentIssueId** | **String** | The parent issue |  |
 |**subtaskIssueType** | [**CreateJiraIssueTaskParamsIssueType**](CreateJiraIssueTaskParamsIssueType.md) |  |  |
-|**state** | [**UpdateLinearIssueTaskParamsState**](UpdateLinearIssueTaskParamsState.md) |  |  |
-|**project** | [**CreateLinearIssueTaskParamsProject**](CreateLinearIssueTaskParamsProject.md) |  |  [optional] |
 |**issueId** | **String** | The issue id |  |
+|**filename** | **String** | The attachment filename |  [optional] |
+|**ticketId** | **String** | The ticket id |  |
+|**state** | [**UpdateLinearIssueTaskParamsState**](UpdateLinearIssueTaskParamsState.md) |  |  |
+|**project** | [**CreateLinearIssueTaskParamsProject**](CreateLinearIssueTaskParamsProject.md) |  |  |
 |**topic** | **String** |  |  |
 |**chatType** | [**ChatTypeEnum**](#ChatTypeEnum) | Type of chat to create |  [optional] |
 |**members** | [**List&lt;CreateMicrosoftTeamsChatTaskParamsMembersInner&gt;**](CreateMicrosoftTeamsChatTaskParamsMembersInner.md) | Array of members to include in the chat |  |
+|**chat** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
+|**audience** | **String** | Target audience resource name (e.g. audiences/default). Leave blank to make private. |  [optional] |
+|**spaces** | [**List&lt;AddActionItemTaskParamsPostToSlackChannelsInner&gt;**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
+|**text** | **String** | The message text |  |
+|**threadKey** | **String** | Thread key to reply within a thread. Messages with the same thread key are grouped together |  [optional] |
+|**attachments** | **String** | Support liquid markup. Needs to be a valid JSON string after liquid is parsed |  |
 |**emails** | **String** | Comma separated list of emails to invite |  |
 |**parentPage** | [**CreateNotionPageTaskParamsParentPage**](CreateNotionPageTaskParamsParentPage.md) |  |  |
 |**showTimelineAsTable** | **Boolean** |  |  [optional] |
 |**showActionItemsAsTable** | **Boolean** |  |  [optional] |
-|**text** | **String** | The message text |  |
-|**attachments** | **String** | Support liquid markup. Needs to be a valid JSON string after liquid is parsed |  |
+|**chats** | [**List&lt;AddActionItemTaskParamsPostToSlackChannelsInner&gt;**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
 |**archivation** | [**CreateTrelloCardTaskParamsArchivation**](CreateTrelloCardTaskParamsArchivation.md) |  |  |
 |**group** | [**Object**](Object.md) | The group id and display name |  [optional] |
-|**workflowState** | [**Object**](Object.md) | The workflow state id workflow state name |  [optional] |
+|**workflowState** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
 |**parentStoryId** | **String** | The parent story |  |
 |**board** | [**CreateTrelloCardTaskParamsBoard**](CreateTrelloCardTaskParamsBoard.md) |  |  |
 |**_list** | [**CreateTrelloCardTaskParamsList**](CreateTrelloCardTaskParamsList.md) |  |  |
@@ -154,11 +169,12 @@
 |**createAsEmail** | **String** | The email to use if creating as email |  [optional] |
 |**alternativeHosts** | **List&lt;String&gt;** |  |  [optional] |
 |**autoRecording** | [**AutoRecordingEnum**](#AutoRecordingEnum) |  |  [optional] |
-|**githubRepositoryNames** | **List&lt;String&gt;** |  |  [optional] |
+|**enableZoomBotAutoJoin** | **Boolean** | Allow the Rootly bot to start recording without waiting for host approval |  [optional] |
+|**githubRepositoryNames** | **List&lt;String&gt;** |  |  |
 |**branch** | **String** | The branch |  |
 |**pastDuration** | **String** | in format &#39;1 minute&#39;, &#39;30 days&#39;, &#39;3 months&#39;, etc |  |
 |**servicesImpactedByIncident** | **Boolean** |  |  [optional] |
-|**gitlabRepositoryNames** | **List&lt;String&gt;** |  |  [optional] |
+|**gitlabRepositoryNames** | **List&lt;String&gt;** |  |  |
 |**refs** | **List&lt;String&gt;** |  |  [optional] |
 |**sources** | **List&lt;String&gt;** |  |  [optional] |
 |**environmentsImpactedByIncident** | **Boolean** |  |  [optional] |
@@ -169,17 +185,19 @@
 |**eventMessage** | **String** |  |  [optional] |
 |**method** | [**MethodEnum**](#MethodEnum) | HTTP method |  [optional] |
 |**succeedOnStatus** | **String** | HTTP status code expected. Can be a regular expression. Eg: 200, 200|203, 20[0-3] |  |
-|**slackUsers** | [**List&lt;Object&gt;**](Object.md) |  |  [optional] |
-|**slackUserGroups** | [**List&lt;Object&gt;**](Object.md) |  |  [optional] |
-|**slackEmails** | **String** | Comma separated list of emails to invite to the channel |  [optional] |
+|**slackUsers** | [**List&lt;AddActionItemTaskParamsPostToSlackChannelsInner&gt;**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
+|**slackUserGroups** | [**List&lt;AddActionItemTaskParamsPostToSlackChannelsInner&gt;**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
+|**slackEmails** | **String** |  |  |
 |**schedules** | [**List&lt;AddActionItemTaskParamsPostToSlackChannelsInner&gt;**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
 |**escalations** | [**List&lt;AddActionItemTaskParamsPostToSlackChannelsInner&gt;**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
 |**details** | **String** | Details payload. Can contain liquid markup and need to be valid JSON |  [optional] |
 |**alertId** | **String** | Opsgenie Alert ID |  |
 |**opsgenieIncidentId** | **String** | The Opsgenie incident ID, this can also be a Rootly incident variable ex. {{ incident.opsgenie_incident_id }} |  |
-|**alertUrgencyId** | **String** | Alert urgency ID |  [optional] |
+|**functionalityTarget** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
+|**alertUrgencyId** | **String** | Alert urgency ID |  |
 |**escalationNote** | **String** |  |  [optional] |
-|**escalationPolicies** | [**List&lt;Object&gt;**](Object.md) |  |  [optional] |
+|**createNewAlert** | **Boolean** | When true, always create a new alert instead of re-paging the alert that triggered the workflow |  [optional] |
+|**escalationPolicies** | [**List&lt;AddActionItemTaskParamsPostToSlackChannelsInner&gt;**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
 |**createNewIncidentOnConflict** | **Boolean** | Rootly only supports linking to a single PagerDuty incident. If this feature is disabled Rootly will add responders from any additional pages to the existing PagerDuty incident that is linked to the Rootly incident. If enabled, Rootly will create a new PagerDuty incident that is not linked to any Rootly incidents |  [optional] |
 |**victorOpsIncidentId** | **String** | The victor_ops incident ID, this can also be a Rootly incident variable ex. {{ incident.victor_ops_incident_id }} |  |
 |**resolutionMessage** | **String** | Resolution message |  [optional] |
@@ -188,6 +206,7 @@
 |**shouldTweet** | **Boolean** | For Statuspage.io integrated pages auto publishes a tweet for your update |  [optional] |
 |**statusPageTemplate** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
 |**statusPageId** | **String** |  |  |
+|**statusPageIds** | **List&lt;String&gt;** | Publishes the update to every listed status page (requires the status-page-v3-limited-bulk-publish feature). When set, it takes precedence over status_page_id and the first entry becomes status_page_id. |  [optional] |
 |**integrationPayload** | **String** | Additional API Payload you can pass to statuspage.io for example. Can contain liquid markup and need to be valid JSON |  [optional] |
 |**commands** | **String** |  |  |
 |**privacy** | [**PrivacyEnum**](#PrivacyEnum) |  |  |
@@ -218,6 +237,7 @@
 |**tableName** | **String** | The table name |  |
 |**recordId** | **String** | The record id |  |
 |**taskId** | **String** | The task id |  |
+|**labelsMode** | [**LabelsModeEnum**](#LabelsModeEnum) | How to apply labels. &#39;replace&#39; (default) overwrites all existing labels. &#39;append&#39; adds to existing labels without removing them. |  [optional] |
 |**startedAt** | **String** |  |  [optional] |
 |**detectedAt** | **String** |  |  [optional] |
 |**acknowledgedAt** | **String** |  |  [optional] |
@@ -229,7 +249,6 @@
 |**subStatusId** | **String** | Sub-status to update timestamp for |  |
 |**assignedAt** | **String** | Timestamp of when the sub-status was assigned |  |
 |**cardId** | **String** | The card id |  |
-|**ticketId** | **String** | The ticket id |  |
 |**resource** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
 |**workflow** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
 |**checkWorkflowConditions** | **Boolean** |  |  [optional] |
@@ -238,7 +257,7 @@
 |**systemPrompt** | **String** | The system prompt to send to Anthropic (optional) |  [optional] |
 |**prompt** | **String** | The prompt to send to Anthropic |  |
 |**temperature** | **BigDecimal** | Sampling temperature (0.0-1.5). Higher values make output more random. |  [optional] |
-|**maxTokens** | **Integer** | Maximum number of tokens to generate |  [optional] |
+|**maxTokens** | **Integer** | Maximum number of tokens to generate. Defaults to 4000 when omitted |  [optional] |
 |**topP** | **BigDecimal** | Nucleus sampling parameter (0.0-1.0) |  [optional] |
 |**reasoningEffort** | [**ReasoningEffortEnum**](#ReasoningEffortEnum) | Constrains effort on reasoning for GPT-5 and o-series models |  [optional] |
 |**reasoningSummary** | [**ReasoningSummaryEnum**](#ReasoningSummaryEnum) | Summary of the reasoning performed by the model for GPT-5 and o-series models |  [optional] |
@@ -285,8 +304,8 @@
 | Name | Value |
 |---- | -----|
 | INCIDENT | &quot;incident&quot; |
-| POST_MORTEM | &quot;post_mortem&quot; |
 | ACTION_ITEM | &quot;action_item&quot; |
+| POST_MORTEM | &quot;post_mortem&quot; |
 | PULSE | &quot;pulse&quot; |
 | ALERT | &quot;alert&quot; |
 
@@ -351,6 +370,17 @@
 | EVENT_NAMED_HANGOUT | &quot;eventNamedHangout&quot; |
 | HANGOUTS_MEET | &quot;hangoutsMeet&quot; |
 | ADD_ON | &quot;addOn&quot; |
+
+
+
+## Enum: RecordingModeEnum
+
+| Name | Value |
+|---- | -----|
+| SPEAKER_VIEW | &quot;speaker_view&quot; |
+| GALLERY_VIEW | &quot;gallery_view&quot; |
+| GALLERY_VIEW_V2 | &quot;gallery_view_v2&quot; |
+| AUDIO_ONLY | &quot;audio_only&quot; |
 
 
 
@@ -461,6 +491,15 @@
 | STACKED_HORIZONTAL_BAR | &quot;STACKED_HORIZONTAL_BAR&quot; |
 | TABLE | &quot;TABLE&quot; |
 | VERTICAL_BAR | &quot;VERTICAL_BAR&quot; |
+
+
+
+## Enum: LabelsModeEnum
+
+| Name | Value |
+|---- | -----|
+| REPLACE | &quot;replace&quot; |
+| APPEND | &quot;append&quot; |
 
 
 

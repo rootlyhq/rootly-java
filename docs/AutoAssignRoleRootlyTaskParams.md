@@ -9,11 +9,11 @@
 |------------ | ------------- | ------------- | -------------|
 |**taskType** | [**TaskTypeEnum**](#TaskTypeEnum) |  |  [optional] |
 |**incidentRoleId** | **String** | The role id |  |
-|**escalationPolicyTarget** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
-|**serviceTarget** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
-|**userTarget** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
-|**groupTarget** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
-|**scheduleTarget** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
+|**escalationPolicyTarget** | [**Object**](Object.md) |  |  [optional] |
+|**serviceTarget** | [**Object**](Object.md) |  |  [optional] |
+|**userTarget** | [**Object**](Object.md) |  |  [optional] |
+|**groupTarget** | [**Object**](Object.md) |  |  [optional] |
+|**scheduleTarget** | [**Object**](Object.md) |  |  [optional] |
 
 
 

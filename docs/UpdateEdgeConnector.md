@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**edgeConnector** | [**V1EdgeConnectorsIdPatchRequestEdgeConnector**](V1EdgeConnectorsIdPatchRequestEdgeConnector.md) |  |  |
+|**edgeConnector** | [**UpdateEdgeConnectorEdgeConnector**](UpdateEdgeConnectorEdgeConnector.md) |  |  |
 
 
 

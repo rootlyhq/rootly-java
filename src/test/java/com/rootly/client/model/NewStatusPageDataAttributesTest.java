@@ -41,6 +41,14 @@ public class NewStatusPageDataAttributesTest {
     }
 
     /**
+     * Test the property 'slug'
+     */
+    @Test
+    public void slugTest() {
+        // TODO: test slug
+    }
+
+    /**
      * Test the property 'title'
      */
     @Test
@@ -182,6 +190,22 @@ public class NewStatusPageDataAttributesTest {
     @Test
     public void samlNameIdentifierFormatTest() {
         // TODO: test samlNameIdentifierFormat
+    }
+
+    /**
+     * Test the property 'sectionOrder'
+     */
+    @Test
+    public void sectionOrderTest() {
+        // TODO: test sectionOrder
+    }
+
+    /**
+     * Test the property 'externalDomainNames'
+     */
+    @Test
+    public void externalDomainNamesTest() {
+        // TODO: test externalDomainNames
     }
 
     /**

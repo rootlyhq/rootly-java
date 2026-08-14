@@ -18,6 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewCauseDataAttributesPropertiesInner;
 import com.rootly.client.model.NewEnvironmentDataAttributesSlackAliasesInner;
 import com.rootly.client.model.NewEnvironmentDataAttributesSlackChannelsInner;
 import java.io.IOException;
@@ -59,11 +60,35 @@ public class EnvironmentTest {
     }
 
     /**
+     * Test the property 'managedBy'
+     */
+    @Test
+    public void managedByTest() {
+        // TODO: test managedBy
+    }
+
+    /**
+     * Test the property 'externalId'
+     */
+    @Test
+    public void externalIdTest() {
+        // TODO: test externalId
+    }
+
+    /**
      * Test the property 'description'
      */
     @Test
     public void descriptionTest() {
         // TODO: test description
+    }
+
+    /**
+     * Test the property 'publicDescription'
+     */
+    @Test
+    public void publicDescriptionTest() {
+        // TODO: test publicDescription
     }
 
     /**
@@ -104,6 +129,14 @@ public class EnvironmentTest {
     @Test
     public void slackAliasesTest() {
         // TODO: test slackAliases
+    }
+
+    /**
+     * Test the property 'properties'
+     */
+    @Test
+    public void propertiesTest() {
+        // TODO: test properties
     }
 
     /**

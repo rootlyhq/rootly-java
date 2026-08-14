@@ -50,7 +50,7 @@ import com.rootly.client.JSON;
 /**
  * NewEscalationPolicyPathDataAttributesRulesInnerOneOf4
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf4 {
   /**
    * The type of the escalation path rule
@@ -104,18 +104,18 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf4 {
 
   public static final String SERIALIZED_NAME_RULE_TYPE = "rule_type";
   @SerializedName(SERIALIZED_NAME_RULE_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private RuleTypeEnum ruleType;
 
   public static final String SERIALIZED_NAME_SERVICE_IDS = "service_ids";
   @SerializedName(SERIALIZED_NAME_SERVICE_IDS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<String> serviceIds = new ArrayList<>();
 
   public NewEscalationPolicyPathDataAttributesRulesInnerOneOf4() {
   }
 
-  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf4 ruleType(@javax.annotation.Nonnull RuleTypeEnum ruleType) {
+  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf4 ruleType(@jakarta.annotation.Nonnull RuleTypeEnum ruleType) {
     this.ruleType = ruleType;
     return this;
   }
@@ -124,17 +124,17 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf4 {
    * The type of the escalation path rule
    * @return ruleType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public RuleTypeEnum getRuleType() {
     return ruleType;
   }
 
-  public void setRuleType(@javax.annotation.Nonnull RuleTypeEnum ruleType) {
+  public void setRuleType(@jakarta.annotation.Nonnull RuleTypeEnum ruleType) {
     this.ruleType = ruleType;
   }
 
 
-  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf4 serviceIds(@javax.annotation.Nonnull List<String> serviceIds) {
+  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf4 serviceIds(@jakarta.annotation.Nonnull List<String> serviceIds) {
     this.serviceIds = serviceIds;
     return this;
   }
@@ -151,12 +151,12 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf4 {
    * Service ids for which this escalation path should be used
    * @return serviceIds
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<String> getServiceIds() {
     return serviceIds;
   }
 
-  public void setServiceIds(@javax.annotation.Nonnull List<String> serviceIds) {
+  public void setServiceIds(@jakarta.annotation.Nonnull List<String> serviceIds) {
     this.serviceIds = serviceIds;
   }
 

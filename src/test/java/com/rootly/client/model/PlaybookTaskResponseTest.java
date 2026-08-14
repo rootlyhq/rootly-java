@@ -18,9 +18,12 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.JsonapiIncludedResource;
 import com.rootly.client.model.PlaybookTaskResponseData;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -44,6 +47,14 @@ public class PlaybookTaskResponseTest {
     @Test
     public void dataTest() {
         // TODO: test data
+    }
+
+    /**
+     * Test the property 'included'
+     */
+    @Test
+    public void includedTest() {
+        // TODO: test included
     }
 
 }

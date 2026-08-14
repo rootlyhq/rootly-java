@@ -504,6 +504,22 @@ public class IncidentActionItemsApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterKindEq  (optional)
+     * @param filterKindNotEq  (optional)
+     * @param filterKindIn  (optional)
+     * @param filterKindNotIn  (optional)
+     * @param filterPriorityEq  (optional)
+     * @param filterPriorityNotEq  (optional)
+     * @param filterPriorityIn  (optional)
+     * @param filterPriorityNotIn  (optional)
+     * @param filterStatusEq  (optional)
+     * @param filterStatusNotEq  (optional)
+     * @param filterStatusIn  (optional)
+     * @param filterStatusNotIn  (optional)
+     * @param filterIncidentStatusEq  (optional)
+     * @param filterIncidentStatusNotEq  (optional)
+     * @param filterIncidentStatusIn  (optional)
+     * @param filterIncidentStatusNotIn  (optional)
      * @param sort  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -515,7 +531,7 @@ public class IncidentActionItemsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAllIncidentActionItemsCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterPriority, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterIncidentStatus, @jakarta.annotation.Nullable String filterIncidentCreatedAtGt, @jakarta.annotation.Nullable String filterIncidentCreatedAtGte, @jakarta.annotation.Nullable String filterIncidentCreatedAtLt, @jakarta.annotation.Nullable String filterIncidentCreatedAtLte, @jakarta.annotation.Nullable String filterDueDateGt, @jakarta.annotation.Nullable String filterDueDateGte, @jakarta.annotation.Nullable String filterDueDateLt, @jakarta.annotation.Nullable String filterDueDateLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listAllIncidentActionItemsCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterPriority, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterIncidentStatus, @jakarta.annotation.Nullable String filterIncidentCreatedAtGt, @jakarta.annotation.Nullable String filterIncidentCreatedAtGte, @jakarta.annotation.Nullable String filterIncidentCreatedAtLt, @jakarta.annotation.Nullable String filterIncidentCreatedAtLte, @jakarta.annotation.Nullable String filterDueDateGt, @jakarta.annotation.Nullable String filterDueDateGte, @jakarta.annotation.Nullable String filterDueDateLt, @jakarta.annotation.Nullable String filterDueDateLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterKindEq, @jakarta.annotation.Nullable String filterKindNotEq, @jakarta.annotation.Nullable String filterKindIn, @jakarta.annotation.Nullable String filterKindNotIn, @jakarta.annotation.Nullable String filterPriorityEq, @jakarta.annotation.Nullable String filterPriorityNotEq, @jakarta.annotation.Nullable String filterPriorityIn, @jakarta.annotation.Nullable String filterPriorityNotIn, @jakarta.annotation.Nullable String filterStatusEq, @jakarta.annotation.Nullable String filterStatusNotEq, @jakarta.annotation.Nullable String filterStatusIn, @jakarta.annotation.Nullable String filterStatusNotIn, @jakarta.annotation.Nullable String filterIncidentStatusEq, @jakarta.annotation.Nullable String filterIncidentStatusNotEq, @jakarta.annotation.Nullable String filterIncidentStatusIn, @jakarta.annotation.Nullable String filterIncidentStatusNotIn, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -616,6 +632,70 @@ public class IncidentActionItemsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[created_at][lte]", filterCreatedAtLte));
         }
 
+        if (filterKindEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[kind][eq]", filterKindEq));
+        }
+
+        if (filterKindNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[kind][not_eq]", filterKindNotEq));
+        }
+
+        if (filterKindIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[kind][in]", filterKindIn));
+        }
+
+        if (filterKindNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[kind][not_in]", filterKindNotIn));
+        }
+
+        if (filterPriorityEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[priority][eq]", filterPriorityEq));
+        }
+
+        if (filterPriorityNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[priority][not_eq]", filterPriorityNotEq));
+        }
+
+        if (filterPriorityIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[priority][in]", filterPriorityIn));
+        }
+
+        if (filterPriorityNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[priority][not_in]", filterPriorityNotIn));
+        }
+
+        if (filterStatusEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[status][eq]", filterStatusEq));
+        }
+
+        if (filterStatusNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[status][not_eq]", filterStatusNotEq));
+        }
+
+        if (filterStatusIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[status][in]", filterStatusIn));
+        }
+
+        if (filterStatusNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[status][not_in]", filterStatusNotIn));
+        }
+
+        if (filterIncidentStatusEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[incident_status][eq]", filterIncidentStatusEq));
+        }
+
+        if (filterIncidentStatusNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[incident_status][not_eq]", filterIncidentStatusNotEq));
+        }
+
+        if (filterIncidentStatusIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[incident_status][in]", filterIncidentStatusIn));
+        }
+
+        if (filterIncidentStatusNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[incident_status][not_in]", filterIncidentStatusNotIn));
+        }
+
         if (sort != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort", sort));
         }
@@ -640,8 +720,8 @@ public class IncidentActionItemsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listAllIncidentActionItemsValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterPriority, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterIncidentStatus, @jakarta.annotation.Nullable String filterIncidentCreatedAtGt, @jakarta.annotation.Nullable String filterIncidentCreatedAtGte, @jakarta.annotation.Nullable String filterIncidentCreatedAtLt, @jakarta.annotation.Nullable String filterIncidentCreatedAtLte, @jakarta.annotation.Nullable String filterDueDateGt, @jakarta.annotation.Nullable String filterDueDateGte, @jakarta.annotation.Nullable String filterDueDateLt, @jakarta.annotation.Nullable String filterDueDateLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
-        return listAllIncidentActionItemsCall(include, pageNumber, pageSize, filterKind, filterPriority, filterStatus, filterIncidentStatus, filterIncidentCreatedAtGt, filterIncidentCreatedAtGte, filterIncidentCreatedAtLt, filterIncidentCreatedAtLte, filterDueDateGt, filterDueDateGte, filterDueDateLt, filterDueDateLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
+    private okhttp3.Call listAllIncidentActionItemsValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterPriority, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterIncidentStatus, @jakarta.annotation.Nullable String filterIncidentCreatedAtGt, @jakarta.annotation.Nullable String filterIncidentCreatedAtGte, @jakarta.annotation.Nullable String filterIncidentCreatedAtLt, @jakarta.annotation.Nullable String filterIncidentCreatedAtLte, @jakarta.annotation.Nullable String filterDueDateGt, @jakarta.annotation.Nullable String filterDueDateGte, @jakarta.annotation.Nullable String filterDueDateLt, @jakarta.annotation.Nullable String filterDueDateLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterKindEq, @jakarta.annotation.Nullable String filterKindNotEq, @jakarta.annotation.Nullable String filterKindIn, @jakarta.annotation.Nullable String filterKindNotIn, @jakarta.annotation.Nullable String filterPriorityEq, @jakarta.annotation.Nullable String filterPriorityNotEq, @jakarta.annotation.Nullable String filterPriorityIn, @jakarta.annotation.Nullable String filterPriorityNotIn, @jakarta.annotation.Nullable String filterStatusEq, @jakarta.annotation.Nullable String filterStatusNotEq, @jakarta.annotation.Nullable String filterStatusIn, @jakarta.annotation.Nullable String filterStatusNotIn, @jakarta.annotation.Nullable String filterIncidentStatusEq, @jakarta.annotation.Nullable String filterIncidentStatusNotEq, @jakarta.annotation.Nullable String filterIncidentStatusIn, @jakarta.annotation.Nullable String filterIncidentStatusNotIn, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+        return listAllIncidentActionItemsCall(include, pageNumber, pageSize, filterKind, filterPriority, filterStatus, filterIncidentStatus, filterIncidentCreatedAtGt, filterIncidentCreatedAtGte, filterIncidentCreatedAtLt, filterIncidentCreatedAtLte, filterDueDateGt, filterDueDateGte, filterDueDateLt, filterDueDateLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterKindEq, filterKindNotEq, filterKindIn, filterKindNotIn, filterPriorityEq, filterPriorityNotEq, filterPriorityIn, filterPriorityNotIn, filterStatusEq, filterStatusNotEq, filterStatusIn, filterStatusNotIn, filterIncidentStatusEq, filterIncidentStatusNotEq, filterIncidentStatusIn, filterIncidentStatusNotIn, sort, _callback);
 
     }
 
@@ -667,6 +747,22 @@ public class IncidentActionItemsApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterKindEq  (optional)
+     * @param filterKindNotEq  (optional)
+     * @param filterKindIn  (optional)
+     * @param filterKindNotIn  (optional)
+     * @param filterPriorityEq  (optional)
+     * @param filterPriorityNotEq  (optional)
+     * @param filterPriorityIn  (optional)
+     * @param filterPriorityNotIn  (optional)
+     * @param filterStatusEq  (optional)
+     * @param filterStatusNotEq  (optional)
+     * @param filterStatusIn  (optional)
+     * @param filterStatusNotIn  (optional)
+     * @param filterIncidentStatusEq  (optional)
+     * @param filterIncidentStatusNotEq  (optional)
+     * @param filterIncidentStatusIn  (optional)
+     * @param filterIncidentStatusNotIn  (optional)
      * @param sort  (optional)
      * @return IncidentActionItemList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -677,8 +773,8 @@ public class IncidentActionItemsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentActionItemList listAllIncidentActionItems(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterPriority, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterIncidentStatus, @jakarta.annotation.Nullable String filterIncidentCreatedAtGt, @jakarta.annotation.Nullable String filterIncidentCreatedAtGte, @jakarta.annotation.Nullable String filterIncidentCreatedAtLt, @jakarta.annotation.Nullable String filterIncidentCreatedAtLte, @jakarta.annotation.Nullable String filterDueDateGt, @jakarta.annotation.Nullable String filterDueDateGte, @jakarta.annotation.Nullable String filterDueDateLt, @jakarta.annotation.Nullable String filterDueDateLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
-        ApiResponse<IncidentActionItemList> localVarResp = listAllIncidentActionItemsWithHttpInfo(include, pageNumber, pageSize, filterKind, filterPriority, filterStatus, filterIncidentStatus, filterIncidentCreatedAtGt, filterIncidentCreatedAtGte, filterIncidentCreatedAtLt, filterIncidentCreatedAtLte, filterDueDateGt, filterDueDateGte, filterDueDateLt, filterDueDateLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
+    public IncidentActionItemList listAllIncidentActionItems(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterPriority, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterIncidentStatus, @jakarta.annotation.Nullable String filterIncidentCreatedAtGt, @jakarta.annotation.Nullable String filterIncidentCreatedAtGte, @jakarta.annotation.Nullable String filterIncidentCreatedAtLt, @jakarta.annotation.Nullable String filterIncidentCreatedAtLte, @jakarta.annotation.Nullable String filterDueDateGt, @jakarta.annotation.Nullable String filterDueDateGte, @jakarta.annotation.Nullable String filterDueDateLt, @jakarta.annotation.Nullable String filterDueDateLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterKindEq, @jakarta.annotation.Nullable String filterKindNotEq, @jakarta.annotation.Nullable String filterKindIn, @jakarta.annotation.Nullable String filterKindNotIn, @jakarta.annotation.Nullable String filterPriorityEq, @jakarta.annotation.Nullable String filterPriorityNotEq, @jakarta.annotation.Nullable String filterPriorityIn, @jakarta.annotation.Nullable String filterPriorityNotIn, @jakarta.annotation.Nullable String filterStatusEq, @jakarta.annotation.Nullable String filterStatusNotEq, @jakarta.annotation.Nullable String filterStatusIn, @jakarta.annotation.Nullable String filterStatusNotIn, @jakarta.annotation.Nullable String filterIncidentStatusEq, @jakarta.annotation.Nullable String filterIncidentStatusNotEq, @jakarta.annotation.Nullable String filterIncidentStatusIn, @jakarta.annotation.Nullable String filterIncidentStatusNotIn, @jakarta.annotation.Nullable String sort) throws ApiException {
+        ApiResponse<IncidentActionItemList> localVarResp = listAllIncidentActionItemsWithHttpInfo(include, pageNumber, pageSize, filterKind, filterPriority, filterStatus, filterIncidentStatus, filterIncidentCreatedAtGt, filterIncidentCreatedAtGte, filterIncidentCreatedAtLt, filterIncidentCreatedAtLte, filterDueDateGt, filterDueDateGte, filterDueDateLt, filterDueDateLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterKindEq, filterKindNotEq, filterKindIn, filterKindNotIn, filterPriorityEq, filterPriorityNotEq, filterPriorityIn, filterPriorityNotIn, filterStatusEq, filterStatusNotEq, filterStatusIn, filterStatusNotIn, filterIncidentStatusEq, filterIncidentStatusNotEq, filterIncidentStatusIn, filterIncidentStatusNotIn, sort);
         return localVarResp.getData();
     }
 
@@ -704,6 +800,22 @@ public class IncidentActionItemsApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterKindEq  (optional)
+     * @param filterKindNotEq  (optional)
+     * @param filterKindIn  (optional)
+     * @param filterKindNotIn  (optional)
+     * @param filterPriorityEq  (optional)
+     * @param filterPriorityNotEq  (optional)
+     * @param filterPriorityIn  (optional)
+     * @param filterPriorityNotIn  (optional)
+     * @param filterStatusEq  (optional)
+     * @param filterStatusNotEq  (optional)
+     * @param filterStatusIn  (optional)
+     * @param filterStatusNotIn  (optional)
+     * @param filterIncidentStatusEq  (optional)
+     * @param filterIncidentStatusNotEq  (optional)
+     * @param filterIncidentStatusIn  (optional)
+     * @param filterIncidentStatusNotIn  (optional)
      * @param sort  (optional)
      * @return ApiResponse&lt;IncidentActionItemList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -714,8 +826,8 @@ public class IncidentActionItemsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentActionItemList> listAllIncidentActionItemsWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterPriority, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterIncidentStatus, @jakarta.annotation.Nullable String filterIncidentCreatedAtGt, @jakarta.annotation.Nullable String filterIncidentCreatedAtGte, @jakarta.annotation.Nullable String filterIncidentCreatedAtLt, @jakarta.annotation.Nullable String filterIncidentCreatedAtLte, @jakarta.annotation.Nullable String filterDueDateGt, @jakarta.annotation.Nullable String filterDueDateGte, @jakarta.annotation.Nullable String filterDueDateLt, @jakarta.annotation.Nullable String filterDueDateLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
-        okhttp3.Call localVarCall = listAllIncidentActionItemsValidateBeforeCall(include, pageNumber, pageSize, filterKind, filterPriority, filterStatus, filterIncidentStatus, filterIncidentCreatedAtGt, filterIncidentCreatedAtGte, filterIncidentCreatedAtLt, filterIncidentCreatedAtLte, filterDueDateGt, filterDueDateGte, filterDueDateLt, filterDueDateLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, null);
+    public ApiResponse<IncidentActionItemList> listAllIncidentActionItemsWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterPriority, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterIncidentStatus, @jakarta.annotation.Nullable String filterIncidentCreatedAtGt, @jakarta.annotation.Nullable String filterIncidentCreatedAtGte, @jakarta.annotation.Nullable String filterIncidentCreatedAtLt, @jakarta.annotation.Nullable String filterIncidentCreatedAtLte, @jakarta.annotation.Nullable String filterDueDateGt, @jakarta.annotation.Nullable String filterDueDateGte, @jakarta.annotation.Nullable String filterDueDateLt, @jakarta.annotation.Nullable String filterDueDateLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterKindEq, @jakarta.annotation.Nullable String filterKindNotEq, @jakarta.annotation.Nullable String filterKindIn, @jakarta.annotation.Nullable String filterKindNotIn, @jakarta.annotation.Nullable String filterPriorityEq, @jakarta.annotation.Nullable String filterPriorityNotEq, @jakarta.annotation.Nullable String filterPriorityIn, @jakarta.annotation.Nullable String filterPriorityNotIn, @jakarta.annotation.Nullable String filterStatusEq, @jakarta.annotation.Nullable String filterStatusNotEq, @jakarta.annotation.Nullable String filterStatusIn, @jakarta.annotation.Nullable String filterStatusNotIn, @jakarta.annotation.Nullable String filterIncidentStatusEq, @jakarta.annotation.Nullable String filterIncidentStatusNotEq, @jakarta.annotation.Nullable String filterIncidentStatusIn, @jakarta.annotation.Nullable String filterIncidentStatusNotIn, @jakarta.annotation.Nullable String sort) throws ApiException {
+        okhttp3.Call localVarCall = listAllIncidentActionItemsValidateBeforeCall(include, pageNumber, pageSize, filterKind, filterPriority, filterStatus, filterIncidentStatus, filterIncidentCreatedAtGt, filterIncidentCreatedAtGte, filterIncidentCreatedAtLt, filterIncidentCreatedAtLte, filterDueDateGt, filterDueDateGte, filterDueDateLt, filterDueDateLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterKindEq, filterKindNotEq, filterKindIn, filterKindNotIn, filterPriorityEq, filterPriorityNotEq, filterPriorityIn, filterPriorityNotIn, filterStatusEq, filterStatusNotEq, filterStatusIn, filterStatusNotIn, filterIncidentStatusEq, filterIncidentStatusNotEq, filterIncidentStatusIn, filterIncidentStatusNotIn, sort, null);
         Type localVarReturnType = new TypeToken<IncidentActionItemList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -742,6 +854,22 @@ public class IncidentActionItemsApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterKindEq  (optional)
+     * @param filterKindNotEq  (optional)
+     * @param filterKindIn  (optional)
+     * @param filterKindNotIn  (optional)
+     * @param filterPriorityEq  (optional)
+     * @param filterPriorityNotEq  (optional)
+     * @param filterPriorityIn  (optional)
+     * @param filterPriorityNotIn  (optional)
+     * @param filterStatusEq  (optional)
+     * @param filterStatusNotEq  (optional)
+     * @param filterStatusIn  (optional)
+     * @param filterStatusNotIn  (optional)
+     * @param filterIncidentStatusEq  (optional)
+     * @param filterIncidentStatusNotEq  (optional)
+     * @param filterIncidentStatusIn  (optional)
+     * @param filterIncidentStatusNotIn  (optional)
      * @param sort  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -753,9 +881,9 @@ public class IncidentActionItemsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAllIncidentActionItemsAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterPriority, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterIncidentStatus, @jakarta.annotation.Nullable String filterIncidentCreatedAtGt, @jakarta.annotation.Nullable String filterIncidentCreatedAtGte, @jakarta.annotation.Nullable String filterIncidentCreatedAtLt, @jakarta.annotation.Nullable String filterIncidentCreatedAtLte, @jakarta.annotation.Nullable String filterDueDateGt, @jakarta.annotation.Nullable String filterDueDateGte, @jakarta.annotation.Nullable String filterDueDateLt, @jakarta.annotation.Nullable String filterDueDateLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback<IncidentActionItemList> _callback) throws ApiException {
+    public okhttp3.Call listAllIncidentActionItemsAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterPriority, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterIncidentStatus, @jakarta.annotation.Nullable String filterIncidentCreatedAtGt, @jakarta.annotation.Nullable String filterIncidentCreatedAtGte, @jakarta.annotation.Nullable String filterIncidentCreatedAtLt, @jakarta.annotation.Nullable String filterIncidentCreatedAtLte, @jakarta.annotation.Nullable String filterDueDateGt, @jakarta.annotation.Nullable String filterDueDateGte, @jakarta.annotation.Nullable String filterDueDateLt, @jakarta.annotation.Nullable String filterDueDateLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterKindEq, @jakarta.annotation.Nullable String filterKindNotEq, @jakarta.annotation.Nullable String filterKindIn, @jakarta.annotation.Nullable String filterKindNotIn, @jakarta.annotation.Nullable String filterPriorityEq, @jakarta.annotation.Nullable String filterPriorityNotEq, @jakarta.annotation.Nullable String filterPriorityIn, @jakarta.annotation.Nullable String filterPriorityNotIn, @jakarta.annotation.Nullable String filterStatusEq, @jakarta.annotation.Nullable String filterStatusNotEq, @jakarta.annotation.Nullable String filterStatusIn, @jakarta.annotation.Nullable String filterStatusNotIn, @jakarta.annotation.Nullable String filterIncidentStatusEq, @jakarta.annotation.Nullable String filterIncidentStatusNotEq, @jakarta.annotation.Nullable String filterIncidentStatusIn, @jakarta.annotation.Nullable String filterIncidentStatusNotIn, @jakarta.annotation.Nullable String sort, final ApiCallback<IncidentActionItemList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listAllIncidentActionItemsValidateBeforeCall(include, pageNumber, pageSize, filterKind, filterPriority, filterStatus, filterIncidentStatus, filterIncidentCreatedAtGt, filterIncidentCreatedAtGte, filterIncidentCreatedAtLt, filterIncidentCreatedAtLte, filterDueDateGt, filterDueDateGte, filterDueDateLt, filterDueDateLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
+        okhttp3.Call localVarCall = listAllIncidentActionItemsValidateBeforeCall(include, pageNumber, pageSize, filterKind, filterPriority, filterStatus, filterIncidentStatus, filterIncidentCreatedAtGt, filterIncidentCreatedAtGte, filterIncidentCreatedAtLt, filterIncidentCreatedAtLte, filterDueDateGt, filterDueDateGte, filterDueDateLt, filterDueDateLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterKindEq, filterKindNotEq, filterKindIn, filterKindNotIn, filterPriorityEq, filterPriorityNotEq, filterPriorityIn, filterPriorityNotIn, filterStatusEq, filterStatusNotEq, filterStatusIn, filterStatusNotIn, filterIncidentStatusEq, filterIncidentStatusNotEq, filterIncidentStatusIn, filterIncidentStatusNotIn, sort, _callback);
         Type localVarReturnType = new TypeToken<IncidentActionItemList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

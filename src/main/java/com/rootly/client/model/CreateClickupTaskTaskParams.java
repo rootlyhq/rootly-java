@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.AddActionItemTaskParamsPostToSlackChannelsInner;
 import com.rootly.client.model.CreateJiraIssueTaskParamsPriority;
 import java.io.IOException;
 import java.util.Arrays;
@@ -50,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * CreateClickupTaskTaskParams
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateClickupTaskTaskParams {
   /**
    * Gets or Sets taskType
@@ -116,6 +117,11 @@ public class CreateClickupTaskTaskParams {
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   @jakarta.annotation.Nullable
   private String description;
+
+  public static final String SERIALIZED_NAME_LIST = "list";
+  @SerializedName(SERIALIZED_NAME_LIST)
+  @jakarta.annotation.Nonnull
+  private AddActionItemTaskParamsPostToSlackChannelsInner _list;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
@@ -199,6 +205,25 @@ public class CreateClickupTaskTaskParams {
 
   public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
+  }
+
+
+  public CreateClickupTaskTaskParams _list(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner _list) {
+    this._list = _list;
+    return this;
+  }
+
+  /**
+   * Get _list
+   * @return _list
+   */
+  @jakarta.annotation.Nonnull
+  public AddActionItemTaskParamsPostToSlackChannelsInner getList() {
+    return _list;
+  }
+
+  public void setList(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner _list) {
+    this._list = _list;
   }
 
 
@@ -310,6 +335,7 @@ public class CreateClickupTaskTaskParams {
     return Objects.equals(this.taskType, createClickupTaskTaskParams.taskType) &&
         Objects.equals(this.title, createClickupTaskTaskParams.title) &&
         Objects.equals(this.description, createClickupTaskTaskParams.description) &&
+        Objects.equals(this._list, createClickupTaskTaskParams._list) &&
         Objects.equals(this.tags, createClickupTaskTaskParams.tags) &&
         Objects.equals(this.priority, createClickupTaskTaskParams.priority) &&
         Objects.equals(this.dueDate, createClickupTaskTaskParams.dueDate) &&
@@ -323,7 +349,7 @@ public class CreateClickupTaskTaskParams {
 
   @Override
   public int hashCode() {
-    return Objects.hash(taskType, title, description, tags, priority, dueDate, customFieldsMapping, taskPayload);
+    return Objects.hash(taskType, title, description, _list, tags, priority, dueDate, customFieldsMapping, taskPayload);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -340,6 +366,7 @@ public class CreateClickupTaskTaskParams {
     sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    _list: ").append(toIndentedString(_list)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
     sb.append("    dueDate: ").append(toIndentedString(dueDate)).append("\n");
@@ -370,6 +397,7 @@ public class CreateClickupTaskTaskParams {
     openapiFields.add("task_type");
     openapiFields.add("title");
     openapiFields.add("description");
+    openapiFields.add("list");
     openapiFields.add("tags");
     openapiFields.add("priority");
     openapiFields.add("due_date");
@@ -379,6 +407,7 @@ public class CreateClickupTaskTaskParams {
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
     openapiRequiredFields.add("title");
+    openapiRequiredFields.add("list");
   }
 
   /**
@@ -422,6 +451,8 @@ public class CreateClickupTaskTaskParams {
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
+      // validate the required field `list`
+      AddActionItemTaskParamsPostToSlackChannelsInner.validateJsonElement(jsonObj.get("list"));
       if ((jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull()) && !jsonObj.get("tags").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `tags` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }

@@ -78,7 +78,8 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | form_field_position created |  -  |
+| **201** | form_field_position created on an action item form |  -  |
+| **422** | rejects an action item form when the feature is disabled |  -  |
 | **401** | responds with unauthorized for invalid token |  -  |
 
 <a id="deleteFormFieldPosition"></a>
@@ -360,5 +361,6 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | form_field_position updated |  -  |
+| **422** | does not error when updating with a nonexistent form_field_id |  -  |
 | **404** | resource not found |  -  |
 

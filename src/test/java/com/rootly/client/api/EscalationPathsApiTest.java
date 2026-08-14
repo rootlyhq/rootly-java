@@ -90,9 +90,10 @@ public class EscalationPathsApiTest {
     public void listEscalationPathsTest() throws ApiException {
         String escalationPolicyId = null;
         String include = null;
+        String filterPathType = null;
         Integer pageNumber = null;
         Integer pageSize = null;
-        EscalationPolicyPathList response = api.listEscalationPaths(escalationPolicyId, include, pageNumber, pageSize);
+        EscalationPolicyPathList response = api.listEscalationPaths(escalationPolicyId, include, filterPathType, pageNumber, pageSize);
         // TODO: test validations
     }
 

@@ -48,22 +48,22 @@ import com.rootly.client.JSON;
 /**
  * Set a value for a catalog property
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewCauseDataAttributesPropertiesInner {
   public static final String SERIALIZED_NAME_CATALOG_PROPERTY_ID = "catalog_property_id";
   @SerializedName(SERIALIZED_NAME_CATALOG_PROPERTY_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String catalogPropertyId;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String value;
 
   public NewCauseDataAttributesPropertiesInner() {
   }
 
-  public NewCauseDataAttributesPropertiesInner catalogPropertyId(@javax.annotation.Nonnull String catalogPropertyId) {
+  public NewCauseDataAttributesPropertiesInner catalogPropertyId(@jakarta.annotation.Nonnull String catalogPropertyId) {
     this.catalogPropertyId = catalogPropertyId;
     return this;
   }
@@ -72,17 +72,17 @@ public class NewCauseDataAttributesPropertiesInner {
    * Catalog property ID
    * @return catalogPropertyId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCatalogPropertyId() {
     return catalogPropertyId;
   }
 
-  public void setCatalogPropertyId(@javax.annotation.Nonnull String catalogPropertyId) {
+  public void setCatalogPropertyId(@jakarta.annotation.Nonnull String catalogPropertyId) {
     this.catalogPropertyId = catalogPropertyId;
   }
 
 
-  public NewCauseDataAttributesPropertiesInner value(@javax.annotation.Nonnull String value) {
+  public NewCauseDataAttributesPropertiesInner value(@jakarta.annotation.Nonnull String value) {
     this.value = value;
     return this;
   }
@@ -91,12 +91,12 @@ public class NewCauseDataAttributesPropertiesInner {
    * The property value
    * @return value
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getValue() {
     return value;
   }
 
-  public void setValue(@javax.annotation.Nonnull String value) {
+  public void setValue(@jakarta.annotation.Nonnull String value) {
     this.value = value;
   }
 

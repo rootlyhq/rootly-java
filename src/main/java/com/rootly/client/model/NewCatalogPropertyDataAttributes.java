@@ -49,11 +49,17 @@ import com.rootly.client.JSON;
 /**
  * NewCatalogPropertyDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewCatalogPropertyDataAttributes {
+  public static final String SERIALIZED_NAME_SLUG = "slug";
+  @Deprecated
+  @SerializedName(SERIALIZED_NAME_SLUG)
+  @jakarta.annotation.Nullable
+  private String slug;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   /**
@@ -66,8 +72,6 @@ public class NewCatalogPropertyDataAttributes {
     REFERENCE("reference"),
     
     BOOLEAN("boolean"),
-    
-    REFERENCE2("reference"),
     
     SERVICE("service"),
     
@@ -128,27 +132,27 @@ public class NewCatalogPropertyDataAttributes {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private KindEnum kind;
 
   public static final String SERIALIZED_NAME_KIND_CATALOG_ID = "kind_catalog_id";
   @SerializedName(SERIALIZED_NAME_KIND_CATALOG_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String kindCatalogId;
 
   public static final String SERIALIZED_NAME_MULTIPLE = "multiple";
   @SerializedName(SERIALIZED_NAME_MULTIPLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean multiple;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public static final String SERIALIZED_NAME_REQUIRED = "required";
   @SerializedName(SERIALIZED_NAME_REQUIRED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean required;
 
   /**
@@ -215,13 +219,41 @@ public class NewCatalogPropertyDataAttributes {
 
   public static final String SERIALIZED_NAME_CATALOG_TYPE = "catalog_type";
   @SerializedName(SERIALIZED_NAME_CATALOG_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CatalogTypeEnum catalogType;
+
+  public static final String SERIALIZED_NAME_EXTERNAL_ID = "external_id";
+  @SerializedName(SERIALIZED_NAME_EXTERNAL_ID)
+  @jakarta.annotation.Nullable
+  private String externalId;
 
   public NewCatalogPropertyDataAttributes() {
   }
 
-  public NewCatalogPropertyDataAttributes name(@javax.annotation.Nonnull String name) {
+  @Deprecated
+  public NewCatalogPropertyDataAttributes slug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+    return this;
+  }
+
+  /**
+   * Deprecated. &#x60;slug&#x60; is derived from &#x60;name&#x60;; any submitted value is ignored. This property will be removed from the request schema in a future version.
+   * @return slug
+   * @deprecated
+   */
+  @Deprecated
+  @jakarta.annotation.Nullable
+  public String getSlug() {
+    return slug;
+  }
+
+  @Deprecated
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+  }
+
+
+  public NewCatalogPropertyDataAttributes name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -230,17 +262,17 @@ public class NewCatalogPropertyDataAttributes {
    * Get name
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public NewCatalogPropertyDataAttributes kind(@javax.annotation.Nonnull KindEnum kind) {
+  public NewCatalogPropertyDataAttributes kind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
     return this;
   }
@@ -249,17 +281,17 @@ public class NewCatalogPropertyDataAttributes {
    * Get kind
    * @return kind
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(@javax.annotation.Nonnull KindEnum kind) {
+  public void setKind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public NewCatalogPropertyDataAttributes kindCatalogId(@javax.annotation.Nullable String kindCatalogId) {
+  public NewCatalogPropertyDataAttributes kindCatalogId(@jakarta.annotation.Nullable String kindCatalogId) {
     this.kindCatalogId = kindCatalogId;
     return this;
   }
@@ -268,17 +300,17 @@ public class NewCatalogPropertyDataAttributes {
    * Restricts values to items of specified catalog.
    * @return kindCatalogId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getKindCatalogId() {
     return kindCatalogId;
   }
 
-  public void setKindCatalogId(@javax.annotation.Nullable String kindCatalogId) {
+  public void setKindCatalogId(@jakarta.annotation.Nullable String kindCatalogId) {
     this.kindCatalogId = kindCatalogId;
   }
 
 
-  public NewCatalogPropertyDataAttributes multiple(@javax.annotation.Nullable Boolean multiple) {
+  public NewCatalogPropertyDataAttributes multiple(@jakarta.annotation.Nullable Boolean multiple) {
     this.multiple = multiple;
     return this;
   }
@@ -287,17 +319,17 @@ public class NewCatalogPropertyDataAttributes {
    * Whether the attribute accepts multiple values.
    * @return multiple
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getMultiple() {
     return multiple;
   }
 
-  public void setMultiple(@javax.annotation.Nullable Boolean multiple) {
+  public void setMultiple(@jakarta.annotation.Nullable Boolean multiple) {
     this.multiple = multiple;
   }
 
 
-  public NewCatalogPropertyDataAttributes position(@javax.annotation.Nullable Integer position) {
+  public NewCatalogPropertyDataAttributes position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -306,17 +338,17 @@ public class NewCatalogPropertyDataAttributes {
    * Default position of the item when displayed in a list.
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 
 
-  public NewCatalogPropertyDataAttributes required(@javax.annotation.Nullable Boolean required) {
+  public NewCatalogPropertyDataAttributes required(@jakarta.annotation.Nullable Boolean required) {
     this.required = required;
     return this;
   }
@@ -325,17 +357,17 @@ public class NewCatalogPropertyDataAttributes {
    * Whether the property is required.
    * @return required
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getRequired() {
     return required;
   }
 
-  public void setRequired(@javax.annotation.Nullable Boolean required) {
+  public void setRequired(@jakarta.annotation.Nullable Boolean required) {
     this.required = required;
   }
 
 
-  public NewCatalogPropertyDataAttributes catalogType(@javax.annotation.Nullable CatalogTypeEnum catalogType) {
+  public NewCatalogPropertyDataAttributes catalogType(@jakarta.annotation.Nullable CatalogTypeEnum catalogType) {
     this.catalogType = catalogType;
     return this;
   }
@@ -344,13 +376,32 @@ public class NewCatalogPropertyDataAttributes {
    * The type of catalog the property belongs to.
    * @return catalogType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CatalogTypeEnum getCatalogType() {
     return catalogType;
   }
 
-  public void setCatalogType(@javax.annotation.Nullable CatalogTypeEnum catalogType) {
+  public void setCatalogType(@jakarta.annotation.Nullable CatalogTypeEnum catalogType) {
     this.catalogType = catalogType;
+  }
+
+
+  public NewCatalogPropertyDataAttributes externalId(@jakarta.annotation.Nullable String externalId) {
+    this.externalId = externalId;
+    return this;
+  }
+
+  /**
+   * An external identifier for this catalog property. Must be unique within the scope.
+   * @return externalId
+   */
+  @jakarta.annotation.Nullable
+  public String getExternalId() {
+    return externalId;
+  }
+
+  public void setExternalId(@jakarta.annotation.Nullable String externalId) {
+    this.externalId = externalId;
   }
 
 
@@ -364,13 +415,15 @@ public class NewCatalogPropertyDataAttributes {
       return false;
     }
     NewCatalogPropertyDataAttributes newCatalogPropertyDataAttributes = (NewCatalogPropertyDataAttributes) o;
-    return Objects.equals(this.name, newCatalogPropertyDataAttributes.name) &&
+    return Objects.equals(this.slug, newCatalogPropertyDataAttributes.slug) &&
+        Objects.equals(this.name, newCatalogPropertyDataAttributes.name) &&
         Objects.equals(this.kind, newCatalogPropertyDataAttributes.kind) &&
         Objects.equals(this.kindCatalogId, newCatalogPropertyDataAttributes.kindCatalogId) &&
         Objects.equals(this.multiple, newCatalogPropertyDataAttributes.multiple) &&
         Objects.equals(this.position, newCatalogPropertyDataAttributes.position) &&
         Objects.equals(this.required, newCatalogPropertyDataAttributes.required) &&
-        Objects.equals(this.catalogType, newCatalogPropertyDataAttributes.catalogType);
+        Objects.equals(this.catalogType, newCatalogPropertyDataAttributes.catalogType) &&
+        Objects.equals(this.externalId, newCatalogPropertyDataAttributes.externalId);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -379,7 +432,7 @@ public class NewCatalogPropertyDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, kind, kindCatalogId, multiple, position, required, catalogType);
+    return Objects.hash(slug, name, kind, kindCatalogId, multiple, position, required, catalogType, externalId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -393,6 +446,7 @@ public class NewCatalogPropertyDataAttributes {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class NewCatalogPropertyDataAttributes {\n");
+    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
     sb.append("    kindCatalogId: ").append(toIndentedString(kindCatalogId)).append("\n");
@@ -400,6 +454,7 @@ public class NewCatalogPropertyDataAttributes {
     sb.append("    position: ").append(toIndentedString(position)).append("\n");
     sb.append("    required: ").append(toIndentedString(required)).append("\n");
     sb.append("    catalogType: ").append(toIndentedString(catalogType)).append("\n");
+    sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -422,6 +477,7 @@ public class NewCatalogPropertyDataAttributes {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("slug");
     openapiFields.add("name");
     openapiFields.add("kind");
     openapiFields.add("kind_catalog_id");
@@ -429,6 +485,7 @@ public class NewCatalogPropertyDataAttributes {
     openapiFields.add("position");
     openapiFields.add("required");
     openapiFields.add("catalog_type");
+    openapiFields.add("external_id");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -464,6 +521,9 @@ public class NewCatalogPropertyDataAttributes {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
+      }
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
@@ -481,6 +541,9 @@ public class NewCatalogPropertyDataAttributes {
       // validate the optional field `catalog_type`
       if (jsonObj.get("catalog_type") != null && !jsonObj.get("catalog_type").isJsonNull()) {
         CatalogTypeEnum.validateJsonElement(jsonObj.get("catalog_type"));
+      }
+      if ((jsonObj.get("external_id") != null && !jsonObj.get("external_id").isJsonNull()) && !jsonObj.get("external_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `external_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("external_id").toString()));
       }
   }
 

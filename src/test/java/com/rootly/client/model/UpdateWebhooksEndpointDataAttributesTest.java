@@ -18,10 +18,12 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewWebhooksEndpointDataAttributesCustomHeadersInner;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -37,6 +39,14 @@ public class UpdateWebhooksEndpointDataAttributesTest {
     @Test
     public void testUpdateWebhooksEndpointDataAttributes() {
         // TODO: test UpdateWebhooksEndpointDataAttributes
+    }
+
+    /**
+     * Test the property 'slug'
+     */
+    @Test
+    public void slugTest() {
+        // TODO: test slug
     }
 
     /**
@@ -61,6 +71,14 @@ public class UpdateWebhooksEndpointDataAttributesTest {
     @Test
     public void enabledTest() {
         // TODO: test enabled
+    }
+
+    /**
+     * Test the property 'customHeaders'
+     */
+    @Test
+    public void customHeadersTest() {
+        // TODO: test customHeaders
     }
 
 }

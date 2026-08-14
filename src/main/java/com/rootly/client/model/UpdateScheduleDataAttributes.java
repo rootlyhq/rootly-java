@@ -53,7 +53,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateScheduleDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateScheduleDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -89,6 +89,108 @@ public class UpdateScheduleDataAttributes {
   @SerializedName(SERIALIZED_NAME_OWNER_USER_ID)
   @jakarta.annotation.Nullable
   private Integer ownerUserId;
+
+  public static final String SERIALIZED_NAME_SYNC_LINEAR_ENABLED = "sync_linear_enabled";
+  @SerializedName(SERIALIZED_NAME_SYNC_LINEAR_ENABLED)
+  @jakarta.annotation.Nullable
+  private Boolean syncLinearEnabled;
+
+  public static final String SERIALIZED_NAME_INCLUDE_SHADOWS_IN_SLACK_NOTIFICATIONS = "include_shadows_in_slack_notifications";
+  @SerializedName(SERIALIZED_NAME_INCLUDE_SHADOWS_IN_SLACK_NOTIFICATIONS)
+  @jakarta.annotation.Nullable
+  private Boolean includeShadowsInSlackNotifications;
+
+  public static final String SERIALIZED_NAME_SHIFT_START_NOTIFICATIONS_ENABLED = "shift_start_notifications_enabled";
+  @SerializedName(SERIALIZED_NAME_SHIFT_START_NOTIFICATIONS_ENABLED)
+  @jakarta.annotation.Nullable
+  private Boolean shiftStartNotificationsEnabled;
+
+  public static final String SERIALIZED_NAME_SHIFT_UPDATE_NOTIFICATIONS_ENABLED = "shift_update_notifications_enabled";
+  @SerializedName(SERIALIZED_NAME_SHIFT_UPDATE_NOTIFICATIONS_ENABLED)
+  @jakarta.annotation.Nullable
+  private Boolean shiftUpdateNotificationsEnabled;
+
+  public static final String SERIALIZED_NAME_SHIFT_REPORT_ENABLED = "shift_report_enabled";
+  @SerializedName(SERIALIZED_NAME_SHIFT_REPORT_ENABLED)
+  @jakarta.annotation.Nullable
+  private Boolean shiftReportEnabled;
+
+  /**
+   * Day of week the weekly shift summary is sent
+   */
+  @JsonAdapter(ShiftReportDayOfWeekEnum.Adapter.class)
+  public enum ShiftReportDayOfWeekEnum {
+    MONDAY("monday"),
+    
+    TUESDAY("tuesday"),
+    
+    WEDNESDAY("wednesday"),
+    
+    THURSDAY("thursday"),
+    
+    FRIDAY("friday"),
+    
+    SATURDAY("saturday"),
+    
+    SUNDAY("sunday");
+
+    private String value;
+
+    ShiftReportDayOfWeekEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static ShiftReportDayOfWeekEnum fromValue(String value) {
+      for (ShiftReportDayOfWeekEnum b : ShiftReportDayOfWeekEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<ShiftReportDayOfWeekEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ShiftReportDayOfWeekEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ShiftReportDayOfWeekEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return ShiftReportDayOfWeekEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      ShiftReportDayOfWeekEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_SHIFT_REPORT_DAY_OF_WEEK = "shift_report_day_of_week";
+  @SerializedName(SERIALIZED_NAME_SHIFT_REPORT_DAY_OF_WEEK)
+  @jakarta.annotation.Nullable
+  private ShiftReportDayOfWeekEnum shiftReportDayOfWeek;
+
+  public static final String SERIALIZED_NAME_SHIFT_REPORT_TIME_OF_DAY = "shift_report_time_of_day";
+  @SerializedName(SERIALIZED_NAME_SHIFT_REPORT_TIME_OF_DAY)
+  @jakarta.annotation.Nullable
+  private String shiftReportTimeOfDay;
+
+  public static final String SERIALIZED_NAME_SHIFT_REPORT_TIME_ZONE = "shift_report_time_zone";
+  @SerializedName(SERIALIZED_NAME_SHIFT_REPORT_TIME_ZONE)
+  @jakarta.annotation.Nullable
+  private String shiftReportTimeZone;
 
   public UpdateScheduleDataAttributes() {
   }
@@ -234,6 +336,158 @@ public class UpdateScheduleDataAttributes {
   }
 
 
+  public UpdateScheduleDataAttributes syncLinearEnabled(@jakarta.annotation.Nullable Boolean syncLinearEnabled) {
+    this.syncLinearEnabled = syncLinearEnabled;
+    return this;
+  }
+
+  /**
+   * Whether the schedule is synced with Linear
+   * @return syncLinearEnabled
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getSyncLinearEnabled() {
+    return syncLinearEnabled;
+  }
+
+  public void setSyncLinearEnabled(@jakarta.annotation.Nullable Boolean syncLinearEnabled) {
+    this.syncLinearEnabled = syncLinearEnabled;
+  }
+
+
+  public UpdateScheduleDataAttributes includeShadowsInSlackNotifications(@jakarta.annotation.Nullable Boolean includeShadowsInSlackNotifications) {
+    this.includeShadowsInSlackNotifications = includeShadowsInSlackNotifications;
+    return this;
+  }
+
+  /**
+   * Whether shadow users are included in Slack notifications and user group syncing. Requires &#x60;slack_channel&#x60; to be set; otherwise this value is forced to false on save.
+   * @return includeShadowsInSlackNotifications
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getIncludeShadowsInSlackNotifications() {
+    return includeShadowsInSlackNotifications;
+  }
+
+  public void setIncludeShadowsInSlackNotifications(@jakarta.annotation.Nullable Boolean includeShadowsInSlackNotifications) {
+    this.includeShadowsInSlackNotifications = includeShadowsInSlackNotifications;
+  }
+
+
+  public UpdateScheduleDataAttributes shiftStartNotificationsEnabled(@jakarta.annotation.Nullable Boolean shiftStartNotificationsEnabled) {
+    this.shiftStartNotificationsEnabled = shiftStartNotificationsEnabled;
+    return this;
+  }
+
+  /**
+   * Whether shift-start notifications are enabled. Requires &#x60;slack_channel&#x60; to be set; otherwise this value is forced to false on save.
+   * @return shiftStartNotificationsEnabled
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getShiftStartNotificationsEnabled() {
+    return shiftStartNotificationsEnabled;
+  }
+
+  public void setShiftStartNotificationsEnabled(@jakarta.annotation.Nullable Boolean shiftStartNotificationsEnabled) {
+    this.shiftStartNotificationsEnabled = shiftStartNotificationsEnabled;
+  }
+
+
+  public UpdateScheduleDataAttributes shiftUpdateNotificationsEnabled(@jakarta.annotation.Nullable Boolean shiftUpdateNotificationsEnabled) {
+    this.shiftUpdateNotificationsEnabled = shiftUpdateNotificationsEnabled;
+    return this;
+  }
+
+  /**
+   * Whether shift-update notifications are enabled. Requires &#x60;slack_channel&#x60; to be set; otherwise this value is forced to false on save.
+   * @return shiftUpdateNotificationsEnabled
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getShiftUpdateNotificationsEnabled() {
+    return shiftUpdateNotificationsEnabled;
+  }
+
+  public void setShiftUpdateNotificationsEnabled(@jakarta.annotation.Nullable Boolean shiftUpdateNotificationsEnabled) {
+    this.shiftUpdateNotificationsEnabled = shiftUpdateNotificationsEnabled;
+  }
+
+
+  public UpdateScheduleDataAttributes shiftReportEnabled(@jakarta.annotation.Nullable Boolean shiftReportEnabled) {
+    this.shiftReportEnabled = shiftReportEnabled;
+    return this;
+  }
+
+  /**
+   * Whether the weekly shift summary report is enabled. Requires &#x60;slack_channel&#x60; to be set; otherwise this value is forced to false on save.
+   * @return shiftReportEnabled
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getShiftReportEnabled() {
+    return shiftReportEnabled;
+  }
+
+  public void setShiftReportEnabled(@jakarta.annotation.Nullable Boolean shiftReportEnabled) {
+    this.shiftReportEnabled = shiftReportEnabled;
+  }
+
+
+  public UpdateScheduleDataAttributes shiftReportDayOfWeek(@jakarta.annotation.Nullable ShiftReportDayOfWeekEnum shiftReportDayOfWeek) {
+    this.shiftReportDayOfWeek = shiftReportDayOfWeek;
+    return this;
+  }
+
+  /**
+   * Day of week the weekly shift summary is sent
+   * @return shiftReportDayOfWeek
+   */
+  @jakarta.annotation.Nullable
+  public ShiftReportDayOfWeekEnum getShiftReportDayOfWeek() {
+    return shiftReportDayOfWeek;
+  }
+
+  public void setShiftReportDayOfWeek(@jakarta.annotation.Nullable ShiftReportDayOfWeekEnum shiftReportDayOfWeek) {
+    this.shiftReportDayOfWeek = shiftReportDayOfWeek;
+  }
+
+
+  public UpdateScheduleDataAttributes shiftReportTimeOfDay(@jakarta.annotation.Nullable String shiftReportTimeOfDay) {
+    this.shiftReportTimeOfDay = shiftReportTimeOfDay;
+    return this;
+  }
+
+  /**
+   * Time of day the weekly shift summary is sent, in HH:MM 24-hour format
+   * @return shiftReportTimeOfDay
+   */
+  @jakarta.annotation.Nullable
+  public String getShiftReportTimeOfDay() {
+    return shiftReportTimeOfDay;
+  }
+
+  public void setShiftReportTimeOfDay(@jakarta.annotation.Nullable String shiftReportTimeOfDay) {
+    this.shiftReportTimeOfDay = shiftReportTimeOfDay;
+  }
+
+
+  public UpdateScheduleDataAttributes shiftReportTimeZone(@jakarta.annotation.Nullable String shiftReportTimeZone) {
+    this.shiftReportTimeZone = shiftReportTimeZone;
+    return this;
+  }
+
+  /**
+   * IANA time zone used for the weekly shift summary
+   * @return shiftReportTimeZone
+   */
+  @jakarta.annotation.Nullable
+  public String getShiftReportTimeZone() {
+    return shiftReportTimeZone;
+  }
+
+  public void setShiftReportTimeZone(@jakarta.annotation.Nullable String shiftReportTimeZone) {
+    this.shiftReportTimeZone = shiftReportTimeZone;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -250,7 +504,15 @@ public class UpdateScheduleDataAttributes {
         Objects.equals(this.slackUserGroup, updateScheduleDataAttributes.slackUserGroup) &&
         Objects.equals(this.slackChannel, updateScheduleDataAttributes.slackChannel) &&
         Objects.equals(this.ownerGroupIds, updateScheduleDataAttributes.ownerGroupIds) &&
-        Objects.equals(this.ownerUserId, updateScheduleDataAttributes.ownerUserId);
+        Objects.equals(this.ownerUserId, updateScheduleDataAttributes.ownerUserId) &&
+        Objects.equals(this.syncLinearEnabled, updateScheduleDataAttributes.syncLinearEnabled) &&
+        Objects.equals(this.includeShadowsInSlackNotifications, updateScheduleDataAttributes.includeShadowsInSlackNotifications) &&
+        Objects.equals(this.shiftStartNotificationsEnabled, updateScheduleDataAttributes.shiftStartNotificationsEnabled) &&
+        Objects.equals(this.shiftUpdateNotificationsEnabled, updateScheduleDataAttributes.shiftUpdateNotificationsEnabled) &&
+        Objects.equals(this.shiftReportEnabled, updateScheduleDataAttributes.shiftReportEnabled) &&
+        Objects.equals(this.shiftReportDayOfWeek, updateScheduleDataAttributes.shiftReportDayOfWeek) &&
+        Objects.equals(this.shiftReportTimeOfDay, updateScheduleDataAttributes.shiftReportTimeOfDay) &&
+        Objects.equals(this.shiftReportTimeZone, updateScheduleDataAttributes.shiftReportTimeZone);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -259,7 +521,7 @@ public class UpdateScheduleDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, allTimeCoverage, slackUserGroup, slackChannel, ownerGroupIds, ownerUserId);
+    return Objects.hash(name, description, allTimeCoverage, slackUserGroup, slackChannel, ownerGroupIds, ownerUserId, syncLinearEnabled, includeShadowsInSlackNotifications, shiftStartNotificationsEnabled, shiftUpdateNotificationsEnabled, shiftReportEnabled, shiftReportDayOfWeek, shiftReportTimeOfDay, shiftReportTimeZone);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -280,6 +542,14 @@ public class UpdateScheduleDataAttributes {
     sb.append("    slackChannel: ").append(toIndentedString(slackChannel)).append("\n");
     sb.append("    ownerGroupIds: ").append(toIndentedString(ownerGroupIds)).append("\n");
     sb.append("    ownerUserId: ").append(toIndentedString(ownerUserId)).append("\n");
+    sb.append("    syncLinearEnabled: ").append(toIndentedString(syncLinearEnabled)).append("\n");
+    sb.append("    includeShadowsInSlackNotifications: ").append(toIndentedString(includeShadowsInSlackNotifications)).append("\n");
+    sb.append("    shiftStartNotificationsEnabled: ").append(toIndentedString(shiftStartNotificationsEnabled)).append("\n");
+    sb.append("    shiftUpdateNotificationsEnabled: ").append(toIndentedString(shiftUpdateNotificationsEnabled)).append("\n");
+    sb.append("    shiftReportEnabled: ").append(toIndentedString(shiftReportEnabled)).append("\n");
+    sb.append("    shiftReportDayOfWeek: ").append(toIndentedString(shiftReportDayOfWeek)).append("\n");
+    sb.append("    shiftReportTimeOfDay: ").append(toIndentedString(shiftReportTimeOfDay)).append("\n");
+    sb.append("    shiftReportTimeZone: ").append(toIndentedString(shiftReportTimeZone)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -309,6 +579,14 @@ public class UpdateScheduleDataAttributes {
     openapiFields.add("slack_channel");
     openapiFields.add("owner_group_ids");
     openapiFields.add("owner_user_id");
+    openapiFields.add("sync_linear_enabled");
+    openapiFields.add("include_shadows_in_slack_notifications");
+    openapiFields.add("shift_start_notifications_enabled");
+    openapiFields.add("shift_update_notifications_enabled");
+    openapiFields.add("shift_report_enabled");
+    openapiFields.add("shift_report_day_of_week");
+    openapiFields.add("shift_report_time_of_day");
+    openapiFields.add("shift_report_time_zone");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -352,6 +630,19 @@ public class UpdateScheduleDataAttributes {
       // ensure the optional json data is an array if present
       if (jsonObj.get("owner_group_ids") != null && !jsonObj.get("owner_group_ids").isJsonNull() && !jsonObj.get("owner_group_ids").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `owner_group_ids` to be an array in the JSON string but got `%s`", jsonObj.get("owner_group_ids").toString()));
+      }
+      if ((jsonObj.get("shift_report_day_of_week") != null && !jsonObj.get("shift_report_day_of_week").isJsonNull()) && !jsonObj.get("shift_report_day_of_week").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `shift_report_day_of_week` to be a primitive type in the JSON string but got `%s`", jsonObj.get("shift_report_day_of_week").toString()));
+      }
+      // validate the optional field `shift_report_day_of_week`
+      if (jsonObj.get("shift_report_day_of_week") != null && !jsonObj.get("shift_report_day_of_week").isJsonNull()) {
+        ShiftReportDayOfWeekEnum.validateJsonElement(jsonObj.get("shift_report_day_of_week"));
+      }
+      if ((jsonObj.get("shift_report_time_of_day") != null && !jsonObj.get("shift_report_time_of_day").isJsonNull()) && !jsonObj.get("shift_report_time_of_day").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `shift_report_time_of_day` to be a primitive type in the JSON string but got `%s`", jsonObj.get("shift_report_time_of_day").toString()));
+      }
+      if ((jsonObj.get("shift_report_time_zone") != null && !jsonObj.get("shift_report_time_zone").isJsonNull()) && !jsonObj.get("shift_report_time_zone").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `shift_report_time_zone` to be a primitive type in the JSON string but got `%s`", jsonObj.get("shift_report_time_zone").toString()));
       }
   }
 

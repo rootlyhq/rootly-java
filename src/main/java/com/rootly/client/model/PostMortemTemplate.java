@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * PostMortemTemplate
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class PostMortemTemplate {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -151,6 +151,13 @@ public class PostMortemTemplate {
   public PostMortemTemplate() {
   }
 
+  public PostMortemTemplate(
+     String slug
+  ) {
+    this();
+    this.slug = slug;
+  }
+
   public PostMortemTemplate name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
@@ -170,11 +177,6 @@ public class PostMortemTemplate {
   }
 
 
-  public PostMortemTemplate slug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
-    return this;
-  }
-
   /**
    * The slugified name of the postmortem template
    * @return slug
@@ -184,9 +186,6 @@ public class PostMortemTemplate {
     return slug;
   }
 
-  public void setSlug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
-  }
 
 
   public PostMortemTemplate _default(@jakarta.annotation.Nullable Boolean _default) {

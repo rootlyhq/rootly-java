@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**kind** | [**KindEnum**](#KindEnum) | The kind of the workflow group |  [optional] |
 |**name** | **String** | The name of the workflow group. |  |
-|**slug** | **String** | The slug of the workflow group. |  [optional] |
+|**slug** | **String** | The slug of the workflow group. |  [optional] [readonly] |
 |**description** | **String** | A description of the workflow group. |  [optional] |
 |**icon** | **String** | An emoji icon displayed next to the workflow group. |  [optional] |
 |**expanded** | **Boolean** | Whether the group is expanded or collapsed. |  [optional] |

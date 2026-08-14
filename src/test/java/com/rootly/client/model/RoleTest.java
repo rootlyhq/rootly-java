@@ -289,6 +289,62 @@ public class RoleTest {
     }
 
     /**
+     * Test the property 'catalogsPermissions'
+     */
+    @Test
+    public void catalogsPermissionsTest() {
+        // TODO: test catalogsPermissions
+    }
+
+    /**
+     * Test the property 'subStatusesPermissions'
+     */
+    @Test
+    public void subStatusesPermissionsTest() {
+        // TODO: test subStatusesPermissions
+    }
+
+    /**
+     * Test the property 'edgeConnectorPermissions'
+     */
+    @Test
+    public void edgeConnectorPermissionsTest() {
+        // TODO: test edgeConnectorPermissions
+    }
+
+    /**
+     * Test the property 'slasPermissions'
+     */
+    @Test
+    public void slasPermissionsTest() {
+        // TODO: test slasPermissions
+    }
+
+    /**
+     * Test the property 'pagingPermissions'
+     */
+    @Test
+    public void pagingPermissionsTest() {
+        // TODO: test pagingPermissions
+    }
+
+    /**
+     * Test the property 'incidentCommunicationPermissions'
+     */
+    @Test
+    public void incidentCommunicationPermissionsTest() {
+        // TODO: test incidentCommunicationPermissions
+    }
+
+    /**
+     * Test the property 'communicationPermissions'
+     */
+    @Test
+    public void communicationPermissionsTest() {
+        // TODO: test communicationPermissions
+    }
+
+    /**
      * Test the property 'createdAt'
      */
     @Test

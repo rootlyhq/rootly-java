@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.rootly.client.model.NewAlertDataAttributesAlertFieldValuesAttributesInner;
 import com.rootly.client.model.NewAlertDataAttributesLabelsInner;
+import com.rootly.client.model.NewAlertDataAttributesNotificationTargetsInner;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -54,7 +55,7 @@ import com.rootly.client.JSON;
 /**
  * NewAlertDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewAlertDataAttributes {
   /**
    * Whether the alert is marked as noise
@@ -113,144 +114,11 @@ public class NewAlertDataAttributes {
   @jakarta.annotation.Nullable
   private NoiseEnum noise;
 
-  /**
-   * The source of the alert
-   */
-  @JsonAdapter(SourceEnum.Adapter.class)
-  public enum SourceEnum {
-    ROOTLY("rootly"),
-    
-    MANUAL("manual"),
-    
-    API("api"),
-    
-    HEARTBEAT("heartbeat"),
-    
-    WEB("web"),
-    
-    SLACK("slack"),
-    
-    EMAIL("email"),
-    
-    WORKFLOW("workflow"),
-    
-    LIVE_CALL_ROUTING("live_call_routing"),
-    
-    MOBILE("mobile"),
-    
-    PAGERDUTY("pagerduty"),
-    
-    OPSGENIE("opsgenie"),
-    
-    VICTOROPS("victorops"),
-    
-    PAGERTREE("pagertree"),
-    
-    DATADOG("datadog"),
-    
-    NOBL9("nobl9"),
-    
-    ZENDESK("zendesk"),
-    
-    ASANA("asana"),
-    
-    CLICKUP("clickup"),
-    
-    SENTRY("sentry"),
-    
-    ROLLBAR("rollbar"),
-    
-    JIRA("jira"),
-    
-    HONEYCOMB("honeycomb"),
-    
-    SERVICE_NOW("service_now"),
-    
-    LINEAR("linear"),
-    
-    GRAFANA("grafana"),
-    
-    ALERTMANAGER("alertmanager"),
-    
-    GOOGLE_CLOUD("google_cloud"),
-    
-    GENERIC_WEBHOOK("generic_webhook"),
-    
-    CLOUD_WATCH("cloud_watch"),
-    
-    AZURE("azure"),
-    
-    SPLUNK("splunk"),
-    
-    CHRONOSPHERE("chronosphere"),
-    
-    APP_OPTICS("app_optics"),
-    
-    BUG_SNAG("bug_snag"),
-    
-    MONTE_CARLO("monte_carlo"),
-    
-    NAGIOS("nagios"),
-    
-    PRTG("prtg"),
-    
-    CATCHPOINT("catchpoint"),
-    
-    APP_DYNAMICS("app_dynamics"),
-    
-    CHECKLY("checkly"),
-    
-    NEW_RELIC("new_relic"),
-    
-    GITLAB("gitlab");
-
-    private String value;
-
-    SourceEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static SourceEnum fromValue(String value) {
-      for (SourceEnum b : SourceEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<SourceEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final SourceEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public SourceEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return SourceEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      SourceEnum.fromValue(value);
-    }
-  }
-
   public static final String SERIALIZED_NAME_SOURCE = "source";
+  @Deprecated
   @SerializedName(SERIALIZED_NAME_SOURCE)
-  @jakarta.annotation.Nonnull
-  private SourceEnum source;
+  @jakarta.annotation.Nullable
+  private String source;
 
   /**
    * Only available for organizations with Rootly On-Call enabled. Can be one of open, triggered.
@@ -329,6 +197,11 @@ public class NewAlertDataAttributes {
   @jakarta.annotation.Nullable
   private List<String> groupIds;
 
+  public static final String SERIALIZED_NAME_FUNCTIONALITY_IDS = "functionality_ids";
+  @SerializedName(SERIALIZED_NAME_FUNCTIONALITY_IDS)
+  @jakarta.annotation.Nullable
+  private List<String> functionalityIds;
+
   public static final String SERIALIZED_NAME_ENVIRONMENT_IDS = "environment_ids";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_IDS)
   @jakarta.annotation.Nullable
@@ -360,7 +233,7 @@ public class NewAlertDataAttributes {
   private String alertUrgencyId;
 
   /**
-   * Only available for organizations with Rootly On-Call enabled. Can be one of Group, Service, EscalationPolicy, User.
+   * Only available for organizations with Rootly On-Call enabled. Can be one of Group, Service, EscalationPolicy, Functionality, User. Please contact support if you encounter issues using &#x60;Functionality&#x60; as a notification target type.
    */
   @JsonAdapter(NotificationTargetTypeEnum.Adapter.class)
   public enum NotificationTargetTypeEnum {
@@ -370,7 +243,9 @@ public class NewAlertDataAttributes {
     
     ESCALATION_POLICY("EscalationPolicy"),
     
-    SERVICE("Service");
+    SERVICE("Service"),
+    
+    FUNCTIONALITY("Functionality");
 
     private String value;
 
@@ -425,6 +300,11 @@ public class NewAlertDataAttributes {
   @jakarta.annotation.Nullable
   private String notificationTargetId;
 
+  public static final String SERIALIZED_NAME_NOTIFICATION_TARGETS = "notification_targets";
+  @SerializedName(SERIALIZED_NAME_NOTIFICATION_TARGETS)
+  @jakarta.annotation.Nullable
+  private List<NewAlertDataAttributesNotificationTargetsInner> notificationTargets;
+
   public static final String SERIALIZED_NAME_LABELS = "labels";
   @SerializedName(SERIALIZED_NAME_LABELS)
   @jakarta.annotation.Nullable
@@ -467,21 +347,25 @@ public class NewAlertDataAttributes {
   }
 
 
-  public NewAlertDataAttributes source(@jakarta.annotation.Nonnull SourceEnum source) {
+  @Deprecated
+  public NewAlertDataAttributes source(@jakarta.annotation.Nullable String source) {
     this.source = source;
     return this;
   }
 
   /**
-   * The source of the alert
+   * Deprecated. Accepted for backwards compatibility; new clients should omit. Defaults to &#x60;api&#x60;.
    * @return source
+   * @deprecated
    */
-  @jakarta.annotation.Nonnull
-  public SourceEnum getSource() {
+  @Deprecated
+  @jakarta.annotation.Nullable
+  public String getSource() {
     return source;
   }
 
-  public void setSource(@jakarta.annotation.Nonnull SourceEnum source) {
+  @Deprecated
+  public void setSource(@jakarta.annotation.Nullable String source) {
     this.source = source;
   }
 
@@ -594,6 +478,33 @@ public class NewAlertDataAttributes {
 
   public void setGroupIds(@jakarta.annotation.Nullable List<String> groupIds) {
     this.groupIds = groupIds;
+  }
+
+
+  public NewAlertDataAttributes functionalityIds(@jakarta.annotation.Nullable List<String> functionalityIds) {
+    this.functionalityIds = functionalityIds;
+    return this;
+  }
+
+  public NewAlertDataAttributes addFunctionalityIdsItem(String functionalityIdsItem) {
+    if (this.functionalityIds == null) {
+      this.functionalityIds = new ArrayList<>();
+    }
+    this.functionalityIds.add(functionalityIdsItem);
+    return this;
+  }
+
+  /**
+   * The Functionality IDs to attach to the alert
+   * @return functionalityIds
+   */
+  @jakarta.annotation.Nullable
+  public List<String> getFunctionalityIds() {
+    return functionalityIds;
+  }
+
+  public void setFunctionalityIds(@jakarta.annotation.Nullable List<String> functionalityIds) {
+    this.functionalityIds = functionalityIds;
   }
 
 
@@ -725,7 +636,7 @@ public class NewAlertDataAttributes {
   }
 
   /**
-   * Only available for organizations with Rootly On-Call enabled. Can be one of Group, Service, EscalationPolicy, User.
+   * Only available for organizations with Rootly On-Call enabled. Can be one of Group, Service, EscalationPolicy, Functionality, User. Please contact support if you encounter issues using &#x60;Functionality&#x60; as a notification target type.
    * @return notificationTargetType
    */
   @jakarta.annotation.Nullable
@@ -754,6 +665,33 @@ public class NewAlertDataAttributes {
 
   public void setNotificationTargetId(@jakarta.annotation.Nullable String notificationTargetId) {
     this.notificationTargetId = notificationTargetId;
+  }
+
+
+  public NewAlertDataAttributes notificationTargets(@jakarta.annotation.Nullable List<NewAlertDataAttributesNotificationTargetsInner> notificationTargets) {
+    this.notificationTargets = notificationTargets;
+    return this;
+  }
+
+  public NewAlertDataAttributes addNotificationTargetsItem(NewAlertDataAttributesNotificationTargetsInner notificationTargetsItem) {
+    if (this.notificationTargets == null) {
+      this.notificationTargets = new ArrayList<>();
+    }
+    this.notificationTargets.add(notificationTargetsItem);
+    return this;
+  }
+
+  /**
+   * Only available for organizations with Rootly On-Call enabled. Page multiple destinations (any combination of Group, Service, EscalationPolicy, Functionality, or User) in a single request. &#x60;Functionality&#x60; targets require the &#x60;enable_paging_functionalities&#x60; feature; a request that includes one while it is disabled is rejected. Applies to alert creation only. When provided, this takes precedence over the singular &#x60;notification_target_type&#x60; / &#x60;notification_target_id&#x60; fields.
+   * @return notificationTargets
+   */
+  @jakarta.annotation.Nullable
+  public List<NewAlertDataAttributesNotificationTargetsInner> getNotificationTargets() {
+    return notificationTargets;
+  }
+
+  public void setNotificationTargets(@jakarta.annotation.Nullable List<NewAlertDataAttributesNotificationTargetsInner> notificationTargets) {
+    this.notificationTargets = notificationTargets;
   }
 
 
@@ -866,6 +804,7 @@ public class NewAlertDataAttributes {
         Objects.equals(this.description, newAlertDataAttributes.description) &&
         Objects.equals(this.serviceIds, newAlertDataAttributes.serviceIds) &&
         Objects.equals(this.groupIds, newAlertDataAttributes.groupIds) &&
+        Objects.equals(this.functionalityIds, newAlertDataAttributes.functionalityIds) &&
         Objects.equals(this.environmentIds, newAlertDataAttributes.environmentIds) &&
         Objects.equals(this.startedAt, newAlertDataAttributes.startedAt) &&
         Objects.equals(this.endedAt, newAlertDataAttributes.endedAt) &&
@@ -874,6 +813,7 @@ public class NewAlertDataAttributes {
         Objects.equals(this.alertUrgencyId, newAlertDataAttributes.alertUrgencyId) &&
         Objects.equals(this.notificationTargetType, newAlertDataAttributes.notificationTargetType) &&
         Objects.equals(this.notificationTargetId, newAlertDataAttributes.notificationTargetId) &&
+        Objects.equals(this.notificationTargets, newAlertDataAttributes.notificationTargets) &&
         Objects.equals(this.labels, newAlertDataAttributes.labels) &&
         Objects.equals(this.data, newAlertDataAttributes.data) &&
         Objects.equals(this.deduplicationKey, newAlertDataAttributes.deduplicationKey) &&
@@ -886,7 +826,7 @@ public class NewAlertDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(noise, source, status, summary, description, serviceIds, groupIds, environmentIds, startedAt, endedAt, externalId, externalUrl, alertUrgencyId, notificationTargetType, notificationTargetId, labels, data, deduplicationKey, alertFieldValuesAttributes);
+    return Objects.hash(noise, source, status, summary, description, serviceIds, groupIds, functionalityIds, environmentIds, startedAt, endedAt, externalId, externalUrl, alertUrgencyId, notificationTargetType, notificationTargetId, notificationTargets, labels, data, deduplicationKey, alertFieldValuesAttributes);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -907,6 +847,7 @@ public class NewAlertDataAttributes {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    serviceIds: ").append(toIndentedString(serviceIds)).append("\n");
     sb.append("    groupIds: ").append(toIndentedString(groupIds)).append("\n");
+    sb.append("    functionalityIds: ").append(toIndentedString(functionalityIds)).append("\n");
     sb.append("    environmentIds: ").append(toIndentedString(environmentIds)).append("\n");
     sb.append("    startedAt: ").append(toIndentedString(startedAt)).append("\n");
     sb.append("    endedAt: ").append(toIndentedString(endedAt)).append("\n");
@@ -915,6 +856,7 @@ public class NewAlertDataAttributes {
     sb.append("    alertUrgencyId: ").append(toIndentedString(alertUrgencyId)).append("\n");
     sb.append("    notificationTargetType: ").append(toIndentedString(notificationTargetType)).append("\n");
     sb.append("    notificationTargetId: ").append(toIndentedString(notificationTargetId)).append("\n");
+    sb.append("    notificationTargets: ").append(toIndentedString(notificationTargets)).append("\n");
     sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    deduplicationKey: ").append(toIndentedString(deduplicationKey)).append("\n");
@@ -948,6 +890,7 @@ public class NewAlertDataAttributes {
     openapiFields.add("description");
     openapiFields.add("service_ids");
     openapiFields.add("group_ids");
+    openapiFields.add("functionality_ids");
     openapiFields.add("environment_ids");
     openapiFields.add("started_at");
     openapiFields.add("ended_at");
@@ -956,6 +899,7 @@ public class NewAlertDataAttributes {
     openapiFields.add("alert_urgency_id");
     openapiFields.add("notification_target_type");
     openapiFields.add("notification_target_id");
+    openapiFields.add("notification_targets");
     openapiFields.add("labels");
     openapiFields.add("data");
     openapiFields.add("deduplication_key");
@@ -963,7 +907,6 @@ public class NewAlertDataAttributes {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("source");
     openapiRequiredFields.add("summary");
   }
 
@@ -1002,11 +945,9 @@ public class NewAlertDataAttributes {
       if (jsonObj.get("noise") != null && !jsonObj.get("noise").isJsonNull()) {
         NoiseEnum.validateJsonElement(jsonObj.get("noise"));
       }
-      if (!jsonObj.get("source").isJsonPrimitive()) {
+      if ((jsonObj.get("source") != null && !jsonObj.get("source").isJsonNull()) && !jsonObj.get("source").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `source` to be a primitive type in the JSON string but got `%s`", jsonObj.get("source").toString()));
       }
-      // validate the required field `source`
-      SourceEnum.validateJsonElement(jsonObj.get("source"));
       if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
@@ -1027,6 +968,10 @@ public class NewAlertDataAttributes {
       // ensure the optional json data is an array if present
       if (jsonObj.get("group_ids") != null && !jsonObj.get("group_ids").isJsonNull() && !jsonObj.get("group_ids").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `group_ids` to be an array in the JSON string but got `%s`", jsonObj.get("group_ids").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("functionality_ids") != null && !jsonObj.get("functionality_ids").isJsonNull() && !jsonObj.get("functionality_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `functionality_ids` to be an array in the JSON string but got `%s`", jsonObj.get("functionality_ids").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("environment_ids") != null && !jsonObj.get("environment_ids").isJsonNull() && !jsonObj.get("environment_ids").isJsonArray()) {
@@ -1050,6 +995,20 @@ public class NewAlertDataAttributes {
       }
       if ((jsonObj.get("notification_target_id") != null && !jsonObj.get("notification_target_id").isJsonNull()) && !jsonObj.get("notification_target_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `notification_target_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("notification_target_id").toString()));
+      }
+      if (jsonObj.get("notification_targets") != null && !jsonObj.get("notification_targets").isJsonNull()) {
+        JsonArray jsonArraynotificationTargets = jsonObj.getAsJsonArray("notification_targets");
+        if (jsonArraynotificationTargets != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("notification_targets").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `notification_targets` to be an array in the JSON string but got `%s`", jsonObj.get("notification_targets").toString()));
+          }
+
+          // validate the optional field `notification_targets` (array)
+          for (int i = 0; i < jsonArraynotificationTargets.size(); i++) {
+            NewAlertDataAttributesNotificationTargetsInner.validateJsonElement(jsonArraynotificationTargets.get(i));
+          };
+        }
       }
       if (jsonObj.get("labels") != null && !jsonObj.get("labels").isJsonNull()) {
         JsonArray jsonArraylabels = jsonObj.getAsJsonArray("labels");

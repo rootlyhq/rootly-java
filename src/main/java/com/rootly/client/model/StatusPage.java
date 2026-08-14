@@ -22,7 +22,9 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -51,7 +53,7 @@ import com.rootly.client.JSON;
 /**
  * StatusPage
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class StatusPage {
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
@@ -318,6 +320,65 @@ public class StatusPage {
   @jakarta.annotation.Nullable
   private SamlNameIdentifierFormatEnum samlNameIdentifierFormat;
 
+  /**
+   * Gets or Sets sectionOrder
+   */
+  @JsonAdapter(SectionOrderEnum.Adapter.class)
+  public enum SectionOrderEnum {
+    MAINTENANCE("maintenance"),
+    
+    SYSTEM_STATUS("system_status"),
+    
+    INCIDENTS("incidents");
+
+    private String value;
+
+    SectionOrderEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static SectionOrderEnum fromValue(String value) {
+      for (SectionOrderEnum b : SectionOrderEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<SectionOrderEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final SectionOrderEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public SectionOrderEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return SectionOrderEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      SectionOrderEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_SECTION_ORDER = "section_order";
+  @SerializedName(SERIALIZED_NAME_SECTION_ORDER)
+  @jakarta.annotation.Nullable
+  private List<SectionOrderEnum> sectionOrder;
+
   public static final String SERIALIZED_NAME_WEBSITE_URL = "website_url";
   @SerializedName(SERIALIZED_NAME_WEBSITE_URL)
   @jakarta.annotation.Nullable
@@ -363,6 +424,11 @@ public class StatusPage {
   @jakarta.annotation.Nullable
   private List<String> externalDomainNames = new ArrayList<>();
 
+  public static final String SERIALIZED_NAME_CNAME_RECORDS = "cname_records";
+  @SerializedName(SERIALIZED_NAME_CNAME_RECORDS)
+  @jakarta.annotation.Nullable
+  private Map<String, String> cnameRecords;
+
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
   @jakarta.annotation.Nullable
@@ -379,6 +445,15 @@ public class StatusPage {
   private String updatedAt;
 
   public StatusPage() {
+  }
+
+  public StatusPage(
+     String slug, 
+     Map<String, String> cnameRecords
+  ) {
+    this();
+    this.slug = slug;
+    this.cnameRecords = cnameRecords;
   }
 
   public StatusPage title(@jakarta.annotation.Nonnull String title) {
@@ -400,11 +475,6 @@ public class StatusPage {
   }
 
 
-  public StatusPage slug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
-    return this;
-  }
-
   /**
    * The slug of the status page
    * @return slug
@@ -414,9 +484,6 @@ public class StatusPage {
     return slug;
   }
 
-  public void setSlug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
-  }
 
 
   public StatusPage publicTitle(@jakarta.annotation.Nullable String publicTitle) {
@@ -765,6 +832,33 @@ public class StatusPage {
   }
 
 
+  public StatusPage sectionOrder(@jakarta.annotation.Nullable List<SectionOrderEnum> sectionOrder) {
+    this.sectionOrder = sectionOrder;
+    return this;
+  }
+
+  public StatusPage addSectionOrderItem(SectionOrderEnum sectionOrderItem) {
+    if (this.sectionOrder == null) {
+      this.sectionOrder = new ArrayList<>();
+    }
+    this.sectionOrder.add(sectionOrderItem);
+    return this;
+  }
+
+  /**
+   * Order of sections on the status page
+   * @return sectionOrder
+   */
+  @jakarta.annotation.Nullable
+  public List<SectionOrderEnum> getSectionOrder() {
+    return sectionOrder;
+  }
+
+  public void setSectionOrder(@jakarta.annotation.Nullable List<SectionOrderEnum> sectionOrder) {
+    this.sectionOrder = sectionOrder;
+  }
+
+
   public StatusPage websiteUrl(@jakarta.annotation.Nullable String websiteUrl) {
     this.websiteUrl = websiteUrl;
     return this;
@@ -960,6 +1054,17 @@ public class StatusPage {
   }
 
 
+  /**
+   * CNAME records mapping external domain names to their DNS target values. These are populated asynchronously after setting external_domain_names.
+   * @return cnameRecords
+   */
+  @jakarta.annotation.Nullable
+  public Map<String, String> getCnameRecords() {
+    return cnameRecords;
+  }
+
+
+
   public StatusPage enabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
@@ -1047,6 +1152,7 @@ public class StatusPage {
         Objects.equals(this.samlIdpCert, statusPage.samlIdpCert) &&
         Objects.equals(this.samlIdpCertFingerprint, statusPage.samlIdpCertFingerprint) &&
         Objects.equals(this.samlNameIdentifierFormat, statusPage.samlNameIdentifierFormat) &&
+        Objects.equals(this.sectionOrder, statusPage.sectionOrder) &&
         Objects.equals(this.websiteUrl, statusPage.websiteUrl) &&
         Objects.equals(this.websitePrivacyUrl, statusPage.websitePrivacyUrl) &&
         Objects.equals(this.websiteSupportUrl, statusPage.websiteSupportUrl) &&
@@ -1056,6 +1162,7 @@ public class StatusPage {
         Objects.equals(this.serviceIds, statusPage.serviceIds) &&
         Objects.equals(this.functionalityIds, statusPage.functionalityIds) &&
         Objects.equals(this.externalDomainNames, statusPage.externalDomainNames) &&
+        Objects.equals(this.cnameRecords, statusPage.cnameRecords) &&
         Objects.equals(this.enabled, statusPage.enabled) &&
         Objects.equals(this.createdAt, statusPage.createdAt) &&
         Objects.equals(this.updatedAt, statusPage.updatedAt);
@@ -1067,7 +1174,7 @@ public class StatusPage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, slug, publicTitle, description, publicDescription, headerColor, footerColor, allowSearchEngineIndex, showUptime, showUptimeLastDays, successMessage, failureMessage, authenticationMethod, authenticationEnabled, authenticationPassword, samlIdpSsoServiceUrl, samlIdpSloServiceUrl, samlIdpCert, samlIdpCertFingerprint, samlNameIdentifierFormat, websiteUrl, websitePrivacyUrl, websiteSupportUrl, gaTrackingId, timeZone, _public, serviceIds, functionalityIds, externalDomainNames, enabled, createdAt, updatedAt);
+    return Objects.hash(title, slug, publicTitle, description, publicDescription, headerColor, footerColor, allowSearchEngineIndex, showUptime, showUptimeLastDays, successMessage, failureMessage, authenticationMethod, authenticationEnabled, authenticationPassword, samlIdpSsoServiceUrl, samlIdpSloServiceUrl, samlIdpCert, samlIdpCertFingerprint, samlNameIdentifierFormat, sectionOrder, websiteUrl, websitePrivacyUrl, websiteSupportUrl, gaTrackingId, timeZone, _public, serviceIds, functionalityIds, externalDomainNames, cnameRecords, enabled, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1101,6 +1208,7 @@ public class StatusPage {
     sb.append("    samlIdpCert: ").append(toIndentedString(samlIdpCert)).append("\n");
     sb.append("    samlIdpCertFingerprint: ").append(toIndentedString(samlIdpCertFingerprint)).append("\n");
     sb.append("    samlNameIdentifierFormat: ").append(toIndentedString(samlNameIdentifierFormat)).append("\n");
+    sb.append("    sectionOrder: ").append(toIndentedString(sectionOrder)).append("\n");
     sb.append("    websiteUrl: ").append(toIndentedString(websiteUrl)).append("\n");
     sb.append("    websitePrivacyUrl: ").append(toIndentedString(websitePrivacyUrl)).append("\n");
     sb.append("    websiteSupportUrl: ").append(toIndentedString(websiteSupportUrl)).append("\n");
@@ -1110,6 +1218,7 @@ public class StatusPage {
     sb.append("    serviceIds: ").append(toIndentedString(serviceIds)).append("\n");
     sb.append("    functionalityIds: ").append(toIndentedString(functionalityIds)).append("\n");
     sb.append("    externalDomainNames: ").append(toIndentedString(externalDomainNames)).append("\n");
+    sb.append("    cnameRecords: ").append(toIndentedString(cnameRecords)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
@@ -1155,6 +1264,7 @@ public class StatusPage {
     openapiFields.add("saml_idp_cert");
     openapiFields.add("saml_idp_cert_fingerprint");
     openapiFields.add("saml_name_identifier_format");
+    openapiFields.add("section_order");
     openapiFields.add("website_url");
     openapiFields.add("website_privacy_url");
     openapiFields.add("website_support_url");
@@ -1164,6 +1274,7 @@ public class StatusPage {
     openapiFields.add("service_ids");
     openapiFields.add("functionality_ids");
     openapiFields.add("external_domain_names");
+    openapiFields.add("cname_records");
     openapiFields.add("enabled");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
@@ -1262,6 +1373,10 @@ public class StatusPage {
       // validate the optional field `saml_name_identifier_format`
       if (jsonObj.get("saml_name_identifier_format") != null && !jsonObj.get("saml_name_identifier_format").isJsonNull()) {
         SamlNameIdentifierFormatEnum.validateJsonElement(jsonObj.get("saml_name_identifier_format"));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("section_order") != null && !jsonObj.get("section_order").isJsonNull() && !jsonObj.get("section_order").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `section_order` to be an array in the JSON string but got `%s`", jsonObj.get("section_order").toString()));
       }
       if ((jsonObj.get("website_url") != null && !jsonObj.get("website_url").isJsonNull()) && !jsonObj.get("website_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `website_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("website_url").toString()));

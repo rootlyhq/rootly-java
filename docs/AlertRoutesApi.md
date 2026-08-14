@@ -8,6 +8,7 @@ All URIs are relative to *https://api.rootly.com*
 | [**deleteAlertRoute**](AlertRoutesApi.md#deleteAlertRoute) | **DELETE** /v1/alert_routes/{id} | Delete an alert route |
 | [**getAlertRoute**](AlertRoutesApi.md#getAlertRoute) | **GET** /v1/alert_routes/{id} | Get an alert route |
 | [**listAlertRoutes**](AlertRoutesApi.md#listAlertRoutes) | **GET** /v1/alert_routes | List alert routes |
+| [**patchAlertRoute**](AlertRoutesApi.md#patchAlertRoute) | **PATCH** /v1/alert_routes/{id} | Update an alert route |
 | [**updateAlertRoute**](AlertRoutesApi.md#updateAlertRoute) | **PUT** /v1/alert_routes/{id} | Update an alert route |
 
 
@@ -156,7 +157,7 @@ public class Example {
 
 Get an alert route
 
-Get a specific alert route by id. **Note: This endpoint requires access to Advanced Alert Routing. If you&#39;re unsure whether you have access to this feature, please contact Rootly customer support.**
+Get a specific alert route by id. **Note: This endpoint requires access to Advanced Alert Routing. If you&#39;re unsure whether you have access to this feature, please contact Rootly customer support.**  ## Optional Parameters  - **show_nested_ids** (query parameter): When set to &#x60;true&#x60;, the response will include IDs for all nested resources (destinations, condition_groups, conditions). This is useful when you need to reference these nested resources for updates or deletions via PATCH requests.  Example: &#x60;GET /v1/alert_routes/{id}?show_nested_ids&#x3D;true&#x60;
 
 ### Example
 ```java
@@ -221,7 +222,7 @@ public class Example {
 
 <a id="listAlertRoutes"></a>
 # **listAlertRoutes**
-> AlertRouteList listAlertRoutes(pageNumber, pageSize, filterSearch, filterName, sort)
+> AlertRouteList listAlertRoutes(pageNumber, pageSize, filterSearch, filterName, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, sort)
 
 List alert routes
 
@@ -251,9 +252,17 @@ public class Example {
     Integer pageSize = 56; // Integer | 
     String filterSearch = "filterSearch_example"; // String | 
     String filterName = "filterName_example"; // String | 
+    String filterSlugEq = "filterSlugEq_example"; // String | 
+    String filterSlugNotEq = "filterSlugNotEq_example"; // String | 
+    String filterSlugIn = "filterSlugIn_example"; // String | 
+    String filterSlugNotIn = "filterSlugNotIn_example"; // String | 
+    String filterNameEq = "filterNameEq_example"; // String | 
+    String filterNameNotEq = "filterNameNotEq_example"; // String | 
+    String filterNameIn = "filterNameIn_example"; // String | 
+    String filterNameNotIn = "filterNameNotIn_example"; // String | 
     String sort = "sort_example"; // String | 
     try {
-      AlertRouteList result = apiInstance.listAlertRoutes(pageNumber, pageSize, filterSearch, filterName, sort);
+      AlertRouteList result = apiInstance.listAlertRoutes(pageNumber, pageSize, filterSearch, filterName, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, sort);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AlertRoutesApi#listAlertRoutes");
@@ -274,6 +283,14 @@ public class Example {
 | **pageSize** | **Integer**|  | [optional] |
 | **filterSearch** | **String**|  | [optional] |
 | **filterName** | **String**|  | [optional] |
+| **filterSlugEq** | **String**|  | [optional] |
+| **filterSlugNotEq** | **String**|  | [optional] |
+| **filterSlugIn** | **String**|  | [optional] |
+| **filterSlugNotIn** | **String**|  | [optional] |
+| **filterNameEq** | **String**|  | [optional] |
+| **filterNameNotEq** | **String**|  | [optional] |
+| **filterNameIn** | **String**|  | [optional] |
+| **filterNameNotIn** | **String**|  | [optional] |
 | **sort** | **String**|  | [optional] |
 
 ### Return type
@@ -295,13 +312,85 @@ public class Example {
 | **200** | alert routes filtered by search |  -  |
 | **401** | unauthorized |  -  |
 
+<a id="patchAlertRoute"></a>
+# **patchAlertRoute**
+> AlertRouteResponse patchAlertRoute(id, patchAlertRoute)
+
+Update an alert route
+
+Updates an alert route. **Note: This endpoint requires access to Advanced Alert Routing. If you&#39;re unsure whether you have access to this feature, please contact Rootly customer support.**
+
+### Example
+```java
+// Import classes:
+import com.rootly.client.ApiClient;
+import com.rootly.client.ApiException;
+import com.rootly.client.Configuration;
+import com.rootly.client.auth.*;
+import com.rootly.client.models.*;
+import com.rootly.client.api.AlertRoutesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.rootly.com");
+    
+    // Configure HTTP bearer authorization: bearer_auth
+    HttpBearerAuth bearer_auth = (HttpBearerAuth) defaultClient.getAuthentication("bearer_auth");
+    bearer_auth.setBearerToken("BEARER TOKEN");
+
+    AlertRoutesApi apiInstance = new AlertRoutesApi(defaultClient);
+    String id = "id_example"; // String | 
+    PatchAlertRoute patchAlertRoute = new PatchAlertRoute(); // PatchAlertRoute | 
+    try {
+      AlertRouteResponse result = apiInstance.patchAlertRoute(id, patchAlertRoute);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AlertRoutesApi#patchAlertRoute");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **String**|  | |
+| **patchAlertRoute** | [**PatchAlertRoute**](PatchAlertRoute.md)|  | |
+
+### Return type
+
+[**AlertRouteResponse**](AlertRouteResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/vnd.api+json
+ - **Accept**: application/vnd.api+json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | delete existing rule by id with _destroy |  -  |
+| **422** | invalid request |  -  |
+| **401** | unauthorized |  -  |
+| **404** | cross-team access denied |  -  |
+
 <a id="updateAlertRoute"></a>
 # **updateAlertRoute**
 > AlertRouteResponse updateAlertRoute(id, updateAlertRoute)
 
 Update an alert route
 
-Update a specific alert route by id. **Note: This endpoint requires access to Advanced Alert Routing. If you&#39;re unsure whether you have access to this feature, please contact Rootly customer support.**  ## Asynchronous Rule Creation  For organizations with large numbers of routing rules, Rootly supports asynchronous rule processing to improve performance. When enabled, rule updates happen in the background.  **Important**: When async processing is enabled, the rules list in the API response will not be up-to-date immediately after update. You should refetch the alert route after a few minutes to get the updated rules.  If you experience slow operations when managing alert routes with many rules, contact Rootly customer support to enable asynchronous rule processing for your organization.
+Update a specific alert route by id. **Note: This endpoint requires access to Advanced Alert Routing. If you&#39;re unsure whether you have access to this feature, please contact Rootly customer support.**  ### Asynchronous Rule Creation  For organizations with large numbers of routing rules, Rootly supports asynchronous rule processing to improve performance. When enabled, rule updates happen in the background.  **Important**: When async processing is enabled, the rules list in the API response will not be up-to-date immediately after update. You should refetch the alert route after a few minutes to get the updated rules.  If you experience slow operations when managing alert routes with many rules, contact Rootly customer support to enable asynchronous rule processing for your organization.
 
 ### Example
 ```java

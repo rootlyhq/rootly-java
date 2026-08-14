@@ -21,7 +21,9 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.rootly.client.model.AddActionItemTaskParamsPostToSlackChannelsInner;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -50,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * PublishIncidentTaskParams
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class PublishIncidentTaskParams {
   /**
    * Gets or Sets taskType
@@ -208,6 +210,11 @@ public class PublishIncidentTaskParams {
   @SerializedName(SERIALIZED_NAME_STATUS_PAGE_ID)
   @jakarta.annotation.Nonnull
   private String statusPageId;
+
+  public static final String SERIALIZED_NAME_STATUS_PAGE_IDS = "status_page_ids";
+  @SerializedName(SERIALIZED_NAME_STATUS_PAGE_IDS)
+  @jakarta.annotation.Nullable
+  private List<String> statusPageIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_INTEGRATION_PAYLOAD = "integration_payload";
   @SerializedName(SERIALIZED_NAME_INTEGRATION_PAYLOAD)
@@ -388,6 +395,33 @@ public class PublishIncidentTaskParams {
   }
 
 
+  public PublishIncidentTaskParams statusPageIds(@jakarta.annotation.Nullable List<String> statusPageIds) {
+    this.statusPageIds = statusPageIds;
+    return this;
+  }
+
+  public PublishIncidentTaskParams addStatusPageIdsItem(String statusPageIdsItem) {
+    if (this.statusPageIds == null) {
+      this.statusPageIds = new ArrayList<>();
+    }
+    this.statusPageIds.add(statusPageIdsItem);
+    return this;
+  }
+
+  /**
+   * Publishes the update to every listed status page (requires the status-page-v3-limited-bulk-publish feature). When set, it takes precedence over status_page_id and the first entry becomes status_page_id.
+   * @return statusPageIds
+   */
+  @jakarta.annotation.Nullable
+  public List<String> getStatusPageIds() {
+    return statusPageIds;
+  }
+
+  public void setStatusPageIds(@jakarta.annotation.Nullable List<String> statusPageIds) {
+    this.statusPageIds = statusPageIds;
+  }
+
+
   public PublishIncidentTaskParams integrationPayload(@jakarta.annotation.Nullable String integrationPayload) {
     this.integrationPayload = integrationPayload;
     return this;
@@ -426,6 +460,7 @@ public class PublishIncidentTaskParams {
         Objects.equals(this.shouldTweet, publishIncidentTaskParams.shouldTweet) &&
         Objects.equals(this.statusPageTemplate, publishIncidentTaskParams.statusPageTemplate) &&
         Objects.equals(this.statusPageId, publishIncidentTaskParams.statusPageId) &&
+        Objects.equals(this.statusPageIds, publishIncidentTaskParams.statusPageIds) &&
         Objects.equals(this.integrationPayload, publishIncidentTaskParams.integrationPayload);
   }
 
@@ -435,7 +470,7 @@ public class PublishIncidentTaskParams {
 
   @Override
   public int hashCode() {
-    return Objects.hash(taskType, incident, publicTitle, event, status, notifySubscribers, shouldTweet, statusPageTemplate, statusPageId, integrationPayload);
+    return Objects.hash(taskType, incident, publicTitle, event, status, notifySubscribers, shouldTweet, statusPageTemplate, statusPageId, statusPageIds, integrationPayload);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -458,6 +493,7 @@ public class PublishIncidentTaskParams {
     sb.append("    shouldTweet: ").append(toIndentedString(shouldTweet)).append("\n");
     sb.append("    statusPageTemplate: ").append(toIndentedString(statusPageTemplate)).append("\n");
     sb.append("    statusPageId: ").append(toIndentedString(statusPageId)).append("\n");
+    sb.append("    statusPageIds: ").append(toIndentedString(statusPageIds)).append("\n");
     sb.append("    integrationPayload: ").append(toIndentedString(integrationPayload)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -490,6 +526,7 @@ public class PublishIncidentTaskParams {
     openapiFields.add("should_tweet");
     openapiFields.add("status_page_template");
     openapiFields.add("status_page_id");
+    openapiFields.add("status_page_ids");
     openapiFields.add("integration_payload");
 
     // a set of required properties/fields (JSON key names)
@@ -554,6 +591,10 @@ public class PublishIncidentTaskParams {
       }
       if (!jsonObj.get("status_page_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `status_page_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status_page_id").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("status_page_ids") != null && !jsonObj.get("status_page_ids").isJsonNull() && !jsonObj.get("status_page_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `status_page_ids` to be an array in the JSON string but got `%s`", jsonObj.get("status_page_ids").toString()));
       }
       if ((jsonObj.get("integration_payload") != null && !jsonObj.get("integration_payload").isJsonNull()) && !jsonObj.get("integration_payload").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `integration_payload` to be a primitive type in the JSON string but got `%s`", jsonObj.get("integration_payload").toString()));

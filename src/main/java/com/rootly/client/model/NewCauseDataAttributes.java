@@ -19,8 +19,11 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewCauseDataAttributesPropertiesInner;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -49,8 +52,14 @@ import com.rootly.client.JSON;
 /**
  * NewCauseDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewCauseDataAttributes {
+  public static final String SERIALIZED_NAME_SLUG = "slug";
+  @Deprecated
+  @SerializedName(SERIALIZED_NAME_SLUG)
+  @jakarta.annotation.Nullable
+  private String slug;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @jakarta.annotation.Nonnull
@@ -61,13 +70,46 @@ public class NewCauseDataAttributes {
   @jakarta.annotation.Nullable
   private String description;
 
+  public static final String SERIALIZED_NAME_PUBLIC_DESCRIPTION = "public_description";
+  @SerializedName(SERIALIZED_NAME_PUBLIC_DESCRIPTION)
+  @jakarta.annotation.Nullable
+  private String publicDescription;
+
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
   @jakarta.annotation.Nullable
   private Integer position;
 
+  public static final String SERIALIZED_NAME_PROPERTIES = "properties";
+  @SerializedName(SERIALIZED_NAME_PROPERTIES)
+  @jakarta.annotation.Nullable
+  private List<NewCauseDataAttributesPropertiesInner> properties = new ArrayList<>();
+
   public NewCauseDataAttributes() {
   }
+
+  @Deprecated
+  public NewCauseDataAttributes slug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+    return this;
+  }
+
+  /**
+   * Deprecated. &#x60;slug&#x60; is derived from &#x60;name&#x60;; any submitted value is ignored. This property will be removed from the request schema in a future version.
+   * @return slug
+   * @deprecated
+   */
+  @Deprecated
+  @jakarta.annotation.Nullable
+  public String getSlug() {
+    return slug;
+  }
+
+  @Deprecated
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+  }
+
 
   public NewCauseDataAttributes name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
@@ -107,6 +149,25 @@ public class NewCauseDataAttributes {
   }
 
 
+  public NewCauseDataAttributes publicDescription(@jakarta.annotation.Nullable String publicDescription) {
+    this.publicDescription = publicDescription;
+    return this;
+  }
+
+  /**
+   * The status page description of the cause
+   * @return publicDescription
+   */
+  @jakarta.annotation.Nullable
+  public String getPublicDescription() {
+    return publicDescription;
+  }
+
+  public void setPublicDescription(@jakarta.annotation.Nullable String publicDescription) {
+    this.publicDescription = publicDescription;
+  }
+
+
   public NewCauseDataAttributes position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
@@ -126,6 +187,33 @@ public class NewCauseDataAttributes {
   }
 
 
+  public NewCauseDataAttributes properties(@jakarta.annotation.Nullable List<NewCauseDataAttributesPropertiesInner> properties) {
+    this.properties = properties;
+    return this;
+  }
+
+  public NewCauseDataAttributes addPropertiesItem(NewCauseDataAttributesPropertiesInner propertiesItem) {
+    if (this.properties == null) {
+      this.properties = new ArrayList<>();
+    }
+    this.properties.add(propertiesItem);
+    return this;
+  }
+
+  /**
+   * Array of property values for this cause.
+   * @return properties
+   */
+  @jakarta.annotation.Nullable
+  public List<NewCauseDataAttributesPropertiesInner> getProperties() {
+    return properties;
+  }
+
+  public void setProperties(@jakarta.annotation.Nullable List<NewCauseDataAttributesPropertiesInner> properties) {
+    this.properties = properties;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -136,9 +224,12 @@ public class NewCauseDataAttributes {
       return false;
     }
     NewCauseDataAttributes newCauseDataAttributes = (NewCauseDataAttributes) o;
-    return Objects.equals(this.name, newCauseDataAttributes.name) &&
+    return Objects.equals(this.slug, newCauseDataAttributes.slug) &&
+        Objects.equals(this.name, newCauseDataAttributes.name) &&
         Objects.equals(this.description, newCauseDataAttributes.description) &&
-        Objects.equals(this.position, newCauseDataAttributes.position);
+        Objects.equals(this.publicDescription, newCauseDataAttributes.publicDescription) &&
+        Objects.equals(this.position, newCauseDataAttributes.position) &&
+        Objects.equals(this.properties, newCauseDataAttributes.properties);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -147,7 +238,7 @@ public class NewCauseDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, position);
+    return Objects.hash(slug, name, description, publicDescription, position, properties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -161,9 +252,12 @@ public class NewCauseDataAttributes {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class NewCauseDataAttributes {\n");
+    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    publicDescription: ").append(toIndentedString(publicDescription)).append("\n");
     sb.append("    position: ").append(toIndentedString(position)).append("\n");
+    sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -186,9 +280,12 @@ public class NewCauseDataAttributes {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("slug");
     openapiFields.add("name");
     openapiFields.add("description");
+    openapiFields.add("public_description");
     openapiFields.add("position");
+    openapiFields.add("properties");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -223,11 +320,31 @@ public class NewCauseDataAttributes {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
+      }
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
+      if ((jsonObj.get("public_description") != null && !jsonObj.get("public_description").isJsonNull()) && !jsonObj.get("public_description").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `public_description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("public_description").toString()));
+      }
+      if (jsonObj.get("properties") != null && !jsonObj.get("properties").isJsonNull()) {
+        JsonArray jsonArrayproperties = jsonObj.getAsJsonArray("properties");
+        if (jsonArrayproperties != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("properties").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `properties` to be an array in the JSON string but got `%s`", jsonObj.get("properties").toString()));
+          }
+
+          // validate the optional field `properties` (array)
+          for (int i = 0; i < jsonArrayproperties.size(); i++) {
+            NewCauseDataAttributesPropertiesInner.validateJsonElement(jsonArrayproperties.get(i));
+          };
+        }
       }
   }
 

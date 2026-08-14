@@ -87,7 +87,7 @@ public class CatalogPropertiesApi {
         <tr><td> 201 </td><td> catalog_property created </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createCatalogPropertyCall(@javax.annotation.Nonnull String catalogId, @javax.annotation.Nonnull NewCatalogField newCatalogField, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createCatalogPropertyCall(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nonnull NewCatalogField newCatalogField, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -133,7 +133,7 @@ public class CatalogPropertiesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createCatalogPropertyValidateBeforeCall(@javax.annotation.Nonnull String catalogId, @javax.annotation.Nonnull NewCatalogField newCatalogField, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createCatalogPropertyValidateBeforeCall(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nonnull NewCatalogField newCatalogField, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'catalogId' is set
         if (catalogId == null) {
             throw new ApiException("Missing the required parameter 'catalogId' when calling createCatalogProperty(Async)");
@@ -161,7 +161,7 @@ public class CatalogPropertiesApi {
         <tr><td> 201 </td><td> catalog_property created </td><td>  -  </td></tr>
      </table>
      */
-    public void createCatalogProperty(@javax.annotation.Nonnull String catalogId, @javax.annotation.Nonnull NewCatalogField newCatalogField) throws ApiException {
+    public void createCatalogProperty(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nonnull NewCatalogField newCatalogField) throws ApiException {
         createCatalogPropertyWithHttpInfo(catalogId, newCatalogField);
     }
 
@@ -179,7 +179,7 @@ public class CatalogPropertiesApi {
         <tr><td> 201 </td><td> catalog_property created </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> createCatalogPropertyWithHttpInfo(@javax.annotation.Nonnull String catalogId, @javax.annotation.Nonnull NewCatalogField newCatalogField) throws ApiException {
+    public ApiResponse<Void> createCatalogPropertyWithHttpInfo(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nonnull NewCatalogField newCatalogField) throws ApiException {
         okhttp3.Call localVarCall = createCatalogPropertyValidateBeforeCall(catalogId, newCatalogField, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -199,7 +199,7 @@ public class CatalogPropertiesApi {
         <tr><td> 201 </td><td> catalog_property created </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createCatalogPropertyAsync(@javax.annotation.Nonnull String catalogId, @javax.annotation.Nonnull NewCatalogField newCatalogField, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call createCatalogPropertyAsync(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nonnull NewCatalogField newCatalogField, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createCatalogPropertyValidateBeforeCall(catalogId, newCatalogField, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -218,7 +218,7 @@ public class CatalogPropertiesApi {
         <tr><td> 200 </td><td> catalog_property deleted </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteCatalogPropertyCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteCatalogPropertyCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -263,7 +263,7 @@ public class CatalogPropertiesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteCatalogPropertyValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteCatalogPropertyValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteCatalogProperty(Async)");
@@ -285,7 +285,7 @@ public class CatalogPropertiesApi {
         <tr><td> 200 </td><td> catalog_property deleted </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteCatalogProperty(@javax.annotation.Nonnull String id) throws ApiException {
+    public void deleteCatalogProperty(@jakarta.annotation.Nonnull String id) throws ApiException {
         deleteCatalogPropertyWithHttpInfo(id);
     }
 
@@ -302,7 +302,7 @@ public class CatalogPropertiesApi {
         <tr><td> 200 </td><td> catalog_property deleted </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteCatalogPropertyWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<Void> deleteCatalogPropertyWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteCatalogPropertyValidateBeforeCall(id, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -321,7 +321,7 @@ public class CatalogPropertiesApi {
         <tr><td> 200 </td><td> catalog_property deleted </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteCatalogPropertyAsync(@javax.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteCatalogPropertyAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteCatalogPropertyValidateBeforeCall(id, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -340,7 +340,7 @@ public class CatalogPropertiesApi {
         <tr><td> 200 </td><td> catalog_property found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCatalogPropertyCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCatalogPropertyCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -385,7 +385,7 @@ public class CatalogPropertiesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCatalogPropertyValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCatalogPropertyValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getCatalogProperty(Async)");
@@ -407,7 +407,7 @@ public class CatalogPropertiesApi {
         <tr><td> 200 </td><td> catalog_property found </td><td>  -  </td></tr>
      </table>
      */
-    public void getCatalogProperty(@javax.annotation.Nonnull String id) throws ApiException {
+    public void getCatalogProperty(@jakarta.annotation.Nonnull String id) throws ApiException {
         getCatalogPropertyWithHttpInfo(id);
     }
 
@@ -424,7 +424,7 @@ public class CatalogPropertiesApi {
         <tr><td> 200 </td><td> catalog_property found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> getCatalogPropertyWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<Void> getCatalogPropertyWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getCatalogPropertyValidateBeforeCall(id, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -443,7 +443,7 @@ public class CatalogPropertiesApi {
         <tr><td> 200 </td><td> catalog_property found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCatalogPropertyAsync(@javax.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call getCatalogPropertyAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCatalogPropertyValidateBeforeCall(id, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -462,7 +462,7 @@ public class CatalogPropertiesApi {
         <tr><td> 200 </td><td> success with catalog_properties type </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listCatalogPropertiesCall(@javax.annotation.Nonnull String catalogId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listCatalogPropertiesCall(@jakarta.annotation.Nonnull String catalogId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -507,7 +507,7 @@ public class CatalogPropertiesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listCatalogPropertiesValidateBeforeCall(@javax.annotation.Nonnull String catalogId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listCatalogPropertiesValidateBeforeCall(@jakarta.annotation.Nonnull String catalogId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'catalogId' is set
         if (catalogId == null) {
             throw new ApiException("Missing the required parameter 'catalogId' when calling listCatalogProperties(Async)");
@@ -529,7 +529,7 @@ public class CatalogPropertiesApi {
         <tr><td> 200 </td><td> success with catalog_properties type </td><td>  -  </td></tr>
      </table>
      */
-    public void listCatalogProperties(@javax.annotation.Nonnull String catalogId) throws ApiException {
+    public void listCatalogProperties(@jakarta.annotation.Nonnull String catalogId) throws ApiException {
         listCatalogPropertiesWithHttpInfo(catalogId);
     }
 
@@ -546,7 +546,7 @@ public class CatalogPropertiesApi {
         <tr><td> 200 </td><td> success with catalog_properties type </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> listCatalogPropertiesWithHttpInfo(@javax.annotation.Nonnull String catalogId) throws ApiException {
+    public ApiResponse<Void> listCatalogPropertiesWithHttpInfo(@jakarta.annotation.Nonnull String catalogId) throws ApiException {
         okhttp3.Call localVarCall = listCatalogPropertiesValidateBeforeCall(catalogId, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -565,7 +565,7 @@ public class CatalogPropertiesApi {
         <tr><td> 200 </td><td> success with catalog_properties type </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listCatalogPropertiesAsync(@javax.annotation.Nonnull String catalogId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call listCatalogPropertiesAsync(@jakarta.annotation.Nonnull String catalogId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listCatalogPropertiesValidateBeforeCall(catalogId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -585,7 +585,7 @@ public class CatalogPropertiesApi {
         <tr><td> 200 </td><td> catalog_property updated </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateCatalogPropertyCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateCatalogField updateCatalogField, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateCatalogPropertyCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateCatalogField updateCatalogField, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -631,7 +631,7 @@ public class CatalogPropertiesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateCatalogPropertyValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateCatalogField updateCatalogField, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateCatalogPropertyValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateCatalogField updateCatalogField, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateCatalogProperty(Async)");
@@ -659,7 +659,7 @@ public class CatalogPropertiesApi {
         <tr><td> 200 </td><td> catalog_property updated </td><td>  -  </td></tr>
      </table>
      */
-    public void updateCatalogProperty(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateCatalogField updateCatalogField) throws ApiException {
+    public void updateCatalogProperty(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateCatalogField updateCatalogField) throws ApiException {
         updateCatalogPropertyWithHttpInfo(id, updateCatalogField);
     }
 
@@ -677,7 +677,7 @@ public class CatalogPropertiesApi {
         <tr><td> 200 </td><td> catalog_property updated </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> updateCatalogPropertyWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateCatalogField updateCatalogField) throws ApiException {
+    public ApiResponse<Void> updateCatalogPropertyWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateCatalogField updateCatalogField) throws ApiException {
         okhttp3.Call localVarCall = updateCatalogPropertyValidateBeforeCall(id, updateCatalogField, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -697,7 +697,7 @@ public class CatalogPropertiesApi {
         <tr><td> 200 </td><td> catalog_property updated </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateCatalogPropertyAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateCatalogField updateCatalogField, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call updateCatalogPropertyAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateCatalogField updateCatalogField, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateCatalogPropertyValidateBeforeCall(id, updateCatalogField, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);

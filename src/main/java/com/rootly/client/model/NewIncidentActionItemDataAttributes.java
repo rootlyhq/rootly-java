@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewIncidentActionItemDataAttributesFormFieldSelectionsInner;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -51,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * NewIncidentActionItemDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewIncidentActionItemDataAttributes {
   public static final String SERIALIZED_NAME_SUMMARY = "summary";
   @SerializedName(SERIALIZED_NAME_SUMMARY)
@@ -269,6 +270,11 @@ public class NewIncidentActionItemDataAttributes {
   @SerializedName(SERIALIZED_NAME_JIRA_ISSUE_URL)
   @jakarta.annotation.Nullable
   private String jiraIssueUrl;
+
+  public static final String SERIALIZED_NAME_FORM_FIELD_SELECTIONS = "form_field_selections";
+  @SerializedName(SERIALIZED_NAME_FORM_FIELD_SELECTIONS)
+  @jakarta.annotation.Nullable
+  private List<NewIncidentActionItemDataAttributesFormFieldSelectionsInner> formFieldSelections;
 
   public NewIncidentActionItemDataAttributes() {
   }
@@ -490,6 +496,33 @@ public class NewIncidentActionItemDataAttributes {
   }
 
 
+  public NewIncidentActionItemDataAttributes formFieldSelections(@jakarta.annotation.Nullable List<NewIncidentActionItemDataAttributesFormFieldSelectionsInner> formFieldSelections) {
+    this.formFieldSelections = formFieldSelections;
+    return this;
+  }
+
+  public NewIncidentActionItemDataAttributes addFormFieldSelectionsItem(NewIncidentActionItemDataAttributesFormFieldSelectionsInner formFieldSelectionsItem) {
+    if (this.formFieldSelections == null) {
+      this.formFieldSelections = new ArrayList<>();
+    }
+    this.formFieldSelections.add(formFieldSelectionsItem);
+    return this;
+  }
+
+  /**
+   * Custom field values to set on the action item. Ignored unless custom fields for action items are enabled for the organization.
+   * @return formFieldSelections
+   */
+  @jakarta.annotation.Nullable
+  public List<NewIncidentActionItemDataAttributesFormFieldSelectionsInner> getFormFieldSelections() {
+    return formFieldSelections;
+  }
+
+  public void setFormFieldSelections(@jakarta.annotation.Nullable List<NewIncidentActionItemDataAttributesFormFieldSelectionsInner> formFieldSelections) {
+    this.formFieldSelections = formFieldSelections;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -510,7 +543,8 @@ public class NewIncidentActionItemDataAttributes {
         Objects.equals(this.dueDate, newIncidentActionItemDataAttributes.dueDate) &&
         Objects.equals(this.jiraIssueId, newIncidentActionItemDataAttributes.jiraIssueId) &&
         Objects.equals(this.jiraIssueKey, newIncidentActionItemDataAttributes.jiraIssueKey) &&
-        Objects.equals(this.jiraIssueUrl, newIncidentActionItemDataAttributes.jiraIssueUrl);
+        Objects.equals(this.jiraIssueUrl, newIncidentActionItemDataAttributes.jiraIssueUrl) &&
+        Objects.equals(this.formFieldSelections, newIncidentActionItemDataAttributes.formFieldSelections);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -519,7 +553,7 @@ public class NewIncidentActionItemDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(summary, description, kind, assignedToUserId, assignedToGroupIds, priority, status, dueDate, jiraIssueId, jiraIssueKey, jiraIssueUrl);
+    return Objects.hash(summary, description, kind, assignedToUserId, assignedToGroupIds, priority, status, dueDate, jiraIssueId, jiraIssueKey, jiraIssueUrl, formFieldSelections);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -544,6 +578,7 @@ public class NewIncidentActionItemDataAttributes {
     sb.append("    jiraIssueId: ").append(toIndentedString(jiraIssueId)).append("\n");
     sb.append("    jiraIssueKey: ").append(toIndentedString(jiraIssueKey)).append("\n");
     sb.append("    jiraIssueUrl: ").append(toIndentedString(jiraIssueUrl)).append("\n");
+    sb.append("    formFieldSelections: ").append(toIndentedString(formFieldSelections)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -577,6 +612,7 @@ public class NewIncidentActionItemDataAttributes {
     openapiFields.add("jira_issue_id");
     openapiFields.add("jira_issue_key");
     openapiFields.add("jira_issue_url");
+    openapiFields.add("form_field_selections");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -653,6 +689,20 @@ public class NewIncidentActionItemDataAttributes {
       }
       if ((jsonObj.get("jira_issue_url") != null && !jsonObj.get("jira_issue_url").isJsonNull()) && !jsonObj.get("jira_issue_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `jira_issue_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("jira_issue_url").toString()));
+      }
+      if (jsonObj.get("form_field_selections") != null && !jsonObj.get("form_field_selections").isJsonNull()) {
+        JsonArray jsonArrayformFieldSelections = jsonObj.getAsJsonArray("form_field_selections");
+        if (jsonArrayformFieldSelections != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("form_field_selections").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `form_field_selections` to be an array in the JSON string but got `%s`", jsonObj.get("form_field_selections").toString()));
+          }
+
+          // validate the optional field `form_field_selections` (array)
+          for (int i = 0; i < jsonArrayformFieldSelections.size(); i++) {
+            NewIncidentActionItemDataAttributesFormFieldSelectionsInner.validateJsonElement(jsonArrayformFieldSelections.get(i));
+          };
+        }
       }
   }
 

@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewCauseDataAttributesPropertiesInner;
 import com.rootly.client.model.NewEnvironmentDataAttributesSlackAliasesInner;
 import com.rootly.client.model.NewEnvironmentDataAttributesSlackChannelsInner;
 import com.rootly.client.model.ServiceAlertBroadcastChannel;
@@ -55,7 +56,7 @@ import com.rootly.client.JSON;
 /**
  * Service
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Service {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -66,6 +67,73 @@ public class Service {
   @SerializedName(SERIALIZED_NAME_SLUG)
   @jakarta.annotation.Nullable
   private String slug;
+
+  /**
+   * How this service is managed (provenance): web, api, terraform, etc. Read-only.
+   */
+  @JsonAdapter(ManagedByEnum.Adapter.class)
+  public enum ManagedByEnum {
+    WEB("web"),
+    
+    ADMIN_WEB("admin_web"),
+    
+    API("api"),
+    
+    TERRAFORM("terraform"),
+    
+    PULUMI("pulumi"),
+    
+    BACKSTAGE("backstage"),
+    
+    CATALOG_SYNC("catalog_sync");
+
+    private String value;
+
+    ManagedByEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static ManagedByEnum fromValue(String value) {
+      for (ManagedByEnum b : ManagedByEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<ManagedByEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ManagedByEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ManagedByEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return ManagedByEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      ManagedByEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_MANAGED_BY = "managed_by";
+  @SerializedName(SERIALIZED_NAME_MANAGED_BY)
+  @jakarta.annotation.Nullable
+  private ManagedByEnum managedBy;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -217,6 +285,11 @@ public class Service {
   @jakarta.annotation.Nullable
   private ServiceIncidentBroadcastChannel incidentBroadcastChannel;
 
+  public static final String SERIALIZED_NAME_PROPERTIES = "properties";
+  @SerializedName(SERIALIZED_NAME_PROPERTIES)
+  @jakarta.annotation.Nullable
+  private List<NewCauseDataAttributesPropertiesInner> properties;
+
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   @jakarta.annotation.Nonnull
@@ -228,6 +301,13 @@ public class Service {
   private String updatedAt;
 
   public Service() {
+  }
+
+  public Service(
+     String slug
+  ) {
+    this();
+    this.slug = slug;
   }
 
   public Service name(@jakarta.annotation.Nonnull String name) {
@@ -249,11 +329,6 @@ public class Service {
   }
 
 
-  public Service slug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
-    return this;
-  }
-
   /**
    * The slug of the service
    * @return slug
@@ -263,8 +338,24 @@ public class Service {
     return slug;
   }
 
-  public void setSlug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
+
+
+  public Service managedBy(@jakarta.annotation.Nullable ManagedByEnum managedBy) {
+    this.managedBy = managedBy;
+    return this;
+  }
+
+  /**
+   * How this service is managed (provenance): web, api, terraform, etc. Read-only.
+   * @return managedBy
+   */
+  @jakarta.annotation.Nullable
+  public ManagedByEnum getManagedBy() {
+    return managedBy;
+  }
+
+  public void setManagedBy(@jakarta.annotation.Nullable ManagedByEnum managedBy) {
+    this.managedBy = managedBy;
   }
 
 
@@ -293,7 +384,7 @@ public class Service {
   }
 
   /**
-   * The public description of the service
+   * The status page description of the service
    * @return publicDescription
    */
   @jakarta.annotation.Nullable
@@ -894,6 +985,33 @@ public class Service {
   }
 
 
+  public Service properties(@jakarta.annotation.Nullable List<NewCauseDataAttributesPropertiesInner> properties) {
+    this.properties = properties;
+    return this;
+  }
+
+  public Service addPropertiesItem(NewCauseDataAttributesPropertiesInner propertiesItem) {
+    if (this.properties == null) {
+      this.properties = new ArrayList<>();
+    }
+    this.properties.add(propertiesItem);
+    return this;
+  }
+
+  /**
+   * Array of property values for this service.
+   * @return properties
+   */
+  @jakarta.annotation.Nullable
+  public List<NewCauseDataAttributesPropertiesInner> getProperties() {
+    return properties;
+  }
+
+  public void setProperties(@jakarta.annotation.Nullable List<NewCauseDataAttributesPropertiesInner> properties) {
+    this.properties = properties;
+  }
+
+
   public Service createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
@@ -944,6 +1062,7 @@ public class Service {
     Service service = (Service) o;
     return Objects.equals(this.name, service.name) &&
         Objects.equals(this.slug, service.slug) &&
+        Objects.equals(this.managedBy, service.managedBy) &&
         Objects.equals(this.description, service.description) &&
         Objects.equals(this.publicDescription, service.publicDescription) &&
         Objects.equals(this.notifyEmails, service.notifyEmails) &&
@@ -974,6 +1093,7 @@ public class Service {
         Objects.equals(this.alertBroadcastChannel, service.alertBroadcastChannel) &&
         Objects.equals(this.incidentBroadcastEnabled, service.incidentBroadcastEnabled) &&
         Objects.equals(this.incidentBroadcastChannel, service.incidentBroadcastChannel) &&
+        Objects.equals(this.properties, service.properties) &&
         Objects.equals(this.createdAt, service.createdAt) &&
         Objects.equals(this.updatedAt, service.updatedAt);
   }
@@ -984,7 +1104,7 @@ public class Service {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, slug, description, publicDescription, notifyEmails, color, position, backstageId, externalId, pagerdutyId, opsgenieId, cortexId, serviceNowCiSysId, githubRepositoryName, githubRepositoryBranch, gitlabRepositoryName, gitlabRepositoryBranch, kubernetesDeploymentName, environmentIds, serviceIds, ownerGroupIds, ownerUserIds, alertUrgencyId, escalationPolicyId, alertsEmailEnabled, alertsEmailAddress, slackChannels, slackAliases, alertBroadcastEnabled, alertBroadcastChannel, incidentBroadcastEnabled, incidentBroadcastChannel, createdAt, updatedAt);
+    return Objects.hash(name, slug, managedBy, description, publicDescription, notifyEmails, color, position, backstageId, externalId, pagerdutyId, opsgenieId, cortexId, serviceNowCiSysId, githubRepositoryName, githubRepositoryBranch, gitlabRepositoryName, gitlabRepositoryBranch, kubernetesDeploymentName, environmentIds, serviceIds, ownerGroupIds, ownerUserIds, alertUrgencyId, escalationPolicyId, alertsEmailEnabled, alertsEmailAddress, slackChannels, slackAliases, alertBroadcastEnabled, alertBroadcastChannel, incidentBroadcastEnabled, incidentBroadcastChannel, properties, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1000,6 +1120,7 @@ public class Service {
     sb.append("class Service {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
+    sb.append("    managedBy: ").append(toIndentedString(managedBy)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    publicDescription: ").append(toIndentedString(publicDescription)).append("\n");
     sb.append("    notifyEmails: ").append(toIndentedString(notifyEmails)).append("\n");
@@ -1030,6 +1151,7 @@ public class Service {
     sb.append("    alertBroadcastChannel: ").append(toIndentedString(alertBroadcastChannel)).append("\n");
     sb.append("    incidentBroadcastEnabled: ").append(toIndentedString(incidentBroadcastEnabled)).append("\n");
     sb.append("    incidentBroadcastChannel: ").append(toIndentedString(incidentBroadcastChannel)).append("\n");
+    sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -1056,6 +1178,7 @@ public class Service {
     openapiFields = new HashSet<String>();
     openapiFields.add("name");
     openapiFields.add("slug");
+    openapiFields.add("managed_by");
     openapiFields.add("description");
     openapiFields.add("public_description");
     openapiFields.add("notify_emails");
@@ -1086,6 +1209,7 @@ public class Service {
     openapiFields.add("alert_broadcast_channel");
     openapiFields.add("incident_broadcast_enabled");
     openapiFields.add("incident_broadcast_channel");
+    openapiFields.add("properties");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
 
@@ -1129,6 +1253,13 @@ public class Service {
       }
       if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
+      }
+      if ((jsonObj.get("managed_by") != null && !jsonObj.get("managed_by").isJsonNull()) && !jsonObj.get("managed_by").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `managed_by` to be a primitive type in the JSON string but got `%s`", jsonObj.get("managed_by").toString()));
+      }
+      // validate the optional field `managed_by`
+      if (jsonObj.get("managed_by") != null && !jsonObj.get("managed_by").isJsonNull()) {
+        ManagedByEnum.validateJsonElement(jsonObj.get("managed_by"));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
@@ -1236,6 +1367,20 @@ public class Service {
       // validate the optional field `incident_broadcast_channel`
       if (jsonObj.get("incident_broadcast_channel") != null && !jsonObj.get("incident_broadcast_channel").isJsonNull()) {
         ServiceIncidentBroadcastChannel.validateJsonElement(jsonObj.get("incident_broadcast_channel"));
+      }
+      if (jsonObj.get("properties") != null && !jsonObj.get("properties").isJsonNull()) {
+        JsonArray jsonArrayproperties = jsonObj.getAsJsonArray("properties");
+        if (jsonArrayproperties != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("properties").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `properties` to be an array in the JSON string but got `%s`", jsonObj.get("properties").toString()));
+          }
+
+          // validate the optional field `properties` (array)
+          for (int i = 0; i < jsonArrayproperties.size(); i++) {
+            NewCauseDataAttributesPropertiesInner.validateJsonElement(jsonArrayproperties.get(i));
+          };
+        }
       }
       if (!jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));

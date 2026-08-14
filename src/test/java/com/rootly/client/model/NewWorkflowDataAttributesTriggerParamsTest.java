@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonWriter;
 import com.rootly.client.model.ActionItemTriggerParams;
 import com.rootly.client.model.AlertTriggerParams;
 import com.rootly.client.model.AlertTriggerParamsAlertFieldConditionsInner;
+import com.rootly.client.model.AlertTriggerParamsAlertPayloadConditions;
 import com.rootly.client.model.IncidentTriggerParams;
 import com.rootly.client.model.PulseTriggerParams;
 import com.rootly.client.model.SimpleTriggerParams;
@@ -28,6 +29,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -196,6 +198,30 @@ public class NewWorkflowDataAttributesTriggerParamsTest {
     @Test
     public void incidentConditionCauseTest() {
         // TODO: test incidentConditionCause
+    }
+
+    /**
+     * Test the property 'incidentConditionLabel'
+     */
+    @Test
+    public void incidentConditionLabelTest() {
+        // TODO: test incidentConditionLabel
+    }
+
+    /**
+     * Test the property 'incidentConditionLabelUseRegexp'
+     */
+    @Test
+    public void incidentConditionLabelUseRegexpTest() {
+        // TODO: test incidentConditionLabelUseRegexp
+    }
+
+    /**
+     * Test the property 'incidentLabels'
+     */
+    @Test
+    public void incidentLabelsTest() {
+        // TODO: test incidentLabels
     }
 
     /**
@@ -415,6 +441,22 @@ public class NewWorkflowDataAttributesTriggerParamsTest {
     }
 
     /**
+     * Test the property 'alertConditionUrgency'
+     */
+    @Test
+    public void alertConditionUrgencyTest() {
+        // TODO: test alertConditionUrgency
+    }
+
+    /**
+     * Test the property 'alertUrgencyIds'
+     */
+    @Test
+    public void alertUrgencyIdsTest() {
+        // TODO: test alertUrgencyIds
+    }
+
+    /**
      * Test the property 'alertConditionPayload'
      */
     @Test
@@ -452,6 +494,14 @@ public class NewWorkflowDataAttributesTriggerParamsTest {
     @Test
     public void alertFieldConditionsTest() {
         // TODO: test alertFieldConditions
+    }
+
+    /**
+     * Test the property 'alertPayloadConditions'
+     */
+    @Test
+    public void alertPayloadConditionsTest() {
+        // TODO: test alertPayloadConditions
     }
 
     /**

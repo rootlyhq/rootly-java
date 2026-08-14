@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * EdgeConnectorActionDataAttributesParametersInner
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class EdgeConnectorActionDataAttributesParametersInner {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -130,7 +130,7 @@ public class EdgeConnectorActionDataAttributesParametersInner {
   public static final String SERIALIZED_NAME_DEFAULT = "default";
   @SerializedName(SERIALIZED_NAME_DEFAULT)
   @jakarta.annotation.Nullable
-  private Object _default = null;
+  private String _default;
 
   public static final String SERIALIZED_NAME_OPTIONS = "options";
   @SerializedName(SERIALIZED_NAME_OPTIONS)
@@ -216,7 +216,7 @@ public class EdgeConnectorActionDataAttributesParametersInner {
   }
 
 
-  public EdgeConnectorActionDataAttributesParametersInner _default(@jakarta.annotation.Nullable Object _default) {
+  public EdgeConnectorActionDataAttributesParametersInner _default(@jakarta.annotation.Nullable String _default) {
     this._default = _default;
     return this;
   }
@@ -226,11 +226,11 @@ public class EdgeConnectorActionDataAttributesParametersInner {
    * @return _default
    */
   @jakarta.annotation.Nullable
-  public Object getDefault() {
+  public String getDefault() {
     return _default;
   }
 
-  public void setDefault(@jakarta.annotation.Nullable Object _default) {
+  public void setDefault(@jakarta.annotation.Nullable String _default) {
     this._default = _default;
   }
 
@@ -372,6 +372,9 @@ public class EdgeConnectorActionDataAttributesParametersInner {
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
+      if ((jsonObj.get("default") != null && !jsonObj.get("default").isJsonNull()) && !jsonObj.get("default").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `default` to be a primitive type in the JSON string but got `%s`", jsonObj.get("default").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("options") != null && !jsonObj.get("options").isJsonNull() && !jsonObj.get("options").isJsonArray()) {

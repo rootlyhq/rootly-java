@@ -9,7 +9,7 @@ Slack channel to broadcast incidents to
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**id** | **String** | Slack channel ID |  |
-|**name** | **String** | Slack channel name |  |
+|**name** | **String** | Slack channel name |  [optional] |
 
 
 

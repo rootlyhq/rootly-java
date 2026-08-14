@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**name** | **String** | The name of the severity |  |
-|**slug** | **String** | The slug of the severity |  [optional] |
+|**slug** | **String** | The slug of the severity |  [optional] [readonly] |
 |**description** | **String** | The description of the severity |  [optional] |
 |**severity** | [**SeverityEnum**](#SeverityEnum) | The severity of the severity |  [optional] |
 |**color** | **String** | The hex color of the severity |  [optional] |

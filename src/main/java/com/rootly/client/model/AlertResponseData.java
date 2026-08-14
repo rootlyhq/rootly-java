@@ -49,151 +49,17 @@ import com.rootly.client.JSON;
 /**
  * AlertResponseData
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AlertResponseData {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   @jakarta.annotation.Nonnull
   private String id;
 
-  /**
-   * The source of the alert
-   */
-  @JsonAdapter(SourceEnum.Adapter.class)
-  public enum SourceEnum {
-    ROOTLY("rootly"),
-    
-    MANUAL("manual"),
-    
-    API("api"),
-    
-    HEARTBEAT("heartbeat"),
-    
-    WEB("web"),
-    
-    SLACK("slack"),
-    
-    EMAIL("email"),
-    
-    WORKFLOW("workflow"),
-    
-    LIVE_CALL_ROUTING("live_call_routing"),
-    
-    MOBILE("mobile"),
-    
-    PAGERDUTY("pagerduty"),
-    
-    OPSGENIE("opsgenie"),
-    
-    VICTOROPS("victorops"),
-    
-    PAGERTREE("pagertree"),
-    
-    DATADOG("datadog"),
-    
-    NOBL9("nobl9"),
-    
-    ZENDESK("zendesk"),
-    
-    ASANA("asana"),
-    
-    CLICKUP("clickup"),
-    
-    SENTRY("sentry"),
-    
-    ROLLBAR("rollbar"),
-    
-    JIRA("jira"),
-    
-    HONEYCOMB("honeycomb"),
-    
-    SERVICE_NOW("service_now"),
-    
-    LINEAR("linear"),
-    
-    GRAFANA("grafana"),
-    
-    ALERTMANAGER("alertmanager"),
-    
-    GOOGLE_CLOUD("google_cloud"),
-    
-    GENERIC_WEBHOOK("generic_webhook"),
-    
-    CLOUD_WATCH("cloud_watch"),
-    
-    AZURE("azure"),
-    
-    SPLUNK("splunk"),
-    
-    CHRONOSPHERE("chronosphere"),
-    
-    APP_OPTICS("app_optics"),
-    
-    BUG_SNAG("bug_snag"),
-    
-    MONTE_CARLO("monte_carlo"),
-    
-    NAGIOS("nagios"),
-    
-    PRTG("prtg"),
-    
-    CATCHPOINT("catchpoint"),
-    
-    APP_DYNAMICS("app_dynamics"),
-    
-    CHECKLY("checkly"),
-    
-    NEW_RELIC("new_relic"),
-    
-    GITLAB("gitlab");
-
-    private String value;
-
-    SourceEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static SourceEnum fromValue(String value) {
-      for (SourceEnum b : SourceEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<SourceEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final SourceEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public SourceEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return SourceEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      SourceEnum.fromValue(value);
-    }
-  }
-
   public static final String SERIALIZED_NAME_SOURCE = "source";
   @SerializedName(SERIALIZED_NAME_SOURCE)
   @jakarta.annotation.Nullable
-  private SourceEnum source;
+  private String source;
 
   /**
    * Gets or Sets type
@@ -277,7 +143,7 @@ public class AlertResponseData {
   }
 
 
-  public AlertResponseData source(@jakarta.annotation.Nullable SourceEnum source) {
+  public AlertResponseData source(@jakarta.annotation.Nullable String source) {
     this.source = source;
     return this;
   }
@@ -287,11 +153,11 @@ public class AlertResponseData {
    * @return source
    */
   @jakarta.annotation.Nullable
-  public SourceEnum getSource() {
+  public String getSource() {
     return source;
   }
 
-  public void setSource(@jakarta.annotation.Nullable SourceEnum source) {
+  public void setSource(@jakarta.annotation.Nullable String source) {
     this.source = source;
   }
 
@@ -430,10 +296,6 @@ public class AlertResponseData {
       }
       if ((jsonObj.get("source") != null && !jsonObj.get("source").isJsonNull()) && !jsonObj.get("source").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `source` to be a primitive type in the JSON string but got `%s`", jsonObj.get("source").toString()));
-      }
-      // validate the optional field `source`
-      if (jsonObj.get("source") != null && !jsonObj.get("source").isJsonNull()) {
-        SourceEnum.validateJsonElement(jsonObj.get("source"));
       }
       if (!jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));

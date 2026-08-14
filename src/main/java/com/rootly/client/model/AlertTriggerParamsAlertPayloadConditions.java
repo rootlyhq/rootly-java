@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * AlertTriggerParamsAlertPayloadConditions
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AlertTriggerParamsAlertPayloadConditions {
   /**
    * Gets or Sets logic
@@ -109,18 +109,18 @@ public class AlertTriggerParamsAlertPayloadConditions {
 
   public static final String SERIALIZED_NAME_LOGIC = "logic";
   @SerializedName(SERIALIZED_NAME_LOGIC)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private LogicEnum logic;
 
   public static final String SERIALIZED_NAME_CONDITIONS = "conditions";
   @SerializedName(SERIALIZED_NAME_CONDITIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<AlertTriggerParamsAlertPayloadConditionsConditionsInner> conditions = new ArrayList<>();
 
   public AlertTriggerParamsAlertPayloadConditions() {
   }
 
-  public AlertTriggerParamsAlertPayloadConditions logic(@javax.annotation.Nullable LogicEnum logic) {
+  public AlertTriggerParamsAlertPayloadConditions logic(@jakarta.annotation.Nullable LogicEnum logic) {
     this.logic = logic;
     return this;
   }
@@ -129,17 +129,17 @@ public class AlertTriggerParamsAlertPayloadConditions {
    * Get logic
    * @return logic
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public LogicEnum getLogic() {
     return logic;
   }
 
-  public void setLogic(@javax.annotation.Nullable LogicEnum logic) {
+  public void setLogic(@jakarta.annotation.Nullable LogicEnum logic) {
     this.logic = logic;
   }
 
 
-  public AlertTriggerParamsAlertPayloadConditions conditions(@javax.annotation.Nullable List<AlertTriggerParamsAlertPayloadConditionsConditionsInner> conditions) {
+  public AlertTriggerParamsAlertPayloadConditions conditions(@jakarta.annotation.Nullable List<AlertTriggerParamsAlertPayloadConditionsConditionsInner> conditions) {
     this.conditions = conditions;
     return this;
   }
@@ -156,12 +156,12 @@ public class AlertTriggerParamsAlertPayloadConditions {
    * Get conditions
    * @return conditions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<AlertTriggerParamsAlertPayloadConditionsConditionsInner> getConditions() {
     return conditions;
   }
 
-  public void setConditions(@javax.annotation.Nullable List<AlertTriggerParamsAlertPayloadConditionsConditionsInner> conditions) {
+  public void setConditions(@jakarta.annotation.Nullable List<AlertTriggerParamsAlertPayloadConditionsConditionsInner> conditions) {
     this.conditions = conditions;
   }
 

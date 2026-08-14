@@ -480,12 +480,27 @@ public class CatalogsApi {
      * @param sort comma separated if needed. eg: created_at,updated_at (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
+     * @param filterSearch  (optional)
      * @param filterSlug  (optional)
      * @param filterName  (optional)
+     * @param filterExternalId  (optional)
+     * @param filterManagedBy  (optional)
      * @param filterCreatedAtGt  (optional)
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
+     * @param filterManagedByEq  (optional)
+     * @param filterManagedByNotEq  (optional)
+     * @param filterManagedByIn  (optional)
+     * @param filterManagedByNotIn  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -496,7 +511,7 @@ public class CatalogsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listCatalogsCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listCatalogsCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterExternalId, @jakarta.annotation.Nullable String filterManagedBy, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterManagedByEq, @jakarta.annotation.Nullable String filterManagedByNotEq, @jakarta.annotation.Nullable String filterManagedByIn, @jakarta.annotation.Nullable String filterManagedByNotIn, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -537,12 +552,24 @@ public class CatalogsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("page[size]", pageSize));
         }
 
+        if (filterSearch != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[search]", filterSearch));
+        }
+
         if (filterSlug != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug]", filterSlug));
         }
 
         if (filterName != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name]", filterName));
+        }
+
+        if (filterExternalId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[external_id]", filterExternalId));
+        }
+
+        if (filterManagedBy != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[managed_by]", filterManagedBy));
         }
 
         if (filterCreatedAtGt != null) {
@@ -559,6 +586,54 @@ public class CatalogsApi {
 
         if (filterCreatedAtLte != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[created_at][lte]", filterCreatedAtLte));
+        }
+
+        if (filterSlugEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][eq]", filterSlugEq));
+        }
+
+        if (filterSlugNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][not_eq]", filterSlugNotEq));
+        }
+
+        if (filterSlugIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][in]", filterSlugIn));
+        }
+
+        if (filterSlugNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][not_in]", filterSlugNotIn));
+        }
+
+        if (filterNameEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][eq]", filterNameEq));
+        }
+
+        if (filterNameNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][not_eq]", filterNameNotEq));
+        }
+
+        if (filterNameIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][in]", filterNameIn));
+        }
+
+        if (filterNameNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][not_in]", filterNameNotIn));
+        }
+
+        if (filterManagedByEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[managed_by][eq]", filterManagedByEq));
+        }
+
+        if (filterManagedByNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[managed_by][not_eq]", filterManagedByNotEq));
+        }
+
+        if (filterManagedByIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[managed_by][in]", filterManagedByIn));
+        }
+
+        if (filterManagedByNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[managed_by][not_in]", filterManagedByNotIn));
         }
 
         final String[] localVarAccepts = {
@@ -581,8 +656,8 @@ public class CatalogsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listCatalogsValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
-        return listCatalogsCall(include, sort, pageNumber, pageSize, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, _callback);
+    private okhttp3.Call listCatalogsValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterExternalId, @jakarta.annotation.Nullable String filterManagedBy, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterManagedByEq, @jakarta.annotation.Nullable String filterManagedByNotEq, @jakarta.annotation.Nullable String filterManagedByIn, @jakarta.annotation.Nullable String filterManagedByNotIn, final ApiCallback _callback) throws ApiException {
+        return listCatalogsCall(include, sort, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterExternalId, filterManagedBy, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterManagedByEq, filterManagedByNotEq, filterManagedByIn, filterManagedByNotIn, _callback);
 
     }
 
@@ -593,12 +668,27 @@ public class CatalogsApi {
      * @param sort comma separated if needed. eg: created_at,updated_at (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
+     * @param filterSearch  (optional)
      * @param filterSlug  (optional)
      * @param filterName  (optional)
+     * @param filterExternalId  (optional)
+     * @param filterManagedBy  (optional)
      * @param filterCreatedAtGt  (optional)
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
+     * @param filterManagedByEq  (optional)
+     * @param filterManagedByNotEq  (optional)
+     * @param filterManagedByIn  (optional)
+     * @param filterManagedByNotIn  (optional)
      * @return CatalogList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -608,8 +698,8 @@ public class CatalogsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public CatalogList listCatalogs(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte) throws ApiException {
-        ApiResponse<CatalogList> localVarResp = listCatalogsWithHttpInfo(include, sort, pageNumber, pageSize, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
+    public CatalogList listCatalogs(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterExternalId, @jakarta.annotation.Nullable String filterManagedBy, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterManagedByEq, @jakarta.annotation.Nullable String filterManagedByNotEq, @jakarta.annotation.Nullable String filterManagedByIn, @jakarta.annotation.Nullable String filterManagedByNotIn) throws ApiException {
+        ApiResponse<CatalogList> localVarResp = listCatalogsWithHttpInfo(include, sort, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterExternalId, filterManagedBy, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterManagedByEq, filterManagedByNotEq, filterManagedByIn, filterManagedByNotIn);
         return localVarResp.getData();
     }
 
@@ -620,12 +710,27 @@ public class CatalogsApi {
      * @param sort comma separated if needed. eg: created_at,updated_at (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
+     * @param filterSearch  (optional)
      * @param filterSlug  (optional)
      * @param filterName  (optional)
+     * @param filterExternalId  (optional)
+     * @param filterManagedBy  (optional)
      * @param filterCreatedAtGt  (optional)
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
+     * @param filterManagedByEq  (optional)
+     * @param filterManagedByNotEq  (optional)
+     * @param filterManagedByIn  (optional)
+     * @param filterManagedByNotIn  (optional)
      * @return ApiResponse&lt;CatalogList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -635,8 +740,8 @@ public class CatalogsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CatalogList> listCatalogsWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte) throws ApiException {
-        okhttp3.Call localVarCall = listCatalogsValidateBeforeCall(include, sort, pageNumber, pageSize, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, null);
+    public ApiResponse<CatalogList> listCatalogsWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterExternalId, @jakarta.annotation.Nullable String filterManagedBy, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterManagedByEq, @jakarta.annotation.Nullable String filterManagedByNotEq, @jakarta.annotation.Nullable String filterManagedByIn, @jakarta.annotation.Nullable String filterManagedByNotIn) throws ApiException {
+        okhttp3.Call localVarCall = listCatalogsValidateBeforeCall(include, sort, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterExternalId, filterManagedBy, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterManagedByEq, filterManagedByNotEq, filterManagedByIn, filterManagedByNotIn, null);
         Type localVarReturnType = new TypeToken<CatalogList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -648,12 +753,27 @@ public class CatalogsApi {
      * @param sort comma separated if needed. eg: created_at,updated_at (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
+     * @param filterSearch  (optional)
      * @param filterSlug  (optional)
      * @param filterName  (optional)
+     * @param filterExternalId  (optional)
+     * @param filterManagedBy  (optional)
      * @param filterCreatedAtGt  (optional)
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
+     * @param filterManagedByEq  (optional)
+     * @param filterManagedByNotEq  (optional)
+     * @param filterManagedByIn  (optional)
+     * @param filterManagedByNotIn  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -664,9 +784,9 @@ public class CatalogsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listCatalogsAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback<CatalogList> _callback) throws ApiException {
+    public okhttp3.Call listCatalogsAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterExternalId, @jakarta.annotation.Nullable String filterManagedBy, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterManagedByEq, @jakarta.annotation.Nullable String filterManagedByNotEq, @jakarta.annotation.Nullable String filterManagedByIn, @jakarta.annotation.Nullable String filterManagedByNotIn, final ApiCallback<CatalogList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listCatalogsValidateBeforeCall(include, sort, pageNumber, pageSize, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, _callback);
+        okhttp3.Call localVarCall = listCatalogsValidateBeforeCall(include, sort, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterExternalId, filterManagedBy, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterManagedByEq, filterManagedByNotEq, filterManagedByIn, filterManagedByNotIn, _callback);
         Type localVarReturnType = new TypeToken<CatalogList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

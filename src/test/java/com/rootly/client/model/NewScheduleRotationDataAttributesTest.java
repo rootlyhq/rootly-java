@@ -22,7 +22,7 @@ import com.rootly.client.model.NewScheduleRotationDataAttributesActiveTimeAttrib
 import com.rootly.client.model.NewScheduleRotationDataAttributesScheduleRotationMembersInner;
 import com.rootly.client.model.NewScheduleRotationDataAttributesScheduleRotationableAttributes;
 import java.io.IOException;
-import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * Links
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Links {
   public static final String SERIALIZED_NAME_SELF = "self";
   @SerializedName(SERIALIZED_NAME_SELF)
@@ -72,7 +72,7 @@ public class Links {
 
   public static final String SERIALIZED_NAME_LAST = "last";
   @SerializedName(SERIALIZED_NAME_LAST)
-  @jakarta.annotation.Nonnull
+  @jakarta.annotation.Nullable
   private String last;
 
   public Links() {
@@ -154,7 +154,7 @@ public class Links {
   }
 
 
-  public Links last(@jakarta.annotation.Nonnull String last) {
+  public Links last(@jakarta.annotation.Nullable String last) {
     this.last = last;
     return this;
   }
@@ -163,12 +163,12 @@ public class Links {
    * Get last
    * @return last
    */
-  @jakarta.annotation.Nonnull
+  @jakarta.annotation.Nullable
   public String getLast() {
     return last;
   }
 
-  public void setLast(@jakarta.annotation.Nonnull String last) {
+  public void setLast(@jakarta.annotation.Nullable String last) {
     this.last = last;
   }
 
@@ -281,7 +281,7 @@ public class Links {
       if ((jsonObj.get("next") != null && !jsonObj.get("next").isJsonNull()) && !jsonObj.get("next").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `next` to be a primitive type in the JSON string but got `%s`", jsonObj.get("next").toString()));
       }
-      if (!jsonObj.get("last").isJsonPrimitive()) {
+      if ((jsonObj.get("last") != null && !jsonObj.get("last").isJsonNull()) && !jsonObj.get("last").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `last` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last").toString()));
       }
   }

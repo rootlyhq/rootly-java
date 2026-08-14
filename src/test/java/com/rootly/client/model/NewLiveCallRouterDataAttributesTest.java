@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -106,6 +107,14 @@ public class NewLiveCallRouterDataAttributesTest {
     }
 
     /**
+     * Test the property 'unavailableResponderMessage'
+     */
+    @Test
+    public void unavailableResponderMessageTest() {
+        // TODO: test unavailableResponderMessage
+    }
+
+    /**
      * Test the property 'waitingMusicUrl'
      */
     @Test
@@ -146,11 +155,43 @@ public class NewLiveCallRouterDataAttributesTest {
     }
 
     /**
+     * Test the property 'notifyViaSms'
+     */
+    @Test
+    public void notifyViaSmsTest() {
+        // TODO: test notifyViaSms
+    }
+
+    /**
+     * Test the property 'notifyViaPushNotification'
+     */
+    @Test
+    public void notifyViaPushNotificationTest() {
+        // TODO: test notifyViaPushNotification
+    }
+
+    /**
+     * Test the property 'informationalNotificationMessage'
+     */
+    @Test
+    public void informationalNotificationMessageTest() {
+        // TODO: test informationalNotificationMessage
+    }
+
+    /**
      * Test the property 'alertUrgencyId'
      */
     @Test
     public void alertUrgencyIdTest() {
         // TODO: test alertUrgencyId
+    }
+
+    /**
+     * Test the property 'callingTreeEnabled'
+     */
+    @Test
+    public void callingTreeEnabledTest() {
+        // TODO: test callingTreeEnabled
     }
 
     /**

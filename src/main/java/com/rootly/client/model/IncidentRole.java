@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * IncidentRole
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class IncidentRole {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -104,6 +104,13 @@ public class IncidentRole {
   public IncidentRole() {
   }
 
+  public IncidentRole(
+     String slug
+  ) {
+    this();
+    this.slug = slug;
+  }
+
   public IncidentRole name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
@@ -123,11 +130,6 @@ public class IncidentRole {
   }
 
 
-  public IncidentRole slug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
-    return this;
-  }
-
   /**
    * The slug of the incident role
    * @return slug
@@ -137,9 +139,6 @@ public class IncidentRole {
     return slug;
   }
 
-  public void setSlug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
-  }
 
 
   public IncidentRole summary(@jakarta.annotation.Nullable String summary) {

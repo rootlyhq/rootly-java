@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewWebhooksEndpointDataAttributesCustomHeadersInner;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -50,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * WebhooksEndpoint
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class WebhooksEndpoint {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -59,7 +60,7 @@ public class WebhooksEndpoint {
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
-  @jakarta.annotation.Nonnull
+  @jakarta.annotation.Nullable
   private String slug;
 
   public static final String SERIALIZED_NAME_URL = "url";
@@ -118,7 +119,11 @@ public class WebhooksEndpoint {
     
     ALERT_CREATED("alert.created"),
     
+    ALERT_UPDATED("alert.updated"),
+    
     PULSE_CREATED("pulse.created"),
+    
+    SHIFT_STARTED("shift.started"),
     
     GENIUS_WORKFLOW_RUN_QUEUED("genius_workflow_run.queued"),
     
@@ -128,7 +133,9 @@ public class WebhooksEndpoint {
     
     GENIUS_WORKFLOW_RUN_FAILED("genius_workflow_run.failed"),
     
-    GENIUS_WORKFLOW_RUN_CANCELED("genius_workflow_run.canceled");
+    GENIUS_WORKFLOW_RUN_CANCELED("genius_workflow_run.canceled"),
+    
+    AUDIT_LOG_CREATED("audit_log.created");
 
     private String value;
 
@@ -188,6 +195,11 @@ public class WebhooksEndpoint {
   @jakarta.annotation.Nonnull
   private Boolean enabled;
 
+  public static final String SERIALIZED_NAME_CUSTOM_HEADERS = "custom_headers";
+  @SerializedName(SERIALIZED_NAME_CUSTOM_HEADERS)
+  @jakarta.annotation.Nullable
+  private List<NewWebhooksEndpointDataAttributesCustomHeadersInner> customHeaders = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   @jakarta.annotation.Nonnull
@@ -199,6 +211,13 @@ public class WebhooksEndpoint {
   private String updatedAt;
 
   public WebhooksEndpoint() {
+  }
+
+  public WebhooksEndpoint(
+     String slug
+  ) {
+    this();
+    this.slug = slug;
   }
 
   public WebhooksEndpoint name(@jakarta.annotation.Nonnull String name) {
@@ -220,23 +239,15 @@ public class WebhooksEndpoint {
   }
 
 
-  public WebhooksEndpoint slug(@jakarta.annotation.Nonnull String slug) {
-    this.slug = slug;
-    return this;
-  }
-
   /**
    * The slug of the endpoint
    * @return slug
    */
-  @jakarta.annotation.Nonnull
+  @jakarta.annotation.Nullable
   public String getSlug() {
     return slug;
   }
 
-  public void setSlug(@jakarta.annotation.Nonnull String slug) {
-    this.slug = slug;
-  }
 
 
   public WebhooksEndpoint url(@jakarta.annotation.Nonnull String url) {
@@ -323,6 +334,33 @@ public class WebhooksEndpoint {
   }
 
 
+  public WebhooksEndpoint customHeaders(@jakarta.annotation.Nullable List<NewWebhooksEndpointDataAttributesCustomHeadersInner> customHeaders) {
+    this.customHeaders = customHeaders;
+    return this;
+  }
+
+  public WebhooksEndpoint addCustomHeadersItem(NewWebhooksEndpointDataAttributesCustomHeadersInner customHeadersItem) {
+    if (this.customHeaders == null) {
+      this.customHeaders = new ArrayList<>();
+    }
+    this.customHeaders.add(customHeadersItem);
+    return this;
+  }
+
+  /**
+   * Custom HTTP headers sent with each delivery. Max 10. Reserved names (Content-Type, X-Rootly-Signature, Host, etc.) are rejected.
+   * @return customHeaders
+   */
+  @jakarta.annotation.Nullable
+  public List<NewWebhooksEndpointDataAttributesCustomHeadersInner> getCustomHeaders() {
+    return customHeaders;
+  }
+
+  public void setCustomHeaders(@jakarta.annotation.Nullable List<NewWebhooksEndpointDataAttributesCustomHeadersInner> customHeaders) {
+    this.customHeaders = customHeaders;
+  }
+
+
   public WebhooksEndpoint createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
@@ -377,13 +415,14 @@ public class WebhooksEndpoint {
         Objects.equals(this.eventTypes, webhooksEndpoint.eventTypes) &&
         Objects.equals(this.secret, webhooksEndpoint.secret) &&
         Objects.equals(this.enabled, webhooksEndpoint.enabled) &&
+        Objects.equals(this.customHeaders, webhooksEndpoint.customHeaders) &&
         Objects.equals(this.createdAt, webhooksEndpoint.createdAt) &&
         Objects.equals(this.updatedAt, webhooksEndpoint.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, slug, url, eventTypes, secret, enabled, createdAt, updatedAt);
+    return Objects.hash(name, slug, url, eventTypes, secret, enabled, customHeaders, createdAt, updatedAt);
   }
 
   @Override
@@ -396,6 +435,7 @@ public class WebhooksEndpoint {
     sb.append("    eventTypes: ").append(toIndentedString(eventTypes)).append("\n");
     sb.append("    secret: ").append(toIndentedString(secret)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+    sb.append("    customHeaders: ").append(toIndentedString(customHeaders)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -426,13 +466,13 @@ public class WebhooksEndpoint {
     openapiFields.add("event_types");
     openapiFields.add("secret");
     openapiFields.add("enabled");
+    openapiFields.add("custom_headers");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
     openapiRequiredFields.add("name");
-    openapiRequiredFields.add("slug");
     openapiRequiredFields.add("url");
     openapiRequiredFields.add("event_types");
     openapiRequiredFields.add("secret");
@@ -472,7 +512,7 @@ public class WebhooksEndpoint {
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
-      if (!jsonObj.get("slug").isJsonPrimitive()) {
+      if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
       }
       if (!jsonObj.get("url").isJsonPrimitive()) {
@@ -486,6 +526,20 @@ public class WebhooksEndpoint {
       }
       if (!jsonObj.get("secret").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `secret` to be a primitive type in the JSON string but got `%s`", jsonObj.get("secret").toString()));
+      }
+      if (jsonObj.get("custom_headers") != null && !jsonObj.get("custom_headers").isJsonNull()) {
+        JsonArray jsonArraycustomHeaders = jsonObj.getAsJsonArray("custom_headers");
+        if (jsonArraycustomHeaders != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("custom_headers").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `custom_headers` to be an array in the JSON string but got `%s`", jsonObj.get("custom_headers").toString()));
+          }
+
+          // validate the optional field `custom_headers` (array)
+          for (int i = 0; i < jsonArraycustomHeaders.size(); i++) {
+            NewWebhooksEndpointDataAttributesCustomHeadersInner.validateJsonElement(jsonArraycustomHeaders.get(i));
+          };
+        }
       }
       if (!jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));

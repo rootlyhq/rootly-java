@@ -50,8 +50,10 @@ import com.rootly.client.JSON;
 
 /**
  * NewEscalationPolicyDataAttributesBusinessHours
+ * @deprecated
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@Deprecated
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewEscalationPolicyDataAttributesBusinessHours {
   /**
    * Time zone for business hours
@@ -116,8 +118,6 @@ public class NewEscalationPolicyDataAttributesBusinessHours {
     
     MEXICO_CITY("Mexico City"),
     
-    AMERICA_MEXICO_CITY2("America/Mexico_City"),
-    
     MONTERREY("Monterrey"),
     
     AMERICA_MONTERREY("America/Monterrey"),
@@ -143,8 +143,6 @@ public class NewEscalationPolicyDataAttributesBusinessHours {
     AMERICA_LIMA("America/Lima"),
     
     QUITO("Quito"),
-    
-    AMERICA_LIMA2("America/Lima"),
     
     ATLANTIC_TIME_CANADA_("Atlantic Time (Canada)"),
     
@@ -206,14 +204,6 @@ public class NewEscalationPolicyDataAttributesBusinessHours {
     
     ATLANTIC_CAPE_VERDE("Atlantic/Cape_Verde"),
     
-    CASABLANCA("Casablanca"),
-    
-    AFRICA_CASABLANCA("Africa/Casablanca"),
-    
-    DUBLIN("Dublin"),
-    
-    EUROPE_DUBLIN("Europe/Dublin"),
-    
     EDINBURGH("Edinburgh"),
     
     EUROPE_LONDON("Europe/London"),
@@ -223,8 +213,6 @@ public class NewEscalationPolicyDataAttributesBusinessHours {
     EUROPE_LISBON("Europe/Lisbon"),
     
     LONDON("London"),
-    
-    EUROPE_LONDON2("Europe/London"),
     
     MONROVIA("Monrovia"),
     
@@ -262,9 +250,17 @@ public class NewEscalationPolicyDataAttributesBusinessHours {
     
     EUROPE_BUDAPEST("Europe/Budapest"),
     
+    CASABLANCA("Casablanca"),
+    
+    AFRICA_CASABLANCA("Africa/Casablanca"),
+    
     COPENHAGEN("Copenhagen"),
     
     EUROPE_COPENHAGEN("Europe/Copenhagen"),
+    
+    DUBLIN("Dublin"),
+    
+    EUROPE_DUBLIN("Europe/Dublin"),
     
     LJUBLJANA("Ljubljana"),
     
@@ -315,8 +311,6 @@ public class NewEscalationPolicyDataAttributesBusinessHours {
     EUROPE_ZAGREB("Europe/Zagreb"),
     
     ZURICH("Zurich"),
-    
-    EUROPE_ZURICH2("Europe/Zurich"),
     
     ATHENS("Athens"),
     
@@ -400,8 +394,6 @@ public class NewEscalationPolicyDataAttributesBusinessHours {
     
     ST_PETERSBURG("St. Petersburg"),
     
-    EUROPE_MOSCOW2("Europe/Moscow"),
-    
     VOLGOGRAD("Volgograd"),
     
     EUROPE_VOLGOGRAD("Europe/Volgograd"),
@@ -419,8 +411,6 @@ public class NewEscalationPolicyDataAttributesBusinessHours {
     ASIA_BAKU("Asia/Baku"),
     
     MUSCAT("Muscat"),
-    
-    ASIA_MUSCAT2("Asia/Muscat"),
     
     SAMARA("Samara"),
     
@@ -444,8 +434,6 @@ public class NewEscalationPolicyDataAttributesBusinessHours {
     
     ASTANA("Astana"),
     
-    ASIA_ALMATY2("Asia/Almaty"),
-    
     EKATERINBURG("Ekaterinburg"),
     
     ASIA_YEKATERINBURG("Asia/Yekaterinburg"),
@@ -455,8 +443,6 @@ public class NewEscalationPolicyDataAttributesBusinessHours {
     ASIA_KARACHI("Asia/Karachi"),
     
     KARACHI("Karachi"),
-    
-    ASIA_KARACHI2("Asia/Karachi"),
     
     TASHKENT("Tashkent"),
     
@@ -468,15 +454,9 @@ public class NewEscalationPolicyDataAttributesBusinessHours {
     
     KOLKATA("Kolkata"),
     
-    ASIA_KOLKATA2("Asia/Kolkata"),
-    
     MUMBAI("Mumbai"),
     
-    ASIA_KOLKATA3("Asia/Kolkata"),
-    
     NEW_DELHI("New Delhi"),
-    
-    ASIA_KOLKATA4("Asia/Kolkata"),
     
     SRI_JAYAWARDENEPURA("Sri Jayawardenepura"),
     
@@ -503,8 +483,6 @@ public class NewEscalationPolicyDataAttributesBusinessHours {
     ASIA_BANGKOK("Asia/Bangkok"),
     
     HANOI("Hanoi"),
-    
-    ASIA_BANGKOK2("Asia/Bangkok"),
     
     JAKARTA("Jakarta"),
     
@@ -560,15 +538,11 @@ public class NewEscalationPolicyDataAttributesBusinessHours {
     
     SAPPORO("Sapporo"),
     
-    ASIA_TOKYO2("Asia/Tokyo"),
-    
     SEOUL("Seoul"),
     
     ASIA_SEOUL("Asia/Seoul"),
     
     TOKYO("Tokyo"),
-    
-    ASIA_TOKYO3("Asia/Tokyo"),
     
     YAKUTSK("Yakutsk"),
     
@@ -648,8 +622,6 @@ public class NewEscalationPolicyDataAttributesBusinessHours {
     
     WELLINGTON("Wellington"),
     
-    PACIFIC_AUCKLAND2("Pacific/Auckland"),
-    
     CHATHAM_IS_("Chatham Is."),
     
     PACIFIC_CHATHAM("Pacific/Chatham"),
@@ -664,7 +636,39 @@ public class NewEscalationPolicyDataAttributesBusinessHours {
     
     TOKELAU_IS_("Tokelau Is."),
     
-    PACIFIC_FAKAOFO("Pacific/Fakaofo");
+    PACIFIC_FAKAOFO("Pacific/Fakaofo"),
+    
+    AMERICA_ADAK("America/Adak"),
+    
+    AMERICA_ATKA("America/Atka"),
+    
+    US_ALEUTIAN("US/Aleutian"),
+    
+    AMERICA_VANCOUVER("America/Vancouver"),
+    
+    CANADA_PACIFIC("Canada/Pacific"),
+    
+    AMERICA_MIQUELON("America/Miquelon"),
+    
+    AUSTRALIA_EUCLA("Australia/Eucla"),
+    
+    AUSTRALIA_LHI("Australia/LHI"),
+    
+    AUSTRALIA_LORD_HOWE("Australia/Lord_Howe"),
+    
+    CHILE_EASTER_ISLAND("Chile/EasterIsland"),
+    
+    PACIFIC_EASTER("Pacific/Easter"),
+    
+    PACIFIC_GAMBIER("Pacific/Gambier"),
+    
+    PACIFIC_PITCAIRN("Pacific/Pitcairn"),
+    
+    PACIFIC_MARQUESAS("Pacific/Marquesas"),
+    
+    PACIFIC_KIRITIMATI("Pacific/Kiritimati"),
+    
+    PACIFIC_NORFOLK("Pacific/Norfolk");
 
     private String value;
 

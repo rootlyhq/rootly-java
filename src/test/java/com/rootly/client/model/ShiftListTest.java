@@ -18,6 +18,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.JsonapiIncludedResource;
+import com.rootly.client.model.Meta;
 import com.rootly.client.model.ShiftListDataInner;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -46,6 +48,22 @@ public class ShiftListTest {
     @Test
     public void dataTest() {
         // TODO: test data
+    }
+
+    /**
+     * Test the property 'meta'
+     */
+    @Test
+    public void metaTest() {
+        // TODO: test meta
+    }
+
+    /**
+     * Test the property 'included'
+     */
+    @Test
+    public void includedTest() {
+        // TODO: test included
     }
 
 }

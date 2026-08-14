@@ -52,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * NewSlaDataAttributesConditionsInner
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewSlaDataAttributesConditionsInner {
   /**
    * The type of condition
@@ -108,7 +108,7 @@ public class NewSlaDataAttributesConditionsInner {
 
   public static final String SERIALIZED_NAME_CONDITIONABLE_TYPE = "conditionable_type";
   @SerializedName(SERIALIZED_NAME_CONDITIONABLE_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private ConditionableTypeEnum conditionableType;
 
   /**
@@ -197,33 +197,33 @@ public class NewSlaDataAttributesConditionsInner {
 
   public static final String SERIALIZED_NAME_PROPERTY = "property";
   @SerializedName(SERIALIZED_NAME_PROPERTY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private PropertyEnum property;
 
   public static final String SERIALIZED_NAME_OPERATOR = "operator";
   @SerializedName(SERIALIZED_NAME_OPERATOR)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String operator;
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> values;
 
   public static final String SERIALIZED_NAME_FORM_FIELD_ID = "form_field_id";
   @SerializedName(SERIALIZED_NAME_FORM_FIELD_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private UUID formFieldId;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public NewSlaDataAttributesConditionsInner() {
   }
 
-  public NewSlaDataAttributesConditionsInner conditionableType(@javax.annotation.Nonnull ConditionableTypeEnum conditionableType) {
+  public NewSlaDataAttributesConditionsInner conditionableType(@jakarta.annotation.Nonnull ConditionableTypeEnum conditionableType) {
     this.conditionableType = conditionableType;
     return this;
   }
@@ -232,17 +232,17 @@ public class NewSlaDataAttributesConditionsInner {
    * The type of condition
    * @return conditionableType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public ConditionableTypeEnum getConditionableType() {
     return conditionableType;
   }
 
-  public void setConditionableType(@javax.annotation.Nonnull ConditionableTypeEnum conditionableType) {
+  public void setConditionableType(@jakarta.annotation.Nonnull ConditionableTypeEnum conditionableType) {
     this.conditionableType = conditionableType;
   }
 
 
-  public NewSlaDataAttributesConditionsInner property(@javax.annotation.Nullable PropertyEnum property) {
+  public NewSlaDataAttributesConditionsInner property(@jakarta.annotation.Nullable PropertyEnum property) {
     this.property = property;
     return this;
   }
@@ -251,17 +251,17 @@ public class NewSlaDataAttributesConditionsInner {
    * The property to evaluate (for built-in field conditions). When the team has custom lifecycle statuses enabled, use &#39;sub_status&#39; (with sub-status IDs as values); otherwise use &#39;status&#39; (with parent status names). Sending the wrong one will return a validation error.
    * @return property
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public PropertyEnum getProperty() {
     return property;
   }
 
-  public void setProperty(@javax.annotation.Nullable PropertyEnum property) {
+  public void setProperty(@jakarta.annotation.Nullable PropertyEnum property) {
     this.property = property;
   }
 
 
-  public NewSlaDataAttributesConditionsInner operator(@javax.annotation.Nonnull String operator) {
+  public NewSlaDataAttributesConditionsInner operator(@jakarta.annotation.Nonnull String operator) {
     this.operator = operator;
     return this;
   }
@@ -270,17 +270,17 @@ public class NewSlaDataAttributesConditionsInner {
    * The comparison operator
    * @return operator
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getOperator() {
     return operator;
   }
 
-  public void setOperator(@javax.annotation.Nonnull String operator) {
+  public void setOperator(@jakarta.annotation.Nonnull String operator) {
     this.operator = operator;
   }
 
 
-  public NewSlaDataAttributesConditionsInner values(@javax.annotation.Nullable List<String> values) {
+  public NewSlaDataAttributesConditionsInner values(@jakarta.annotation.Nullable List<String> values) {
     this.values = values;
     return this;
   }
@@ -297,17 +297,17 @@ public class NewSlaDataAttributesConditionsInner {
    * The values to compare against
    * @return values
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getValues() {
     return values;
   }
 
-  public void setValues(@javax.annotation.Nullable List<String> values) {
+  public void setValues(@jakarta.annotation.Nullable List<String> values) {
     this.values = values;
   }
 
 
-  public NewSlaDataAttributesConditionsInner formFieldId(@javax.annotation.Nullable UUID formFieldId) {
+  public NewSlaDataAttributesConditionsInner formFieldId(@jakarta.annotation.Nullable UUID formFieldId) {
     this.formFieldId = formFieldId;
     return this;
   }
@@ -316,17 +316,17 @@ public class NewSlaDataAttributesConditionsInner {
    * The ID of the form field (for custom field conditions)
    * @return formFieldId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public UUID getFormFieldId() {
     return formFieldId;
   }
 
-  public void setFormFieldId(@javax.annotation.Nullable UUID formFieldId) {
+  public void setFormFieldId(@jakarta.annotation.Nullable UUID formFieldId) {
     this.formFieldId = formFieldId;
   }
 
 
-  public NewSlaDataAttributesConditionsInner position(@javax.annotation.Nullable Integer position) {
+  public NewSlaDataAttributesConditionsInner position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -335,12 +335,12 @@ public class NewSlaDataAttributesConditionsInner {
    * The position of the condition for ordering
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 

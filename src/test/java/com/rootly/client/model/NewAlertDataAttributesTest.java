@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.rootly.client.model.NewAlertDataAttributesAlertFieldValuesAttributesInner;
 import com.rootly.client.model.NewAlertDataAttributesLabelsInner;
+import com.rootly.client.model.NewAlertDataAttributesNotificationTargetsInner;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -100,6 +101,14 @@ public class NewAlertDataAttributesTest {
     }
 
     /**
+     * Test the property 'functionalityIds'
+     */
+    @Test
+    public void functionalityIdsTest() {
+        // TODO: test functionalityIds
+    }
+
+    /**
      * Test the property 'environmentIds'
      */
     @Test
@@ -161,6 +170,14 @@ public class NewAlertDataAttributesTest {
     @Test
     public void notificationTargetIdTest() {
         // TODO: test notificationTargetId
+    }
+
+    /**
+     * Test the property 'notificationTargets'
+     */
+    @Test
+    public void notificationTargetsTest() {
+        // TODO: test notificationTargets
     }
 
     /**

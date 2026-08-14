@@ -94,7 +94,7 @@ public class ApiKeysApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createApiKeyCall(@javax.annotation.Nonnull NewApiKey newApiKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createApiKeyCall(@jakarta.annotation.Nonnull NewApiKey newApiKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -140,7 +140,7 @@ public class ApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createApiKeyValidateBeforeCall(@javax.annotation.Nonnull NewApiKey newApiKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createApiKeyValidateBeforeCall(@jakarta.annotation.Nonnull NewApiKey newApiKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'newApiKey' is set
         if (newApiKey == null) {
             throw new ApiException("Missing the required parameter 'newApiKey' when calling createApiKey(Async)");
@@ -165,7 +165,7 @@ public class ApiKeysApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiKeyWithTokenResponse createApiKey(@javax.annotation.Nonnull NewApiKey newApiKey) throws ApiException {
+    public ApiKeyWithTokenResponse createApiKey(@jakarta.annotation.Nonnull NewApiKey newApiKey) throws ApiException {
         ApiResponse<ApiKeyWithTokenResponse> localVarResp = createApiKeyWithHttpInfo(newApiKey);
         return localVarResp.getData();
     }
@@ -185,7 +185,7 @@ public class ApiKeysApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ApiKeyWithTokenResponse> createApiKeyWithHttpInfo(@javax.annotation.Nonnull NewApiKey newApiKey) throws ApiException {
+    public ApiResponse<ApiKeyWithTokenResponse> createApiKeyWithHttpInfo(@jakarta.annotation.Nonnull NewApiKey newApiKey) throws ApiException {
         okhttp3.Call localVarCall = createApiKeyValidateBeforeCall(newApiKey, null);
         Type localVarReturnType = new TypeToken<ApiKeyWithTokenResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -207,7 +207,7 @@ public class ApiKeysApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createApiKeyAsync(@javax.annotation.Nonnull NewApiKey newApiKey, final ApiCallback<ApiKeyWithTokenResponse> _callback) throws ApiException {
+    public okhttp3.Call createApiKeyAsync(@jakarta.annotation.Nonnull NewApiKey newApiKey, final ApiCallback<ApiKeyWithTokenResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createApiKeyValidateBeforeCall(newApiKey, _callback);
         Type localVarReturnType = new TypeToken<ApiKeyWithTokenResponse>(){}.getType();
@@ -228,7 +228,7 @@ public class ApiKeysApi {
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteApiKeyCall(@javax.annotation.Nonnull UUID id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteApiKeyCall(@jakarta.annotation.Nonnull UUID id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -274,7 +274,7 @@ public class ApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteApiKeyValidateBeforeCall(@javax.annotation.Nonnull UUID id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteApiKeyValidateBeforeCall(@jakarta.annotation.Nonnull UUID id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteApiKey(Async)");
@@ -298,7 +298,7 @@ public class ApiKeysApi {
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiKeyResponse deleteApiKey(@javax.annotation.Nonnull UUID id) throws ApiException {
+    public ApiKeyResponse deleteApiKey(@jakarta.annotation.Nonnull UUID id) throws ApiException {
         ApiResponse<ApiKeyResponse> localVarResp = deleteApiKeyWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -317,7 +317,7 @@ public class ApiKeysApi {
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ApiKeyResponse> deleteApiKeyWithHttpInfo(@javax.annotation.Nonnull UUID id) throws ApiException {
+    public ApiResponse<ApiKeyResponse> deleteApiKeyWithHttpInfo(@jakarta.annotation.Nonnull UUID id) throws ApiException {
         okhttp3.Call localVarCall = deleteApiKeyValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<ApiKeyResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -338,7 +338,7 @@ public class ApiKeysApi {
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteApiKeyAsync(@javax.annotation.Nonnull UUID id, final ApiCallback<ApiKeyResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteApiKeyAsync(@jakarta.annotation.Nonnull UUID id, final ApiCallback<ApiKeyResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteApiKeyValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<ApiKeyResponse>(){}.getType();
@@ -360,7 +360,7 @@ public class ApiKeysApi {
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getApiKeyCall(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getApiKeyCall(@jakarta.annotation.Nonnull UUID id, @jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -410,7 +410,7 @@ public class ApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getApiKeyValidateBeforeCall(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getApiKeyValidateBeforeCall(@jakarta.annotation.Nonnull UUID id, @jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getApiKey(Async)");
@@ -435,7 +435,7 @@ public class ApiKeysApi {
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiKeyResponse getApiKey(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String include) throws ApiException {
+    public ApiKeyResponse getApiKey(@jakarta.annotation.Nonnull UUID id, @jakarta.annotation.Nullable String include) throws ApiException {
         ApiResponse<ApiKeyResponse> localVarResp = getApiKeyWithHttpInfo(id, include);
         return localVarResp.getData();
     }
@@ -455,7 +455,7 @@ public class ApiKeysApi {
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ApiKeyResponse> getApiKeyWithHttpInfo(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String include) throws ApiException {
+    public ApiResponse<ApiKeyResponse> getApiKeyWithHttpInfo(@jakarta.annotation.Nonnull UUID id, @jakarta.annotation.Nullable String include) throws ApiException {
         okhttp3.Call localVarCall = getApiKeyValidateBeforeCall(id, include, null);
         Type localVarReturnType = new TypeToken<ApiKeyResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -477,7 +477,7 @@ public class ApiKeysApi {
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getApiKeyAsync(@javax.annotation.Nonnull UUID id, @javax.annotation.Nullable String include, final ApiCallback<ApiKeyResponse> _callback) throws ApiException {
+    public okhttp3.Call getApiKeyAsync(@jakarta.annotation.Nonnull UUID id, @jakarta.annotation.Nullable String include, final ApiCallback<ApiKeyResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getApiKeyValidateBeforeCall(id, include, _callback);
         Type localVarReturnType = new TypeToken<ApiKeyResponse>(){}.getType();
@@ -521,7 +521,7 @@ public class ApiKeysApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listApiKeysCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterUserId, @javax.annotation.Nullable String filterGroupIds, @javax.annotation.Nullable String filterRoleId, @javax.annotation.Nullable Boolean filterActive, @javax.annotation.Nullable Boolean filterExpired, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String filterExpiresAtGt, @javax.annotation.Nullable String filterExpiresAtGte, @javax.annotation.Nullable String filterExpiresAtLt, @javax.annotation.Nullable String filterExpiresAtLte, @javax.annotation.Nullable String filterLastUsedAtGt, @javax.annotation.Nullable String filterLastUsedAtGte, @javax.annotation.Nullable String filterLastUsedAtLt, @javax.annotation.Nullable String filterLastUsedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listApiKeysCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterUserId, @jakarta.annotation.Nullable String filterGroupIds, @jakarta.annotation.Nullable String filterRoleId, @jakarta.annotation.Nullable Boolean filterActive, @jakarta.annotation.Nullable Boolean filterExpired, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterExpiresAtGt, @jakarta.annotation.Nullable String filterExpiresAtGte, @jakarta.annotation.Nullable String filterExpiresAtLt, @jakarta.annotation.Nullable String filterExpiresAtLte, @jakarta.annotation.Nullable String filterLastUsedAtGt, @jakarta.annotation.Nullable String filterLastUsedAtGte, @jakarta.annotation.Nullable String filterLastUsedAtLt, @jakarta.annotation.Nullable String filterLastUsedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -662,7 +662,7 @@ public class ApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listApiKeysValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterUserId, @javax.annotation.Nullable String filterGroupIds, @javax.annotation.Nullable String filterRoleId, @javax.annotation.Nullable Boolean filterActive, @javax.annotation.Nullable Boolean filterExpired, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String filterExpiresAtGt, @javax.annotation.Nullable String filterExpiresAtGte, @javax.annotation.Nullable String filterExpiresAtLt, @javax.annotation.Nullable String filterExpiresAtLte, @javax.annotation.Nullable String filterLastUsedAtGt, @javax.annotation.Nullable String filterLastUsedAtGte, @javax.annotation.Nullable String filterLastUsedAtLt, @javax.annotation.Nullable String filterLastUsedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listApiKeysValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterUserId, @jakarta.annotation.Nullable String filterGroupIds, @jakarta.annotation.Nullable String filterRoleId, @jakarta.annotation.Nullable Boolean filterActive, @jakarta.annotation.Nullable Boolean filterExpired, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterExpiresAtGt, @jakarta.annotation.Nullable String filterExpiresAtGte, @jakarta.annotation.Nullable String filterExpiresAtLt, @jakarta.annotation.Nullable String filterExpiresAtLte, @jakarta.annotation.Nullable String filterLastUsedAtGt, @jakarta.annotation.Nullable String filterLastUsedAtGte, @jakarta.annotation.Nullable String filterLastUsedAtLt, @jakarta.annotation.Nullable String filterLastUsedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         return listApiKeysCall(include, pageNumber, pageSize, filterKind, filterSearch, filterName, filterUserId, filterGroupIds, filterRoleId, filterActive, filterExpired, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterExpiresAtGt, filterExpiresAtGte, filterExpiresAtLt, filterExpiresAtLte, filterLastUsedAtGt, filterLastUsedAtGte, filterLastUsedAtLt, filterLastUsedAtLte, sort, _callback);
 
     }
@@ -704,7 +704,7 @@ public class ApiKeysApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiKeyList listApiKeys(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterUserId, @javax.annotation.Nullable String filterGroupIds, @javax.annotation.Nullable String filterRoleId, @javax.annotation.Nullable Boolean filterActive, @javax.annotation.Nullable Boolean filterExpired, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String filterExpiresAtGt, @javax.annotation.Nullable String filterExpiresAtGte, @javax.annotation.Nullable String filterExpiresAtLt, @javax.annotation.Nullable String filterExpiresAtLte, @javax.annotation.Nullable String filterLastUsedAtGt, @javax.annotation.Nullable String filterLastUsedAtGte, @javax.annotation.Nullable String filterLastUsedAtLt, @javax.annotation.Nullable String filterLastUsedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+    public ApiKeyList listApiKeys(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterUserId, @jakarta.annotation.Nullable String filterGroupIds, @jakarta.annotation.Nullable String filterRoleId, @jakarta.annotation.Nullable Boolean filterActive, @jakarta.annotation.Nullable Boolean filterExpired, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterExpiresAtGt, @jakarta.annotation.Nullable String filterExpiresAtGte, @jakarta.annotation.Nullable String filterExpiresAtLt, @jakarta.annotation.Nullable String filterExpiresAtLte, @jakarta.annotation.Nullable String filterLastUsedAtGt, @jakarta.annotation.Nullable String filterLastUsedAtGte, @jakarta.annotation.Nullable String filterLastUsedAtLt, @jakarta.annotation.Nullable String filterLastUsedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
         ApiResponse<ApiKeyList> localVarResp = listApiKeysWithHttpInfo(include, pageNumber, pageSize, filterKind, filterSearch, filterName, filterUserId, filterGroupIds, filterRoleId, filterActive, filterExpired, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterExpiresAtGt, filterExpiresAtGte, filterExpiresAtLt, filterExpiresAtLte, filterLastUsedAtGt, filterLastUsedAtGte, filterLastUsedAtLt, filterLastUsedAtLte, sort);
         return localVarResp.getData();
     }
@@ -746,7 +746,7 @@ public class ApiKeysApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ApiKeyList> listApiKeysWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterUserId, @javax.annotation.Nullable String filterGroupIds, @javax.annotation.Nullable String filterRoleId, @javax.annotation.Nullable Boolean filterActive, @javax.annotation.Nullable Boolean filterExpired, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String filterExpiresAtGt, @javax.annotation.Nullable String filterExpiresAtGte, @javax.annotation.Nullable String filterExpiresAtLt, @javax.annotation.Nullable String filterExpiresAtLte, @javax.annotation.Nullable String filterLastUsedAtGt, @javax.annotation.Nullable String filterLastUsedAtGte, @javax.annotation.Nullable String filterLastUsedAtLt, @javax.annotation.Nullable String filterLastUsedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
+    public ApiResponse<ApiKeyList> listApiKeysWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterUserId, @jakarta.annotation.Nullable String filterGroupIds, @jakarta.annotation.Nullable String filterRoleId, @jakarta.annotation.Nullable Boolean filterActive, @jakarta.annotation.Nullable Boolean filterExpired, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterExpiresAtGt, @jakarta.annotation.Nullable String filterExpiresAtGte, @jakarta.annotation.Nullable String filterExpiresAtLt, @jakarta.annotation.Nullable String filterExpiresAtLte, @jakarta.annotation.Nullable String filterLastUsedAtGt, @jakarta.annotation.Nullable String filterLastUsedAtGte, @jakarta.annotation.Nullable String filterLastUsedAtLt, @jakarta.annotation.Nullable String filterLastUsedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
         okhttp3.Call localVarCall = listApiKeysValidateBeforeCall(include, pageNumber, pageSize, filterKind, filterSearch, filterName, filterUserId, filterGroupIds, filterRoleId, filterActive, filterExpired, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterExpiresAtGt, filterExpiresAtGte, filterExpiresAtLt, filterExpiresAtLte, filterLastUsedAtGt, filterLastUsedAtGte, filterLastUsedAtLt, filterLastUsedAtLte, sort, null);
         Type localVarReturnType = new TypeToken<ApiKeyList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -790,7 +790,7 @@ public class ApiKeysApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listApiKeysAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterKind, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterUserId, @javax.annotation.Nullable String filterGroupIds, @javax.annotation.Nullable String filterRoleId, @javax.annotation.Nullable Boolean filterActive, @javax.annotation.Nullable Boolean filterExpired, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String filterExpiresAtGt, @javax.annotation.Nullable String filterExpiresAtGte, @javax.annotation.Nullable String filterExpiresAtLt, @javax.annotation.Nullable String filterExpiresAtLte, @javax.annotation.Nullable String filterLastUsedAtGt, @javax.annotation.Nullable String filterLastUsedAtGte, @javax.annotation.Nullable String filterLastUsedAtLt, @javax.annotation.Nullable String filterLastUsedAtLte, @javax.annotation.Nullable String sort, final ApiCallback<ApiKeyList> _callback) throws ApiException {
+    public okhttp3.Call listApiKeysAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterUserId, @jakarta.annotation.Nullable String filterGroupIds, @jakarta.annotation.Nullable String filterRoleId, @jakarta.annotation.Nullable Boolean filterActive, @jakarta.annotation.Nullable Boolean filterExpired, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterExpiresAtGt, @jakarta.annotation.Nullable String filterExpiresAtGte, @jakarta.annotation.Nullable String filterExpiresAtLt, @jakarta.annotation.Nullable String filterExpiresAtLte, @jakarta.annotation.Nullable String filterLastUsedAtGt, @jakarta.annotation.Nullable String filterLastUsedAtGte, @jakarta.annotation.Nullable String filterLastUsedAtLt, @jakarta.annotation.Nullable String filterLastUsedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback<ApiKeyList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listApiKeysValidateBeforeCall(include, pageNumber, pageSize, filterKind, filterSearch, filterName, filterUserId, filterGroupIds, filterRoleId, filterActive, filterExpired, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterExpiresAtGt, filterExpiresAtGte, filterExpiresAtLt, filterExpiresAtLte, filterLastUsedAtGt, filterLastUsedAtGte, filterLastUsedAtLt, filterLastUsedAtLte, sort, _callback);
         Type localVarReturnType = new TypeToken<ApiKeyList>(){}.getType();
@@ -812,7 +812,7 @@ public class ApiKeysApi {
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call rotateApiKeyCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable RotateApiKey rotateApiKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call rotateApiKeyCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable RotateApiKey rotateApiKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -859,7 +859,7 @@ public class ApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call rotateApiKeyValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable RotateApiKey rotateApiKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call rotateApiKeyValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable RotateApiKey rotateApiKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling rotateApiKey(Async)");
@@ -884,7 +884,7 @@ public class ApiKeysApi {
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiKeyWithTokenResponse rotateApiKey(@javax.annotation.Nonnull String id, @javax.annotation.Nullable RotateApiKey rotateApiKey) throws ApiException {
+    public ApiKeyWithTokenResponse rotateApiKey(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable RotateApiKey rotateApiKey) throws ApiException {
         ApiResponse<ApiKeyWithTokenResponse> localVarResp = rotateApiKeyWithHttpInfo(id, rotateApiKey);
         return localVarResp.getData();
     }
@@ -904,7 +904,7 @@ public class ApiKeysApi {
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ApiKeyWithTokenResponse> rotateApiKeyWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable RotateApiKey rotateApiKey) throws ApiException {
+    public ApiResponse<ApiKeyWithTokenResponse> rotateApiKeyWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable RotateApiKey rotateApiKey) throws ApiException {
         okhttp3.Call localVarCall = rotateApiKeyValidateBeforeCall(id, rotateApiKey, null);
         Type localVarReturnType = new TypeToken<ApiKeyWithTokenResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -926,7 +926,7 @@ public class ApiKeysApi {
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call rotateApiKeyAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nullable RotateApiKey rotateApiKey, final ApiCallback<ApiKeyWithTokenResponse> _callback) throws ApiException {
+    public okhttp3.Call rotateApiKeyAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable RotateApiKey rotateApiKey, final ApiCallback<ApiKeyWithTokenResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = rotateApiKeyValidateBeforeCall(id, rotateApiKey, _callback);
         Type localVarReturnType = new TypeToken<ApiKeyWithTokenResponse>(){}.getType();
@@ -948,7 +948,7 @@ public class ApiKeysApi {
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateApiKeyCall(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UpdateApiKey updateApiKey, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateApiKeyCall(@jakarta.annotation.Nonnull UUID id, @jakarta.annotation.Nonnull UpdateApiKey updateApiKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -995,7 +995,7 @@ public class ApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateApiKeyValidateBeforeCall(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UpdateApiKey updateApiKey, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateApiKeyValidateBeforeCall(@jakarta.annotation.Nonnull UUID id, @jakarta.annotation.Nonnull UpdateApiKey updateApiKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateApiKey(Async)");
@@ -1025,7 +1025,7 @@ public class ApiKeysApi {
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiKeyResponse updateApiKey(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UpdateApiKey updateApiKey) throws ApiException {
+    public ApiKeyResponse updateApiKey(@jakarta.annotation.Nonnull UUID id, @jakarta.annotation.Nonnull UpdateApiKey updateApiKey) throws ApiException {
         ApiResponse<ApiKeyResponse> localVarResp = updateApiKeyWithHttpInfo(id, updateApiKey);
         return localVarResp.getData();
     }
@@ -1045,7 +1045,7 @@ public class ApiKeysApi {
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ApiKeyResponse> updateApiKeyWithHttpInfo(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UpdateApiKey updateApiKey) throws ApiException {
+    public ApiResponse<ApiKeyResponse> updateApiKeyWithHttpInfo(@jakarta.annotation.Nonnull UUID id, @jakarta.annotation.Nonnull UpdateApiKey updateApiKey) throws ApiException {
         okhttp3.Call localVarCall = updateApiKeyValidateBeforeCall(id, updateApiKey, null);
         Type localVarReturnType = new TypeToken<ApiKeyResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1067,7 +1067,7 @@ public class ApiKeysApi {
         <tr><td> 404 </td><td> API key not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateApiKeyAsync(@javax.annotation.Nonnull UUID id, @javax.annotation.Nonnull UpdateApiKey updateApiKey, final ApiCallback<ApiKeyResponse> _callback) throws ApiException {
+    public okhttp3.Call updateApiKeyAsync(@jakarta.annotation.Nonnull UUID id, @jakarta.annotation.Nonnull UpdateApiKey updateApiKey, final ApiCallback<ApiKeyResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateApiKeyValidateBeforeCall(id, updateApiKey, _callback);
         Type localVarReturnType = new TypeToken<ApiKeyResponse>(){}.getType();

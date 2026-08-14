@@ -82,7 +82,7 @@ public class Example {
 
 <a id="listShifts"></a>
 # **listShifts**
-> ShiftList listShifts(include, from, to, userIds, scheduleIds)
+> ShiftList listShifts(include, from, to, userIds, scheduleIds, pageNumber, pageSize)
 
 List shifts
 
@@ -113,8 +113,10 @@ public class Example {
     String to = "to_example"; // String | End range for shifts in ISO-8601 format (e.g., 2025-01-01T00:00:00Z or 2025-01-01T00:00:00+00:00)
     List<Integer> userIds = Arrays.asList(); // List<Integer> | 
     List<String> scheduleIds = Arrays.asList(); // List<String> | 
+    Integer pageNumber = 56; // Integer | Page number (defaults to 1)
+    Integer pageSize = 56; // Integer | Number of shifts per page (defaults to 50, max 1000)
     try {
-      ShiftList result = apiInstance.listShifts(include, from, to, userIds, scheduleIds);
+      ShiftList result = apiInstance.listShifts(include, from, to, userIds, scheduleIds, pageNumber, pageSize);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ShiftsApi#listShifts");
@@ -131,11 +133,13 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **include** | **String**| comma separated if needed. eg: shift_override,user. Note: &#x60;user&#x60; is deprecated, use &#x60;assignee&#x60; instead. | [optional] [enum: shift_override, user, assignee] |
+| **include** | **String**| comma separated if needed. eg: shift_override,user. Note: &#x60;user&#x60; is deprecated, use &#x60;assignee&#x60; instead. | [optional] [enum: shift_override, user, assignee, shift_shadow] |
 | **from** | **String**| Start range for shifts in ISO-8601 format (e.g., 2025-01-01T00:00:00Z or 2025-01-01T00:00:00+00:00) | [optional] |
 | **to** | **String**| End range for shifts in ISO-8601 format (e.g., 2025-01-01T00:00:00Z or 2025-01-01T00:00:00+00:00) | [optional] |
 | **userIds** | [**List&lt;Integer&gt;**](Integer.md)|  | [optional] |
 | **scheduleIds** | [**List&lt;String&gt;**](String.md)|  | [optional] |
+| **pageNumber** | **Integer**| Page number (defaults to 1) | [optional] |
+| **pageSize** | **Integer**| Number of shifts per page (defaults to 50, max 1000) | [optional] |
 
 ### Return type
 

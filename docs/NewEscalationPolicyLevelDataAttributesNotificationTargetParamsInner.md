@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**id** | **String** | The ID of notification target. If Slack channel, then id of the slack channel (eg. C06Q2JK7RQW) |  |
+|**id** | **String** | The ID of notification target. If Slack channel, then id of the slack channel (eg. C06Q2JK7RQW). If Microsoft Teams channel, then the Rootly channel UUID. |  |
 |**type** | [**TypeEnum**](#TypeEnum) | The type of the notification target |  |
 |**teamMembers** | [**TeamMembersEnum**](#TeamMembersEnum) | For targets with type&#x3D;team, controls whether to notify admins, all team members, or escalate to team EP. |  [optional] |
 
@@ -21,6 +21,7 @@
 | USER | &quot;user&quot; |
 | SCHEDULE | &quot;schedule&quot; |
 | SLACK_CHANNEL | &quot;slack_channel&quot; |
+| MICROSOFT_TEAMS_CHANNEL | &quot;microsoft_teams_channel&quot; |
 | SERVICE | &quot;service&quot; |
 
 

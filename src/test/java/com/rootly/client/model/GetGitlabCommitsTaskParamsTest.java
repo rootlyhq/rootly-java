@@ -18,6 +18,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.GetGithubCommitsTaskParamsAnyOf;
+import com.rootly.client.model.GetGitlabCommitsTaskParamsAnyOf;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -37,6 +39,22 @@ public class GetGitlabCommitsTaskParamsTest {
     @Test
     public void testGetGitlabCommitsTaskParams() {
         // TODO: test GetGitlabCommitsTaskParams
+    }
+
+    /**
+     * Test the property 'serviceIds'
+     */
+    @Test
+    public void serviceIdsTest() {
+        // TODO: test serviceIds
+    }
+
+    /**
+     * Test the property 'gitlabRepositoryNames'
+     */
+    @Test
+    public void gitlabRepositoryNamesTest() {
+        // TODO: test gitlabRepositoryNames
     }
 
 }

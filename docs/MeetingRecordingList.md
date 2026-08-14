@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**data** | [**List&lt;MeetingRecordingListDataInner&gt;**](MeetingRecordingListDataInner.md) |  |  |
+|**data** | [**List&lt;MeetingRecordingResponseData&gt;**](MeetingRecordingResponseData.md) |  |  |
 |**meta** | [**Meta**](Meta.md) |  |  [optional] |
 
 

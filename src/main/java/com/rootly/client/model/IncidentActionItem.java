@@ -52,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * IncidentActionItem
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class IncidentActionItem {
   public static final String SERIALIZED_NAME_SUMMARY = "summary";
   @SerializedName(SERIALIZED_NAME_SUMMARY)
@@ -270,6 +270,11 @@ public class IncidentActionItem {
   @SerializedName(SERIALIZED_NAME_JIRA_ISSUE_URL)
   @jakarta.annotation.Nullable
   private String jiraIssueUrl;
+
+  public static final String SERIALIZED_NAME_CREATED_BY = "created_by";
+  @SerializedName(SERIALIZED_NAME_CREATED_BY)
+  @jakarta.annotation.Nullable
+  private UserFlatResponse createdBy;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -501,6 +506,25 @@ public class IncidentActionItem {
   }
 
 
+  public IncidentActionItem createdBy(@jakarta.annotation.Nullable UserFlatResponse createdBy) {
+    this.createdBy = createdBy;
+    return this;
+  }
+
+  /**
+   * User who created this action item
+   * @return createdBy
+   */
+  @jakarta.annotation.Nullable
+  public UserFlatResponse getCreatedBy() {
+    return createdBy;
+  }
+
+  public void setCreatedBy(@jakarta.annotation.Nullable UserFlatResponse createdBy) {
+    this.createdBy = createdBy;
+  }
+
+
   public IncidentActionItem createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
@@ -560,6 +584,7 @@ public class IncidentActionItem {
         Objects.equals(this.jiraIssueId, incidentActionItem.jiraIssueId) &&
         Objects.equals(this.jiraIssueKey, incidentActionItem.jiraIssueKey) &&
         Objects.equals(this.jiraIssueUrl, incidentActionItem.jiraIssueUrl) &&
+        Objects.equals(this.createdBy, incidentActionItem.createdBy) &&
         Objects.equals(this.createdAt, incidentActionItem.createdAt) &&
         Objects.equals(this.updatedAt, incidentActionItem.updatedAt);
   }
@@ -570,7 +595,7 @@ public class IncidentActionItem {
 
   @Override
   public int hashCode() {
-    return Objects.hash(summary, description, kind, assignedTo, assignedToGroupIds, priority, status, dueDate, jiraIssueId, jiraIssueKey, jiraIssueUrl, createdAt, updatedAt);
+    return Objects.hash(summary, description, kind, assignedTo, assignedToGroupIds, priority, status, dueDate, jiraIssueId, jiraIssueKey, jiraIssueUrl, createdBy, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -595,6 +620,7 @@ public class IncidentActionItem {
     sb.append("    jiraIssueId: ").append(toIndentedString(jiraIssueId)).append("\n");
     sb.append("    jiraIssueKey: ").append(toIndentedString(jiraIssueKey)).append("\n");
     sb.append("    jiraIssueUrl: ").append(toIndentedString(jiraIssueUrl)).append("\n");
+    sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -630,6 +656,7 @@ public class IncidentActionItem {
     openapiFields.add("jira_issue_id");
     openapiFields.add("jira_issue_key");
     openapiFields.add("jira_issue_url");
+    openapiFields.add("created_by");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
 
@@ -714,6 +741,10 @@ public class IncidentActionItem {
       }
       if ((jsonObj.get("jira_issue_url") != null && !jsonObj.get("jira_issue_url").isJsonNull()) && !jsonObj.get("jira_issue_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `jira_issue_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("jira_issue_url").toString()));
+      }
+      // validate the optional field `created_by`
+      if (jsonObj.get("created_by") != null && !jsonObj.get("created_by").isJsonNull()) {
+        UserFlatResponse.validateJsonElement(jsonObj.get("created_by"));
       }
       if (!jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));

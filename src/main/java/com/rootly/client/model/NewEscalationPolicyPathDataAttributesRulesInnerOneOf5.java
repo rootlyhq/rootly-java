@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * NewEscalationPolicyPathDataAttributesRulesInnerOneOf5
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf5 {
   /**
    * The type of the escalation path rule
@@ -105,7 +105,7 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf5 {
 
   public static final String SERIALIZED_NAME_RULE_TYPE = "rule_type";
   @SerializedName(SERIALIZED_NAME_RULE_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private RuleTypeEnum ruleType;
 
   /**
@@ -171,8 +171,6 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf5 {
     
     MEXICO_CITY("Mexico City"),
     
-    AMERICA_MEXICO_CITY2("America/Mexico_City"),
-    
     MONTERREY("Monterrey"),
     
     AMERICA_MONTERREY("America/Monterrey"),
@@ -198,8 +196,6 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf5 {
     AMERICA_LIMA("America/Lima"),
     
     QUITO("Quito"),
-    
-    AMERICA_LIMA2("America/Lima"),
     
     ATLANTIC_TIME_CANADA_("Atlantic Time (Canada)"),
     
@@ -270,8 +266,6 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf5 {
     EUROPE_LISBON("Europe/Lisbon"),
     
     LONDON("London"),
-    
-    EUROPE_LONDON2("Europe/London"),
     
     MONROVIA("Monrovia"),
     
@@ -371,8 +365,6 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf5 {
     
     ZURICH("Zurich"),
     
-    EUROPE_ZURICH2("Europe/Zurich"),
-    
     ATHENS("Athens"),
     
     EUROPE_ATHENS("Europe/Athens"),
@@ -455,8 +447,6 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf5 {
     
     ST_PETERSBURG("St. Petersburg"),
     
-    EUROPE_MOSCOW2("Europe/Moscow"),
-    
     VOLGOGRAD("Volgograd"),
     
     EUROPE_VOLGOGRAD("Europe/Volgograd"),
@@ -474,8 +464,6 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf5 {
     ASIA_BAKU("Asia/Baku"),
     
     MUSCAT("Muscat"),
-    
-    ASIA_MUSCAT2("Asia/Muscat"),
     
     SAMARA("Samara"),
     
@@ -499,8 +487,6 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf5 {
     
     ASTANA("Astana"),
     
-    ASIA_ALMATY2("Asia/Almaty"),
-    
     EKATERINBURG("Ekaterinburg"),
     
     ASIA_YEKATERINBURG("Asia/Yekaterinburg"),
@@ -510,8 +496,6 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf5 {
     ASIA_KARACHI("Asia/Karachi"),
     
     KARACHI("Karachi"),
-    
-    ASIA_KARACHI2("Asia/Karachi"),
     
     TASHKENT("Tashkent"),
     
@@ -523,15 +507,9 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf5 {
     
     KOLKATA("Kolkata"),
     
-    ASIA_KOLKATA2("Asia/Kolkata"),
-    
     MUMBAI("Mumbai"),
     
-    ASIA_KOLKATA3("Asia/Kolkata"),
-    
     NEW_DELHI("New Delhi"),
-    
-    ASIA_KOLKATA4("Asia/Kolkata"),
     
     SRI_JAYAWARDENEPURA("Sri Jayawardenepura"),
     
@@ -558,8 +536,6 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf5 {
     ASIA_BANGKOK("Asia/Bangkok"),
     
     HANOI("Hanoi"),
-    
-    ASIA_BANGKOK2("Asia/Bangkok"),
     
     JAKARTA("Jakarta"),
     
@@ -615,15 +591,11 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf5 {
     
     SAPPORO("Sapporo"),
     
-    ASIA_TOKYO2("Asia/Tokyo"),
-    
     SEOUL("Seoul"),
     
     ASIA_SEOUL("Asia/Seoul"),
     
     TOKYO("Tokyo"),
-    
-    ASIA_TOKYO3("Asia/Tokyo"),
     
     YAKUTSK("Yakutsk"),
     
@@ -703,8 +675,6 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf5 {
     
     WELLINGTON("Wellington"),
     
-    PACIFIC_AUCKLAND2("Pacific/Auckland"),
-    
     CHATHAM_IS_("Chatham Is."),
     
     PACIFIC_CHATHAM("Pacific/Chatham"),
@@ -719,7 +689,39 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf5 {
     
     TOKELAU_IS_("Tokelau Is."),
     
-    PACIFIC_FAKAOFO("Pacific/Fakaofo");
+    PACIFIC_FAKAOFO("Pacific/Fakaofo"),
+    
+    AMERICA_ADAK("America/Adak"),
+    
+    AMERICA_ATKA("America/Atka"),
+    
+    US_ALEUTIAN("US/Aleutian"),
+    
+    AMERICA_VANCOUVER("America/Vancouver"),
+    
+    CANADA_PACIFIC("Canada/Pacific"),
+    
+    AMERICA_MIQUELON("America/Miquelon"),
+    
+    AUSTRALIA_EUCLA("Australia/Eucla"),
+    
+    AUSTRALIA_LHI("Australia/LHI"),
+    
+    AUSTRALIA_LORD_HOWE("Australia/Lord_Howe"),
+    
+    CHILE_EASTER_ISLAND("Chile/EasterIsland"),
+    
+    PACIFIC_EASTER("Pacific/Easter"),
+    
+    PACIFIC_GAMBIER("Pacific/Gambier"),
+    
+    PACIFIC_PITCAIRN("Pacific/Pitcairn"),
+    
+    PACIFIC_MARQUESAS("Pacific/Marquesas"),
+    
+    PACIFIC_KIRITIMATI("Pacific/Kiritimati"),
+    
+    PACIFIC_NORFOLK("Pacific/Norfolk");
 
     private String value;
 
@@ -766,18 +768,18 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf5 {
 
   public static final String SERIALIZED_NAME_TIME_ZONE = "time_zone";
   @SerializedName(SERIALIZED_NAME_TIME_ZONE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private TimeZoneEnum timeZone;
 
   public static final String SERIALIZED_NAME_TIME_BLOCKS = "time_blocks";
   @SerializedName(SERIALIZED_NAME_TIME_BLOCKS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner> timeBlocks = new ArrayList<>();
 
   public NewEscalationPolicyPathDataAttributesRulesInnerOneOf5() {
   }
 
-  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf5 ruleType(@javax.annotation.Nonnull RuleTypeEnum ruleType) {
+  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf5 ruleType(@jakarta.annotation.Nonnull RuleTypeEnum ruleType) {
     this.ruleType = ruleType;
     return this;
   }
@@ -786,17 +788,17 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf5 {
    * The type of the escalation path rule
    * @return ruleType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public RuleTypeEnum getRuleType() {
     return ruleType;
   }
 
-  public void setRuleType(@javax.annotation.Nonnull RuleTypeEnum ruleType) {
+  public void setRuleType(@jakarta.annotation.Nonnull RuleTypeEnum ruleType) {
     this.ruleType = ruleType;
   }
 
 
-  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf5 timeZone(@javax.annotation.Nonnull TimeZoneEnum timeZone) {
+  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf5 timeZone(@jakarta.annotation.Nonnull TimeZoneEnum timeZone) {
     this.timeZone = timeZone;
     return this;
   }
@@ -805,17 +807,17 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf5 {
    * Time zone for the deferral window
    * @return timeZone
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public TimeZoneEnum getTimeZone() {
     return timeZone;
   }
 
-  public void setTimeZone(@javax.annotation.Nonnull TimeZoneEnum timeZone) {
+  public void setTimeZone(@jakarta.annotation.Nonnull TimeZoneEnum timeZone) {
     this.timeZone = timeZone;
   }
 
 
-  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf5 timeBlocks(@javax.annotation.Nonnull List<NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner> timeBlocks) {
+  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf5 timeBlocks(@jakarta.annotation.Nonnull List<NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner> timeBlocks) {
     this.timeBlocks = timeBlocks;
     return this;
   }
@@ -832,12 +834,12 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf5 {
    * Time windows during which alerts are deferred
    * @return timeBlocks
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner> getTimeBlocks() {
     return timeBlocks;
   }
 
-  public void setTimeBlocks(@javax.annotation.Nonnull List<NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner> timeBlocks) {
+  public void setTimeBlocks(@jakarta.annotation.Nonnull List<NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner> timeBlocks) {
     this.timeBlocks = timeBlocks;
   }
 

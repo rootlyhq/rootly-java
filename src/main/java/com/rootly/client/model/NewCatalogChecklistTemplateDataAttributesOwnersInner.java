@@ -48,11 +48,11 @@ import com.rootly.client.JSON;
 /**
  * NewCatalogChecklistTemplateDataAttributesOwnersInner
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewCatalogChecklistTemplateDataAttributesOwnersInner {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String id;
 
   /**
@@ -109,13 +109,13 @@ public class NewCatalogChecklistTemplateDataAttributesOwnersInner {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private TypeEnum type;
 
   public NewCatalogChecklistTemplateDataAttributesOwnersInner() {
   }
 
-  public NewCatalogChecklistTemplateDataAttributesOwnersInner id(@javax.annotation.Nonnull String id) {
+  public NewCatalogChecklistTemplateDataAttributesOwnersInner id(@jakarta.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
@@ -124,17 +124,17 @@ public class NewCatalogChecklistTemplateDataAttributesOwnersInner {
    * User ID for user owners, or field key for field owners
    * @return id
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(@javax.annotation.Nonnull String id) {
+  public void setId(@jakarta.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public NewCatalogChecklistTemplateDataAttributesOwnersInner type(@javax.annotation.Nonnull TypeEnum type) {
+  public NewCatalogChecklistTemplateDataAttributesOwnersInner type(@jakarta.annotation.Nonnull TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -143,12 +143,12 @@ public class NewCatalogChecklistTemplateDataAttributesOwnersInner {
    * Type of owner
    * @return type
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public TypeEnum getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nonnull TypeEnum type) {
+  public void setType(@jakarta.annotation.Nonnull TypeEnum type) {
     this.type = type;
   }
 

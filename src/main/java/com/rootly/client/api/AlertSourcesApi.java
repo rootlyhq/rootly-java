@@ -87,7 +87,6 @@ public class AlertSourcesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> alert source created with resolution rule </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> alert template attribute when alert fields are enabled </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
@@ -159,7 +158,6 @@ public class AlertSourcesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> alert source created with resolution rule </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> alert template attribute when alert fields are enabled </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
@@ -180,7 +178,6 @@ public class AlertSourcesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> alert source created with resolution rule </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> alert template attribute when alert fields are enabled </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
@@ -203,7 +200,6 @@ public class AlertSourcesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> alert source created with resolution rule </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> alert template attribute when alert fields are enabled </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
@@ -485,6 +481,8 @@ public class AlertSourcesApi {
      * @param filterSearch  (optional)
      * @param filterStatuses  (optional)
      * @param filterSourceTypes  (optional)
+     * @param filterName  (optional)
+     * @param filterEnabled  (optional)
      * @param sort  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -496,7 +494,7 @@ public class AlertSourcesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAlertsSourcesCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterStatuses, @jakarta.annotation.Nullable String filterSourceTypes, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listAlertsSourcesCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterStatuses, @jakarta.annotation.Nullable String filterSourceTypes, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -545,6 +543,14 @@ public class AlertSourcesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[source_types]", filterSourceTypes));
         }
 
+        if (filterName != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name]", filterName));
+        }
+
+        if (filterEnabled != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[enabled]", filterEnabled));
+        }
+
         if (sort != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort", sort));
         }
@@ -569,8 +575,8 @@ public class AlertSourcesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listAlertsSourcesValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterStatuses, @jakarta.annotation.Nullable String filterSourceTypes, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
-        return listAlertsSourcesCall(include, pageNumber, pageSize, filterSearch, filterStatuses, filterSourceTypes, sort, _callback);
+    private okhttp3.Call listAlertsSourcesValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterStatuses, @jakarta.annotation.Nullable String filterSourceTypes, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+        return listAlertsSourcesCall(include, pageNumber, pageSize, filterSearch, filterStatuses, filterSourceTypes, filterName, filterEnabled, sort, _callback);
 
     }
 
@@ -583,6 +589,8 @@ public class AlertSourcesApi {
      * @param filterSearch  (optional)
      * @param filterStatuses  (optional)
      * @param filterSourceTypes  (optional)
+     * @param filterName  (optional)
+     * @param filterEnabled  (optional)
      * @param sort  (optional)
      * @return AlertsSourceList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -593,8 +601,8 @@ public class AlertSourcesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public AlertsSourceList listAlertsSources(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterStatuses, @jakarta.annotation.Nullable String filterSourceTypes, @jakarta.annotation.Nullable String sort) throws ApiException {
-        ApiResponse<AlertsSourceList> localVarResp = listAlertsSourcesWithHttpInfo(include, pageNumber, pageSize, filterSearch, filterStatuses, filterSourceTypes, sort);
+    public AlertsSourceList listAlertsSources(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterStatuses, @jakarta.annotation.Nullable String filterSourceTypes, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String sort) throws ApiException {
+        ApiResponse<AlertsSourceList> localVarResp = listAlertsSourcesWithHttpInfo(include, pageNumber, pageSize, filterSearch, filterStatuses, filterSourceTypes, filterName, filterEnabled, sort);
         return localVarResp.getData();
     }
 
@@ -607,6 +615,8 @@ public class AlertSourcesApi {
      * @param filterSearch  (optional)
      * @param filterStatuses  (optional)
      * @param filterSourceTypes  (optional)
+     * @param filterName  (optional)
+     * @param filterEnabled  (optional)
      * @param sort  (optional)
      * @return ApiResponse&lt;AlertsSourceList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -617,8 +627,8 @@ public class AlertSourcesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertsSourceList> listAlertsSourcesWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterStatuses, @jakarta.annotation.Nullable String filterSourceTypes, @jakarta.annotation.Nullable String sort) throws ApiException {
-        okhttp3.Call localVarCall = listAlertsSourcesValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterStatuses, filterSourceTypes, sort, null);
+    public ApiResponse<AlertsSourceList> listAlertsSourcesWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterStatuses, @jakarta.annotation.Nullable String filterSourceTypes, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String sort) throws ApiException {
+        okhttp3.Call localVarCall = listAlertsSourcesValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterStatuses, filterSourceTypes, filterName, filterEnabled, sort, null);
         Type localVarReturnType = new TypeToken<AlertsSourceList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -632,6 +642,8 @@ public class AlertSourcesApi {
      * @param filterSearch  (optional)
      * @param filterStatuses  (optional)
      * @param filterSourceTypes  (optional)
+     * @param filterName  (optional)
+     * @param filterEnabled  (optional)
      * @param sort  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -643,9 +655,9 @@ public class AlertSourcesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAlertsSourcesAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterStatuses, @jakarta.annotation.Nullable String filterSourceTypes, @jakarta.annotation.Nullable String sort, final ApiCallback<AlertsSourceList> _callback) throws ApiException {
+    public okhttp3.Call listAlertsSourcesAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterStatuses, @jakarta.annotation.Nullable String filterSourceTypes, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String sort, final ApiCallback<AlertsSourceList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listAlertsSourcesValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterStatuses, filterSourceTypes, sort, _callback);
+        okhttp3.Call localVarCall = listAlertsSourcesValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterStatuses, filterSourceTypes, filterName, filterEnabled, sort, _callback);
         Type localVarReturnType = new TypeToken<AlertsSourceList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -661,7 +673,7 @@ public class AlertSourcesApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> alert source updated </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> preserves existing alert source field ids </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
@@ -738,7 +750,7 @@ public class AlertSourcesApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> alert source updated </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> preserves existing alert source field ids </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
@@ -758,7 +770,7 @@ public class AlertSourcesApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> alert source updated </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> preserves existing alert source field ids </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
@@ -780,7 +792,7 @@ public class AlertSourcesApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> alert source updated </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> preserves existing alert source field ids </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */

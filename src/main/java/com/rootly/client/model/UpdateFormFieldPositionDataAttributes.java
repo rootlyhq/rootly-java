@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateFormFieldPositionDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateFormFieldPositionDataAttributes {
   public static final String SERIALIZED_NAME_FORM_FIELD_ID = "form_field_id";
   @SerializedName(SERIALIZED_NAME_FORM_FIELD_ID)
@@ -92,7 +92,15 @@ public class UpdateFormFieldPositionDataAttributes {
     
     SLACK_SCHEDULED_INCIDENT_FORM("slack_scheduled_incident_form"),
     
-    SLACK_UPDATE_SCHEDULED_INCIDENT_FORM("slack_update_scheduled_incident_form");
+    SLACK_UPDATE_SCHEDULED_INCIDENT_FORM("slack_update_scheduled_incident_form"),
+    
+    WEB_ACTION_ITEM_FORM("web_action_item_form"),
+    
+    SLACK_ACTION_ITEM_FORM("slack_action_item_form"),
+    
+    WEB_TASK_FORM("web_task_form"),
+    
+    SLACK_TASK_FORM("slack_task_form");
 
     private String value;
 

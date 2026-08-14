@@ -39,7 +39,7 @@ public class OverrideShiftsApiTest {
     /**
      * creates an override shift
      *
-     * Creates a new override shift from provided data. If any existing override shifts overlap with the specified time range, they will be automatically deleted and replaced by the new override.
+     * Creates a new override shift from provided data. If any existing override shifts overlap with the specified time range, they will be automatically deleted and replaced by the new override. This endpoint is idempotent: re-sending an identical override (same user and same start/end time) returns the existing override with a 200 status and does not recreate it.
      *
      * @throws ApiException if the Api call fails
      */
@@ -54,7 +54,7 @@ public class OverrideShiftsApiTest {
     /**
      * Delete an on call shadow configuration
      *
-     * Delete a specific on call shadow configuration by id
+     * Delete a specific on call shadow configuration by id. Future shadows are hard-deleted. Active shadows (started in the past) have their end time truncated to preserve historical data.
      *
      * @throws ApiException if the Api call fails
      */

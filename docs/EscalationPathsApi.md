@@ -222,7 +222,7 @@ public class Example {
 
 <a id="listEscalationPaths"></a>
 # **listEscalationPaths**
-> EscalationPolicyPathList listEscalationPaths(escalationPolicyId, include, pageNumber, pageSize)
+> EscalationPolicyPathList listEscalationPaths(escalationPolicyId, include, filterPathType, pageNumber, pageSize)
 
 List escalation paths
 
@@ -250,10 +250,11 @@ public class Example {
     EscalationPathsApi apiInstance = new EscalationPathsApi(defaultClient);
     String escalationPolicyId = "escalationPolicyId_example"; // String | 
     String include = "escalation_policy_levels"; // String | comma separated if needed. eg: escalation_policy_levels
+    String filterPathType = "escalation"; // String | Filter by path_type. Returns all path types when omitted.
     Integer pageNumber = 56; // Integer | 
     Integer pageSize = 56; // Integer | 
     try {
-      EscalationPolicyPathList result = apiInstance.listEscalationPaths(escalationPolicyId, include, pageNumber, pageSize);
+      EscalationPolicyPathList result = apiInstance.listEscalationPaths(escalationPolicyId, include, filterPathType, pageNumber, pageSize);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EscalationPathsApi#listEscalationPaths");
@@ -272,6 +273,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **escalationPolicyId** | **String**|  | |
 | **include** | **String**| comma separated if needed. eg: escalation_policy_levels | [optional] [enum: escalation_policy_levels] |
+| **filterPathType** | **String**| Filter by path_type. Returns all path types when omitted. | [optional] [enum: escalation, deferral] |
 | **pageNumber** | **Integer**|  | [optional] |
 | **pageSize** | **Integer**|  | [optional] |
 

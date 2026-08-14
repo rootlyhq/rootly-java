@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**taskType** | [**TaskTypeEnum**](#TaskTypeEnum) |  |  [optional] |
-|**issueType** | [**IssueTypeEnum**](#IssueTypeEnum) | The issue type |  [optional] |
+|**issueType** | [**IssueTypeEnum**](#IssueTypeEnum) | The issue type |  |
 |**title** | **String** | The issue title |  |
 |**description** | **String** | The issue description |  [optional] |
 |**repository** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |

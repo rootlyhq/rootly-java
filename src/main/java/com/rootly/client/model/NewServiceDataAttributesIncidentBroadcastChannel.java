@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * Slack channel to broadcast incidents to
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewServiceDataAttributesIncidentBroadcastChannel {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -57,7 +57,7 @@ public class NewServiceDataAttributesIncidentBroadcastChannel {
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @jakarta.annotation.Nonnull
+  @jakarta.annotation.Nullable
   private String name;
 
   public NewServiceDataAttributesIncidentBroadcastChannel() {
@@ -82,7 +82,7 @@ public class NewServiceDataAttributesIncidentBroadcastChannel {
   }
 
 
-  public NewServiceDataAttributesIncidentBroadcastChannel name(@jakarta.annotation.Nonnull String name) {
+  public NewServiceDataAttributesIncidentBroadcastChannel name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -91,12 +91,12 @@ public class NewServiceDataAttributesIncidentBroadcastChannel {
    * Slack channel name
    * @return name
    */
-  @jakarta.annotation.Nonnull
+  @jakarta.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(@jakarta.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 
@@ -154,7 +154,6 @@ public class NewServiceDataAttributesIncidentBroadcastChannel {
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
     openapiRequiredFields.add("id");
-    openapiRequiredFields.add("name");
   }
 
   /**
@@ -188,7 +187,7 @@ public class NewServiceDataAttributesIncidentBroadcastChannel {
       if (!jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
-      if (!jsonObj.get("name").isJsonPrimitive()) {
+      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
   }

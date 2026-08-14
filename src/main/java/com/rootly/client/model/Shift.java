@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * Shift
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Shift {
   public static final String SERIALIZED_NAME_SCHEDULE_ID = "schedule_id";
   @SerializedName(SERIALIZED_NAME_SCHEDULE_ID)
@@ -75,6 +75,11 @@ public class Shift {
   @SerializedName(SERIALIZED_NAME_IS_OVERRIDE)
   @jakarta.annotation.Nonnull
   private Boolean isOverride;
+
+  public static final String SERIALIZED_NAME_IS_SHADOW = "is_shadow";
+  @SerializedName(SERIALIZED_NAME_IS_SHADOW)
+  @jakarta.annotation.Nonnull
+  private Boolean isShadow;
 
   public static final String SERIALIZED_NAME_USER_ID = "user_id";
   @SerializedName(SERIALIZED_NAME_USER_ID)
@@ -179,6 +184,25 @@ public class Shift {
   }
 
 
+  public Shift isShadow(@jakarta.annotation.Nonnull Boolean isShadow) {
+    this.isShadow = isShadow;
+    return this;
+  }
+
+  /**
+   * Denotes shift is a shadow shift
+   * @return isShadow
+   */
+  @jakarta.annotation.Nonnull
+  public Boolean getIsShadow() {
+    return isShadow;
+  }
+
+  public void setIsShadow(@jakarta.annotation.Nonnull Boolean isShadow) {
+    this.isShadow = isShadow;
+  }
+
+
   public Shift userId(@jakarta.annotation.Nullable Integer userId) {
     this.userId = userId;
     return this;
@@ -213,6 +237,7 @@ public class Shift {
         Objects.equals(this.startsAt, shift.startsAt) &&
         Objects.equals(this.endsAt, shift.endsAt) &&
         Objects.equals(this.isOverride, shift.isOverride) &&
+        Objects.equals(this.isShadow, shift.isShadow) &&
         Objects.equals(this.userId, shift.userId);
   }
 
@@ -222,7 +247,7 @@ public class Shift {
 
   @Override
   public int hashCode() {
-    return Objects.hash(scheduleId, rotationId, startsAt, endsAt, isOverride, userId);
+    return Objects.hash(scheduleId, rotationId, startsAt, endsAt, isOverride, isShadow, userId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -241,6 +266,7 @@ public class Shift {
     sb.append("    startsAt: ").append(toIndentedString(startsAt)).append("\n");
     sb.append("    endsAt: ").append(toIndentedString(endsAt)).append("\n");
     sb.append("    isOverride: ").append(toIndentedString(isOverride)).append("\n");
+    sb.append("    isShadow: ").append(toIndentedString(isShadow)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -269,6 +295,7 @@ public class Shift {
     openapiFields.add("starts_at");
     openapiFields.add("ends_at");
     openapiFields.add("is_override");
+    openapiFields.add("is_shadow");
     openapiFields.add("user_id");
 
     // a set of required properties/fields (JSON key names)
@@ -278,6 +305,7 @@ public class Shift {
     openapiRequiredFields.add("starts_at");
     openapiRequiredFields.add("ends_at");
     openapiRequiredFields.add("is_override");
+    openapiRequiredFields.add("is_shadow");
   }
 
   /**

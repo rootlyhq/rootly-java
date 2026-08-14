@@ -18,6 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewIncidentActionItemDataAttributesFormFieldSelectionsInner;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -126,6 +127,14 @@ public class UpdateIncidentActionItemDataAttributesTest {
     @Test
     public void jiraIssueUrlTest() {
         // TODO: test jiraIssueUrl
+    }
+
+    /**
+     * Test the property 'formFieldSelections'
+     */
+    @Test
+    public void formFieldSelectionsTest() {
+        // TODO: test formFieldSelections
     }
 
 }

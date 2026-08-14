@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * PageRootlyOnCallRespondersTaskParams
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class PageRootlyOnCallRespondersTaskParams {
   /**
    * Gets or Sets taskType
@@ -126,9 +126,14 @@ public class PageRootlyOnCallRespondersTaskParams {
   @jakarta.annotation.Nullable
   private AddActionItemTaskParamsPostToSlackChannelsInner groupTarget;
 
+  public static final String SERIALIZED_NAME_FUNCTIONALITY_TARGET = "functionality_target";
+  @SerializedName(SERIALIZED_NAME_FUNCTIONALITY_TARGET)
+  @jakarta.annotation.Nullable
+  private AddActionItemTaskParamsPostToSlackChannelsInner functionalityTarget;
+
   public static final String SERIALIZED_NAME_ALERT_URGENCY_ID = "alert_urgency_id";
   @SerializedName(SERIALIZED_NAME_ALERT_URGENCY_ID)
-  @jakarta.annotation.Nullable
+  @jakarta.annotation.Nonnull
   private String alertUrgencyId;
 
   public static final String SERIALIZED_NAME_SUMMARY = "summary";
@@ -145,6 +150,11 @@ public class PageRootlyOnCallRespondersTaskParams {
   @SerializedName(SERIALIZED_NAME_ESCALATION_NOTE)
   @jakarta.annotation.Nullable
   private String escalationNote;
+
+  public static final String SERIALIZED_NAME_CREATE_NEW_ALERT = "create_new_alert";
+  @SerializedName(SERIALIZED_NAME_CREATE_NEW_ALERT)
+  @jakarta.annotation.Nullable
+  private Boolean createNewAlert = false;
 
   public PageRootlyOnCallRespondersTaskParams() {
   }
@@ -244,7 +254,26 @@ public class PageRootlyOnCallRespondersTaskParams {
   }
 
 
-  public PageRootlyOnCallRespondersTaskParams alertUrgencyId(@jakarta.annotation.Nullable String alertUrgencyId) {
+  public PageRootlyOnCallRespondersTaskParams functionalityTarget(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner functionalityTarget) {
+    this.functionalityTarget = functionalityTarget;
+    return this;
+  }
+
+  /**
+   * Get functionalityTarget
+   * @return functionalityTarget
+   */
+  @jakarta.annotation.Nullable
+  public AddActionItemTaskParamsPostToSlackChannelsInner getFunctionalityTarget() {
+    return functionalityTarget;
+  }
+
+  public void setFunctionalityTarget(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner functionalityTarget) {
+    this.functionalityTarget = functionalityTarget;
+  }
+
+
+  public PageRootlyOnCallRespondersTaskParams alertUrgencyId(@jakarta.annotation.Nonnull String alertUrgencyId) {
     this.alertUrgencyId = alertUrgencyId;
     return this;
   }
@@ -253,12 +282,12 @@ public class PageRootlyOnCallRespondersTaskParams {
    * Alert urgency ID
    * @return alertUrgencyId
    */
-  @jakarta.annotation.Nullable
+  @jakarta.annotation.Nonnull
   public String getAlertUrgencyId() {
     return alertUrgencyId;
   }
 
-  public void setAlertUrgencyId(@jakarta.annotation.Nullable String alertUrgencyId) {
+  public void setAlertUrgencyId(@jakarta.annotation.Nonnull String alertUrgencyId) {
     this.alertUrgencyId = alertUrgencyId;
   }
 
@@ -320,6 +349,25 @@ public class PageRootlyOnCallRespondersTaskParams {
   }
 
 
+  public PageRootlyOnCallRespondersTaskParams createNewAlert(@jakarta.annotation.Nullable Boolean createNewAlert) {
+    this.createNewAlert = createNewAlert;
+    return this;
+  }
+
+  /**
+   * When true, always create a new alert instead of re-paging the alert that triggered the workflow
+   * @return createNewAlert
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getCreateNewAlert() {
+    return createNewAlert;
+  }
+
+  public void setCreateNewAlert(@jakarta.annotation.Nullable Boolean createNewAlert) {
+    this.createNewAlert = createNewAlert;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -335,15 +383,17 @@ public class PageRootlyOnCallRespondersTaskParams {
         Objects.equals(this.serviceTarget, pageRootlyOnCallRespondersTaskParams.serviceTarget) &&
         Objects.equals(this.userTarget, pageRootlyOnCallRespondersTaskParams.userTarget) &&
         Objects.equals(this.groupTarget, pageRootlyOnCallRespondersTaskParams.groupTarget) &&
+        Objects.equals(this.functionalityTarget, pageRootlyOnCallRespondersTaskParams.functionalityTarget) &&
         Objects.equals(this.alertUrgencyId, pageRootlyOnCallRespondersTaskParams.alertUrgencyId) &&
         Objects.equals(this.summary, pageRootlyOnCallRespondersTaskParams.summary) &&
         Objects.equals(this.description, pageRootlyOnCallRespondersTaskParams.description) &&
-        Objects.equals(this.escalationNote, pageRootlyOnCallRespondersTaskParams.escalationNote);
+        Objects.equals(this.escalationNote, pageRootlyOnCallRespondersTaskParams.escalationNote) &&
+        Objects.equals(this.createNewAlert, pageRootlyOnCallRespondersTaskParams.createNewAlert);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(taskType, escalationPolicyTarget, serviceTarget, userTarget, groupTarget, alertUrgencyId, summary, description, escalationNote);
+    return Objects.hash(taskType, escalationPolicyTarget, serviceTarget, userTarget, groupTarget, functionalityTarget, alertUrgencyId, summary, description, escalationNote, createNewAlert);
   }
 
   @Override
@@ -355,10 +405,12 @@ public class PageRootlyOnCallRespondersTaskParams {
     sb.append("    serviceTarget: ").append(toIndentedString(serviceTarget)).append("\n");
     sb.append("    userTarget: ").append(toIndentedString(userTarget)).append("\n");
     sb.append("    groupTarget: ").append(toIndentedString(groupTarget)).append("\n");
+    sb.append("    functionalityTarget: ").append(toIndentedString(functionalityTarget)).append("\n");
     sb.append("    alertUrgencyId: ").append(toIndentedString(alertUrgencyId)).append("\n");
     sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    escalationNote: ").append(toIndentedString(escalationNote)).append("\n");
+    sb.append("    createNewAlert: ").append(toIndentedString(createNewAlert)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -386,13 +438,16 @@ public class PageRootlyOnCallRespondersTaskParams {
     openapiFields.add("service_target");
     openapiFields.add("user_target");
     openapiFields.add("group_target");
+    openapiFields.add("functionality_target");
     openapiFields.add("alert_urgency_id");
     openapiFields.add("summary");
     openapiFields.add("description");
     openapiFields.add("escalation_note");
+    openapiFields.add("create_new_alert");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("alert_urgency_id");
     openapiRequiredFields.add("summary");
   }
 
@@ -447,7 +502,11 @@ public class PageRootlyOnCallRespondersTaskParams {
       if (jsonObj.get("group_target") != null && !jsonObj.get("group_target").isJsonNull()) {
         AddActionItemTaskParamsPostToSlackChannelsInner.validateJsonElement(jsonObj.get("group_target"));
       }
-      if ((jsonObj.get("alert_urgency_id") != null && !jsonObj.get("alert_urgency_id").isJsonNull()) && !jsonObj.get("alert_urgency_id").isJsonPrimitive()) {
+      // validate the optional field `functionality_target`
+      if (jsonObj.get("functionality_target") != null && !jsonObj.get("functionality_target").isJsonNull()) {
+        AddActionItemTaskParamsPostToSlackChannelsInner.validateJsonElement(jsonObj.get("functionality_target"));
+      }
+      if (!jsonObj.get("alert_urgency_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `alert_urgency_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("alert_urgency_id").toString()));
       }
       if (!jsonObj.get("summary").isJsonPrimitive()) {

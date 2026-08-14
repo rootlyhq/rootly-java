@@ -79,6 +79,14 @@ public class ShiftTest {
     }
 
     /**
+     * Test the property 'isShadow'
+     */
+    @Test
+    public void isShadowTest() {
+        // TODO: test isShadow
+    }
+
+    /**
      * Test the property 'userId'
      */
     @Test

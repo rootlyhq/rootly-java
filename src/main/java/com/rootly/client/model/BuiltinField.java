@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * BuiltinField
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class BuiltinField {
   /**
    * Gets or Sets fieldSource
@@ -102,18 +102,18 @@ public class BuiltinField {
 
   public static final String SERIALIZED_NAME_FIELD_SOURCE = "field_source";
   @SerializedName(SERIALIZED_NAME_FIELD_SOURCE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private FieldSourceEnum fieldSource;
 
   public static final String SERIALIZED_NAME_FIELD_KEY = "field_key";
   @SerializedName(SERIALIZED_NAME_FIELD_KEY)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String fieldKey;
 
   public BuiltinField() {
   }
 
-  public BuiltinField fieldSource(@javax.annotation.Nonnull FieldSourceEnum fieldSource) {
+  public BuiltinField fieldSource(@jakarta.annotation.Nonnull FieldSourceEnum fieldSource) {
     this.fieldSource = fieldSource;
     return this;
   }
@@ -122,17 +122,17 @@ public class BuiltinField {
    * Get fieldSource
    * @return fieldSource
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public FieldSourceEnum getFieldSource() {
     return fieldSource;
   }
 
-  public void setFieldSource(@javax.annotation.Nonnull FieldSourceEnum fieldSource) {
+  public void setFieldSource(@jakarta.annotation.Nonnull FieldSourceEnum fieldSource) {
     this.fieldSource = fieldSource;
   }
 
 
-  public BuiltinField fieldKey(@javax.annotation.Nonnull String fieldKey) {
+  public BuiltinField fieldKey(@jakarta.annotation.Nonnull String fieldKey) {
     this.fieldKey = fieldKey;
     return this;
   }
@@ -141,12 +141,12 @@ public class BuiltinField {
    * Key identifying the builtin field
    * @return fieldKey
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getFieldKey() {
     return fieldKey;
   }
 
-  public void setFieldKey(@javax.annotation.Nonnull String fieldKey) {
+  public void setFieldKey(@jakarta.annotation.Nonnull String fieldKey) {
     this.fieldKey = fieldKey;
   }
 

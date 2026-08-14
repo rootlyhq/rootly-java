@@ -7,12 +7,14 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**slug** | **String** | Deprecated. &#x60;slug&#x60; is derived from &#x60;name&#x60;; any submitted value is ignored. This property will be removed from the request schema in a future version. |  [optional] |
 |**name** | **String** |  |  [optional] |
 |**kind** | [**KindEnum**](#KindEnum) |  |  [optional] |
 |**kindCatalogId** | **String** | Restricts values to items of specified catalog. |  [optional] |
 |**position** | **Integer** | Default position of the item when displayed in a list. |  [optional] |
 |**required** | **Boolean** | Whether the property is required. |  [optional] |
 |**catalogType** | [**CatalogTypeEnum**](#CatalogTypeEnum) | The type of catalog the property belongs to. |  [optional] |
+|**externalId** | **String** | An external identifier for this catalog property. Must be unique within the scope. |  [optional] |
 
 
 
@@ -23,7 +25,6 @@
 | TEXT | &quot;text&quot; |
 | REFERENCE | &quot;reference&quot; |
 | BOOLEAN | &quot;boolean&quot; |
-| REFERENCE2 | &quot;reference&quot; |
 | SERVICE | &quot;service&quot; |
 | FUNCTIONALITY | &quot;functionality&quot; |
 | ENVIRONMENT | &quot;environment&quot; |

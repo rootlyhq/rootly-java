@@ -32,7 +32,6 @@
 | P3 | &quot;P3&quot; |
 | P1 | &quot;P1&quot; |
 | P2 | &quot;P2&quot; |
-| P32 | &quot;P3&quot; |
 | P4 | &quot;P4&quot; |
 | P5 | &quot;P5&quot; |
 | AUTO | &quot;auto&quot; |

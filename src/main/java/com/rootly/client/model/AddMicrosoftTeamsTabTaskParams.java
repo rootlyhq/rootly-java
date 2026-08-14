@@ -19,403 +19,250 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.AddSlackBookmarkTaskParamsAnyOf;
+import com.rootly.client.model.AddSlackBookmarkTaskParamsAnyOf1;
 import java.io.IOException;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.TypeAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
 
-import java.util.HashMap;
+
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonParseException;
 
 import com.rootly.client.JSON;
 
-/**
- * AddMicrosoftTeamsTabTaskParams
- */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
-public class AddMicrosoftTeamsTabTaskParams {
-  /**
-   * Gets or Sets taskType
-   */
-  @JsonAdapter(TaskTypeEnum.Adapter.class)
-  public enum TaskTypeEnum {
-    ADD_MICROSOFT_TEAMS_TAB("add_microsoft_teams_tab");
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+public class AddMicrosoftTeamsTabTaskParams extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(AddMicrosoftTeamsTabTaskParams.class.getName());
 
-    private String value;
+    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+        @SuppressWarnings("unchecked")
+        @Override
+        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+            if (!AddMicrosoftTeamsTabTaskParams.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'AddMicrosoftTeamsTabTaskParams' and its subtypes
+            }
+            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<AddSlackBookmarkTaskParamsAnyOf> adapterAddSlackBookmarkTaskParamsAnyOf = gson.getDelegateAdapter(this, TypeToken.get(AddSlackBookmarkTaskParamsAnyOf.class));
+            final TypeAdapter<AddSlackBookmarkTaskParamsAnyOf1> adapterAddSlackBookmarkTaskParamsAnyOf1 = gson.getDelegateAdapter(this, TypeToken.get(AddSlackBookmarkTaskParamsAnyOf1.class));
 
-    TaskTypeEnum(String value) {
-      this.value = value;
+            return (TypeAdapter<T>) new TypeAdapter<AddMicrosoftTeamsTabTaskParams>() {
+                @Override
+                public void write(JsonWriter out, AddMicrosoftTeamsTabTaskParams value) throws IOException {
+                    if (value == null || value.getActualInstance() == null) {
+                        elementAdapter.write(out, null);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `AddSlackBookmarkTaskParamsAnyOf`
+                    if (value.getActualInstance() instanceof AddSlackBookmarkTaskParamsAnyOf) {
+                        JsonElement element = adapterAddSlackBookmarkTaskParamsAnyOf.toJsonTree((AddSlackBookmarkTaskParamsAnyOf)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `AddSlackBookmarkTaskParamsAnyOf1`
+                    if (value.getActualInstance() instanceof AddSlackBookmarkTaskParamsAnyOf1) {
+                        JsonElement element = adapterAddSlackBookmarkTaskParamsAnyOf1.toJsonTree((AddSlackBookmarkTaskParamsAnyOf1)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    throw new IOException("Failed to serialize as the type doesn't match anyOf schemas: AddSlackBookmarkTaskParamsAnyOf, AddSlackBookmarkTaskParamsAnyOf1");
+                }
+
+                @Override
+                public AddMicrosoftTeamsTabTaskParams read(JsonReader in) throws IOException {
+                    Object deserialized = null;
+                    JsonElement jsonElement = elementAdapter.read(in);
+
+                    ArrayList<String> errorMessages = new ArrayList<>();
+                    TypeAdapter actualAdapter = elementAdapter;
+
+                    // deserialize AddSlackBookmarkTaskParamsAnyOf
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        AddSlackBookmarkTaskParamsAnyOf.validateJsonElement(jsonElement);
+                        actualAdapter = adapterAddSlackBookmarkTaskParamsAnyOf;
+                        AddMicrosoftTeamsTabTaskParams ret = new AddMicrosoftTeamsTabTaskParams();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
+                        return ret;
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for AddSlackBookmarkTaskParamsAnyOf failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'AddSlackBookmarkTaskParamsAnyOf'", e);
+                    }
+                    // deserialize AddSlackBookmarkTaskParamsAnyOf1
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        AddSlackBookmarkTaskParamsAnyOf1.validateJsonElement(jsonElement);
+                        actualAdapter = adapterAddSlackBookmarkTaskParamsAnyOf1;
+                        AddMicrosoftTeamsTabTaskParams ret = new AddMicrosoftTeamsTabTaskParams();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
+                        return ret;
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for AddSlackBookmarkTaskParamsAnyOf1 failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'AddSlackBookmarkTaskParamsAnyOf1'", e);
+                    }
+
+                    throw new IOException(String.format("Failed deserialization for AddMicrosoftTeamsTabTaskParams: no class matches result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
+                }
+            }.nullSafe();
+        }
     }
 
-    public String getValue() {
-      return value;
+    // store a list of schema names defined in anyOf
+    public static final Map<String, Class<?>> schemas = new HashMap<String, Class<?>>();
+
+    public AddMicrosoftTeamsTabTaskParams() {
+        super("anyOf", Boolean.FALSE);
+    }
+
+    public AddMicrosoftTeamsTabTaskParams(Object o) {
+        super("anyOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    static {
+        schemas.put("AddSlackBookmarkTaskParamsAnyOf", AddSlackBookmarkTaskParamsAnyOf.class);
+        schemas.put("AddSlackBookmarkTaskParamsAnyOf1", AddSlackBookmarkTaskParamsAnyOf1.class);
     }
 
     @Override
-    public String toString() {
-      return String.valueOf(value);
+    public Map<String, Class<?>> getSchemas() {
+        return AddMicrosoftTeamsTabTaskParams.schemas;
     }
 
-    public static TaskTypeEnum fromValue(String value) {
-      for (TaskTypeEnum b : TaskTypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
+    /**
+     * Set the instance that matches the anyOf child schema, check
+     * the instance parameter is valid against the anyOf child schemas:
+     * AddSlackBookmarkTaskParamsAnyOf, AddSlackBookmarkTaskParamsAnyOf1
+     *
+     * It could be an instance of the 'anyOf' schemas.
+     */
+    @Override
+    public void setActualInstance(Object instance) {
+        if (instance instanceof AddSlackBookmarkTaskParamsAnyOf) {
+            super.setActualInstance(instance);
+            return;
         }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
 
-    public static class Adapter extends TypeAdapter<TaskTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final TaskTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public TaskTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return TaskTypeEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      TaskTypeEnum.fromValue(value);
-    }
-  }
-
-  public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
-  @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @jakarta.annotation.Nullable
-  private TaskTypeEnum taskType;
-
-  public static final String SERIALIZED_NAME_PLAYBOOK_ID = "playbook_id";
-  @SerializedName(SERIALIZED_NAME_PLAYBOOK_ID)
-  @jakarta.annotation.Nullable
-  private String playbookId;
-
-  public static final String SERIALIZED_NAME_TEAM = "team";
-  @SerializedName(SERIALIZED_NAME_TEAM)
-  @jakarta.annotation.Nonnull
-  private Object team;
-
-  public static final String SERIALIZED_NAME_CHANNEL = "channel";
-  @SerializedName(SERIALIZED_NAME_CHANNEL)
-  @jakarta.annotation.Nonnull
-  private Object channel;
-
-  public static final String SERIALIZED_NAME_TITLE = "title";
-  @SerializedName(SERIALIZED_NAME_TITLE)
-  @jakarta.annotation.Nullable
-  private String title;
-
-  public static final String SERIALIZED_NAME_LINK = "link";
-  @SerializedName(SERIALIZED_NAME_LINK)
-  @jakarta.annotation.Nullable
-  private String link;
-
-  public AddMicrosoftTeamsTabTaskParams() {
-  }
-
-  public AddMicrosoftTeamsTabTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
-    this.taskType = taskType;
-    return this;
-  }
-
-  /**
-   * Get taskType
-   * @return taskType
-   */
-  @jakarta.annotation.Nullable
-  public TaskTypeEnum getTaskType() {
-    return taskType;
-  }
-
-  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
-    this.taskType = taskType;
-  }
-
-
-  public AddMicrosoftTeamsTabTaskParams playbookId(@jakarta.annotation.Nullable String playbookId) {
-    this.playbookId = playbookId;
-    return this;
-  }
-
-  /**
-   * The playbook id if tab is of an incident playbook
-   * @return playbookId
-   */
-  @jakarta.annotation.Nullable
-  public String getPlaybookId() {
-    return playbookId;
-  }
-
-  public void setPlaybookId(@jakarta.annotation.Nullable String playbookId) {
-    this.playbookId = playbookId;
-  }
-
-
-  public AddMicrosoftTeamsTabTaskParams team(@jakarta.annotation.Nonnull Object team) {
-    this.team = team;
-    return this;
-  }
-
-  /**
-   * Get team
-   * @return team
-   */
-  @jakarta.annotation.Nonnull
-  public Object getTeam() {
-    return team;
-  }
-
-  public void setTeam(@jakarta.annotation.Nonnull Object team) {
-    this.team = team;
-  }
-
-
-  public AddMicrosoftTeamsTabTaskParams channel(@jakarta.annotation.Nonnull Object channel) {
-    this.channel = channel;
-    return this;
-  }
-
-  /**
-   * Get channel
-   * @return channel
-   */
-  @jakarta.annotation.Nonnull
-  public Object getChannel() {
-    return channel;
-  }
-
-  public void setChannel(@jakarta.annotation.Nonnull Object channel) {
-    this.channel = channel;
-  }
-
-
-  public AddMicrosoftTeamsTabTaskParams title(@jakarta.annotation.Nullable String title) {
-    this.title = title;
-    return this;
-  }
-
-  /**
-   * The tab title. Required if not a playbook tab
-   * @return title
-   */
-  @jakarta.annotation.Nullable
-  public String getTitle() {
-    return title;
-  }
-
-  public void setTitle(@jakarta.annotation.Nullable String title) {
-    this.title = title;
-  }
-
-
-  public AddMicrosoftTeamsTabTaskParams link(@jakarta.annotation.Nullable String link) {
-    this.link = link;
-    return this;
-  }
-
-  /**
-   * The tab link. Required if not a playbook tab
-   * @return link
-   */
-  @jakarta.annotation.Nullable
-  public String getLink() {
-    return link;
-  }
-
-  public void setLink(@jakarta.annotation.Nullable String link) {
-    this.link = link;
-  }
-
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    AddMicrosoftTeamsTabTaskParams addMicrosoftTeamsTabTaskParams = (AddMicrosoftTeamsTabTaskParams) o;
-    return Objects.equals(this.taskType, addMicrosoftTeamsTabTaskParams.taskType) &&
-        Objects.equals(this.playbookId, addMicrosoftTeamsTabTaskParams.playbookId) &&
-        Objects.equals(this.team, addMicrosoftTeamsTabTaskParams.team) &&
-        Objects.equals(this.channel, addMicrosoftTeamsTabTaskParams.channel) &&
-        Objects.equals(this.title, addMicrosoftTeamsTabTaskParams.title) &&
-        Objects.equals(this.link, addMicrosoftTeamsTabTaskParams.link);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(taskType, playbookId, team, channel, title, link);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class AddMicrosoftTeamsTabTaskParams {\n");
-    sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
-    sb.append("    playbookId: ").append(toIndentedString(playbookId)).append("\n");
-    sb.append("    team: ").append(toIndentedString(team)).append("\n");
-    sb.append("    channel: ").append(toIndentedString(channel)).append("\n");
-    sb.append("    title: ").append(toIndentedString(title)).append("\n");
-    sb.append("    link: ").append(toIndentedString(link)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("team");
-    openapiRequiredFields.add("channel");
-  }
-
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to AddMicrosoftTeamsTabTaskParams
-   */
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      if (jsonElement == null) {
-        if (!AddMicrosoftTeamsTabTaskParams.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AddMicrosoftTeamsTabTaskParams is not found in the empty JSON string", AddMicrosoftTeamsTabTaskParams.openapiRequiredFields.toString()));
+        if (instance instanceof AddSlackBookmarkTaskParamsAnyOf1) {
+            super.setActualInstance(instance);
+            return;
         }
-      }
 
-      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!AddMicrosoftTeamsTabTaskParams.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AddMicrosoftTeamsTabTaskParams` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
-        }
-      }
+        throw new RuntimeException("Invalid instance type. Must be AddSlackBookmarkTaskParamsAnyOf, AddSlackBookmarkTaskParamsAnyOf1");
+    }
 
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : AddMicrosoftTeamsTabTaskParams.openapiRequiredFields) {
-        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
-        }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("task_type") != null && !jsonObj.get("task_type").isJsonNull()) && !jsonObj.get("task_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `task_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("task_type").toString()));
-      }
-      // validate the optional field `task_type`
-      if (jsonObj.get("task_type") != null && !jsonObj.get("task_type").isJsonNull()) {
-        TaskTypeEnum.validateJsonElement(jsonObj.get("task_type"));
-      }
-      if ((jsonObj.get("playbook_id") != null && !jsonObj.get("playbook_id").isJsonNull()) && !jsonObj.get("playbook_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `playbook_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("playbook_id").toString()));
-      }
-      // validate the required field `team`
-      // validate the required field `channel`
-      if ((jsonObj.get("title") != null && !jsonObj.get("title").isJsonNull()) && !jsonObj.get("title").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
-      }
-      if ((jsonObj.get("link") != null && !jsonObj.get("link").isJsonNull()) && !jsonObj.get("link").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `link` to be a primitive type in the JSON string but got `%s`", jsonObj.get("link").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    /**
+     * Get the actual instance, which can be the following:
+     * AddSlackBookmarkTaskParamsAnyOf, AddSlackBookmarkTaskParamsAnyOf1
+     *
+     * @return The actual instance (AddSlackBookmarkTaskParamsAnyOf, AddSlackBookmarkTaskParamsAnyOf1)
+     */
     @SuppressWarnings("unchecked")
     @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!AddMicrosoftTeamsTabTaskParams.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'AddMicrosoftTeamsTabTaskParams' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<AddMicrosoftTeamsTabTaskParams> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(AddMicrosoftTeamsTabTaskParams.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<AddMicrosoftTeamsTabTaskParams>() {
-           @Override
-           public void write(JsonWriter out, AddMicrosoftTeamsTabTaskParams value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public AddMicrosoftTeamsTabTaskParams read(JsonReader in) throws IOException {
-             JsonElement jsonElement = elementAdapter.read(in);
-             validateJsonElement(jsonElement);
-             return thisAdapter.fromJsonTree(jsonElement);
-           }
-
-       }.nullSafe();
+    public Object getActualInstance() {
+        return super.getActualInstance();
     }
-  }
 
-  /**
-   * Create an instance of AddMicrosoftTeamsTabTaskParams given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of AddMicrosoftTeamsTabTaskParams
-   * @throws IOException if the JSON string is invalid with respect to AddMicrosoftTeamsTabTaskParams
-   */
-  public static AddMicrosoftTeamsTabTaskParams fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, AddMicrosoftTeamsTabTaskParams.class);
-  }
+    /**
+     * Get the actual instance of `AddSlackBookmarkTaskParamsAnyOf`. If the actual instance is not `AddSlackBookmarkTaskParamsAnyOf`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `AddSlackBookmarkTaskParamsAnyOf`
+     * @throws ClassCastException if the instance is not `AddSlackBookmarkTaskParamsAnyOf`
+     */
+    public AddSlackBookmarkTaskParamsAnyOf getAddSlackBookmarkTaskParamsAnyOf() throws ClassCastException {
+        return (AddSlackBookmarkTaskParamsAnyOf)super.getActualInstance();
+    }
 
-  /**
-   * Convert an instance of AddMicrosoftTeamsTabTaskParams to an JSON string
-   *
-   * @return JSON string
-   */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
+    /**
+     * Get the actual instance of `AddSlackBookmarkTaskParamsAnyOf1`. If the actual instance is not `AddSlackBookmarkTaskParamsAnyOf1`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `AddSlackBookmarkTaskParamsAnyOf1`
+     * @throws ClassCastException if the instance is not `AddSlackBookmarkTaskParamsAnyOf1`
+     */
+    public AddSlackBookmarkTaskParamsAnyOf1 getAddSlackBookmarkTaskParamsAnyOf1() throws ClassCastException {
+        return (AddSlackBookmarkTaskParamsAnyOf1)super.getActualInstance();
+    }
+
+    /**
+     * Validates the JSON Element and throws an exception if issues found
+     *
+     * @param jsonElement JSON Element
+     * @throws IOException if the JSON Element is invalid with respect to AddMicrosoftTeamsTabTaskParams
+     */
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+        // validate anyOf schemas one by one
+        ArrayList<String> errorMessages = new ArrayList<>();
+        // validate the json string with AddSlackBookmarkTaskParamsAnyOf
+        try {
+            AddSlackBookmarkTaskParamsAnyOf.validateJsonElement(jsonElement);
+            return;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for AddSlackBookmarkTaskParamsAnyOf failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with AddSlackBookmarkTaskParamsAnyOf1
+        try {
+            AddSlackBookmarkTaskParamsAnyOf1.validateJsonElement(jsonElement);
+            return;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for AddSlackBookmarkTaskParamsAnyOf1 failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        throw new IOException(String.format("The JSON string is invalid for AddMicrosoftTeamsTabTaskParams with anyOf schemas: AddSlackBookmarkTaskParamsAnyOf, AddSlackBookmarkTaskParamsAnyOf1. no class match the result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
+    }
+
+    /**
+     * Create an instance of AddMicrosoftTeamsTabTaskParams given an JSON string
+     *
+     * @param jsonString JSON string
+     * @return An instance of AddMicrosoftTeamsTabTaskParams
+     * @throws IOException if the JSON string is invalid with respect to AddMicrosoftTeamsTabTaskParams
+     */
+    public static AddMicrosoftTeamsTabTaskParams fromJson(String jsonString) throws IOException {
+        return JSON.getGson().fromJson(jsonString, AddMicrosoftTeamsTabTaskParams.class);
+    }
+
+    /**
+     * Convert an instance of AddMicrosoftTeamsTabTaskParams to an JSON string
+     *
+     * @return JSON string
+     */
+    public String toJson() {
+        return JSON.getGson().toJson(this);
+    }
 }
 

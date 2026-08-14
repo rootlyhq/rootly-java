@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * NewAlertUrgencyDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewAlertUrgencyDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -65,6 +65,11 @@ public class NewAlertUrgencyDataAttributes {
   @SerializedName(SERIALIZED_NAME_POSITION)
   @jakarta.annotation.Nullable
   private Integer position;
+
+  public static final String SERIALIZED_NAME_RETRIGGER_TIMEOUT_MINUTES = "retrigger_timeout_minutes";
+  @SerializedName(SERIALIZED_NAME_RETRIGGER_TIMEOUT_MINUTES)
+  @jakarta.annotation.Nullable
+  private Integer retriggerTimeoutMinutes;
 
   public NewAlertUrgencyDataAttributes() {
   }
@@ -126,6 +131,25 @@ public class NewAlertUrgencyDataAttributes {
   }
 
 
+  public NewAlertUrgencyDataAttributes retriggerTimeoutMinutes(@jakarta.annotation.Nullable Integer retriggerTimeoutMinutes) {
+    this.retriggerTimeoutMinutes = retriggerTimeoutMinutes;
+    return this;
+  }
+
+  /**
+   * Re-trigger acknowledged alerts of this urgency after N minutes; null inherits the workspace default, negative &#x3D; never.
+   * @return retriggerTimeoutMinutes
+   */
+  @jakarta.annotation.Nullable
+  public Integer getRetriggerTimeoutMinutes() {
+    return retriggerTimeoutMinutes;
+  }
+
+  public void setRetriggerTimeoutMinutes(@jakarta.annotation.Nullable Integer retriggerTimeoutMinutes) {
+    this.retriggerTimeoutMinutes = retriggerTimeoutMinutes;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -138,7 +162,8 @@ public class NewAlertUrgencyDataAttributes {
     NewAlertUrgencyDataAttributes newAlertUrgencyDataAttributes = (NewAlertUrgencyDataAttributes) o;
     return Objects.equals(this.name, newAlertUrgencyDataAttributes.name) &&
         Objects.equals(this.description, newAlertUrgencyDataAttributes.description) &&
-        Objects.equals(this.position, newAlertUrgencyDataAttributes.position);
+        Objects.equals(this.position, newAlertUrgencyDataAttributes.position) &&
+        Objects.equals(this.retriggerTimeoutMinutes, newAlertUrgencyDataAttributes.retriggerTimeoutMinutes);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -147,7 +172,7 @@ public class NewAlertUrgencyDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, position);
+    return Objects.hash(name, description, position, retriggerTimeoutMinutes);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -164,6 +189,7 @@ public class NewAlertUrgencyDataAttributes {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    position: ").append(toIndentedString(position)).append("\n");
+    sb.append("    retriggerTimeoutMinutes: ").append(toIndentedString(retriggerTimeoutMinutes)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -189,6 +215,7 @@ public class NewAlertUrgencyDataAttributes {
     openapiFields.add("name");
     openapiFields.add("description");
     openapiFields.add("position");
+    openapiFields.add("retrigger_timeout_minutes");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

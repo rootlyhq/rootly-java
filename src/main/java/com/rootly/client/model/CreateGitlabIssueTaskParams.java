@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * CreateGitlabIssueTaskParams
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateGitlabIssueTaskParams {
   /**
    * Gets or Sets taskType
@@ -164,7 +164,7 @@ public class CreateGitlabIssueTaskParams {
 
   public static final String SERIALIZED_NAME_ISSUE_TYPE = "issue_type";
   @SerializedName(SERIALIZED_NAME_ISSUE_TYPE)
-  @jakarta.annotation.Nullable
+  @jakarta.annotation.Nonnull
   private IssueTypeEnum issueType;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
@@ -214,7 +214,7 @@ public class CreateGitlabIssueTaskParams {
   }
 
 
-  public CreateGitlabIssueTaskParams issueType(@jakarta.annotation.Nullable IssueTypeEnum issueType) {
+  public CreateGitlabIssueTaskParams issueType(@jakarta.annotation.Nonnull IssueTypeEnum issueType) {
     this.issueType = issueType;
     return this;
   }
@@ -223,12 +223,12 @@ public class CreateGitlabIssueTaskParams {
    * The issue type
    * @return issueType
    */
-  @jakarta.annotation.Nullable
+  @jakarta.annotation.Nonnull
   public IssueTypeEnum getIssueType() {
     return issueType;
   }
 
-  public void setIssueType(@jakarta.annotation.Nullable IssueTypeEnum issueType) {
+  public void setIssueType(@jakarta.annotation.Nonnull IssueTypeEnum issueType) {
     this.issueType = issueType;
   }
 
@@ -395,6 +395,7 @@ public class CreateGitlabIssueTaskParams {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("issue_type");
     openapiRequiredFields.add("title");
     openapiRequiredFields.add("repository");
   }
@@ -434,13 +435,11 @@ public class CreateGitlabIssueTaskParams {
       if (jsonObj.get("task_type") != null && !jsonObj.get("task_type").isJsonNull()) {
         TaskTypeEnum.validateJsonElement(jsonObj.get("task_type"));
       }
-      if ((jsonObj.get("issue_type") != null && !jsonObj.get("issue_type").isJsonNull()) && !jsonObj.get("issue_type").isJsonPrimitive()) {
+      if (!jsonObj.get("issue_type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `issue_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("issue_type").toString()));
       }
-      // validate the optional field `issue_type`
-      if (jsonObj.get("issue_type") != null && !jsonObj.get("issue_type").isJsonNull()) {
-        IssueTypeEnum.validateJsonElement(jsonObj.get("issue_type"));
-      }
+      // validate the required field `issue_type`
+      IssueTypeEnum.validateJsonElement(jsonObj.get("issue_type"));
       if (!jsonObj.get("title").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
       }

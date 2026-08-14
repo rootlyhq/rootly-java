@@ -90,6 +90,7 @@ public class OverrideShiftsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> returns assignee relationship when schedule nesting enabled </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> cannot create schedule-based override shift </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> returns the existing override without recreating it </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
@@ -157,7 +158,7 @@ public class OverrideShiftsApi {
 
     /**
      * creates an override shift
-     * Creates a new override shift from provided data. If any existing override shifts overlap with the specified time range, they will be automatically deleted and replaced by the new override.
+     * Creates a new override shift from provided data. If any existing override shifts overlap with the specified time range, they will be automatically deleted and replaced by the new override. This endpoint is idempotent: re-sending an identical override (same user and same start/end time) returns the existing override with a 200 status and does not recreate it.
      * @param scheduleId  (required)
      * @param newOverrideShift  (required)
      * @return OverrideShiftResponse
@@ -168,6 +169,7 @@ public class OverrideShiftsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> returns assignee relationship when schedule nesting enabled </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> cannot create schedule-based override shift </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> returns the existing override without recreating it </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
@@ -178,7 +180,7 @@ public class OverrideShiftsApi {
 
     /**
      * creates an override shift
-     * Creates a new override shift from provided data. If any existing override shifts overlap with the specified time range, they will be automatically deleted and replaced by the new override.
+     * Creates a new override shift from provided data. If any existing override shifts overlap with the specified time range, they will be automatically deleted and replaced by the new override. This endpoint is idempotent: re-sending an identical override (same user and same start/end time) returns the existing override with a 200 status and does not recreate it.
      * @param scheduleId  (required)
      * @param newOverrideShift  (required)
      * @return ApiResponse&lt;OverrideShiftResponse&gt;
@@ -189,6 +191,7 @@ public class OverrideShiftsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> returns assignee relationship when schedule nesting enabled </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> cannot create schedule-based override shift </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> returns the existing override without recreating it </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
@@ -200,7 +203,7 @@ public class OverrideShiftsApi {
 
     /**
      * creates an override shift (asynchronously)
-     * Creates a new override shift from provided data. If any existing override shifts overlap with the specified time range, they will be automatically deleted and replaced by the new override.
+     * Creates a new override shift from provided data. If any existing override shifts overlap with the specified time range, they will be automatically deleted and replaced by the new override. This endpoint is idempotent: re-sending an identical override (same user and same start/end time) returns the existing override with a 200 status and does not recreate it.
      * @param scheduleId  (required)
      * @param newOverrideShift  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -212,6 +215,7 @@ public class OverrideShiftsApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> returns assignee relationship when schedule nesting enabled </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> cannot create schedule-based override shift </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> returns the existing override without recreating it </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
@@ -232,7 +236,8 @@ public class OverrideShiftsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> override shift deleted </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> active shadow is preserved with truncated end time </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> shadow period already ended </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
@@ -294,7 +299,7 @@ public class OverrideShiftsApi {
 
     /**
      * Delete an on call shadow configuration
-     * Delete a specific on call shadow configuration by id
+     * Delete a specific on call shadow configuration by id. Future shadows are hard-deleted. Active shadows (started in the past) have their end time truncated to preserve historical data.
      * @param id  (required)
      * @return OnCallShadowResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -302,7 +307,8 @@ public class OverrideShiftsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> override shift deleted </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> active shadow is preserved with truncated end time </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> shadow period already ended </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
@@ -313,7 +319,7 @@ public class OverrideShiftsApi {
 
     /**
      * Delete an on call shadow configuration
-     * Delete a specific on call shadow configuration by id
+     * Delete a specific on call shadow configuration by id. Future shadows are hard-deleted. Active shadows (started in the past) have their end time truncated to preserve historical data.
      * @param id  (required)
      * @return ApiResponse&lt;OnCallShadowResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -321,7 +327,8 @@ public class OverrideShiftsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> override shift deleted </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> active shadow is preserved with truncated end time </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> shadow period already ended </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
@@ -333,7 +340,7 @@ public class OverrideShiftsApi {
 
     /**
      * Delete an on call shadow configuration (asynchronously)
-     * Delete a specific on call shadow configuration by id
+     * Delete a specific on call shadow configuration by id. Future shadows are hard-deleted. Active shadows (started in the past) have their end time truncated to preserve historical data.
      * @param id  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -342,7 +349,8 @@ public class OverrideShiftsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> override shift deleted </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> active shadow is preserved with truncated end time </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> shadow period already ended </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */

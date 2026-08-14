@@ -91,7 +91,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call createCatalogEntityPropertyCall(@jakarta.annotation.Nonnull String catalogEntityId, @jakarta.annotation.Nonnull NewCatalogEntityProperty newCatalogEntityProperty, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
@@ -138,6 +140,7 @@ public class CatalogEntityPropertiesApi {
         return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
+    @Deprecated
     @SuppressWarnings("rawtypes")
     private okhttp3.Call createCatalogEntityPropertyValidateBeforeCall(@jakarta.annotation.Nonnull String catalogEntityId, @jakarta.annotation.Nonnull NewCatalogEntityProperty newCatalogEntityProperty, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'catalogEntityId' is set
@@ -156,7 +159,7 @@ public class CatalogEntityPropertiesApi {
 
     /**
      * Creates a Catalog Entity Property
-     * Creates a new Catalog Entity Property from provided data
+     * **Deprecated:** This endpoint is deprecated, please use the &#x60;fields&#x60; attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.  Creates a new Catalog Entity Property from provided data.
      * @param catalogEntityId  (required)
      * @param newCatalogEntityProperty  (required)
      * @return CatalogEntityPropertyResponse
@@ -169,7 +172,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public CatalogEntityPropertyResponse createCatalogEntityProperty(@jakarta.annotation.Nonnull String catalogEntityId, @jakarta.annotation.Nonnull NewCatalogEntityProperty newCatalogEntityProperty) throws ApiException {
         ApiResponse<CatalogEntityPropertyResponse> localVarResp = createCatalogEntityPropertyWithHttpInfo(catalogEntityId, newCatalogEntityProperty);
         return localVarResp.getData();
@@ -177,7 +182,7 @@ public class CatalogEntityPropertiesApi {
 
     /**
      * Creates a Catalog Entity Property
-     * Creates a new Catalog Entity Property from provided data
+     * **Deprecated:** This endpoint is deprecated, please use the &#x60;fields&#x60; attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.  Creates a new Catalog Entity Property from provided data.
      * @param catalogEntityId  (required)
      * @param newCatalogEntityProperty  (required)
      * @return ApiResponse&lt;CatalogEntityPropertyResponse&gt;
@@ -190,7 +195,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public ApiResponse<CatalogEntityPropertyResponse> createCatalogEntityPropertyWithHttpInfo(@jakarta.annotation.Nonnull String catalogEntityId, @jakarta.annotation.Nonnull NewCatalogEntityProperty newCatalogEntityProperty) throws ApiException {
         okhttp3.Call localVarCall = createCatalogEntityPropertyValidateBeforeCall(catalogEntityId, newCatalogEntityProperty, null);
         Type localVarReturnType = new TypeToken<CatalogEntityPropertyResponse>(){}.getType();
@@ -199,7 +206,7 @@ public class CatalogEntityPropertiesApi {
 
     /**
      * Creates a Catalog Entity Property (asynchronously)
-     * Creates a new Catalog Entity Property from provided data
+     * **Deprecated:** This endpoint is deprecated, please use the &#x60;fields&#x60; attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.  Creates a new Catalog Entity Property from provided data.
      * @param catalogEntityId  (required)
      * @param newCatalogEntityProperty  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -213,7 +220,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call createCatalogEntityPropertyAsync(@jakarta.annotation.Nonnull String catalogEntityId, @jakarta.annotation.Nonnull NewCatalogEntityProperty newCatalogEntityProperty, final ApiCallback<CatalogEntityPropertyResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createCatalogEntityPropertyValidateBeforeCall(catalogEntityId, newCatalogEntityProperty, _callback);
@@ -234,7 +243,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 200 </td><td> catalog_entity_property deleted </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call deleteCatalogEntityPropertyCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
@@ -280,6 +291,7 @@ public class CatalogEntityPropertiesApi {
         return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
+    @Deprecated
     @SuppressWarnings("rawtypes")
     private okhttp3.Call deleteCatalogEntityPropertyValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
@@ -293,7 +305,7 @@ public class CatalogEntityPropertiesApi {
 
     /**
      * Delete a Catalog Entity Property
-     * Delete a specific Catalog Entity Property by id
+     * **Deprecated:** This endpoint is deprecated, please use the &#x60;fields&#x60; attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.  Delete a specific Catalog Entity Property by id.
      * @param id  (required)
      * @return CatalogEntityPropertyResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -304,7 +316,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 200 </td><td> catalog_entity_property deleted </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public CatalogEntityPropertyResponse deleteCatalogEntityProperty(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<CatalogEntityPropertyResponse> localVarResp = deleteCatalogEntityPropertyWithHttpInfo(id);
         return localVarResp.getData();
@@ -312,7 +326,7 @@ public class CatalogEntityPropertiesApi {
 
     /**
      * Delete a Catalog Entity Property
-     * Delete a specific Catalog Entity Property by id
+     * **Deprecated:** This endpoint is deprecated, please use the &#x60;fields&#x60; attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.  Delete a specific Catalog Entity Property by id.
      * @param id  (required)
      * @return ApiResponse&lt;CatalogEntityPropertyResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -323,7 +337,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 200 </td><td> catalog_entity_property deleted </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public ApiResponse<CatalogEntityPropertyResponse> deleteCatalogEntityPropertyWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteCatalogEntityPropertyValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<CatalogEntityPropertyResponse>(){}.getType();
@@ -332,7 +348,7 @@ public class CatalogEntityPropertiesApi {
 
     /**
      * Delete a Catalog Entity Property (asynchronously)
-     * Delete a specific Catalog Entity Property by id
+     * **Deprecated:** This endpoint is deprecated, please use the &#x60;fields&#x60; attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.  Delete a specific Catalog Entity Property by id.
      * @param id  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -344,7 +360,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 200 </td><td> catalog_entity_property deleted </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call deleteCatalogEntityPropertyAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<CatalogEntityPropertyResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteCatalogEntityPropertyValidateBeforeCall(id, _callback);
@@ -366,7 +384,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 200 </td><td> catalog_entity_property found </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call getCatalogEntityPropertyCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
@@ -416,6 +436,7 @@ public class CatalogEntityPropertiesApi {
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
+    @Deprecated
     @SuppressWarnings("rawtypes")
     private okhttp3.Call getCatalogEntityPropertyValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
@@ -429,7 +450,7 @@ public class CatalogEntityPropertiesApi {
 
     /**
      * Retrieves a Catalog Entity Property
-     * Retrieves a specific Catalog Entity Property by id
+     * **Deprecated:** This endpoint is deprecated, please use &#x60;include&#x3D;fields&#x60; on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to retrieve field values instead.  Retrieves a specific Catalog Entity Property by id.
      * @param id  (required)
      * @param include comma separated if needed. eg: catalog_entity,catalog_field (optional)
      * @return CatalogEntityPropertyResponse
@@ -441,7 +462,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 200 </td><td> catalog_entity_property found </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public CatalogEntityPropertyResponse getCatalogEntityProperty(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include) throws ApiException {
         ApiResponse<CatalogEntityPropertyResponse> localVarResp = getCatalogEntityPropertyWithHttpInfo(id, include);
         return localVarResp.getData();
@@ -449,7 +472,7 @@ public class CatalogEntityPropertiesApi {
 
     /**
      * Retrieves a Catalog Entity Property
-     * Retrieves a specific Catalog Entity Property by id
+     * **Deprecated:** This endpoint is deprecated, please use &#x60;include&#x3D;fields&#x60; on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to retrieve field values instead.  Retrieves a specific Catalog Entity Property by id.
      * @param id  (required)
      * @param include comma separated if needed. eg: catalog_entity,catalog_field (optional)
      * @return ApiResponse&lt;CatalogEntityPropertyResponse&gt;
@@ -461,7 +484,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 200 </td><td> catalog_entity_property found </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public ApiResponse<CatalogEntityPropertyResponse> getCatalogEntityPropertyWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include) throws ApiException {
         okhttp3.Call localVarCall = getCatalogEntityPropertyValidateBeforeCall(id, include, null);
         Type localVarReturnType = new TypeToken<CatalogEntityPropertyResponse>(){}.getType();
@@ -470,7 +495,7 @@ public class CatalogEntityPropertiesApi {
 
     /**
      * Retrieves a Catalog Entity Property (asynchronously)
-     * Retrieves a specific Catalog Entity Property by id
+     * **Deprecated:** This endpoint is deprecated, please use &#x60;include&#x3D;fields&#x60; on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to retrieve field values instead.  Retrieves a specific Catalog Entity Property by id.
      * @param id  (required)
      * @param include comma separated if needed. eg: catalog_entity,catalog_field (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -483,7 +508,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 200 </td><td> catalog_entity_property found </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call getCatalogEntityPropertyAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include, final ApiCallback<CatalogEntityPropertyResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCatalogEntityPropertyValidateBeforeCall(id, include, _callback);
@@ -513,7 +540,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call listCatalogEntityPropertiesCall(@jakarta.annotation.Nonnull String catalogEntityId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterCatalogFieldId, @jakarta.annotation.Nullable String filterKey, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
@@ -599,6 +628,7 @@ public class CatalogEntityPropertiesApi {
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
+    @Deprecated
     @SuppressWarnings("rawtypes")
     private okhttp3.Call listCatalogEntityPropertiesValidateBeforeCall(@jakarta.annotation.Nonnull String catalogEntityId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterCatalogFieldId, @jakarta.annotation.Nullable String filterKey, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'catalogEntityId' is set
@@ -612,7 +642,7 @@ public class CatalogEntityPropertiesApi {
 
     /**
      * List catalog properties
-     * List Catalog Entity Properties
+     * **Deprecated:** This endpoint is deprecated, please use &#x60;include&#x3D;fields&#x60; on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to retrieve field values instead.  List Catalog Entity Properties.
      * @param catalogEntityId  (required)
      * @param include comma separated if needed. eg: catalog_entity,catalog_field (optional)
      * @param sort comma separated if needed. eg: created_at,updated_at (optional)
@@ -632,7 +662,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public CatalogEntityPropertyList listCatalogEntityProperties(@jakarta.annotation.Nonnull String catalogEntityId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterCatalogFieldId, @jakarta.annotation.Nullable String filterKey, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte) throws ApiException {
         ApiResponse<CatalogEntityPropertyList> localVarResp = listCatalogEntityPropertiesWithHttpInfo(catalogEntityId, include, sort, pageNumber, pageSize, filterCatalogFieldId, filterKey, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
         return localVarResp.getData();
@@ -640,7 +672,7 @@ public class CatalogEntityPropertiesApi {
 
     /**
      * List catalog properties
-     * List Catalog Entity Properties
+     * **Deprecated:** This endpoint is deprecated, please use &#x60;include&#x3D;fields&#x60; on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to retrieve field values instead.  List Catalog Entity Properties.
      * @param catalogEntityId  (required)
      * @param include comma separated if needed. eg: catalog_entity,catalog_field (optional)
      * @param sort comma separated if needed. eg: created_at,updated_at (optional)
@@ -660,7 +692,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public ApiResponse<CatalogEntityPropertyList> listCatalogEntityPropertiesWithHttpInfo(@jakarta.annotation.Nonnull String catalogEntityId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterCatalogFieldId, @jakarta.annotation.Nullable String filterKey, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte) throws ApiException {
         okhttp3.Call localVarCall = listCatalogEntityPropertiesValidateBeforeCall(catalogEntityId, include, sort, pageNumber, pageSize, filterCatalogFieldId, filterKey, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, null);
         Type localVarReturnType = new TypeToken<CatalogEntityPropertyList>(){}.getType();
@@ -669,7 +703,7 @@ public class CatalogEntityPropertiesApi {
 
     /**
      * List catalog properties (asynchronously)
-     * List Catalog Entity Properties
+     * **Deprecated:** This endpoint is deprecated, please use &#x60;include&#x3D;fields&#x60; on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to retrieve field values instead.  List Catalog Entity Properties.
      * @param catalogEntityId  (required)
      * @param include comma separated if needed. eg: catalog_entity,catalog_field (optional)
      * @param sort comma separated if needed. eg: created_at,updated_at (optional)
@@ -690,7 +724,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call listCatalogEntityPropertiesAsync(@jakarta.annotation.Nonnull String catalogEntityId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterCatalogFieldId, @jakarta.annotation.Nullable String filterKey, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback<CatalogEntityPropertyList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listCatalogEntityPropertiesValidateBeforeCall(catalogEntityId, include, sort, pageNumber, pageSize, filterCatalogFieldId, filterKey, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, _callback);
@@ -712,7 +748,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 200 </td><td> catalog_entity_property updated </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call updateCatalogEntityPropertyCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateCatalogEntityProperty updateCatalogEntityProperty, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
@@ -759,6 +797,7 @@ public class CatalogEntityPropertiesApi {
         return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
+    @Deprecated
     @SuppressWarnings("rawtypes")
     private okhttp3.Call updateCatalogEntityPropertyValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateCatalogEntityProperty updateCatalogEntityProperty, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
@@ -777,7 +816,7 @@ public class CatalogEntityPropertiesApi {
 
     /**
      * Update a Catalog Entity Property
-     * Update a specific Catalog Entity Property by id
+     * **Deprecated:** This endpoint is deprecated, please use the &#x60;fields&#x60; attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.  Update a specific Catalog Entity Property by id.
      * @param id  (required)
      * @param updateCatalogEntityProperty  (required)
      * @return CatalogEntityPropertyResponse
@@ -789,7 +828,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 200 </td><td> catalog_entity_property updated </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public CatalogEntityPropertyResponse updateCatalogEntityProperty(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateCatalogEntityProperty updateCatalogEntityProperty) throws ApiException {
         ApiResponse<CatalogEntityPropertyResponse> localVarResp = updateCatalogEntityPropertyWithHttpInfo(id, updateCatalogEntityProperty);
         return localVarResp.getData();
@@ -797,7 +838,7 @@ public class CatalogEntityPropertiesApi {
 
     /**
      * Update a Catalog Entity Property
-     * Update a specific Catalog Entity Property by id
+     * **Deprecated:** This endpoint is deprecated, please use the &#x60;fields&#x60; attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.  Update a specific Catalog Entity Property by id.
      * @param id  (required)
      * @param updateCatalogEntityProperty  (required)
      * @return ApiResponse&lt;CatalogEntityPropertyResponse&gt;
@@ -809,7 +850,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 200 </td><td> catalog_entity_property updated </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public ApiResponse<CatalogEntityPropertyResponse> updateCatalogEntityPropertyWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateCatalogEntityProperty updateCatalogEntityProperty) throws ApiException {
         okhttp3.Call localVarCall = updateCatalogEntityPropertyValidateBeforeCall(id, updateCatalogEntityProperty, null);
         Type localVarReturnType = new TypeToken<CatalogEntityPropertyResponse>(){}.getType();
@@ -818,7 +861,7 @@ public class CatalogEntityPropertiesApi {
 
     /**
      * Update a Catalog Entity Property (asynchronously)
-     * Update a specific Catalog Entity Property by id
+     * **Deprecated:** This endpoint is deprecated, please use the &#x60;fields&#x60; attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.  Update a specific Catalog Entity Property by id.
      * @param id  (required)
      * @param updateCatalogEntityProperty  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -831,7 +874,9 @@ public class CatalogEntityPropertiesApi {
         <tr><td> 200 </td><td> catalog_entity_property updated </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
+    @Deprecated
     public okhttp3.Call updateCatalogEntityPropertyAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateCatalogEntityProperty updateCatalogEntityProperty, final ApiCallback<CatalogEntityPropertyResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateCatalogEntityPropertyValidateBeforeCall(id, updateCatalogEntityProperty, _callback);

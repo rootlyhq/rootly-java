@@ -8,6 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**data** | [**IncidentFormFieldSelectionResponseData**](IncidentFormFieldSelectionResponseData.md) |  |  |
+|**included** | [**List&lt;JsonapiIncludedResource&gt;**](JsonapiIncludedResource.md) |  |  [optional] |
 
 
 

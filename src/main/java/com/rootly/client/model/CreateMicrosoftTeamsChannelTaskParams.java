@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * CreateMicrosoftTeamsChannelTaskParams
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateMicrosoftTeamsChannelTaskParams {
   /**
    * Gets or Sets taskType
@@ -108,7 +108,7 @@ public class CreateMicrosoftTeamsChannelTaskParams {
 
   public static final String SERIALIZED_NAME_TEAM = "team";
   @SerializedName(SERIALIZED_NAME_TEAM)
-  @jakarta.annotation.Nullable
+  @jakarta.annotation.Nonnull
   private AddActionItemTaskParamsPostToSlackChannelsInner team;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
@@ -202,7 +202,7 @@ public class CreateMicrosoftTeamsChannelTaskParams {
   }
 
 
-  public CreateMicrosoftTeamsChannelTaskParams team(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner team) {
+  public CreateMicrosoftTeamsChannelTaskParams team(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner team) {
     this.team = team;
     return this;
   }
@@ -211,12 +211,12 @@ public class CreateMicrosoftTeamsChannelTaskParams {
    * Get team
    * @return team
    */
-  @jakarta.annotation.Nullable
+  @jakarta.annotation.Nonnull
   public AddActionItemTaskParamsPostToSlackChannelsInner getTeam() {
     return team;
   }
 
-  public void setTeam(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner team) {
+  public void setTeam(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner team) {
     this.team = team;
   }
 
@@ -339,6 +339,7 @@ public class CreateMicrosoftTeamsChannelTaskParams {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("team");
     openapiRequiredFields.add("title");
   }
 
@@ -377,10 +378,8 @@ public class CreateMicrosoftTeamsChannelTaskParams {
       if (jsonObj.get("task_type") != null && !jsonObj.get("task_type").isJsonNull()) {
         TaskTypeEnum.validateJsonElement(jsonObj.get("task_type"));
       }
-      // validate the optional field `team`
-      if (jsonObj.get("team") != null && !jsonObj.get("team").isJsonNull()) {
-        AddActionItemTaskParamsPostToSlackChannelsInner.validateJsonElement(jsonObj.get("team"));
-      }
+      // validate the required field `team`
+      AddActionItemTaskParamsPostToSlackChannelsInner.validateJsonElement(jsonObj.get("team"));
       if (!jsonObj.get("title").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
       }

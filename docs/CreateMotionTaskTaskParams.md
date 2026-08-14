@@ -13,7 +13,7 @@
 |**status** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
 |**title** | **String** | The task title |  |
 |**description** | **String** | The task description |  [optional] |
-|**labels** | **List&lt;String&gt;** |  |  [optional] |
+|**labels** | **String** | The task labels |  [optional] |
 |**priority** | [**CreateJiraIssueTaskParamsPriority**](CreateJiraIssueTaskParamsPriority.md) |  |  [optional] |
 |**duration** | **String** | The duration. Eg.  \&quot;NONE\&quot;, \&quot;REMINDER\&quot;, or a integer greater than 0. |  [optional] |
 |**dueDate** | **String** | The due date |  [optional] |

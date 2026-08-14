@@ -49,11 +49,11 @@ import com.rootly.client.JSON;
 /**
  * CatalogEntityChecklistChecklistFieldsInnerData
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CatalogEntityChecklistChecklistFieldsInnerData {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String id;
 
   /**
@@ -108,18 +108,18 @@ public class CatalogEntityChecklistChecklistFieldsInnerData {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CatalogEntityChecklistChecklistFieldsInnerDataAttributes attributes;
 
   public CatalogEntityChecklistChecklistFieldsInnerData() {
   }
 
-  public CatalogEntityChecklistChecklistFieldsInnerData id(@javax.annotation.Nullable String id) {
+  public CatalogEntityChecklistChecklistFieldsInnerData id(@jakarta.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -128,17 +128,17 @@ public class CatalogEntityChecklistChecklistFieldsInnerData {
    * ID of the checklist field
    * @return id
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getId() {
     return id;
   }
 
-  public void setId(@javax.annotation.Nullable String id) {
+  public void setId(@jakarta.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public CatalogEntityChecklistChecklistFieldsInnerData type(@javax.annotation.Nullable TypeEnum type) {
+  public CatalogEntityChecklistChecklistFieldsInnerData type(@jakarta.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -147,17 +147,17 @@ public class CatalogEntityChecklistChecklistFieldsInnerData {
    * Get type
    * @return type
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TypeEnum getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nullable TypeEnum type) {
+  public void setType(@jakarta.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
 
-  public CatalogEntityChecklistChecklistFieldsInnerData attributes(@javax.annotation.Nullable CatalogEntityChecklistChecklistFieldsInnerDataAttributes attributes) {
+  public CatalogEntityChecklistChecklistFieldsInnerData attributes(@jakarta.annotation.Nullable CatalogEntityChecklistChecklistFieldsInnerDataAttributes attributes) {
     this.attributes = attributes;
     return this;
   }
@@ -166,12 +166,12 @@ public class CatalogEntityChecklistChecklistFieldsInnerData {
    * Get attributes
    * @return attributes
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CatalogEntityChecklistChecklistFieldsInnerDataAttributes getAttributes() {
     return attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nullable CatalogEntityChecklistChecklistFieldsInnerDataAttributes attributes) {
+  public void setAttributes(@jakarta.annotation.Nullable CatalogEntityChecklistChecklistFieldsInnerDataAttributes attributes) {
     this.attributes = attributes;
   }
 

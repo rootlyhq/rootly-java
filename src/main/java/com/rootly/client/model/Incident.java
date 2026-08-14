@@ -22,6 +22,7 @@ import com.google.gson.stream.JsonWriter;
 import com.rootly.client.model.EnvironmentResponse;
 import com.rootly.client.model.FunctionalityResponse;
 import com.rootly.client.model.IncidentTypeResponse;
+import com.rootly.client.model.IncidentZoomMeetingGlobalDialInNumbersInner;
 import com.rootly.client.model.ServiceResponse;
 import com.rootly.client.model.SeverityResponse;
 import com.rootly.client.model.TeamResponse;
@@ -57,7 +58,7 @@ import com.rootly.client.JSON;
 /**
  * Incident
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Incident {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -81,7 +82,7 @@ public class Incident {
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
-  @jakarta.annotation.Nonnull
+  @jakarta.annotation.Nullable
   private String slug;
 
   public static final String SERIALIZED_NAME_PARENT_INCIDENT_ID = "parent_incident_id";
@@ -237,7 +238,7 @@ public class Incident {
   public static final String SERIALIZED_NAME_ZOOM_MEETING_GLOBAL_DIAL_IN_NUMBERS = "zoom_meeting_global_dial_in_numbers";
   @SerializedName(SERIALIZED_NAME_ZOOM_MEETING_GLOBAL_DIAL_IN_NUMBERS)
   @jakarta.annotation.Nullable
-  private List<String> zoomMeetingGlobalDialInNumbers;
+  private List<IncidentZoomMeetingGlobalDialInNumbersInner> zoomMeetingGlobalDialInNumbers;
 
   public static final String SERIALIZED_NAME_GOOGLE_DRIVE_ID = "google_drive_id";
   @SerializedName(SERIALIZED_NAME_GOOGLE_DRIVE_ID)
@@ -263,6 +264,91 @@ public class Incident {
   @SerializedName(SERIALIZED_NAME_GOOGLE_MEETING_URL)
   @jakarta.annotation.Nullable
   private String googleMeetingUrl;
+
+  public static final String SERIALIZED_NAME_MICROSOFT_TEAMS_MEETING_ID = "microsoft_teams_meeting_id";
+  @SerializedName(SERIALIZED_NAME_MICROSOFT_TEAMS_MEETING_ID)
+  @jakarta.annotation.Nullable
+  private String microsoftTeamsMeetingId;
+
+  public static final String SERIALIZED_NAME_MICROSOFT_TEAMS_MEETING_URL = "microsoft_teams_meeting_url";
+  @SerializedName(SERIALIZED_NAME_MICROSOFT_TEAMS_MEETING_URL)
+  @jakarta.annotation.Nullable
+  private String microsoftTeamsMeetingUrl;
+
+  public static final String SERIALIZED_NAME_MICROSOFT_TEAMS_CHANNEL_ID = "microsoft_teams_channel_id";
+  @SerializedName(SERIALIZED_NAME_MICROSOFT_TEAMS_CHANNEL_ID)
+  @jakarta.annotation.Nullable
+  private String microsoftTeamsChannelId;
+
+  public static final String SERIALIZED_NAME_MICROSOFT_TEAMS_CHANNEL_NAME = "microsoft_teams_channel_name";
+  @SerializedName(SERIALIZED_NAME_MICROSOFT_TEAMS_CHANNEL_NAME)
+  @jakarta.annotation.Nullable
+  private String microsoftTeamsChannelName;
+
+  public static final String SERIALIZED_NAME_MICROSOFT_TEAMS_CHANNEL_URL = "microsoft_teams_channel_url";
+  @SerializedName(SERIALIZED_NAME_MICROSOFT_TEAMS_CHANNEL_URL)
+  @jakarta.annotation.Nullable
+  private String microsoftTeamsChannelUrl;
+
+  public static final String SERIALIZED_NAME_MICROSOFT_TEAMS_CHANNEL_SHORT_URL = "microsoft_teams_channel_short_url";
+  @SerializedName(SERIALIZED_NAME_MICROSOFT_TEAMS_CHANNEL_SHORT_URL)
+  @jakarta.annotation.Nullable
+  private String microsoftTeamsChannelShortUrl;
+
+  public static final String SERIALIZED_NAME_MICROSOFT_TEAMS_CHAT_ID = "microsoft_teams_chat_id";
+  @SerializedName(SERIALIZED_NAME_MICROSOFT_TEAMS_CHAT_ID)
+  @jakarta.annotation.Nullable
+  private String microsoftTeamsChatId;
+
+  public static final String SERIALIZED_NAME_MICROSOFT_TEAMS_CHAT_URL = "microsoft_teams_chat_url";
+  @SerializedName(SERIALIZED_NAME_MICROSOFT_TEAMS_CHAT_URL)
+  @jakarta.annotation.Nullable
+  private String microsoftTeamsChatUrl;
+
+  public static final String SERIALIZED_NAME_MICROSOFT_TEAMS_TEAM_ID = "microsoft_teams_team_id";
+  @SerializedName(SERIALIZED_NAME_MICROSOFT_TEAMS_TEAM_ID)
+  @jakarta.annotation.Nullable
+  private String microsoftTeamsTeamId;
+
+  public static final String SERIALIZED_NAME_GOOGLE_CHAT_SPACE_ID = "google_chat_space_id";
+  @SerializedName(SERIALIZED_NAME_GOOGLE_CHAT_SPACE_ID)
+  @jakarta.annotation.Nullable
+  private String googleChatSpaceId;
+
+  public static final String SERIALIZED_NAME_GOOGLE_CHAT_SPACE_NAME = "google_chat_space_name";
+  @SerializedName(SERIALIZED_NAME_GOOGLE_CHAT_SPACE_NAME)
+  @jakarta.annotation.Nullable
+  private String googleChatSpaceName;
+
+  public static final String SERIALIZED_NAME_GOOGLE_CHAT_SPACE_URL = "google_chat_space_url";
+  @SerializedName(SERIALIZED_NAME_GOOGLE_CHAT_SPACE_URL)
+  @jakarta.annotation.Nullable
+  private String googleChatSpaceUrl;
+
+  public static final String SERIALIZED_NAME_GOOGLE_CHAT_SPACE_SHORT_URL = "google_chat_space_short_url";
+  @SerializedName(SERIALIZED_NAME_GOOGLE_CHAT_SPACE_SHORT_URL)
+  @jakarta.annotation.Nullable
+  private String googleChatSpaceShortUrl;
+
+  public static final String SERIALIZED_NAME_GOOGLE_CHAT_SPACE_ARCHIVED = "google_chat_space_archived";
+  @SerializedName(SERIALIZED_NAME_GOOGLE_CHAT_SPACE_ARCHIVED)
+  @jakarta.annotation.Nullable
+  private Boolean googleChatSpaceArchived;
+
+  public static final String SERIALIZED_NAME_GOOGLE_CHAT_SPACE_DOMAIN_ID = "google_chat_space_domain_id";
+  @SerializedName(SERIALIZED_NAME_GOOGLE_CHAT_SPACE_DOMAIN_ID)
+  @jakarta.annotation.Nullable
+  private String googleChatSpaceDomainId;
+
+  public static final String SERIALIZED_NAME_WEBEX_MEETING_ID = "webex_meeting_id";
+  @SerializedName(SERIALIZED_NAME_WEBEX_MEETING_ID)
+  @jakarta.annotation.Nullable
+  private String webexMeetingId;
+
+  public static final String SERIALIZED_NAME_WEBEX_MEETING_URL = "webex_meeting_url";
+  @SerializedName(SERIALIZED_NAME_WEBEX_MEETING_URL)
+  @jakarta.annotation.Nullable
+  private String webexMeetingUrl;
 
   public static final String SERIALIZED_NAME_JIRA_ISSUE_KEY = "jira_issue_key";
   @SerializedName(SERIALIZED_NAME_JIRA_ISSUE_KEY)
@@ -708,6 +794,13 @@ public class Incident {
   public Incident() {
   }
 
+  public Incident(
+     String slug
+  ) {
+    this();
+    this.slug = slug;
+  }
+
   public Incident id(@jakarta.annotation.Nullable String id) {
     this.id = id;
     return this;
@@ -784,23 +877,15 @@ public class Incident {
   }
 
 
-  public Incident slug(@jakarta.annotation.Nonnull String slug) {
-    this.slug = slug;
-    return this;
-  }
-
   /**
    * The slug of the incident
    * @return slug
    */
-  @jakarta.annotation.Nonnull
+  @jakarta.annotation.Nullable
   public String getSlug() {
     return slug;
   }
 
-  public void setSlug(@jakarta.annotation.Nonnull String slug) {
-    this.slug = slug;
-  }
 
 
   public Incident parentIncidentId(@jakarta.annotation.Nullable String parentIncidentId) {
@@ -1413,12 +1498,12 @@ public class Incident {
   }
 
 
-  public Incident zoomMeetingGlobalDialInNumbers(@jakarta.annotation.Nullable List<String> zoomMeetingGlobalDialInNumbers) {
+  public Incident zoomMeetingGlobalDialInNumbers(@jakarta.annotation.Nullable List<IncidentZoomMeetingGlobalDialInNumbersInner> zoomMeetingGlobalDialInNumbers) {
     this.zoomMeetingGlobalDialInNumbers = zoomMeetingGlobalDialInNumbers;
     return this;
   }
 
-  public Incident addZoomMeetingGlobalDialInNumbersItem(String zoomMeetingGlobalDialInNumbersItem) {
+  public Incident addZoomMeetingGlobalDialInNumbersItem(IncidentZoomMeetingGlobalDialInNumbersInner zoomMeetingGlobalDialInNumbersItem) {
     if (this.zoomMeetingGlobalDialInNumbers == null) {
       this.zoomMeetingGlobalDialInNumbers = new ArrayList<>();
     }
@@ -1431,11 +1516,11 @@ public class Incident {
    * @return zoomMeetingGlobalDialInNumbers
    */
   @jakarta.annotation.Nullable
-  public List<String> getZoomMeetingGlobalDialInNumbers() {
+  public List<IncidentZoomMeetingGlobalDialInNumbersInner> getZoomMeetingGlobalDialInNumbers() {
     return zoomMeetingGlobalDialInNumbers;
   }
 
-  public void setZoomMeetingGlobalDialInNumbers(@jakarta.annotation.Nullable List<String> zoomMeetingGlobalDialInNumbers) {
+  public void setZoomMeetingGlobalDialInNumbers(@jakarta.annotation.Nullable List<IncidentZoomMeetingGlobalDialInNumbersInner> zoomMeetingGlobalDialInNumbers) {
     this.zoomMeetingGlobalDialInNumbers = zoomMeetingGlobalDialInNumbers;
   }
 
@@ -1532,6 +1617,329 @@ public class Incident {
 
   public void setGoogleMeetingUrl(@jakarta.annotation.Nullable String googleMeetingUrl) {
     this.googleMeetingUrl = googleMeetingUrl;
+  }
+
+
+  public Incident microsoftTeamsMeetingId(@jakarta.annotation.Nullable String microsoftTeamsMeetingId) {
+    this.microsoftTeamsMeetingId = microsoftTeamsMeetingId;
+    return this;
+  }
+
+  /**
+   * Microsoft Teams meeting ID
+   * @return microsoftTeamsMeetingId
+   */
+  @jakarta.annotation.Nullable
+  public String getMicrosoftTeamsMeetingId() {
+    return microsoftTeamsMeetingId;
+  }
+
+  public void setMicrosoftTeamsMeetingId(@jakarta.annotation.Nullable String microsoftTeamsMeetingId) {
+    this.microsoftTeamsMeetingId = microsoftTeamsMeetingId;
+  }
+
+
+  public Incident microsoftTeamsMeetingUrl(@jakarta.annotation.Nullable String microsoftTeamsMeetingUrl) {
+    this.microsoftTeamsMeetingUrl = microsoftTeamsMeetingUrl;
+    return this;
+  }
+
+  /**
+   * Microsoft Teams meeting URL
+   * @return microsoftTeamsMeetingUrl
+   */
+  @jakarta.annotation.Nullable
+  public String getMicrosoftTeamsMeetingUrl() {
+    return microsoftTeamsMeetingUrl;
+  }
+
+  public void setMicrosoftTeamsMeetingUrl(@jakarta.annotation.Nullable String microsoftTeamsMeetingUrl) {
+    this.microsoftTeamsMeetingUrl = microsoftTeamsMeetingUrl;
+  }
+
+
+  public Incident microsoftTeamsChannelId(@jakarta.annotation.Nullable String microsoftTeamsChannelId) {
+    this.microsoftTeamsChannelId = microsoftTeamsChannelId;
+    return this;
+  }
+
+  /**
+   * Microsoft Teams channel ID
+   * @return microsoftTeamsChannelId
+   */
+  @jakarta.annotation.Nullable
+  public String getMicrosoftTeamsChannelId() {
+    return microsoftTeamsChannelId;
+  }
+
+  public void setMicrosoftTeamsChannelId(@jakarta.annotation.Nullable String microsoftTeamsChannelId) {
+    this.microsoftTeamsChannelId = microsoftTeamsChannelId;
+  }
+
+
+  public Incident microsoftTeamsChannelName(@jakarta.annotation.Nullable String microsoftTeamsChannelName) {
+    this.microsoftTeamsChannelName = microsoftTeamsChannelName;
+    return this;
+  }
+
+  /**
+   * Microsoft Teams channel name
+   * @return microsoftTeamsChannelName
+   */
+  @jakarta.annotation.Nullable
+  public String getMicrosoftTeamsChannelName() {
+    return microsoftTeamsChannelName;
+  }
+
+  public void setMicrosoftTeamsChannelName(@jakarta.annotation.Nullable String microsoftTeamsChannelName) {
+    this.microsoftTeamsChannelName = microsoftTeamsChannelName;
+  }
+
+
+  public Incident microsoftTeamsChannelUrl(@jakarta.annotation.Nullable String microsoftTeamsChannelUrl) {
+    this.microsoftTeamsChannelUrl = microsoftTeamsChannelUrl;
+    return this;
+  }
+
+  /**
+   * Microsoft Teams channel URL
+   * @return microsoftTeamsChannelUrl
+   */
+  @jakarta.annotation.Nullable
+  public String getMicrosoftTeamsChannelUrl() {
+    return microsoftTeamsChannelUrl;
+  }
+
+  public void setMicrosoftTeamsChannelUrl(@jakarta.annotation.Nullable String microsoftTeamsChannelUrl) {
+    this.microsoftTeamsChannelUrl = microsoftTeamsChannelUrl;
+  }
+
+
+  public Incident microsoftTeamsChannelShortUrl(@jakarta.annotation.Nullable String microsoftTeamsChannelShortUrl) {
+    this.microsoftTeamsChannelShortUrl = microsoftTeamsChannelShortUrl;
+    return this;
+  }
+
+  /**
+   * Microsoft Teams channel short URL
+   * @return microsoftTeamsChannelShortUrl
+   */
+  @jakarta.annotation.Nullable
+  public String getMicrosoftTeamsChannelShortUrl() {
+    return microsoftTeamsChannelShortUrl;
+  }
+
+  public void setMicrosoftTeamsChannelShortUrl(@jakarta.annotation.Nullable String microsoftTeamsChannelShortUrl) {
+    this.microsoftTeamsChannelShortUrl = microsoftTeamsChannelShortUrl;
+  }
+
+
+  public Incident microsoftTeamsChatId(@jakarta.annotation.Nullable String microsoftTeamsChatId) {
+    this.microsoftTeamsChatId = microsoftTeamsChatId;
+    return this;
+  }
+
+  /**
+   * Microsoft Teams chat ID
+   * @return microsoftTeamsChatId
+   */
+  @jakarta.annotation.Nullable
+  public String getMicrosoftTeamsChatId() {
+    return microsoftTeamsChatId;
+  }
+
+  public void setMicrosoftTeamsChatId(@jakarta.annotation.Nullable String microsoftTeamsChatId) {
+    this.microsoftTeamsChatId = microsoftTeamsChatId;
+  }
+
+
+  public Incident microsoftTeamsChatUrl(@jakarta.annotation.Nullable String microsoftTeamsChatUrl) {
+    this.microsoftTeamsChatUrl = microsoftTeamsChatUrl;
+    return this;
+  }
+
+  /**
+   * Microsoft Teams chat URL
+   * @return microsoftTeamsChatUrl
+   */
+  @jakarta.annotation.Nullable
+  public String getMicrosoftTeamsChatUrl() {
+    return microsoftTeamsChatUrl;
+  }
+
+  public void setMicrosoftTeamsChatUrl(@jakarta.annotation.Nullable String microsoftTeamsChatUrl) {
+    this.microsoftTeamsChatUrl = microsoftTeamsChatUrl;
+  }
+
+
+  public Incident microsoftTeamsTeamId(@jakarta.annotation.Nullable String microsoftTeamsTeamId) {
+    this.microsoftTeamsTeamId = microsoftTeamsTeamId;
+    return this;
+  }
+
+  /**
+   * Microsoft Teams team ID
+   * @return microsoftTeamsTeamId
+   */
+  @jakarta.annotation.Nullable
+  public String getMicrosoftTeamsTeamId() {
+    return microsoftTeamsTeamId;
+  }
+
+  public void setMicrosoftTeamsTeamId(@jakarta.annotation.Nullable String microsoftTeamsTeamId) {
+    this.microsoftTeamsTeamId = microsoftTeamsTeamId;
+  }
+
+
+  public Incident googleChatSpaceId(@jakarta.annotation.Nullable String googleChatSpaceId) {
+    this.googleChatSpaceId = googleChatSpaceId;
+    return this;
+  }
+
+  /**
+   * Google Chat space ID
+   * @return googleChatSpaceId
+   */
+  @jakarta.annotation.Nullable
+  public String getGoogleChatSpaceId() {
+    return googleChatSpaceId;
+  }
+
+  public void setGoogleChatSpaceId(@jakarta.annotation.Nullable String googleChatSpaceId) {
+    this.googleChatSpaceId = googleChatSpaceId;
+  }
+
+
+  public Incident googleChatSpaceName(@jakarta.annotation.Nullable String googleChatSpaceName) {
+    this.googleChatSpaceName = googleChatSpaceName;
+    return this;
+  }
+
+  /**
+   * Google Chat space name
+   * @return googleChatSpaceName
+   */
+  @jakarta.annotation.Nullable
+  public String getGoogleChatSpaceName() {
+    return googleChatSpaceName;
+  }
+
+  public void setGoogleChatSpaceName(@jakarta.annotation.Nullable String googleChatSpaceName) {
+    this.googleChatSpaceName = googleChatSpaceName;
+  }
+
+
+  public Incident googleChatSpaceUrl(@jakarta.annotation.Nullable String googleChatSpaceUrl) {
+    this.googleChatSpaceUrl = googleChatSpaceUrl;
+    return this;
+  }
+
+  /**
+   * Google Chat space URL
+   * @return googleChatSpaceUrl
+   */
+  @jakarta.annotation.Nullable
+  public String getGoogleChatSpaceUrl() {
+    return googleChatSpaceUrl;
+  }
+
+  public void setGoogleChatSpaceUrl(@jakarta.annotation.Nullable String googleChatSpaceUrl) {
+    this.googleChatSpaceUrl = googleChatSpaceUrl;
+  }
+
+
+  public Incident googleChatSpaceShortUrl(@jakarta.annotation.Nullable String googleChatSpaceShortUrl) {
+    this.googleChatSpaceShortUrl = googleChatSpaceShortUrl;
+    return this;
+  }
+
+  /**
+   * Google Chat space short URL
+   * @return googleChatSpaceShortUrl
+   */
+  @jakarta.annotation.Nullable
+  public String getGoogleChatSpaceShortUrl() {
+    return googleChatSpaceShortUrl;
+  }
+
+  public void setGoogleChatSpaceShortUrl(@jakarta.annotation.Nullable String googleChatSpaceShortUrl) {
+    this.googleChatSpaceShortUrl = googleChatSpaceShortUrl;
+  }
+
+
+  public Incident googleChatSpaceArchived(@jakarta.annotation.Nullable Boolean googleChatSpaceArchived) {
+    this.googleChatSpaceArchived = googleChatSpaceArchived;
+    return this;
+  }
+
+  /**
+   * Whether the Google Chat space is archived
+   * @return googleChatSpaceArchived
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getGoogleChatSpaceArchived() {
+    return googleChatSpaceArchived;
+  }
+
+  public void setGoogleChatSpaceArchived(@jakarta.annotation.Nullable Boolean googleChatSpaceArchived) {
+    this.googleChatSpaceArchived = googleChatSpaceArchived;
+  }
+
+
+  public Incident googleChatSpaceDomainId(@jakarta.annotation.Nullable String googleChatSpaceDomainId) {
+    this.googleChatSpaceDomainId = googleChatSpaceDomainId;
+    return this;
+  }
+
+  /**
+   * Google Chat space domain ID
+   * @return googleChatSpaceDomainId
+   */
+  @jakarta.annotation.Nullable
+  public String getGoogleChatSpaceDomainId() {
+    return googleChatSpaceDomainId;
+  }
+
+  public void setGoogleChatSpaceDomainId(@jakarta.annotation.Nullable String googleChatSpaceDomainId) {
+    this.googleChatSpaceDomainId = googleChatSpaceDomainId;
+  }
+
+
+  public Incident webexMeetingId(@jakarta.annotation.Nullable String webexMeetingId) {
+    this.webexMeetingId = webexMeetingId;
+    return this;
+  }
+
+  /**
+   * Webex meeting ID
+   * @return webexMeetingId
+   */
+  @jakarta.annotation.Nullable
+  public String getWebexMeetingId() {
+    return webexMeetingId;
+  }
+
+  public void setWebexMeetingId(@jakarta.annotation.Nullable String webexMeetingId) {
+    this.webexMeetingId = webexMeetingId;
+  }
+
+
+  public Incident webexMeetingUrl(@jakarta.annotation.Nullable String webexMeetingUrl) {
+    this.webexMeetingUrl = webexMeetingUrl;
+    return this;
+  }
+
+  /**
+   * Webex meeting URL
+   * @return webexMeetingUrl
+   */
+  @jakarta.annotation.Nullable
+  public String getWebexMeetingUrl() {
+    return webexMeetingUrl;
+  }
+
+  public void setWebexMeetingUrl(@jakarta.annotation.Nullable String webexMeetingUrl) {
+    this.webexMeetingUrl = webexMeetingUrl;
   }
 
 
@@ -3057,6 +3465,23 @@ public class Incident {
         Objects.equals(this.googleDriveUrl, incident.googleDriveUrl) &&
         Objects.equals(this.googleMeetingId, incident.googleMeetingId) &&
         Objects.equals(this.googleMeetingUrl, incident.googleMeetingUrl) &&
+        Objects.equals(this.microsoftTeamsMeetingId, incident.microsoftTeamsMeetingId) &&
+        Objects.equals(this.microsoftTeamsMeetingUrl, incident.microsoftTeamsMeetingUrl) &&
+        Objects.equals(this.microsoftTeamsChannelId, incident.microsoftTeamsChannelId) &&
+        Objects.equals(this.microsoftTeamsChannelName, incident.microsoftTeamsChannelName) &&
+        Objects.equals(this.microsoftTeamsChannelUrl, incident.microsoftTeamsChannelUrl) &&
+        Objects.equals(this.microsoftTeamsChannelShortUrl, incident.microsoftTeamsChannelShortUrl) &&
+        Objects.equals(this.microsoftTeamsChatId, incident.microsoftTeamsChatId) &&
+        Objects.equals(this.microsoftTeamsChatUrl, incident.microsoftTeamsChatUrl) &&
+        Objects.equals(this.microsoftTeamsTeamId, incident.microsoftTeamsTeamId) &&
+        Objects.equals(this.googleChatSpaceId, incident.googleChatSpaceId) &&
+        Objects.equals(this.googleChatSpaceName, incident.googleChatSpaceName) &&
+        Objects.equals(this.googleChatSpaceUrl, incident.googleChatSpaceUrl) &&
+        Objects.equals(this.googleChatSpaceShortUrl, incident.googleChatSpaceShortUrl) &&
+        Objects.equals(this.googleChatSpaceArchived, incident.googleChatSpaceArchived) &&
+        Objects.equals(this.googleChatSpaceDomainId, incident.googleChatSpaceDomainId) &&
+        Objects.equals(this.webexMeetingId, incident.webexMeetingId) &&
+        Objects.equals(this.webexMeetingUrl, incident.webexMeetingUrl) &&
         Objects.equals(this.jiraIssueKey, incident.jiraIssueKey) &&
         Objects.equals(this.jiraIssueId, incident.jiraIssueId) &&
         Objects.equals(this.jiraIssueUrl, incident.jiraIssueUrl) &&
@@ -3142,7 +3567,7 @@ public class Incident {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, sequentialId, title, kind, slug, parentIncidentId, duplicateIncidentId, summary, _private, source, status, url, shortUrl, publicTitle, user, severity, environments, incidentTypes, services, functionalities, groups, labels, slackChannelId, slackChannelName, slackChannelUrl, slackChannelShortUrl, slackChannelDeepLink, slackChannelArchived, slackLastMessageTs, zoomMeetingId, zoomMeetingStartUrl, zoomMeetingJoinUrl, zoomMeetingPassword, zoomMeetingPstnPassword, zoomMeetingH323Password, zoomMeetingGlobalDialInNumbers, googleDriveId, googleDriveParentId, googleDriveUrl, googleMeetingId, googleMeetingUrl, jiraIssueKey, jiraIssueId, jiraIssueUrl, githubIssueId, githubIssueUrl, gitlabIssueId, gitlabIssueUrl, asanaTaskId, asanaTaskUrl, linearIssueId, linearIssueUrl, trelloCardId, trelloCardUrl, zendeskTicketId, zendeskTicketUrl, pagerdutyIncidentId, pagerdutyIncidentNumber, pagerdutyIncidentUrl, opsgenieIncidentId, opsgenieIncidentUrl, opsgenieAlertId, opsgenieAlertUrl, serviceNowIncidentId, serviceNowIncidentKey, serviceNowIncidentUrl, mattermostChannelId, mattermostChannelName, mattermostChannelUrl, confluencePageId, confluencePageUrl, datadogNotebookId, datadogNotebookUrl, shortcutStoryId, shortcutStoryUrl, shortcutTaskId, shortcutTaskUrl, motionTaskId, motionTaskUrl, clickupTaskId, clickupTaskUrl, victorOpsIncidentId, victorOpsIncidentUrl, quipPageId, quipPageUrl, sharepointPageId, sharepointPageUrl, airtableBaseKey, airtableTableName, airtableRecordId, airtableRecordUrl, freshserviceTicketId, freshserviceTicketUrl, freshserviceTaskId, freshserviceTaskUrl, mitigationMessage, resolutionMessage, cancellationMessage, scheduledFor, scheduledUntil, mutedServiceIds, retrospectiveProgressStatus, inTriageBy, startedBy, mitigatedBy, resolvedBy, closedBy, cancelledBy, inTriageAt, startedAt, detectedAt, acknowledgedAt, mitigatedAt, resolvedAt, closedAt, cancelledAt, createdAt, updatedAt);
+    return Objects.hash(id, sequentialId, title, kind, slug, parentIncidentId, duplicateIncidentId, summary, _private, source, status, url, shortUrl, publicTitle, user, severity, environments, incidentTypes, services, functionalities, groups, labels, slackChannelId, slackChannelName, slackChannelUrl, slackChannelShortUrl, slackChannelDeepLink, slackChannelArchived, slackLastMessageTs, zoomMeetingId, zoomMeetingStartUrl, zoomMeetingJoinUrl, zoomMeetingPassword, zoomMeetingPstnPassword, zoomMeetingH323Password, zoomMeetingGlobalDialInNumbers, googleDriveId, googleDriveParentId, googleDriveUrl, googleMeetingId, googleMeetingUrl, microsoftTeamsMeetingId, microsoftTeamsMeetingUrl, microsoftTeamsChannelId, microsoftTeamsChannelName, microsoftTeamsChannelUrl, microsoftTeamsChannelShortUrl, microsoftTeamsChatId, microsoftTeamsChatUrl, microsoftTeamsTeamId, googleChatSpaceId, googleChatSpaceName, googleChatSpaceUrl, googleChatSpaceShortUrl, googleChatSpaceArchived, googleChatSpaceDomainId, webexMeetingId, webexMeetingUrl, jiraIssueKey, jiraIssueId, jiraIssueUrl, githubIssueId, githubIssueUrl, gitlabIssueId, gitlabIssueUrl, asanaTaskId, asanaTaskUrl, linearIssueId, linearIssueUrl, trelloCardId, trelloCardUrl, zendeskTicketId, zendeskTicketUrl, pagerdutyIncidentId, pagerdutyIncidentNumber, pagerdutyIncidentUrl, opsgenieIncidentId, opsgenieIncidentUrl, opsgenieAlertId, opsgenieAlertUrl, serviceNowIncidentId, serviceNowIncidentKey, serviceNowIncidentUrl, mattermostChannelId, mattermostChannelName, mattermostChannelUrl, confluencePageId, confluencePageUrl, datadogNotebookId, datadogNotebookUrl, shortcutStoryId, shortcutStoryUrl, shortcutTaskId, shortcutTaskUrl, motionTaskId, motionTaskUrl, clickupTaskId, clickupTaskUrl, victorOpsIncidentId, victorOpsIncidentUrl, quipPageId, quipPageUrl, sharepointPageId, sharepointPageUrl, airtableBaseKey, airtableTableName, airtableRecordId, airtableRecordUrl, freshserviceTicketId, freshserviceTicketUrl, freshserviceTaskId, freshserviceTaskUrl, mitigationMessage, resolutionMessage, cancellationMessage, scheduledFor, scheduledUntil, mutedServiceIds, retrospectiveProgressStatus, inTriageBy, startedBy, mitigatedBy, resolvedBy, closedBy, cancelledBy, inTriageAt, startedAt, detectedAt, acknowledgedAt, mitigatedAt, resolvedAt, closedAt, cancelledAt, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -3197,6 +3622,23 @@ public class Incident {
     sb.append("    googleDriveUrl: ").append(toIndentedString(googleDriveUrl)).append("\n");
     sb.append("    googleMeetingId: ").append(toIndentedString(googleMeetingId)).append("\n");
     sb.append("    googleMeetingUrl: ").append(toIndentedString(googleMeetingUrl)).append("\n");
+    sb.append("    microsoftTeamsMeetingId: ").append(toIndentedString(microsoftTeamsMeetingId)).append("\n");
+    sb.append("    microsoftTeamsMeetingUrl: ").append(toIndentedString(microsoftTeamsMeetingUrl)).append("\n");
+    sb.append("    microsoftTeamsChannelId: ").append(toIndentedString(microsoftTeamsChannelId)).append("\n");
+    sb.append("    microsoftTeamsChannelName: ").append(toIndentedString(microsoftTeamsChannelName)).append("\n");
+    sb.append("    microsoftTeamsChannelUrl: ").append(toIndentedString(microsoftTeamsChannelUrl)).append("\n");
+    sb.append("    microsoftTeamsChannelShortUrl: ").append(toIndentedString(microsoftTeamsChannelShortUrl)).append("\n");
+    sb.append("    microsoftTeamsChatId: ").append(toIndentedString(microsoftTeamsChatId)).append("\n");
+    sb.append("    microsoftTeamsChatUrl: ").append(toIndentedString(microsoftTeamsChatUrl)).append("\n");
+    sb.append("    microsoftTeamsTeamId: ").append(toIndentedString(microsoftTeamsTeamId)).append("\n");
+    sb.append("    googleChatSpaceId: ").append(toIndentedString(googleChatSpaceId)).append("\n");
+    sb.append("    googleChatSpaceName: ").append(toIndentedString(googleChatSpaceName)).append("\n");
+    sb.append("    googleChatSpaceUrl: ").append(toIndentedString(googleChatSpaceUrl)).append("\n");
+    sb.append("    googleChatSpaceShortUrl: ").append(toIndentedString(googleChatSpaceShortUrl)).append("\n");
+    sb.append("    googleChatSpaceArchived: ").append(toIndentedString(googleChatSpaceArchived)).append("\n");
+    sb.append("    googleChatSpaceDomainId: ").append(toIndentedString(googleChatSpaceDomainId)).append("\n");
+    sb.append("    webexMeetingId: ").append(toIndentedString(webexMeetingId)).append("\n");
+    sb.append("    webexMeetingUrl: ").append(toIndentedString(webexMeetingUrl)).append("\n");
     sb.append("    jiraIssueKey: ").append(toIndentedString(jiraIssueKey)).append("\n");
     sb.append("    jiraIssueId: ").append(toIndentedString(jiraIssueId)).append("\n");
     sb.append("    jiraIssueUrl: ").append(toIndentedString(jiraIssueUrl)).append("\n");
@@ -3337,6 +3779,23 @@ public class Incident {
     openapiFields.add("google_drive_url");
     openapiFields.add("google_meeting_id");
     openapiFields.add("google_meeting_url");
+    openapiFields.add("microsoft_teams_meeting_id");
+    openapiFields.add("microsoft_teams_meeting_url");
+    openapiFields.add("microsoft_teams_channel_id");
+    openapiFields.add("microsoft_teams_channel_name");
+    openapiFields.add("microsoft_teams_channel_url");
+    openapiFields.add("microsoft_teams_channel_short_url");
+    openapiFields.add("microsoft_teams_chat_id");
+    openapiFields.add("microsoft_teams_chat_url");
+    openapiFields.add("microsoft_teams_team_id");
+    openapiFields.add("google_chat_space_id");
+    openapiFields.add("google_chat_space_name");
+    openapiFields.add("google_chat_space_url");
+    openapiFields.add("google_chat_space_short_url");
+    openapiFields.add("google_chat_space_archived");
+    openapiFields.add("google_chat_space_domain_id");
+    openapiFields.add("webex_meeting_id");
+    openapiFields.add("webex_meeting_url");
     openapiFields.add("jira_issue_key");
     openapiFields.add("jira_issue_id");
     openapiFields.add("jira_issue_url");
@@ -3418,7 +3877,6 @@ public class Incident {
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
     openapiRequiredFields.add("title");
-    openapiRequiredFields.add("slug");
     openapiRequiredFields.add("created_at");
     openapiRequiredFields.add("updated_at");
   }
@@ -3460,7 +3918,7 @@ public class Incident {
       if ((jsonObj.get("kind") != null && !jsonObj.get("kind").isJsonNull()) && !jsonObj.get("kind").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
       }
-      if (!jsonObj.get("slug").isJsonPrimitive()) {
+      if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
       }
       if ((jsonObj.get("parent_incident_id") != null && !jsonObj.get("parent_incident_id").isJsonNull()) && !jsonObj.get("parent_incident_id").isJsonPrimitive()) {
@@ -3597,9 +4055,19 @@ public class Incident {
       if ((jsonObj.get("zoom_meeting_h323_password") != null && !jsonObj.get("zoom_meeting_h323_password").isJsonNull()) && !jsonObj.get("zoom_meeting_h323_password").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `zoom_meeting_h323_password` to be a primitive type in the JSON string but got `%s`", jsonObj.get("zoom_meeting_h323_password").toString()));
       }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("zoom_meeting_global_dial_in_numbers") != null && !jsonObj.get("zoom_meeting_global_dial_in_numbers").isJsonNull() && !jsonObj.get("zoom_meeting_global_dial_in_numbers").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `zoom_meeting_global_dial_in_numbers` to be an array in the JSON string but got `%s`", jsonObj.get("zoom_meeting_global_dial_in_numbers").toString()));
+      if (jsonObj.get("zoom_meeting_global_dial_in_numbers") != null && !jsonObj.get("zoom_meeting_global_dial_in_numbers").isJsonNull()) {
+        JsonArray jsonArrayzoomMeetingGlobalDialInNumbers = jsonObj.getAsJsonArray("zoom_meeting_global_dial_in_numbers");
+        if (jsonArrayzoomMeetingGlobalDialInNumbers != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("zoom_meeting_global_dial_in_numbers").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `zoom_meeting_global_dial_in_numbers` to be an array in the JSON string but got `%s`", jsonObj.get("zoom_meeting_global_dial_in_numbers").toString()));
+          }
+
+          // validate the optional field `zoom_meeting_global_dial_in_numbers` (array)
+          for (int i = 0; i < jsonArrayzoomMeetingGlobalDialInNumbers.size(); i++) {
+            IncidentZoomMeetingGlobalDialInNumbersInner.validateJsonElement(jsonArrayzoomMeetingGlobalDialInNumbers.get(i));
+          };
+        }
       }
       if ((jsonObj.get("google_drive_id") != null && !jsonObj.get("google_drive_id").isJsonNull()) && !jsonObj.get("google_drive_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `google_drive_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("google_drive_id").toString()));
@@ -3615,6 +4083,54 @@ public class Incident {
       }
       if ((jsonObj.get("google_meeting_url") != null && !jsonObj.get("google_meeting_url").isJsonNull()) && !jsonObj.get("google_meeting_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `google_meeting_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("google_meeting_url").toString()));
+      }
+      if ((jsonObj.get("microsoft_teams_meeting_id") != null && !jsonObj.get("microsoft_teams_meeting_id").isJsonNull()) && !jsonObj.get("microsoft_teams_meeting_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `microsoft_teams_meeting_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("microsoft_teams_meeting_id").toString()));
+      }
+      if ((jsonObj.get("microsoft_teams_meeting_url") != null && !jsonObj.get("microsoft_teams_meeting_url").isJsonNull()) && !jsonObj.get("microsoft_teams_meeting_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `microsoft_teams_meeting_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("microsoft_teams_meeting_url").toString()));
+      }
+      if ((jsonObj.get("microsoft_teams_channel_id") != null && !jsonObj.get("microsoft_teams_channel_id").isJsonNull()) && !jsonObj.get("microsoft_teams_channel_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `microsoft_teams_channel_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("microsoft_teams_channel_id").toString()));
+      }
+      if ((jsonObj.get("microsoft_teams_channel_name") != null && !jsonObj.get("microsoft_teams_channel_name").isJsonNull()) && !jsonObj.get("microsoft_teams_channel_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `microsoft_teams_channel_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("microsoft_teams_channel_name").toString()));
+      }
+      if ((jsonObj.get("microsoft_teams_channel_url") != null && !jsonObj.get("microsoft_teams_channel_url").isJsonNull()) && !jsonObj.get("microsoft_teams_channel_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `microsoft_teams_channel_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("microsoft_teams_channel_url").toString()));
+      }
+      if ((jsonObj.get("microsoft_teams_channel_short_url") != null && !jsonObj.get("microsoft_teams_channel_short_url").isJsonNull()) && !jsonObj.get("microsoft_teams_channel_short_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `microsoft_teams_channel_short_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("microsoft_teams_channel_short_url").toString()));
+      }
+      if ((jsonObj.get("microsoft_teams_chat_id") != null && !jsonObj.get("microsoft_teams_chat_id").isJsonNull()) && !jsonObj.get("microsoft_teams_chat_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `microsoft_teams_chat_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("microsoft_teams_chat_id").toString()));
+      }
+      if ((jsonObj.get("microsoft_teams_chat_url") != null && !jsonObj.get("microsoft_teams_chat_url").isJsonNull()) && !jsonObj.get("microsoft_teams_chat_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `microsoft_teams_chat_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("microsoft_teams_chat_url").toString()));
+      }
+      if ((jsonObj.get("microsoft_teams_team_id") != null && !jsonObj.get("microsoft_teams_team_id").isJsonNull()) && !jsonObj.get("microsoft_teams_team_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `microsoft_teams_team_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("microsoft_teams_team_id").toString()));
+      }
+      if ((jsonObj.get("google_chat_space_id") != null && !jsonObj.get("google_chat_space_id").isJsonNull()) && !jsonObj.get("google_chat_space_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `google_chat_space_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("google_chat_space_id").toString()));
+      }
+      if ((jsonObj.get("google_chat_space_name") != null && !jsonObj.get("google_chat_space_name").isJsonNull()) && !jsonObj.get("google_chat_space_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `google_chat_space_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("google_chat_space_name").toString()));
+      }
+      if ((jsonObj.get("google_chat_space_url") != null && !jsonObj.get("google_chat_space_url").isJsonNull()) && !jsonObj.get("google_chat_space_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `google_chat_space_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("google_chat_space_url").toString()));
+      }
+      if ((jsonObj.get("google_chat_space_short_url") != null && !jsonObj.get("google_chat_space_short_url").isJsonNull()) && !jsonObj.get("google_chat_space_short_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `google_chat_space_short_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("google_chat_space_short_url").toString()));
+      }
+      if ((jsonObj.get("google_chat_space_domain_id") != null && !jsonObj.get("google_chat_space_domain_id").isJsonNull()) && !jsonObj.get("google_chat_space_domain_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `google_chat_space_domain_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("google_chat_space_domain_id").toString()));
+      }
+      if ((jsonObj.get("webex_meeting_id") != null && !jsonObj.get("webex_meeting_id").isJsonNull()) && !jsonObj.get("webex_meeting_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `webex_meeting_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("webex_meeting_id").toString()));
+      }
+      if ((jsonObj.get("webex_meeting_url") != null && !jsonObj.get("webex_meeting_url").isJsonNull()) && !jsonObj.get("webex_meeting_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `webex_meeting_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("webex_meeting_url").toString()));
       }
       if ((jsonObj.get("jira_issue_key") != null && !jsonObj.get("jira_issue_key").isJsonNull()) && !jsonObj.get("jira_issue_key").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `jira_issue_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("jira_issue_key").toString()));

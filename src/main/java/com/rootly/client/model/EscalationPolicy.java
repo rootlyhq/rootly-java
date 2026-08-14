@@ -52,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * EscalationPolicy
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class EscalationPolicy {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -90,6 +90,7 @@ public class EscalationPolicy {
   private List<String> serviceIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_BUSINESS_HOURS = "business_hours";
+  @Deprecated
   @SerializedName(SERIALIZED_NAME_BUSINESS_HOURS)
   @jakarta.annotation.Nullable
   private NewEscalationPolicyDataAttributesBusinessHours businessHours;
@@ -256,6 +257,7 @@ public class EscalationPolicy {
   }
 
 
+  @Deprecated
   public EscalationPolicy businessHours(@jakarta.annotation.Nullable NewEscalationPolicyDataAttributesBusinessHours businessHours) {
     this.businessHours = businessHours;
     return this;
@@ -264,12 +266,15 @@ public class EscalationPolicy {
   /**
    * Get businessHours
    * @return businessHours
+   * @deprecated
    */
+  @Deprecated
   @jakarta.annotation.Nullable
   public NewEscalationPolicyDataAttributesBusinessHours getBusinessHours() {
     return businessHours;
   }
 
+  @Deprecated
   public void setBusinessHours(@jakarta.annotation.Nullable NewEscalationPolicyDataAttributesBusinessHours businessHours) {
     this.businessHours = businessHours;
   }

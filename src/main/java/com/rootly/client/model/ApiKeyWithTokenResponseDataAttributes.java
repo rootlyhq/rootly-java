@@ -49,16 +49,16 @@ import com.rootly.client.JSON;
 /**
  * ApiKeyWithTokenResponseDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ApiKeyWithTokenResponseDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   /**
@@ -117,53 +117,53 @@ public class ApiKeyWithTokenResponseDataAttributes {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private KindEnum kind;
 
   public static final String SERIALIZED_NAME_ROLE_ID = "role_id";
   @SerializedName(SERIALIZED_NAME_ROLE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String roleId;
 
   public static final String SERIALIZED_NAME_ON_CALL_ROLE_ID = "on_call_role_id";
   @SerializedName(SERIALIZED_NAME_ON_CALL_ROLE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String onCallRoleId;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public static final String SERIALIZED_NAME_EXPIRES_AT = "expires_at";
   @SerializedName(SERIALIZED_NAME_EXPIRES_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String expiresAt;
 
   public static final String SERIALIZED_NAME_LAST_USED_AT = "last_used_at";
   @SerializedName(SERIALIZED_NAME_LAST_USED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String lastUsedAt;
 
   public static final String SERIALIZED_NAME_GRACE_PERIOD_ENDS_AT = "grace_period_ends_at";
   @SerializedName(SERIALIZED_NAME_GRACE_PERIOD_ENDS_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String gracePeriodEndsAt;
 
   public static final String SERIALIZED_NAME_TOKEN = "token";
   @SerializedName(SERIALIZED_NAME_TOKEN)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String token;
 
   public ApiKeyWithTokenResponseDataAttributes() {
   }
 
-  public ApiKeyWithTokenResponseDataAttributes name(@javax.annotation.Nonnull String name) {
+  public ApiKeyWithTokenResponseDataAttributes name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -172,17 +172,17 @@ public class ApiKeyWithTokenResponseDataAttributes {
    * The name of the API key
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public ApiKeyWithTokenResponseDataAttributes description(@javax.annotation.Nullable String description) {
+  public ApiKeyWithTokenResponseDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -191,17 +191,17 @@ public class ApiKeyWithTokenResponseDataAttributes {
    * A description of the API key
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public ApiKeyWithTokenResponseDataAttributes kind(@javax.annotation.Nonnull KindEnum kind) {
+  public ApiKeyWithTokenResponseDataAttributes kind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
     return this;
   }
@@ -210,17 +210,17 @@ public class ApiKeyWithTokenResponseDataAttributes {
    * The kind of the API key
    * @return kind
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(@javax.annotation.Nonnull KindEnum kind) {
+  public void setKind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public ApiKeyWithTokenResponseDataAttributes roleId(@javax.annotation.Nullable String roleId) {
+  public ApiKeyWithTokenResponseDataAttributes roleId(@jakarta.annotation.Nullable String roleId) {
     this.roleId = roleId;
     return this;
   }
@@ -229,17 +229,17 @@ public class ApiKeyWithTokenResponseDataAttributes {
    * The role ID
    * @return roleId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getRoleId() {
     return roleId;
   }
 
-  public void setRoleId(@javax.annotation.Nullable String roleId) {
+  public void setRoleId(@jakarta.annotation.Nullable String roleId) {
     this.roleId = roleId;
   }
 
 
-  public ApiKeyWithTokenResponseDataAttributes onCallRoleId(@javax.annotation.Nullable String onCallRoleId) {
+  public ApiKeyWithTokenResponseDataAttributes onCallRoleId(@jakarta.annotation.Nullable String onCallRoleId) {
     this.onCallRoleId = onCallRoleId;
     return this;
   }
@@ -248,17 +248,17 @@ public class ApiKeyWithTokenResponseDataAttributes {
    * The on-call role ID
    * @return onCallRoleId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getOnCallRoleId() {
     return onCallRoleId;
   }
 
-  public void setOnCallRoleId(@javax.annotation.Nullable String onCallRoleId) {
+  public void setOnCallRoleId(@jakarta.annotation.Nullable String onCallRoleId) {
     this.onCallRoleId = onCallRoleId;
   }
 
 
-  public ApiKeyWithTokenResponseDataAttributes createdAt(@javax.annotation.Nonnull String createdAt) {
+  public ApiKeyWithTokenResponseDataAttributes createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -267,17 +267,17 @@ public class ApiKeyWithTokenResponseDataAttributes {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public ApiKeyWithTokenResponseDataAttributes updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public ApiKeyWithTokenResponseDataAttributes updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -286,17 +286,17 @@ public class ApiKeyWithTokenResponseDataAttributes {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 
 
-  public ApiKeyWithTokenResponseDataAttributes expiresAt(@javax.annotation.Nullable String expiresAt) {
+  public ApiKeyWithTokenResponseDataAttributes expiresAt(@jakarta.annotation.Nullable String expiresAt) {
     this.expiresAt = expiresAt;
     return this;
   }
@@ -305,17 +305,17 @@ public class ApiKeyWithTokenResponseDataAttributes {
    * Expiration date
    * @return expiresAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getExpiresAt() {
     return expiresAt;
   }
 
-  public void setExpiresAt(@javax.annotation.Nullable String expiresAt) {
+  public void setExpiresAt(@jakarta.annotation.Nullable String expiresAt) {
     this.expiresAt = expiresAt;
   }
 
 
-  public ApiKeyWithTokenResponseDataAttributes lastUsedAt(@javax.annotation.Nullable String lastUsedAt) {
+  public ApiKeyWithTokenResponseDataAttributes lastUsedAt(@jakarta.annotation.Nullable String lastUsedAt) {
     this.lastUsedAt = lastUsedAt;
     return this;
   }
@@ -324,17 +324,17 @@ public class ApiKeyWithTokenResponseDataAttributes {
    * Date of last use
    * @return lastUsedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getLastUsedAt() {
     return lastUsedAt;
   }
 
-  public void setLastUsedAt(@javax.annotation.Nullable String lastUsedAt) {
+  public void setLastUsedAt(@jakarta.annotation.Nullable String lastUsedAt) {
     this.lastUsedAt = lastUsedAt;
   }
 
 
-  public ApiKeyWithTokenResponseDataAttributes gracePeriodEndsAt(@javax.annotation.Nullable String gracePeriodEndsAt) {
+  public ApiKeyWithTokenResponseDataAttributes gracePeriodEndsAt(@jakarta.annotation.Nullable String gracePeriodEndsAt) {
     this.gracePeriodEndsAt = gracePeriodEndsAt;
     return this;
   }
@@ -343,17 +343,17 @@ public class ApiKeyWithTokenResponseDataAttributes {
    * Grace period end date
    * @return gracePeriodEndsAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getGracePeriodEndsAt() {
     return gracePeriodEndsAt;
   }
 
-  public void setGracePeriodEndsAt(@javax.annotation.Nullable String gracePeriodEndsAt) {
+  public void setGracePeriodEndsAt(@jakarta.annotation.Nullable String gracePeriodEndsAt) {
     this.gracePeriodEndsAt = gracePeriodEndsAt;
   }
 
 
-  public ApiKeyWithTokenResponseDataAttributes token(@javax.annotation.Nonnull String token) {
+  public ApiKeyWithTokenResponseDataAttributes token(@jakarta.annotation.Nonnull String token) {
     this.token = token;
     return this;
   }
@@ -362,12 +362,12 @@ public class ApiKeyWithTokenResponseDataAttributes {
    * The API key token (only shown once)
    * @return token
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getToken() {
     return token;
   }
 
-  public void setToken(@javax.annotation.Nonnull String token) {
+  public void setToken(@jakarta.annotation.Nonnull String token) {
     this.token = token;
   }
 

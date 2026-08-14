@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -40,19 +41,19 @@ public class NewOnCallRoleDataAttributesTest {
     }
 
     /**
-     * Test the property 'name'
-     */
-    @Test
-    public void nameTest() {
-        // TODO: test name
-    }
-
-    /**
      * Test the property 'slug'
      */
     @Test
     public void slugTest() {
         // TODO: test slug
+    }
+
+    /**
+     * Test the property 'name'
+     */
+    @Test
+    public void nameTest() {
+        // TODO: test name
     }
 
     /**
@@ -224,6 +225,14 @@ public class NewOnCallRoleDataAttributesTest {
     }
 
     /**
+     * Test the property 'functionalitiesPermissions'
+     */
+    @Test
+    public void functionalitiesPermissionsTest() {
+        // TODO: test functionalitiesPermissions
+    }
+
+    /**
      * Test the property 'webhooksPermissions'
      */
     @Test
@@ -237,6 +246,14 @@ public class NewOnCallRoleDataAttributesTest {
     @Test
     public void workflowsPermissionsTest() {
         // TODO: test workflowsPermissions
+    }
+
+    /**
+     * Test the property 'catalogsPermissions'
+     */
+    @Test
+    public void catalogsPermissionsTest() {
+        // TODO: test catalogsPermissions
     }
 
 }

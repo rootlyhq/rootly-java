@@ -49,8 +49,14 @@ import com.rootly.client.JSON;
 /**
  * UpdateRetrospectiveStepDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateRetrospectiveStepDataAttributes {
+  public static final String SERIALIZED_NAME_SLUG = "slug";
+  @Deprecated
+  @SerializedName(SERIALIZED_NAME_SLUG)
+  @jakarta.annotation.Nullable
+  private String slug;
+
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
   @jakarta.annotation.Nullable
@@ -83,6 +89,29 @@ public class UpdateRetrospectiveStepDataAttributes {
 
   public UpdateRetrospectiveStepDataAttributes() {
   }
+
+  @Deprecated
+  public UpdateRetrospectiveStepDataAttributes slug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+    return this;
+  }
+
+  /**
+   * Deprecated. &#x60;slug&#x60; is derived from &#x60;title&#x60;; any submitted value is ignored. This property will be removed from the request schema in a future version.
+   * @return slug
+   * @deprecated
+   */
+  @Deprecated
+  @jakarta.annotation.Nullable
+  public String getSlug() {
+    return slug;
+  }
+
+  @Deprecated
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+  }
+
 
   public UpdateRetrospectiveStepDataAttributes title(@jakarta.annotation.Nullable String title) {
     this.title = title;
@@ -208,7 +237,8 @@ public class UpdateRetrospectiveStepDataAttributes {
       return false;
     }
     UpdateRetrospectiveStepDataAttributes updateRetrospectiveStepDataAttributes = (UpdateRetrospectiveStepDataAttributes) o;
-    return Objects.equals(this.title, updateRetrospectiveStepDataAttributes.title) &&
+    return Objects.equals(this.slug, updateRetrospectiveStepDataAttributes.slug) &&
+        Objects.equals(this.title, updateRetrospectiveStepDataAttributes.title) &&
         Objects.equals(this.description, updateRetrospectiveStepDataAttributes.description) &&
         Objects.equals(this.incidentRoleId, updateRetrospectiveStepDataAttributes.incidentRoleId) &&
         Objects.equals(this.dueAfterDays, updateRetrospectiveStepDataAttributes.dueAfterDays) &&
@@ -222,7 +252,7 @@ public class UpdateRetrospectiveStepDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, description, incidentRoleId, dueAfterDays, position, skippable);
+    return Objects.hash(slug, title, description, incidentRoleId, dueAfterDays, position, skippable);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -236,6 +266,7 @@ public class UpdateRetrospectiveStepDataAttributes {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdateRetrospectiveStepDataAttributes {\n");
+    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    incidentRoleId: ").append(toIndentedString(incidentRoleId)).append("\n");
@@ -264,6 +295,7 @@ public class UpdateRetrospectiveStepDataAttributes {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("slug");
     openapiFields.add("title");
     openapiFields.add("description");
     openapiFields.add("incident_role_id");
@@ -296,6 +328,9 @@ public class UpdateRetrospectiveStepDataAttributes {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
+      }
       if ((jsonObj.get("title") != null && !jsonObj.get("title").isJsonNull()) && !jsonObj.get("title").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
       }

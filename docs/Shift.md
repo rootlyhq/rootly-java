@@ -12,6 +12,7 @@
 |**startsAt** | **String** | Start datetime of shift |  |
 |**endsAt** | **String** | End datetime of shift |  |
 |**isOverride** | **Boolean** | Denotes shift is an override shift |  |
+|**isShadow** | **Boolean** | Denotes shift is a shadow shift |  |
 |**userId** | **Integer** | ID of user on shift |  [optional] |
 
 

@@ -51,27 +51,37 @@ import com.rootly.client.JSON;
 /**
  * NewOnCallPayReportDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewOnCallPayReportDataAttributes {
   public static final String SERIALIZED_NAME_START_DATE = "start_date";
   @SerializedName(SERIALIZED_NAME_START_DATE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private LocalDate startDate;
 
   public static final String SERIALIZED_NAME_END_DATE = "end_date";
   @SerializedName(SERIALIZED_NAME_END_DATE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private LocalDate endDate;
 
   public static final String SERIALIZED_NAME_SCHEDULE_IDS = "schedule_ids";
   @SerializedName(SERIALIZED_NAME_SCHEDULE_IDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> scheduleIds = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_TIME_ZONE = "time_zone";
+  @SerializedName(SERIALIZED_NAME_TIME_ZONE)
+  @jakarta.annotation.Nullable
+  private String timeZone;
+
+  public static final String SERIALIZED_NAME_USE_RESPONDERS_TIME_ZONE = "use_responders_time_zone";
+  @SerializedName(SERIALIZED_NAME_USE_RESPONDERS_TIME_ZONE)
+  @jakarta.annotation.Nullable
+  private Boolean useRespondersTimeZone;
 
   public NewOnCallPayReportDataAttributes() {
   }
 
-  public NewOnCallPayReportDataAttributes startDate(@javax.annotation.Nonnull LocalDate startDate) {
+  public NewOnCallPayReportDataAttributes startDate(@jakarta.annotation.Nonnull LocalDate startDate) {
     this.startDate = startDate;
     return this;
   }
@@ -80,17 +90,17 @@ public class NewOnCallPayReportDataAttributes {
    * The start date for the report period.
    * @return startDate
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public LocalDate getStartDate() {
     return startDate;
   }
 
-  public void setStartDate(@javax.annotation.Nonnull LocalDate startDate) {
+  public void setStartDate(@jakarta.annotation.Nonnull LocalDate startDate) {
     this.startDate = startDate;
   }
 
 
-  public NewOnCallPayReportDataAttributes endDate(@javax.annotation.Nonnull LocalDate endDate) {
+  public NewOnCallPayReportDataAttributes endDate(@jakarta.annotation.Nonnull LocalDate endDate) {
     this.endDate = endDate;
     return this;
   }
@@ -99,17 +109,17 @@ public class NewOnCallPayReportDataAttributes {
    * The end date for the report period.
    * @return endDate
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public LocalDate getEndDate() {
     return endDate;
   }
 
-  public void setEndDate(@javax.annotation.Nonnull LocalDate endDate) {
+  public void setEndDate(@jakarta.annotation.Nonnull LocalDate endDate) {
     this.endDate = endDate;
   }
 
 
-  public NewOnCallPayReportDataAttributes scheduleIds(@javax.annotation.Nullable List<String> scheduleIds) {
+  public NewOnCallPayReportDataAttributes scheduleIds(@jakarta.annotation.Nullable List<String> scheduleIds) {
     this.scheduleIds = scheduleIds;
     return this;
   }
@@ -126,13 +136,51 @@ public class NewOnCallPayReportDataAttributes {
    * List of schedule UUIDs to scope the report.
    * @return scheduleIds
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getScheduleIds() {
     return scheduleIds;
   }
 
-  public void setScheduleIds(@javax.annotation.Nullable List<String> scheduleIds) {
+  public void setScheduleIds(@jakarta.annotation.Nullable List<String> scheduleIds) {
     this.scheduleIds = scheduleIds;
+  }
+
+
+  public NewOnCallPayReportDataAttributes timeZone(@jakarta.annotation.Nullable String timeZone) {
+    this.timeZone = timeZone;
+    return this;
+  }
+
+  /**
+   * IANA timezone used to compute day and weekend boundaries. Defaults to the team&#39;s timezone.
+   * @return timeZone
+   */
+  @jakarta.annotation.Nullable
+  public String getTimeZone() {
+    return timeZone;
+  }
+
+  public void setTimeZone(@jakarta.annotation.Nullable String timeZone) {
+    this.timeZone = timeZone;
+  }
+
+
+  public NewOnCallPayReportDataAttributes useRespondersTimeZone(@jakarta.annotation.Nullable Boolean useRespondersTimeZone) {
+    this.useRespondersTimeZone = useRespondersTimeZone;
+    return this;
+  }
+
+  /**
+   * When true, day and weekend boundaries are computed in each responder&#39;s personal timezone instead of the report-wide timezone.
+   * @return useRespondersTimeZone
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getUseRespondersTimeZone() {
+    return useRespondersTimeZone;
+  }
+
+  public void setUseRespondersTimeZone(@jakarta.annotation.Nullable Boolean useRespondersTimeZone) {
+    this.useRespondersTimeZone = useRespondersTimeZone;
   }
 
 
@@ -148,12 +196,14 @@ public class NewOnCallPayReportDataAttributes {
     NewOnCallPayReportDataAttributes newOnCallPayReportDataAttributes = (NewOnCallPayReportDataAttributes) o;
     return Objects.equals(this.startDate, newOnCallPayReportDataAttributes.startDate) &&
         Objects.equals(this.endDate, newOnCallPayReportDataAttributes.endDate) &&
-        Objects.equals(this.scheduleIds, newOnCallPayReportDataAttributes.scheduleIds);
+        Objects.equals(this.scheduleIds, newOnCallPayReportDataAttributes.scheduleIds) &&
+        Objects.equals(this.timeZone, newOnCallPayReportDataAttributes.timeZone) &&
+        Objects.equals(this.useRespondersTimeZone, newOnCallPayReportDataAttributes.useRespondersTimeZone);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startDate, endDate, scheduleIds);
+    return Objects.hash(startDate, endDate, scheduleIds, timeZone, useRespondersTimeZone);
   }
 
   @Override
@@ -163,6 +213,8 @@ public class NewOnCallPayReportDataAttributes {
     sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
     sb.append("    scheduleIds: ").append(toIndentedString(scheduleIds)).append("\n");
+    sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
+    sb.append("    useRespondersTimeZone: ").append(toIndentedString(useRespondersTimeZone)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -188,6 +240,8 @@ public class NewOnCallPayReportDataAttributes {
     openapiFields.add("start_date");
     openapiFields.add("end_date");
     openapiFields.add("schedule_ids");
+    openapiFields.add("time_zone");
+    openapiFields.add("use_responders_time_zone");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -226,6 +280,9 @@ public class NewOnCallPayReportDataAttributes {
       // ensure the optional json data is an array if present
       if (jsonObj.get("schedule_ids") != null && !jsonObj.get("schedule_ids").isJsonNull() && !jsonObj.get("schedule_ids").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `schedule_ids` to be an array in the JSON string but got `%s`", jsonObj.get("schedule_ids").toString()));
+      }
+      if ((jsonObj.get("time_zone") != null && !jsonObj.get("time_zone").isJsonNull()) && !jsonObj.get("time_zone").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `time_zone` to be a primitive type in the JSON string but got `%s`", jsonObj.get("time_zone").toString()));
       }
   }
 

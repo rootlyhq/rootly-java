@@ -54,6 +54,14 @@ public class UpdateAlertsSourceDataAttributesTest {
     }
 
     /**
+     * Test the property 'enabled'
+     */
+    @Test
+    public void enabledTest() {
+        // TODO: test enabled
+    }
+
+    /**
      * Test the property 'sourceType'
      */
     @Test

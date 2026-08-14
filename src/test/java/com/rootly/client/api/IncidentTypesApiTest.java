@@ -14,10 +14,13 @@
 package com.rootly.client.api;
 
 import com.rootly.client.ApiException;
+import com.rootly.client.model.CatalogPropertyList;
+import com.rootly.client.model.CatalogPropertyResponse;
 import com.rootly.client.model.ErrorsList;
 import com.rootly.client.model.GetAlertFieldIdParameter;
 import com.rootly.client.model.IncidentTypeList;
 import com.rootly.client.model.IncidentTypeResponse;
+import com.rootly.client.model.NewCatalogProperty;
 import com.rootly.client.model.NewIncidentType;
 import com.rootly.client.model.UpdateIncidentType;
 import org.junit.jupiter.api.Disabled;
@@ -51,6 +54,20 @@ public class IncidentTypesApiTest {
     }
 
     /**
+     * Creates a Catalog Property
+     *
+     * Creates a new Catalog Property from provided data
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void createIncidentTypeCatalogPropertyTest() throws ApiException {
+        NewCatalogProperty newCatalogProperty = null;
+        CatalogPropertyResponse response = api.createIncidentTypeCatalogProperty(newCatalogProperty);
+        // TODO: test validations
+    }
+
+    /**
      * Delete an incident type
      *
      * Delete a specific incident_type by id
@@ -79,6 +96,30 @@ public class IncidentTypesApiTest {
     }
 
     /**
+     * List Catalog Properties
+     *
+     * List IncidentType Catalog Properties
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void listIncidentTypeCatalogPropertiesTest() throws ApiException {
+        String include = null;
+        String sort = null;
+        Integer pageNumber = null;
+        Integer pageSize = null;
+        String filterSlug = null;
+        String filterName = null;
+        String filterKind = null;
+        String filterCreatedAtGt = null;
+        String filterCreatedAtGte = null;
+        String filterCreatedAtLt = null;
+        String filterCreatedAtLte = null;
+        CatalogPropertyList response = api.listIncidentTypeCatalogProperties(include, sort, pageNumber, pageSize, filterSlug, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
+        // TODO: test validations
+    }
+
+    /**
      * List incident types
      *
      * List incident types
@@ -97,8 +138,20 @@ public class IncidentTypesApiTest {
         String filterCreatedAtGte = null;
         String filterCreatedAtLt = null;
         String filterCreatedAtLte = null;
+        String filterSlugEq = null;
+        String filterSlugNotEq = null;
+        String filterSlugIn = null;
+        String filterSlugNotIn = null;
+        String filterNameEq = null;
+        String filterNameNotEq = null;
+        String filterNameIn = null;
+        String filterNameNotIn = null;
+        String filterColorEq = null;
+        String filterColorNotEq = null;
+        String filterColorIn = null;
+        String filterColorNotIn = null;
         String sort = null;
-        IncidentTypeList response = api.listIncidentTypes(include, pageNumber, pageSize, filterSlug, filterName, filterColor, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
+        IncidentTypeList response = api.listIncidentTypes(include, pageNumber, pageSize, filterSlug, filterName, filterColor, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterColorEq, filterColorNotEq, filterColorIn, filterColorNotIn, sort);
         // TODO: test validations
     }
 

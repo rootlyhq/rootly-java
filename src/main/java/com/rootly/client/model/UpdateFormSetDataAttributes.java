@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,8 +51,14 @@ import com.rootly.client.JSON;
 /**
  * UpdateFormSetDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateFormSetDataAttributes {
+  public static final String SERIALIZED_NAME_SLUG = "slug";
+  @Deprecated
+  @SerializedName(SERIALIZED_NAME_SLUG)
+  @jakarta.annotation.Nullable
+  private String slug;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @jakarta.annotation.Nullable
@@ -64,6 +71,29 @@ public class UpdateFormSetDataAttributes {
 
   public UpdateFormSetDataAttributes() {
   }
+
+  @Deprecated
+  public UpdateFormSetDataAttributes slug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+    return this;
+  }
+
+  /**
+   * Deprecated. &#x60;slug&#x60; is derived from &#x60;name&#x60;; any submitted value is ignored. This property will be removed from the request schema in a future version.
+   * @return slug
+   * @deprecated
+   */
+  @Deprecated
+  @jakarta.annotation.Nullable
+  public String getSlug() {
+    return slug;
+  }
+
+  @Deprecated
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+  }
+
 
   public UpdateFormSetDataAttributes name(@jakarta.annotation.Nullable String name) {
     this.name = name;
@@ -98,7 +128,7 @@ public class UpdateFormSetDataAttributes {
   }
 
   /**
-   * The forms included in the form set. Add custom forms using the custom form&#39;s &#x60;slug&#x60; field. Or choose a built-in form: &#x60;web_new_incident_form&#x60;, &#x60;web_update_incident_form&#x60;, &#x60;web_incident_post_mortem_form&#x60;, &#x60;web_incident_mitigation_form&#x60;, &#x60;web_incident_resolution_form&#x60;, &#x60;web_incident_cancellation_form&#x60;, &#x60;web_scheduled_incident_form&#x60;, &#x60;web_update_scheduled_incident_form&#x60;, &#x60;slack_new_incident_form&#x60;, &#x60;slack_update_incident_form&#x60;, &#x60;slack_update_incident_status_form&#x60;, &#x60;slack_incident_mitigation_form&#x60;, &#x60;slack_incident_resolution_form&#x60;, &#x60;slack_incident_cancellation_form&#x60;, &#x60;slack_scheduled_incident_form&#x60;, &#x60;slack_update_scheduled_incident_form&#x60;
+   * The forms included in the form set. Add custom forms using the custom form&#39;s &#x60;slug&#x60; field. Or choose a built-in form: &#x60;web_new_incident_form&#x60;, &#x60;web_update_incident_form&#x60;, &#x60;web_incident_post_mortem_form&#x60;, &#x60;web_incident_mitigation_form&#x60;, &#x60;web_incident_resolution_form&#x60;, &#x60;web_incident_cancellation_form&#x60;, &#x60;web_scheduled_incident_form&#x60;, &#x60;web_update_scheduled_incident_form&#x60;, &#x60;slack_new_incident_form&#x60;, &#x60;slack_update_incident_form&#x60;, &#x60;slack_update_incident_status_form&#x60;, &#x60;slack_incident_mitigation_form&#x60;, &#x60;slack_incident_resolution_form&#x60;, &#x60;slack_incident_cancellation_form&#x60;, &#x60;slack_scheduled_incident_form&#x60;, &#x60;slack_update_scheduled_incident_form&#x60;, &#x60;google_chat_new_incident_form&#x60;, &#x60;google_chat_update_incident_form&#x60;, &#x60;microsoft_teams_new_incident_form&#x60;
    * @return forms
    */
   @jakarta.annotation.Nullable
@@ -121,19 +151,32 @@ public class UpdateFormSetDataAttributes {
       return false;
     }
     UpdateFormSetDataAttributes updateFormSetDataAttributes = (UpdateFormSetDataAttributes) o;
-    return Objects.equals(this.name, updateFormSetDataAttributes.name) &&
+    return Objects.equals(this.slug, updateFormSetDataAttributes.slug) &&
+        Objects.equals(this.name, updateFormSetDataAttributes.name) &&
         Objects.equals(this.forms, updateFormSetDataAttributes.forms);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, forms);
+    return Objects.hash(slug, name, forms);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdateFormSetDataAttributes {\n");
+    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    forms: ").append(toIndentedString(forms)).append("\n");
     sb.append("}");
@@ -158,6 +201,7 @@ public class UpdateFormSetDataAttributes {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("slug");
     openapiFields.add("name");
     openapiFields.add("forms");
 
@@ -186,6 +230,9 @@ public class UpdateFormSetDataAttributes {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
+      }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }

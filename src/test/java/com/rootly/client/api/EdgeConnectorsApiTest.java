@@ -14,8 +14,8 @@
 package com.rootly.client.api;
 
 import com.rootly.client.ApiException;
-import com.rootly.client.model.V1EdgeConnectorsIdPatchRequest;
-import com.rootly.client.model.V1EdgeConnectorsPostRequest;
+import com.rootly.client.model.CreateEdgeConnectorRequest;
+import com.rootly.client.model.UpdateEdgeConnectorRequest;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -33,17 +33,14 @@ public class EdgeConnectorsApiTest {
     private final EdgeConnectorsApi api = new EdgeConnectorsApi();
 
     /**
-     * List edge connectors
+     * Create edge connector
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void v1EdgeConnectorsGetTest() throws ApiException {
-        Integer page = null;
-        Integer perPage = null;
-        String status = null;
-        String name = null;
-        api.v1EdgeConnectorsGet(page, perPage, status, name);
+    public void createEdgeConnectorTest() throws ApiException {
+        CreateEdgeConnectorRequest createEdgeConnectorRequest = null;
+        api.createEdgeConnector(createEdgeConnectorRequest);
         // TODO: test validations
     }
 
@@ -53,9 +50,9 @@ public class EdgeConnectorsApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void v1EdgeConnectorsIdDeleteTest() throws ApiException {
+    public void deleteEdgeConnectorTest() throws ApiException {
         String id = null;
-        api.v1EdgeConnectorsIdDelete(id);
+        api.deleteEdgeConnector(id);
         // TODO: test validations
     }
 
@@ -65,9 +62,24 @@ public class EdgeConnectorsApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void v1EdgeConnectorsIdGetTest() throws ApiException {
+    public void getEdgeConnectorTest() throws ApiException {
         String id = null;
-        api.v1EdgeConnectorsIdGet(id);
+        api.getEdgeConnector(id);
+        // TODO: test validations
+    }
+
+    /**
+     * List edge connectors
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void listEdgeConnectorsTest() throws ApiException {
+        Integer page = null;
+        Integer perPage = null;
+        String status = null;
+        String name = null;
+        api.listEdgeConnectors(page, perPage, status, name);
         // TODO: test validations
     }
 
@@ -77,22 +89,10 @@ public class EdgeConnectorsApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void v1EdgeConnectorsIdPatchTest() throws ApiException {
+    public void updateEdgeConnectorTest() throws ApiException {
         String id = null;
-        V1EdgeConnectorsIdPatchRequest v1EdgeConnectorsIdPatchRequest = null;
-        api.v1EdgeConnectorsIdPatch(id, v1EdgeConnectorsIdPatchRequest);
-        // TODO: test validations
-    }
-
-    /**
-     * Create edge connector
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void v1EdgeConnectorsPostTest() throws ApiException {
-        V1EdgeConnectorsPostRequest v1EdgeConnectorsPostRequest = null;
-        api.v1EdgeConnectorsPost(v1EdgeConnectorsPostRequest);
+        UpdateEdgeConnectorRequest updateEdgeConnectorRequest = null;
+        api.updateEdgeConnector(id, updateEdgeConnectorRequest);
         // TODO: test validations
     }
 

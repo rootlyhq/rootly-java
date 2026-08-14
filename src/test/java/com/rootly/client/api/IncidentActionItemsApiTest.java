@@ -106,8 +106,24 @@ public class IncidentActionItemsApiTest {
         String filterCreatedAtGte = null;
         String filterCreatedAtLt = null;
         String filterCreatedAtLte = null;
+        String filterKindEq = null;
+        String filterKindNotEq = null;
+        String filterKindIn = null;
+        String filterKindNotIn = null;
+        String filterPriorityEq = null;
+        String filterPriorityNotEq = null;
+        String filterPriorityIn = null;
+        String filterPriorityNotIn = null;
+        String filterStatusEq = null;
+        String filterStatusNotEq = null;
+        String filterStatusIn = null;
+        String filterStatusNotIn = null;
+        String filterIncidentStatusEq = null;
+        String filterIncidentStatusNotEq = null;
+        String filterIncidentStatusIn = null;
+        String filterIncidentStatusNotIn = null;
         String sort = null;
-        IncidentActionItemList response = api.listAllIncidentActionItems(include, pageNumber, pageSize, filterKind, filterPriority, filterStatus, filterIncidentStatus, filterIncidentCreatedAtGt, filterIncidentCreatedAtGte, filterIncidentCreatedAtLt, filterIncidentCreatedAtLte, filterDueDateGt, filterDueDateGte, filterDueDateLt, filterDueDateLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
+        IncidentActionItemList response = api.listAllIncidentActionItems(include, pageNumber, pageSize, filterKind, filterPriority, filterStatus, filterIncidentStatus, filterIncidentCreatedAtGt, filterIncidentCreatedAtGte, filterIncidentCreatedAtLt, filterIncidentCreatedAtLte, filterDueDateGt, filterDueDateGte, filterDueDateLt, filterDueDateLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterKindEq, filterKindNotEq, filterKindIn, filterKindNotIn, filterPriorityEq, filterPriorityNotEq, filterPriorityIn, filterPriorityNotIn, filterStatusEq, filterStatusNotEq, filterStatusIn, filterStatusNotIn, filterIncidentStatusEq, filterIncidentStatusNotEq, filterIncidentStatusIn, filterIncidentStatusNotIn, sort);
         // TODO: test validations
     }
 

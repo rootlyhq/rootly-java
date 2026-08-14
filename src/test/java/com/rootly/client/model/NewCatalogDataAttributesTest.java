@@ -39,6 +39,14 @@ public class NewCatalogDataAttributesTest {
     }
 
     /**
+     * Test the property 'slug'
+     */
+    @Test
+    public void slugTest() {
+        // TODO: test slug
+    }
+
+    /**
      * Test the property 'name'
      */
     @Test
@@ -68,6 +76,14 @@ public class NewCatalogDataAttributesTest {
     @Test
     public void positionTest() {
         // TODO: test position
+    }
+
+    /**
+     * Test the property 'externalId'
+     */
+    @Test
+    public void externalIdTest() {
+        // TODO: test externalId
     }
 
 }

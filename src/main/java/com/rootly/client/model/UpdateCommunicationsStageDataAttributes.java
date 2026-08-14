@@ -49,8 +49,14 @@ import com.rootly.client.JSON;
 /**
  * UpdateCommunicationsStageDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateCommunicationsStageDataAttributes {
+  public static final String SERIALIZED_NAME_SLUG = "slug";
+  @Deprecated
+  @SerializedName(SERIALIZED_NAME_SLUG)
+  @jakarta.annotation.Nullable
+  private String slug;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @jakarta.annotation.Nullable
@@ -68,6 +74,29 @@ public class UpdateCommunicationsStageDataAttributes {
 
   public UpdateCommunicationsStageDataAttributes() {
   }
+
+  @Deprecated
+  public UpdateCommunicationsStageDataAttributes slug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+    return this;
+  }
+
+  /**
+   * Deprecated. &#x60;slug&#x60; is derived from &#x60;name&#x60;; any submitted value is ignored. This property will be removed from the request schema in a future version.
+   * @return slug
+   * @deprecated
+   */
+  @Deprecated
+  @jakarta.annotation.Nullable
+  public String getSlug() {
+    return slug;
+  }
+
+  @Deprecated
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+  }
+
 
   public UpdateCommunicationsStageDataAttributes name(@jakarta.annotation.Nullable String name) {
     this.name = name;
@@ -136,7 +165,8 @@ public class UpdateCommunicationsStageDataAttributes {
       return false;
     }
     UpdateCommunicationsStageDataAttributes updateCommunicationsStageDataAttributes = (UpdateCommunicationsStageDataAttributes) o;
-    return Objects.equals(this.name, updateCommunicationsStageDataAttributes.name) &&
+    return Objects.equals(this.slug, updateCommunicationsStageDataAttributes.slug) &&
+        Objects.equals(this.name, updateCommunicationsStageDataAttributes.name) &&
         Objects.equals(this.description, updateCommunicationsStageDataAttributes.description) &&
         Objects.equals(this.position, updateCommunicationsStageDataAttributes.position);
   }
@@ -147,7 +177,7 @@ public class UpdateCommunicationsStageDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, position);
+    return Objects.hash(slug, name, description, position);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -161,6 +191,7 @@ public class UpdateCommunicationsStageDataAttributes {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdateCommunicationsStageDataAttributes {\n");
+    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    position: ").append(toIndentedString(position)).append("\n");
@@ -186,6 +217,7 @@ public class UpdateCommunicationsStageDataAttributes {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("slug");
     openapiFields.add("name");
     openapiFields.add("description");
     openapiFields.add("position");
@@ -215,6 +247,9 @@ public class UpdateCommunicationsStageDataAttributes {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
+      }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }

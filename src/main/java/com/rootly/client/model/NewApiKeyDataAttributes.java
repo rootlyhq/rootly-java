@@ -50,16 +50,16 @@ import com.rootly.client.JSON;
 /**
  * NewApiKeyDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewApiKeyDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   /**
@@ -118,33 +118,33 @@ public class NewApiKeyDataAttributes {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private KindEnum kind;
 
   public static final String SERIALIZED_NAME_EXPIRES_AT = "expires_at";
   @SerializedName(SERIALIZED_NAME_EXPIRES_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private OffsetDateTime expiresAt;
 
   public static final String SERIALIZED_NAME_GROUP_ID = "group_id";
   @SerializedName(SERIALIZED_NAME_GROUP_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String groupId;
 
   public static final String SERIALIZED_NAME_ROLE_ID = "role_id";
   @SerializedName(SERIALIZED_NAME_ROLE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String roleId;
 
   public static final String SERIALIZED_NAME_ON_CALL_ROLE_ID = "on_call_role_id";
   @SerializedName(SERIALIZED_NAME_ON_CALL_ROLE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String onCallRoleId;
 
   public NewApiKeyDataAttributes() {
   }
 
-  public NewApiKeyDataAttributes name(@javax.annotation.Nonnull String name) {
+  public NewApiKeyDataAttributes name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -153,17 +153,17 @@ public class NewApiKeyDataAttributes {
    * The name of the API key
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public NewApiKeyDataAttributes description(@javax.annotation.Nullable String description) {
+  public NewApiKeyDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -172,17 +172,17 @@ public class NewApiKeyDataAttributes {
    * A description of the API key
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public NewApiKeyDataAttributes kind(@javax.annotation.Nonnull KindEnum kind) {
+  public NewApiKeyDataAttributes kind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
     return this;
   }
@@ -191,17 +191,17 @@ public class NewApiKeyDataAttributes {
    * The kind of the API key
    * @return kind
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(@javax.annotation.Nonnull KindEnum kind) {
+  public void setKind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public NewApiKeyDataAttributes expiresAt(@javax.annotation.Nonnull OffsetDateTime expiresAt) {
+  public NewApiKeyDataAttributes expiresAt(@jakarta.annotation.Nonnull OffsetDateTime expiresAt) {
     this.expiresAt = expiresAt;
     return this;
   }
@@ -210,17 +210,17 @@ public class NewApiKeyDataAttributes {
    * The expiration date of the API key (ISO 8601)
    * @return expiresAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public OffsetDateTime getExpiresAt() {
     return expiresAt;
   }
 
-  public void setExpiresAt(@javax.annotation.Nonnull OffsetDateTime expiresAt) {
+  public void setExpiresAt(@jakarta.annotation.Nonnull OffsetDateTime expiresAt) {
     this.expiresAt = expiresAt;
   }
 
 
-  public NewApiKeyDataAttributes groupId(@javax.annotation.Nullable String groupId) {
+  public NewApiKeyDataAttributes groupId(@jakarta.annotation.Nullable String groupId) {
     this.groupId = groupId;
     return this;
   }
@@ -229,17 +229,17 @@ public class NewApiKeyDataAttributes {
    * The group (team) ID. Required when kind is &#39;team&#39;.
    * @return groupId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getGroupId() {
     return groupId;
   }
 
-  public void setGroupId(@javax.annotation.Nullable String groupId) {
+  public void setGroupId(@jakarta.annotation.Nullable String groupId) {
     this.groupId = groupId;
   }
 
 
-  public NewApiKeyDataAttributes roleId(@javax.annotation.Nullable String roleId) {
+  public NewApiKeyDataAttributes roleId(@jakarta.annotation.Nullable String roleId) {
     this.roleId = roleId;
     return this;
   }
@@ -248,17 +248,17 @@ public class NewApiKeyDataAttributes {
    * The role ID for organization API keys
    * @return roleId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getRoleId() {
     return roleId;
   }
 
-  public void setRoleId(@javax.annotation.Nullable String roleId) {
+  public void setRoleId(@jakarta.annotation.Nullable String roleId) {
     this.roleId = roleId;
   }
 
 
-  public NewApiKeyDataAttributes onCallRoleId(@javax.annotation.Nullable String onCallRoleId) {
+  public NewApiKeyDataAttributes onCallRoleId(@jakarta.annotation.Nullable String onCallRoleId) {
     this.onCallRoleId = onCallRoleId;
     return this;
   }
@@ -267,12 +267,12 @@ public class NewApiKeyDataAttributes {
    * The on-call role ID for organization API keys
    * @return onCallRoleId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getOnCallRoleId() {
     return onCallRoleId;
   }
 
-  public void setOnCallRoleId(@javax.annotation.Nullable String onCallRoleId) {
+  public void setOnCallRoleId(@jakarta.annotation.Nullable String onCallRoleId) {
     this.onCallRoleId = onCallRoleId;
   }
 

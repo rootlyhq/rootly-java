@@ -20,8 +20,12 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.rootly.client.model.AddActionItemTaskParamsPostToSlackChannelsInner;
+import com.rootly.client.model.CreateGithubIssueTaskParamsIssueType;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,7 +53,7 @@ import com.rootly.client.JSON;
 /**
  * CreateGithubIssueTaskParams
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateGithubIssueTaskParams {
   /**
    * Gets or Sets taskType
@@ -120,6 +124,26 @@ public class CreateGithubIssueTaskParams {
   @SerializedName(SERIALIZED_NAME_REPOSITORY)
   @jakarta.annotation.Nonnull
   private AddActionItemTaskParamsPostToSlackChannelsInner repository;
+
+  public static final String SERIALIZED_NAME_LABELS = "labels";
+  @SerializedName(SERIALIZED_NAME_LABELS)
+  @jakarta.annotation.Nullable
+  private List<AddActionItemTaskParamsPostToSlackChannelsInner> labels = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_ISSUE_TYPE = "issue_type";
+  @SerializedName(SERIALIZED_NAME_ISSUE_TYPE)
+  @jakarta.annotation.Nullable
+  private CreateGithubIssueTaskParamsIssueType issueType;
+
+  public static final String SERIALIZED_NAME_PARENT_ISSUE_NUMBER = "parent_issue_number";
+  @SerializedName(SERIALIZED_NAME_PARENT_ISSUE_NUMBER)
+  @jakarta.annotation.Nullable
+  private String parentIssueNumber;
+
+  public static final String SERIALIZED_NAME_CUSTOM_FIELDS_MAPPING = "custom_fields_mapping";
+  @SerializedName(SERIALIZED_NAME_CUSTOM_FIELDS_MAPPING)
+  @jakarta.annotation.Nullable
+  private String customFieldsMapping;
 
   public CreateGithubIssueTaskParams() {
   }
@@ -200,6 +224,90 @@ public class CreateGithubIssueTaskParams {
   }
 
 
+  public CreateGithubIssueTaskParams labels(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> labels) {
+    this.labels = labels;
+    return this;
+  }
+
+  public CreateGithubIssueTaskParams addLabelsItem(AddActionItemTaskParamsPostToSlackChannelsInner labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<>();
+    }
+    this.labels.add(labelsItem);
+    return this;
+  }
+
+  /**
+   * The issue labels
+   * @return labels
+   */
+  @jakarta.annotation.Nullable
+  public List<AddActionItemTaskParamsPostToSlackChannelsInner> getLabels() {
+    return labels;
+  }
+
+  public void setLabels(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> labels) {
+    this.labels = labels;
+  }
+
+
+  public CreateGithubIssueTaskParams issueType(@jakarta.annotation.Nullable CreateGithubIssueTaskParamsIssueType issueType) {
+    this.issueType = issueType;
+    return this;
+  }
+
+  /**
+   * Get issueType
+   * @return issueType
+   */
+  @jakarta.annotation.Nullable
+  public CreateGithubIssueTaskParamsIssueType getIssueType() {
+    return issueType;
+  }
+
+  public void setIssueType(@jakarta.annotation.Nullable CreateGithubIssueTaskParamsIssueType issueType) {
+    this.issueType = issueType;
+  }
+
+
+  public CreateGithubIssueTaskParams parentIssueNumber(@jakarta.annotation.Nullable String parentIssueNumber) {
+    this.parentIssueNumber = parentIssueNumber;
+    return this;
+  }
+
+  /**
+   * The parent issue number for sub-issue linking
+   * @return parentIssueNumber
+   */
+  @jakarta.annotation.Nullable
+  public String getParentIssueNumber() {
+    return parentIssueNumber;
+  }
+
+  public void setParentIssueNumber(@jakarta.annotation.Nullable String parentIssueNumber) {
+    this.parentIssueNumber = parentIssueNumber;
+  }
+
+
+  public CreateGithubIssueTaskParams customFieldsMapping(@jakarta.annotation.Nullable String customFieldsMapping) {
+    this.customFieldsMapping = customFieldsMapping;
+    return this;
+  }
+
+  /**
+   * Custom field mappings. Can contain liquid markup and need to be valid JSON
+   * @return customFieldsMapping
+   */
+  @jakarta.annotation.Nullable
+  public String getCustomFieldsMapping() {
+    return customFieldsMapping;
+  }
+
+  public void setCustomFieldsMapping(@jakarta.annotation.Nullable String customFieldsMapping) {
+    this.customFieldsMapping = customFieldsMapping;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -213,12 +321,27 @@ public class CreateGithubIssueTaskParams {
     return Objects.equals(this.taskType, createGithubIssueTaskParams.taskType) &&
         Objects.equals(this.title, createGithubIssueTaskParams.title) &&
         Objects.equals(this.body, createGithubIssueTaskParams.body) &&
-        Objects.equals(this.repository, createGithubIssueTaskParams.repository);
+        Objects.equals(this.repository, createGithubIssueTaskParams.repository) &&
+        Objects.equals(this.labels, createGithubIssueTaskParams.labels) &&
+        Objects.equals(this.issueType, createGithubIssueTaskParams.issueType) &&
+        Objects.equals(this.parentIssueNumber, createGithubIssueTaskParams.parentIssueNumber) &&
+        Objects.equals(this.customFieldsMapping, createGithubIssueTaskParams.customFieldsMapping);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(taskType, title, body, repository);
+    return Objects.hash(taskType, title, body, repository, labels, issueType, parentIssueNumber, customFieldsMapping);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -229,6 +352,10 @@ public class CreateGithubIssueTaskParams {
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    body: ").append(toIndentedString(body)).append("\n");
     sb.append("    repository: ").append(toIndentedString(repository)).append("\n");
+    sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
+    sb.append("    issueType: ").append(toIndentedString(issueType)).append("\n");
+    sb.append("    parentIssueNumber: ").append(toIndentedString(parentIssueNumber)).append("\n");
+    sb.append("    customFieldsMapping: ").append(toIndentedString(customFieldsMapping)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -255,6 +382,10 @@ public class CreateGithubIssueTaskParams {
     openapiFields.add("title");
     openapiFields.add("body");
     openapiFields.add("repository");
+    openapiFields.add("labels");
+    openapiFields.add("issue_type");
+    openapiFields.add("parent_issue_number");
+    openapiFields.add("custom_fields_mapping");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -305,6 +436,30 @@ public class CreateGithubIssueTaskParams {
       }
       // validate the required field `repository`
       AddActionItemTaskParamsPostToSlackChannelsInner.validateJsonElement(jsonObj.get("repository"));
+      if (jsonObj.get("labels") != null && !jsonObj.get("labels").isJsonNull()) {
+        JsonArray jsonArraylabels = jsonObj.getAsJsonArray("labels");
+        if (jsonArraylabels != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("labels").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `labels` to be an array in the JSON string but got `%s`", jsonObj.get("labels").toString()));
+          }
+
+          // validate the optional field `labels` (array)
+          for (int i = 0; i < jsonArraylabels.size(); i++) {
+            AddActionItemTaskParamsPostToSlackChannelsInner.validateJsonElement(jsonArraylabels.get(i));
+          };
+        }
+      }
+      // validate the optional field `issue_type`
+      if (jsonObj.get("issue_type") != null && !jsonObj.get("issue_type").isJsonNull()) {
+        CreateGithubIssueTaskParamsIssueType.validateJsonElement(jsonObj.get("issue_type"));
+      }
+      if ((jsonObj.get("parent_issue_number") != null && !jsonObj.get("parent_issue_number").isJsonNull()) && !jsonObj.get("parent_issue_number").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `parent_issue_number` to be a primitive type in the JSON string but got `%s`", jsonObj.get("parent_issue_number").toString()));
+      }
+      if ((jsonObj.get("custom_fields_mapping") != null && !jsonObj.get("custom_fields_mapping").isJsonNull()) && !jsonObj.get("custom_fields_mapping").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `custom_fields_mapping` to be a primitive type in the JSON string but got `%s`", jsonObj.get("custom_fields_mapping").toString()));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

@@ -11,6 +11,7 @@
 |**description** | **String** | Connector description |  [optional] |
 |**status** | [**StatusEnum**](#StatusEnum) | Connector status |  [optional] |
 |**subscriptions** | **List&lt;String&gt;** | Array of event types to subscribe to |  [optional] |
+|**filters** | [**CreateEdgeConnectorRequestDataAttributesFilters**](CreateEdgeConnectorRequestDataAttributesFilters.md) |  |  [optional] |
 
 
 

@@ -48,17 +48,17 @@ import com.rootly.client.JSON;
 /**
  * SnoozeAlertDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SnoozeAlertDataAttributes {
   public static final String SERIALIZED_NAME_DELAY_MINUTES = "delay_minutes";
   @SerializedName(SERIALIZED_NAME_DELAY_MINUTES)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Integer delayMinutes;
 
   public SnoozeAlertDataAttributes() {
   }
 
-  public SnoozeAlertDataAttributes delayMinutes(@javax.annotation.Nonnull Integer delayMinutes) {
+  public SnoozeAlertDataAttributes delayMinutes(@jakarta.annotation.Nonnull Integer delayMinutes) {
     this.delayMinutes = delayMinutes;
     return this;
   }
@@ -66,15 +66,15 @@ public class SnoozeAlertDataAttributes {
   /**
    * Number of minutes to snooze the alert for
    * minimum: 1
-   * maximum: 1440
+   * maximum: 10080
    * @return delayMinutes
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Integer getDelayMinutes() {
     return delayMinutes;
   }
 
-  public void setDelayMinutes(@javax.annotation.Nonnull Integer delayMinutes) {
+  public void setDelayMinutes(@jakarta.annotation.Nonnull Integer delayMinutes) {
     this.delayMinutes = delayMinutes;
   }
 

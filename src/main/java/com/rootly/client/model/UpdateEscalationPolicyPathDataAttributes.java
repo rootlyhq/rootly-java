@@ -53,7 +53,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateEscalationPolicyPathDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateEscalationPolicyPathDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -116,6 +116,125 @@ public class UpdateEscalationPolicyPathDataAttributes {
   @SerializedName(SERIALIZED_NAME_NOTIFICATION_TYPE)
   @jakarta.annotation.Nullable
   private NotificationTypeEnum notificationType = NotificationTypeEnum.AUDIBLE;
+
+  /**
+   * The type of escalation path. Cannot be changed after creation.
+   */
+  @JsonAdapter(PathTypeEnum.Adapter.class)
+  public enum PathTypeEnum {
+    ESCALATION("escalation"),
+    
+    DEFERRAL("deferral");
+
+    private String value;
+
+    PathTypeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static PathTypeEnum fromValue(String value) {
+      for (PathTypeEnum b : PathTypeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<PathTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final PathTypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public PathTypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return PathTypeEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      PathTypeEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_PATH_TYPE = "path_type";
+  @SerializedName(SERIALIZED_NAME_PATH_TYPE)
+  @jakarta.annotation.Nullable
+  private PathTypeEnum pathType;
+
+  /**
+   * What happens after a deferral path finishes.
+   */
+  @JsonAdapter(AfterDeferralBehaviorEnum.Adapter.class)
+  public enum AfterDeferralBehaviorEnum {
+    RE_EVALUATE("re_evaluate"),
+    
+    EXECUTE_PATH("execute_path");
+
+    private String value;
+
+    AfterDeferralBehaviorEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static AfterDeferralBehaviorEnum fromValue(String value) {
+      for (AfterDeferralBehaviorEnum b : AfterDeferralBehaviorEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<AfterDeferralBehaviorEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final AfterDeferralBehaviorEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public AfterDeferralBehaviorEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return AfterDeferralBehaviorEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      AfterDeferralBehaviorEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_AFTER_DEFERRAL_BEHAVIOR = "after_deferral_behavior";
+  @SerializedName(SERIALIZED_NAME_AFTER_DEFERRAL_BEHAVIOR)
+  @jakarta.annotation.Nullable
+  private AfterDeferralBehaviorEnum afterDeferralBehavior;
+
+  public static final String SERIALIZED_NAME_AFTER_DEFERRAL_PATH_ID = "after_deferral_path_id";
+  @SerializedName(SERIALIZED_NAME_AFTER_DEFERRAL_PATH_ID)
+  @jakarta.annotation.Nullable
+  private String afterDeferralPathId;
 
   public static final String SERIALIZED_NAME_DEFAULT = "default";
   @SerializedName(SERIALIZED_NAME_DEFAULT)
@@ -199,6 +318,11 @@ public class UpdateEscalationPolicyPathDataAttributes {
   @jakarta.annotation.Nullable
   private Integer initialDelay;
 
+  public static final String SERIALIZED_NAME_RETRIGGER_TIMEOUT_MINUTES = "retrigger_timeout_minutes";
+  @SerializedName(SERIALIZED_NAME_RETRIGGER_TIMEOUT_MINUTES)
+  @jakarta.annotation.Nullable
+  private Integer retriggerTimeoutMinutes;
+
   public static final String SERIALIZED_NAME_RULES = "rules";
   @SerializedName(SERIALIZED_NAME_RULES)
   @jakarta.annotation.Nullable
@@ -267,8 +391,6 @@ public class UpdateEscalationPolicyPathDataAttributes {
     
     MEXICO_CITY("Mexico City"),
     
-    AMERICA_MEXICO_CITY2("America/Mexico_City"),
-    
     MONTERREY("Monterrey"),
     
     AMERICA_MONTERREY("America/Monterrey"),
@@ -294,8 +416,6 @@ public class UpdateEscalationPolicyPathDataAttributes {
     AMERICA_LIMA("America/Lima"),
     
     QUITO("Quito"),
-    
-    AMERICA_LIMA2("America/Lima"),
     
     ATLANTIC_TIME_CANADA_("Atlantic Time (Canada)"),
     
@@ -357,14 +477,6 @@ public class UpdateEscalationPolicyPathDataAttributes {
     
     ATLANTIC_CAPE_VERDE("Atlantic/Cape_Verde"),
     
-    CASABLANCA("Casablanca"),
-    
-    AFRICA_CASABLANCA("Africa/Casablanca"),
-    
-    DUBLIN("Dublin"),
-    
-    EUROPE_DUBLIN("Europe/Dublin"),
-    
     EDINBURGH("Edinburgh"),
     
     EUROPE_LONDON("Europe/London"),
@@ -374,8 +486,6 @@ public class UpdateEscalationPolicyPathDataAttributes {
     EUROPE_LISBON("Europe/Lisbon"),
     
     LONDON("London"),
-    
-    EUROPE_LONDON2("Europe/London"),
     
     MONROVIA("Monrovia"),
     
@@ -413,9 +523,17 @@ public class UpdateEscalationPolicyPathDataAttributes {
     
     EUROPE_BUDAPEST("Europe/Budapest"),
     
+    CASABLANCA("Casablanca"),
+    
+    AFRICA_CASABLANCA("Africa/Casablanca"),
+    
     COPENHAGEN("Copenhagen"),
     
     EUROPE_COPENHAGEN("Europe/Copenhagen"),
+    
+    DUBLIN("Dublin"),
+    
+    EUROPE_DUBLIN("Europe/Dublin"),
     
     LJUBLJANA("Ljubljana"),
     
@@ -466,8 +584,6 @@ public class UpdateEscalationPolicyPathDataAttributes {
     EUROPE_ZAGREB("Europe/Zagreb"),
     
     ZURICH("Zurich"),
-    
-    EUROPE_ZURICH2("Europe/Zurich"),
     
     ATHENS("Athens"),
     
@@ -551,8 +667,6 @@ public class UpdateEscalationPolicyPathDataAttributes {
     
     ST_PETERSBURG("St. Petersburg"),
     
-    EUROPE_MOSCOW2("Europe/Moscow"),
-    
     VOLGOGRAD("Volgograd"),
     
     EUROPE_VOLGOGRAD("Europe/Volgograd"),
@@ -570,8 +684,6 @@ public class UpdateEscalationPolicyPathDataAttributes {
     ASIA_BAKU("Asia/Baku"),
     
     MUSCAT("Muscat"),
-    
-    ASIA_MUSCAT2("Asia/Muscat"),
     
     SAMARA("Samara"),
     
@@ -595,8 +707,6 @@ public class UpdateEscalationPolicyPathDataAttributes {
     
     ASTANA("Astana"),
     
-    ASIA_ALMATY2("Asia/Almaty"),
-    
     EKATERINBURG("Ekaterinburg"),
     
     ASIA_YEKATERINBURG("Asia/Yekaterinburg"),
@@ -606,8 +716,6 @@ public class UpdateEscalationPolicyPathDataAttributes {
     ASIA_KARACHI("Asia/Karachi"),
     
     KARACHI("Karachi"),
-    
-    ASIA_KARACHI2("Asia/Karachi"),
     
     TASHKENT("Tashkent"),
     
@@ -619,15 +727,9 @@ public class UpdateEscalationPolicyPathDataAttributes {
     
     KOLKATA("Kolkata"),
     
-    ASIA_KOLKATA2("Asia/Kolkata"),
-    
     MUMBAI("Mumbai"),
     
-    ASIA_KOLKATA3("Asia/Kolkata"),
-    
     NEW_DELHI("New Delhi"),
-    
-    ASIA_KOLKATA4("Asia/Kolkata"),
     
     SRI_JAYAWARDENEPURA("Sri Jayawardenepura"),
     
@@ -654,8 +756,6 @@ public class UpdateEscalationPolicyPathDataAttributes {
     ASIA_BANGKOK("Asia/Bangkok"),
     
     HANOI("Hanoi"),
-    
-    ASIA_BANGKOK2("Asia/Bangkok"),
     
     JAKARTA("Jakarta"),
     
@@ -711,15 +811,11 @@ public class UpdateEscalationPolicyPathDataAttributes {
     
     SAPPORO("Sapporo"),
     
-    ASIA_TOKYO2("Asia/Tokyo"),
-    
     SEOUL("Seoul"),
     
     ASIA_SEOUL("Asia/Seoul"),
     
     TOKYO("Tokyo"),
-    
-    ASIA_TOKYO3("Asia/Tokyo"),
     
     YAKUTSK("Yakutsk"),
     
@@ -799,8 +895,6 @@ public class UpdateEscalationPolicyPathDataAttributes {
     
     WELLINGTON("Wellington"),
     
-    PACIFIC_AUCKLAND2("Pacific/Auckland"),
-    
     CHATHAM_IS_("Chatham Is."),
     
     PACIFIC_CHATHAM("Pacific/Chatham"),
@@ -815,7 +909,39 @@ public class UpdateEscalationPolicyPathDataAttributes {
     
     TOKELAU_IS_("Tokelau Is."),
     
-    PACIFIC_FAKAOFO("Pacific/Fakaofo");
+    PACIFIC_FAKAOFO("Pacific/Fakaofo"),
+    
+    AMERICA_ADAK("America/Adak"),
+    
+    AMERICA_ATKA("America/Atka"),
+    
+    US_ALEUTIAN("US/Aleutian"),
+    
+    AMERICA_VANCOUVER("America/Vancouver"),
+    
+    CANADA_PACIFIC("Canada/Pacific"),
+    
+    AMERICA_MIQUELON("America/Miquelon"),
+    
+    AUSTRALIA_EUCLA("Australia/Eucla"),
+    
+    AUSTRALIA_LHI("Australia/LHI"),
+    
+    AUSTRALIA_LORD_HOWE("Australia/Lord_Howe"),
+    
+    CHILE_EASTER_ISLAND("Chile/EasterIsland"),
+    
+    PACIFIC_EASTER("Pacific/Easter"),
+    
+    PACIFIC_GAMBIER("Pacific/Gambier"),
+    
+    PACIFIC_PITCAIRN("Pacific/Pitcairn"),
+    
+    PACIFIC_MARQUESAS("Pacific/Marquesas"),
+    
+    PACIFIC_KIRITIMATI("Pacific/Kiritimati"),
+    
+    PACIFIC_NORFOLK("Pacific/Norfolk");
 
     private String value;
 
@@ -908,6 +1034,63 @@ public class UpdateEscalationPolicyPathDataAttributes {
 
   public void setNotificationType(@jakarta.annotation.Nullable NotificationTypeEnum notificationType) {
     this.notificationType = notificationType;
+  }
+
+
+  public UpdateEscalationPolicyPathDataAttributes pathType(@jakarta.annotation.Nullable PathTypeEnum pathType) {
+    this.pathType = pathType;
+    return this;
+  }
+
+  /**
+   * The type of escalation path. Cannot be changed after creation.
+   * @return pathType
+   */
+  @jakarta.annotation.Nullable
+  public PathTypeEnum getPathType() {
+    return pathType;
+  }
+
+  public void setPathType(@jakarta.annotation.Nullable PathTypeEnum pathType) {
+    this.pathType = pathType;
+  }
+
+
+  public UpdateEscalationPolicyPathDataAttributes afterDeferralBehavior(@jakarta.annotation.Nullable AfterDeferralBehaviorEnum afterDeferralBehavior) {
+    this.afterDeferralBehavior = afterDeferralBehavior;
+    return this;
+  }
+
+  /**
+   * What happens after a deferral path finishes.
+   * @return afterDeferralBehavior
+   */
+  @jakarta.annotation.Nullable
+  public AfterDeferralBehaviorEnum getAfterDeferralBehavior() {
+    return afterDeferralBehavior;
+  }
+
+  public void setAfterDeferralBehavior(@jakarta.annotation.Nullable AfterDeferralBehaviorEnum afterDeferralBehavior) {
+    this.afterDeferralBehavior = afterDeferralBehavior;
+  }
+
+
+  public UpdateEscalationPolicyPathDataAttributes afterDeferralPathId(@jakarta.annotation.Nullable String afterDeferralPathId) {
+    this.afterDeferralPathId = afterDeferralPathId;
+    return this;
+  }
+
+  /**
+   * The escalation path to execute after this deferral path when after_deferral_behavior is execute_path.
+   * @return afterDeferralPathId
+   */
+  @jakarta.annotation.Nullable
+  public String getAfterDeferralPathId() {
+    return afterDeferralPathId;
+  }
+
+  public void setAfterDeferralPathId(@jakarta.annotation.Nullable String afterDeferralPathId) {
+    this.afterDeferralPathId = afterDeferralPathId;
   }
 
 
@@ -1025,6 +1208,25 @@ public class UpdateEscalationPolicyPathDataAttributes {
   }
 
 
+  public UpdateEscalationPolicyPathDataAttributes retriggerTimeoutMinutes(@jakarta.annotation.Nullable Integer retriggerTimeoutMinutes) {
+    this.retriggerTimeoutMinutes = retriggerTimeoutMinutes;
+    return this;
+  }
+
+  /**
+   * Re-trigger acknowledged alerts on this path after N minutes; null inherits the urgency/workspace default, negative &#x3D; never.
+   * @return retriggerTimeoutMinutes
+   */
+  @jakarta.annotation.Nullable
+  public Integer getRetriggerTimeoutMinutes() {
+    return retriggerTimeoutMinutes;
+  }
+
+  public void setRetriggerTimeoutMinutes(@jakarta.annotation.Nullable Integer retriggerTimeoutMinutes) {
+    this.retriggerTimeoutMinutes = retriggerTimeoutMinutes;
+  }
+
+
   public UpdateEscalationPolicyPathDataAttributes rules(@jakarta.annotation.Nullable List<UpdateEscalationPolicyPathDataAttributesRulesInner> rules) {
     this.rules = rules;
     return this;
@@ -1110,12 +1312,16 @@ public class UpdateEscalationPolicyPathDataAttributes {
     UpdateEscalationPolicyPathDataAttributes updateEscalationPolicyPathDataAttributes = (UpdateEscalationPolicyPathDataAttributes) o;
     return Objects.equals(this.name, updateEscalationPolicyPathDataAttributes.name) &&
         Objects.equals(this.notificationType, updateEscalationPolicyPathDataAttributes.notificationType) &&
+        Objects.equals(this.pathType, updateEscalationPolicyPathDataAttributes.pathType) &&
+        Objects.equals(this.afterDeferralBehavior, updateEscalationPolicyPathDataAttributes.afterDeferralBehavior) &&
+        Objects.equals(this.afterDeferralPathId, updateEscalationPolicyPathDataAttributes.afterDeferralPathId) &&
         Objects.equals(this._default, updateEscalationPolicyPathDataAttributes._default) &&
         Objects.equals(this.matchMode, updateEscalationPolicyPathDataAttributes.matchMode) &&
         Objects.equals(this.position, updateEscalationPolicyPathDataAttributes.position) &&
         Objects.equals(this.repeat, updateEscalationPolicyPathDataAttributes.repeat) &&
         Objects.equals(this.repeatCount, updateEscalationPolicyPathDataAttributes.repeatCount) &&
         Objects.equals(this.initialDelay, updateEscalationPolicyPathDataAttributes.initialDelay) &&
+        Objects.equals(this.retriggerTimeoutMinutes, updateEscalationPolicyPathDataAttributes.retriggerTimeoutMinutes) &&
         Objects.equals(this.rules, updateEscalationPolicyPathDataAttributes.rules) &&
         Objects.equals(this.timeRestrictionTimeZone, updateEscalationPolicyPathDataAttributes.timeRestrictionTimeZone) &&
         Objects.equals(this.timeRestrictions, updateEscalationPolicyPathDataAttributes.timeRestrictions);
@@ -1127,7 +1333,7 @@ public class UpdateEscalationPolicyPathDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, notificationType, _default, matchMode, position, repeat, repeatCount, initialDelay, rules, timeRestrictionTimeZone, timeRestrictions);
+    return Objects.hash(name, notificationType, pathType, afterDeferralBehavior, afterDeferralPathId, _default, matchMode, position, repeat, repeatCount, initialDelay, retriggerTimeoutMinutes, rules, timeRestrictionTimeZone, timeRestrictions);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1143,12 +1349,16 @@ public class UpdateEscalationPolicyPathDataAttributes {
     sb.append("class UpdateEscalationPolicyPathDataAttributes {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    notificationType: ").append(toIndentedString(notificationType)).append("\n");
+    sb.append("    pathType: ").append(toIndentedString(pathType)).append("\n");
+    sb.append("    afterDeferralBehavior: ").append(toIndentedString(afterDeferralBehavior)).append("\n");
+    sb.append("    afterDeferralPathId: ").append(toIndentedString(afterDeferralPathId)).append("\n");
     sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
     sb.append("    matchMode: ").append(toIndentedString(matchMode)).append("\n");
     sb.append("    position: ").append(toIndentedString(position)).append("\n");
     sb.append("    repeat: ").append(toIndentedString(repeat)).append("\n");
     sb.append("    repeatCount: ").append(toIndentedString(repeatCount)).append("\n");
     sb.append("    initialDelay: ").append(toIndentedString(initialDelay)).append("\n");
+    sb.append("    retriggerTimeoutMinutes: ").append(toIndentedString(retriggerTimeoutMinutes)).append("\n");
     sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
     sb.append("    timeRestrictionTimeZone: ").append(toIndentedString(timeRestrictionTimeZone)).append("\n");
     sb.append("    timeRestrictions: ").append(toIndentedString(timeRestrictions)).append("\n");
@@ -1176,12 +1386,16 @@ public class UpdateEscalationPolicyPathDataAttributes {
     openapiFields = new HashSet<String>();
     openapiFields.add("name");
     openapiFields.add("notification_type");
+    openapiFields.add("path_type");
+    openapiFields.add("after_deferral_behavior");
+    openapiFields.add("after_deferral_path_id");
     openapiFields.add("default");
     openapiFields.add("match_mode");
     openapiFields.add("position");
     openapiFields.add("repeat");
     openapiFields.add("repeat_count");
     openapiFields.add("initial_delay");
+    openapiFields.add("retrigger_timeout_minutes");
     openapiFields.add("rules");
     openapiFields.add("time_restriction_time_zone");
     openapiFields.add("time_restrictions");
@@ -1220,6 +1434,23 @@ public class UpdateEscalationPolicyPathDataAttributes {
       // validate the optional field `notification_type`
       if (jsonObj.get("notification_type") != null && !jsonObj.get("notification_type").isJsonNull()) {
         NotificationTypeEnum.validateJsonElement(jsonObj.get("notification_type"));
+      }
+      if ((jsonObj.get("path_type") != null && !jsonObj.get("path_type").isJsonNull()) && !jsonObj.get("path_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `path_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("path_type").toString()));
+      }
+      // validate the optional field `path_type`
+      if (jsonObj.get("path_type") != null && !jsonObj.get("path_type").isJsonNull()) {
+        PathTypeEnum.validateJsonElement(jsonObj.get("path_type"));
+      }
+      if ((jsonObj.get("after_deferral_behavior") != null && !jsonObj.get("after_deferral_behavior").isJsonNull()) && !jsonObj.get("after_deferral_behavior").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `after_deferral_behavior` to be a primitive type in the JSON string but got `%s`", jsonObj.get("after_deferral_behavior").toString()));
+      }
+      // validate the optional field `after_deferral_behavior`
+      if (jsonObj.get("after_deferral_behavior") != null && !jsonObj.get("after_deferral_behavior").isJsonNull()) {
+        AfterDeferralBehaviorEnum.validateJsonElement(jsonObj.get("after_deferral_behavior"));
+      }
+      if ((jsonObj.get("after_deferral_path_id") != null && !jsonObj.get("after_deferral_path_id").isJsonNull()) && !jsonObj.get("after_deferral_path_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `after_deferral_path_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("after_deferral_path_id").toString()));
       }
       if ((jsonObj.get("match_mode") != null && !jsonObj.get("match_mode").isJsonNull()) && !jsonObj.get("match_mode").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `match_mode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("match_mode").toString()));

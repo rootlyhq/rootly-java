@@ -49,17 +49,17 @@ import com.rootly.client.JSON;
 /**
  * EscalateAlert
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class EscalateAlert {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private EscalateAlertData data;
 
   public EscalateAlert() {
   }
 
-  public EscalateAlert data(@javax.annotation.Nullable EscalateAlertData data) {
+  public EscalateAlert data(@jakarta.annotation.Nullable EscalateAlertData data) {
     this.data = data;
     return this;
   }
@@ -68,12 +68,12 @@ public class EscalateAlert {
    * Get data
    * @return data
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public EscalateAlertData getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nullable EscalateAlertData data) {
+  public void setData(@jakarta.annotation.Nullable EscalateAlertData data) {
     this.data = data;
   }
 

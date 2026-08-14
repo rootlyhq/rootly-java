@@ -20,10 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,57 +48,18 @@ import com.rootly.client.JSON;
 /**
  * CustomField
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CustomField {
-  public static final String SERIALIZED_NAME_LABEL = "label";
-  @SerializedName(SERIALIZED_NAME_LABEL)
-  @jakarta.annotation.Nonnull
-  private String label;
-
-  public static final String SERIALIZED_NAME_KIND = "kind";
-  @SerializedName(SERIALIZED_NAME_KIND)
-  @jakarta.annotation.Nullable
-  private String kind;
-
-  public static final String SERIALIZED_NAME_ENABLED = "enabled";
-  @SerializedName(SERIALIZED_NAME_ENABLED)
-  @jakarta.annotation.Nullable
-  private Boolean enabled;
-
-  public static final String SERIALIZED_NAME_SLUG = "slug";
-  @SerializedName(SERIALIZED_NAME_SLUG)
-  @jakarta.annotation.Nonnull
-  private String slug;
-
-  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
-  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @jakarta.annotation.Nullable
-  private String description;
-
   /**
-   * Where the custom_field is shown
+   * Gets or Sets fieldSource
    */
-  @JsonAdapter(ShownEnum.Adapter.class)
-  public enum ShownEnum {
-    INCIDENT_FORM("incident_form"),
-    
-    INCIDENT_MITIGATION_FORM("incident_mitigation_form"),
-    
-    INCIDENT_RESOLUTION_FORM("incident_resolution_form"),
-    
-    INCIDENT_POST_MORTEM_FORM("incident_post_mortem_form"),
-    
-    INCIDENT_SLACK_FORM("incident_slack_form"),
-    
-    INCIDENT_MITIGATION_SLACK_FORM("incident_mitigation_slack_form"),
-    
-    INCIDENT_RESOLUTION_SLACK_FORM("incident_resolution_slack_form"),
-    
-    INCIDENT_POST_MORTEM("incident_post_mortem");
+  @JsonAdapter(FieldSourceEnum.Adapter.class)
+  public enum FieldSourceEnum {
+    CUSTOM("custom");
 
     private String value;
 
-    ShownEnum(String value) {
+    FieldSourceEnum(String value) {
       this.value = value;
     }
 
@@ -114,8 +72,8 @@ public class CustomField {
       return String.valueOf(value);
     }
 
-    public static ShownEnum fromValue(String value) {
-      for (ShownEnum b : ShownEnum.values()) {
+    public static FieldSourceEnum fromValue(String value) {
+      for (FieldSourceEnum b : FieldSourceEnum.values()) {
         if (b.value.equals(value)) {
           return b;
         }
@@ -123,342 +81,97 @@ public class CustomField {
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
-    public static class Adapter extends TypeAdapter<ShownEnum> {
+    public static class Adapter extends TypeAdapter<FieldSourceEnum> {
       @Override
-      public void write(final JsonWriter jsonWriter, final ShownEnum enumeration) throws IOException {
+      public void write(final JsonWriter jsonWriter, final FieldSourceEnum enumeration) throws IOException {
         jsonWriter.value(enumeration.getValue());
       }
 
       @Override
-      public ShownEnum read(final JsonReader jsonReader) throws IOException {
+      public FieldSourceEnum read(final JsonReader jsonReader) throws IOException {
         String value =  jsonReader.nextString();
-        return ShownEnum.fromValue(value);
+        return FieldSourceEnum.fromValue(value);
       }
     }
 
     public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       String value = jsonElement.getAsString();
-      ShownEnum.fromValue(value);
+      FieldSourceEnum.fromValue(value);
     }
   }
 
-  public static final String SERIALIZED_NAME_SHOWN = "shown";
-  @SerializedName(SERIALIZED_NAME_SHOWN)
+  public static final String SERIALIZED_NAME_FIELD_SOURCE = "field_source";
+  @SerializedName(SERIALIZED_NAME_FIELD_SOURCE)
   @jakarta.annotation.Nonnull
-  private List<ShownEnum> shown = new ArrayList<>();
+  private FieldSourceEnum fieldSource;
 
-  /**
-   * Where the custom_field is required
-   */
-  @JsonAdapter(RequiredEnum.Adapter.class)
-  public enum RequiredEnum {
-    INCIDENT_FORM("incident_form"),
-    
-    INCIDENT_MITIGATION_FORM("incident_mitigation_form"),
-    
-    INCIDENT_RESOLUTION_FORM("incident_resolution_form"),
-    
-    INCIDENT_POST_MORTEM_FORM("incident_post_mortem_form"),
-    
-    INCIDENT_SLACK_FORM("incident_slack_form"),
-    
-    INCIDENT_MITIGATION_SLACK_FORM("incident_mitigation_slack_form"),
-    
-    INCIDENT_RESOLUTION_SLACK_FORM("incident_resolution_slack_form");
+  public static final String SERIALIZED_NAME_CATALOG_PROPERTY_ID = "catalog_property_id";
+  @SerializedName(SERIALIZED_NAME_CATALOG_PROPERTY_ID)
+  @jakarta.annotation.Nonnull
+  private String catalogPropertyId;
 
-    private String value;
-
-    RequiredEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static RequiredEnum fromValue(String value) {
-      for (RequiredEnum b : RequiredEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<RequiredEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final RequiredEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public RequiredEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return RequiredEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      RequiredEnum.fromValue(value);
-    }
-  }
-
-  public static final String SERIALIZED_NAME_REQUIRED = "required";
-  @SerializedName(SERIALIZED_NAME_REQUIRED)
+  public static final String SERIALIZED_NAME_FIELD_KEY = "field_key";
+  @SerializedName(SERIALIZED_NAME_FIELD_KEY)
   @jakarta.annotation.Nullable
-  private List<RequiredEnum> required;
-
-  public static final String SERIALIZED_NAME_DEFAULT = "default";
-  @SerializedName(SERIALIZED_NAME_DEFAULT)
-  @jakarta.annotation.Nullable
-  private String _default;
-
-  public static final String SERIALIZED_NAME_POSITION = "position";
-  @SerializedName(SERIALIZED_NAME_POSITION)
-  @jakarta.annotation.Nonnull
-  private Integer position;
-
-  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
-  @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @jakarta.annotation.Nonnull
-  private String createdAt;
-
-  public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
-  @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @jakarta.annotation.Nonnull
-  private String updatedAt;
+  private String fieldKey;
 
   public CustomField() {
   }
 
-  public CustomField label(@jakarta.annotation.Nonnull String label) {
-    this.label = label;
+  public CustomField fieldSource(@jakarta.annotation.Nonnull FieldSourceEnum fieldSource) {
+    this.fieldSource = fieldSource;
     return this;
   }
 
   /**
-   * The name of the custom_field
-   * @return label
+   * Get fieldSource
+   * @return fieldSource
    */
   @jakarta.annotation.Nonnull
-  public String getLabel() {
-    return label;
+  public FieldSourceEnum getFieldSource() {
+    return fieldSource;
   }
 
-  public void setLabel(@jakarta.annotation.Nonnull String label) {
-    this.label = label;
+  public void setFieldSource(@jakarta.annotation.Nonnull FieldSourceEnum fieldSource) {
+    this.fieldSource = fieldSource;
   }
 
 
-  public CustomField kind(@jakarta.annotation.Nullable String kind) {
-    this.kind = kind;
+  public CustomField catalogPropertyId(@jakarta.annotation.Nonnull String catalogPropertyId) {
+    this.catalogPropertyId = catalogPropertyId;
     return this;
   }
 
   /**
-   * The kind of the custom_field
-   * @return kind
+   * ID of the catalog property
+   * @return catalogPropertyId
+   */
+  @jakarta.annotation.Nonnull
+  public String getCatalogPropertyId() {
+    return catalogPropertyId;
+  }
+
+  public void setCatalogPropertyId(@jakarta.annotation.Nonnull String catalogPropertyId) {
+    this.catalogPropertyId = catalogPropertyId;
+  }
+
+
+  public CustomField fieldKey(@jakarta.annotation.Nullable String fieldKey) {
+    this.fieldKey = fieldKey;
+    return this;
+  }
+
+  /**
+   * Ignored for custom fields (auto-derived from catalog property)
+   * @return fieldKey
    */
   @jakarta.annotation.Nullable
-  public String getKind() {
-    return kind;
+  public String getFieldKey() {
+    return fieldKey;
   }
 
-  public void setKind(@jakarta.annotation.Nullable String kind) {
-    this.kind = kind;
-  }
-
-
-  public CustomField enabled(@jakarta.annotation.Nullable Boolean enabled) {
-    this.enabled = enabled;
-    return this;
-  }
-
-  /**
-   * Whether the custom_field is enabled
-   * @return enabled
-   */
-  @jakarta.annotation.Nullable
-  public Boolean getEnabled() {
-    return enabled;
-  }
-
-  public void setEnabled(@jakarta.annotation.Nullable Boolean enabled) {
-    this.enabled = enabled;
-  }
-
-
-  public CustomField slug(@jakarta.annotation.Nonnull String slug) {
-    this.slug = slug;
-    return this;
-  }
-
-  /**
-   * The slug of the custom_field
-   * @return slug
-   */
-  @jakarta.annotation.Nonnull
-  public String getSlug() {
-    return slug;
-  }
-
-  public void setSlug(@jakarta.annotation.Nonnull String slug) {
-    this.slug = slug;
-  }
-
-
-  public CustomField description(@jakarta.annotation.Nullable String description) {
-    this.description = description;
-    return this;
-  }
-
-  /**
-   * The description of the custom_field
-   * @return description
-   */
-  @jakarta.annotation.Nullable
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(@jakarta.annotation.Nullable String description) {
-    this.description = description;
-  }
-
-
-  public CustomField shown(@jakarta.annotation.Nonnull List<ShownEnum> shown) {
-    this.shown = shown;
-    return this;
-  }
-
-  public CustomField addShownItem(ShownEnum shownItem) {
-    if (this.shown == null) {
-      this.shown = new ArrayList<>();
-    }
-    this.shown.add(shownItem);
-    return this;
-  }
-
-  /**
-   * Get shown
-   * @return shown
-   */
-  @jakarta.annotation.Nonnull
-  public List<ShownEnum> getShown() {
-    return shown;
-  }
-
-  public void setShown(@jakarta.annotation.Nonnull List<ShownEnum> shown) {
-    this.shown = shown;
-  }
-
-
-  public CustomField required(@jakarta.annotation.Nullable List<RequiredEnum> required) {
-    this.required = required;
-    return this;
-  }
-
-  public CustomField addRequiredItem(RequiredEnum requiredItem) {
-    if (this.required == null) {
-      this.required = new ArrayList<>();
-    }
-    this.required.add(requiredItem);
-    return this;
-  }
-
-  /**
-   * Get required
-   * @return required
-   */
-  @jakarta.annotation.Nullable
-  public List<RequiredEnum> getRequired() {
-    return required;
-  }
-
-  public void setRequired(@jakarta.annotation.Nullable List<RequiredEnum> required) {
-    this.required = required;
-  }
-
-
-  public CustomField _default(@jakarta.annotation.Nullable String _default) {
-    this._default = _default;
-    return this;
-  }
-
-  /**
-   * The default value for text field kinds
-   * @return _default
-   */
-  @jakarta.annotation.Nullable
-  public String getDefault() {
-    return _default;
-  }
-
-  public void setDefault(@jakarta.annotation.Nullable String _default) {
-    this._default = _default;
-  }
-
-
-  public CustomField position(@jakarta.annotation.Nonnull Integer position) {
-    this.position = position;
-    return this;
-  }
-
-  /**
-   * The position of the custom_field
-   * @return position
-   */
-  @jakarta.annotation.Nonnull
-  public Integer getPosition() {
-    return position;
-  }
-
-  public void setPosition(@jakarta.annotation.Nonnull Integer position) {
-    this.position = position;
-  }
-
-
-  public CustomField createdAt(@jakarta.annotation.Nonnull String createdAt) {
-    this.createdAt = createdAt;
-    return this;
-  }
-
-  /**
-   * Date of creation
-   * @return createdAt
-   */
-  @jakarta.annotation.Nonnull
-  public String getCreatedAt() {
-    return createdAt;
-  }
-
-  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
-    this.createdAt = createdAt;
-  }
-
-
-  public CustomField updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
-    this.updatedAt = updatedAt;
-    return this;
-  }
-
-  /**
-   * Date of last update
-   * @return updatedAt
-   */
-  @jakarta.annotation.Nonnull
-  public String getUpdatedAt() {
-    return updatedAt;
-  }
-
-  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
-    this.updatedAt = updatedAt;
+  public void setFieldKey(@jakarta.annotation.Nullable String fieldKey) {
+    this.fieldKey = fieldKey;
   }
 
 
@@ -472,50 +185,23 @@ public class CustomField {
       return false;
     }
     CustomField customField = (CustomField) o;
-    return Objects.equals(this.label, customField.label) &&
-        Objects.equals(this.kind, customField.kind) &&
-        Objects.equals(this.enabled, customField.enabled) &&
-        Objects.equals(this.slug, customField.slug) &&
-        Objects.equals(this.description, customField.description) &&
-        Objects.equals(this.shown, customField.shown) &&
-        Objects.equals(this.required, customField.required) &&
-        Objects.equals(this._default, customField._default) &&
-        Objects.equals(this.position, customField.position) &&
-        Objects.equals(this.createdAt, customField.createdAt) &&
-        Objects.equals(this.updatedAt, customField.updatedAt);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+    return Objects.equals(this.fieldSource, customField.fieldSource) &&
+        Objects.equals(this.catalogPropertyId, customField.catalogPropertyId) &&
+        Objects.equals(this.fieldKey, customField.fieldKey);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(label, kind, enabled, slug, description, shown, required, _default, position, createdAt, updatedAt);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(fieldSource, catalogPropertyId, fieldKey);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CustomField {\n");
-    sb.append("    label: ").append(toIndentedString(label)).append("\n");
-    sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
-    sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
-    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    shown: ").append(toIndentedString(shown)).append("\n");
-    sb.append("    required: ").append(toIndentedString(required)).append("\n");
-    sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
-    sb.append("    position: ").append(toIndentedString(position)).append("\n");
-    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-    sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+    sb.append("    fieldSource: ").append(toIndentedString(fieldSource)).append("\n");
+    sb.append("    catalogPropertyId: ").append(toIndentedString(catalogPropertyId)).append("\n");
+    sb.append("    fieldKey: ").append(toIndentedString(fieldKey)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -538,27 +224,14 @@ public class CustomField {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("label");
-    openapiFields.add("kind");
-    openapiFields.add("enabled");
-    openapiFields.add("slug");
-    openapiFields.add("description");
-    openapiFields.add("shown");
-    openapiFields.add("required");
-    openapiFields.add("default");
-    openapiFields.add("position");
-    openapiFields.add("created_at");
-    openapiFields.add("updated_at");
+    openapiFields.add("field_source");
+    openapiFields.add("catalog_property_id");
+    openapiFields.add("field_key");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("label");
-    openapiRequiredFields.add("slug");
-    openapiRequiredFields.add("shown");
-    openapiRequiredFields.add("required");
-    openapiRequiredFields.add("position");
-    openapiRequiredFields.add("created_at");
-    openapiRequiredFields.add("updated_at");
+    openapiRequiredFields.add("field_source");
+    openapiRequiredFields.add("catalog_property_id");
   }
 
   /**
@@ -589,38 +262,16 @@ public class CustomField {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("label").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `label` to be a primitive type in the JSON string but got `%s`", jsonObj.get("label").toString()));
+      if (!jsonObj.get("field_source").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `field_source` to be a primitive type in the JSON string but got `%s`", jsonObj.get("field_source").toString()));
       }
-      if ((jsonObj.get("kind") != null && !jsonObj.get("kind").isJsonNull()) && !jsonObj.get("kind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
+      // validate the required field `field_source`
+      FieldSourceEnum.validateJsonElement(jsonObj.get("field_source"));
+      if (!jsonObj.get("catalog_property_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `catalog_property_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("catalog_property_id").toString()));
       }
-      if (!jsonObj.get("slug").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
-      }
-      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
-      }
-      // ensure the required json array is present
-      if (jsonObj.get("shown") == null) {
-        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
-      } else if (!jsonObj.get("shown").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `shown` to be an array in the JSON string but got `%s`", jsonObj.get("shown").toString()));
-      }
-      // ensure the required json array is present
-      if (jsonObj.get("required") == null) {
-        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
-      } else if (!jsonObj.get("required").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `required` to be an array in the JSON string but got `%s`", jsonObj.get("required").toString()));
-      }
-      if ((jsonObj.get("default") != null && !jsonObj.get("default").isJsonNull()) && !jsonObj.get("default").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `default` to be a primitive type in the JSON string but got `%s`", jsonObj.get("default").toString()));
-      }
-      if (!jsonObj.get("created_at").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));
-      }
-      if (!jsonObj.get("updated_at").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `updated_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updated_at").toString()));
+      if ((jsonObj.get("field_key") != null && !jsonObj.get("field_key").isJsonNull()) && !jsonObj.get("field_key").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `field_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("field_key").toString()));
       }
   }
 

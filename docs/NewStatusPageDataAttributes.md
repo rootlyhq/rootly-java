@@ -7,6 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**slug** | **String** | Deprecated. &#x60;slug&#x60; is derived from &#x60;title&#x60;; any submitted value is ignored. This property will be removed from the request schema in a future version. |  [optional] |
 |**title** | **String** | The title of the status page |  |
 |**publicTitle** | **String** | The public title of the status page |  [optional] |
 |**description** | **String** | The description of the status page |  [optional] |
@@ -25,6 +26,8 @@
 |**samlIdpSloServiceUrl** | **String** | SAML IdP SLO service URL |  [optional] |
 |**samlIdpCert** | **String** | SAML IdP certificate |  [optional] |
 |**samlNameIdentifierFormat** | [**SamlNameIdentifierFormatEnum**](#SamlNameIdentifierFormatEnum) | SAML name identifier format |  [optional] |
+|**sectionOrder** | [**List&lt;SectionOrderEnum&gt;**](#List&lt;SectionOrderEnum&gt;) | Order of sections on the status page |  [optional] |
+|**externalDomainNames** | **List&lt;String&gt;** | External domain names attached to the status page |  [optional] |
 |**websiteUrl** | **String** | Website URL |  [optional] |
 |**websitePrivacyUrl** | **String** | Website Privacy URL |  [optional] |
 |**websiteSupportUrl** | **String** | Website Support URL |  [optional] |
@@ -65,6 +68,16 @@
 | URN_OASIS_NAMES_TC_SAML_2_0_NAMEID_FORMAT_PERSISTENT | &quot;urn:oasis:names:tc:SAML:2.0:nameid-format:persistent&quot; |
 | URN_OASIS_NAMES_TC_SAML_2_0_NAMEID_FORMAT_TRANSIENT | &quot;urn:oasis:names:tc:SAML:2.0:nameid-format:transient&quot; |
 | URN_OASIS_NAMES_TC_SAML_1_1_NAMEID_FORMAT_UNSPECIFIED | &quot;urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified&quot; |
+
+
+
+## Enum: List&lt;SectionOrderEnum&gt;
+
+| Name | Value |
+|---- | -----|
+| MAINTENANCE | &quot;maintenance&quot; |
+| SYSTEM_STATUS | &quot;system_status&quot; |
+| INCIDENTS | &quot;incidents&quot; |
 
 
 

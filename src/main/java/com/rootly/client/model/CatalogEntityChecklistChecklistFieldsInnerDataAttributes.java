@@ -49,57 +49,57 @@ import com.rootly.client.JSON;
 /**
  * CatalogEntityChecklistChecklistFieldsInnerDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CatalogEntityChecklistChecklistFieldsInnerDataAttributes {
   public static final String SERIALIZED_NAME_CATALOG_ENTITY_CHECKLIST_ID = "catalog_entity_checklist_id";
   @SerializedName(SERIALIZED_NAME_CATALOG_ENTITY_CHECKLIST_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String catalogEntityChecklistId;
 
   public static final String SERIALIZED_NAME_CATALOG_CHECKLIST_TEMPLATE_FIELD_ID = "catalog_checklist_template_field_id";
   @SerializedName(SERIALIZED_NAME_CATALOG_CHECKLIST_TEMPLATE_FIELD_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String catalogChecklistTemplateFieldId;
 
   public static final String SERIALIZED_NAME_FIELD_KEY = "field_key";
   @SerializedName(SERIALIZED_NAME_FIELD_KEY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String fieldKey;
 
   public static final String SERIALIZED_NAME_CHECKED = "checked";
   @SerializedName(SERIALIZED_NAME_CHECKED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean checked;
 
   public static final String SERIALIZED_NAME_VALUE_SNAPSHOT = "value_snapshot";
   @SerializedName(SERIALIZED_NAME_VALUE_SNAPSHOT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Object valueSnapshot;
 
   public static final String SERIALIZED_NAME_COMPLETED_BY_USER_ID = "completed_by_user_id";
   @SerializedName(SERIALIZED_NAME_COMPLETED_BY_USER_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String completedByUserId;
 
   public static final String SERIALIZED_NAME_COMPLETED_AT = "completed_at";
   @SerializedName(SERIALIZED_NAME_COMPLETED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String completedAt;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String updatedAt;
 
   public CatalogEntityChecklistChecklistFieldsInnerDataAttributes() {
   }
 
-  public CatalogEntityChecklistChecklistFieldsInnerDataAttributes catalogEntityChecklistId(@javax.annotation.Nullable String catalogEntityChecklistId) {
+  public CatalogEntityChecklistChecklistFieldsInnerDataAttributes catalogEntityChecklistId(@jakarta.annotation.Nullable String catalogEntityChecklistId) {
     this.catalogEntityChecklistId = catalogEntityChecklistId;
     return this;
   }
@@ -108,17 +108,17 @@ public class CatalogEntityChecklistChecklistFieldsInnerDataAttributes {
    * The ID of the parent checklist
    * @return catalogEntityChecklistId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCatalogEntityChecklistId() {
     return catalogEntityChecklistId;
   }
 
-  public void setCatalogEntityChecklistId(@javax.annotation.Nullable String catalogEntityChecklistId) {
+  public void setCatalogEntityChecklistId(@jakarta.annotation.Nullable String catalogEntityChecklistId) {
     this.catalogEntityChecklistId = catalogEntityChecklistId;
   }
 
 
-  public CatalogEntityChecklistChecklistFieldsInnerDataAttributes catalogChecklistTemplateFieldId(@javax.annotation.Nullable String catalogChecklistTemplateFieldId) {
+  public CatalogEntityChecklistChecklistFieldsInnerDataAttributes catalogChecklistTemplateFieldId(@jakarta.annotation.Nullable String catalogChecklistTemplateFieldId) {
     this.catalogChecklistTemplateFieldId = catalogChecklistTemplateFieldId;
     return this;
   }
@@ -127,17 +127,17 @@ public class CatalogEntityChecklistChecklistFieldsInnerDataAttributes {
    * The ID of the template field
    * @return catalogChecklistTemplateFieldId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCatalogChecklistTemplateFieldId() {
     return catalogChecklistTemplateFieldId;
   }
 
-  public void setCatalogChecklistTemplateFieldId(@javax.annotation.Nullable String catalogChecklistTemplateFieldId) {
+  public void setCatalogChecklistTemplateFieldId(@jakarta.annotation.Nullable String catalogChecklistTemplateFieldId) {
     this.catalogChecklistTemplateFieldId = catalogChecklistTemplateFieldId;
   }
 
 
-  public CatalogEntityChecklistChecklistFieldsInnerDataAttributes fieldKey(@javax.annotation.Nullable String fieldKey) {
+  public CatalogEntityChecklistChecklistFieldsInnerDataAttributes fieldKey(@jakarta.annotation.Nullable String fieldKey) {
     this.fieldKey = fieldKey;
     return this;
   }
@@ -146,17 +146,17 @@ public class CatalogEntityChecklistChecklistFieldsInnerDataAttributes {
    * The field key
    * @return fieldKey
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getFieldKey() {
     return fieldKey;
   }
 
-  public void setFieldKey(@javax.annotation.Nullable String fieldKey) {
+  public void setFieldKey(@jakarta.annotation.Nullable String fieldKey) {
     this.fieldKey = fieldKey;
   }
 
 
-  public CatalogEntityChecklistChecklistFieldsInnerDataAttributes checked(@javax.annotation.Nullable Boolean checked) {
+  public CatalogEntityChecklistChecklistFieldsInnerDataAttributes checked(@jakarta.annotation.Nullable Boolean checked) {
     this.checked = checked;
     return this;
   }
@@ -165,17 +165,17 @@ public class CatalogEntityChecklistChecklistFieldsInnerDataAttributes {
    * Whether the field is checked
    * @return checked
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getChecked() {
     return checked;
   }
 
-  public void setChecked(@javax.annotation.Nullable Boolean checked) {
+  public void setChecked(@jakarta.annotation.Nullable Boolean checked) {
     this.checked = checked;
   }
 
 
-  public CatalogEntityChecklistChecklistFieldsInnerDataAttributes valueSnapshot(@javax.annotation.Nullable Object valueSnapshot) {
+  public CatalogEntityChecklistChecklistFieldsInnerDataAttributes valueSnapshot(@jakarta.annotation.Nullable Object valueSnapshot) {
     this.valueSnapshot = valueSnapshot;
     return this;
   }
@@ -184,17 +184,17 @@ public class CatalogEntityChecklistChecklistFieldsInnerDataAttributes {
    * The value snapshot at time of checking
    * @return valueSnapshot
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Object getValueSnapshot() {
     return valueSnapshot;
   }
 
-  public void setValueSnapshot(@javax.annotation.Nullable Object valueSnapshot) {
+  public void setValueSnapshot(@jakarta.annotation.Nullable Object valueSnapshot) {
     this.valueSnapshot = valueSnapshot;
   }
 
 
-  public CatalogEntityChecklistChecklistFieldsInnerDataAttributes completedByUserId(@javax.annotation.Nullable String completedByUserId) {
+  public CatalogEntityChecklistChecklistFieldsInnerDataAttributes completedByUserId(@jakarta.annotation.Nullable String completedByUserId) {
     this.completedByUserId = completedByUserId;
     return this;
   }
@@ -203,17 +203,17 @@ public class CatalogEntityChecklistChecklistFieldsInnerDataAttributes {
    * The ID of the user who checked the field
    * @return completedByUserId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCompletedByUserId() {
     return completedByUserId;
   }
 
-  public void setCompletedByUserId(@javax.annotation.Nullable String completedByUserId) {
+  public void setCompletedByUserId(@jakarta.annotation.Nullable String completedByUserId) {
     this.completedByUserId = completedByUserId;
   }
 
 
-  public CatalogEntityChecklistChecklistFieldsInnerDataAttributes completedAt(@javax.annotation.Nullable String completedAt) {
+  public CatalogEntityChecklistChecklistFieldsInnerDataAttributes completedAt(@jakarta.annotation.Nullable String completedAt) {
     this.completedAt = completedAt;
     return this;
   }
@@ -222,17 +222,17 @@ public class CatalogEntityChecklistChecklistFieldsInnerDataAttributes {
    * When the field was checked
    * @return completedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCompletedAt() {
     return completedAt;
   }
 
-  public void setCompletedAt(@javax.annotation.Nullable String completedAt) {
+  public void setCompletedAt(@jakarta.annotation.Nullable String completedAt) {
     this.completedAt = completedAt;
   }
 
 
-  public CatalogEntityChecklistChecklistFieldsInnerDataAttributes createdAt(@javax.annotation.Nullable String createdAt) {
+  public CatalogEntityChecklistChecklistFieldsInnerDataAttributes createdAt(@jakarta.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -241,17 +241,17 @@ public class CatalogEntityChecklistChecklistFieldsInnerDataAttributes {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nullable String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public CatalogEntityChecklistChecklistFieldsInnerDataAttributes updatedAt(@javax.annotation.Nullable String updatedAt) {
+  public CatalogEntityChecklistChecklistFieldsInnerDataAttributes updatedAt(@jakarta.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -260,12 +260,12 @@ public class CatalogEntityChecklistChecklistFieldsInnerDataAttributes {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nullable String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

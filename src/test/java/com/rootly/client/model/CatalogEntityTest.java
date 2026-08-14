@@ -18,8 +18,11 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewCatalogEntityDataAttributesPropertiesInner;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -47,6 +50,14 @@ public class CatalogEntityTest {
     }
 
     /**
+     * Test the property 'slug'
+     */
+    @Test
+    public void slugTest() {
+        // TODO: test slug
+    }
+
+    /**
      * Test the property 'description'
      */
     @Test
@@ -55,11 +66,43 @@ public class CatalogEntityTest {
     }
 
     /**
+     * Test the property 'publicDescription'
+     */
+    @Test
+    public void publicDescriptionTest() {
+        // TODO: test publicDescription
+    }
+
+    /**
      * Test the property 'position'
      */
     @Test
     public void positionTest() {
         // TODO: test position
+    }
+
+    /**
+     * Test the property 'backstageId'
+     */
+    @Test
+    public void backstageIdTest() {
+        // TODO: test backstageId
+    }
+
+    /**
+     * Test the property 'externalId'
+     */
+    @Test
+    public void externalIdTest() {
+        // TODO: test externalId
+    }
+
+    /**
+     * Test the property 'managedBy'
+     */
+    @Test
+    public void managedByTest() {
+        // TODO: test managedBy
     }
 
     /**
@@ -76,6 +119,14 @@ public class CatalogEntityTest {
     @Test
     public void updatedAtTest() {
         // TODO: test updatedAt
+    }
+
+    /**
+     * Test the property 'properties'
+     */
+    @Test
+    public void propertiesTest() {
+        // TODO: test properties
     }
 
 }

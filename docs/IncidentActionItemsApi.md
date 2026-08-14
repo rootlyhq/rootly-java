@@ -221,7 +221,7 @@ public class Example {
 
 <a id="listAllIncidentActionItems"></a>
 # **listAllIncidentActionItems**
-> IncidentActionItemList listAllIncidentActionItems(include, pageNumber, pageSize, filterKind, filterPriority, filterStatus, filterIncidentStatus, filterIncidentCreatedAtGt, filterIncidentCreatedAtGte, filterIncidentCreatedAtLt, filterIncidentCreatedAtLte, filterDueDateGt, filterDueDateGte, filterDueDateLt, filterDueDateLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort)
+> IncidentActionItemList listAllIncidentActionItems(include, pageNumber, pageSize, filterKind, filterPriority, filterStatus, filterIncidentStatus, filterIncidentCreatedAtGt, filterIncidentCreatedAtGte, filterIncidentCreatedAtLt, filterIncidentCreatedAtLte, filterDueDateGt, filterDueDateGte, filterDueDateLt, filterDueDateLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterKindEq, filterKindNotEq, filterKindIn, filterKindNotIn, filterPriorityEq, filterPriorityNotEq, filterPriorityIn, filterPriorityNotIn, filterStatusEq, filterStatusNotEq, filterStatusIn, filterStatusNotIn, filterIncidentStatusEq, filterIncidentStatusNotEq, filterIncidentStatusIn, filterIncidentStatusNotIn, sort)
 
 List all action items for an organization
 
@@ -266,9 +266,25 @@ public class Example {
     String filterCreatedAtGte = "filterCreatedAtGte_example"; // String | 
     String filterCreatedAtLt = "filterCreatedAtLt_example"; // String | 
     String filterCreatedAtLte = "filterCreatedAtLte_example"; // String | 
+    String filterKindEq = "filterKindEq_example"; // String | 
+    String filterKindNotEq = "filterKindNotEq_example"; // String | 
+    String filterKindIn = "filterKindIn_example"; // String | 
+    String filterKindNotIn = "filterKindNotIn_example"; // String | 
+    String filterPriorityEq = "filterPriorityEq_example"; // String | 
+    String filterPriorityNotEq = "filterPriorityNotEq_example"; // String | 
+    String filterPriorityIn = "filterPriorityIn_example"; // String | 
+    String filterPriorityNotIn = "filterPriorityNotIn_example"; // String | 
+    String filterStatusEq = "filterStatusEq_example"; // String | 
+    String filterStatusNotEq = "filterStatusNotEq_example"; // String | 
+    String filterStatusIn = "filterStatusIn_example"; // String | 
+    String filterStatusNotIn = "filterStatusNotIn_example"; // String | 
+    String filterIncidentStatusEq = "filterIncidentStatusEq_example"; // String | 
+    String filterIncidentStatusNotEq = "filterIncidentStatusNotEq_example"; // String | 
+    String filterIncidentStatusIn = "filterIncidentStatusIn_example"; // String | 
+    String filterIncidentStatusNotIn = "filterIncidentStatusNotIn_example"; // String | 
     String sort = "sort_example"; // String | 
     try {
-      IncidentActionItemList result = apiInstance.listAllIncidentActionItems(include, pageNumber, pageSize, filterKind, filterPriority, filterStatus, filterIncidentStatus, filterIncidentCreatedAtGt, filterIncidentCreatedAtGte, filterIncidentCreatedAtLt, filterIncidentCreatedAtLte, filterDueDateGt, filterDueDateGte, filterDueDateLt, filterDueDateLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
+      IncidentActionItemList result = apiInstance.listAllIncidentActionItems(include, pageNumber, pageSize, filterKind, filterPriority, filterStatus, filterIncidentStatus, filterIncidentCreatedAtGt, filterIncidentCreatedAtGte, filterIncidentCreatedAtLt, filterIncidentCreatedAtLte, filterDueDateGt, filterDueDateGte, filterDueDateLt, filterDueDateLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterKindEq, filterKindNotEq, filterKindIn, filterKindNotIn, filterPriorityEq, filterPriorityNotEq, filterPriorityIn, filterPriorityNotIn, filterStatusEq, filterStatusNotEq, filterStatusIn, filterStatusNotIn, filterIncidentStatusEq, filterIncidentStatusNotEq, filterIncidentStatusIn, filterIncidentStatusNotIn, sort);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling IncidentActionItemsApi#listAllIncidentActionItems");
@@ -304,6 +320,22 @@ public class Example {
 | **filterCreatedAtGte** | **String**|  | [optional] |
 | **filterCreatedAtLt** | **String**|  | [optional] |
 | **filterCreatedAtLte** | **String**|  | [optional] |
+| **filterKindEq** | **String**|  | [optional] |
+| **filterKindNotEq** | **String**|  | [optional] |
+| **filterKindIn** | **String**|  | [optional] |
+| **filterKindNotIn** | **String**|  | [optional] |
+| **filterPriorityEq** | **String**|  | [optional] |
+| **filterPriorityNotEq** | **String**|  | [optional] |
+| **filterPriorityIn** | **String**|  | [optional] |
+| **filterPriorityNotIn** | **String**|  | [optional] |
+| **filterStatusEq** | **String**|  | [optional] |
+| **filterStatusNotEq** | **String**|  | [optional] |
+| **filterStatusIn** | **String**|  | [optional] |
+| **filterStatusNotIn** | **String**|  | [optional] |
+| **filterIncidentStatusEq** | **String**|  | [optional] |
+| **filterIncidentStatusNotEq** | **String**|  | [optional] |
+| **filterIncidentStatusIn** | **String**|  | [optional] |
+| **filterIncidentStatusNotIn** | **String**|  | [optional] |
 | **sort** | **String**|  | [optional] |
 
 ### Return type

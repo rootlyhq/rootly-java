@@ -12,13 +12,15 @@
 |**valueKind** | [**ValueKindEnum**](#ValueKindEnum) | The value kind of the form field |  |
 |**valueKindCatalogId** | **String** | The ID of the catalog used when value_kind is &#x60;catalog_entity&#x60; |  [optional] |
 |**name** | **String** | The name of the form field |  |
-|**slug** | **String** | The slug of the form field |  |
+|**slug** | **String** | The slug of the form field |  [optional] [readonly] |
+|**resourceType** | [**ResourceTypeEnum**](#ResourceTypeEnum) | The resource type this field belongs to |  [optional] |
 |**description** | **String** | The description of the form field |  [optional] |
 |**shown** | **List&lt;String&gt;** |  |  |
 |**required** | **List&lt;String&gt;** |  |  |
 |**showOnIncidentDetails** | **Boolean** | Whether the form field is shown on the incident details panel |  [optional] |
 |**enabled** | **Boolean** | Whether the form field is enabled |  [optional] |
 |**defaultValues** | **List&lt;String&gt;** |  |  |
+|**autoSetByCatalogPropertyId** | **String** | Catalog property ID to auto-set this form field. Only reference-kind catalog properties are supported. |  [optional] |
 |**createdAt** | **String** | Date of creation |  |
 |**updatedAt** | **String** | Date of last update |  |
 
@@ -40,6 +42,7 @@
 | CAUSES | &quot;causes&quot; |
 | FUNCTIONALITIES | &quot;functionalities&quot; |
 | TEAMS | &quot;teams&quot; |
+| STATUS | &quot;status&quot; |
 | VISIBILITY | &quot;visibility&quot; |
 | MARK_AS_TEST | &quot;mark_as_test&quot; |
 | MARK_AS_BACKFILLED | &quot;mark_as_backfilled&quot; |
@@ -88,6 +91,18 @@
 | FUNCTIONALITY | &quot;functionality&quot; |
 | USER | &quot;user&quot; |
 | CATALOG_ENTITY | &quot;catalog_entity&quot; |
+| ENVIRONMENT | &quot;environment&quot; |
+| CAUSE | &quot;cause&quot; |
+| INCIDENT_TYPE | &quot;incident_type&quot; |
+
+
+
+## Enum: ResourceTypeEnum
+
+| Name | Value |
+|---- | -----|
+| INCIDENT | &quot;incident&quot; |
+| PROBLEM | &quot;problem&quot; |
 
 
 

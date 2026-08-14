@@ -18,6 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewCauseDataAttributesPropertiesInner;
 import com.rootly.client.model.NewEnvironmentDataAttributesSlackAliasesInner;
 import com.rootly.client.model.NewEnvironmentDataAttributesSlackChannelsInner;
 import java.io.IOException;
@@ -67,6 +68,14 @@ public class IncidentTypeTest {
     }
 
     /**
+     * Test the property 'publicDescription'
+     */
+    @Test
+    public void publicDescriptionTest() {
+        // TODO: test publicDescription
+    }
+
+    /**
      * Test the property 'color'
      */
     @Test
@@ -104,6 +113,14 @@ public class IncidentTypeTest {
     @Test
     public void slackAliasesTest() {
         // TODO: test slackAliases
+    }
+
+    /**
+     * Test the property 'properties'
+     */
+    @Test
+    public void propertiesTest() {
+        // TODO: test properties
     }
 
     /**

@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -94,6 +95,22 @@ public class CreateZoomMeetingTaskParamsTest {
     @Test
     public void recordMeetingTest() {
         // TODO: test recordMeeting
+    }
+
+    /**
+     * Test the property 'recordingMode'
+     */
+    @Test
+    public void recordingModeTest() {
+        // TODO: test recordingMode
+    }
+
+    /**
+     * Test the property 'enableZoomBotAutoJoin'
+     */
+    @Test
+    public void enableZoomBotAutoJoinTest() {
+        // TODO: test enableZoomBotAutoJoin
     }
 
     /**

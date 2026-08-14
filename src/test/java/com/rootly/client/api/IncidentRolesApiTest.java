@@ -87,7 +87,6 @@ public class IncidentRolesApiTest {
      */
     @Test
     public void listIncidentRolesTest() throws ApiException {
-        String include = null;
         Integer pageNumber = null;
         Integer pageSize = null;
         String filterSearch = null;
@@ -98,8 +97,20 @@ public class IncidentRolesApiTest {
         String filterCreatedAtGte = null;
         String filterCreatedAtLt = null;
         String filterCreatedAtLte = null;
+        String filterSlugEq = null;
+        String filterSlugNotEq = null;
+        String filterSlugIn = null;
+        String filterSlugNotIn = null;
+        String filterNameEq = null;
+        String filterNameNotEq = null;
+        String filterNameIn = null;
+        String filterNameNotIn = null;
+        String filterEnabledEq = null;
+        String filterEnabledNotEq = null;
+        String filterEnabledIn = null;
+        String filterEnabledNotIn = null;
         String sort = null;
-        IncidentRoleList response = api.listIncidentRoles(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
+        IncidentRoleList response = api.listIncidentRoles(pageNumber, pageSize, filterSearch, filterSlug, filterName, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterEnabledEq, filterEnabledNotEq, filterEnabledIn, filterEnabledNotIn, sort);
         // TODO: test validations
     }
 

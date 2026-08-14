@@ -15,11 +15,15 @@
 |**phoneNumber** | **String** | You can select a phone number using [generate_phone_number](#//api/v1/live_call_routers/generate_phone_number) API and pass that phone number here to register |  [optional] |
 |**voicemailGreeting** | **String** | The voicemail greeting of the live_call_router |  [optional] |
 |**callerGreeting** | **String** | The caller greeting message of the live_call_router |  [optional] |
+|**unavailableResponderMessage** | **String** | The message played to the caller when a responder doesn&#39;t answer and the call moves on to the next person in the escalation. Leave blank to use the default message. |  [optional] |
 |**waitingMusicUrl** | [**WaitingMusicUrlEnum**](#WaitingMusicUrlEnum) | The waiting music URL of the live_call_router |  [optional] |
 |**sentToVoicemailDelay** | **Integer** | The delay (seconds) after which the caller in redirected to voicemail |  [optional] |
 |**shouldRedirectToVoicemailOnNoAnswer** | **Boolean** | This prompts the caller to choose voicemail or connect live |  [optional] |
 |**escalationLevelDelayInSeconds** | **Integer** | This overrides the delay (seconds) in escalation levels |  [optional] |
 |**shouldAutoResolveAlertOnCallEnd** | **Boolean** | This overrides the delay (seconds) in escalation levels |  [optional] |
+|**notifyViaSms** | **Boolean** | Whether responders are also notified via SMS when this router pages them |  [optional] |
+|**notifyViaPushNotification** | **Boolean** | Whether responders are also notified via push notification when this router pages them |  [optional] |
+|**informationalNotificationMessage** | **String** | Optional message included in the SMS/push notification. Supports variables such as {{ alert.url }}, {{ alert.data.* }}, and {{ alert.alert_urgency.name }}. |  [optional] |
 |**alertUrgencyId** | **String** | This is used in escalation paths to determine who to page |  [optional] |
 |**callingTreePrompt** | **String** | The audio instructions callers will hear when they call this number, prompting them to select from available options to route their call |  [optional] |
 |**pagingTargets** | [**List&lt;NewLiveCallRouterDataAttributesPagingTargetsInner&gt;**](NewLiveCallRouterDataAttributesPagingTargetsInner.md) | Paging targets that callers can select from when this live call router is configured as a phone tree. |  [optional] |
@@ -47,6 +51,8 @@
 | DE | &quot;DE&quot; |
 | NL | &quot;NL&quot; |
 | NZ | &quot;NZ&quot; |
+| SE | &quot;SE&quot; |
+| CH | &quot;CH&quot; |
 | GB | &quot;GB&quot; |
 | US | &quot;US&quot; |
 

@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * AddMicrosoftTeamsChatTabTaskParams
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AddMicrosoftTeamsChatTabTaskParams {
   /**
    * Gets or Sets taskType
@@ -103,28 +103,28 @@ public class AddMicrosoftTeamsChatTabTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_CHAT = "chat";
   @SerializedName(SERIALIZED_NAME_CHAT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private AddActionItemTaskParamsPostToSlackChannelsInner chat;
 
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String title;
 
   public static final String SERIALIZED_NAME_LINK = "link";
   @SerializedName(SERIALIZED_NAME_LINK)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String link;
 
   public AddMicrosoftTeamsChatTabTaskParams() {
   }
 
-  public AddMicrosoftTeamsChatTabTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public AddMicrosoftTeamsChatTabTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -133,17 +133,17 @@ public class AddMicrosoftTeamsChatTabTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public AddMicrosoftTeamsChatTabTaskParams chat(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner chat) {
+  public AddMicrosoftTeamsChatTabTaskParams chat(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner chat) {
     this.chat = chat;
     return this;
   }
@@ -152,17 +152,17 @@ public class AddMicrosoftTeamsChatTabTaskParams {
    * Get chat
    * @return chat
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public AddActionItemTaskParamsPostToSlackChannelsInner getChat() {
     return chat;
   }
 
-  public void setChat(@javax.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner chat) {
+  public void setChat(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner chat) {
     this.chat = chat;
   }
 
 
-  public AddMicrosoftTeamsChatTabTaskParams title(@javax.annotation.Nonnull String title) {
+  public AddMicrosoftTeamsChatTabTaskParams title(@jakarta.annotation.Nonnull String title) {
     this.title = title;
     return this;
   }
@@ -171,17 +171,17 @@ public class AddMicrosoftTeamsChatTabTaskParams {
    * The tab title
    * @return title
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getTitle() {
     return title;
   }
 
-  public void setTitle(@javax.annotation.Nonnull String title) {
+  public void setTitle(@jakarta.annotation.Nonnull String title) {
     this.title = title;
   }
 
 
-  public AddMicrosoftTeamsChatTabTaskParams link(@javax.annotation.Nonnull String link) {
+  public AddMicrosoftTeamsChatTabTaskParams link(@jakarta.annotation.Nonnull String link) {
     this.link = link;
     return this;
   }
@@ -190,12 +190,12 @@ public class AddMicrosoftTeamsChatTabTaskParams {
    * The tab link
    * @return link
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getLink() {
     return link;
   }
 
-  public void setLink(@javax.annotation.Nonnull String link) {
+  public void setLink(@jakarta.annotation.Nonnull String link) {
     this.link = link;
   }
 

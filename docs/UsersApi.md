@@ -210,7 +210,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | user found with teams, schedules, and notification_rules includes |  -  |
+| **200** | teams include only returns teams from the current team |  -  |
 | **404** | resource not found |  -  |
 
 <a id="listUsers"></a>
@@ -366,6 +366,6 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | update name and role simultaneously |  -  |
+| **200** | custom role with roles_permissions can update user role (IR-5606) |  -  |
 | **404** | returns 404 for on_call_role_id belonging to another team |  -  |
 

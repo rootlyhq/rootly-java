@@ -10,6 +10,7 @@
 |**data** | [**List&lt;IncidentFormFieldSelectionResponseData&gt;**](IncidentFormFieldSelectionResponseData.md) |  |  |
 |**links** | [**Links**](Links.md) |  |  |
 |**meta** | [**Meta**](Meta.md) |  |  |
+|**included** | [**List&lt;JsonapiIncludedResource&gt;**](JsonapiIncludedResource.md) |  |  [optional] |
 
 
 

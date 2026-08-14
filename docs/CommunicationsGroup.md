@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**name** | **String** | The name of the communications group |  |
-|**slug** | **String** | The slug of the communications group |  |
+|**slug** | **String** | The slug of the communications group |  [optional] [readonly] |
 |**description** | **String** | The description of the communications group |  [optional] |
 |**communicationTypeId** | **String** | The communication type ID |  |
 |**isPrivate** | **Boolean** | Whether the group is private |  |

@@ -50,11 +50,11 @@ import com.rootly.client.JSON;
 /**
  * AlertTriggerParamsAlertPayloadConditionsConditionsInner
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AlertTriggerParamsAlertPayloadConditionsConditionsInner {
   public static final String SERIALIZED_NAME_QUERY = "query";
   @SerializedName(SERIALIZED_NAME_QUERY)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String query;
 
   /**
@@ -125,23 +125,23 @@ public class AlertTriggerParamsAlertPayloadConditionsConditionsInner {
 
   public static final String SERIALIZED_NAME_OPERATOR = "operator";
   @SerializedName(SERIALIZED_NAME_OPERATOR)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private OperatorEnum operator;
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> values = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_USE_REGEXP = "use_regexp";
   @SerializedName(SERIALIZED_NAME_USE_REGEXP)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean useRegexp;
 
   public AlertTriggerParamsAlertPayloadConditionsConditionsInner() {
   }
 
-  public AlertTriggerParamsAlertPayloadConditionsConditionsInner query(@javax.annotation.Nonnull String query) {
+  public AlertTriggerParamsAlertPayloadConditionsConditionsInner query(@jakarta.annotation.Nonnull String query) {
     this.query = query;
     return this;
   }
@@ -150,17 +150,17 @@ public class AlertTriggerParamsAlertPayloadConditionsConditionsInner {
    * Get query
    * @return query
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getQuery() {
     return query;
   }
 
-  public void setQuery(@javax.annotation.Nonnull String query) {
+  public void setQuery(@jakarta.annotation.Nonnull String query) {
     this.query = query;
   }
 
 
-  public AlertTriggerParamsAlertPayloadConditionsConditionsInner operator(@javax.annotation.Nonnull OperatorEnum operator) {
+  public AlertTriggerParamsAlertPayloadConditionsConditionsInner operator(@jakarta.annotation.Nonnull OperatorEnum operator) {
     this.operator = operator;
     return this;
   }
@@ -169,17 +169,17 @@ public class AlertTriggerParamsAlertPayloadConditionsConditionsInner {
    * Get operator
    * @return operator
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public OperatorEnum getOperator() {
     return operator;
   }
 
-  public void setOperator(@javax.annotation.Nonnull OperatorEnum operator) {
+  public void setOperator(@jakarta.annotation.Nonnull OperatorEnum operator) {
     this.operator = operator;
   }
 
 
-  public AlertTriggerParamsAlertPayloadConditionsConditionsInner values(@javax.annotation.Nullable List<String> values) {
+  public AlertTriggerParamsAlertPayloadConditionsConditionsInner values(@jakarta.annotation.Nullable List<String> values) {
     this.values = values;
     return this;
   }
@@ -196,17 +196,17 @@ public class AlertTriggerParamsAlertPayloadConditionsConditionsInner {
    * Get values
    * @return values
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getValues() {
     return values;
   }
 
-  public void setValues(@javax.annotation.Nullable List<String> values) {
+  public void setValues(@jakarta.annotation.Nullable List<String> values) {
     this.values = values;
   }
 
 
-  public AlertTriggerParamsAlertPayloadConditionsConditionsInner useRegexp(@javax.annotation.Nullable Boolean useRegexp) {
+  public AlertTriggerParamsAlertPayloadConditionsConditionsInner useRegexp(@jakarta.annotation.Nullable Boolean useRegexp) {
     this.useRegexp = useRegexp;
     return this;
   }
@@ -215,12 +215,12 @@ public class AlertTriggerParamsAlertPayloadConditionsConditionsInner {
    * Get useRegexp
    * @return useRegexp
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getUseRegexp() {
     return useRegexp;
   }
 
-  public void setUseRegexp(@javax.annotation.Nullable Boolean useRegexp) {
+  public void setUseRegexp(@jakarta.annotation.Nullable Boolean useRegexp) {
     this.useRegexp = useRegexp;
   }
 

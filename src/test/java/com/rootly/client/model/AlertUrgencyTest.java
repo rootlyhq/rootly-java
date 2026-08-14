@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -35,6 +36,14 @@ public class AlertUrgencyTest {
     @Test
     public void testAlertUrgency() {
         // TODO: test AlertUrgency
+    }
+
+    /**
+     * Test the property 'id'
+     */
+    @Test
+    public void idTest() {
+        // TODO: test id
     }
 
     /**
@@ -59,6 +68,46 @@ public class AlertUrgencyTest {
     @Test
     public void positionTest() {
         // TODO: test position
+    }
+
+    /**
+     * Test the property 'retriggerTimeoutMinutes'
+     */
+    @Test
+    public void retriggerTimeoutMinutesTest() {
+        // TODO: test retriggerTimeoutMinutes
+    }
+
+    /**
+     * Test the property 'urgency'
+     */
+    @Test
+    public void urgencyTest() {
+        // TODO: test urgency
+    }
+
+    /**
+     * Test the property 'color'
+     */
+    @Test
+    public void colorTest() {
+        // TODO: test color
+    }
+
+    /**
+     * Test the property 'teamId'
+     */
+    @Test
+    public void teamIdTest() {
+        // TODO: test teamId
+    }
+
+    /**
+     * Test the property 'deletedAt'
+     */
+    @Test
+    public void deletedAtTest() {
+        // TODO: test deletedAt
     }
 
     /**

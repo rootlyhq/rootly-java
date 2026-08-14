@@ -92,6 +92,14 @@ public class UpdateAlertDataAttributesTest {
     }
 
     /**
+     * Test the property 'functionalityIds'
+     */
+    @Test
+    public void functionalityIdsTest() {
+        // TODO: test functionalityIds
+    }
+
+    /**
      * Test the property 'environmentIds'
      */
     @Test

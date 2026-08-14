@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * AlertField
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AlertField {
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
@@ -78,9 +78,11 @@ public class AlertField {
   public AlertField() {
   }
 
-  public AlertField slug(@jakarta.annotation.Nullable String slug) {
+  public AlertField(
+     String slug
+  ) {
+    this();
     this.slug = slug;
-    return this;
   }
 
   /**
@@ -92,9 +94,6 @@ public class AlertField {
     return slug;
   }
 
-  public void setSlug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
-  }
 
 
   public AlertField name(@jakarta.annotation.Nonnull String name) {

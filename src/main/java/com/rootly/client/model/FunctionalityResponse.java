@@ -20,8 +20,11 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.rootly.client.model.FunctionalityResponseData;
+import com.rootly.client.model.JsonapiIncludedResource;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,12 +52,17 @@ import com.rootly.client.JSON;
 /**
  * FunctionalityResponse
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class FunctionalityResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
   @jakarta.annotation.Nonnull
   private FunctionalityResponseData data;
+
+  public static final String SERIALIZED_NAME_INCLUDED = "included";
+  @SerializedName(SERIALIZED_NAME_INCLUDED)
+  @jakarta.annotation.Nullable
+  private List<JsonapiIncludedResource> included = new ArrayList<>();
 
   public FunctionalityResponse() {
   }
@@ -78,6 +86,33 @@ public class FunctionalityResponse {
   }
 
 
+  public FunctionalityResponse included(@jakarta.annotation.Nullable List<JsonapiIncludedResource> included) {
+    this.included = included;
+    return this;
+  }
+
+  public FunctionalityResponse addIncludedItem(JsonapiIncludedResource includedItem) {
+    if (this.included == null) {
+      this.included = new ArrayList<>();
+    }
+    this.included.add(includedItem);
+    return this;
+  }
+
+  /**
+   * Get included
+   * @return included
+   */
+  @jakarta.annotation.Nullable
+  public List<JsonapiIncludedResource> getIncluded() {
+    return included;
+  }
+
+  public void setIncluded(@jakarta.annotation.Nullable List<JsonapiIncludedResource> included) {
+    this.included = included;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -88,12 +123,13 @@ public class FunctionalityResponse {
       return false;
     }
     FunctionalityResponse functionalityResponse = (FunctionalityResponse) o;
-    return Objects.equals(this.data, functionalityResponse.data);
+    return Objects.equals(this.data, functionalityResponse.data) &&
+        Objects.equals(this.included, functionalityResponse.included);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(data);
+    return Objects.hash(data, included);
   }
 
   @Override
@@ -101,6 +137,7 @@ public class FunctionalityResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class FunctionalityResponse {\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
+    sb.append("    included: ").append(toIndentedString(included)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -124,6 +161,7 @@ public class FunctionalityResponse {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("data");
+    openapiFields.add("included");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -160,6 +198,20 @@ public class FunctionalityResponse {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the required field `data`
       FunctionalityResponseData.validateJsonElement(jsonObj.get("data"));
+      if (jsonObj.get("included") != null && !jsonObj.get("included").isJsonNull()) {
+        JsonArray jsonArrayincluded = jsonObj.getAsJsonArray("included");
+        if (jsonArrayincluded != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("included").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `included` to be an array in the JSON string but got `%s`", jsonObj.get("included").toString()));
+          }
+
+          // validate the optional field `included` (array)
+          for (int i = 0; i < jsonArrayincluded.size(); i++) {
+            JsonapiIncludedResource.validateJsonElement(jsonArrayincluded.get(i));
+          };
+        }
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

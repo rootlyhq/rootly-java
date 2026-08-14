@@ -14,6 +14,7 @@
 package com.rootly.client.api;
 
 import com.rootly.client.ApiException;
+import com.rootly.client.model.AlertEventFeedList;
 import com.rootly.client.model.AlertEventList;
 import com.rootly.client.model.AlertEventResponse;
 import com.rootly.client.model.ErrorsList;
@@ -94,6 +95,30 @@ public class AlertEventsApiTest {
         String filterKind = null;
         String filterAction = null;
         AlertEventList response = api.listAlertEvents(alertId, include, pageNumber, pageSize, filterKind, filterAction);
+        // TODO: test validations
+    }
+
+    /**
+     * List alert events across alerts
+     *
+     * Returns a flat list of alert events across all alerts the requester can access. Designed for periodic polling: use &#x60;page[after]&#x60; with the &#x60;next_cursor&#x60; returned in the previous response to stream forward.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void listAlertEventsFeedTest() throws ApiException {
+        String include = null;
+        Integer pageSize = null;
+        String pageAfter = null;
+        String sort = null;
+        String filterKind = null;
+        String filterAction = null;
+        String filterAlertId = null;
+        String filterCreatedAtGt = null;
+        String filterCreatedAtGte = null;
+        String filterCreatedAtLt = null;
+        String filterCreatedAtLte = null;
+        AlertEventFeedList response = api.listAlertEventsFeed(include, pageSize, pageAfter, sort, filterKind, filterAction, filterAlertId, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
         // TODO: test validations
     }
 

@@ -74,6 +74,38 @@ public class NewEscalationPolicyLevelDataAttributesTest {
     }
 
     /**
+     * Test the property 'pagingStrategyConfigurationRepeats'
+     */
+    @Test
+    public void pagingStrategyConfigurationRepeatsTest() {
+        // TODO: test pagingStrategyConfigurationRepeats
+    }
+
+    /**
+     * Test the property 'pagingStrategyConfigurationRepeatsMode'
+     */
+    @Test
+    public void pagingStrategyConfigurationRepeatsModeTest() {
+        // TODO: test pagingStrategyConfigurationRepeatsMode
+    }
+
+    /**
+     * Test the property 'pagingStrategyConfigurationRotationScope'
+     */
+    @Test
+    public void pagingStrategyConfigurationRotationScopeTest() {
+        // TODO: test pagingStrategyConfigurationRotationScope
+    }
+
+    /**
+     * Test the property 'pagingStrategyConfigurationPageUsersCount'
+     */
+    @Test
+    public void pagingStrategyConfigurationPageUsersCountTest() {
+        // TODO: test pagingStrategyConfigurationPageUsersCount
+    }
+
+    /**
      * Test the property 'escalationPolicyPathId'
      */
     @Test

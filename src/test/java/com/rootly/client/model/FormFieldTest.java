@@ -89,6 +89,14 @@ public class FormFieldTest {
     }
 
     /**
+     * Test the property 'resourceType'
+     */
+    @Test
+    public void resourceTypeTest() {
+        // TODO: test resourceType
+    }
+
+    /**
      * Test the property 'description'
      */
     @Test
@@ -134,6 +142,14 @@ public class FormFieldTest {
     @Test
     public void defaultValuesTest() {
         // TODO: test defaultValues
+    }
+
+    /**
+     * Test the property 'autoSetByCatalogPropertyId'
+     */
+    @Test
+    public void autoSetByCatalogPropertyIdTest() {
+        // TODO: test autoSetByCatalogPropertyId
     }
 
     /**

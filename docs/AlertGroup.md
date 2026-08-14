@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**name** | **String** | The name of the alert group |  |
 |**description** | **String** | The description of the alert group |  |
-|**slug** | **String** | The slug of the alert group |  |
+|**slug** | **String** | The slug of the alert group |  [optional] [readonly] |
 |**conditionType** | **String** | Grouping condition for the alert group |  |
 |**timeWindow** | **Integer** | Time window for the alert grouping |  |
 |**groupByAlertTitle** | **Boolean** | [DEPRECATED] Whether the alerts are grouped by title or not. This field is deprecated. Please use the &#x60;conditions&#x60; field with advanced alert grouping instead. |  [optional] |

@@ -18,6 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewCauseDataAttributesPropertiesInner;
 import com.rootly.client.model.NewEnvironmentDataAttributesSlackAliasesInner;
 import com.rootly.client.model.NewEnvironmentDataAttributesSlackChannelsInner;
 import java.io.IOException;
@@ -56,6 +57,14 @@ public class FunctionalityTest {
     @Test
     public void slugTest() {
         // TODO: test slug
+    }
+
+    /**
+     * Test the property 'managedBy'
+     */
+    @Test
+    public void managedByTest() {
+        // TODO: test managedBy
     }
 
     /**
@@ -187,6 +196,14 @@ public class FunctionalityTest {
     }
 
     /**
+     * Test the property 'escalationPolicyId'
+     */
+    @Test
+    public void escalationPolicyIdTest() {
+        // TODO: test escalationPolicyId
+    }
+
+    /**
      * Test the property 'slackChannels'
      */
     @Test
@@ -200,6 +217,14 @@ public class FunctionalityTest {
     @Test
     public void slackAliasesTest() {
         // TODO: test slackAliases
+    }
+
+    /**
+     * Test the property 'properties'
+     */
+    @Test
+    public void propertiesTest() {
+        // TODO: test properties
     }
 
     /**

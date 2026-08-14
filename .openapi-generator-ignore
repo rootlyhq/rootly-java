@@ -25,9 +25,13 @@
 # Protect custom files from regeneration
 build.gradle
 pom.xml
+gradlew
+gradlew.bat
+gradle/wrapper/**
 LICENSE
 README.md
 CLAUDE.md
 PUBLISHING.md
 CHANGELOG.md
 .github/dependabot.yml
+.github/workflows/maven.yml

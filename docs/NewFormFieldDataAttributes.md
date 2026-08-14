@@ -7,6 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**slug** | **String** | Deprecated. &#x60;slug&#x60; is derived from &#x60;name&#x60;; any submitted value is ignored. This property will be removed from the request schema in a future version. |  [optional] |
 |**kind** | [**KindEnum**](#KindEnum) | The kind of the form field |  |
 |**inputKind** | [**InputKindEnum**](#InputKindEnum) | The input kind of the form field |  [optional] |
 |**valueKind** | [**ValueKindEnum**](#ValueKindEnum) | The value kind of the form field |  [optional] |
@@ -18,6 +19,7 @@
 |**showOnIncidentDetails** | **Boolean** | Whether the form field is shown on the incident details panel |  [optional] |
 |**enabled** | **Boolean** | Whether the form field is enabled |  [optional] |
 |**defaultValues** | **List&lt;String&gt;** |  |  [optional] |
+|**autoSetByCatalogPropertyId** | **String** | Catalog property ID to auto-set this form field. Only reference-kind catalog properties are supported. |  [optional] |
 
 
 
@@ -37,6 +39,7 @@
 | CAUSES | &quot;causes&quot; |
 | FUNCTIONALITIES | &quot;functionalities&quot; |
 | TEAMS | &quot;teams&quot; |
+| STATUS | &quot;status&quot; |
 | VISIBILITY | &quot;visibility&quot; |
 | MARK_AS_TEST | &quot;mark_as_test&quot; |
 | MARK_AS_BACKFILLED | &quot;mark_as_backfilled&quot; |
@@ -85,6 +88,9 @@
 | FUNCTIONALITY | &quot;functionality&quot; |
 | USER | &quot;user&quot; |
 | CATALOG_ENTITY | &quot;catalog_entity&quot; |
+| ENVIRONMENT | &quot;environment&quot; |
+| CAUSE | &quot;cause&quot; |
+| INCIDENT_TYPE | &quot;incident_type&quot; |
 
 
 

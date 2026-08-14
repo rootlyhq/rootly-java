@@ -19,10 +19,12 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewWebhooksEndpointDataAttributesCustomHeadersInner;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,8 +52,14 @@ import com.rootly.client.JSON;
 /**
  * NewWebhooksEndpointDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewWebhooksEndpointDataAttributes {
+  public static final String SERIALIZED_NAME_SLUG = "slug";
+  @Deprecated
+  @SerializedName(SERIALIZED_NAME_SLUG)
+  @jakarta.annotation.Nullable
+  private String slug;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @jakarta.annotation.Nonnull
@@ -118,7 +126,11 @@ public class NewWebhooksEndpointDataAttributes {
     
     ALERT_CREATED("alert.created"),
     
+    ALERT_UPDATED("alert.updated"),
+    
     PULSE_CREATED("pulse.created"),
+    
+    SHIFT_STARTED("shift.started"),
     
     GENIUS_WORKFLOW_RUN_QUEUED("genius_workflow_run.queued"),
     
@@ -128,7 +140,9 @@ public class NewWebhooksEndpointDataAttributes {
     
     GENIUS_WORKFLOW_RUN_FAILED("genius_workflow_run.failed"),
     
-    GENIUS_WORKFLOW_RUN_CANCELED("genius_workflow_run.canceled");
+    GENIUS_WORKFLOW_RUN_CANCELED("genius_workflow_run.canceled"),
+    
+    AUDIT_LOG_CREATED("audit_log.created");
 
     private String value;
 
@@ -183,8 +197,36 @@ public class NewWebhooksEndpointDataAttributes {
   @jakarta.annotation.Nullable
   private Boolean enabled;
 
+  public static final String SERIALIZED_NAME_CUSTOM_HEADERS = "custom_headers";
+  @SerializedName(SERIALIZED_NAME_CUSTOM_HEADERS)
+  @jakarta.annotation.Nullable
+  private List<NewWebhooksEndpointDataAttributesCustomHeadersInner> customHeaders = new ArrayList<>();
+
   public NewWebhooksEndpointDataAttributes() {
   }
+
+  @Deprecated
+  public NewWebhooksEndpointDataAttributes slug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+    return this;
+  }
+
+  /**
+   * Deprecated. &#x60;slug&#x60; is derived from &#x60;name&#x60;; any submitted value is ignored. This property will be removed from the request schema in a future version.
+   * @return slug
+   * @deprecated
+   */
+  @Deprecated
+  @jakarta.annotation.Nullable
+  public String getSlug() {
+    return slug;
+  }
+
+  @Deprecated
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+  }
+
 
   public NewWebhooksEndpointDataAttributes name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
@@ -289,6 +331,33 @@ public class NewWebhooksEndpointDataAttributes {
   }
 
 
+  public NewWebhooksEndpointDataAttributes customHeaders(@jakarta.annotation.Nullable List<NewWebhooksEndpointDataAttributesCustomHeadersInner> customHeaders) {
+    this.customHeaders = customHeaders;
+    return this;
+  }
+
+  public NewWebhooksEndpointDataAttributes addCustomHeadersItem(NewWebhooksEndpointDataAttributesCustomHeadersInner customHeadersItem) {
+    if (this.customHeaders == null) {
+      this.customHeaders = new ArrayList<>();
+    }
+    this.customHeaders.add(customHeadersItem);
+    return this;
+  }
+
+  /**
+   * Custom HTTP headers sent with each delivery. Max 10. Reserved names (Content-Type, X-Rootly-Signature, Host, etc.) are rejected.
+   * @return customHeaders
+   */
+  @jakarta.annotation.Nullable
+  public List<NewWebhooksEndpointDataAttributesCustomHeadersInner> getCustomHeaders() {
+    return customHeaders;
+  }
+
+  public void setCustomHeaders(@jakarta.annotation.Nullable List<NewWebhooksEndpointDataAttributesCustomHeadersInner> customHeaders) {
+    this.customHeaders = customHeaders;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -299,27 +368,42 @@ public class NewWebhooksEndpointDataAttributes {
       return false;
     }
     NewWebhooksEndpointDataAttributes newWebhooksEndpointDataAttributes = (NewWebhooksEndpointDataAttributes) o;
-    return Objects.equals(this.name, newWebhooksEndpointDataAttributes.name) &&
+    return Objects.equals(this.slug, newWebhooksEndpointDataAttributes.slug) &&
+        Objects.equals(this.name, newWebhooksEndpointDataAttributes.name) &&
         Objects.equals(this.url, newWebhooksEndpointDataAttributes.url) &&
         Objects.equals(this.secret, newWebhooksEndpointDataAttributes.secret) &&
         Objects.equals(this.eventTypes, newWebhooksEndpointDataAttributes.eventTypes) &&
-        Objects.equals(this.enabled, newWebhooksEndpointDataAttributes.enabled);
+        Objects.equals(this.enabled, newWebhooksEndpointDataAttributes.enabled) &&
+        Objects.equals(this.customHeaders, newWebhooksEndpointDataAttributes.customHeaders);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, url, secret, eventTypes, enabled);
+    return Objects.hash(slug, name, url, secret, eventTypes, enabled, customHeaders);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class NewWebhooksEndpointDataAttributes {\n");
+    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    secret: ").append(toIndentedString(secret)).append("\n");
     sb.append("    eventTypes: ").append(toIndentedString(eventTypes)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+    sb.append("    customHeaders: ").append(toIndentedString(customHeaders)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -342,11 +426,13 @@ public class NewWebhooksEndpointDataAttributes {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("slug");
     openapiFields.add("name");
     openapiFields.add("url");
     openapiFields.add("secret");
     openapiFields.add("event_types");
     openapiFields.add("enabled");
+    openapiFields.add("custom_headers");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -382,6 +468,9 @@ public class NewWebhooksEndpointDataAttributes {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
+      }
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
@@ -394,6 +483,20 @@ public class NewWebhooksEndpointDataAttributes {
       // ensure the optional json data is an array if present
       if (jsonObj.get("event_types") != null && !jsonObj.get("event_types").isJsonNull() && !jsonObj.get("event_types").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `event_types` to be an array in the JSON string but got `%s`", jsonObj.get("event_types").toString()));
+      }
+      if (jsonObj.get("custom_headers") != null && !jsonObj.get("custom_headers").isJsonNull()) {
+        JsonArray jsonArraycustomHeaders = jsonObj.getAsJsonArray("custom_headers");
+        if (jsonArraycustomHeaders != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("custom_headers").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `custom_headers` to be an array in the JSON string but got `%s`", jsonObj.get("custom_headers").toString()));
+          }
+
+          // validate the optional field `custom_headers` (array)
+          for (int i = 0; i < jsonArraycustomHeaders.size(); i++) {
+            NewWebhooksEndpointDataAttributesCustomHeadersInner.validateJsonElement(jsonArraycustomHeaders.get(i));
+          };
+        }
       }
   }
 

@@ -20,7 +20,9 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -49,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateHeartbeatDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateHeartbeatDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -146,7 +148,7 @@ public class UpdateHeartbeatDataAttributes {
   private String notificationTargetId;
 
   /**
-   * Gets or Sets notificationTargetType
+   * The type of the notification target. Please contact support if you encounter issues using &#x60;Functionality&#x60; as a target type.
    */
   @JsonAdapter(NotificationTargetTypeEnum.Adapter.class)
   public enum NotificationTargetTypeEnum {
@@ -156,7 +158,9 @@ public class UpdateHeartbeatDataAttributes {
     
     SERVICE("Service"),
     
-    ESCALATION_POLICY("EscalationPolicy");
+    ESCALATION_POLICY("EscalationPolicy"),
+    
+    FUNCTIONALITY("Functionality");
 
     private String value;
 
@@ -205,6 +209,11 @@ public class UpdateHeartbeatDataAttributes {
   @SerializedName(SERIALIZED_NAME_NOTIFICATION_TARGET_TYPE)
   @jakarta.annotation.Nullable
   private NotificationTargetTypeEnum notificationTargetType;
+
+  public static final String SERIALIZED_NAME_OWNER_GROUP_IDS = "owner_group_ids";
+  @SerializedName(SERIALIZED_NAME_OWNER_GROUP_IDS)
+  @jakarta.annotation.Nullable
+  private List<String> ownerGroupIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
@@ -372,7 +381,7 @@ public class UpdateHeartbeatDataAttributes {
   }
 
   /**
-   * Get notificationTargetType
+   * The type of the notification target. Please contact support if you encounter issues using &#x60;Functionality&#x60; as a target type.
    * @return notificationTargetType
    */
   @jakarta.annotation.Nullable
@@ -382,6 +391,33 @@ public class UpdateHeartbeatDataAttributes {
 
   public void setNotificationTargetType(@jakarta.annotation.Nullable NotificationTargetTypeEnum notificationTargetType) {
     this.notificationTargetType = notificationTargetType;
+  }
+
+
+  public UpdateHeartbeatDataAttributes ownerGroupIds(@jakarta.annotation.Nullable List<String> ownerGroupIds) {
+    this.ownerGroupIds = ownerGroupIds;
+    return this;
+  }
+
+  public UpdateHeartbeatDataAttributes addOwnerGroupIdsItem(String ownerGroupIdsItem) {
+    if (this.ownerGroupIds == null) {
+      this.ownerGroupIds = new ArrayList<>();
+    }
+    this.ownerGroupIds.add(ownerGroupIdsItem);
+    return this;
+  }
+
+  /**
+   * List of team IDs that own this heartbeat
+   * @return ownerGroupIds
+   */
+  @jakarta.annotation.Nullable
+  public List<String> getOwnerGroupIds() {
+    return ownerGroupIds;
+  }
+
+  public void setOwnerGroupIds(@jakarta.annotation.Nullable List<String> ownerGroupIds) {
+    this.ownerGroupIds = ownerGroupIds;
   }
 
 
@@ -423,6 +459,7 @@ public class UpdateHeartbeatDataAttributes {
         Objects.equals(this.intervalUnit, updateHeartbeatDataAttributes.intervalUnit) &&
         Objects.equals(this.notificationTargetId, updateHeartbeatDataAttributes.notificationTargetId) &&
         Objects.equals(this.notificationTargetType, updateHeartbeatDataAttributes.notificationTargetType) &&
+        Objects.equals(this.ownerGroupIds, updateHeartbeatDataAttributes.ownerGroupIds) &&
         Objects.equals(this.enabled, updateHeartbeatDataAttributes.enabled);
   }
 
@@ -432,7 +469,7 @@ public class UpdateHeartbeatDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, alertSummary, alertDescription, alertUrgencyId, interval, intervalUnit, notificationTargetId, notificationTargetType, enabled);
+    return Objects.hash(name, description, alertSummary, alertDescription, alertUrgencyId, interval, intervalUnit, notificationTargetId, notificationTargetType, ownerGroupIds, enabled);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -455,6 +492,7 @@ public class UpdateHeartbeatDataAttributes {
     sb.append("    intervalUnit: ").append(toIndentedString(intervalUnit)).append("\n");
     sb.append("    notificationTargetId: ").append(toIndentedString(notificationTargetId)).append("\n");
     sb.append("    notificationTargetType: ").append(toIndentedString(notificationTargetType)).append("\n");
+    sb.append("    ownerGroupIds: ").append(toIndentedString(ownerGroupIds)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -487,6 +525,7 @@ public class UpdateHeartbeatDataAttributes {
     openapiFields.add("interval_unit");
     openapiFields.add("notification_target_id");
     openapiFields.add("notification_target_type");
+    openapiFields.add("owner_group_ids");
     openapiFields.add("enabled");
 
     // a set of required properties/fields (JSON key names)
@@ -545,6 +584,10 @@ public class UpdateHeartbeatDataAttributes {
       // validate the optional field `notification_target_type`
       if (jsonObj.get("notification_target_type") != null && !jsonObj.get("notification_target_type").isJsonNull()) {
         NotificationTargetTypeEnum.validateJsonElement(jsonObj.get("notification_target_type"));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("owner_group_ids") != null && !jsonObj.get("owner_group_ids").isJsonNull() && !jsonObj.get("owner_group_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `owner_group_ids` to be an array in the JSON string but got `%s`", jsonObj.get("owner_group_ids").toString()));
       }
   }
 

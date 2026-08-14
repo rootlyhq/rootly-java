@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * WebhooksDelivery
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class WebhooksDelivery {
   public static final String SERIALIZED_NAME_ENDPOINT_ID = "endpoint_id";
   @SerializedName(SERIALIZED_NAME_ENDPOINT_ID)
@@ -59,6 +59,70 @@ public class WebhooksDelivery {
   @SerializedName(SERIALIZED_NAME_PAYLOAD)
   @jakarta.annotation.Nonnull
   private String payload;
+
+  /**
+   * Delivery status
+   */
+  @JsonAdapter(StatusEnum.Adapter.class)
+  public enum StatusEnum {
+    PENDING("pending"),
+    
+    SUCCESS("success"),
+    
+    FAILED("failed");
+
+    private String value;
+
+    StatusEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static StatusEnum fromValue(String value) {
+      for (StatusEnum b : StatusEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<StatusEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final StatusEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public StatusEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return StatusEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      StatusEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_STATUS = "status";
+  @SerializedName(SERIALIZED_NAME_STATUS)
+  @jakarta.annotation.Nonnull
+  private StatusEnum status;
+
+  public static final String SERIALIZED_NAME_RESPONSE_STATUS = "response_status";
+  @SerializedName(SERIALIZED_NAME_RESPONSE_STATUS)
+  @jakarta.annotation.Nullable
+  private Integer responseStatus;
 
   public static final String SERIALIZED_NAME_DELIVERED_AT = "delivered_at";
   @SerializedName(SERIALIZED_NAME_DELIVERED_AT)
@@ -113,6 +177,44 @@ public class WebhooksDelivery {
 
   public void setPayload(@jakarta.annotation.Nonnull String payload) {
     this.payload = payload;
+  }
+
+
+  public WebhooksDelivery status(@jakarta.annotation.Nonnull StatusEnum status) {
+    this.status = status;
+    return this;
+  }
+
+  /**
+   * Delivery status
+   * @return status
+   */
+  @jakarta.annotation.Nonnull
+  public StatusEnum getStatus() {
+    return status;
+  }
+
+  public void setStatus(@jakarta.annotation.Nonnull StatusEnum status) {
+    this.status = status;
+  }
+
+
+  public WebhooksDelivery responseStatus(@jakarta.annotation.Nullable Integer responseStatus) {
+    this.responseStatus = responseStatus;
+    return this;
+  }
+
+  /**
+   * HTTP status code recorded for the delivery attempt. It is null before the first attempt. For SSRF and transport failures, Rootly generates this code because no destination response was received.
+   * @return responseStatus
+   */
+  @jakarta.annotation.Nullable
+  public Integer getResponseStatus() {
+    return responseStatus;
+  }
+
+  public void setResponseStatus(@jakarta.annotation.Nullable Integer responseStatus) {
+    this.responseStatus = responseStatus;
   }
 
 
@@ -185,6 +287,8 @@ public class WebhooksDelivery {
     WebhooksDelivery webhooksDelivery = (WebhooksDelivery) o;
     return Objects.equals(this.endpointId, webhooksDelivery.endpointId) &&
         Objects.equals(this.payload, webhooksDelivery.payload) &&
+        Objects.equals(this.status, webhooksDelivery.status) &&
+        Objects.equals(this.responseStatus, webhooksDelivery.responseStatus) &&
         Objects.equals(this.deliveredAt, webhooksDelivery.deliveredAt) &&
         Objects.equals(this.createdAt, webhooksDelivery.createdAt) &&
         Objects.equals(this.updatedAt, webhooksDelivery.updatedAt);
@@ -192,7 +296,7 @@ public class WebhooksDelivery {
 
   @Override
   public int hashCode() {
-    return Objects.hash(endpointId, payload, deliveredAt, createdAt, updatedAt);
+    return Objects.hash(endpointId, payload, status, responseStatus, deliveredAt, createdAt, updatedAt);
   }
 
   @Override
@@ -201,6 +305,8 @@ public class WebhooksDelivery {
     sb.append("class WebhooksDelivery {\n");
     sb.append("    endpointId: ").append(toIndentedString(endpointId)).append("\n");
     sb.append("    payload: ").append(toIndentedString(payload)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    responseStatus: ").append(toIndentedString(responseStatus)).append("\n");
     sb.append("    deliveredAt: ").append(toIndentedString(deliveredAt)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
@@ -228,6 +334,8 @@ public class WebhooksDelivery {
     openapiFields = new HashSet<String>();
     openapiFields.add("endpoint_id");
     openapiFields.add("payload");
+    openapiFields.add("status");
+    openapiFields.add("response_status");
     openapiFields.add("delivered_at");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
@@ -236,6 +344,8 @@ public class WebhooksDelivery {
     openapiRequiredFields = new HashSet<String>();
     openapiRequiredFields.add("endpoint_id");
     openapiRequiredFields.add("payload");
+    openapiRequiredFields.add("status");
+    openapiRequiredFields.add("response_status");
     openapiRequiredFields.add("delivered_at");
     openapiRequiredFields.add("created_at");
     openapiRequiredFields.add("updated_at");
@@ -275,6 +385,11 @@ public class WebhooksDelivery {
       if (!jsonObj.get("payload").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `payload` to be a primitive type in the JSON string but got `%s`", jsonObj.get("payload").toString()));
       }
+      if (!jsonObj.get("status").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+      }
+      // validate the required field `status`
+      StatusEnum.validateJsonElement(jsonObj.get("status"));
       if ((jsonObj.get("delivered_at") != null && !jsonObj.get("delivered_at").isJsonNull()) && !jsonObj.get("delivered_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `delivered_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("delivered_at").toString()));
       }

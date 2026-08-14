@@ -19,8 +19,12 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewIncidentStatusPageEventDataAttributesStatusPageComponentsInner;
 import java.io.IOException;
+import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -49,7 +53,7 @@ import com.rootly.client.JSON;
 /**
  * NewIncidentStatusPageEventDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewIncidentStatusPageEventDataAttributes {
   public static final String SERIALIZED_NAME_EVENT = "event";
   @SerializedName(SERIALIZED_NAME_EVENT)
@@ -137,6 +141,16 @@ public class NewIncidentStatusPageEventDataAttributes {
   @SerializedName(SERIALIZED_NAME_SHOULD_TWEET)
   @jakarta.annotation.Nullable
   private Boolean shouldTweet = false;
+
+  public static final String SERIALIZED_NAME_STARTED_AT = "started_at";
+  @SerializedName(SERIALIZED_NAME_STARTED_AT)
+  @jakarta.annotation.Nullable
+  private OffsetDateTime startedAt;
+
+  public static final String SERIALIZED_NAME_STATUS_PAGE_COMPONENTS = "status_page_components";
+  @SerializedName(SERIALIZED_NAME_STATUS_PAGE_COMPONENTS)
+  @jakarta.annotation.Nullable
+  private List<NewIncidentStatusPageEventDataAttributesStatusPageComponentsInner> statusPageComponents;
 
   public NewIncidentStatusPageEventDataAttributes() {
   }
@@ -236,6 +250,52 @@ public class NewIncidentStatusPageEventDataAttributes {
   }
 
 
+  public NewIncidentStatusPageEventDataAttributes startedAt(@jakarta.annotation.Nullable OffsetDateTime startedAt) {
+    this.startedAt = startedAt;
+    return this;
+  }
+
+  /**
+   * When the event started. Defaults to the time of creation.
+   * @return startedAt
+   */
+  @jakarta.annotation.Nullable
+  public OffsetDateTime getStartedAt() {
+    return startedAt;
+  }
+
+  public void setStartedAt(@jakarta.annotation.Nullable OffsetDateTime startedAt) {
+    this.startedAt = startedAt;
+  }
+
+
+  public NewIncidentStatusPageEventDataAttributes statusPageComponents(@jakarta.annotation.Nullable List<NewIncidentStatusPageEventDataAttributesStatusPageComponentsInner> statusPageComponents) {
+    this.statusPageComponents = statusPageComponents;
+    return this;
+  }
+
+  public NewIncidentStatusPageEventDataAttributes addStatusPageComponentsItem(NewIncidentStatusPageEventDataAttributesStatusPageComponentsInner statusPageComponentsItem) {
+    if (this.statusPageComponents == null) {
+      this.statusPageComponents = new ArrayList<>();
+    }
+    this.statusPageComponents.add(statusPageComponentsItem);
+    return this;
+  }
+
+  /**
+   * Affected status page components and their statuses. Requires the status-page-v3-phase-1 feature. Ignored for terminal event statuses (resolved, completed), which clear component impact. A status is required per component except for scheduled maintenance incidents.
+   * @return statusPageComponents
+   */
+  @jakarta.annotation.Nullable
+  public List<NewIncidentStatusPageEventDataAttributesStatusPageComponentsInner> getStatusPageComponents() {
+    return statusPageComponents;
+  }
+
+  public void setStatusPageComponents(@jakarta.annotation.Nullable List<NewIncidentStatusPageEventDataAttributesStatusPageComponentsInner> statusPageComponents) {
+    this.statusPageComponents = statusPageComponents;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -250,7 +310,9 @@ public class NewIncidentStatusPageEventDataAttributes {
         Objects.equals(this.statusPageId, newIncidentStatusPageEventDataAttributes.statusPageId) &&
         Objects.equals(this.status, newIncidentStatusPageEventDataAttributes.status) &&
         Objects.equals(this.notifySubscribers, newIncidentStatusPageEventDataAttributes.notifySubscribers) &&
-        Objects.equals(this.shouldTweet, newIncidentStatusPageEventDataAttributes.shouldTweet);
+        Objects.equals(this.shouldTweet, newIncidentStatusPageEventDataAttributes.shouldTweet) &&
+        Objects.equals(this.startedAt, newIncidentStatusPageEventDataAttributes.startedAt) &&
+        Objects.equals(this.statusPageComponents, newIncidentStatusPageEventDataAttributes.statusPageComponents);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -259,7 +321,7 @@ public class NewIncidentStatusPageEventDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(event, statusPageId, status, notifySubscribers, shouldTweet);
+    return Objects.hash(event, statusPageId, status, notifySubscribers, shouldTweet, startedAt, statusPageComponents);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -278,6 +340,8 @@ public class NewIncidentStatusPageEventDataAttributes {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    notifySubscribers: ").append(toIndentedString(notifySubscribers)).append("\n");
     sb.append("    shouldTweet: ").append(toIndentedString(shouldTweet)).append("\n");
+    sb.append("    startedAt: ").append(toIndentedString(startedAt)).append("\n");
+    sb.append("    statusPageComponents: ").append(toIndentedString(statusPageComponents)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -305,6 +369,8 @@ public class NewIncidentStatusPageEventDataAttributes {
     openapiFields.add("status");
     openapiFields.add("notify_subscribers");
     openapiFields.add("should_tweet");
+    openapiFields.add("started_at");
+    openapiFields.add("status_page_components");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -351,6 +417,20 @@ public class NewIncidentStatusPageEventDataAttributes {
       // validate the optional field `status`
       if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
         StatusEnum.validateJsonElement(jsonObj.get("status"));
+      }
+      if (jsonObj.get("status_page_components") != null && !jsonObj.get("status_page_components").isJsonNull()) {
+        JsonArray jsonArraystatusPageComponents = jsonObj.getAsJsonArray("status_page_components");
+        if (jsonArraystatusPageComponents != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("status_page_components").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `status_page_components` to be an array in the JSON string but got `%s`", jsonObj.get("status_page_components").toString()));
+          }
+
+          // validate the optional field `status_page_components` (array)
+          for (int i = 0; i < jsonArraystatusPageComponents.size(); i++) {
+            NewIncidentStatusPageEventDataAttributesStatusPageComponentsInner.validateJsonElement(jsonArraystatusPageComponents.get(i));
+          };
+        }
       }
   }
 

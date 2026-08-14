@@ -362,6 +362,26 @@ public class PulsesApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterSourceEq  (optional)
+     * @param filterSourceNotEq  (optional)
+     * @param filterSourceIn  (optional)
+     * @param filterSourceNotIn  (optional)
+     * @param filterServicesEq  (optional)
+     * @param filterServicesNotEq  (optional)
+     * @param filterServicesIn  (optional)
+     * @param filterServicesNotIn  (optional)
+     * @param filterEnvironmentsEq  (optional)
+     * @param filterEnvironmentsNotEq  (optional)
+     * @param filterEnvironmentsIn  (optional)
+     * @param filterEnvironmentsNotIn  (optional)
+     * @param filterLabelsEq  (optional)
+     * @param filterLabelsNotEq  (optional)
+     * @param filterLabelsIn  (optional)
+     * @param filterLabelsNotIn  (optional)
+     * @param filterRefsEq  (optional)
+     * @param filterRefsNotEq  (optional)
+     * @param filterRefsIn  (optional)
+     * @param filterRefsNotIn  (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
      * @param _callback Callback for upload/download progress
@@ -374,7 +394,7 @@ public class PulsesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listPulsesCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterRefs, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterEndedAtGt, @jakarta.annotation.Nullable String filterEndedAtGte, @jakarta.annotation.Nullable String filterEndedAtLt, @jakarta.annotation.Nullable String filterEndedAtLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listPulsesCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterRefs, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterEndedAtGt, @jakarta.annotation.Nullable String filterEndedAtGte, @jakarta.annotation.Nullable String filterEndedAtLt, @jakarta.annotation.Nullable String filterEndedAtLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSourceEq, @jakarta.annotation.Nullable String filterSourceNotEq, @jakarta.annotation.Nullable String filterSourceIn, @jakarta.annotation.Nullable String filterSourceNotIn, @jakarta.annotation.Nullable String filterServicesEq, @jakarta.annotation.Nullable String filterServicesNotEq, @jakarta.annotation.Nullable String filterServicesIn, @jakarta.annotation.Nullable String filterServicesNotIn, @jakarta.annotation.Nullable String filterEnvironmentsEq, @jakarta.annotation.Nullable String filterEnvironmentsNotEq, @jakarta.annotation.Nullable String filterEnvironmentsIn, @jakarta.annotation.Nullable String filterEnvironmentsNotIn, @jakarta.annotation.Nullable String filterLabelsEq, @jakarta.annotation.Nullable String filterLabelsNotEq, @jakarta.annotation.Nullable String filterLabelsIn, @jakarta.annotation.Nullable String filterLabelsNotIn, @jakarta.annotation.Nullable String filterRefsEq, @jakarta.annotation.Nullable String filterRefsNotEq, @jakarta.annotation.Nullable String filterRefsIn, @jakarta.annotation.Nullable String filterRefsNotIn, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -471,6 +491,86 @@ public class PulsesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[created_at][lte]", filterCreatedAtLte));
         }
 
+        if (filterSourceEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[source][eq]", filterSourceEq));
+        }
+
+        if (filterSourceNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[source][not_eq]", filterSourceNotEq));
+        }
+
+        if (filterSourceIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[source][in]", filterSourceIn));
+        }
+
+        if (filterSourceNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[source][not_in]", filterSourceNotIn));
+        }
+
+        if (filterServicesEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[services][eq]", filterServicesEq));
+        }
+
+        if (filterServicesNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[services][not_eq]", filterServicesNotEq));
+        }
+
+        if (filterServicesIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[services][in]", filterServicesIn));
+        }
+
+        if (filterServicesNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[services][not_in]", filterServicesNotIn));
+        }
+
+        if (filterEnvironmentsEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[environments][eq]", filterEnvironmentsEq));
+        }
+
+        if (filterEnvironmentsNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[environments][not_eq]", filterEnvironmentsNotEq));
+        }
+
+        if (filterEnvironmentsIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[environments][in]", filterEnvironmentsIn));
+        }
+
+        if (filterEnvironmentsNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[environments][not_in]", filterEnvironmentsNotIn));
+        }
+
+        if (filterLabelsEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[labels][eq]", filterLabelsEq));
+        }
+
+        if (filterLabelsNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[labels][not_eq]", filterLabelsNotEq));
+        }
+
+        if (filterLabelsIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[labels][in]", filterLabelsIn));
+        }
+
+        if (filterLabelsNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[labels][not_in]", filterLabelsNotIn));
+        }
+
+        if (filterRefsEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[refs][eq]", filterRefsEq));
+        }
+
+        if (filterRefsNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[refs][not_eq]", filterRefsNotEq));
+        }
+
+        if (filterRefsIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[refs][in]", filterRefsIn));
+        }
+
+        if (filterRefsNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[refs][not_in]", filterRefsNotIn));
+        }
+
         if (pageNumber != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("page[number]", pageNumber));
         }
@@ -499,8 +599,8 @@ public class PulsesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listPulsesValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterRefs, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterEndedAtGt, @jakarta.annotation.Nullable String filterEndedAtGte, @jakarta.annotation.Nullable String filterEndedAtLt, @jakarta.annotation.Nullable String filterEndedAtLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
-        return listPulsesCall(include, filterSource, filterServices, filterEnvironments, filterLabels, filterRefs, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize, _callback);
+    private okhttp3.Call listPulsesValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterRefs, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterEndedAtGt, @jakarta.annotation.Nullable String filterEndedAtGte, @jakarta.annotation.Nullable String filterEndedAtLt, @jakarta.annotation.Nullable String filterEndedAtLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSourceEq, @jakarta.annotation.Nullable String filterSourceNotEq, @jakarta.annotation.Nullable String filterSourceIn, @jakarta.annotation.Nullable String filterSourceNotIn, @jakarta.annotation.Nullable String filterServicesEq, @jakarta.annotation.Nullable String filterServicesNotEq, @jakarta.annotation.Nullable String filterServicesIn, @jakarta.annotation.Nullable String filterServicesNotIn, @jakarta.annotation.Nullable String filterEnvironmentsEq, @jakarta.annotation.Nullable String filterEnvironmentsNotEq, @jakarta.annotation.Nullable String filterEnvironmentsIn, @jakarta.annotation.Nullable String filterEnvironmentsNotIn, @jakarta.annotation.Nullable String filterLabelsEq, @jakarta.annotation.Nullable String filterLabelsNotEq, @jakarta.annotation.Nullable String filterLabelsIn, @jakarta.annotation.Nullable String filterLabelsNotIn, @jakarta.annotation.Nullable String filterRefsEq, @jakarta.annotation.Nullable String filterRefsNotEq, @jakarta.annotation.Nullable String filterRefsIn, @jakarta.annotation.Nullable String filterRefsNotIn, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+        return listPulsesCall(include, filterSource, filterServices, filterEnvironments, filterLabels, filterRefs, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSourceEq, filterSourceNotEq, filterSourceIn, filterSourceNotIn, filterServicesEq, filterServicesNotEq, filterServicesIn, filterServicesNotIn, filterEnvironmentsEq, filterEnvironmentsNotEq, filterEnvironmentsIn, filterEnvironmentsNotIn, filterLabelsEq, filterLabelsNotEq, filterLabelsIn, filterLabelsNotIn, filterRefsEq, filterRefsNotEq, filterRefsIn, filterRefsNotIn, pageNumber, pageSize, _callback);
 
     }
 
@@ -525,6 +625,26 @@ public class PulsesApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterSourceEq  (optional)
+     * @param filterSourceNotEq  (optional)
+     * @param filterSourceIn  (optional)
+     * @param filterSourceNotIn  (optional)
+     * @param filterServicesEq  (optional)
+     * @param filterServicesNotEq  (optional)
+     * @param filterServicesIn  (optional)
+     * @param filterServicesNotIn  (optional)
+     * @param filterEnvironmentsEq  (optional)
+     * @param filterEnvironmentsNotEq  (optional)
+     * @param filterEnvironmentsIn  (optional)
+     * @param filterEnvironmentsNotIn  (optional)
+     * @param filterLabelsEq  (optional)
+     * @param filterLabelsNotEq  (optional)
+     * @param filterLabelsIn  (optional)
+     * @param filterLabelsNotIn  (optional)
+     * @param filterRefsEq  (optional)
+     * @param filterRefsNotEq  (optional)
+     * @param filterRefsIn  (optional)
+     * @param filterRefsNotIn  (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
      * @return PulseList
@@ -536,8 +656,8 @@ public class PulsesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public PulseList listPulses(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterRefs, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterEndedAtGt, @jakarta.annotation.Nullable String filterEndedAtGte, @jakarta.annotation.Nullable String filterEndedAtLt, @jakarta.annotation.Nullable String filterEndedAtLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
-        ApiResponse<PulseList> localVarResp = listPulsesWithHttpInfo(include, filterSource, filterServices, filterEnvironments, filterLabels, filterRefs, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize);
+    public PulseList listPulses(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterRefs, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterEndedAtGt, @jakarta.annotation.Nullable String filterEndedAtGte, @jakarta.annotation.Nullable String filterEndedAtLt, @jakarta.annotation.Nullable String filterEndedAtLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSourceEq, @jakarta.annotation.Nullable String filterSourceNotEq, @jakarta.annotation.Nullable String filterSourceIn, @jakarta.annotation.Nullable String filterSourceNotIn, @jakarta.annotation.Nullable String filterServicesEq, @jakarta.annotation.Nullable String filterServicesNotEq, @jakarta.annotation.Nullable String filterServicesIn, @jakarta.annotation.Nullable String filterServicesNotIn, @jakarta.annotation.Nullable String filterEnvironmentsEq, @jakarta.annotation.Nullable String filterEnvironmentsNotEq, @jakarta.annotation.Nullable String filterEnvironmentsIn, @jakarta.annotation.Nullable String filterEnvironmentsNotIn, @jakarta.annotation.Nullable String filterLabelsEq, @jakarta.annotation.Nullable String filterLabelsNotEq, @jakarta.annotation.Nullable String filterLabelsIn, @jakarta.annotation.Nullable String filterLabelsNotIn, @jakarta.annotation.Nullable String filterRefsEq, @jakarta.annotation.Nullable String filterRefsNotEq, @jakarta.annotation.Nullable String filterRefsIn, @jakarta.annotation.Nullable String filterRefsNotIn, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
+        ApiResponse<PulseList> localVarResp = listPulsesWithHttpInfo(include, filterSource, filterServices, filterEnvironments, filterLabels, filterRefs, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSourceEq, filterSourceNotEq, filterSourceIn, filterSourceNotIn, filterServicesEq, filterServicesNotEq, filterServicesIn, filterServicesNotIn, filterEnvironmentsEq, filterEnvironmentsNotEq, filterEnvironmentsIn, filterEnvironmentsNotIn, filterLabelsEq, filterLabelsNotEq, filterLabelsIn, filterLabelsNotIn, filterRefsEq, filterRefsNotEq, filterRefsIn, filterRefsNotIn, pageNumber, pageSize);
         return localVarResp.getData();
     }
 
@@ -562,6 +682,26 @@ public class PulsesApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterSourceEq  (optional)
+     * @param filterSourceNotEq  (optional)
+     * @param filterSourceIn  (optional)
+     * @param filterSourceNotIn  (optional)
+     * @param filterServicesEq  (optional)
+     * @param filterServicesNotEq  (optional)
+     * @param filterServicesIn  (optional)
+     * @param filterServicesNotIn  (optional)
+     * @param filterEnvironmentsEq  (optional)
+     * @param filterEnvironmentsNotEq  (optional)
+     * @param filterEnvironmentsIn  (optional)
+     * @param filterEnvironmentsNotIn  (optional)
+     * @param filterLabelsEq  (optional)
+     * @param filterLabelsNotEq  (optional)
+     * @param filterLabelsIn  (optional)
+     * @param filterLabelsNotIn  (optional)
+     * @param filterRefsEq  (optional)
+     * @param filterRefsNotEq  (optional)
+     * @param filterRefsIn  (optional)
+     * @param filterRefsNotIn  (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
      * @return ApiResponse&lt;PulseList&gt;
@@ -573,8 +713,8 @@ public class PulsesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PulseList> listPulsesWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterRefs, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterEndedAtGt, @jakarta.annotation.Nullable String filterEndedAtGte, @jakarta.annotation.Nullable String filterEndedAtLt, @jakarta.annotation.Nullable String filterEndedAtLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
-        okhttp3.Call localVarCall = listPulsesValidateBeforeCall(include, filterSource, filterServices, filterEnvironments, filterLabels, filterRefs, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize, null);
+    public ApiResponse<PulseList> listPulsesWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterRefs, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterEndedAtGt, @jakarta.annotation.Nullable String filterEndedAtGte, @jakarta.annotation.Nullable String filterEndedAtLt, @jakarta.annotation.Nullable String filterEndedAtLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSourceEq, @jakarta.annotation.Nullable String filterSourceNotEq, @jakarta.annotation.Nullable String filterSourceIn, @jakarta.annotation.Nullable String filterSourceNotIn, @jakarta.annotation.Nullable String filterServicesEq, @jakarta.annotation.Nullable String filterServicesNotEq, @jakarta.annotation.Nullable String filterServicesIn, @jakarta.annotation.Nullable String filterServicesNotIn, @jakarta.annotation.Nullable String filterEnvironmentsEq, @jakarta.annotation.Nullable String filterEnvironmentsNotEq, @jakarta.annotation.Nullable String filterEnvironmentsIn, @jakarta.annotation.Nullable String filterEnvironmentsNotIn, @jakarta.annotation.Nullable String filterLabelsEq, @jakarta.annotation.Nullable String filterLabelsNotEq, @jakarta.annotation.Nullable String filterLabelsIn, @jakarta.annotation.Nullable String filterLabelsNotIn, @jakarta.annotation.Nullable String filterRefsEq, @jakarta.annotation.Nullable String filterRefsNotEq, @jakarta.annotation.Nullable String filterRefsIn, @jakarta.annotation.Nullable String filterRefsNotIn, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
+        okhttp3.Call localVarCall = listPulsesValidateBeforeCall(include, filterSource, filterServices, filterEnvironments, filterLabels, filterRefs, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSourceEq, filterSourceNotEq, filterSourceIn, filterSourceNotIn, filterServicesEq, filterServicesNotEq, filterServicesIn, filterServicesNotIn, filterEnvironmentsEq, filterEnvironmentsNotEq, filterEnvironmentsIn, filterEnvironmentsNotIn, filterLabelsEq, filterLabelsNotEq, filterLabelsIn, filterLabelsNotIn, filterRefsEq, filterRefsNotEq, filterRefsIn, filterRefsNotIn, pageNumber, pageSize, null);
         Type localVarReturnType = new TypeToken<PulseList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -600,6 +740,26 @@ public class PulsesApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterSourceEq  (optional)
+     * @param filterSourceNotEq  (optional)
+     * @param filterSourceIn  (optional)
+     * @param filterSourceNotIn  (optional)
+     * @param filterServicesEq  (optional)
+     * @param filterServicesNotEq  (optional)
+     * @param filterServicesIn  (optional)
+     * @param filterServicesNotIn  (optional)
+     * @param filterEnvironmentsEq  (optional)
+     * @param filterEnvironmentsNotEq  (optional)
+     * @param filterEnvironmentsIn  (optional)
+     * @param filterEnvironmentsNotIn  (optional)
+     * @param filterLabelsEq  (optional)
+     * @param filterLabelsNotEq  (optional)
+     * @param filterLabelsIn  (optional)
+     * @param filterLabelsNotIn  (optional)
+     * @param filterRefsEq  (optional)
+     * @param filterRefsNotEq  (optional)
+     * @param filterRefsIn  (optional)
+     * @param filterRefsNotIn  (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -612,9 +772,9 @@ public class PulsesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listPulsesAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterRefs, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterEndedAtGt, @jakarta.annotation.Nullable String filterEndedAtGte, @jakarta.annotation.Nullable String filterEndedAtLt, @jakarta.annotation.Nullable String filterEndedAtLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback<PulseList> _callback) throws ApiException {
+    public okhttp3.Call listPulsesAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterRefs, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterEndedAtGt, @jakarta.annotation.Nullable String filterEndedAtGte, @jakarta.annotation.Nullable String filterEndedAtLt, @jakarta.annotation.Nullable String filterEndedAtLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSourceEq, @jakarta.annotation.Nullable String filterSourceNotEq, @jakarta.annotation.Nullable String filterSourceIn, @jakarta.annotation.Nullable String filterSourceNotIn, @jakarta.annotation.Nullable String filterServicesEq, @jakarta.annotation.Nullable String filterServicesNotEq, @jakarta.annotation.Nullable String filterServicesIn, @jakarta.annotation.Nullable String filterServicesNotIn, @jakarta.annotation.Nullable String filterEnvironmentsEq, @jakarta.annotation.Nullable String filterEnvironmentsNotEq, @jakarta.annotation.Nullable String filterEnvironmentsIn, @jakarta.annotation.Nullable String filterEnvironmentsNotIn, @jakarta.annotation.Nullable String filterLabelsEq, @jakarta.annotation.Nullable String filterLabelsNotEq, @jakarta.annotation.Nullable String filterLabelsIn, @jakarta.annotation.Nullable String filterLabelsNotIn, @jakarta.annotation.Nullable String filterRefsEq, @jakarta.annotation.Nullable String filterRefsNotEq, @jakarta.annotation.Nullable String filterRefsIn, @jakarta.annotation.Nullable String filterRefsNotIn, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback<PulseList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listPulsesValidateBeforeCall(include, filterSource, filterServices, filterEnvironments, filterLabels, filterRefs, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize, _callback);
+        okhttp3.Call localVarCall = listPulsesValidateBeforeCall(include, filterSource, filterServices, filterEnvironments, filterLabels, filterRefs, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSourceEq, filterSourceNotEq, filterSourceIn, filterSourceNotIn, filterServicesEq, filterServicesNotEq, filterServicesIn, filterServicesNotIn, filterEnvironmentsEq, filterEnvironmentsNotEq, filterEnvironmentsIn, filterEnvironmentsNotIn, filterLabelsEq, filterLabelsNotEq, filterLabelsIn, filterLabelsNotIn, filterRefsEq, filterRefsNotEq, filterRefsIn, filterRefsNotIn, pageNumber, pageSize, _callback);
         Type localVarReturnType = new TypeToken<PulseList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

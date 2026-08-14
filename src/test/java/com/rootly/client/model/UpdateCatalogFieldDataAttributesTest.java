@@ -39,19 +39,19 @@ public class UpdateCatalogFieldDataAttributesTest {
     }
 
     /**
-     * Test the property 'name'
-     */
-    @Test
-    public void nameTest() {
-        // TODO: test name
-    }
-
-    /**
      * Test the property 'slug'
      */
     @Test
     public void slugTest() {
         // TODO: test slug
+    }
+
+    /**
+     * Test the property 'name'
+     */
+    @Test
+    public void nameTest() {
+        // TODO: test name
     }
 
     /**
@@ -76,6 +76,30 @@ public class UpdateCatalogFieldDataAttributesTest {
     @Test
     public void positionTest() {
         // TODO: test position
+    }
+
+    /**
+     * Test the property 'required'
+     */
+    @Test
+    public void requiredTest() {
+        // TODO: test required
+    }
+
+    /**
+     * Test the property 'catalogType'
+     */
+    @Test
+    public void catalogTypeTest() {
+        // TODO: test catalogType
+    }
+
+    /**
+     * Test the property 'externalId'
+     */
+    @Test
+    public void externalIdTest() {
+        // TODO: test externalId
     }
 
 }

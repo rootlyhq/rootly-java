@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * FormField
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class FormField {
   /**
    * The kind of the form field
@@ -81,6 +81,8 @@ public class FormField {
     FUNCTIONALITIES("functionalities"),
     
     TEAMS("teams"),
+    
+    STATUS("status"),
     
     VISIBILITY("visibility"),
     
@@ -254,7 +256,13 @@ public class FormField {
     
     USER("user"),
     
-    CATALOG_ENTITY("catalog_entity");
+    CATALOG_ENTITY("catalog_entity"),
+    
+    ENVIRONMENT("environment"),
+    
+    CAUSE("cause"),
+    
+    INCIDENT_TYPE("incident_type");
 
     private String value;
 
@@ -316,8 +324,65 @@ public class FormField {
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
-  @jakarta.annotation.Nonnull
+  @jakarta.annotation.Nullable
   private String slug;
+
+  /**
+   * The resource type this field belongs to
+   */
+  @JsonAdapter(ResourceTypeEnum.Adapter.class)
+  public enum ResourceTypeEnum {
+    INCIDENT("incident"),
+    
+    PROBLEM("problem");
+
+    private String value;
+
+    ResourceTypeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static ResourceTypeEnum fromValue(String value) {
+      for (ResourceTypeEnum b : ResourceTypeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<ResourceTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ResourceTypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ResourceTypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return ResourceTypeEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      ResourceTypeEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_RESOURCE_TYPE = "resource_type";
+  @SerializedName(SERIALIZED_NAME_RESOURCE_TYPE)
+  @jakarta.annotation.Nullable
+  private ResourceTypeEnum resourceType;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -349,6 +414,11 @@ public class FormField {
   @jakarta.annotation.Nonnull
   private List<String> defaultValues = new ArrayList<>();
 
+  public static final String SERIALIZED_NAME_AUTO_SET_BY_CATALOG_PROPERTY_ID = "auto_set_by_catalog_property_id";
+  @SerializedName(SERIALIZED_NAME_AUTO_SET_BY_CATALOG_PROPERTY_ID)
+  @jakarta.annotation.Nullable
+  private String autoSetByCatalogPropertyId;
+
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   @jakarta.annotation.Nonnull
@@ -360,6 +430,13 @@ public class FormField {
   private String updatedAt;
 
   public FormField() {
+  }
+
+  public FormField(
+     String slug
+  ) {
+    this();
+    this.slug = slug;
   }
 
   public FormField kind(@jakarta.annotation.Nonnull KindEnum kind) {
@@ -457,22 +534,33 @@ public class FormField {
   }
 
 
-  public FormField slug(@jakarta.annotation.Nonnull String slug) {
-    this.slug = slug;
-    return this;
-  }
-
   /**
    * The slug of the form field
    * @return slug
    */
-  @jakarta.annotation.Nonnull
+  @jakarta.annotation.Nullable
   public String getSlug() {
     return slug;
   }
 
-  public void setSlug(@jakarta.annotation.Nonnull String slug) {
-    this.slug = slug;
+
+
+  public FormField resourceType(@jakarta.annotation.Nullable ResourceTypeEnum resourceType) {
+    this.resourceType = resourceType;
+    return this;
+  }
+
+  /**
+   * The resource type this field belongs to
+   * @return resourceType
+   */
+  @jakarta.annotation.Nullable
+  public ResourceTypeEnum getResourceType() {
+    return resourceType;
+  }
+
+  public void setResourceType(@jakarta.annotation.Nullable ResourceTypeEnum resourceType) {
+    this.resourceType = resourceType;
   }
 
 
@@ -614,6 +702,25 @@ public class FormField {
   }
 
 
+  public FormField autoSetByCatalogPropertyId(@jakarta.annotation.Nullable String autoSetByCatalogPropertyId) {
+    this.autoSetByCatalogPropertyId = autoSetByCatalogPropertyId;
+    return this;
+  }
+
+  /**
+   * Catalog property ID to auto-set this form field. Only reference-kind catalog properties are supported.
+   * @return autoSetByCatalogPropertyId
+   */
+  @jakarta.annotation.Nullable
+  public String getAutoSetByCatalogPropertyId() {
+    return autoSetByCatalogPropertyId;
+  }
+
+  public void setAutoSetByCatalogPropertyId(@jakarta.annotation.Nullable String autoSetByCatalogPropertyId) {
+    this.autoSetByCatalogPropertyId = autoSetByCatalogPropertyId;
+  }
+
+
   public FormField createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
@@ -668,12 +775,14 @@ public class FormField {
         Objects.equals(this.valueKindCatalogId, formField.valueKindCatalogId) &&
         Objects.equals(this.name, formField.name) &&
         Objects.equals(this.slug, formField.slug) &&
+        Objects.equals(this.resourceType, formField.resourceType) &&
         Objects.equals(this.description, formField.description) &&
         Objects.equals(this.shown, formField.shown) &&
         Objects.equals(this.required, formField.required) &&
         Objects.equals(this.showOnIncidentDetails, formField.showOnIncidentDetails) &&
         Objects.equals(this.enabled, formField.enabled) &&
         Objects.equals(this.defaultValues, formField.defaultValues) &&
+        Objects.equals(this.autoSetByCatalogPropertyId, formField.autoSetByCatalogPropertyId) &&
         Objects.equals(this.createdAt, formField.createdAt) &&
         Objects.equals(this.updatedAt, formField.updatedAt);
   }
@@ -684,7 +793,7 @@ public class FormField {
 
   @Override
   public int hashCode() {
-    return Objects.hash(kind, inputKind, valueKind, valueKindCatalogId, name, slug, description, shown, required, showOnIncidentDetails, enabled, defaultValues, createdAt, updatedAt);
+    return Objects.hash(kind, inputKind, valueKind, valueKindCatalogId, name, slug, resourceType, description, shown, required, showOnIncidentDetails, enabled, defaultValues, autoSetByCatalogPropertyId, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -704,12 +813,14 @@ public class FormField {
     sb.append("    valueKindCatalogId: ").append(toIndentedString(valueKindCatalogId)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
+    sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    shown: ").append(toIndentedString(shown)).append("\n");
     sb.append("    required: ").append(toIndentedString(required)).append("\n");
     sb.append("    showOnIncidentDetails: ").append(toIndentedString(showOnIncidentDetails)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    defaultValues: ").append(toIndentedString(defaultValues)).append("\n");
+    sb.append("    autoSetByCatalogPropertyId: ").append(toIndentedString(autoSetByCatalogPropertyId)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -740,12 +851,14 @@ public class FormField {
     openapiFields.add("value_kind_catalog_id");
     openapiFields.add("name");
     openapiFields.add("slug");
+    openapiFields.add("resource_type");
     openapiFields.add("description");
     openapiFields.add("shown");
     openapiFields.add("required");
     openapiFields.add("show_on_incident_details");
     openapiFields.add("enabled");
     openapiFields.add("default_values");
+    openapiFields.add("auto_set_by_catalog_property_id");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
 
@@ -755,7 +868,6 @@ public class FormField {
     openapiRequiredFields.add("input_kind");
     openapiRequiredFields.add("value_kind");
     openapiRequiredFields.add("name");
-    openapiRequiredFields.add("slug");
     openapiRequiredFields.add("shown");
     openapiRequiredFields.add("required");
     openapiRequiredFields.add("default_values");
@@ -812,8 +924,15 @@ public class FormField {
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
-      if (!jsonObj.get("slug").isJsonPrimitive()) {
+      if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
+      }
+      if ((jsonObj.get("resource_type") != null && !jsonObj.get("resource_type").isJsonNull()) && !jsonObj.get("resource_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `resource_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resource_type").toString()));
+      }
+      // validate the optional field `resource_type`
+      if (jsonObj.get("resource_type") != null && !jsonObj.get("resource_type").isJsonNull()) {
+        ResourceTypeEnum.validateJsonElement(jsonObj.get("resource_type"));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
@@ -835,6 +954,9 @@ public class FormField {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("default_values").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `default_values` to be an array in the JSON string but got `%s`", jsonObj.get("default_values").toString()));
+      }
+      if ((jsonObj.get("auto_set_by_catalog_property_id") != null && !jsonObj.get("auto_set_by_catalog_property_id").isJsonNull()) && !jsonObj.get("auto_set_by_catalog_property_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `auto_set_by_catalog_property_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("auto_set_by_catalog_property_id").toString()));
       }
       if (!jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));

@@ -51,8 +51,24 @@ public class AuditsApiTest {
         String filterApiKeyId = null;
         String filterSource = null;
         String filterItemType = null;
+        String filterUserIdEq = null;
+        String filterUserIdNotEq = null;
+        String filterUserIdIn = null;
+        String filterUserIdNotIn = null;
+        String filterApiKeyIdEq = null;
+        String filterApiKeyIdNotEq = null;
+        String filterApiKeyIdIn = null;
+        String filterApiKeyIdNotIn = null;
+        String filterSourceEq = null;
+        String filterSourceNotEq = null;
+        String filterSourceIn = null;
+        String filterSourceNotIn = null;
+        String filterItemTypeEq = null;
+        String filterItemTypeNotEq = null;
+        String filterItemTypeIn = null;
+        String filterItemTypeNotIn = null;
         String sort = null;
-        AuditsList response = api.listAudits(include, pageNumber, pageSize, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUserId, filterApiKeyId, filterSource, filterItemType, sort);
+        AuditsList response = api.listAudits(include, pageNumber, pageSize, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUserId, filterApiKeyId, filterSource, filterItemType, filterUserIdEq, filterUserIdNotEq, filterUserIdIn, filterUserIdNotIn, filterApiKeyIdEq, filterApiKeyIdNotEq, filterApiKeyIdIn, filterApiKeyIdNotIn, filterSourceEq, filterSourceNotEq, filterSourceIn, filterSourceNotIn, filterItemTypeEq, filterItemTypeNotEq, filterItemTypeIn, filterItemTypeNotIn, sort);
         // TODO: test validations
     }
 

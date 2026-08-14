@@ -19,378 +19,253 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.AddActionItemTaskParamsPostToSlackChannelsInner;
+import com.rootly.client.model.PageVictorOpsOnCallRespondersTaskParamsAnyOf;
+import com.rootly.client.model.PageVictorOpsOnCallRespondersTaskParamsAnyOf1;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.TypeAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
 
-import java.util.HashMap;
+
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonParseException;
 
 import com.rootly.client.JSON;
 
-/**
- * PageVictorOpsOnCallRespondersTaskParams
- */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
-public class PageVictorOpsOnCallRespondersTaskParams {
-  /**
-   * Gets or Sets taskType
-   */
-  @JsonAdapter(TaskTypeEnum.Adapter.class)
-  public enum TaskTypeEnum {
-    PAGE_VICTOR_OPS_ON_CALL_RESPONDERS("page_victor_ops_on_call_responders");
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+public class PageVictorOpsOnCallRespondersTaskParams extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(PageVictorOpsOnCallRespondersTaskParams.class.getName());
 
-    private String value;
+    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+        @SuppressWarnings("unchecked")
+        @Override
+        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+            if (!PageVictorOpsOnCallRespondersTaskParams.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'PageVictorOpsOnCallRespondersTaskParams' and its subtypes
+            }
+            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<PageVictorOpsOnCallRespondersTaskParamsAnyOf> adapterPageVictorOpsOnCallRespondersTaskParamsAnyOf = gson.getDelegateAdapter(this, TypeToken.get(PageVictorOpsOnCallRespondersTaskParamsAnyOf.class));
+            final TypeAdapter<PageVictorOpsOnCallRespondersTaskParamsAnyOf1> adapterPageVictorOpsOnCallRespondersTaskParamsAnyOf1 = gson.getDelegateAdapter(this, TypeToken.get(PageVictorOpsOnCallRespondersTaskParamsAnyOf1.class));
 
-    TaskTypeEnum(String value) {
-      this.value = value;
+            return (TypeAdapter<T>) new TypeAdapter<PageVictorOpsOnCallRespondersTaskParams>() {
+                @Override
+                public void write(JsonWriter out, PageVictorOpsOnCallRespondersTaskParams value) throws IOException {
+                    if (value == null || value.getActualInstance() == null) {
+                        elementAdapter.write(out, null);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `PageVictorOpsOnCallRespondersTaskParamsAnyOf`
+                    if (value.getActualInstance() instanceof PageVictorOpsOnCallRespondersTaskParamsAnyOf) {
+                        JsonElement element = adapterPageVictorOpsOnCallRespondersTaskParamsAnyOf.toJsonTree((PageVictorOpsOnCallRespondersTaskParamsAnyOf)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `PageVictorOpsOnCallRespondersTaskParamsAnyOf1`
+                    if (value.getActualInstance() instanceof PageVictorOpsOnCallRespondersTaskParamsAnyOf1) {
+                        JsonElement element = adapterPageVictorOpsOnCallRespondersTaskParamsAnyOf1.toJsonTree((PageVictorOpsOnCallRespondersTaskParamsAnyOf1)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    throw new IOException("Failed to serialize as the type doesn't match anyOf schemas: PageVictorOpsOnCallRespondersTaskParamsAnyOf, PageVictorOpsOnCallRespondersTaskParamsAnyOf1");
+                }
+
+                @Override
+                public PageVictorOpsOnCallRespondersTaskParams read(JsonReader in) throws IOException {
+                    Object deserialized = null;
+                    JsonElement jsonElement = elementAdapter.read(in);
+
+                    ArrayList<String> errorMessages = new ArrayList<>();
+                    TypeAdapter actualAdapter = elementAdapter;
+
+                    // deserialize PageVictorOpsOnCallRespondersTaskParamsAnyOf
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        PageVictorOpsOnCallRespondersTaskParamsAnyOf.validateJsonElement(jsonElement);
+                        actualAdapter = adapterPageVictorOpsOnCallRespondersTaskParamsAnyOf;
+                        PageVictorOpsOnCallRespondersTaskParams ret = new PageVictorOpsOnCallRespondersTaskParams();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
+                        return ret;
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for PageVictorOpsOnCallRespondersTaskParamsAnyOf failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'PageVictorOpsOnCallRespondersTaskParamsAnyOf'", e);
+                    }
+                    // deserialize PageVictorOpsOnCallRespondersTaskParamsAnyOf1
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        PageVictorOpsOnCallRespondersTaskParamsAnyOf1.validateJsonElement(jsonElement);
+                        actualAdapter = adapterPageVictorOpsOnCallRespondersTaskParamsAnyOf1;
+                        PageVictorOpsOnCallRespondersTaskParams ret = new PageVictorOpsOnCallRespondersTaskParams();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
+                        return ret;
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for PageVictorOpsOnCallRespondersTaskParamsAnyOf1 failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'PageVictorOpsOnCallRespondersTaskParamsAnyOf1'", e);
+                    }
+
+                    throw new IOException(String.format("Failed deserialization for PageVictorOpsOnCallRespondersTaskParams: no class matches result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
+                }
+            }.nullSafe();
+        }
     }
 
-    public String getValue() {
-      return value;
+    // store a list of schema names defined in anyOf
+    public static final Map<String, Class<?>> schemas = new HashMap<String, Class<?>>();
+
+    public PageVictorOpsOnCallRespondersTaskParams() {
+        super("anyOf", Boolean.FALSE);
+    }
+
+    public PageVictorOpsOnCallRespondersTaskParams(Object o) {
+        super("anyOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    static {
+        schemas.put("PageVictorOpsOnCallRespondersTaskParamsAnyOf", PageVictorOpsOnCallRespondersTaskParamsAnyOf.class);
+        schemas.put("PageVictorOpsOnCallRespondersTaskParamsAnyOf1", PageVictorOpsOnCallRespondersTaskParamsAnyOf1.class);
     }
 
     @Override
-    public String toString() {
-      return String.valueOf(value);
+    public Map<String, Class<?>> getSchemas() {
+        return PageVictorOpsOnCallRespondersTaskParams.schemas;
     }
 
-    public static TaskTypeEnum fromValue(String value) {
-      for (TaskTypeEnum b : TaskTypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
+    /**
+     * Set the instance that matches the anyOf child schema, check
+     * the instance parameter is valid against the anyOf child schemas:
+     * PageVictorOpsOnCallRespondersTaskParamsAnyOf, PageVictorOpsOnCallRespondersTaskParamsAnyOf1
+     *
+     * It could be an instance of the 'anyOf' schemas.
+     */
+    @Override
+    public void setActualInstance(Object instance) {
+        if (instance instanceof PageVictorOpsOnCallRespondersTaskParamsAnyOf) {
+            super.setActualInstance(instance);
+            return;
         }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
 
-    public static class Adapter extends TypeAdapter<TaskTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final TaskTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public TaskTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return TaskTypeEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      TaskTypeEnum.fromValue(value);
-    }
-  }
-
-  public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
-  @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @jakarta.annotation.Nullable
-  private TaskTypeEnum taskType;
-
-  public static final String SERIALIZED_NAME_ESCALATION_POLICIES = "escalation_policies";
-  @SerializedName(SERIALIZED_NAME_ESCALATION_POLICIES)
-  @jakarta.annotation.Nullable
-  private List<Object> escalationPolicies = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_USERS = "users";
-  @SerializedName(SERIALIZED_NAME_USERS)
-  @jakarta.annotation.Nullable
-  private List<Object> users = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_TITLE = "title";
-  @SerializedName(SERIALIZED_NAME_TITLE)
-  @jakarta.annotation.Nullable
-  private String title;
-
-  public PageVictorOpsOnCallRespondersTaskParams() {
-  }
-
-  public PageVictorOpsOnCallRespondersTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
-    this.taskType = taskType;
-    return this;
-  }
-
-  /**
-   * Get taskType
-   * @return taskType
-   */
-  @jakarta.annotation.Nullable
-  public TaskTypeEnum getTaskType() {
-    return taskType;
-  }
-
-  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
-    this.taskType = taskType;
-  }
-
-
-  public PageVictorOpsOnCallRespondersTaskParams escalationPolicies(@jakarta.annotation.Nullable List<Object> escalationPolicies) {
-    this.escalationPolicies = escalationPolicies;
-    return this;
-  }
-
-  public PageVictorOpsOnCallRespondersTaskParams addEscalationPoliciesItem(Object escalationPoliciesItem) {
-    if (this.escalationPolicies == null) {
-      this.escalationPolicies = new ArrayList<>();
-    }
-    this.escalationPolicies.add(escalationPoliciesItem);
-    return this;
-  }
-
-  /**
-   * Get escalationPolicies
-   * @return escalationPolicies
-   */
-  @jakarta.annotation.Nullable
-  public List<Object> getEscalationPolicies() {
-    return escalationPolicies;
-  }
-
-  public void setEscalationPolicies(@jakarta.annotation.Nullable List<Object> escalationPolicies) {
-    this.escalationPolicies = escalationPolicies;
-  }
-
-
-  public PageVictorOpsOnCallRespondersTaskParams users(@jakarta.annotation.Nullable List<Object> users) {
-    this.users = users;
-    return this;
-  }
-
-  public PageVictorOpsOnCallRespondersTaskParams addUsersItem(Object usersItem) {
-    if (this.users == null) {
-      this.users = new ArrayList<>();
-    }
-    this.users.add(usersItem);
-    return this;
-  }
-
-  /**
-   * Get users
-   * @return users
-   */
-  @jakarta.annotation.Nullable
-  public List<Object> getUsers() {
-    return users;
-  }
-
-  public void setUsers(@jakarta.annotation.Nullable List<Object> users) {
-    this.users = users;
-  }
-
-
-  public PageVictorOpsOnCallRespondersTaskParams title(@jakarta.annotation.Nullable String title) {
-    this.title = title;
-    return this;
-  }
-
-  /**
-   * Alert title.
-   * @return title
-   */
-  @jakarta.annotation.Nullable
-  public String getTitle() {
-    return title;
-  }
-
-  public void setTitle(@jakarta.annotation.Nullable String title) {
-    this.title = title;
-  }
-
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    PageVictorOpsOnCallRespondersTaskParams pageVictorOpsOnCallRespondersTaskParams = (PageVictorOpsOnCallRespondersTaskParams) o;
-    return Objects.equals(this.taskType, pageVictorOpsOnCallRespondersTaskParams.taskType) &&
-        Objects.equals(this.escalationPolicies, pageVictorOpsOnCallRespondersTaskParams.escalationPolicies) &&
-        Objects.equals(this.users, pageVictorOpsOnCallRespondersTaskParams.users) &&
-        Objects.equals(this.title, pageVictorOpsOnCallRespondersTaskParams.title);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(taskType, escalationPolicies, users, title);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class PageVictorOpsOnCallRespondersTaskParams {\n");
-    sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
-    sb.append("    escalationPolicies: ").append(toIndentedString(escalationPolicies)).append("\n");
-    sb.append("    users: ").append(toIndentedString(users)).append("\n");
-    sb.append("    title: ").append(toIndentedString(title)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to PageVictorOpsOnCallRespondersTaskParams
-   */
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      if (jsonElement == null) {
-        if (!PageVictorOpsOnCallRespondersTaskParams.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PageVictorOpsOnCallRespondersTaskParams is not found in the empty JSON string", PageVictorOpsOnCallRespondersTaskParams.openapiRequiredFields.toString()));
+        if (instance instanceof PageVictorOpsOnCallRespondersTaskParamsAnyOf1) {
+            super.setActualInstance(instance);
+            return;
         }
-      }
 
-      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!PageVictorOpsOnCallRespondersTaskParams.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `PageVictorOpsOnCallRespondersTaskParams` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
-        }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("task_type") != null && !jsonObj.get("task_type").isJsonNull()) && !jsonObj.get("task_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `task_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("task_type").toString()));
-      }
-      // validate the optional field `task_type`
-      if (jsonObj.get("task_type") != null && !jsonObj.get("task_type").isJsonNull()) {
-        TaskTypeEnum.validateJsonElement(jsonObj.get("task_type"));
-      }
-      if (jsonObj.get("escalation_policies") != null && !jsonObj.get("escalation_policies").isJsonNull()) {
-        JsonArray jsonArrayescalationPolicies = jsonObj.getAsJsonArray("escalation_policies");
-        if (jsonArrayescalationPolicies != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("escalation_policies").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `escalation_policies` to be an array in the JSON string but got `%s`", jsonObj.get("escalation_policies").toString()));
-          }
+        throw new RuntimeException("Invalid instance type. Must be PageVictorOpsOnCallRespondersTaskParamsAnyOf, PageVictorOpsOnCallRespondersTaskParamsAnyOf1");
+    }
 
-          // validate the optional field `escalation_policies` (array)
-          for (int i = 0; i < jsonArrayescalationPolicies.size(); i++) {
-          };
-        }
-      }
-      if (jsonObj.get("users") != null && !jsonObj.get("users").isJsonNull()) {
-        JsonArray jsonArrayusers = jsonObj.getAsJsonArray("users");
-        if (jsonArrayusers != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("users").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `users` to be an array in the JSON string but got `%s`", jsonObj.get("users").toString()));
-          }
-
-          // validate the optional field `users` (array)
-          for (int i = 0; i < jsonArrayusers.size(); i++) {
-          };
-        }
-      }
-      if ((jsonObj.get("title") != null && !jsonObj.get("title").isJsonNull()) && !jsonObj.get("title").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    /**
+     * Get the actual instance, which can be the following:
+     * PageVictorOpsOnCallRespondersTaskParamsAnyOf, PageVictorOpsOnCallRespondersTaskParamsAnyOf1
+     *
+     * @return The actual instance (PageVictorOpsOnCallRespondersTaskParamsAnyOf, PageVictorOpsOnCallRespondersTaskParamsAnyOf1)
+     */
     @SuppressWarnings("unchecked")
     @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!PageVictorOpsOnCallRespondersTaskParams.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'PageVictorOpsOnCallRespondersTaskParams' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<PageVictorOpsOnCallRespondersTaskParams> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(PageVictorOpsOnCallRespondersTaskParams.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<PageVictorOpsOnCallRespondersTaskParams>() {
-           @Override
-           public void write(JsonWriter out, PageVictorOpsOnCallRespondersTaskParams value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public PageVictorOpsOnCallRespondersTaskParams read(JsonReader in) throws IOException {
-             JsonElement jsonElement = elementAdapter.read(in);
-             validateJsonElement(jsonElement);
-             return thisAdapter.fromJsonTree(jsonElement);
-           }
-
-       }.nullSafe();
+    public Object getActualInstance() {
+        return super.getActualInstance();
     }
-  }
 
-  /**
-   * Create an instance of PageVictorOpsOnCallRespondersTaskParams given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of PageVictorOpsOnCallRespondersTaskParams
-   * @throws IOException if the JSON string is invalid with respect to PageVictorOpsOnCallRespondersTaskParams
-   */
-  public static PageVictorOpsOnCallRespondersTaskParams fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, PageVictorOpsOnCallRespondersTaskParams.class);
-  }
+    /**
+     * Get the actual instance of `PageVictorOpsOnCallRespondersTaskParamsAnyOf`. If the actual instance is not `PageVictorOpsOnCallRespondersTaskParamsAnyOf`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `PageVictorOpsOnCallRespondersTaskParamsAnyOf`
+     * @throws ClassCastException if the instance is not `PageVictorOpsOnCallRespondersTaskParamsAnyOf`
+     */
+    public PageVictorOpsOnCallRespondersTaskParamsAnyOf getPageVictorOpsOnCallRespondersTaskParamsAnyOf() throws ClassCastException {
+        return (PageVictorOpsOnCallRespondersTaskParamsAnyOf)super.getActualInstance();
+    }
 
-  /**
-   * Convert an instance of PageVictorOpsOnCallRespondersTaskParams to an JSON string
-   *
-   * @return JSON string
-   */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
+    /**
+     * Get the actual instance of `PageVictorOpsOnCallRespondersTaskParamsAnyOf1`. If the actual instance is not `PageVictorOpsOnCallRespondersTaskParamsAnyOf1`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `PageVictorOpsOnCallRespondersTaskParamsAnyOf1`
+     * @throws ClassCastException if the instance is not `PageVictorOpsOnCallRespondersTaskParamsAnyOf1`
+     */
+    public PageVictorOpsOnCallRespondersTaskParamsAnyOf1 getPageVictorOpsOnCallRespondersTaskParamsAnyOf1() throws ClassCastException {
+        return (PageVictorOpsOnCallRespondersTaskParamsAnyOf1)super.getActualInstance();
+    }
+
+    /**
+     * Validates the JSON Element and throws an exception if issues found
+     *
+     * @param jsonElement JSON Element
+     * @throws IOException if the JSON Element is invalid with respect to PageVictorOpsOnCallRespondersTaskParams
+     */
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+        // validate anyOf schemas one by one
+        ArrayList<String> errorMessages = new ArrayList<>();
+        // validate the json string with PageVictorOpsOnCallRespondersTaskParamsAnyOf
+        try {
+            PageVictorOpsOnCallRespondersTaskParamsAnyOf.validateJsonElement(jsonElement);
+            return;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for PageVictorOpsOnCallRespondersTaskParamsAnyOf failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with PageVictorOpsOnCallRespondersTaskParamsAnyOf1
+        try {
+            PageVictorOpsOnCallRespondersTaskParamsAnyOf1.validateJsonElement(jsonElement);
+            return;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for PageVictorOpsOnCallRespondersTaskParamsAnyOf1 failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        throw new IOException(String.format("The JSON string is invalid for PageVictorOpsOnCallRespondersTaskParams with anyOf schemas: PageVictorOpsOnCallRespondersTaskParamsAnyOf, PageVictorOpsOnCallRespondersTaskParamsAnyOf1. no class match the result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
+    }
+
+    /**
+     * Create an instance of PageVictorOpsOnCallRespondersTaskParams given an JSON string
+     *
+     * @param jsonString JSON string
+     * @return An instance of PageVictorOpsOnCallRespondersTaskParams
+     * @throws IOException if the JSON string is invalid with respect to PageVictorOpsOnCallRespondersTaskParams
+     */
+    public static PageVictorOpsOnCallRespondersTaskParams fromJson(String jsonString) throws IOException {
+        return JSON.getGson().fromJson(jsonString, PageVictorOpsOnCallRespondersTaskParams.class);
+    }
+
+    /**
+     * Convert an instance of PageVictorOpsOnCallRespondersTaskParams to an JSON string
+     *
+     * @return JSON string
+     */
+    public String toJson() {
+        return JSON.getGson().toJson(this);
+    }
 }
 

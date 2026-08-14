@@ -19,11 +19,14 @@
 |**alertConditionStatusUseRegexp** | **Boolean** |  |  [optional] |
 |**alertStatuses** | **List&lt;String&gt;** |  |  [optional] |
 |**alertLabels** | **List&lt;String&gt;** |  |  [optional] |
+|**alertConditionUrgency** | [**AlertConditionUrgencyEnum**](#AlertConditionUrgencyEnum) |  |  [optional] |
+|**alertUrgencyIds** | **List&lt;UUID&gt;** |  |  [optional] |
 |**alertConditionPayload** | [**AlertConditionPayloadEnum**](#AlertConditionPayloadEnum) |  |  [optional] |
 |**alertConditionPayloadUseRegexp** | **Boolean** |  |  [optional] |
 |**alertPayload** | **List&lt;String&gt;** |  |  [optional] |
 |**alertQueryPayload** | **String** | You can use jsonpath syntax. eg: $.incident.teams[*] |  [optional] |
 |**alertFieldConditions** | [**List&lt;AlertTriggerParamsAlertFieldConditionsInner&gt;**](AlertTriggerParamsAlertFieldConditionsInner.md) |  |  [optional] |
+|**alertPayloadConditions** | [**AlertTriggerParamsAlertPayloadConditions**](AlertTriggerParamsAlertPayloadConditions.md) |  |  [optional] |
 
 
 
@@ -87,6 +90,22 @@
 
 
 ## Enum: AlertConditionStatusEnum
+
+| Name | Value |
+|---- | -----|
+| IS | &quot;IS&quot; |
+| IS_NOT | &quot;IS NOT&quot; |
+| ANY | &quot;ANY&quot; |
+| CONTAINS | &quot;CONTAINS&quot; |
+| CONTAINS_ALL | &quot;CONTAINS_ALL&quot; |
+| CONTAINS_NONE | &quot;CONTAINS_NONE&quot; |
+| NONE | &quot;NONE&quot; |
+| SET | &quot;SET&quot; |
+| UNSET | &quot;UNSET&quot; |
+
+
+
+## Enum: AlertConditionUrgencyEnum
 
 | Name | Value |
 |---- | -----|

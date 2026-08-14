@@ -2,7 +2,7 @@
 
 # CreateOpenaiChatCompletionTaskParamsModel
 
-The OpenAI model. eg: gpt-4o-mini
+The OpenAI model. eg: gpt-5-nano
 
 ## Properties
 

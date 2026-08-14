@@ -11,7 +11,7 @@
 |**type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
 |**required** | **Boolean** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
-|**_default** | **Object** | Default value (any type) |  [optional] |
+|**_default** | **String** | Default value (any type) |  [optional] |
 |**options** | **List&lt;String&gt;** |  |  [optional] |
 
 

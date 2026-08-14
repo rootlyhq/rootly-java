@@ -88,7 +88,7 @@ public class FormFieldPlacementsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> form_field_placement created with non_editable true </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> cross-resource placement rejected </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
@@ -166,7 +166,7 @@ public class FormFieldPlacementsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> form_field_placement created with non_editable true </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> cross-resource placement rejected </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
@@ -187,7 +187,7 @@ public class FormFieldPlacementsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> form_field_placement created with non_editable true </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> cross-resource placement rejected </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
@@ -210,7 +210,7 @@ public class FormFieldPlacementsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> form_field_placement created with non_editable true </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> cross-resource placement rejected </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
@@ -653,7 +653,8 @@ public class FormFieldPlacementsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> form_field_placement updated with non_editable </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> moves a custom field&#39;s placement onto an action item form </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> rejects re-pointing a placement at another team&#39;s form set </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
@@ -730,7 +731,8 @@ public class FormFieldPlacementsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> form_field_placement updated with non_editable </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> moves a custom field&#39;s placement onto an action item form </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> rejects re-pointing a placement at another team&#39;s form set </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
@@ -750,7 +752,8 @@ public class FormFieldPlacementsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> form_field_placement updated with non_editable </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> moves a custom field&#39;s placement onto an action item form </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> rejects re-pointing a placement at another team&#39;s form set </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
@@ -772,7 +775,8 @@ public class FormFieldPlacementsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> form_field_placement updated with non_editable </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> moves a custom field&#39;s placement onto an action item form </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> rejects re-pointing a placement at another team&#39;s form set </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */

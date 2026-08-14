@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * WorkflowGroup
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class WorkflowGroup {
   /**
    * The kind of the workflow group
@@ -149,6 +149,13 @@ public class WorkflowGroup {
   public WorkflowGroup() {
   }
 
+  public WorkflowGroup(
+     String slug
+  ) {
+    this();
+    this.slug = slug;
+  }
+
   public WorkflowGroup kind(@jakarta.annotation.Nullable KindEnum kind) {
     this.kind = kind;
     return this;
@@ -187,11 +194,6 @@ public class WorkflowGroup {
   }
 
 
-  public WorkflowGroup slug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
-    return this;
-  }
-
   /**
    * The slug of the workflow group.
    * @return slug
@@ -201,9 +203,6 @@ public class WorkflowGroup {
     return slug;
   }
 
-  public void setSlug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
-  }
 
 
   public WorkflowGroup description(@jakarta.annotation.Nullable String description) {

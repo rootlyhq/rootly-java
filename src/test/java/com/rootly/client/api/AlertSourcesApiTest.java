@@ -92,8 +92,10 @@ public class AlertSourcesApiTest {
         String filterSearch = null;
         String filterStatuses = null;
         String filterSourceTypes = null;
+        String filterName = null;
+        Boolean filterEnabled = null;
         String sort = null;
-        AlertsSourceList response = api.listAlertsSources(include, pageNumber, pageSize, filterSearch, filterStatuses, filterSourceTypes, sort);
+        AlertsSourceList response = api.listAlertsSources(include, pageNumber, pageSize, filterSearch, filterStatuses, filterSourceTypes, filterName, filterEnabled, sort);
         // TODO: test validations
     }
 

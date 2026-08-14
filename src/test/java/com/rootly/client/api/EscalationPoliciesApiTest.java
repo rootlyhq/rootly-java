@@ -90,13 +90,22 @@ public class EscalationPoliciesApiTest {
         String include = null;
         String filterSearch = null;
         String filterName = null;
+        String filterTeamIds = null;
         String filterCreatedAtGt = null;
         String filterCreatedAtGte = null;
         String filterCreatedAtLt = null;
         String filterCreatedAtLte = null;
+        String filterNameEq = null;
+        String filterNameNotEq = null;
+        String filterNameIn = null;
+        String filterNameNotIn = null;
+        String filterTeamIdsEq = null;
+        String filterTeamIdsNotEq = null;
+        String filterTeamIdsIn = null;
+        String filterTeamIdsNotIn = null;
         Integer pageNumber = null;
         Integer pageSize = null;
-        EscalationPolicyList response = api.listEscalationPolicies(include, filterSearch, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize);
+        EscalationPolicyList response = api.listEscalationPolicies(include, filterSearch, filterName, filterTeamIds, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterTeamIdsEq, filterTeamIdsNotEq, filterTeamIdsIn, filterTeamIdsNotIn, pageNumber, pageSize);
         // TODO: test validations
     }
 

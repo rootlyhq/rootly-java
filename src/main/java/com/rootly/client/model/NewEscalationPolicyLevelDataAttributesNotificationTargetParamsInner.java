@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * NewEscalationPolicyLevelDataAttributesNotificationTargetParamsInner
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewEscalationPolicyLevelDataAttributesNotificationTargetParamsInner {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -68,6 +68,8 @@ public class NewEscalationPolicyLevelDataAttributesNotificationTargetParamsInner
     SCHEDULE("schedule"),
     
     SLACK_CHANNEL("slack_channel"),
+    
+    MICROSOFT_TEAMS_CHANNEL("microsoft_teams_channel"),
     
     SERVICE("service");
 
@@ -187,7 +189,7 @@ public class NewEscalationPolicyLevelDataAttributesNotificationTargetParamsInner
   }
 
   /**
-   * The ID of notification target. If Slack channel, then id of the slack channel (eg. C06Q2JK7RQW)
+   * The ID of notification target. If Slack channel, then id of the slack channel (eg. C06Q2JK7RQW). If Microsoft Teams channel, then the Rootly channel UUID.
    * @return id
    */
   @jakarta.annotation.Nonnull

@@ -28,6 +28,7 @@ import java.io.IOException;
 
 
 import com.rootly.client.model.ErrorsList;
+import java.time.OffsetDateTime;
 import com.rootly.client.model.WebhooksDeliveryList;
 import com.rootly.client.model.WebhooksDeliveryResponse;
 
@@ -338,6 +339,15 @@ public class WebhooksDeliveriesApi {
      * @param include  (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
+     * @param filterStatus Delivery status: pending, success, failed. Comma-separated. Unknown values are ignored; if no valid values remain, the result set is empty. (optional)
+     * @param filterCreatedAtGt Created after this timestamp (exclusive). Use ISO 8601 with Z or a numeric UTC offset. (optional)
+     * @param filterCreatedAtGte Created at or after this timestamp (inclusive). Use ISO 8601 with Z or a numeric UTC offset. (optional)
+     * @param filterCreatedAtLt Created before this timestamp (exclusive). Use ISO 8601 with Z or a numeric UTC offset. (optional)
+     * @param filterCreatedAtLte Created at or before this timestamp (inclusive). Use ISO 8601 with Z or a numeric UTC offset. (optional)
+     * @param filterDeliveredAtGt Delivered after this timestamp (exclusive). Use ISO 8601 with Z or a numeric UTC offset. (optional)
+     * @param filterDeliveredAtGte Delivered at or after this timestamp (inclusive). Use ISO 8601 with Z or a numeric UTC offset. (optional)
+     * @param filterDeliveredAtLt Delivered before this timestamp (exclusive). Use ISO 8601 with Z or a numeric UTC offset. (optional)
+     * @param filterDeliveredAtLte Delivered at or before this timestamp (inclusive). Use ISO 8601 with Z or a numeric UTC offset. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -346,9 +356,10 @@ public class WebhooksDeliveriesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> invalid date filter </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listWebhooksDeliveriesCall(@jakarta.annotation.Nonnull String endpointId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listWebhooksDeliveriesCall(@jakarta.annotation.Nonnull String endpointId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable OffsetDateTime filterCreatedAtGt, @jakarta.annotation.Nullable OffsetDateTime filterCreatedAtGte, @jakarta.annotation.Nullable OffsetDateTime filterCreatedAtLt, @jakarta.annotation.Nullable OffsetDateTime filterCreatedAtLte, @jakarta.annotation.Nullable OffsetDateTime filterDeliveredAtGt, @jakarta.annotation.Nullable OffsetDateTime filterDeliveredAtGte, @jakarta.annotation.Nullable OffsetDateTime filterDeliveredAtLt, @jakarta.annotation.Nullable OffsetDateTime filterDeliveredAtLte, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -386,6 +397,42 @@ public class WebhooksDeliveriesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("page[size]", pageSize));
         }
 
+        if (filterStatus != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[status]", filterStatus));
+        }
+
+        if (filterCreatedAtGt != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[created_at][gt]", filterCreatedAtGt));
+        }
+
+        if (filterCreatedAtGte != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[created_at][gte]", filterCreatedAtGte));
+        }
+
+        if (filterCreatedAtLt != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[created_at][lt]", filterCreatedAtLt));
+        }
+
+        if (filterCreatedAtLte != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[created_at][lte]", filterCreatedAtLte));
+        }
+
+        if (filterDeliveredAtGt != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[delivered_at][gt]", filterDeliveredAtGt));
+        }
+
+        if (filterDeliveredAtGte != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[delivered_at][gte]", filterDeliveredAtGte));
+        }
+
+        if (filterDeliveredAtLt != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[delivered_at][lt]", filterDeliveredAtLt));
+        }
+
+        if (filterDeliveredAtLte != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[delivered_at][lte]", filterDeliveredAtLte));
+        }
+
         final String[] localVarAccepts = {
             "application/vnd.api+json"
         };
@@ -406,13 +453,13 @@ public class WebhooksDeliveriesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listWebhooksDeliveriesValidateBeforeCall(@jakarta.annotation.Nonnull String endpointId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listWebhooksDeliveriesValidateBeforeCall(@jakarta.annotation.Nonnull String endpointId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable OffsetDateTime filterCreatedAtGt, @jakarta.annotation.Nullable OffsetDateTime filterCreatedAtGte, @jakarta.annotation.Nullable OffsetDateTime filterCreatedAtLt, @jakarta.annotation.Nullable OffsetDateTime filterCreatedAtLte, @jakarta.annotation.Nullable OffsetDateTime filterDeliveredAtGt, @jakarta.annotation.Nullable OffsetDateTime filterDeliveredAtGte, @jakarta.annotation.Nullable OffsetDateTime filterDeliveredAtLt, @jakarta.annotation.Nullable OffsetDateTime filterDeliveredAtLte, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'endpointId' is set
         if (endpointId == null) {
             throw new ApiException("Missing the required parameter 'endpointId' when calling listWebhooksDeliveries(Async)");
         }
 
-        return listWebhooksDeliveriesCall(endpointId, include, pageNumber, pageSize, _callback);
+        return listWebhooksDeliveriesCall(endpointId, include, pageNumber, pageSize, filterStatus, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterDeliveredAtGt, filterDeliveredAtGte, filterDeliveredAtLt, filterDeliveredAtLte, _callback);
 
     }
 
@@ -423,6 +470,15 @@ public class WebhooksDeliveriesApi {
      * @param include  (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
+     * @param filterStatus Delivery status: pending, success, failed. Comma-separated. Unknown values are ignored; if no valid values remain, the result set is empty. (optional)
+     * @param filterCreatedAtGt Created after this timestamp (exclusive). Use ISO 8601 with Z or a numeric UTC offset. (optional)
+     * @param filterCreatedAtGte Created at or after this timestamp (inclusive). Use ISO 8601 with Z or a numeric UTC offset. (optional)
+     * @param filterCreatedAtLt Created before this timestamp (exclusive). Use ISO 8601 with Z or a numeric UTC offset. (optional)
+     * @param filterCreatedAtLte Created at or before this timestamp (inclusive). Use ISO 8601 with Z or a numeric UTC offset. (optional)
+     * @param filterDeliveredAtGt Delivered after this timestamp (exclusive). Use ISO 8601 with Z or a numeric UTC offset. (optional)
+     * @param filterDeliveredAtGte Delivered at or after this timestamp (inclusive). Use ISO 8601 with Z or a numeric UTC offset. (optional)
+     * @param filterDeliveredAtLt Delivered before this timestamp (exclusive). Use ISO 8601 with Z or a numeric UTC offset. (optional)
+     * @param filterDeliveredAtLte Delivered at or before this timestamp (inclusive). Use ISO 8601 with Z or a numeric UTC offset. (optional)
      * @return WebhooksDeliveryList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -430,10 +486,11 @@ public class WebhooksDeliveriesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> invalid date filter </td><td>  -  </td></tr>
      </table>
      */
-    public WebhooksDeliveryList listWebhooksDeliveries(@jakarta.annotation.Nonnull String endpointId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
-        ApiResponse<WebhooksDeliveryList> localVarResp = listWebhooksDeliveriesWithHttpInfo(endpointId, include, pageNumber, pageSize);
+    public WebhooksDeliveryList listWebhooksDeliveries(@jakarta.annotation.Nonnull String endpointId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable OffsetDateTime filterCreatedAtGt, @jakarta.annotation.Nullable OffsetDateTime filterCreatedAtGte, @jakarta.annotation.Nullable OffsetDateTime filterCreatedAtLt, @jakarta.annotation.Nullable OffsetDateTime filterCreatedAtLte, @jakarta.annotation.Nullable OffsetDateTime filterDeliveredAtGt, @jakarta.annotation.Nullable OffsetDateTime filterDeliveredAtGte, @jakarta.annotation.Nullable OffsetDateTime filterDeliveredAtLt, @jakarta.annotation.Nullable OffsetDateTime filterDeliveredAtLte) throws ApiException {
+        ApiResponse<WebhooksDeliveryList> localVarResp = listWebhooksDeliveriesWithHttpInfo(endpointId, include, pageNumber, pageSize, filterStatus, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterDeliveredAtGt, filterDeliveredAtGte, filterDeliveredAtLt, filterDeliveredAtLte);
         return localVarResp.getData();
     }
 
@@ -444,6 +501,15 @@ public class WebhooksDeliveriesApi {
      * @param include  (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
+     * @param filterStatus Delivery status: pending, success, failed. Comma-separated. Unknown values are ignored; if no valid values remain, the result set is empty. (optional)
+     * @param filterCreatedAtGt Created after this timestamp (exclusive). Use ISO 8601 with Z or a numeric UTC offset. (optional)
+     * @param filterCreatedAtGte Created at or after this timestamp (inclusive). Use ISO 8601 with Z or a numeric UTC offset. (optional)
+     * @param filterCreatedAtLt Created before this timestamp (exclusive). Use ISO 8601 with Z or a numeric UTC offset. (optional)
+     * @param filterCreatedAtLte Created at or before this timestamp (inclusive). Use ISO 8601 with Z or a numeric UTC offset. (optional)
+     * @param filterDeliveredAtGt Delivered after this timestamp (exclusive). Use ISO 8601 with Z or a numeric UTC offset. (optional)
+     * @param filterDeliveredAtGte Delivered at or after this timestamp (inclusive). Use ISO 8601 with Z or a numeric UTC offset. (optional)
+     * @param filterDeliveredAtLt Delivered before this timestamp (exclusive). Use ISO 8601 with Z or a numeric UTC offset. (optional)
+     * @param filterDeliveredAtLte Delivered at or before this timestamp (inclusive). Use ISO 8601 with Z or a numeric UTC offset. (optional)
      * @return ApiResponse&lt;WebhooksDeliveryList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -451,10 +517,11 @@ public class WebhooksDeliveriesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> invalid date filter </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebhooksDeliveryList> listWebhooksDeliveriesWithHttpInfo(@jakarta.annotation.Nonnull String endpointId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
-        okhttp3.Call localVarCall = listWebhooksDeliveriesValidateBeforeCall(endpointId, include, pageNumber, pageSize, null);
+    public ApiResponse<WebhooksDeliveryList> listWebhooksDeliveriesWithHttpInfo(@jakarta.annotation.Nonnull String endpointId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable OffsetDateTime filterCreatedAtGt, @jakarta.annotation.Nullable OffsetDateTime filterCreatedAtGte, @jakarta.annotation.Nullable OffsetDateTime filterCreatedAtLt, @jakarta.annotation.Nullable OffsetDateTime filterCreatedAtLte, @jakarta.annotation.Nullable OffsetDateTime filterDeliveredAtGt, @jakarta.annotation.Nullable OffsetDateTime filterDeliveredAtGte, @jakarta.annotation.Nullable OffsetDateTime filterDeliveredAtLt, @jakarta.annotation.Nullable OffsetDateTime filterDeliveredAtLte) throws ApiException {
+        okhttp3.Call localVarCall = listWebhooksDeliveriesValidateBeforeCall(endpointId, include, pageNumber, pageSize, filterStatus, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterDeliveredAtGt, filterDeliveredAtGte, filterDeliveredAtLt, filterDeliveredAtLte, null);
         Type localVarReturnType = new TypeToken<WebhooksDeliveryList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -466,6 +533,15 @@ public class WebhooksDeliveriesApi {
      * @param include  (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
+     * @param filterStatus Delivery status: pending, success, failed. Comma-separated. Unknown values are ignored; if no valid values remain, the result set is empty. (optional)
+     * @param filterCreatedAtGt Created after this timestamp (exclusive). Use ISO 8601 with Z or a numeric UTC offset. (optional)
+     * @param filterCreatedAtGte Created at or after this timestamp (inclusive). Use ISO 8601 with Z or a numeric UTC offset. (optional)
+     * @param filterCreatedAtLt Created before this timestamp (exclusive). Use ISO 8601 with Z or a numeric UTC offset. (optional)
+     * @param filterCreatedAtLte Created at or before this timestamp (inclusive). Use ISO 8601 with Z or a numeric UTC offset. (optional)
+     * @param filterDeliveredAtGt Delivered after this timestamp (exclusive). Use ISO 8601 with Z or a numeric UTC offset. (optional)
+     * @param filterDeliveredAtGte Delivered at or after this timestamp (inclusive). Use ISO 8601 with Z or a numeric UTC offset. (optional)
+     * @param filterDeliveredAtLt Delivered before this timestamp (exclusive). Use ISO 8601 with Z or a numeric UTC offset. (optional)
+     * @param filterDeliveredAtLte Delivered at or before this timestamp (inclusive). Use ISO 8601 with Z or a numeric UTC offset. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -474,11 +550,12 @@ public class WebhooksDeliveriesApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> invalid date filter </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listWebhooksDeliveriesAsync(@jakarta.annotation.Nonnull String endpointId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback<WebhooksDeliveryList> _callback) throws ApiException {
+    public okhttp3.Call listWebhooksDeliveriesAsync(@jakarta.annotation.Nonnull String endpointId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable OffsetDateTime filterCreatedAtGt, @jakarta.annotation.Nullable OffsetDateTime filterCreatedAtGte, @jakarta.annotation.Nullable OffsetDateTime filterCreatedAtLt, @jakarta.annotation.Nullable OffsetDateTime filterCreatedAtLte, @jakarta.annotation.Nullable OffsetDateTime filterDeliveredAtGt, @jakarta.annotation.Nullable OffsetDateTime filterDeliveredAtGte, @jakarta.annotation.Nullable OffsetDateTime filterDeliveredAtLt, @jakarta.annotation.Nullable OffsetDateTime filterDeliveredAtLte, final ApiCallback<WebhooksDeliveryList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listWebhooksDeliveriesValidateBeforeCall(endpointId, include, pageNumber, pageSize, _callback);
+        okhttp3.Call localVarCall = listWebhooksDeliveriesValidateBeforeCall(endpointId, include, pageNumber, pageSize, filterStatus, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterDeliveredAtGt, filterDeliveredAtGte, filterDeliveredAtLt, filterDeliveredAtLte, _callback);
         Type localVarReturnType = new TypeToken<WebhooksDeliveryList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

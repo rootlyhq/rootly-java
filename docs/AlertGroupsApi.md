@@ -218,7 +218,7 @@ public class Example {
 
 <a id="listAlertGroups"></a>
 # **listAlertGroups**
-> AlertGroupList listAlertGroups(include)
+> AlertGroupList listAlertGroups(include, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn)
 
 List alert groups
 
@@ -245,8 +245,16 @@ public class Example {
 
     AlertGroupsApi apiInstance = new AlertGroupsApi(defaultClient);
     String include = "include_example"; // String | 
+    String filterSlugEq = "filterSlugEq_example"; // String | 
+    String filterSlugNotEq = "filterSlugNotEq_example"; // String | 
+    String filterSlugIn = "filterSlugIn_example"; // String | 
+    String filterSlugNotIn = "filterSlugNotIn_example"; // String | 
+    String filterNameEq = "filterNameEq_example"; // String | 
+    String filterNameNotEq = "filterNameNotEq_example"; // String | 
+    String filterNameIn = "filterNameIn_example"; // String | 
+    String filterNameNotIn = "filterNameNotIn_example"; // String | 
     try {
-      AlertGroupList result = apiInstance.listAlertGroups(include);
+      AlertGroupList result = apiInstance.listAlertGroups(include, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AlertGroupsApi#listAlertGroups");
@@ -264,6 +272,14 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **include** | **String**|  | [optional] |
+| **filterSlugEq** | **String**|  | [optional] |
+| **filterSlugNotEq** | **String**|  | [optional] |
+| **filterSlugIn** | **String**|  | [optional] |
+| **filterSlugNotIn** | **String**|  | [optional] |
+| **filterNameEq** | **String**|  | [optional] |
+| **filterNameNotEq** | **String**|  | [optional] |
+| **filterNameIn** | **String**|  | [optional] |
+| **filterNameNotIn** | **String**|  | [optional] |
 
 ### Return type
 

@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewCauseDataAttributesPropertiesInner;
 import com.rootly.client.model.NewEnvironmentDataAttributesSlackAliasesInner;
 import com.rootly.client.model.NewEnvironmentDataAttributesSlackChannelsInner;
 import java.io.IOException;
@@ -53,8 +54,14 @@ import com.rootly.client.JSON;
 /**
  * UpdateIncidentTypeDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateIncidentTypeDataAttributes {
+  public static final String SERIALIZED_NAME_SLUG = "slug";
+  @Deprecated
+  @SerializedName(SERIALIZED_NAME_SLUG)
+  @jakarta.annotation.Nullable
+  private String slug;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @jakarta.annotation.Nullable
@@ -64,6 +71,11 @@ public class UpdateIncidentTypeDataAttributes {
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   @jakarta.annotation.Nullable
   private String description;
+
+  public static final String SERIALIZED_NAME_PUBLIC_DESCRIPTION = "public_description";
+  @SerializedName(SERIALIZED_NAME_PUBLIC_DESCRIPTION)
+  @jakarta.annotation.Nullable
+  private String publicDescription;
 
   public static final String SERIALIZED_NAME_COLOR = "color";
   @SerializedName(SERIALIZED_NAME_COLOR)
@@ -90,8 +102,36 @@ public class UpdateIncidentTypeDataAttributes {
   @jakarta.annotation.Nullable
   private List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases;
 
+  public static final String SERIALIZED_NAME_PROPERTIES = "properties";
+  @SerializedName(SERIALIZED_NAME_PROPERTIES)
+  @jakarta.annotation.Nullable
+  private List<NewCauseDataAttributesPropertiesInner> properties = new ArrayList<>();
+
   public UpdateIncidentTypeDataAttributes() {
   }
+
+  @Deprecated
+  public UpdateIncidentTypeDataAttributes slug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+    return this;
+  }
+
+  /**
+   * Deprecated. &#x60;slug&#x60; is derived from &#x60;name&#x60;; any submitted value is ignored. This property will be removed from the request schema in a future version.
+   * @return slug
+   * @deprecated
+   */
+  @Deprecated
+  @jakarta.annotation.Nullable
+  public String getSlug() {
+    return slug;
+  }
+
+  @Deprecated
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+  }
+
 
   public UpdateIncidentTypeDataAttributes name(@jakarta.annotation.Nullable String name) {
     this.name = name;
@@ -128,6 +168,25 @@ public class UpdateIncidentTypeDataAttributes {
 
   public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
+  }
+
+
+  public UpdateIncidentTypeDataAttributes publicDescription(@jakarta.annotation.Nullable String publicDescription) {
+    this.publicDescription = publicDescription;
+    return this;
+  }
+
+  /**
+   * The status page description of the incident type
+   * @return publicDescription
+   */
+  @jakarta.annotation.Nullable
+  public String getPublicDescription() {
+    return publicDescription;
+  }
+
+  public void setPublicDescription(@jakarta.annotation.Nullable String publicDescription) {
+    this.publicDescription = publicDescription;
   }
 
 
@@ -250,6 +309,33 @@ public class UpdateIncidentTypeDataAttributes {
   }
 
 
+  public UpdateIncidentTypeDataAttributes properties(@jakarta.annotation.Nullable List<NewCauseDataAttributesPropertiesInner> properties) {
+    this.properties = properties;
+    return this;
+  }
+
+  public UpdateIncidentTypeDataAttributes addPropertiesItem(NewCauseDataAttributesPropertiesInner propertiesItem) {
+    if (this.properties == null) {
+      this.properties = new ArrayList<>();
+    }
+    this.properties.add(propertiesItem);
+    return this;
+  }
+
+  /**
+   * Array of property values for this incident type.
+   * @return properties
+   */
+  @jakarta.annotation.Nullable
+  public List<NewCauseDataAttributesPropertiesInner> getProperties() {
+    return properties;
+  }
+
+  public void setProperties(@jakarta.annotation.Nullable List<NewCauseDataAttributesPropertiesInner> properties) {
+    this.properties = properties;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -260,13 +346,16 @@ public class UpdateIncidentTypeDataAttributes {
       return false;
     }
     UpdateIncidentTypeDataAttributes updateIncidentTypeDataAttributes = (UpdateIncidentTypeDataAttributes) o;
-    return Objects.equals(this.name, updateIncidentTypeDataAttributes.name) &&
+    return Objects.equals(this.slug, updateIncidentTypeDataAttributes.slug) &&
+        Objects.equals(this.name, updateIncidentTypeDataAttributes.name) &&
         Objects.equals(this.description, updateIncidentTypeDataAttributes.description) &&
+        Objects.equals(this.publicDescription, updateIncidentTypeDataAttributes.publicDescription) &&
         Objects.equals(this.color, updateIncidentTypeDataAttributes.color) &&
         Objects.equals(this.position, updateIncidentTypeDataAttributes.position) &&
         Objects.equals(this.notifyEmails, updateIncidentTypeDataAttributes.notifyEmails) &&
         Objects.equals(this.slackChannels, updateIncidentTypeDataAttributes.slackChannels) &&
-        Objects.equals(this.slackAliases, updateIncidentTypeDataAttributes.slackAliases);
+        Objects.equals(this.slackAliases, updateIncidentTypeDataAttributes.slackAliases) &&
+        Objects.equals(this.properties, updateIncidentTypeDataAttributes.properties);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -275,7 +364,7 @@ public class UpdateIncidentTypeDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, color, position, notifyEmails, slackChannels, slackAliases);
+    return Objects.hash(slug, name, description, publicDescription, color, position, notifyEmails, slackChannels, slackAliases, properties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -289,13 +378,16 @@ public class UpdateIncidentTypeDataAttributes {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdateIncidentTypeDataAttributes {\n");
+    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    publicDescription: ").append(toIndentedString(publicDescription)).append("\n");
     sb.append("    color: ").append(toIndentedString(color)).append("\n");
     sb.append("    position: ").append(toIndentedString(position)).append("\n");
     sb.append("    notifyEmails: ").append(toIndentedString(notifyEmails)).append("\n");
     sb.append("    slackChannels: ").append(toIndentedString(slackChannels)).append("\n");
     sb.append("    slackAliases: ").append(toIndentedString(slackAliases)).append("\n");
+    sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -318,13 +410,16 @@ public class UpdateIncidentTypeDataAttributes {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("slug");
     openapiFields.add("name");
     openapiFields.add("description");
+    openapiFields.add("public_description");
     openapiFields.add("color");
     openapiFields.add("position");
     openapiFields.add("notify_emails");
     openapiFields.add("slack_channels");
     openapiFields.add("slack_aliases");
+    openapiFields.add("properties");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -351,11 +446,17 @@ public class UpdateIncidentTypeDataAttributes {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
+      }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
+      if ((jsonObj.get("public_description") != null && !jsonObj.get("public_description").isJsonNull()) && !jsonObj.get("public_description").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `public_description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("public_description").toString()));
       }
       if ((jsonObj.get("color") != null && !jsonObj.get("color").isJsonNull()) && !jsonObj.get("color").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `color` to be a primitive type in the JSON string but got `%s`", jsonObj.get("color").toString()));
@@ -389,6 +490,20 @@ public class UpdateIncidentTypeDataAttributes {
           // validate the optional field `slack_aliases` (array)
           for (int i = 0; i < jsonArrayslackAliases.size(); i++) {
             NewEnvironmentDataAttributesSlackAliasesInner.validateJsonElement(jsonArrayslackAliases.get(i));
+          };
+        }
+      }
+      if (jsonObj.get("properties") != null && !jsonObj.get("properties").isJsonNull()) {
+        JsonArray jsonArrayproperties = jsonObj.getAsJsonArray("properties");
+        if (jsonArrayproperties != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("properties").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `properties` to be an array in the JSON string but got `%s`", jsonObj.get("properties").toString()));
+          }
+
+          // validate the optional field `properties` (array)
+          for (int i = 0; i < jsonArrayproperties.size(); i++) {
+            NewCauseDataAttributesPropertiesInner.validateJsonElement(jsonArrayproperties.get(i));
           };
         }
       }

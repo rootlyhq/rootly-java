@@ -11,7 +11,7 @@
 |**sequentialId** | **Integer** | Sequential ID of the incident |  [optional] |
 |**title** | **String** | The title of the incident |  |
 |**kind** | **String** | The kind of the incident |  [optional] |
-|**slug** | **String** | The slug of the incident |  |
+|**slug** | **String** | The slug of the incident |  [optional] [readonly] |
 |**parentIncidentId** | **String** | ID of parent incident |  [optional] |
 |**duplicateIncidentId** | **String** | ID of duplicated incident |  [optional] |
 |**summary** | **String** | The summary of the incident |  [optional] |
@@ -42,12 +42,29 @@
 |**zoomMeetingPassword** | **String** | Zoom meeting password |  [optional] |
 |**zoomMeetingPstnPassword** | **String** | Zoom meeting PSTN password |  [optional] |
 |**zoomMeetingH323Password** | **String** | Zoom meeting H323 password |  [optional] |
-|**zoomMeetingGlobalDialInNumbers** | **List&lt;String&gt;** | Zoom meeting global dial-in numbers |  [optional] |
+|**zoomMeetingGlobalDialInNumbers** | [**List&lt;IncidentZoomMeetingGlobalDialInNumbersInner&gt;**](IncidentZoomMeetingGlobalDialInNumbersInner.md) | Zoom meeting global dial-in numbers |  [optional] |
 |**googleDriveId** | **String** | Google Drive document ID |  [optional] |
 |**googleDriveParentId** | **String** | Google Drive parent folder ID |  [optional] |
 |**googleDriveUrl** | **String** | Google Drive URL |  [optional] |
 |**googleMeetingId** | **String** | Google meeting ID |  [optional] |
 |**googleMeetingUrl** | **String** | Google meeting URL |  [optional] |
+|**microsoftTeamsMeetingId** | **String** | Microsoft Teams meeting ID |  [optional] |
+|**microsoftTeamsMeetingUrl** | **String** | Microsoft Teams meeting URL |  [optional] |
+|**microsoftTeamsChannelId** | **String** | Microsoft Teams channel ID |  [optional] |
+|**microsoftTeamsChannelName** | **String** | Microsoft Teams channel name |  [optional] |
+|**microsoftTeamsChannelUrl** | **String** | Microsoft Teams channel URL |  [optional] |
+|**microsoftTeamsChannelShortUrl** | **String** | Microsoft Teams channel short URL |  [optional] |
+|**microsoftTeamsChatId** | **String** | Microsoft Teams chat ID |  [optional] |
+|**microsoftTeamsChatUrl** | **String** | Microsoft Teams chat URL |  [optional] |
+|**microsoftTeamsTeamId** | **String** | Microsoft Teams team ID |  [optional] |
+|**googleChatSpaceId** | **String** | Google Chat space ID |  [optional] |
+|**googleChatSpaceName** | **String** | Google Chat space name |  [optional] |
+|**googleChatSpaceUrl** | **String** | Google Chat space URL |  [optional] |
+|**googleChatSpaceShortUrl** | **String** | Google Chat space short URL |  [optional] |
+|**googleChatSpaceArchived** | **Boolean** | Whether the Google Chat space is archived |  [optional] |
+|**googleChatSpaceDomainId** | **String** | Google Chat space domain ID |  [optional] |
+|**webexMeetingId** | **String** | Webex meeting ID |  [optional] |
+|**webexMeetingUrl** | **String** | Webex meeting URL |  [optional] |
 |**jiraIssueKey** | **String** | Jira issue key |  [optional] |
 |**jiraIssueId** | **String** | Jira issue ID |  [optional] |
 |**jiraIssueUrl** | **String** | Jira issue URL |  [optional] |

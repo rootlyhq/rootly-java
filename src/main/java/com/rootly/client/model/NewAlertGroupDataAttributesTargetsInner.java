@@ -49,10 +49,10 @@ import com.rootly.client.JSON;
 /**
  * NewAlertGroupDataAttributesTargetsInner
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewAlertGroupDataAttributesTargetsInner {
   /**
-   * The type of the target.
+   * The type of the target. Please contact support if you encounter issues using &#x60;Functionality&#x60; as a target type.
    */
   @JsonAdapter(TargetTypeEnum.Adapter.class)
   public enum TargetTypeEnum {
@@ -60,7 +60,9 @@ public class NewAlertGroupDataAttributesTargetsInner {
     
     SERVICE("Service"),
     
-    ESCALATION_POLICY("EscalationPolicy");
+    ESCALATION_POLICY("EscalationPolicy"),
+    
+    FUNCTIONALITY("Functionality");
 
     private String value;
 
@@ -124,7 +126,7 @@ public class NewAlertGroupDataAttributesTargetsInner {
   }
 
   /**
-   * The type of the target.
+   * The type of the target. Please contact support if you encounter issues using &#x60;Functionality&#x60; as a target type.
    * @return targetType
    */
   @jakarta.annotation.Nonnull
@@ -143,7 +145,7 @@ public class NewAlertGroupDataAttributesTargetsInner {
   }
 
   /**
-   * id for the Group, Service or EscalationPolicy
+   * id for the Group, Service, EscalationPolicy or Functionality
    * @return targetId
    */
   @jakarta.annotation.Nonnull

@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesInner
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesInner {
   /**
    * Select the field on which the condition to be evaluated
@@ -150,7 +150,7 @@ public class NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttri
   }
 
   /**
-   * JSON path expression to extract a specific value from the alert&#39;s payload for evaluation
+   * JSON path expression to extract a specific value from the alert&#39;s payload for evaluation. For &#x60;notification_target_id&#x60; only: if your account has opted in to Dynamic Notification Targets, this may also be a Liquid template that resolves to a notification target id at routing time.
    * @return jsonPath
    */
   @jakarta.annotation.Nullable

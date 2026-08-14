@@ -88,7 +88,15 @@ public class AlertGroupsApiTest {
     @Test
     public void listAlertGroupsTest() throws ApiException {
         String include = null;
-        AlertGroupList response = api.listAlertGroups(include);
+        String filterSlugEq = null;
+        String filterSlugNotEq = null;
+        String filterSlugIn = null;
+        String filterSlugNotIn = null;
+        String filterNameEq = null;
+        String filterNameNotEq = null;
+        String filterNameIn = null;
+        String filterNameNotIn = null;
+        AlertGroupList response = api.listAlertGroups(include, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn);
         // TODO: test validations
     }
 

@@ -48,32 +48,32 @@ import com.rootly.client.JSON;
 /**
  * CatalogEntityChecklistChecklistOwnersInnerDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CatalogEntityChecklistChecklistOwnersInnerDataAttributes {
   public static final String SERIALIZED_NAME_CATALOG_ENTITY_CHECKLIST_ID = "catalog_entity_checklist_id";
   @SerializedName(SERIALIZED_NAME_CATALOG_ENTITY_CHECKLIST_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String catalogEntityChecklistId;
 
   public static final String SERIALIZED_NAME_OWNER_USER_ID = "owner_user_id";
   @SerializedName(SERIALIZED_NAME_OWNER_USER_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String ownerUserId;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String updatedAt;
 
   public CatalogEntityChecklistChecklistOwnersInnerDataAttributes() {
   }
 
-  public CatalogEntityChecklistChecklistOwnersInnerDataAttributes catalogEntityChecklistId(@javax.annotation.Nullable String catalogEntityChecklistId) {
+  public CatalogEntityChecklistChecklistOwnersInnerDataAttributes catalogEntityChecklistId(@jakarta.annotation.Nullable String catalogEntityChecklistId) {
     this.catalogEntityChecklistId = catalogEntityChecklistId;
     return this;
   }
@@ -82,17 +82,17 @@ public class CatalogEntityChecklistChecklistOwnersInnerDataAttributes {
    * The ID of the parent checklist
    * @return catalogEntityChecklistId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCatalogEntityChecklistId() {
     return catalogEntityChecklistId;
   }
 
-  public void setCatalogEntityChecklistId(@javax.annotation.Nullable String catalogEntityChecklistId) {
+  public void setCatalogEntityChecklistId(@jakarta.annotation.Nullable String catalogEntityChecklistId) {
     this.catalogEntityChecklistId = catalogEntityChecklistId;
   }
 
 
-  public CatalogEntityChecklistChecklistOwnersInnerDataAttributes ownerUserId(@javax.annotation.Nullable String ownerUserId) {
+  public CatalogEntityChecklistChecklistOwnersInnerDataAttributes ownerUserId(@jakarta.annotation.Nullable String ownerUserId) {
     this.ownerUserId = ownerUserId;
     return this;
   }
@@ -101,17 +101,17 @@ public class CatalogEntityChecklistChecklistOwnersInnerDataAttributes {
    * The ID of the owner user
    * @return ownerUserId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getOwnerUserId() {
     return ownerUserId;
   }
 
-  public void setOwnerUserId(@javax.annotation.Nullable String ownerUserId) {
+  public void setOwnerUserId(@jakarta.annotation.Nullable String ownerUserId) {
     this.ownerUserId = ownerUserId;
   }
 
 
-  public CatalogEntityChecklistChecklistOwnersInnerDataAttributes createdAt(@javax.annotation.Nullable String createdAt) {
+  public CatalogEntityChecklistChecklistOwnersInnerDataAttributes createdAt(@jakarta.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -120,17 +120,17 @@ public class CatalogEntityChecklistChecklistOwnersInnerDataAttributes {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nullable String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public CatalogEntityChecklistChecklistOwnersInnerDataAttributes updatedAt(@javax.annotation.Nullable String updatedAt) {
+  public CatalogEntityChecklistChecklistOwnersInnerDataAttributes updatedAt(@jakarta.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -139,12 +139,12 @@ public class CatalogEntityChecklistChecklistOwnersInnerDataAttributes {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nullable String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

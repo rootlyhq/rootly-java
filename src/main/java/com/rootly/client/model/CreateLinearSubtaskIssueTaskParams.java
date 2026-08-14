@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -53,7 +54,7 @@ import com.rootly.client.JSON;
 /**
  * CreateLinearSubtaskIssueTaskParams
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateLinearSubtaskIssueTaskParams {
   /**
    * Gets or Sets taskType
@@ -144,6 +145,11 @@ public class CreateLinearSubtaskIssueTaskParams {
   @SerializedName(SERIALIZED_NAME_ASSIGN_USER_EMAIL)
   @jakarta.annotation.Nullable
   private String assignUserEmail;
+
+  public static final String SERIALIZED_NAME_CUSTOM_FIELDS_MAPPING = "custom_fields_mapping";
+  @SerializedName(SERIALIZED_NAME_CUSTOM_FIELDS_MAPPING)
+  @jakarta.annotation.Nullable
+  private String customFieldsMapping;
 
   public CreateLinearSubtaskIssueTaskParams() {
   }
@@ -308,6 +314,25 @@ public class CreateLinearSubtaskIssueTaskParams {
   }
 
 
+  public CreateLinearSubtaskIssueTaskParams customFieldsMapping(@jakarta.annotation.Nullable String customFieldsMapping) {
+    this.customFieldsMapping = customFieldsMapping;
+    return this;
+  }
+
+  /**
+   * Custom field mappings. Can contain liquid markup and need to be valid JSON
+   * @return customFieldsMapping
+   */
+  @jakarta.annotation.Nullable
+  public String getCustomFieldsMapping() {
+    return customFieldsMapping;
+  }
+
+  public void setCustomFieldsMapping(@jakarta.annotation.Nullable String customFieldsMapping) {
+    this.customFieldsMapping = customFieldsMapping;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -325,12 +350,24 @@ public class CreateLinearSubtaskIssueTaskParams {
         Objects.equals(this.state, createLinearSubtaskIssueTaskParams.state) &&
         Objects.equals(this.priority, createLinearSubtaskIssueTaskParams.priority) &&
         Objects.equals(this.labels, createLinearSubtaskIssueTaskParams.labels) &&
-        Objects.equals(this.assignUserEmail, createLinearSubtaskIssueTaskParams.assignUserEmail);
+        Objects.equals(this.assignUserEmail, createLinearSubtaskIssueTaskParams.assignUserEmail) &&
+        Objects.equals(this.customFieldsMapping, createLinearSubtaskIssueTaskParams.customFieldsMapping);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(taskType, parentIssueId, title, description, state, priority, labels, assignUserEmail);
+    return Objects.hash(taskType, parentIssueId, title, description, state, priority, labels, assignUserEmail, customFieldsMapping);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -345,6 +382,7 @@ public class CreateLinearSubtaskIssueTaskParams {
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
     sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
     sb.append("    assignUserEmail: ").append(toIndentedString(assignUserEmail)).append("\n");
+    sb.append("    customFieldsMapping: ").append(toIndentedString(customFieldsMapping)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -375,6 +413,7 @@ public class CreateLinearSubtaskIssueTaskParams {
     openapiFields.add("priority");
     openapiFields.add("labels");
     openapiFields.add("assign_user_email");
+    openapiFields.add("custom_fields_mapping");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -449,6 +488,9 @@ public class CreateLinearSubtaskIssueTaskParams {
       }
       if ((jsonObj.get("assign_user_email") != null && !jsonObj.get("assign_user_email").isJsonNull()) && !jsonObj.get("assign_user_email").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `assign_user_email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("assign_user_email").toString()));
+      }
+      if ((jsonObj.get("custom_fields_mapping") != null && !jsonObj.get("custom_fields_mapping").isJsonNull()) && !jsonObj.get("custom_fields_mapping").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `custom_fields_mapping` to be a primitive type in the JSON string but got `%s`", jsonObj.get("custom_fields_mapping").toString()));
       }
   }
 

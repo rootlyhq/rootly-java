@@ -49,17 +49,18 @@ import com.rootly.client.JSON;
 /**
  * UpdateCustomFormDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateCustomFormDataAttributes {
+  public static final String SERIALIZED_NAME_SLUG = "slug";
+  @Deprecated
+  @SerializedName(SERIALIZED_NAME_SLUG)
+  @jakarta.annotation.Nullable
+  private String slug;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @jakarta.annotation.Nullable
   private String name;
-
-  public static final String SERIALIZED_NAME_SLUG = "slug";
-  @SerializedName(SERIALIZED_NAME_SLUG)
-  @jakarta.annotation.Nullable
-  private String slug;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -79,6 +80,29 @@ public class UpdateCustomFormDataAttributes {
   public UpdateCustomFormDataAttributes() {
   }
 
+  @Deprecated
+  public UpdateCustomFormDataAttributes slug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+    return this;
+  }
+
+  /**
+   * Deprecated. &#x60;slug&#x60; is derived from &#x60;name&#x60;; any submitted value is ignored. This property will be removed from the request schema in a future version.
+   * @return slug
+   * @deprecated
+   */
+  @Deprecated
+  @jakarta.annotation.Nullable
+  public String getSlug() {
+    return slug;
+  }
+
+  @Deprecated
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+  }
+
+
   public UpdateCustomFormDataAttributes name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
@@ -95,25 +119,6 @@ public class UpdateCustomFormDataAttributes {
 
   public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
-  }
-
-
-  public UpdateCustomFormDataAttributes slug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
-    return this;
-  }
-
-  /**
-   * The custom form slug. Add this to form_field.shown or form_field.required to associate form fields with custom forms.
-   * @return slug
-   */
-  @jakarta.annotation.Nullable
-  public String getSlug() {
-    return slug;
-  }
-
-  public void setSlug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
   }
 
 
@@ -184,8 +189,8 @@ public class UpdateCustomFormDataAttributes {
       return false;
     }
     UpdateCustomFormDataAttributes updateCustomFormDataAttributes = (UpdateCustomFormDataAttributes) o;
-    return Objects.equals(this.name, updateCustomFormDataAttributes.name) &&
-        Objects.equals(this.slug, updateCustomFormDataAttributes.slug) &&
+    return Objects.equals(this.slug, updateCustomFormDataAttributes.slug) &&
+        Objects.equals(this.name, updateCustomFormDataAttributes.name) &&
         Objects.equals(this.description, updateCustomFormDataAttributes.description) &&
         Objects.equals(this.enabled, updateCustomFormDataAttributes.enabled) &&
         Objects.equals(this.command, updateCustomFormDataAttributes.command);
@@ -197,7 +202,7 @@ public class UpdateCustomFormDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, slug, description, enabled, command);
+    return Objects.hash(slug, name, description, enabled, command);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -211,8 +216,8 @@ public class UpdateCustomFormDataAttributes {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdateCustomFormDataAttributes {\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    command: ").append(toIndentedString(command)).append("\n");
@@ -238,8 +243,8 @@ public class UpdateCustomFormDataAttributes {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("name");
     openapiFields.add("slug");
+    openapiFields.add("name");
     openapiFields.add("description");
     openapiFields.add("enabled");
     openapiFields.add("command");
@@ -269,11 +274,11 @@ public class UpdateCustomFormDataAttributes {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
       if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
+      }
+      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));

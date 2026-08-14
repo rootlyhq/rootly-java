@@ -130,6 +130,14 @@ public class IncidentActionItemTest {
     }
 
     /**
+     * Test the property 'createdBy'
+     */
+    @Test
+    public void createdByTest() {
+        // TODO: test createdBy
+    }
+
+    /**
      * Test the property 'createdAt'
      */
     @Test

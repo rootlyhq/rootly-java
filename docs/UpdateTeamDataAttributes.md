@@ -7,8 +7,10 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**slug** | **String** | Deprecated. &#x60;slug&#x60; is derived from &#x60;name&#x60;; any submitted value is ignored. This property will be removed from the request schema in a future version. |  [optional] |
 |**name** | **String** | The name of the team |  [optional] |
 |**description** | **String** | The description of the team |  [optional] |
+|**publicDescription** | **String** | The status page description of the team |  [optional] |
 |**notifyEmails** | **List&lt;String&gt;** | Emails to attach to the team |  [optional] |
 |**color** | **String** | The hex color of the team |  [optional] |
 |**position** | **Integer** | Position of the team |  [optional] |
@@ -32,6 +34,19 @@
 |**incidentBroadcastEnabled** | **Boolean** | Enable incidents to be broadcasted to a specific channel |  [optional] |
 |**incidentBroadcastChannel** | [**NewServiceDataAttributesIncidentBroadcastChannel**](NewServiceDataAttributesIncidentBroadcastChannel.md) |  |  [optional] |
 |**autoAddMembersWhenAttached** | **Boolean** | Auto add members to incident channel when team is attached |  [optional] |
+|**autoAddMembersScope** | [**AutoAddMembersScopeEnum**](#AutoAddMembersScopeEnum) | Visibility-scoped auto-add behavior. Only present when the &#x60;enable_scoped_incident_channel_auto_add&#x60; feature flag is on for the organization. When set, it overrides &#x60;auto_add_members_when_attached&#x60;. |  [optional] |
+|**properties** | [**List&lt;NewCauseDataAttributesPropertiesInner&gt;**](NewCauseDataAttributesPropertiesInner.md) | Array of property values for this team. |  [optional] |
+
+
+
+## Enum: AutoAddMembersScopeEnum
+
+| Name | Value |
+|---- | -----|
+| OFF | &quot;off&quot; |
+| PUBLIC_ONLY | &quot;public_only&quot; |
+| PUBLIC_AND_TEST | &quot;public_and_test&quot; |
+| ALL | &quot;all&quot; |
 
 
 

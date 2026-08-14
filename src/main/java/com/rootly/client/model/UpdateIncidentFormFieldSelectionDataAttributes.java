@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateIncidentFormFieldSelectionDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateIncidentFormFieldSelectionDataAttributes {
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
@@ -87,6 +87,21 @@ public class UpdateIncidentFormFieldSelectionDataAttributes {
   @SerializedName(SERIALIZED_NAME_SELECTED_USER_IDS)
   @jakarta.annotation.Nullable
   private List<Integer> selectedUserIds = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_SELECTED_ENVIRONMENT_IDS = "selected_environment_ids";
+  @SerializedName(SERIALIZED_NAME_SELECTED_ENVIRONMENT_IDS)
+  @jakarta.annotation.Nullable
+  private List<String> selectedEnvironmentIds = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_SELECTED_CAUSE_IDS = "selected_cause_ids";
+  @SerializedName(SERIALIZED_NAME_SELECTED_CAUSE_IDS)
+  @jakarta.annotation.Nullable
+  private List<String> selectedCauseIds = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_SELECTED_INCIDENT_TYPE_IDS = "selected_incident_type_ids";
+  @SerializedName(SERIALIZED_NAME_SELECTED_INCIDENT_TYPE_IDS)
+  @jakarta.annotation.Nullable
+  private List<String> selectedIncidentTypeIds = new ArrayList<>();
 
   public UpdateIncidentFormFieldSelectionDataAttributes() {
   }
@@ -272,6 +287,87 @@ public class UpdateIncidentFormFieldSelectionDataAttributes {
   }
 
 
+  public UpdateIncidentFormFieldSelectionDataAttributes selectedEnvironmentIds(@jakarta.annotation.Nullable List<String> selectedEnvironmentIds) {
+    this.selectedEnvironmentIds = selectedEnvironmentIds;
+    return this;
+  }
+
+  public UpdateIncidentFormFieldSelectionDataAttributes addSelectedEnvironmentIdsItem(String selectedEnvironmentIdsItem) {
+    if (this.selectedEnvironmentIds == null) {
+      this.selectedEnvironmentIds = new ArrayList<>();
+    }
+    this.selectedEnvironmentIds.add(selectedEnvironmentIdsItem);
+    return this;
+  }
+
+  /**
+   * Get selectedEnvironmentIds
+   * @return selectedEnvironmentIds
+   */
+  @jakarta.annotation.Nullable
+  public List<String> getSelectedEnvironmentIds() {
+    return selectedEnvironmentIds;
+  }
+
+  public void setSelectedEnvironmentIds(@jakarta.annotation.Nullable List<String> selectedEnvironmentIds) {
+    this.selectedEnvironmentIds = selectedEnvironmentIds;
+  }
+
+
+  public UpdateIncidentFormFieldSelectionDataAttributes selectedCauseIds(@jakarta.annotation.Nullable List<String> selectedCauseIds) {
+    this.selectedCauseIds = selectedCauseIds;
+    return this;
+  }
+
+  public UpdateIncidentFormFieldSelectionDataAttributes addSelectedCauseIdsItem(String selectedCauseIdsItem) {
+    if (this.selectedCauseIds == null) {
+      this.selectedCauseIds = new ArrayList<>();
+    }
+    this.selectedCauseIds.add(selectedCauseIdsItem);
+    return this;
+  }
+
+  /**
+   * Get selectedCauseIds
+   * @return selectedCauseIds
+   */
+  @jakarta.annotation.Nullable
+  public List<String> getSelectedCauseIds() {
+    return selectedCauseIds;
+  }
+
+  public void setSelectedCauseIds(@jakarta.annotation.Nullable List<String> selectedCauseIds) {
+    this.selectedCauseIds = selectedCauseIds;
+  }
+
+
+  public UpdateIncidentFormFieldSelectionDataAttributes selectedIncidentTypeIds(@jakarta.annotation.Nullable List<String> selectedIncidentTypeIds) {
+    this.selectedIncidentTypeIds = selectedIncidentTypeIds;
+    return this;
+  }
+
+  public UpdateIncidentFormFieldSelectionDataAttributes addSelectedIncidentTypeIdsItem(String selectedIncidentTypeIdsItem) {
+    if (this.selectedIncidentTypeIds == null) {
+      this.selectedIncidentTypeIds = new ArrayList<>();
+    }
+    this.selectedIncidentTypeIds.add(selectedIncidentTypeIdsItem);
+    return this;
+  }
+
+  /**
+   * Get selectedIncidentTypeIds
+   * @return selectedIncidentTypeIds
+   */
+  @jakarta.annotation.Nullable
+  public List<String> getSelectedIncidentTypeIds() {
+    return selectedIncidentTypeIds;
+  }
+
+  public void setSelectedIncidentTypeIds(@jakarta.annotation.Nullable List<String> selectedIncidentTypeIds) {
+    this.selectedIncidentTypeIds = selectedIncidentTypeIds;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -288,7 +384,10 @@ public class UpdateIncidentFormFieldSelectionDataAttributes {
         Objects.equals(this.selectedOptionIds, updateIncidentFormFieldSelectionDataAttributes.selectedOptionIds) &&
         Objects.equals(this.selectedServiceIds, updateIncidentFormFieldSelectionDataAttributes.selectedServiceIds) &&
         Objects.equals(this.selectedFunctionalityIds, updateIncidentFormFieldSelectionDataAttributes.selectedFunctionalityIds) &&
-        Objects.equals(this.selectedUserIds, updateIncidentFormFieldSelectionDataAttributes.selectedUserIds);
+        Objects.equals(this.selectedUserIds, updateIncidentFormFieldSelectionDataAttributes.selectedUserIds) &&
+        Objects.equals(this.selectedEnvironmentIds, updateIncidentFormFieldSelectionDataAttributes.selectedEnvironmentIds) &&
+        Objects.equals(this.selectedCauseIds, updateIncidentFormFieldSelectionDataAttributes.selectedCauseIds) &&
+        Objects.equals(this.selectedIncidentTypeIds, updateIncidentFormFieldSelectionDataAttributes.selectedIncidentTypeIds);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -297,7 +396,7 @@ public class UpdateIncidentFormFieldSelectionDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(value, selectedCatalogEntityIds, selectedGroupIds, selectedOptionIds, selectedServiceIds, selectedFunctionalityIds, selectedUserIds);
+    return Objects.hash(value, selectedCatalogEntityIds, selectedGroupIds, selectedOptionIds, selectedServiceIds, selectedFunctionalityIds, selectedUserIds, selectedEnvironmentIds, selectedCauseIds, selectedIncidentTypeIds);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -318,6 +417,9 @@ public class UpdateIncidentFormFieldSelectionDataAttributes {
     sb.append("    selectedServiceIds: ").append(toIndentedString(selectedServiceIds)).append("\n");
     sb.append("    selectedFunctionalityIds: ").append(toIndentedString(selectedFunctionalityIds)).append("\n");
     sb.append("    selectedUserIds: ").append(toIndentedString(selectedUserIds)).append("\n");
+    sb.append("    selectedEnvironmentIds: ").append(toIndentedString(selectedEnvironmentIds)).append("\n");
+    sb.append("    selectedCauseIds: ").append(toIndentedString(selectedCauseIds)).append("\n");
+    sb.append("    selectedIncidentTypeIds: ").append(toIndentedString(selectedIncidentTypeIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -347,6 +449,9 @@ public class UpdateIncidentFormFieldSelectionDataAttributes {
     openapiFields.add("selected_service_ids");
     openapiFields.add("selected_functionality_ids");
     openapiFields.add("selected_user_ids");
+    openapiFields.add("selected_environment_ids");
+    openapiFields.add("selected_cause_ids");
+    openapiFields.add("selected_incident_type_ids");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -399,6 +504,18 @@ public class UpdateIncidentFormFieldSelectionDataAttributes {
       // ensure the optional json data is an array if present
       if (jsonObj.get("selected_user_ids") != null && !jsonObj.get("selected_user_ids").isJsonNull() && !jsonObj.get("selected_user_ids").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `selected_user_ids` to be an array in the JSON string but got `%s`", jsonObj.get("selected_user_ids").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("selected_environment_ids") != null && !jsonObj.get("selected_environment_ids").isJsonNull() && !jsonObj.get("selected_environment_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `selected_environment_ids` to be an array in the JSON string but got `%s`", jsonObj.get("selected_environment_ids").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("selected_cause_ids") != null && !jsonObj.get("selected_cause_ids").isJsonNull() && !jsonObj.get("selected_cause_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `selected_cause_ids` to be an array in the JSON string but got `%s`", jsonObj.get("selected_cause_ids").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("selected_incident_type_ids") != null && !jsonObj.get("selected_incident_type_ids").isJsonNull() && !jsonObj.get("selected_incident_type_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `selected_incident_type_ids` to be an array in the JSON string but got `%s`", jsonObj.get("selected_incident_type_ids").toString()));
       }
   }
 

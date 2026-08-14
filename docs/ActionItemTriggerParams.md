@@ -25,6 +25,9 @@
 |**incidentConditionService** | [**IncidentConditionServiceEnum**](#IncidentConditionServiceEnum) |  |  [optional] |
 |**incidentConditionFunctionality** | [**IncidentConditionFunctionalityEnum**](#IncidentConditionFunctionalityEnum) |  |  [optional] |
 |**incidentConditionGroup** | [**IncidentConditionGroupEnum**](#IncidentConditionGroupEnum) |  |  [optional] |
+|**incidentConditionLabel** | [**IncidentConditionLabelEnum**](#IncidentConditionLabelEnum) |  |  [optional] |
+|**incidentConditionLabelUseRegexp** | **Boolean** |  |  [optional] |
+|**incidentLabels** | **List&lt;String&gt;** |  |  [optional] |
 |**incidentConditionSummary** | [**IncidentConditionSummaryEnum**](#IncidentConditionSummaryEnum) |  |  [optional] |
 |**incidentConditionStartedAt** | [**IncidentConditionStartedAtEnum**](#IncidentConditionStartedAtEnum) |  |  [optional] |
 |**incidentConditionDetectedAt** | [**IncidentConditionDetectedAtEnum**](#IncidentConditionDetectedAtEnum) |  |  [optional] |
@@ -257,6 +260,22 @@
 
 
 ## Enum: IncidentConditionGroupEnum
+
+| Name | Value |
+|---- | -----|
+| IS | &quot;IS&quot; |
+| IS_NOT | &quot;IS NOT&quot; |
+| ANY | &quot;ANY&quot; |
+| CONTAINS | &quot;CONTAINS&quot; |
+| CONTAINS_ALL | &quot;CONTAINS_ALL&quot; |
+| CONTAINS_NONE | &quot;CONTAINS_NONE&quot; |
+| NONE | &quot;NONE&quot; |
+| SET | &quot;SET&quot; |
+| UNSET | &quot;UNSET&quot; |
+
+
+
+## Enum: IncidentConditionLabelEnum
 
 | Name | Value |
 |---- | -----|

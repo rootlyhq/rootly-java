@@ -94,7 +94,15 @@ public class WorkflowTasksApiTest {
         String filterSearch = null;
         String filterName = null;
         String filterSlug = null;
-        WorkflowTaskList response = api.listWorkflowTasks(workflowId, include, pageNumber, pageSize, filterSearch, filterName, filterSlug);
+        String filterNameEq = null;
+        String filterNameNotEq = null;
+        String filterNameIn = null;
+        String filterNameNotIn = null;
+        String filterSlugEq = null;
+        String filterSlugNotEq = null;
+        String filterSlugIn = null;
+        String filterSlugNotIn = null;
+        WorkflowTaskList response = api.listWorkflowTasks(workflowId, include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn);
         // TODO: test validations
     }
 

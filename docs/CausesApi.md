@@ -5,8 +5,10 @@ All URIs are relative to *https://api.rootly.com*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**createCause**](CausesApi.md#createCause) | **POST** /v1/causes | Creates a cause |
+| [**createCauseCatalogProperty**](CausesApi.md#createCauseCatalogProperty) | **POST** /v1/causes/properties | Creates a Catalog Property |
 | [**deleteCause**](CausesApi.md#deleteCause) | **DELETE** /v1/causes/{id} | Delete a cause |
 | [**getCause**](CausesApi.md#getCause) | **GET** /v1/causes/{id} | Retrieves a cause |
+| [**listCauseCatalogProperties**](CausesApi.md#listCauseCatalogProperties) | **GET** /v1/causes/properties | List Catalog Properties |
 | [**listCauses**](CausesApi.md#listCauses) | **GET** /v1/causes | List causes |
 | [**updateCause**](CausesApi.md#updateCause) | **PUT** /v1/causes/{id} | Update a cause |
 
@@ -78,6 +80,75 @@ public class Example {
 |-------------|-------------|------------------|
 | **201** | cause created |  -  |
 | **422** | invalid request |  -  |
+| **401** | responds with unauthorized for invalid token |  -  |
+
+<a id="createCauseCatalogProperty"></a>
+# **createCauseCatalogProperty**
+> CatalogPropertyResponse createCauseCatalogProperty(newCatalogProperty)
+
+Creates a Catalog Property
+
+Creates a new Catalog Property from provided data
+
+### Example
+```java
+// Import classes:
+import com.rootly.client.ApiClient;
+import com.rootly.client.ApiException;
+import com.rootly.client.Configuration;
+import com.rootly.client.auth.*;
+import com.rootly.client.models.*;
+import com.rootly.client.api.CausesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.rootly.com");
+    
+    // Configure HTTP bearer authorization: bearer_auth
+    HttpBearerAuth bearer_auth = (HttpBearerAuth) defaultClient.getAuthentication("bearer_auth");
+    bearer_auth.setBearerToken("BEARER TOKEN");
+
+    CausesApi apiInstance = new CausesApi(defaultClient);
+    NewCatalogProperty newCatalogProperty = new NewCatalogProperty(); // NewCatalogProperty | 
+    try {
+      CatalogPropertyResponse result = apiInstance.createCauseCatalogProperty(newCatalogProperty);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling CausesApi#createCauseCatalogProperty");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **newCatalogProperty** | [**NewCatalogProperty**](NewCatalogProperty.md)|  | |
+
+### Return type
+
+[**CatalogPropertyResponse**](CatalogPropertyResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/vnd.api+json
+ - **Accept**: application/vnd.api+json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | catalog_property created ignores wrong catalog_type attribute |  -  |
+| **422** | exceeds max fields per catalog |  -  |
 | **401** | responds with unauthorized for invalid token |  -  |
 
 <a id="deleteCause"></a>
@@ -216,9 +287,96 @@ public class Example {
 | **200** | cause found by slug |  -  |
 | **404** | resource not found |  -  |
 
+<a id="listCauseCatalogProperties"></a>
+# **listCauseCatalogProperties**
+> CatalogPropertyList listCauseCatalogProperties(include, sort, pageNumber, pageSize, filterSlug, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte)
+
+List Catalog Properties
+
+List Cause Catalog Properties
+
+### Example
+```java
+// Import classes:
+import com.rootly.client.ApiClient;
+import com.rootly.client.ApiException;
+import com.rootly.client.Configuration;
+import com.rootly.client.auth.*;
+import com.rootly.client.models.*;
+import com.rootly.client.api.CausesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.rootly.com");
+    
+    // Configure HTTP bearer authorization: bearer_auth
+    HttpBearerAuth bearer_auth = (HttpBearerAuth) defaultClient.getAuthentication("bearer_auth");
+    bearer_auth.setBearerToken("BEARER TOKEN");
+
+    CausesApi apiInstance = new CausesApi(defaultClient);
+    String include = "catalog"; // String | comma separated if needed. eg: catalog
+    String sort = "created_at"; // String | comma separated if needed. eg: created_at,updated_at
+    Integer pageNumber = 56; // Integer | 
+    Integer pageSize = 56; // Integer | 
+    String filterSlug = "filterSlug_example"; // String | 
+    String filterName = "filterName_example"; // String | 
+    String filterKind = "filterKind_example"; // String | 
+    String filterCreatedAtGt = "filterCreatedAtGt_example"; // String | 
+    String filterCreatedAtGte = "filterCreatedAtGte_example"; // String | 
+    String filterCreatedAtLt = "filterCreatedAtLt_example"; // String | 
+    String filterCreatedAtLte = "filterCreatedAtLte_example"; // String | 
+    try {
+      CatalogPropertyList result = apiInstance.listCauseCatalogProperties(include, sort, pageNumber, pageSize, filterSlug, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling CausesApi#listCauseCatalogProperties");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **include** | **String**| comma separated if needed. eg: catalog | [optional] [enum: catalog] |
+| **sort** | **String**| comma separated if needed. eg: created_at,updated_at | [optional] [enum: created_at, -created_at, updated_at, -updated_at, position, -position] |
+| **pageNumber** | **Integer**|  | [optional] |
+| **pageSize** | **Integer**|  | [optional] |
+| **filterSlug** | **String**|  | [optional] |
+| **filterName** | **String**|  | [optional] |
+| **filterKind** | **String**|  | [optional] |
+| **filterCreatedAtGt** | **String**|  | [optional] |
+| **filterCreatedAtGte** | **String**|  | [optional] |
+| **filterCreatedAtLt** | **String**|  | [optional] |
+| **filterCreatedAtLte** | **String**|  | [optional] |
+
+### Return type
+
+[**CatalogPropertyList**](CatalogPropertyList.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.api+json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | success |  -  |
+
 <a id="listCauses"></a>
 # **listCauses**
-> CauseList listCauses(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte)
+> CauseList listCauses(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn)
 
 List causes
 
@@ -254,8 +412,16 @@ public class Example {
     String filterCreatedAtGte = "filterCreatedAtGte_example"; // String | 
     String filterCreatedAtLt = "filterCreatedAtLt_example"; // String | 
     String filterCreatedAtLte = "filterCreatedAtLte_example"; // String | 
+    String filterSlugEq = "filterSlugEq_example"; // String | 
+    String filterSlugNotEq = "filterSlugNotEq_example"; // String | 
+    String filterSlugIn = "filterSlugIn_example"; // String | 
+    String filterSlugNotIn = "filterSlugNotIn_example"; // String | 
+    String filterNameEq = "filterNameEq_example"; // String | 
+    String filterNameNotEq = "filterNameNotEq_example"; // String | 
+    String filterNameIn = "filterNameIn_example"; // String | 
+    String filterNameNotIn = "filterNameNotIn_example"; // String | 
     try {
-      CauseList result = apiInstance.listCauses(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
+      CauseList result = apiInstance.listCauses(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CausesApi#listCauses");
@@ -282,6 +448,14 @@ public class Example {
 | **filterCreatedAtGte** | **String**|  | [optional] |
 | **filterCreatedAtLt** | **String**|  | [optional] |
 | **filterCreatedAtLte** | **String**|  | [optional] |
+| **filterSlugEq** | **String**|  | [optional] |
+| **filterSlugNotEq** | **String**|  | [optional] |
+| **filterSlugIn** | **String**|  | [optional] |
+| **filterSlugNotIn** | **String**|  | [optional] |
+| **filterNameEq** | **String**|  | [optional] |
+| **filterNameNotEq** | **String**|  | [optional] |
+| **filterNameIn** | **String**|  | [optional] |
+| **filterNameNotIn** | **String**|  | [optional] |
 
 ### Return type
 

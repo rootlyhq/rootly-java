@@ -14,10 +14,19 @@
 package com.rootly.client.api;
 
 import com.rootly.client.ApiException;
+import com.rootly.client.model.BulkDeleteEnvironments422Response;
+import com.rootly.client.model.BulkDestroyEnvironments;
+import com.rootly.client.model.BulkDestroyEnvironmentsResponse;
+import com.rootly.client.model.BulkUpsertEnvironments;
+import com.rootly.client.model.BulkUpsertEnvironments422Response;
+import com.rootly.client.model.BulkUpsertEnvironmentsResponse;
+import com.rootly.client.model.CatalogPropertyList;
+import com.rootly.client.model.CatalogPropertyResponse;
 import com.rootly.client.model.EnvironmentList;
 import com.rootly.client.model.EnvironmentResponse;
 import com.rootly.client.model.ErrorsList;
 import com.rootly.client.model.GetAlertFieldIdParameter;
+import com.rootly.client.model.NewCatalogProperty;
 import com.rootly.client.model.NewEnvironment;
 import com.rootly.client.model.UpdateEnvironment;
 import org.junit.jupiter.api.Disabled;
@@ -37,6 +46,34 @@ public class EnvironmentsApiTest {
     private final EnvironmentsApi api = new EnvironmentsApi();
 
     /**
+     * Bulk delete Environments
+     *
+     * Delete environments by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void bulkDeleteEnvironmentsTest() throws ApiException {
+        BulkDestroyEnvironments bulkDestroyEnvironments = null;
+        BulkDestroyEnvironmentsResponse response = api.bulkDeleteEnvironments(bulkDestroyEnvironments);
+        // TODO: test validations
+    }
+
+    /**
+     * Bulk upsert Environments
+     *
+     * Create or update multiple environments by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void bulkUpsertEnvironmentsTest() throws ApiException {
+        BulkUpsertEnvironments bulkUpsertEnvironments = null;
+        BulkUpsertEnvironmentsResponse response = api.bulkUpsertEnvironments(bulkUpsertEnvironments);
+        // TODO: test validations
+    }
+
+    /**
      * Creates an environment
      *
      * Creates a new environment from provided data
@@ -47,6 +84,20 @@ public class EnvironmentsApiTest {
     public void createEnvironmentTest() throws ApiException {
         NewEnvironment newEnvironment = null;
         EnvironmentResponse response = api.createEnvironment(newEnvironment);
+        // TODO: test validations
+    }
+
+    /**
+     * Creates a Catalog Property
+     *
+     * Creates a new Catalog Property from provided data
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void createEnvironmentCatalogPropertyTest() throws ApiException {
+        NewCatalogProperty newCatalogProperty = null;
+        CatalogPropertyResponse response = api.createEnvironmentCatalogProperty(newCatalogProperty);
         // TODO: test validations
     }
 
@@ -79,6 +130,30 @@ public class EnvironmentsApiTest {
     }
 
     /**
+     * List Catalog Properties
+     *
+     * List Environment Catalog Properties
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void listEnvironmentCatalogPropertiesTest() throws ApiException {
+        String include = null;
+        String sort = null;
+        Integer pageNumber = null;
+        Integer pageSize = null;
+        String filterSlug = null;
+        String filterName = null;
+        String filterKind = null;
+        String filterCreatedAtGt = null;
+        String filterCreatedAtGte = null;
+        String filterCreatedAtLt = null;
+        String filterCreatedAtLte = null;
+        CatalogPropertyList response = api.listEnvironmentCatalogProperties(include, sort, pageNumber, pageSize, filterSlug, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
+        // TODO: test validations
+    }
+
+    /**
      * List environments
      *
      * List environments
@@ -98,8 +173,20 @@ public class EnvironmentsApiTest {
         String filterCreatedAtGte = null;
         String filterCreatedAtLt = null;
         String filterCreatedAtLte = null;
+        String filterSlugEq = null;
+        String filterSlugNotEq = null;
+        String filterSlugIn = null;
+        String filterSlugNotIn = null;
+        String filterNameEq = null;
+        String filterNameNotEq = null;
+        String filterNameIn = null;
+        String filterNameNotIn = null;
+        String filterColorEq = null;
+        String filterColorNotEq = null;
+        String filterColorIn = null;
+        String filterColorNotIn = null;
         String sort = null;
-        EnvironmentList response = api.listEnvironments(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterColor, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
+        EnvironmentList response = api.listEnvironments(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterColor, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterColorEq, filterColorNotEq, filterColorIn, filterColorNotIn, sort);
         // TODO: test validations
     }
 

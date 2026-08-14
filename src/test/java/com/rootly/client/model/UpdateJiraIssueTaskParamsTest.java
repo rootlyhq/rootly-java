@@ -18,6 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.CreateJiraIssueTaskParamsIntegration;
 import com.rootly.client.model.CreateJiraIssueTaskParamsPriority;
 import com.rootly.client.model.CreateJiraIssueTaskParamsStatus;
 import java.io.IOException;
@@ -46,6 +47,14 @@ public class UpdateJiraIssueTaskParamsTest {
     @Test
     public void taskTypeTest() {
         // TODO: test taskType
+    }
+
+    /**
+     * Test the property 'integration'
+     */
+    @Test
+    public void integrationTest() {
+        // TODO: test integration
     }
 
     /**
@@ -142,6 +151,22 @@ public class UpdateJiraIssueTaskParamsTest {
     @Test
     public void updatePayloadTest() {
         // TODO: test updatePayload
+    }
+
+    /**
+     * Test the property 'retryCount'
+     */
+    @Test
+    public void retryCountTest() {
+        // TODO: test retryCount
+    }
+
+    /**
+     * Test the property 'retryWaitTime'
+     */
+    @Test
+    public void retryWaitTimeTest() {
+        // TODO: test retryWaitTime
     }
 
 }

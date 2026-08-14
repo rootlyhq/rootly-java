@@ -76,8 +76,8 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | form_field created |  -  |
-| **422** | invalid request |  -  |
+| **201** | form_field created with auto_set_by_catalog_property_id |  -  |
+| **422** | form_field creation fails with auto_set_by_catalog_property_id for catalog fields of different type |  -  |
 | **401** | responds with unauthorized for invalid token |  -  |
 
 <a id="deleteFormField"></a>
@@ -220,7 +220,7 @@ public class Example {
 
 <a id="listFormFields"></a>
 # **listFormFields**
-> FormFieldList listFormFields(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterKind, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte)
+> FormFieldList listFormFields(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterKind, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterKindEq, filterKindNotEq, filterKindIn, filterKindNotIn, filterEnabledEq, filterEnabledNotEq, filterEnabledIn, filterEnabledNotIn)
 
 List Form Fields
 
@@ -258,8 +258,24 @@ public class Example {
     String filterCreatedAtGte = "filterCreatedAtGte_example"; // String | 
     String filterCreatedAtLt = "filterCreatedAtLt_example"; // String | 
     String filterCreatedAtLte = "filterCreatedAtLte_example"; // String | 
+    String filterSlugEq = "filterSlugEq_example"; // String | 
+    String filterSlugNotEq = "filterSlugNotEq_example"; // String | 
+    String filterSlugIn = "filterSlugIn_example"; // String | 
+    String filterSlugNotIn = "filterSlugNotIn_example"; // String | 
+    String filterNameEq = "filterNameEq_example"; // String | 
+    String filterNameNotEq = "filterNameNotEq_example"; // String | 
+    String filterNameIn = "filterNameIn_example"; // String | 
+    String filterNameNotIn = "filterNameNotIn_example"; // String | 
+    String filterKindEq = "filterKindEq_example"; // String | 
+    String filterKindNotEq = "filterKindNotEq_example"; // String | 
+    String filterKindIn = "filterKindIn_example"; // String | 
+    String filterKindNotIn = "filterKindNotIn_example"; // String | 
+    String filterEnabledEq = "filterEnabledEq_example"; // String | 
+    String filterEnabledNotEq = "filterEnabledNotEq_example"; // String | 
+    String filterEnabledIn = "filterEnabledIn_example"; // String | 
+    String filterEnabledNotIn = "filterEnabledNotIn_example"; // String | 
     try {
-      FormFieldList result = apiInstance.listFormFields(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterKind, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
+      FormFieldList result = apiInstance.listFormFields(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterKind, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterKindEq, filterKindNotEq, filterKindIn, filterKindNotIn, filterEnabledEq, filterEnabledNotEq, filterEnabledIn, filterEnabledNotIn);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FormFieldsApi#listFormFields");
@@ -288,6 +304,22 @@ public class Example {
 | **filterCreatedAtGte** | **String**|  | [optional] |
 | **filterCreatedAtLt** | **String**|  | [optional] |
 | **filterCreatedAtLte** | **String**|  | [optional] |
+| **filterSlugEq** | **String**|  | [optional] |
+| **filterSlugNotEq** | **String**|  | [optional] |
+| **filterSlugIn** | **String**|  | [optional] |
+| **filterSlugNotIn** | **String**|  | [optional] |
+| **filterNameEq** | **String**|  | [optional] |
+| **filterNameNotEq** | **String**|  | [optional] |
+| **filterNameIn** | **String**|  | [optional] |
+| **filterNameNotIn** | **String**|  | [optional] |
+| **filterKindEq** | **String**|  | [optional] |
+| **filterKindNotEq** | **String**|  | [optional] |
+| **filterKindIn** | **String**|  | [optional] |
+| **filterKindNotIn** | **String**|  | [optional] |
+| **filterEnabledEq** | **String**|  | [optional] |
+| **filterEnabledNotEq** | **String**|  | [optional] |
+| **filterEnabledIn** | **String**|  | [optional] |
+| **filterEnabledNotIn** | **String**|  | [optional] |
 
 ### Return type
 

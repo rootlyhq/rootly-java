@@ -71,4 +71,12 @@ public class UpdateEdgeConnectorRequestDataAttributesTest {
         // TODO: test subscriptions
     }
 
+    /**
+     * Test the property 'filters'
+     */
+    @Test
+    public void filtersTest() {
+        // TODO: test filters
+    }
+
 }

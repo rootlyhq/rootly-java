@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * NewEscalationPolicyPathDataAttributesRulesInnerOneOf1
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf1 {
   /**
    * The type of the escalation path rule
@@ -102,18 +102,18 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf1 {
 
   public static final String SERIALIZED_NAME_RULE_TYPE = "rule_type";
   @SerializedName(SERIALIZED_NAME_RULE_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private RuleTypeEnum ruleType;
 
   public static final String SERIALIZED_NAME_WITHIN_WORKING_HOUR = "within_working_hour";
   @SerializedName(SERIALIZED_NAME_WITHIN_WORKING_HOUR)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Boolean withinWorkingHour;
 
   public NewEscalationPolicyPathDataAttributesRulesInnerOneOf1() {
   }
 
-  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf1 ruleType(@javax.annotation.Nonnull RuleTypeEnum ruleType) {
+  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf1 ruleType(@jakarta.annotation.Nonnull RuleTypeEnum ruleType) {
     this.ruleType = ruleType;
     return this;
   }
@@ -122,17 +122,17 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf1 {
    * The type of the escalation path rule
    * @return ruleType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public RuleTypeEnum getRuleType() {
     return ruleType;
   }
 
-  public void setRuleType(@javax.annotation.Nonnull RuleTypeEnum ruleType) {
+  public void setRuleType(@jakarta.annotation.Nonnull RuleTypeEnum ruleType) {
     this.ruleType = ruleType;
   }
 
 
-  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf1 withinWorkingHour(@javax.annotation.Nonnull Boolean withinWorkingHour) {
+  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf1 withinWorkingHour(@jakarta.annotation.Nonnull Boolean withinWorkingHour) {
     this.withinWorkingHour = withinWorkingHour;
     return this;
   }
@@ -141,12 +141,12 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf1 {
    * Whether the escalation path should be used within working hours
    * @return withinWorkingHour
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Boolean getWithinWorkingHour() {
     return withinWorkingHour;
   }
 
-  public void setWithinWorkingHour(@javax.annotation.Nonnull Boolean withinWorkingHour) {
+  public void setWithinWorkingHour(@jakarta.annotation.Nonnull Boolean withinWorkingHour) {
     this.withinWorkingHour = withinWorkingHour;
   }
 

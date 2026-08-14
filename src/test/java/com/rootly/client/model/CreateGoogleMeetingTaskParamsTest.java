@@ -82,6 +82,14 @@ public class CreateGoogleMeetingTaskParamsTest {
     }
 
     /**
+     * Test the property 'recordingMode'
+     */
+    @Test
+    public void recordingModeTest() {
+        // TODO: test recordingMode
+    }
+
+    /**
      * Test the property 'postToIncidentTimeline'
      */
     @Test

@@ -79,7 +79,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | form_field_placement created with non_editable true |  -  |
-| **422** | invalid request |  -  |
+| **422** | cross-resource placement rejected |  -  |
 | **401** | responds with unauthorized for invalid token |  -  |
 
 <a id="deleteFormFieldPlacement"></a>
@@ -360,6 +360,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | form_field_placement updated with non_editable |  -  |
+| **200** | moves a custom field&#39;s placement onto an action item form |  -  |
+| **422** | rejects re-pointing a placement at another team&#39;s form set |  -  |
 | **404** | resource not found |  -  |
 

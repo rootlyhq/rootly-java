@@ -87,8 +87,8 @@ public class FormFieldsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> form_field created </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> form_field created with auto_set_by_catalog_property_id </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> form_field creation fails with auto_set_by_catalog_property_id for catalog fields of different type </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
@@ -158,8 +158,8 @@ public class FormFieldsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> form_field created </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> form_field created with auto_set_by_catalog_property_id </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> form_field creation fails with auto_set_by_catalog_property_id for catalog fields of different type </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
@@ -178,8 +178,8 @@ public class FormFieldsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> form_field created </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> form_field created with auto_set_by_catalog_property_id </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> form_field creation fails with auto_set_by_catalog_property_id for catalog fields of different type </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
@@ -200,8 +200,8 @@ public class FormFieldsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> form_field created </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> form_field created with auto_set_by_catalog_property_id </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> form_field creation fails with auto_set_by_catalog_property_id for catalog fields of different type </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
@@ -496,6 +496,22 @@ public class FormFieldsApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
+     * @param filterKindEq  (optional)
+     * @param filterKindNotEq  (optional)
+     * @param filterKindIn  (optional)
+     * @param filterKindNotIn  (optional)
+     * @param filterEnabledEq  (optional)
+     * @param filterEnabledNotEq  (optional)
+     * @param filterEnabledIn  (optional)
+     * @param filterEnabledNotIn  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -506,7 +522,7 @@ public class FormFieldsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listFormFieldsCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listFormFieldsCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterKindEq, @jakarta.annotation.Nullable String filterKindNotEq, @jakarta.annotation.Nullable String filterKindIn, @jakarta.annotation.Nullable String filterKindNotIn, @jakarta.annotation.Nullable String filterEnabledEq, @jakarta.annotation.Nullable String filterEnabledNotEq, @jakarta.annotation.Nullable String filterEnabledIn, @jakarta.annotation.Nullable String filterEnabledNotIn, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -579,6 +595,70 @@ public class FormFieldsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[created_at][lte]", filterCreatedAtLte));
         }
 
+        if (filterSlugEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][eq]", filterSlugEq));
+        }
+
+        if (filterSlugNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][not_eq]", filterSlugNotEq));
+        }
+
+        if (filterSlugIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][in]", filterSlugIn));
+        }
+
+        if (filterSlugNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][not_in]", filterSlugNotIn));
+        }
+
+        if (filterNameEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][eq]", filterNameEq));
+        }
+
+        if (filterNameNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][not_eq]", filterNameNotEq));
+        }
+
+        if (filterNameIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][in]", filterNameIn));
+        }
+
+        if (filterNameNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][not_in]", filterNameNotIn));
+        }
+
+        if (filterKindEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[kind][eq]", filterKindEq));
+        }
+
+        if (filterKindNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[kind][not_eq]", filterKindNotEq));
+        }
+
+        if (filterKindIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[kind][in]", filterKindIn));
+        }
+
+        if (filterKindNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[kind][not_in]", filterKindNotIn));
+        }
+
+        if (filterEnabledEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[enabled][eq]", filterEnabledEq));
+        }
+
+        if (filterEnabledNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[enabled][not_eq]", filterEnabledNotEq));
+        }
+
+        if (filterEnabledIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[enabled][in]", filterEnabledIn));
+        }
+
+        if (filterEnabledNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[enabled][not_in]", filterEnabledNotIn));
+        }
+
         final String[] localVarAccepts = {
             "application/vnd.api+json"
         };
@@ -599,8 +679,8 @@ public class FormFieldsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listFormFieldsValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
-        return listFormFieldsCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterKind, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, _callback);
+    private okhttp3.Call listFormFieldsValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterKindEq, @jakarta.annotation.Nullable String filterKindNotEq, @jakarta.annotation.Nullable String filterKindIn, @jakarta.annotation.Nullable String filterKindNotIn, @jakarta.annotation.Nullable String filterEnabledEq, @jakarta.annotation.Nullable String filterEnabledNotEq, @jakarta.annotation.Nullable String filterEnabledIn, @jakarta.annotation.Nullable String filterEnabledNotIn, final ApiCallback _callback) throws ApiException {
+        return listFormFieldsCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterKind, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterKindEq, filterKindNotEq, filterKindIn, filterKindNotIn, filterEnabledEq, filterEnabledNotEq, filterEnabledIn, filterEnabledNotIn, _callback);
 
     }
 
@@ -619,6 +699,22 @@ public class FormFieldsApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
+     * @param filterKindEq  (optional)
+     * @param filterKindNotEq  (optional)
+     * @param filterKindIn  (optional)
+     * @param filterKindNotIn  (optional)
+     * @param filterEnabledEq  (optional)
+     * @param filterEnabledNotEq  (optional)
+     * @param filterEnabledIn  (optional)
+     * @param filterEnabledNotIn  (optional)
      * @return FormFieldList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -628,8 +724,8 @@ public class FormFieldsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public FormFieldList listFormFields(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte) throws ApiException {
-        ApiResponse<FormFieldList> localVarResp = listFormFieldsWithHttpInfo(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterKind, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
+    public FormFieldList listFormFields(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterKindEq, @jakarta.annotation.Nullable String filterKindNotEq, @jakarta.annotation.Nullable String filterKindIn, @jakarta.annotation.Nullable String filterKindNotIn, @jakarta.annotation.Nullable String filterEnabledEq, @jakarta.annotation.Nullable String filterEnabledNotEq, @jakarta.annotation.Nullable String filterEnabledIn, @jakarta.annotation.Nullable String filterEnabledNotIn) throws ApiException {
+        ApiResponse<FormFieldList> localVarResp = listFormFieldsWithHttpInfo(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterKind, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterKindEq, filterKindNotEq, filterKindIn, filterKindNotIn, filterEnabledEq, filterEnabledNotEq, filterEnabledIn, filterEnabledNotIn);
         return localVarResp.getData();
     }
 
@@ -648,6 +744,22 @@ public class FormFieldsApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
+     * @param filterKindEq  (optional)
+     * @param filterKindNotEq  (optional)
+     * @param filterKindIn  (optional)
+     * @param filterKindNotIn  (optional)
+     * @param filterEnabledEq  (optional)
+     * @param filterEnabledNotEq  (optional)
+     * @param filterEnabledIn  (optional)
+     * @param filterEnabledNotIn  (optional)
      * @return ApiResponse&lt;FormFieldList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -657,8 +769,8 @@ public class FormFieldsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<FormFieldList> listFormFieldsWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte) throws ApiException {
-        okhttp3.Call localVarCall = listFormFieldsValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterKind, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, null);
+    public ApiResponse<FormFieldList> listFormFieldsWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterKindEq, @jakarta.annotation.Nullable String filterKindNotEq, @jakarta.annotation.Nullable String filterKindIn, @jakarta.annotation.Nullable String filterKindNotIn, @jakarta.annotation.Nullable String filterEnabledEq, @jakarta.annotation.Nullable String filterEnabledNotEq, @jakarta.annotation.Nullable String filterEnabledIn, @jakarta.annotation.Nullable String filterEnabledNotIn) throws ApiException {
+        okhttp3.Call localVarCall = listFormFieldsValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterKind, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterKindEq, filterKindNotEq, filterKindIn, filterKindNotIn, filterEnabledEq, filterEnabledNotEq, filterEnabledIn, filterEnabledNotIn, null);
         Type localVarReturnType = new TypeToken<FormFieldList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -678,6 +790,22 @@ public class FormFieldsApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
+     * @param filterKindEq  (optional)
+     * @param filterKindNotEq  (optional)
+     * @param filterKindIn  (optional)
+     * @param filterKindNotIn  (optional)
+     * @param filterEnabledEq  (optional)
+     * @param filterEnabledNotEq  (optional)
+     * @param filterEnabledIn  (optional)
+     * @param filterEnabledNotIn  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -688,9 +816,9 @@ public class FormFieldsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listFormFieldsAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback<FormFieldList> _callback) throws ApiException {
+    public okhttp3.Call listFormFieldsAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterKindEq, @jakarta.annotation.Nullable String filterKindNotEq, @jakarta.annotation.Nullable String filterKindIn, @jakarta.annotation.Nullable String filterKindNotIn, @jakarta.annotation.Nullable String filterEnabledEq, @jakarta.annotation.Nullable String filterEnabledNotEq, @jakarta.annotation.Nullable String filterEnabledIn, @jakarta.annotation.Nullable String filterEnabledNotIn, final ApiCallback<FormFieldList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listFormFieldsValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterKind, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, _callback);
+        okhttp3.Call localVarCall = listFormFieldsValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterKind, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterKindEq, filterKindNotEq, filterKindIn, filterKindNotIn, filterEnabledEq, filterEnabledNotEq, filterEnabledIn, filterEnabledNotIn, _callback);
         Type localVarReturnType = new TypeToken<FormFieldList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

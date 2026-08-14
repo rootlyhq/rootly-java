@@ -18,6 +18,9 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.AddActionItemTaskParamsPostToSlackChannelsInner;
+import com.rootly.client.model.CreateShortcutStoryTaskParamsAnyOf;
+import com.rootly.client.model.CreateShortcutStoryTaskParamsAnyOf1;
 import java.io.IOException;
 import java.util.Arrays;
 import org.junit.jupiter.api.Disabled;
@@ -35,6 +38,22 @@ public class CreateShortcutStoryTaskParamsTest {
     @Test
     public void testCreateShortcutStoryTaskParams() {
         // TODO: test CreateShortcutStoryTaskParams
+    }
+
+    /**
+     * Test the property 'project'
+     */
+    @Test
+    public void projectTest() {
+        // TODO: test project
+    }
+
+    /**
+     * Test the property 'workflowState'
+     */
+    @Test
+    public void workflowStateTest() {
+        // TODO: test workflowState
     }
 
 }

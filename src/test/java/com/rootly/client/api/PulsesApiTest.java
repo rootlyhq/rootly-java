@@ -90,9 +90,29 @@ public class PulsesApiTest {
         String filterCreatedAtGte = null;
         String filterCreatedAtLt = null;
         String filterCreatedAtLte = null;
+        String filterSourceEq = null;
+        String filterSourceNotEq = null;
+        String filterSourceIn = null;
+        String filterSourceNotIn = null;
+        String filterServicesEq = null;
+        String filterServicesNotEq = null;
+        String filterServicesIn = null;
+        String filterServicesNotIn = null;
+        String filterEnvironmentsEq = null;
+        String filterEnvironmentsNotEq = null;
+        String filterEnvironmentsIn = null;
+        String filterEnvironmentsNotIn = null;
+        String filterLabelsEq = null;
+        String filterLabelsNotEq = null;
+        String filterLabelsIn = null;
+        String filterLabelsNotIn = null;
+        String filterRefsEq = null;
+        String filterRefsNotEq = null;
+        String filterRefsIn = null;
+        String filterRefsNotIn = null;
         Integer pageNumber = null;
         Integer pageSize = null;
-        PulseList response = api.listPulses(include, filterSource, filterServices, filterEnvironments, filterLabels, filterRefs, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize);
+        PulseList response = api.listPulses(include, filterSource, filterServices, filterEnvironments, filterLabels, filterRefs, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSourceEq, filterSourceNotEq, filterSourceIn, filterSourceNotIn, filterServicesEq, filterServicesNotEq, filterServicesIn, filterServicesNotIn, filterEnvironmentsEq, filterEnvironmentsNotEq, filterEnvironmentsIn, filterEnvironmentsNotIn, filterLabelsEq, filterLabelsNotEq, filterLabelsIn, filterLabelsNotIn, filterRefsEq, filterRefsNotEq, filterRefsIn, filterRefsNotIn, pageNumber, pageSize);
         // TODO: test validations
     }
 

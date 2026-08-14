@@ -46,9 +46,9 @@ import java.util.Set;
 import com.rootly.client.JSON;
 
 /**
- * The OpenAI model. eg: gpt-4o-mini
+ * The OpenAI model. eg: gpt-5-nano
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateOpenaiChatCompletionTaskParamsModel {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)

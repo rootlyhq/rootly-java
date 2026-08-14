@@ -12,6 +12,7 @@
 |**status** | [**StatusEnum**](#StatusEnum) | The status of the incident event |  [optional] |
 |**notifySubscribers** | **Boolean** | Notify all status pages subscribers |  [optional] |
 |**shouldTweet** | **Boolean** | For Statuspage.io integrated pages auto publishes a tweet for your update |  [optional] |
+|**statusPageComponents** | [**List&lt;IncidentStatusPageEventStatusPageComponentsInner&gt;**](IncidentStatusPageEventStatusPageComponentsInner.md) | Affected status page components recorded on the event and their statuses |  [optional] |
 |**startedAt** | **String** | Date of start |  |
 |**createdAt** | **String** | Date of creation |  |
 |**updatedAt** | **String** | Date of last update |  |

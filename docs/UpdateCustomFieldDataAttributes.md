@@ -8,7 +8,6 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**label** | **String** | The name of the custom_field |  [optional] |
-|**slug** | **String** | The slug of the custom_field |  [optional] |
 |**description** | **String** | The description of the custom_field |  [optional] |
 |**shown** | [**List&lt;ShownEnum&gt;**](#List&lt;ShownEnum&gt;) |  |  [optional] |
 |**required** | [**List&lt;RequiredEnum&gt;**](#List&lt;RequiredEnum&gt;) |  |  [optional] |

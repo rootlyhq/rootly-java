@@ -15,14 +15,15 @@
 |**interval** | **Integer** |  |  |
 |**intervalUnit** | [**IntervalUnitEnum**](#IntervalUnitEnum) |  |  |
 |**notificationTargetId** | **String** |  |  |
-|**notificationTargetType** | [**NotificationTargetTypeEnum**](#NotificationTargetTypeEnum) |  |  |
+|**notificationTargetType** | [**NotificationTargetTypeEnum**](#NotificationTargetTypeEnum) | The type of the notification target. Please contact support if you encounter issues using &#x60;Functionality&#x60; as a target type. |  |
+|**ownerGroupIds** | **List&lt;String&gt;** | List of team IDs that own this heartbeat |  [optional] |
 |**enabled** | **Boolean** | Whether to trigger alerts when heartbeat is expired. |  |
 |**status** | [**StatusEnum**](#StatusEnum) |  |  |
 |**pingUrl** | **String** | URL to receive heartbeat pings. |  [optional] |
 |**secret** | **String** | Secret used as bearer token when pinging heartbeat. |  [optional] |
 |**emailAddress** | **String** | Email address to receive heartbeat pings. |  |
-|**lastPingedAt** | **String** | When the heartbeat was last pinged. |  [optional] |
-|**expiresAt** | **String** | When heartbeat expires |  [optional] |
+|**lastPingedAt** | **String** | Last persisted heartbeat ping timestamp. Accepted pings may be coalesced for up to 30 seconds. |  [optional] |
+|**expiresAt** | **String** | Persisted expiry deadline, including up to 30 seconds of coalescing grace. |  [optional] |
 |**createdAt** | **String** | Date of creation |  |
 |**updatedAt** | **String** | Date of last update |  |
 
@@ -46,6 +47,7 @@
 | GROUP | &quot;Group&quot; |
 | SERVICE | &quot;Service&quot; |
 | ESCALATION_POLICY | &quot;EscalationPolicy&quot; |
+| FUNCTIONALITY | &quot;Functionality&quot; |
 
 
 

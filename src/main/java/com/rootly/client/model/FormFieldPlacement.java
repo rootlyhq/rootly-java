@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * FormFieldPlacement
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class FormFieldPlacement {
   public static final String SERIALIZED_NAME_FORM_FIELD_ID = "form_field_id";
   @SerializedName(SERIALIZED_NAME_FORM_FIELD_ID)
@@ -222,7 +222,7 @@ public class FormFieldPlacement {
   }
 
   /**
-   * The form set this field is placed in.
+   * The form set this field is placed in. The form set must have the same &#x60;resource_type&#x60; as the form field, otherwise the request is rejected with 422.
    * @return formSetId
    */
   @jakarta.annotation.Nonnull

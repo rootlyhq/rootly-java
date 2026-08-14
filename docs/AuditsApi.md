@@ -9,7 +9,7 @@ All URIs are relative to *https://api.rootly.com*
 
 <a id="listAudits"></a>
 # **listAudits**
-> AuditsList listAudits(include, pageNumber, pageSize, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUserId, filterApiKeyId, filterSource, filterItemType, sort)
+> AuditsList listAudits(include, pageNumber, pageSize, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUserId, filterApiKeyId, filterSource, filterItemType, filterUserIdEq, filterUserIdNotEq, filterUserIdIn, filterUserIdNotIn, filterApiKeyIdEq, filterApiKeyIdNotEq, filterApiKeyIdIn, filterApiKeyIdNotIn, filterSourceEq, filterSourceNotEq, filterSourceIn, filterSourceNotIn, filterItemTypeEq, filterItemTypeNotEq, filterItemTypeIn, filterItemTypeNotIn, sort)
 
 List audits
 
@@ -46,9 +46,25 @@ public class Example {
     String filterApiKeyId = "filterApiKeyId_example"; // String | 
     String filterSource = "filterSource_example"; // String | 
     String filterItemType = "filterItemType_example"; // String | 
+    String filterUserIdEq = "filterUserIdEq_example"; // String | 
+    String filterUserIdNotEq = "filterUserIdNotEq_example"; // String | 
+    String filterUserIdIn = "filterUserIdIn_example"; // String | 
+    String filterUserIdNotIn = "filterUserIdNotIn_example"; // String | 
+    String filterApiKeyIdEq = "filterApiKeyIdEq_example"; // String | 
+    String filterApiKeyIdNotEq = "filterApiKeyIdNotEq_example"; // String | 
+    String filterApiKeyIdIn = "filterApiKeyIdIn_example"; // String | 
+    String filterApiKeyIdNotIn = "filterApiKeyIdNotIn_example"; // String | 
+    String filterSourceEq = "filterSourceEq_example"; // String | 
+    String filterSourceNotEq = "filterSourceNotEq_example"; // String | 
+    String filterSourceIn = "filterSourceIn_example"; // String | 
+    String filterSourceNotIn = "filterSourceNotIn_example"; // String | 
+    String filterItemTypeEq = "filterItemTypeEq_example"; // String | 
+    String filterItemTypeNotEq = "filterItemTypeNotEq_example"; // String | 
+    String filterItemTypeIn = "filterItemTypeIn_example"; // String | 
+    String filterItemTypeNotIn = "filterItemTypeNotIn_example"; // String | 
     String sort = "sort_example"; // String | 
     try {
-      AuditsList result = apiInstance.listAudits(include, pageNumber, pageSize, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUserId, filterApiKeyId, filterSource, filterItemType, sort);
+      AuditsList result = apiInstance.listAudits(include, pageNumber, pageSize, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUserId, filterApiKeyId, filterSource, filterItemType, filterUserIdEq, filterUserIdNotEq, filterUserIdIn, filterUserIdNotIn, filterApiKeyIdEq, filterApiKeyIdNotEq, filterApiKeyIdIn, filterApiKeyIdNotIn, filterSourceEq, filterSourceNotEq, filterSourceIn, filterSourceNotIn, filterItemTypeEq, filterItemTypeNotEq, filterItemTypeIn, filterItemTypeNotIn, sort);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AuditsApi#listAudits");
@@ -76,6 +92,22 @@ public class Example {
 | **filterApiKeyId** | **String**|  | [optional] |
 | **filterSource** | **String**|  | [optional] |
 | **filterItemType** | **String**|  | [optional] |
+| **filterUserIdEq** | **String**|  | [optional] |
+| **filterUserIdNotEq** | **String**|  | [optional] |
+| **filterUserIdIn** | **String**|  | [optional] |
+| **filterUserIdNotIn** | **String**|  | [optional] |
+| **filterApiKeyIdEq** | **String**|  | [optional] |
+| **filterApiKeyIdNotEq** | **String**|  | [optional] |
+| **filterApiKeyIdIn** | **String**|  | [optional] |
+| **filterApiKeyIdNotIn** | **String**|  | [optional] |
+| **filterSourceEq** | **String**|  | [optional] |
+| **filterSourceNotEq** | **String**|  | [optional] |
+| **filterSourceIn** | **String**|  | [optional] |
+| **filterSourceNotIn** | **String**|  | [optional] |
+| **filterItemTypeEq** | **String**|  | [optional] |
+| **filterItemTypeNotEq** | **String**|  | [optional] |
+| **filterItemTypeIn** | **String**|  | [optional] |
+| **filterItemTypeNotIn** | **String**|  | [optional] |
 | **sort** | **String**|  | [optional] |
 
 ### Return type

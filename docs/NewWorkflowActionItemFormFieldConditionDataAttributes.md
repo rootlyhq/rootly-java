@@ -1,0 +1,40 @@
+
+
+# NewWorkflowActionItemFormFieldConditionDataAttributes
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**formFieldId** | **String** | The custom field for this condition |  |
+|**actionItemCondition** | [**ActionItemConditionEnum**](#ActionItemConditionEnum) | The trigger condition |  |
+|**values** | **List&lt;String&gt;** |  |  [optional] |
+|**selectedCatalogEntityIds** | **List&lt;String&gt;** |  |  [optional] |
+|**selectedFunctionalityIds** | **List&lt;String&gt;** |  |  [optional] |
+|**selectedGroupIds** | **List&lt;String&gt;** |  |  [optional] |
+|**selectedOptionIds** | **List&lt;String&gt;** |  |  [optional] |
+|**selectedServiceIds** | **List&lt;String&gt;** |  |  [optional] |
+|**selectedUserIds** | **List&lt;Integer&gt;** |  |  [optional] |
+|**selectedCauseIds** | **List&lt;String&gt;** |  |  [optional] |
+|**selectedEnvironmentIds** | **List&lt;String&gt;** |  |  [optional] |
+|**selectedIncidentTypeIds** | **List&lt;String&gt;** |  |  [optional] |
+
+
+
+## Enum: ActionItemConditionEnum
+
+| Name | Value |
+|---- | -----|
+| IS | &quot;IS&quot; |
+| IS_NOT | &quot;IS NOT&quot; |
+| ANY | &quot;ANY&quot; |
+| CONTAINS | &quot;CONTAINS&quot; |
+| CONTAINS_ALL | &quot;CONTAINS_ALL&quot; |
+| CONTAINS_NONE | &quot;CONTAINS_NONE&quot; |
+| NONE | &quot;NONE&quot; |
+| SET | &quot;SET&quot; |
+| UNSET | &quot;UNSET&quot; |
+
+
+

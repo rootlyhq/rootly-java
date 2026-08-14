@@ -99,8 +99,24 @@ public class SeveritiesApiTest {
         String filterCreatedAtGte = null;
         String filterCreatedAtLt = null;
         String filterCreatedAtLte = null;
+        String filterSlugEq = null;
+        String filterSlugNotEq = null;
+        String filterSlugIn = null;
+        String filterSlugNotIn = null;
+        String filterNameEq = null;
+        String filterNameNotEq = null;
+        String filterNameIn = null;
+        String filterNameNotIn = null;
+        String filterSeverityEq = null;
+        String filterSeverityNotEq = null;
+        String filterSeverityIn = null;
+        String filterSeverityNotIn = null;
+        String filterColorEq = null;
+        String filterColorNotEq = null;
+        String filterColorIn = null;
+        String filterColorNotIn = null;
         String sort = null;
-        SeverityList response = api.listSeverities(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterSeverity, filterColor, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
+        SeverityList response = api.listSeverities(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterSeverity, filterColor, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterSeverityEq, filterSeverityNotEq, filterSeverityIn, filterSeverityNotIn, filterColorEq, filterColorNotEq, filterColorIn, filterColorNotIn, sort);
         // TODO: test validations
     }
 

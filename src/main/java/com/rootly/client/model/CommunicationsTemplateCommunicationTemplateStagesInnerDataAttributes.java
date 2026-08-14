@@ -51,52 +51,52 @@ import com.rootly.client.JSON;
 /**
  * CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributes {
   public static final String SERIALIZED_NAME_EMAIL_BODY = "email_body";
   @SerializedName(SERIALIZED_NAME_EMAIL_BODY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String emailBody;
 
   public static final String SERIALIZED_NAME_EMAIL_SUBJECT = "email_subject";
   @SerializedName(SERIALIZED_NAME_EMAIL_SUBJECT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String emailSubject;
 
   public static final String SERIALIZED_NAME_SLACK_CONTENT = "slack_content";
   @SerializedName(SERIALIZED_NAME_SLACK_CONTENT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String slackContent;
 
   public static final String SERIALIZED_NAME_SMS_CONTENT = "sms_content";
   @SerializedName(SERIALIZED_NAME_SMS_CONTENT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String smsContent;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String updatedAt;
 
   public static final String SERIALIZED_NAME_COMMUNICATION_STAGE = "communication_stage";
   @SerializedName(SERIALIZED_NAME_COMMUNICATION_STAGE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributesCommunicationStage communicationStage;
 
   public static final String SERIALIZED_NAME_COMMUNICATION_TEMPLATE = "communication_template";
   @SerializedName(SERIALIZED_NAME_COMMUNICATION_TEMPLATE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributesCommunicationTemplate communicationTemplate;
 
   public CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributes() {
   }
 
-  public CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributes emailBody(@javax.annotation.Nullable String emailBody) {
+  public CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributes emailBody(@jakarta.annotation.Nullable String emailBody) {
     this.emailBody = emailBody;
     return this;
   }
@@ -105,17 +105,17 @@ public class CommunicationsTemplateCommunicationTemplateStagesInnerDataAttribute
    * Email body for the stage
    * @return emailBody
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getEmailBody() {
     return emailBody;
   }
 
-  public void setEmailBody(@javax.annotation.Nullable String emailBody) {
+  public void setEmailBody(@jakarta.annotation.Nullable String emailBody) {
     this.emailBody = emailBody;
   }
 
 
-  public CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributes emailSubject(@javax.annotation.Nullable String emailSubject) {
+  public CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributes emailSubject(@jakarta.annotation.Nullable String emailSubject) {
     this.emailSubject = emailSubject;
     return this;
   }
@@ -124,17 +124,17 @@ public class CommunicationsTemplateCommunicationTemplateStagesInnerDataAttribute
    * Email subject for the stage
    * @return emailSubject
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getEmailSubject() {
     return emailSubject;
   }
 
-  public void setEmailSubject(@javax.annotation.Nullable String emailSubject) {
+  public void setEmailSubject(@jakarta.annotation.Nullable String emailSubject) {
     this.emailSubject = emailSubject;
   }
 
 
-  public CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributes slackContent(@javax.annotation.Nullable String slackContent) {
+  public CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributes slackContent(@jakarta.annotation.Nullable String slackContent) {
     this.slackContent = slackContent;
     return this;
   }
@@ -143,17 +143,17 @@ public class CommunicationsTemplateCommunicationTemplateStagesInnerDataAttribute
    * Slack content for the stage
    * @return slackContent
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSlackContent() {
     return slackContent;
   }
 
-  public void setSlackContent(@javax.annotation.Nullable String slackContent) {
+  public void setSlackContent(@jakarta.annotation.Nullable String slackContent) {
     this.slackContent = slackContent;
   }
 
 
-  public CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributes smsContent(@javax.annotation.Nullable String smsContent) {
+  public CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributes smsContent(@jakarta.annotation.Nullable String smsContent) {
     this.smsContent = smsContent;
     return this;
   }
@@ -162,17 +162,17 @@ public class CommunicationsTemplateCommunicationTemplateStagesInnerDataAttribute
    * SMS content for the stage
    * @return smsContent
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSmsContent() {
     return smsContent;
   }
 
-  public void setSmsContent(@javax.annotation.Nullable String smsContent) {
+  public void setSmsContent(@jakarta.annotation.Nullable String smsContent) {
     this.smsContent = smsContent;
   }
 
 
-  public CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributes createdAt(@javax.annotation.Nullable String createdAt) {
+  public CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributes createdAt(@jakarta.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -181,17 +181,17 @@ public class CommunicationsTemplateCommunicationTemplateStagesInnerDataAttribute
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nullable String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributes updatedAt(@javax.annotation.Nullable String updatedAt) {
+  public CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributes updatedAt(@jakarta.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -200,17 +200,17 @@ public class CommunicationsTemplateCommunicationTemplateStagesInnerDataAttribute
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nullable String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
   }
 
 
-  public CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributes communicationStage(@javax.annotation.Nullable CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributesCommunicationStage communicationStage) {
+  public CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributes communicationStage(@jakarta.annotation.Nullable CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributesCommunicationStage communicationStage) {
     this.communicationStage = communicationStage;
     return this;
   }
@@ -219,17 +219,17 @@ public class CommunicationsTemplateCommunicationTemplateStagesInnerDataAttribute
    * Get communicationStage
    * @return communicationStage
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributesCommunicationStage getCommunicationStage() {
     return communicationStage;
   }
 
-  public void setCommunicationStage(@javax.annotation.Nullable CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributesCommunicationStage communicationStage) {
+  public void setCommunicationStage(@jakarta.annotation.Nullable CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributesCommunicationStage communicationStage) {
     this.communicationStage = communicationStage;
   }
 
 
-  public CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributes communicationTemplate(@javax.annotation.Nullable CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributesCommunicationTemplate communicationTemplate) {
+  public CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributes communicationTemplate(@jakarta.annotation.Nullable CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributesCommunicationTemplate communicationTemplate) {
     this.communicationTemplate = communicationTemplate;
     return this;
   }
@@ -238,12 +238,12 @@ public class CommunicationsTemplateCommunicationTemplateStagesInnerDataAttribute
    * Get communicationTemplate
    * @return communicationTemplate
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributesCommunicationTemplate getCommunicationTemplate() {
     return communicationTemplate;
   }
 
-  public void setCommunicationTemplate(@javax.annotation.Nullable CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributesCommunicationTemplate communicationTemplate) {
+  public void setCommunicationTemplate(@jakarta.annotation.Nullable CommunicationsTemplateCommunicationTemplateStagesInnerDataAttributesCommunicationTemplate communicationTemplate) {
     this.communicationTemplate = communicationTemplate;
   }
 

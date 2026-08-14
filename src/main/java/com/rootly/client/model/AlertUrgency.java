@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,8 +49,13 @@ import com.rootly.client.JSON;
 /**
  * AlertUrgency
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AlertUrgency {
+  public static final String SERIALIZED_NAME_ID = "id";
+  @SerializedName(SERIALIZED_NAME_ID)
+  @jakarta.annotation.Nullable
+  private String id;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @jakarta.annotation.Nonnull
@@ -65,6 +71,31 @@ public class AlertUrgency {
   @jakarta.annotation.Nonnull
   private Integer position;
 
+  public static final String SERIALIZED_NAME_RETRIGGER_TIMEOUT_MINUTES = "retrigger_timeout_minutes";
+  @SerializedName(SERIALIZED_NAME_RETRIGGER_TIMEOUT_MINUTES)
+  @jakarta.annotation.Nullable
+  private Integer retriggerTimeoutMinutes;
+
+  public static final String SERIALIZED_NAME_URGENCY = "urgency";
+  @SerializedName(SERIALIZED_NAME_URGENCY)
+  @jakarta.annotation.Nullable
+  private String urgency;
+
+  public static final String SERIALIZED_NAME_COLOR = "color";
+  @SerializedName(SERIALIZED_NAME_COLOR)
+  @jakarta.annotation.Nullable
+  private String color;
+
+  public static final String SERIALIZED_NAME_TEAM_ID = "team_id";
+  @SerializedName(SERIALIZED_NAME_TEAM_ID)
+  @jakarta.annotation.Nullable
+  private Integer teamId;
+
+  public static final String SERIALIZED_NAME_DELETED_AT = "deleted_at";
+  @SerializedName(SERIALIZED_NAME_DELETED_AT)
+  @jakarta.annotation.Nullable
+  private String deletedAt;
+
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   @jakarta.annotation.Nonnull
@@ -77,6 +108,25 @@ public class AlertUrgency {
 
   public AlertUrgency() {
   }
+
+  public AlertUrgency id(@jakarta.annotation.Nullable String id) {
+    this.id = id;
+    return this;
+  }
+
+  /**
+   * Unique ID of the alert urgency
+   * @return id
+   */
+  @jakarta.annotation.Nullable
+  public String getId() {
+    return id;
+  }
+
+  public void setId(@jakarta.annotation.Nullable String id) {
+    this.id = id;
+  }
+
 
   public AlertUrgency name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
@@ -135,6 +185,101 @@ public class AlertUrgency {
   }
 
 
+  public AlertUrgency retriggerTimeoutMinutes(@jakarta.annotation.Nullable Integer retriggerTimeoutMinutes) {
+    this.retriggerTimeoutMinutes = retriggerTimeoutMinutes;
+    return this;
+  }
+
+  /**
+   * Re-trigger acknowledged alerts of this urgency after N minutes; null inherits the workspace default, negative &#x3D; never.
+   * @return retriggerTimeoutMinutes
+   */
+  @jakarta.annotation.Nullable
+  public Integer getRetriggerTimeoutMinutes() {
+    return retriggerTimeoutMinutes;
+  }
+
+  public void setRetriggerTimeoutMinutes(@jakarta.annotation.Nullable Integer retriggerTimeoutMinutes) {
+    this.retriggerTimeoutMinutes = retriggerTimeoutMinutes;
+  }
+
+
+  public AlertUrgency urgency(@jakarta.annotation.Nullable String urgency) {
+    this.urgency = urgency;
+    return this;
+  }
+
+  /**
+   * The urgency level
+   * @return urgency
+   */
+  @jakarta.annotation.Nullable
+  public String getUrgency() {
+    return urgency;
+  }
+
+  public void setUrgency(@jakarta.annotation.Nullable String urgency) {
+    this.urgency = urgency;
+  }
+
+
+  public AlertUrgency color(@jakarta.annotation.Nullable String color) {
+    this.color = color;
+    return this;
+  }
+
+  /**
+   * The color associated with this urgency level
+   * @return color
+   */
+  @jakarta.annotation.Nullable
+  public String getColor() {
+    return color;
+  }
+
+  public void setColor(@jakarta.annotation.Nullable String color) {
+    this.color = color;
+  }
+
+
+  public AlertUrgency teamId(@jakarta.annotation.Nullable Integer teamId) {
+    this.teamId = teamId;
+    return this;
+  }
+
+  /**
+   * The ID of the team this urgency belongs to
+   * @return teamId
+   */
+  @jakarta.annotation.Nullable
+  public Integer getTeamId() {
+    return teamId;
+  }
+
+  public void setTeamId(@jakarta.annotation.Nullable Integer teamId) {
+    this.teamId = teamId;
+  }
+
+
+  public AlertUrgency deletedAt(@jakarta.annotation.Nullable String deletedAt) {
+    this.deletedAt = deletedAt;
+    return this;
+  }
+
+  /**
+   * Date of deletion
+   * @return deletedAt
+   */
+  @jakarta.annotation.Nullable
+  public String getDeletedAt() {
+    return deletedAt;
+  }
+
+  public void setDeletedAt(@jakarta.annotation.Nullable String deletedAt) {
+    this.deletedAt = deletedAt;
+  }
+
+
   public AlertUrgency createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
@@ -183,25 +328,48 @@ public class AlertUrgency {
       return false;
     }
     AlertUrgency alertUrgency = (AlertUrgency) o;
-    return Objects.equals(this.name, alertUrgency.name) &&
+    return Objects.equals(this.id, alertUrgency.id) &&
+        Objects.equals(this.name, alertUrgency.name) &&
         Objects.equals(this.description, alertUrgency.description) &&
         Objects.equals(this.position, alertUrgency.position) &&
+        Objects.equals(this.retriggerTimeoutMinutes, alertUrgency.retriggerTimeoutMinutes) &&
+        Objects.equals(this.urgency, alertUrgency.urgency) &&
+        Objects.equals(this.color, alertUrgency.color) &&
+        Objects.equals(this.teamId, alertUrgency.teamId) &&
+        Objects.equals(this.deletedAt, alertUrgency.deletedAt) &&
         Objects.equals(this.createdAt, alertUrgency.createdAt) &&
         Objects.equals(this.updatedAt, alertUrgency.updatedAt);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, position, createdAt, updatedAt);
+    return Objects.hash(id, name, description, position, retriggerTimeoutMinutes, urgency, color, teamId, deletedAt, createdAt, updatedAt);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AlertUrgency {\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    position: ").append(toIndentedString(position)).append("\n");
+    sb.append("    retriggerTimeoutMinutes: ").append(toIndentedString(retriggerTimeoutMinutes)).append("\n");
+    sb.append("    urgency: ").append(toIndentedString(urgency)).append("\n");
+    sb.append("    color: ").append(toIndentedString(color)).append("\n");
+    sb.append("    teamId: ").append(toIndentedString(teamId)).append("\n");
+    sb.append("    deletedAt: ").append(toIndentedString(deletedAt)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -226,9 +394,15 @@ public class AlertUrgency {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("id");
     openapiFields.add("name");
     openapiFields.add("description");
     openapiFields.add("position");
+    openapiFields.add("retrigger_timeout_minutes");
+    openapiFields.add("urgency");
+    openapiFields.add("color");
+    openapiFields.add("team_id");
+    openapiFields.add("deleted_at");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
 
@@ -269,11 +443,23 @@ public class AlertUrgency {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+      }
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if (!jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
+      if ((jsonObj.get("urgency") != null && !jsonObj.get("urgency").isJsonNull()) && !jsonObj.get("urgency").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `urgency` to be a primitive type in the JSON string but got `%s`", jsonObj.get("urgency").toString()));
+      }
+      if ((jsonObj.get("color") != null && !jsonObj.get("color").isJsonNull()) && !jsonObj.get("color").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `color` to be a primitive type in the JSON string but got `%s`", jsonObj.get("color").toString()));
+      }
+      if ((jsonObj.get("deleted_at") != null && !jsonObj.get("deleted_at").isJsonNull()) && !jsonObj.get("deleted_at").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `deleted_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("deleted_at").toString()));
       }
       if (!jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));

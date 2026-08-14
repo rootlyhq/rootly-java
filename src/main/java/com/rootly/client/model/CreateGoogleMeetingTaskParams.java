@@ -52,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * CreateGoogleMeetingTaskParams
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateGoogleMeetingTaskParams {
   /**
    * Gets or Sets taskType
@@ -185,6 +185,67 @@ public class CreateGoogleMeetingTaskParams {
   @jakarta.annotation.Nullable
   private Boolean recordMeeting;
 
+  /**
+   * The video layout for the bot&#39;s recording (e.g. speaker_view, gallery_view, gallery_view_v2, audio_only)
+   */
+  @JsonAdapter(RecordingModeEnum.Adapter.class)
+  public enum RecordingModeEnum {
+    SPEAKER_VIEW("speaker_view"),
+    
+    GALLERY_VIEW("gallery_view"),
+    
+    GALLERY_VIEW_V2("gallery_view_v2"),
+    
+    AUDIO_ONLY("audio_only");
+
+    private String value;
+
+    RecordingModeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static RecordingModeEnum fromValue(String value) {
+      for (RecordingModeEnum b : RecordingModeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<RecordingModeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final RecordingModeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public RecordingModeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return RecordingModeEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      RecordingModeEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_RECORDING_MODE = "recording_mode";
+  @SerializedName(SERIALIZED_NAME_RECORDING_MODE)
+  @jakarta.annotation.Nullable
+  private RecordingModeEnum recordingMode;
+
   public static final String SERIALIZED_NAME_POST_TO_INCIDENT_TIMELINE = "post_to_incident_timeline";
   @SerializedName(SERIALIZED_NAME_POST_TO_INCIDENT_TIMELINE)
   @jakarta.annotation.Nullable
@@ -293,6 +354,25 @@ public class CreateGoogleMeetingTaskParams {
   }
 
 
+  public CreateGoogleMeetingTaskParams recordingMode(@jakarta.annotation.Nullable RecordingModeEnum recordingMode) {
+    this.recordingMode = recordingMode;
+    return this;
+  }
+
+  /**
+   * The video layout for the bot&#39;s recording (e.g. speaker_view, gallery_view, gallery_view_v2, audio_only)
+   * @return recordingMode
+   */
+  @jakarta.annotation.Nullable
+  public RecordingModeEnum getRecordingMode() {
+    return recordingMode;
+  }
+
+  public void setRecordingMode(@jakarta.annotation.Nullable RecordingModeEnum recordingMode) {
+    this.recordingMode = recordingMode;
+  }
+
+
   public CreateGoogleMeetingTaskParams postToIncidentTimeline(@jakarta.annotation.Nullable Boolean postToIncidentTimeline) {
     this.postToIncidentTimeline = postToIncidentTimeline;
     return this;
@@ -354,6 +434,7 @@ public class CreateGoogleMeetingTaskParams {
         Objects.equals(this.description, createGoogleMeetingTaskParams.description) &&
         Objects.equals(this.conferenceSolutionKey, createGoogleMeetingTaskParams.conferenceSolutionKey) &&
         Objects.equals(this.recordMeeting, createGoogleMeetingTaskParams.recordMeeting) &&
+        Objects.equals(this.recordingMode, createGoogleMeetingTaskParams.recordingMode) &&
         Objects.equals(this.postToIncidentTimeline, createGoogleMeetingTaskParams.postToIncidentTimeline) &&
         Objects.equals(this.postToSlackChannels, createGoogleMeetingTaskParams.postToSlackChannels);
   }
@@ -364,7 +445,7 @@ public class CreateGoogleMeetingTaskParams {
 
   @Override
   public int hashCode() {
-    return Objects.hash(taskType, summary, description, conferenceSolutionKey, recordMeeting, postToIncidentTimeline, postToSlackChannels);
+    return Objects.hash(taskType, summary, description, conferenceSolutionKey, recordMeeting, recordingMode, postToIncidentTimeline, postToSlackChannels);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -383,6 +464,7 @@ public class CreateGoogleMeetingTaskParams {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    conferenceSolutionKey: ").append(toIndentedString(conferenceSolutionKey)).append("\n");
     sb.append("    recordMeeting: ").append(toIndentedString(recordMeeting)).append("\n");
+    sb.append("    recordingMode: ").append(toIndentedString(recordingMode)).append("\n");
     sb.append("    postToIncidentTimeline: ").append(toIndentedString(postToIncidentTimeline)).append("\n");
     sb.append("    postToSlackChannels: ").append(toIndentedString(postToSlackChannels)).append("\n");
     sb.append("}");
@@ -412,6 +494,7 @@ public class CreateGoogleMeetingTaskParams {
     openapiFields.add("description");
     openapiFields.add("conference_solution_key");
     openapiFields.add("record_meeting");
+    openapiFields.add("recording_mode");
     openapiFields.add("post_to_incident_timeline");
     openapiFields.add("post_to_slack_channels");
 
@@ -468,6 +551,13 @@ public class CreateGoogleMeetingTaskParams {
       // validate the optional field `conference_solution_key`
       if (jsonObj.get("conference_solution_key") != null && !jsonObj.get("conference_solution_key").isJsonNull()) {
         ConferenceSolutionKeyEnum.validateJsonElement(jsonObj.get("conference_solution_key"));
+      }
+      if ((jsonObj.get("recording_mode") != null && !jsonObj.get("recording_mode").isJsonNull()) && !jsonObj.get("recording_mode").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `recording_mode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("recording_mode").toString()));
+      }
+      // validate the optional field `recording_mode`
+      if (jsonObj.get("recording_mode") != null && !jsonObj.get("recording_mode").isJsonNull()) {
+        RecordingModeEnum.validateJsonElement(jsonObj.get("recording_mode"));
       }
       if (jsonObj.get("post_to_slack_channels") != null && !jsonObj.get("post_to_slack_channels").isJsonNull()) {
         JsonArray jsonArraypostToSlackChannels = jsonObj.getAsJsonArray("post_to_slack_channels");

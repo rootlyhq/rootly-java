@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewCauseDataAttributesPropertiesInner;
 import com.rootly.client.model.NewEnvironmentDataAttributesSlackAliasesInner;
 import com.rootly.client.model.NewEnvironmentDataAttributesSlackChannelsInner;
 import java.io.IOException;
@@ -53,8 +54,14 @@ import com.rootly.client.JSON;
 /**
  * UpdateFunctionalityDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateFunctionalityDataAttributes {
+  public static final String SERIALIZED_NAME_SLUG = "slug";
+  @Deprecated
+  @SerializedName(SERIALIZED_NAME_SLUG)
+  @jakarta.annotation.Nullable
+  private String slug;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @jakarta.annotation.Nullable
@@ -140,6 +147,11 @@ public class UpdateFunctionalityDataAttributes {
   @jakarta.annotation.Nullable
   private List<Integer> ownerUserIds;
 
+  public static final String SERIALIZED_NAME_ESCALATION_POLICY_ID = "escalation_policy_id";
+  @SerializedName(SERIALIZED_NAME_ESCALATION_POLICY_ID)
+  @jakarta.annotation.Nullable
+  private String escalationPolicyId;
+
   public static final String SERIALIZED_NAME_SLACK_CHANNELS = "slack_channels";
   @SerializedName(SERIALIZED_NAME_SLACK_CHANNELS)
   @jakarta.annotation.Nullable
@@ -150,8 +162,36 @@ public class UpdateFunctionalityDataAttributes {
   @jakarta.annotation.Nullable
   private List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases;
 
+  public static final String SERIALIZED_NAME_PROPERTIES = "properties";
+  @SerializedName(SERIALIZED_NAME_PROPERTIES)
+  @jakarta.annotation.Nullable
+  private List<NewCauseDataAttributesPropertiesInner> properties = new ArrayList<>();
+
   public UpdateFunctionalityDataAttributes() {
   }
+
+  @Deprecated
+  public UpdateFunctionalityDataAttributes slug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+    return this;
+  }
+
+  /**
+   * Deprecated. &#x60;slug&#x60; is derived from &#x60;name&#x60;; any submitted value is ignored. This property will be removed from the request schema in a future version.
+   * @return slug
+   * @deprecated
+   */
+  @Deprecated
+  @jakarta.annotation.Nullable
+  public String getSlug() {
+    return slug;
+  }
+
+  @Deprecated
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+  }
+
 
   public UpdateFunctionalityDataAttributes name(@jakarta.annotation.Nullable String name) {
     this.name = name;
@@ -197,7 +237,7 @@ public class UpdateFunctionalityDataAttributes {
   }
 
   /**
-   * The public description of the functionality
+   * The status page description of the functionality
    * @return publicDescription
    */
   @jakarta.annotation.Nullable
@@ -476,7 +516,7 @@ public class UpdateFunctionalityDataAttributes {
   }
 
   /**
-   * Owner Teams associated with this functionality
+   * Owner Teams associated with this functionality. Empty array removes all; omitting or null leaves unchanged.
    * @return ownerGroupIds
    */
   @jakarta.annotation.Nullable
@@ -503,7 +543,7 @@ public class UpdateFunctionalityDataAttributes {
   }
 
   /**
-   * Owner Users associated with this functionality
+   * Owner Users associated with this functionality. Empty array removes all; omitting or null leaves unchanged.
    * @return ownerUserIds
    */
   @jakarta.annotation.Nullable
@@ -513,6 +553,25 @@ public class UpdateFunctionalityDataAttributes {
 
   public void setOwnerUserIds(@jakarta.annotation.Nullable List<Integer> ownerUserIds) {
     this.ownerUserIds = ownerUserIds;
+  }
+
+
+  public UpdateFunctionalityDataAttributes escalationPolicyId(@jakarta.annotation.Nullable String escalationPolicyId) {
+    this.escalationPolicyId = escalationPolicyId;
+    return this;
+  }
+
+  /**
+   * The escalation policy id of the functionality
+   * @return escalationPolicyId
+   */
+  @jakarta.annotation.Nullable
+  public String getEscalationPolicyId() {
+    return escalationPolicyId;
+  }
+
+  public void setEscalationPolicyId(@jakarta.annotation.Nullable String escalationPolicyId) {
+    this.escalationPolicyId = escalationPolicyId;
   }
 
 
@@ -570,6 +629,33 @@ public class UpdateFunctionalityDataAttributes {
   }
 
 
+  public UpdateFunctionalityDataAttributes properties(@jakarta.annotation.Nullable List<NewCauseDataAttributesPropertiesInner> properties) {
+    this.properties = properties;
+    return this;
+  }
+
+  public UpdateFunctionalityDataAttributes addPropertiesItem(NewCauseDataAttributesPropertiesInner propertiesItem) {
+    if (this.properties == null) {
+      this.properties = new ArrayList<>();
+    }
+    this.properties.add(propertiesItem);
+    return this;
+  }
+
+  /**
+   * Array of property values for this functionality.
+   * @return properties
+   */
+  @jakarta.annotation.Nullable
+  public List<NewCauseDataAttributesPropertiesInner> getProperties() {
+    return properties;
+  }
+
+  public void setProperties(@jakarta.annotation.Nullable List<NewCauseDataAttributesPropertiesInner> properties) {
+    this.properties = properties;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -580,7 +666,8 @@ public class UpdateFunctionalityDataAttributes {
       return false;
     }
     UpdateFunctionalityDataAttributes updateFunctionalityDataAttributes = (UpdateFunctionalityDataAttributes) o;
-    return Objects.equals(this.name, updateFunctionalityDataAttributes.name) &&
+    return Objects.equals(this.slug, updateFunctionalityDataAttributes.slug) &&
+        Objects.equals(this.name, updateFunctionalityDataAttributes.name) &&
         Objects.equals(this.description, updateFunctionalityDataAttributes.description) &&
         Objects.equals(this.publicDescription, updateFunctionalityDataAttributes.publicDescription) &&
         Objects.equals(this.notifyEmails, updateFunctionalityDataAttributes.notifyEmails) &&
@@ -597,8 +684,10 @@ public class UpdateFunctionalityDataAttributes {
         Objects.equals(this.serviceIds, updateFunctionalityDataAttributes.serviceIds) &&
         Objects.equals(this.ownerGroupIds, updateFunctionalityDataAttributes.ownerGroupIds) &&
         Objects.equals(this.ownerUserIds, updateFunctionalityDataAttributes.ownerUserIds) &&
+        Objects.equals(this.escalationPolicyId, updateFunctionalityDataAttributes.escalationPolicyId) &&
         Objects.equals(this.slackChannels, updateFunctionalityDataAttributes.slackChannels) &&
-        Objects.equals(this.slackAliases, updateFunctionalityDataAttributes.slackAliases);
+        Objects.equals(this.slackAliases, updateFunctionalityDataAttributes.slackAliases) &&
+        Objects.equals(this.properties, updateFunctionalityDataAttributes.properties);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -607,7 +696,7 @@ public class UpdateFunctionalityDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, publicDescription, notifyEmails, color, position, backstageId, externalId, pagerdutyId, opsgenieId, opsgenieTeamId, cortexId, serviceNowCiSysId, environmentIds, serviceIds, ownerGroupIds, ownerUserIds, slackChannels, slackAliases);
+    return Objects.hash(slug, name, description, publicDescription, notifyEmails, color, position, backstageId, externalId, pagerdutyId, opsgenieId, opsgenieTeamId, cortexId, serviceNowCiSysId, environmentIds, serviceIds, ownerGroupIds, ownerUserIds, escalationPolicyId, slackChannels, slackAliases, properties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -621,6 +710,7 @@ public class UpdateFunctionalityDataAttributes {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdateFunctionalityDataAttributes {\n");
+    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    publicDescription: ").append(toIndentedString(publicDescription)).append("\n");
@@ -638,8 +728,10 @@ public class UpdateFunctionalityDataAttributes {
     sb.append("    serviceIds: ").append(toIndentedString(serviceIds)).append("\n");
     sb.append("    ownerGroupIds: ").append(toIndentedString(ownerGroupIds)).append("\n");
     sb.append("    ownerUserIds: ").append(toIndentedString(ownerUserIds)).append("\n");
+    sb.append("    escalationPolicyId: ").append(toIndentedString(escalationPolicyId)).append("\n");
     sb.append("    slackChannels: ").append(toIndentedString(slackChannels)).append("\n");
     sb.append("    slackAliases: ").append(toIndentedString(slackAliases)).append("\n");
+    sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -662,6 +754,7 @@ public class UpdateFunctionalityDataAttributes {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("slug");
     openapiFields.add("name");
     openapiFields.add("description");
     openapiFields.add("public_description");
@@ -679,8 +772,10 @@ public class UpdateFunctionalityDataAttributes {
     openapiFields.add("service_ids");
     openapiFields.add("owner_group_ids");
     openapiFields.add("owner_user_ids");
+    openapiFields.add("escalation_policy_id");
     openapiFields.add("slack_channels");
     openapiFields.add("slack_aliases");
+    openapiFields.add("properties");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -707,6 +802,9 @@ public class UpdateFunctionalityDataAttributes {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
+      }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
@@ -760,6 +858,9 @@ public class UpdateFunctionalityDataAttributes {
       if (jsonObj.get("owner_user_ids") != null && !jsonObj.get("owner_user_ids").isJsonNull() && !jsonObj.get("owner_user_ids").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `owner_user_ids` to be an array in the JSON string but got `%s`", jsonObj.get("owner_user_ids").toString()));
       }
+      if ((jsonObj.get("escalation_policy_id") != null && !jsonObj.get("escalation_policy_id").isJsonNull()) && !jsonObj.get("escalation_policy_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `escalation_policy_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("escalation_policy_id").toString()));
+      }
       if (jsonObj.get("slack_channels") != null && !jsonObj.get("slack_channels").isJsonNull()) {
         JsonArray jsonArrayslackChannels = jsonObj.getAsJsonArray("slack_channels");
         if (jsonArrayslackChannels != null) {
@@ -785,6 +886,20 @@ public class UpdateFunctionalityDataAttributes {
           // validate the optional field `slack_aliases` (array)
           for (int i = 0; i < jsonArrayslackAliases.size(); i++) {
             NewEnvironmentDataAttributesSlackAliasesInner.validateJsonElement(jsonArrayslackAliases.get(i));
+          };
+        }
+      }
+      if (jsonObj.get("properties") != null && !jsonObj.get("properties").isJsonNull()) {
+        JsonArray jsonArrayproperties = jsonObj.getAsJsonArray("properties");
+        if (jsonArrayproperties != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("properties").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `properties` to be an array in the JSON string but got `%s`", jsonObj.get("properties").toString()));
+          }
+
+          // validate the optional field `properties` (array)
+          for (int i = 0; i < jsonArrayproperties.size(); i++) {
+            NewCauseDataAttributesPropertiesInner.validateJsonElement(jsonArrayproperties.get(i));
           };
         }
       }

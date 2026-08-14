@@ -23,7 +23,7 @@ import com.rootly.client.model.NewScheduleRotationDataAttributesActiveTimeAttrib
 import com.rootly.client.model.NewScheduleRotationDataAttributesScheduleRotationMembersInner;
 import com.rootly.client.model.NewScheduleRotationDataAttributesScheduleRotationableAttributes;
 import java.io.IOException;
-import java.time.LocalDate;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -55,7 +55,7 @@ import com.rootly.client.JSON;
 /**
  * NewScheduleRotationDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewScheduleRotationDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -279,12 +279,12 @@ public class NewScheduleRotationDataAttributes {
   public static final String SERIALIZED_NAME_START_TIME = "start_time";
   @SerializedName(SERIALIZED_NAME_START_TIME)
   @jakarta.annotation.Nullable
-  private LocalDate startTime;
+  private OffsetDateTime startTime;
 
   public static final String SERIALIZED_NAME_END_TIME = "end_time";
   @SerializedName(SERIALIZED_NAME_END_TIME)
   @jakarta.annotation.Nullable
-  private LocalDate endTime;
+  private OffsetDateTime endTime;
 
   public static final String SERIALIZED_NAME_SCHEDULE_ROTATION_MEMBERS = "schedule_rotation_members";
   @SerializedName(SERIALIZED_NAME_SCHEDULE_ROTATION_MEMBERS)
@@ -489,40 +489,40 @@ public class NewScheduleRotationDataAttributes {
   }
 
 
-  public NewScheduleRotationDataAttributes startTime(@jakarta.annotation.Nullable LocalDate startTime) {
+  public NewScheduleRotationDataAttributes startTime(@jakarta.annotation.Nullable OffsetDateTime startTime) {
     this.startTime = startTime;
     return this;
   }
 
   /**
-   * ISO8601 date and time when rotation starts. Shifts will only be created after this time.
+   * RFC3339 date-time when rotation starts. Shifts will only be created after this time.
    * @return startTime
    */
   @jakarta.annotation.Nullable
-  public LocalDate getStartTime() {
+  public OffsetDateTime getStartTime() {
     return startTime;
   }
 
-  public void setStartTime(@jakarta.annotation.Nullable LocalDate startTime) {
+  public void setStartTime(@jakarta.annotation.Nullable OffsetDateTime startTime) {
     this.startTime = startTime;
   }
 
 
-  public NewScheduleRotationDataAttributes endTime(@jakarta.annotation.Nullable LocalDate endTime) {
+  public NewScheduleRotationDataAttributes endTime(@jakarta.annotation.Nullable OffsetDateTime endTime) {
     this.endTime = endTime;
     return this;
   }
 
   /**
-   * ISO8601 date and time when rotation ends. Shifts will only be created before this time.
+   * RFC3339 date-time when rotation ends. Shifts will only be created before this time.
    * @return endTime
    */
   @jakarta.annotation.Nullable
-  public LocalDate getEndTime() {
+  public OffsetDateTime getEndTime() {
     return endTime;
   }
 
-  public void setEndTime(@jakarta.annotation.Nullable LocalDate endTime) {
+  public void setEndTime(@jakarta.annotation.Nullable OffsetDateTime endTime) {
     this.endTime = endTime;
   }
 

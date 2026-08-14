@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateEdgeConnectorRequestData
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateEdgeConnectorRequestData {
   /**
    * Gets or Sets type
@@ -103,23 +103,23 @@ public class UpdateEdgeConnectorRequestData {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String id;
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private UpdateEdgeConnectorRequestDataAttributes attributes;
 
   public UpdateEdgeConnectorRequestData() {
   }
 
-  public UpdateEdgeConnectorRequestData type(@javax.annotation.Nullable TypeEnum type) {
+  public UpdateEdgeConnectorRequestData type(@jakarta.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -128,17 +128,17 @@ public class UpdateEdgeConnectorRequestData {
    * Get type
    * @return type
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TypeEnum getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nullable TypeEnum type) {
+  public void setType(@jakarta.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
 
-  public UpdateEdgeConnectorRequestData id(@javax.annotation.Nullable String id) {
+  public UpdateEdgeConnectorRequestData id(@jakarta.annotation.Nullable String id) {
     this.id = id;
     return this;
   }
@@ -147,17 +147,17 @@ public class UpdateEdgeConnectorRequestData {
    * Get id
    * @return id
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getId() {
     return id;
   }
 
-  public void setId(@javax.annotation.Nullable String id) {
+  public void setId(@jakarta.annotation.Nullable String id) {
     this.id = id;
   }
 
 
-  public UpdateEdgeConnectorRequestData attributes(@javax.annotation.Nullable UpdateEdgeConnectorRequestDataAttributes attributes) {
+  public UpdateEdgeConnectorRequestData attributes(@jakarta.annotation.Nullable UpdateEdgeConnectorRequestDataAttributes attributes) {
     this.attributes = attributes;
     return this;
   }
@@ -166,12 +166,12 @@ public class UpdateEdgeConnectorRequestData {
    * Get attributes
    * @return attributes
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public UpdateEdgeConnectorRequestDataAttributes getAttributes() {
     return attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nullable UpdateEdgeConnectorRequestDataAttributes attributes) {
+  public void setAttributes(@jakarta.annotation.Nullable UpdateEdgeConnectorRequestDataAttributes attributes) {
     this.attributes = attributes;
   }
 

@@ -8,6 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**data** | [**ScheduleRotationActiveDayResponseData**](ScheduleRotationActiveDayResponseData.md) |  |  [optional] |
+|**included** | [**List&lt;JsonapiIncludedResource&gt;**](JsonapiIncludedResource.md) |  |  [optional] |
 
 
 

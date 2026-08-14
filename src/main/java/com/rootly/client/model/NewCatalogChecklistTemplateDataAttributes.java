@@ -53,16 +53,22 @@ import com.rootly.client.JSON;
 /**
  * NewCatalogChecklistTemplateDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewCatalogChecklistTemplateDataAttributes {
+  public static final String SERIALIZED_NAME_SLUG = "slug";
+  @Deprecated
+  @SerializedName(SERIALIZED_NAME_SLUG)
+  @jakarta.annotation.Nullable
+  private String slug;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   /**
@@ -129,7 +135,7 @@ public class NewCatalogChecklistTemplateDataAttributes {
 
   public static final String SERIALIZED_NAME_CATALOG_TYPE = "catalog_type";
   @SerializedName(SERIALIZED_NAME_CATALOG_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private CatalogTypeEnum catalogType;
 
   /**
@@ -186,28 +192,51 @@ public class NewCatalogChecklistTemplateDataAttributes {
 
   public static final String SERIALIZED_NAME_SCOPE_TYPE = "scope_type";
   @SerializedName(SERIALIZED_NAME_SCOPE_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private ScopeTypeEnum scopeType;
 
   public static final String SERIALIZED_NAME_SCOPE_ID = "scope_id";
   @SerializedName(SERIALIZED_NAME_SCOPE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String scopeId;
 
   public static final String SERIALIZED_NAME_FIELDS = "fields";
   @SerializedName(SERIALIZED_NAME_FIELDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewCatalogChecklistTemplateDataAttributesFieldsInner> fields;
 
   public static final String SERIALIZED_NAME_OWNERS = "owners";
   @SerializedName(SERIALIZED_NAME_OWNERS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewCatalogChecklistTemplateDataAttributesOwnersInner> owners;
 
   public NewCatalogChecklistTemplateDataAttributes() {
   }
 
-  public NewCatalogChecklistTemplateDataAttributes name(@javax.annotation.Nonnull String name) {
+  @Deprecated
+  public NewCatalogChecklistTemplateDataAttributes slug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+    return this;
+  }
+
+  /**
+   * Deprecated. &#x60;slug&#x60; is derived from &#x60;name&#x60;; any submitted value is ignored. This property will be removed from the request schema in a future version.
+   * @return slug
+   * @deprecated
+   */
+  @Deprecated
+  @jakarta.annotation.Nullable
+  public String getSlug() {
+    return slug;
+  }
+
+  @Deprecated
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+  }
+
+
+  public NewCatalogChecklistTemplateDataAttributes name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -216,17 +245,17 @@ public class NewCatalogChecklistTemplateDataAttributes {
    * The name of the checklist template
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public NewCatalogChecklistTemplateDataAttributes description(@javax.annotation.Nullable String description) {
+  public NewCatalogChecklistTemplateDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -235,17 +264,17 @@ public class NewCatalogChecklistTemplateDataAttributes {
    * The description of the checklist template
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public NewCatalogChecklistTemplateDataAttributes catalogType(@javax.annotation.Nonnull CatalogTypeEnum catalogType) {
+  public NewCatalogChecklistTemplateDataAttributes catalogType(@jakarta.annotation.Nonnull CatalogTypeEnum catalogType) {
     this.catalogType = catalogType;
     return this;
   }
@@ -254,17 +283,17 @@ public class NewCatalogChecklistTemplateDataAttributes {
    * The catalog type
    * @return catalogType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public CatalogTypeEnum getCatalogType() {
     return catalogType;
   }
 
-  public void setCatalogType(@javax.annotation.Nonnull CatalogTypeEnum catalogType) {
+  public void setCatalogType(@jakarta.annotation.Nonnull CatalogTypeEnum catalogType) {
     this.catalogType = catalogType;
   }
 
 
-  public NewCatalogChecklistTemplateDataAttributes scopeType(@javax.annotation.Nonnull ScopeTypeEnum scopeType) {
+  public NewCatalogChecklistTemplateDataAttributes scopeType(@jakarta.annotation.Nonnull ScopeTypeEnum scopeType) {
     this.scopeType = scopeType;
     return this;
   }
@@ -273,17 +302,17 @@ public class NewCatalogChecklistTemplateDataAttributes {
    * The scope type
    * @return scopeType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public ScopeTypeEnum getScopeType() {
     return scopeType;
   }
 
-  public void setScopeType(@javax.annotation.Nonnull ScopeTypeEnum scopeType) {
+  public void setScopeType(@jakarta.annotation.Nonnull ScopeTypeEnum scopeType) {
     this.scopeType = scopeType;
   }
 
 
-  public NewCatalogChecklistTemplateDataAttributes scopeId(@javax.annotation.Nullable String scopeId) {
+  public NewCatalogChecklistTemplateDataAttributes scopeId(@jakarta.annotation.Nullable String scopeId) {
     this.scopeId = scopeId;
     return this;
   }
@@ -292,17 +321,17 @@ public class NewCatalogChecklistTemplateDataAttributes {
    * The scope ID (team or catalog UUID)
    * @return scopeId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getScopeId() {
     return scopeId;
   }
 
-  public void setScopeId(@javax.annotation.Nullable String scopeId) {
+  public void setScopeId(@jakarta.annotation.Nullable String scopeId) {
     this.scopeId = scopeId;
   }
 
 
-  public NewCatalogChecklistTemplateDataAttributes fields(@javax.annotation.Nullable List<NewCatalogChecklistTemplateDataAttributesFieldsInner> fields) {
+  public NewCatalogChecklistTemplateDataAttributes fields(@jakarta.annotation.Nullable List<NewCatalogChecklistTemplateDataAttributesFieldsInner> fields) {
     this.fields = fields;
     return this;
   }
@@ -319,17 +348,17 @@ public class NewCatalogChecklistTemplateDataAttributes {
    * Template fields. Position is determined by array order.
    * @return fields
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewCatalogChecklistTemplateDataAttributesFieldsInner> getFields() {
     return fields;
   }
 
-  public void setFields(@javax.annotation.Nullable List<NewCatalogChecklistTemplateDataAttributesFieldsInner> fields) {
+  public void setFields(@jakarta.annotation.Nullable List<NewCatalogChecklistTemplateDataAttributesFieldsInner> fields) {
     this.fields = fields;
   }
 
 
-  public NewCatalogChecklistTemplateDataAttributes owners(@javax.annotation.Nullable List<NewCatalogChecklistTemplateDataAttributesOwnersInner> owners) {
+  public NewCatalogChecklistTemplateDataAttributes owners(@jakarta.annotation.Nullable List<NewCatalogChecklistTemplateDataAttributesOwnersInner> owners) {
     this.owners = owners;
     return this;
   }
@@ -346,12 +375,12 @@ public class NewCatalogChecklistTemplateDataAttributes {
    * Template owners
    * @return owners
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewCatalogChecklistTemplateDataAttributesOwnersInner> getOwners() {
     return owners;
   }
 
-  public void setOwners(@javax.annotation.Nullable List<NewCatalogChecklistTemplateDataAttributesOwnersInner> owners) {
+  public void setOwners(@jakarta.annotation.Nullable List<NewCatalogChecklistTemplateDataAttributesOwnersInner> owners) {
     this.owners = owners;
   }
 
@@ -366,7 +395,8 @@ public class NewCatalogChecklistTemplateDataAttributes {
       return false;
     }
     NewCatalogChecklistTemplateDataAttributes newCatalogChecklistTemplateDataAttributes = (NewCatalogChecklistTemplateDataAttributes) o;
-    return Objects.equals(this.name, newCatalogChecklistTemplateDataAttributes.name) &&
+    return Objects.equals(this.slug, newCatalogChecklistTemplateDataAttributes.slug) &&
+        Objects.equals(this.name, newCatalogChecklistTemplateDataAttributes.name) &&
         Objects.equals(this.description, newCatalogChecklistTemplateDataAttributes.description) &&
         Objects.equals(this.catalogType, newCatalogChecklistTemplateDataAttributes.catalogType) &&
         Objects.equals(this.scopeType, newCatalogChecklistTemplateDataAttributes.scopeType) &&
@@ -381,7 +411,7 @@ public class NewCatalogChecklistTemplateDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, catalogType, scopeType, scopeId, fields, owners);
+    return Objects.hash(slug, name, description, catalogType, scopeType, scopeId, fields, owners);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -395,6 +425,7 @@ public class NewCatalogChecklistTemplateDataAttributes {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class NewCatalogChecklistTemplateDataAttributes {\n");
+    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    catalogType: ").append(toIndentedString(catalogType)).append("\n");
@@ -424,6 +455,7 @@ public class NewCatalogChecklistTemplateDataAttributes {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("slug");
     openapiFields.add("name");
     openapiFields.add("description");
     openapiFields.add("catalog_type");
@@ -467,6 +499,9 @@ public class NewCatalogChecklistTemplateDataAttributes {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
+      }
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }

@@ -64,4 +64,20 @@ public class UpdateOnCallPayReportDataAttributesTest {
         // TODO: test scheduleIds
     }
 
+    /**
+     * Test the property 'timeZone'
+     */
+    @Test
+    public void timeZoneTest() {
+        // TODO: test timeZone
+    }
+
+    /**
+     * Test the property 'useRespondersTimeZone'
+     */
+    @Test
+    public void useRespondersTimeZoneTest() {
+        // TODO: test useRespondersTimeZone
+    }
+
 }

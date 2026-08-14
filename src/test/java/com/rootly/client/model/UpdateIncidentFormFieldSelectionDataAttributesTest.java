@@ -96,4 +96,28 @@ public class UpdateIncidentFormFieldSelectionDataAttributesTest {
         // TODO: test selectedUserIds
     }
 
+    /**
+     * Test the property 'selectedEnvironmentIds'
+     */
+    @Test
+    public void selectedEnvironmentIdsTest() {
+        // TODO: test selectedEnvironmentIds
+    }
+
+    /**
+     * Test the property 'selectedCauseIds'
+     */
+    @Test
+    public void selectedCauseIdsTest() {
+        // TODO: test selectedCauseIds
+    }
+
+    /**
+     * Test the property 'selectedIncidentTypeIds'
+     */
+    @Test
+    public void selectedIncidentTypeIdsTest() {
+        // TODO: test selectedIncidentTypeIds
+    }
+
 }

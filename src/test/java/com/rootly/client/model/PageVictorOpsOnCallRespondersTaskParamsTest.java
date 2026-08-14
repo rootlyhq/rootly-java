@@ -18,6 +18,9 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.AddActionItemTaskParamsPostToSlackChannelsInner;
+import com.rootly.client.model.PageVictorOpsOnCallRespondersTaskParamsAnyOf;
+import com.rootly.client.model.PageVictorOpsOnCallRespondersTaskParamsAnyOf1;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -38,6 +41,22 @@ public class PageVictorOpsOnCallRespondersTaskParamsTest {
     @Test
     public void testPageVictorOpsOnCallRespondersTaskParams() {
         // TODO: test PageVictorOpsOnCallRespondersTaskParams
+    }
+
+    /**
+     * Test the property 'users'
+     */
+    @Test
+    public void usersTest() {
+        // TODO: test users
+    }
+
+    /**
+     * Test the property 'escalationPolicies'
+     */
+    @Test
+    public void escalationPoliciesTest() {
+        // TODO: test escalationPolicies
     }
 
 }

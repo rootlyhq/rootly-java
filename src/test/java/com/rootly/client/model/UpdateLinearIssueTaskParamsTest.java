@@ -116,4 +116,12 @@ public class UpdateLinearIssueTaskParamsTest {
         // TODO: test assignUserEmail
     }
 
+    /**
+     * Test the property 'customFieldsMapping'
+     */
+    @Test
+    public void customFieldsMappingTest() {
+        // TODO: test customFieldsMapping
+    }
+
 }

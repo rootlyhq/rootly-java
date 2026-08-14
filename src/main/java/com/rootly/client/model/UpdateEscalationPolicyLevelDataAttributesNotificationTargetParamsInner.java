@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsInner
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsInner {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -68,6 +68,8 @@ public class UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsIn
     SCHEDULE("schedule"),
     
     SLACK_CHANNEL("slack_channel"),
+    
+    MICROSOFT_TEAMS_CHANNEL("microsoft_teams_channel"),
     
     SERVICE("service");
 

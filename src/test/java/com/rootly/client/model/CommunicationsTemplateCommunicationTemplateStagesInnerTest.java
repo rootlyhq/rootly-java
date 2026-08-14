@@ -18,9 +18,9 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.CommunicationsTemplateCommunicationTemplateStagesInnerData;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -39,51 +39,11 @@ public class CommunicationsTemplateCommunicationTemplateStagesInnerTest {
     }
 
     /**
-     * Test the property 'id'
+     * Test the property 'data'
      */
     @Test
-    public void idTest() {
-        // TODO: test id
-    }
-
-    /**
-     * Test the property 'communicationStageId'
-     */
-    @Test
-    public void communicationStageIdTest() {
-        // TODO: test communicationStageId
-    }
-
-    /**
-     * Test the property 'smsContent'
-     */
-    @Test
-    public void smsContentTest() {
-        // TODO: test smsContent
-    }
-
-    /**
-     * Test the property 'emailSubject'
-     */
-    @Test
-    public void emailSubjectTest() {
-        // TODO: test emailSubject
-    }
-
-    /**
-     * Test the property 'emailBody'
-     */
-    @Test
-    public void emailBodyTest() {
-        // TODO: test emailBody
-    }
-
-    /**
-     * Test the property 'slackContent'
-     */
-    @Test
-    public void slackContentTest() {
-        // TODO: test slackContent
+    public void dataTest() {
+        // TODO: test data
     }
 
 }

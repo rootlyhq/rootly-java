@@ -49,14 +49,6 @@ public class UpdateCustomFieldDataAttributesTest {
     }
 
     /**
-     * Test the property 'slug'
-     */
-    @Test
-    public void slugTest() {
-        // TODO: test slug
-    }
-
-    /**
      * Test the property 'description'
      */
     @Test

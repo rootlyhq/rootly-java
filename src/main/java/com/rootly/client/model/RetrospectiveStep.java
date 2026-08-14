@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * RetrospectiveStep
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RetrospectiveStep {
   public static final String SERIALIZED_NAME_RETROSPECTIVE_PROCESS_ID = "retrospective_process_id";
   @SerializedName(SERIALIZED_NAME_RETROSPECTIVE_PROCESS_ID)
@@ -104,6 +104,13 @@ public class RetrospectiveStep {
   public RetrospectiveStep() {
   }
 
+  public RetrospectiveStep(
+     String slug
+  ) {
+    this();
+    this.slug = slug;
+  }
+
   public RetrospectiveStep retrospectiveProcessId(@jakarta.annotation.Nonnull String retrospectiveProcessId) {
     this.retrospectiveProcessId = retrospectiveProcessId;
     return this;
@@ -142,11 +149,6 @@ public class RetrospectiveStep {
   }
 
 
-  public RetrospectiveStep slug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
-    return this;
-  }
-
   /**
    * The slug of the step
    * @return slug
@@ -156,9 +158,6 @@ public class RetrospectiveStep {
     return slug;
   }
 
-  public void setSlug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
-  }
 
 
   public RetrospectiveStep description(@jakarta.annotation.Nullable String description) {
