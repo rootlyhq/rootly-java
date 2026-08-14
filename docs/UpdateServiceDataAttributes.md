@@ -7,9 +7,10 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**slug** | **String** | Deprecated. &#x60;slug&#x60; is derived from &#x60;name&#x60;; any submitted value is ignored. This property will be removed from the request schema in a future version. |  [optional] |
 |**name** | **String** | The name of the service |  [optional] |
 |**description** | **String** | The description of the service |  [optional] |
-|**publicDescription** | **String** | The public description of the service |  [optional] |
+|**publicDescription** | **String** | The status page description of the service |  [optional] |
 |**notifyEmails** | **List&lt;String&gt;** | Emails to attach to the service |  [optional] |
 |**color** | **String** | The hex color of the service |  [optional] |
 |**position** | **Integer** | Position of the service |  [optional] |
@@ -25,8 +26,8 @@
 |**gitlabRepositoryBranch** | **String** | The GitLab repository branch associated to this service. eg: main |  [optional] |
 |**environmentIds** | **List&lt;String&gt;** | Environments associated with this service |  [optional] |
 |**serviceIds** | **List&lt;String&gt;** | Services dependent on this service |  [optional] |
-|**ownerGroupIds** | **List&lt;String&gt;** | Owner Teams associated with this service |  [optional] |
-|**ownerUserIds** | **List&lt;Integer&gt;** | Owner Users associated with this service |  [optional] |
+|**ownerGroupIds** | **List&lt;String&gt;** | Owner Teams associated with this service. Empty array removes all; omitting or null leaves unchanged. |  [optional] |
+|**ownerUserIds** | **List&lt;Integer&gt;** | Owner Users associated with this service. Empty array removes all; omitting or null leaves unchanged. |  [optional] |
 |**alertsEmailEnabled** | **Boolean** | Enable alerts through email |  [optional] |
 |**alertUrgencyId** | **String** | The alert urgency id of the service |  [optional] |
 |**escalationPolicyId** | **String** | The escalation policy id of the service |  [optional] |
@@ -37,6 +38,7 @@
 |**alertBroadcastChannel** | [**NewServiceDataAttributesAlertBroadcastChannel**](NewServiceDataAttributesAlertBroadcastChannel.md) |  |  [optional] |
 |**incidentBroadcastEnabled** | **Boolean** | Enable incidents to be broadcasted to a specific channel |  [optional] |
 |**incidentBroadcastChannel** | [**NewServiceDataAttributesIncidentBroadcastChannel**](NewServiceDataAttributesIncidentBroadcastChannel.md) |  |  [optional] |
+|**properties** | [**List&lt;NewCauseDataAttributesPropertiesInner&gt;**](NewCauseDataAttributesPropertiesInner.md) | Array of property values for this service. |  [optional] |
 
 
 

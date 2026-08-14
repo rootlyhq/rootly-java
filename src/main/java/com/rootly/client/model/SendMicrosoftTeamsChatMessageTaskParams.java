@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * SendMicrosoftTeamsChatMessageTaskParams
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SendMicrosoftTeamsChatMessageTaskParams {
   /**
    * Gets or Sets taskType
@@ -105,23 +105,23 @@ public class SendMicrosoftTeamsChatMessageTaskParams {
 
   public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
   public static final String SERIALIZED_NAME_CHATS = "chats";
   @SerializedName(SERIALIZED_NAME_CHATS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<AddActionItemTaskParamsPostToSlackChannelsInner> chats = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TEXT = "text";
   @SerializedName(SERIALIZED_NAME_TEXT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String text;
 
   public SendMicrosoftTeamsChatMessageTaskParams() {
   }
 
-  public SendMicrosoftTeamsChatMessageTaskParams taskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public SendMicrosoftTeamsChatMessageTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
     return this;
   }
@@ -130,17 +130,17 @@ public class SendMicrosoftTeamsChatMessageTaskParams {
    * Get taskType
    * @return taskType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TaskTypeEnum getTaskType() {
     return taskType;
   }
 
-  public void setTaskType(@javax.annotation.Nullable TaskTypeEnum taskType) {
+  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
   }
 
 
-  public SendMicrosoftTeamsChatMessageTaskParams chats(@javax.annotation.Nonnull List<AddActionItemTaskParamsPostToSlackChannelsInner> chats) {
+  public SendMicrosoftTeamsChatMessageTaskParams chats(@jakarta.annotation.Nonnull List<AddActionItemTaskParamsPostToSlackChannelsInner> chats) {
     this.chats = chats;
     return this;
   }
@@ -157,17 +157,17 @@ public class SendMicrosoftTeamsChatMessageTaskParams {
    * Get chats
    * @return chats
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<AddActionItemTaskParamsPostToSlackChannelsInner> getChats() {
     return chats;
   }
 
-  public void setChats(@javax.annotation.Nonnull List<AddActionItemTaskParamsPostToSlackChannelsInner> chats) {
+  public void setChats(@jakarta.annotation.Nonnull List<AddActionItemTaskParamsPostToSlackChannelsInner> chats) {
     this.chats = chats;
   }
 
 
-  public SendMicrosoftTeamsChatMessageTaskParams text(@javax.annotation.Nonnull String text) {
+  public SendMicrosoftTeamsChatMessageTaskParams text(@jakarta.annotation.Nonnull String text) {
     this.text = text;
     return this;
   }
@@ -176,12 +176,12 @@ public class SendMicrosoftTeamsChatMessageTaskParams {
    * The message text
    * @return text
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getText() {
     return text;
   }
 
-  public void setText(@javax.annotation.Nonnull String text) {
+  public void setText(@jakarta.annotation.Nonnull String text) {
     this.text = text;
   }
 

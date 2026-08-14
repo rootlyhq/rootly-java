@@ -15,6 +15,7 @@ package com.rootly.client.api;
 
 import com.rootly.client.ApiException;
 import com.rootly.client.model.ErrorsList;
+import com.rootly.client.model.OncallList;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -51,7 +52,7 @@ public class OnCallsApiTest {
         String filterServiceIds = null;
         String filterGroupIds = null;
         String filterNotificationTypes = null;
-        api.listOncalls(include, since, until, earliest, timeZone, filterEscalationPolicyIds, filterScheduleIds, filterUserIds, filterServiceIds, filterGroupIds, filterNotificationTypes);
+        OncallList response = api.listOncalls(include, since, until, earliest, timeZone, filterEscalationPolicyIds, filterScheduleIds, filterUserIds, filterServiceIds, filterGroupIds, filterNotificationTypes);
         // TODO: test validations
     }
 

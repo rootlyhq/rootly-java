@@ -220,7 +220,7 @@ public class Example {
 
 <a id="listCustomFields"></a>
 # **listCustomFields**
-> CustomFieldList listCustomFields(include, sort, pageNumber, pageSize, filterSlug, filterLabel, filterKind, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte)
+> CustomFieldList listCustomFields(include, sort, pageNumber, pageSize, filterSlug, filterLabel, filterKind, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterLabelEq, filterLabelNotEq, filterLabelIn, filterLabelNotIn, filterKindEq, filterKindNotEq, filterKindIn, filterKindNotIn, filterEnabledEq, filterEnabledNotEq, filterEnabledIn, filterEnabledNotIn)
 
 [DEPRECATED] List Custom Fields
 
@@ -258,8 +258,24 @@ public class Example {
     String filterCreatedAtGte = "filterCreatedAtGte_example"; // String | 
     String filterCreatedAtLt = "filterCreatedAtLt_example"; // String | 
     String filterCreatedAtLte = "filterCreatedAtLte_example"; // String | 
+    String filterSlugEq = "filterSlugEq_example"; // String | 
+    String filterSlugNotEq = "filterSlugNotEq_example"; // String | 
+    String filterSlugIn = "filterSlugIn_example"; // String | 
+    String filterSlugNotIn = "filterSlugNotIn_example"; // String | 
+    String filterLabelEq = "filterLabelEq_example"; // String | 
+    String filterLabelNotEq = "filterLabelNotEq_example"; // String | 
+    String filterLabelIn = "filterLabelIn_example"; // String | 
+    String filterLabelNotIn = "filterLabelNotIn_example"; // String | 
+    String filterKindEq = "filterKindEq_example"; // String | 
+    String filterKindNotEq = "filterKindNotEq_example"; // String | 
+    String filterKindIn = "filterKindIn_example"; // String | 
+    String filterKindNotIn = "filterKindNotIn_example"; // String | 
+    String filterEnabledEq = "filterEnabledEq_example"; // String | 
+    String filterEnabledNotEq = "filterEnabledNotEq_example"; // String | 
+    String filterEnabledIn = "filterEnabledIn_example"; // String | 
+    String filterEnabledNotIn = "filterEnabledNotIn_example"; // String | 
     try {
-      CustomFieldList result = apiInstance.listCustomFields(include, sort, pageNumber, pageSize, filterSlug, filterLabel, filterKind, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
+      CustomFieldList result = apiInstance.listCustomFields(include, sort, pageNumber, pageSize, filterSlug, filterLabel, filterKind, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterLabelEq, filterLabelNotEq, filterLabelIn, filterLabelNotIn, filterKindEq, filterKindNotEq, filterKindIn, filterKindNotIn, filterEnabledEq, filterEnabledNotEq, filterEnabledIn, filterEnabledNotIn);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DeprecatedCustomFieldsApi#listCustomFields");
@@ -288,6 +304,22 @@ public class Example {
 | **filterCreatedAtGte** | **String**|  | [optional] |
 | **filterCreatedAtLt** | **String**|  | [optional] |
 | **filterCreatedAtLte** | **String**|  | [optional] |
+| **filterSlugEq** | **String**|  | [optional] |
+| **filterSlugNotEq** | **String**|  | [optional] |
+| **filterSlugIn** | **String**|  | [optional] |
+| **filterSlugNotIn** | **String**|  | [optional] |
+| **filterLabelEq** | **String**|  | [optional] |
+| **filterLabelNotEq** | **String**|  | [optional] |
+| **filterLabelIn** | **String**|  | [optional] |
+| **filterLabelNotIn** | **String**|  | [optional] |
+| **filterKindEq** | **String**|  | [optional] |
+| **filterKindNotEq** | **String**|  | [optional] |
+| **filterKindIn** | **String**|  | [optional] |
+| **filterKindNotIn** | **String**|  | [optional] |
+| **filterEnabledEq** | **String**|  | [optional] |
+| **filterEnabledNotEq** | **String**|  | [optional] |
+| **filterEnabledIn** | **String**|  | [optional] |
+| **filterEnabledNotIn** | **String**|  | [optional] |
 
 ### Return type
 

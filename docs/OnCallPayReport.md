@@ -22,7 +22,8 @@
 |**hasSingleRate** | **Boolean** | Whether a single rate is applied to all users. |  [optional] |
 |**enabledGranularTimeBreakdown** | **Boolean** | Whether granular time breakdown is enabled. |  [optional] |
 |**lastGeneratedAt** | **OffsetDateTime** | When the report was last generated. |  [optional] |
-|**timeZone** | **String** | The team&#39;s IANA timezone used to interpret start_date and end_date. |  [optional] |
+|**timeZone** | **String** | The IANA timezone used to compute day and weekend boundaries for this report. Defaults to the team&#39;s timezone. |  [optional] |
+|**useRespondersTimeZone** | **Boolean** | When true, each responder&#39;s personal timezone is used for their pay calculation; otherwise the report-wide time_zone is used. |  [optional] |
 |**csvFileUrl** | **URI** | Download URL for the generated CSV report. Null until the report is generated. |  [optional] |
 |**xlsxFileUrl** | **URI** | Download URL for the generated XLSX report. Null until the report is generated. |  [optional] |
 |**createdAt** | **OffsetDateTime** |  |  |

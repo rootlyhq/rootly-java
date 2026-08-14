@@ -170,6 +170,14 @@ public class OnCallPayReportTest {
     }
 
     /**
+     * Test the property 'useRespondersTimeZone'
+     */
+    @Test
+    public void useRespondersTimeZoneTest() {
+        // TODO: test useRespondersTimeZone
+    }
+
+    /**
      * Test the property 'csvFileUrl'
      */
     @Test

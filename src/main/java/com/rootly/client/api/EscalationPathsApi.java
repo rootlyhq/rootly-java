@@ -495,6 +495,7 @@ public class EscalationPathsApi {
      * Build call for listEscalationPaths
      * @param escalationPolicyId  (required)
      * @param include comma separated if needed. eg: escalation_policy_levels (optional)
+     * @param filterPathType Filter by path_type. Returns all path types when omitted. (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
      * @param _callback Callback for upload/download progress
@@ -507,7 +508,7 @@ public class EscalationPathsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listEscalationPathsCall(@jakarta.annotation.Nonnull String escalationPolicyId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listEscalationPathsCall(@jakarta.annotation.Nonnull String escalationPolicyId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterPathType, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -535,6 +536,10 @@ public class EscalationPathsApi {
 
         if (include != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("include", include));
+        }
+
+        if (filterPathType != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[path_type]", filterPathType));
         }
 
         if (pageNumber != null) {
@@ -565,13 +570,13 @@ public class EscalationPathsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listEscalationPathsValidateBeforeCall(@jakarta.annotation.Nonnull String escalationPolicyId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listEscalationPathsValidateBeforeCall(@jakarta.annotation.Nonnull String escalationPolicyId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterPathType, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'escalationPolicyId' is set
         if (escalationPolicyId == null) {
             throw new ApiException("Missing the required parameter 'escalationPolicyId' when calling listEscalationPaths(Async)");
         }
 
-        return listEscalationPathsCall(escalationPolicyId, include, pageNumber, pageSize, _callback);
+        return listEscalationPathsCall(escalationPolicyId, include, filterPathType, pageNumber, pageSize, _callback);
 
     }
 
@@ -580,6 +585,7 @@ public class EscalationPathsApi {
      * List escalation paths
      * @param escalationPolicyId  (required)
      * @param include comma separated if needed. eg: escalation_policy_levels (optional)
+     * @param filterPathType Filter by path_type. Returns all path types when omitted. (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
      * @return EscalationPolicyPathList
@@ -591,8 +597,8 @@ public class EscalationPathsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public EscalationPolicyPathList listEscalationPaths(@jakarta.annotation.Nonnull String escalationPolicyId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
-        ApiResponse<EscalationPolicyPathList> localVarResp = listEscalationPathsWithHttpInfo(escalationPolicyId, include, pageNumber, pageSize);
+    public EscalationPolicyPathList listEscalationPaths(@jakarta.annotation.Nonnull String escalationPolicyId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterPathType, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
+        ApiResponse<EscalationPolicyPathList> localVarResp = listEscalationPathsWithHttpInfo(escalationPolicyId, include, filterPathType, pageNumber, pageSize);
         return localVarResp.getData();
     }
 
@@ -601,6 +607,7 @@ public class EscalationPathsApi {
      * List escalation paths
      * @param escalationPolicyId  (required)
      * @param include comma separated if needed. eg: escalation_policy_levels (optional)
+     * @param filterPathType Filter by path_type. Returns all path types when omitted. (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
      * @return ApiResponse&lt;EscalationPolicyPathList&gt;
@@ -612,8 +619,8 @@ public class EscalationPathsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<EscalationPolicyPathList> listEscalationPathsWithHttpInfo(@jakarta.annotation.Nonnull String escalationPolicyId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
-        okhttp3.Call localVarCall = listEscalationPathsValidateBeforeCall(escalationPolicyId, include, pageNumber, pageSize, null);
+    public ApiResponse<EscalationPolicyPathList> listEscalationPathsWithHttpInfo(@jakarta.annotation.Nonnull String escalationPolicyId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterPathType, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
+        okhttp3.Call localVarCall = listEscalationPathsValidateBeforeCall(escalationPolicyId, include, filterPathType, pageNumber, pageSize, null);
         Type localVarReturnType = new TypeToken<EscalationPolicyPathList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -623,6 +630,7 @@ public class EscalationPathsApi {
      * List escalation paths
      * @param escalationPolicyId  (required)
      * @param include comma separated if needed. eg: escalation_policy_levels (optional)
+     * @param filterPathType Filter by path_type. Returns all path types when omitted. (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -635,9 +643,9 @@ public class EscalationPathsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listEscalationPathsAsync(@jakarta.annotation.Nonnull String escalationPolicyId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback<EscalationPolicyPathList> _callback) throws ApiException {
+    public okhttp3.Call listEscalationPathsAsync(@jakarta.annotation.Nonnull String escalationPolicyId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterPathType, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback<EscalationPolicyPathList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listEscalationPathsValidateBeforeCall(escalationPolicyId, include, pageNumber, pageSize, _callback);
+        okhttp3.Call localVarCall = listEscalationPathsValidateBeforeCall(escalationPolicyId, include, filterPathType, pageNumber, pageSize, _callback);
         Type localVarReturnType = new TypeToken<EscalationPolicyPathList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

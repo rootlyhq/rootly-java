@@ -478,10 +478,19 @@ public class SchedulesApi {
      * @param include  (optional)
      * @param filterSearch  (optional)
      * @param filterName  (optional)
+     * @param filterTeamIds Filter schedules by owning team IDs. Comma-separate multiple values. (optional)
      * @param filterCreatedAtGt  (optional)
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
+     * @param filterTeamIdsEq  (optional)
+     * @param filterTeamIdsNotEq  (optional)
+     * @param filterTeamIdsIn  (optional)
+     * @param filterTeamIdsNotIn  (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
      * @param _callback Callback for upload/download progress
@@ -494,7 +503,7 @@ public class SchedulesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listSchedulesCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listSchedulesCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterTeamIds, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterTeamIdsEq, @jakarta.annotation.Nullable String filterTeamIdsNotEq, @jakarta.annotation.Nullable String filterTeamIdsIn, @jakarta.annotation.Nullable String filterTeamIdsNotIn, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -531,6 +540,10 @@ public class SchedulesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name]", filterName));
         }
 
+        if (filterTeamIds != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[team_ids]", filterTeamIds));
+        }
+
         if (filterCreatedAtGt != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[created_at][gt]", filterCreatedAtGt));
         }
@@ -545,6 +558,38 @@ public class SchedulesApi {
 
         if (filterCreatedAtLte != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[created_at][lte]", filterCreatedAtLte));
+        }
+
+        if (filterNameEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][eq]", filterNameEq));
+        }
+
+        if (filterNameNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][not_eq]", filterNameNotEq));
+        }
+
+        if (filterNameIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][in]", filterNameIn));
+        }
+
+        if (filterNameNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][not_in]", filterNameNotIn));
+        }
+
+        if (filterTeamIdsEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[team_ids][eq]", filterTeamIdsEq));
+        }
+
+        if (filterTeamIdsNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[team_ids][not_eq]", filterTeamIdsNotEq));
+        }
+
+        if (filterTeamIdsIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[team_ids][in]", filterTeamIdsIn));
+        }
+
+        if (filterTeamIdsNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[team_ids][not_in]", filterTeamIdsNotIn));
         }
 
         if (pageNumber != null) {
@@ -575,8 +620,8 @@ public class SchedulesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listSchedulesValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
-        return listSchedulesCall(include, filterSearch, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize, _callback);
+    private okhttp3.Call listSchedulesValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterTeamIds, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterTeamIdsEq, @jakarta.annotation.Nullable String filterTeamIdsNotEq, @jakarta.annotation.Nullable String filterTeamIdsIn, @jakarta.annotation.Nullable String filterTeamIdsNotIn, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+        return listSchedulesCall(include, filterSearch, filterName, filterTeamIds, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterTeamIdsEq, filterTeamIdsNotEq, filterTeamIdsIn, filterTeamIdsNotIn, pageNumber, pageSize, _callback);
 
     }
 
@@ -586,10 +631,19 @@ public class SchedulesApi {
      * @param include  (optional)
      * @param filterSearch  (optional)
      * @param filterName  (optional)
+     * @param filterTeamIds Filter schedules by owning team IDs. Comma-separate multiple values. (optional)
      * @param filterCreatedAtGt  (optional)
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
+     * @param filterTeamIdsEq  (optional)
+     * @param filterTeamIdsNotEq  (optional)
+     * @param filterTeamIdsIn  (optional)
+     * @param filterTeamIdsNotIn  (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
      * @return ScheduleList
@@ -601,8 +655,8 @@ public class SchedulesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ScheduleList listSchedules(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
-        ApiResponse<ScheduleList> localVarResp = listSchedulesWithHttpInfo(include, filterSearch, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize);
+    public ScheduleList listSchedules(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterTeamIds, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterTeamIdsEq, @jakarta.annotation.Nullable String filterTeamIdsNotEq, @jakarta.annotation.Nullable String filterTeamIdsIn, @jakarta.annotation.Nullable String filterTeamIdsNotIn, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
+        ApiResponse<ScheduleList> localVarResp = listSchedulesWithHttpInfo(include, filterSearch, filterName, filterTeamIds, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterTeamIdsEq, filterTeamIdsNotEq, filterTeamIdsIn, filterTeamIdsNotIn, pageNumber, pageSize);
         return localVarResp.getData();
     }
 
@@ -612,10 +666,19 @@ public class SchedulesApi {
      * @param include  (optional)
      * @param filterSearch  (optional)
      * @param filterName  (optional)
+     * @param filterTeamIds Filter schedules by owning team IDs. Comma-separate multiple values. (optional)
      * @param filterCreatedAtGt  (optional)
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
+     * @param filterTeamIdsEq  (optional)
+     * @param filterTeamIdsNotEq  (optional)
+     * @param filterTeamIdsIn  (optional)
+     * @param filterTeamIdsNotIn  (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
      * @return ApiResponse&lt;ScheduleList&gt;
@@ -627,8 +690,8 @@ public class SchedulesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ScheduleList> listSchedulesWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
-        okhttp3.Call localVarCall = listSchedulesValidateBeforeCall(include, filterSearch, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize, null);
+    public ApiResponse<ScheduleList> listSchedulesWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterTeamIds, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterTeamIdsEq, @jakarta.annotation.Nullable String filterTeamIdsNotEq, @jakarta.annotation.Nullable String filterTeamIdsIn, @jakarta.annotation.Nullable String filterTeamIdsNotIn, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
+        okhttp3.Call localVarCall = listSchedulesValidateBeforeCall(include, filterSearch, filterName, filterTeamIds, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterTeamIdsEq, filterTeamIdsNotEq, filterTeamIdsIn, filterTeamIdsNotIn, pageNumber, pageSize, null);
         Type localVarReturnType = new TypeToken<ScheduleList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -639,10 +702,19 @@ public class SchedulesApi {
      * @param include  (optional)
      * @param filterSearch  (optional)
      * @param filterName  (optional)
+     * @param filterTeamIds Filter schedules by owning team IDs. Comma-separate multiple values. (optional)
      * @param filterCreatedAtGt  (optional)
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
+     * @param filterTeamIdsEq  (optional)
+     * @param filterTeamIdsNotEq  (optional)
+     * @param filterTeamIdsIn  (optional)
+     * @param filterTeamIdsNotIn  (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -655,9 +727,9 @@ public class SchedulesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listSchedulesAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback<ScheduleList> _callback) throws ApiException {
+    public okhttp3.Call listSchedulesAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterTeamIds, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterTeamIdsEq, @jakarta.annotation.Nullable String filterTeamIdsNotEq, @jakarta.annotation.Nullable String filterTeamIdsIn, @jakarta.annotation.Nullable String filterTeamIdsNotIn, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback<ScheduleList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listSchedulesValidateBeforeCall(include, filterSearch, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize, _callback);
+        okhttp3.Call localVarCall = listSchedulesValidateBeforeCall(include, filterSearch, filterName, filterTeamIds, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterTeamIdsEq, filterTeamIdsNotEq, filterTeamIdsIn, filterTeamIdsNotIn, pageNumber, pageSize, _callback);
         Type localVarReturnType = new TypeToken<ScheduleList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

@@ -48,37 +48,37 @@ import com.rootly.client.JSON;
 /**
  * IncidentZoomMeetingGlobalDialInNumbersInner
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class IncidentZoomMeetingGlobalDialInNumbersInner {
   public static final String SERIALIZED_NAME_COUNTRY = "country";
   @SerializedName(SERIALIZED_NAME_COUNTRY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String country;
 
   public static final String SERIALIZED_NAME_COUNTRY_NAME = "country_name";
   @SerializedName(SERIALIZED_NAME_COUNTRY_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String countryName;
 
   public static final String SERIALIZED_NAME_CITY = "city";
   @SerializedName(SERIALIZED_NAME_CITY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String city;
 
   public static final String SERIALIZED_NAME_NUMBER = "number";
   @SerializedName(SERIALIZED_NAME_NUMBER)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String number;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String type;
 
   public IncidentZoomMeetingGlobalDialInNumbersInner() {
   }
 
-  public IncidentZoomMeetingGlobalDialInNumbersInner country(@javax.annotation.Nullable String country) {
+  public IncidentZoomMeetingGlobalDialInNumbersInner country(@jakarta.annotation.Nullable String country) {
     this.country = country;
     return this;
   }
@@ -87,17 +87,17 @@ public class IncidentZoomMeetingGlobalDialInNumbersInner {
    * Get country
    * @return country
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCountry() {
     return country;
   }
 
-  public void setCountry(@javax.annotation.Nullable String country) {
+  public void setCountry(@jakarta.annotation.Nullable String country) {
     this.country = country;
   }
 
 
-  public IncidentZoomMeetingGlobalDialInNumbersInner countryName(@javax.annotation.Nullable String countryName) {
+  public IncidentZoomMeetingGlobalDialInNumbersInner countryName(@jakarta.annotation.Nullable String countryName) {
     this.countryName = countryName;
     return this;
   }
@@ -106,17 +106,17 @@ public class IncidentZoomMeetingGlobalDialInNumbersInner {
    * Get countryName
    * @return countryName
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCountryName() {
     return countryName;
   }
 
-  public void setCountryName(@javax.annotation.Nullable String countryName) {
+  public void setCountryName(@jakarta.annotation.Nullable String countryName) {
     this.countryName = countryName;
   }
 
 
-  public IncidentZoomMeetingGlobalDialInNumbersInner city(@javax.annotation.Nullable String city) {
+  public IncidentZoomMeetingGlobalDialInNumbersInner city(@jakarta.annotation.Nullable String city) {
     this.city = city;
     return this;
   }
@@ -125,17 +125,17 @@ public class IncidentZoomMeetingGlobalDialInNumbersInner {
    * Get city
    * @return city
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCity() {
     return city;
   }
 
-  public void setCity(@javax.annotation.Nullable String city) {
+  public void setCity(@jakarta.annotation.Nullable String city) {
     this.city = city;
   }
 
 
-  public IncidentZoomMeetingGlobalDialInNumbersInner number(@javax.annotation.Nullable String number) {
+  public IncidentZoomMeetingGlobalDialInNumbersInner number(@jakarta.annotation.Nullable String number) {
     this.number = number;
     return this;
   }
@@ -144,17 +144,17 @@ public class IncidentZoomMeetingGlobalDialInNumbersInner {
    * Get number
    * @return number
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getNumber() {
     return number;
   }
 
-  public void setNumber(@javax.annotation.Nullable String number) {
+  public void setNumber(@jakarta.annotation.Nullable String number) {
     this.number = number;
   }
 
 
-  public IncidentZoomMeetingGlobalDialInNumbersInner type(@javax.annotation.Nullable String type) {
+  public IncidentZoomMeetingGlobalDialInNumbersInner type(@jakarta.annotation.Nullable String type) {
     this.type = type;
     return this;
   }
@@ -163,12 +163,12 @@ public class IncidentZoomMeetingGlobalDialInNumbersInner {
    * Get type
    * @return type
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nullable String type) {
+  public void setType(@jakarta.annotation.Nullable String type) {
     this.type = type;
   }
 

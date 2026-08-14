@@ -49,16 +49,18 @@ import com.rootly.client.JSON;
 /**
  * NewAlertRouteDataAttributesRulesInnerDestinationsInner
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewAlertRouteDataAttributesRulesInnerDestinationsInner {
   /**
-   * The type of the target
+   * The type of the target. Please contact support if you encounter issues using &#x60;Functionality&#x60; as a target type.
    */
   @JsonAdapter(TargetTypeEnum.Adapter.class)
   public enum TargetTypeEnum {
     SERVICE("Service"),
     
     GROUP("Group"),
+    
+    FUNCTIONALITY("Functionality"),
     
     ESCALATION_POLICY("EscalationPolicy");
 
@@ -124,7 +126,7 @@ public class NewAlertRouteDataAttributesRulesInnerDestinationsInner {
   }
 
   /**
-   * The type of the target
+   * The type of the target. Please contact support if you encounter issues using &#x60;Functionality&#x60; as a target type.
    * @return targetType
    */
   @jakarta.annotation.Nonnull

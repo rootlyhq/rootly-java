@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,8 +49,14 @@ import com.rootly.client.JSON;
 /**
  * UpdateAlertFieldDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateAlertFieldDataAttributes {
+  public static final String SERIALIZED_NAME_SLUG = "slug";
+  @Deprecated
+  @SerializedName(SERIALIZED_NAME_SLUG)
+  @jakarta.annotation.Nullable
+  private String slug;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @jakarta.annotation.Nullable
@@ -57,6 +64,29 @@ public class UpdateAlertFieldDataAttributes {
 
   public UpdateAlertFieldDataAttributes() {
   }
+
+  @Deprecated
+  public UpdateAlertFieldDataAttributes slug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+    return this;
+  }
+
+  /**
+   * Deprecated. &#x60;slug&#x60; is derived from &#x60;name&#x60;; any submitted value is ignored. This property will be removed from the request schema in a future version.
+   * @return slug
+   * @deprecated
+   */
+  @Deprecated
+  @jakarta.annotation.Nullable
+  public String getSlug() {
+    return slug;
+  }
+
+  @Deprecated
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+  }
+
 
   public UpdateAlertFieldDataAttributes name(@jakarta.annotation.Nullable String name) {
     this.name = name;
@@ -87,18 +117,31 @@ public class UpdateAlertFieldDataAttributes {
       return false;
     }
     UpdateAlertFieldDataAttributes updateAlertFieldDataAttributes = (UpdateAlertFieldDataAttributes) o;
-    return Objects.equals(this.name, updateAlertFieldDataAttributes.name);
+    return Objects.equals(this.slug, updateAlertFieldDataAttributes.slug) &&
+        Objects.equals(this.name, updateAlertFieldDataAttributes.name);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name);
+    return Objects.hash(slug, name);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdateAlertFieldDataAttributes {\n");
+    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -122,6 +165,7 @@ public class UpdateAlertFieldDataAttributes {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("slug");
     openapiFields.add("name");
 
     // a set of required properties/fields (JSON key names)
@@ -149,6 +193,9 @@ public class UpdateAlertFieldDataAttributes {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
+      }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }

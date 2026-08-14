@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**name** | **String** | The name of the checklist template |  |
-|**slug** | **String** | The slug of the checklist template |  [optional] |
+|**slug** | **String** | The slug of the checklist template |  [optional] [readonly] |
 |**description** | **String** | The description of the checklist template |  [optional] |
 |**catalogType** | [**CatalogTypeEnum**](#CatalogTypeEnum) | The catalog type |  |
 |**scopeType** | [**ScopeTypeEnum**](#ScopeTypeEnum) | The scope type |  |

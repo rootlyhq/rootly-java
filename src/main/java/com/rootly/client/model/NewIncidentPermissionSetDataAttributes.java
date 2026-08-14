@@ -51,17 +51,18 @@ import com.rootly.client.JSON;
 /**
  * NewIncidentPermissionSetDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewIncidentPermissionSetDataAttributes {
+  public static final String SERIALIZED_NAME_SLUG = "slug";
+  @Deprecated
+  @SerializedName(SERIALIZED_NAME_SLUG)
+  @jakarta.annotation.Nullable
+  private String slug;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @jakarta.annotation.Nonnull
   private String name;
-
-  public static final String SERIALIZED_NAME_SLUG = "slug";
-  @SerializedName(SERIALIZED_NAME_SLUG)
-  @jakarta.annotation.Nullable
-  private String slug;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -193,6 +194,29 @@ public class NewIncidentPermissionSetDataAttributes {
   public NewIncidentPermissionSetDataAttributes() {
   }
 
+  @Deprecated
+  public NewIncidentPermissionSetDataAttributes slug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+    return this;
+  }
+
+  /**
+   * Deprecated. &#x60;slug&#x60; is derived from &#x60;name&#x60;; any submitted value is ignored. This property will be removed from the request schema in a future version.
+   * @return slug
+   * @deprecated
+   */
+  @Deprecated
+  @jakarta.annotation.Nullable
+  public String getSlug() {
+    return slug;
+  }
+
+  @Deprecated
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+  }
+
+
   public NewIncidentPermissionSetDataAttributes name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
@@ -209,25 +233,6 @@ public class NewIncidentPermissionSetDataAttributes {
 
   public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
-  }
-
-
-  public NewIncidentPermissionSetDataAttributes slug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
-    return this;
-  }
-
-  /**
-   * The incident permission set slug.
-   * @return slug
-   */
-  @jakarta.annotation.Nullable
-  public String getSlug() {
-    return slug;
-  }
-
-  public void setSlug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
   }
 
 
@@ -314,8 +319,8 @@ public class NewIncidentPermissionSetDataAttributes {
       return false;
     }
     NewIncidentPermissionSetDataAttributes newIncidentPermissionSetDataAttributes = (NewIncidentPermissionSetDataAttributes) o;
-    return Objects.equals(this.name, newIncidentPermissionSetDataAttributes.name) &&
-        Objects.equals(this.slug, newIncidentPermissionSetDataAttributes.slug) &&
+    return Objects.equals(this.slug, newIncidentPermissionSetDataAttributes.slug) &&
+        Objects.equals(this.name, newIncidentPermissionSetDataAttributes.name) &&
         Objects.equals(this.description, newIncidentPermissionSetDataAttributes.description) &&
         Objects.equals(this.privateIncidentPermissions, newIncidentPermissionSetDataAttributes.privateIncidentPermissions) &&
         Objects.equals(this.publicIncidentPermissions, newIncidentPermissionSetDataAttributes.publicIncidentPermissions);
@@ -327,7 +332,7 @@ public class NewIncidentPermissionSetDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, slug, description, privateIncidentPermissions, publicIncidentPermissions);
+    return Objects.hash(slug, name, description, privateIncidentPermissions, publicIncidentPermissions);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -341,8 +346,8 @@ public class NewIncidentPermissionSetDataAttributes {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class NewIncidentPermissionSetDataAttributes {\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    privateIncidentPermissions: ").append(toIndentedString(privateIncidentPermissions)).append("\n");
     sb.append("    publicIncidentPermissions: ").append(toIndentedString(publicIncidentPermissions)).append("\n");
@@ -368,8 +373,8 @@ public class NewIncidentPermissionSetDataAttributes {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("name");
     openapiFields.add("slug");
+    openapiFields.add("name");
     openapiFields.add("description");
     openapiFields.add("private_incident_permissions");
     openapiFields.add("public_incident_permissions");
@@ -407,11 +412,11 @@ public class NewIncidentPermissionSetDataAttributes {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
       if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
+      }
+      if (!jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));

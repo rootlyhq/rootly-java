@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**name** | **String** | The role name. |  |
-|**slug** | **String** | The role slug. |  |
+|**slug** | **String** | The role slug. |  [optional] [readonly] |
 |**systemRole** | [**List&lt;SystemRoleEnum&gt;**](#List&lt;SystemRoleEnum&gt;) | The kind of role |  [optional] |
 |**alertSourcesPermissions** | [**List&lt;AlertSourcesPermissionsEnum&gt;**](#List&lt;AlertSourcesPermissionsEnum&gt;) |  |  [optional] |
 |**alertUrgencyPermissions** | [**List&lt;AlertUrgencyPermissionsEnum&gt;**](#List&lt;AlertUrgencyPermissionsEnum&gt;) |  |  [optional] |
@@ -30,8 +30,10 @@
 |**scheduleOverridePermissions** | [**List&lt;ScheduleOverridePermissionsEnum&gt;**](#List&lt;ScheduleOverridePermissionsEnum&gt;) |  |  [optional] |
 |**schedulesPermissions** | [**List&lt;SchedulesPermissionsEnum&gt;**](#List&lt;SchedulesPermissionsEnum&gt;) |  |  [optional] |
 |**servicesPermissions** | [**List&lt;ServicesPermissionsEnum&gt;**](#List&lt;ServicesPermissionsEnum&gt;) |  |  [optional] |
+|**functionalitiesPermissions** | [**List&lt;FunctionalitiesPermissionsEnum&gt;**](#List&lt;FunctionalitiesPermissionsEnum&gt;) |  |  [optional] |
 |**webhooksPermissions** | [**List&lt;WebhooksPermissionsEnum&gt;**](#List&lt;WebhooksPermissionsEnum&gt;) |  |  [optional] |
 |**workflowsPermissions** | [**List&lt;WorkflowsPermissionsEnum&gt;**](#List&lt;WorkflowsPermissionsEnum&gt;) |  |  [optional] |
+|**catalogsPermissions** | [**List&lt;CatalogsPermissionsEnum&gt;**](#List&lt;CatalogsPermissionsEnum&gt;) |  |  [optional] |
 |**createdAt** | **String** |  |  |
 |**updatedAt** | **String** |  |  |
 
@@ -130,6 +132,7 @@
 | CREATE | &quot;create&quot; |
 | UPDATE | &quot;update&quot; |
 | READ | &quot;read&quot; |
+| DELETE | &quot;delete&quot; |
 
 
 
@@ -260,6 +263,17 @@
 
 
 
+## Enum: List&lt;FunctionalitiesPermissionsEnum&gt;
+
+| Name | Value |
+|---- | -----|
+| CREATE | &quot;create&quot; |
+| READ | &quot;read&quot; |
+| UPDATE | &quot;update&quot; |
+| DELETE | &quot;delete&quot; |
+
+
+
 ## Enum: List&lt;WebhooksPermissionsEnum&gt;
 
 | Name | Value |
@@ -272,6 +286,17 @@
 
 
 ## Enum: List&lt;WorkflowsPermissionsEnum&gt;
+
+| Name | Value |
+|---- | -----|
+| CREATE | &quot;create&quot; |
+| READ | &quot;read&quot; |
+| UPDATE | &quot;update&quot; |
+| DELETE | &quot;delete&quot; |
+
+
+
+## Enum: List&lt;CatalogsPermissionsEnum&gt;
 
 | Name | Value |
 |---- | -----|

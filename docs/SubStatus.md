@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**name** | **String** |  |  |
-|**slug** | **String** |  |  [optional] |
+|**slug** | **String** |  |  [optional] [readonly] |
 |**description** | **String** |  |  [optional] |
 |**parentStatus** | [**ParentStatusEnum**](#ParentStatusEnum) |  |  |
 |**position** | **Integer** |  |  [optional] |

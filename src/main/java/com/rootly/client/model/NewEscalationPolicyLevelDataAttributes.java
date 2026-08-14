@@ -52,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * NewEscalationPolicyLevelDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewEscalationPolicyLevelDataAttributes {
   public static final String SERIALIZED_NAME_DELAY = "delay";
   @SerializedName(SERIALIZED_NAME_DELAY)
@@ -123,7 +123,7 @@ public class NewEscalationPolicyLevelDataAttributes {
   public static final String SERIALIZED_NAME_PAGING_STRATEGY_CONFIGURATION_STRATEGY = "paging_strategy_configuration_strategy";
   @SerializedName(SERIALIZED_NAME_PAGING_STRATEGY_CONFIGURATION_STRATEGY)
   @jakarta.annotation.Nullable
-  private PagingStrategyConfigurationStrategyEnum pagingStrategyConfigurationStrategy;
+  private PagingStrategyConfigurationStrategyEnum pagingStrategyConfigurationStrategy = PagingStrategyConfigurationStrategyEnum.DEFAULT;
 
   /**
    * Gets or Sets pagingStrategyConfigurationScheduleStrategy
@@ -180,7 +180,131 @@ public class NewEscalationPolicyLevelDataAttributes {
   public static final String SERIALIZED_NAME_PAGING_STRATEGY_CONFIGURATION_SCHEDULE_STRATEGY = "paging_strategy_configuration_schedule_strategy";
   @SerializedName(SERIALIZED_NAME_PAGING_STRATEGY_CONFIGURATION_SCHEDULE_STRATEGY)
   @jakarta.annotation.Nullable
-  private PagingStrategyConfigurationScheduleStrategyEnum pagingStrategyConfigurationScheduleStrategy;
+  private PagingStrategyConfigurationScheduleStrategyEnum pagingStrategyConfigurationScheduleStrategy = PagingStrategyConfigurationScheduleStrategyEnum.ON_CALL_ONLY;
+
+  public static final String SERIALIZED_NAME_PAGING_STRATEGY_CONFIGURATION_REPEATS = "paging_strategy_configuration_repeats";
+  @SerializedName(SERIALIZED_NAME_PAGING_STRATEGY_CONFIGURATION_REPEATS)
+  @jakarta.annotation.Nullable
+  private Integer pagingStrategyConfigurationRepeats;
+
+  /**
+   * Controls how repeats are interpreted: &#39;users&#39; pages exactly N users, &#39;all&#39; pages everyone once.
+   */
+  @JsonAdapter(PagingStrategyConfigurationRepeatsModeEnum.Adapter.class)
+  public enum PagingStrategyConfigurationRepeatsModeEnum {
+    USERS("users"),
+    
+    ALL("all");
+
+    private String value;
+
+    PagingStrategyConfigurationRepeatsModeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static PagingStrategyConfigurationRepeatsModeEnum fromValue(String value) {
+      for (PagingStrategyConfigurationRepeatsModeEnum b : PagingStrategyConfigurationRepeatsModeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<PagingStrategyConfigurationRepeatsModeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final PagingStrategyConfigurationRepeatsModeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public PagingStrategyConfigurationRepeatsModeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return PagingStrategyConfigurationRepeatsModeEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      PagingStrategyConfigurationRepeatsModeEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_PAGING_STRATEGY_CONFIGURATION_REPEATS_MODE = "paging_strategy_configuration_repeats_mode";
+  @SerializedName(SERIALIZED_NAME_PAGING_STRATEGY_CONFIGURATION_REPEATS_MODE)
+  @jakarta.annotation.Nullable
+  private PagingStrategyConfigurationRepeatsModeEnum pagingStrategyConfigurationRepeatsMode;
+
+  /**
+   * Scope of rotation ordering: active rotation members only, or entire schedule.
+   */
+  @JsonAdapter(PagingStrategyConfigurationRotationScopeEnum.Adapter.class)
+  public enum PagingStrategyConfigurationRotationScopeEnum {
+    ACTIVE_ROTATION("active_rotation"),
+    
+    ENTIRE_SCHEDULE("entire_schedule");
+
+    private String value;
+
+    PagingStrategyConfigurationRotationScopeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static PagingStrategyConfigurationRotationScopeEnum fromValue(String value) {
+      for (PagingStrategyConfigurationRotationScopeEnum b : PagingStrategyConfigurationRotationScopeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<PagingStrategyConfigurationRotationScopeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final PagingStrategyConfigurationRotationScopeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public PagingStrategyConfigurationRotationScopeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return PagingStrategyConfigurationRotationScopeEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      PagingStrategyConfigurationRotationScopeEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_PAGING_STRATEGY_CONFIGURATION_ROTATION_SCOPE = "paging_strategy_configuration_rotation_scope";
+  @SerializedName(SERIALIZED_NAME_PAGING_STRATEGY_CONFIGURATION_ROTATION_SCOPE)
+  @jakarta.annotation.Nullable
+  private PagingStrategyConfigurationRotationScopeEnum pagingStrategyConfigurationRotationScope;
+
+  public static final String SERIALIZED_NAME_PAGING_STRATEGY_CONFIGURATION_PAGE_USERS_COUNT = "paging_strategy_configuration_page_users_count";
+  @SerializedName(SERIALIZED_NAME_PAGING_STRATEGY_CONFIGURATION_PAGE_USERS_COUNT)
+  @jakarta.annotation.Nullable
+  private Integer pagingStrategyConfigurationPageUsersCount;
 
   public static final String SERIALIZED_NAME_ESCALATION_POLICY_PATH_ID = "escalation_policy_path_id";
   @SerializedName(SERIALIZED_NAME_ESCALATION_POLICY_PATH_ID)
@@ -201,7 +325,7 @@ public class NewEscalationPolicyLevelDataAttributes {
   }
 
   /**
-   * Delay before notification targets will be alerted.
+   * Delay before notifying targets in the next Escalation Level.
    * @return delay
    */
   @jakarta.annotation.Nullable
@@ -271,6 +395,82 @@ public class NewEscalationPolicyLevelDataAttributes {
   }
 
 
+  public NewEscalationPolicyLevelDataAttributes pagingStrategyConfigurationRepeats(@jakarta.annotation.Nullable Integer pagingStrategyConfigurationRepeats) {
+    this.pagingStrategyConfigurationRepeats = pagingStrategyConfigurationRepeats;
+    return this;
+  }
+
+  /**
+   * Number of times to rotate through the roster (cycle-based round robin).
+   * @return pagingStrategyConfigurationRepeats
+   */
+  @jakarta.annotation.Nullable
+  public Integer getPagingStrategyConfigurationRepeats() {
+    return pagingStrategyConfigurationRepeats;
+  }
+
+  public void setPagingStrategyConfigurationRepeats(@jakarta.annotation.Nullable Integer pagingStrategyConfigurationRepeats) {
+    this.pagingStrategyConfigurationRepeats = pagingStrategyConfigurationRepeats;
+  }
+
+
+  public NewEscalationPolicyLevelDataAttributes pagingStrategyConfigurationRepeatsMode(@jakarta.annotation.Nullable PagingStrategyConfigurationRepeatsModeEnum pagingStrategyConfigurationRepeatsMode) {
+    this.pagingStrategyConfigurationRepeatsMode = pagingStrategyConfigurationRepeatsMode;
+    return this;
+  }
+
+  /**
+   * Controls how repeats are interpreted: &#39;users&#39; pages exactly N users, &#39;all&#39; pages everyone once.
+   * @return pagingStrategyConfigurationRepeatsMode
+   */
+  @jakarta.annotation.Nullable
+  public PagingStrategyConfigurationRepeatsModeEnum getPagingStrategyConfigurationRepeatsMode() {
+    return pagingStrategyConfigurationRepeatsMode;
+  }
+
+  public void setPagingStrategyConfigurationRepeatsMode(@jakarta.annotation.Nullable PagingStrategyConfigurationRepeatsModeEnum pagingStrategyConfigurationRepeatsMode) {
+    this.pagingStrategyConfigurationRepeatsMode = pagingStrategyConfigurationRepeatsMode;
+  }
+
+
+  public NewEscalationPolicyLevelDataAttributes pagingStrategyConfigurationRotationScope(@jakarta.annotation.Nullable PagingStrategyConfigurationRotationScopeEnum pagingStrategyConfigurationRotationScope) {
+    this.pagingStrategyConfigurationRotationScope = pagingStrategyConfigurationRotationScope;
+    return this;
+  }
+
+  /**
+   * Scope of rotation ordering: active rotation members only, or entire schedule.
+   * @return pagingStrategyConfigurationRotationScope
+   */
+  @jakarta.annotation.Nullable
+  public PagingStrategyConfigurationRotationScopeEnum getPagingStrategyConfigurationRotationScope() {
+    return pagingStrategyConfigurationRotationScope;
+  }
+
+  public void setPagingStrategyConfigurationRotationScope(@jakarta.annotation.Nullable PagingStrategyConfigurationRotationScopeEnum pagingStrategyConfigurationRotationScope) {
+    this.pagingStrategyConfigurationRotationScope = pagingStrategyConfigurationRotationScope;
+  }
+
+
+  public NewEscalationPolicyLevelDataAttributes pagingStrategyConfigurationPageUsersCount(@jakarta.annotation.Nullable Integer pagingStrategyConfigurationPageUsersCount) {
+    this.pagingStrategyConfigurationPageUsersCount = pagingStrategyConfigurationPageUsersCount;
+    return this;
+  }
+
+  /**
+   * Number of users to page at a time (cycle-based round robin).
+   * @return pagingStrategyConfigurationPageUsersCount
+   */
+  @jakarta.annotation.Nullable
+  public Integer getPagingStrategyConfigurationPageUsersCount() {
+    return pagingStrategyConfigurationPageUsersCount;
+  }
+
+  public void setPagingStrategyConfigurationPageUsersCount(@jakarta.annotation.Nullable Integer pagingStrategyConfigurationPageUsersCount) {
+    this.pagingStrategyConfigurationPageUsersCount = pagingStrategyConfigurationPageUsersCount;
+  }
+
+
   public NewEscalationPolicyLevelDataAttributes escalationPolicyPathId(@jakarta.annotation.Nullable String escalationPolicyPathId) {
     this.escalationPolicyPathId = escalationPolicyPathId;
     return this;
@@ -331,6 +531,10 @@ public class NewEscalationPolicyLevelDataAttributes {
         Objects.equals(this.position, newEscalationPolicyLevelDataAttributes.position) &&
         Objects.equals(this.pagingStrategyConfigurationStrategy, newEscalationPolicyLevelDataAttributes.pagingStrategyConfigurationStrategy) &&
         Objects.equals(this.pagingStrategyConfigurationScheduleStrategy, newEscalationPolicyLevelDataAttributes.pagingStrategyConfigurationScheduleStrategy) &&
+        Objects.equals(this.pagingStrategyConfigurationRepeats, newEscalationPolicyLevelDataAttributes.pagingStrategyConfigurationRepeats) &&
+        Objects.equals(this.pagingStrategyConfigurationRepeatsMode, newEscalationPolicyLevelDataAttributes.pagingStrategyConfigurationRepeatsMode) &&
+        Objects.equals(this.pagingStrategyConfigurationRotationScope, newEscalationPolicyLevelDataAttributes.pagingStrategyConfigurationRotationScope) &&
+        Objects.equals(this.pagingStrategyConfigurationPageUsersCount, newEscalationPolicyLevelDataAttributes.pagingStrategyConfigurationPageUsersCount) &&
         Objects.equals(this.escalationPolicyPathId, newEscalationPolicyLevelDataAttributes.escalationPolicyPathId) &&
         Objects.equals(this.notificationTargetParams, newEscalationPolicyLevelDataAttributes.notificationTargetParams);
   }
@@ -341,7 +545,7 @@ public class NewEscalationPolicyLevelDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(delay, position, pagingStrategyConfigurationStrategy, pagingStrategyConfigurationScheduleStrategy, escalationPolicyPathId, notificationTargetParams);
+    return Objects.hash(delay, position, pagingStrategyConfigurationStrategy, pagingStrategyConfigurationScheduleStrategy, pagingStrategyConfigurationRepeats, pagingStrategyConfigurationRepeatsMode, pagingStrategyConfigurationRotationScope, pagingStrategyConfigurationPageUsersCount, escalationPolicyPathId, notificationTargetParams);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -359,6 +563,10 @@ public class NewEscalationPolicyLevelDataAttributes {
     sb.append("    position: ").append(toIndentedString(position)).append("\n");
     sb.append("    pagingStrategyConfigurationStrategy: ").append(toIndentedString(pagingStrategyConfigurationStrategy)).append("\n");
     sb.append("    pagingStrategyConfigurationScheduleStrategy: ").append(toIndentedString(pagingStrategyConfigurationScheduleStrategy)).append("\n");
+    sb.append("    pagingStrategyConfigurationRepeats: ").append(toIndentedString(pagingStrategyConfigurationRepeats)).append("\n");
+    sb.append("    pagingStrategyConfigurationRepeatsMode: ").append(toIndentedString(pagingStrategyConfigurationRepeatsMode)).append("\n");
+    sb.append("    pagingStrategyConfigurationRotationScope: ").append(toIndentedString(pagingStrategyConfigurationRotationScope)).append("\n");
+    sb.append("    pagingStrategyConfigurationPageUsersCount: ").append(toIndentedString(pagingStrategyConfigurationPageUsersCount)).append("\n");
     sb.append("    escalationPolicyPathId: ").append(toIndentedString(escalationPolicyPathId)).append("\n");
     sb.append("    notificationTargetParams: ").append(toIndentedString(notificationTargetParams)).append("\n");
     sb.append("}");
@@ -387,6 +595,10 @@ public class NewEscalationPolicyLevelDataAttributes {
     openapiFields.add("position");
     openapiFields.add("paging_strategy_configuration_strategy");
     openapiFields.add("paging_strategy_configuration_schedule_strategy");
+    openapiFields.add("paging_strategy_configuration_repeats");
+    openapiFields.add("paging_strategy_configuration_repeats_mode");
+    openapiFields.add("paging_strategy_configuration_rotation_scope");
+    openapiFields.add("paging_strategy_configuration_page_users_count");
     openapiFields.add("escalation_policy_path_id");
     openapiFields.add("notification_target_params");
 
@@ -437,6 +649,20 @@ public class NewEscalationPolicyLevelDataAttributes {
       // validate the optional field `paging_strategy_configuration_schedule_strategy`
       if (jsonObj.get("paging_strategy_configuration_schedule_strategy") != null && !jsonObj.get("paging_strategy_configuration_schedule_strategy").isJsonNull()) {
         PagingStrategyConfigurationScheduleStrategyEnum.validateJsonElement(jsonObj.get("paging_strategy_configuration_schedule_strategy"));
+      }
+      if ((jsonObj.get("paging_strategy_configuration_repeats_mode") != null && !jsonObj.get("paging_strategy_configuration_repeats_mode").isJsonNull()) && !jsonObj.get("paging_strategy_configuration_repeats_mode").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `paging_strategy_configuration_repeats_mode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("paging_strategy_configuration_repeats_mode").toString()));
+      }
+      // validate the optional field `paging_strategy_configuration_repeats_mode`
+      if (jsonObj.get("paging_strategy_configuration_repeats_mode") != null && !jsonObj.get("paging_strategy_configuration_repeats_mode").isJsonNull()) {
+        PagingStrategyConfigurationRepeatsModeEnum.validateJsonElement(jsonObj.get("paging_strategy_configuration_repeats_mode"));
+      }
+      if ((jsonObj.get("paging_strategy_configuration_rotation_scope") != null && !jsonObj.get("paging_strategy_configuration_rotation_scope").isJsonNull()) && !jsonObj.get("paging_strategy_configuration_rotation_scope").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `paging_strategy_configuration_rotation_scope` to be a primitive type in the JSON string but got `%s`", jsonObj.get("paging_strategy_configuration_rotation_scope").toString()));
+      }
+      // validate the optional field `paging_strategy_configuration_rotation_scope`
+      if (jsonObj.get("paging_strategy_configuration_rotation_scope") != null && !jsonObj.get("paging_strategy_configuration_rotation_scope").isJsonNull()) {
+        PagingStrategyConfigurationRotationScopeEnum.validateJsonElement(jsonObj.get("paging_strategy_configuration_rotation_scope"));
       }
       if ((jsonObj.get("escalation_policy_path_id") != null && !jsonObj.get("escalation_policy_path_id").isJsonNull()) && !jsonObj.get("escalation_policy_path_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `escalation_policy_path_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("escalation_policy_path_id").toString()));

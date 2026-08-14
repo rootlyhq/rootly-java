@@ -13,7 +13,7 @@ test:
 build-docker:
 	@echo "Generating client using Docker..."
 	@echo "Cleaning old openapitools package files..."
-	@rm -rf src/main/java/org/openapitools src/test/java/org/openapitools
+	@rm -rf src/main/java/org/openapitools src/test/java/org/openapitools src/test/java/com/rootly/client
 	docker run --rm -v "$${PWD}:/local" openapitools/openapi-generator-cli:v7.13.0 generate \
 		-i https://rootly-heroku.s3.amazonaws.com/swagger/v1/swagger.json \
 		-g java \
@@ -36,7 +36,7 @@ build-docker:
 build-local:
 	@echo "Generating client using local openapi-generator..."
 	@echo "Cleaning old openapitools package files..."
-	@rm -rf src/main/java/org/openapitools src/test/java/org/openapitools
+	@rm -rf src/main/java/org/openapitools src/test/java/org/openapitools src/test/java/com/rootly/client
 	openapi-generator generate \
 		-i https://rootly-heroku.s3.amazonaws.com/swagger/v1/swagger.json \
 		-g java \

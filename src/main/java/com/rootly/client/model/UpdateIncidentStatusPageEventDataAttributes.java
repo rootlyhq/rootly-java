@@ -20,6 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
 
@@ -49,7 +50,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateIncidentStatusPageEventDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateIncidentStatusPageEventDataAttributes {
   public static final String SERIALIZED_NAME_EVENT = "event";
   @SerializedName(SERIALIZED_NAME_EVENT)
@@ -137,6 +138,11 @@ public class UpdateIncidentStatusPageEventDataAttributes {
   @SerializedName(SERIALIZED_NAME_SHOULD_TWEET)
   @jakarta.annotation.Nullable
   private Boolean shouldTweet = false;
+
+  public static final String SERIALIZED_NAME_STARTED_AT = "started_at";
+  @SerializedName(SERIALIZED_NAME_STARTED_AT)
+  @jakarta.annotation.Nullable
+  private OffsetDateTime startedAt;
 
   public UpdateIncidentStatusPageEventDataAttributes() {
   }
@@ -236,6 +242,25 @@ public class UpdateIncidentStatusPageEventDataAttributes {
   }
 
 
+  public UpdateIncidentStatusPageEventDataAttributes startedAt(@jakarta.annotation.Nullable OffsetDateTime startedAt) {
+    this.startedAt = startedAt;
+    return this;
+  }
+
+  /**
+   * When the event started.
+   * @return startedAt
+   */
+  @jakarta.annotation.Nullable
+  public OffsetDateTime getStartedAt() {
+    return startedAt;
+  }
+
+  public void setStartedAt(@jakarta.annotation.Nullable OffsetDateTime startedAt) {
+    this.startedAt = startedAt;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -250,7 +275,8 @@ public class UpdateIncidentStatusPageEventDataAttributes {
         Objects.equals(this.statusPageId, updateIncidentStatusPageEventDataAttributes.statusPageId) &&
         Objects.equals(this.status, updateIncidentStatusPageEventDataAttributes.status) &&
         Objects.equals(this.notifySubscribers, updateIncidentStatusPageEventDataAttributes.notifySubscribers) &&
-        Objects.equals(this.shouldTweet, updateIncidentStatusPageEventDataAttributes.shouldTweet);
+        Objects.equals(this.shouldTweet, updateIncidentStatusPageEventDataAttributes.shouldTweet) &&
+        Objects.equals(this.startedAt, updateIncidentStatusPageEventDataAttributes.startedAt);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -259,7 +285,7 @@ public class UpdateIncidentStatusPageEventDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(event, statusPageId, status, notifySubscribers, shouldTweet);
+    return Objects.hash(event, statusPageId, status, notifySubscribers, shouldTweet, startedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -278,6 +304,7 @@ public class UpdateIncidentStatusPageEventDataAttributes {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    notifySubscribers: ").append(toIndentedString(notifySubscribers)).append("\n");
     sb.append("    shouldTweet: ").append(toIndentedString(shouldTweet)).append("\n");
+    sb.append("    startedAt: ").append(toIndentedString(startedAt)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -305,6 +332,7 @@ public class UpdateIncidentStatusPageEventDataAttributes {
     openapiFields.add("status");
     openapiFields.add("notify_subscribers");
     openapiFields.add("should_tweet");
+    openapiFields.add("started_at");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

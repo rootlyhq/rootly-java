@@ -89,7 +89,7 @@ public class CatalogEntityChecklistsApi {
         <tr><td> 404 </td><td> resource not found for another team </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCatalogEntityChecklistCall(@javax.annotation.Nonnull UUID id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCatalogEntityChecklistCall(@jakarta.annotation.Nonnull UUID id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -135,7 +135,7 @@ public class CatalogEntityChecklistsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCatalogEntityChecklistValidateBeforeCall(@javax.annotation.Nonnull UUID id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCatalogEntityChecklistValidateBeforeCall(@jakarta.annotation.Nonnull UUID id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getCatalogEntityChecklist(Async)");
@@ -159,7 +159,7 @@ public class CatalogEntityChecklistsApi {
         <tr><td> 404 </td><td> resource not found for another team </td><td>  -  </td></tr>
      </table>
      */
-    public CatalogEntityChecklistResponse getCatalogEntityChecklist(@javax.annotation.Nonnull UUID id) throws ApiException {
+    public CatalogEntityChecklistResponse getCatalogEntityChecklist(@jakarta.annotation.Nonnull UUID id) throws ApiException {
         ApiResponse<CatalogEntityChecklistResponse> localVarResp = getCatalogEntityChecklistWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -178,7 +178,7 @@ public class CatalogEntityChecklistsApi {
         <tr><td> 404 </td><td> resource not found for another team </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CatalogEntityChecklistResponse> getCatalogEntityChecklistWithHttpInfo(@javax.annotation.Nonnull UUID id) throws ApiException {
+    public ApiResponse<CatalogEntityChecklistResponse> getCatalogEntityChecklistWithHttpInfo(@jakarta.annotation.Nonnull UUID id) throws ApiException {
         okhttp3.Call localVarCall = getCatalogEntityChecklistValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<CatalogEntityChecklistResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -199,7 +199,7 @@ public class CatalogEntityChecklistsApi {
         <tr><td> 404 </td><td> resource not found for another team </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCatalogEntityChecklistAsync(@javax.annotation.Nonnull UUID id, final ApiCallback<CatalogEntityChecklistResponse> _callback) throws ApiException {
+    public okhttp3.Call getCatalogEntityChecklistAsync(@jakarta.annotation.Nonnull UUID id, final ApiCallback<CatalogEntityChecklistResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCatalogEntityChecklistValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<CatalogEntityChecklistResponse>(){}.getType();
@@ -228,7 +228,7 @@ public class CatalogEntityChecklistsApi {
         <tr><td> 200 </td><td> returns empty list for another team </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listCatalogEntityChecklistsCall(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable String filterCatalogChecklistTemplateId, @javax.annotation.Nullable String filterAuditableType, @javax.annotation.Nullable String filterAuditableId, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listCatalogEntityChecklistsCall(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterCatalogChecklistTemplateId, @jakarta.annotation.Nullable String filterAuditableType, @jakarta.annotation.Nullable String filterAuditableId, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -313,7 +313,7 @@ public class CatalogEntityChecklistsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listCatalogEntityChecklistsValidateBeforeCall(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable String filterCatalogChecklistTemplateId, @javax.annotation.Nullable String filterAuditableType, @javax.annotation.Nullable String filterAuditableId, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listCatalogEntityChecklistsValidateBeforeCall(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterCatalogChecklistTemplateId, @jakarta.annotation.Nullable String filterAuditableType, @jakarta.annotation.Nullable String filterAuditableId, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
         return listCatalogEntityChecklistsCall(pageNumber, pageSize, filterStatus, filterCatalogChecklistTemplateId, filterAuditableType, filterAuditableId, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, _callback);
 
     }
@@ -340,7 +340,7 @@ public class CatalogEntityChecklistsApi {
         <tr><td> 200 </td><td> returns empty list for another team </td><td>  -  </td></tr>
      </table>
      */
-    public CatalogEntityChecklistList listCatalogEntityChecklists(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable String filterCatalogChecklistTemplateId, @javax.annotation.Nullable String filterAuditableType, @javax.annotation.Nullable String filterAuditableId, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte) throws ApiException {
+    public CatalogEntityChecklistList listCatalogEntityChecklists(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterCatalogChecklistTemplateId, @jakarta.annotation.Nullable String filterAuditableType, @jakarta.annotation.Nullable String filterAuditableId, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte) throws ApiException {
         ApiResponse<CatalogEntityChecklistList> localVarResp = listCatalogEntityChecklistsWithHttpInfo(pageNumber, pageSize, filterStatus, filterCatalogChecklistTemplateId, filterAuditableType, filterAuditableId, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
         return localVarResp.getData();
     }
@@ -367,7 +367,7 @@ public class CatalogEntityChecklistsApi {
         <tr><td> 200 </td><td> returns empty list for another team </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CatalogEntityChecklistList> listCatalogEntityChecklistsWithHttpInfo(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable String filterCatalogChecklistTemplateId, @javax.annotation.Nullable String filterAuditableType, @javax.annotation.Nullable String filterAuditableId, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte) throws ApiException {
+    public ApiResponse<CatalogEntityChecklistList> listCatalogEntityChecklistsWithHttpInfo(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterCatalogChecklistTemplateId, @jakarta.annotation.Nullable String filterAuditableType, @jakarta.annotation.Nullable String filterAuditableId, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte) throws ApiException {
         okhttp3.Call localVarCall = listCatalogEntityChecklistsValidateBeforeCall(pageNumber, pageSize, filterStatus, filterCatalogChecklistTemplateId, filterAuditableType, filterAuditableId, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, null);
         Type localVarReturnType = new TypeToken<CatalogEntityChecklistList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -396,7 +396,7 @@ public class CatalogEntityChecklistsApi {
         <tr><td> 200 </td><td> returns empty list for another team </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listCatalogEntityChecklistsAsync(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable String filterCatalogChecklistTemplateId, @javax.annotation.Nullable String filterAuditableType, @javax.annotation.Nullable String filterAuditableId, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback<CatalogEntityChecklistList> _callback) throws ApiException {
+    public okhttp3.Call listCatalogEntityChecklistsAsync(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterCatalogChecklistTemplateId, @jakarta.annotation.Nullable String filterAuditableType, @jakarta.annotation.Nullable String filterAuditableId, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback<CatalogEntityChecklistList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listCatalogEntityChecklistsValidateBeforeCall(pageNumber, pageSize, filterStatus, filterCatalogChecklistTemplateId, filterAuditableType, filterAuditableId, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, _callback);
         Type localVarReturnType = new TypeToken<CatalogEntityChecklistList>(){}.getType();

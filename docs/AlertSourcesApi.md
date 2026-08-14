@@ -77,7 +77,6 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | alert source created with resolution rule |  -  |
-| **400** | alert template attribute when alert fields are enabled |  -  |
 | **422** | invalid request |  -  |
 | **401** | responds with unauthorized for invalid token |  -  |
 
@@ -219,7 +218,7 @@ public class Example {
 
 <a id="listAlertsSources"></a>
 # **listAlertsSources**
-> AlertsSourceList listAlertsSources(include, pageNumber, pageSize, filterSearch, filterStatuses, filterSourceTypes, sort)
+> AlertsSourceList listAlertsSources(include, pageNumber, pageSize, filterSearch, filterStatuses, filterSourceTypes, filterName, filterEnabled, sort)
 
 List alert sources
 
@@ -251,9 +250,11 @@ public class Example {
     String filterSearch = "filterSearch_example"; // String | 
     String filterStatuses = "filterStatuses_example"; // String | 
     String filterSourceTypes = "filterSourceTypes_example"; // String | 
+    String filterName = "filterName_example"; // String | 
+    Boolean filterEnabled = true; // Boolean | 
     String sort = "sort_example"; // String | 
     try {
-      AlertsSourceList result = apiInstance.listAlertsSources(include, pageNumber, pageSize, filterSearch, filterStatuses, filterSourceTypes, sort);
+      AlertsSourceList result = apiInstance.listAlertsSources(include, pageNumber, pageSize, filterSearch, filterStatuses, filterSourceTypes, filterName, filterEnabled, sort);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AlertSourcesApi#listAlertsSources");
@@ -276,6 +277,8 @@ public class Example {
 | **filterSearch** | **String**|  | [optional] |
 | **filterStatuses** | **String**|  | [optional] |
 | **filterSourceTypes** | **String**|  | [optional] |
+| **filterName** | **String**|  | [optional] |
+| **filterEnabled** | **Boolean**|  | [optional] |
 | **sort** | **String**|  | [optional] |
 
 ### Return type
@@ -363,6 +366,6 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | alert source updated |  -  |
+| **200** | preserves existing alert source field ids |  -  |
 | **404** | resource not found |  -  |
 

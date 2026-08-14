@@ -14,6 +14,12 @@
 package com.rootly.client.api;
 
 import com.rootly.client.ApiException;
+import com.rootly.client.model.BulkDeleteCatalogEntities422Response;
+import com.rootly.client.model.BulkDestroyCatalogEntities;
+import com.rootly.client.model.BulkDestroyCatalogEntitiesResponse;
+import com.rootly.client.model.BulkUpsertCatalogEntities;
+import com.rootly.client.model.BulkUpsertCatalogEntities422Response;
+import com.rootly.client.model.BulkUpsertCatalogEntitiesResponse;
 import com.rootly.client.model.CatalogEntityList;
 import com.rootly.client.model.CatalogEntityResponse;
 import com.rootly.client.model.ErrorsList;
@@ -35,6 +41,36 @@ import java.util.Map;
 public class CatalogEntitiesApiTest {
 
     private final CatalogEntitiesApi api = new CatalogEntitiesApi();
+
+    /**
+     * Bulk delete Catalog Entities
+     *
+     * Delete catalog entities by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void bulkDeleteCatalogEntitiesTest() throws ApiException {
+        String catalogId = null;
+        BulkDestroyCatalogEntities bulkDestroyCatalogEntities = null;
+        BulkDestroyCatalogEntitiesResponse response = api.bulkDeleteCatalogEntities(catalogId, bulkDestroyCatalogEntities);
+        // TODO: test validations
+    }
+
+    /**
+     * Bulk upsert Catalog Entities
+     *
+     * Create or update multiple catalog entities by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void bulkUpsertCatalogEntitiesTest() throws ApiException {
+        String catalogId = null;
+        BulkUpsertCatalogEntities bulkUpsertCatalogEntities = null;
+        BulkUpsertCatalogEntitiesResponse response = api.bulkUpsertCatalogEntities(catalogId, bulkUpsertCatalogEntities);
+        // TODO: test validations
+    }
 
     /**
      * Creates a Catalog Entity
@@ -94,13 +130,29 @@ public class CatalogEntitiesApiTest {
         String sort = null;
         Integer pageNumber = null;
         Integer pageSize = null;
+        String filterSearch = null;
         String filterSlug = null;
         String filterName = null;
+        String filterBackstageId = null;
+        String filterExternalId = null;
+        String filterManagedBy = null;
         String filterCreatedAtGt = null;
         String filterCreatedAtGte = null;
         String filterCreatedAtLt = null;
         String filterCreatedAtLte = null;
-        CatalogEntityList response = api.listCatalogEntities(catalogId, include, sort, pageNumber, pageSize, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
+        String filterSlugEq = null;
+        String filterSlugNotEq = null;
+        String filterSlugIn = null;
+        String filterSlugNotIn = null;
+        String filterNameEq = null;
+        String filterNameNotEq = null;
+        String filterNameIn = null;
+        String filterNameNotIn = null;
+        String filterManagedByEq = null;
+        String filterManagedByNotEq = null;
+        String filterManagedByIn = null;
+        String filterManagedByNotIn = null;
+        CatalogEntityList response = api.listCatalogEntities(catalogId, include, sort, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterBackstageId, filterExternalId, filterManagedBy, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterManagedByEq, filterManagedByNotEq, filterManagedByIn, filterManagedByNotIn);
         // TODO: test validations
     }
 

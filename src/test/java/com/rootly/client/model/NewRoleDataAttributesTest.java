@@ -41,19 +41,19 @@ public class NewRoleDataAttributesTest {
     }
 
     /**
-     * Test the property 'name'
-     */
-    @Test
-    public void nameTest() {
-        // TODO: test name
-    }
-
-    /**
      * Test the property 'slug'
      */
     @Test
     public void slugTest() {
         // TODO: test slug
+    }
+
+    /**
+     * Test the property 'name'
+     */
+    @Test
+    public void nameTest() {
+        // TODO: test name
     }
 
     /**
@@ -270,6 +270,62 @@ public class NewRoleDataAttributesTest {
     @Test
     public void workflowsPermissionsTest() {
         // TODO: test workflowsPermissions
+    }
+
+    /**
+     * Test the property 'catalogsPermissions'
+     */
+    @Test
+    public void catalogsPermissionsTest() {
+        // TODO: test catalogsPermissions
+    }
+
+    /**
+     * Test the property 'subStatusesPermissions'
+     */
+    @Test
+    public void subStatusesPermissionsTest() {
+        // TODO: test subStatusesPermissions
+    }
+
+    /**
+     * Test the property 'edgeConnectorPermissions'
+     */
+    @Test
+    public void edgeConnectorPermissionsTest() {
+        // TODO: test edgeConnectorPermissions
+    }
+
+    /**
+     * Test the property 'slasPermissions'
+     */
+    @Test
+    public void slasPermissionsTest() {
+        // TODO: test slasPermissions
+    }
+
+    /**
+     * Test the property 'pagingPermissions'
+     */
+    @Test
+    public void pagingPermissionsTest() {
+        // TODO: test pagingPermissions
+    }
+
+    /**
+     * Test the property 'incidentCommunicationPermissions'
+     */
+    @Test
+    public void incidentCommunicationPermissionsTest() {
+        // TODO: test incidentCommunicationPermissions
+    }
+
+    /**
+     * Test the property 'communicationPermissions'
+     */
+    @Test
+    public void communicationPermissionsTest() {
+        // TODO: test communicationPermissions
     }
 
 }

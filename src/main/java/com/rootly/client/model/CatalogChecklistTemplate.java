@@ -53,21 +53,21 @@ import com.rootly.client.JSON;
 /**
  * CatalogChecklistTemplate
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CatalogChecklistTemplate {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String slug;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   /**
@@ -134,7 +134,7 @@ public class CatalogChecklistTemplate {
 
   public static final String SERIALIZED_NAME_CATALOG_TYPE = "catalog_type";
   @SerializedName(SERIALIZED_NAME_CATALOG_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private CatalogTypeEnum catalogType;
 
   /**
@@ -191,38 +191,45 @@ public class CatalogChecklistTemplate {
 
   public static final String SERIALIZED_NAME_SCOPE_TYPE = "scope_type";
   @SerializedName(SERIALIZED_NAME_SCOPE_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private ScopeTypeEnum scopeType;
 
   public static final String SERIALIZED_NAME_SCOPE_ID = "scope_id";
   @SerializedName(SERIALIZED_NAME_SCOPE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String scopeId;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public static final String SERIALIZED_NAME_FIELDS = "fields";
   @SerializedName(SERIALIZED_NAME_FIELDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<CatalogChecklistTemplateFieldsInner> fields;
 
   public static final String SERIALIZED_NAME_OWNERS = "owners";
   @SerializedName(SERIALIZED_NAME_OWNERS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<CatalogChecklistTemplateOwnersInner> owners;
 
   public CatalogChecklistTemplate() {
   }
 
-  public CatalogChecklistTemplate name(@javax.annotation.Nonnull String name) {
+  public CatalogChecklistTemplate(
+     String slug
+  ) {
+    this();
+    this.slug = slug;
+  }
+
+  public CatalogChecklistTemplate name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -231,36 +238,28 @@ public class CatalogChecklistTemplate {
    * The name of the checklist template
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
-
-  public CatalogChecklistTemplate slug(@javax.annotation.Nullable String slug) {
-    this.slug = slug;
-    return this;
-  }
 
   /**
    * The slug of the checklist template
    * @return slug
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSlug() {
     return slug;
   }
 
-  public void setSlug(@javax.annotation.Nullable String slug) {
-    this.slug = slug;
-  }
 
 
-  public CatalogChecklistTemplate description(@javax.annotation.Nullable String description) {
+  public CatalogChecklistTemplate description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -269,17 +268,17 @@ public class CatalogChecklistTemplate {
    * The description of the checklist template
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public CatalogChecklistTemplate catalogType(@javax.annotation.Nonnull CatalogTypeEnum catalogType) {
+  public CatalogChecklistTemplate catalogType(@jakarta.annotation.Nonnull CatalogTypeEnum catalogType) {
     this.catalogType = catalogType;
     return this;
   }
@@ -288,17 +287,17 @@ public class CatalogChecklistTemplate {
    * The catalog type
    * @return catalogType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public CatalogTypeEnum getCatalogType() {
     return catalogType;
   }
 
-  public void setCatalogType(@javax.annotation.Nonnull CatalogTypeEnum catalogType) {
+  public void setCatalogType(@jakarta.annotation.Nonnull CatalogTypeEnum catalogType) {
     this.catalogType = catalogType;
   }
 
 
-  public CatalogChecklistTemplate scopeType(@javax.annotation.Nonnull ScopeTypeEnum scopeType) {
+  public CatalogChecklistTemplate scopeType(@jakarta.annotation.Nonnull ScopeTypeEnum scopeType) {
     this.scopeType = scopeType;
     return this;
   }
@@ -307,17 +306,17 @@ public class CatalogChecklistTemplate {
    * The scope type
    * @return scopeType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public ScopeTypeEnum getScopeType() {
     return scopeType;
   }
 
-  public void setScopeType(@javax.annotation.Nonnull ScopeTypeEnum scopeType) {
+  public void setScopeType(@jakarta.annotation.Nonnull ScopeTypeEnum scopeType) {
     this.scopeType = scopeType;
   }
 
 
-  public CatalogChecklistTemplate scopeId(@javax.annotation.Nonnull String scopeId) {
+  public CatalogChecklistTemplate scopeId(@jakarta.annotation.Nonnull String scopeId) {
     this.scopeId = scopeId;
     return this;
   }
@@ -326,17 +325,17 @@ public class CatalogChecklistTemplate {
    * The scope ID
    * @return scopeId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getScopeId() {
     return scopeId;
   }
 
-  public void setScopeId(@javax.annotation.Nonnull String scopeId) {
+  public void setScopeId(@jakarta.annotation.Nonnull String scopeId) {
     this.scopeId = scopeId;
   }
 
 
-  public CatalogChecklistTemplate createdAt(@javax.annotation.Nonnull String createdAt) {
+  public CatalogChecklistTemplate createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -345,17 +344,17 @@ public class CatalogChecklistTemplate {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public CatalogChecklistTemplate updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public CatalogChecklistTemplate updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -364,17 +363,17 @@ public class CatalogChecklistTemplate {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 
 
-  public CatalogChecklistTemplate fields(@javax.annotation.Nullable List<CatalogChecklistTemplateFieldsInner> fields) {
+  public CatalogChecklistTemplate fields(@jakarta.annotation.Nullable List<CatalogChecklistTemplateFieldsInner> fields) {
     this.fields = fields;
     return this;
   }
@@ -391,17 +390,17 @@ public class CatalogChecklistTemplate {
    * Template fields in position order
    * @return fields
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<CatalogChecklistTemplateFieldsInner> getFields() {
     return fields;
   }
 
-  public void setFields(@javax.annotation.Nullable List<CatalogChecklistTemplateFieldsInner> fields) {
+  public void setFields(@jakarta.annotation.Nullable List<CatalogChecklistTemplateFieldsInner> fields) {
     this.fields = fields;
   }
 
 
-  public CatalogChecklistTemplate owners(@javax.annotation.Nullable List<CatalogChecklistTemplateOwnersInner> owners) {
+  public CatalogChecklistTemplate owners(@jakarta.annotation.Nullable List<CatalogChecklistTemplateOwnersInner> owners) {
     this.owners = owners;
     return this;
   }
@@ -418,12 +417,12 @@ public class CatalogChecklistTemplate {
    * Template owners
    * @return owners
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<CatalogChecklistTemplateOwnersInner> getOwners() {
     return owners;
   }
 
-  public void setOwners(@javax.annotation.Nullable List<CatalogChecklistTemplateOwnersInner> owners) {
+  public void setOwners(@jakarta.annotation.Nullable List<CatalogChecklistTemplateOwnersInner> owners) {
     this.owners = owners;
   }
 

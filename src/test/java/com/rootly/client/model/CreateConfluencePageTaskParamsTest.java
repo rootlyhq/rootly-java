@@ -111,4 +111,36 @@ public class CreateConfluencePageTaskParamsTest {
         // TODO: test markPostMortemAsPublished
     }
 
+    /**
+     * Test the property 'includeOverview'
+     */
+    @Test
+    public void includeOverviewTest() {
+        // TODO: test includeOverview
+    }
+
+    /**
+     * Test the property 'includeTimeline'
+     */
+    @Test
+    public void includeTimelineTest() {
+        // TODO: test includeTimeline
+    }
+
+    /**
+     * Test the property 'includeFollowUps'
+     */
+    @Test
+    public void includeFollowUpsTest() {
+        // TODO: test includeFollowUps
+    }
+
+    /**
+     * Test the property 'createAsLiveDoc'
+     */
+    @Test
+    public void createAsLiveDocTest() {
+        // TODO: test createAsLiveDoc
+    }
+
 }

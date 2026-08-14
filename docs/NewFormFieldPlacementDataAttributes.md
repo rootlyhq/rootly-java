@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**formSetId** | **String** | The form set this field is placed in. |  |
+|**formSetId** | **String** | The form set this field is placed in. The form set must have the same &#x60;resource_type&#x60; as the form field, otherwise the request is rejected with 422. |  |
 |**form** | **String** | The form this field is placed on. |  |
 |**position** | **Integer** | The position of the field placement. |  [optional] |
 |**required** | **Boolean** | Whether the field is unconditionally required on this form. |  [optional] |

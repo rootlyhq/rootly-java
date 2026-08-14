@@ -95,8 +95,12 @@ public class AlertUrgenciesApiTest {
         String filterCreatedAtGte = null;
         String filterCreatedAtLt = null;
         String filterCreatedAtLte = null;
+        String filterNameEq = null;
+        String filterNameNotEq = null;
+        String filterNameIn = null;
+        String filterNameNotIn = null;
         String sort = null;
-        AlertUrgencyList response = api.listAlertUrgencies(include, pageNumber, pageSize, filterSearch, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
+        AlertUrgencyList response = api.listAlertUrgencies(include, pageNumber, pageSize, filterSearch, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, sort);
         // TODO: test validations
     }
 

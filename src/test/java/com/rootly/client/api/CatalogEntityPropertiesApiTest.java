@@ -38,7 +38,7 @@ public class CatalogEntityPropertiesApiTest {
     /**
      * Creates a Catalog Entity Property
      *
-     * Creates a new Catalog Entity Property from provided data
+     * **Deprecated:** This endpoint is deprecated, please use the &#x60;fields&#x60; attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.  Creates a new Catalog Entity Property from provided data.
      *
      * @throws ApiException if the Api call fails
      */
@@ -53,7 +53,7 @@ public class CatalogEntityPropertiesApiTest {
     /**
      * Delete a Catalog Entity Property
      *
-     * Delete a specific Catalog Entity Property by id
+     * **Deprecated:** This endpoint is deprecated, please use the &#x60;fields&#x60; attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.  Delete a specific Catalog Entity Property by id.
      *
      * @throws ApiException if the Api call fails
      */
@@ -67,7 +67,7 @@ public class CatalogEntityPropertiesApiTest {
     /**
      * Retrieves a Catalog Entity Property
      *
-     * Retrieves a specific Catalog Entity Property by id
+     * **Deprecated:** This endpoint is deprecated, please use &#x60;include&#x3D;fields&#x60; on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to retrieve field values instead.  Retrieves a specific Catalog Entity Property by id.
      *
      * @throws ApiException if the Api call fails
      */
@@ -82,7 +82,7 @@ public class CatalogEntityPropertiesApiTest {
     /**
      * List catalog properties
      *
-     * List Catalog Entity Properties
+     * **Deprecated:** This endpoint is deprecated, please use &#x60;include&#x3D;fields&#x60; on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to retrieve field values instead.  List Catalog Entity Properties.
      *
      * @throws ApiException if the Api call fails
      */
@@ -106,7 +106,7 @@ public class CatalogEntityPropertiesApiTest {
     /**
      * Update a Catalog Entity Property
      *
-     * Update a specific Catalog Entity Property by id
+     * **Deprecated:** This endpoint is deprecated, please use the &#x60;fields&#x60; attribute on catalog entities or native catalog endpoints (teams, services, functionalities, incident_types, causes, environments) to set field values instead.  Update a specific Catalog Entity Property by id.
      *
      * @throws ApiException if the Api call fails
      */

@@ -20,7 +20,9 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.rootly.client.model.AddActionItemTaskParamsPostToSlackChannelsInner;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -109,6 +111,14 @@ public class PublishIncidentTaskParamsTest {
     @Test
     public void statusPageIdTest() {
         // TODO: test statusPageId
+    }
+
+    /**
+     * Test the property 'statusPageIds'
+     */
+    @Test
+    public void statusPageIdsTest() {
+        // TODO: test statusPageIds
     }
 
     /**

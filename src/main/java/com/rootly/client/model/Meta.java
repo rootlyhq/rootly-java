@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,11 +49,16 @@ import com.rootly.client.JSON;
 /**
  * Meta
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Meta {
+  public static final String SERIALIZED_NAME_NEXT_CURSOR = "next_cursor";
+  @SerializedName(SERIALIZED_NAME_NEXT_CURSOR)
+  @jakarta.annotation.Nullable
+  private String nextCursor;
+
   public static final String SERIALIZED_NAME_CURRENT_PAGE = "current_page";
   @SerializedName(SERIALIZED_NAME_CURRENT_PAGE)
-  @jakarta.annotation.Nonnull
+  @jakarta.annotation.Nullable
   private Integer currentPage;
 
   public static final String SERIALIZED_NAME_NEXT_PAGE = "next_page";
@@ -78,7 +84,26 @@ public class Meta {
   public Meta() {
   }
 
-  public Meta currentPage(@jakarta.annotation.Nonnull Integer currentPage) {
+  public Meta nextCursor(@jakarta.annotation.Nullable String nextCursor) {
+    this.nextCursor = nextCursor;
+    return this;
+  }
+
+  /**
+   * Get nextCursor
+   * @return nextCursor
+   */
+  @jakarta.annotation.Nullable
+  public String getNextCursor() {
+    return nextCursor;
+  }
+
+  public void setNextCursor(@jakarta.annotation.Nullable String nextCursor) {
+    this.nextCursor = nextCursor;
+  }
+
+
+  public Meta currentPage(@jakarta.annotation.Nullable Integer currentPage) {
     this.currentPage = currentPage;
     return this;
   }
@@ -87,12 +112,12 @@ public class Meta {
    * Get currentPage
    * @return currentPage
    */
-  @jakarta.annotation.Nonnull
+  @jakarta.annotation.Nullable
   public Integer getCurrentPage() {
     return currentPage;
   }
 
-  public void setCurrentPage(@jakarta.annotation.Nonnull Integer currentPage) {
+  public void setCurrentPage(@jakarta.annotation.Nullable Integer currentPage) {
     this.currentPage = currentPage;
   }
 
@@ -183,22 +208,35 @@ public class Meta {
       return false;
     }
     Meta meta = (Meta) o;
-    return Objects.equals(this.currentPage, meta.currentPage) &&
+    return Objects.equals(this.nextCursor, meta.nextCursor) &&
+        Objects.equals(this.currentPage, meta.currentPage) &&
         Objects.equals(this.nextPage, meta.nextPage) &&
         Objects.equals(this.prevPage, meta.prevPage) &&
         Objects.equals(this.totalCount, meta.totalCount) &&
         Objects.equals(this.totalPages, meta.totalPages);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(currentPage, nextPage, prevPage, totalCount, totalPages);
+    return Objects.hash(nextCursor, currentPage, nextPage, prevPage, totalCount, totalPages);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Meta {\n");
+    sb.append("    nextCursor: ").append(toIndentedString(nextCursor)).append("\n");
     sb.append("    currentPage: ").append(toIndentedString(currentPage)).append("\n");
     sb.append("    nextPage: ").append(toIndentedString(nextPage)).append("\n");
     sb.append("    prevPage: ").append(toIndentedString(prevPage)).append("\n");
@@ -226,6 +264,7 @@ public class Meta {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("next_cursor");
     openapiFields.add("current_page");
     openapiFields.add("next_page");
     openapiFields.add("prev_page");
@@ -269,6 +308,9 @@ public class Meta {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("next_cursor") != null && !jsonObj.get("next_cursor").isJsonNull()) && !jsonObj.get("next_cursor").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `next_cursor` to be a primitive type in the JSON string but got `%s`", jsonObj.get("next_cursor").toString()));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

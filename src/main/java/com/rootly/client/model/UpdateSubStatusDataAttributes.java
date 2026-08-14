@@ -49,17 +49,18 @@ import com.rootly.client.JSON;
 /**
  * UpdateSubStatusDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateSubStatusDataAttributes {
+  public static final String SERIALIZED_NAME_SLUG = "slug";
+  @Deprecated
+  @SerializedName(SERIALIZED_NAME_SLUG)
+  @jakarta.annotation.Nullable
+  private String slug;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @jakarta.annotation.Nullable
   private String name;
-
-  public static final String SERIALIZED_NAME_SLUG = "slug";
-  @SerializedName(SERIALIZED_NAME_SLUG)
-  @jakarta.annotation.Nullable
-  private String slug;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -73,6 +74,29 @@ public class UpdateSubStatusDataAttributes {
 
   public UpdateSubStatusDataAttributes() {
   }
+
+  @Deprecated
+  public UpdateSubStatusDataAttributes slug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+    return this;
+  }
+
+  /**
+   * Deprecated. &#x60;slug&#x60; is derived from &#x60;name&#x60;; any submitted value is ignored. This property will be removed from the request schema in a future version.
+   * @return slug
+   * @deprecated
+   */
+  @Deprecated
+  @jakarta.annotation.Nullable
+  public String getSlug() {
+    return slug;
+  }
+
+  @Deprecated
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+  }
+
 
   public UpdateSubStatusDataAttributes name(@jakarta.annotation.Nullable String name) {
     this.name = name;
@@ -90,25 +114,6 @@ public class UpdateSubStatusDataAttributes {
 
   public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
-  }
-
-
-  public UpdateSubStatusDataAttributes slug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
-    return this;
-  }
-
-  /**
-   * Get slug
-   * @return slug
-   */
-  @jakarta.annotation.Nullable
-  public String getSlug() {
-    return slug;
-  }
-
-  public void setSlug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
   }
 
 
@@ -160,8 +165,8 @@ public class UpdateSubStatusDataAttributes {
       return false;
     }
     UpdateSubStatusDataAttributes updateSubStatusDataAttributes = (UpdateSubStatusDataAttributes) o;
-    return Objects.equals(this.name, updateSubStatusDataAttributes.name) &&
-        Objects.equals(this.slug, updateSubStatusDataAttributes.slug) &&
+    return Objects.equals(this.slug, updateSubStatusDataAttributes.slug) &&
+        Objects.equals(this.name, updateSubStatusDataAttributes.name) &&
         Objects.equals(this.description, updateSubStatusDataAttributes.description) &&
         Objects.equals(this.position, updateSubStatusDataAttributes.position);
   }
@@ -172,7 +177,7 @@ public class UpdateSubStatusDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, slug, description, position);
+    return Objects.hash(slug, name, description, position);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -186,8 +191,8 @@ public class UpdateSubStatusDataAttributes {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdateSubStatusDataAttributes {\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    position: ").append(toIndentedString(position)).append("\n");
     sb.append("}");
@@ -212,8 +217,8 @@ public class UpdateSubStatusDataAttributes {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("name");
     openapiFields.add("slug");
+    openapiFields.add("name");
     openapiFields.add("description");
     openapiFields.add("position");
 
@@ -242,11 +247,11 @@ public class UpdateSubStatusDataAttributes {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
       if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
+      }
+      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));

@@ -16,7 +16,10 @@
 |**speakerCount** | **Integer** | Number of unique speakers detected in the transcript |  [optional] |
 |**wordCount** | **Integer** | Total word count across all transcript segments |  [optional] |
 |**transcriptSummary** | **String** | AI-generated summary of the meeting transcript (null if no transcript or not yet analyzed) |  [optional] |
-|**hasVideo** | **Boolean** | Whether a video recording file is attached |  [optional] |
+|**title** | **String** | Human-readable label for the recording session |  [optional] |
+|**meetingUrl** | **String** | Original meeting URL |  [optional] |
+|**videoUrl** | **String** | Signed URL to stream/download the video recording |  [optional] |
+|**createdBy** | **String** | Source that created the recording (e.g. desktop_sdk, recall_bot) |  [optional] |
 |**createdAt** | **OffsetDateTime** | When the recording session was created |  |
 |**updatedAt** | **OffsetDateTime** | When the recording session was last updated |  |
 

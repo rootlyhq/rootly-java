@@ -49,17 +49,17 @@ import com.rootly.client.JSON;
 /**
  * CatalogEntityChecklistChecklistFieldsInner
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CatalogEntityChecklistChecklistFieldsInner {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CatalogEntityChecklistChecklistFieldsInnerData data;
 
   public CatalogEntityChecklistChecklistFieldsInner() {
   }
 
-  public CatalogEntityChecklistChecklistFieldsInner data(@javax.annotation.Nullable CatalogEntityChecklistChecklistFieldsInnerData data) {
+  public CatalogEntityChecklistChecklistFieldsInner data(@jakarta.annotation.Nullable CatalogEntityChecklistChecklistFieldsInnerData data) {
     this.data = data;
     return this;
   }
@@ -68,12 +68,12 @@ public class CatalogEntityChecklistChecklistFieldsInner {
    * Get data
    * @return data
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CatalogEntityChecklistChecklistFieldsInnerData getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nullable CatalogEntityChecklistChecklistFieldsInnerData data) {
+  public void setData(@jakarta.annotation.Nullable CatalogEntityChecklistChecklistFieldsInnerData data) {
     this.data = data;
   }
 

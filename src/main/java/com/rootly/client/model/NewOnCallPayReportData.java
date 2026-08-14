@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * NewOnCallPayReportData
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewOnCallPayReportData {
   /**
    * Gets or Sets type
@@ -103,18 +103,18 @@ public class NewOnCallPayReportData {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private NewOnCallPayReportDataAttributes attributes;
 
   public NewOnCallPayReportData() {
   }
 
-  public NewOnCallPayReportData type(@javax.annotation.Nonnull TypeEnum type) {
+  public NewOnCallPayReportData type(@jakarta.annotation.Nonnull TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -123,17 +123,17 @@ public class NewOnCallPayReportData {
    * Get type
    * @return type
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public TypeEnum getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nonnull TypeEnum type) {
+  public void setType(@jakarta.annotation.Nonnull TypeEnum type) {
     this.type = type;
   }
 
 
-  public NewOnCallPayReportData attributes(@javax.annotation.Nonnull NewOnCallPayReportDataAttributes attributes) {
+  public NewOnCallPayReportData attributes(@jakarta.annotation.Nonnull NewOnCallPayReportDataAttributes attributes) {
     this.attributes = attributes;
     return this;
   }
@@ -142,12 +142,12 @@ public class NewOnCallPayReportData {
    * Get attributes
    * @return attributes
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public NewOnCallPayReportDataAttributes getAttributes() {
     return attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nonnull NewOnCallPayReportDataAttributes attributes) {
+  public void setAttributes(@jakarta.annotation.Nonnull NewOnCallPayReportDataAttributes attributes) {
     this.attributes = attributes;
   }
 

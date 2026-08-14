@@ -18,6 +18,9 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.AddActionItemTaskParamsPostToSlackChannelsInner;
+import com.rootly.client.model.AutoAssignRolePagerdutyTaskParamsAnyOf;
+import com.rootly.client.model.AutoAssignRolePagerdutyTaskParamsAnyOf1;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -37,6 +40,22 @@ public class InviteToSlackChannelPagerdutyTaskParamsTest {
     @Test
     public void testInviteToSlackChannelPagerdutyTaskParams() {
         // TODO: test InviteToSlackChannelPagerdutyTaskParams
+    }
+
+    /**
+     * Test the property 'escalationPolicy'
+     */
+    @Test
+    public void escalationPolicyTest() {
+        // TODO: test escalationPolicy
+    }
+
+    /**
+     * Test the property 'schedule'
+     */
+    @Test
+    public void scheduleTest() {
+        // TODO: test schedule
     }
 
 }

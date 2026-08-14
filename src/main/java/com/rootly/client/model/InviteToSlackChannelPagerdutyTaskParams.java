@@ -19,381 +19,252 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.AddActionItemTaskParamsPostToSlackChannelsInner;
+import com.rootly.client.model.AutoAssignRolePagerdutyTaskParamsAnyOf;
+import com.rootly.client.model.AutoAssignRolePagerdutyTaskParamsAnyOf1;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.TypeAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
 
-import java.util.HashMap;
+
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonParseException;
 
 import com.rootly.client.JSON;
 
-/**
- * InviteToSlackChannelPagerdutyTaskParams
- */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
-public class InviteToSlackChannelPagerdutyTaskParams {
-  /**
-   * Gets or Sets taskType
-   */
-  @JsonAdapter(TaskTypeEnum.Adapter.class)
-  public enum TaskTypeEnum {
-    INVITE_TO_SLACK_CHANNEL_PAGERDUTY("invite_to_slack_channel_pagerduty");
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+public class InviteToSlackChannelPagerdutyTaskParams extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(InviteToSlackChannelPagerdutyTaskParams.class.getName());
 
-    private String value;
+    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+        @SuppressWarnings("unchecked")
+        @Override
+        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+            if (!InviteToSlackChannelPagerdutyTaskParams.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'InviteToSlackChannelPagerdutyTaskParams' and its subtypes
+            }
+            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<AutoAssignRolePagerdutyTaskParamsAnyOf1> adapterAutoAssignRolePagerdutyTaskParamsAnyOf1 = gson.getDelegateAdapter(this, TypeToken.get(AutoAssignRolePagerdutyTaskParamsAnyOf1.class));
+            final TypeAdapter<AutoAssignRolePagerdutyTaskParamsAnyOf> adapterAutoAssignRolePagerdutyTaskParamsAnyOf = gson.getDelegateAdapter(this, TypeToken.get(AutoAssignRolePagerdutyTaskParamsAnyOf.class));
 
-    TaskTypeEnum(String value) {
-      this.value = value;
+            return (TypeAdapter<T>) new TypeAdapter<InviteToSlackChannelPagerdutyTaskParams>() {
+                @Override
+                public void write(JsonWriter out, InviteToSlackChannelPagerdutyTaskParams value) throws IOException {
+                    if (value == null || value.getActualInstance() == null) {
+                        elementAdapter.write(out, null);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `AutoAssignRolePagerdutyTaskParamsAnyOf1`
+                    if (value.getActualInstance() instanceof AutoAssignRolePagerdutyTaskParamsAnyOf1) {
+                        JsonElement element = adapterAutoAssignRolePagerdutyTaskParamsAnyOf1.toJsonTree((AutoAssignRolePagerdutyTaskParamsAnyOf1)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `AutoAssignRolePagerdutyTaskParamsAnyOf`
+                    if (value.getActualInstance() instanceof AutoAssignRolePagerdutyTaskParamsAnyOf) {
+                        JsonElement element = adapterAutoAssignRolePagerdutyTaskParamsAnyOf.toJsonTree((AutoAssignRolePagerdutyTaskParamsAnyOf)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    throw new IOException("Failed to serialize as the type doesn't match anyOf schemas: AutoAssignRolePagerdutyTaskParamsAnyOf, AutoAssignRolePagerdutyTaskParamsAnyOf1");
+                }
+
+                @Override
+                public InviteToSlackChannelPagerdutyTaskParams read(JsonReader in) throws IOException {
+                    Object deserialized = null;
+                    JsonElement jsonElement = elementAdapter.read(in);
+
+                    ArrayList<String> errorMessages = new ArrayList<>();
+                    TypeAdapter actualAdapter = elementAdapter;
+
+                    // deserialize AutoAssignRolePagerdutyTaskParamsAnyOf1
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        AutoAssignRolePagerdutyTaskParamsAnyOf1.validateJsonElement(jsonElement);
+                        actualAdapter = adapterAutoAssignRolePagerdutyTaskParamsAnyOf1;
+                        InviteToSlackChannelPagerdutyTaskParams ret = new InviteToSlackChannelPagerdutyTaskParams();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
+                        return ret;
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for AutoAssignRolePagerdutyTaskParamsAnyOf1 failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'AutoAssignRolePagerdutyTaskParamsAnyOf1'", e);
+                    }
+                    // deserialize AutoAssignRolePagerdutyTaskParamsAnyOf
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        AutoAssignRolePagerdutyTaskParamsAnyOf.validateJsonElement(jsonElement);
+                        actualAdapter = adapterAutoAssignRolePagerdutyTaskParamsAnyOf;
+                        InviteToSlackChannelPagerdutyTaskParams ret = new InviteToSlackChannelPagerdutyTaskParams();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
+                        return ret;
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for AutoAssignRolePagerdutyTaskParamsAnyOf failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'AutoAssignRolePagerdutyTaskParamsAnyOf'", e);
+                    }
+
+                    throw new IOException(String.format("Failed deserialization for InviteToSlackChannelPagerdutyTaskParams: no class matches result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
+                }
+            }.nullSafe();
+        }
     }
 
-    public String getValue() {
-      return value;
+    // store a list of schema names defined in anyOf
+    public static final Map<String, Class<?>> schemas = new HashMap<String, Class<?>>();
+
+    public InviteToSlackChannelPagerdutyTaskParams() {
+        super("anyOf", Boolean.FALSE);
+    }
+
+    public InviteToSlackChannelPagerdutyTaskParams(Object o) {
+        super("anyOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    static {
+        schemas.put("AutoAssignRolePagerdutyTaskParamsAnyOf1", AutoAssignRolePagerdutyTaskParamsAnyOf1.class);
+        schemas.put("AutoAssignRolePagerdutyTaskParamsAnyOf", AutoAssignRolePagerdutyTaskParamsAnyOf.class);
     }
 
     @Override
-    public String toString() {
-      return String.valueOf(value);
+    public Map<String, Class<?>> getSchemas() {
+        return InviteToSlackChannelPagerdutyTaskParams.schemas;
     }
 
-    public static TaskTypeEnum fromValue(String value) {
-      for (TaskTypeEnum b : TaskTypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
+    /**
+     * Set the instance that matches the anyOf child schema, check
+     * the instance parameter is valid against the anyOf child schemas:
+     * AutoAssignRolePagerdutyTaskParamsAnyOf, AutoAssignRolePagerdutyTaskParamsAnyOf1
+     *
+     * It could be an instance of the 'anyOf' schemas.
+     */
+    @Override
+    public void setActualInstance(Object instance) {
+        if (instance instanceof AutoAssignRolePagerdutyTaskParamsAnyOf1) {
+            super.setActualInstance(instance);
+            return;
         }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
 
-    public static class Adapter extends TypeAdapter<TaskTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final TaskTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public TaskTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return TaskTypeEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      TaskTypeEnum.fromValue(value);
-    }
-  }
-
-  public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
-  @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @jakarta.annotation.Nullable
-  private TaskTypeEnum taskType;
-
-  public static final String SERIALIZED_NAME_CHANNELS = "channels";
-  @SerializedName(SERIALIZED_NAME_CHANNELS)
-  @jakarta.annotation.Nonnull
-  private List<Object> channels = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_ESCALATION_POLICY = "escalation_policy";
-  @SerializedName(SERIALIZED_NAME_ESCALATION_POLICY)
-  @jakarta.annotation.Nullable
-  private Object escalationPolicy;
-
-  public static final String SERIALIZED_NAME_SCHEDULE = "schedule";
-  @SerializedName(SERIALIZED_NAME_SCHEDULE)
-  @jakarta.annotation.Nullable
-  private Object schedule;
-
-  public static final String SERIALIZED_NAME_SERVICE = "service";
-  @SerializedName(SERIALIZED_NAME_SERVICE)
-  @jakarta.annotation.Nullable
-  private Object service;
-
-  public InviteToSlackChannelPagerdutyTaskParams() {
-  }
-
-  public InviteToSlackChannelPagerdutyTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
-    this.taskType = taskType;
-    return this;
-  }
-
-  /**
-   * Get taskType
-   * @return taskType
-   */
-  @jakarta.annotation.Nullable
-  public TaskTypeEnum getTaskType() {
-    return taskType;
-  }
-
-  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
-    this.taskType = taskType;
-  }
-
-
-  public InviteToSlackChannelPagerdutyTaskParams channels(@jakarta.annotation.Nonnull List<Object> channels) {
-    this.channels = channels;
-    return this;
-  }
-
-  public InviteToSlackChannelPagerdutyTaskParams addChannelsItem(Object channelsItem) {
-    if (this.channels == null) {
-      this.channels = new ArrayList<>();
-    }
-    this.channels.add(channelsItem);
-    return this;
-  }
-
-  /**
-   * Get channels
-   * @return channels
-   */
-  @jakarta.annotation.Nonnull
-  public List<Object> getChannels() {
-    return channels;
-  }
-
-  public void setChannels(@jakarta.annotation.Nonnull List<Object> channels) {
-    this.channels = channels;
-  }
-
-
-  public InviteToSlackChannelPagerdutyTaskParams escalationPolicy(@jakarta.annotation.Nullable Object escalationPolicy) {
-    this.escalationPolicy = escalationPolicy;
-    return this;
-  }
-
-  /**
-   * Get escalationPolicy
-   * @return escalationPolicy
-   */
-  @jakarta.annotation.Nullable
-  public Object getEscalationPolicy() {
-    return escalationPolicy;
-  }
-
-  public void setEscalationPolicy(@jakarta.annotation.Nullable Object escalationPolicy) {
-    this.escalationPolicy = escalationPolicy;
-  }
-
-
-  public InviteToSlackChannelPagerdutyTaskParams schedule(@jakarta.annotation.Nullable Object schedule) {
-    this.schedule = schedule;
-    return this;
-  }
-
-  /**
-   * Get schedule
-   * @return schedule
-   */
-  @jakarta.annotation.Nullable
-  public Object getSchedule() {
-    return schedule;
-  }
-
-  public void setSchedule(@jakarta.annotation.Nullable Object schedule) {
-    this.schedule = schedule;
-  }
-
-
-  public InviteToSlackChannelPagerdutyTaskParams service(@jakarta.annotation.Nullable Object service) {
-    this.service = service;
-    return this;
-  }
-
-  /**
-   * Get service
-   * @return service
-   */
-  @jakarta.annotation.Nullable
-  public Object getService() {
-    return service;
-  }
-
-  public void setService(@jakarta.annotation.Nullable Object service) {
-    this.service = service;
-  }
-
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    InviteToSlackChannelPagerdutyTaskParams inviteToSlackChannelPagerdutyTaskParams = (InviteToSlackChannelPagerdutyTaskParams) o;
-    return Objects.equals(this.taskType, inviteToSlackChannelPagerdutyTaskParams.taskType) &&
-        Objects.equals(this.channels, inviteToSlackChannelPagerdutyTaskParams.channels) &&
-        Objects.equals(this.escalationPolicy, inviteToSlackChannelPagerdutyTaskParams.escalationPolicy) &&
-        Objects.equals(this.schedule, inviteToSlackChannelPagerdutyTaskParams.schedule) &&
-        Objects.equals(this.service, inviteToSlackChannelPagerdutyTaskParams.service);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(taskType, channels, escalationPolicy, schedule, service);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class InviteToSlackChannelPagerdutyTaskParams {\n");
-    sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
-    sb.append("    channels: ").append(toIndentedString(channels)).append("\n");
-    sb.append("    escalationPolicy: ").append(toIndentedString(escalationPolicy)).append("\n");
-    sb.append("    schedule: ").append(toIndentedString(schedule)).append("\n");
-    sb.append("    service: ").append(toIndentedString(service)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("channels");
-  }
-
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to InviteToSlackChannelPagerdutyTaskParams
-   */
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      if (jsonElement == null) {
-        if (!InviteToSlackChannelPagerdutyTaskParams.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in InviteToSlackChannelPagerdutyTaskParams is not found in the empty JSON string", InviteToSlackChannelPagerdutyTaskParams.openapiRequiredFields.toString()));
+        if (instance instanceof AutoAssignRolePagerdutyTaskParamsAnyOf) {
+            super.setActualInstance(instance);
+            return;
         }
-      }
 
-      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!InviteToSlackChannelPagerdutyTaskParams.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `InviteToSlackChannelPagerdutyTaskParams` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
-        }
-      }
+        throw new RuntimeException("Invalid instance type. Must be AutoAssignRolePagerdutyTaskParamsAnyOf, AutoAssignRolePagerdutyTaskParamsAnyOf1");
+    }
 
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : InviteToSlackChannelPagerdutyTaskParams.openapiRequiredFields) {
-        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
-        }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("task_type") != null && !jsonObj.get("task_type").isJsonNull()) && !jsonObj.get("task_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `task_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("task_type").toString()));
-      }
-      // validate the optional field `task_type`
-      if (jsonObj.get("task_type") != null && !jsonObj.get("task_type").isJsonNull()) {
-        TaskTypeEnum.validateJsonElement(jsonObj.get("task_type"));
-      }
-      // ensure the json data is an array
-      if (!jsonObj.get("channels").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `channels` to be an array in the JSON string but got `%s`", jsonObj.get("channels").toString()));
-      }
-
-      JsonArray jsonArraychannels = jsonObj.getAsJsonArray("channels");
-      // validate the required field `channels` (array)
-      for (int i = 0; i < jsonArraychannels.size(); i++) {
-      };
-      // validate the optional field `escalation_policy`
-      if (jsonObj.get("escalation_policy") != null && !jsonObj.get("escalation_policy").isJsonNull()) {
-      }
-      // validate the optional field `schedule`
-      if (jsonObj.get("schedule") != null && !jsonObj.get("schedule").isJsonNull()) {
-      }
-      // validate the optional field `service`
-      if (jsonObj.get("service") != null && !jsonObj.get("service").isJsonNull()) {
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    /**
+     * Get the actual instance, which can be the following:
+     * AutoAssignRolePagerdutyTaskParamsAnyOf, AutoAssignRolePagerdutyTaskParamsAnyOf1
+     *
+     * @return The actual instance (AutoAssignRolePagerdutyTaskParamsAnyOf, AutoAssignRolePagerdutyTaskParamsAnyOf1)
+     */
     @SuppressWarnings("unchecked")
     @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!InviteToSlackChannelPagerdutyTaskParams.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'InviteToSlackChannelPagerdutyTaskParams' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<InviteToSlackChannelPagerdutyTaskParams> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(InviteToSlackChannelPagerdutyTaskParams.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<InviteToSlackChannelPagerdutyTaskParams>() {
-           @Override
-           public void write(JsonWriter out, InviteToSlackChannelPagerdutyTaskParams value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public InviteToSlackChannelPagerdutyTaskParams read(JsonReader in) throws IOException {
-             JsonElement jsonElement = elementAdapter.read(in);
-             validateJsonElement(jsonElement);
-             return thisAdapter.fromJsonTree(jsonElement);
-           }
-
-       }.nullSafe();
+    public Object getActualInstance() {
+        return super.getActualInstance();
     }
-  }
 
-  /**
-   * Create an instance of InviteToSlackChannelPagerdutyTaskParams given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of InviteToSlackChannelPagerdutyTaskParams
-   * @throws IOException if the JSON string is invalid with respect to InviteToSlackChannelPagerdutyTaskParams
-   */
-  public static InviteToSlackChannelPagerdutyTaskParams fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, InviteToSlackChannelPagerdutyTaskParams.class);
-  }
+    /**
+     * Get the actual instance of `AutoAssignRolePagerdutyTaskParamsAnyOf1`. If the actual instance is not `AutoAssignRolePagerdutyTaskParamsAnyOf1`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `AutoAssignRolePagerdutyTaskParamsAnyOf1`
+     * @throws ClassCastException if the instance is not `AutoAssignRolePagerdutyTaskParamsAnyOf1`
+     */
+    public AutoAssignRolePagerdutyTaskParamsAnyOf1 getAutoAssignRolePagerdutyTaskParamsAnyOf1() throws ClassCastException {
+        return (AutoAssignRolePagerdutyTaskParamsAnyOf1)super.getActualInstance();
+    }
 
-  /**
-   * Convert an instance of InviteToSlackChannelPagerdutyTaskParams to an JSON string
-   *
-   * @return JSON string
-   */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
+    /**
+     * Get the actual instance of `AutoAssignRolePagerdutyTaskParamsAnyOf`. If the actual instance is not `AutoAssignRolePagerdutyTaskParamsAnyOf`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `AutoAssignRolePagerdutyTaskParamsAnyOf`
+     * @throws ClassCastException if the instance is not `AutoAssignRolePagerdutyTaskParamsAnyOf`
+     */
+    public AutoAssignRolePagerdutyTaskParamsAnyOf getAutoAssignRolePagerdutyTaskParamsAnyOf() throws ClassCastException {
+        return (AutoAssignRolePagerdutyTaskParamsAnyOf)super.getActualInstance();
+    }
+
+    /**
+     * Validates the JSON Element and throws an exception if issues found
+     *
+     * @param jsonElement JSON Element
+     * @throws IOException if the JSON Element is invalid with respect to InviteToSlackChannelPagerdutyTaskParams
+     */
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+        // validate anyOf schemas one by one
+        ArrayList<String> errorMessages = new ArrayList<>();
+        // validate the json string with AutoAssignRolePagerdutyTaskParamsAnyOf1
+        try {
+            AutoAssignRolePagerdutyTaskParamsAnyOf1.validateJsonElement(jsonElement);
+            return;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for AutoAssignRolePagerdutyTaskParamsAnyOf1 failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with AutoAssignRolePagerdutyTaskParamsAnyOf
+        try {
+            AutoAssignRolePagerdutyTaskParamsAnyOf.validateJsonElement(jsonElement);
+            return;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for AutoAssignRolePagerdutyTaskParamsAnyOf failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        throw new IOException(String.format("The JSON string is invalid for InviteToSlackChannelPagerdutyTaskParams with anyOf schemas: AutoAssignRolePagerdutyTaskParamsAnyOf, AutoAssignRolePagerdutyTaskParamsAnyOf1. no class match the result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
+    }
+
+    /**
+     * Create an instance of InviteToSlackChannelPagerdutyTaskParams given an JSON string
+     *
+     * @param jsonString JSON string
+     * @return An instance of InviteToSlackChannelPagerdutyTaskParams
+     * @throws IOException if the JSON string is invalid with respect to InviteToSlackChannelPagerdutyTaskParams
+     */
+    public static InviteToSlackChannelPagerdutyTaskParams fromJson(String jsonString) throws IOException {
+        return JSON.getGson().fromJson(jsonString, InviteToSlackChannelPagerdutyTaskParams.class);
+    }
+
+    /**
+     * Convert an instance of InviteToSlackChannelPagerdutyTaskParams to an JSON string
+     *
+     * @return JSON string
+     */
+    public String toJson() {
+        return JSON.getGson().toJson(this);
+    }
 }
 

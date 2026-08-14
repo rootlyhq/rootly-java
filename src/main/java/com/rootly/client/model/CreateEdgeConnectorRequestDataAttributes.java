@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.CreateEdgeConnectorRequestDataAttributesFilters;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -50,16 +51,16 @@ import com.rootly.client.JSON;
 /**
  * CreateEdgeConnectorRequestDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateEdgeConnectorRequestDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   /**
@@ -116,18 +117,23 @@ public class CreateEdgeConnectorRequestDataAttributes {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private StatusEnum status;
 
   public static final String SERIALIZED_NAME_SUBSCRIPTIONS = "subscriptions";
   @SerializedName(SERIALIZED_NAME_SUBSCRIPTIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> subscriptions = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_FILTERS = "filters";
+  @SerializedName(SERIALIZED_NAME_FILTERS)
+  @jakarta.annotation.Nullable
+  private CreateEdgeConnectorRequestDataAttributesFilters filters;
 
   public CreateEdgeConnectorRequestDataAttributes() {
   }
 
-  public CreateEdgeConnectorRequestDataAttributes name(@javax.annotation.Nonnull String name) {
+  public CreateEdgeConnectorRequestDataAttributes name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -136,17 +142,17 @@ public class CreateEdgeConnectorRequestDataAttributes {
    * Connector name
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public CreateEdgeConnectorRequestDataAttributes description(@javax.annotation.Nullable String description) {
+  public CreateEdgeConnectorRequestDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -155,17 +161,17 @@ public class CreateEdgeConnectorRequestDataAttributes {
    * Connector description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public CreateEdgeConnectorRequestDataAttributes status(@javax.annotation.Nullable StatusEnum status) {
+  public CreateEdgeConnectorRequestDataAttributes status(@jakarta.annotation.Nullable StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -174,17 +180,17 @@ public class CreateEdgeConnectorRequestDataAttributes {
    * Connector status
    * @return status
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nullable StatusEnum status) {
+  public void setStatus(@jakarta.annotation.Nullable StatusEnum status) {
     this.status = status;
   }
 
 
-  public CreateEdgeConnectorRequestDataAttributes subscriptions(@javax.annotation.Nullable List<String> subscriptions) {
+  public CreateEdgeConnectorRequestDataAttributes subscriptions(@jakarta.annotation.Nullable List<String> subscriptions) {
     this.subscriptions = subscriptions;
     return this;
   }
@@ -201,13 +207,32 @@ public class CreateEdgeConnectorRequestDataAttributes {
    * Array of event types to subscribe to
    * @return subscriptions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getSubscriptions() {
     return subscriptions;
   }
 
-  public void setSubscriptions(@javax.annotation.Nullable List<String> subscriptions) {
+  public void setSubscriptions(@jakarta.annotation.Nullable List<String> subscriptions) {
     this.subscriptions = subscriptions;
+  }
+
+
+  public CreateEdgeConnectorRequestDataAttributes filters(@jakarta.annotation.Nullable CreateEdgeConnectorRequestDataAttributesFilters filters) {
+    this.filters = filters;
+    return this;
+  }
+
+  /**
+   * Get filters
+   * @return filters
+   */
+  @jakarta.annotation.Nullable
+  public CreateEdgeConnectorRequestDataAttributesFilters getFilters() {
+    return filters;
+  }
+
+  public void setFilters(@jakarta.annotation.Nullable CreateEdgeConnectorRequestDataAttributesFilters filters) {
+    this.filters = filters;
   }
 
 
@@ -224,12 +249,13 @@ public class CreateEdgeConnectorRequestDataAttributes {
     return Objects.equals(this.name, createEdgeConnectorRequestDataAttributes.name) &&
         Objects.equals(this.description, createEdgeConnectorRequestDataAttributes.description) &&
         Objects.equals(this.status, createEdgeConnectorRequestDataAttributes.status) &&
-        Objects.equals(this.subscriptions, createEdgeConnectorRequestDataAttributes.subscriptions);
+        Objects.equals(this.subscriptions, createEdgeConnectorRequestDataAttributes.subscriptions) &&
+        Objects.equals(this.filters, createEdgeConnectorRequestDataAttributes.filters);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, status, subscriptions);
+    return Objects.hash(name, description, status, subscriptions, filters);
   }
 
   @Override
@@ -240,6 +266,7 @@ public class CreateEdgeConnectorRequestDataAttributes {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    subscriptions: ").append(toIndentedString(subscriptions)).append("\n");
+    sb.append("    filters: ").append(toIndentedString(filters)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -266,6 +293,7 @@ public class CreateEdgeConnectorRequestDataAttributes {
     openapiFields.add("description");
     openapiFields.add("status");
     openapiFields.add("subscriptions");
+    openapiFields.add("filters");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -316,6 +344,10 @@ public class CreateEdgeConnectorRequestDataAttributes {
       // ensure the optional json data is an array if present
       if (jsonObj.get("subscriptions") != null && !jsonObj.get("subscriptions").isJsonNull() && !jsonObj.get("subscriptions").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `subscriptions` to be an array in the JSON string but got `%s`", jsonObj.get("subscriptions").toString()));
+      }
+      // validate the optional field `filters`
+      if (jsonObj.get("filters") != null && !jsonObj.get("filters").isJsonNull()) {
+        CreateEdgeConnectorRequestDataAttributesFilters.validateJsonElement(jsonObj.get("filters"));
       }
   }
 

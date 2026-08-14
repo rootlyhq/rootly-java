@@ -25,6 +25,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,7 +53,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateLiveCallRouterDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateLiveCallRouterDataAttributes {
   /**
    * The kind of the live_call_router
@@ -135,6 +136,10 @@ public class UpdateLiveCallRouterDataAttributes {
     NL("NL"),
     
     NZ("NZ"),
+    
+    SE("SE"),
+    
+    CH("CH"),
     
     GB("GB"),
     
@@ -257,6 +262,11 @@ public class UpdateLiveCallRouterDataAttributes {
   @jakarta.annotation.Nullable
   private String callerGreeting;
 
+  public static final String SERIALIZED_NAME_UNAVAILABLE_RESPONDER_MESSAGE = "unavailable_responder_message";
+  @SerializedName(SERIALIZED_NAME_UNAVAILABLE_RESPONDER_MESSAGE)
+  @jakarta.annotation.Nullable
+  private String unavailableResponderMessage;
+
   /**
    * The waiting music URL of the live_call_router
    */
@@ -344,10 +354,30 @@ public class UpdateLiveCallRouterDataAttributes {
   @jakarta.annotation.Nullable
   private Boolean shouldAutoResolveAlertOnCallEnd;
 
+  public static final String SERIALIZED_NAME_NOTIFY_VIA_SMS = "notify_via_sms";
+  @SerializedName(SERIALIZED_NAME_NOTIFY_VIA_SMS)
+  @jakarta.annotation.Nullable
+  private Boolean notifyViaSms;
+
+  public static final String SERIALIZED_NAME_NOTIFY_VIA_PUSH_NOTIFICATION = "notify_via_push_notification";
+  @SerializedName(SERIALIZED_NAME_NOTIFY_VIA_PUSH_NOTIFICATION)
+  @jakarta.annotation.Nullable
+  private Boolean notifyViaPushNotification;
+
+  public static final String SERIALIZED_NAME_INFORMATIONAL_NOTIFICATION_MESSAGE = "informational_notification_message";
+  @SerializedName(SERIALIZED_NAME_INFORMATIONAL_NOTIFICATION_MESSAGE)
+  @jakarta.annotation.Nullable
+  private String informationalNotificationMessage;
+
   public static final String SERIALIZED_NAME_ALERT_URGENCY_ID = "alert_urgency_id";
   @SerializedName(SERIALIZED_NAME_ALERT_URGENCY_ID)
   @jakarta.annotation.Nullable
   private String alertUrgencyId;
+
+  public static final String SERIALIZED_NAME_CALLING_TREE_ENABLED = "calling_tree_enabled";
+  @SerializedName(SERIALIZED_NAME_CALLING_TREE_ENABLED)
+  @jakarta.annotation.Nullable
+  private Boolean callingTreeEnabled;
 
   public static final String SERIALIZED_NAME_CALLING_TREE_PROMPT = "calling_tree_prompt";
   @SerializedName(SERIALIZED_NAME_CALLING_TREE_PROMPT)
@@ -500,6 +530,25 @@ public class UpdateLiveCallRouterDataAttributes {
   }
 
 
+  public UpdateLiveCallRouterDataAttributes unavailableResponderMessage(@jakarta.annotation.Nullable String unavailableResponderMessage) {
+    this.unavailableResponderMessage = unavailableResponderMessage;
+    return this;
+  }
+
+  /**
+   * The message played to the caller when a responder doesn&#39;t answer and the call moves on to the next person in the escalation. Leave blank to use the default message.
+   * @return unavailableResponderMessage
+   */
+  @jakarta.annotation.Nullable
+  public String getUnavailableResponderMessage() {
+    return unavailableResponderMessage;
+  }
+
+  public void setUnavailableResponderMessage(@jakarta.annotation.Nullable String unavailableResponderMessage) {
+    this.unavailableResponderMessage = unavailableResponderMessage;
+  }
+
+
   public UpdateLiveCallRouterDataAttributes waitingMusicUrl(@jakarta.annotation.Nullable WaitingMusicUrlEnum waitingMusicUrl) {
     this.waitingMusicUrl = waitingMusicUrl;
     return this;
@@ -595,6 +644,63 @@ public class UpdateLiveCallRouterDataAttributes {
   }
 
 
+  public UpdateLiveCallRouterDataAttributes notifyViaSms(@jakarta.annotation.Nullable Boolean notifyViaSms) {
+    this.notifyViaSms = notifyViaSms;
+    return this;
+  }
+
+  /**
+   * Whether responders are also notified via SMS when this router pages them
+   * @return notifyViaSms
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getNotifyViaSms() {
+    return notifyViaSms;
+  }
+
+  public void setNotifyViaSms(@jakarta.annotation.Nullable Boolean notifyViaSms) {
+    this.notifyViaSms = notifyViaSms;
+  }
+
+
+  public UpdateLiveCallRouterDataAttributes notifyViaPushNotification(@jakarta.annotation.Nullable Boolean notifyViaPushNotification) {
+    this.notifyViaPushNotification = notifyViaPushNotification;
+    return this;
+  }
+
+  /**
+   * Whether responders are also notified via push notification when this router pages them
+   * @return notifyViaPushNotification
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getNotifyViaPushNotification() {
+    return notifyViaPushNotification;
+  }
+
+  public void setNotifyViaPushNotification(@jakarta.annotation.Nullable Boolean notifyViaPushNotification) {
+    this.notifyViaPushNotification = notifyViaPushNotification;
+  }
+
+
+  public UpdateLiveCallRouterDataAttributes informationalNotificationMessage(@jakarta.annotation.Nullable String informationalNotificationMessage) {
+    this.informationalNotificationMessage = informationalNotificationMessage;
+    return this;
+  }
+
+  /**
+   * Optional message included in the SMS/push notification. Supports variables such as {{ alert.url }}, {{ alert.data.* }}, and {{ alert.alert_urgency.name }}.
+   * @return informationalNotificationMessage
+   */
+  @jakarta.annotation.Nullable
+  public String getInformationalNotificationMessage() {
+    return informationalNotificationMessage;
+  }
+
+  public void setInformationalNotificationMessage(@jakarta.annotation.Nullable String informationalNotificationMessage) {
+    this.informationalNotificationMessage = informationalNotificationMessage;
+  }
+
+
   public UpdateLiveCallRouterDataAttributes alertUrgencyId(@jakarta.annotation.Nullable String alertUrgencyId) {
     this.alertUrgencyId = alertUrgencyId;
     return this;
@@ -611,6 +717,25 @@ public class UpdateLiveCallRouterDataAttributes {
 
   public void setAlertUrgencyId(@jakarta.annotation.Nullable String alertUrgencyId) {
     this.alertUrgencyId = alertUrgencyId;
+  }
+
+
+  public UpdateLiveCallRouterDataAttributes callingTreeEnabled(@jakarta.annotation.Nullable Boolean callingTreeEnabled) {
+    this.callingTreeEnabled = callingTreeEnabled;
+    return this;
+  }
+
+  /**
+   * Whether the live call router is configured as a phone tree, requiring callers to press a key before being connected
+   * @return callingTreeEnabled
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getCallingTreeEnabled() {
+    return callingTreeEnabled;
+  }
+
+  public void setCallingTreeEnabled(@jakarta.annotation.Nullable Boolean callingTreeEnabled) {
+    this.callingTreeEnabled = callingTreeEnabled;
   }
 
 
@@ -696,20 +821,36 @@ public class UpdateLiveCallRouterDataAttributes {
         Objects.equals(this.phoneType, updateLiveCallRouterDataAttributes.phoneType) &&
         Objects.equals(this.voicemailGreeting, updateLiveCallRouterDataAttributes.voicemailGreeting) &&
         Objects.equals(this.callerGreeting, updateLiveCallRouterDataAttributes.callerGreeting) &&
+        Objects.equals(this.unavailableResponderMessage, updateLiveCallRouterDataAttributes.unavailableResponderMessage) &&
         Objects.equals(this.waitingMusicUrl, updateLiveCallRouterDataAttributes.waitingMusicUrl) &&
         Objects.equals(this.sentToVoicemailDelay, updateLiveCallRouterDataAttributes.sentToVoicemailDelay) &&
         Objects.equals(this.shouldRedirectToVoicemailOnNoAnswer, updateLiveCallRouterDataAttributes.shouldRedirectToVoicemailOnNoAnswer) &&
         Objects.equals(this.escalationLevelDelayInSeconds, updateLiveCallRouterDataAttributes.escalationLevelDelayInSeconds) &&
         Objects.equals(this.shouldAutoResolveAlertOnCallEnd, updateLiveCallRouterDataAttributes.shouldAutoResolveAlertOnCallEnd) &&
+        Objects.equals(this.notifyViaSms, updateLiveCallRouterDataAttributes.notifyViaSms) &&
+        Objects.equals(this.notifyViaPushNotification, updateLiveCallRouterDataAttributes.notifyViaPushNotification) &&
+        Objects.equals(this.informationalNotificationMessage, updateLiveCallRouterDataAttributes.informationalNotificationMessage) &&
         Objects.equals(this.alertUrgencyId, updateLiveCallRouterDataAttributes.alertUrgencyId) &&
+        Objects.equals(this.callingTreeEnabled, updateLiveCallRouterDataAttributes.callingTreeEnabled) &&
         Objects.equals(this.callingTreePrompt, updateLiveCallRouterDataAttributes.callingTreePrompt) &&
         Objects.equals(this.pagingTargets, updateLiveCallRouterDataAttributes.pagingTargets) &&
         Objects.equals(this.escalationPolicyTriggerParams, updateLiveCallRouterDataAttributes.escalationPolicyTriggerParams);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(kind, enabled, name, countryCode, phoneType, voicemailGreeting, callerGreeting, waitingMusicUrl, sentToVoicemailDelay, shouldRedirectToVoicemailOnNoAnswer, escalationLevelDelayInSeconds, shouldAutoResolveAlertOnCallEnd, alertUrgencyId, callingTreePrompt, pagingTargets, escalationPolicyTriggerParams);
+    return Objects.hash(kind, enabled, name, countryCode, phoneType, voicemailGreeting, callerGreeting, unavailableResponderMessage, waitingMusicUrl, sentToVoicemailDelay, shouldRedirectToVoicemailOnNoAnswer, escalationLevelDelayInSeconds, shouldAutoResolveAlertOnCallEnd, notifyViaSms, notifyViaPushNotification, informationalNotificationMessage, alertUrgencyId, callingTreeEnabled, callingTreePrompt, pagingTargets, escalationPolicyTriggerParams);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -723,12 +864,17 @@ public class UpdateLiveCallRouterDataAttributes {
     sb.append("    phoneType: ").append(toIndentedString(phoneType)).append("\n");
     sb.append("    voicemailGreeting: ").append(toIndentedString(voicemailGreeting)).append("\n");
     sb.append("    callerGreeting: ").append(toIndentedString(callerGreeting)).append("\n");
+    sb.append("    unavailableResponderMessage: ").append(toIndentedString(unavailableResponderMessage)).append("\n");
     sb.append("    waitingMusicUrl: ").append(toIndentedString(waitingMusicUrl)).append("\n");
     sb.append("    sentToVoicemailDelay: ").append(toIndentedString(sentToVoicemailDelay)).append("\n");
     sb.append("    shouldRedirectToVoicemailOnNoAnswer: ").append(toIndentedString(shouldRedirectToVoicemailOnNoAnswer)).append("\n");
     sb.append("    escalationLevelDelayInSeconds: ").append(toIndentedString(escalationLevelDelayInSeconds)).append("\n");
     sb.append("    shouldAutoResolveAlertOnCallEnd: ").append(toIndentedString(shouldAutoResolveAlertOnCallEnd)).append("\n");
+    sb.append("    notifyViaSms: ").append(toIndentedString(notifyViaSms)).append("\n");
+    sb.append("    notifyViaPushNotification: ").append(toIndentedString(notifyViaPushNotification)).append("\n");
+    sb.append("    informationalNotificationMessage: ").append(toIndentedString(informationalNotificationMessage)).append("\n");
     sb.append("    alertUrgencyId: ").append(toIndentedString(alertUrgencyId)).append("\n");
+    sb.append("    callingTreeEnabled: ").append(toIndentedString(callingTreeEnabled)).append("\n");
     sb.append("    callingTreePrompt: ").append(toIndentedString(callingTreePrompt)).append("\n");
     sb.append("    pagingTargets: ").append(toIndentedString(pagingTargets)).append("\n");
     sb.append("    escalationPolicyTriggerParams: ").append(toIndentedString(escalationPolicyTriggerParams)).append("\n");
@@ -761,12 +907,17 @@ public class UpdateLiveCallRouterDataAttributes {
     openapiFields.add("phone_type");
     openapiFields.add("voicemail_greeting");
     openapiFields.add("caller_greeting");
+    openapiFields.add("unavailable_responder_message");
     openapiFields.add("waiting_music_url");
     openapiFields.add("sent_to_voicemail_delay");
     openapiFields.add("should_redirect_to_voicemail_on_no_answer");
     openapiFields.add("escalation_level_delay_in_seconds");
     openapiFields.add("should_auto_resolve_alert_on_call_end");
+    openapiFields.add("notify_via_sms");
+    openapiFields.add("notify_via_push_notification");
+    openapiFields.add("informational_notification_message");
     openapiFields.add("alert_urgency_id");
+    openapiFields.add("calling_tree_enabled");
     openapiFields.add("calling_tree_prompt");
     openapiFields.add("paging_targets");
     openapiFields.add("escalation_policy_trigger_params");
@@ -826,12 +977,18 @@ public class UpdateLiveCallRouterDataAttributes {
       if ((jsonObj.get("caller_greeting") != null && !jsonObj.get("caller_greeting").isJsonNull()) && !jsonObj.get("caller_greeting").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `caller_greeting` to be a primitive type in the JSON string but got `%s`", jsonObj.get("caller_greeting").toString()));
       }
+      if ((jsonObj.get("unavailable_responder_message") != null && !jsonObj.get("unavailable_responder_message").isJsonNull()) && !jsonObj.get("unavailable_responder_message").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `unavailable_responder_message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unavailable_responder_message").toString()));
+      }
       if ((jsonObj.get("waiting_music_url") != null && !jsonObj.get("waiting_music_url").isJsonNull()) && !jsonObj.get("waiting_music_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `waiting_music_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("waiting_music_url").toString()));
       }
       // validate the optional field `waiting_music_url`
       if (jsonObj.get("waiting_music_url") != null && !jsonObj.get("waiting_music_url").isJsonNull()) {
         WaitingMusicUrlEnum.validateJsonElement(jsonObj.get("waiting_music_url"));
+      }
+      if ((jsonObj.get("informational_notification_message") != null && !jsonObj.get("informational_notification_message").isJsonNull()) && !jsonObj.get("informational_notification_message").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `informational_notification_message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("informational_notification_message").toString()));
       }
       if ((jsonObj.get("alert_urgency_id") != null && !jsonObj.get("alert_urgency_id").isJsonNull()) && !jsonObj.get("alert_urgency_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `alert_urgency_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("alert_urgency_id").toString()));

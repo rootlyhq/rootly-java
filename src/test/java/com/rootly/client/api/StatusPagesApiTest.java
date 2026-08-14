@@ -97,8 +97,16 @@ public class StatusPagesApiTest {
         String filterCreatedAtGte = null;
         String filterCreatedAtLt = null;
         String filterCreatedAtLte = null;
+        String filterNameEq = null;
+        String filterNameNotEq = null;
+        String filterNameIn = null;
+        String filterNameNotIn = null;
+        String filterSlugEq = null;
+        String filterSlugNotEq = null;
+        String filterSlugIn = null;
+        String filterSlugNotIn = null;
         String sort = null;
-        StatusPageList response = api.listStatusPages(include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
+        StatusPageList response = api.listStatusPages(include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, sort);
         // TODO: test validations
     }
 

@@ -16,6 +16,9 @@
 |**selectedServiceIds** | **List&lt;String&gt;** |  |  [optional] |
 |**selectedFunctionalityIds** | **List&lt;String&gt;** |  |  [optional] |
 |**selectedUserIds** | **List&lt;Integer&gt;** |  |  [optional] |
+|**selectedEnvironmentIds** | **List&lt;String&gt;** |  |  [optional] |
+|**selectedCauseIds** | **List&lt;String&gt;** |  |  [optional] |
+|**selectedIncidentTypeIds** | **List&lt;String&gt;** |  |  [optional] |
 
 
 

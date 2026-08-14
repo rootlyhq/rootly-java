@@ -49,11 +49,11 @@ import com.rootly.client.JSON;
 /**
  * CatalogField
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CatalogField {
   public static final String SERIALIZED_NAME_CATALOG_ID = "catalog_id";
   @SerializedName(SERIALIZED_NAME_CATALOG_ID)
-  @jakarta.annotation.Nonnull
+  @jakarta.annotation.Nullable
   private String catalogId;
 
   public static final String SERIALIZED_NAME_NAME = "name";
@@ -63,7 +63,7 @@ public class CatalogField {
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
-  @jakarta.annotation.Nonnull
+  @jakarta.annotation.Nullable
   private String slug;
 
   /**
@@ -138,6 +138,150 @@ public class CatalogField {
   @jakarta.annotation.Nullable
   private Integer position;
 
+  public static final String SERIALIZED_NAME_REQUIRED = "required";
+  @SerializedName(SERIALIZED_NAME_REQUIRED)
+  @jakarta.annotation.Nullable
+  private Boolean required;
+
+  /**
+   * The type of catalog the field belongs to.
+   */
+  @JsonAdapter(CatalogTypeEnum.Adapter.class)
+  public enum CatalogTypeEnum {
+    CATALOG("catalog"),
+    
+    CAUSE("cause"),
+    
+    ENVIRONMENT("environment"),
+    
+    FUNCTIONALITY("functionality"),
+    
+    INCIDENT_TYPE("incident_type"),
+    
+    SERVICE("service"),
+    
+    TEAM("team");
+
+    private String value;
+
+    CatalogTypeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static CatalogTypeEnum fromValue(String value) {
+      for (CatalogTypeEnum b : CatalogTypeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<CatalogTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final CatalogTypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public CatalogTypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return CatalogTypeEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      CatalogTypeEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_CATALOG_TYPE = "catalog_type";
+  @SerializedName(SERIALIZED_NAME_CATALOG_TYPE)
+  @jakarta.annotation.Nullable
+  private CatalogTypeEnum catalogType;
+
+  public static final String SERIALIZED_NAME_EXTERNAL_ID = "external_id";
+  @SerializedName(SERIALIZED_NAME_EXTERNAL_ID)
+  @jakarta.annotation.Nullable
+  private String externalId;
+
+  /**
+   * Which source manages this resource (read-only).
+   */
+  @JsonAdapter(ManagedByEnum.Adapter.class)
+  public enum ManagedByEnum {
+    WEB("web"),
+    
+    ADMIN_WEB("admin_web"),
+    
+    API("api"),
+    
+    TERRAFORM("terraform"),
+    
+    PULUMI("pulumi"),
+    
+    BACKSTAGE("backstage"),
+    
+    CATALOG_SYNC("catalog_sync");
+
+    private String value;
+
+    ManagedByEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static ManagedByEnum fromValue(String value) {
+      for (ManagedByEnum b : ManagedByEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<ManagedByEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ManagedByEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ManagedByEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return ManagedByEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      ManagedByEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_MANAGED_BY = "managed_by";
+  @SerializedName(SERIALIZED_NAME_MANAGED_BY)
+  @jakarta.annotation.Nullable
+  private ManagedByEnum managedBy;
+
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   @jakarta.annotation.Nonnull
@@ -151,7 +295,14 @@ public class CatalogField {
   public CatalogField() {
   }
 
-  public CatalogField catalogId(@jakarta.annotation.Nonnull String catalogId) {
+  public CatalogField(
+     String slug
+  ) {
+    this();
+    this.slug = slug;
+  }
+
+  public CatalogField catalogId(@jakarta.annotation.Nullable String catalogId) {
     this.catalogId = catalogId;
     return this;
   }
@@ -160,12 +311,12 @@ public class CatalogField {
    * Get catalogId
    * @return catalogId
    */
-  @jakarta.annotation.Nonnull
+  @jakarta.annotation.Nullable
   public String getCatalogId() {
     return catalogId;
   }
 
-  public void setCatalogId(@jakarta.annotation.Nonnull String catalogId) {
+  public void setCatalogId(@jakarta.annotation.Nullable String catalogId) {
     this.catalogId = catalogId;
   }
 
@@ -189,23 +340,15 @@ public class CatalogField {
   }
 
 
-  public CatalogField slug(@jakarta.annotation.Nonnull String slug) {
-    this.slug = slug;
-    return this;
-  }
-
   /**
    * Get slug
    * @return slug
    */
-  @jakarta.annotation.Nonnull
+  @jakarta.annotation.Nullable
   public String getSlug() {
     return slug;
   }
 
-  public void setSlug(@jakarta.annotation.Nonnull String slug) {
-    this.slug = slug;
-  }
 
 
   public CatalogField kind(@jakarta.annotation.Nonnull KindEnum kind) {
@@ -284,6 +427,82 @@ public class CatalogField {
   }
 
 
+  public CatalogField required(@jakarta.annotation.Nullable Boolean required) {
+    this.required = required;
+    return this;
+  }
+
+  /**
+   * Whether the field is required.
+   * @return required
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getRequired() {
+    return required;
+  }
+
+  public void setRequired(@jakarta.annotation.Nullable Boolean required) {
+    this.required = required;
+  }
+
+
+  public CatalogField catalogType(@jakarta.annotation.Nullable CatalogTypeEnum catalogType) {
+    this.catalogType = catalogType;
+    return this;
+  }
+
+  /**
+   * The type of catalog the field belongs to.
+   * @return catalogType
+   */
+  @jakarta.annotation.Nullable
+  public CatalogTypeEnum getCatalogType() {
+    return catalogType;
+  }
+
+  public void setCatalogType(@jakarta.annotation.Nullable CatalogTypeEnum catalogType) {
+    this.catalogType = catalogType;
+  }
+
+
+  public CatalogField externalId(@jakarta.annotation.Nullable String externalId) {
+    this.externalId = externalId;
+    return this;
+  }
+
+  /**
+   * An external identifier for this catalog field. Must be unique within the scope.
+   * @return externalId
+   */
+  @jakarta.annotation.Nullable
+  public String getExternalId() {
+    return externalId;
+  }
+
+  public void setExternalId(@jakarta.annotation.Nullable String externalId) {
+    this.externalId = externalId;
+  }
+
+
+  public CatalogField managedBy(@jakarta.annotation.Nullable ManagedByEnum managedBy) {
+    this.managedBy = managedBy;
+    return this;
+  }
+
+  /**
+   * Which source manages this resource (read-only).
+   * @return managedBy
+   */
+  @jakarta.annotation.Nullable
+  public ManagedByEnum getManagedBy() {
+    return managedBy;
+  }
+
+  public void setManagedBy(@jakarta.annotation.Nullable ManagedByEnum managedBy) {
+    this.managedBy = managedBy;
+  }
+
+
   public CatalogField createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
@@ -339,6 +558,10 @@ public class CatalogField {
         Objects.equals(this.kindCatalogId, catalogField.kindCatalogId) &&
         Objects.equals(this.multiple, catalogField.multiple) &&
         Objects.equals(this.position, catalogField.position) &&
+        Objects.equals(this.required, catalogField.required) &&
+        Objects.equals(this.catalogType, catalogField.catalogType) &&
+        Objects.equals(this.externalId, catalogField.externalId) &&
+        Objects.equals(this.managedBy, catalogField.managedBy) &&
         Objects.equals(this.createdAt, catalogField.createdAt) &&
         Objects.equals(this.updatedAt, catalogField.updatedAt);
   }
@@ -349,7 +572,7 @@ public class CatalogField {
 
   @Override
   public int hashCode() {
-    return Objects.hash(catalogId, name, slug, kind, kindCatalogId, multiple, position, createdAt, updatedAt);
+    return Objects.hash(catalogId, name, slug, kind, kindCatalogId, multiple, position, required, catalogType, externalId, managedBy, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -370,6 +593,10 @@ public class CatalogField {
     sb.append("    kindCatalogId: ").append(toIndentedString(kindCatalogId)).append("\n");
     sb.append("    multiple: ").append(toIndentedString(multiple)).append("\n");
     sb.append("    position: ").append(toIndentedString(position)).append("\n");
+    sb.append("    required: ").append(toIndentedString(required)).append("\n");
+    sb.append("    catalogType: ").append(toIndentedString(catalogType)).append("\n");
+    sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
+    sb.append("    managedBy: ").append(toIndentedString(managedBy)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -401,6 +628,10 @@ public class CatalogField {
     openapiFields.add("kind_catalog_id");
     openapiFields.add("multiple");
     openapiFields.add("position");
+    openapiFields.add("required");
+    openapiFields.add("catalog_type");
+    openapiFields.add("external_id");
+    openapiFields.add("managed_by");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
 
@@ -408,7 +639,6 @@ public class CatalogField {
     openapiRequiredFields = new HashSet<String>();
     openapiRequiredFields.add("catalog_id");
     openapiRequiredFields.add("name");
-    openapiRequiredFields.add("slug");
     openapiRequiredFields.add("kind");
     openapiRequiredFields.add("multiple");
     openapiRequiredFields.add("position");
@@ -444,13 +674,13 @@ public class CatalogField {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("catalog_id").isJsonPrimitive()) {
+      if ((jsonObj.get("catalog_id") != null && !jsonObj.get("catalog_id").isJsonNull()) && !jsonObj.get("catalog_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `catalog_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("catalog_id").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
-      if (!jsonObj.get("slug").isJsonPrimitive()) {
+      if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
       }
       if (!jsonObj.get("kind").isJsonPrimitive()) {
@@ -460,6 +690,23 @@ public class CatalogField {
       KindEnum.validateJsonElement(jsonObj.get("kind"));
       if ((jsonObj.get("kind_catalog_id") != null && !jsonObj.get("kind_catalog_id").isJsonNull()) && !jsonObj.get("kind_catalog_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `kind_catalog_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind_catalog_id").toString()));
+      }
+      if ((jsonObj.get("catalog_type") != null && !jsonObj.get("catalog_type").isJsonNull()) && !jsonObj.get("catalog_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `catalog_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("catalog_type").toString()));
+      }
+      // validate the optional field `catalog_type`
+      if (jsonObj.get("catalog_type") != null && !jsonObj.get("catalog_type").isJsonNull()) {
+        CatalogTypeEnum.validateJsonElement(jsonObj.get("catalog_type"));
+      }
+      if ((jsonObj.get("external_id") != null && !jsonObj.get("external_id").isJsonNull()) && !jsonObj.get("external_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `external_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("external_id").toString()));
+      }
+      if ((jsonObj.get("managed_by") != null && !jsonObj.get("managed_by").isJsonNull()) && !jsonObj.get("managed_by").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `managed_by` to be a primitive type in the JSON string but got `%s`", jsonObj.get("managed_by").toString()));
+      }
+      // validate the optional field `managed_by`
+      if (jsonObj.get("managed_by") != null && !jsonObj.get("managed_by").isJsonNull()) {
+        ManagedByEnum.validateJsonElement(jsonObj.get("managed_by"));
       }
       if (!jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));

@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * UserNotificationRule
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UserNotificationRule {
   public static final String SERIALIZED_NAME_USER_ID = "user_id";
   @SerializedName(SERIALIZED_NAME_USER_ID)
@@ -103,7 +103,11 @@ public class UserNotificationRule {
     
     NON_CRITICAL_DEVICE("non_critical_device"),
     
-    SLACK("slack");
+    SLACK("slack"),
+    
+    GOOGLE_CHAT("google_chat"),
+    
+    MICROSOFT_TEAMS("microsoft_teams");
 
     private String value;
 
@@ -152,6 +156,63 @@ public class UserNotificationRule {
   @SerializedName(SERIALIZED_NAME_ENABLED_CONTACT_TYPES)
   @jakarta.annotation.Nullable
   private List<EnabledContactTypesEnum> enabledContactTypes = new ArrayList<>();
+
+  /**
+   * Type of notification rule (audible or quiet). Audible notifications use sound/vibration to alert users, while quiet notifications are silent.
+   */
+  @JsonAdapter(NotificationTypeEnum.Adapter.class)
+  public enum NotificationTypeEnum {
+    AUDIBLE("audible"),
+    
+    QUIET("quiet");
+
+    private String value;
+
+    NotificationTypeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static NotificationTypeEnum fromValue(String value) {
+      for (NotificationTypeEnum b : NotificationTypeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<NotificationTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final NotificationTypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public NotificationTypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return NotificationTypeEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      NotificationTypeEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_NOTIFICATION_TYPE = "notification_type";
+  @SerializedName(SERIALIZED_NAME_NOTIFICATION_TYPE)
+  @jakarta.annotation.Nullable
+  private NotificationTypeEnum notificationType;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -326,6 +387,25 @@ public class UserNotificationRule {
   }
 
 
+  public UserNotificationRule notificationType(@jakarta.annotation.Nullable NotificationTypeEnum notificationType) {
+    this.notificationType = notificationType;
+    return this;
+  }
+
+  /**
+   * Type of notification rule (audible or quiet). Audible notifications use sound/vibration to alert users, while quiet notifications are silent.
+   * @return notificationType
+   */
+  @jakarta.annotation.Nullable
+  public NotificationTypeEnum getNotificationType() {
+    return notificationType;
+  }
+
+  public void setNotificationType(@jakarta.annotation.Nullable NotificationTypeEnum notificationType) {
+    this.notificationType = notificationType;
+  }
+
+
   public UserNotificationRule createdAt(@jakarta.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
     return this;
@@ -382,6 +462,7 @@ public class UserNotificationRule {
         Objects.equals(this.userSmsNumberId, userNotificationRule.userSmsNumberId) &&
         Objects.equals(this.userDeviceId, userNotificationRule.userDeviceId) &&
         Objects.equals(this.enabledContactTypes, userNotificationRule.enabledContactTypes) &&
+        Objects.equals(this.notificationType, userNotificationRule.notificationType) &&
         Objects.equals(this.createdAt, userNotificationRule.createdAt) &&
         Objects.equals(this.updatedAt, userNotificationRule.updatedAt);
   }
@@ -392,7 +473,7 @@ public class UserNotificationRule {
 
   @Override
   public int hashCode() {
-    return Objects.hash(userId, delay, position, userEmailAddressId, userCallNumberId, userSmsNumberId, userDeviceId, enabledContactTypes, createdAt, updatedAt);
+    return Objects.hash(userId, delay, position, userEmailAddressId, userCallNumberId, userSmsNumberId, userDeviceId, enabledContactTypes, notificationType, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -414,6 +495,7 @@ public class UserNotificationRule {
     sb.append("    userSmsNumberId: ").append(toIndentedString(userSmsNumberId)).append("\n");
     sb.append("    userDeviceId: ").append(toIndentedString(userDeviceId)).append("\n");
     sb.append("    enabledContactTypes: ").append(toIndentedString(enabledContactTypes)).append("\n");
+    sb.append("    notificationType: ").append(toIndentedString(notificationType)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -446,6 +528,7 @@ public class UserNotificationRule {
     openapiFields.add("user_sms_number_id");
     openapiFields.add("user_device_id");
     openapiFields.add("enabled_contact_types");
+    openapiFields.add("notification_type");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
 
@@ -489,6 +572,13 @@ public class UserNotificationRule {
       // ensure the optional json data is an array if present
       if (jsonObj.get("enabled_contact_types") != null && !jsonObj.get("enabled_contact_types").isJsonNull() && !jsonObj.get("enabled_contact_types").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `enabled_contact_types` to be an array in the JSON string but got `%s`", jsonObj.get("enabled_contact_types").toString()));
+      }
+      if ((jsonObj.get("notification_type") != null && !jsonObj.get("notification_type").isJsonNull()) && !jsonObj.get("notification_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `notification_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("notification_type").toString()));
+      }
+      // validate the optional field `notification_type`
+      if (jsonObj.get("notification_type") != null && !jsonObj.get("notification_type").isJsonNull()) {
+        NotificationTypeEnum.validateJsonElement(jsonObj.get("notification_type"));
       }
       if ((jsonObj.get("created_at") != null && !jsonObj.get("created_at").isJsonNull()) && !jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));

@@ -218,7 +218,7 @@ public class Example {
 
 <a id="listIncidentRoles"></a>
 # **listIncidentRoles**
-> IncidentRoleList listIncidentRoles(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort)
+> IncidentRoleList listIncidentRoles(pageNumber, pageSize, filterSearch, filterSlug, filterName, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterEnabledEq, filterEnabledNotEq, filterEnabledIn, filterEnabledNotIn, sort)
 
 List incident roles
 
@@ -244,7 +244,6 @@ public class Example {
     bearer_auth.setBearerToken("BEARER TOKEN");
 
     IncidentRolesApi apiInstance = new IncidentRolesApi(defaultClient);
-    String include = "include_example"; // String | 
     Integer pageNumber = 56; // Integer | 
     Integer pageSize = 56; // Integer | 
     String filterSearch = "filterSearch_example"; // String | 
@@ -255,9 +254,21 @@ public class Example {
     String filterCreatedAtGte = "filterCreatedAtGte_example"; // String | 
     String filterCreatedAtLt = "filterCreatedAtLt_example"; // String | 
     String filterCreatedAtLte = "filterCreatedAtLte_example"; // String | 
+    String filterSlugEq = "filterSlugEq_example"; // String | 
+    String filterSlugNotEq = "filterSlugNotEq_example"; // String | 
+    String filterSlugIn = "filterSlugIn_example"; // String | 
+    String filterSlugNotIn = "filterSlugNotIn_example"; // String | 
+    String filterNameEq = "filterNameEq_example"; // String | 
+    String filterNameNotEq = "filterNameNotEq_example"; // String | 
+    String filterNameIn = "filterNameIn_example"; // String | 
+    String filterNameNotIn = "filterNameNotIn_example"; // String | 
+    String filterEnabledEq = "filterEnabledEq_example"; // String | 
+    String filterEnabledNotEq = "filterEnabledNotEq_example"; // String | 
+    String filterEnabledIn = "filterEnabledIn_example"; // String | 
+    String filterEnabledNotIn = "filterEnabledNotIn_example"; // String | 
     String sort = "sort_example"; // String | 
     try {
-      IncidentRoleList result = apiInstance.listIncidentRoles(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
+      IncidentRoleList result = apiInstance.listIncidentRoles(pageNumber, pageSize, filterSearch, filterSlug, filterName, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterEnabledEq, filterEnabledNotEq, filterEnabledIn, filterEnabledNotIn, sort);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling IncidentRolesApi#listIncidentRoles");
@@ -274,7 +285,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **include** | **String**|  | [optional] |
 | **pageNumber** | **Integer**|  | [optional] |
 | **pageSize** | **Integer**|  | [optional] |
 | **filterSearch** | **String**|  | [optional] |
@@ -285,6 +295,18 @@ public class Example {
 | **filterCreatedAtGte** | **String**|  | [optional] |
 | **filterCreatedAtLt** | **String**|  | [optional] |
 | **filterCreatedAtLte** | **String**|  | [optional] |
+| **filterSlugEq** | **String**|  | [optional] |
+| **filterSlugNotEq** | **String**|  | [optional] |
+| **filterSlugIn** | **String**|  | [optional] |
+| **filterSlugNotIn** | **String**|  | [optional] |
+| **filterNameEq** | **String**|  | [optional] |
+| **filterNameNotEq** | **String**|  | [optional] |
+| **filterNameIn** | **String**|  | [optional] |
+| **filterNameNotIn** | **String**|  | [optional] |
+| **filterEnabledEq** | **String**|  | [optional] |
+| **filterEnabledNotEq** | **String**|  | [optional] |
+| **filterEnabledIn** | **String**|  | [optional] |
+| **filterEnabledNotIn** | **String**|  | [optional] |
 | **sort** | **String**|  | [optional] |
 
 ### Return type

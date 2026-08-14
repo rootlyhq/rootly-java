@@ -27,8 +27,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.rootly.client.model.V1EdgeConnectorsIdPatchRequest;
-import com.rootly.client.model.V1EdgeConnectorsPostRequest;
+import com.rootly.client.model.CreateEdgeConnectorRequest;
+import com.rootly.client.model.UpdateEdgeConnectorRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -74,7 +74,376 @@ public class EdgeConnectorsApi {
     }
 
     /**
-     * Build call for v1EdgeConnectorsGet
+     * Build call for createEdgeConnector
+     * @param createEdgeConnectorRequest  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Edge connector created </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Invalid parameters </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call createEdgeConnectorCall(@jakarta.annotation.Nullable CreateEdgeConnectorRequest createEdgeConnectorRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = createEdgeConnectorRequest;
+
+        // create path and map variables
+        String localVarPath = "/v1/edge_connectors";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/vnd.api+json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "bearer_auth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call createEdgeConnectorValidateBeforeCall(@jakarta.annotation.Nullable CreateEdgeConnectorRequest createEdgeConnectorRequest, final ApiCallback _callback) throws ApiException {
+        return createEdgeConnectorCall(createEdgeConnectorRequest, _callback);
+
+    }
+
+    /**
+     * Create edge connector
+     * 
+     * @param createEdgeConnectorRequest  (optional)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Edge connector created </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Invalid parameters </td><td>  -  </td></tr>
+     </table>
+     */
+    public void createEdgeConnector(@jakarta.annotation.Nullable CreateEdgeConnectorRequest createEdgeConnectorRequest) throws ApiException {
+        createEdgeConnectorWithHttpInfo(createEdgeConnectorRequest);
+    }
+
+    /**
+     * Create edge connector
+     * 
+     * @param createEdgeConnectorRequest  (optional)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Edge connector created </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Invalid parameters </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> createEdgeConnectorWithHttpInfo(@jakarta.annotation.Nullable CreateEdgeConnectorRequest createEdgeConnectorRequest) throws ApiException {
+        okhttp3.Call localVarCall = createEdgeConnectorValidateBeforeCall(createEdgeConnectorRequest, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Create edge connector (asynchronously)
+     * 
+     * @param createEdgeConnectorRequest  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Edge connector created </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Invalid parameters </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call createEdgeConnectorAsync(@jakarta.annotation.Nullable CreateEdgeConnectorRequest createEdgeConnectorRequest, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = createEdgeConnectorValidateBeforeCall(createEdgeConnectorRequest, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for deleteEdgeConnector
+     * @param id Edge connector ID (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Edge connector deleted </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteEdgeConnectorCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v1/edge_connectors/{id}"
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "bearer_auth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call deleteEdgeConnectorValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling deleteEdgeConnector(Async)");
+        }
+
+        return deleteEdgeConnectorCall(id, _callback);
+
+    }
+
+    /**
+     * Delete edge connector
+     * 
+     * @param id Edge connector ID (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Edge connector deleted </td><td>  -  </td></tr>
+     </table>
+     */
+    public void deleteEdgeConnector(@jakarta.annotation.Nonnull String id) throws ApiException {
+        deleteEdgeConnectorWithHttpInfo(id);
+    }
+
+    /**
+     * Delete edge connector
+     * 
+     * @param id Edge connector ID (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Edge connector deleted </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> deleteEdgeConnectorWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
+        okhttp3.Call localVarCall = deleteEdgeConnectorValidateBeforeCall(id, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Delete edge connector (asynchronously)
+     * 
+     * @param id Edge connector ID (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Edge connector deleted </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deleteEdgeConnectorAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = deleteEdgeConnectorValidateBeforeCall(id, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getEdgeConnector
+     * @param id Edge connector ID (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns edge connector details </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Edge connector not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getEdgeConnectorCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v1/edge_connectors/{id}"
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "bearer_auth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getEdgeConnectorValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling getEdgeConnector(Async)");
+        }
+
+        return getEdgeConnectorCall(id, _callback);
+
+    }
+
+    /**
+     * Show edge connector
+     * 
+     * @param id Edge connector ID (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns edge connector details </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Edge connector not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public void getEdgeConnector(@jakarta.annotation.Nonnull String id) throws ApiException {
+        getEdgeConnectorWithHttpInfo(id);
+    }
+
+    /**
+     * Show edge connector
+     * 
+     * @param id Edge connector ID (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns edge connector details </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Edge connector not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> getEdgeConnectorWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
+        okhttp3.Call localVarCall = getEdgeConnectorValidateBeforeCall(id, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Show edge connector (asynchronously)
+     * 
+     * @param id Edge connector ID (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Returns edge connector details </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Edge connector not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getEdgeConnectorAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getEdgeConnectorValidateBeforeCall(id, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for listEdgeConnectors
      * @param page  (optional)
      * @param perPage  (optional)
      * @param status Filter by status (active/paused) (optional)
@@ -89,7 +458,7 @@ public class EdgeConnectorsApi {
         <tr><td> 200 </td><td> Filters by status </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1EdgeConnectorsGetCall(@jakarta.annotation.Nullable Integer page, @jakarta.annotation.Nullable Integer perPage, @jakarta.annotation.Nullable String status, @jakarta.annotation.Nullable String name, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listEdgeConnectorsCall(@jakarta.annotation.Nullable Integer page, @jakarta.annotation.Nullable Integer perPage, @jakarta.annotation.Nullable String status, @jakarta.annotation.Nullable String name, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -149,8 +518,8 @@ public class EdgeConnectorsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1EdgeConnectorsGetValidateBeforeCall(@jakarta.annotation.Nullable Integer page, @jakarta.annotation.Nullable Integer perPage, @jakarta.annotation.Nullable String status, @jakarta.annotation.Nullable String name, final ApiCallback _callback) throws ApiException {
-        return v1EdgeConnectorsGetCall(page, perPage, status, name, _callback);
+    private okhttp3.Call listEdgeConnectorsValidateBeforeCall(@jakarta.annotation.Nullable Integer page, @jakarta.annotation.Nullable Integer perPage, @jakarta.annotation.Nullable String status, @jakarta.annotation.Nullable String name, final ApiCallback _callback) throws ApiException {
+        return listEdgeConnectorsCall(page, perPage, status, name, _callback);
 
     }
 
@@ -169,8 +538,8 @@ public class EdgeConnectorsApi {
         <tr><td> 200 </td><td> Filters by status </td><td>  -  </td></tr>
      </table>
      */
-    public void v1EdgeConnectorsGet(@jakarta.annotation.Nullable Integer page, @jakarta.annotation.Nullable Integer perPage, @jakarta.annotation.Nullable String status, @jakarta.annotation.Nullable String name) throws ApiException {
-        v1EdgeConnectorsGetWithHttpInfo(page, perPage, status, name);
+    public void listEdgeConnectors(@jakarta.annotation.Nullable Integer page, @jakarta.annotation.Nullable Integer perPage, @jakarta.annotation.Nullable String status, @jakarta.annotation.Nullable String name) throws ApiException {
+        listEdgeConnectorsWithHttpInfo(page, perPage, status, name);
     }
 
     /**
@@ -189,8 +558,8 @@ public class EdgeConnectorsApi {
         <tr><td> 200 </td><td> Filters by status </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> v1EdgeConnectorsGetWithHttpInfo(@jakarta.annotation.Nullable Integer page, @jakarta.annotation.Nullable Integer perPage, @jakarta.annotation.Nullable String status, @jakarta.annotation.Nullable String name) throws ApiException {
-        okhttp3.Call localVarCall = v1EdgeConnectorsGetValidateBeforeCall(page, perPage, status, name, null);
+    public ApiResponse<Void> listEdgeConnectorsWithHttpInfo(@jakarta.annotation.Nullable Integer page, @jakarta.annotation.Nullable Integer perPage, @jakarta.annotation.Nullable String status, @jakarta.annotation.Nullable String name) throws ApiException {
+        okhttp3.Call localVarCall = listEdgeConnectorsValidateBeforeCall(page, perPage, status, name, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -211,264 +580,16 @@ public class EdgeConnectorsApi {
         <tr><td> 200 </td><td> Filters by status </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1EdgeConnectorsGetAsync(@jakarta.annotation.Nullable Integer page, @jakarta.annotation.Nullable Integer perPage, @jakarta.annotation.Nullable String status, @jakarta.annotation.Nullable String name, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call listEdgeConnectorsAsync(@jakarta.annotation.Nullable Integer page, @jakarta.annotation.Nullable Integer perPage, @jakarta.annotation.Nullable String status, @jakarta.annotation.Nullable String name, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v1EdgeConnectorsGetValidateBeforeCall(page, perPage, status, name, _callback);
+        okhttp3.Call localVarCall = listEdgeConnectorsValidateBeforeCall(page, perPage, status, name, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
-     * Build call for v1EdgeConnectorsIdDelete
+     * Build call for updateEdgeConnector
      * @param id Edge connector ID (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Edge connector deleted </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call v1EdgeConnectorsIdDeleteCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/v1/edge_connectors/{id}"
-            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "bearer_auth" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1EdgeConnectorsIdDeleteValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'id' is set
-        if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling v1EdgeConnectorsIdDelete(Async)");
-        }
-
-        return v1EdgeConnectorsIdDeleteCall(id, _callback);
-
-    }
-
-    /**
-     * Delete edge connector
-     * 
-     * @param id Edge connector ID (required)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Edge connector deleted </td><td>  -  </td></tr>
-     </table>
-     */
-    public void v1EdgeConnectorsIdDelete(@jakarta.annotation.Nonnull String id) throws ApiException {
-        v1EdgeConnectorsIdDeleteWithHttpInfo(id);
-    }
-
-    /**
-     * Delete edge connector
-     * 
-     * @param id Edge connector ID (required)
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Edge connector deleted </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Void> v1EdgeConnectorsIdDeleteWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
-        okhttp3.Call localVarCall = v1EdgeConnectorsIdDeleteValidateBeforeCall(id, null);
-        return localVarApiClient.execute(localVarCall);
-    }
-
-    /**
-     * Delete edge connector (asynchronously)
-     * 
-     * @param id Edge connector ID (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Edge connector deleted </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call v1EdgeConnectorsIdDeleteAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = v1EdgeConnectorsIdDeleteValidateBeforeCall(id, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for v1EdgeConnectorsIdGet
-     * @param id Edge connector ID (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Returns edge connector details </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Edge connector not found </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call v1EdgeConnectorsIdGetCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/v1/edge_connectors/{id}"
-            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "bearer_auth" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1EdgeConnectorsIdGetValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'id' is set
-        if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling v1EdgeConnectorsIdGet(Async)");
-        }
-
-        return v1EdgeConnectorsIdGetCall(id, _callback);
-
-    }
-
-    /**
-     * Show edge connector
-     * 
-     * @param id Edge connector ID (required)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Returns edge connector details </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Edge connector not found </td><td>  -  </td></tr>
-     </table>
-     */
-    public void v1EdgeConnectorsIdGet(@jakarta.annotation.Nonnull String id) throws ApiException {
-        v1EdgeConnectorsIdGetWithHttpInfo(id);
-    }
-
-    /**
-     * Show edge connector
-     * 
-     * @param id Edge connector ID (required)
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Returns edge connector details </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Edge connector not found </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Void> v1EdgeConnectorsIdGetWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
-        okhttp3.Call localVarCall = v1EdgeConnectorsIdGetValidateBeforeCall(id, null);
-        return localVarApiClient.execute(localVarCall);
-    }
-
-    /**
-     * Show edge connector (asynchronously)
-     * 
-     * @param id Edge connector ID (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Returns edge connector details </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Edge connector not found </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call v1EdgeConnectorsIdGetAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<Void> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = v1EdgeConnectorsIdGetValidateBeforeCall(id, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for v1EdgeConnectorsIdPatch
-     * @param id Edge connector ID (required)
-     * @param v1EdgeConnectorsIdPatchRequest  (optional)
+     * @param updateEdgeConnectorRequest  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -480,7 +601,7 @@ public class EdgeConnectorsApi {
         <tr><td> 422 </td><td> Invalid parameters </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1EdgeConnectorsIdPatchCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable V1EdgeConnectorsIdPatchRequest v1EdgeConnectorsIdPatchRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateEdgeConnectorCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable UpdateEdgeConnectorRequest updateEdgeConnectorRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -494,7 +615,7 @@ public class EdgeConnectorsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = v1EdgeConnectorsIdPatchRequest;
+        Object localVarPostBody = updateEdgeConnectorRequest;
 
         // create path and map variables
         String localVarPath = "/v1/edge_connectors/{id}"
@@ -526,13 +647,13 @@ public class EdgeConnectorsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1EdgeConnectorsIdPatchValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable V1EdgeConnectorsIdPatchRequest v1EdgeConnectorsIdPatchRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateEdgeConnectorValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable UpdateEdgeConnectorRequest updateEdgeConnectorRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling v1EdgeConnectorsIdPatch(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling updateEdgeConnector(Async)");
         }
 
-        return v1EdgeConnectorsIdPatchCall(id, v1EdgeConnectorsIdPatchRequest, _callback);
+        return updateEdgeConnectorCall(id, updateEdgeConnectorRequest, _callback);
 
     }
 
@@ -540,7 +661,7 @@ public class EdgeConnectorsApi {
      * Update edge connector
      * 
      * @param id Edge connector ID (required)
-     * @param v1EdgeConnectorsIdPatchRequest  (optional)
+     * @param updateEdgeConnectorRequest  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -550,15 +671,15 @@ public class EdgeConnectorsApi {
         <tr><td> 422 </td><td> Invalid parameters </td><td>  -  </td></tr>
      </table>
      */
-    public void v1EdgeConnectorsIdPatch(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable V1EdgeConnectorsIdPatchRequest v1EdgeConnectorsIdPatchRequest) throws ApiException {
-        v1EdgeConnectorsIdPatchWithHttpInfo(id, v1EdgeConnectorsIdPatchRequest);
+    public void updateEdgeConnector(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable UpdateEdgeConnectorRequest updateEdgeConnectorRequest) throws ApiException {
+        updateEdgeConnectorWithHttpInfo(id, updateEdgeConnectorRequest);
     }
 
     /**
      * Update edge connector
      * 
      * @param id Edge connector ID (required)
-     * @param v1EdgeConnectorsIdPatchRequest  (optional)
+     * @param updateEdgeConnectorRequest  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -569,8 +690,8 @@ public class EdgeConnectorsApi {
         <tr><td> 422 </td><td> Invalid parameters </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> v1EdgeConnectorsIdPatchWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable V1EdgeConnectorsIdPatchRequest v1EdgeConnectorsIdPatchRequest) throws ApiException {
-        okhttp3.Call localVarCall = v1EdgeConnectorsIdPatchValidateBeforeCall(id, v1EdgeConnectorsIdPatchRequest, null);
+    public ApiResponse<Void> updateEdgeConnectorWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable UpdateEdgeConnectorRequest updateEdgeConnectorRequest) throws ApiException {
+        okhttp3.Call localVarCall = updateEdgeConnectorValidateBeforeCall(id, updateEdgeConnectorRequest, null);
         return localVarApiClient.execute(localVarCall);
     }
 
@@ -578,7 +699,7 @@ public class EdgeConnectorsApi {
      * Update edge connector (asynchronously)
      * 
      * @param id Edge connector ID (required)
-     * @param v1EdgeConnectorsIdPatchRequest  (optional)
+     * @param updateEdgeConnectorRequest  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -590,130 +711,9 @@ public class EdgeConnectorsApi {
         <tr><td> 422 </td><td> Invalid parameters </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1EdgeConnectorsIdPatchAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable V1EdgeConnectorsIdPatchRequest v1EdgeConnectorsIdPatchRequest, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call updateEdgeConnectorAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable UpdateEdgeConnectorRequest updateEdgeConnectorRequest, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v1EdgeConnectorsIdPatchValidateBeforeCall(id, v1EdgeConnectorsIdPatchRequest, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for v1EdgeConnectorsPost
-     * @param v1EdgeConnectorsPostRequest  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Edge connector created </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Invalid parameters </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call v1EdgeConnectorsPostCall(@jakarta.annotation.Nullable V1EdgeConnectorsPostRequest v1EdgeConnectorsPostRequest, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = v1EdgeConnectorsPostRequest;
-
-        // create path and map variables
-        String localVarPath = "/v1/edge_connectors";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            "application/vnd.api+json"
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] { "bearer_auth" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1EdgeConnectorsPostValidateBeforeCall(@jakarta.annotation.Nullable V1EdgeConnectorsPostRequest v1EdgeConnectorsPostRequest, final ApiCallback _callback) throws ApiException {
-        return v1EdgeConnectorsPostCall(v1EdgeConnectorsPostRequest, _callback);
-
-    }
-
-    /**
-     * Create edge connector
-     * 
-     * @param v1EdgeConnectorsPostRequest  (optional)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Edge connector created </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Invalid parameters </td><td>  -  </td></tr>
-     </table>
-     */
-    public void v1EdgeConnectorsPost(@jakarta.annotation.Nullable V1EdgeConnectorsPostRequest v1EdgeConnectorsPostRequest) throws ApiException {
-        v1EdgeConnectorsPostWithHttpInfo(v1EdgeConnectorsPostRequest);
-    }
-
-    /**
-     * Create edge connector
-     * 
-     * @param v1EdgeConnectorsPostRequest  (optional)
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Edge connector created </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Invalid parameters </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Void> v1EdgeConnectorsPostWithHttpInfo(@jakarta.annotation.Nullable V1EdgeConnectorsPostRequest v1EdgeConnectorsPostRequest) throws ApiException {
-        okhttp3.Call localVarCall = v1EdgeConnectorsPostValidateBeforeCall(v1EdgeConnectorsPostRequest, null);
-        return localVarApiClient.execute(localVarCall);
-    }
-
-    /**
-     * Create edge connector (asynchronously)
-     * 
-     * @param v1EdgeConnectorsPostRequest  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Edge connector created </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Invalid parameters </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call v1EdgeConnectorsPostAsync(@jakarta.annotation.Nullable V1EdgeConnectorsPostRequest v1EdgeConnectorsPostRequest, final ApiCallback<Void> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = v1EdgeConnectorsPostValidateBeforeCall(v1EdgeConnectorsPostRequest, _callback);
+        okhttp3.Call localVarCall = updateEdgeConnectorValidateBeforeCall(id, updateEdgeConnectorRequest, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }

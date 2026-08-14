@@ -91,13 +91,28 @@ public class CatalogsApiTest {
         String sort = null;
         Integer pageNumber = null;
         Integer pageSize = null;
+        String filterSearch = null;
         String filterSlug = null;
         String filterName = null;
+        String filterExternalId = null;
+        String filterManagedBy = null;
         String filterCreatedAtGt = null;
         String filterCreatedAtGte = null;
         String filterCreatedAtLt = null;
         String filterCreatedAtLte = null;
-        CatalogList response = api.listCatalogs(include, sort, pageNumber, pageSize, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
+        String filterSlugEq = null;
+        String filterSlugNotEq = null;
+        String filterSlugIn = null;
+        String filterSlugNotIn = null;
+        String filterNameEq = null;
+        String filterNameNotEq = null;
+        String filterNameIn = null;
+        String filterNameNotIn = null;
+        String filterManagedByEq = null;
+        String filterManagedByNotEq = null;
+        String filterManagedByIn = null;
+        String filterManagedByNotIn = null;
+        CatalogList response = api.listCatalogs(include, sort, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterExternalId, filterManagedBy, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterManagedByEq, filterManagedByNotEq, filterManagedByIn, filterManagedByNotIn);
         // TODO: test validations
     }
 

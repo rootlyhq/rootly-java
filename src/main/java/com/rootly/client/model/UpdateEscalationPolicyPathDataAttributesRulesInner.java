@@ -19,13 +19,20 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerAnyOf;
-import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerAnyOf1;
-import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2;
+import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf;
+import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf1;
+import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf2;
+import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf3;
+import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf4;
+import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf5;
+import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner;
+import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf6;
+import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf7;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 
 
@@ -62,7 +69,7 @@ import com.google.gson.JsonParseException;
 
 import com.rootly.client.JSON;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateEscalationPolicyPathDataAttributesRulesInner extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(UpdateEscalationPolicyPathDataAttributesRulesInner.class.getName());
 
@@ -74,9 +81,14 @@ public class UpdateEscalationPolicyPathDataAttributesRulesInner extends Abstract
                 return null; // this class only serializes 'UpdateEscalationPolicyPathDataAttributesRulesInner' and its subtypes
             }
             final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<NewEscalationPolicyPathDataAttributesRulesInnerAnyOf> adapterNewEscalationPolicyPathDataAttributesRulesInnerAnyOf = gson.getDelegateAdapter(this, TypeToken.get(NewEscalationPolicyPathDataAttributesRulesInnerAnyOf.class));
-            final TypeAdapter<NewEscalationPolicyPathDataAttributesRulesInnerAnyOf1> adapterNewEscalationPolicyPathDataAttributesRulesInnerAnyOf1 = gson.getDelegateAdapter(this, TypeToken.get(NewEscalationPolicyPathDataAttributesRulesInnerAnyOf1.class));
-            final TypeAdapter<NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2> adapterNewEscalationPolicyPathDataAttributesRulesInnerAnyOf2 = gson.getDelegateAdapter(this, TypeToken.get(NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2.class));
+            final TypeAdapter<NewEscalationPolicyPathDataAttributesRulesInnerOneOf> adapterNewEscalationPolicyPathDataAttributesRulesInnerOneOf = gson.getDelegateAdapter(this, TypeToken.get(NewEscalationPolicyPathDataAttributesRulesInnerOneOf.class));
+            final TypeAdapter<NewEscalationPolicyPathDataAttributesRulesInnerOneOf1> adapterNewEscalationPolicyPathDataAttributesRulesInnerOneOf1 = gson.getDelegateAdapter(this, TypeToken.get(NewEscalationPolicyPathDataAttributesRulesInnerOneOf1.class));
+            final TypeAdapter<NewEscalationPolicyPathDataAttributesRulesInnerOneOf2> adapterNewEscalationPolicyPathDataAttributesRulesInnerOneOf2 = gson.getDelegateAdapter(this, TypeToken.get(NewEscalationPolicyPathDataAttributesRulesInnerOneOf2.class));
+            final TypeAdapter<NewEscalationPolicyPathDataAttributesRulesInnerOneOf3> adapterNewEscalationPolicyPathDataAttributesRulesInnerOneOf3 = gson.getDelegateAdapter(this, TypeToken.get(NewEscalationPolicyPathDataAttributesRulesInnerOneOf3.class));
+            final TypeAdapter<NewEscalationPolicyPathDataAttributesRulesInnerOneOf4> adapterNewEscalationPolicyPathDataAttributesRulesInnerOneOf4 = gson.getDelegateAdapter(this, TypeToken.get(NewEscalationPolicyPathDataAttributesRulesInnerOneOf4.class));
+            final TypeAdapter<NewEscalationPolicyPathDataAttributesRulesInnerOneOf5> adapterNewEscalationPolicyPathDataAttributesRulesInnerOneOf5 = gson.getDelegateAdapter(this, TypeToken.get(NewEscalationPolicyPathDataAttributesRulesInnerOneOf5.class));
+            final TypeAdapter<NewEscalationPolicyPathDataAttributesRulesInnerOneOf6> adapterNewEscalationPolicyPathDataAttributesRulesInnerOneOf6 = gson.getDelegateAdapter(this, TypeToken.get(NewEscalationPolicyPathDataAttributesRulesInnerOneOf6.class));
+            final TypeAdapter<NewEscalationPolicyPathDataAttributesRulesInnerOneOf7> adapterNewEscalationPolicyPathDataAttributesRulesInnerOneOf7 = gson.getDelegateAdapter(this, TypeToken.get(NewEscalationPolicyPathDataAttributesRulesInnerOneOf7.class));
 
             return (TypeAdapter<T>) new TypeAdapter<UpdateEscalationPolicyPathDataAttributesRulesInner>() {
                 @Override
@@ -86,25 +98,55 @@ public class UpdateEscalationPolicyPathDataAttributesRulesInner extends Abstract
                         return;
                     }
 
-                    // check if the actual instance is of the type `NewEscalationPolicyPathDataAttributesRulesInnerAnyOf`
-                    if (value.getActualInstance() instanceof NewEscalationPolicyPathDataAttributesRulesInnerAnyOf) {
-                        JsonElement element = adapterNewEscalationPolicyPathDataAttributesRulesInnerAnyOf.toJsonTree((NewEscalationPolicyPathDataAttributesRulesInnerAnyOf)value.getActualInstance());
+                    // check if the actual instance is of the type `NewEscalationPolicyPathDataAttributesRulesInnerOneOf`
+                    if (value.getActualInstance() instanceof NewEscalationPolicyPathDataAttributesRulesInnerOneOf) {
+                        JsonElement element = adapterNewEscalationPolicyPathDataAttributesRulesInnerOneOf.toJsonTree((NewEscalationPolicyPathDataAttributesRulesInnerOneOf)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `NewEscalationPolicyPathDataAttributesRulesInnerAnyOf1`
-                    if (value.getActualInstance() instanceof NewEscalationPolicyPathDataAttributesRulesInnerAnyOf1) {
-                        JsonElement element = adapterNewEscalationPolicyPathDataAttributesRulesInnerAnyOf1.toJsonTree((NewEscalationPolicyPathDataAttributesRulesInnerAnyOf1)value.getActualInstance());
+                    // check if the actual instance is of the type `NewEscalationPolicyPathDataAttributesRulesInnerOneOf1`
+                    if (value.getActualInstance() instanceof NewEscalationPolicyPathDataAttributesRulesInnerOneOf1) {
+                        JsonElement element = adapterNewEscalationPolicyPathDataAttributesRulesInnerOneOf1.toJsonTree((NewEscalationPolicyPathDataAttributesRulesInnerOneOf1)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
-                    // check if the actual instance is of the type `NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2`
-                    if (value.getActualInstance() instanceof NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2) {
-                        JsonElement element = adapterNewEscalationPolicyPathDataAttributesRulesInnerAnyOf2.toJsonTree((NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2)value.getActualInstance());
+                    // check if the actual instance is of the type `NewEscalationPolicyPathDataAttributesRulesInnerOneOf2`
+                    if (value.getActualInstance() instanceof NewEscalationPolicyPathDataAttributesRulesInnerOneOf2) {
+                        JsonElement element = adapterNewEscalationPolicyPathDataAttributesRulesInnerOneOf2.toJsonTree((NewEscalationPolicyPathDataAttributesRulesInnerOneOf2)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
-                    throw new IOException("Failed to serialize as the type doesn't match anyOf schemas: NewEscalationPolicyPathDataAttributesRulesInnerAnyOf, NewEscalationPolicyPathDataAttributesRulesInnerAnyOf1, NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2");
+                    // check if the actual instance is of the type `NewEscalationPolicyPathDataAttributesRulesInnerOneOf3`
+                    if (value.getActualInstance() instanceof NewEscalationPolicyPathDataAttributesRulesInnerOneOf3) {
+                        JsonElement element = adapterNewEscalationPolicyPathDataAttributesRulesInnerOneOf3.toJsonTree((NewEscalationPolicyPathDataAttributesRulesInnerOneOf3)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `NewEscalationPolicyPathDataAttributesRulesInnerOneOf4`
+                    if (value.getActualInstance() instanceof NewEscalationPolicyPathDataAttributesRulesInnerOneOf4) {
+                        JsonElement element = adapterNewEscalationPolicyPathDataAttributesRulesInnerOneOf4.toJsonTree((NewEscalationPolicyPathDataAttributesRulesInnerOneOf4)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `NewEscalationPolicyPathDataAttributesRulesInnerOneOf5`
+                    if (value.getActualInstance() instanceof NewEscalationPolicyPathDataAttributesRulesInnerOneOf5) {
+                        JsonElement element = adapterNewEscalationPolicyPathDataAttributesRulesInnerOneOf5.toJsonTree((NewEscalationPolicyPathDataAttributesRulesInnerOneOf5)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `NewEscalationPolicyPathDataAttributesRulesInnerOneOf6`
+                    if (value.getActualInstance() instanceof NewEscalationPolicyPathDataAttributesRulesInnerOneOf6) {
+                        JsonElement element = adapterNewEscalationPolicyPathDataAttributesRulesInnerOneOf6.toJsonTree((NewEscalationPolicyPathDataAttributesRulesInnerOneOf6)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `NewEscalationPolicyPathDataAttributesRulesInnerOneOf7`
+                    if (value.getActualInstance() instanceof NewEscalationPolicyPathDataAttributesRulesInnerOneOf7) {
+                        JsonElement element = adapterNewEscalationPolicyPathDataAttributesRulesInnerOneOf7.toJsonTree((NewEscalationPolicyPathDataAttributesRulesInnerOneOf7)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: NewEscalationPolicyPathDataAttributesRulesInnerOneOf, NewEscalationPolicyPathDataAttributesRulesInnerOneOf1, NewEscalationPolicyPathDataAttributesRulesInnerOneOf2, NewEscalationPolicyPathDataAttributesRulesInnerOneOf3, NewEscalationPolicyPathDataAttributesRulesInnerOneOf4, NewEscalationPolicyPathDataAttributesRulesInnerOneOf5, NewEscalationPolicyPathDataAttributesRulesInnerOneOf6, NewEscalationPolicyPathDataAttributesRulesInnerOneOf7");
                 }
 
                 @Override
@@ -112,71 +154,140 @@ public class UpdateEscalationPolicyPathDataAttributesRulesInner extends Abstract
                     Object deserialized = null;
                     JsonElement jsonElement = elementAdapter.read(in);
 
+                    int match = 0;
                     ArrayList<String> errorMessages = new ArrayList<>();
                     TypeAdapter actualAdapter = elementAdapter;
 
-                    // deserialize NewEscalationPolicyPathDataAttributesRulesInnerAnyOf
+                    // deserialize NewEscalationPolicyPathDataAttributesRulesInnerOneOf
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        NewEscalationPolicyPathDataAttributesRulesInnerAnyOf.validateJsonElement(jsonElement);
-                        actualAdapter = adapterNewEscalationPolicyPathDataAttributesRulesInnerAnyOf;
-                        UpdateEscalationPolicyPathDataAttributesRulesInner ret = new UpdateEscalationPolicyPathDataAttributesRulesInner();
-                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
-                        return ret;
+                        NewEscalationPolicyPathDataAttributesRulesInnerOneOf.validateJsonElement(jsonElement);
+                        actualAdapter = adapterNewEscalationPolicyPathDataAttributesRulesInnerOneOf;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'NewEscalationPolicyPathDataAttributesRulesInnerOneOf'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for NewEscalationPolicyPathDataAttributesRulesInnerAnyOf failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'NewEscalationPolicyPathDataAttributesRulesInnerAnyOf'", e);
+                        errorMessages.add(String.format("Deserialization for NewEscalationPolicyPathDataAttributesRulesInnerOneOf failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'NewEscalationPolicyPathDataAttributesRulesInnerOneOf'", e);
                     }
-                    // deserialize NewEscalationPolicyPathDataAttributesRulesInnerAnyOf1
+                    // deserialize NewEscalationPolicyPathDataAttributesRulesInnerOneOf1
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        NewEscalationPolicyPathDataAttributesRulesInnerAnyOf1.validateJsonElement(jsonElement);
-                        actualAdapter = adapterNewEscalationPolicyPathDataAttributesRulesInnerAnyOf1;
-                        UpdateEscalationPolicyPathDataAttributesRulesInner ret = new UpdateEscalationPolicyPathDataAttributesRulesInner();
-                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
-                        return ret;
+                        NewEscalationPolicyPathDataAttributesRulesInnerOneOf1.validateJsonElement(jsonElement);
+                        actualAdapter = adapterNewEscalationPolicyPathDataAttributesRulesInnerOneOf1;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'NewEscalationPolicyPathDataAttributesRulesInnerOneOf1'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for NewEscalationPolicyPathDataAttributesRulesInnerAnyOf1 failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'NewEscalationPolicyPathDataAttributesRulesInnerAnyOf1'", e);
+                        errorMessages.add(String.format("Deserialization for NewEscalationPolicyPathDataAttributesRulesInnerOneOf1 failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'NewEscalationPolicyPathDataAttributesRulesInnerOneOf1'", e);
                     }
-                    // deserialize NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2
+                    // deserialize NewEscalationPolicyPathDataAttributesRulesInnerOneOf2
                     try {
                         // validate the JSON object to see if any exception is thrown
-                        NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2.validateJsonElement(jsonElement);
-                        actualAdapter = adapterNewEscalationPolicyPathDataAttributesRulesInnerAnyOf2;
-                        UpdateEscalationPolicyPathDataAttributesRulesInner ret = new UpdateEscalationPolicyPathDataAttributesRulesInner();
-                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
-                        return ret;
+                        NewEscalationPolicyPathDataAttributesRulesInnerOneOf2.validateJsonElement(jsonElement);
+                        actualAdapter = adapterNewEscalationPolicyPathDataAttributesRulesInnerOneOf2;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'NewEscalationPolicyPathDataAttributesRulesInnerOneOf2'");
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2 failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2'", e);
+                        errorMessages.add(String.format("Deserialization for NewEscalationPolicyPathDataAttributesRulesInnerOneOf2 failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'NewEscalationPolicyPathDataAttributesRulesInnerOneOf2'", e);
+                    }
+                    // deserialize NewEscalationPolicyPathDataAttributesRulesInnerOneOf3
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        NewEscalationPolicyPathDataAttributesRulesInnerOneOf3.validateJsonElement(jsonElement);
+                        actualAdapter = adapterNewEscalationPolicyPathDataAttributesRulesInnerOneOf3;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'NewEscalationPolicyPathDataAttributesRulesInnerOneOf3'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for NewEscalationPolicyPathDataAttributesRulesInnerOneOf3 failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'NewEscalationPolicyPathDataAttributesRulesInnerOneOf3'", e);
+                    }
+                    // deserialize NewEscalationPolicyPathDataAttributesRulesInnerOneOf4
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        NewEscalationPolicyPathDataAttributesRulesInnerOneOf4.validateJsonElement(jsonElement);
+                        actualAdapter = adapterNewEscalationPolicyPathDataAttributesRulesInnerOneOf4;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'NewEscalationPolicyPathDataAttributesRulesInnerOneOf4'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for NewEscalationPolicyPathDataAttributesRulesInnerOneOf4 failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'NewEscalationPolicyPathDataAttributesRulesInnerOneOf4'", e);
+                    }
+                    // deserialize NewEscalationPolicyPathDataAttributesRulesInnerOneOf5
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        NewEscalationPolicyPathDataAttributesRulesInnerOneOf5.validateJsonElement(jsonElement);
+                        actualAdapter = adapterNewEscalationPolicyPathDataAttributesRulesInnerOneOf5;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'NewEscalationPolicyPathDataAttributesRulesInnerOneOf5'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for NewEscalationPolicyPathDataAttributesRulesInnerOneOf5 failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'NewEscalationPolicyPathDataAttributesRulesInnerOneOf5'", e);
+                    }
+                    // deserialize NewEscalationPolicyPathDataAttributesRulesInnerOneOf6
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        NewEscalationPolicyPathDataAttributesRulesInnerOneOf6.validateJsonElement(jsonElement);
+                        actualAdapter = adapterNewEscalationPolicyPathDataAttributesRulesInnerOneOf6;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'NewEscalationPolicyPathDataAttributesRulesInnerOneOf6'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for NewEscalationPolicyPathDataAttributesRulesInnerOneOf6 failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'NewEscalationPolicyPathDataAttributesRulesInnerOneOf6'", e);
+                    }
+                    // deserialize NewEscalationPolicyPathDataAttributesRulesInnerOneOf7
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        NewEscalationPolicyPathDataAttributesRulesInnerOneOf7.validateJsonElement(jsonElement);
+                        actualAdapter = adapterNewEscalationPolicyPathDataAttributesRulesInnerOneOf7;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'NewEscalationPolicyPathDataAttributesRulesInnerOneOf7'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for NewEscalationPolicyPathDataAttributesRulesInnerOneOf7 failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'NewEscalationPolicyPathDataAttributesRulesInnerOneOf7'", e);
                     }
 
-                    throw new IOException(String.format("Failed deserialization for UpdateEscalationPolicyPathDataAttributesRulesInner: no class matches result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
+                    if (match == 1) {
+                        UpdateEscalationPolicyPathDataAttributesRulesInner ret = new UpdateEscalationPolicyPathDataAttributesRulesInner();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
+                        return ret;
+                    }
+
+                    throw new IOException(String.format("Failed deserialization for UpdateEscalationPolicyPathDataAttributesRulesInner: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonElement.toString()));
                 }
             }.nullSafe();
         }
     }
 
-    // store a list of schema names defined in anyOf
+    // store a list of schema names defined in oneOf
     public static final Map<String, Class<?>> schemas = new HashMap<String, Class<?>>();
 
     public UpdateEscalationPolicyPathDataAttributesRulesInner() {
-        super("anyOf", Boolean.TRUE);
+        super("oneOf", Boolean.TRUE);
     }
 
     public UpdateEscalationPolicyPathDataAttributesRulesInner(Object o) {
-        super("anyOf", Boolean.TRUE);
+        super("oneOf", Boolean.TRUE);
         setActualInstance(o);
     }
 
     static {
-        schemas.put("NewEscalationPolicyPathDataAttributesRulesInnerAnyOf", NewEscalationPolicyPathDataAttributesRulesInnerAnyOf.class);
-        schemas.put("NewEscalationPolicyPathDataAttributesRulesInnerAnyOf1", NewEscalationPolicyPathDataAttributesRulesInnerAnyOf1.class);
-        schemas.put("NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2", NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2.class);
+        schemas.put("NewEscalationPolicyPathDataAttributesRulesInnerOneOf", NewEscalationPolicyPathDataAttributesRulesInnerOneOf.class);
+        schemas.put("NewEscalationPolicyPathDataAttributesRulesInnerOneOf1", NewEscalationPolicyPathDataAttributesRulesInnerOneOf1.class);
+        schemas.put("NewEscalationPolicyPathDataAttributesRulesInnerOneOf2", NewEscalationPolicyPathDataAttributesRulesInnerOneOf2.class);
+        schemas.put("NewEscalationPolicyPathDataAttributesRulesInnerOneOf3", NewEscalationPolicyPathDataAttributesRulesInnerOneOf3.class);
+        schemas.put("NewEscalationPolicyPathDataAttributesRulesInnerOneOf4", NewEscalationPolicyPathDataAttributesRulesInnerOneOf4.class);
+        schemas.put("NewEscalationPolicyPathDataAttributesRulesInnerOneOf5", NewEscalationPolicyPathDataAttributesRulesInnerOneOf5.class);
+        schemas.put("NewEscalationPolicyPathDataAttributesRulesInnerOneOf6", NewEscalationPolicyPathDataAttributesRulesInnerOneOf6.class);
+        schemas.put("NewEscalationPolicyPathDataAttributesRulesInnerOneOf7", NewEscalationPolicyPathDataAttributesRulesInnerOneOf7.class);
     }
 
     @Override
@@ -185,11 +296,11 @@ public class UpdateEscalationPolicyPathDataAttributesRulesInner extends Abstract
     }
 
     /**
-     * Set the instance that matches the anyOf child schema, check
-     * the instance parameter is valid against the anyOf child schemas:
-     * NewEscalationPolicyPathDataAttributesRulesInnerAnyOf, NewEscalationPolicyPathDataAttributesRulesInnerAnyOf1, NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2
+     * Set the instance that matches the oneOf child schema, check
+     * the instance parameter is valid against the oneOf child schemas:
+     * NewEscalationPolicyPathDataAttributesRulesInnerOneOf, NewEscalationPolicyPathDataAttributesRulesInnerOneOf1, NewEscalationPolicyPathDataAttributesRulesInnerOneOf2, NewEscalationPolicyPathDataAttributesRulesInnerOneOf3, NewEscalationPolicyPathDataAttributesRulesInnerOneOf4, NewEscalationPolicyPathDataAttributesRulesInnerOneOf5, NewEscalationPolicyPathDataAttributesRulesInnerOneOf6, NewEscalationPolicyPathDataAttributesRulesInnerOneOf7
      *
-     * It could be an instance of the 'anyOf' schemas.
+     * It could be an instance of the 'oneOf' schemas.
      */
     @Override
     public void setActualInstance(Object instance) {
@@ -198,29 +309,54 @@ public class UpdateEscalationPolicyPathDataAttributesRulesInner extends Abstract
            return;
         }
 
-        if (instance instanceof NewEscalationPolicyPathDataAttributesRulesInnerAnyOf) {
+        if (instance instanceof NewEscalationPolicyPathDataAttributesRulesInnerOneOf) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (instance instanceof NewEscalationPolicyPathDataAttributesRulesInnerAnyOf1) {
+        if (instance instanceof NewEscalationPolicyPathDataAttributesRulesInnerOneOf1) {
             super.setActualInstance(instance);
             return;
         }
 
-        if (instance instanceof NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2) {
+        if (instance instanceof NewEscalationPolicyPathDataAttributesRulesInnerOneOf2) {
             super.setActualInstance(instance);
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be NewEscalationPolicyPathDataAttributesRulesInnerAnyOf, NewEscalationPolicyPathDataAttributesRulesInnerAnyOf1, NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2");
+        if (instance instanceof NewEscalationPolicyPathDataAttributesRulesInnerOneOf3) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof NewEscalationPolicyPathDataAttributesRulesInnerOneOf4) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof NewEscalationPolicyPathDataAttributesRulesInnerOneOf5) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof NewEscalationPolicyPathDataAttributesRulesInnerOneOf6) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof NewEscalationPolicyPathDataAttributesRulesInnerOneOf7) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        throw new RuntimeException("Invalid instance type. Must be NewEscalationPolicyPathDataAttributesRulesInnerOneOf, NewEscalationPolicyPathDataAttributesRulesInnerOneOf1, NewEscalationPolicyPathDataAttributesRulesInnerOneOf2, NewEscalationPolicyPathDataAttributesRulesInnerOneOf3, NewEscalationPolicyPathDataAttributesRulesInnerOneOf4, NewEscalationPolicyPathDataAttributesRulesInnerOneOf5, NewEscalationPolicyPathDataAttributesRulesInnerOneOf6, NewEscalationPolicyPathDataAttributesRulesInnerOneOf7");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * NewEscalationPolicyPathDataAttributesRulesInnerAnyOf, NewEscalationPolicyPathDataAttributesRulesInnerAnyOf1, NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2
+     * NewEscalationPolicyPathDataAttributesRulesInnerOneOf, NewEscalationPolicyPathDataAttributesRulesInnerOneOf1, NewEscalationPolicyPathDataAttributesRulesInnerOneOf2, NewEscalationPolicyPathDataAttributesRulesInnerOneOf3, NewEscalationPolicyPathDataAttributesRulesInnerOneOf4, NewEscalationPolicyPathDataAttributesRulesInnerOneOf5, NewEscalationPolicyPathDataAttributesRulesInnerOneOf6, NewEscalationPolicyPathDataAttributesRulesInnerOneOf7
      *
-     * @return The actual instance (NewEscalationPolicyPathDataAttributesRulesInnerAnyOf, NewEscalationPolicyPathDataAttributesRulesInnerAnyOf1, NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2)
+     * @return The actual instance (NewEscalationPolicyPathDataAttributesRulesInnerOneOf, NewEscalationPolicyPathDataAttributesRulesInnerOneOf1, NewEscalationPolicyPathDataAttributesRulesInnerOneOf2, NewEscalationPolicyPathDataAttributesRulesInnerOneOf3, NewEscalationPolicyPathDataAttributesRulesInnerOneOf4, NewEscalationPolicyPathDataAttributesRulesInnerOneOf5, NewEscalationPolicyPathDataAttributesRulesInnerOneOf6, NewEscalationPolicyPathDataAttributesRulesInnerOneOf7)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -229,36 +365,91 @@ public class UpdateEscalationPolicyPathDataAttributesRulesInner extends Abstract
     }
 
     /**
-     * Get the actual instance of `NewEscalationPolicyPathDataAttributesRulesInnerAnyOf`. If the actual instance is not `NewEscalationPolicyPathDataAttributesRulesInnerAnyOf`,
+     * Get the actual instance of `NewEscalationPolicyPathDataAttributesRulesInnerOneOf`. If the actual instance is not `NewEscalationPolicyPathDataAttributesRulesInnerOneOf`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `NewEscalationPolicyPathDataAttributesRulesInnerAnyOf`
-     * @throws ClassCastException if the instance is not `NewEscalationPolicyPathDataAttributesRulesInnerAnyOf`
+     * @return The actual instance of `NewEscalationPolicyPathDataAttributesRulesInnerOneOf`
+     * @throws ClassCastException if the instance is not `NewEscalationPolicyPathDataAttributesRulesInnerOneOf`
      */
-    public NewEscalationPolicyPathDataAttributesRulesInnerAnyOf getNewEscalationPolicyPathDataAttributesRulesInnerAnyOf() throws ClassCastException {
-        return (NewEscalationPolicyPathDataAttributesRulesInnerAnyOf)super.getActualInstance();
+    public NewEscalationPolicyPathDataAttributesRulesInnerOneOf getNewEscalationPolicyPathDataAttributesRulesInnerOneOf() throws ClassCastException {
+        return (NewEscalationPolicyPathDataAttributesRulesInnerOneOf)super.getActualInstance();
     }
 
     /**
-     * Get the actual instance of `NewEscalationPolicyPathDataAttributesRulesInnerAnyOf1`. If the actual instance is not `NewEscalationPolicyPathDataAttributesRulesInnerAnyOf1`,
+     * Get the actual instance of `NewEscalationPolicyPathDataAttributesRulesInnerOneOf1`. If the actual instance is not `NewEscalationPolicyPathDataAttributesRulesInnerOneOf1`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `NewEscalationPolicyPathDataAttributesRulesInnerAnyOf1`
-     * @throws ClassCastException if the instance is not `NewEscalationPolicyPathDataAttributesRulesInnerAnyOf1`
+     * @return The actual instance of `NewEscalationPolicyPathDataAttributesRulesInnerOneOf1`
+     * @throws ClassCastException if the instance is not `NewEscalationPolicyPathDataAttributesRulesInnerOneOf1`
      */
-    public NewEscalationPolicyPathDataAttributesRulesInnerAnyOf1 getNewEscalationPolicyPathDataAttributesRulesInnerAnyOf1() throws ClassCastException {
-        return (NewEscalationPolicyPathDataAttributesRulesInnerAnyOf1)super.getActualInstance();
+    public NewEscalationPolicyPathDataAttributesRulesInnerOneOf1 getNewEscalationPolicyPathDataAttributesRulesInnerOneOf1() throws ClassCastException {
+        return (NewEscalationPolicyPathDataAttributesRulesInnerOneOf1)super.getActualInstance();
     }
 
     /**
-     * Get the actual instance of `NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2`. If the actual instance is not `NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2`,
+     * Get the actual instance of `NewEscalationPolicyPathDataAttributesRulesInnerOneOf2`. If the actual instance is not `NewEscalationPolicyPathDataAttributesRulesInnerOneOf2`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2`
-     * @throws ClassCastException if the instance is not `NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2`
+     * @return The actual instance of `NewEscalationPolicyPathDataAttributesRulesInnerOneOf2`
+     * @throws ClassCastException if the instance is not `NewEscalationPolicyPathDataAttributesRulesInnerOneOf2`
      */
-    public NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2 getNewEscalationPolicyPathDataAttributesRulesInnerAnyOf2() throws ClassCastException {
-        return (NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2)super.getActualInstance();
+    public NewEscalationPolicyPathDataAttributesRulesInnerOneOf2 getNewEscalationPolicyPathDataAttributesRulesInnerOneOf2() throws ClassCastException {
+        return (NewEscalationPolicyPathDataAttributesRulesInnerOneOf2)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `NewEscalationPolicyPathDataAttributesRulesInnerOneOf3`. If the actual instance is not `NewEscalationPolicyPathDataAttributesRulesInnerOneOf3`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `NewEscalationPolicyPathDataAttributesRulesInnerOneOf3`
+     * @throws ClassCastException if the instance is not `NewEscalationPolicyPathDataAttributesRulesInnerOneOf3`
+     */
+    public NewEscalationPolicyPathDataAttributesRulesInnerOneOf3 getNewEscalationPolicyPathDataAttributesRulesInnerOneOf3() throws ClassCastException {
+        return (NewEscalationPolicyPathDataAttributesRulesInnerOneOf3)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `NewEscalationPolicyPathDataAttributesRulesInnerOneOf4`. If the actual instance is not `NewEscalationPolicyPathDataAttributesRulesInnerOneOf4`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `NewEscalationPolicyPathDataAttributesRulesInnerOneOf4`
+     * @throws ClassCastException if the instance is not `NewEscalationPolicyPathDataAttributesRulesInnerOneOf4`
+     */
+    public NewEscalationPolicyPathDataAttributesRulesInnerOneOf4 getNewEscalationPolicyPathDataAttributesRulesInnerOneOf4() throws ClassCastException {
+        return (NewEscalationPolicyPathDataAttributesRulesInnerOneOf4)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `NewEscalationPolicyPathDataAttributesRulesInnerOneOf5`. If the actual instance is not `NewEscalationPolicyPathDataAttributesRulesInnerOneOf5`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `NewEscalationPolicyPathDataAttributesRulesInnerOneOf5`
+     * @throws ClassCastException if the instance is not `NewEscalationPolicyPathDataAttributesRulesInnerOneOf5`
+     */
+    public NewEscalationPolicyPathDataAttributesRulesInnerOneOf5 getNewEscalationPolicyPathDataAttributesRulesInnerOneOf5() throws ClassCastException {
+        return (NewEscalationPolicyPathDataAttributesRulesInnerOneOf5)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `NewEscalationPolicyPathDataAttributesRulesInnerOneOf6`. If the actual instance is not `NewEscalationPolicyPathDataAttributesRulesInnerOneOf6`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `NewEscalationPolicyPathDataAttributesRulesInnerOneOf6`
+     * @throws ClassCastException if the instance is not `NewEscalationPolicyPathDataAttributesRulesInnerOneOf6`
+     */
+    public NewEscalationPolicyPathDataAttributesRulesInnerOneOf6 getNewEscalationPolicyPathDataAttributesRulesInnerOneOf6() throws ClassCastException {
+        return (NewEscalationPolicyPathDataAttributesRulesInnerOneOf6)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `NewEscalationPolicyPathDataAttributesRulesInnerOneOf7`. If the actual instance is not `NewEscalationPolicyPathDataAttributesRulesInnerOneOf7`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `NewEscalationPolicyPathDataAttributesRulesInnerOneOf7`
+     * @throws ClassCastException if the instance is not `NewEscalationPolicyPathDataAttributesRulesInnerOneOf7`
+     */
+    public NewEscalationPolicyPathDataAttributesRulesInnerOneOf7 getNewEscalationPolicyPathDataAttributesRulesInnerOneOf7() throws ClassCastException {
+        return (NewEscalationPolicyPathDataAttributesRulesInnerOneOf7)super.getActualInstance();
     }
 
     /**
@@ -268,33 +459,76 @@ public class UpdateEscalationPolicyPathDataAttributesRulesInner extends Abstract
      * @throws IOException if the JSON Element is invalid with respect to UpdateEscalationPolicyPathDataAttributesRulesInner
      */
     public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        // validate anyOf schemas one by one
+        // validate oneOf schemas one by one
+        int validCount = 0;
         ArrayList<String> errorMessages = new ArrayList<>();
-        // validate the json string with NewEscalationPolicyPathDataAttributesRulesInnerAnyOf
+        // validate the json string with NewEscalationPolicyPathDataAttributesRulesInnerOneOf
         try {
-            NewEscalationPolicyPathDataAttributesRulesInnerAnyOf.validateJsonElement(jsonElement);
-            return;
+            NewEscalationPolicyPathDataAttributesRulesInnerOneOf.validateJsonElement(jsonElement);
+            validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for NewEscalationPolicyPathDataAttributesRulesInnerAnyOf failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format("Deserialization for NewEscalationPolicyPathDataAttributesRulesInnerOneOf failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with NewEscalationPolicyPathDataAttributesRulesInnerAnyOf1
+        // validate the json string with NewEscalationPolicyPathDataAttributesRulesInnerOneOf1
         try {
-            NewEscalationPolicyPathDataAttributesRulesInnerAnyOf1.validateJsonElement(jsonElement);
-            return;
+            NewEscalationPolicyPathDataAttributesRulesInnerOneOf1.validateJsonElement(jsonElement);
+            validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for NewEscalationPolicyPathDataAttributesRulesInnerAnyOf1 failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format("Deserialization for NewEscalationPolicyPathDataAttributesRulesInnerOneOf1 failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2
+        // validate the json string with NewEscalationPolicyPathDataAttributesRulesInnerOneOf2
         try {
-            NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2.validateJsonElement(jsonElement);
-            return;
+            NewEscalationPolicyPathDataAttributesRulesInnerOneOf2.validateJsonElement(jsonElement);
+            validCount++;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2 failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format("Deserialization for NewEscalationPolicyPathDataAttributesRulesInnerOneOf2 failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        throw new IOException(String.format("The JSON string is invalid for UpdateEscalationPolicyPathDataAttributesRulesInner with anyOf schemas: NewEscalationPolicyPathDataAttributesRulesInnerAnyOf, NewEscalationPolicyPathDataAttributesRulesInnerAnyOf1, NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2. no class match the result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
+        // validate the json string with NewEscalationPolicyPathDataAttributesRulesInnerOneOf3
+        try {
+            NewEscalationPolicyPathDataAttributesRulesInnerOneOf3.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for NewEscalationPolicyPathDataAttributesRulesInnerOneOf3 failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with NewEscalationPolicyPathDataAttributesRulesInnerOneOf4
+        try {
+            NewEscalationPolicyPathDataAttributesRulesInnerOneOf4.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for NewEscalationPolicyPathDataAttributesRulesInnerOneOf4 failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with NewEscalationPolicyPathDataAttributesRulesInnerOneOf5
+        try {
+            NewEscalationPolicyPathDataAttributesRulesInnerOneOf5.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for NewEscalationPolicyPathDataAttributesRulesInnerOneOf5 failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with NewEscalationPolicyPathDataAttributesRulesInnerOneOf6
+        try {
+            NewEscalationPolicyPathDataAttributesRulesInnerOneOf6.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for NewEscalationPolicyPathDataAttributesRulesInnerOneOf6 failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with NewEscalationPolicyPathDataAttributesRulesInnerOneOf7
+        try {
+            NewEscalationPolicyPathDataAttributesRulesInnerOneOf7.validateJsonElement(jsonElement);
+            validCount++;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for NewEscalationPolicyPathDataAttributesRulesInnerOneOf7 failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        if (validCount != 1) {
+            throw new IOException(String.format("The JSON string is invalid for UpdateEscalationPolicyPathDataAttributesRulesInner with oneOf schemas: NewEscalationPolicyPathDataAttributesRulesInnerOneOf, NewEscalationPolicyPathDataAttributesRulesInnerOneOf1, NewEscalationPolicyPathDataAttributesRulesInnerOneOf2, NewEscalationPolicyPathDataAttributesRulesInnerOneOf3, NewEscalationPolicyPathDataAttributesRulesInnerOneOf4, NewEscalationPolicyPathDataAttributesRulesInnerOneOf5, NewEscalationPolicyPathDataAttributesRulesInnerOneOf6, NewEscalationPolicyPathDataAttributesRulesInnerOneOf7. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonElement.toString()));
+        }
     }
 
     /**

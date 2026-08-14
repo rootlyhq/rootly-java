@@ -110,4 +110,28 @@ public class CreateGoogleDocsPageTaskParamsTest {
         // TODO: test permissions
     }
 
+    /**
+     * Test the property 'includeOverview'
+     */
+    @Test
+    public void includeOverviewTest() {
+        // TODO: test includeOverview
+    }
+
+    /**
+     * Test the property 'includeTimeline'
+     */
+    @Test
+    public void includeTimelineTest() {
+        // TODO: test includeTimeline
+    }
+
+    /**
+     * Test the property 'includeFollowUps'
+     */
+    @Test
+    public void includeFollowUpsTest() {
+        // TODO: test includeFollowUps
+    }
+
 }

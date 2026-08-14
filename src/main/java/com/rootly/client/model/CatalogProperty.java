@@ -49,21 +49,21 @@ import com.rootly.client.JSON;
 /**
  * CatalogProperty
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CatalogProperty {
   public static final String SERIALIZED_NAME_CATALOG_ID = "catalog_id";
   @SerializedName(SERIALIZED_NAME_CATALOG_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String catalogId;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String slug;
 
   /**
@@ -120,27 +120,27 @@ public class CatalogProperty {
 
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private KindEnum kind;
 
   public static final String SERIALIZED_NAME_KIND_CATALOG_ID = "kind_catalog_id";
   @SerializedName(SERIALIZED_NAME_KIND_CATALOG_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String kindCatalogId;
 
   public static final String SERIALIZED_NAME_MULTIPLE = "multiple";
   @SerializedName(SERIALIZED_NAME_MULTIPLE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Boolean multiple;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public static final String SERIALIZED_NAME_REQUIRED = "required";
   @SerializedName(SERIALIZED_NAME_REQUIRED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean required;
 
   /**
@@ -207,23 +207,102 @@ public class CatalogProperty {
 
   public static final String SERIALIZED_NAME_CATALOG_TYPE = "catalog_type";
   @SerializedName(SERIALIZED_NAME_CATALOG_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CatalogTypeEnum catalogType;
+
+  public static final String SERIALIZED_NAME_EXTERNAL_ID = "external_id";
+  @SerializedName(SERIALIZED_NAME_EXTERNAL_ID)
+  @jakarta.annotation.Nullable
+  private String externalId;
+
+  /**
+   * Which source manages this resource (read-only).
+   */
+  @JsonAdapter(ManagedByEnum.Adapter.class)
+  public enum ManagedByEnum {
+    WEB("web"),
+    
+    ADMIN_WEB("admin_web"),
+    
+    API("api"),
+    
+    TERRAFORM("terraform"),
+    
+    PULUMI("pulumi"),
+    
+    BACKSTAGE("backstage"),
+    
+    CATALOG_SYNC("catalog_sync");
+
+    private String value;
+
+    ManagedByEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static ManagedByEnum fromValue(String value) {
+      for (ManagedByEnum b : ManagedByEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<ManagedByEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ManagedByEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ManagedByEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return ManagedByEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      ManagedByEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_MANAGED_BY = "managed_by";
+  @SerializedName(SERIALIZED_NAME_MANAGED_BY)
+  @jakarta.annotation.Nullable
+  private ManagedByEnum managedBy;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public CatalogProperty() {
   }
 
-  public CatalogProperty catalogId(@javax.annotation.Nullable String catalogId) {
+  public CatalogProperty(
+     String slug
+  ) {
+    this();
+    this.slug = slug;
+  }
+
+  public CatalogProperty catalogId(@jakarta.annotation.Nullable String catalogId) {
     this.catalogId = catalogId;
     return this;
   }
@@ -232,17 +311,17 @@ public class CatalogProperty {
    * Get catalogId
    * @return catalogId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCatalogId() {
     return catalogId;
   }
 
-  public void setCatalogId(@javax.annotation.Nullable String catalogId) {
+  public void setCatalogId(@jakarta.annotation.Nullable String catalogId) {
     this.catalogId = catalogId;
   }
 
 
-  public CatalogProperty name(@javax.annotation.Nonnull String name) {
+  public CatalogProperty name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -251,36 +330,28 @@ public class CatalogProperty {
    * Get name
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
-
-  public CatalogProperty slug(@javax.annotation.Nullable String slug) {
-    this.slug = slug;
-    return this;
-  }
 
   /**
    * Get slug
    * @return slug
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSlug() {
     return slug;
   }
 
-  public void setSlug(@javax.annotation.Nullable String slug) {
-    this.slug = slug;
-  }
 
 
-  public CatalogProperty kind(@javax.annotation.Nonnull KindEnum kind) {
+  public CatalogProperty kind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
     return this;
   }
@@ -289,17 +360,17 @@ public class CatalogProperty {
    * Get kind
    * @return kind
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public KindEnum getKind() {
     return kind;
   }
 
-  public void setKind(@javax.annotation.Nonnull KindEnum kind) {
+  public void setKind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
   }
 
 
-  public CatalogProperty kindCatalogId(@javax.annotation.Nullable String kindCatalogId) {
+  public CatalogProperty kindCatalogId(@jakarta.annotation.Nullable String kindCatalogId) {
     this.kindCatalogId = kindCatalogId;
     return this;
   }
@@ -308,17 +379,17 @@ public class CatalogProperty {
    * Restricts values to items of specified catalog.
    * @return kindCatalogId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getKindCatalogId() {
     return kindCatalogId;
   }
 
-  public void setKindCatalogId(@javax.annotation.Nullable String kindCatalogId) {
+  public void setKindCatalogId(@jakarta.annotation.Nullable String kindCatalogId) {
     this.kindCatalogId = kindCatalogId;
   }
 
 
-  public CatalogProperty multiple(@javax.annotation.Nonnull Boolean multiple) {
+  public CatalogProperty multiple(@jakarta.annotation.Nonnull Boolean multiple) {
     this.multiple = multiple;
     return this;
   }
@@ -327,17 +398,17 @@ public class CatalogProperty {
    * Whether the attribute accepts multiple values.
    * @return multiple
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Boolean getMultiple() {
     return multiple;
   }
 
-  public void setMultiple(@javax.annotation.Nonnull Boolean multiple) {
+  public void setMultiple(@jakarta.annotation.Nonnull Boolean multiple) {
     this.multiple = multiple;
   }
 
 
-  public CatalogProperty position(@javax.annotation.Nullable Integer position) {
+  public CatalogProperty position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -346,17 +417,17 @@ public class CatalogProperty {
    * Default position of the item when displayed in a list.
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 
 
-  public CatalogProperty required(@javax.annotation.Nullable Boolean required) {
+  public CatalogProperty required(@jakarta.annotation.Nullable Boolean required) {
     this.required = required;
     return this;
   }
@@ -365,17 +436,17 @@ public class CatalogProperty {
    * Whether the property is required.
    * @return required
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getRequired() {
     return required;
   }
 
-  public void setRequired(@javax.annotation.Nullable Boolean required) {
+  public void setRequired(@jakarta.annotation.Nullable Boolean required) {
     this.required = required;
   }
 
 
-  public CatalogProperty catalogType(@javax.annotation.Nullable CatalogTypeEnum catalogType) {
+  public CatalogProperty catalogType(@jakarta.annotation.Nullable CatalogTypeEnum catalogType) {
     this.catalogType = catalogType;
     return this;
   }
@@ -384,17 +455,55 @@ public class CatalogProperty {
    * The type of catalog the property belongs to.
    * @return catalogType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CatalogTypeEnum getCatalogType() {
     return catalogType;
   }
 
-  public void setCatalogType(@javax.annotation.Nullable CatalogTypeEnum catalogType) {
+  public void setCatalogType(@jakarta.annotation.Nullable CatalogTypeEnum catalogType) {
     this.catalogType = catalogType;
   }
 
 
-  public CatalogProperty createdAt(@javax.annotation.Nonnull String createdAt) {
+  public CatalogProperty externalId(@jakarta.annotation.Nullable String externalId) {
+    this.externalId = externalId;
+    return this;
+  }
+
+  /**
+   * An external identifier for this catalog property. Must be unique within the scope.
+   * @return externalId
+   */
+  @jakarta.annotation.Nullable
+  public String getExternalId() {
+    return externalId;
+  }
+
+  public void setExternalId(@jakarta.annotation.Nullable String externalId) {
+    this.externalId = externalId;
+  }
+
+
+  public CatalogProperty managedBy(@jakarta.annotation.Nullable ManagedByEnum managedBy) {
+    this.managedBy = managedBy;
+    return this;
+  }
+
+  /**
+   * Which source manages this resource (read-only).
+   * @return managedBy
+   */
+  @jakarta.annotation.Nullable
+  public ManagedByEnum getManagedBy() {
+    return managedBy;
+  }
+
+  public void setManagedBy(@jakarta.annotation.Nullable ManagedByEnum managedBy) {
+    this.managedBy = managedBy;
+  }
+
+
+  public CatalogProperty createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -403,17 +512,17 @@ public class CatalogProperty {
    * Get createdAt
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public CatalogProperty updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public CatalogProperty updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -422,12 +531,12 @@ public class CatalogProperty {
    * Get updatedAt
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 
@@ -451,6 +560,8 @@ public class CatalogProperty {
         Objects.equals(this.position, catalogProperty.position) &&
         Objects.equals(this.required, catalogProperty.required) &&
         Objects.equals(this.catalogType, catalogProperty.catalogType) &&
+        Objects.equals(this.externalId, catalogProperty.externalId) &&
+        Objects.equals(this.managedBy, catalogProperty.managedBy) &&
         Objects.equals(this.createdAt, catalogProperty.createdAt) &&
         Objects.equals(this.updatedAt, catalogProperty.updatedAt);
   }
@@ -461,7 +572,7 @@ public class CatalogProperty {
 
   @Override
   public int hashCode() {
-    return Objects.hash(catalogId, name, slug, kind, kindCatalogId, multiple, position, required, catalogType, createdAt, updatedAt);
+    return Objects.hash(catalogId, name, slug, kind, kindCatalogId, multiple, position, required, catalogType, externalId, managedBy, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -484,6 +595,8 @@ public class CatalogProperty {
     sb.append("    position: ").append(toIndentedString(position)).append("\n");
     sb.append("    required: ").append(toIndentedString(required)).append("\n");
     sb.append("    catalogType: ").append(toIndentedString(catalogType)).append("\n");
+    sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
+    sb.append("    managedBy: ").append(toIndentedString(managedBy)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -517,6 +630,8 @@ public class CatalogProperty {
     openapiFields.add("position");
     openapiFields.add("required");
     openapiFields.add("catalog_type");
+    openapiFields.add("external_id");
+    openapiFields.add("managed_by");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
 
@@ -582,6 +697,16 @@ public class CatalogProperty {
       // validate the optional field `catalog_type`
       if (jsonObj.get("catalog_type") != null && !jsonObj.get("catalog_type").isJsonNull()) {
         CatalogTypeEnum.validateJsonElement(jsonObj.get("catalog_type"));
+      }
+      if ((jsonObj.get("external_id") != null && !jsonObj.get("external_id").isJsonNull()) && !jsonObj.get("external_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `external_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("external_id").toString()));
+      }
+      if ((jsonObj.get("managed_by") != null && !jsonObj.get("managed_by").isJsonNull()) && !jsonObj.get("managed_by").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `managed_by` to be a primitive type in the JSON string but got `%s`", jsonObj.get("managed_by").toString()));
+      }
+      // validate the optional field `managed_by`
+      if (jsonObj.get("managed_by") != null && !jsonObj.get("managed_by").isJsonNull()) {
+        ManagedByEnum.validateJsonElement(jsonObj.get("managed_by"));
       }
       if (!jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));

@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.rootly.client.model.V1EdgeConnectorsIdPatchRequestEdgeConnector;
+import com.rootly.client.model.UpdateEdgeConnectorEdgeConnector;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -49,17 +49,17 @@ import com.rootly.client.JSON;
 /**
  * UpdateEdgeConnector
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateEdgeConnector {
   public static final String SERIALIZED_NAME_EDGE_CONNECTOR = "edge_connector";
   @SerializedName(SERIALIZED_NAME_EDGE_CONNECTOR)
   @jakarta.annotation.Nonnull
-  private V1EdgeConnectorsIdPatchRequestEdgeConnector edgeConnector;
+  private UpdateEdgeConnectorEdgeConnector edgeConnector;
 
   public UpdateEdgeConnector() {
   }
 
-  public UpdateEdgeConnector edgeConnector(@jakarta.annotation.Nonnull V1EdgeConnectorsIdPatchRequestEdgeConnector edgeConnector) {
+  public UpdateEdgeConnector edgeConnector(@jakarta.annotation.Nonnull UpdateEdgeConnectorEdgeConnector edgeConnector) {
     this.edgeConnector = edgeConnector;
     return this;
   }
@@ -69,11 +69,11 @@ public class UpdateEdgeConnector {
    * @return edgeConnector
    */
   @jakarta.annotation.Nonnull
-  public V1EdgeConnectorsIdPatchRequestEdgeConnector getEdgeConnector() {
+  public UpdateEdgeConnectorEdgeConnector getEdgeConnector() {
     return edgeConnector;
   }
 
-  public void setEdgeConnector(@jakarta.annotation.Nonnull V1EdgeConnectorsIdPatchRequestEdgeConnector edgeConnector) {
+  public void setEdgeConnector(@jakarta.annotation.Nonnull UpdateEdgeConnectorEdgeConnector edgeConnector) {
     this.edgeConnector = edgeConnector;
   }
 
@@ -159,7 +159,7 @@ public class UpdateEdgeConnector {
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the required field `edge_connector`
-      V1EdgeConnectorsIdPatchRequestEdgeConnector.validateJsonElement(jsonObj.get("edge_connector"));
+      UpdateEdgeConnectorEdgeConnector.validateJsonElement(jsonObj.get("edge_connector"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

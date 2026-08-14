@@ -50,7 +50,7 @@ import com.rootly.client.JSON;
 /**
  * NewEscalationPolicyPathDataAttributesRulesInnerOneOf3
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf3 {
   /**
    * The type of the escalation path rule
@@ -104,17 +104,17 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf3 {
 
   public static final String SERIALIZED_NAME_RULE_TYPE = "rule_type";
   @SerializedName(SERIALIZED_NAME_RULE_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private RuleTypeEnum ruleType;
 
   public static final String SERIALIZED_NAME_FIELDABLE_TYPE = "fieldable_type";
   @SerializedName(SERIALIZED_NAME_FIELDABLE_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String fieldableType;
 
   public static final String SERIALIZED_NAME_FIELDABLE_ID = "fieldable_id";
   @SerializedName(SERIALIZED_NAME_FIELDABLE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String fieldableId;
 
   /**
@@ -195,18 +195,18 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf3 {
 
   public static final String SERIALIZED_NAME_OPERATOR = "operator";
   @SerializedName(SERIALIZED_NAME_OPERATOR)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private OperatorEnum operator;
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> values = new ArrayList<>();
 
   public NewEscalationPolicyPathDataAttributesRulesInnerOneOf3() {
   }
 
-  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf3 ruleType(@javax.annotation.Nonnull RuleTypeEnum ruleType) {
+  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf3 ruleType(@jakarta.annotation.Nonnull RuleTypeEnum ruleType) {
     this.ruleType = ruleType;
     return this;
   }
@@ -215,17 +215,17 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf3 {
    * The type of the escalation path rule
    * @return ruleType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public RuleTypeEnum getRuleType() {
     return ruleType;
   }
 
-  public void setRuleType(@javax.annotation.Nonnull RuleTypeEnum ruleType) {
+  public void setRuleType(@jakarta.annotation.Nonnull RuleTypeEnum ruleType) {
     this.ruleType = ruleType;
   }
 
 
-  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf3 fieldableType(@javax.annotation.Nonnull String fieldableType) {
+  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf3 fieldableType(@jakarta.annotation.Nonnull String fieldableType) {
     this.fieldableType = fieldableType;
     return this;
   }
@@ -234,17 +234,17 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf3 {
    * The type of the fieldable (e.g., AlertField)
    * @return fieldableType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getFieldableType() {
     return fieldableType;
   }
 
-  public void setFieldableType(@javax.annotation.Nonnull String fieldableType) {
+  public void setFieldableType(@jakarta.annotation.Nonnull String fieldableType) {
     this.fieldableType = fieldableType;
   }
 
 
-  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf3 fieldableId(@javax.annotation.Nonnull String fieldableId) {
+  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf3 fieldableId(@jakarta.annotation.Nonnull String fieldableId) {
     this.fieldableId = fieldableId;
     return this;
   }
@@ -253,17 +253,17 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf3 {
    * The ID of the alert field
    * @return fieldableId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getFieldableId() {
     return fieldableId;
   }
 
-  public void setFieldableId(@javax.annotation.Nonnull String fieldableId) {
+  public void setFieldableId(@jakarta.annotation.Nonnull String fieldableId) {
     this.fieldableId = fieldableId;
   }
 
 
-  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf3 operator(@javax.annotation.Nonnull OperatorEnum operator) {
+  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf3 operator(@jakarta.annotation.Nonnull OperatorEnum operator) {
     this.operator = operator;
     return this;
   }
@@ -272,17 +272,17 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf3 {
    * How the alert field value should be matched
    * @return operator
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public OperatorEnum getOperator() {
     return operator;
   }
 
-  public void setOperator(@javax.annotation.Nonnull OperatorEnum operator) {
+  public void setOperator(@jakarta.annotation.Nonnull OperatorEnum operator) {
     this.operator = operator;
   }
 
 
-  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf3 values(@javax.annotation.Nullable List<String> values) {
+  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf3 values(@jakarta.annotation.Nullable List<String> values) {
     this.values = values;
     return this;
   }
@@ -299,12 +299,12 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf3 {
    * Values to match against
    * @return values
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getValues() {
     return values;
   }
 
-  public void setValues(@javax.annotation.Nullable List<String> values) {
+  public void setValues(@jakarta.annotation.Nullable List<String> values) {
     this.values = values;
   }
 

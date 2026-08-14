@@ -2,6 +2,7 @@
 
 # NewCatalogEntityPropertyDataAttributes
 
+Maximum of 50 values allowed per catalog field.
 
 ## Properties
 
@@ -20,6 +21,7 @@
 |---- | -----|
 | TEXT | &quot;text&quot; |
 | CATALOG_ENTITY | &quot;catalog_entity&quot; |
+| SLACK | &quot;slack&quot; |
 
 
 

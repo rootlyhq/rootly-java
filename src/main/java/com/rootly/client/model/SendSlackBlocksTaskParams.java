@@ -19,667 +19,298 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.AddActionItemTaskParamsPostToSlackChannelsInner;
+import com.rootly.client.model.InviteToSlackChannelTaskParamsAnyOf;
+import com.rootly.client.model.InviteToSlackChannelTaskParamsAnyOf1;
+import com.rootly.client.model.SendSlackMessageTaskParamsAnyOf;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.TypeAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
 
-import java.util.HashMap;
+
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonParseException;
 
 import com.rootly.client.JSON;
 
-/**
- * SendSlackBlocksTaskParams
- */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
-public class SendSlackBlocksTaskParams {
-  /**
-   * Gets or Sets taskType
-   */
-  @JsonAdapter(TaskTypeEnum.Adapter.class)
-  public enum TaskTypeEnum {
-    SEND_SLACK_BLOCKS("send_slack_blocks");
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+public class SendSlackBlocksTaskParams extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(SendSlackBlocksTaskParams.class.getName());
 
-    private String value;
+    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+        @SuppressWarnings("unchecked")
+        @Override
+        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+            if (!SendSlackBlocksTaskParams.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'SendSlackBlocksTaskParams' and its subtypes
+            }
+            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<SendSlackMessageTaskParamsAnyOf> adapterSendSlackMessageTaskParamsAnyOf = gson.getDelegateAdapter(this, TypeToken.get(SendSlackMessageTaskParamsAnyOf.class));
+            final TypeAdapter<InviteToSlackChannelTaskParamsAnyOf> adapterInviteToSlackChannelTaskParamsAnyOf = gson.getDelegateAdapter(this, TypeToken.get(InviteToSlackChannelTaskParamsAnyOf.class));
+            final TypeAdapter<InviteToSlackChannelTaskParamsAnyOf1> adapterInviteToSlackChannelTaskParamsAnyOf1 = gson.getDelegateAdapter(this, TypeToken.get(InviteToSlackChannelTaskParamsAnyOf1.class));
 
-    TaskTypeEnum(String value) {
-      this.value = value;
+            return (TypeAdapter<T>) new TypeAdapter<SendSlackBlocksTaskParams>() {
+                @Override
+                public void write(JsonWriter out, SendSlackBlocksTaskParams value) throws IOException {
+                    if (value == null || value.getActualInstance() == null) {
+                        elementAdapter.write(out, null);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `SendSlackMessageTaskParamsAnyOf`
+                    if (value.getActualInstance() instanceof SendSlackMessageTaskParamsAnyOf) {
+                        JsonElement element = adapterSendSlackMessageTaskParamsAnyOf.toJsonTree((SendSlackMessageTaskParamsAnyOf)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `InviteToSlackChannelTaskParamsAnyOf`
+                    if (value.getActualInstance() instanceof InviteToSlackChannelTaskParamsAnyOf) {
+                        JsonElement element = adapterInviteToSlackChannelTaskParamsAnyOf.toJsonTree((InviteToSlackChannelTaskParamsAnyOf)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `InviteToSlackChannelTaskParamsAnyOf1`
+                    if (value.getActualInstance() instanceof InviteToSlackChannelTaskParamsAnyOf1) {
+                        JsonElement element = adapterInviteToSlackChannelTaskParamsAnyOf1.toJsonTree((InviteToSlackChannelTaskParamsAnyOf1)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    throw new IOException("Failed to serialize as the type doesn't match anyOf schemas: InviteToSlackChannelTaskParamsAnyOf, InviteToSlackChannelTaskParamsAnyOf1, SendSlackMessageTaskParamsAnyOf");
+                }
+
+                @Override
+                public SendSlackBlocksTaskParams read(JsonReader in) throws IOException {
+                    Object deserialized = null;
+                    JsonElement jsonElement = elementAdapter.read(in);
+
+                    ArrayList<String> errorMessages = new ArrayList<>();
+                    TypeAdapter actualAdapter = elementAdapter;
+
+                    // deserialize SendSlackMessageTaskParamsAnyOf
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        SendSlackMessageTaskParamsAnyOf.validateJsonElement(jsonElement);
+                        actualAdapter = adapterSendSlackMessageTaskParamsAnyOf;
+                        SendSlackBlocksTaskParams ret = new SendSlackBlocksTaskParams();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
+                        return ret;
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for SendSlackMessageTaskParamsAnyOf failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'SendSlackMessageTaskParamsAnyOf'", e);
+                    }
+                    // deserialize InviteToSlackChannelTaskParamsAnyOf
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        InviteToSlackChannelTaskParamsAnyOf.validateJsonElement(jsonElement);
+                        actualAdapter = adapterInviteToSlackChannelTaskParamsAnyOf;
+                        SendSlackBlocksTaskParams ret = new SendSlackBlocksTaskParams();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
+                        return ret;
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for InviteToSlackChannelTaskParamsAnyOf failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'InviteToSlackChannelTaskParamsAnyOf'", e);
+                    }
+                    // deserialize InviteToSlackChannelTaskParamsAnyOf1
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        InviteToSlackChannelTaskParamsAnyOf1.validateJsonElement(jsonElement);
+                        actualAdapter = adapterInviteToSlackChannelTaskParamsAnyOf1;
+                        SendSlackBlocksTaskParams ret = new SendSlackBlocksTaskParams();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
+                        return ret;
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for InviteToSlackChannelTaskParamsAnyOf1 failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'InviteToSlackChannelTaskParamsAnyOf1'", e);
+                    }
+
+                    throw new IOException(String.format("Failed deserialization for SendSlackBlocksTaskParams: no class matches result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
+                }
+            }.nullSafe();
+        }
     }
 
-    public String getValue() {
-      return value;
+    // store a list of schema names defined in anyOf
+    public static final Map<String, Class<?>> schemas = new HashMap<String, Class<?>>();
+
+    public SendSlackBlocksTaskParams() {
+        super("anyOf", Boolean.FALSE);
+    }
+
+    public SendSlackBlocksTaskParams(Object o) {
+        super("anyOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    static {
+        schemas.put("SendSlackMessageTaskParamsAnyOf", SendSlackMessageTaskParamsAnyOf.class);
+        schemas.put("InviteToSlackChannelTaskParamsAnyOf", InviteToSlackChannelTaskParamsAnyOf.class);
+        schemas.put("InviteToSlackChannelTaskParamsAnyOf1", InviteToSlackChannelTaskParamsAnyOf1.class);
     }
 
     @Override
-    public String toString() {
-      return String.valueOf(value);
+    public Map<String, Class<?>> getSchemas() {
+        return SendSlackBlocksTaskParams.schemas;
     }
 
-    public static TaskTypeEnum fromValue(String value) {
-      for (TaskTypeEnum b : TaskTypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
+    /**
+     * Set the instance that matches the anyOf child schema, check
+     * the instance parameter is valid against the anyOf child schemas:
+     * InviteToSlackChannelTaskParamsAnyOf, InviteToSlackChannelTaskParamsAnyOf1, SendSlackMessageTaskParamsAnyOf
+     *
+     * It could be an instance of the 'anyOf' schemas.
+     */
+    @Override
+    public void setActualInstance(Object instance) {
+        if (instance instanceof SendSlackMessageTaskParamsAnyOf) {
+            super.setActualInstance(instance);
+            return;
         }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
 
-    public static class Adapter extends TypeAdapter<TaskTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final TaskTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public TaskTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return TaskTypeEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      TaskTypeEnum.fromValue(value);
-    }
-  }
-
-  public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
-  @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @jakarta.annotation.Nullable
-  private TaskTypeEnum taskType;
-
-  public static final String SERIALIZED_NAME_MESSAGE = "message";
-  @SerializedName(SERIALIZED_NAME_MESSAGE)
-  @jakarta.annotation.Nullable
-  private String message;
-
-  public static final String SERIALIZED_NAME_BLOCKS = "blocks";
-  @SerializedName(SERIALIZED_NAME_BLOCKS)
-  @jakarta.annotation.Nonnull
-  private String blocks;
-
-  public static final String SERIALIZED_NAME_ATTACHMENTS = "attachments";
-  @SerializedName(SERIALIZED_NAME_ATTACHMENTS)
-  @jakarta.annotation.Nullable
-  private String attachments;
-
-  public static final String SERIALIZED_NAME_CHANNELS = "channels";
-  @SerializedName(SERIALIZED_NAME_CHANNELS)
-  @jakarta.annotation.Nullable
-  private List<Object> channels = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_SLACK_USERS = "slack_users";
-  @SerializedName(SERIALIZED_NAME_SLACK_USERS)
-  @jakarta.annotation.Nullable
-  private List<Object> slackUsers = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_SLACK_USER_GROUPS = "slack_user_groups";
-  @SerializedName(SERIALIZED_NAME_SLACK_USER_GROUPS)
-  @jakarta.annotation.Nullable
-  private List<Object> slackUserGroups = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_BROADCAST_THREAD_REPLY_TO_CHANNEL = "broadcast_thread_reply_to_channel";
-  @SerializedName(SERIALIZED_NAME_BROADCAST_THREAD_REPLY_TO_CHANNEL)
-  @jakarta.annotation.Nullable
-  private Boolean broadcastThreadReplyToChannel;
-
-  public static final String SERIALIZED_NAME_SEND_AS_EPHEMERAL = "send_as_ephemeral";
-  @SerializedName(SERIALIZED_NAME_SEND_AS_EPHEMERAL)
-  @jakarta.annotation.Nullable
-  private Boolean sendAsEphemeral;
-
-  public static final String SERIALIZED_NAME_PIN_TO_CHANNEL = "pin_to_channel";
-  @SerializedName(SERIALIZED_NAME_PIN_TO_CHANNEL)
-  @jakarta.annotation.Nullable
-  private Boolean pinToChannel;
-
-  public static final String SERIALIZED_NAME_THREAD_TS = "thread_ts";
-  @SerializedName(SERIALIZED_NAME_THREAD_TS)
-  @jakarta.annotation.Nullable
-  private String threadTs;
-
-  public static final String SERIALIZED_NAME_UPDATE_PARENT_MESSAGE = "update_parent_message";
-  @SerializedName(SERIALIZED_NAME_UPDATE_PARENT_MESSAGE)
-  @jakarta.annotation.Nullable
-  private Boolean updateParentMessage;
-
-  public static final String SERIALIZED_NAME_PARENT_MESSAGE_THREAD_TASK = "parent_message_thread_task";
-  @SerializedName(SERIALIZED_NAME_PARENT_MESSAGE_THREAD_TASK)
-  @jakarta.annotation.Nullable
-  private Object parentMessageThreadTask;
-
-  public static final String SERIALIZED_NAME_SEND_ONLY_AS_THREADED_MESSAGE = "send_only_as_threaded_message";
-  @SerializedName(SERIALIZED_NAME_SEND_ONLY_AS_THREADED_MESSAGE)
-  @jakarta.annotation.Nullable
-  private Boolean sendOnlyAsThreadedMessage;
-
-  public SendSlackBlocksTaskParams() {
-  }
-
-  public SendSlackBlocksTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
-    this.taskType = taskType;
-    return this;
-  }
-
-  /**
-   * Get taskType
-   * @return taskType
-   */
-  @jakarta.annotation.Nullable
-  public TaskTypeEnum getTaskType() {
-    return taskType;
-  }
-
-  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
-    this.taskType = taskType;
-  }
-
-
-  public SendSlackBlocksTaskParams message(@jakarta.annotation.Nullable String message) {
-    this.message = message;
-    return this;
-  }
-
-  /**
-   * Get message
-   * @return message
-   */
-  @jakarta.annotation.Nullable
-  public String getMessage() {
-    return message;
-  }
-
-  public void setMessage(@jakarta.annotation.Nullable String message) {
-    this.message = message;
-  }
-
-
-  public SendSlackBlocksTaskParams blocks(@jakarta.annotation.Nonnull String blocks) {
-    this.blocks = blocks;
-    return this;
-  }
-
-  /**
-   * Support liquid markup. Needs to be a valid JSON string after liquid is parsed
-   * @return blocks
-   */
-  @jakarta.annotation.Nonnull
-  public String getBlocks() {
-    return blocks;
-  }
-
-  public void setBlocks(@jakarta.annotation.Nonnull String blocks) {
-    this.blocks = blocks;
-  }
-
-
-  public SendSlackBlocksTaskParams attachments(@jakarta.annotation.Nullable String attachments) {
-    this.attachments = attachments;
-    return this;
-  }
-
-  /**
-   * Support liquid markup. Needs to be a valid JSON string after liquid is parsed
-   * @return attachments
-   */
-  @jakarta.annotation.Nullable
-  public String getAttachments() {
-    return attachments;
-  }
-
-  public void setAttachments(@jakarta.annotation.Nullable String attachments) {
-    this.attachments = attachments;
-  }
-
-
-  public SendSlackBlocksTaskParams channels(@jakarta.annotation.Nullable List<Object> channels) {
-    this.channels = channels;
-    return this;
-  }
-
-  public SendSlackBlocksTaskParams addChannelsItem(Object channelsItem) {
-    if (this.channels == null) {
-      this.channels = new ArrayList<>();
-    }
-    this.channels.add(channelsItem);
-    return this;
-  }
-
-  /**
-   * Get channels
-   * @return channels
-   */
-  @jakarta.annotation.Nullable
-  public List<Object> getChannels() {
-    return channels;
-  }
-
-  public void setChannels(@jakarta.annotation.Nullable List<Object> channels) {
-    this.channels = channels;
-  }
-
-
-  public SendSlackBlocksTaskParams slackUsers(@jakarta.annotation.Nullable List<Object> slackUsers) {
-    this.slackUsers = slackUsers;
-    return this;
-  }
-
-  public SendSlackBlocksTaskParams addSlackUsersItem(Object slackUsersItem) {
-    if (this.slackUsers == null) {
-      this.slackUsers = new ArrayList<>();
-    }
-    this.slackUsers.add(slackUsersItem);
-    return this;
-  }
-
-  /**
-   * Get slackUsers
-   * @return slackUsers
-   */
-  @jakarta.annotation.Nullable
-  public List<Object> getSlackUsers() {
-    return slackUsers;
-  }
-
-  public void setSlackUsers(@jakarta.annotation.Nullable List<Object> slackUsers) {
-    this.slackUsers = slackUsers;
-  }
-
-
-  public SendSlackBlocksTaskParams slackUserGroups(@jakarta.annotation.Nullable List<Object> slackUserGroups) {
-    this.slackUserGroups = slackUserGroups;
-    return this;
-  }
-
-  public SendSlackBlocksTaskParams addSlackUserGroupsItem(Object slackUserGroupsItem) {
-    if (this.slackUserGroups == null) {
-      this.slackUserGroups = new ArrayList<>();
-    }
-    this.slackUserGroups.add(slackUserGroupsItem);
-    return this;
-  }
-
-  /**
-   * Get slackUserGroups
-   * @return slackUserGroups
-   */
-  @jakarta.annotation.Nullable
-  public List<Object> getSlackUserGroups() {
-    return slackUserGroups;
-  }
-
-  public void setSlackUserGroups(@jakarta.annotation.Nullable List<Object> slackUserGroups) {
-    this.slackUserGroups = slackUserGroups;
-  }
-
-
-  public SendSlackBlocksTaskParams broadcastThreadReplyToChannel(@jakarta.annotation.Nullable Boolean broadcastThreadReplyToChannel) {
-    this.broadcastThreadReplyToChannel = broadcastThreadReplyToChannel;
-    return this;
-  }
-
-  /**
-   * Get broadcastThreadReplyToChannel
-   * @return broadcastThreadReplyToChannel
-   */
-  @jakarta.annotation.Nullable
-  public Boolean getBroadcastThreadReplyToChannel() {
-    return broadcastThreadReplyToChannel;
-  }
-
-  public void setBroadcastThreadReplyToChannel(@jakarta.annotation.Nullable Boolean broadcastThreadReplyToChannel) {
-    this.broadcastThreadReplyToChannel = broadcastThreadReplyToChannel;
-  }
-
-
-  public SendSlackBlocksTaskParams sendAsEphemeral(@jakarta.annotation.Nullable Boolean sendAsEphemeral) {
-    this.sendAsEphemeral = sendAsEphemeral;
-    return this;
-  }
-
-  /**
-   * Get sendAsEphemeral
-   * @return sendAsEphemeral
-   */
-  @jakarta.annotation.Nullable
-  public Boolean getSendAsEphemeral() {
-    return sendAsEphemeral;
-  }
-
-  public void setSendAsEphemeral(@jakarta.annotation.Nullable Boolean sendAsEphemeral) {
-    this.sendAsEphemeral = sendAsEphemeral;
-  }
-
-
-  public SendSlackBlocksTaskParams pinToChannel(@jakarta.annotation.Nullable Boolean pinToChannel) {
-    this.pinToChannel = pinToChannel;
-    return this;
-  }
-
-  /**
-   * Get pinToChannel
-   * @return pinToChannel
-   */
-  @jakarta.annotation.Nullable
-  public Boolean getPinToChannel() {
-    return pinToChannel;
-  }
-
-  public void setPinToChannel(@jakarta.annotation.Nullable Boolean pinToChannel) {
-    this.pinToChannel = pinToChannel;
-  }
-
-
-  public SendSlackBlocksTaskParams threadTs(@jakarta.annotation.Nullable String threadTs) {
-    this.threadTs = threadTs;
-    return this;
-  }
-
-  /**
-   * The thread to send the message into
-   * @return threadTs
-   */
-  @jakarta.annotation.Nullable
-  public String getThreadTs() {
-    return threadTs;
-  }
-
-  public void setThreadTs(@jakarta.annotation.Nullable String threadTs) {
-    this.threadTs = threadTs;
-  }
-
-
-  public SendSlackBlocksTaskParams updateParentMessage(@jakarta.annotation.Nullable Boolean updateParentMessage) {
-    this.updateParentMessage = updateParentMessage;
-    return this;
-  }
-
-  /**
-   * Get updateParentMessage
-   * @return updateParentMessage
-   */
-  @jakarta.annotation.Nullable
-  public Boolean getUpdateParentMessage() {
-    return updateParentMessage;
-  }
-
-  public void setUpdateParentMessage(@jakarta.annotation.Nullable Boolean updateParentMessage) {
-    this.updateParentMessage = updateParentMessage;
-  }
-
-
-  public SendSlackBlocksTaskParams parentMessageThreadTask(@jakarta.annotation.Nullable Object parentMessageThreadTask) {
-    this.parentMessageThreadTask = parentMessageThreadTask;
-    return this;
-  }
-
-  /**
-   * A hash where [id] is the task id of the parent task that sent a message, and [name] is the name of the parent task
-   * @return parentMessageThreadTask
-   */
-  @jakarta.annotation.Nullable
-  public Object getParentMessageThreadTask() {
-    return parentMessageThreadTask;
-  }
-
-  public void setParentMessageThreadTask(@jakarta.annotation.Nullable Object parentMessageThreadTask) {
-    this.parentMessageThreadTask = parentMessageThreadTask;
-  }
-
-
-  public SendSlackBlocksTaskParams sendOnlyAsThreadedMessage(@jakarta.annotation.Nullable Boolean sendOnlyAsThreadedMessage) {
-    this.sendOnlyAsThreadedMessage = sendOnlyAsThreadedMessage;
-    return this;
-  }
-
-  /**
-   * When set to true, if the parent for this threaded message cannot be found the message will be skipped.
-   * @return sendOnlyAsThreadedMessage
-   */
-  @jakarta.annotation.Nullable
-  public Boolean getSendOnlyAsThreadedMessage() {
-    return sendOnlyAsThreadedMessage;
-  }
-
-  public void setSendOnlyAsThreadedMessage(@jakarta.annotation.Nullable Boolean sendOnlyAsThreadedMessage) {
-    this.sendOnlyAsThreadedMessage = sendOnlyAsThreadedMessage;
-  }
-
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    SendSlackBlocksTaskParams sendSlackBlocksTaskParams = (SendSlackBlocksTaskParams) o;
-    return Objects.equals(this.taskType, sendSlackBlocksTaskParams.taskType) &&
-        Objects.equals(this.message, sendSlackBlocksTaskParams.message) &&
-        Objects.equals(this.blocks, sendSlackBlocksTaskParams.blocks) &&
-        Objects.equals(this.attachments, sendSlackBlocksTaskParams.attachments) &&
-        Objects.equals(this.channels, sendSlackBlocksTaskParams.channels) &&
-        Objects.equals(this.slackUsers, sendSlackBlocksTaskParams.slackUsers) &&
-        Objects.equals(this.slackUserGroups, sendSlackBlocksTaskParams.slackUserGroups) &&
-        Objects.equals(this.broadcastThreadReplyToChannel, sendSlackBlocksTaskParams.broadcastThreadReplyToChannel) &&
-        Objects.equals(this.sendAsEphemeral, sendSlackBlocksTaskParams.sendAsEphemeral) &&
-        Objects.equals(this.pinToChannel, sendSlackBlocksTaskParams.pinToChannel) &&
-        Objects.equals(this.threadTs, sendSlackBlocksTaskParams.threadTs) &&
-        Objects.equals(this.updateParentMessage, sendSlackBlocksTaskParams.updateParentMessage) &&
-        Objects.equals(this.parentMessageThreadTask, sendSlackBlocksTaskParams.parentMessageThreadTask) &&
-        Objects.equals(this.sendOnlyAsThreadedMessage, sendSlackBlocksTaskParams.sendOnlyAsThreadedMessage);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(taskType, message, blocks, attachments, channels, slackUsers, slackUserGroups, broadcastThreadReplyToChannel, sendAsEphemeral, pinToChannel, threadTs, updateParentMessage, parentMessageThreadTask, sendOnlyAsThreadedMessage);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class SendSlackBlocksTaskParams {\n");
-    sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    blocks: ").append(toIndentedString(blocks)).append("\n");
-    sb.append("    attachments: ").append(toIndentedString(attachments)).append("\n");
-    sb.append("    channels: ").append(toIndentedString(channels)).append("\n");
-    sb.append("    slackUsers: ").append(toIndentedString(slackUsers)).append("\n");
-    sb.append("    slackUserGroups: ").append(toIndentedString(slackUserGroups)).append("\n");
-    sb.append("    broadcastThreadReplyToChannel: ").append(toIndentedString(broadcastThreadReplyToChannel)).append("\n");
-    sb.append("    sendAsEphemeral: ").append(toIndentedString(sendAsEphemeral)).append("\n");
-    sb.append("    pinToChannel: ").append(toIndentedString(pinToChannel)).append("\n");
-    sb.append("    threadTs: ").append(toIndentedString(threadTs)).append("\n");
-    sb.append("    updateParentMessage: ").append(toIndentedString(updateParentMessage)).append("\n");
-    sb.append("    parentMessageThreadTask: ").append(toIndentedString(parentMessageThreadTask)).append("\n");
-    sb.append("    sendOnlyAsThreadedMessage: ").append(toIndentedString(sendOnlyAsThreadedMessage)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("blocks");
-  }
-
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to SendSlackBlocksTaskParams
-   */
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      if (jsonElement == null) {
-        if (!SendSlackBlocksTaskParams.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SendSlackBlocksTaskParams is not found in the empty JSON string", SendSlackBlocksTaskParams.openapiRequiredFields.toString()));
+        if (instance instanceof InviteToSlackChannelTaskParamsAnyOf) {
+            super.setActualInstance(instance);
+            return;
         }
-      }
 
-      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!SendSlackBlocksTaskParams.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SendSlackBlocksTaskParams` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (instance instanceof InviteToSlackChannelTaskParamsAnyOf1) {
+            super.setActualInstance(instance);
+            return;
         }
-      }
 
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : SendSlackBlocksTaskParams.openapiRequiredFields) {
-        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
-        }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("task_type") != null && !jsonObj.get("task_type").isJsonNull()) && !jsonObj.get("task_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `task_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("task_type").toString()));
-      }
-      // validate the optional field `task_type`
-      if (jsonObj.get("task_type") != null && !jsonObj.get("task_type").isJsonNull()) {
-        TaskTypeEnum.validateJsonElement(jsonObj.get("task_type"));
-      }
-      if ((jsonObj.get("message") != null && !jsonObj.get("message").isJsonNull()) && !jsonObj.get("message").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
-      }
-      if (!jsonObj.get("blocks").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `blocks` to be a primitive type in the JSON string but got `%s`", jsonObj.get("blocks").toString()));
-      }
-      if ((jsonObj.get("attachments") != null && !jsonObj.get("attachments").isJsonNull()) && !jsonObj.get("attachments").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `attachments` to be a primitive type in the JSON string but got `%s`", jsonObj.get("attachments").toString()));
-      }
-      if (jsonObj.get("channels") != null && !jsonObj.get("channels").isJsonNull()) {
-        JsonArray jsonArraychannels = jsonObj.getAsJsonArray("channels");
-        if (jsonArraychannels != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("channels").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `channels` to be an array in the JSON string but got `%s`", jsonObj.get("channels").toString()));
-          }
+        throw new RuntimeException("Invalid instance type. Must be InviteToSlackChannelTaskParamsAnyOf, InviteToSlackChannelTaskParamsAnyOf1, SendSlackMessageTaskParamsAnyOf");
+    }
 
-          // validate the optional field `channels` (array)
-          for (int i = 0; i < jsonArraychannels.size(); i++) {
-          };
-        }
-      }
-      if (jsonObj.get("slack_users") != null && !jsonObj.get("slack_users").isJsonNull()) {
-        JsonArray jsonArrayslackUsers = jsonObj.getAsJsonArray("slack_users");
-        if (jsonArrayslackUsers != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("slack_users").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `slack_users` to be an array in the JSON string but got `%s`", jsonObj.get("slack_users").toString()));
-          }
-
-          // validate the optional field `slack_users` (array)
-          for (int i = 0; i < jsonArrayslackUsers.size(); i++) {
-          };
-        }
-      }
-      if (jsonObj.get("slack_user_groups") != null && !jsonObj.get("slack_user_groups").isJsonNull()) {
-        JsonArray jsonArrayslackUserGroups = jsonObj.getAsJsonArray("slack_user_groups");
-        if (jsonArrayslackUserGroups != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("slack_user_groups").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `slack_user_groups` to be an array in the JSON string but got `%s`", jsonObj.get("slack_user_groups").toString()));
-          }
-
-          // validate the optional field `slack_user_groups` (array)
-          for (int i = 0; i < jsonArrayslackUserGroups.size(); i++) {
-          };
-        }
-      }
-      if ((jsonObj.get("thread_ts") != null && !jsonObj.get("thread_ts").isJsonNull()) && !jsonObj.get("thread_ts").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `thread_ts` to be a primitive type in the JSON string but got `%s`", jsonObj.get("thread_ts").toString()));
-      }
-      // validate the optional field `parent_message_thread_task`
-      if (jsonObj.get("parent_message_thread_task") != null && !jsonObj.get("parent_message_thread_task").isJsonNull()) {
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    /**
+     * Get the actual instance, which can be the following:
+     * InviteToSlackChannelTaskParamsAnyOf, InviteToSlackChannelTaskParamsAnyOf1, SendSlackMessageTaskParamsAnyOf
+     *
+     * @return The actual instance (InviteToSlackChannelTaskParamsAnyOf, InviteToSlackChannelTaskParamsAnyOf1, SendSlackMessageTaskParamsAnyOf)
+     */
     @SuppressWarnings("unchecked")
     @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!SendSlackBlocksTaskParams.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'SendSlackBlocksTaskParams' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<SendSlackBlocksTaskParams> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(SendSlackBlocksTaskParams.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<SendSlackBlocksTaskParams>() {
-           @Override
-           public void write(JsonWriter out, SendSlackBlocksTaskParams value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public SendSlackBlocksTaskParams read(JsonReader in) throws IOException {
-             JsonElement jsonElement = elementAdapter.read(in);
-             validateJsonElement(jsonElement);
-             return thisAdapter.fromJsonTree(jsonElement);
-           }
-
-       }.nullSafe();
+    public Object getActualInstance() {
+        return super.getActualInstance();
     }
-  }
 
-  /**
-   * Create an instance of SendSlackBlocksTaskParams given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of SendSlackBlocksTaskParams
-   * @throws IOException if the JSON string is invalid with respect to SendSlackBlocksTaskParams
-   */
-  public static SendSlackBlocksTaskParams fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, SendSlackBlocksTaskParams.class);
-  }
+    /**
+     * Get the actual instance of `SendSlackMessageTaskParamsAnyOf`. If the actual instance is not `SendSlackMessageTaskParamsAnyOf`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `SendSlackMessageTaskParamsAnyOf`
+     * @throws ClassCastException if the instance is not `SendSlackMessageTaskParamsAnyOf`
+     */
+    public SendSlackMessageTaskParamsAnyOf getSendSlackMessageTaskParamsAnyOf() throws ClassCastException {
+        return (SendSlackMessageTaskParamsAnyOf)super.getActualInstance();
+    }
 
-  /**
-   * Convert an instance of SendSlackBlocksTaskParams to an JSON string
-   *
-   * @return JSON string
-   */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
+    /**
+     * Get the actual instance of `InviteToSlackChannelTaskParamsAnyOf`. If the actual instance is not `InviteToSlackChannelTaskParamsAnyOf`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `InviteToSlackChannelTaskParamsAnyOf`
+     * @throws ClassCastException if the instance is not `InviteToSlackChannelTaskParamsAnyOf`
+     */
+    public InviteToSlackChannelTaskParamsAnyOf getInviteToSlackChannelTaskParamsAnyOf() throws ClassCastException {
+        return (InviteToSlackChannelTaskParamsAnyOf)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `InviteToSlackChannelTaskParamsAnyOf1`. If the actual instance is not `InviteToSlackChannelTaskParamsAnyOf1`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `InviteToSlackChannelTaskParamsAnyOf1`
+     * @throws ClassCastException if the instance is not `InviteToSlackChannelTaskParamsAnyOf1`
+     */
+    public InviteToSlackChannelTaskParamsAnyOf1 getInviteToSlackChannelTaskParamsAnyOf1() throws ClassCastException {
+        return (InviteToSlackChannelTaskParamsAnyOf1)super.getActualInstance();
+    }
+
+    /**
+     * Validates the JSON Element and throws an exception if issues found
+     *
+     * @param jsonElement JSON Element
+     * @throws IOException if the JSON Element is invalid with respect to SendSlackBlocksTaskParams
+     */
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+        // validate anyOf schemas one by one
+        ArrayList<String> errorMessages = new ArrayList<>();
+        // validate the json string with SendSlackMessageTaskParamsAnyOf
+        try {
+            SendSlackMessageTaskParamsAnyOf.validateJsonElement(jsonElement);
+            return;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for SendSlackMessageTaskParamsAnyOf failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with InviteToSlackChannelTaskParamsAnyOf
+        try {
+            InviteToSlackChannelTaskParamsAnyOf.validateJsonElement(jsonElement);
+            return;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for InviteToSlackChannelTaskParamsAnyOf failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with InviteToSlackChannelTaskParamsAnyOf1
+        try {
+            InviteToSlackChannelTaskParamsAnyOf1.validateJsonElement(jsonElement);
+            return;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for InviteToSlackChannelTaskParamsAnyOf1 failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        throw new IOException(String.format("The JSON string is invalid for SendSlackBlocksTaskParams with anyOf schemas: InviteToSlackChannelTaskParamsAnyOf, InviteToSlackChannelTaskParamsAnyOf1, SendSlackMessageTaskParamsAnyOf. no class match the result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
+    }
+
+    /**
+     * Create an instance of SendSlackBlocksTaskParams given an JSON string
+     *
+     * @param jsonString JSON string
+     * @return An instance of SendSlackBlocksTaskParams
+     * @throws IOException if the JSON string is invalid with respect to SendSlackBlocksTaskParams
+     */
+    public static SendSlackBlocksTaskParams fromJson(String jsonString) throws IOException {
+        return JSON.getGson().fromJson(jsonString, SendSlackBlocksTaskParams.class);
+    }
+
+    /**
+     * Convert an instance of SendSlackBlocksTaskParams to an JSON string
+     *
+     * @return JSON string
+     */
+    public String toJson() {
+        return JSON.getGson().toJson(this);
+    }
 }
 

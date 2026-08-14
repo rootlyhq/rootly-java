@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * CreateGoogleDocsPageTaskParams
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateGoogleDocsPageTaskParams {
   /**
    * Gets or Sets taskType
@@ -145,6 +145,21 @@ public class CreateGoogleDocsPageTaskParams {
   @SerializedName(SERIALIZED_NAME_PERMISSIONS)
   @jakarta.annotation.Nullable
   private String permissions;
+
+  public static final String SERIALIZED_NAME_INCLUDE_OVERVIEW = "include_overview";
+  @SerializedName(SERIALIZED_NAME_INCLUDE_OVERVIEW)
+  @jakarta.annotation.Nullable
+  private Boolean includeOverview = true;
+
+  public static final String SERIALIZED_NAME_INCLUDE_TIMELINE = "include_timeline";
+  @SerializedName(SERIALIZED_NAME_INCLUDE_TIMELINE)
+  @jakarta.annotation.Nullable
+  private Boolean includeTimeline = true;
+
+  public static final String SERIALIZED_NAME_INCLUDE_FOLLOW_UPS = "include_follow_ups";
+  @SerializedName(SERIALIZED_NAME_INCLUDE_FOLLOW_UPS)
+  @jakarta.annotation.Nullable
+  private Boolean includeFollowUps = true;
 
   public CreateGoogleDocsPageTaskParams() {
   }
@@ -320,6 +335,63 @@ public class CreateGoogleDocsPageTaskParams {
   }
 
 
+  public CreateGoogleDocsPageTaskParams includeOverview(@jakarta.annotation.Nullable Boolean includeOverview) {
+    this.includeOverview = includeOverview;
+    return this;
+  }
+
+  /**
+   * Get includeOverview
+   * @return includeOverview
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getIncludeOverview() {
+    return includeOverview;
+  }
+
+  public void setIncludeOverview(@jakarta.annotation.Nullable Boolean includeOverview) {
+    this.includeOverview = includeOverview;
+  }
+
+
+  public CreateGoogleDocsPageTaskParams includeTimeline(@jakarta.annotation.Nullable Boolean includeTimeline) {
+    this.includeTimeline = includeTimeline;
+    return this;
+  }
+
+  /**
+   * Get includeTimeline
+   * @return includeTimeline
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getIncludeTimeline() {
+    return includeTimeline;
+  }
+
+  public void setIncludeTimeline(@jakarta.annotation.Nullable Boolean includeTimeline) {
+    this.includeTimeline = includeTimeline;
+  }
+
+
+  public CreateGoogleDocsPageTaskParams includeFollowUps(@jakarta.annotation.Nullable Boolean includeFollowUps) {
+    this.includeFollowUps = includeFollowUps;
+    return this;
+  }
+
+  /**
+   * Get includeFollowUps
+   * @return includeFollowUps
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getIncludeFollowUps() {
+    return includeFollowUps;
+  }
+
+  public void setIncludeFollowUps(@jakarta.annotation.Nullable Boolean includeFollowUps) {
+    this.includeFollowUps = includeFollowUps;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -338,12 +410,15 @@ public class CreateGoogleDocsPageTaskParams {
         Objects.equals(this.parentFolder, createGoogleDocsPageTaskParams.parentFolder) &&
         Objects.equals(this.content, createGoogleDocsPageTaskParams.content) &&
         Objects.equals(this.templateId, createGoogleDocsPageTaskParams.templateId) &&
-        Objects.equals(this.permissions, createGoogleDocsPageTaskParams.permissions);
+        Objects.equals(this.permissions, createGoogleDocsPageTaskParams.permissions) &&
+        Objects.equals(this.includeOverview, createGoogleDocsPageTaskParams.includeOverview) &&
+        Objects.equals(this.includeTimeline, createGoogleDocsPageTaskParams.includeTimeline) &&
+        Objects.equals(this.includeFollowUps, createGoogleDocsPageTaskParams.includeFollowUps);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(taskType, postMortemTemplateId, markPostMortemAsPublished, title, drive, parentFolder, content, templateId, permissions);
+    return Objects.hash(taskType, postMortemTemplateId, markPostMortemAsPublished, title, drive, parentFolder, content, templateId, permissions, includeOverview, includeTimeline, includeFollowUps);
   }
 
   @Override
@@ -359,6 +434,9 @@ public class CreateGoogleDocsPageTaskParams {
     sb.append("    content: ").append(toIndentedString(content)).append("\n");
     sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
     sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
+    sb.append("    includeOverview: ").append(toIndentedString(includeOverview)).append("\n");
+    sb.append("    includeTimeline: ").append(toIndentedString(includeTimeline)).append("\n");
+    sb.append("    includeFollowUps: ").append(toIndentedString(includeFollowUps)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -390,6 +468,9 @@ public class CreateGoogleDocsPageTaskParams {
     openapiFields.add("content");
     openapiFields.add("template_id");
     openapiFields.add("permissions");
+    openapiFields.add("include_overview");
+    openapiFields.add("include_timeline");
+    openapiFields.add("include_follow_ups");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

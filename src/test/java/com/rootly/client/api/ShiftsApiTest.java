@@ -62,7 +62,9 @@ public class ShiftsApiTest {
         String to = null;
         List<Integer> userIds = null;
         List<String> scheduleIds = null;
-        ShiftList response = api.listShifts(include, from, to, userIds, scheduleIds);
+        Integer pageNumber = null;
+        Integer pageSize = null;
+        ShiftList response = api.listShifts(include, from, to, userIds, scheduleIds, pageNumber, pageSize);
         // TODO: test validations
     }
 

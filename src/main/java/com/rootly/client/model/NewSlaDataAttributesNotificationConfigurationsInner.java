@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * NewSlaDataAttributesNotificationConfigurationsInner
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewSlaDataAttributesNotificationConfigurationsInner {
   /**
    * When to send the notification relative to the deadline
@@ -106,18 +106,18 @@ public class NewSlaDataAttributesNotificationConfigurationsInner {
 
   public static final String SERIALIZED_NAME_OFFSET_TYPE = "offset_type";
   @SerializedName(SERIALIZED_NAME_OFFSET_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private OffsetTypeEnum offsetType;
 
   public static final String SERIALIZED_NAME_OFFSET_DAYS = "offset_days";
   @SerializedName(SERIALIZED_NAME_OFFSET_DAYS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Integer offsetDays;
 
   public NewSlaDataAttributesNotificationConfigurationsInner() {
   }
 
-  public NewSlaDataAttributesNotificationConfigurationsInner offsetType(@javax.annotation.Nonnull OffsetTypeEnum offsetType) {
+  public NewSlaDataAttributesNotificationConfigurationsInner offsetType(@jakarta.annotation.Nonnull OffsetTypeEnum offsetType) {
     this.offsetType = offsetType;
     return this;
   }
@@ -126,17 +126,17 @@ public class NewSlaDataAttributesNotificationConfigurationsInner {
    * When to send the notification relative to the deadline
    * @return offsetType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public OffsetTypeEnum getOffsetType() {
     return offsetType;
   }
 
-  public void setOffsetType(@javax.annotation.Nonnull OffsetTypeEnum offsetType) {
+  public void setOffsetType(@jakarta.annotation.Nonnull OffsetTypeEnum offsetType) {
     this.offsetType = offsetType;
   }
 
 
-  public NewSlaDataAttributesNotificationConfigurationsInner offsetDays(@javax.annotation.Nonnull Integer offsetDays) {
+  public NewSlaDataAttributesNotificationConfigurationsInner offsetDays(@jakarta.annotation.Nonnull Integer offsetDays) {
     this.offsetDays = offsetDays;
     return this;
   }
@@ -145,12 +145,12 @@ public class NewSlaDataAttributesNotificationConfigurationsInner {
    * Number of days before or after the deadline. Must be 0 for when_due.
    * @return offsetDays
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Integer getOffsetDays() {
     return offsetDays;
   }
 
-  public void setOffsetDays(@javax.annotation.Nonnull Integer offsetDays) {
+  public void setOffsetDays(@jakarta.annotation.Nonnull Integer offsetDays) {
     this.offsetDays = offsetDays;
   }
 

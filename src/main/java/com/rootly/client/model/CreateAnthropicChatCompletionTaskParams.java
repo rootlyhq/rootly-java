@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * CreateAnthropicChatCompletionTaskParams
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateAnthropicChatCompletionTaskParams {
   /**
    * Gets or Sets taskType
@@ -120,6 +120,11 @@ public class CreateAnthropicChatCompletionTaskParams {
   @SerializedName(SERIALIZED_NAME_PROMPT)
   @jakarta.annotation.Nonnull
   private String prompt;
+
+  public static final String SERIALIZED_NAME_MAX_TOKENS = "max_tokens";
+  @SerializedName(SERIALIZED_NAME_MAX_TOKENS)
+  @jakarta.annotation.Nullable
+  private Integer maxTokens;
 
   public CreateAnthropicChatCompletionTaskParams() {
   }
@@ -200,6 +205,26 @@ public class CreateAnthropicChatCompletionTaskParams {
   }
 
 
+  public CreateAnthropicChatCompletionTaskParams maxTokens(@jakarta.annotation.Nullable Integer maxTokens) {
+    this.maxTokens = maxTokens;
+    return this;
+  }
+
+  /**
+   * Maximum number of tokens to generate. Defaults to 4000 when omitted
+   * minimum: 1
+   * @return maxTokens
+   */
+  @jakarta.annotation.Nullable
+  public Integer getMaxTokens() {
+    return maxTokens;
+  }
+
+  public void setMaxTokens(@jakarta.annotation.Nullable Integer maxTokens) {
+    this.maxTokens = maxTokens;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -213,12 +238,13 @@ public class CreateAnthropicChatCompletionTaskParams {
     return Objects.equals(this.taskType, createAnthropicChatCompletionTaskParams.taskType) &&
         Objects.equals(this.model, createAnthropicChatCompletionTaskParams.model) &&
         Objects.equals(this.systemPrompt, createAnthropicChatCompletionTaskParams.systemPrompt) &&
-        Objects.equals(this.prompt, createAnthropicChatCompletionTaskParams.prompt);
+        Objects.equals(this.prompt, createAnthropicChatCompletionTaskParams.prompt) &&
+        Objects.equals(this.maxTokens, createAnthropicChatCompletionTaskParams.maxTokens);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(taskType, model, systemPrompt, prompt);
+    return Objects.hash(taskType, model, systemPrompt, prompt, maxTokens);
   }
 
   @Override
@@ -229,6 +255,7 @@ public class CreateAnthropicChatCompletionTaskParams {
     sb.append("    model: ").append(toIndentedString(model)).append("\n");
     sb.append("    systemPrompt: ").append(toIndentedString(systemPrompt)).append("\n");
     sb.append("    prompt: ").append(toIndentedString(prompt)).append("\n");
+    sb.append("    maxTokens: ").append(toIndentedString(maxTokens)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -255,6 +282,7 @@ public class CreateAnthropicChatCompletionTaskParams {
     openapiFields.add("model");
     openapiFields.add("system_prompt");
     openapiFields.add("prompt");
+    openapiFields.add("max_tokens");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

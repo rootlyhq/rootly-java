@@ -50,27 +50,27 @@ import com.rootly.client.JSON;
 /**
  * UpdateApiKeyDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateApiKeyDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_EXPIRES_AT = "expires_at";
   @SerializedName(SERIALIZED_NAME_EXPIRES_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private OffsetDateTime expiresAt;
 
   public UpdateApiKeyDataAttributes() {
   }
 
-  public UpdateApiKeyDataAttributes name(@javax.annotation.Nullable String name) {
+  public UpdateApiKeyDataAttributes name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -79,17 +79,17 @@ public class UpdateApiKeyDataAttributes {
    * The name of the API key
    * @return name
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public UpdateApiKeyDataAttributes description(@javax.annotation.Nullable String description) {
+  public UpdateApiKeyDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -98,17 +98,17 @@ public class UpdateApiKeyDataAttributes {
    * A description of the API key
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UpdateApiKeyDataAttributes expiresAt(@javax.annotation.Nullable OffsetDateTime expiresAt) {
+  public UpdateApiKeyDataAttributes expiresAt(@jakarta.annotation.Nullable OffsetDateTime expiresAt) {
     this.expiresAt = expiresAt;
     return this;
   }
@@ -117,12 +117,12 @@ public class UpdateApiKeyDataAttributes {
    * The expiration date of the API key (ISO 8601)
    * @return expiresAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public OffsetDateTime getExpiresAt() {
     return expiresAt;
   }
 
-  public void setExpiresAt(@javax.annotation.Nullable OffsetDateTime expiresAt) {
+  public void setExpiresAt(@jakarta.annotation.Nullable OffsetDateTime expiresAt) {
     this.expiresAt = expiresAt;
   }
 

@@ -91,7 +91,7 @@ public class OnCallPayReportsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createOnCallPayReportCall(@javax.annotation.Nonnull NewOnCallPayReport newOnCallPayReport, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createOnCallPayReportCall(@jakarta.annotation.Nonnull NewOnCallPayReport newOnCallPayReport, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -137,7 +137,7 @@ public class OnCallPayReportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createOnCallPayReportValidateBeforeCall(@javax.annotation.Nonnull NewOnCallPayReport newOnCallPayReport, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createOnCallPayReportValidateBeforeCall(@jakarta.annotation.Nonnull NewOnCallPayReport newOnCallPayReport, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'newOnCallPayReport' is set
         if (newOnCallPayReport == null) {
             throw new ApiException("Missing the required parameter 'newOnCallPayReport' when calling createOnCallPayReport(Async)");
@@ -162,7 +162,7 @@ public class OnCallPayReportsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public OnCallPayReportResponse createOnCallPayReport(@javax.annotation.Nonnull NewOnCallPayReport newOnCallPayReport) throws ApiException {
+    public OnCallPayReportResponse createOnCallPayReport(@jakarta.annotation.Nonnull NewOnCallPayReport newOnCallPayReport) throws ApiException {
         ApiResponse<OnCallPayReportResponse> localVarResp = createOnCallPayReportWithHttpInfo(newOnCallPayReport);
         return localVarResp.getData();
     }
@@ -182,7 +182,7 @@ public class OnCallPayReportsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OnCallPayReportResponse> createOnCallPayReportWithHttpInfo(@javax.annotation.Nonnull NewOnCallPayReport newOnCallPayReport) throws ApiException {
+    public ApiResponse<OnCallPayReportResponse> createOnCallPayReportWithHttpInfo(@jakarta.annotation.Nonnull NewOnCallPayReport newOnCallPayReport) throws ApiException {
         okhttp3.Call localVarCall = createOnCallPayReportValidateBeforeCall(newOnCallPayReport, null);
         Type localVarReturnType = new TypeToken<OnCallPayReportResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -204,7 +204,7 @@ public class OnCallPayReportsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createOnCallPayReportAsync(@javax.annotation.Nonnull NewOnCallPayReport newOnCallPayReport, final ApiCallback<OnCallPayReportResponse> _callback) throws ApiException {
+    public okhttp3.Call createOnCallPayReportAsync(@jakarta.annotation.Nonnull NewOnCallPayReport newOnCallPayReport, final ApiCallback<OnCallPayReportResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createOnCallPayReportValidateBeforeCall(newOnCallPayReport, _callback);
         Type localVarReturnType = new TypeToken<OnCallPayReportResponse>(){}.getType();
@@ -226,7 +226,7 @@ public class OnCallPayReportsApi {
         <tr><td> 404 </td><td> resource not found for different team </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getOnCallPayReportCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getOnCallPayReportCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -276,7 +276,7 @@ public class OnCallPayReportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getOnCallPayReportValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getOnCallPayReportValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getOnCallPayReport(Async)");
@@ -301,7 +301,7 @@ public class OnCallPayReportsApi {
         <tr><td> 404 </td><td> resource not found for different team </td><td>  -  </td></tr>
      </table>
      */
-    public OnCallPayReportResponse getOnCallPayReport(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include) throws ApiException {
+    public OnCallPayReportResponse getOnCallPayReport(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include) throws ApiException {
         ApiResponse<OnCallPayReportResponse> localVarResp = getOnCallPayReportWithHttpInfo(id, include);
         return localVarResp.getData();
     }
@@ -321,7 +321,7 @@ public class OnCallPayReportsApi {
         <tr><td> 404 </td><td> resource not found for different team </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OnCallPayReportResponse> getOnCallPayReportWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include) throws ApiException {
+    public ApiResponse<OnCallPayReportResponse> getOnCallPayReportWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include) throws ApiException {
         okhttp3.Call localVarCall = getOnCallPayReportValidateBeforeCall(id, include, null);
         Type localVarReturnType = new TypeToken<OnCallPayReportResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -343,7 +343,7 @@ public class OnCallPayReportsApi {
         <tr><td> 404 </td><td> resource not found for different team </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getOnCallPayReportAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nullable String include, final ApiCallback<OnCallPayReportResponse> _callback) throws ApiException {
+    public okhttp3.Call getOnCallPayReportAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable String include, final ApiCallback<OnCallPayReportResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getOnCallPayReportValidateBeforeCall(id, include, _callback);
         Type localVarReturnType = new TypeToken<OnCallPayReportResponse>(){}.getType();
@@ -370,7 +370,7 @@ public class OnCallPayReportsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listOnCallPayReportsCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listOnCallPayReportsCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -447,7 +447,7 @@ public class OnCallPayReportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listOnCallPayReportsValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listOnCallPayReportsValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
         return listOnCallPayReportsCall(include, pageNumber, pageSize, filterStatus, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, _callback);
 
     }
@@ -472,7 +472,7 @@ public class OnCallPayReportsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public OnCallPayReportList listOnCallPayReports(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte) throws ApiException {
+    public OnCallPayReportList listOnCallPayReports(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte) throws ApiException {
         ApiResponse<OnCallPayReportList> localVarResp = listOnCallPayReportsWithHttpInfo(include, pageNumber, pageSize, filterStatus, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
         return localVarResp.getData();
     }
@@ -497,7 +497,7 @@ public class OnCallPayReportsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OnCallPayReportList> listOnCallPayReportsWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte) throws ApiException {
+    public ApiResponse<OnCallPayReportList> listOnCallPayReportsWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte) throws ApiException {
         okhttp3.Call localVarCall = listOnCallPayReportsValidateBeforeCall(include, pageNumber, pageSize, filterStatus, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, null);
         Type localVarReturnType = new TypeToken<OnCallPayReportList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -524,7 +524,7 @@ public class OnCallPayReportsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listOnCallPayReportsAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterStatus, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, final ApiCallback<OnCallPayReportList> _callback) throws ApiException {
+    public okhttp3.Call listOnCallPayReportsAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback<OnCallPayReportList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listOnCallPayReportsValidateBeforeCall(include, pageNumber, pageSize, filterStatus, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, _callback);
         Type localVarReturnType = new TypeToken<OnCallPayReportList>(){}.getType();
@@ -545,7 +545,7 @@ public class OnCallPayReportsApi {
         <tr><td> 404 </td><td> on_call_pay_report not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call regenerateOnCallPayReportCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call regenerateOnCallPayReportCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -591,7 +591,7 @@ public class OnCallPayReportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call regenerateOnCallPayReportValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call regenerateOnCallPayReportValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling regenerateOnCallPayReport(Async)");
@@ -615,7 +615,7 @@ public class OnCallPayReportsApi {
         <tr><td> 404 </td><td> on_call_pay_report not found </td><td>  -  </td></tr>
      </table>
      */
-    public OnCallPayReportResponse regenerateOnCallPayReport(@javax.annotation.Nonnull String id) throws ApiException {
+    public OnCallPayReportResponse regenerateOnCallPayReport(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<OnCallPayReportResponse> localVarResp = regenerateOnCallPayReportWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -634,7 +634,7 @@ public class OnCallPayReportsApi {
         <tr><td> 404 </td><td> on_call_pay_report not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OnCallPayReportResponse> regenerateOnCallPayReportWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<OnCallPayReportResponse> regenerateOnCallPayReportWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = regenerateOnCallPayReportValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<OnCallPayReportResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -655,7 +655,7 @@ public class OnCallPayReportsApi {
         <tr><td> 404 </td><td> on_call_pay_report not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call regenerateOnCallPayReportAsync(@javax.annotation.Nonnull String id, final ApiCallback<OnCallPayReportResponse> _callback) throws ApiException {
+    public okhttp3.Call regenerateOnCallPayReportAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<OnCallPayReportResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = regenerateOnCallPayReportValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<OnCallPayReportResponse>(){}.getType();
@@ -678,7 +678,7 @@ public class OnCallPayReportsApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateOnCallPayReportCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateOnCallPayReport updateOnCallPayReport, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateOnCallPayReportCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateOnCallPayReport updateOnCallPayReport, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -725,7 +725,7 @@ public class OnCallPayReportsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateOnCallPayReportValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateOnCallPayReport updateOnCallPayReport, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateOnCallPayReportValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateOnCallPayReport updateOnCallPayReport, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateOnCallPayReport(Async)");
@@ -756,7 +756,7 @@ public class OnCallPayReportsApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public OnCallPayReportResponse updateOnCallPayReport(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateOnCallPayReport updateOnCallPayReport) throws ApiException {
+    public OnCallPayReportResponse updateOnCallPayReport(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateOnCallPayReport updateOnCallPayReport) throws ApiException {
         ApiResponse<OnCallPayReportResponse> localVarResp = updateOnCallPayReportWithHttpInfo(id, updateOnCallPayReport);
         return localVarResp.getData();
     }
@@ -777,7 +777,7 @@ public class OnCallPayReportsApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OnCallPayReportResponse> updateOnCallPayReportWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateOnCallPayReport updateOnCallPayReport) throws ApiException {
+    public ApiResponse<OnCallPayReportResponse> updateOnCallPayReportWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateOnCallPayReport updateOnCallPayReport) throws ApiException {
         okhttp3.Call localVarCall = updateOnCallPayReportValidateBeforeCall(id, updateOnCallPayReport, null);
         Type localVarReturnType = new TypeToken<OnCallPayReportResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -800,7 +800,7 @@ public class OnCallPayReportsApi {
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateOnCallPayReportAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateOnCallPayReport updateOnCallPayReport, final ApiCallback<OnCallPayReportResponse> _callback) throws ApiException {
+    public okhttp3.Call updateOnCallPayReportAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateOnCallPayReport updateOnCallPayReport, final ApiCallback<OnCallPayReportResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateOnCallPayReportValidateBeforeCall(id, updateOnCallPayReport, _callback);
         Type localVarReturnType = new TypeToken<OnCallPayReportResponse>(){}.getType();

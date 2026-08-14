@@ -18,6 +18,7 @@
 |---- | -----|
 | TEXT | &quot;text&quot; |
 | CATALOG_ENTITY | &quot;catalog_entity&quot; |
+| SLACK | &quot;slack&quot; |
 
 
 

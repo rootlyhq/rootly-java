@@ -218,7 +218,7 @@ public class Example {
 
 <a id="listSLAs"></a>
 # **listSLAs**
-> SlaList listSLAs(pageNumber, pageSize, filterSearch, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort)
+> SlaList listSLAs(pageNumber, pageSize, filterSearch, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, sort)
 
 List SLAs
 
@@ -253,9 +253,17 @@ public class Example {
     String filterCreatedAtGte = "filterCreatedAtGte_example"; // String | 
     String filterCreatedAtLt = "filterCreatedAtLt_example"; // String | 
     String filterCreatedAtLte = "filterCreatedAtLte_example"; // String | 
+    String filterSlugEq = "filterSlugEq_example"; // String | 
+    String filterSlugNotEq = "filterSlugNotEq_example"; // String | 
+    String filterSlugIn = "filterSlugIn_example"; // String | 
+    String filterSlugNotIn = "filterSlugNotIn_example"; // String | 
+    String filterNameEq = "filterNameEq_example"; // String | 
+    String filterNameNotEq = "filterNameNotEq_example"; // String | 
+    String filterNameIn = "filterNameIn_example"; // String | 
+    String filterNameNotIn = "filterNameNotIn_example"; // String | 
     String sort = "sort_example"; // String | 
     try {
-      SlaList result = apiInstance.listSLAs(pageNumber, pageSize, filterSearch, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
+      SlaList result = apiInstance.listSLAs(pageNumber, pageSize, filterSearch, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, sort);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SlasApi#listSLAs");
@@ -281,6 +289,14 @@ public class Example {
 | **filterCreatedAtGte** | **String**|  | [optional] |
 | **filterCreatedAtLt** | **String**|  | [optional] |
 | **filterCreatedAtLte** | **String**|  | [optional] |
+| **filterSlugEq** | **String**|  | [optional] |
+| **filterSlugNotEq** | **String**|  | [optional] |
+| **filterSlugIn** | **String**|  | [optional] |
+| **filterSlugNotIn** | **String**|  | [optional] |
+| **filterNameEq** | **String**|  | [optional] |
+| **filterNameNotEq** | **String**|  | [optional] |
+| **filterNameIn** | **String**|  | [optional] |
+| **filterNameNotIn** | **String**|  | [optional] |
 | **sort** | **String**|  | [optional] |
 
 ### Return type

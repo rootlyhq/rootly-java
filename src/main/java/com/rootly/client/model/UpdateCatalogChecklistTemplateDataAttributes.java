@@ -53,32 +53,61 @@ import com.rootly.client.JSON;
 /**
  * UpdateCatalogChecklistTemplateDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateCatalogChecklistTemplateDataAttributes {
+  public static final String SERIALIZED_NAME_SLUG = "slug";
+  @Deprecated
+  @SerializedName(SERIALIZED_NAME_SLUG)
+  @jakarta.annotation.Nullable
+  private String slug;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_FIELDS = "fields";
   @SerializedName(SERIALIZED_NAME_FIELDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewCatalogChecklistTemplateDataAttributesFieldsInner> fields;
 
   public static final String SERIALIZED_NAME_OWNERS = "owners";
   @SerializedName(SERIALIZED_NAME_OWNERS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewCatalogChecklistTemplateDataAttributesOwnersInner> owners;
 
   public UpdateCatalogChecklistTemplateDataAttributes() {
   }
 
-  public UpdateCatalogChecklistTemplateDataAttributes name(@javax.annotation.Nullable String name) {
+  @Deprecated
+  public UpdateCatalogChecklistTemplateDataAttributes slug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+    return this;
+  }
+
+  /**
+   * Deprecated. &#x60;slug&#x60; is derived from &#x60;name&#x60;; any submitted value is ignored. This property will be removed from the request schema in a future version.
+   * @return slug
+   * @deprecated
+   */
+  @Deprecated
+  @jakarta.annotation.Nullable
+  public String getSlug() {
+    return slug;
+  }
+
+  @Deprecated
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+  }
+
+
+  public UpdateCatalogChecklistTemplateDataAttributes name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -87,17 +116,17 @@ public class UpdateCatalogChecklistTemplateDataAttributes {
    * The name of the checklist template
    * @return name
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public UpdateCatalogChecklistTemplateDataAttributes description(@javax.annotation.Nullable String description) {
+  public UpdateCatalogChecklistTemplateDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -106,17 +135,17 @@ public class UpdateCatalogChecklistTemplateDataAttributes {
    * The description of the checklist template
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UpdateCatalogChecklistTemplateDataAttributes fields(@javax.annotation.Nullable List<NewCatalogChecklistTemplateDataAttributesFieldsInner> fields) {
+  public UpdateCatalogChecklistTemplateDataAttributes fields(@jakarta.annotation.Nullable List<NewCatalogChecklistTemplateDataAttributesFieldsInner> fields) {
     this.fields = fields;
     return this;
   }
@@ -133,17 +162,17 @@ public class UpdateCatalogChecklistTemplateDataAttributes {
    * Template fields. Position is determined by array order. Replaces all existing fields.
    * @return fields
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewCatalogChecklistTemplateDataAttributesFieldsInner> getFields() {
     return fields;
   }
 
-  public void setFields(@javax.annotation.Nullable List<NewCatalogChecklistTemplateDataAttributesFieldsInner> fields) {
+  public void setFields(@jakarta.annotation.Nullable List<NewCatalogChecklistTemplateDataAttributesFieldsInner> fields) {
     this.fields = fields;
   }
 
 
-  public UpdateCatalogChecklistTemplateDataAttributes owners(@javax.annotation.Nullable List<NewCatalogChecklistTemplateDataAttributesOwnersInner> owners) {
+  public UpdateCatalogChecklistTemplateDataAttributes owners(@jakarta.annotation.Nullable List<NewCatalogChecklistTemplateDataAttributesOwnersInner> owners) {
     this.owners = owners;
     return this;
   }
@@ -160,12 +189,12 @@ public class UpdateCatalogChecklistTemplateDataAttributes {
    * Template owners. Replaces all existing owners.
    * @return owners
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewCatalogChecklistTemplateDataAttributesOwnersInner> getOwners() {
     return owners;
   }
 
-  public void setOwners(@javax.annotation.Nullable List<NewCatalogChecklistTemplateDataAttributesOwnersInner> owners) {
+  public void setOwners(@jakarta.annotation.Nullable List<NewCatalogChecklistTemplateDataAttributesOwnersInner> owners) {
     this.owners = owners;
   }
 
@@ -180,7 +209,8 @@ public class UpdateCatalogChecklistTemplateDataAttributes {
       return false;
     }
     UpdateCatalogChecklistTemplateDataAttributes updateCatalogChecklistTemplateDataAttributes = (UpdateCatalogChecklistTemplateDataAttributes) o;
-    return Objects.equals(this.name, updateCatalogChecklistTemplateDataAttributes.name) &&
+    return Objects.equals(this.slug, updateCatalogChecklistTemplateDataAttributes.slug) &&
+        Objects.equals(this.name, updateCatalogChecklistTemplateDataAttributes.name) &&
         Objects.equals(this.description, updateCatalogChecklistTemplateDataAttributes.description) &&
         Objects.equals(this.fields, updateCatalogChecklistTemplateDataAttributes.fields) &&
         Objects.equals(this.owners, updateCatalogChecklistTemplateDataAttributes.owners);
@@ -192,7 +222,7 @@ public class UpdateCatalogChecklistTemplateDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, fields, owners);
+    return Objects.hash(slug, name, description, fields, owners);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -206,6 +236,7 @@ public class UpdateCatalogChecklistTemplateDataAttributes {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdateCatalogChecklistTemplateDataAttributes {\n");
+    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
@@ -232,6 +263,7 @@ public class UpdateCatalogChecklistTemplateDataAttributes {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("slug");
     openapiFields.add("name");
     openapiFields.add("description");
     openapiFields.add("fields");
@@ -262,6 +294,9 @@ public class UpdateCatalogChecklistTemplateDataAttributes {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
+      }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }

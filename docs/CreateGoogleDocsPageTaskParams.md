@@ -16,6 +16,9 @@
 |**content** | **String** | The page content |  [optional] |
 |**templateId** | **String** | The Google Doc file ID to use as a template |  [optional] |
 |**permissions** | **String** | Page permissions JSON |  [optional] |
+|**includeOverview** | **Boolean** |  |  [optional] |
+|**includeTimeline** | **Boolean** |  |  [optional] |
+|**includeFollowUps** | **Boolean** |  |  [optional] |
 
 
 

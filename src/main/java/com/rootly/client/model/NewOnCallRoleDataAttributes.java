@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,17 +51,18 @@ import com.rootly.client.JSON;
 /**
  * NewOnCallRoleDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewOnCallRoleDataAttributes {
+  public static final String SERIALIZED_NAME_SLUG = "slug";
+  @Deprecated
+  @SerializedName(SERIALIZED_NAME_SLUG)
+  @jakarta.annotation.Nullable
+  private String slug;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @jakarta.annotation.Nonnull
   private String name;
-
-  public static final String SERIALIZED_NAME_SLUG = "slug";
-  @SerializedName(SERIALIZED_NAME_SLUG)
-  @jakarta.annotation.Nullable
-  private String slug;
 
   /**
    * Gets or Sets systemRole
@@ -555,7 +557,9 @@ public class NewOnCallRoleDataAttributes {
     
     UPDATE("update"),
     
-    READ("read");
+    READ("read"),
+    
+    DELETE("delete");
 
     private String value;
 
@@ -1328,6 +1332,67 @@ public class NewOnCallRoleDataAttributes {
   private List<ServicesPermissionsEnum> servicesPermissions = new ArrayList<>();
 
   /**
+   * Gets or Sets functionalitiesPermissions
+   */
+  @JsonAdapter(FunctionalitiesPermissionsEnum.Adapter.class)
+  public enum FunctionalitiesPermissionsEnum {
+    CREATE("create"),
+    
+    READ("read"),
+    
+    UPDATE("update"),
+    
+    DELETE("delete");
+
+    private String value;
+
+    FunctionalitiesPermissionsEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static FunctionalitiesPermissionsEnum fromValue(String value) {
+      for (FunctionalitiesPermissionsEnum b : FunctionalitiesPermissionsEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<FunctionalitiesPermissionsEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final FunctionalitiesPermissionsEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public FunctionalitiesPermissionsEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return FunctionalitiesPermissionsEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      FunctionalitiesPermissionsEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_FUNCTIONALITIES_PERMISSIONS = "functionalities_permissions";
+  @SerializedName(SERIALIZED_NAME_FUNCTIONALITIES_PERMISSIONS)
+  @jakarta.annotation.Nullable
+  private List<FunctionalitiesPermissionsEnum> functionalitiesPermissions = new ArrayList<>();
+
+  /**
    * Gets or Sets webhooksPermissions
    */
   @JsonAdapter(WebhooksPermissionsEnum.Adapter.class)
@@ -1449,8 +1514,92 @@ public class NewOnCallRoleDataAttributes {
   @jakarta.annotation.Nullable
   private List<WorkflowsPermissionsEnum> workflowsPermissions = new ArrayList<>();
 
+  /**
+   * Gets or Sets catalogsPermissions
+   */
+  @JsonAdapter(CatalogsPermissionsEnum.Adapter.class)
+  public enum CatalogsPermissionsEnum {
+    CREATE("create"),
+    
+    READ("read"),
+    
+    UPDATE("update"),
+    
+    DELETE("delete");
+
+    private String value;
+
+    CatalogsPermissionsEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static CatalogsPermissionsEnum fromValue(String value) {
+      for (CatalogsPermissionsEnum b : CatalogsPermissionsEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<CatalogsPermissionsEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final CatalogsPermissionsEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public CatalogsPermissionsEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return CatalogsPermissionsEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      CatalogsPermissionsEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_CATALOGS_PERMISSIONS = "catalogs_permissions";
+  @SerializedName(SERIALIZED_NAME_CATALOGS_PERMISSIONS)
+  @jakarta.annotation.Nullable
+  private List<CatalogsPermissionsEnum> catalogsPermissions = new ArrayList<>();
+
   public NewOnCallRoleDataAttributes() {
   }
+
+  @Deprecated
+  public NewOnCallRoleDataAttributes slug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+    return this;
+  }
+
+  /**
+   * Deprecated. &#x60;slug&#x60; is derived from &#x60;name&#x60;; any submitted value is ignored. This property will be removed from the request schema in a future version.
+   * @return slug
+   * @deprecated
+   */
+  @Deprecated
+  @jakarta.annotation.Nullable
+  public String getSlug() {
+    return slug;
+  }
+
+  @Deprecated
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+  }
+
 
   public NewOnCallRoleDataAttributes name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
@@ -1468,25 +1617,6 @@ public class NewOnCallRoleDataAttributes {
 
   public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
-  }
-
-
-  public NewOnCallRoleDataAttributes slug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
-    return this;
-  }
-
-  /**
-   * The role slug.
-   * @return slug
-   */
-  @jakarta.annotation.Nullable
-  public String getSlug() {
-    return slug;
-  }
-
-  public void setSlug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
   }
 
 
@@ -2057,6 +2187,33 @@ public class NewOnCallRoleDataAttributes {
   }
 
 
+  public NewOnCallRoleDataAttributes functionalitiesPermissions(@jakarta.annotation.Nullable List<FunctionalitiesPermissionsEnum> functionalitiesPermissions) {
+    this.functionalitiesPermissions = functionalitiesPermissions;
+    return this;
+  }
+
+  public NewOnCallRoleDataAttributes addFunctionalitiesPermissionsItem(FunctionalitiesPermissionsEnum functionalitiesPermissionsItem) {
+    if (this.functionalitiesPermissions == null) {
+      this.functionalitiesPermissions = new ArrayList<>();
+    }
+    this.functionalitiesPermissions.add(functionalitiesPermissionsItem);
+    return this;
+  }
+
+  /**
+   * Get functionalitiesPermissions
+   * @return functionalitiesPermissions
+   */
+  @jakarta.annotation.Nullable
+  public List<FunctionalitiesPermissionsEnum> getFunctionalitiesPermissions() {
+    return functionalitiesPermissions;
+  }
+
+  public void setFunctionalitiesPermissions(@jakarta.annotation.Nullable List<FunctionalitiesPermissionsEnum> functionalitiesPermissions) {
+    this.functionalitiesPermissions = functionalitiesPermissions;
+  }
+
+
   public NewOnCallRoleDataAttributes webhooksPermissions(@jakarta.annotation.Nullable List<WebhooksPermissionsEnum> webhooksPermissions) {
     this.webhooksPermissions = webhooksPermissions;
     return this;
@@ -2111,6 +2268,33 @@ public class NewOnCallRoleDataAttributes {
   }
 
 
+  public NewOnCallRoleDataAttributes catalogsPermissions(@jakarta.annotation.Nullable List<CatalogsPermissionsEnum> catalogsPermissions) {
+    this.catalogsPermissions = catalogsPermissions;
+    return this;
+  }
+
+  public NewOnCallRoleDataAttributes addCatalogsPermissionsItem(CatalogsPermissionsEnum catalogsPermissionsItem) {
+    if (this.catalogsPermissions == null) {
+      this.catalogsPermissions = new ArrayList<>();
+    }
+    this.catalogsPermissions.add(catalogsPermissionsItem);
+    return this;
+  }
+
+  /**
+   * Get catalogsPermissions
+   * @return catalogsPermissions
+   */
+  @jakarta.annotation.Nullable
+  public List<CatalogsPermissionsEnum> getCatalogsPermissions() {
+    return catalogsPermissions;
+  }
+
+  public void setCatalogsPermissions(@jakarta.annotation.Nullable List<CatalogsPermissionsEnum> catalogsPermissions) {
+    this.catalogsPermissions = catalogsPermissions;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -2121,8 +2305,8 @@ public class NewOnCallRoleDataAttributes {
       return false;
     }
     NewOnCallRoleDataAttributes newOnCallRoleDataAttributes = (NewOnCallRoleDataAttributes) o;
-    return Objects.equals(this.name, newOnCallRoleDataAttributes.name) &&
-        Objects.equals(this.slug, newOnCallRoleDataAttributes.slug) &&
+    return Objects.equals(this.slug, newOnCallRoleDataAttributes.slug) &&
+        Objects.equals(this.name, newOnCallRoleDataAttributes.name) &&
         Objects.equals(this.systemRole, newOnCallRoleDataAttributes.systemRole) &&
         Objects.equals(this.alertFieldsPermissions, newOnCallRoleDataAttributes.alertFieldsPermissions) &&
         Objects.equals(this.alertGroupsPermissions, newOnCallRoleDataAttributes.alertGroupsPermissions) &&
@@ -2144,21 +2328,34 @@ public class NewOnCallRoleDataAttributes {
         Objects.equals(this.scheduleOverridePermissions, newOnCallRoleDataAttributes.scheduleOverridePermissions) &&
         Objects.equals(this.schedulesPermissions, newOnCallRoleDataAttributes.schedulesPermissions) &&
         Objects.equals(this.servicesPermissions, newOnCallRoleDataAttributes.servicesPermissions) &&
+        Objects.equals(this.functionalitiesPermissions, newOnCallRoleDataAttributes.functionalitiesPermissions) &&
         Objects.equals(this.webhooksPermissions, newOnCallRoleDataAttributes.webhooksPermissions) &&
-        Objects.equals(this.workflowsPermissions, newOnCallRoleDataAttributes.workflowsPermissions);
+        Objects.equals(this.workflowsPermissions, newOnCallRoleDataAttributes.workflowsPermissions) &&
+        Objects.equals(this.catalogsPermissions, newOnCallRoleDataAttributes.catalogsPermissions);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, slug, systemRole, alertFieldsPermissions, alertGroupsPermissions, alertRoutingRulesPermissions, onCallReadinessReportPermissions, onCallRolesPermissions, alertSourcesPermissions, alertUrgencyPermissions, alertsPermissions, apiKeysPermissions, auditsPermissions, contactsPermissions, escalationPoliciesPermissions, groupsPermissions, heartbeatsPermissions, integrationsPermissions, invitationsPermissions, liveCallRoutingPermissions, scheduleOverridePermissions, schedulesPermissions, servicesPermissions, webhooksPermissions, workflowsPermissions);
+    return Objects.hash(slug, name, systemRole, alertFieldsPermissions, alertGroupsPermissions, alertRoutingRulesPermissions, onCallReadinessReportPermissions, onCallRolesPermissions, alertSourcesPermissions, alertUrgencyPermissions, alertsPermissions, apiKeysPermissions, auditsPermissions, contactsPermissions, escalationPoliciesPermissions, groupsPermissions, heartbeatsPermissions, integrationsPermissions, invitationsPermissions, liveCallRoutingPermissions, scheduleOverridePermissions, schedulesPermissions, servicesPermissions, functionalitiesPermissions, webhooksPermissions, workflowsPermissions, catalogsPermissions);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class NewOnCallRoleDataAttributes {\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    systemRole: ").append(toIndentedString(systemRole)).append("\n");
     sb.append("    alertFieldsPermissions: ").append(toIndentedString(alertFieldsPermissions)).append("\n");
     sb.append("    alertGroupsPermissions: ").append(toIndentedString(alertGroupsPermissions)).append("\n");
@@ -2180,8 +2377,10 @@ public class NewOnCallRoleDataAttributes {
     sb.append("    scheduleOverridePermissions: ").append(toIndentedString(scheduleOverridePermissions)).append("\n");
     sb.append("    schedulesPermissions: ").append(toIndentedString(schedulesPermissions)).append("\n");
     sb.append("    servicesPermissions: ").append(toIndentedString(servicesPermissions)).append("\n");
+    sb.append("    functionalitiesPermissions: ").append(toIndentedString(functionalitiesPermissions)).append("\n");
     sb.append("    webhooksPermissions: ").append(toIndentedString(webhooksPermissions)).append("\n");
     sb.append("    workflowsPermissions: ").append(toIndentedString(workflowsPermissions)).append("\n");
+    sb.append("    catalogsPermissions: ").append(toIndentedString(catalogsPermissions)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -2204,8 +2403,8 @@ public class NewOnCallRoleDataAttributes {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("name");
     openapiFields.add("slug");
+    openapiFields.add("name");
     openapiFields.add("system_role");
     openapiFields.add("alert_fields_permissions");
     openapiFields.add("alert_groups_permissions");
@@ -2227,8 +2426,10 @@ public class NewOnCallRoleDataAttributes {
     openapiFields.add("schedule_override_permissions");
     openapiFields.add("schedules_permissions");
     openapiFields.add("services_permissions");
+    openapiFields.add("functionalities_permissions");
     openapiFields.add("webhooks_permissions");
     openapiFields.add("workflows_permissions");
+    openapiFields.add("catalogs_permissions");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -2263,11 +2464,11 @@ public class NewOnCallRoleDataAttributes {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
       if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
+      }
+      if (!jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("system_role") != null && !jsonObj.get("system_role").isJsonNull() && !jsonObj.get("system_role").isJsonArray()) {
@@ -2354,12 +2555,20 @@ public class NewOnCallRoleDataAttributes {
         throw new IllegalArgumentException(String.format("Expected the field `services_permissions` to be an array in the JSON string but got `%s`", jsonObj.get("services_permissions").toString()));
       }
       // ensure the optional json data is an array if present
+      if (jsonObj.get("functionalities_permissions") != null && !jsonObj.get("functionalities_permissions").isJsonNull() && !jsonObj.get("functionalities_permissions").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `functionalities_permissions` to be an array in the JSON string but got `%s`", jsonObj.get("functionalities_permissions").toString()));
+      }
+      // ensure the optional json data is an array if present
       if (jsonObj.get("webhooks_permissions") != null && !jsonObj.get("webhooks_permissions").isJsonNull() && !jsonObj.get("webhooks_permissions").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `webhooks_permissions` to be an array in the JSON string but got `%s`", jsonObj.get("webhooks_permissions").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("workflows_permissions") != null && !jsonObj.get("workflows_permissions").isJsonNull() && !jsonObj.get("workflows_permissions").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `workflows_permissions` to be an array in the JSON string but got `%s`", jsonObj.get("workflows_permissions").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("catalogs_permissions") != null && !jsonObj.get("catalogs_permissions").isJsonNull() && !jsonObj.get("catalogs_permissions").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `catalogs_permissions` to be an array in the JSON string but got `%s`", jsonObj.get("catalogs_permissions").toString()));
       }
   }
 

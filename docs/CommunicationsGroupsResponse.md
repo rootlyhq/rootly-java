@@ -10,6 +10,7 @@
 |**data** | [**List&lt;CommunicationsGroupResponseData&gt;**](CommunicationsGroupResponseData.md) |  |  |
 |**links** | [**Links**](Links.md) |  |  [optional] |
 |**meta** | [**Meta**](Meta.md) |  |  [optional] |
+|**included** | [**List&lt;JsonapiIncludedResource&gt;**](JsonapiIncludedResource.md) |  |  [optional] |
 
 
 

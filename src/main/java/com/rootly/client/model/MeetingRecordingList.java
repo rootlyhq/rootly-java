@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.rootly.client.model.MeetingRecordingListDataInner;
+import com.rootly.client.model.MeetingRecordingResponseData;
 import com.rootly.client.model.Meta;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -52,27 +52,27 @@ import com.rootly.client.JSON;
 /**
  * MeetingRecordingList
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class MeetingRecordingList {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nonnull
-  private List<MeetingRecordingListDataInner> data = new ArrayList<>();
+  @jakarta.annotation.Nonnull
+  private List<MeetingRecordingResponseData> data = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_META = "meta";
   @SerializedName(SERIALIZED_NAME_META)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Meta meta;
 
   public MeetingRecordingList() {
   }
 
-  public MeetingRecordingList data(@javax.annotation.Nonnull List<MeetingRecordingListDataInner> data) {
+  public MeetingRecordingList data(@jakarta.annotation.Nonnull List<MeetingRecordingResponseData> data) {
     this.data = data;
     return this;
   }
 
-  public MeetingRecordingList addDataItem(MeetingRecordingListDataInner dataItem) {
+  public MeetingRecordingList addDataItem(MeetingRecordingResponseData dataItem) {
     if (this.data == null) {
       this.data = new ArrayList<>();
     }
@@ -84,17 +84,17 @@ public class MeetingRecordingList {
    * Get data
    * @return data
    */
-  @javax.annotation.Nonnull
-  public List<MeetingRecordingListDataInner> getData() {
+  @jakarta.annotation.Nonnull
+  public List<MeetingRecordingResponseData> getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nonnull List<MeetingRecordingListDataInner> data) {
+  public void setData(@jakarta.annotation.Nonnull List<MeetingRecordingResponseData> data) {
     this.data = data;
   }
 
 
-  public MeetingRecordingList meta(@javax.annotation.Nullable Meta meta) {
+  public MeetingRecordingList meta(@jakarta.annotation.Nullable Meta meta) {
     this.meta = meta;
     return this;
   }
@@ -103,12 +103,12 @@ public class MeetingRecordingList {
    * Get meta
    * @return meta
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Meta getMeta() {
     return meta;
   }
 
-  public void setMeta(@javax.annotation.Nullable Meta meta) {
+  public void setMeta(@jakarta.annotation.Nullable Meta meta) {
     this.meta = meta;
   }
 
@@ -204,7 +204,7 @@ public class MeetingRecordingList {
       JsonArray jsonArraydata = jsonObj.getAsJsonArray("data");
       // validate the required field `data` (array)
       for (int i = 0; i < jsonArraydata.size(); i++) {
-        MeetingRecordingListDataInner.validateJsonElement(jsonArraydata.get(i));
+        MeetingRecordingResponseData.validateJsonElement(jsonArraydata.get(i));
       };
       // validate the optional field `meta`
       if (jsonObj.get("meta") != null && !jsonObj.get("meta").isJsonNull()) {

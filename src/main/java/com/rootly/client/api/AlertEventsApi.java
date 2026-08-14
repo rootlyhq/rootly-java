@@ -27,6 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import com.rootly.client.model.AlertEventFeedList;
 import com.rootly.client.model.AlertEventList;
 import com.rootly.client.model.AlertEventResponse;
 import com.rootly.client.model.ErrorsList;
@@ -634,6 +635,211 @@ public class AlertEventsApi {
 
         okhttp3.Call localVarCall = listAlertEventsValidateBeforeCall(alertId, include, pageNumber, pageSize, filterKind, filterAction, _callback);
         Type localVarReturnType = new TypeToken<AlertEventList>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for listAlertEventsFeed
+     * @param include  (optional)
+     * @param pageSize Page size (max 50). (optional)
+     * @param pageAfter Cursor token from the previous response&#39;s &#x60;meta.next_cursor&#x60;. Pass the same &#x60;sort&#x60; value used to obtain the cursor. (optional)
+     * @param sort Sort by &#x60;created_at&#x60;. Defaults to &#x60;created_at&#x60; (oldest-first). Use &#x60;-created_at&#x60; for newest-first. (optional)
+     * @param filterKind  (optional)
+     * @param filterAction  (optional)
+     * @param filterAlertId  (optional)
+     * @param filterCreatedAtGt  (optional)
+     * @param filterCreatedAtGte  (optional)
+     * @param filterCreatedAtLt  (optional)
+     * @param filterCreatedAtLte  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listAlertEventsFeedCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String pageAfter, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterAction, @jakarta.annotation.Nullable String filterAlertId, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v1/alert_events";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (include != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("include", include));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page[size]", pageSize));
+        }
+
+        if (pageAfter != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page[after]", pageAfter));
+        }
+
+        if (sort != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort", sort));
+        }
+
+        if (filterKind != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[kind]", filterKind));
+        }
+
+        if (filterAction != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[action]", filterAction));
+        }
+
+        if (filterAlertId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[alert_id]", filterAlertId));
+        }
+
+        if (filterCreatedAtGt != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[created_at][gt]", filterCreatedAtGt));
+        }
+
+        if (filterCreatedAtGte != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[created_at][gte]", filterCreatedAtGte));
+        }
+
+        if (filterCreatedAtLt != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[created_at][lt]", filterCreatedAtLt));
+        }
+
+        if (filterCreatedAtLte != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[created_at][lte]", filterCreatedAtLte));
+        }
+
+        final String[] localVarAccepts = {
+            "application/vnd.api+json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "bearer_auth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listAlertEventsFeedValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String pageAfter, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterAction, @jakarta.annotation.Nullable String filterAlertId, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
+        return listAlertEventsFeedCall(include, pageSize, pageAfter, sort, filterKind, filterAction, filterAlertId, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, _callback);
+
+    }
+
+    /**
+     * List alert events across alerts
+     * Returns a flat list of alert events across all alerts the requester can access. Designed for periodic polling: use &#x60;page[after]&#x60; with the &#x60;next_cursor&#x60; returned in the previous response to stream forward.
+     * @param include  (optional)
+     * @param pageSize Page size (max 50). (optional)
+     * @param pageAfter Cursor token from the previous response&#39;s &#x60;meta.next_cursor&#x60;. Pass the same &#x60;sort&#x60; value used to obtain the cursor. (optional)
+     * @param sort Sort by &#x60;created_at&#x60;. Defaults to &#x60;created_at&#x60; (oldest-first). Use &#x60;-created_at&#x60; for newest-first. (optional)
+     * @param filterKind  (optional)
+     * @param filterAction  (optional)
+     * @param filterAlertId  (optional)
+     * @param filterCreatedAtGt  (optional)
+     * @param filterCreatedAtGte  (optional)
+     * @param filterCreatedAtLt  (optional)
+     * @param filterCreatedAtLte  (optional)
+     * @return AlertEventFeedList
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
+     </table>
+     */
+    public AlertEventFeedList listAlertEventsFeed(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String pageAfter, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterAction, @jakarta.annotation.Nullable String filterAlertId, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte) throws ApiException {
+        ApiResponse<AlertEventFeedList> localVarResp = listAlertEventsFeedWithHttpInfo(include, pageSize, pageAfter, sort, filterKind, filterAction, filterAlertId, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List alert events across alerts
+     * Returns a flat list of alert events across all alerts the requester can access. Designed for periodic polling: use &#x60;page[after]&#x60; with the &#x60;next_cursor&#x60; returned in the previous response to stream forward.
+     * @param include  (optional)
+     * @param pageSize Page size (max 50). (optional)
+     * @param pageAfter Cursor token from the previous response&#39;s &#x60;meta.next_cursor&#x60;. Pass the same &#x60;sort&#x60; value used to obtain the cursor. (optional)
+     * @param sort Sort by &#x60;created_at&#x60;. Defaults to &#x60;created_at&#x60; (oldest-first). Use &#x60;-created_at&#x60; for newest-first. (optional)
+     * @param filterKind  (optional)
+     * @param filterAction  (optional)
+     * @param filterAlertId  (optional)
+     * @param filterCreatedAtGt  (optional)
+     * @param filterCreatedAtGte  (optional)
+     * @param filterCreatedAtLt  (optional)
+     * @param filterCreatedAtLte  (optional)
+     * @return ApiResponse&lt;AlertEventFeedList&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<AlertEventFeedList> listAlertEventsFeedWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String pageAfter, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterAction, @jakarta.annotation.Nullable String filterAlertId, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte) throws ApiException {
+        okhttp3.Call localVarCall = listAlertEventsFeedValidateBeforeCall(include, pageSize, pageAfter, sort, filterKind, filterAction, filterAlertId, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, null);
+        Type localVarReturnType = new TypeToken<AlertEventFeedList>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List alert events across alerts (asynchronously)
+     * Returns a flat list of alert events across all alerts the requester can access. Designed for periodic polling: use &#x60;page[after]&#x60; with the &#x60;next_cursor&#x60; returned in the previous response to stream forward.
+     * @param include  (optional)
+     * @param pageSize Page size (max 50). (optional)
+     * @param pageAfter Cursor token from the previous response&#39;s &#x60;meta.next_cursor&#x60;. Pass the same &#x60;sort&#x60; value used to obtain the cursor. (optional)
+     * @param sort Sort by &#x60;created_at&#x60;. Defaults to &#x60;created_at&#x60; (oldest-first). Use &#x60;-created_at&#x60; for newest-first. (optional)
+     * @param filterKind  (optional)
+     * @param filterAction  (optional)
+     * @param filterAlertId  (optional)
+     * @param filterCreatedAtGt  (optional)
+     * @param filterCreatedAtGte  (optional)
+     * @param filterCreatedAtLt  (optional)
+     * @param filterCreatedAtLte  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listAlertEventsFeedAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String pageAfter, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterAction, @jakarta.annotation.Nullable String filterAlertId, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback<AlertEventFeedList> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listAlertEventsFeedValidateBeforeCall(include, pageSize, pageAfter, sort, filterKind, filterAction, filterAlertId, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, _callback);
+        Type localVarReturnType = new TypeToken<AlertEventFeedList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

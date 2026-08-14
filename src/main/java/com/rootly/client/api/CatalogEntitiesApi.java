@@ -27,6 +27,12 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import com.rootly.client.model.BulkDeleteCatalogEntities422Response;
+import com.rootly.client.model.BulkDestroyCatalogEntities;
+import com.rootly.client.model.BulkDestroyCatalogEntitiesResponse;
+import com.rootly.client.model.BulkUpsertCatalogEntities;
+import com.rootly.client.model.BulkUpsertCatalogEntities422Response;
+import com.rootly.client.model.BulkUpsertCatalogEntitiesResponse;
 import com.rootly.client.model.CatalogEntityList;
 import com.rootly.client.model.CatalogEntityResponse;
 import com.rootly.client.model.ErrorsList;
@@ -78,6 +84,296 @@ public class CatalogEntitiesApi {
     }
 
     /**
+     * Build call for bulkDeleteCatalogEntities
+     * @param catalogId  (required)
+     * @param bulkDestroyCatalogEntities  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> entities deleted successfully </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> validation or partial-failure error </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call bulkDeleteCatalogEntitiesCall(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nonnull BulkDestroyCatalogEntities bulkDestroyCatalogEntities, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = bulkDestroyCatalogEntities;
+
+        // create path and map variables
+        String localVarPath = "/v1/catalogs/{catalog_id}/entities/bulk_delete"
+            .replace("{" + "catalog_id" + "}", localVarApiClient.escapeString(catalogId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/vnd.api+json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/vnd.api+json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "bearer_auth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call bulkDeleteCatalogEntitiesValidateBeforeCall(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nonnull BulkDestroyCatalogEntities bulkDestroyCatalogEntities, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'catalogId' is set
+        if (catalogId == null) {
+            throw new ApiException("Missing the required parameter 'catalogId' when calling bulkDeleteCatalogEntities(Async)");
+        }
+
+        // verify the required parameter 'bulkDestroyCatalogEntities' is set
+        if (bulkDestroyCatalogEntities == null) {
+            throw new ApiException("Missing the required parameter 'bulkDestroyCatalogEntities' when calling bulkDeleteCatalogEntities(Async)");
+        }
+
+        return bulkDeleteCatalogEntitiesCall(catalogId, bulkDestroyCatalogEntities, _callback);
+
+    }
+
+    /**
+     * Bulk delete Catalog Entities
+     * Delete catalog entities by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+     * @param catalogId  (required)
+     * @param bulkDestroyCatalogEntities  (required)
+     * @return BulkDestroyCatalogEntitiesResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> entities deleted successfully </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> validation or partial-failure error </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
+     </table>
+     */
+    public BulkDestroyCatalogEntitiesResponse bulkDeleteCatalogEntities(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nonnull BulkDestroyCatalogEntities bulkDestroyCatalogEntities) throws ApiException {
+        ApiResponse<BulkDestroyCatalogEntitiesResponse> localVarResp = bulkDeleteCatalogEntitiesWithHttpInfo(catalogId, bulkDestroyCatalogEntities);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Bulk delete Catalog Entities
+     * Delete catalog entities by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+     * @param catalogId  (required)
+     * @param bulkDestroyCatalogEntities  (required)
+     * @return ApiResponse&lt;BulkDestroyCatalogEntitiesResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> entities deleted successfully </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> validation or partial-failure error </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<BulkDestroyCatalogEntitiesResponse> bulkDeleteCatalogEntitiesWithHttpInfo(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nonnull BulkDestroyCatalogEntities bulkDestroyCatalogEntities) throws ApiException {
+        okhttp3.Call localVarCall = bulkDeleteCatalogEntitiesValidateBeforeCall(catalogId, bulkDestroyCatalogEntities, null);
+        Type localVarReturnType = new TypeToken<BulkDestroyCatalogEntitiesResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Bulk delete Catalog Entities (asynchronously)
+     * Delete catalog entities by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+     * @param catalogId  (required)
+     * @param bulkDestroyCatalogEntities  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> entities deleted successfully </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> validation or partial-failure error </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call bulkDeleteCatalogEntitiesAsync(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nonnull BulkDestroyCatalogEntities bulkDestroyCatalogEntities, final ApiCallback<BulkDestroyCatalogEntitiesResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = bulkDeleteCatalogEntitiesValidateBeforeCall(catalogId, bulkDestroyCatalogEntities, _callback);
+        Type localVarReturnType = new TypeToken<BulkDestroyCatalogEntitiesResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for bulkUpsertCatalogEntities
+     * @param catalogId  (required)
+     * @param bulkUpsertCatalogEntities  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> entities upserted successfully </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> validation or entity-level error </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call bulkUpsertCatalogEntitiesCall(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nonnull BulkUpsertCatalogEntities bulkUpsertCatalogEntities, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = bulkUpsertCatalogEntities;
+
+        // create path and map variables
+        String localVarPath = "/v1/catalogs/{catalog_id}/entities/bulk_upsert"
+            .replace("{" + "catalog_id" + "}", localVarApiClient.escapeString(catalogId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/vnd.api+json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/vnd.api+json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "bearer_auth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call bulkUpsertCatalogEntitiesValidateBeforeCall(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nonnull BulkUpsertCatalogEntities bulkUpsertCatalogEntities, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'catalogId' is set
+        if (catalogId == null) {
+            throw new ApiException("Missing the required parameter 'catalogId' when calling bulkUpsertCatalogEntities(Async)");
+        }
+
+        // verify the required parameter 'bulkUpsertCatalogEntities' is set
+        if (bulkUpsertCatalogEntities == null) {
+            throw new ApiException("Missing the required parameter 'bulkUpsertCatalogEntities' when calling bulkUpsertCatalogEntities(Async)");
+        }
+
+        return bulkUpsertCatalogEntitiesCall(catalogId, bulkUpsertCatalogEntities, _callback);
+
+    }
+
+    /**
+     * Bulk upsert Catalog Entities
+     * Create or update multiple catalog entities by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail.
+     * @param catalogId  (required)
+     * @param bulkUpsertCatalogEntities  (required)
+     * @return BulkUpsertCatalogEntitiesResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> entities upserted successfully </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> validation or entity-level error </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
+     </table>
+     */
+    public BulkUpsertCatalogEntitiesResponse bulkUpsertCatalogEntities(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nonnull BulkUpsertCatalogEntities bulkUpsertCatalogEntities) throws ApiException {
+        ApiResponse<BulkUpsertCatalogEntitiesResponse> localVarResp = bulkUpsertCatalogEntitiesWithHttpInfo(catalogId, bulkUpsertCatalogEntities);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Bulk upsert Catalog Entities
+     * Create or update multiple catalog entities by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail.
+     * @param catalogId  (required)
+     * @param bulkUpsertCatalogEntities  (required)
+     * @return ApiResponse&lt;BulkUpsertCatalogEntitiesResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> entities upserted successfully </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> validation or entity-level error </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<BulkUpsertCatalogEntitiesResponse> bulkUpsertCatalogEntitiesWithHttpInfo(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nonnull BulkUpsertCatalogEntities bulkUpsertCatalogEntities) throws ApiException {
+        okhttp3.Call localVarCall = bulkUpsertCatalogEntitiesValidateBeforeCall(catalogId, bulkUpsertCatalogEntities, null);
+        Type localVarReturnType = new TypeToken<BulkUpsertCatalogEntitiesResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Bulk upsert Catalog Entities (asynchronously)
+     * Create or update multiple catalog entities by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail.
+     * @param catalogId  (required)
+     * @param bulkUpsertCatalogEntities  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> entities upserted successfully </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> validation or entity-level error </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call bulkUpsertCatalogEntitiesAsync(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nonnull BulkUpsertCatalogEntities bulkUpsertCatalogEntities, final ApiCallback<BulkUpsertCatalogEntitiesResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = bulkUpsertCatalogEntitiesValidateBeforeCall(catalogId, bulkUpsertCatalogEntities, _callback);
+        Type localVarReturnType = new TypeToken<BulkUpsertCatalogEntitiesResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for createCatalogEntity
      * @param catalogId  (required)
      * @param newCatalogEntity  (required)
@@ -88,8 +384,8 @@ public class CatalogEntitiesApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> catalog_entity created </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> catalog_entity created with fields attribute </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> rejects entity with invalid catalog_field_id </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
@@ -166,8 +462,8 @@ public class CatalogEntitiesApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> catalog_entity created </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> catalog_entity created with fields attribute </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> rejects entity with invalid catalog_field_id </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
@@ -187,8 +483,8 @@ public class CatalogEntitiesApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> catalog_entity created </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> catalog_entity created with fields attribute </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> rejects entity with invalid catalog_field_id </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
@@ -210,8 +506,8 @@ public class CatalogEntitiesApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> catalog_entity created </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> catalog_entity created with fields attribute </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> rejects entity with invalid catalog_field_id </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
@@ -499,12 +795,28 @@ public class CatalogEntitiesApi {
      * @param sort comma separated if needed. eg: created_at,updated_at (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
+     * @param filterSearch  (optional)
      * @param filterSlug  (optional)
      * @param filterName  (optional)
+     * @param filterBackstageId  (optional)
+     * @param filterExternalId  (optional)
+     * @param filterManagedBy  (optional)
      * @param filterCreatedAtGt  (optional)
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
+     * @param filterManagedByEq  (optional)
+     * @param filterManagedByNotEq  (optional)
+     * @param filterManagedByIn  (optional)
+     * @param filterManagedByNotIn  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -515,7 +827,7 @@ public class CatalogEntitiesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listCatalogEntitiesCall(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listCatalogEntitiesCall(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterBackstageId, @jakarta.annotation.Nullable String filterExternalId, @jakarta.annotation.Nullable String filterManagedBy, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterManagedByEq, @jakarta.annotation.Nullable String filterManagedByNotEq, @jakarta.annotation.Nullable String filterManagedByIn, @jakarta.annotation.Nullable String filterManagedByNotIn, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -557,12 +869,28 @@ public class CatalogEntitiesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("page[size]", pageSize));
         }
 
+        if (filterSearch != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[search]", filterSearch));
+        }
+
         if (filterSlug != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug]", filterSlug));
         }
 
         if (filterName != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name]", filterName));
+        }
+
+        if (filterBackstageId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[backstage_id]", filterBackstageId));
+        }
+
+        if (filterExternalId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[external_id]", filterExternalId));
+        }
+
+        if (filterManagedBy != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[managed_by]", filterManagedBy));
         }
 
         if (filterCreatedAtGt != null) {
@@ -579,6 +907,54 @@ public class CatalogEntitiesApi {
 
         if (filterCreatedAtLte != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[created_at][lte]", filterCreatedAtLte));
+        }
+
+        if (filterSlugEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][eq]", filterSlugEq));
+        }
+
+        if (filterSlugNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][not_eq]", filterSlugNotEq));
+        }
+
+        if (filterSlugIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][in]", filterSlugIn));
+        }
+
+        if (filterSlugNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][not_in]", filterSlugNotIn));
+        }
+
+        if (filterNameEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][eq]", filterNameEq));
+        }
+
+        if (filterNameNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][not_eq]", filterNameNotEq));
+        }
+
+        if (filterNameIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][in]", filterNameIn));
+        }
+
+        if (filterNameNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][not_in]", filterNameNotIn));
+        }
+
+        if (filterManagedByEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[managed_by][eq]", filterManagedByEq));
+        }
+
+        if (filterManagedByNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[managed_by][not_eq]", filterManagedByNotEq));
+        }
+
+        if (filterManagedByIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[managed_by][in]", filterManagedByIn));
+        }
+
+        if (filterManagedByNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[managed_by][not_in]", filterManagedByNotIn));
         }
 
         final String[] localVarAccepts = {
@@ -601,13 +977,13 @@ public class CatalogEntitiesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listCatalogEntitiesValidateBeforeCall(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listCatalogEntitiesValidateBeforeCall(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterBackstageId, @jakarta.annotation.Nullable String filterExternalId, @jakarta.annotation.Nullable String filterManagedBy, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterManagedByEq, @jakarta.annotation.Nullable String filterManagedByNotEq, @jakarta.annotation.Nullable String filterManagedByIn, @jakarta.annotation.Nullable String filterManagedByNotIn, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'catalogId' is set
         if (catalogId == null) {
             throw new ApiException("Missing the required parameter 'catalogId' when calling listCatalogEntities(Async)");
         }
 
-        return listCatalogEntitiesCall(catalogId, include, sort, pageNumber, pageSize, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, _callback);
+        return listCatalogEntitiesCall(catalogId, include, sort, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterBackstageId, filterExternalId, filterManagedBy, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterManagedByEq, filterManagedByNotEq, filterManagedByIn, filterManagedByNotIn, _callback);
 
     }
 
@@ -619,12 +995,28 @@ public class CatalogEntitiesApi {
      * @param sort comma separated if needed. eg: created_at,updated_at (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
+     * @param filterSearch  (optional)
      * @param filterSlug  (optional)
      * @param filterName  (optional)
+     * @param filterBackstageId  (optional)
+     * @param filterExternalId  (optional)
+     * @param filterManagedBy  (optional)
      * @param filterCreatedAtGt  (optional)
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
+     * @param filterManagedByEq  (optional)
+     * @param filterManagedByNotEq  (optional)
+     * @param filterManagedByIn  (optional)
+     * @param filterManagedByNotIn  (optional)
      * @return CatalogEntityList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -634,8 +1026,8 @@ public class CatalogEntitiesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public CatalogEntityList listCatalogEntities(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte) throws ApiException {
-        ApiResponse<CatalogEntityList> localVarResp = listCatalogEntitiesWithHttpInfo(catalogId, include, sort, pageNumber, pageSize, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
+    public CatalogEntityList listCatalogEntities(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterBackstageId, @jakarta.annotation.Nullable String filterExternalId, @jakarta.annotation.Nullable String filterManagedBy, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterManagedByEq, @jakarta.annotation.Nullable String filterManagedByNotEq, @jakarta.annotation.Nullable String filterManagedByIn, @jakarta.annotation.Nullable String filterManagedByNotIn) throws ApiException {
+        ApiResponse<CatalogEntityList> localVarResp = listCatalogEntitiesWithHttpInfo(catalogId, include, sort, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterBackstageId, filterExternalId, filterManagedBy, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterManagedByEq, filterManagedByNotEq, filterManagedByIn, filterManagedByNotIn);
         return localVarResp.getData();
     }
 
@@ -647,12 +1039,28 @@ public class CatalogEntitiesApi {
      * @param sort comma separated if needed. eg: created_at,updated_at (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
+     * @param filterSearch  (optional)
      * @param filterSlug  (optional)
      * @param filterName  (optional)
+     * @param filterBackstageId  (optional)
+     * @param filterExternalId  (optional)
+     * @param filterManagedBy  (optional)
      * @param filterCreatedAtGt  (optional)
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
+     * @param filterManagedByEq  (optional)
+     * @param filterManagedByNotEq  (optional)
+     * @param filterManagedByIn  (optional)
+     * @param filterManagedByNotIn  (optional)
      * @return ApiResponse&lt;CatalogEntityList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -662,8 +1070,8 @@ public class CatalogEntitiesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CatalogEntityList> listCatalogEntitiesWithHttpInfo(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte) throws ApiException {
-        okhttp3.Call localVarCall = listCatalogEntitiesValidateBeforeCall(catalogId, include, sort, pageNumber, pageSize, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, null);
+    public ApiResponse<CatalogEntityList> listCatalogEntitiesWithHttpInfo(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterBackstageId, @jakarta.annotation.Nullable String filterExternalId, @jakarta.annotation.Nullable String filterManagedBy, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterManagedByEq, @jakarta.annotation.Nullable String filterManagedByNotEq, @jakarta.annotation.Nullable String filterManagedByIn, @jakarta.annotation.Nullable String filterManagedByNotIn) throws ApiException {
+        okhttp3.Call localVarCall = listCatalogEntitiesValidateBeforeCall(catalogId, include, sort, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterBackstageId, filterExternalId, filterManagedBy, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterManagedByEq, filterManagedByNotEq, filterManagedByIn, filterManagedByNotIn, null);
         Type localVarReturnType = new TypeToken<CatalogEntityList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -676,12 +1084,28 @@ public class CatalogEntitiesApi {
      * @param sort comma separated if needed. eg: created_at,updated_at (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
+     * @param filterSearch  (optional)
      * @param filterSlug  (optional)
      * @param filterName  (optional)
+     * @param filterBackstageId  (optional)
+     * @param filterExternalId  (optional)
+     * @param filterManagedBy  (optional)
      * @param filterCreatedAtGt  (optional)
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
+     * @param filterManagedByEq  (optional)
+     * @param filterManagedByNotEq  (optional)
+     * @param filterManagedByIn  (optional)
+     * @param filterManagedByNotIn  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -692,9 +1116,9 @@ public class CatalogEntitiesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listCatalogEntitiesAsync(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback<CatalogEntityList> _callback) throws ApiException {
+    public okhttp3.Call listCatalogEntitiesAsync(@jakarta.annotation.Nonnull String catalogId, @jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterBackstageId, @jakarta.annotation.Nullable String filterExternalId, @jakarta.annotation.Nullable String filterManagedBy, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterManagedByEq, @jakarta.annotation.Nullable String filterManagedByNotEq, @jakarta.annotation.Nullable String filterManagedByIn, @jakarta.annotation.Nullable String filterManagedByNotIn, final ApiCallback<CatalogEntityList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listCatalogEntitiesValidateBeforeCall(catalogId, include, sort, pageNumber, pageSize, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, _callback);
+        okhttp3.Call localVarCall = listCatalogEntitiesValidateBeforeCall(catalogId, include, sort, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterBackstageId, filterExternalId, filterManagedBy, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterManagedByEq, filterManagedByNotEq, filterManagedByIn, filterManagedByNotIn, _callback);
         Type localVarReturnType = new TypeToken<CatalogEntityList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -710,7 +1134,7 @@ public class CatalogEntitiesApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> catalog_entity updated </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> catalog_entity update replaces existing properties </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
@@ -787,7 +1211,7 @@ public class CatalogEntitiesApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> catalog_entity updated </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> catalog_entity update replaces existing properties </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
@@ -807,7 +1231,7 @@ public class CatalogEntitiesApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> catalog_entity updated </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> catalog_entity update replaces existing properties </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
@@ -829,7 +1253,7 @@ public class CatalogEntitiesApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> catalog_entity updated </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> catalog_entity update replaces existing properties </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */

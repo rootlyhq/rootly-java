@@ -47,19 +47,34 @@ import java.util.Set;
 import com.rootly.client.JSON;
 
 /**
- * Flat user object as returned by serializer
+ * Flat user attributes as returned by UserFlatSerializer (no nested associations)
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UserFlatResponse {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   @jakarta.annotation.Nonnull
   private Integer id;
 
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  @jakarta.annotation.Nullable
+  private String name;
+
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
   @jakarta.annotation.Nonnull
   private String email;
+
+  public static final String SERIALIZED_NAME_PHONE = "phone";
+  @SerializedName(SERIALIZED_NAME_PHONE)
+  @jakarta.annotation.Nullable
+  private String phone;
+
+  public static final String SERIALIZED_NAME_PHONE2 = "phone_2";
+  @SerializedName(SERIALIZED_NAME_PHONE2)
+  @jakarta.annotation.Nullable
+  private String phone2;
 
   public static final String SERIALIZED_NAME_FIRST_NAME = "first_name";
   @SerializedName(SERIALIZED_NAME_FIRST_NAME)
@@ -71,6 +86,11 @@ public class UserFlatResponse {
   @jakarta.annotation.Nullable
   private String lastName;
 
+  public static final String SERIALIZED_NAME_PREFERRED_NAME = "preferred_name";
+  @SerializedName(SERIALIZED_NAME_PREFERRED_NAME)
+  @jakarta.annotation.Nullable
+  private String preferredName;
+
   public static final String SERIALIZED_NAME_FULL_NAME = "full_name";
   @SerializedName(SERIALIZED_NAME_FULL_NAME)
   @jakarta.annotation.Nullable
@@ -80,6 +100,11 @@ public class UserFlatResponse {
   @SerializedName(SERIALIZED_NAME_FULL_NAME_WITH_TEAM)
   @jakarta.annotation.Nullable
   private String fullNameWithTeam;
+
+  public static final String SERIALIZED_NAME_SLACK_ID = "slack_id";
+  @SerializedName(SERIALIZED_NAME_SLACK_ID)
+  @jakarta.annotation.Nullable
+  private String slackId;
 
   public static final String SERIALIZED_NAME_TIME_ZONE = "time_zone";
   @SerializedName(SERIALIZED_NAME_TIME_ZONE)
@@ -118,13 +143,32 @@ public class UserFlatResponse {
   }
 
 
+  public UserFlatResponse name(@jakarta.annotation.Nullable String name) {
+    this.name = name;
+    return this;
+  }
+
+  /**
+   * Display name
+   * @return name
+   */
+  @jakarta.annotation.Nullable
+  public String getName() {
+    return name;
+  }
+
+  public void setName(@jakarta.annotation.Nullable String name) {
+    this.name = name;
+  }
+
+
   public UserFlatResponse email(@jakarta.annotation.Nonnull String email) {
     this.email = email;
     return this;
   }
 
   /**
-   * User email
+   * Email address
    * @return email
    */
   @jakarta.annotation.Nonnull
@@ -137,13 +181,51 @@ public class UserFlatResponse {
   }
 
 
+  public UserFlatResponse phone(@jakarta.annotation.Nullable String phone) {
+    this.phone = phone;
+    return this;
+  }
+
+  /**
+   * Primary phone number
+   * @return phone
+   */
+  @jakarta.annotation.Nullable
+  public String getPhone() {
+    return phone;
+  }
+
+  public void setPhone(@jakarta.annotation.Nullable String phone) {
+    this.phone = phone;
+  }
+
+
+  public UserFlatResponse phone2(@jakarta.annotation.Nullable String phone2) {
+    this.phone2 = phone2;
+    return this;
+  }
+
+  /**
+   * Secondary phone number
+   * @return phone2
+   */
+  @jakarta.annotation.Nullable
+  public String getPhone2() {
+    return phone2;
+  }
+
+  public void setPhone2(@jakarta.annotation.Nullable String phone2) {
+    this.phone2 = phone2;
+  }
+
+
   public UserFlatResponse firstName(@jakarta.annotation.Nullable String firstName) {
     this.firstName = firstName;
     return this;
   }
 
   /**
-   * User first name
+   * First name
    * @return firstName
    */
   @jakarta.annotation.Nullable
@@ -162,7 +244,7 @@ public class UserFlatResponse {
   }
 
   /**
-   * User last name
+   * Last name
    * @return lastName
    */
   @jakarta.annotation.Nullable
@@ -175,13 +257,32 @@ public class UserFlatResponse {
   }
 
 
+  public UserFlatResponse preferredName(@jakarta.annotation.Nullable String preferredName) {
+    this.preferredName = preferredName;
+    return this;
+  }
+
+  /**
+   * Preferred name
+   * @return preferredName
+   */
+  @jakarta.annotation.Nullable
+  public String getPreferredName() {
+    return preferredName;
+  }
+
+  public void setPreferredName(@jakarta.annotation.Nullable String preferredName) {
+    this.preferredName = preferredName;
+  }
+
+
   public UserFlatResponse fullName(@jakarta.annotation.Nullable String fullName) {
     this.fullName = fullName;
     return this;
   }
 
   /**
-   * User full name
+   * Full name
    * @return fullName
    */
   @jakarta.annotation.Nullable
@@ -200,7 +301,7 @@ public class UserFlatResponse {
   }
 
   /**
-   * User full name with team
+   * Full name with team context
    * @return fullNameWithTeam
    */
   @jakarta.annotation.Nullable
@@ -213,13 +314,32 @@ public class UserFlatResponse {
   }
 
 
+  public UserFlatResponse slackId(@jakarta.annotation.Nullable String slackId) {
+    this.slackId = slackId;
+    return this;
+  }
+
+  /**
+   * Slack user ID
+   * @return slackId
+   */
+  @jakarta.annotation.Nullable
+  public String getSlackId() {
+    return slackId;
+  }
+
+  public void setSlackId(@jakarta.annotation.Nullable String slackId) {
+    this.slackId = slackId;
+  }
+
+
   public UserFlatResponse timeZone(@jakarta.annotation.Nullable String timeZone) {
     this.timeZone = timeZone;
     return this;
   }
 
   /**
-   * User time zone
+   * IANA time zone
    * @return timeZone
    */
   @jakarta.annotation.Nullable
@@ -238,7 +358,7 @@ public class UserFlatResponse {
   }
 
   /**
-   * User creation timestamp
+   * Date of creation
    * @return createdAt
    */
   @jakarta.annotation.Nonnull
@@ -257,7 +377,7 @@ public class UserFlatResponse {
   }
 
   /**
-   * User last update timestamp
+   * Date of last update
    * @return updatedAt
    */
   @jakarta.annotation.Nonnull
@@ -281,11 +401,16 @@ public class UserFlatResponse {
     }
     UserFlatResponse userFlatResponse = (UserFlatResponse) o;
     return Objects.equals(this.id, userFlatResponse.id) &&
+        Objects.equals(this.name, userFlatResponse.name) &&
         Objects.equals(this.email, userFlatResponse.email) &&
+        Objects.equals(this.phone, userFlatResponse.phone) &&
+        Objects.equals(this.phone2, userFlatResponse.phone2) &&
         Objects.equals(this.firstName, userFlatResponse.firstName) &&
         Objects.equals(this.lastName, userFlatResponse.lastName) &&
+        Objects.equals(this.preferredName, userFlatResponse.preferredName) &&
         Objects.equals(this.fullName, userFlatResponse.fullName) &&
         Objects.equals(this.fullNameWithTeam, userFlatResponse.fullNameWithTeam) &&
+        Objects.equals(this.slackId, userFlatResponse.slackId) &&
         Objects.equals(this.timeZone, userFlatResponse.timeZone) &&
         Objects.equals(this.createdAt, userFlatResponse.createdAt) &&
         Objects.equals(this.updatedAt, userFlatResponse.updatedAt);
@@ -297,7 +422,7 @@ public class UserFlatResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, email, firstName, lastName, fullName, fullNameWithTeam, timeZone, createdAt, updatedAt);
+    return Objects.hash(id, name, email, phone, phone2, firstName, lastName, preferredName, fullName, fullNameWithTeam, slackId, timeZone, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -312,11 +437,16 @@ public class UserFlatResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class UserFlatResponse {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
+    sb.append("    phone2: ").append(toIndentedString(phone2)).append("\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
+    sb.append("    preferredName: ").append(toIndentedString(preferredName)).append("\n");
     sb.append("    fullName: ").append(toIndentedString(fullName)).append("\n");
     sb.append("    fullNameWithTeam: ").append(toIndentedString(fullNameWithTeam)).append("\n");
+    sb.append("    slackId: ").append(toIndentedString(slackId)).append("\n");
     sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
@@ -343,11 +473,16 @@ public class UserFlatResponse {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("id");
+    openapiFields.add("name");
     openapiFields.add("email");
+    openapiFields.add("phone");
+    openapiFields.add("phone_2");
     openapiFields.add("first_name");
     openapiFields.add("last_name");
+    openapiFields.add("preferred_name");
     openapiFields.add("full_name");
     openapiFields.add("full_name_with_team");
+    openapiFields.add("slack_id");
     openapiFields.add("time_zone");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
@@ -388,8 +523,17 @@ public class UserFlatResponse {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
       if (!jsonObj.get("email").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
+      }
+      if ((jsonObj.get("phone") != null && !jsonObj.get("phone").isJsonNull()) && !jsonObj.get("phone").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `phone` to be a primitive type in the JSON string but got `%s`", jsonObj.get("phone").toString()));
+      }
+      if ((jsonObj.get("phone_2") != null && !jsonObj.get("phone_2").isJsonNull()) && !jsonObj.get("phone_2").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `phone_2` to be a primitive type in the JSON string but got `%s`", jsonObj.get("phone_2").toString()));
       }
       if ((jsonObj.get("first_name") != null && !jsonObj.get("first_name").isJsonNull()) && !jsonObj.get("first_name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `first_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("first_name").toString()));
@@ -397,11 +541,17 @@ public class UserFlatResponse {
       if ((jsonObj.get("last_name") != null && !jsonObj.get("last_name").isJsonNull()) && !jsonObj.get("last_name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `last_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_name").toString()));
       }
+      if ((jsonObj.get("preferred_name") != null && !jsonObj.get("preferred_name").isJsonNull()) && !jsonObj.get("preferred_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `preferred_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("preferred_name").toString()));
+      }
       if ((jsonObj.get("full_name") != null && !jsonObj.get("full_name").isJsonNull()) && !jsonObj.get("full_name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `full_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("full_name").toString()));
       }
       if ((jsonObj.get("full_name_with_team") != null && !jsonObj.get("full_name_with_team").isJsonNull()) && !jsonObj.get("full_name_with_team").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `full_name_with_team` to be a primitive type in the JSON string but got `%s`", jsonObj.get("full_name_with_team").toString()));
+      }
+      if ((jsonObj.get("slack_id") != null && !jsonObj.get("slack_id").isJsonNull()) && !jsonObj.get("slack_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `slack_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slack_id").toString()));
       }
       if ((jsonObj.get("time_zone") != null && !jsonObj.get("time_zone").isJsonNull()) && !jsonObj.get("time_zone").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `time_zone` to be a primitive type in the JSON string but got `%s`", jsonObj.get("time_zone").toString()));

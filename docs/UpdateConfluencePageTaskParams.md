@@ -8,11 +8,15 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**taskType** | [**TaskTypeEnum**](#TaskTypeEnum) |  |  [optional] |
+|**integration** | [**CreateConfluencePageTaskParamsIntegration**](CreateConfluencePageTaskParamsIntegration.md) |  |  [optional] |
 |**fileId** | **String** | The Confluence page ID |  |
 |**title** | **String** | The Confluence page title |  [optional] |
 |**content** | **String** | The Confluence page content |  [optional] |
 |**postMortemTemplateId** | **String** | Retrospective template to use when updating page, if desired |  [optional] |
 |**template** | [**UpdateConfluencePageTaskParamsTemplate**](UpdateConfluencePageTaskParamsTemplate.md) |  |  [optional] |
+|**includeOverview** | **Boolean** |  |  [optional] |
+|**includeTimeline** | **Boolean** |  |  [optional] |
+|**includeFollowUps** | **Boolean** |  |  [optional] |
 
 
 

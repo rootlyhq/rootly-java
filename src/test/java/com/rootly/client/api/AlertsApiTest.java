@@ -18,8 +18,11 @@ import com.rootly.client.model.AlertList;
 import com.rootly.client.model.AlertResponse;
 import com.rootly.client.model.AttachAlert;
 import com.rootly.client.model.ErrorsList;
+import com.rootly.client.model.EscalateAlert;
 import com.rootly.client.model.NewAlert;
+import com.rootly.client.model.Receipt;
 import com.rootly.client.model.ResolveAlert;
+import com.rootly.client.model.SnoozeAlert;
 import com.rootly.client.model.UpdateAlert;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -81,6 +84,21 @@ public class AlertsApiTest {
     }
 
     /**
+     * Escalates an alert
+     *
+     * Escalates a specific alert to the next or specified level in its escalation policy
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void escalateAlertTest() throws ApiException {
+        String id = null;
+        EscalateAlert escalateAlert = null;
+        AlertResponse response = api.escalateAlert(id, escalateAlert);
+        // TODO: test validations
+    }
+
+    /**
      * Retrieves an alert
      *
      * Retrieves a specific alert by id
@@ -92,6 +110,20 @@ public class AlertsApiTest {
         String id = null;
         String include = null;
         AlertResponse response = api.getAlert(id, include);
+        // TODO: test validations
+    }
+
+    /**
+     * Get a receipt
+     *
+     * Retrieve the delivery receipt for a notification by ID, including its state and (when applicable) failure reason and referenced resource.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getReceiptTest() throws ApiException {
+        String id = null;
+        Receipt response = api.getReceipt(id);
         // TODO: test validations
     }
 
@@ -123,9 +155,38 @@ public class AlertsApiTest {
         String filterCreatedAtGte = null;
         String filterCreatedAtLt = null;
         String filterCreatedAtLte = null;
+        String filterUpdatedAtGt = null;
+        String filterUpdatedAtGte = null;
+        String filterUpdatedAtLt = null;
+        String filterUpdatedAtLte = null;
+        String filterStatusEq = null;
+        String filterStatusNotEq = null;
+        String filterStatusIn = null;
+        String filterStatusNotIn = null;
+        String filterSourceEq = null;
+        String filterSourceNotEq = null;
+        String filterSourceIn = null;
+        String filterSourceNotIn = null;
+        String filterServicesEq = null;
+        String filterServicesNotEq = null;
+        String filterServicesIn = null;
+        String filterServicesNotIn = null;
+        String filterGroupsEq = null;
+        String filterGroupsNotEq = null;
+        String filterGroupsIn = null;
+        String filterGroupsNotIn = null;
+        String filterEnvironmentsEq = null;
+        String filterEnvironmentsNotEq = null;
+        String filterEnvironmentsIn = null;
+        String filterEnvironmentsNotIn = null;
+        String filterLabelsEq = null;
+        String filterLabelsNotEq = null;
+        String filterLabelsIn = null;
+        String filterLabelsNotIn = null;
+        String pageAfter = null;
         Integer pageNumber = null;
         Integer pageSize = null;
-        AlertList response = api.listAlerts(include, filterStatus, filterSource, filterServices, filterEnvironments, filterGroups, filterLabels, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize);
+        AlertList response = api.listAlerts(include, filterStatus, filterSource, filterServices, filterEnvironments, filterGroups, filterLabels, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUpdatedAtGt, filterUpdatedAtGte, filterUpdatedAtLt, filterUpdatedAtLte, filterStatusEq, filterStatusNotEq, filterStatusIn, filterStatusNotIn, filterSourceEq, filterSourceNotEq, filterSourceIn, filterSourceNotIn, filterServicesEq, filterServicesNotEq, filterServicesIn, filterServicesNotIn, filterGroupsEq, filterGroupsNotEq, filterGroupsIn, filterGroupsNotIn, filterEnvironmentsEq, filterEnvironmentsNotEq, filterEnvironmentsIn, filterEnvironmentsNotIn, filterLabelsEq, filterLabelsNotEq, filterLabelsIn, filterLabelsNotIn, pageAfter, pageNumber, pageSize);
         // TODO: test validations
     }
 
@@ -156,6 +217,21 @@ public class AlertsApiTest {
         String id = null;
         ResolveAlert resolveAlert = null;
         AlertResponse response = api.resolveAlert(id, resolveAlert);
+        // TODO: test validations
+    }
+
+    /**
+     * Snoozes an alert
+     *
+     * Snoozes a specific alert by id, extending the acknowledgment timeout
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void snoozeAlertTest() throws ApiException {
+        String id = null;
+        SnoozeAlert snoozeAlert = null;
+        AlertResponse response = api.snoozeAlert(id, snoozeAlert);
         // TODO: test validations
     }
 

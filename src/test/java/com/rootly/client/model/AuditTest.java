@@ -55,6 +55,14 @@ public class AuditTest {
     }
 
     /**
+     * Test the property 'itemTypeDisplay'
+     */
+    @Test
+    public void itemTypeDisplayTest() {
+        // TODO: test itemTypeDisplay
+    }
+
+    /**
      * Test the property '_object'
      */
     @Test
@@ -76,6 +84,54 @@ public class AuditTest {
     @Test
     public void userIdTest() {
         // TODO: test userId
+    }
+
+    /**
+     * Test the property 'userName'
+     */
+    @Test
+    public void userNameTest() {
+        // TODO: test userName
+    }
+
+    /**
+     * Test the property 'userEmail'
+     */
+    @Test
+    public void userEmailTest() {
+        // TODO: test userEmail
+    }
+
+    /**
+     * Test the property 'ipAddress'
+     */
+    @Test
+    public void ipAddressTest() {
+        // TODO: test ipAddress
+    }
+
+    /**
+     * Test the property 'userAgent'
+     */
+    @Test
+    public void userAgentTest() {
+        // TODO: test userAgent
+    }
+
+    /**
+     * Test the property 'requestId'
+     */
+    @Test
+    public void requestIdTest() {
+        // TODO: test requestId
+    }
+
+    /**
+     * Test the property 'sessionId'
+     */
+    @Test
+    public void sessionIdTest() {
+        // TODO: test sessionId
     }
 
     /**

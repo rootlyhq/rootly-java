@@ -22,9 +22,7 @@ import com.google.gson.stream.JsonWriter;
 import com.rootly.client.model.AddActionItemTaskParamsPostToSlackChannelsInner;
 import com.rootly.client.model.CreateJiraIssueTaskParamsPriority;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,7 +50,7 @@ import com.rootly.client.JSON;
 /**
  * CreateMotionTaskTaskParams
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateMotionTaskTaskParams {
   /**
    * Gets or Sets taskType
@@ -137,7 +135,7 @@ public class CreateMotionTaskTaskParams {
   public static final String SERIALIZED_NAME_LABELS = "labels";
   @SerializedName(SERIALIZED_NAME_LABELS)
   @jakarta.annotation.Nullable
-  private List<String> labels = new ArrayList<>();
+  private String labels;
 
   public static final String SERIALIZED_NAME_PRIORITY = "priority";
   @SerializedName(SERIALIZED_NAME_PRIORITY)
@@ -271,29 +269,21 @@ public class CreateMotionTaskTaskParams {
   }
 
 
-  public CreateMotionTaskTaskParams labels(@jakarta.annotation.Nullable List<String> labels) {
+  public CreateMotionTaskTaskParams labels(@jakarta.annotation.Nullable String labels) {
     this.labels = labels;
     return this;
   }
 
-  public CreateMotionTaskTaskParams addLabelsItem(String labelsItem) {
-    if (this.labels == null) {
-      this.labels = new ArrayList<>();
-    }
-    this.labels.add(labelsItem);
-    return this;
-  }
-
   /**
-   * Get labels
+   * The task labels
    * @return labels
    */
   @jakarta.annotation.Nullable
-  public List<String> getLabels() {
+  public String getLabels() {
     return labels;
   }
 
-  public void setLabels(@jakarta.annotation.Nullable List<String> labels) {
+  public void setLabels(@jakarta.annotation.Nullable String labels) {
     this.labels = labels;
   }
 
@@ -486,9 +476,8 @@ public class CreateMotionTaskTaskParams {
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("labels") != null && !jsonObj.get("labels").isJsonNull() && !jsonObj.get("labels").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `labels` to be an array in the JSON string but got `%s`", jsonObj.get("labels").toString()));
+      if ((jsonObj.get("labels") != null && !jsonObj.get("labels").isJsonNull()) && !jsonObj.get("labels").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `labels` to be a primitive type in the JSON string but got `%s`", jsonObj.get("labels").toString()));
       }
       // validate the optional field `priority`
       if (jsonObj.get("priority") != null && !jsonObj.get("priority").isJsonNull()) {

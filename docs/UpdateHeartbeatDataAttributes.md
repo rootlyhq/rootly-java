@@ -15,7 +15,8 @@
 |**interval** | **Integer** |  |  [optional] |
 |**intervalUnit** | [**IntervalUnitEnum**](#IntervalUnitEnum) |  |  [optional] |
 |**notificationTargetId** | **String** |  |  [optional] |
-|**notificationTargetType** | [**NotificationTargetTypeEnum**](#NotificationTargetTypeEnum) |  |  [optional] |
+|**notificationTargetType** | [**NotificationTargetTypeEnum**](#NotificationTargetTypeEnum) | The type of the notification target. Please contact support if you encounter issues using &#x60;Functionality&#x60; as a target type. |  [optional] |
+|**ownerGroupIds** | **List&lt;String&gt;** | List of team IDs that own this heartbeat |  [optional] |
 |**enabled** | **Boolean** | Whether to trigger alerts when heartbeat is expired. |  [optional] |
 
 
@@ -38,6 +39,7 @@
 | GROUP | &quot;Group&quot; |
 | SERVICE | &quot;Service&quot; |
 | ESCALATION_POLICY | &quot;EscalationPolicy&quot; |
+| FUNCTIONALITY | &quot;Functionality&quot; |
 
 
 

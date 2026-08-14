@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * EscalateAlertData
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class EscalateAlertData {
   /**
    * Gets or Sets type
@@ -103,18 +103,18 @@ public class EscalateAlertData {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private EscalateAlertDataAttributes attributes;
 
   public EscalateAlertData() {
   }
 
-  public EscalateAlertData type(@javax.annotation.Nullable TypeEnum type) {
+  public EscalateAlertData type(@jakarta.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -123,17 +123,17 @@ public class EscalateAlertData {
    * Get type
    * @return type
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TypeEnum getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nullable TypeEnum type) {
+  public void setType(@jakarta.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
 
-  public EscalateAlertData attributes(@javax.annotation.Nullable EscalateAlertDataAttributes attributes) {
+  public EscalateAlertData attributes(@jakarta.annotation.Nullable EscalateAlertDataAttributes attributes) {
     this.attributes = attributes;
     return this;
   }
@@ -142,12 +142,12 @@ public class EscalateAlertData {
    * Get attributes
    * @return attributes
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public EscalateAlertDataAttributes getAttributes() {
     return attributes;
   }
 
-  public void setAttributes(@javax.annotation.Nullable EscalateAlertDataAttributes attributes) {
+  public void setAttributes(@jakarta.annotation.Nullable EscalateAlertDataAttributes attributes) {
     this.attributes = attributes;
   }
 

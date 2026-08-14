@@ -149,7 +149,7 @@ public class Example {
 
 <a id="listPulses"></a>
 # **listPulses**
-> PulseList listPulses(include, filterSource, filterServices, filterEnvironments, filterLabels, filterRefs, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize)
+> PulseList listPulses(include, filterSource, filterServices, filterEnvironments, filterLabels, filterRefs, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSourceEq, filterSourceNotEq, filterSourceIn, filterSourceNotIn, filterServicesEq, filterServicesNotEq, filterServicesIn, filterServicesNotIn, filterEnvironmentsEq, filterEnvironmentsNotEq, filterEnvironmentsIn, filterEnvironmentsNotIn, filterLabelsEq, filterLabelsNotEq, filterLabelsIn, filterLabelsNotIn, filterRefsEq, filterRefsNotEq, filterRefsIn, filterRefsNotIn, pageNumber, pageSize)
 
 List pulses
 
@@ -193,10 +193,30 @@ public class Example {
     String filterCreatedAtGte = "filterCreatedAtGte_example"; // String | 
     String filterCreatedAtLt = "filterCreatedAtLt_example"; // String | 
     String filterCreatedAtLte = "filterCreatedAtLte_example"; // String | 
+    String filterSourceEq = "filterSourceEq_example"; // String | 
+    String filterSourceNotEq = "filterSourceNotEq_example"; // String | 
+    String filterSourceIn = "filterSourceIn_example"; // String | 
+    String filterSourceNotIn = "filterSourceNotIn_example"; // String | 
+    String filterServicesEq = "filterServicesEq_example"; // String | 
+    String filterServicesNotEq = "filterServicesNotEq_example"; // String | 
+    String filterServicesIn = "filterServicesIn_example"; // String | 
+    String filterServicesNotIn = "filterServicesNotIn_example"; // String | 
+    String filterEnvironmentsEq = "filterEnvironmentsEq_example"; // String | 
+    String filterEnvironmentsNotEq = "filterEnvironmentsNotEq_example"; // String | 
+    String filterEnvironmentsIn = "filterEnvironmentsIn_example"; // String | 
+    String filterEnvironmentsNotIn = "filterEnvironmentsNotIn_example"; // String | 
+    String filterLabelsEq = "filterLabelsEq_example"; // String | 
+    String filterLabelsNotEq = "filterLabelsNotEq_example"; // String | 
+    String filterLabelsIn = "filterLabelsIn_example"; // String | 
+    String filterLabelsNotIn = "filterLabelsNotIn_example"; // String | 
+    String filterRefsEq = "filterRefsEq_example"; // String | 
+    String filterRefsNotEq = "filterRefsNotEq_example"; // String | 
+    String filterRefsIn = "filterRefsIn_example"; // String | 
+    String filterRefsNotIn = "filterRefsNotIn_example"; // String | 
     Integer pageNumber = 56; // Integer | 
     Integer pageSize = 56; // Integer | 
     try {
-      PulseList result = apiInstance.listPulses(include, filterSource, filterServices, filterEnvironments, filterLabels, filterRefs, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize);
+      PulseList result = apiInstance.listPulses(include, filterSource, filterServices, filterEnvironments, filterLabels, filterRefs, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSourceEq, filterSourceNotEq, filterSourceIn, filterSourceNotIn, filterServicesEq, filterServicesNotEq, filterServicesIn, filterServicesNotIn, filterEnvironmentsEq, filterEnvironmentsNotEq, filterEnvironmentsIn, filterEnvironmentsNotIn, filterLabelsEq, filterLabelsNotEq, filterLabelsIn, filterLabelsNotIn, filterRefsEq, filterRefsNotEq, filterRefsIn, filterRefsNotIn, pageNumber, pageSize);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PulsesApi#listPulses");
@@ -231,6 +251,26 @@ public class Example {
 | **filterCreatedAtGte** | **String**|  | [optional] |
 | **filterCreatedAtLt** | **String**|  | [optional] |
 | **filterCreatedAtLte** | **String**|  | [optional] |
+| **filterSourceEq** | **String**|  | [optional] |
+| **filterSourceNotEq** | **String**|  | [optional] |
+| **filterSourceIn** | **String**|  | [optional] |
+| **filterSourceNotIn** | **String**|  | [optional] |
+| **filterServicesEq** | **String**|  | [optional] |
+| **filterServicesNotEq** | **String**|  | [optional] |
+| **filterServicesIn** | **String**|  | [optional] |
+| **filterServicesNotIn** | **String**|  | [optional] |
+| **filterEnvironmentsEq** | **String**|  | [optional] |
+| **filterEnvironmentsNotEq** | **String**|  | [optional] |
+| **filterEnvironmentsIn** | **String**|  | [optional] |
+| **filterEnvironmentsNotIn** | **String**|  | [optional] |
+| **filterLabelsEq** | **String**|  | [optional] |
+| **filterLabelsNotEq** | **String**|  | [optional] |
+| **filterLabelsIn** | **String**|  | [optional] |
+| **filterLabelsNotIn** | **String**|  | [optional] |
+| **filterRefsEq** | **String**|  | [optional] |
+| **filterRefsNotEq** | **String**|  | [optional] |
+| **filterRefsIn** | **String**|  | [optional] |
+| **filterRefsNotIn** | **String**|  | [optional] |
 | **pageNumber** | **Integer**|  | [optional] |
 | **pageSize** | **Integer**|  | [optional] |
 

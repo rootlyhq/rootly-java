@@ -218,7 +218,7 @@ public class Example {
 
 <a id="listSchedules"></a>
 # **listSchedules**
-> ScheduleList listSchedules(include, filterSearch, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize)
+> ScheduleList listSchedules(include, filterSearch, filterName, filterTeamIds, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterTeamIdsEq, filterTeamIdsNotEq, filterTeamIdsIn, filterTeamIdsNotIn, pageNumber, pageSize)
 
 List schedules
 
@@ -247,14 +247,23 @@ public class Example {
     String include = "include_example"; // String | 
     String filterSearch = "filterSearch_example"; // String | 
     String filterName = "filterName_example"; // String | 
+    String filterTeamIds = "filterTeamIds_example"; // String | Filter schedules by owning team IDs. Comma-separate multiple values.
     String filterCreatedAtGt = "filterCreatedAtGt_example"; // String | 
     String filterCreatedAtGte = "filterCreatedAtGte_example"; // String | 
     String filterCreatedAtLt = "filterCreatedAtLt_example"; // String | 
     String filterCreatedAtLte = "filterCreatedAtLte_example"; // String | 
+    String filterNameEq = "filterNameEq_example"; // String | 
+    String filterNameNotEq = "filterNameNotEq_example"; // String | 
+    String filterNameIn = "filterNameIn_example"; // String | 
+    String filterNameNotIn = "filterNameNotIn_example"; // String | 
+    String filterTeamIdsEq = "filterTeamIdsEq_example"; // String | 
+    String filterTeamIdsNotEq = "filterTeamIdsNotEq_example"; // String | 
+    String filterTeamIdsIn = "filterTeamIdsIn_example"; // String | 
+    String filterTeamIdsNotIn = "filterTeamIdsNotIn_example"; // String | 
     Integer pageNumber = 56; // Integer | 
     Integer pageSize = 56; // Integer | 
     try {
-      ScheduleList result = apiInstance.listSchedules(include, filterSearch, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize);
+      ScheduleList result = apiInstance.listSchedules(include, filterSearch, filterName, filterTeamIds, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterTeamIdsEq, filterTeamIdsNotEq, filterTeamIdsIn, filterTeamIdsNotIn, pageNumber, pageSize);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SchedulesApi#listSchedules");
@@ -274,10 +283,19 @@ public class Example {
 | **include** | **String**|  | [optional] |
 | **filterSearch** | **String**|  | [optional] |
 | **filterName** | **String**|  | [optional] |
+| **filterTeamIds** | **String**| Filter schedules by owning team IDs. Comma-separate multiple values. | [optional] |
 | **filterCreatedAtGt** | **String**|  | [optional] |
 | **filterCreatedAtGte** | **String**|  | [optional] |
 | **filterCreatedAtLt** | **String**|  | [optional] |
 | **filterCreatedAtLte** | **String**|  | [optional] |
+| **filterNameEq** | **String**|  | [optional] |
+| **filterNameNotEq** | **String**|  | [optional] |
+| **filterNameIn** | **String**|  | [optional] |
+| **filterNameNotIn** | **String**|  | [optional] |
+| **filterTeamIdsEq** | **String**|  | [optional] |
+| **filterTeamIdsNotEq** | **String**|  | [optional] |
+| **filterTeamIdsIn** | **String**|  | [optional] |
+| **filterTeamIdsNotIn** | **String**|  | [optional] |
 | **pageNumber** | **Integer**|  | [optional] |
 | **pageSize** | **Integer**|  | [optional] |
 

@@ -476,7 +476,6 @@ public class IncidentRolesApi {
     }
     /**
      * Build call for listIncidentRoles
-     * @param include  (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
      * @param filterSearch  (optional)
@@ -487,6 +486,18 @@ public class IncidentRolesApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
+     * @param filterEnabledEq  (optional)
+     * @param filterEnabledNotEq  (optional)
+     * @param filterEnabledIn  (optional)
+     * @param filterEnabledNotIn  (optional)
      * @param sort  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -498,7 +509,7 @@ public class IncidentRolesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listIncidentRolesCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listIncidentRolesCall(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterEnabledEq, @jakarta.annotation.Nullable String filterEnabledNotEq, @jakarta.annotation.Nullable String filterEnabledIn, @jakarta.annotation.Nullable String filterEnabledNotIn, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -522,10 +533,6 @@ public class IncidentRolesApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (include != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("include", include));
-        }
 
         if (pageNumber != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("page[number]", pageNumber));
@@ -567,6 +574,54 @@ public class IncidentRolesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[created_at][lte]", filterCreatedAtLte));
         }
 
+        if (filterSlugEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][eq]", filterSlugEq));
+        }
+
+        if (filterSlugNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][not_eq]", filterSlugNotEq));
+        }
+
+        if (filterSlugIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][in]", filterSlugIn));
+        }
+
+        if (filterSlugNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][not_in]", filterSlugNotIn));
+        }
+
+        if (filterNameEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][eq]", filterNameEq));
+        }
+
+        if (filterNameNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][not_eq]", filterNameNotEq));
+        }
+
+        if (filterNameIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][in]", filterNameIn));
+        }
+
+        if (filterNameNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][not_in]", filterNameNotIn));
+        }
+
+        if (filterEnabledEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[enabled][eq]", filterEnabledEq));
+        }
+
+        if (filterEnabledNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[enabled][not_eq]", filterEnabledNotEq));
+        }
+
+        if (filterEnabledIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[enabled][in]", filterEnabledIn));
+        }
+
+        if (filterEnabledNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[enabled][not_in]", filterEnabledNotIn));
+        }
+
         if (sort != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort", sort));
         }
@@ -591,15 +646,14 @@ public class IncidentRolesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listIncidentRolesValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
-        return listIncidentRolesCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
+    private okhttp3.Call listIncidentRolesValidateBeforeCall(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterEnabledEq, @jakarta.annotation.Nullable String filterEnabledNotEq, @jakarta.annotation.Nullable String filterEnabledIn, @jakarta.annotation.Nullable String filterEnabledNotIn, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+        return listIncidentRolesCall(pageNumber, pageSize, filterSearch, filterSlug, filterName, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterEnabledEq, filterEnabledNotEq, filterEnabledIn, filterEnabledNotIn, sort, _callback);
 
     }
 
     /**
      * List incident roles
      * List incident roles
-     * @param include  (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
      * @param filterSearch  (optional)
@@ -610,6 +664,18 @@ public class IncidentRolesApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
+     * @param filterEnabledEq  (optional)
+     * @param filterEnabledNotEq  (optional)
+     * @param filterEnabledIn  (optional)
+     * @param filterEnabledNotIn  (optional)
      * @param sort  (optional)
      * @return IncidentRoleList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -620,15 +686,14 @@ public class IncidentRolesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentRoleList listIncidentRoles(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
-        ApiResponse<IncidentRoleList> localVarResp = listIncidentRolesWithHttpInfo(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
+    public IncidentRoleList listIncidentRoles(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterEnabledEq, @jakarta.annotation.Nullable String filterEnabledNotEq, @jakarta.annotation.Nullable String filterEnabledIn, @jakarta.annotation.Nullable String filterEnabledNotIn, @jakarta.annotation.Nullable String sort) throws ApiException {
+        ApiResponse<IncidentRoleList> localVarResp = listIncidentRolesWithHttpInfo(pageNumber, pageSize, filterSearch, filterSlug, filterName, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterEnabledEq, filterEnabledNotEq, filterEnabledIn, filterEnabledNotIn, sort);
         return localVarResp.getData();
     }
 
     /**
      * List incident roles
      * List incident roles
-     * @param include  (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
      * @param filterSearch  (optional)
@@ -639,6 +704,18 @@ public class IncidentRolesApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
+     * @param filterEnabledEq  (optional)
+     * @param filterEnabledNotEq  (optional)
+     * @param filterEnabledIn  (optional)
+     * @param filterEnabledNotIn  (optional)
      * @param sort  (optional)
      * @return ApiResponse&lt;IncidentRoleList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -649,8 +726,8 @@ public class IncidentRolesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentRoleList> listIncidentRolesWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
-        okhttp3.Call localVarCall = listIncidentRolesValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, null);
+    public ApiResponse<IncidentRoleList> listIncidentRolesWithHttpInfo(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterEnabledEq, @jakarta.annotation.Nullable String filterEnabledNotEq, @jakarta.annotation.Nullable String filterEnabledIn, @jakarta.annotation.Nullable String filterEnabledNotIn, @jakarta.annotation.Nullable String sort) throws ApiException {
+        okhttp3.Call localVarCall = listIncidentRolesValidateBeforeCall(pageNumber, pageSize, filterSearch, filterSlug, filterName, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterEnabledEq, filterEnabledNotEq, filterEnabledIn, filterEnabledNotIn, sort, null);
         Type localVarReturnType = new TypeToken<IncidentRoleList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -658,7 +735,6 @@ public class IncidentRolesApi {
     /**
      * List incident roles (asynchronously)
      * List incident roles
-     * @param include  (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
      * @param filterSearch  (optional)
@@ -669,6 +745,18 @@ public class IncidentRolesApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
+     * @param filterEnabledEq  (optional)
+     * @param filterEnabledNotEq  (optional)
+     * @param filterEnabledIn  (optional)
+     * @param filterEnabledNotIn  (optional)
      * @param sort  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -680,9 +768,9 @@ public class IncidentRolesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listIncidentRolesAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback<IncidentRoleList> _callback) throws ApiException {
+    public okhttp3.Call listIncidentRolesAsync(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterEnabledEq, @jakarta.annotation.Nullable String filterEnabledNotEq, @jakarta.annotation.Nullable String filterEnabledIn, @jakarta.annotation.Nullable String filterEnabledNotIn, @jakarta.annotation.Nullable String sort, final ApiCallback<IncidentRoleList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listIncidentRolesValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
+        okhttp3.Call localVarCall = listIncidentRolesValidateBeforeCall(pageNumber, pageSize, filterSearch, filterSlug, filterName, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterEnabledEq, filterEnabledNotEq, filterEnabledIn, filterEnabledNotIn, sort, _callback);
         Type localVarReturnType = new TypeToken<IncidentRoleList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

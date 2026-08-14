@@ -18,6 +18,7 @@
 |**jiraIssueId** | **String** | The Jira issue ID. |  [optional] |
 |**jiraIssueKey** | **String** | The Jira issue key. |  [optional] |
 |**jiraIssueUrl** | **String** | The Jira issue URL. |  [optional] |
+|**formFieldSelections** | [**List&lt;NewIncidentActionItemDataAttributesFormFieldSelectionsInner&gt;**](NewIncidentActionItemDataAttributesFormFieldSelectionsInner.md) | Custom field values to set on the action item. Ignored unless custom fields for action items are enabled for the organization. |  [optional] |
 
 
 

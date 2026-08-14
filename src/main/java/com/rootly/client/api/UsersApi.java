@@ -338,7 +338,7 @@ public class UsersApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> user found with teams, schedules, and notification_rules includes </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> teams include only returns teams from the current team </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
@@ -413,7 +413,7 @@ public class UsersApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> user found with teams, schedules, and notification_rules includes </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> teams include only returns teams from the current team </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
@@ -433,7 +433,7 @@ public class UsersApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> user found with teams, schedules, and notification_rules includes </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> teams include only returns teams from the current team </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
@@ -455,7 +455,7 @@ public class UsersApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> user found with teams, schedules, and notification_rules includes </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> teams include only returns teams from the current team </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
@@ -678,7 +678,7 @@ public class UsersApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> update name and role simultaneously </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> custom role with roles_permissions can update user role (IR-5606) </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> returns 404 for on_call_role_id belonging to another team </td><td>  -  </td></tr>
      </table>
      */
@@ -750,7 +750,7 @@ public class UsersApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> update name and role simultaneously </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> custom role with roles_permissions can update user role (IR-5606) </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> returns 404 for on_call_role_id belonging to another team </td><td>  -  </td></tr>
      </table>
      */
@@ -770,7 +770,7 @@ public class UsersApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> update name and role simultaneously </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> custom role with roles_permissions can update user role (IR-5606) </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> returns 404 for on_call_role_id belonging to another team </td><td>  -  </td></tr>
      </table>
      */
@@ -792,7 +792,7 @@ public class UsersApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> update name and role simultaneously </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> custom role with roles_permissions can update user role (IR-5606) </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> returns 404 for on_call_role_id belonging to another team </td><td>  -  </td></tr>
      </table>
      */

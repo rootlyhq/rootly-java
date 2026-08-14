@@ -27,6 +27,8 @@
 | DEVICE | &quot;device&quot; |
 | NON_CRITICAL_DEVICE | &quot;non_critical_device&quot; |
 | SLACK | &quot;slack&quot; |
+| GOOGLE_CHAT | &quot;google_chat&quot; |
+| MICROSOFT_TEAMS | &quot;microsoft_teams&quot; |
 
 
 

@@ -227,6 +227,8 @@ public class ShiftsApi {
      * @param to End range for shifts in ISO-8601 format (e.g., 2025-01-01T00:00:00Z or 2025-01-01T00:00:00+00:00) (optional)
      * @param userIds  (optional)
      * @param scheduleIds  (optional)
+     * @param pageNumber Page number (defaults to 1) (optional)
+     * @param pageSize Number of shifts per page (defaults to 50, max 1000) (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -238,7 +240,7 @@ public class ShiftsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listShiftsCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String from, @jakarta.annotation.Nullable String to, @jakarta.annotation.Nullable List<Integer> userIds, @jakarta.annotation.Nullable List<String> scheduleIds, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listShiftsCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String from, @jakarta.annotation.Nullable String to, @jakarta.annotation.Nullable List<Integer> userIds, @jakarta.annotation.Nullable List<String> scheduleIds, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -283,6 +285,14 @@ public class ShiftsApi {
             localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("multi", "schedule_ids[]", scheduleIds));
         }
 
+        if (pageNumber != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page[number]", pageNumber));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page[size]", pageSize));
+        }
+
         final String[] localVarAccepts = {
             "application/vnd.api+json"
         };
@@ -303,8 +313,8 @@ public class ShiftsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listShiftsValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String from, @jakarta.annotation.Nullable String to, @jakarta.annotation.Nullable List<Integer> userIds, @jakarta.annotation.Nullable List<String> scheduleIds, final ApiCallback _callback) throws ApiException {
-        return listShiftsCall(include, from, to, userIds, scheduleIds, _callback);
+    private okhttp3.Call listShiftsValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String from, @jakarta.annotation.Nullable String to, @jakarta.annotation.Nullable List<Integer> userIds, @jakarta.annotation.Nullable List<String> scheduleIds, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+        return listShiftsCall(include, from, to, userIds, scheduleIds, pageNumber, pageSize, _callback);
 
     }
 
@@ -316,6 +326,8 @@ public class ShiftsApi {
      * @param to End range for shifts in ISO-8601 format (e.g., 2025-01-01T00:00:00Z or 2025-01-01T00:00:00+00:00) (optional)
      * @param userIds  (optional)
      * @param scheduleIds  (optional)
+     * @param pageNumber Page number (defaults to 1) (optional)
+     * @param pageSize Number of shifts per page (defaults to 50, max 1000) (optional)
      * @return ShiftList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -326,8 +338,8 @@ public class ShiftsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ShiftList listShifts(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String from, @jakarta.annotation.Nullable String to, @jakarta.annotation.Nullable List<Integer> userIds, @jakarta.annotation.Nullable List<String> scheduleIds) throws ApiException {
-        ApiResponse<ShiftList> localVarResp = listShiftsWithHttpInfo(include, from, to, userIds, scheduleIds);
+    public ShiftList listShifts(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String from, @jakarta.annotation.Nullable String to, @jakarta.annotation.Nullable List<Integer> userIds, @jakarta.annotation.Nullable List<String> scheduleIds, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
+        ApiResponse<ShiftList> localVarResp = listShiftsWithHttpInfo(include, from, to, userIds, scheduleIds, pageNumber, pageSize);
         return localVarResp.getData();
     }
 
@@ -339,6 +351,8 @@ public class ShiftsApi {
      * @param to End range for shifts in ISO-8601 format (e.g., 2025-01-01T00:00:00Z or 2025-01-01T00:00:00+00:00) (optional)
      * @param userIds  (optional)
      * @param scheduleIds  (optional)
+     * @param pageNumber Page number (defaults to 1) (optional)
+     * @param pageSize Number of shifts per page (defaults to 50, max 1000) (optional)
      * @return ApiResponse&lt;ShiftList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -349,8 +363,8 @@ public class ShiftsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ShiftList> listShiftsWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String from, @jakarta.annotation.Nullable String to, @jakarta.annotation.Nullable List<Integer> userIds, @jakarta.annotation.Nullable List<String> scheduleIds) throws ApiException {
-        okhttp3.Call localVarCall = listShiftsValidateBeforeCall(include, from, to, userIds, scheduleIds, null);
+    public ApiResponse<ShiftList> listShiftsWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String from, @jakarta.annotation.Nullable String to, @jakarta.annotation.Nullable List<Integer> userIds, @jakarta.annotation.Nullable List<String> scheduleIds, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
+        okhttp3.Call localVarCall = listShiftsValidateBeforeCall(include, from, to, userIds, scheduleIds, pageNumber, pageSize, null);
         Type localVarReturnType = new TypeToken<ShiftList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -363,6 +377,8 @@ public class ShiftsApi {
      * @param to End range for shifts in ISO-8601 format (e.g., 2025-01-01T00:00:00Z or 2025-01-01T00:00:00+00:00) (optional)
      * @param userIds  (optional)
      * @param scheduleIds  (optional)
+     * @param pageNumber Page number (defaults to 1) (optional)
+     * @param pageSize Number of shifts per page (defaults to 50, max 1000) (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -374,9 +390,9 @@ public class ShiftsApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listShiftsAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String from, @jakarta.annotation.Nullable String to, @jakarta.annotation.Nullable List<Integer> userIds, @jakarta.annotation.Nullable List<String> scheduleIds, final ApiCallback<ShiftList> _callback) throws ApiException {
+    public okhttp3.Call listShiftsAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String from, @jakarta.annotation.Nullable String to, @jakarta.annotation.Nullable List<Integer> userIds, @jakarta.annotation.Nullable List<String> scheduleIds, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback<ShiftList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listShiftsValidateBeforeCall(include, from, to, userIds, scheduleIds, _callback);
+        okhttp3.Call localVarCall = listShiftsValidateBeforeCall(include, from, to, userIds, scheduleIds, pageNumber, pageSize, _callback);
         Type localVarReturnType = new TypeToken<ShiftList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

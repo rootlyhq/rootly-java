@@ -62,4 +62,12 @@ public class UpdateAlertUrgencyDataAttributesTest {
         // TODO: test position
     }
 
+    /**
+     * Test the property 'retriggerTimeoutMinutes'
+     */
+    @Test
+    public void retriggerTimeoutMinutesTest() {
+        // TODO: test retriggerTimeoutMinutes
+    }
+
 }

@@ -34,6 +34,10 @@
 | SLACK_INCIDENT_CANCELLATION_FORM | &quot;slack_incident_cancellation_form&quot; |
 | SLACK_SCHEDULED_INCIDENT_FORM | &quot;slack_scheduled_incident_form&quot; |
 | SLACK_UPDATE_SCHEDULED_INCIDENT_FORM | &quot;slack_update_scheduled_incident_form&quot; |
+| WEB_ACTION_ITEM_FORM | &quot;web_action_item_form&quot; |
+| SLACK_ACTION_ITEM_FORM | &quot;slack_action_item_form&quot; |
+| WEB_TASK_FORM | &quot;web_task_form&quot; |
+| SLACK_TASK_FORM | &quot;slack_task_form&quot; |
 
 
 

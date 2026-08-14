@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.rootly.client.model.UpdateAlertRouteDataAttributesRulesInner;
+import com.rootly.client.model.NewAlertRouteDataAttributesRulesInner;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -52,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateAlertRouteDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateAlertRouteDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -77,7 +77,7 @@ public class UpdateAlertRouteDataAttributes {
   public static final String SERIALIZED_NAME_RULES = "rules";
   @SerializedName(SERIALIZED_NAME_RULES)
   @jakarta.annotation.Nullable
-  private List<UpdateAlertRouteDataAttributesRulesInner> rules = new ArrayList<>();
+  private List<NewAlertRouteDataAttributesRulesInner> rules = new ArrayList<>();
 
   public UpdateAlertRouteDataAttributes() {
   }
@@ -174,12 +174,12 @@ public class UpdateAlertRouteDataAttributes {
   }
 
 
-  public UpdateAlertRouteDataAttributes rules(@jakarta.annotation.Nullable List<UpdateAlertRouteDataAttributesRulesInner> rules) {
+  public UpdateAlertRouteDataAttributes rules(@jakarta.annotation.Nullable List<NewAlertRouteDataAttributesRulesInner> rules) {
     this.rules = rules;
     return this;
   }
 
-  public UpdateAlertRouteDataAttributes addRulesItem(UpdateAlertRouteDataAttributesRulesInner rulesItem) {
+  public UpdateAlertRouteDataAttributes addRulesItem(NewAlertRouteDataAttributesRulesInner rulesItem) {
     if (this.rules == null) {
       this.rules = new ArrayList<>();
     }
@@ -192,11 +192,11 @@ public class UpdateAlertRouteDataAttributes {
    * @return rules
    */
   @jakarta.annotation.Nullable
-  public List<UpdateAlertRouteDataAttributesRulesInner> getRules() {
+  public List<NewAlertRouteDataAttributesRulesInner> getRules() {
     return rules;
   }
 
-  public void setRules(@jakarta.annotation.Nullable List<UpdateAlertRouteDataAttributesRulesInner> rules) {
+  public void setRules(@jakarta.annotation.Nullable List<NewAlertRouteDataAttributesRulesInner> rules) {
     this.rules = rules;
   }
 
@@ -306,7 +306,7 @@ public class UpdateAlertRouteDataAttributes {
 
           // validate the optional field `rules` (array)
           for (int i = 0; i < jsonArrayrules.size(); i++) {
-            UpdateAlertRouteDataAttributesRulesInner.validateJsonElement(jsonArrayrules.get(i));
+            NewAlertRouteDataAttributesRulesInner.validateJsonElement(jsonArrayrules.get(i));
           };
         }
       }

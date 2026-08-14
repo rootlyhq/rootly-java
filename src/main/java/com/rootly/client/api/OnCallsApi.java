@@ -28,6 +28,7 @@ import java.io.IOException;
 
 
 import com.rootly.client.model.ErrorsList;
+import com.rootly.client.model.OncallList;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -77,14 +78,14 @@ public class OnCallsApi {
      * @param include comma separated if needed. eg: user,schedule (optional)
      * @param since Start of time range in ISO-8601 format (e.g., 2025-01-01T00:00:00Z). Defaults to current time. (optional)
      * @param until End of time range in ISO-8601 format (e.g., 2025-01-01T00:00:00Z). Defaults to &#39;since&#39; time. (optional)
-     * @param earliest When true, returns only the first on-call user per escalation policy level (optional)
+     * @param earliest When true, returns only the first on-call entry per escalation policy path and level (optional)
      * @param timeZone Timezone for response times (e.g., America/New_York). Defaults to UTC. (optional)
      * @param filterEscalationPolicyIds Comma-separated escalation policy IDs (optional)
      * @param filterScheduleIds Comma-separated schedule IDs (optional)
      * @param filterUserIds Comma-separated user IDs (optional)
      * @param filterServiceIds Comma-separated service IDs (optional)
      * @param filterGroupIds Comma-separated group IDs (teams) (optional)
-     * @param filterNotificationTypes Comma-separated notification types to include. One or both of: audible, quiet. When present, oncalls are returned from every non-deferral escalation path whose notification_type is in the filter, sorted audible-first. When absent, only the default path&#39;s oncalls are returned (existing behavior). (optional)
+     * @param filterNotificationTypes Comma-separated notification types to include. One or both of: audible, quiet. When omitted, returns oncalls from all non-deferral escalation paths. When provided, limits results to matching notification types and sorts audible-first. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -97,7 +98,7 @@ public class OnCallsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listOncallsCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable String since, @javax.annotation.Nullable String until, @javax.annotation.Nullable Boolean earliest, @javax.annotation.Nullable String timeZone, @javax.annotation.Nullable String filterEscalationPolicyIds, @javax.annotation.Nullable String filterScheduleIds, @javax.annotation.Nullable String filterUserIds, @javax.annotation.Nullable String filterServiceIds, @javax.annotation.Nullable String filterGroupIds, @javax.annotation.Nullable String filterNotificationTypes, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listOncallsCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String since, @jakarta.annotation.Nullable String until, @jakarta.annotation.Nullable Boolean earliest, @jakarta.annotation.Nullable String timeZone, @jakarta.annotation.Nullable String filterEscalationPolicyIds, @jakarta.annotation.Nullable String filterScheduleIds, @jakarta.annotation.Nullable String filterUserIds, @jakarta.annotation.Nullable String filterServiceIds, @jakarta.annotation.Nullable String filterGroupIds, @jakarta.annotation.Nullable String filterNotificationTypes, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -186,7 +187,7 @@ public class OnCallsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listOncallsValidateBeforeCall(@javax.annotation.Nullable String include, @javax.annotation.Nullable String since, @javax.annotation.Nullable String until, @javax.annotation.Nullable Boolean earliest, @javax.annotation.Nullable String timeZone, @javax.annotation.Nullable String filterEscalationPolicyIds, @javax.annotation.Nullable String filterScheduleIds, @javax.annotation.Nullable String filterUserIds, @javax.annotation.Nullable String filterServiceIds, @javax.annotation.Nullable String filterGroupIds, @javax.annotation.Nullable String filterNotificationTypes, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listOncallsValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String since, @jakarta.annotation.Nullable String until, @jakarta.annotation.Nullable Boolean earliest, @jakarta.annotation.Nullable String timeZone, @jakarta.annotation.Nullable String filterEscalationPolicyIds, @jakarta.annotation.Nullable String filterScheduleIds, @jakarta.annotation.Nullable String filterUserIds, @jakarta.annotation.Nullable String filterServiceIds, @jakarta.annotation.Nullable String filterGroupIds, @jakarta.annotation.Nullable String filterNotificationTypes, final ApiCallback _callback) throws ApiException {
         return listOncallsCall(include, since, until, earliest, timeZone, filterEscalationPolicyIds, filterScheduleIds, filterUserIds, filterServiceIds, filterGroupIds, filterNotificationTypes, _callback);
 
     }
@@ -197,14 +198,15 @@ public class OnCallsApi {
      * @param include comma separated if needed. eg: user,schedule (optional)
      * @param since Start of time range in ISO-8601 format (e.g., 2025-01-01T00:00:00Z). Defaults to current time. (optional)
      * @param until End of time range in ISO-8601 format (e.g., 2025-01-01T00:00:00Z). Defaults to &#39;since&#39; time. (optional)
-     * @param earliest When true, returns only the first on-call user per escalation policy level (optional)
+     * @param earliest When true, returns only the first on-call entry per escalation policy path and level (optional)
      * @param timeZone Timezone for response times (e.g., America/New_York). Defaults to UTC. (optional)
      * @param filterEscalationPolicyIds Comma-separated escalation policy IDs (optional)
      * @param filterScheduleIds Comma-separated schedule IDs (optional)
      * @param filterUserIds Comma-separated user IDs (optional)
      * @param filterServiceIds Comma-separated service IDs (optional)
      * @param filterGroupIds Comma-separated group IDs (teams) (optional)
-     * @param filterNotificationTypes Comma-separated notification types to include. One or both of: audible, quiet. When present, oncalls are returned from every non-deferral escalation path whose notification_type is in the filter, sorted audible-first. When absent, only the default path&#39;s oncalls are returned (existing behavior). (optional)
+     * @param filterNotificationTypes Comma-separated notification types to include. One or both of: audible, quiet. When omitted, returns oncalls from all non-deferral escalation paths. When provided, limits results to matching notification types and sorts audible-first. (optional)
+     * @return OncallList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -215,8 +217,9 @@ public class OnCallsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public void listOncalls(@javax.annotation.Nullable String include, @javax.annotation.Nullable String since, @javax.annotation.Nullable String until, @javax.annotation.Nullable Boolean earliest, @javax.annotation.Nullable String timeZone, @javax.annotation.Nullable String filterEscalationPolicyIds, @javax.annotation.Nullable String filterScheduleIds, @javax.annotation.Nullable String filterUserIds, @javax.annotation.Nullable String filterServiceIds, @javax.annotation.Nullable String filterGroupIds, @javax.annotation.Nullable String filterNotificationTypes) throws ApiException {
-        listOncallsWithHttpInfo(include, since, until, earliest, timeZone, filterEscalationPolicyIds, filterScheduleIds, filterUserIds, filterServiceIds, filterGroupIds, filterNotificationTypes);
+    public OncallList listOncalls(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String since, @jakarta.annotation.Nullable String until, @jakarta.annotation.Nullable Boolean earliest, @jakarta.annotation.Nullable String timeZone, @jakarta.annotation.Nullable String filterEscalationPolicyIds, @jakarta.annotation.Nullable String filterScheduleIds, @jakarta.annotation.Nullable String filterUserIds, @jakarta.annotation.Nullable String filterServiceIds, @jakarta.annotation.Nullable String filterGroupIds, @jakarta.annotation.Nullable String filterNotificationTypes) throws ApiException {
+        ApiResponse<OncallList> localVarResp = listOncallsWithHttpInfo(include, since, until, earliest, timeZone, filterEscalationPolicyIds, filterScheduleIds, filterUserIds, filterServiceIds, filterGroupIds, filterNotificationTypes);
+        return localVarResp.getData();
     }
 
     /**
@@ -225,15 +228,15 @@ public class OnCallsApi {
      * @param include comma separated if needed. eg: user,schedule (optional)
      * @param since Start of time range in ISO-8601 format (e.g., 2025-01-01T00:00:00Z). Defaults to current time. (optional)
      * @param until End of time range in ISO-8601 format (e.g., 2025-01-01T00:00:00Z). Defaults to &#39;since&#39; time. (optional)
-     * @param earliest When true, returns only the first on-call user per escalation policy level (optional)
+     * @param earliest When true, returns only the first on-call entry per escalation policy path and level (optional)
      * @param timeZone Timezone for response times (e.g., America/New_York). Defaults to UTC. (optional)
      * @param filterEscalationPolicyIds Comma-separated escalation policy IDs (optional)
      * @param filterScheduleIds Comma-separated schedule IDs (optional)
      * @param filterUserIds Comma-separated user IDs (optional)
      * @param filterServiceIds Comma-separated service IDs (optional)
      * @param filterGroupIds Comma-separated group IDs (teams) (optional)
-     * @param filterNotificationTypes Comma-separated notification types to include. One or both of: audible, quiet. When present, oncalls are returned from every non-deferral escalation path whose notification_type is in the filter, sorted audible-first. When absent, only the default path&#39;s oncalls are returned (existing behavior). (optional)
-     * @return ApiResponse&lt;Void&gt;
+     * @param filterNotificationTypes Comma-separated notification types to include. One or both of: audible, quiet. When omitted, returns oncalls from all non-deferral escalation paths. When provided, limits results to matching notification types and sorts audible-first. (optional)
+     * @return ApiResponse&lt;OncallList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -244,9 +247,10 @@ public class OnCallsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> listOncallsWithHttpInfo(@javax.annotation.Nullable String include, @javax.annotation.Nullable String since, @javax.annotation.Nullable String until, @javax.annotation.Nullable Boolean earliest, @javax.annotation.Nullable String timeZone, @javax.annotation.Nullable String filterEscalationPolicyIds, @javax.annotation.Nullable String filterScheduleIds, @javax.annotation.Nullable String filterUserIds, @javax.annotation.Nullable String filterServiceIds, @javax.annotation.Nullable String filterGroupIds, @javax.annotation.Nullable String filterNotificationTypes) throws ApiException {
+    public ApiResponse<OncallList> listOncallsWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String since, @jakarta.annotation.Nullable String until, @jakarta.annotation.Nullable Boolean earliest, @jakarta.annotation.Nullable String timeZone, @jakarta.annotation.Nullable String filterEscalationPolicyIds, @jakarta.annotation.Nullable String filterScheduleIds, @jakarta.annotation.Nullable String filterUserIds, @jakarta.annotation.Nullable String filterServiceIds, @jakarta.annotation.Nullable String filterGroupIds, @jakarta.annotation.Nullable String filterNotificationTypes) throws ApiException {
         okhttp3.Call localVarCall = listOncallsValidateBeforeCall(include, since, until, earliest, timeZone, filterEscalationPolicyIds, filterScheduleIds, filterUserIds, filterServiceIds, filterGroupIds, filterNotificationTypes, null);
-        return localVarApiClient.execute(localVarCall);
+        Type localVarReturnType = new TypeToken<OncallList>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
@@ -255,14 +259,14 @@ public class OnCallsApi {
      * @param include comma separated if needed. eg: user,schedule (optional)
      * @param since Start of time range in ISO-8601 format (e.g., 2025-01-01T00:00:00Z). Defaults to current time. (optional)
      * @param until End of time range in ISO-8601 format (e.g., 2025-01-01T00:00:00Z). Defaults to &#39;since&#39; time. (optional)
-     * @param earliest When true, returns only the first on-call user per escalation policy level (optional)
+     * @param earliest When true, returns only the first on-call entry per escalation policy path and level (optional)
      * @param timeZone Timezone for response times (e.g., America/New_York). Defaults to UTC. (optional)
      * @param filterEscalationPolicyIds Comma-separated escalation policy IDs (optional)
      * @param filterScheduleIds Comma-separated schedule IDs (optional)
      * @param filterUserIds Comma-separated user IDs (optional)
      * @param filterServiceIds Comma-separated service IDs (optional)
      * @param filterGroupIds Comma-separated group IDs (teams) (optional)
-     * @param filterNotificationTypes Comma-separated notification types to include. One or both of: audible, quiet. When present, oncalls are returned from every non-deferral escalation path whose notification_type is in the filter, sorted audible-first. When absent, only the default path&#39;s oncalls are returned (existing behavior). (optional)
+     * @param filterNotificationTypes Comma-separated notification types to include. One or both of: audible, quiet. When omitted, returns oncalls from all non-deferral escalation paths. When provided, limits results to matching notification types and sorts audible-first. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -275,10 +279,11 @@ public class OnCallsApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listOncallsAsync(@javax.annotation.Nullable String include, @javax.annotation.Nullable String since, @javax.annotation.Nullable String until, @javax.annotation.Nullable Boolean earliest, @javax.annotation.Nullable String timeZone, @javax.annotation.Nullable String filterEscalationPolicyIds, @javax.annotation.Nullable String filterScheduleIds, @javax.annotation.Nullable String filterUserIds, @javax.annotation.Nullable String filterServiceIds, @javax.annotation.Nullable String filterGroupIds, @javax.annotation.Nullable String filterNotificationTypes, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call listOncallsAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String since, @jakarta.annotation.Nullable String until, @jakarta.annotation.Nullable Boolean earliest, @jakarta.annotation.Nullable String timeZone, @jakarta.annotation.Nullable String filterEscalationPolicyIds, @jakarta.annotation.Nullable String filterScheduleIds, @jakarta.annotation.Nullable String filterUserIds, @jakarta.annotation.Nullable String filterServiceIds, @jakarta.annotation.Nullable String filterGroupIds, @jakarta.annotation.Nullable String filterNotificationTypes, final ApiCallback<OncallList> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listOncallsValidateBeforeCall(include, since, until, earliest, timeZone, filterEscalationPolicyIds, filterScheduleIds, filterUserIds, filterServiceIds, filterGroupIds, filterNotificationTypes, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
+        Type localVarReturnType = new TypeToken<OncallList>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
 }

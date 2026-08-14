@@ -19,8 +19,13 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.rootly.client.model.AddActionItemTaskParamsPostToSlackChannelsInner;
+import com.rootly.client.model.CreateGithubIssueTaskParamsIssueType;
+import com.rootly.client.model.UpdateGithubIssueTaskParamsRepository;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -55,6 +60,14 @@ public class UpdateGithubIssueTaskParamsTest {
     }
 
     /**
+     * Test the property 'repository'
+     */
+    @Test
+    public void repositoryTest() {
+        // TODO: test repository
+    }
+
+    /**
      * Test the property 'title'
      */
     @Test
@@ -71,11 +84,43 @@ public class UpdateGithubIssueTaskParamsTest {
     }
 
     /**
+     * Test the property 'labels'
+     */
+    @Test
+    public void labelsTest() {
+        // TODO: test labels
+    }
+
+    /**
+     * Test the property 'labelsMode'
+     */
+    @Test
+    public void labelsModeTest() {
+        // TODO: test labelsMode
+    }
+
+    /**
+     * Test the property 'issueType'
+     */
+    @Test
+    public void issueTypeTest() {
+        // TODO: test issueType
+    }
+
+    /**
      * Test the property 'completion'
      */
     @Test
     public void completionTest() {
         // TODO: test completion
+    }
+
+    /**
+     * Test the property 'customFieldsMapping'
+     */
+    @Test
+    public void customFieldsMappingTest() {
+        // TODO: test customFieldsMapping
     }
 
 }

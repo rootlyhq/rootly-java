@@ -18,7 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.rootly.client.model.MeetingRecordingListDataInner;
+import com.rootly.client.model.MeetingRecordingResponseData;
 import com.rootly.client.model.Meta;
 import java.io.IOException;
 import java.util.ArrayList;

@@ -51,17 +51,12 @@ import com.rootly.client.JSON;
 /**
  * UpdateCustomFieldDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateCustomFieldDataAttributes {
   public static final String SERIALIZED_NAME_LABEL = "label";
   @SerializedName(SERIALIZED_NAME_LABEL)
   @jakarta.annotation.Nullable
   private String label;
-
-  public static final String SERIALIZED_NAME_SLUG = "slug";
-  @SerializedName(SERIALIZED_NAME_SLUG)
-  @jakarta.annotation.Nullable
-  private String slug;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -236,25 +231,6 @@ public class UpdateCustomFieldDataAttributes {
   }
 
 
-  public UpdateCustomFieldDataAttributes slug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
-    return this;
-  }
-
-  /**
-   * The slug of the custom_field
-   * @return slug
-   */
-  @jakarta.annotation.Nullable
-  public String getSlug() {
-    return slug;
-  }
-
-  public void setSlug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
-  }
-
-
   public UpdateCustomFieldDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
@@ -377,7 +353,6 @@ public class UpdateCustomFieldDataAttributes {
     }
     UpdateCustomFieldDataAttributes updateCustomFieldDataAttributes = (UpdateCustomFieldDataAttributes) o;
     return Objects.equals(this.label, updateCustomFieldDataAttributes.label) &&
-        Objects.equals(this.slug, updateCustomFieldDataAttributes.slug) &&
         Objects.equals(this.description, updateCustomFieldDataAttributes.description) &&
         Objects.equals(this.shown, updateCustomFieldDataAttributes.shown) &&
         Objects.equals(this.required, updateCustomFieldDataAttributes.required) &&
@@ -391,7 +366,7 @@ public class UpdateCustomFieldDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(label, slug, description, shown, required, _default, position);
+    return Objects.hash(label, description, shown, required, _default, position);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -406,7 +381,6 @@ public class UpdateCustomFieldDataAttributes {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdateCustomFieldDataAttributes {\n");
     sb.append("    label: ").append(toIndentedString(label)).append("\n");
-    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    shown: ").append(toIndentedString(shown)).append("\n");
     sb.append("    required: ").append(toIndentedString(required)).append("\n");
@@ -435,7 +409,6 @@ public class UpdateCustomFieldDataAttributes {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("label");
-    openapiFields.add("slug");
     openapiFields.add("description");
     openapiFields.add("shown");
     openapiFields.add("required");
@@ -469,9 +442,6 @@ public class UpdateCustomFieldDataAttributes {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("label") != null && !jsonObj.get("label").isJsonNull()) && !jsonObj.get("label").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `label` to be a primitive type in the JSON string but got `%s`", jsonObj.get("label").toString()));
-      }
-      if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));

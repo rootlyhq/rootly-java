@@ -96,8 +96,16 @@ public class AlertRoutingRulesApiTest {
         String filterCreatedAtGte = null;
         String filterCreatedAtLt = null;
         String filterCreatedAtLte = null;
+        String filterSlugEq = null;
+        String filterSlugNotEq = null;
+        String filterSlugIn = null;
+        String filterSlugNotIn = null;
+        String filterNameEq = null;
+        String filterNameNotEq = null;
+        String filterNameIn = null;
+        String filterNameNotIn = null;
         String sort = null;
-        AlertRoutingRuleList response = api.listAlertRoutingRules(include, pageNumber, pageSize, filterSearch, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
+        AlertRoutingRuleList response = api.listAlertRoutingRules(include, pageNumber, pageSize, filterSearch, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, sort);
         // TODO: test validations
     }
 

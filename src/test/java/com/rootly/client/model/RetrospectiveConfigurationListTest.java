@@ -18,6 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.JsonapiIncludedResource;
 import com.rootly.client.model.RetrospectiveConfigurationListDataInner;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -46,6 +47,14 @@ public class RetrospectiveConfigurationListTest {
     @Test
     public void dataTest() {
         // TODO: test data
+    }
+
+    /**
+     * Test the property 'included'
+     */
+    @Test
+    public void includedTest() {
+        // TODO: test included
     }
 
 }

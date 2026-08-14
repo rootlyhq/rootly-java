@@ -22,6 +22,7 @@ import com.google.gson.stream.JsonWriter;
 import com.rootly.client.model.ActionItemTriggerParams;
 import com.rootly.client.model.AlertTriggerParams;
 import com.rootly.client.model.AlertTriggerParamsAlertFieldConditionsInner;
+import com.rootly.client.model.AlertTriggerParamsAlertPayloadConditions;
 import com.rootly.client.model.IncidentTriggerParams;
 import com.rootly.client.model.PulseTriggerParams;
 import com.rootly.client.model.SimpleTriggerParams;
@@ -29,6 +30,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 
@@ -66,7 +68,7 @@ import com.google.gson.JsonParseException;
 
 import com.rootly.client.JSON;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewWorkflowDataAttributesTriggerParams extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(NewWorkflowDataAttributesTriggerParams.class.getName());
 

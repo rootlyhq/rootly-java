@@ -16,6 +16,10 @@
 |**content** | **String** | The page content |  [optional] |
 |**postMortemTemplateId** | **String** | The Retrospective template to use |  [optional] |
 |**markPostMortemAsPublished** | **Boolean** |  |  [optional] |
+|**includeOverview** | **Boolean** |  |  [optional] |
+|**includeTimeline** | **Boolean** |  |  [optional] |
+|**includeFollowUps** | **Boolean** |  |  [optional] |
+|**createAsLiveDoc** | **Boolean** |  |  [optional] |
 
 
 

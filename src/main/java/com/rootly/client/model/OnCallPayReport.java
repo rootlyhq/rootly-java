@@ -52,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * OnCallPayReport
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class OnCallPayReport {
   /**
    * The current status of the report.
@@ -110,32 +110,32 @@ public class OnCallPayReport {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private StatusEnum status;
 
   public static final String SERIALIZED_NAME_START_DATE = "start_date";
   @SerializedName(SERIALIZED_NAME_START_DATE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private LocalDate startDate;
 
   public static final String SERIALIZED_NAME_END_DATE = "end_date";
   @SerializedName(SERIALIZED_NAME_END_DATE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private LocalDate endDate;
 
   public static final String SERIALIZED_NAME_TOTAL_DURATION = "total_duration";
   @SerializedName(SERIALIZED_NAME_TOTAL_DURATION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer totalDuration;
 
   public static final String SERIALIZED_NAME_USERS_COUNT = "users_count";
   @SerializedName(SERIALIZED_NAME_USERS_COUNT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer usersCount;
 
   public static final String SERIALIZED_NAME_CURRENCY = "currency";
   @SerializedName(SERIALIZED_NAME_CURRENCY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String currency;
 
   /**
@@ -192,78 +192,83 @@ public class OnCallPayReport {
 
   public static final String SERIALIZED_NAME_PAY_TYPE = "pay_type";
   @SerializedName(SERIALIZED_NAME_PAY_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private PayTypeEnum payType;
 
   public static final String SERIALIZED_NAME_HOURLY_RATE_CENTS = "hourly_rate_cents";
   @SerializedName(SERIALIZED_NAME_HOURLY_RATE_CENTS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer hourlyRateCents;
 
   public static final String SERIALIZED_NAME_DAILY_RATE_CENTS = "daily_rate_cents";
   @SerializedName(SERIALIZED_NAME_DAILY_RATE_CENTS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer dailyRateCents;
 
   public static final String SERIALIZED_NAME_TOTAL_PAY_CENTS = "total_pay_cents";
   @SerializedName(SERIALIZED_NAME_TOTAL_PAY_CENTS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer totalPayCents;
 
   public static final String SERIALIZED_NAME_INCLUDE_SHADOW = "include_shadow";
   @SerializedName(SERIALIZED_NAME_INCLUDE_SHADOW)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean includeShadow;
 
   public static final String SERIALIZED_NAME_SHOW_INDIVIDUAL_SHIFT_DATA = "show_individual_shift_data";
   @SerializedName(SERIALIZED_NAME_SHOW_INDIVIDUAL_SHIFT_DATA)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean showIndividualShiftData;
 
   public static final String SERIALIZED_NAME_HAS_SINGLE_RATE = "has_single_rate";
   @SerializedName(SERIALIZED_NAME_HAS_SINGLE_RATE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean hasSingleRate;
 
   public static final String SERIALIZED_NAME_ENABLED_GRANULAR_TIME_BREAKDOWN = "enabled_granular_time_breakdown";
   @SerializedName(SERIALIZED_NAME_ENABLED_GRANULAR_TIME_BREAKDOWN)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean enabledGranularTimeBreakdown;
 
   public static final String SERIALIZED_NAME_LAST_GENERATED_AT = "last_generated_at";
   @SerializedName(SERIALIZED_NAME_LAST_GENERATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private OffsetDateTime lastGeneratedAt;
 
   public static final String SERIALIZED_NAME_TIME_ZONE = "time_zone";
   @SerializedName(SERIALIZED_NAME_TIME_ZONE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String timeZone;
+
+  public static final String SERIALIZED_NAME_USE_RESPONDERS_TIME_ZONE = "use_responders_time_zone";
+  @SerializedName(SERIALIZED_NAME_USE_RESPONDERS_TIME_ZONE)
+  @jakarta.annotation.Nullable
+  private Boolean useRespondersTimeZone;
 
   public static final String SERIALIZED_NAME_CSV_FILE_URL = "csv_file_url";
   @SerializedName(SERIALIZED_NAME_CSV_FILE_URL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private URI csvFileUrl;
 
   public static final String SERIALIZED_NAME_XLSX_FILE_URL = "xlsx_file_url";
   @SerializedName(SERIALIZED_NAME_XLSX_FILE_URL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private URI xlsxFileUrl;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private OffsetDateTime updatedAt;
 
   public OnCallPayReport() {
   }
 
-  public OnCallPayReport status(@javax.annotation.Nonnull StatusEnum status) {
+  public OnCallPayReport status(@jakarta.annotation.Nonnull StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -272,17 +277,17 @@ public class OnCallPayReport {
    * The current status of the report.
    * @return status
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nonnull StatusEnum status) {
+  public void setStatus(@jakarta.annotation.Nonnull StatusEnum status) {
     this.status = status;
   }
 
 
-  public OnCallPayReport startDate(@javax.annotation.Nonnull LocalDate startDate) {
+  public OnCallPayReport startDate(@jakarta.annotation.Nonnull LocalDate startDate) {
     this.startDate = startDate;
     return this;
   }
@@ -291,17 +296,17 @@ public class OnCallPayReport {
    * The start date of the report period.
    * @return startDate
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public LocalDate getStartDate() {
     return startDate;
   }
 
-  public void setStartDate(@javax.annotation.Nonnull LocalDate startDate) {
+  public void setStartDate(@jakarta.annotation.Nonnull LocalDate startDate) {
     this.startDate = startDate;
   }
 
 
-  public OnCallPayReport endDate(@javax.annotation.Nonnull LocalDate endDate) {
+  public OnCallPayReport endDate(@jakarta.annotation.Nonnull LocalDate endDate) {
     this.endDate = endDate;
     return this;
   }
@@ -310,17 +315,17 @@ public class OnCallPayReport {
    * The end date of the report period.
    * @return endDate
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public LocalDate getEndDate() {
     return endDate;
   }
 
-  public void setEndDate(@javax.annotation.Nonnull LocalDate endDate) {
+  public void setEndDate(@jakarta.annotation.Nonnull LocalDate endDate) {
     this.endDate = endDate;
   }
 
 
-  public OnCallPayReport totalDuration(@javax.annotation.Nullable Integer totalDuration) {
+  public OnCallPayReport totalDuration(@jakarta.annotation.Nullable Integer totalDuration) {
     this.totalDuration = totalDuration;
     return this;
   }
@@ -329,17 +334,17 @@ public class OnCallPayReport {
    * Total on-call duration in seconds.
    * @return totalDuration
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getTotalDuration() {
     return totalDuration;
   }
 
-  public void setTotalDuration(@javax.annotation.Nullable Integer totalDuration) {
+  public void setTotalDuration(@jakarta.annotation.Nullable Integer totalDuration) {
     this.totalDuration = totalDuration;
   }
 
 
-  public OnCallPayReport usersCount(@javax.annotation.Nullable Integer usersCount) {
+  public OnCallPayReport usersCount(@jakarta.annotation.Nullable Integer usersCount) {
     this.usersCount = usersCount;
     return this;
   }
@@ -348,17 +353,17 @@ public class OnCallPayReport {
    * Number of users included in the report.
    * @return usersCount
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getUsersCount() {
     return usersCount;
   }
 
-  public void setUsersCount(@javax.annotation.Nullable Integer usersCount) {
+  public void setUsersCount(@jakarta.annotation.Nullable Integer usersCount) {
     this.usersCount = usersCount;
   }
 
 
-  public OnCallPayReport currency(@javax.annotation.Nullable String currency) {
+  public OnCallPayReport currency(@jakarta.annotation.Nullable String currency) {
     this.currency = currency;
     return this;
   }
@@ -367,17 +372,17 @@ public class OnCallPayReport {
    * The currency code for monetary values.
    * @return currency
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCurrency() {
     return currency;
   }
 
-  public void setCurrency(@javax.annotation.Nullable String currency) {
+  public void setCurrency(@jakarta.annotation.Nullable String currency) {
     this.currency = currency;
   }
 
 
-  public OnCallPayReport payType(@javax.annotation.Nullable PayTypeEnum payType) {
+  public OnCallPayReport payType(@jakarta.annotation.Nullable PayTypeEnum payType) {
     this.payType = payType;
     return this;
   }
@@ -386,17 +391,17 @@ public class OnCallPayReport {
    * The pay calculation type.
    * @return payType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public PayTypeEnum getPayType() {
     return payType;
   }
 
-  public void setPayType(@javax.annotation.Nullable PayTypeEnum payType) {
+  public void setPayType(@jakarta.annotation.Nullable PayTypeEnum payType) {
     this.payType = payType;
   }
 
 
-  public OnCallPayReport hourlyRateCents(@javax.annotation.Nullable Integer hourlyRateCents) {
+  public OnCallPayReport hourlyRateCents(@jakarta.annotation.Nullable Integer hourlyRateCents) {
     this.hourlyRateCents = hourlyRateCents;
     return this;
   }
@@ -405,17 +410,17 @@ public class OnCallPayReport {
    * Hourly pay rate in cents.
    * @return hourlyRateCents
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getHourlyRateCents() {
     return hourlyRateCents;
   }
 
-  public void setHourlyRateCents(@javax.annotation.Nullable Integer hourlyRateCents) {
+  public void setHourlyRateCents(@jakarta.annotation.Nullable Integer hourlyRateCents) {
     this.hourlyRateCents = hourlyRateCents;
   }
 
 
-  public OnCallPayReport dailyRateCents(@javax.annotation.Nullable Integer dailyRateCents) {
+  public OnCallPayReport dailyRateCents(@jakarta.annotation.Nullable Integer dailyRateCents) {
     this.dailyRateCents = dailyRateCents;
     return this;
   }
@@ -424,17 +429,17 @@ public class OnCallPayReport {
    * Daily pay rate in cents.
    * @return dailyRateCents
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getDailyRateCents() {
     return dailyRateCents;
   }
 
-  public void setDailyRateCents(@javax.annotation.Nullable Integer dailyRateCents) {
+  public void setDailyRateCents(@jakarta.annotation.Nullable Integer dailyRateCents) {
     this.dailyRateCents = dailyRateCents;
   }
 
 
-  public OnCallPayReport totalPayCents(@javax.annotation.Nullable Integer totalPayCents) {
+  public OnCallPayReport totalPayCents(@jakarta.annotation.Nullable Integer totalPayCents) {
     this.totalPayCents = totalPayCents;
     return this;
   }
@@ -443,17 +448,17 @@ public class OnCallPayReport {
    * Total pay amount in cents.
    * @return totalPayCents
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getTotalPayCents() {
     return totalPayCents;
   }
 
-  public void setTotalPayCents(@javax.annotation.Nullable Integer totalPayCents) {
+  public void setTotalPayCents(@jakarta.annotation.Nullable Integer totalPayCents) {
     this.totalPayCents = totalPayCents;
   }
 
 
-  public OnCallPayReport includeShadow(@javax.annotation.Nullable Boolean includeShadow) {
+  public OnCallPayReport includeShadow(@jakarta.annotation.Nullable Boolean includeShadow) {
     this.includeShadow = includeShadow;
     return this;
   }
@@ -462,17 +467,17 @@ public class OnCallPayReport {
    * Whether shadow shifts are included.
    * @return includeShadow
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getIncludeShadow() {
     return includeShadow;
   }
 
-  public void setIncludeShadow(@javax.annotation.Nullable Boolean includeShadow) {
+  public void setIncludeShadow(@jakarta.annotation.Nullable Boolean includeShadow) {
     this.includeShadow = includeShadow;
   }
 
 
-  public OnCallPayReport showIndividualShiftData(@javax.annotation.Nullable Boolean showIndividualShiftData) {
+  public OnCallPayReport showIndividualShiftData(@jakarta.annotation.Nullable Boolean showIndividualShiftData) {
     this.showIndividualShiftData = showIndividualShiftData;
     return this;
   }
@@ -481,17 +486,17 @@ public class OnCallPayReport {
    * Whether individual shift data is shown.
    * @return showIndividualShiftData
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getShowIndividualShiftData() {
     return showIndividualShiftData;
   }
 
-  public void setShowIndividualShiftData(@javax.annotation.Nullable Boolean showIndividualShiftData) {
+  public void setShowIndividualShiftData(@jakarta.annotation.Nullable Boolean showIndividualShiftData) {
     this.showIndividualShiftData = showIndividualShiftData;
   }
 
 
-  public OnCallPayReport hasSingleRate(@javax.annotation.Nullable Boolean hasSingleRate) {
+  public OnCallPayReport hasSingleRate(@jakarta.annotation.Nullable Boolean hasSingleRate) {
     this.hasSingleRate = hasSingleRate;
     return this;
   }
@@ -500,17 +505,17 @@ public class OnCallPayReport {
    * Whether a single rate is applied to all users.
    * @return hasSingleRate
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getHasSingleRate() {
     return hasSingleRate;
   }
 
-  public void setHasSingleRate(@javax.annotation.Nullable Boolean hasSingleRate) {
+  public void setHasSingleRate(@jakarta.annotation.Nullable Boolean hasSingleRate) {
     this.hasSingleRate = hasSingleRate;
   }
 
 
-  public OnCallPayReport enabledGranularTimeBreakdown(@javax.annotation.Nullable Boolean enabledGranularTimeBreakdown) {
+  public OnCallPayReport enabledGranularTimeBreakdown(@jakarta.annotation.Nullable Boolean enabledGranularTimeBreakdown) {
     this.enabledGranularTimeBreakdown = enabledGranularTimeBreakdown;
     return this;
   }
@@ -519,17 +524,17 @@ public class OnCallPayReport {
    * Whether granular time breakdown is enabled.
    * @return enabledGranularTimeBreakdown
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getEnabledGranularTimeBreakdown() {
     return enabledGranularTimeBreakdown;
   }
 
-  public void setEnabledGranularTimeBreakdown(@javax.annotation.Nullable Boolean enabledGranularTimeBreakdown) {
+  public void setEnabledGranularTimeBreakdown(@jakarta.annotation.Nullable Boolean enabledGranularTimeBreakdown) {
     this.enabledGranularTimeBreakdown = enabledGranularTimeBreakdown;
   }
 
 
-  public OnCallPayReport lastGeneratedAt(@javax.annotation.Nullable OffsetDateTime lastGeneratedAt) {
+  public OnCallPayReport lastGeneratedAt(@jakarta.annotation.Nullable OffsetDateTime lastGeneratedAt) {
     this.lastGeneratedAt = lastGeneratedAt;
     return this;
   }
@@ -538,36 +543,55 @@ public class OnCallPayReport {
    * When the report was last generated.
    * @return lastGeneratedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public OffsetDateTime getLastGeneratedAt() {
     return lastGeneratedAt;
   }
 
-  public void setLastGeneratedAt(@javax.annotation.Nullable OffsetDateTime lastGeneratedAt) {
+  public void setLastGeneratedAt(@jakarta.annotation.Nullable OffsetDateTime lastGeneratedAt) {
     this.lastGeneratedAt = lastGeneratedAt;
   }
 
 
-  public OnCallPayReport timeZone(@javax.annotation.Nullable String timeZone) {
+  public OnCallPayReport timeZone(@jakarta.annotation.Nullable String timeZone) {
     this.timeZone = timeZone;
     return this;
   }
 
   /**
-   * The team&#39;s IANA timezone used to interpret start_date and end_date.
+   * The IANA timezone used to compute day and weekend boundaries for this report. Defaults to the team&#39;s timezone.
    * @return timeZone
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTimeZone() {
     return timeZone;
   }
 
-  public void setTimeZone(@javax.annotation.Nullable String timeZone) {
+  public void setTimeZone(@jakarta.annotation.Nullable String timeZone) {
     this.timeZone = timeZone;
   }
 
 
-  public OnCallPayReport csvFileUrl(@javax.annotation.Nullable URI csvFileUrl) {
+  public OnCallPayReport useRespondersTimeZone(@jakarta.annotation.Nullable Boolean useRespondersTimeZone) {
+    this.useRespondersTimeZone = useRespondersTimeZone;
+    return this;
+  }
+
+  /**
+   * When true, each responder&#39;s personal timezone is used for their pay calculation; otherwise the report-wide time_zone is used.
+   * @return useRespondersTimeZone
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getUseRespondersTimeZone() {
+    return useRespondersTimeZone;
+  }
+
+  public void setUseRespondersTimeZone(@jakarta.annotation.Nullable Boolean useRespondersTimeZone) {
+    this.useRespondersTimeZone = useRespondersTimeZone;
+  }
+
+
+  public OnCallPayReport csvFileUrl(@jakarta.annotation.Nullable URI csvFileUrl) {
     this.csvFileUrl = csvFileUrl;
     return this;
   }
@@ -576,17 +600,17 @@ public class OnCallPayReport {
    * Download URL for the generated CSV report. Null until the report is generated.
    * @return csvFileUrl
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public URI getCsvFileUrl() {
     return csvFileUrl;
   }
 
-  public void setCsvFileUrl(@javax.annotation.Nullable URI csvFileUrl) {
+  public void setCsvFileUrl(@jakarta.annotation.Nullable URI csvFileUrl) {
     this.csvFileUrl = csvFileUrl;
   }
 
 
-  public OnCallPayReport xlsxFileUrl(@javax.annotation.Nullable URI xlsxFileUrl) {
+  public OnCallPayReport xlsxFileUrl(@jakarta.annotation.Nullable URI xlsxFileUrl) {
     this.xlsxFileUrl = xlsxFileUrl;
     return this;
   }
@@ -595,17 +619,17 @@ public class OnCallPayReport {
    * Download URL for the generated XLSX report. Null until the report is generated.
    * @return xlsxFileUrl
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public URI getXlsxFileUrl() {
     return xlsxFileUrl;
   }
 
-  public void setXlsxFileUrl(@javax.annotation.Nullable URI xlsxFileUrl) {
+  public void setXlsxFileUrl(@jakarta.annotation.Nullable URI xlsxFileUrl) {
     this.xlsxFileUrl = xlsxFileUrl;
   }
 
 
-  public OnCallPayReport createdAt(@javax.annotation.Nonnull OffsetDateTime createdAt) {
+  public OnCallPayReport createdAt(@jakarta.annotation.Nonnull OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -614,17 +638,17 @@ public class OnCallPayReport {
    * Get createdAt
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull OffsetDateTime createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public OnCallPayReport updatedAt(@javax.annotation.Nonnull OffsetDateTime updatedAt) {
+  public OnCallPayReport updatedAt(@jakarta.annotation.Nonnull OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -633,12 +657,12 @@ public class OnCallPayReport {
    * Get updatedAt
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull OffsetDateTime updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
   }
 
@@ -669,6 +693,7 @@ public class OnCallPayReport {
         Objects.equals(this.enabledGranularTimeBreakdown, onCallPayReport.enabledGranularTimeBreakdown) &&
         Objects.equals(this.lastGeneratedAt, onCallPayReport.lastGeneratedAt) &&
         Objects.equals(this.timeZone, onCallPayReport.timeZone) &&
+        Objects.equals(this.useRespondersTimeZone, onCallPayReport.useRespondersTimeZone) &&
         Objects.equals(this.csvFileUrl, onCallPayReport.csvFileUrl) &&
         Objects.equals(this.xlsxFileUrl, onCallPayReport.xlsxFileUrl) &&
         Objects.equals(this.createdAt, onCallPayReport.createdAt) &&
@@ -681,7 +706,7 @@ public class OnCallPayReport {
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, startDate, endDate, totalDuration, usersCount, currency, payType, hourlyRateCents, dailyRateCents, totalPayCents, includeShadow, showIndividualShiftData, hasSingleRate, enabledGranularTimeBreakdown, lastGeneratedAt, timeZone, csvFileUrl, xlsxFileUrl, createdAt, updatedAt);
+    return Objects.hash(status, startDate, endDate, totalDuration, usersCount, currency, payType, hourlyRateCents, dailyRateCents, totalPayCents, includeShadow, showIndividualShiftData, hasSingleRate, enabledGranularTimeBreakdown, lastGeneratedAt, timeZone, useRespondersTimeZone, csvFileUrl, xlsxFileUrl, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -711,6 +736,7 @@ public class OnCallPayReport {
     sb.append("    enabledGranularTimeBreakdown: ").append(toIndentedString(enabledGranularTimeBreakdown)).append("\n");
     sb.append("    lastGeneratedAt: ").append(toIndentedString(lastGeneratedAt)).append("\n");
     sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
+    sb.append("    useRespondersTimeZone: ").append(toIndentedString(useRespondersTimeZone)).append("\n");
     sb.append("    csvFileUrl: ").append(toIndentedString(csvFileUrl)).append("\n");
     sb.append("    xlsxFileUrl: ").append(toIndentedString(xlsxFileUrl)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
@@ -753,6 +779,7 @@ public class OnCallPayReport {
     openapiFields.add("enabled_granular_time_breakdown");
     openapiFields.add("last_generated_at");
     openapiFields.add("time_zone");
+    openapiFields.add("use_responders_time_zone");
     openapiFields.add("csv_file_url");
     openapiFields.add("xlsx_file_url");
     openapiFields.add("created_at");

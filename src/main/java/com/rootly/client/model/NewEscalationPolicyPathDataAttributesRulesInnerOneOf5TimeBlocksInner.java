@@ -49,67 +49,67 @@ import com.rootly.client.JSON;
 /**
  * NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner {
   public static final String SERIALIZED_NAME_MONDAY = "monday";
   @SerializedName(SERIALIZED_NAME_MONDAY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean monday = false;
 
   public static final String SERIALIZED_NAME_TUESDAY = "tuesday";
   @SerializedName(SERIALIZED_NAME_TUESDAY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean tuesday = false;
 
   public static final String SERIALIZED_NAME_WEDNESDAY = "wednesday";
   @SerializedName(SERIALIZED_NAME_WEDNESDAY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean wednesday = false;
 
   public static final String SERIALIZED_NAME_THURSDAY = "thursday";
   @SerializedName(SERIALIZED_NAME_THURSDAY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean thursday = false;
 
   public static final String SERIALIZED_NAME_FRIDAY = "friday";
   @SerializedName(SERIALIZED_NAME_FRIDAY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean friday = false;
 
   public static final String SERIALIZED_NAME_SATURDAY = "saturday";
   @SerializedName(SERIALIZED_NAME_SATURDAY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean saturday = false;
 
   public static final String SERIALIZED_NAME_SUNDAY = "sunday";
   @SerializedName(SERIALIZED_NAME_SUNDAY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean sunday = false;
 
   public static final String SERIALIZED_NAME_START_TIME = "start_time";
   @SerializedName(SERIALIZED_NAME_START_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String startTime;
 
   public static final String SERIALIZED_NAME_END_TIME = "end_time";
   @SerializedName(SERIALIZED_NAME_END_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String endTime;
 
   public static final String SERIALIZED_NAME_ALL_DAY = "all_day";
   @SerializedName(SERIALIZED_NAME_ALL_DAY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean allDay = false;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner() {
   }
 
-  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner monday(@javax.annotation.Nullable Boolean monday) {
+  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner monday(@jakarta.annotation.Nullable Boolean monday) {
     this.monday = monday;
     return this;
   }
@@ -118,17 +118,17 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInne
    * Get monday
    * @return monday
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getMonday() {
     return monday;
   }
 
-  public void setMonday(@javax.annotation.Nullable Boolean monday) {
+  public void setMonday(@jakarta.annotation.Nullable Boolean monday) {
     this.monday = monday;
   }
 
 
-  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner tuesday(@javax.annotation.Nullable Boolean tuesday) {
+  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner tuesday(@jakarta.annotation.Nullable Boolean tuesday) {
     this.tuesday = tuesday;
     return this;
   }
@@ -137,17 +137,17 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInne
    * Get tuesday
    * @return tuesday
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getTuesday() {
     return tuesday;
   }
 
-  public void setTuesday(@javax.annotation.Nullable Boolean tuesday) {
+  public void setTuesday(@jakarta.annotation.Nullable Boolean tuesday) {
     this.tuesday = tuesday;
   }
 
 
-  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner wednesday(@javax.annotation.Nullable Boolean wednesday) {
+  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner wednesday(@jakarta.annotation.Nullable Boolean wednesday) {
     this.wednesday = wednesday;
     return this;
   }
@@ -156,17 +156,17 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInne
    * Get wednesday
    * @return wednesday
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getWednesday() {
     return wednesday;
   }
 
-  public void setWednesday(@javax.annotation.Nullable Boolean wednesday) {
+  public void setWednesday(@jakarta.annotation.Nullable Boolean wednesday) {
     this.wednesday = wednesday;
   }
 
 
-  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner thursday(@javax.annotation.Nullable Boolean thursday) {
+  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner thursday(@jakarta.annotation.Nullable Boolean thursday) {
     this.thursday = thursday;
     return this;
   }
@@ -175,17 +175,17 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInne
    * Get thursday
    * @return thursday
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getThursday() {
     return thursday;
   }
 
-  public void setThursday(@javax.annotation.Nullable Boolean thursday) {
+  public void setThursday(@jakarta.annotation.Nullable Boolean thursday) {
     this.thursday = thursday;
   }
 
 
-  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner friday(@javax.annotation.Nullable Boolean friday) {
+  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner friday(@jakarta.annotation.Nullable Boolean friday) {
     this.friday = friday;
     return this;
   }
@@ -194,17 +194,17 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInne
    * Get friday
    * @return friday
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getFriday() {
     return friday;
   }
 
-  public void setFriday(@javax.annotation.Nullable Boolean friday) {
+  public void setFriday(@jakarta.annotation.Nullable Boolean friday) {
     this.friday = friday;
   }
 
 
-  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner saturday(@javax.annotation.Nullable Boolean saturday) {
+  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner saturday(@jakarta.annotation.Nullable Boolean saturday) {
     this.saturday = saturday;
     return this;
   }
@@ -213,17 +213,17 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInne
    * Get saturday
    * @return saturday
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getSaturday() {
     return saturday;
   }
 
-  public void setSaturday(@javax.annotation.Nullable Boolean saturday) {
+  public void setSaturday(@jakarta.annotation.Nullable Boolean saturday) {
     this.saturday = saturday;
   }
 
 
-  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner sunday(@javax.annotation.Nullable Boolean sunday) {
+  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner sunday(@jakarta.annotation.Nullable Boolean sunday) {
     this.sunday = sunday;
     return this;
   }
@@ -232,17 +232,17 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInne
    * Get sunday
    * @return sunday
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getSunday() {
     return sunday;
   }
 
-  public void setSunday(@javax.annotation.Nullable Boolean sunday) {
+  public void setSunday(@jakarta.annotation.Nullable Boolean sunday) {
     this.sunday = sunday;
   }
 
 
-  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner startTime(@javax.annotation.Nullable String startTime) {
+  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner startTime(@jakarta.annotation.Nullable String startTime) {
     this.startTime = startTime;
     return this;
   }
@@ -251,17 +251,17 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInne
    * Formatted as HH:MM
    * @return startTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getStartTime() {
     return startTime;
   }
 
-  public void setStartTime(@javax.annotation.Nullable String startTime) {
+  public void setStartTime(@jakarta.annotation.Nullable String startTime) {
     this.startTime = startTime;
   }
 
 
-  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner endTime(@javax.annotation.Nullable String endTime) {
+  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner endTime(@jakarta.annotation.Nullable String endTime) {
     this.endTime = endTime;
     return this;
   }
@@ -270,17 +270,17 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInne
    * Formatted as HH:MM
    * @return endTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getEndTime() {
     return endTime;
   }
 
-  public void setEndTime(@javax.annotation.Nullable String endTime) {
+  public void setEndTime(@jakarta.annotation.Nullable String endTime) {
     this.endTime = endTime;
   }
 
 
-  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner allDay(@javax.annotation.Nullable Boolean allDay) {
+  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner allDay(@jakarta.annotation.Nullable Boolean allDay) {
     this.allDay = allDay;
     return this;
   }
@@ -289,17 +289,17 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInne
    * Get allDay
    * @return allDay
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getAllDay() {
     return allDay;
   }
 
-  public void setAllDay(@javax.annotation.Nullable Boolean allDay) {
+  public void setAllDay(@jakarta.annotation.Nullable Boolean allDay) {
     this.allDay = allDay;
   }
 
 
-  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner position(@javax.annotation.Nullable Integer position) {
+  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -308,12 +308,12 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInne
    * Get position
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 

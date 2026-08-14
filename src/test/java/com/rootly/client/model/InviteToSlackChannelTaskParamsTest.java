@@ -18,6 +18,10 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.AddActionItemTaskParamsPostToSlackChannelsInner;
+import com.rootly.client.model.InviteToSlackChannelTaskParamsAnyOf;
+import com.rootly.client.model.InviteToSlackChannelTaskParamsAnyOf1;
+import com.rootly.client.model.InviteToSlackChannelTaskParamsAnyOf2;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -37,6 +41,30 @@ public class InviteToSlackChannelTaskParamsTest {
     @Test
     public void testInviteToSlackChannelTaskParams() {
         // TODO: test InviteToSlackChannelTaskParams
+    }
+
+    /**
+     * Test the property 'slackUsers'
+     */
+    @Test
+    public void slackUsersTest() {
+        // TODO: test slackUsers
+    }
+
+    /**
+     * Test the property 'slackUserGroups'
+     */
+    @Test
+    public void slackUserGroupsTest() {
+        // TODO: test slackUserGroups
+    }
+
+    /**
+     * Test the property 'slackEmails'
+     */
+    @Test
+    public void slackEmailsTest() {
+        // TODO: test slackEmails
     }
 
 }

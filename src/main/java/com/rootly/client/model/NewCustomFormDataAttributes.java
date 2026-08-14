@@ -49,17 +49,18 @@ import com.rootly.client.JSON;
 /**
  * NewCustomFormDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewCustomFormDataAttributes {
+  public static final String SERIALIZED_NAME_SLUG = "slug";
+  @Deprecated
+  @SerializedName(SERIALIZED_NAME_SLUG)
+  @jakarta.annotation.Nullable
+  private String slug;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @jakarta.annotation.Nonnull
   private String name;
-
-  public static final String SERIALIZED_NAME_SLUG = "slug";
-  @SerializedName(SERIALIZED_NAME_SLUG)
-  @jakarta.annotation.Nullable
-  private String slug;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -79,6 +80,29 @@ public class NewCustomFormDataAttributes {
   public NewCustomFormDataAttributes() {
   }
 
+  @Deprecated
+  public NewCustomFormDataAttributes slug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+    return this;
+  }
+
+  /**
+   * Deprecated. &#x60;slug&#x60; is derived from &#x60;name&#x60;; any submitted value is ignored. This property will be removed from the request schema in a future version.
+   * @return slug
+   * @deprecated
+   */
+  @Deprecated
+  @jakarta.annotation.Nullable
+  public String getSlug() {
+    return slug;
+  }
+
+  @Deprecated
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+  }
+
+
   public NewCustomFormDataAttributes name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
@@ -95,25 +119,6 @@ public class NewCustomFormDataAttributes {
 
   public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
-  }
-
-
-  public NewCustomFormDataAttributes slug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
-    return this;
-  }
-
-  /**
-   * The custom form slug. Add this to form_field.shown or form_field.required to associate form fields with custom forms.
-   * @return slug
-   */
-  @jakarta.annotation.Nullable
-  public String getSlug() {
-    return slug;
-  }
-
-  public void setSlug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
   }
 
 
@@ -184,8 +189,8 @@ public class NewCustomFormDataAttributes {
       return false;
     }
     NewCustomFormDataAttributes newCustomFormDataAttributes = (NewCustomFormDataAttributes) o;
-    return Objects.equals(this.name, newCustomFormDataAttributes.name) &&
-        Objects.equals(this.slug, newCustomFormDataAttributes.slug) &&
+    return Objects.equals(this.slug, newCustomFormDataAttributes.slug) &&
+        Objects.equals(this.name, newCustomFormDataAttributes.name) &&
         Objects.equals(this.description, newCustomFormDataAttributes.description) &&
         Objects.equals(this.enabled, newCustomFormDataAttributes.enabled) &&
         Objects.equals(this.command, newCustomFormDataAttributes.command);
@@ -197,7 +202,7 @@ public class NewCustomFormDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, slug, description, enabled, command);
+    return Objects.hash(slug, name, description, enabled, command);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -211,8 +216,8 @@ public class NewCustomFormDataAttributes {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class NewCustomFormDataAttributes {\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    command: ").append(toIndentedString(command)).append("\n");
@@ -238,8 +243,8 @@ public class NewCustomFormDataAttributes {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("name");
     openapiFields.add("slug");
+    openapiFields.add("name");
     openapiFields.add("description");
     openapiFields.add("enabled");
     openapiFields.add("command");
@@ -278,11 +283,11 @@ public class NewCustomFormDataAttributes {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
       if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
+      }
+      if (!jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));

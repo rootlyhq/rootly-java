@@ -7,6 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**nextCursor** | **String** |  |  [optional] |
 |**currentPage** | **Integer** |  |  |
 |**nextPage** | **Integer** |  |  |
 |**prevPage** | **Integer** |  |  |

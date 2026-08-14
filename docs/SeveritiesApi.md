@@ -218,7 +218,7 @@ public class Example {
 
 <a id="listSeverities"></a>
 # **listSeverities**
-> SeverityList listSeverities(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterSeverity, filterColor, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort)
+> SeverityList listSeverities(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterSeverity, filterColor, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterSeverityEq, filterSeverityNotEq, filterSeverityIn, filterSeverityNotIn, filterColorEq, filterColorNotEq, filterColorIn, filterColorNotIn, sort)
 
 List severities
 
@@ -256,9 +256,25 @@ public class Example {
     String filterCreatedAtGte = "filterCreatedAtGte_example"; // String | 
     String filterCreatedAtLt = "filterCreatedAtLt_example"; // String | 
     String filterCreatedAtLte = "filterCreatedAtLte_example"; // String | 
+    String filterSlugEq = "filterSlugEq_example"; // String | 
+    String filterSlugNotEq = "filterSlugNotEq_example"; // String | 
+    String filterSlugIn = "filterSlugIn_example"; // String | 
+    String filterSlugNotIn = "filterSlugNotIn_example"; // String | 
+    String filterNameEq = "filterNameEq_example"; // String | 
+    String filterNameNotEq = "filterNameNotEq_example"; // String | 
+    String filterNameIn = "filterNameIn_example"; // String | 
+    String filterNameNotIn = "filterNameNotIn_example"; // String | 
+    String filterSeverityEq = "filterSeverityEq_example"; // String | 
+    String filterSeverityNotEq = "filterSeverityNotEq_example"; // String | 
+    String filterSeverityIn = "filterSeverityIn_example"; // String | 
+    String filterSeverityNotIn = "filterSeverityNotIn_example"; // String | 
+    String filterColorEq = "filterColorEq_example"; // String | 
+    String filterColorNotEq = "filterColorNotEq_example"; // String | 
+    String filterColorIn = "filterColorIn_example"; // String | 
+    String filterColorNotIn = "filterColorNotIn_example"; // String | 
     String sort = "sort_example"; // String | 
     try {
-      SeverityList result = apiInstance.listSeverities(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterSeverity, filterColor, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
+      SeverityList result = apiInstance.listSeverities(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterSeverity, filterColor, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterSeverityEq, filterSeverityNotEq, filterSeverityIn, filterSeverityNotIn, filterColorEq, filterColorNotEq, filterColorIn, filterColorNotIn, sort);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SeveritiesApi#listSeverities");
@@ -287,6 +303,22 @@ public class Example {
 | **filterCreatedAtGte** | **String**|  | [optional] |
 | **filterCreatedAtLt** | **String**|  | [optional] |
 | **filterCreatedAtLte** | **String**|  | [optional] |
+| **filterSlugEq** | **String**|  | [optional] |
+| **filterSlugNotEq** | **String**|  | [optional] |
+| **filterSlugIn** | **String**|  | [optional] |
+| **filterSlugNotIn** | **String**|  | [optional] |
+| **filterNameEq** | **String**|  | [optional] |
+| **filterNameNotEq** | **String**|  | [optional] |
+| **filterNameIn** | **String**|  | [optional] |
+| **filterNameNotIn** | **String**|  | [optional] |
+| **filterSeverityEq** | **String**|  | [optional] |
+| **filterSeverityNotEq** | **String**|  | [optional] |
+| **filterSeverityIn** | **String**|  | [optional] |
+| **filterSeverityNotIn** | **String**|  | [optional] |
+| **filterColorEq** | **String**|  | [optional] |
+| **filterColorNotEq** | **String**|  | [optional] |
+| **filterColorIn** | **String**|  | [optional] |
+| **filterColorNotIn** | **String**|  | [optional] |
 | **sort** | **String**|  | [optional] |
 
 ### Return type

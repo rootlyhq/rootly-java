@@ -20,10 +20,12 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.rootly.client.model.AlertTriggerParamsAlertFieldConditionsInner;
+import com.rootly.client.model.AlertTriggerParamsAlertPayloadConditions;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -52,7 +54,7 @@ import com.rootly.client.JSON;
 /**
  * AlertTriggerParams
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AlertTriggerParams {
   /**
    * Gets or Sets triggerType
@@ -469,6 +471,82 @@ public class AlertTriggerParams {
   private List<String> alertLabels = new ArrayList<>();
 
   /**
+   * Gets or Sets alertConditionUrgency
+   */
+  @JsonAdapter(AlertConditionUrgencyEnum.Adapter.class)
+  public enum AlertConditionUrgencyEnum {
+    IS("IS"),
+    
+    IS_NOT("IS NOT"),
+    
+    ANY("ANY"),
+    
+    CONTAINS("CONTAINS"),
+    
+    CONTAINS_ALL("CONTAINS_ALL"),
+    
+    CONTAINS_NONE("CONTAINS_NONE"),
+    
+    NONE("NONE"),
+    
+    SET("SET"),
+    
+    UNSET("UNSET");
+
+    private String value;
+
+    AlertConditionUrgencyEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static AlertConditionUrgencyEnum fromValue(String value) {
+      for (AlertConditionUrgencyEnum b : AlertConditionUrgencyEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<AlertConditionUrgencyEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final AlertConditionUrgencyEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public AlertConditionUrgencyEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return AlertConditionUrgencyEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      AlertConditionUrgencyEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_ALERT_CONDITION_URGENCY = "alert_condition_urgency";
+  @SerializedName(SERIALIZED_NAME_ALERT_CONDITION_URGENCY)
+  @jakarta.annotation.Nullable
+  private AlertConditionUrgencyEnum alertConditionUrgency = AlertConditionUrgencyEnum.ANY;
+
+  public static final String SERIALIZED_NAME_ALERT_URGENCY_IDS = "alert_urgency_ids";
+  @SerializedName(SERIALIZED_NAME_ALERT_URGENCY_IDS)
+  @jakarta.annotation.Nullable
+  private List<UUID> alertUrgencyIds = new ArrayList<>();
+
+  /**
    * Gets or Sets alertConditionPayload
    */
   @JsonAdapter(AlertConditionPayloadEnum.Adapter.class)
@@ -558,6 +636,11 @@ public class AlertTriggerParams {
   @SerializedName(SERIALIZED_NAME_ALERT_FIELD_CONDITIONS)
   @jakarta.annotation.Nullable
   private List<AlertTriggerParamsAlertFieldConditionsInner> alertFieldConditions = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_ALERT_PAYLOAD_CONDITIONS = "alert_payload_conditions";
+  @SerializedName(SERIALIZED_NAME_ALERT_PAYLOAD_CONDITIONS)
+  @jakarta.annotation.Nullable
+  private AlertTriggerParamsAlertPayloadConditions alertPayloadConditions;
 
   public AlertTriggerParams() {
   }
@@ -822,6 +905,52 @@ public class AlertTriggerParams {
   }
 
 
+  public AlertTriggerParams alertConditionUrgency(@jakarta.annotation.Nullable AlertConditionUrgencyEnum alertConditionUrgency) {
+    this.alertConditionUrgency = alertConditionUrgency;
+    return this;
+  }
+
+  /**
+   * Get alertConditionUrgency
+   * @return alertConditionUrgency
+   */
+  @jakarta.annotation.Nullable
+  public AlertConditionUrgencyEnum getAlertConditionUrgency() {
+    return alertConditionUrgency;
+  }
+
+  public void setAlertConditionUrgency(@jakarta.annotation.Nullable AlertConditionUrgencyEnum alertConditionUrgency) {
+    this.alertConditionUrgency = alertConditionUrgency;
+  }
+
+
+  public AlertTriggerParams alertUrgencyIds(@jakarta.annotation.Nullable List<UUID> alertUrgencyIds) {
+    this.alertUrgencyIds = alertUrgencyIds;
+    return this;
+  }
+
+  public AlertTriggerParams addAlertUrgencyIdsItem(UUID alertUrgencyIdsItem) {
+    if (this.alertUrgencyIds == null) {
+      this.alertUrgencyIds = new ArrayList<>();
+    }
+    this.alertUrgencyIds.add(alertUrgencyIdsItem);
+    return this;
+  }
+
+  /**
+   * Get alertUrgencyIds
+   * @return alertUrgencyIds
+   */
+  @jakarta.annotation.Nullable
+  public List<UUID> getAlertUrgencyIds() {
+    return alertUrgencyIds;
+  }
+
+  public void setAlertUrgencyIds(@jakarta.annotation.Nullable List<UUID> alertUrgencyIds) {
+    this.alertUrgencyIds = alertUrgencyIds;
+  }
+
+
   public AlertTriggerParams alertConditionPayload(@jakarta.annotation.Nullable AlertConditionPayloadEnum alertConditionPayload) {
     this.alertConditionPayload = alertConditionPayload;
     return this;
@@ -933,6 +1062,25 @@ public class AlertTriggerParams {
   }
 
 
+  public AlertTriggerParams alertPayloadConditions(@jakarta.annotation.Nullable AlertTriggerParamsAlertPayloadConditions alertPayloadConditions) {
+    this.alertPayloadConditions = alertPayloadConditions;
+    return this;
+  }
+
+  /**
+   * Get alertPayloadConditions
+   * @return alertPayloadConditions
+   */
+  @jakarta.annotation.Nullable
+  public AlertTriggerParamsAlertPayloadConditions getAlertPayloadConditions() {
+    return alertPayloadConditions;
+  }
+
+  public void setAlertPayloadConditions(@jakarta.annotation.Nullable AlertTriggerParamsAlertPayloadConditions alertPayloadConditions) {
+    this.alertPayloadConditions = alertPayloadConditions;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -955,11 +1103,14 @@ public class AlertTriggerParams {
         Objects.equals(this.alertConditionStatusUseRegexp, alertTriggerParams.alertConditionStatusUseRegexp) &&
         Objects.equals(this.alertStatuses, alertTriggerParams.alertStatuses) &&
         Objects.equals(this.alertLabels, alertTriggerParams.alertLabels) &&
+        Objects.equals(this.alertConditionUrgency, alertTriggerParams.alertConditionUrgency) &&
+        Objects.equals(this.alertUrgencyIds, alertTriggerParams.alertUrgencyIds) &&
         Objects.equals(this.alertConditionPayload, alertTriggerParams.alertConditionPayload) &&
         Objects.equals(this.alertConditionPayloadUseRegexp, alertTriggerParams.alertConditionPayloadUseRegexp) &&
         Objects.equals(this.alertPayload, alertTriggerParams.alertPayload) &&
         Objects.equals(this.alertQueryPayload, alertTriggerParams.alertQueryPayload) &&
-        Objects.equals(this.alertFieldConditions, alertTriggerParams.alertFieldConditions);
+        Objects.equals(this.alertFieldConditions, alertTriggerParams.alertFieldConditions) &&
+        Objects.equals(this.alertPayloadConditions, alertTriggerParams.alertPayloadConditions);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -968,7 +1119,7 @@ public class AlertTriggerParams {
 
   @Override
   public int hashCode() {
-    return Objects.hash(triggerType, triggers, alertCondition, alertConditionSource, alertConditionSourceUseRegexp, alertSources, alertConditionLabel, alertConditionLabelUseRegexp, alertConditionStatus, alertConditionStatusUseRegexp, alertStatuses, alertLabels, alertConditionPayload, alertConditionPayloadUseRegexp, alertPayload, alertQueryPayload, alertFieldConditions);
+    return Objects.hash(triggerType, triggers, alertCondition, alertConditionSource, alertConditionSourceUseRegexp, alertSources, alertConditionLabel, alertConditionLabelUseRegexp, alertConditionStatus, alertConditionStatusUseRegexp, alertStatuses, alertLabels, alertConditionUrgency, alertUrgencyIds, alertConditionPayload, alertConditionPayloadUseRegexp, alertPayload, alertQueryPayload, alertFieldConditions, alertPayloadConditions);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -994,11 +1145,14 @@ public class AlertTriggerParams {
     sb.append("    alertConditionStatusUseRegexp: ").append(toIndentedString(alertConditionStatusUseRegexp)).append("\n");
     sb.append("    alertStatuses: ").append(toIndentedString(alertStatuses)).append("\n");
     sb.append("    alertLabels: ").append(toIndentedString(alertLabels)).append("\n");
+    sb.append("    alertConditionUrgency: ").append(toIndentedString(alertConditionUrgency)).append("\n");
+    sb.append("    alertUrgencyIds: ").append(toIndentedString(alertUrgencyIds)).append("\n");
     sb.append("    alertConditionPayload: ").append(toIndentedString(alertConditionPayload)).append("\n");
     sb.append("    alertConditionPayloadUseRegexp: ").append(toIndentedString(alertConditionPayloadUseRegexp)).append("\n");
     sb.append("    alertPayload: ").append(toIndentedString(alertPayload)).append("\n");
     sb.append("    alertQueryPayload: ").append(toIndentedString(alertQueryPayload)).append("\n");
     sb.append("    alertFieldConditions: ").append(toIndentedString(alertFieldConditions)).append("\n");
+    sb.append("    alertPayloadConditions: ").append(toIndentedString(alertPayloadConditions)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -1033,11 +1187,14 @@ public class AlertTriggerParams {
     openapiFields.add("alert_condition_status_use_regexp");
     openapiFields.add("alert_statuses");
     openapiFields.add("alert_labels");
+    openapiFields.add("alert_condition_urgency");
+    openapiFields.add("alert_urgency_ids");
     openapiFields.add("alert_condition_payload");
     openapiFields.add("alert_condition_payload_use_regexp");
     openapiFields.add("alert_payload");
     openapiFields.add("alert_query_payload");
     openapiFields.add("alert_field_conditions");
+    openapiFields.add("alert_payload_conditions");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -1121,6 +1278,17 @@ public class AlertTriggerParams {
       if (jsonObj.get("alert_labels") != null && !jsonObj.get("alert_labels").isJsonNull() && !jsonObj.get("alert_labels").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `alert_labels` to be an array in the JSON string but got `%s`", jsonObj.get("alert_labels").toString()));
       }
+      if ((jsonObj.get("alert_condition_urgency") != null && !jsonObj.get("alert_condition_urgency").isJsonNull()) && !jsonObj.get("alert_condition_urgency").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `alert_condition_urgency` to be a primitive type in the JSON string but got `%s`", jsonObj.get("alert_condition_urgency").toString()));
+      }
+      // validate the optional field `alert_condition_urgency`
+      if (jsonObj.get("alert_condition_urgency") != null && !jsonObj.get("alert_condition_urgency").isJsonNull()) {
+        AlertConditionUrgencyEnum.validateJsonElement(jsonObj.get("alert_condition_urgency"));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("alert_urgency_ids") != null && !jsonObj.get("alert_urgency_ids").isJsonNull() && !jsonObj.get("alert_urgency_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `alert_urgency_ids` to be an array in the JSON string but got `%s`", jsonObj.get("alert_urgency_ids").toString()));
+      }
       if ((jsonObj.get("alert_condition_payload") != null && !jsonObj.get("alert_condition_payload").isJsonNull()) && !jsonObj.get("alert_condition_payload").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `alert_condition_payload` to be a primitive type in the JSON string but got `%s`", jsonObj.get("alert_condition_payload").toString()));
       }
@@ -1148,6 +1316,10 @@ public class AlertTriggerParams {
             AlertTriggerParamsAlertFieldConditionsInner.validateJsonElement(jsonArrayalertFieldConditions.get(i));
           };
         }
+      }
+      // validate the optional field `alert_payload_conditions`
+      if (jsonObj.get("alert_payload_conditions") != null && !jsonObj.get("alert_payload_conditions").isJsonNull()) {
+        AlertTriggerParamsAlertPayloadConditions.validateJsonElement(jsonObj.get("alert_payload_conditions"));
       }
   }
 

@@ -50,9 +50,9 @@ import java.util.Set;
 import com.rootly.client.JSON;
 
 /**
- * Provide additional attributes for generic_webhook alerts source
+ * Provide additional attributes for the underlying source. &#x60;auto_resolve&#x60;, &#x60;resolve_state&#x60; and &#x60;field_mappings_attributes&#x60; apply to generic_webhook sources; &#x60;accept_threaded_emails&#x60; applies to email sources.
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewAlertsSourceDataAttributesSourceableAttributes {
   public static final String SERIALIZED_NAME_AUTO_RESOLVE = "auto_resolve";
   @SerializedName(SERIALIZED_NAME_AUTO_RESOLVE)

@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * PostMortemTriggerParams
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class PostMortemTriggerParams {
   /**
    * Gets or Sets triggerType
@@ -1181,6 +1181,87 @@ public class PostMortemTriggerParams {
   private IncidentConditionCauseEnum incidentConditionCause = IncidentConditionCauseEnum.ANY;
 
   /**
+   * Gets or Sets incidentConditionLabel
+   */
+  @JsonAdapter(IncidentConditionLabelEnum.Adapter.class)
+  public enum IncidentConditionLabelEnum {
+    IS("IS"),
+    
+    IS_NOT("IS NOT"),
+    
+    ANY("ANY"),
+    
+    CONTAINS("CONTAINS"),
+    
+    CONTAINS_ALL("CONTAINS_ALL"),
+    
+    CONTAINS_NONE("CONTAINS_NONE"),
+    
+    NONE("NONE"),
+    
+    SET("SET"),
+    
+    UNSET("UNSET");
+
+    private String value;
+
+    IncidentConditionLabelEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static IncidentConditionLabelEnum fromValue(String value) {
+      for (IncidentConditionLabelEnum b : IncidentConditionLabelEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<IncidentConditionLabelEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final IncidentConditionLabelEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public IncidentConditionLabelEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return IncidentConditionLabelEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      IncidentConditionLabelEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_INCIDENT_CONDITION_LABEL = "incident_condition_label";
+  @SerializedName(SERIALIZED_NAME_INCIDENT_CONDITION_LABEL)
+  @jakarta.annotation.Nullable
+  private IncidentConditionLabelEnum incidentConditionLabel = IncidentConditionLabelEnum.ANY;
+
+  public static final String SERIALIZED_NAME_INCIDENT_CONDITION_LABEL_USE_REGEXP = "incident_condition_label_use_regexp";
+  @SerializedName(SERIALIZED_NAME_INCIDENT_CONDITION_LABEL_USE_REGEXP)
+  @jakarta.annotation.Nullable
+  private Boolean incidentConditionLabelUseRegexp = false;
+
+  public static final String SERIALIZED_NAME_INCIDENT_LABELS = "incident_labels";
+  @SerializedName(SERIALIZED_NAME_INCIDENT_LABELS)
+  @jakarta.annotation.Nullable
+  private List<String> incidentLabels = new ArrayList<>();
+
+  /**
    * [DEPRECATED] Use incident_condition_cause instead
    */
   @JsonAdapter(IncidentPostMortemConditionCauseEnum.Adapter.class)
@@ -2231,6 +2312,71 @@ public class PostMortemTriggerParams {
   }
 
 
+  public PostMortemTriggerParams incidentConditionLabel(@jakarta.annotation.Nullable IncidentConditionLabelEnum incidentConditionLabel) {
+    this.incidentConditionLabel = incidentConditionLabel;
+    return this;
+  }
+
+  /**
+   * Get incidentConditionLabel
+   * @return incidentConditionLabel
+   */
+  @jakarta.annotation.Nullable
+  public IncidentConditionLabelEnum getIncidentConditionLabel() {
+    return incidentConditionLabel;
+  }
+
+  public void setIncidentConditionLabel(@jakarta.annotation.Nullable IncidentConditionLabelEnum incidentConditionLabel) {
+    this.incidentConditionLabel = incidentConditionLabel;
+  }
+
+
+  public PostMortemTriggerParams incidentConditionLabelUseRegexp(@jakarta.annotation.Nullable Boolean incidentConditionLabelUseRegexp) {
+    this.incidentConditionLabelUseRegexp = incidentConditionLabelUseRegexp;
+    return this;
+  }
+
+  /**
+   * Get incidentConditionLabelUseRegexp
+   * @return incidentConditionLabelUseRegexp
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getIncidentConditionLabelUseRegexp() {
+    return incidentConditionLabelUseRegexp;
+  }
+
+  public void setIncidentConditionLabelUseRegexp(@jakarta.annotation.Nullable Boolean incidentConditionLabelUseRegexp) {
+    this.incidentConditionLabelUseRegexp = incidentConditionLabelUseRegexp;
+  }
+
+
+  public PostMortemTriggerParams incidentLabels(@jakarta.annotation.Nullable List<String> incidentLabels) {
+    this.incidentLabels = incidentLabels;
+    return this;
+  }
+
+  public PostMortemTriggerParams addIncidentLabelsItem(String incidentLabelsItem) {
+    if (this.incidentLabels == null) {
+      this.incidentLabels = new ArrayList<>();
+    }
+    this.incidentLabels.add(incidentLabelsItem);
+    return this;
+  }
+
+  /**
+   * Get incidentLabels
+   * @return incidentLabels
+   */
+  @jakarta.annotation.Nullable
+  public List<String> getIncidentLabels() {
+    return incidentLabels;
+  }
+
+  public void setIncidentLabels(@jakarta.annotation.Nullable List<String> incidentLabels) {
+    this.incidentLabels = incidentLabels;
+  }
+
+
   public PostMortemTriggerParams incidentPostMortemConditionCause(@jakarta.annotation.Nullable IncidentPostMortemConditionCauseEnum incidentPostMortemConditionCause) {
     this.incidentPostMortemConditionCause = incidentPostMortemConditionCause;
     return this;
@@ -2477,6 +2623,9 @@ public class PostMortemTriggerParams {
         Objects.equals(this.incidentConditionFunctionality, postMortemTriggerParams.incidentConditionFunctionality) &&
         Objects.equals(this.incidentConditionGroup, postMortemTriggerParams.incidentConditionGroup) &&
         Objects.equals(this.incidentConditionCause, postMortemTriggerParams.incidentConditionCause) &&
+        Objects.equals(this.incidentConditionLabel, postMortemTriggerParams.incidentConditionLabel) &&
+        Objects.equals(this.incidentConditionLabelUseRegexp, postMortemTriggerParams.incidentConditionLabelUseRegexp) &&
+        Objects.equals(this.incidentLabels, postMortemTriggerParams.incidentLabels) &&
         Objects.equals(this.incidentPostMortemConditionCause, postMortemTriggerParams.incidentPostMortemConditionCause) &&
         Objects.equals(this.incidentConditionSummary, postMortemTriggerParams.incidentConditionSummary) &&
         Objects.equals(this.incidentConditionStartedAt, postMortemTriggerParams.incidentConditionStartedAt) &&
@@ -2496,7 +2645,7 @@ public class PostMortemTriggerParams {
 
   @Override
   public int hashCode() {
-    return Objects.hash(triggerType, triggers, incidentVisibilities, incidentKinds, incidentStatuses, incidentInactivityDuration, incidentCondition, incidentConditionVisibility, incidentConditionKind, incidentConditionStatus, incidentConditionSubStatus, incidentConditionEnvironment, incidentConditionSeverity, incidentConditionIncidentType, incidentConditionIncidentRoles, incidentConditionService, incidentConditionFunctionality, incidentConditionGroup, incidentConditionCause, incidentPostMortemConditionCause, incidentConditionSummary, incidentConditionStartedAt, incidentConditionDetectedAt, incidentConditionAcknowledgedAt, incidentConditionMitigatedAt, incidentConditionResolvedAt, incidentConditionalInactivity, incidentPostMortemCondition, incidentPostMortemConditionStatus, incidentPostMortemStatuses);
+    return Objects.hash(triggerType, triggers, incidentVisibilities, incidentKinds, incidentStatuses, incidentInactivityDuration, incidentCondition, incidentConditionVisibility, incidentConditionKind, incidentConditionStatus, incidentConditionSubStatus, incidentConditionEnvironment, incidentConditionSeverity, incidentConditionIncidentType, incidentConditionIncidentRoles, incidentConditionService, incidentConditionFunctionality, incidentConditionGroup, incidentConditionCause, incidentConditionLabel, incidentConditionLabelUseRegexp, incidentLabels, incidentPostMortemConditionCause, incidentConditionSummary, incidentConditionStartedAt, incidentConditionDetectedAt, incidentConditionAcknowledgedAt, incidentConditionMitigatedAt, incidentConditionResolvedAt, incidentConditionalInactivity, incidentPostMortemCondition, incidentPostMortemConditionStatus, incidentPostMortemStatuses);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -2529,6 +2678,9 @@ public class PostMortemTriggerParams {
     sb.append("    incidentConditionFunctionality: ").append(toIndentedString(incidentConditionFunctionality)).append("\n");
     sb.append("    incidentConditionGroup: ").append(toIndentedString(incidentConditionGroup)).append("\n");
     sb.append("    incidentConditionCause: ").append(toIndentedString(incidentConditionCause)).append("\n");
+    sb.append("    incidentConditionLabel: ").append(toIndentedString(incidentConditionLabel)).append("\n");
+    sb.append("    incidentConditionLabelUseRegexp: ").append(toIndentedString(incidentConditionLabelUseRegexp)).append("\n");
+    sb.append("    incidentLabels: ").append(toIndentedString(incidentLabels)).append("\n");
     sb.append("    incidentPostMortemConditionCause: ").append(toIndentedString(incidentPostMortemConditionCause)).append("\n");
     sb.append("    incidentConditionSummary: ").append(toIndentedString(incidentConditionSummary)).append("\n");
     sb.append("    incidentConditionStartedAt: ").append(toIndentedString(incidentConditionStartedAt)).append("\n");
@@ -2581,6 +2733,9 @@ public class PostMortemTriggerParams {
     openapiFields.add("incident_condition_functionality");
     openapiFields.add("incident_condition_group");
     openapiFields.add("incident_condition_cause");
+    openapiFields.add("incident_condition_label");
+    openapiFields.add("incident_condition_label_use_regexp");
+    openapiFields.add("incident_labels");
     openapiFields.add("incident_post_mortem_condition_cause");
     openapiFields.add("incident_condition_summary");
     openapiFields.add("incident_condition_started_at");
@@ -2740,6 +2895,17 @@ public class PostMortemTriggerParams {
       // validate the optional field `incident_condition_cause`
       if (jsonObj.get("incident_condition_cause") != null && !jsonObj.get("incident_condition_cause").isJsonNull()) {
         IncidentConditionCauseEnum.validateJsonElement(jsonObj.get("incident_condition_cause"));
+      }
+      if ((jsonObj.get("incident_condition_label") != null && !jsonObj.get("incident_condition_label").isJsonNull()) && !jsonObj.get("incident_condition_label").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `incident_condition_label` to be a primitive type in the JSON string but got `%s`", jsonObj.get("incident_condition_label").toString()));
+      }
+      // validate the optional field `incident_condition_label`
+      if (jsonObj.get("incident_condition_label") != null && !jsonObj.get("incident_condition_label").isJsonNull()) {
+        IncidentConditionLabelEnum.validateJsonElement(jsonObj.get("incident_condition_label"));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("incident_labels") != null && !jsonObj.get("incident_labels").isJsonNull() && !jsonObj.get("incident_labels").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `incident_labels` to be an array in the JSON string but got `%s`", jsonObj.get("incident_labels").toString()));
       }
       if ((jsonObj.get("incident_post_mortem_condition_cause") != null && !jsonObj.get("incident_post_mortem_condition_cause").isJsonNull()) && !jsonObj.get("incident_post_mortem_condition_cause").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `incident_post_mortem_condition_cause` to be a primitive type in the JSON string but got `%s`", jsonObj.get("incident_post_mortem_condition_cause").toString()));

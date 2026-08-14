@@ -41,6 +41,14 @@ public class NewFormFieldDataAttributesTest {
     }
 
     /**
+     * Test the property 'slug'
+     */
+    @Test
+    public void slugTest() {
+        // TODO: test slug
+    }
+
+    /**
      * Test the property 'kind'
      */
     @Test
@@ -126,6 +134,14 @@ public class NewFormFieldDataAttributesTest {
     @Test
     public void defaultValuesTest() {
         // TODO: test defaultValues
+    }
+
+    /**
+     * Test the property 'autoSetByCatalogPropertyId'
+     */
+    @Test
+    public void autoSetByCatalogPropertyIdTest() {
+        // TODO: test autoSetByCatalogPropertyId
     }
 
 }

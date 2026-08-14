@@ -54,7 +54,6 @@
 | GUADALAJARA | &quot;Guadalajara&quot; |
 | AMERICA_MEXICO_CITY | &quot;America/Mexico_City&quot; |
 | MEXICO_CITY | &quot;Mexico City&quot; |
-| AMERICA_MEXICO_CITY2 | &quot;America/Mexico_City&quot; |
 | MONTERREY | &quot;Monterrey&quot; |
 | AMERICA_MONTERREY | &quot;America/Monterrey&quot; |
 | SASKATCHEWAN | &quot;Saskatchewan&quot; |
@@ -68,7 +67,6 @@
 | LIMA | &quot;Lima&quot; |
 | AMERICA_LIMA | &quot;America/Lima&quot; |
 | QUITO | &quot;Quito&quot; |
-| AMERICA_LIMA2 | &quot;America/Lima&quot; |
 | ATLANTIC_TIME_CANADA_ | &quot;Atlantic Time (Canada)&quot; |
 | AMERICA_HALIFAX | &quot;America/Halifax&quot; |
 | CARACAS | &quot;Caracas&quot; |
@@ -104,7 +102,6 @@
 | LISBON | &quot;Lisbon&quot; |
 | EUROPE_LISBON | &quot;Europe/Lisbon&quot; |
 | LONDON | &quot;London&quot; |
-| EUROPE_LONDON2 | &quot;Europe/London&quot; |
 | MONROVIA | &quot;Monrovia&quot; |
 | AFRICA_MONROVIA | &quot;Africa/Monrovia&quot; |
 | UTC | &quot;UTC&quot; |
@@ -154,7 +151,6 @@
 | ZAGREB | &quot;Zagreb&quot; |
 | EUROPE_ZAGREB | &quot;Europe/Zagreb&quot; |
 | ZURICH | &quot;Zurich&quot; |
-| EUROPE_ZURICH2 | &quot;Europe/Zurich&quot; |
 | ATHENS | &quot;Athens&quot; |
 | EUROPE_ATHENS | &quot;Europe/Athens&quot; |
 | BUCHAREST | &quot;Bucharest&quot; |
@@ -196,7 +192,6 @@
 | RIYADH | &quot;Riyadh&quot; |
 | ASIA_RIYADH | &quot;Asia/Riyadh&quot; |
 | ST_PETERSBURG | &quot;St. Petersburg&quot; |
-| EUROPE_MOSCOW2 | &quot;Europe/Moscow&quot; |
 | VOLGOGRAD | &quot;Volgograd&quot; |
 | EUROPE_VOLGOGRAD | &quot;Europe/Volgograd&quot; |
 | TEHRAN | &quot;Tehran&quot; |
@@ -206,7 +201,6 @@
 | BAKU | &quot;Baku&quot; |
 | ASIA_BAKU | &quot;Asia/Baku&quot; |
 | MUSCAT | &quot;Muscat&quot; |
-| ASIA_MUSCAT2 | &quot;Asia/Muscat&quot; |
 | SAMARA | &quot;Samara&quot; |
 | EUROPE_SAMARA | &quot;Europe/Samara&quot; |
 | TBILISI | &quot;Tbilisi&quot; |
@@ -218,23 +212,18 @@
 | ALMATY | &quot;Almaty&quot; |
 | ASIA_ALMATY | &quot;Asia/Almaty&quot; |
 | ASTANA | &quot;Astana&quot; |
-| ASIA_ALMATY2 | &quot;Asia/Almaty&quot; |
 | EKATERINBURG | &quot;Ekaterinburg&quot; |
 | ASIA_YEKATERINBURG | &quot;Asia/Yekaterinburg&quot; |
 | ISLAMABAD | &quot;Islamabad&quot; |
 | ASIA_KARACHI | &quot;Asia/Karachi&quot; |
 | KARACHI | &quot;Karachi&quot; |
-| ASIA_KARACHI2 | &quot;Asia/Karachi&quot; |
 | TASHKENT | &quot;Tashkent&quot; |
 | ASIA_TASHKENT | &quot;Asia/Tashkent&quot; |
 | CHENNAI | &quot;Chennai&quot; |
 | ASIA_KOLKATA | &quot;Asia/Kolkata&quot; |
 | KOLKATA | &quot;Kolkata&quot; |
-| ASIA_KOLKATA2 | &quot;Asia/Kolkata&quot; |
 | MUMBAI | &quot;Mumbai&quot; |
-| ASIA_KOLKATA3 | &quot;Asia/Kolkata&quot; |
 | NEW_DELHI | &quot;New Delhi&quot; |
-| ASIA_KOLKATA4 | &quot;Asia/Kolkata&quot; |
 | SRI_JAYAWARDENEPURA | &quot;Sri Jayawardenepura&quot; |
 | ASIA_COLOMBO | &quot;Asia/Colombo&quot; |
 | KATHMANDU | &quot;Kathmandu&quot; |
@@ -248,7 +237,6 @@
 | BANGKOK | &quot;Bangkok&quot; |
 | ASIA_BANGKOK | &quot;Asia/Bangkok&quot; |
 | HANOI | &quot;Hanoi&quot; |
-| ASIA_BANGKOK2 | &quot;Asia/Bangkok&quot; |
 | JAKARTA | &quot;Jakarta&quot; |
 | ASIA_JAKARTA | &quot;Asia/Jakarta&quot; |
 | KRASNOYARSK | &quot;Krasnoyarsk&quot; |
@@ -276,11 +264,9 @@
 | OSAKA | &quot;Osaka&quot; |
 | ASIA_TOKYO | &quot;Asia/Tokyo&quot; |
 | SAPPORO | &quot;Sapporo&quot; |
-| ASIA_TOKYO2 | &quot;Asia/Tokyo&quot; |
 | SEOUL | &quot;Seoul&quot; |
 | ASIA_SEOUL | &quot;Asia/Seoul&quot; |
 | TOKYO | &quot;Tokyo&quot; |
-| ASIA_TOKYO3 | &quot;Asia/Tokyo&quot; |
 | YAKUTSK | &quot;Yakutsk&quot; |
 | ASIA_YAKUTSK | &quot;Asia/Yakutsk&quot; |
 | ADELAIDE | &quot;Adelaide&quot; |
@@ -320,7 +306,6 @@
 | MARSHALL_IS_ | &quot;Marshall Is.&quot; |
 | PACIFIC_MAJURO | &quot;Pacific/Majuro&quot; |
 | WELLINGTON | &quot;Wellington&quot; |
-| PACIFIC_AUCKLAND2 | &quot;Pacific/Auckland&quot; |
 | CHATHAM_IS_ | &quot;Chatham Is.&quot; |
 | PACIFIC_CHATHAM | &quot;Pacific/Chatham&quot; |
 | NUKU_ALOFA | &quot;Nuku&#39;alofa&quot; |
@@ -329,6 +314,22 @@
 | PACIFIC_APIA | &quot;Pacific/Apia&quot; |
 | TOKELAU_IS_ | &quot;Tokelau Is.&quot; |
 | PACIFIC_FAKAOFO | &quot;Pacific/Fakaofo&quot; |
+| AMERICA_ADAK | &quot;America/Adak&quot; |
+| AMERICA_ATKA | &quot;America/Atka&quot; |
+| US_ALEUTIAN | &quot;US/Aleutian&quot; |
+| AMERICA_VANCOUVER | &quot;America/Vancouver&quot; |
+| CANADA_PACIFIC | &quot;Canada/Pacific&quot; |
+| AMERICA_MIQUELON | &quot;America/Miquelon&quot; |
+| AUSTRALIA_EUCLA | &quot;Australia/Eucla&quot; |
+| AUSTRALIA_LHI | &quot;Australia/LHI&quot; |
+| AUSTRALIA_LORD_HOWE | &quot;Australia/Lord_Howe&quot; |
+| CHILE_EASTER_ISLAND | &quot;Chile/EasterIsland&quot; |
+| PACIFIC_EASTER | &quot;Pacific/Easter&quot; |
+| PACIFIC_GAMBIER | &quot;Pacific/Gambier&quot; |
+| PACIFIC_PITCAIRN | &quot;Pacific/Pitcairn&quot; |
+| PACIFIC_MARQUESAS | &quot;Pacific/Marquesas&quot; |
+| PACIFIC_KIRITIMATI | &quot;Pacific/Kiritimati&quot; |
+| PACIFIC_NORFOLK | &quot;Pacific/Norfolk&quot; |
 
 
 

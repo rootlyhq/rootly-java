@@ -78,7 +78,8 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | workflow_form_field_condition created |  -  |
+| **201** | accepts out-of-scope selected ids when scope validation is disabled |  -  |
+| **422** | rejects out-of-scope selected ids when scope validation is enabled |  -  |
 | **401** | responds with unauthorized for invalid token |  -  |
 
 <a id="deleteWorkflowFormFieldCondition"></a>
@@ -214,7 +215,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | workflow_form_field_condition found |  -  |
+| **200** | includes native field ids |  -  |
 | **404** | resource not found |  -  |
 
 <a id="listWorkflowFormFieldConditions"></a>
@@ -357,6 +358,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | workflow_form_field_condition updated |  -  |
+| **200** | accepts out-of-scope selected ids on update when scope validation is disabled |  -  |
+| **422** | rejects out-of-scope selected ids on update when scope validation is enabled |  -  |
 | **404** | resource not found |  -  |
 

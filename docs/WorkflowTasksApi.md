@@ -219,7 +219,7 @@ public class Example {
 
 <a id="listWorkflowTasks"></a>
 # **listWorkflowTasks**
-> WorkflowTaskList listWorkflowTasks(workflowId, include, pageNumber, pageSize, filterSearch, filterName, filterSlug)
+> WorkflowTaskList listWorkflowTasks(workflowId, include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn)
 
 List workflow tasks
 
@@ -252,8 +252,16 @@ public class Example {
     String filterSearch = "filterSearch_example"; // String | 
     String filterName = "filterName_example"; // String | 
     String filterSlug = "filterSlug_example"; // String | 
+    String filterNameEq = "filterNameEq_example"; // String | 
+    String filterNameNotEq = "filterNameNotEq_example"; // String | 
+    String filterNameIn = "filterNameIn_example"; // String | 
+    String filterNameNotIn = "filterNameNotIn_example"; // String | 
+    String filterSlugEq = "filterSlugEq_example"; // String | 
+    String filterSlugNotEq = "filterSlugNotEq_example"; // String | 
+    String filterSlugIn = "filterSlugIn_example"; // String | 
+    String filterSlugNotIn = "filterSlugNotIn_example"; // String | 
     try {
-      WorkflowTaskList result = apiInstance.listWorkflowTasks(workflowId, include, pageNumber, pageSize, filterSearch, filterName, filterSlug);
+      WorkflowTaskList result = apiInstance.listWorkflowTasks(workflowId, include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WorkflowTasksApi#listWorkflowTasks");
@@ -277,6 +285,14 @@ public class Example {
 | **filterSearch** | **String**|  | [optional] |
 | **filterName** | **String**|  | [optional] |
 | **filterSlug** | **String**|  | [optional] |
+| **filterNameEq** | **String**|  | [optional] |
+| **filterNameNotEq** | **String**|  | [optional] |
+| **filterNameIn** | **String**|  | [optional] |
+| **filterNameNotIn** | **String**|  | [optional] |
+| **filterSlugEq** | **String**|  | [optional] |
+| **filterSlugNotEq** | **String**|  | [optional] |
+| **filterSlugIn** | **String**|  | [optional] |
+| **filterSlugNotIn** | **String**|  | [optional] |
 
 ### Return type
 

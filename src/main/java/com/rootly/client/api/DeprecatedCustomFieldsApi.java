@@ -522,6 +522,22 @@ public class DeprecatedCustomFieldsApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterLabelEq  (optional)
+     * @param filterLabelNotEq  (optional)
+     * @param filterLabelIn  (optional)
+     * @param filterLabelNotIn  (optional)
+     * @param filterKindEq  (optional)
+     * @param filterKindNotEq  (optional)
+     * @param filterKindIn  (optional)
+     * @param filterKindNotIn  (optional)
+     * @param filterEnabledEq  (optional)
+     * @param filterEnabledNotEq  (optional)
+     * @param filterEnabledIn  (optional)
+     * @param filterEnabledNotIn  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -534,7 +550,7 @@ public class DeprecatedCustomFieldsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call listCustomFieldsCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterLabel, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listCustomFieldsCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterLabel, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterLabelEq, @jakarta.annotation.Nullable String filterLabelNotEq, @jakarta.annotation.Nullable String filterLabelIn, @jakarta.annotation.Nullable String filterLabelNotIn, @jakarta.annotation.Nullable String filterKindEq, @jakarta.annotation.Nullable String filterKindNotEq, @jakarta.annotation.Nullable String filterKindIn, @jakarta.annotation.Nullable String filterKindNotIn, @jakarta.annotation.Nullable String filterEnabledEq, @jakarta.annotation.Nullable String filterEnabledNotEq, @jakarta.annotation.Nullable String filterEnabledIn, @jakarta.annotation.Nullable String filterEnabledNotIn, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -607,6 +623,70 @@ public class DeprecatedCustomFieldsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[created_at][lte]", filterCreatedAtLte));
         }
 
+        if (filterSlugEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][eq]", filterSlugEq));
+        }
+
+        if (filterSlugNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][not_eq]", filterSlugNotEq));
+        }
+
+        if (filterSlugIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][in]", filterSlugIn));
+        }
+
+        if (filterSlugNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][not_in]", filterSlugNotIn));
+        }
+
+        if (filterLabelEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[label][eq]", filterLabelEq));
+        }
+
+        if (filterLabelNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[label][not_eq]", filterLabelNotEq));
+        }
+
+        if (filterLabelIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[label][in]", filterLabelIn));
+        }
+
+        if (filterLabelNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[label][not_in]", filterLabelNotIn));
+        }
+
+        if (filterKindEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[kind][eq]", filterKindEq));
+        }
+
+        if (filterKindNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[kind][not_eq]", filterKindNotEq));
+        }
+
+        if (filterKindIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[kind][in]", filterKindIn));
+        }
+
+        if (filterKindNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[kind][not_in]", filterKindNotIn));
+        }
+
+        if (filterEnabledEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[enabled][eq]", filterEnabledEq));
+        }
+
+        if (filterEnabledNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[enabled][not_eq]", filterEnabledNotEq));
+        }
+
+        if (filterEnabledIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[enabled][in]", filterEnabledIn));
+        }
+
+        if (filterEnabledNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[enabled][not_in]", filterEnabledNotIn));
+        }
+
         final String[] localVarAccepts = {
             "application/vnd.api+json"
         };
@@ -628,8 +708,8 @@ public class DeprecatedCustomFieldsApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listCustomFieldsValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterLabel, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
-        return listCustomFieldsCall(include, sort, pageNumber, pageSize, filterSlug, filterLabel, filterKind, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, _callback);
+    private okhttp3.Call listCustomFieldsValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterLabel, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterLabelEq, @jakarta.annotation.Nullable String filterLabelNotEq, @jakarta.annotation.Nullable String filterLabelIn, @jakarta.annotation.Nullable String filterLabelNotIn, @jakarta.annotation.Nullable String filterKindEq, @jakarta.annotation.Nullable String filterKindNotEq, @jakarta.annotation.Nullable String filterKindIn, @jakarta.annotation.Nullable String filterKindNotIn, @jakarta.annotation.Nullable String filterEnabledEq, @jakarta.annotation.Nullable String filterEnabledNotEq, @jakarta.annotation.Nullable String filterEnabledIn, @jakarta.annotation.Nullable String filterEnabledNotIn, final ApiCallback _callback) throws ApiException {
+        return listCustomFieldsCall(include, sort, pageNumber, pageSize, filterSlug, filterLabel, filterKind, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterLabelEq, filterLabelNotEq, filterLabelIn, filterLabelNotIn, filterKindEq, filterKindNotEq, filterKindIn, filterKindNotIn, filterEnabledEq, filterEnabledNotEq, filterEnabledIn, filterEnabledNotIn, _callback);
 
     }
 
@@ -648,6 +728,22 @@ public class DeprecatedCustomFieldsApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterLabelEq  (optional)
+     * @param filterLabelNotEq  (optional)
+     * @param filterLabelIn  (optional)
+     * @param filterLabelNotIn  (optional)
+     * @param filterKindEq  (optional)
+     * @param filterKindNotEq  (optional)
+     * @param filterKindIn  (optional)
+     * @param filterKindNotIn  (optional)
+     * @param filterEnabledEq  (optional)
+     * @param filterEnabledNotEq  (optional)
+     * @param filterEnabledIn  (optional)
+     * @param filterEnabledNotIn  (optional)
      * @return CustomFieldList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -659,8 +755,8 @@ public class DeprecatedCustomFieldsApi {
      * @deprecated
      */
     @Deprecated
-    public CustomFieldList listCustomFields(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterLabel, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte) throws ApiException {
-        ApiResponse<CustomFieldList> localVarResp = listCustomFieldsWithHttpInfo(include, sort, pageNumber, pageSize, filterSlug, filterLabel, filterKind, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
+    public CustomFieldList listCustomFields(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterLabel, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterLabelEq, @jakarta.annotation.Nullable String filterLabelNotEq, @jakarta.annotation.Nullable String filterLabelIn, @jakarta.annotation.Nullable String filterLabelNotIn, @jakarta.annotation.Nullable String filterKindEq, @jakarta.annotation.Nullable String filterKindNotEq, @jakarta.annotation.Nullable String filterKindIn, @jakarta.annotation.Nullable String filterKindNotIn, @jakarta.annotation.Nullable String filterEnabledEq, @jakarta.annotation.Nullable String filterEnabledNotEq, @jakarta.annotation.Nullable String filterEnabledIn, @jakarta.annotation.Nullable String filterEnabledNotIn) throws ApiException {
+        ApiResponse<CustomFieldList> localVarResp = listCustomFieldsWithHttpInfo(include, sort, pageNumber, pageSize, filterSlug, filterLabel, filterKind, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterLabelEq, filterLabelNotEq, filterLabelIn, filterLabelNotIn, filterKindEq, filterKindNotEq, filterKindIn, filterKindNotIn, filterEnabledEq, filterEnabledNotEq, filterEnabledIn, filterEnabledNotIn);
         return localVarResp.getData();
     }
 
@@ -679,6 +775,22 @@ public class DeprecatedCustomFieldsApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterLabelEq  (optional)
+     * @param filterLabelNotEq  (optional)
+     * @param filterLabelIn  (optional)
+     * @param filterLabelNotIn  (optional)
+     * @param filterKindEq  (optional)
+     * @param filterKindNotEq  (optional)
+     * @param filterKindIn  (optional)
+     * @param filterKindNotIn  (optional)
+     * @param filterEnabledEq  (optional)
+     * @param filterEnabledNotEq  (optional)
+     * @param filterEnabledIn  (optional)
+     * @param filterEnabledNotIn  (optional)
      * @return ApiResponse&lt;CustomFieldList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -690,8 +802,8 @@ public class DeprecatedCustomFieldsApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<CustomFieldList> listCustomFieldsWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterLabel, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte) throws ApiException {
-        okhttp3.Call localVarCall = listCustomFieldsValidateBeforeCall(include, sort, pageNumber, pageSize, filterSlug, filterLabel, filterKind, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, null);
+    public ApiResponse<CustomFieldList> listCustomFieldsWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterLabel, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterLabelEq, @jakarta.annotation.Nullable String filterLabelNotEq, @jakarta.annotation.Nullable String filterLabelIn, @jakarta.annotation.Nullable String filterLabelNotIn, @jakarta.annotation.Nullable String filterKindEq, @jakarta.annotation.Nullable String filterKindNotEq, @jakarta.annotation.Nullable String filterKindIn, @jakarta.annotation.Nullable String filterKindNotIn, @jakarta.annotation.Nullable String filterEnabledEq, @jakarta.annotation.Nullable String filterEnabledNotEq, @jakarta.annotation.Nullable String filterEnabledIn, @jakarta.annotation.Nullable String filterEnabledNotIn) throws ApiException {
+        okhttp3.Call localVarCall = listCustomFieldsValidateBeforeCall(include, sort, pageNumber, pageSize, filterSlug, filterLabel, filterKind, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterLabelEq, filterLabelNotEq, filterLabelIn, filterLabelNotIn, filterKindEq, filterKindNotEq, filterKindIn, filterKindNotIn, filterEnabledEq, filterEnabledNotEq, filterEnabledIn, filterEnabledNotIn, null);
         Type localVarReturnType = new TypeToken<CustomFieldList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -711,6 +823,22 @@ public class DeprecatedCustomFieldsApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterLabelEq  (optional)
+     * @param filterLabelNotEq  (optional)
+     * @param filterLabelIn  (optional)
+     * @param filterLabelNotIn  (optional)
+     * @param filterKindEq  (optional)
+     * @param filterKindNotEq  (optional)
+     * @param filterKindIn  (optional)
+     * @param filterKindNotIn  (optional)
+     * @param filterEnabledEq  (optional)
+     * @param filterEnabledNotEq  (optional)
+     * @param filterEnabledIn  (optional)
+     * @param filterEnabledNotIn  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -723,9 +851,9 @@ public class DeprecatedCustomFieldsApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call listCustomFieldsAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterLabel, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback<CustomFieldList> _callback) throws ApiException {
+    public okhttp3.Call listCustomFieldsAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterLabel, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable Boolean filterEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterLabelEq, @jakarta.annotation.Nullable String filterLabelNotEq, @jakarta.annotation.Nullable String filterLabelIn, @jakarta.annotation.Nullable String filterLabelNotIn, @jakarta.annotation.Nullable String filterKindEq, @jakarta.annotation.Nullable String filterKindNotEq, @jakarta.annotation.Nullable String filterKindIn, @jakarta.annotation.Nullable String filterKindNotIn, @jakarta.annotation.Nullable String filterEnabledEq, @jakarta.annotation.Nullable String filterEnabledNotEq, @jakarta.annotation.Nullable String filterEnabledIn, @jakarta.annotation.Nullable String filterEnabledNotIn, final ApiCallback<CustomFieldList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listCustomFieldsValidateBeforeCall(include, sort, pageNumber, pageSize, filterSlug, filterLabel, filterKind, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, _callback);
+        okhttp3.Call localVarCall = listCustomFieldsValidateBeforeCall(include, sort, pageNumber, pageSize, filterSlug, filterLabel, filterKind, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterLabelEq, filterLabelNotEq, filterLabelIn, filterLabelNotIn, filterKindEq, filterKindNotEq, filterKindIn, filterKindNotIn, filterEnabledEq, filterEnabledNotEq, filterEnabledIn, filterEnabledNotIn, _callback);
         Type localVarReturnType = new TypeToken<CustomFieldList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

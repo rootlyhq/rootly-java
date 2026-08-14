@@ -477,6 +477,14 @@ public class AlertGroupsApi {
     /**
      * Build call for listAlertGroups
      * @param include  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -487,7 +495,7 @@ public class AlertGroupsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAlertGroupsCall(@jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listAlertGroupsCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -516,6 +524,38 @@ public class AlertGroupsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("include", include));
         }
 
+        if (filterSlugEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][eq]", filterSlugEq));
+        }
+
+        if (filterSlugNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][not_eq]", filterSlugNotEq));
+        }
+
+        if (filterSlugIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][in]", filterSlugIn));
+        }
+
+        if (filterSlugNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][not_in]", filterSlugNotIn));
+        }
+
+        if (filterNameEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][eq]", filterNameEq));
+        }
+
+        if (filterNameNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][not_eq]", filterNameNotEq));
+        }
+
+        if (filterNameIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][in]", filterNameIn));
+        }
+
+        if (filterNameNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][not_in]", filterNameNotIn));
+        }
+
         final String[] localVarAccepts = {
             "application/vnd.api+json"
         };
@@ -536,8 +576,8 @@ public class AlertGroupsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listAlertGroupsValidateBeforeCall(@jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
-        return listAlertGroupsCall(include, _callback);
+    private okhttp3.Call listAlertGroupsValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, final ApiCallback _callback) throws ApiException {
+        return listAlertGroupsCall(include, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, _callback);
 
     }
 
@@ -545,6 +585,14 @@ public class AlertGroupsApi {
      * List alert groups
      * List alert groups
      * @param include  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
      * @return AlertGroupList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -554,8 +602,8 @@ public class AlertGroupsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public AlertGroupList listAlertGroups(@jakarta.annotation.Nullable String include) throws ApiException {
-        ApiResponse<AlertGroupList> localVarResp = listAlertGroupsWithHttpInfo(include);
+    public AlertGroupList listAlertGroups(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn) throws ApiException {
+        ApiResponse<AlertGroupList> localVarResp = listAlertGroupsWithHttpInfo(include, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn);
         return localVarResp.getData();
     }
 
@@ -563,6 +611,14 @@ public class AlertGroupsApi {
      * List alert groups
      * List alert groups
      * @param include  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
      * @return ApiResponse&lt;AlertGroupList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -572,8 +628,8 @@ public class AlertGroupsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertGroupList> listAlertGroupsWithHttpInfo(@jakarta.annotation.Nullable String include) throws ApiException {
-        okhttp3.Call localVarCall = listAlertGroupsValidateBeforeCall(include, null);
+    public ApiResponse<AlertGroupList> listAlertGroupsWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn) throws ApiException {
+        okhttp3.Call localVarCall = listAlertGroupsValidateBeforeCall(include, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, null);
         Type localVarReturnType = new TypeToken<AlertGroupList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -582,6 +638,14 @@ public class AlertGroupsApi {
      * List alert groups (asynchronously)
      * List alert groups
      * @param include  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -592,9 +656,9 @@ public class AlertGroupsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAlertGroupsAsync(@jakarta.annotation.Nullable String include, final ApiCallback<AlertGroupList> _callback) throws ApiException {
+    public okhttp3.Call listAlertGroupsAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, final ApiCallback<AlertGroupList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listAlertGroupsValidateBeforeCall(include, _callback);
+        okhttp3.Call localVarCall = listAlertGroupsValidateBeforeCall(include, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, _callback);
         Type localVarReturnType = new TypeToken<AlertGroupList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

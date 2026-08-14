@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**type** | [**TypeEnum**](#TypeEnum) |  |  [optional] |
+|**type** | [**TypeEnum**](#TypeEnum) |  |  |
 |**attributes** | [**UpdatePulseDataAttributes**](UpdatePulseDataAttributes.md) |  |  |
 
 

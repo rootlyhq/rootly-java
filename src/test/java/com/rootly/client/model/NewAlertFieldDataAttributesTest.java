@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -35,6 +36,14 @@ public class NewAlertFieldDataAttributesTest {
     @Test
     public void testNewAlertFieldDataAttributes() {
         // TODO: test NewAlertFieldDataAttributes
+    }
+
+    /**
+     * Test the property 'slug'
+     */
+    @Test
+    public void slugTest() {
+        // TODO: test slug
     }
 
     /**

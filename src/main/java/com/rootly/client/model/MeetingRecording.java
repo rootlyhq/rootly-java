@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * MeetingRecording
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class MeetingRecording {
   /**
    * Meeting platform
@@ -111,12 +111,12 @@ public class MeetingRecording {
 
   public static final String SERIALIZED_NAME_PLATFORM = "platform";
   @SerializedName(SERIALIZED_NAME_PLATFORM)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private PlatformEnum platform;
 
   public static final String SERIALIZED_NAME_SESSION_NUMBER = "session_number";
   @SerializedName(SERIALIZED_NAME_SESSION_NUMBER)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Integer sessionNumber;
 
   /**
@@ -183,58 +183,73 @@ public class MeetingRecording {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private StatusEnum status;
 
   public static final String SERIALIZED_NAME_STARTED_AT = "started_at";
   @SerializedName(SERIALIZED_NAME_STARTED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private OffsetDateTime startedAt;
 
   public static final String SERIALIZED_NAME_ENDED_AT = "ended_at";
   @SerializedName(SERIALIZED_NAME_ENDED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private OffsetDateTime endedAt;
 
   public static final String SERIALIZED_NAME_DURATION_MINUTES = "duration_minutes";
   @SerializedName(SERIALIZED_NAME_DURATION_MINUTES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private BigDecimal durationMinutes;
 
   public static final String SERIALIZED_NAME_SPEAKER_COUNT = "speaker_count";
   @SerializedName(SERIALIZED_NAME_SPEAKER_COUNT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer speakerCount;
 
   public static final String SERIALIZED_NAME_WORD_COUNT = "word_count";
   @SerializedName(SERIALIZED_NAME_WORD_COUNT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer wordCount;
 
   public static final String SERIALIZED_NAME_TRANSCRIPT_SUMMARY = "transcript_summary";
   @SerializedName(SERIALIZED_NAME_TRANSCRIPT_SUMMARY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String transcriptSummary;
 
-  public static final String SERIALIZED_NAME_HAS_VIDEO = "has_video";
-  @SerializedName(SERIALIZED_NAME_HAS_VIDEO)
-  @javax.annotation.Nullable
-  private Boolean hasVideo;
+  public static final String SERIALIZED_NAME_TITLE = "title";
+  @SerializedName(SERIALIZED_NAME_TITLE)
+  @jakarta.annotation.Nullable
+  private String title;
+
+  public static final String SERIALIZED_NAME_MEETING_URL = "meeting_url";
+  @SerializedName(SERIALIZED_NAME_MEETING_URL)
+  @jakarta.annotation.Nullable
+  private String meetingUrl;
+
+  public static final String SERIALIZED_NAME_VIDEO_URL = "video_url";
+  @SerializedName(SERIALIZED_NAME_VIDEO_URL)
+  @jakarta.annotation.Nullable
+  private String videoUrl;
+
+  public static final String SERIALIZED_NAME_CREATED_BY = "created_by";
+  @SerializedName(SERIALIZED_NAME_CREATED_BY)
+  @jakarta.annotation.Nullable
+  private String createdBy;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private OffsetDateTime updatedAt;
 
   public MeetingRecording() {
   }
 
-  public MeetingRecording platform(@javax.annotation.Nonnull PlatformEnum platform) {
+  public MeetingRecording platform(@jakarta.annotation.Nonnull PlatformEnum platform) {
     this.platform = platform;
     return this;
   }
@@ -243,17 +258,17 @@ public class MeetingRecording {
    * Meeting platform
    * @return platform
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public PlatformEnum getPlatform() {
     return platform;
   }
 
-  public void setPlatform(@javax.annotation.Nonnull PlatformEnum platform) {
+  public void setPlatform(@jakarta.annotation.Nonnull PlatformEnum platform) {
     this.platform = platform;
   }
 
 
-  public MeetingRecording sessionNumber(@javax.annotation.Nonnull Integer sessionNumber) {
+  public MeetingRecording sessionNumber(@jakarta.annotation.Nonnull Integer sessionNumber) {
     this.sessionNumber = sessionNumber;
     return this;
   }
@@ -262,17 +277,17 @@ public class MeetingRecording {
    * Session number within the incident for this platform (starts at 1, increments on re-invite)
    * @return sessionNumber
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Integer getSessionNumber() {
     return sessionNumber;
   }
 
-  public void setSessionNumber(@javax.annotation.Nonnull Integer sessionNumber) {
+  public void setSessionNumber(@jakarta.annotation.Nonnull Integer sessionNumber) {
     this.sessionNumber = sessionNumber;
   }
 
 
-  public MeetingRecording status(@javax.annotation.Nonnull StatusEnum status) {
+  public MeetingRecording status(@jakarta.annotation.Nonnull StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -281,17 +296,17 @@ public class MeetingRecording {
    * Current recording lifecycle status
    * @return status
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nonnull StatusEnum status) {
+  public void setStatus(@jakarta.annotation.Nonnull StatusEnum status) {
     this.status = status;
   }
 
 
-  public MeetingRecording startedAt(@javax.annotation.Nullable OffsetDateTime startedAt) {
+  public MeetingRecording startedAt(@jakarta.annotation.Nullable OffsetDateTime startedAt) {
     this.startedAt = startedAt;
     return this;
   }
@@ -300,17 +315,17 @@ public class MeetingRecording {
    * When the bot started recording (null if bot never joined)
    * @return startedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public OffsetDateTime getStartedAt() {
     return startedAt;
   }
 
-  public void setStartedAt(@javax.annotation.Nullable OffsetDateTime startedAt) {
+  public void setStartedAt(@jakarta.annotation.Nullable OffsetDateTime startedAt) {
     this.startedAt = startedAt;
   }
 
 
-  public MeetingRecording endedAt(@javax.annotation.Nullable OffsetDateTime endedAt) {
+  public MeetingRecording endedAt(@jakarta.annotation.Nullable OffsetDateTime endedAt) {
     this.endedAt = endedAt;
     return this;
   }
@@ -319,17 +334,17 @@ public class MeetingRecording {
    * When the recording ended
    * @return endedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public OffsetDateTime getEndedAt() {
     return endedAt;
   }
 
-  public void setEndedAt(@javax.annotation.Nullable OffsetDateTime endedAt) {
+  public void setEndedAt(@jakarta.annotation.Nullable OffsetDateTime endedAt) {
     this.endedAt = endedAt;
   }
 
 
-  public MeetingRecording durationMinutes(@javax.annotation.Nullable BigDecimal durationMinutes) {
+  public MeetingRecording durationMinutes(@jakarta.annotation.Nullable BigDecimal durationMinutes) {
     this.durationMinutes = durationMinutes;
     return this;
   }
@@ -338,17 +353,17 @@ public class MeetingRecording {
    * Recording duration in minutes (null if not started)
    * @return durationMinutes
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public BigDecimal getDurationMinutes() {
     return durationMinutes;
   }
 
-  public void setDurationMinutes(@javax.annotation.Nullable BigDecimal durationMinutes) {
+  public void setDurationMinutes(@jakarta.annotation.Nullable BigDecimal durationMinutes) {
     this.durationMinutes = durationMinutes;
   }
 
 
-  public MeetingRecording speakerCount(@javax.annotation.Nullable Integer speakerCount) {
+  public MeetingRecording speakerCount(@jakarta.annotation.Nullable Integer speakerCount) {
     this.speakerCount = speakerCount;
     return this;
   }
@@ -357,17 +372,17 @@ public class MeetingRecording {
    * Number of unique speakers detected in the transcript
    * @return speakerCount
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getSpeakerCount() {
     return speakerCount;
   }
 
-  public void setSpeakerCount(@javax.annotation.Nullable Integer speakerCount) {
+  public void setSpeakerCount(@jakarta.annotation.Nullable Integer speakerCount) {
     this.speakerCount = speakerCount;
   }
 
 
-  public MeetingRecording wordCount(@javax.annotation.Nullable Integer wordCount) {
+  public MeetingRecording wordCount(@jakarta.annotation.Nullable Integer wordCount) {
     this.wordCount = wordCount;
     return this;
   }
@@ -376,17 +391,17 @@ public class MeetingRecording {
    * Total word count across all transcript segments
    * @return wordCount
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getWordCount() {
     return wordCount;
   }
 
-  public void setWordCount(@javax.annotation.Nullable Integer wordCount) {
+  public void setWordCount(@jakarta.annotation.Nullable Integer wordCount) {
     this.wordCount = wordCount;
   }
 
 
-  public MeetingRecording transcriptSummary(@javax.annotation.Nullable String transcriptSummary) {
+  public MeetingRecording transcriptSummary(@jakarta.annotation.Nullable String transcriptSummary) {
     this.transcriptSummary = transcriptSummary;
     return this;
   }
@@ -395,36 +410,93 @@ public class MeetingRecording {
    * AI-generated summary of the meeting transcript (null if no transcript or not yet analyzed)
    * @return transcriptSummary
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTranscriptSummary() {
     return transcriptSummary;
   }
 
-  public void setTranscriptSummary(@javax.annotation.Nullable String transcriptSummary) {
+  public void setTranscriptSummary(@jakarta.annotation.Nullable String transcriptSummary) {
     this.transcriptSummary = transcriptSummary;
   }
 
 
-  public MeetingRecording hasVideo(@javax.annotation.Nullable Boolean hasVideo) {
-    this.hasVideo = hasVideo;
+  public MeetingRecording title(@jakarta.annotation.Nullable String title) {
+    this.title = title;
     return this;
   }
 
   /**
-   * Whether a video recording file is attached
-   * @return hasVideo
+   * Human-readable label for the recording session
+   * @return title
    */
-  @javax.annotation.Nullable
-  public Boolean getHasVideo() {
-    return hasVideo;
+  @jakarta.annotation.Nullable
+  public String getTitle() {
+    return title;
   }
 
-  public void setHasVideo(@javax.annotation.Nullable Boolean hasVideo) {
-    this.hasVideo = hasVideo;
+  public void setTitle(@jakarta.annotation.Nullable String title) {
+    this.title = title;
   }
 
 
-  public MeetingRecording createdAt(@javax.annotation.Nonnull OffsetDateTime createdAt) {
+  public MeetingRecording meetingUrl(@jakarta.annotation.Nullable String meetingUrl) {
+    this.meetingUrl = meetingUrl;
+    return this;
+  }
+
+  /**
+   * Original meeting URL
+   * @return meetingUrl
+   */
+  @jakarta.annotation.Nullable
+  public String getMeetingUrl() {
+    return meetingUrl;
+  }
+
+  public void setMeetingUrl(@jakarta.annotation.Nullable String meetingUrl) {
+    this.meetingUrl = meetingUrl;
+  }
+
+
+  public MeetingRecording videoUrl(@jakarta.annotation.Nullable String videoUrl) {
+    this.videoUrl = videoUrl;
+    return this;
+  }
+
+  /**
+   * Signed URL to stream/download the video recording
+   * @return videoUrl
+   */
+  @jakarta.annotation.Nullable
+  public String getVideoUrl() {
+    return videoUrl;
+  }
+
+  public void setVideoUrl(@jakarta.annotation.Nullable String videoUrl) {
+    this.videoUrl = videoUrl;
+  }
+
+
+  public MeetingRecording createdBy(@jakarta.annotation.Nullable String createdBy) {
+    this.createdBy = createdBy;
+    return this;
+  }
+
+  /**
+   * Source that created the recording (e.g. desktop_sdk, recall_bot)
+   * @return createdBy
+   */
+  @jakarta.annotation.Nullable
+  public String getCreatedBy() {
+    return createdBy;
+  }
+
+  public void setCreatedBy(@jakarta.annotation.Nullable String createdBy) {
+    this.createdBy = createdBy;
+  }
+
+
+  public MeetingRecording createdAt(@jakarta.annotation.Nonnull OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -433,17 +505,17 @@ public class MeetingRecording {
    * When the recording session was created
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull OffsetDateTime createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public MeetingRecording updatedAt(@javax.annotation.Nonnull OffsetDateTime updatedAt) {
+  public MeetingRecording updatedAt(@jakarta.annotation.Nonnull OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -452,12 +524,12 @@ public class MeetingRecording {
    * When the recording session was last updated
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull OffsetDateTime updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
   }
 
@@ -481,7 +553,10 @@ public class MeetingRecording {
         Objects.equals(this.speakerCount, meetingRecording.speakerCount) &&
         Objects.equals(this.wordCount, meetingRecording.wordCount) &&
         Objects.equals(this.transcriptSummary, meetingRecording.transcriptSummary) &&
-        Objects.equals(this.hasVideo, meetingRecording.hasVideo) &&
+        Objects.equals(this.title, meetingRecording.title) &&
+        Objects.equals(this.meetingUrl, meetingRecording.meetingUrl) &&
+        Objects.equals(this.videoUrl, meetingRecording.videoUrl) &&
+        Objects.equals(this.createdBy, meetingRecording.createdBy) &&
         Objects.equals(this.createdAt, meetingRecording.createdAt) &&
         Objects.equals(this.updatedAt, meetingRecording.updatedAt);
   }
@@ -492,7 +567,7 @@ public class MeetingRecording {
 
   @Override
   public int hashCode() {
-    return Objects.hash(platform, sessionNumber, status, startedAt, endedAt, durationMinutes, speakerCount, wordCount, transcriptSummary, hasVideo, createdAt, updatedAt);
+    return Objects.hash(platform, sessionNumber, status, startedAt, endedAt, durationMinutes, speakerCount, wordCount, transcriptSummary, title, meetingUrl, videoUrl, createdBy, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -515,7 +590,10 @@ public class MeetingRecording {
     sb.append("    speakerCount: ").append(toIndentedString(speakerCount)).append("\n");
     sb.append("    wordCount: ").append(toIndentedString(wordCount)).append("\n");
     sb.append("    transcriptSummary: ").append(toIndentedString(transcriptSummary)).append("\n");
-    sb.append("    hasVideo: ").append(toIndentedString(hasVideo)).append("\n");
+    sb.append("    title: ").append(toIndentedString(title)).append("\n");
+    sb.append("    meetingUrl: ").append(toIndentedString(meetingUrl)).append("\n");
+    sb.append("    videoUrl: ").append(toIndentedString(videoUrl)).append("\n");
+    sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -549,7 +627,10 @@ public class MeetingRecording {
     openapiFields.add("speaker_count");
     openapiFields.add("word_count");
     openapiFields.add("transcript_summary");
-    openapiFields.add("has_video");
+    openapiFields.add("title");
+    openapiFields.add("meeting_url");
+    openapiFields.add("video_url");
+    openapiFields.add("created_by");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
 
@@ -602,6 +683,18 @@ public class MeetingRecording {
       StatusEnum.validateJsonElement(jsonObj.get("status"));
       if ((jsonObj.get("transcript_summary") != null && !jsonObj.get("transcript_summary").isJsonNull()) && !jsonObj.get("transcript_summary").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `transcript_summary` to be a primitive type in the JSON string but got `%s`", jsonObj.get("transcript_summary").toString()));
+      }
+      if ((jsonObj.get("title") != null && !jsonObj.get("title").isJsonNull()) && !jsonObj.get("title").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
+      }
+      if ((jsonObj.get("meeting_url") != null && !jsonObj.get("meeting_url").isJsonNull()) && !jsonObj.get("meeting_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `meeting_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("meeting_url").toString()));
+      }
+      if ((jsonObj.get("video_url") != null && !jsonObj.get("video_url").isJsonNull()) && !jsonObj.get("video_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `video_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("video_url").toString()));
+      }
+      if ((jsonObj.get("created_by") != null && !jsonObj.get("created_by").isJsonNull()) && !jsonObj.get("created_by").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `created_by` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_by").toString()));
       }
   }
 

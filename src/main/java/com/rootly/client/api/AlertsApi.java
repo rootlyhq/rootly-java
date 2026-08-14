@@ -31,8 +31,11 @@ import com.rootly.client.model.AlertList;
 import com.rootly.client.model.AlertResponse;
 import com.rootly.client.model.AttachAlert;
 import com.rootly.client.model.ErrorsList;
+import com.rootly.client.model.EscalateAlert;
 import com.rootly.client.model.NewAlert;
+import com.rootly.client.model.Receipt;
 import com.rootly.client.model.ResolveAlert;
+import com.rootly.client.model.SnoozeAlert;
 import com.rootly.client.model.UpdateAlert;
 
 import java.lang.reflect.Type;
@@ -490,6 +493,150 @@ public class AlertsApi {
         return localVarCall;
     }
     /**
+     * Build call for escalateAlert
+     * @param id  (required)
+     * @param escalateAlert  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> escalates to different EP defaults to level 1 </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> escalation_policy_level exceeds max </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> cannot escalate grouped member alert </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> malformed escalation_policy_id </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call escalateAlertCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable EscalateAlert escalateAlert, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = escalateAlert;
+
+        // create path and map variables
+        String localVarPath = "/v1/alerts/{id}/escalate"
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/vnd.api+json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/vnd.api+json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "bearer_auth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call escalateAlertValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable EscalateAlert escalateAlert, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling escalateAlert(Async)");
+        }
+
+        return escalateAlertCall(id, escalateAlert, _callback);
+
+    }
+
+    /**
+     * Escalates an alert
+     * Escalates a specific alert to the next or specified level in its escalation policy
+     * @param id  (required)
+     * @param escalateAlert  (optional)
+     * @return AlertResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> escalates to different EP defaults to level 1 </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> escalation_policy_level exceeds max </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> cannot escalate grouped member alert </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> malformed escalation_policy_id </td><td>  -  </td></tr>
+     </table>
+     */
+    public AlertResponse escalateAlert(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable EscalateAlert escalateAlert) throws ApiException {
+        ApiResponse<AlertResponse> localVarResp = escalateAlertWithHttpInfo(id, escalateAlert);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Escalates an alert
+     * Escalates a specific alert to the next or specified level in its escalation policy
+     * @param id  (required)
+     * @param escalateAlert  (optional)
+     * @return ApiResponse&lt;AlertResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> escalates to different EP defaults to level 1 </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> escalation_policy_level exceeds max </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> cannot escalate grouped member alert </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> malformed escalation_policy_id </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<AlertResponse> escalateAlertWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable EscalateAlert escalateAlert) throws ApiException {
+        okhttp3.Call localVarCall = escalateAlertValidateBeforeCall(id, escalateAlert, null);
+        Type localVarReturnType = new TypeToken<AlertResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Escalates an alert (asynchronously)
+     * Escalates a specific alert to the next or specified level in its escalation policy
+     * @param id  (required)
+     * @param escalateAlert  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> escalates to different EP defaults to level 1 </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> escalation_policy_level exceeds max </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> cannot escalate grouped member alert </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> malformed escalation_policy_id </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call escalateAlertAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable EscalateAlert escalateAlert, final ApiCallback<AlertResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = escalateAlertValidateBeforeCall(id, escalateAlert, _callback);
+        Type localVarReturnType = new TypeToken<AlertResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for getAlert
      * @param id  (required)
      * @param include comma separated if needed. eg: environments,services,groups (optional)
@@ -629,6 +776,137 @@ public class AlertsApi {
         return localVarCall;
     }
     /**
+     * Build call for getReceipt
+     * @param id Receipt ID (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> receipt found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> receipt not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getReceiptCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v1/alerts/receipts/{id}"
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "bearer_auth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getReceiptValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling getReceipt(Async)");
+        }
+
+        return getReceiptCall(id, _callback);
+
+    }
+
+    /**
+     * Get a receipt
+     * Retrieve the delivery receipt for a notification by ID, including its state and (when applicable) failure reason and referenced resource.
+     * @param id Receipt ID (required)
+     * @return Receipt
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> receipt found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> receipt not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public Receipt getReceipt(@jakarta.annotation.Nonnull String id) throws ApiException {
+        ApiResponse<Receipt> localVarResp = getReceiptWithHttpInfo(id);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get a receipt
+     * Retrieve the delivery receipt for a notification by ID, including its state and (when applicable) failure reason and referenced resource.
+     * @param id Receipt ID (required)
+     * @return ApiResponse&lt;Receipt&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> receipt found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> receipt not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Receipt> getReceiptWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
+        okhttp3.Call localVarCall = getReceiptValidateBeforeCall(id, null);
+        Type localVarReturnType = new TypeToken<Receipt>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get a receipt (asynchronously)
+     * Retrieve the delivery receipt for a notification by ID, including its state and (when applicable) failure reason and referenced resource.
+     * @param id Receipt ID (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> receipt found </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> receipt not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getReceiptAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<Receipt> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getReceiptValidateBeforeCall(id, _callback);
+        Type localVarReturnType = new TypeToken<Receipt>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for listAlerts
      * @param include comma separated if needed. eg: environments,services,groups (optional)
      * @param filterStatus  (optional)
@@ -649,6 +927,35 @@ public class AlertsApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterUpdatedAtGt  (optional)
+     * @param filterUpdatedAtGte  (optional)
+     * @param filterUpdatedAtLt  (optional)
+     * @param filterUpdatedAtLte  (optional)
+     * @param filterStatusEq  (optional)
+     * @param filterStatusNotEq  (optional)
+     * @param filterStatusIn  (optional)
+     * @param filterStatusNotIn  (optional)
+     * @param filterSourceEq  (optional)
+     * @param filterSourceNotEq  (optional)
+     * @param filterSourceIn  (optional)
+     * @param filterSourceNotIn  (optional)
+     * @param filterServicesEq  (optional)
+     * @param filterServicesNotEq  (optional)
+     * @param filterServicesIn  (optional)
+     * @param filterServicesNotIn  (optional)
+     * @param filterGroupsEq  (optional)
+     * @param filterGroupsNotEq  (optional)
+     * @param filterGroupsIn  (optional)
+     * @param filterGroupsNotIn  (optional)
+     * @param filterEnvironmentsEq  (optional)
+     * @param filterEnvironmentsNotEq  (optional)
+     * @param filterEnvironmentsIn  (optional)
+     * @param filterEnvironmentsNotIn  (optional)
+     * @param filterLabelsEq  (optional)
+     * @param filterLabelsNotEq  (optional)
+     * @param filterLabelsIn  (optional)
+     * @param filterLabelsNotIn  (optional)
+     * @param pageAfter The cursor to fetch results using cursor pagination. A cursor is provided in meta.next_cursor in the response. (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
      * @param _callback Callback for upload/download progress
@@ -661,7 +968,7 @@ public class AlertsApi {
         <tr><td> 200 </td><td> returns grouping attributes </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAlertsCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterGroups, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterEndedAtGt, @jakarta.annotation.Nullable String filterEndedAtGte, @jakarta.annotation.Nullable String filterEndedAtLt, @jakarta.annotation.Nullable String filterEndedAtLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listAlertsCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterGroups, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterEndedAtGt, @jakarta.annotation.Nullable String filterEndedAtGte, @jakarta.annotation.Nullable String filterEndedAtLt, @jakarta.annotation.Nullable String filterEndedAtLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUpdatedAtGt, @jakarta.annotation.Nullable String filterUpdatedAtGte, @jakarta.annotation.Nullable String filterUpdatedAtLt, @jakarta.annotation.Nullable String filterUpdatedAtLte, @jakarta.annotation.Nullable String filterStatusEq, @jakarta.annotation.Nullable String filterStatusNotEq, @jakarta.annotation.Nullable String filterStatusIn, @jakarta.annotation.Nullable String filterStatusNotIn, @jakarta.annotation.Nullable String filterSourceEq, @jakarta.annotation.Nullable String filterSourceNotEq, @jakarta.annotation.Nullable String filterSourceIn, @jakarta.annotation.Nullable String filterSourceNotIn, @jakarta.annotation.Nullable String filterServicesEq, @jakarta.annotation.Nullable String filterServicesNotEq, @jakarta.annotation.Nullable String filterServicesIn, @jakarta.annotation.Nullable String filterServicesNotIn, @jakarta.annotation.Nullable String filterGroupsEq, @jakarta.annotation.Nullable String filterGroupsNotEq, @jakarta.annotation.Nullable String filterGroupsIn, @jakarta.annotation.Nullable String filterGroupsNotIn, @jakarta.annotation.Nullable String filterEnvironmentsEq, @jakarta.annotation.Nullable String filterEnvironmentsNotEq, @jakarta.annotation.Nullable String filterEnvironmentsIn, @jakarta.annotation.Nullable String filterEnvironmentsNotIn, @jakarta.annotation.Nullable String filterLabelsEq, @jakarta.annotation.Nullable String filterLabelsNotEq, @jakarta.annotation.Nullable String filterLabelsIn, @jakarta.annotation.Nullable String filterLabelsNotIn, @jakarta.annotation.Nullable String pageAfter, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -762,6 +1069,122 @@ public class AlertsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[created_at][lte]", filterCreatedAtLte));
         }
 
+        if (filterUpdatedAtGt != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[updated_at][gt]", filterUpdatedAtGt));
+        }
+
+        if (filterUpdatedAtGte != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[updated_at][gte]", filterUpdatedAtGte));
+        }
+
+        if (filterUpdatedAtLt != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[updated_at][lt]", filterUpdatedAtLt));
+        }
+
+        if (filterUpdatedAtLte != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[updated_at][lte]", filterUpdatedAtLte));
+        }
+
+        if (filterStatusEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[status][eq]", filterStatusEq));
+        }
+
+        if (filterStatusNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[status][not_eq]", filterStatusNotEq));
+        }
+
+        if (filterStatusIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[status][in]", filterStatusIn));
+        }
+
+        if (filterStatusNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[status][not_in]", filterStatusNotIn));
+        }
+
+        if (filterSourceEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[source][eq]", filterSourceEq));
+        }
+
+        if (filterSourceNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[source][not_eq]", filterSourceNotEq));
+        }
+
+        if (filterSourceIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[source][in]", filterSourceIn));
+        }
+
+        if (filterSourceNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[source][not_in]", filterSourceNotIn));
+        }
+
+        if (filterServicesEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[services][eq]", filterServicesEq));
+        }
+
+        if (filterServicesNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[services][not_eq]", filterServicesNotEq));
+        }
+
+        if (filterServicesIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[services][in]", filterServicesIn));
+        }
+
+        if (filterServicesNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[services][not_in]", filterServicesNotIn));
+        }
+
+        if (filterGroupsEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[groups][eq]", filterGroupsEq));
+        }
+
+        if (filterGroupsNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[groups][not_eq]", filterGroupsNotEq));
+        }
+
+        if (filterGroupsIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[groups][in]", filterGroupsIn));
+        }
+
+        if (filterGroupsNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[groups][not_in]", filterGroupsNotIn));
+        }
+
+        if (filterEnvironmentsEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[environments][eq]", filterEnvironmentsEq));
+        }
+
+        if (filterEnvironmentsNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[environments][not_eq]", filterEnvironmentsNotEq));
+        }
+
+        if (filterEnvironmentsIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[environments][in]", filterEnvironmentsIn));
+        }
+
+        if (filterEnvironmentsNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[environments][not_in]", filterEnvironmentsNotIn));
+        }
+
+        if (filterLabelsEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[labels][eq]", filterLabelsEq));
+        }
+
+        if (filterLabelsNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[labels][not_eq]", filterLabelsNotEq));
+        }
+
+        if (filterLabelsIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[labels][in]", filterLabelsIn));
+        }
+
+        if (filterLabelsNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[labels][not_in]", filterLabelsNotIn));
+        }
+
+        if (pageAfter != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page[after]", pageAfter));
+        }
+
         if (pageNumber != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("page[number]", pageNumber));
         }
@@ -790,8 +1213,8 @@ public class AlertsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listAlertsValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterGroups, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterEndedAtGt, @jakarta.annotation.Nullable String filterEndedAtGte, @jakarta.annotation.Nullable String filterEndedAtLt, @jakarta.annotation.Nullable String filterEndedAtLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
-        return listAlertsCall(include, filterStatus, filterSource, filterServices, filterEnvironments, filterGroups, filterLabels, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize, _callback);
+    private okhttp3.Call listAlertsValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterGroups, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterEndedAtGt, @jakarta.annotation.Nullable String filterEndedAtGte, @jakarta.annotation.Nullable String filterEndedAtLt, @jakarta.annotation.Nullable String filterEndedAtLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUpdatedAtGt, @jakarta.annotation.Nullable String filterUpdatedAtGte, @jakarta.annotation.Nullable String filterUpdatedAtLt, @jakarta.annotation.Nullable String filterUpdatedAtLte, @jakarta.annotation.Nullable String filterStatusEq, @jakarta.annotation.Nullable String filterStatusNotEq, @jakarta.annotation.Nullable String filterStatusIn, @jakarta.annotation.Nullable String filterStatusNotIn, @jakarta.annotation.Nullable String filterSourceEq, @jakarta.annotation.Nullable String filterSourceNotEq, @jakarta.annotation.Nullable String filterSourceIn, @jakarta.annotation.Nullable String filterSourceNotIn, @jakarta.annotation.Nullable String filterServicesEq, @jakarta.annotation.Nullable String filterServicesNotEq, @jakarta.annotation.Nullable String filterServicesIn, @jakarta.annotation.Nullable String filterServicesNotIn, @jakarta.annotation.Nullable String filterGroupsEq, @jakarta.annotation.Nullable String filterGroupsNotEq, @jakarta.annotation.Nullable String filterGroupsIn, @jakarta.annotation.Nullable String filterGroupsNotIn, @jakarta.annotation.Nullable String filterEnvironmentsEq, @jakarta.annotation.Nullable String filterEnvironmentsNotEq, @jakarta.annotation.Nullable String filterEnvironmentsIn, @jakarta.annotation.Nullable String filterEnvironmentsNotIn, @jakarta.annotation.Nullable String filterLabelsEq, @jakarta.annotation.Nullable String filterLabelsNotEq, @jakarta.annotation.Nullable String filterLabelsIn, @jakarta.annotation.Nullable String filterLabelsNotIn, @jakarta.annotation.Nullable String pageAfter, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+        return listAlertsCall(include, filterStatus, filterSource, filterServices, filterEnvironments, filterGroups, filterLabels, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUpdatedAtGt, filterUpdatedAtGte, filterUpdatedAtLt, filterUpdatedAtLte, filterStatusEq, filterStatusNotEq, filterStatusIn, filterStatusNotIn, filterSourceEq, filterSourceNotEq, filterSourceIn, filterSourceNotIn, filterServicesEq, filterServicesNotEq, filterServicesIn, filterServicesNotIn, filterGroupsEq, filterGroupsNotEq, filterGroupsIn, filterGroupsNotIn, filterEnvironmentsEq, filterEnvironmentsNotEq, filterEnvironmentsIn, filterEnvironmentsNotIn, filterLabelsEq, filterLabelsNotEq, filterLabelsIn, filterLabelsNotIn, pageAfter, pageNumber, pageSize, _callback);
 
     }
 
@@ -817,6 +1240,35 @@ public class AlertsApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterUpdatedAtGt  (optional)
+     * @param filterUpdatedAtGte  (optional)
+     * @param filterUpdatedAtLt  (optional)
+     * @param filterUpdatedAtLte  (optional)
+     * @param filterStatusEq  (optional)
+     * @param filterStatusNotEq  (optional)
+     * @param filterStatusIn  (optional)
+     * @param filterStatusNotIn  (optional)
+     * @param filterSourceEq  (optional)
+     * @param filterSourceNotEq  (optional)
+     * @param filterSourceIn  (optional)
+     * @param filterSourceNotIn  (optional)
+     * @param filterServicesEq  (optional)
+     * @param filterServicesNotEq  (optional)
+     * @param filterServicesIn  (optional)
+     * @param filterServicesNotIn  (optional)
+     * @param filterGroupsEq  (optional)
+     * @param filterGroupsNotEq  (optional)
+     * @param filterGroupsIn  (optional)
+     * @param filterGroupsNotIn  (optional)
+     * @param filterEnvironmentsEq  (optional)
+     * @param filterEnvironmentsNotEq  (optional)
+     * @param filterEnvironmentsIn  (optional)
+     * @param filterEnvironmentsNotIn  (optional)
+     * @param filterLabelsEq  (optional)
+     * @param filterLabelsNotEq  (optional)
+     * @param filterLabelsIn  (optional)
+     * @param filterLabelsNotIn  (optional)
+     * @param pageAfter The cursor to fetch results using cursor pagination. A cursor is provided in meta.next_cursor in the response. (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
      * @return AlertList
@@ -828,8 +1280,8 @@ public class AlertsApi {
         <tr><td> 200 </td><td> returns grouping attributes </td><td>  -  </td></tr>
      </table>
      */
-    public AlertList listAlerts(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterGroups, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterEndedAtGt, @jakarta.annotation.Nullable String filterEndedAtGte, @jakarta.annotation.Nullable String filterEndedAtLt, @jakarta.annotation.Nullable String filterEndedAtLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
-        ApiResponse<AlertList> localVarResp = listAlertsWithHttpInfo(include, filterStatus, filterSource, filterServices, filterEnvironments, filterGroups, filterLabels, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize);
+    public AlertList listAlerts(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterGroups, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterEndedAtGt, @jakarta.annotation.Nullable String filterEndedAtGte, @jakarta.annotation.Nullable String filterEndedAtLt, @jakarta.annotation.Nullable String filterEndedAtLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUpdatedAtGt, @jakarta.annotation.Nullable String filterUpdatedAtGte, @jakarta.annotation.Nullable String filterUpdatedAtLt, @jakarta.annotation.Nullable String filterUpdatedAtLte, @jakarta.annotation.Nullable String filterStatusEq, @jakarta.annotation.Nullable String filterStatusNotEq, @jakarta.annotation.Nullable String filterStatusIn, @jakarta.annotation.Nullable String filterStatusNotIn, @jakarta.annotation.Nullable String filterSourceEq, @jakarta.annotation.Nullable String filterSourceNotEq, @jakarta.annotation.Nullable String filterSourceIn, @jakarta.annotation.Nullable String filterSourceNotIn, @jakarta.annotation.Nullable String filterServicesEq, @jakarta.annotation.Nullable String filterServicesNotEq, @jakarta.annotation.Nullable String filterServicesIn, @jakarta.annotation.Nullable String filterServicesNotIn, @jakarta.annotation.Nullable String filterGroupsEq, @jakarta.annotation.Nullable String filterGroupsNotEq, @jakarta.annotation.Nullable String filterGroupsIn, @jakarta.annotation.Nullable String filterGroupsNotIn, @jakarta.annotation.Nullable String filterEnvironmentsEq, @jakarta.annotation.Nullable String filterEnvironmentsNotEq, @jakarta.annotation.Nullable String filterEnvironmentsIn, @jakarta.annotation.Nullable String filterEnvironmentsNotIn, @jakarta.annotation.Nullable String filterLabelsEq, @jakarta.annotation.Nullable String filterLabelsNotEq, @jakarta.annotation.Nullable String filterLabelsIn, @jakarta.annotation.Nullable String filterLabelsNotIn, @jakarta.annotation.Nullable String pageAfter, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
+        ApiResponse<AlertList> localVarResp = listAlertsWithHttpInfo(include, filterStatus, filterSource, filterServices, filterEnvironments, filterGroups, filterLabels, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUpdatedAtGt, filterUpdatedAtGte, filterUpdatedAtLt, filterUpdatedAtLte, filterStatusEq, filterStatusNotEq, filterStatusIn, filterStatusNotIn, filterSourceEq, filterSourceNotEq, filterSourceIn, filterSourceNotIn, filterServicesEq, filterServicesNotEq, filterServicesIn, filterServicesNotIn, filterGroupsEq, filterGroupsNotEq, filterGroupsIn, filterGroupsNotIn, filterEnvironmentsEq, filterEnvironmentsNotEq, filterEnvironmentsIn, filterEnvironmentsNotIn, filterLabelsEq, filterLabelsNotEq, filterLabelsIn, filterLabelsNotIn, pageAfter, pageNumber, pageSize);
         return localVarResp.getData();
     }
 
@@ -855,6 +1307,35 @@ public class AlertsApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterUpdatedAtGt  (optional)
+     * @param filterUpdatedAtGte  (optional)
+     * @param filterUpdatedAtLt  (optional)
+     * @param filterUpdatedAtLte  (optional)
+     * @param filterStatusEq  (optional)
+     * @param filterStatusNotEq  (optional)
+     * @param filterStatusIn  (optional)
+     * @param filterStatusNotIn  (optional)
+     * @param filterSourceEq  (optional)
+     * @param filterSourceNotEq  (optional)
+     * @param filterSourceIn  (optional)
+     * @param filterSourceNotIn  (optional)
+     * @param filterServicesEq  (optional)
+     * @param filterServicesNotEq  (optional)
+     * @param filterServicesIn  (optional)
+     * @param filterServicesNotIn  (optional)
+     * @param filterGroupsEq  (optional)
+     * @param filterGroupsNotEq  (optional)
+     * @param filterGroupsIn  (optional)
+     * @param filterGroupsNotIn  (optional)
+     * @param filterEnvironmentsEq  (optional)
+     * @param filterEnvironmentsNotEq  (optional)
+     * @param filterEnvironmentsIn  (optional)
+     * @param filterEnvironmentsNotIn  (optional)
+     * @param filterLabelsEq  (optional)
+     * @param filterLabelsNotEq  (optional)
+     * @param filterLabelsIn  (optional)
+     * @param filterLabelsNotIn  (optional)
+     * @param pageAfter The cursor to fetch results using cursor pagination. A cursor is provided in meta.next_cursor in the response. (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
      * @return ApiResponse&lt;AlertList&gt;
@@ -866,8 +1347,8 @@ public class AlertsApi {
         <tr><td> 200 </td><td> returns grouping attributes </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertList> listAlertsWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterGroups, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterEndedAtGt, @jakarta.annotation.Nullable String filterEndedAtGte, @jakarta.annotation.Nullable String filterEndedAtLt, @jakarta.annotation.Nullable String filterEndedAtLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
-        okhttp3.Call localVarCall = listAlertsValidateBeforeCall(include, filterStatus, filterSource, filterServices, filterEnvironments, filterGroups, filterLabels, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize, null);
+    public ApiResponse<AlertList> listAlertsWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterGroups, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterEndedAtGt, @jakarta.annotation.Nullable String filterEndedAtGte, @jakarta.annotation.Nullable String filterEndedAtLt, @jakarta.annotation.Nullable String filterEndedAtLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUpdatedAtGt, @jakarta.annotation.Nullable String filterUpdatedAtGte, @jakarta.annotation.Nullable String filterUpdatedAtLt, @jakarta.annotation.Nullable String filterUpdatedAtLte, @jakarta.annotation.Nullable String filterStatusEq, @jakarta.annotation.Nullable String filterStatusNotEq, @jakarta.annotation.Nullable String filterStatusIn, @jakarta.annotation.Nullable String filterStatusNotIn, @jakarta.annotation.Nullable String filterSourceEq, @jakarta.annotation.Nullable String filterSourceNotEq, @jakarta.annotation.Nullable String filterSourceIn, @jakarta.annotation.Nullable String filterSourceNotIn, @jakarta.annotation.Nullable String filterServicesEq, @jakarta.annotation.Nullable String filterServicesNotEq, @jakarta.annotation.Nullable String filterServicesIn, @jakarta.annotation.Nullable String filterServicesNotIn, @jakarta.annotation.Nullable String filterGroupsEq, @jakarta.annotation.Nullable String filterGroupsNotEq, @jakarta.annotation.Nullable String filterGroupsIn, @jakarta.annotation.Nullable String filterGroupsNotIn, @jakarta.annotation.Nullable String filterEnvironmentsEq, @jakarta.annotation.Nullable String filterEnvironmentsNotEq, @jakarta.annotation.Nullable String filterEnvironmentsIn, @jakarta.annotation.Nullable String filterEnvironmentsNotIn, @jakarta.annotation.Nullable String filterLabelsEq, @jakarta.annotation.Nullable String filterLabelsNotEq, @jakarta.annotation.Nullable String filterLabelsIn, @jakarta.annotation.Nullable String filterLabelsNotIn, @jakarta.annotation.Nullable String pageAfter, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize) throws ApiException {
+        okhttp3.Call localVarCall = listAlertsValidateBeforeCall(include, filterStatus, filterSource, filterServices, filterEnvironments, filterGroups, filterLabels, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUpdatedAtGt, filterUpdatedAtGte, filterUpdatedAtLt, filterUpdatedAtLte, filterStatusEq, filterStatusNotEq, filterStatusIn, filterStatusNotIn, filterSourceEq, filterSourceNotEq, filterSourceIn, filterSourceNotIn, filterServicesEq, filterServicesNotEq, filterServicesIn, filterServicesNotIn, filterGroupsEq, filterGroupsNotEq, filterGroupsIn, filterGroupsNotIn, filterEnvironmentsEq, filterEnvironmentsNotEq, filterEnvironmentsIn, filterEnvironmentsNotIn, filterLabelsEq, filterLabelsNotEq, filterLabelsIn, filterLabelsNotIn, pageAfter, pageNumber, pageSize, null);
         Type localVarReturnType = new TypeToken<AlertList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -894,6 +1375,35 @@ public class AlertsApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterUpdatedAtGt  (optional)
+     * @param filterUpdatedAtGte  (optional)
+     * @param filterUpdatedAtLt  (optional)
+     * @param filterUpdatedAtLte  (optional)
+     * @param filterStatusEq  (optional)
+     * @param filterStatusNotEq  (optional)
+     * @param filterStatusIn  (optional)
+     * @param filterStatusNotIn  (optional)
+     * @param filterSourceEq  (optional)
+     * @param filterSourceNotEq  (optional)
+     * @param filterSourceIn  (optional)
+     * @param filterSourceNotIn  (optional)
+     * @param filterServicesEq  (optional)
+     * @param filterServicesNotEq  (optional)
+     * @param filterServicesIn  (optional)
+     * @param filterServicesNotIn  (optional)
+     * @param filterGroupsEq  (optional)
+     * @param filterGroupsNotEq  (optional)
+     * @param filterGroupsIn  (optional)
+     * @param filterGroupsNotIn  (optional)
+     * @param filterEnvironmentsEq  (optional)
+     * @param filterEnvironmentsNotEq  (optional)
+     * @param filterEnvironmentsIn  (optional)
+     * @param filterEnvironmentsNotIn  (optional)
+     * @param filterLabelsEq  (optional)
+     * @param filterLabelsNotEq  (optional)
+     * @param filterLabelsIn  (optional)
+     * @param filterLabelsNotIn  (optional)
+     * @param pageAfter The cursor to fetch results using cursor pagination. A cursor is provided in meta.next_cursor in the response. (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -906,9 +1416,9 @@ public class AlertsApi {
         <tr><td> 200 </td><td> returns grouping attributes </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAlertsAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterGroups, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterEndedAtGt, @jakarta.annotation.Nullable String filterEndedAtGte, @jakarta.annotation.Nullable String filterEndedAtLt, @jakarta.annotation.Nullable String filterEndedAtLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback<AlertList> _callback) throws ApiException {
+    public okhttp3.Call listAlertsAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterGroups, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterEndedAtGt, @jakarta.annotation.Nullable String filterEndedAtGte, @jakarta.annotation.Nullable String filterEndedAtLt, @jakarta.annotation.Nullable String filterEndedAtLte, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUpdatedAtGt, @jakarta.annotation.Nullable String filterUpdatedAtGte, @jakarta.annotation.Nullable String filterUpdatedAtLt, @jakarta.annotation.Nullable String filterUpdatedAtLte, @jakarta.annotation.Nullable String filterStatusEq, @jakarta.annotation.Nullable String filterStatusNotEq, @jakarta.annotation.Nullable String filterStatusIn, @jakarta.annotation.Nullable String filterStatusNotIn, @jakarta.annotation.Nullable String filterSourceEq, @jakarta.annotation.Nullable String filterSourceNotEq, @jakarta.annotation.Nullable String filterSourceIn, @jakarta.annotation.Nullable String filterSourceNotIn, @jakarta.annotation.Nullable String filterServicesEq, @jakarta.annotation.Nullable String filterServicesNotEq, @jakarta.annotation.Nullable String filterServicesIn, @jakarta.annotation.Nullable String filterServicesNotIn, @jakarta.annotation.Nullable String filterGroupsEq, @jakarta.annotation.Nullable String filterGroupsNotEq, @jakarta.annotation.Nullable String filterGroupsIn, @jakarta.annotation.Nullable String filterGroupsNotIn, @jakarta.annotation.Nullable String filterEnvironmentsEq, @jakarta.annotation.Nullable String filterEnvironmentsNotEq, @jakarta.annotation.Nullable String filterEnvironmentsIn, @jakarta.annotation.Nullable String filterEnvironmentsNotIn, @jakarta.annotation.Nullable String filterLabelsEq, @jakarta.annotation.Nullable String filterLabelsNotEq, @jakarta.annotation.Nullable String filterLabelsIn, @jakarta.annotation.Nullable String filterLabelsNotIn, @jakarta.annotation.Nullable String pageAfter, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, final ApiCallback<AlertList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listAlertsValidateBeforeCall(include, filterStatus, filterSource, filterServices, filterEnvironments, filterGroups, filterLabels, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, pageNumber, pageSize, _callback);
+        okhttp3.Call localVarCall = listAlertsValidateBeforeCall(include, filterStatus, filterSource, filterServices, filterEnvironments, filterGroups, filterLabels, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterEndedAtGt, filterEndedAtGte, filterEndedAtLt, filterEndedAtLte, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUpdatedAtGt, filterUpdatedAtGte, filterUpdatedAtLt, filterUpdatedAtLte, filterStatusEq, filterStatusNotEq, filterStatusIn, filterStatusNotIn, filterSourceEq, filterSourceNotEq, filterSourceIn, filterSourceNotIn, filterServicesEq, filterServicesNotEq, filterServicesIn, filterServicesNotIn, filterGroupsEq, filterGroupsNotEq, filterGroupsIn, filterGroupsNotIn, filterEnvironmentsEq, filterEnvironmentsNotEq, filterEnvironmentsIn, filterEnvironmentsNotIn, filterLabelsEq, filterLabelsNotEq, filterLabelsIn, filterLabelsNotIn, pageAfter, pageNumber, pageSize, _callback);
         Type localVarReturnType = new TypeToken<AlertList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1059,9 +1569,8 @@ public class AlertsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> resolve acknowledged </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> resolves open alert </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> cannot resolve open alert </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call resolveAlertCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable ResolveAlert resolveAlert, final ApiCallback _callback) throws ApiException {
@@ -1132,9 +1641,8 @@ public class AlertsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> resolve acknowledged </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> resolves open alert </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> cannot resolve open alert </td><td>  -  </td></tr>
      </table>
      */
     public AlertResponse resolveAlert(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable ResolveAlert resolveAlert) throws ApiException {
@@ -1153,9 +1661,8 @@ public class AlertsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> resolve acknowledged </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> resolves open alert </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> cannot resolve open alert </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<AlertResponse> resolveAlertWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable ResolveAlert resolveAlert) throws ApiException {
@@ -1176,14 +1683,162 @@ public class AlertsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> resolve acknowledged </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> resolves open alert </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> cannot resolve open alert </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call resolveAlertAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable ResolveAlert resolveAlert, final ApiCallback<AlertResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = resolveAlertValidateBeforeCall(id, resolveAlert, _callback);
+        Type localVarReturnType = new TypeToken<AlertResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for snoozeAlert
+     * @param id  (required)
+     * @param snoozeAlert  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> alert snoozed </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> invalid delay_minutes </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> snooze service failure </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call snoozeAlertCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull SnoozeAlert snoozeAlert, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = snoozeAlert;
+
+        // create path and map variables
+        String localVarPath = "/v1/alerts/{id}/snooze"
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/vnd.api+json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/vnd.api+json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "bearer_auth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call snoozeAlertValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull SnoozeAlert snoozeAlert, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling snoozeAlert(Async)");
+        }
+
+        // verify the required parameter 'snoozeAlert' is set
+        if (snoozeAlert == null) {
+            throw new ApiException("Missing the required parameter 'snoozeAlert' when calling snoozeAlert(Async)");
+        }
+
+        return snoozeAlertCall(id, snoozeAlert, _callback);
+
+    }
+
+    /**
+     * Snoozes an alert
+     * Snoozes a specific alert by id, extending the acknowledgment timeout
+     * @param id  (required)
+     * @param snoozeAlert  (required)
+     * @return AlertResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> alert snoozed </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> invalid delay_minutes </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> snooze service failure </td><td>  -  </td></tr>
+     </table>
+     */
+    public AlertResponse snoozeAlert(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull SnoozeAlert snoozeAlert) throws ApiException {
+        ApiResponse<AlertResponse> localVarResp = snoozeAlertWithHttpInfo(id, snoozeAlert);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Snoozes an alert
+     * Snoozes a specific alert by id, extending the acknowledgment timeout
+     * @param id  (required)
+     * @param snoozeAlert  (required)
+     * @return ApiResponse&lt;AlertResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> alert snoozed </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> invalid delay_minutes </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> snooze service failure </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<AlertResponse> snoozeAlertWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull SnoozeAlert snoozeAlert) throws ApiException {
+        okhttp3.Call localVarCall = snoozeAlertValidateBeforeCall(id, snoozeAlert, null);
+        Type localVarReturnType = new TypeToken<AlertResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Snoozes an alert (asynchronously)
+     * Snoozes a specific alert by id, extending the acknowledgment timeout
+     * @param id  (required)
+     * @param snoozeAlert  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> alert snoozed </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> invalid delay_minutes </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> snooze service failure </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call snoozeAlertAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull SnoozeAlert snoozeAlert, final ApiCallback<AlertResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = snoozeAlertValidateBeforeCall(id, snoozeAlert, _callback);
         Type localVarReturnType = new TypeToken<AlertResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1199,7 +1854,7 @@ public class AlertsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> removes existing alert field values and adds new ones </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> updates one field value and preserves others </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
@@ -1271,7 +1926,7 @@ public class AlertsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> removes existing alert field values and adds new ones </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> updates one field value and preserves others </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
@@ -1291,7 +1946,7 @@ public class AlertsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> removes existing alert field values and adds new ones </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> updates one field value and preserves others </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */
@@ -1313,7 +1968,7 @@ public class AlertsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> removes existing alert field values and adds new ones </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> updates one field value and preserves others </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
      </table>
      */

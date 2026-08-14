@@ -2,21 +2,26 @@
 
 # UserFlatResponse
 
-Flat user object as returned by serializer
+Flat user attributes as returned by UserFlatSerializer (no nested associations)
 
 ## Properties
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**id** | **Integer** | User ID |  |
-|**email** | **String** | User email |  |
-|**firstName** | **String** | User first name |  [optional] |
-|**lastName** | **String** | User last name |  [optional] |
-|**fullName** | **String** | User full name |  [optional] |
-|**fullNameWithTeam** | **String** | User full name with team |  [optional] |
-|**timeZone** | **String** | User time zone |  [optional] |
-|**createdAt** | **String** | User creation timestamp |  |
-|**updatedAt** | **String** | User last update timestamp |  |
+|**name** | **String** | Display name |  [optional] |
+|**email** | **String** | Email address |  |
+|**phone** | **String** | Primary phone number |  [optional] |
+|**phone2** | **String** | Secondary phone number |  [optional] |
+|**firstName** | **String** | First name |  [optional] |
+|**lastName** | **String** | Last name |  [optional] |
+|**preferredName** | **String** | Preferred name |  [optional] |
+|**fullName** | **String** | Full name |  [optional] |
+|**fullNameWithTeam** | **String** | Full name with team context |  [optional] |
+|**slackId** | **String** | Slack user ID |  [optional] |
+|**timeZone** | **String** | IANA time zone |  [optional] |
+|**createdAt** | **String** | Date of creation |  |
+|**updatedAt** | **String** | Date of last update |  |
 
 
 

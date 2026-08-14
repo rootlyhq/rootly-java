@@ -52,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * Workflow
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Workflow {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -254,6 +254,13 @@ public class Workflow {
   public Workflow() {
   }
 
+  public Workflow(
+     String slug
+  ) {
+    this();
+    this.slug = slug;
+  }
+
   public Workflow name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
@@ -273,11 +280,6 @@ public class Workflow {
   }
 
 
-  public Workflow slug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
-    return this;
-  }
-
   /**
    * The slug of the workflow
    * @return slug
@@ -287,9 +289,6 @@ public class Workflow {
     return slug;
   }
 
-  public void setSlug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
-  }
 
 
   public Workflow description(@jakarta.annotation.Nullable String description) {

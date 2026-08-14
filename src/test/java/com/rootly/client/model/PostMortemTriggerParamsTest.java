@@ -193,6 +193,30 @@ public class PostMortemTriggerParamsTest {
     }
 
     /**
+     * Test the property 'incidentConditionLabel'
+     */
+    @Test
+    public void incidentConditionLabelTest() {
+        // TODO: test incidentConditionLabel
+    }
+
+    /**
+     * Test the property 'incidentConditionLabelUseRegexp'
+     */
+    @Test
+    public void incidentConditionLabelUseRegexpTest() {
+        // TODO: test incidentConditionLabelUseRegexp
+    }
+
+    /**
+     * Test the property 'incidentLabels'
+     */
+    @Test
+    public void incidentLabelsTest() {
+        // TODO: test incidentLabels
+    }
+
+    /**
      * Test the property 'incidentPostMortemConditionCause'
      */
     @Test

@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**title** | **String** | The title of the status page |  |
-|**slug** | **String** | The slug of the status page |  [optional] |
+|**slug** | **String** | The slug of the status page |  [optional] [readonly] |
 |**publicTitle** | **String** | The public title of the status page |  [optional] |
 |**description** | **String** | The description of the status page |  [optional] |
 |**publicDescription** | **String** | The public description of the status page |  [optional] |
@@ -27,6 +27,7 @@
 |**samlIdpCert** | **String** | SAML IdP certificate |  [optional] |
 |**samlIdpCertFingerprint** | **String** | SAML IdP certificate fingerprint |  [optional] |
 |**samlNameIdentifierFormat** | [**SamlNameIdentifierFormatEnum**](#SamlNameIdentifierFormatEnum) | SAML name identifier format |  [optional] |
+|**sectionOrder** | [**List&lt;SectionOrderEnum&gt;**](#List&lt;SectionOrderEnum&gt;) | Order of sections on the status page |  [optional] |
 |**websiteUrl** | **String** | Website URL |  [optional] |
 |**websitePrivacyUrl** | **String** | Website Privacy URL |  [optional] |
 |**websiteSupportUrl** | **String** | Website Support URL |  [optional] |
@@ -36,6 +37,7 @@
 |**serviceIds** | **List&lt;String&gt;** | Services attached to the status page |  [optional] |
 |**functionalityIds** | **List&lt;String&gt;** | Functionalities attached to the status page |  [optional] |
 |**externalDomainNames** | **List&lt;String&gt;** | External domain names attached to the status page |  [optional] |
+|**cnameRecords** | **Map&lt;String, String&gt;** | CNAME records mapping external domain names to their DNS target values. These are populated asynchronously after setting external_domain_names. |  [optional] [readonly] |
 |**enabled** | **Boolean** | Enabled / Disable the status page |  [optional] |
 |**createdAt** | **String** | Date of creation |  |
 |**updatedAt** | **String** | Date of last update |  |
@@ -70,6 +72,16 @@
 | URN_OASIS_NAMES_TC_SAML_2_0_NAMEID_FORMAT_PERSISTENT | &quot;urn:oasis:names:tc:SAML:2.0:nameid-format:persistent&quot; |
 | URN_OASIS_NAMES_TC_SAML_2_0_NAMEID_FORMAT_TRANSIENT | &quot;urn:oasis:names:tc:SAML:2.0:nameid-format:transient&quot; |
 | URN_OASIS_NAMES_TC_SAML_1_1_NAMEID_FORMAT_UNSPECIFIED | &quot;urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified&quot; |
+
+
+
+## Enum: List&lt;SectionOrderEnum&gt;
+
+| Name | Value |
+|---- | -----|
+| MAINTENANCE | &quot;maintenance&quot; |
+| SYSTEM_STATUS | &quot;system_status&quot; |
+| INCIDENTS | &quot;incidents&quot; |
 
 
 

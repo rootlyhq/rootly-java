@@ -8,9 +8,10 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**name** | **String** | The name of the service |  |
-|**slug** | **String** | The slug of the service |  [optional] |
+|**slug** | **String** | The slug of the service |  [optional] [readonly] |
+|**managedBy** | [**ManagedByEnum**](#ManagedByEnum) | How this service is managed (provenance): web, api, terraform, etc. Read-only. |  [optional] |
 |**description** | **String** | The description of the service |  [optional] |
-|**publicDescription** | **String** | The public description of the service |  [optional] |
+|**publicDescription** | **String** | The status page description of the service |  [optional] |
 |**notifyEmails** | **List&lt;String&gt;** | Emails attached to the service |  [optional] |
 |**color** | **String** | The hex color of the service |  [optional] |
 |**position** | **Integer** | Position of the service |  [optional] |
@@ -39,8 +40,23 @@
 |**alertBroadcastChannel** | [**ServiceAlertBroadcastChannel**](ServiceAlertBroadcastChannel.md) |  |  [optional] |
 |**incidentBroadcastEnabled** | **Boolean** | Enable incidents to be broadcasted to a specific channel |  [optional] |
 |**incidentBroadcastChannel** | [**ServiceIncidentBroadcastChannel**](ServiceIncidentBroadcastChannel.md) |  |  [optional] |
+|**properties** | [**List&lt;NewCauseDataAttributesPropertiesInner&gt;**](NewCauseDataAttributesPropertiesInner.md) | Array of property values for this service. |  [optional] |
 |**createdAt** | **String** | Date of creation |  |
 |**updatedAt** | **String** | Date of last update |  |
+
+
+
+## Enum: ManagedByEnum
+
+| Name | Value |
+|---- | -----|
+| WEB | &quot;web&quot; |
+| ADMIN_WEB | &quot;admin_web&quot; |
+| API | &quot;api&quot; |
+| TERRAFORM | &quot;terraform&quot; |
+| PULUMI | &quot;pulumi&quot; |
+| BACKSTAGE | &quot;backstage&quot; |
+| CATALOG_SYNC | &quot;catalog_sync&quot; |
 
 
 

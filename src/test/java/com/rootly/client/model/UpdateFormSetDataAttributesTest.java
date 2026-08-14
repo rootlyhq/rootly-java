@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -37,6 +38,14 @@ public class UpdateFormSetDataAttributesTest {
     @Test
     public void testUpdateFormSetDataAttributes() {
         // TODO: test UpdateFormSetDataAttributes
+    }
+
+    /**
+     * Test the property 'slug'
+     */
+    @Test
+    public void slugTest() {
+        // TODO: test slug
     }
 
     /**

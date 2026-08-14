@@ -18,13 +18,20 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerAnyOf;
-import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerAnyOf1;
-import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerAnyOf2;
+import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf;
+import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf1;
+import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf2;
+import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf3;
+import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf4;
+import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf5;
+import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner;
+import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf6;
+import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf7;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -88,6 +95,54 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerTest {
     @Test
     public void valueTest() {
         // TODO: test value
+    }
+
+    /**
+     * Test the property 'values'
+     */
+    @Test
+    public void valuesTest() {
+        // TODO: test values
+    }
+
+    /**
+     * Test the property 'fieldableType'
+     */
+    @Test
+    public void fieldableTypeTest() {
+        // TODO: test fieldableType
+    }
+
+    /**
+     * Test the property 'fieldableId'
+     */
+    @Test
+    public void fieldableIdTest() {
+        // TODO: test fieldableId
+    }
+
+    /**
+     * Test the property 'serviceIds'
+     */
+    @Test
+    public void serviceIdsTest() {
+        // TODO: test serviceIds
+    }
+
+    /**
+     * Test the property 'timeZone'
+     */
+    @Test
+    public void timeZoneTest() {
+        // TODO: test timeZone
+    }
+
+    /**
+     * Test the property 'timeBlocks'
+     */
+    @Test
+    public void timeBlocksTest() {
+        // TODO: test timeBlocks
     }
 
 }

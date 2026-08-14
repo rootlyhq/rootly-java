@@ -776,6 +776,141 @@ public class IncidentsApi {
         return localVarCall;
     }
     /**
+     * Build call for detachFromParentIncident
+     * @param id  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> incident detached from parent </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> incident has no parent </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call detachFromParentIncidentCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v1/incidents/{id}/detach_from_parent"
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/vnd.api+json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "bearer_auth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call detachFromParentIncidentValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling detachFromParentIncident(Async)");
+        }
+
+        return detachFromParentIncidentCall(id, _callback);
+
+    }
+
+    /**
+     * Detach an incident from its parent
+     * Detach a sub-incident from its parent incident
+     * @param id  (required)
+     * @return IncidentResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> incident detached from parent </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> incident has no parent </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public IncidentResponse detachFromParentIncident(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+        ApiResponse<IncidentResponse> localVarResp = detachFromParentIncidentWithHttpInfo(id);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Detach an incident from its parent
+     * Detach a sub-incident from its parent incident
+     * @param id  (required)
+     * @return ApiResponse&lt;IncidentResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> incident detached from parent </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> incident has no parent </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<IncidentResponse> detachFromParentIncidentWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+        okhttp3.Call localVarCall = detachFromParentIncidentValidateBeforeCall(id, null);
+        Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Detach an incident from its parent (asynchronously)
+     * Detach a sub-incident from its parent incident
+     * @param id  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> incident detached from parent </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> incident has no parent </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call detachFromParentIncidentAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<IncidentResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = detachFromParentIncidentValidateBeforeCall(id, _callback);
+        Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for getIncident
      * @param id  (required)
      * @param include comma separated if needed. eg: sub_statuses,causes,subscribers (optional)
@@ -916,6 +1051,7 @@ public class IncidentsApi {
     }
     /**
      * Build call for listIncidents
+     * @param pageAfter The cursor to fetch results using cursor pagination. A cursor is provided in meta.next_cursor in the response. (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
      * @param filterSearch  (optional)
@@ -932,13 +1068,18 @@ public class IncidentsApi {
      * @param filterEnvironmentIds  (optional)
      * @param filterFunctionalities  (optional)
      * @param filterFunctionalityIds  (optional)
+     * @param filterFunctionalityNames  (optional)
      * @param filterServices  (optional)
      * @param filterServiceIds  (optional)
+     * @param filterServiceNames  (optional)
      * @param filterTeams  (optional)
      * @param filterTeamIds  (optional)
+     * @param filterTeamNames  (optional)
      * @param filterCause  (optional)
      * @param filterCauseIds  (optional)
      * @param filterCustomFieldSelectedOptionIds  (optional)
+     * @param filterSlackChannelId  (optional)
+     * @param filterSequentialId Filter by the human-readable incident number (the 123 in INC-123). (optional)
      * @param filterCreatedAtGt  (optional)
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
@@ -975,6 +1116,102 @@ public class IncidentsApi {
      * @param filterInTriageAtGte  (optional)
      * @param filterInTriageAtLt  (optional)
      * @param filterInTriageAtLte  (optional)
+     * @param filterKindEq  (optional)
+     * @param filterKindNotEq  (optional)
+     * @param filterKindIn  (optional)
+     * @param filterKindNotIn  (optional)
+     * @param filterStatusEq  (optional)
+     * @param filterStatusNotEq  (optional)
+     * @param filterStatusIn  (optional)
+     * @param filterStatusNotIn  (optional)
+     * @param filterPrivateEq  (optional)
+     * @param filterPrivateNotEq  (optional)
+     * @param filterPrivateIn  (optional)
+     * @param filterPrivateNotIn  (optional)
+     * @param filterUserIdEq  (optional)
+     * @param filterUserIdNotEq  (optional)
+     * @param filterUserIdIn  (optional)
+     * @param filterUserIdNotIn  (optional)
+     * @param filterSeverityEq  (optional)
+     * @param filterSeverityNotEq  (optional)
+     * @param filterSeverityIn  (optional)
+     * @param filterSeverityNotIn  (optional)
+     * @param filterSeverityIdEq  (optional)
+     * @param filterSeverityIdNotEq  (optional)
+     * @param filterSeverityIdIn  (optional)
+     * @param filterSeverityIdNotIn  (optional)
+     * @param filterLabelsEq  (optional)
+     * @param filterLabelsNotEq  (optional)
+     * @param filterLabelsIn  (optional)
+     * @param filterLabelsNotIn  (optional)
+     * @param filterZendeskTicketIdEq  (optional)
+     * @param filterZendeskTicketIdNotEq  (optional)
+     * @param filterZendeskTicketIdIn  (optional)
+     * @param filterZendeskTicketIdNotIn  (optional)
+     * @param filterSequentialIdEq  (optional)
+     * @param filterSequentialIdNotEq  (optional)
+     * @param filterSequentialIdIn  (optional)
+     * @param filterSequentialIdNotIn  (optional)
+     * @param filterTypesEq  (optional)
+     * @param filterTypesNotEq  (optional)
+     * @param filterTypesIn  (optional)
+     * @param filterTypesNotIn  (optional)
+     * @param filterTypeIdsEq  (optional)
+     * @param filterTypeIdsNotEq  (optional)
+     * @param filterTypeIdsIn  (optional)
+     * @param filterTypeIdsNotIn  (optional)
+     * @param filterEnvironmentsEq  (optional)
+     * @param filterEnvironmentsNotEq  (optional)
+     * @param filterEnvironmentsIn  (optional)
+     * @param filterEnvironmentsNotIn  (optional)
+     * @param filterEnvironmentIdsEq  (optional)
+     * @param filterEnvironmentIdsNotEq  (optional)
+     * @param filterEnvironmentIdsIn  (optional)
+     * @param filterEnvironmentIdsNotIn  (optional)
+     * @param filterServicesEq  (optional)
+     * @param filterServicesNotEq  (optional)
+     * @param filterServicesIn  (optional)
+     * @param filterServicesNotIn  (optional)
+     * @param filterServiceIdsEq  (optional)
+     * @param filterServiceIdsNotEq  (optional)
+     * @param filterServiceIdsIn  (optional)
+     * @param filterServiceIdsNotIn  (optional)
+     * @param filterServiceNamesEq  (optional)
+     * @param filterServiceNamesNotEq  (optional)
+     * @param filterServiceNamesIn  (optional)
+     * @param filterServiceNamesNotIn  (optional)
+     * @param filterFunctionalitiesEq  (optional)
+     * @param filterFunctionalitiesNotEq  (optional)
+     * @param filterFunctionalitiesIn  (optional)
+     * @param filterFunctionalitiesNotIn  (optional)
+     * @param filterFunctionalityIdsEq  (optional)
+     * @param filterFunctionalityIdsNotEq  (optional)
+     * @param filterFunctionalityIdsIn  (optional)
+     * @param filterFunctionalityIdsNotIn  (optional)
+     * @param filterFunctionalityNamesEq  (optional)
+     * @param filterFunctionalityNamesNotEq  (optional)
+     * @param filterFunctionalityNamesIn  (optional)
+     * @param filterFunctionalityNamesNotIn  (optional)
+     * @param filterCausesEq  (optional)
+     * @param filterCausesNotEq  (optional)
+     * @param filterCausesIn  (optional)
+     * @param filterCausesNotIn  (optional)
+     * @param filterCauseIdsEq  (optional)
+     * @param filterCauseIdsNotEq  (optional)
+     * @param filterCauseIdsIn  (optional)
+     * @param filterCauseIdsNotIn  (optional)
+     * @param filterTeamsEq  (optional)
+     * @param filterTeamsNotEq  (optional)
+     * @param filterTeamsIn  (optional)
+     * @param filterTeamsNotIn  (optional)
+     * @param filterTeamIdsEq  (optional)
+     * @param filterTeamIdsNotEq  (optional)
+     * @param filterTeamIdsIn  (optional)
+     * @param filterTeamIdsNotIn  (optional)
+     * @param filterTeamNamesEq  (optional)
+     * @param filterTeamNamesNotEq  (optional)
+     * @param filterTeamNamesIn  (optional)
+     * @param filterTeamNamesNotIn  (optional)
      * @param sort comma separated if needed. eg: created_at,updated_at (optional)
      * @param include comma separated if needed. eg: sub_statuses,causes,subscribers (optional)
      * @param _callback Callback for upload/download progress
@@ -985,9 +1222,10 @@ public class IncidentsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> malformed date filter </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listIncidentsCall(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterPrivate, @jakarta.annotation.Nullable Integer filterUserId, @jakarta.annotation.Nullable String filterSeverity, @jakarta.annotation.Nullable String filterSeverityId, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterTypes, @jakarta.annotation.Nullable String filterTypeIds, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterEnvironmentIds, @jakarta.annotation.Nullable String filterFunctionalities, @jakarta.annotation.Nullable String filterFunctionalityIds, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterServiceIds, @jakarta.annotation.Nullable String filterTeams, @jakarta.annotation.Nullable String filterTeamIds, @jakarta.annotation.Nullable String filterCause, @jakarta.annotation.Nullable String filterCauseIds, @jakarta.annotation.Nullable String filterCustomFieldSelectedOptionIds, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUpdatedAtGt, @jakarta.annotation.Nullable String filterUpdatedAtGte, @jakarta.annotation.Nullable String filterUpdatedAtLt, @jakarta.annotation.Nullable String filterUpdatedAtLte, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterDetectedAtGt, @jakarta.annotation.Nullable String filterDetectedAtGte, @jakarta.annotation.Nullable String filterDetectedAtLt, @jakarta.annotation.Nullable String filterDetectedAtLte, @jakarta.annotation.Nullable String filterAcknowledgedAtGt, @jakarta.annotation.Nullable String filterAcknowledgedAtGte, @jakarta.annotation.Nullable String filterAcknowledgedAtLt, @jakarta.annotation.Nullable String filterAcknowledgedAtLte, @jakarta.annotation.Nullable String filterMitigatedAtGt, @jakarta.annotation.Nullable String filterMitigatedAtGte, @jakarta.annotation.Nullable String filterMitigatedAtLt, @jakarta.annotation.Nullable String filterMitigatedAtLte, @jakarta.annotation.Nullable String filterResolvedAtGt, @jakarta.annotation.Nullable String filterResolvedAtGte, @jakarta.annotation.Nullable String filterResolvedAtLt, @jakarta.annotation.Nullable String filterResolvedAtLte, @jakarta.annotation.Nullable String filterClosedAtGt, @jakarta.annotation.Nullable String filterClosedAtGte, @jakarta.annotation.Nullable String filterClosedAtLt, @jakarta.annotation.Nullable String filterClosedAtLte, @jakarta.annotation.Nullable String filterInTriageAtGt, @jakarta.annotation.Nullable String filterInTriageAtGte, @jakarta.annotation.Nullable String filterInTriageAtLt, @jakarta.annotation.Nullable String filterInTriageAtLte, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listIncidentsCall(@jakarta.annotation.Nullable String pageAfter, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterPrivate, @jakarta.annotation.Nullable Integer filterUserId, @jakarta.annotation.Nullable String filterSeverity, @jakarta.annotation.Nullable String filterSeverityId, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterTypes, @jakarta.annotation.Nullable String filterTypeIds, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterEnvironmentIds, @jakarta.annotation.Nullable String filterFunctionalities, @jakarta.annotation.Nullable String filterFunctionalityIds, @jakarta.annotation.Nullable String filterFunctionalityNames, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterServiceIds, @jakarta.annotation.Nullable String filterServiceNames, @jakarta.annotation.Nullable String filterTeams, @jakarta.annotation.Nullable String filterTeamIds, @jakarta.annotation.Nullable String filterTeamNames, @jakarta.annotation.Nullable String filterCause, @jakarta.annotation.Nullable String filterCauseIds, @jakarta.annotation.Nullable String filterCustomFieldSelectedOptionIds, @jakarta.annotation.Nullable String filterSlackChannelId, @jakarta.annotation.Nullable String filterSequentialId, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUpdatedAtGt, @jakarta.annotation.Nullable String filterUpdatedAtGte, @jakarta.annotation.Nullable String filterUpdatedAtLt, @jakarta.annotation.Nullable String filterUpdatedAtLte, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterDetectedAtGt, @jakarta.annotation.Nullable String filterDetectedAtGte, @jakarta.annotation.Nullable String filterDetectedAtLt, @jakarta.annotation.Nullable String filterDetectedAtLte, @jakarta.annotation.Nullable String filterAcknowledgedAtGt, @jakarta.annotation.Nullable String filterAcknowledgedAtGte, @jakarta.annotation.Nullable String filterAcknowledgedAtLt, @jakarta.annotation.Nullable String filterAcknowledgedAtLte, @jakarta.annotation.Nullable String filterMitigatedAtGt, @jakarta.annotation.Nullable String filterMitigatedAtGte, @jakarta.annotation.Nullable String filterMitigatedAtLt, @jakarta.annotation.Nullable String filterMitigatedAtLte, @jakarta.annotation.Nullable String filterResolvedAtGt, @jakarta.annotation.Nullable String filterResolvedAtGte, @jakarta.annotation.Nullable String filterResolvedAtLt, @jakarta.annotation.Nullable String filterResolvedAtLte, @jakarta.annotation.Nullable String filterClosedAtGt, @jakarta.annotation.Nullable String filterClosedAtGte, @jakarta.annotation.Nullable String filterClosedAtLt, @jakarta.annotation.Nullable String filterClosedAtLte, @jakarta.annotation.Nullable String filterInTriageAtGt, @jakarta.annotation.Nullable String filterInTriageAtGte, @jakarta.annotation.Nullable String filterInTriageAtLt, @jakarta.annotation.Nullable String filterInTriageAtLte, @jakarta.annotation.Nullable String filterKindEq, @jakarta.annotation.Nullable String filterKindNotEq, @jakarta.annotation.Nullable String filterKindIn, @jakarta.annotation.Nullable String filterKindNotIn, @jakarta.annotation.Nullable String filterStatusEq, @jakarta.annotation.Nullable String filterStatusNotEq, @jakarta.annotation.Nullable String filterStatusIn, @jakarta.annotation.Nullable String filterStatusNotIn, @jakarta.annotation.Nullable String filterPrivateEq, @jakarta.annotation.Nullable String filterPrivateNotEq, @jakarta.annotation.Nullable String filterPrivateIn, @jakarta.annotation.Nullable String filterPrivateNotIn, @jakarta.annotation.Nullable String filterUserIdEq, @jakarta.annotation.Nullable String filterUserIdNotEq, @jakarta.annotation.Nullable String filterUserIdIn, @jakarta.annotation.Nullable String filterUserIdNotIn, @jakarta.annotation.Nullable String filterSeverityEq, @jakarta.annotation.Nullable String filterSeverityNotEq, @jakarta.annotation.Nullable String filterSeverityIn, @jakarta.annotation.Nullable String filterSeverityNotIn, @jakarta.annotation.Nullable String filterSeverityIdEq, @jakarta.annotation.Nullable String filterSeverityIdNotEq, @jakarta.annotation.Nullable String filterSeverityIdIn, @jakarta.annotation.Nullable String filterSeverityIdNotIn, @jakarta.annotation.Nullable String filterLabelsEq, @jakarta.annotation.Nullable String filterLabelsNotEq, @jakarta.annotation.Nullable String filterLabelsIn, @jakarta.annotation.Nullable String filterLabelsNotIn, @jakarta.annotation.Nullable String filterZendeskTicketIdEq, @jakarta.annotation.Nullable String filterZendeskTicketIdNotEq, @jakarta.annotation.Nullable String filterZendeskTicketIdIn, @jakarta.annotation.Nullable String filterZendeskTicketIdNotIn, @jakarta.annotation.Nullable String filterSequentialIdEq, @jakarta.annotation.Nullable String filterSequentialIdNotEq, @jakarta.annotation.Nullable String filterSequentialIdIn, @jakarta.annotation.Nullable String filterSequentialIdNotIn, @jakarta.annotation.Nullable String filterTypesEq, @jakarta.annotation.Nullable String filterTypesNotEq, @jakarta.annotation.Nullable String filterTypesIn, @jakarta.annotation.Nullable String filterTypesNotIn, @jakarta.annotation.Nullable String filterTypeIdsEq, @jakarta.annotation.Nullable String filterTypeIdsNotEq, @jakarta.annotation.Nullable String filterTypeIdsIn, @jakarta.annotation.Nullable String filterTypeIdsNotIn, @jakarta.annotation.Nullable String filterEnvironmentsEq, @jakarta.annotation.Nullable String filterEnvironmentsNotEq, @jakarta.annotation.Nullable String filterEnvironmentsIn, @jakarta.annotation.Nullable String filterEnvironmentsNotIn, @jakarta.annotation.Nullable String filterEnvironmentIdsEq, @jakarta.annotation.Nullable String filterEnvironmentIdsNotEq, @jakarta.annotation.Nullable String filterEnvironmentIdsIn, @jakarta.annotation.Nullable String filterEnvironmentIdsNotIn, @jakarta.annotation.Nullable String filterServicesEq, @jakarta.annotation.Nullable String filterServicesNotEq, @jakarta.annotation.Nullable String filterServicesIn, @jakarta.annotation.Nullable String filterServicesNotIn, @jakarta.annotation.Nullable String filterServiceIdsEq, @jakarta.annotation.Nullable String filterServiceIdsNotEq, @jakarta.annotation.Nullable String filterServiceIdsIn, @jakarta.annotation.Nullable String filterServiceIdsNotIn, @jakarta.annotation.Nullable String filterServiceNamesEq, @jakarta.annotation.Nullable String filterServiceNamesNotEq, @jakarta.annotation.Nullable String filterServiceNamesIn, @jakarta.annotation.Nullable String filterServiceNamesNotIn, @jakarta.annotation.Nullable String filterFunctionalitiesEq, @jakarta.annotation.Nullable String filterFunctionalitiesNotEq, @jakarta.annotation.Nullable String filterFunctionalitiesIn, @jakarta.annotation.Nullable String filterFunctionalitiesNotIn, @jakarta.annotation.Nullable String filterFunctionalityIdsEq, @jakarta.annotation.Nullable String filterFunctionalityIdsNotEq, @jakarta.annotation.Nullable String filterFunctionalityIdsIn, @jakarta.annotation.Nullable String filterFunctionalityIdsNotIn, @jakarta.annotation.Nullable String filterFunctionalityNamesEq, @jakarta.annotation.Nullable String filterFunctionalityNamesNotEq, @jakarta.annotation.Nullable String filterFunctionalityNamesIn, @jakarta.annotation.Nullable String filterFunctionalityNamesNotIn, @jakarta.annotation.Nullable String filterCausesEq, @jakarta.annotation.Nullable String filterCausesNotEq, @jakarta.annotation.Nullable String filterCausesIn, @jakarta.annotation.Nullable String filterCausesNotIn, @jakarta.annotation.Nullable String filterCauseIdsEq, @jakarta.annotation.Nullable String filterCauseIdsNotEq, @jakarta.annotation.Nullable String filterCauseIdsIn, @jakarta.annotation.Nullable String filterCauseIdsNotIn, @jakarta.annotation.Nullable String filterTeamsEq, @jakarta.annotation.Nullable String filterTeamsNotEq, @jakarta.annotation.Nullable String filterTeamsIn, @jakarta.annotation.Nullable String filterTeamsNotIn, @jakarta.annotation.Nullable String filterTeamIdsEq, @jakarta.annotation.Nullable String filterTeamIdsNotEq, @jakarta.annotation.Nullable String filterTeamIdsIn, @jakarta.annotation.Nullable String filterTeamIdsNotIn, @jakarta.annotation.Nullable String filterTeamNamesEq, @jakarta.annotation.Nullable String filterTeamNamesNotEq, @jakarta.annotation.Nullable String filterTeamNamesIn, @jakarta.annotation.Nullable String filterTeamNamesNotIn, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1011,6 +1249,10 @@ public class IncidentsApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (pageAfter != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page[after]", pageAfter));
+        }
 
         if (pageNumber != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("page[number]", pageNumber));
@@ -1076,6 +1318,10 @@ public class IncidentsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[functionality_ids]", filterFunctionalityIds));
         }
 
+        if (filterFunctionalityNames != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[functionality_names]", filterFunctionalityNames));
+        }
+
         if (filterServices != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[services]", filterServices));
         }
@@ -1084,12 +1330,20 @@ public class IncidentsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[service_ids]", filterServiceIds));
         }
 
+        if (filterServiceNames != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[service_names]", filterServiceNames));
+        }
+
         if (filterTeams != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[teams]", filterTeams));
         }
 
         if (filterTeamIds != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[team_ids]", filterTeamIds));
+        }
+
+        if (filterTeamNames != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[team_names]", filterTeamNames));
         }
 
         if (filterCause != null) {
@@ -1102,6 +1356,14 @@ public class IncidentsApi {
 
         if (filterCustomFieldSelectedOptionIds != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[custom_field_selected_option_ids]", filterCustomFieldSelectedOptionIds));
+        }
+
+        if (filterSlackChannelId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slack_channel_id]", filterSlackChannelId));
+        }
+
+        if (filterSequentialId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[sequential_id]", filterSequentialId));
         }
 
         if (filterCreatedAtGt != null) {
@@ -1248,6 +1510,390 @@ public class IncidentsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[in_triage_at][lte]", filterInTriageAtLte));
         }
 
+        if (filterKindEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[kind][eq]", filterKindEq));
+        }
+
+        if (filterKindNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[kind][not_eq]", filterKindNotEq));
+        }
+
+        if (filterKindIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[kind][in]", filterKindIn));
+        }
+
+        if (filterKindNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[kind][not_in]", filterKindNotIn));
+        }
+
+        if (filterStatusEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[status][eq]", filterStatusEq));
+        }
+
+        if (filterStatusNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[status][not_eq]", filterStatusNotEq));
+        }
+
+        if (filterStatusIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[status][in]", filterStatusIn));
+        }
+
+        if (filterStatusNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[status][not_in]", filterStatusNotIn));
+        }
+
+        if (filterPrivateEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[private][eq]", filterPrivateEq));
+        }
+
+        if (filterPrivateNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[private][not_eq]", filterPrivateNotEq));
+        }
+
+        if (filterPrivateIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[private][in]", filterPrivateIn));
+        }
+
+        if (filterPrivateNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[private][not_in]", filterPrivateNotIn));
+        }
+
+        if (filterUserIdEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[user_id][eq]", filterUserIdEq));
+        }
+
+        if (filterUserIdNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[user_id][not_eq]", filterUserIdNotEq));
+        }
+
+        if (filterUserIdIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[user_id][in]", filterUserIdIn));
+        }
+
+        if (filterUserIdNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[user_id][not_in]", filterUserIdNotIn));
+        }
+
+        if (filterSeverityEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[severity][eq]", filterSeverityEq));
+        }
+
+        if (filterSeverityNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[severity][not_eq]", filterSeverityNotEq));
+        }
+
+        if (filterSeverityIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[severity][in]", filterSeverityIn));
+        }
+
+        if (filterSeverityNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[severity][not_in]", filterSeverityNotIn));
+        }
+
+        if (filterSeverityIdEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[severity_id][eq]", filterSeverityIdEq));
+        }
+
+        if (filterSeverityIdNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[severity_id][not_eq]", filterSeverityIdNotEq));
+        }
+
+        if (filterSeverityIdIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[severity_id][in]", filterSeverityIdIn));
+        }
+
+        if (filterSeverityIdNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[severity_id][not_in]", filterSeverityIdNotIn));
+        }
+
+        if (filterLabelsEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[labels][eq]", filterLabelsEq));
+        }
+
+        if (filterLabelsNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[labels][not_eq]", filterLabelsNotEq));
+        }
+
+        if (filterLabelsIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[labels][in]", filterLabelsIn));
+        }
+
+        if (filterLabelsNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[labels][not_in]", filterLabelsNotIn));
+        }
+
+        if (filterZendeskTicketIdEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[zendesk_ticket_id][eq]", filterZendeskTicketIdEq));
+        }
+
+        if (filterZendeskTicketIdNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[zendesk_ticket_id][not_eq]", filterZendeskTicketIdNotEq));
+        }
+
+        if (filterZendeskTicketIdIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[zendesk_ticket_id][in]", filterZendeskTicketIdIn));
+        }
+
+        if (filterZendeskTicketIdNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[zendesk_ticket_id][not_in]", filterZendeskTicketIdNotIn));
+        }
+
+        if (filterSequentialIdEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[sequential_id][eq]", filterSequentialIdEq));
+        }
+
+        if (filterSequentialIdNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[sequential_id][not_eq]", filterSequentialIdNotEq));
+        }
+
+        if (filterSequentialIdIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[sequential_id][in]", filterSequentialIdIn));
+        }
+
+        if (filterSequentialIdNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[sequential_id][not_in]", filterSequentialIdNotIn));
+        }
+
+        if (filterTypesEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[types][eq]", filterTypesEq));
+        }
+
+        if (filterTypesNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[types][not_eq]", filterTypesNotEq));
+        }
+
+        if (filterTypesIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[types][in]", filterTypesIn));
+        }
+
+        if (filterTypesNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[types][not_in]", filterTypesNotIn));
+        }
+
+        if (filterTypeIdsEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[type_ids][eq]", filterTypeIdsEq));
+        }
+
+        if (filterTypeIdsNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[type_ids][not_eq]", filterTypeIdsNotEq));
+        }
+
+        if (filterTypeIdsIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[type_ids][in]", filterTypeIdsIn));
+        }
+
+        if (filterTypeIdsNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[type_ids][not_in]", filterTypeIdsNotIn));
+        }
+
+        if (filterEnvironmentsEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[environments][eq]", filterEnvironmentsEq));
+        }
+
+        if (filterEnvironmentsNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[environments][not_eq]", filterEnvironmentsNotEq));
+        }
+
+        if (filterEnvironmentsIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[environments][in]", filterEnvironmentsIn));
+        }
+
+        if (filterEnvironmentsNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[environments][not_in]", filterEnvironmentsNotIn));
+        }
+
+        if (filterEnvironmentIdsEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[environment_ids][eq]", filterEnvironmentIdsEq));
+        }
+
+        if (filterEnvironmentIdsNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[environment_ids][not_eq]", filterEnvironmentIdsNotEq));
+        }
+
+        if (filterEnvironmentIdsIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[environment_ids][in]", filterEnvironmentIdsIn));
+        }
+
+        if (filterEnvironmentIdsNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[environment_ids][not_in]", filterEnvironmentIdsNotIn));
+        }
+
+        if (filterServicesEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[services][eq]", filterServicesEq));
+        }
+
+        if (filterServicesNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[services][not_eq]", filterServicesNotEq));
+        }
+
+        if (filterServicesIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[services][in]", filterServicesIn));
+        }
+
+        if (filterServicesNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[services][not_in]", filterServicesNotIn));
+        }
+
+        if (filterServiceIdsEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[service_ids][eq]", filterServiceIdsEq));
+        }
+
+        if (filterServiceIdsNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[service_ids][not_eq]", filterServiceIdsNotEq));
+        }
+
+        if (filterServiceIdsIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[service_ids][in]", filterServiceIdsIn));
+        }
+
+        if (filterServiceIdsNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[service_ids][not_in]", filterServiceIdsNotIn));
+        }
+
+        if (filterServiceNamesEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[service_names][eq]", filterServiceNamesEq));
+        }
+
+        if (filterServiceNamesNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[service_names][not_eq]", filterServiceNamesNotEq));
+        }
+
+        if (filterServiceNamesIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[service_names][in]", filterServiceNamesIn));
+        }
+
+        if (filterServiceNamesNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[service_names][not_in]", filterServiceNamesNotIn));
+        }
+
+        if (filterFunctionalitiesEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[functionalities][eq]", filterFunctionalitiesEq));
+        }
+
+        if (filterFunctionalitiesNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[functionalities][not_eq]", filterFunctionalitiesNotEq));
+        }
+
+        if (filterFunctionalitiesIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[functionalities][in]", filterFunctionalitiesIn));
+        }
+
+        if (filterFunctionalitiesNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[functionalities][not_in]", filterFunctionalitiesNotIn));
+        }
+
+        if (filterFunctionalityIdsEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[functionality_ids][eq]", filterFunctionalityIdsEq));
+        }
+
+        if (filterFunctionalityIdsNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[functionality_ids][not_eq]", filterFunctionalityIdsNotEq));
+        }
+
+        if (filterFunctionalityIdsIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[functionality_ids][in]", filterFunctionalityIdsIn));
+        }
+
+        if (filterFunctionalityIdsNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[functionality_ids][not_in]", filterFunctionalityIdsNotIn));
+        }
+
+        if (filterFunctionalityNamesEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[functionality_names][eq]", filterFunctionalityNamesEq));
+        }
+
+        if (filterFunctionalityNamesNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[functionality_names][not_eq]", filterFunctionalityNamesNotEq));
+        }
+
+        if (filterFunctionalityNamesIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[functionality_names][in]", filterFunctionalityNamesIn));
+        }
+
+        if (filterFunctionalityNamesNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[functionality_names][not_in]", filterFunctionalityNamesNotIn));
+        }
+
+        if (filterCausesEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[causes][eq]", filterCausesEq));
+        }
+
+        if (filterCausesNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[causes][not_eq]", filterCausesNotEq));
+        }
+
+        if (filterCausesIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[causes][in]", filterCausesIn));
+        }
+
+        if (filterCausesNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[causes][not_in]", filterCausesNotIn));
+        }
+
+        if (filterCauseIdsEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[cause_ids][eq]", filterCauseIdsEq));
+        }
+
+        if (filterCauseIdsNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[cause_ids][not_eq]", filterCauseIdsNotEq));
+        }
+
+        if (filterCauseIdsIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[cause_ids][in]", filterCauseIdsIn));
+        }
+
+        if (filterCauseIdsNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[cause_ids][not_in]", filterCauseIdsNotIn));
+        }
+
+        if (filterTeamsEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[teams][eq]", filterTeamsEq));
+        }
+
+        if (filterTeamsNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[teams][not_eq]", filterTeamsNotEq));
+        }
+
+        if (filterTeamsIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[teams][in]", filterTeamsIn));
+        }
+
+        if (filterTeamsNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[teams][not_in]", filterTeamsNotIn));
+        }
+
+        if (filterTeamIdsEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[team_ids][eq]", filterTeamIdsEq));
+        }
+
+        if (filterTeamIdsNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[team_ids][not_eq]", filterTeamIdsNotEq));
+        }
+
+        if (filterTeamIdsIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[team_ids][in]", filterTeamIdsIn));
+        }
+
+        if (filterTeamIdsNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[team_ids][not_in]", filterTeamIdsNotIn));
+        }
+
+        if (filterTeamNamesEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[team_names][eq]", filterTeamNamesEq));
+        }
+
+        if (filterTeamNamesNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[team_names][not_eq]", filterTeamNamesNotEq));
+        }
+
+        if (filterTeamNamesIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[team_names][in]", filterTeamNamesIn));
+        }
+
+        if (filterTeamNamesNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[team_names][not_in]", filterTeamNamesNotIn));
+        }
+
         if (sort != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort", sort));
         }
@@ -1276,14 +1922,15 @@ public class IncidentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listIncidentsValidateBeforeCall(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterPrivate, @jakarta.annotation.Nullable Integer filterUserId, @jakarta.annotation.Nullable String filterSeverity, @jakarta.annotation.Nullable String filterSeverityId, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterTypes, @jakarta.annotation.Nullable String filterTypeIds, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterEnvironmentIds, @jakarta.annotation.Nullable String filterFunctionalities, @jakarta.annotation.Nullable String filterFunctionalityIds, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterServiceIds, @jakarta.annotation.Nullable String filterTeams, @jakarta.annotation.Nullable String filterTeamIds, @jakarta.annotation.Nullable String filterCause, @jakarta.annotation.Nullable String filterCauseIds, @jakarta.annotation.Nullable String filterCustomFieldSelectedOptionIds, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUpdatedAtGt, @jakarta.annotation.Nullable String filterUpdatedAtGte, @jakarta.annotation.Nullable String filterUpdatedAtLt, @jakarta.annotation.Nullable String filterUpdatedAtLte, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterDetectedAtGt, @jakarta.annotation.Nullable String filterDetectedAtGte, @jakarta.annotation.Nullable String filterDetectedAtLt, @jakarta.annotation.Nullable String filterDetectedAtLte, @jakarta.annotation.Nullable String filterAcknowledgedAtGt, @jakarta.annotation.Nullable String filterAcknowledgedAtGte, @jakarta.annotation.Nullable String filterAcknowledgedAtLt, @jakarta.annotation.Nullable String filterAcknowledgedAtLte, @jakarta.annotation.Nullable String filterMitigatedAtGt, @jakarta.annotation.Nullable String filterMitigatedAtGte, @jakarta.annotation.Nullable String filterMitigatedAtLt, @jakarta.annotation.Nullable String filterMitigatedAtLte, @jakarta.annotation.Nullable String filterResolvedAtGt, @jakarta.annotation.Nullable String filterResolvedAtGte, @jakarta.annotation.Nullable String filterResolvedAtLt, @jakarta.annotation.Nullable String filterResolvedAtLte, @jakarta.annotation.Nullable String filterClosedAtGt, @jakarta.annotation.Nullable String filterClosedAtGte, @jakarta.annotation.Nullable String filterClosedAtLt, @jakarta.annotation.Nullable String filterClosedAtLte, @jakarta.annotation.Nullable String filterInTriageAtGt, @jakarta.annotation.Nullable String filterInTriageAtGte, @jakarta.annotation.Nullable String filterInTriageAtLt, @jakarta.annotation.Nullable String filterInTriageAtLte, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
-        return listIncidentsCall(pageNumber, pageSize, filterSearch, filterKind, filterStatus, filterPrivate, filterUserId, filterSeverity, filterSeverityId, filterLabels, filterTypes, filterTypeIds, filterEnvironments, filterEnvironmentIds, filterFunctionalities, filterFunctionalityIds, filterServices, filterServiceIds, filterTeams, filterTeamIds, filterCause, filterCauseIds, filterCustomFieldSelectedOptionIds, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUpdatedAtGt, filterUpdatedAtGte, filterUpdatedAtLt, filterUpdatedAtLte, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterDetectedAtGt, filterDetectedAtGte, filterDetectedAtLt, filterDetectedAtLte, filterAcknowledgedAtGt, filterAcknowledgedAtGte, filterAcknowledgedAtLt, filterAcknowledgedAtLte, filterMitigatedAtGt, filterMitigatedAtGte, filterMitigatedAtLt, filterMitigatedAtLte, filterResolvedAtGt, filterResolvedAtGte, filterResolvedAtLt, filterResolvedAtLte, filterClosedAtGt, filterClosedAtGte, filterClosedAtLt, filterClosedAtLte, filterInTriageAtGt, filterInTriageAtGte, filterInTriageAtLt, filterInTriageAtLte, sort, include, _callback);
+    private okhttp3.Call listIncidentsValidateBeforeCall(@jakarta.annotation.Nullable String pageAfter, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterPrivate, @jakarta.annotation.Nullable Integer filterUserId, @jakarta.annotation.Nullable String filterSeverity, @jakarta.annotation.Nullable String filterSeverityId, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterTypes, @jakarta.annotation.Nullable String filterTypeIds, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterEnvironmentIds, @jakarta.annotation.Nullable String filterFunctionalities, @jakarta.annotation.Nullable String filterFunctionalityIds, @jakarta.annotation.Nullable String filterFunctionalityNames, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterServiceIds, @jakarta.annotation.Nullable String filterServiceNames, @jakarta.annotation.Nullable String filterTeams, @jakarta.annotation.Nullable String filterTeamIds, @jakarta.annotation.Nullable String filterTeamNames, @jakarta.annotation.Nullable String filterCause, @jakarta.annotation.Nullable String filterCauseIds, @jakarta.annotation.Nullable String filterCustomFieldSelectedOptionIds, @jakarta.annotation.Nullable String filterSlackChannelId, @jakarta.annotation.Nullable String filterSequentialId, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUpdatedAtGt, @jakarta.annotation.Nullable String filterUpdatedAtGte, @jakarta.annotation.Nullable String filterUpdatedAtLt, @jakarta.annotation.Nullable String filterUpdatedAtLte, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterDetectedAtGt, @jakarta.annotation.Nullable String filterDetectedAtGte, @jakarta.annotation.Nullable String filterDetectedAtLt, @jakarta.annotation.Nullable String filterDetectedAtLte, @jakarta.annotation.Nullable String filterAcknowledgedAtGt, @jakarta.annotation.Nullable String filterAcknowledgedAtGte, @jakarta.annotation.Nullable String filterAcknowledgedAtLt, @jakarta.annotation.Nullable String filterAcknowledgedAtLte, @jakarta.annotation.Nullable String filterMitigatedAtGt, @jakarta.annotation.Nullable String filterMitigatedAtGte, @jakarta.annotation.Nullable String filterMitigatedAtLt, @jakarta.annotation.Nullable String filterMitigatedAtLte, @jakarta.annotation.Nullable String filterResolvedAtGt, @jakarta.annotation.Nullable String filterResolvedAtGte, @jakarta.annotation.Nullable String filterResolvedAtLt, @jakarta.annotation.Nullable String filterResolvedAtLte, @jakarta.annotation.Nullable String filterClosedAtGt, @jakarta.annotation.Nullable String filterClosedAtGte, @jakarta.annotation.Nullable String filterClosedAtLt, @jakarta.annotation.Nullable String filterClosedAtLte, @jakarta.annotation.Nullable String filterInTriageAtGt, @jakarta.annotation.Nullable String filterInTriageAtGte, @jakarta.annotation.Nullable String filterInTriageAtLt, @jakarta.annotation.Nullable String filterInTriageAtLte, @jakarta.annotation.Nullable String filterKindEq, @jakarta.annotation.Nullable String filterKindNotEq, @jakarta.annotation.Nullable String filterKindIn, @jakarta.annotation.Nullable String filterKindNotIn, @jakarta.annotation.Nullable String filterStatusEq, @jakarta.annotation.Nullable String filterStatusNotEq, @jakarta.annotation.Nullable String filterStatusIn, @jakarta.annotation.Nullable String filterStatusNotIn, @jakarta.annotation.Nullable String filterPrivateEq, @jakarta.annotation.Nullable String filterPrivateNotEq, @jakarta.annotation.Nullable String filterPrivateIn, @jakarta.annotation.Nullable String filterPrivateNotIn, @jakarta.annotation.Nullable String filterUserIdEq, @jakarta.annotation.Nullable String filterUserIdNotEq, @jakarta.annotation.Nullable String filterUserIdIn, @jakarta.annotation.Nullable String filterUserIdNotIn, @jakarta.annotation.Nullable String filterSeverityEq, @jakarta.annotation.Nullable String filterSeverityNotEq, @jakarta.annotation.Nullable String filterSeverityIn, @jakarta.annotation.Nullable String filterSeverityNotIn, @jakarta.annotation.Nullable String filterSeverityIdEq, @jakarta.annotation.Nullable String filterSeverityIdNotEq, @jakarta.annotation.Nullable String filterSeverityIdIn, @jakarta.annotation.Nullable String filterSeverityIdNotIn, @jakarta.annotation.Nullable String filterLabelsEq, @jakarta.annotation.Nullable String filterLabelsNotEq, @jakarta.annotation.Nullable String filterLabelsIn, @jakarta.annotation.Nullable String filterLabelsNotIn, @jakarta.annotation.Nullable String filterZendeskTicketIdEq, @jakarta.annotation.Nullable String filterZendeskTicketIdNotEq, @jakarta.annotation.Nullable String filterZendeskTicketIdIn, @jakarta.annotation.Nullable String filterZendeskTicketIdNotIn, @jakarta.annotation.Nullable String filterSequentialIdEq, @jakarta.annotation.Nullable String filterSequentialIdNotEq, @jakarta.annotation.Nullable String filterSequentialIdIn, @jakarta.annotation.Nullable String filterSequentialIdNotIn, @jakarta.annotation.Nullable String filterTypesEq, @jakarta.annotation.Nullable String filterTypesNotEq, @jakarta.annotation.Nullable String filterTypesIn, @jakarta.annotation.Nullable String filterTypesNotIn, @jakarta.annotation.Nullable String filterTypeIdsEq, @jakarta.annotation.Nullable String filterTypeIdsNotEq, @jakarta.annotation.Nullable String filterTypeIdsIn, @jakarta.annotation.Nullable String filterTypeIdsNotIn, @jakarta.annotation.Nullable String filterEnvironmentsEq, @jakarta.annotation.Nullable String filterEnvironmentsNotEq, @jakarta.annotation.Nullable String filterEnvironmentsIn, @jakarta.annotation.Nullable String filterEnvironmentsNotIn, @jakarta.annotation.Nullable String filterEnvironmentIdsEq, @jakarta.annotation.Nullable String filterEnvironmentIdsNotEq, @jakarta.annotation.Nullable String filterEnvironmentIdsIn, @jakarta.annotation.Nullable String filterEnvironmentIdsNotIn, @jakarta.annotation.Nullable String filterServicesEq, @jakarta.annotation.Nullable String filterServicesNotEq, @jakarta.annotation.Nullable String filterServicesIn, @jakarta.annotation.Nullable String filterServicesNotIn, @jakarta.annotation.Nullable String filterServiceIdsEq, @jakarta.annotation.Nullable String filterServiceIdsNotEq, @jakarta.annotation.Nullable String filterServiceIdsIn, @jakarta.annotation.Nullable String filterServiceIdsNotIn, @jakarta.annotation.Nullable String filterServiceNamesEq, @jakarta.annotation.Nullable String filterServiceNamesNotEq, @jakarta.annotation.Nullable String filterServiceNamesIn, @jakarta.annotation.Nullable String filterServiceNamesNotIn, @jakarta.annotation.Nullable String filterFunctionalitiesEq, @jakarta.annotation.Nullable String filterFunctionalitiesNotEq, @jakarta.annotation.Nullable String filterFunctionalitiesIn, @jakarta.annotation.Nullable String filterFunctionalitiesNotIn, @jakarta.annotation.Nullable String filterFunctionalityIdsEq, @jakarta.annotation.Nullable String filterFunctionalityIdsNotEq, @jakarta.annotation.Nullable String filterFunctionalityIdsIn, @jakarta.annotation.Nullable String filterFunctionalityIdsNotIn, @jakarta.annotation.Nullable String filterFunctionalityNamesEq, @jakarta.annotation.Nullable String filterFunctionalityNamesNotEq, @jakarta.annotation.Nullable String filterFunctionalityNamesIn, @jakarta.annotation.Nullable String filterFunctionalityNamesNotIn, @jakarta.annotation.Nullable String filterCausesEq, @jakarta.annotation.Nullable String filterCausesNotEq, @jakarta.annotation.Nullable String filterCausesIn, @jakarta.annotation.Nullable String filterCausesNotIn, @jakarta.annotation.Nullable String filterCauseIdsEq, @jakarta.annotation.Nullable String filterCauseIdsNotEq, @jakarta.annotation.Nullable String filterCauseIdsIn, @jakarta.annotation.Nullable String filterCauseIdsNotIn, @jakarta.annotation.Nullable String filterTeamsEq, @jakarta.annotation.Nullable String filterTeamsNotEq, @jakarta.annotation.Nullable String filterTeamsIn, @jakarta.annotation.Nullable String filterTeamsNotIn, @jakarta.annotation.Nullable String filterTeamIdsEq, @jakarta.annotation.Nullable String filterTeamIdsNotEq, @jakarta.annotation.Nullable String filterTeamIdsIn, @jakarta.annotation.Nullable String filterTeamIdsNotIn, @jakarta.annotation.Nullable String filterTeamNamesEq, @jakarta.annotation.Nullable String filterTeamNamesNotEq, @jakarta.annotation.Nullable String filterTeamNamesIn, @jakarta.annotation.Nullable String filterTeamNamesNotIn, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable String include, final ApiCallback _callback) throws ApiException {
+        return listIncidentsCall(pageAfter, pageNumber, pageSize, filterSearch, filterKind, filterStatus, filterPrivate, filterUserId, filterSeverity, filterSeverityId, filterLabels, filterTypes, filterTypeIds, filterEnvironments, filterEnvironmentIds, filterFunctionalities, filterFunctionalityIds, filterFunctionalityNames, filterServices, filterServiceIds, filterServiceNames, filterTeams, filterTeamIds, filterTeamNames, filterCause, filterCauseIds, filterCustomFieldSelectedOptionIds, filterSlackChannelId, filterSequentialId, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUpdatedAtGt, filterUpdatedAtGte, filterUpdatedAtLt, filterUpdatedAtLte, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterDetectedAtGt, filterDetectedAtGte, filterDetectedAtLt, filterDetectedAtLte, filterAcknowledgedAtGt, filterAcknowledgedAtGte, filterAcknowledgedAtLt, filterAcknowledgedAtLte, filterMitigatedAtGt, filterMitigatedAtGte, filterMitigatedAtLt, filterMitigatedAtLte, filterResolvedAtGt, filterResolvedAtGte, filterResolvedAtLt, filterResolvedAtLte, filterClosedAtGt, filterClosedAtGte, filterClosedAtLt, filterClosedAtLte, filterInTriageAtGt, filterInTriageAtGte, filterInTriageAtLt, filterInTriageAtLte, filterKindEq, filterKindNotEq, filterKindIn, filterKindNotIn, filterStatusEq, filterStatusNotEq, filterStatusIn, filterStatusNotIn, filterPrivateEq, filterPrivateNotEq, filterPrivateIn, filterPrivateNotIn, filterUserIdEq, filterUserIdNotEq, filterUserIdIn, filterUserIdNotIn, filterSeverityEq, filterSeverityNotEq, filterSeverityIn, filterSeverityNotIn, filterSeverityIdEq, filterSeverityIdNotEq, filterSeverityIdIn, filterSeverityIdNotIn, filterLabelsEq, filterLabelsNotEq, filterLabelsIn, filterLabelsNotIn, filterZendeskTicketIdEq, filterZendeskTicketIdNotEq, filterZendeskTicketIdIn, filterZendeskTicketIdNotIn, filterSequentialIdEq, filterSequentialIdNotEq, filterSequentialIdIn, filterSequentialIdNotIn, filterTypesEq, filterTypesNotEq, filterTypesIn, filterTypesNotIn, filterTypeIdsEq, filterTypeIdsNotEq, filterTypeIdsIn, filterTypeIdsNotIn, filterEnvironmentsEq, filterEnvironmentsNotEq, filterEnvironmentsIn, filterEnvironmentsNotIn, filterEnvironmentIdsEq, filterEnvironmentIdsNotEq, filterEnvironmentIdsIn, filterEnvironmentIdsNotIn, filterServicesEq, filterServicesNotEq, filterServicesIn, filterServicesNotIn, filterServiceIdsEq, filterServiceIdsNotEq, filterServiceIdsIn, filterServiceIdsNotIn, filterServiceNamesEq, filterServiceNamesNotEq, filterServiceNamesIn, filterServiceNamesNotIn, filterFunctionalitiesEq, filterFunctionalitiesNotEq, filterFunctionalitiesIn, filterFunctionalitiesNotIn, filterFunctionalityIdsEq, filterFunctionalityIdsNotEq, filterFunctionalityIdsIn, filterFunctionalityIdsNotIn, filterFunctionalityNamesEq, filterFunctionalityNamesNotEq, filterFunctionalityNamesIn, filterFunctionalityNamesNotIn, filterCausesEq, filterCausesNotEq, filterCausesIn, filterCausesNotIn, filterCauseIdsEq, filterCauseIdsNotEq, filterCauseIdsIn, filterCauseIdsNotIn, filterTeamsEq, filterTeamsNotEq, filterTeamsIn, filterTeamsNotIn, filterTeamIdsEq, filterTeamIdsNotEq, filterTeamIdsIn, filterTeamIdsNotIn, filterTeamNamesEq, filterTeamNamesNotEq, filterTeamNamesIn, filterTeamNamesNotIn, sort, include, _callback);
 
     }
 
     /**
      * List incidents
      * List incidents
+     * @param pageAfter The cursor to fetch results using cursor pagination. A cursor is provided in meta.next_cursor in the response. (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
      * @param filterSearch  (optional)
@@ -1300,13 +1947,18 @@ public class IncidentsApi {
      * @param filterEnvironmentIds  (optional)
      * @param filterFunctionalities  (optional)
      * @param filterFunctionalityIds  (optional)
+     * @param filterFunctionalityNames  (optional)
      * @param filterServices  (optional)
      * @param filterServiceIds  (optional)
+     * @param filterServiceNames  (optional)
      * @param filterTeams  (optional)
      * @param filterTeamIds  (optional)
+     * @param filterTeamNames  (optional)
      * @param filterCause  (optional)
      * @param filterCauseIds  (optional)
      * @param filterCustomFieldSelectedOptionIds  (optional)
+     * @param filterSlackChannelId  (optional)
+     * @param filterSequentialId Filter by the human-readable incident number (the 123 in INC-123). (optional)
      * @param filterCreatedAtGt  (optional)
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
@@ -1343,6 +1995,102 @@ public class IncidentsApi {
      * @param filterInTriageAtGte  (optional)
      * @param filterInTriageAtLt  (optional)
      * @param filterInTriageAtLte  (optional)
+     * @param filterKindEq  (optional)
+     * @param filterKindNotEq  (optional)
+     * @param filterKindIn  (optional)
+     * @param filterKindNotIn  (optional)
+     * @param filterStatusEq  (optional)
+     * @param filterStatusNotEq  (optional)
+     * @param filterStatusIn  (optional)
+     * @param filterStatusNotIn  (optional)
+     * @param filterPrivateEq  (optional)
+     * @param filterPrivateNotEq  (optional)
+     * @param filterPrivateIn  (optional)
+     * @param filterPrivateNotIn  (optional)
+     * @param filterUserIdEq  (optional)
+     * @param filterUserIdNotEq  (optional)
+     * @param filterUserIdIn  (optional)
+     * @param filterUserIdNotIn  (optional)
+     * @param filterSeverityEq  (optional)
+     * @param filterSeverityNotEq  (optional)
+     * @param filterSeverityIn  (optional)
+     * @param filterSeverityNotIn  (optional)
+     * @param filterSeverityIdEq  (optional)
+     * @param filterSeverityIdNotEq  (optional)
+     * @param filterSeverityIdIn  (optional)
+     * @param filterSeverityIdNotIn  (optional)
+     * @param filterLabelsEq  (optional)
+     * @param filterLabelsNotEq  (optional)
+     * @param filterLabelsIn  (optional)
+     * @param filterLabelsNotIn  (optional)
+     * @param filterZendeskTicketIdEq  (optional)
+     * @param filterZendeskTicketIdNotEq  (optional)
+     * @param filterZendeskTicketIdIn  (optional)
+     * @param filterZendeskTicketIdNotIn  (optional)
+     * @param filterSequentialIdEq  (optional)
+     * @param filterSequentialIdNotEq  (optional)
+     * @param filterSequentialIdIn  (optional)
+     * @param filterSequentialIdNotIn  (optional)
+     * @param filterTypesEq  (optional)
+     * @param filterTypesNotEq  (optional)
+     * @param filterTypesIn  (optional)
+     * @param filterTypesNotIn  (optional)
+     * @param filterTypeIdsEq  (optional)
+     * @param filterTypeIdsNotEq  (optional)
+     * @param filterTypeIdsIn  (optional)
+     * @param filterTypeIdsNotIn  (optional)
+     * @param filterEnvironmentsEq  (optional)
+     * @param filterEnvironmentsNotEq  (optional)
+     * @param filterEnvironmentsIn  (optional)
+     * @param filterEnvironmentsNotIn  (optional)
+     * @param filterEnvironmentIdsEq  (optional)
+     * @param filterEnvironmentIdsNotEq  (optional)
+     * @param filterEnvironmentIdsIn  (optional)
+     * @param filterEnvironmentIdsNotIn  (optional)
+     * @param filterServicesEq  (optional)
+     * @param filterServicesNotEq  (optional)
+     * @param filterServicesIn  (optional)
+     * @param filterServicesNotIn  (optional)
+     * @param filterServiceIdsEq  (optional)
+     * @param filterServiceIdsNotEq  (optional)
+     * @param filterServiceIdsIn  (optional)
+     * @param filterServiceIdsNotIn  (optional)
+     * @param filterServiceNamesEq  (optional)
+     * @param filterServiceNamesNotEq  (optional)
+     * @param filterServiceNamesIn  (optional)
+     * @param filterServiceNamesNotIn  (optional)
+     * @param filterFunctionalitiesEq  (optional)
+     * @param filterFunctionalitiesNotEq  (optional)
+     * @param filterFunctionalitiesIn  (optional)
+     * @param filterFunctionalitiesNotIn  (optional)
+     * @param filterFunctionalityIdsEq  (optional)
+     * @param filterFunctionalityIdsNotEq  (optional)
+     * @param filterFunctionalityIdsIn  (optional)
+     * @param filterFunctionalityIdsNotIn  (optional)
+     * @param filterFunctionalityNamesEq  (optional)
+     * @param filterFunctionalityNamesNotEq  (optional)
+     * @param filterFunctionalityNamesIn  (optional)
+     * @param filterFunctionalityNamesNotIn  (optional)
+     * @param filterCausesEq  (optional)
+     * @param filterCausesNotEq  (optional)
+     * @param filterCausesIn  (optional)
+     * @param filterCausesNotIn  (optional)
+     * @param filterCauseIdsEq  (optional)
+     * @param filterCauseIdsNotEq  (optional)
+     * @param filterCauseIdsIn  (optional)
+     * @param filterCauseIdsNotIn  (optional)
+     * @param filterTeamsEq  (optional)
+     * @param filterTeamsNotEq  (optional)
+     * @param filterTeamsIn  (optional)
+     * @param filterTeamsNotIn  (optional)
+     * @param filterTeamIdsEq  (optional)
+     * @param filterTeamIdsNotEq  (optional)
+     * @param filterTeamIdsIn  (optional)
+     * @param filterTeamIdsNotIn  (optional)
+     * @param filterTeamNamesEq  (optional)
+     * @param filterTeamNamesNotEq  (optional)
+     * @param filterTeamNamesIn  (optional)
+     * @param filterTeamNamesNotIn  (optional)
      * @param sort comma separated if needed. eg: created_at,updated_at (optional)
      * @param include comma separated if needed. eg: sub_statuses,causes,subscribers (optional)
      * @return IncidentList
@@ -1352,16 +2100,18 @@ public class IncidentsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> malformed date filter </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentList listIncidents(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterPrivate, @jakarta.annotation.Nullable Integer filterUserId, @jakarta.annotation.Nullable String filterSeverity, @jakarta.annotation.Nullable String filterSeverityId, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterTypes, @jakarta.annotation.Nullable String filterTypeIds, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterEnvironmentIds, @jakarta.annotation.Nullable String filterFunctionalities, @jakarta.annotation.Nullable String filterFunctionalityIds, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterServiceIds, @jakarta.annotation.Nullable String filterTeams, @jakarta.annotation.Nullable String filterTeamIds, @jakarta.annotation.Nullable String filterCause, @jakarta.annotation.Nullable String filterCauseIds, @jakarta.annotation.Nullable String filterCustomFieldSelectedOptionIds, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUpdatedAtGt, @jakarta.annotation.Nullable String filterUpdatedAtGte, @jakarta.annotation.Nullable String filterUpdatedAtLt, @jakarta.annotation.Nullable String filterUpdatedAtLte, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterDetectedAtGt, @jakarta.annotation.Nullable String filterDetectedAtGte, @jakarta.annotation.Nullable String filterDetectedAtLt, @jakarta.annotation.Nullable String filterDetectedAtLte, @jakarta.annotation.Nullable String filterAcknowledgedAtGt, @jakarta.annotation.Nullable String filterAcknowledgedAtGte, @jakarta.annotation.Nullable String filterAcknowledgedAtLt, @jakarta.annotation.Nullable String filterAcknowledgedAtLte, @jakarta.annotation.Nullable String filterMitigatedAtGt, @jakarta.annotation.Nullable String filterMitigatedAtGte, @jakarta.annotation.Nullable String filterMitigatedAtLt, @jakarta.annotation.Nullable String filterMitigatedAtLte, @jakarta.annotation.Nullable String filterResolvedAtGt, @jakarta.annotation.Nullable String filterResolvedAtGte, @jakarta.annotation.Nullable String filterResolvedAtLt, @jakarta.annotation.Nullable String filterResolvedAtLte, @jakarta.annotation.Nullable String filterClosedAtGt, @jakarta.annotation.Nullable String filterClosedAtGte, @jakarta.annotation.Nullable String filterClosedAtLt, @jakarta.annotation.Nullable String filterClosedAtLte, @jakarta.annotation.Nullable String filterInTriageAtGt, @jakarta.annotation.Nullable String filterInTriageAtGte, @jakarta.annotation.Nullable String filterInTriageAtLt, @jakarta.annotation.Nullable String filterInTriageAtLte, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable String include) throws ApiException {
-        ApiResponse<IncidentList> localVarResp = listIncidentsWithHttpInfo(pageNumber, pageSize, filterSearch, filterKind, filterStatus, filterPrivate, filterUserId, filterSeverity, filterSeverityId, filterLabels, filterTypes, filterTypeIds, filterEnvironments, filterEnvironmentIds, filterFunctionalities, filterFunctionalityIds, filterServices, filterServiceIds, filterTeams, filterTeamIds, filterCause, filterCauseIds, filterCustomFieldSelectedOptionIds, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUpdatedAtGt, filterUpdatedAtGte, filterUpdatedAtLt, filterUpdatedAtLte, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterDetectedAtGt, filterDetectedAtGte, filterDetectedAtLt, filterDetectedAtLte, filterAcknowledgedAtGt, filterAcknowledgedAtGte, filterAcknowledgedAtLt, filterAcknowledgedAtLte, filterMitigatedAtGt, filterMitigatedAtGte, filterMitigatedAtLt, filterMitigatedAtLte, filterResolvedAtGt, filterResolvedAtGte, filterResolvedAtLt, filterResolvedAtLte, filterClosedAtGt, filterClosedAtGte, filterClosedAtLt, filterClosedAtLte, filterInTriageAtGt, filterInTriageAtGte, filterInTriageAtLt, filterInTriageAtLte, sort, include);
+    public IncidentList listIncidents(@jakarta.annotation.Nullable String pageAfter, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterPrivate, @jakarta.annotation.Nullable Integer filterUserId, @jakarta.annotation.Nullable String filterSeverity, @jakarta.annotation.Nullable String filterSeverityId, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterTypes, @jakarta.annotation.Nullable String filterTypeIds, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterEnvironmentIds, @jakarta.annotation.Nullable String filterFunctionalities, @jakarta.annotation.Nullable String filterFunctionalityIds, @jakarta.annotation.Nullable String filterFunctionalityNames, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterServiceIds, @jakarta.annotation.Nullable String filterServiceNames, @jakarta.annotation.Nullable String filterTeams, @jakarta.annotation.Nullable String filterTeamIds, @jakarta.annotation.Nullable String filterTeamNames, @jakarta.annotation.Nullable String filterCause, @jakarta.annotation.Nullable String filterCauseIds, @jakarta.annotation.Nullable String filterCustomFieldSelectedOptionIds, @jakarta.annotation.Nullable String filterSlackChannelId, @jakarta.annotation.Nullable String filterSequentialId, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUpdatedAtGt, @jakarta.annotation.Nullable String filterUpdatedAtGte, @jakarta.annotation.Nullable String filterUpdatedAtLt, @jakarta.annotation.Nullable String filterUpdatedAtLte, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterDetectedAtGt, @jakarta.annotation.Nullable String filterDetectedAtGte, @jakarta.annotation.Nullable String filterDetectedAtLt, @jakarta.annotation.Nullable String filterDetectedAtLte, @jakarta.annotation.Nullable String filterAcknowledgedAtGt, @jakarta.annotation.Nullable String filterAcknowledgedAtGte, @jakarta.annotation.Nullable String filterAcknowledgedAtLt, @jakarta.annotation.Nullable String filterAcknowledgedAtLte, @jakarta.annotation.Nullable String filterMitigatedAtGt, @jakarta.annotation.Nullable String filterMitigatedAtGte, @jakarta.annotation.Nullable String filterMitigatedAtLt, @jakarta.annotation.Nullable String filterMitigatedAtLte, @jakarta.annotation.Nullable String filterResolvedAtGt, @jakarta.annotation.Nullable String filterResolvedAtGte, @jakarta.annotation.Nullable String filterResolvedAtLt, @jakarta.annotation.Nullable String filterResolvedAtLte, @jakarta.annotation.Nullable String filterClosedAtGt, @jakarta.annotation.Nullable String filterClosedAtGte, @jakarta.annotation.Nullable String filterClosedAtLt, @jakarta.annotation.Nullable String filterClosedAtLte, @jakarta.annotation.Nullable String filterInTriageAtGt, @jakarta.annotation.Nullable String filterInTriageAtGte, @jakarta.annotation.Nullable String filterInTriageAtLt, @jakarta.annotation.Nullable String filterInTriageAtLte, @jakarta.annotation.Nullable String filterKindEq, @jakarta.annotation.Nullable String filterKindNotEq, @jakarta.annotation.Nullable String filterKindIn, @jakarta.annotation.Nullable String filterKindNotIn, @jakarta.annotation.Nullable String filterStatusEq, @jakarta.annotation.Nullable String filterStatusNotEq, @jakarta.annotation.Nullable String filterStatusIn, @jakarta.annotation.Nullable String filterStatusNotIn, @jakarta.annotation.Nullable String filterPrivateEq, @jakarta.annotation.Nullable String filterPrivateNotEq, @jakarta.annotation.Nullable String filterPrivateIn, @jakarta.annotation.Nullable String filterPrivateNotIn, @jakarta.annotation.Nullable String filterUserIdEq, @jakarta.annotation.Nullable String filterUserIdNotEq, @jakarta.annotation.Nullable String filterUserIdIn, @jakarta.annotation.Nullable String filterUserIdNotIn, @jakarta.annotation.Nullable String filterSeverityEq, @jakarta.annotation.Nullable String filterSeverityNotEq, @jakarta.annotation.Nullable String filterSeverityIn, @jakarta.annotation.Nullable String filterSeverityNotIn, @jakarta.annotation.Nullable String filterSeverityIdEq, @jakarta.annotation.Nullable String filterSeverityIdNotEq, @jakarta.annotation.Nullable String filterSeverityIdIn, @jakarta.annotation.Nullable String filterSeverityIdNotIn, @jakarta.annotation.Nullable String filterLabelsEq, @jakarta.annotation.Nullable String filterLabelsNotEq, @jakarta.annotation.Nullable String filterLabelsIn, @jakarta.annotation.Nullable String filterLabelsNotIn, @jakarta.annotation.Nullable String filterZendeskTicketIdEq, @jakarta.annotation.Nullable String filterZendeskTicketIdNotEq, @jakarta.annotation.Nullable String filterZendeskTicketIdIn, @jakarta.annotation.Nullable String filterZendeskTicketIdNotIn, @jakarta.annotation.Nullable String filterSequentialIdEq, @jakarta.annotation.Nullable String filterSequentialIdNotEq, @jakarta.annotation.Nullable String filterSequentialIdIn, @jakarta.annotation.Nullable String filterSequentialIdNotIn, @jakarta.annotation.Nullable String filterTypesEq, @jakarta.annotation.Nullable String filterTypesNotEq, @jakarta.annotation.Nullable String filterTypesIn, @jakarta.annotation.Nullable String filterTypesNotIn, @jakarta.annotation.Nullable String filterTypeIdsEq, @jakarta.annotation.Nullable String filterTypeIdsNotEq, @jakarta.annotation.Nullable String filterTypeIdsIn, @jakarta.annotation.Nullable String filterTypeIdsNotIn, @jakarta.annotation.Nullable String filterEnvironmentsEq, @jakarta.annotation.Nullable String filterEnvironmentsNotEq, @jakarta.annotation.Nullable String filterEnvironmentsIn, @jakarta.annotation.Nullable String filterEnvironmentsNotIn, @jakarta.annotation.Nullable String filterEnvironmentIdsEq, @jakarta.annotation.Nullable String filterEnvironmentIdsNotEq, @jakarta.annotation.Nullable String filterEnvironmentIdsIn, @jakarta.annotation.Nullable String filterEnvironmentIdsNotIn, @jakarta.annotation.Nullable String filterServicesEq, @jakarta.annotation.Nullable String filterServicesNotEq, @jakarta.annotation.Nullable String filterServicesIn, @jakarta.annotation.Nullable String filterServicesNotIn, @jakarta.annotation.Nullable String filterServiceIdsEq, @jakarta.annotation.Nullable String filterServiceIdsNotEq, @jakarta.annotation.Nullable String filterServiceIdsIn, @jakarta.annotation.Nullable String filterServiceIdsNotIn, @jakarta.annotation.Nullable String filterServiceNamesEq, @jakarta.annotation.Nullable String filterServiceNamesNotEq, @jakarta.annotation.Nullable String filterServiceNamesIn, @jakarta.annotation.Nullable String filterServiceNamesNotIn, @jakarta.annotation.Nullable String filterFunctionalitiesEq, @jakarta.annotation.Nullable String filterFunctionalitiesNotEq, @jakarta.annotation.Nullable String filterFunctionalitiesIn, @jakarta.annotation.Nullable String filterFunctionalitiesNotIn, @jakarta.annotation.Nullable String filterFunctionalityIdsEq, @jakarta.annotation.Nullable String filterFunctionalityIdsNotEq, @jakarta.annotation.Nullable String filterFunctionalityIdsIn, @jakarta.annotation.Nullable String filterFunctionalityIdsNotIn, @jakarta.annotation.Nullable String filterFunctionalityNamesEq, @jakarta.annotation.Nullable String filterFunctionalityNamesNotEq, @jakarta.annotation.Nullable String filterFunctionalityNamesIn, @jakarta.annotation.Nullable String filterFunctionalityNamesNotIn, @jakarta.annotation.Nullable String filterCausesEq, @jakarta.annotation.Nullable String filterCausesNotEq, @jakarta.annotation.Nullable String filterCausesIn, @jakarta.annotation.Nullable String filterCausesNotIn, @jakarta.annotation.Nullable String filterCauseIdsEq, @jakarta.annotation.Nullable String filterCauseIdsNotEq, @jakarta.annotation.Nullable String filterCauseIdsIn, @jakarta.annotation.Nullable String filterCauseIdsNotIn, @jakarta.annotation.Nullable String filterTeamsEq, @jakarta.annotation.Nullable String filterTeamsNotEq, @jakarta.annotation.Nullable String filterTeamsIn, @jakarta.annotation.Nullable String filterTeamsNotIn, @jakarta.annotation.Nullable String filterTeamIdsEq, @jakarta.annotation.Nullable String filterTeamIdsNotEq, @jakarta.annotation.Nullable String filterTeamIdsIn, @jakarta.annotation.Nullable String filterTeamIdsNotIn, @jakarta.annotation.Nullable String filterTeamNamesEq, @jakarta.annotation.Nullable String filterTeamNamesNotEq, @jakarta.annotation.Nullable String filterTeamNamesIn, @jakarta.annotation.Nullable String filterTeamNamesNotIn, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable String include) throws ApiException {
+        ApiResponse<IncidentList> localVarResp = listIncidentsWithHttpInfo(pageAfter, pageNumber, pageSize, filterSearch, filterKind, filterStatus, filterPrivate, filterUserId, filterSeverity, filterSeverityId, filterLabels, filterTypes, filterTypeIds, filterEnvironments, filterEnvironmentIds, filterFunctionalities, filterFunctionalityIds, filterFunctionalityNames, filterServices, filterServiceIds, filterServiceNames, filterTeams, filterTeamIds, filterTeamNames, filterCause, filterCauseIds, filterCustomFieldSelectedOptionIds, filterSlackChannelId, filterSequentialId, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUpdatedAtGt, filterUpdatedAtGte, filterUpdatedAtLt, filterUpdatedAtLte, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterDetectedAtGt, filterDetectedAtGte, filterDetectedAtLt, filterDetectedAtLte, filterAcknowledgedAtGt, filterAcknowledgedAtGte, filterAcknowledgedAtLt, filterAcknowledgedAtLte, filterMitigatedAtGt, filterMitigatedAtGte, filterMitigatedAtLt, filterMitigatedAtLte, filterResolvedAtGt, filterResolvedAtGte, filterResolvedAtLt, filterResolvedAtLte, filterClosedAtGt, filterClosedAtGte, filterClosedAtLt, filterClosedAtLte, filterInTriageAtGt, filterInTriageAtGte, filterInTriageAtLt, filterInTriageAtLte, filterKindEq, filterKindNotEq, filterKindIn, filterKindNotIn, filterStatusEq, filterStatusNotEq, filterStatusIn, filterStatusNotIn, filterPrivateEq, filterPrivateNotEq, filterPrivateIn, filterPrivateNotIn, filterUserIdEq, filterUserIdNotEq, filterUserIdIn, filterUserIdNotIn, filterSeverityEq, filterSeverityNotEq, filterSeverityIn, filterSeverityNotIn, filterSeverityIdEq, filterSeverityIdNotEq, filterSeverityIdIn, filterSeverityIdNotIn, filterLabelsEq, filterLabelsNotEq, filterLabelsIn, filterLabelsNotIn, filterZendeskTicketIdEq, filterZendeskTicketIdNotEq, filterZendeskTicketIdIn, filterZendeskTicketIdNotIn, filterSequentialIdEq, filterSequentialIdNotEq, filterSequentialIdIn, filterSequentialIdNotIn, filterTypesEq, filterTypesNotEq, filterTypesIn, filterTypesNotIn, filterTypeIdsEq, filterTypeIdsNotEq, filterTypeIdsIn, filterTypeIdsNotIn, filterEnvironmentsEq, filterEnvironmentsNotEq, filterEnvironmentsIn, filterEnvironmentsNotIn, filterEnvironmentIdsEq, filterEnvironmentIdsNotEq, filterEnvironmentIdsIn, filterEnvironmentIdsNotIn, filterServicesEq, filterServicesNotEq, filterServicesIn, filterServicesNotIn, filterServiceIdsEq, filterServiceIdsNotEq, filterServiceIdsIn, filterServiceIdsNotIn, filterServiceNamesEq, filterServiceNamesNotEq, filterServiceNamesIn, filterServiceNamesNotIn, filterFunctionalitiesEq, filterFunctionalitiesNotEq, filterFunctionalitiesIn, filterFunctionalitiesNotIn, filterFunctionalityIdsEq, filterFunctionalityIdsNotEq, filterFunctionalityIdsIn, filterFunctionalityIdsNotIn, filterFunctionalityNamesEq, filterFunctionalityNamesNotEq, filterFunctionalityNamesIn, filterFunctionalityNamesNotIn, filterCausesEq, filterCausesNotEq, filterCausesIn, filterCausesNotIn, filterCauseIdsEq, filterCauseIdsNotEq, filterCauseIdsIn, filterCauseIdsNotIn, filterTeamsEq, filterTeamsNotEq, filterTeamsIn, filterTeamsNotIn, filterTeamIdsEq, filterTeamIdsNotEq, filterTeamIdsIn, filterTeamIdsNotIn, filterTeamNamesEq, filterTeamNamesNotEq, filterTeamNamesIn, filterTeamNamesNotIn, sort, include);
         return localVarResp.getData();
     }
 
     /**
      * List incidents
      * List incidents
+     * @param pageAfter The cursor to fetch results using cursor pagination. A cursor is provided in meta.next_cursor in the response. (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
      * @param filterSearch  (optional)
@@ -1378,13 +2128,18 @@ public class IncidentsApi {
      * @param filterEnvironmentIds  (optional)
      * @param filterFunctionalities  (optional)
      * @param filterFunctionalityIds  (optional)
+     * @param filterFunctionalityNames  (optional)
      * @param filterServices  (optional)
      * @param filterServiceIds  (optional)
+     * @param filterServiceNames  (optional)
      * @param filterTeams  (optional)
      * @param filterTeamIds  (optional)
+     * @param filterTeamNames  (optional)
      * @param filterCause  (optional)
      * @param filterCauseIds  (optional)
      * @param filterCustomFieldSelectedOptionIds  (optional)
+     * @param filterSlackChannelId  (optional)
+     * @param filterSequentialId Filter by the human-readable incident number (the 123 in INC-123). (optional)
      * @param filterCreatedAtGt  (optional)
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
@@ -1421,6 +2176,102 @@ public class IncidentsApi {
      * @param filterInTriageAtGte  (optional)
      * @param filterInTriageAtLt  (optional)
      * @param filterInTriageAtLte  (optional)
+     * @param filterKindEq  (optional)
+     * @param filterKindNotEq  (optional)
+     * @param filterKindIn  (optional)
+     * @param filterKindNotIn  (optional)
+     * @param filterStatusEq  (optional)
+     * @param filterStatusNotEq  (optional)
+     * @param filterStatusIn  (optional)
+     * @param filterStatusNotIn  (optional)
+     * @param filterPrivateEq  (optional)
+     * @param filterPrivateNotEq  (optional)
+     * @param filterPrivateIn  (optional)
+     * @param filterPrivateNotIn  (optional)
+     * @param filterUserIdEq  (optional)
+     * @param filterUserIdNotEq  (optional)
+     * @param filterUserIdIn  (optional)
+     * @param filterUserIdNotIn  (optional)
+     * @param filterSeverityEq  (optional)
+     * @param filterSeverityNotEq  (optional)
+     * @param filterSeverityIn  (optional)
+     * @param filterSeverityNotIn  (optional)
+     * @param filterSeverityIdEq  (optional)
+     * @param filterSeverityIdNotEq  (optional)
+     * @param filterSeverityIdIn  (optional)
+     * @param filterSeverityIdNotIn  (optional)
+     * @param filterLabelsEq  (optional)
+     * @param filterLabelsNotEq  (optional)
+     * @param filterLabelsIn  (optional)
+     * @param filterLabelsNotIn  (optional)
+     * @param filterZendeskTicketIdEq  (optional)
+     * @param filterZendeskTicketIdNotEq  (optional)
+     * @param filterZendeskTicketIdIn  (optional)
+     * @param filterZendeskTicketIdNotIn  (optional)
+     * @param filterSequentialIdEq  (optional)
+     * @param filterSequentialIdNotEq  (optional)
+     * @param filterSequentialIdIn  (optional)
+     * @param filterSequentialIdNotIn  (optional)
+     * @param filterTypesEq  (optional)
+     * @param filterTypesNotEq  (optional)
+     * @param filterTypesIn  (optional)
+     * @param filterTypesNotIn  (optional)
+     * @param filterTypeIdsEq  (optional)
+     * @param filterTypeIdsNotEq  (optional)
+     * @param filterTypeIdsIn  (optional)
+     * @param filterTypeIdsNotIn  (optional)
+     * @param filterEnvironmentsEq  (optional)
+     * @param filterEnvironmentsNotEq  (optional)
+     * @param filterEnvironmentsIn  (optional)
+     * @param filterEnvironmentsNotIn  (optional)
+     * @param filterEnvironmentIdsEq  (optional)
+     * @param filterEnvironmentIdsNotEq  (optional)
+     * @param filterEnvironmentIdsIn  (optional)
+     * @param filterEnvironmentIdsNotIn  (optional)
+     * @param filterServicesEq  (optional)
+     * @param filterServicesNotEq  (optional)
+     * @param filterServicesIn  (optional)
+     * @param filterServicesNotIn  (optional)
+     * @param filterServiceIdsEq  (optional)
+     * @param filterServiceIdsNotEq  (optional)
+     * @param filterServiceIdsIn  (optional)
+     * @param filterServiceIdsNotIn  (optional)
+     * @param filterServiceNamesEq  (optional)
+     * @param filterServiceNamesNotEq  (optional)
+     * @param filterServiceNamesIn  (optional)
+     * @param filterServiceNamesNotIn  (optional)
+     * @param filterFunctionalitiesEq  (optional)
+     * @param filterFunctionalitiesNotEq  (optional)
+     * @param filterFunctionalitiesIn  (optional)
+     * @param filterFunctionalitiesNotIn  (optional)
+     * @param filterFunctionalityIdsEq  (optional)
+     * @param filterFunctionalityIdsNotEq  (optional)
+     * @param filterFunctionalityIdsIn  (optional)
+     * @param filterFunctionalityIdsNotIn  (optional)
+     * @param filterFunctionalityNamesEq  (optional)
+     * @param filterFunctionalityNamesNotEq  (optional)
+     * @param filterFunctionalityNamesIn  (optional)
+     * @param filterFunctionalityNamesNotIn  (optional)
+     * @param filterCausesEq  (optional)
+     * @param filterCausesNotEq  (optional)
+     * @param filterCausesIn  (optional)
+     * @param filterCausesNotIn  (optional)
+     * @param filterCauseIdsEq  (optional)
+     * @param filterCauseIdsNotEq  (optional)
+     * @param filterCauseIdsIn  (optional)
+     * @param filterCauseIdsNotIn  (optional)
+     * @param filterTeamsEq  (optional)
+     * @param filterTeamsNotEq  (optional)
+     * @param filterTeamsIn  (optional)
+     * @param filterTeamsNotIn  (optional)
+     * @param filterTeamIdsEq  (optional)
+     * @param filterTeamIdsNotEq  (optional)
+     * @param filterTeamIdsIn  (optional)
+     * @param filterTeamIdsNotIn  (optional)
+     * @param filterTeamNamesEq  (optional)
+     * @param filterTeamNamesNotEq  (optional)
+     * @param filterTeamNamesIn  (optional)
+     * @param filterTeamNamesNotIn  (optional)
      * @param sort comma separated if needed. eg: created_at,updated_at (optional)
      * @param include comma separated if needed. eg: sub_statuses,causes,subscribers (optional)
      * @return ApiResponse&lt;IncidentList&gt;
@@ -1430,10 +2281,11 @@ public class IncidentsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> malformed date filter </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentList> listIncidentsWithHttpInfo(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterPrivate, @jakarta.annotation.Nullable Integer filterUserId, @jakarta.annotation.Nullable String filterSeverity, @jakarta.annotation.Nullable String filterSeverityId, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterTypes, @jakarta.annotation.Nullable String filterTypeIds, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterEnvironmentIds, @jakarta.annotation.Nullable String filterFunctionalities, @jakarta.annotation.Nullable String filterFunctionalityIds, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterServiceIds, @jakarta.annotation.Nullable String filterTeams, @jakarta.annotation.Nullable String filterTeamIds, @jakarta.annotation.Nullable String filterCause, @jakarta.annotation.Nullable String filterCauseIds, @jakarta.annotation.Nullable String filterCustomFieldSelectedOptionIds, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUpdatedAtGt, @jakarta.annotation.Nullable String filterUpdatedAtGte, @jakarta.annotation.Nullable String filterUpdatedAtLt, @jakarta.annotation.Nullable String filterUpdatedAtLte, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterDetectedAtGt, @jakarta.annotation.Nullable String filterDetectedAtGte, @jakarta.annotation.Nullable String filterDetectedAtLt, @jakarta.annotation.Nullable String filterDetectedAtLte, @jakarta.annotation.Nullable String filterAcknowledgedAtGt, @jakarta.annotation.Nullable String filterAcknowledgedAtGte, @jakarta.annotation.Nullable String filterAcknowledgedAtLt, @jakarta.annotation.Nullable String filterAcknowledgedAtLte, @jakarta.annotation.Nullable String filterMitigatedAtGt, @jakarta.annotation.Nullable String filterMitigatedAtGte, @jakarta.annotation.Nullable String filterMitigatedAtLt, @jakarta.annotation.Nullable String filterMitigatedAtLte, @jakarta.annotation.Nullable String filterResolvedAtGt, @jakarta.annotation.Nullable String filterResolvedAtGte, @jakarta.annotation.Nullable String filterResolvedAtLt, @jakarta.annotation.Nullable String filterResolvedAtLte, @jakarta.annotation.Nullable String filterClosedAtGt, @jakarta.annotation.Nullable String filterClosedAtGte, @jakarta.annotation.Nullable String filterClosedAtLt, @jakarta.annotation.Nullable String filterClosedAtLte, @jakarta.annotation.Nullable String filterInTriageAtGt, @jakarta.annotation.Nullable String filterInTriageAtGte, @jakarta.annotation.Nullable String filterInTriageAtLt, @jakarta.annotation.Nullable String filterInTriageAtLte, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable String include) throws ApiException {
-        okhttp3.Call localVarCall = listIncidentsValidateBeforeCall(pageNumber, pageSize, filterSearch, filterKind, filterStatus, filterPrivate, filterUserId, filterSeverity, filterSeverityId, filterLabels, filterTypes, filterTypeIds, filterEnvironments, filterEnvironmentIds, filterFunctionalities, filterFunctionalityIds, filterServices, filterServiceIds, filterTeams, filterTeamIds, filterCause, filterCauseIds, filterCustomFieldSelectedOptionIds, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUpdatedAtGt, filterUpdatedAtGte, filterUpdatedAtLt, filterUpdatedAtLte, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterDetectedAtGt, filterDetectedAtGte, filterDetectedAtLt, filterDetectedAtLte, filterAcknowledgedAtGt, filterAcknowledgedAtGte, filterAcknowledgedAtLt, filterAcknowledgedAtLte, filterMitigatedAtGt, filterMitigatedAtGte, filterMitigatedAtLt, filterMitigatedAtLte, filterResolvedAtGt, filterResolvedAtGte, filterResolvedAtLt, filterResolvedAtLte, filterClosedAtGt, filterClosedAtGte, filterClosedAtLt, filterClosedAtLte, filterInTriageAtGt, filterInTriageAtGte, filterInTriageAtLt, filterInTriageAtLte, sort, include, null);
+    public ApiResponse<IncidentList> listIncidentsWithHttpInfo(@jakarta.annotation.Nullable String pageAfter, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterPrivate, @jakarta.annotation.Nullable Integer filterUserId, @jakarta.annotation.Nullable String filterSeverity, @jakarta.annotation.Nullable String filterSeverityId, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterTypes, @jakarta.annotation.Nullable String filterTypeIds, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterEnvironmentIds, @jakarta.annotation.Nullable String filterFunctionalities, @jakarta.annotation.Nullable String filterFunctionalityIds, @jakarta.annotation.Nullable String filterFunctionalityNames, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterServiceIds, @jakarta.annotation.Nullable String filterServiceNames, @jakarta.annotation.Nullable String filterTeams, @jakarta.annotation.Nullable String filterTeamIds, @jakarta.annotation.Nullable String filterTeamNames, @jakarta.annotation.Nullable String filterCause, @jakarta.annotation.Nullable String filterCauseIds, @jakarta.annotation.Nullable String filterCustomFieldSelectedOptionIds, @jakarta.annotation.Nullable String filterSlackChannelId, @jakarta.annotation.Nullable String filterSequentialId, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUpdatedAtGt, @jakarta.annotation.Nullable String filterUpdatedAtGte, @jakarta.annotation.Nullable String filterUpdatedAtLt, @jakarta.annotation.Nullable String filterUpdatedAtLte, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterDetectedAtGt, @jakarta.annotation.Nullable String filterDetectedAtGte, @jakarta.annotation.Nullable String filterDetectedAtLt, @jakarta.annotation.Nullable String filterDetectedAtLte, @jakarta.annotation.Nullable String filterAcknowledgedAtGt, @jakarta.annotation.Nullable String filterAcknowledgedAtGte, @jakarta.annotation.Nullable String filterAcknowledgedAtLt, @jakarta.annotation.Nullable String filterAcknowledgedAtLte, @jakarta.annotation.Nullable String filterMitigatedAtGt, @jakarta.annotation.Nullable String filterMitigatedAtGte, @jakarta.annotation.Nullable String filterMitigatedAtLt, @jakarta.annotation.Nullable String filterMitigatedAtLte, @jakarta.annotation.Nullable String filterResolvedAtGt, @jakarta.annotation.Nullable String filterResolvedAtGte, @jakarta.annotation.Nullable String filterResolvedAtLt, @jakarta.annotation.Nullable String filterResolvedAtLte, @jakarta.annotation.Nullable String filterClosedAtGt, @jakarta.annotation.Nullable String filterClosedAtGte, @jakarta.annotation.Nullable String filterClosedAtLt, @jakarta.annotation.Nullable String filterClosedAtLte, @jakarta.annotation.Nullable String filterInTriageAtGt, @jakarta.annotation.Nullable String filterInTriageAtGte, @jakarta.annotation.Nullable String filterInTriageAtLt, @jakarta.annotation.Nullable String filterInTriageAtLte, @jakarta.annotation.Nullable String filterKindEq, @jakarta.annotation.Nullable String filterKindNotEq, @jakarta.annotation.Nullable String filterKindIn, @jakarta.annotation.Nullable String filterKindNotIn, @jakarta.annotation.Nullable String filterStatusEq, @jakarta.annotation.Nullable String filterStatusNotEq, @jakarta.annotation.Nullable String filterStatusIn, @jakarta.annotation.Nullable String filterStatusNotIn, @jakarta.annotation.Nullable String filterPrivateEq, @jakarta.annotation.Nullable String filterPrivateNotEq, @jakarta.annotation.Nullable String filterPrivateIn, @jakarta.annotation.Nullable String filterPrivateNotIn, @jakarta.annotation.Nullable String filterUserIdEq, @jakarta.annotation.Nullable String filterUserIdNotEq, @jakarta.annotation.Nullable String filterUserIdIn, @jakarta.annotation.Nullable String filterUserIdNotIn, @jakarta.annotation.Nullable String filterSeverityEq, @jakarta.annotation.Nullable String filterSeverityNotEq, @jakarta.annotation.Nullable String filterSeverityIn, @jakarta.annotation.Nullable String filterSeverityNotIn, @jakarta.annotation.Nullable String filterSeverityIdEq, @jakarta.annotation.Nullable String filterSeverityIdNotEq, @jakarta.annotation.Nullable String filterSeverityIdIn, @jakarta.annotation.Nullable String filterSeverityIdNotIn, @jakarta.annotation.Nullable String filterLabelsEq, @jakarta.annotation.Nullable String filterLabelsNotEq, @jakarta.annotation.Nullable String filterLabelsIn, @jakarta.annotation.Nullable String filterLabelsNotIn, @jakarta.annotation.Nullable String filterZendeskTicketIdEq, @jakarta.annotation.Nullable String filterZendeskTicketIdNotEq, @jakarta.annotation.Nullable String filterZendeskTicketIdIn, @jakarta.annotation.Nullable String filterZendeskTicketIdNotIn, @jakarta.annotation.Nullable String filterSequentialIdEq, @jakarta.annotation.Nullable String filterSequentialIdNotEq, @jakarta.annotation.Nullable String filterSequentialIdIn, @jakarta.annotation.Nullable String filterSequentialIdNotIn, @jakarta.annotation.Nullable String filterTypesEq, @jakarta.annotation.Nullable String filterTypesNotEq, @jakarta.annotation.Nullable String filterTypesIn, @jakarta.annotation.Nullable String filterTypesNotIn, @jakarta.annotation.Nullable String filterTypeIdsEq, @jakarta.annotation.Nullable String filterTypeIdsNotEq, @jakarta.annotation.Nullable String filterTypeIdsIn, @jakarta.annotation.Nullable String filterTypeIdsNotIn, @jakarta.annotation.Nullable String filterEnvironmentsEq, @jakarta.annotation.Nullable String filterEnvironmentsNotEq, @jakarta.annotation.Nullable String filterEnvironmentsIn, @jakarta.annotation.Nullable String filterEnvironmentsNotIn, @jakarta.annotation.Nullable String filterEnvironmentIdsEq, @jakarta.annotation.Nullable String filterEnvironmentIdsNotEq, @jakarta.annotation.Nullable String filterEnvironmentIdsIn, @jakarta.annotation.Nullable String filterEnvironmentIdsNotIn, @jakarta.annotation.Nullable String filterServicesEq, @jakarta.annotation.Nullable String filterServicesNotEq, @jakarta.annotation.Nullable String filterServicesIn, @jakarta.annotation.Nullable String filterServicesNotIn, @jakarta.annotation.Nullable String filterServiceIdsEq, @jakarta.annotation.Nullable String filterServiceIdsNotEq, @jakarta.annotation.Nullable String filterServiceIdsIn, @jakarta.annotation.Nullable String filterServiceIdsNotIn, @jakarta.annotation.Nullable String filterServiceNamesEq, @jakarta.annotation.Nullable String filterServiceNamesNotEq, @jakarta.annotation.Nullable String filterServiceNamesIn, @jakarta.annotation.Nullable String filterServiceNamesNotIn, @jakarta.annotation.Nullable String filterFunctionalitiesEq, @jakarta.annotation.Nullable String filterFunctionalitiesNotEq, @jakarta.annotation.Nullable String filterFunctionalitiesIn, @jakarta.annotation.Nullable String filterFunctionalitiesNotIn, @jakarta.annotation.Nullable String filterFunctionalityIdsEq, @jakarta.annotation.Nullable String filterFunctionalityIdsNotEq, @jakarta.annotation.Nullable String filterFunctionalityIdsIn, @jakarta.annotation.Nullable String filterFunctionalityIdsNotIn, @jakarta.annotation.Nullable String filterFunctionalityNamesEq, @jakarta.annotation.Nullable String filterFunctionalityNamesNotEq, @jakarta.annotation.Nullable String filterFunctionalityNamesIn, @jakarta.annotation.Nullable String filterFunctionalityNamesNotIn, @jakarta.annotation.Nullable String filterCausesEq, @jakarta.annotation.Nullable String filterCausesNotEq, @jakarta.annotation.Nullable String filterCausesIn, @jakarta.annotation.Nullable String filterCausesNotIn, @jakarta.annotation.Nullable String filterCauseIdsEq, @jakarta.annotation.Nullable String filterCauseIdsNotEq, @jakarta.annotation.Nullable String filterCauseIdsIn, @jakarta.annotation.Nullable String filterCauseIdsNotIn, @jakarta.annotation.Nullable String filterTeamsEq, @jakarta.annotation.Nullable String filterTeamsNotEq, @jakarta.annotation.Nullable String filterTeamsIn, @jakarta.annotation.Nullable String filterTeamsNotIn, @jakarta.annotation.Nullable String filterTeamIdsEq, @jakarta.annotation.Nullable String filterTeamIdsNotEq, @jakarta.annotation.Nullable String filterTeamIdsIn, @jakarta.annotation.Nullable String filterTeamIdsNotIn, @jakarta.annotation.Nullable String filterTeamNamesEq, @jakarta.annotation.Nullable String filterTeamNamesNotEq, @jakarta.annotation.Nullable String filterTeamNamesIn, @jakarta.annotation.Nullable String filterTeamNamesNotIn, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable String include) throws ApiException {
+        okhttp3.Call localVarCall = listIncidentsValidateBeforeCall(pageAfter, pageNumber, pageSize, filterSearch, filterKind, filterStatus, filterPrivate, filterUserId, filterSeverity, filterSeverityId, filterLabels, filterTypes, filterTypeIds, filterEnvironments, filterEnvironmentIds, filterFunctionalities, filterFunctionalityIds, filterFunctionalityNames, filterServices, filterServiceIds, filterServiceNames, filterTeams, filterTeamIds, filterTeamNames, filterCause, filterCauseIds, filterCustomFieldSelectedOptionIds, filterSlackChannelId, filterSequentialId, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUpdatedAtGt, filterUpdatedAtGte, filterUpdatedAtLt, filterUpdatedAtLte, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterDetectedAtGt, filterDetectedAtGte, filterDetectedAtLt, filterDetectedAtLte, filterAcknowledgedAtGt, filterAcknowledgedAtGte, filterAcknowledgedAtLt, filterAcknowledgedAtLte, filterMitigatedAtGt, filterMitigatedAtGte, filterMitigatedAtLt, filterMitigatedAtLte, filterResolvedAtGt, filterResolvedAtGte, filterResolvedAtLt, filterResolvedAtLte, filterClosedAtGt, filterClosedAtGte, filterClosedAtLt, filterClosedAtLte, filterInTriageAtGt, filterInTriageAtGte, filterInTriageAtLt, filterInTriageAtLte, filterKindEq, filterKindNotEq, filterKindIn, filterKindNotIn, filterStatusEq, filterStatusNotEq, filterStatusIn, filterStatusNotIn, filterPrivateEq, filterPrivateNotEq, filterPrivateIn, filterPrivateNotIn, filterUserIdEq, filterUserIdNotEq, filterUserIdIn, filterUserIdNotIn, filterSeverityEq, filterSeverityNotEq, filterSeverityIn, filterSeverityNotIn, filterSeverityIdEq, filterSeverityIdNotEq, filterSeverityIdIn, filterSeverityIdNotIn, filterLabelsEq, filterLabelsNotEq, filterLabelsIn, filterLabelsNotIn, filterZendeskTicketIdEq, filterZendeskTicketIdNotEq, filterZendeskTicketIdIn, filterZendeskTicketIdNotIn, filterSequentialIdEq, filterSequentialIdNotEq, filterSequentialIdIn, filterSequentialIdNotIn, filterTypesEq, filterTypesNotEq, filterTypesIn, filterTypesNotIn, filterTypeIdsEq, filterTypeIdsNotEq, filterTypeIdsIn, filterTypeIdsNotIn, filterEnvironmentsEq, filterEnvironmentsNotEq, filterEnvironmentsIn, filterEnvironmentsNotIn, filterEnvironmentIdsEq, filterEnvironmentIdsNotEq, filterEnvironmentIdsIn, filterEnvironmentIdsNotIn, filterServicesEq, filterServicesNotEq, filterServicesIn, filterServicesNotIn, filterServiceIdsEq, filterServiceIdsNotEq, filterServiceIdsIn, filterServiceIdsNotIn, filterServiceNamesEq, filterServiceNamesNotEq, filterServiceNamesIn, filterServiceNamesNotIn, filterFunctionalitiesEq, filterFunctionalitiesNotEq, filterFunctionalitiesIn, filterFunctionalitiesNotIn, filterFunctionalityIdsEq, filterFunctionalityIdsNotEq, filterFunctionalityIdsIn, filterFunctionalityIdsNotIn, filterFunctionalityNamesEq, filterFunctionalityNamesNotEq, filterFunctionalityNamesIn, filterFunctionalityNamesNotIn, filterCausesEq, filterCausesNotEq, filterCausesIn, filterCausesNotIn, filterCauseIdsEq, filterCauseIdsNotEq, filterCauseIdsIn, filterCauseIdsNotIn, filterTeamsEq, filterTeamsNotEq, filterTeamsIn, filterTeamsNotIn, filterTeamIdsEq, filterTeamIdsNotEq, filterTeamIdsIn, filterTeamIdsNotIn, filterTeamNamesEq, filterTeamNamesNotEq, filterTeamNamesIn, filterTeamNamesNotIn, sort, include, null);
         Type localVarReturnType = new TypeToken<IncidentList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1441,6 +2293,7 @@ public class IncidentsApi {
     /**
      * List incidents (asynchronously)
      * List incidents
+     * @param pageAfter The cursor to fetch results using cursor pagination. A cursor is provided in meta.next_cursor in the response. (optional)
      * @param pageNumber  (optional)
      * @param pageSize  (optional)
      * @param filterSearch  (optional)
@@ -1457,13 +2310,18 @@ public class IncidentsApi {
      * @param filterEnvironmentIds  (optional)
      * @param filterFunctionalities  (optional)
      * @param filterFunctionalityIds  (optional)
+     * @param filterFunctionalityNames  (optional)
      * @param filterServices  (optional)
      * @param filterServiceIds  (optional)
+     * @param filterServiceNames  (optional)
      * @param filterTeams  (optional)
      * @param filterTeamIds  (optional)
+     * @param filterTeamNames  (optional)
      * @param filterCause  (optional)
      * @param filterCauseIds  (optional)
      * @param filterCustomFieldSelectedOptionIds  (optional)
+     * @param filterSlackChannelId  (optional)
+     * @param filterSequentialId Filter by the human-readable incident number (the 123 in INC-123). (optional)
      * @param filterCreatedAtGt  (optional)
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
@@ -1500,6 +2358,102 @@ public class IncidentsApi {
      * @param filterInTriageAtGte  (optional)
      * @param filterInTriageAtLt  (optional)
      * @param filterInTriageAtLte  (optional)
+     * @param filterKindEq  (optional)
+     * @param filterKindNotEq  (optional)
+     * @param filterKindIn  (optional)
+     * @param filterKindNotIn  (optional)
+     * @param filterStatusEq  (optional)
+     * @param filterStatusNotEq  (optional)
+     * @param filterStatusIn  (optional)
+     * @param filterStatusNotIn  (optional)
+     * @param filterPrivateEq  (optional)
+     * @param filterPrivateNotEq  (optional)
+     * @param filterPrivateIn  (optional)
+     * @param filterPrivateNotIn  (optional)
+     * @param filterUserIdEq  (optional)
+     * @param filterUserIdNotEq  (optional)
+     * @param filterUserIdIn  (optional)
+     * @param filterUserIdNotIn  (optional)
+     * @param filterSeverityEq  (optional)
+     * @param filterSeverityNotEq  (optional)
+     * @param filterSeverityIn  (optional)
+     * @param filterSeverityNotIn  (optional)
+     * @param filterSeverityIdEq  (optional)
+     * @param filterSeverityIdNotEq  (optional)
+     * @param filterSeverityIdIn  (optional)
+     * @param filterSeverityIdNotIn  (optional)
+     * @param filterLabelsEq  (optional)
+     * @param filterLabelsNotEq  (optional)
+     * @param filterLabelsIn  (optional)
+     * @param filterLabelsNotIn  (optional)
+     * @param filterZendeskTicketIdEq  (optional)
+     * @param filterZendeskTicketIdNotEq  (optional)
+     * @param filterZendeskTicketIdIn  (optional)
+     * @param filterZendeskTicketIdNotIn  (optional)
+     * @param filterSequentialIdEq  (optional)
+     * @param filterSequentialIdNotEq  (optional)
+     * @param filterSequentialIdIn  (optional)
+     * @param filterSequentialIdNotIn  (optional)
+     * @param filterTypesEq  (optional)
+     * @param filterTypesNotEq  (optional)
+     * @param filterTypesIn  (optional)
+     * @param filterTypesNotIn  (optional)
+     * @param filterTypeIdsEq  (optional)
+     * @param filterTypeIdsNotEq  (optional)
+     * @param filterTypeIdsIn  (optional)
+     * @param filterTypeIdsNotIn  (optional)
+     * @param filterEnvironmentsEq  (optional)
+     * @param filterEnvironmentsNotEq  (optional)
+     * @param filterEnvironmentsIn  (optional)
+     * @param filterEnvironmentsNotIn  (optional)
+     * @param filterEnvironmentIdsEq  (optional)
+     * @param filterEnvironmentIdsNotEq  (optional)
+     * @param filterEnvironmentIdsIn  (optional)
+     * @param filterEnvironmentIdsNotIn  (optional)
+     * @param filterServicesEq  (optional)
+     * @param filterServicesNotEq  (optional)
+     * @param filterServicesIn  (optional)
+     * @param filterServicesNotIn  (optional)
+     * @param filterServiceIdsEq  (optional)
+     * @param filterServiceIdsNotEq  (optional)
+     * @param filterServiceIdsIn  (optional)
+     * @param filterServiceIdsNotIn  (optional)
+     * @param filterServiceNamesEq  (optional)
+     * @param filterServiceNamesNotEq  (optional)
+     * @param filterServiceNamesIn  (optional)
+     * @param filterServiceNamesNotIn  (optional)
+     * @param filterFunctionalitiesEq  (optional)
+     * @param filterFunctionalitiesNotEq  (optional)
+     * @param filterFunctionalitiesIn  (optional)
+     * @param filterFunctionalitiesNotIn  (optional)
+     * @param filterFunctionalityIdsEq  (optional)
+     * @param filterFunctionalityIdsNotEq  (optional)
+     * @param filterFunctionalityIdsIn  (optional)
+     * @param filterFunctionalityIdsNotIn  (optional)
+     * @param filterFunctionalityNamesEq  (optional)
+     * @param filterFunctionalityNamesNotEq  (optional)
+     * @param filterFunctionalityNamesIn  (optional)
+     * @param filterFunctionalityNamesNotIn  (optional)
+     * @param filterCausesEq  (optional)
+     * @param filterCausesNotEq  (optional)
+     * @param filterCausesIn  (optional)
+     * @param filterCausesNotIn  (optional)
+     * @param filterCauseIdsEq  (optional)
+     * @param filterCauseIdsNotEq  (optional)
+     * @param filterCauseIdsIn  (optional)
+     * @param filterCauseIdsNotIn  (optional)
+     * @param filterTeamsEq  (optional)
+     * @param filterTeamsNotEq  (optional)
+     * @param filterTeamsIn  (optional)
+     * @param filterTeamsNotIn  (optional)
+     * @param filterTeamIdsEq  (optional)
+     * @param filterTeamIdsNotEq  (optional)
+     * @param filterTeamIdsIn  (optional)
+     * @param filterTeamIdsNotIn  (optional)
+     * @param filterTeamNamesEq  (optional)
+     * @param filterTeamNamesNotEq  (optional)
+     * @param filterTeamNamesIn  (optional)
+     * @param filterTeamNamesNotIn  (optional)
      * @param sort comma separated if needed. eg: created_at,updated_at (optional)
      * @param include comma separated if needed. eg: sub_statuses,causes,subscribers (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -1510,11 +2464,12 @@ public class IncidentsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> malformed date filter </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listIncidentsAsync(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterPrivate, @jakarta.annotation.Nullable Integer filterUserId, @jakarta.annotation.Nullable String filterSeverity, @jakarta.annotation.Nullable String filterSeverityId, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterTypes, @jakarta.annotation.Nullable String filterTypeIds, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterEnvironmentIds, @jakarta.annotation.Nullable String filterFunctionalities, @jakarta.annotation.Nullable String filterFunctionalityIds, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterServiceIds, @jakarta.annotation.Nullable String filterTeams, @jakarta.annotation.Nullable String filterTeamIds, @jakarta.annotation.Nullable String filterCause, @jakarta.annotation.Nullable String filterCauseIds, @jakarta.annotation.Nullable String filterCustomFieldSelectedOptionIds, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUpdatedAtGt, @jakarta.annotation.Nullable String filterUpdatedAtGte, @jakarta.annotation.Nullable String filterUpdatedAtLt, @jakarta.annotation.Nullable String filterUpdatedAtLte, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterDetectedAtGt, @jakarta.annotation.Nullable String filterDetectedAtGte, @jakarta.annotation.Nullable String filterDetectedAtLt, @jakarta.annotation.Nullable String filterDetectedAtLte, @jakarta.annotation.Nullable String filterAcknowledgedAtGt, @jakarta.annotation.Nullable String filterAcknowledgedAtGte, @jakarta.annotation.Nullable String filterAcknowledgedAtLt, @jakarta.annotation.Nullable String filterAcknowledgedAtLte, @jakarta.annotation.Nullable String filterMitigatedAtGt, @jakarta.annotation.Nullable String filterMitigatedAtGte, @jakarta.annotation.Nullable String filterMitigatedAtLt, @jakarta.annotation.Nullable String filterMitigatedAtLte, @jakarta.annotation.Nullable String filterResolvedAtGt, @jakarta.annotation.Nullable String filterResolvedAtGte, @jakarta.annotation.Nullable String filterResolvedAtLt, @jakarta.annotation.Nullable String filterResolvedAtLte, @jakarta.annotation.Nullable String filterClosedAtGt, @jakarta.annotation.Nullable String filterClosedAtGte, @jakarta.annotation.Nullable String filterClosedAtLt, @jakarta.annotation.Nullable String filterClosedAtLte, @jakarta.annotation.Nullable String filterInTriageAtGt, @jakarta.annotation.Nullable String filterInTriageAtGte, @jakarta.annotation.Nullable String filterInTriageAtLt, @jakarta.annotation.Nullable String filterInTriageAtLte, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable String include, final ApiCallback<IncidentList> _callback) throws ApiException {
+    public okhttp3.Call listIncidentsAsync(@jakarta.annotation.Nullable String pageAfter, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterStatus, @jakarta.annotation.Nullable String filterPrivate, @jakarta.annotation.Nullable Integer filterUserId, @jakarta.annotation.Nullable String filterSeverity, @jakarta.annotation.Nullable String filterSeverityId, @jakarta.annotation.Nullable String filterLabels, @jakarta.annotation.Nullable String filterTypes, @jakarta.annotation.Nullable String filterTypeIds, @jakarta.annotation.Nullable String filterEnvironments, @jakarta.annotation.Nullable String filterEnvironmentIds, @jakarta.annotation.Nullable String filterFunctionalities, @jakarta.annotation.Nullable String filterFunctionalityIds, @jakarta.annotation.Nullable String filterFunctionalityNames, @jakarta.annotation.Nullable String filterServices, @jakarta.annotation.Nullable String filterServiceIds, @jakarta.annotation.Nullable String filterServiceNames, @jakarta.annotation.Nullable String filterTeams, @jakarta.annotation.Nullable String filterTeamIds, @jakarta.annotation.Nullable String filterTeamNames, @jakarta.annotation.Nullable String filterCause, @jakarta.annotation.Nullable String filterCauseIds, @jakarta.annotation.Nullable String filterCustomFieldSelectedOptionIds, @jakarta.annotation.Nullable String filterSlackChannelId, @jakarta.annotation.Nullable String filterSequentialId, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUpdatedAtGt, @jakarta.annotation.Nullable String filterUpdatedAtGte, @jakarta.annotation.Nullable String filterUpdatedAtLt, @jakarta.annotation.Nullable String filterUpdatedAtLte, @jakarta.annotation.Nullable String filterStartedAtGt, @jakarta.annotation.Nullable String filterStartedAtGte, @jakarta.annotation.Nullable String filterStartedAtLt, @jakarta.annotation.Nullable String filterStartedAtLte, @jakarta.annotation.Nullable String filterDetectedAtGt, @jakarta.annotation.Nullable String filterDetectedAtGte, @jakarta.annotation.Nullable String filterDetectedAtLt, @jakarta.annotation.Nullable String filterDetectedAtLte, @jakarta.annotation.Nullable String filterAcknowledgedAtGt, @jakarta.annotation.Nullable String filterAcknowledgedAtGte, @jakarta.annotation.Nullable String filterAcknowledgedAtLt, @jakarta.annotation.Nullable String filterAcknowledgedAtLte, @jakarta.annotation.Nullable String filterMitigatedAtGt, @jakarta.annotation.Nullable String filterMitigatedAtGte, @jakarta.annotation.Nullable String filterMitigatedAtLt, @jakarta.annotation.Nullable String filterMitigatedAtLte, @jakarta.annotation.Nullable String filterResolvedAtGt, @jakarta.annotation.Nullable String filterResolvedAtGte, @jakarta.annotation.Nullable String filterResolvedAtLt, @jakarta.annotation.Nullable String filterResolvedAtLte, @jakarta.annotation.Nullable String filterClosedAtGt, @jakarta.annotation.Nullable String filterClosedAtGte, @jakarta.annotation.Nullable String filterClosedAtLt, @jakarta.annotation.Nullable String filterClosedAtLte, @jakarta.annotation.Nullable String filterInTriageAtGt, @jakarta.annotation.Nullable String filterInTriageAtGte, @jakarta.annotation.Nullable String filterInTriageAtLt, @jakarta.annotation.Nullable String filterInTriageAtLte, @jakarta.annotation.Nullable String filterKindEq, @jakarta.annotation.Nullable String filterKindNotEq, @jakarta.annotation.Nullable String filterKindIn, @jakarta.annotation.Nullable String filterKindNotIn, @jakarta.annotation.Nullable String filterStatusEq, @jakarta.annotation.Nullable String filterStatusNotEq, @jakarta.annotation.Nullable String filterStatusIn, @jakarta.annotation.Nullable String filterStatusNotIn, @jakarta.annotation.Nullable String filterPrivateEq, @jakarta.annotation.Nullable String filterPrivateNotEq, @jakarta.annotation.Nullable String filterPrivateIn, @jakarta.annotation.Nullable String filterPrivateNotIn, @jakarta.annotation.Nullable String filterUserIdEq, @jakarta.annotation.Nullable String filterUserIdNotEq, @jakarta.annotation.Nullable String filterUserIdIn, @jakarta.annotation.Nullable String filterUserIdNotIn, @jakarta.annotation.Nullable String filterSeverityEq, @jakarta.annotation.Nullable String filterSeverityNotEq, @jakarta.annotation.Nullable String filterSeverityIn, @jakarta.annotation.Nullable String filterSeverityNotIn, @jakarta.annotation.Nullable String filterSeverityIdEq, @jakarta.annotation.Nullable String filterSeverityIdNotEq, @jakarta.annotation.Nullable String filterSeverityIdIn, @jakarta.annotation.Nullable String filterSeverityIdNotIn, @jakarta.annotation.Nullable String filterLabelsEq, @jakarta.annotation.Nullable String filterLabelsNotEq, @jakarta.annotation.Nullable String filterLabelsIn, @jakarta.annotation.Nullable String filterLabelsNotIn, @jakarta.annotation.Nullable String filterZendeskTicketIdEq, @jakarta.annotation.Nullable String filterZendeskTicketIdNotEq, @jakarta.annotation.Nullable String filterZendeskTicketIdIn, @jakarta.annotation.Nullable String filterZendeskTicketIdNotIn, @jakarta.annotation.Nullable String filterSequentialIdEq, @jakarta.annotation.Nullable String filterSequentialIdNotEq, @jakarta.annotation.Nullable String filterSequentialIdIn, @jakarta.annotation.Nullable String filterSequentialIdNotIn, @jakarta.annotation.Nullable String filterTypesEq, @jakarta.annotation.Nullable String filterTypesNotEq, @jakarta.annotation.Nullable String filterTypesIn, @jakarta.annotation.Nullable String filterTypesNotIn, @jakarta.annotation.Nullable String filterTypeIdsEq, @jakarta.annotation.Nullable String filterTypeIdsNotEq, @jakarta.annotation.Nullable String filterTypeIdsIn, @jakarta.annotation.Nullable String filterTypeIdsNotIn, @jakarta.annotation.Nullable String filterEnvironmentsEq, @jakarta.annotation.Nullable String filterEnvironmentsNotEq, @jakarta.annotation.Nullable String filterEnvironmentsIn, @jakarta.annotation.Nullable String filterEnvironmentsNotIn, @jakarta.annotation.Nullable String filterEnvironmentIdsEq, @jakarta.annotation.Nullable String filterEnvironmentIdsNotEq, @jakarta.annotation.Nullable String filterEnvironmentIdsIn, @jakarta.annotation.Nullable String filterEnvironmentIdsNotIn, @jakarta.annotation.Nullable String filterServicesEq, @jakarta.annotation.Nullable String filterServicesNotEq, @jakarta.annotation.Nullable String filterServicesIn, @jakarta.annotation.Nullable String filterServicesNotIn, @jakarta.annotation.Nullable String filterServiceIdsEq, @jakarta.annotation.Nullable String filterServiceIdsNotEq, @jakarta.annotation.Nullable String filterServiceIdsIn, @jakarta.annotation.Nullable String filterServiceIdsNotIn, @jakarta.annotation.Nullable String filterServiceNamesEq, @jakarta.annotation.Nullable String filterServiceNamesNotEq, @jakarta.annotation.Nullable String filterServiceNamesIn, @jakarta.annotation.Nullable String filterServiceNamesNotIn, @jakarta.annotation.Nullable String filterFunctionalitiesEq, @jakarta.annotation.Nullable String filterFunctionalitiesNotEq, @jakarta.annotation.Nullable String filterFunctionalitiesIn, @jakarta.annotation.Nullable String filterFunctionalitiesNotIn, @jakarta.annotation.Nullable String filterFunctionalityIdsEq, @jakarta.annotation.Nullable String filterFunctionalityIdsNotEq, @jakarta.annotation.Nullable String filterFunctionalityIdsIn, @jakarta.annotation.Nullable String filterFunctionalityIdsNotIn, @jakarta.annotation.Nullable String filterFunctionalityNamesEq, @jakarta.annotation.Nullable String filterFunctionalityNamesNotEq, @jakarta.annotation.Nullable String filterFunctionalityNamesIn, @jakarta.annotation.Nullable String filterFunctionalityNamesNotIn, @jakarta.annotation.Nullable String filterCausesEq, @jakarta.annotation.Nullable String filterCausesNotEq, @jakarta.annotation.Nullable String filterCausesIn, @jakarta.annotation.Nullable String filterCausesNotIn, @jakarta.annotation.Nullable String filterCauseIdsEq, @jakarta.annotation.Nullable String filterCauseIdsNotEq, @jakarta.annotation.Nullable String filterCauseIdsIn, @jakarta.annotation.Nullable String filterCauseIdsNotIn, @jakarta.annotation.Nullable String filterTeamsEq, @jakarta.annotation.Nullable String filterTeamsNotEq, @jakarta.annotation.Nullable String filterTeamsIn, @jakarta.annotation.Nullable String filterTeamsNotIn, @jakarta.annotation.Nullable String filterTeamIdsEq, @jakarta.annotation.Nullable String filterTeamIdsNotEq, @jakarta.annotation.Nullable String filterTeamIdsIn, @jakarta.annotation.Nullable String filterTeamIdsNotIn, @jakarta.annotation.Nullable String filterTeamNamesEq, @jakarta.annotation.Nullable String filterTeamNamesNotEq, @jakarta.annotation.Nullable String filterTeamNamesIn, @jakarta.annotation.Nullable String filterTeamNamesNotIn, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable String include, final ApiCallback<IncidentList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listIncidentsValidateBeforeCall(pageNumber, pageSize, filterSearch, filterKind, filterStatus, filterPrivate, filterUserId, filterSeverity, filterSeverityId, filterLabels, filterTypes, filterTypeIds, filterEnvironments, filterEnvironmentIds, filterFunctionalities, filterFunctionalityIds, filterServices, filterServiceIds, filterTeams, filterTeamIds, filterCause, filterCauseIds, filterCustomFieldSelectedOptionIds, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUpdatedAtGt, filterUpdatedAtGte, filterUpdatedAtLt, filterUpdatedAtLte, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterDetectedAtGt, filterDetectedAtGte, filterDetectedAtLt, filterDetectedAtLte, filterAcknowledgedAtGt, filterAcknowledgedAtGte, filterAcknowledgedAtLt, filterAcknowledgedAtLte, filterMitigatedAtGt, filterMitigatedAtGte, filterMitigatedAtLt, filterMitigatedAtLte, filterResolvedAtGt, filterResolvedAtGte, filterResolvedAtLt, filterResolvedAtLte, filterClosedAtGt, filterClosedAtGte, filterClosedAtLt, filterClosedAtLte, filterInTriageAtGt, filterInTriageAtGte, filterInTriageAtLt, filterInTriageAtLte, sort, include, _callback);
+        okhttp3.Call localVarCall = listIncidentsValidateBeforeCall(pageAfter, pageNumber, pageSize, filterSearch, filterKind, filterStatus, filterPrivate, filterUserId, filterSeverity, filterSeverityId, filterLabels, filterTypes, filterTypeIds, filterEnvironments, filterEnvironmentIds, filterFunctionalities, filterFunctionalityIds, filterFunctionalityNames, filterServices, filterServiceIds, filterServiceNames, filterTeams, filterTeamIds, filterTeamNames, filterCause, filterCauseIds, filterCustomFieldSelectedOptionIds, filterSlackChannelId, filterSequentialId, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUpdatedAtGt, filterUpdatedAtGte, filterUpdatedAtLt, filterUpdatedAtLte, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterDetectedAtGt, filterDetectedAtGte, filterDetectedAtLt, filterDetectedAtLte, filterAcknowledgedAtGt, filterAcknowledgedAtGte, filterAcknowledgedAtLt, filterAcknowledgedAtLte, filterMitigatedAtGt, filterMitigatedAtGte, filterMitigatedAtLt, filterMitigatedAtLte, filterResolvedAtGt, filterResolvedAtGte, filterResolvedAtLt, filterResolvedAtLte, filterClosedAtGt, filterClosedAtGte, filterClosedAtLt, filterClosedAtLte, filterInTriageAtGt, filterInTriageAtGte, filterInTriageAtLt, filterInTriageAtLte, filterKindEq, filterKindNotEq, filterKindIn, filterKindNotIn, filterStatusEq, filterStatusNotEq, filterStatusIn, filterStatusNotIn, filterPrivateEq, filterPrivateNotEq, filterPrivateIn, filterPrivateNotIn, filterUserIdEq, filterUserIdNotEq, filterUserIdIn, filterUserIdNotIn, filterSeverityEq, filterSeverityNotEq, filterSeverityIn, filterSeverityNotIn, filterSeverityIdEq, filterSeverityIdNotEq, filterSeverityIdIn, filterSeverityIdNotIn, filterLabelsEq, filterLabelsNotEq, filterLabelsIn, filterLabelsNotIn, filterZendeskTicketIdEq, filterZendeskTicketIdNotEq, filterZendeskTicketIdIn, filterZendeskTicketIdNotIn, filterSequentialIdEq, filterSequentialIdNotEq, filterSequentialIdIn, filterSequentialIdNotIn, filterTypesEq, filterTypesNotEq, filterTypesIn, filterTypesNotIn, filterTypeIdsEq, filterTypeIdsNotEq, filterTypeIdsIn, filterTypeIdsNotIn, filterEnvironmentsEq, filterEnvironmentsNotEq, filterEnvironmentsIn, filterEnvironmentsNotIn, filterEnvironmentIdsEq, filterEnvironmentIdsNotEq, filterEnvironmentIdsIn, filterEnvironmentIdsNotIn, filterServicesEq, filterServicesNotEq, filterServicesIn, filterServicesNotIn, filterServiceIdsEq, filterServiceIdsNotEq, filterServiceIdsIn, filterServiceIdsNotIn, filterServiceNamesEq, filterServiceNamesNotEq, filterServiceNamesIn, filterServiceNamesNotIn, filterFunctionalitiesEq, filterFunctionalitiesNotEq, filterFunctionalitiesIn, filterFunctionalitiesNotIn, filterFunctionalityIdsEq, filterFunctionalityIdsNotEq, filterFunctionalityIdsIn, filterFunctionalityIdsNotIn, filterFunctionalityNamesEq, filterFunctionalityNamesNotEq, filterFunctionalityNamesIn, filterFunctionalityNamesNotIn, filterCausesEq, filterCausesNotEq, filterCausesIn, filterCausesNotIn, filterCauseIdsEq, filterCauseIdsNotEq, filterCauseIdsIn, filterCauseIdsNotIn, filterTeamsEq, filterTeamsNotEq, filterTeamsIn, filterTeamsNotIn, filterTeamIdsEq, filterTeamIdsNotEq, filterTeamIdsIn, filterTeamIdsNotIn, filterTeamNamesEq, filterTeamNamesNotEq, filterTeamNamesIn, filterTeamNamesNotIn, sort, include, _callback);
         Type localVarReturnType = new TypeToken<IncidentList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -2502,6 +3457,141 @@ public class IncidentsApi {
     public okhttp3.Call triageIncidentAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull InTriageIncident inTriageIncident, final ApiCallback<IncidentResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = triageIncidentValidateBeforeCall(id, inTriageIncident, _callback);
+        Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for unmarkAsDuplicateIncident
+     * @param id  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> duplicate marking removed </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> incident is not marked as duplicate </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call unmarkAsDuplicateIncidentCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v1/incidents/{id}/unmark_as_duplicate"
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/vnd.api+json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "bearer_auth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call unmarkAsDuplicateIncidentValidateBeforeCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling unmarkAsDuplicateIncident(Async)");
+        }
+
+        return unmarkAsDuplicateIncidentCall(id, _callback);
+
+    }
+
+    /**
+     * Remove duplicate marking from an incident
+     * Remove the duplicate marking from an incident
+     * @param id  (required)
+     * @return IncidentResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> duplicate marking removed </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> incident is not marked as duplicate </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public IncidentResponse unmarkAsDuplicateIncident(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+        ApiResponse<IncidentResponse> localVarResp = unmarkAsDuplicateIncidentWithHttpInfo(id);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Remove duplicate marking from an incident
+     * Remove the duplicate marking from an incident
+     * @param id  (required)
+     * @return ApiResponse&lt;IncidentResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> duplicate marking removed </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> incident is not marked as duplicate </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<IncidentResponse> unmarkAsDuplicateIncidentWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id) throws ApiException {
+        okhttp3.Call localVarCall = unmarkAsDuplicateIncidentValidateBeforeCall(id, null);
+        Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Remove duplicate marking from an incident (asynchronously)
+     * Remove the duplicate marking from an incident
+     * @param id  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> duplicate marking removed </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> incident is not marked as duplicate </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call unmarkAsDuplicateIncidentAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, final ApiCallback<IncidentResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = unmarkAsDuplicateIncidentValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

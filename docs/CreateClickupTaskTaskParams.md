@@ -10,6 +10,7 @@
 |**taskType** | [**TaskTypeEnum**](#TaskTypeEnum) |  |  [optional] |
 |**title** | **String** | The task title |  |
 |**description** | **String** | The task description |  [optional] |
+|**_list** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
 |**tags** | **String** | The task tags |  [optional] |
 |**priority** | [**CreateJiraIssueTaskParamsPriority**](CreateJiraIssueTaskParamsPriority.md) |  |  [optional] |
 |**dueDate** | **String** | The due date |  [optional] |

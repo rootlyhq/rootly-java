@@ -20,6 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.rootly.client.model.CatalogEntityChecklistResponseData;
+import com.rootly.client.model.JsonapiIncludedResource;
 import com.rootly.client.model.Links;
 import com.rootly.client.model.Meta;
 import java.io.IOException;
@@ -53,27 +54,32 @@ import com.rootly.client.JSON;
 /**
  * CatalogEntityChecklistList
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CatalogEntityChecklistList {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<CatalogEntityChecklistResponseData> data = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_LINKS = "links";
   @SerializedName(SERIALIZED_NAME_LINKS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Links links;
 
   public static final String SERIALIZED_NAME_META = "meta";
   @SerializedName(SERIALIZED_NAME_META)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Meta meta;
+
+  public static final String SERIALIZED_NAME_INCLUDED = "included";
+  @SerializedName(SERIALIZED_NAME_INCLUDED)
+  @jakarta.annotation.Nullable
+  private List<JsonapiIncludedResource> included = new ArrayList<>();
 
   public CatalogEntityChecklistList() {
   }
 
-  public CatalogEntityChecklistList data(@javax.annotation.Nonnull List<CatalogEntityChecklistResponseData> data) {
+  public CatalogEntityChecklistList data(@jakarta.annotation.Nonnull List<CatalogEntityChecklistResponseData> data) {
     this.data = data;
     return this;
   }
@@ -90,17 +96,17 @@ public class CatalogEntityChecklistList {
    * Get data
    * @return data
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<CatalogEntityChecklistResponseData> getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nonnull List<CatalogEntityChecklistResponseData> data) {
+  public void setData(@jakarta.annotation.Nonnull List<CatalogEntityChecklistResponseData> data) {
     this.data = data;
   }
 
 
-  public CatalogEntityChecklistList links(@javax.annotation.Nullable Links links) {
+  public CatalogEntityChecklistList links(@jakarta.annotation.Nullable Links links) {
     this.links = links;
     return this;
   }
@@ -109,17 +115,17 @@ public class CatalogEntityChecklistList {
    * Get links
    * @return links
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Links getLinks() {
     return links;
   }
 
-  public void setLinks(@javax.annotation.Nullable Links links) {
+  public void setLinks(@jakarta.annotation.Nullable Links links) {
     this.links = links;
   }
 
 
-  public CatalogEntityChecklistList meta(@javax.annotation.Nullable Meta meta) {
+  public CatalogEntityChecklistList meta(@jakarta.annotation.Nullable Meta meta) {
     this.meta = meta;
     return this;
   }
@@ -128,13 +134,40 @@ public class CatalogEntityChecklistList {
    * Get meta
    * @return meta
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Meta getMeta() {
     return meta;
   }
 
-  public void setMeta(@javax.annotation.Nullable Meta meta) {
+  public void setMeta(@jakarta.annotation.Nullable Meta meta) {
     this.meta = meta;
+  }
+
+
+  public CatalogEntityChecklistList included(@jakarta.annotation.Nullable List<JsonapiIncludedResource> included) {
+    this.included = included;
+    return this;
+  }
+
+  public CatalogEntityChecklistList addIncludedItem(JsonapiIncludedResource includedItem) {
+    if (this.included == null) {
+      this.included = new ArrayList<>();
+    }
+    this.included.add(includedItem);
+    return this;
+  }
+
+  /**
+   * Get included
+   * @return included
+   */
+  @jakarta.annotation.Nullable
+  public List<JsonapiIncludedResource> getIncluded() {
+    return included;
+  }
+
+  public void setIncluded(@jakarta.annotation.Nullable List<JsonapiIncludedResource> included) {
+    this.included = included;
   }
 
 
@@ -150,12 +183,13 @@ public class CatalogEntityChecklistList {
     CatalogEntityChecklistList catalogEntityChecklistList = (CatalogEntityChecklistList) o;
     return Objects.equals(this.data, catalogEntityChecklistList.data) &&
         Objects.equals(this.links, catalogEntityChecklistList.links) &&
-        Objects.equals(this.meta, catalogEntityChecklistList.meta);
+        Objects.equals(this.meta, catalogEntityChecklistList.meta) &&
+        Objects.equals(this.included, catalogEntityChecklistList.included);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(data, links, meta);
+    return Objects.hash(data, links, meta, included);
   }
 
   @Override
@@ -165,6 +199,7 @@ public class CatalogEntityChecklistList {
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
+    sb.append("    included: ").append(toIndentedString(included)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -190,6 +225,7 @@ public class CatalogEntityChecklistList {
     openapiFields.add("data");
     openapiFields.add("links");
     openapiFields.add("meta");
+    openapiFields.add("included");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -241,6 +277,20 @@ public class CatalogEntityChecklistList {
       // validate the optional field `meta`
       if (jsonObj.get("meta") != null && !jsonObj.get("meta").isJsonNull()) {
         Meta.validateJsonElement(jsonObj.get("meta"));
+      }
+      if (jsonObj.get("included") != null && !jsonObj.get("included").isJsonNull()) {
+        JsonArray jsonArrayincluded = jsonObj.getAsJsonArray("included");
+        if (jsonArrayincluded != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("included").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `included` to be an array in the JSON string but got `%s`", jsonObj.get("included").toString()));
+          }
+
+          // validate the optional field `included` (array)
+          for (int i = 0; i < jsonArrayincluded.size(); i++) {
+            JsonapiIncludedResource.validateJsonElement(jsonArrayincluded.get(i));
+          };
+        }
       }
   }
 

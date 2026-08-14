@@ -18,8 +18,15 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.AlertEventEscalationTarget;
+import com.rootly.client.model.AlertEventIncident;
+import com.rootly.client.model.AlertEventSchedule;
+import com.rootly.client.model.AlertEventUser;
+import com.rootly.client.model.SlackChannel;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -36,6 +43,14 @@ public class AlertEventTest {
     @Test
     public void testAlertEvent() {
         // TODO: test AlertEvent
+    }
+
+    /**
+     * Test the property 'alertId'
+     */
+    @Test
+    public void alertIdTest() {
+        // TODO: test alertId
     }
 
     /**
@@ -76,6 +91,70 @@ public class AlertEventTest {
     @Test
     public void detailsTest() {
         // TODO: test details
+    }
+
+    /**
+     * Test the property 'user'
+     */
+    @Test
+    public void userTest() {
+        // TODO: test user
+    }
+
+    /**
+     * Test the property 'incident'
+     */
+    @Test
+    public void incidentTest() {
+        // TODO: test incident
+    }
+
+    /**
+     * Test the property 'schedule'
+     */
+    @Test
+    public void scheduleTest() {
+        // TODO: test schedule
+    }
+
+    /**
+     * Test the property 'escalationLevel'
+     */
+    @Test
+    public void escalationLevelTest() {
+        // TODO: test escalationLevel
+    }
+
+    /**
+     * Test the property 'escalationTargetType'
+     */
+    @Test
+    public void escalationTargetTypeTest() {
+        // TODO: test escalationTargetType
+    }
+
+    /**
+     * Test the property 'escalationTarget'
+     */
+    @Test
+    public void escalationTargetTest() {
+        // TODO: test escalationTarget
+    }
+
+    /**
+     * Test the property 'slackChannel'
+     */
+    @Test
+    public void slackChannelTest() {
+        // TODO: test slackChannel
+    }
+
+    /**
+     * Test the property 'incidentIds'
+     */
+    @Test
+    public void incidentIdsTest() {
+        // TODO: test incidentIds
     }
 
     /**

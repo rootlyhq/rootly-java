@@ -18,8 +18,12 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewIncidentStatusPageEventDataAttributesStatusPageComponentsInner;
 import java.io.IOException;
+import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -76,6 +80,22 @@ public class NewIncidentStatusPageEventDataAttributesTest {
     @Test
     public void shouldTweetTest() {
         // TODO: test shouldTweet
+    }
+
+    /**
+     * Test the property 'startedAt'
+     */
+    @Test
+    public void startedAtTest() {
+        // TODO: test startedAt
+    }
+
+    /**
+     * Test the property 'statusPageComponents'
+     */
+    @Test
+    public void statusPageComponentsTest() {
+        // TODO: test statusPageComponents
     }
 
 }

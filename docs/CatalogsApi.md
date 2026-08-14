@@ -218,7 +218,7 @@ public class Example {
 
 <a id="listCatalogs"></a>
 # **listCatalogs**
-> CatalogList listCatalogs(include, sort, pageNumber, pageSize, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte)
+> CatalogList listCatalogs(include, sort, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterExternalId, filterManagedBy, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterManagedByEq, filterManagedByNotEq, filterManagedByIn, filterManagedByNotIn)
 
 List catalogs
 
@@ -248,14 +248,29 @@ public class Example {
     String sort = "created_at"; // String | comma separated if needed. eg: created_at,updated_at
     Integer pageNumber = 56; // Integer | 
     Integer pageSize = 56; // Integer | 
+    String filterSearch = "filterSearch_example"; // String | 
     String filterSlug = "filterSlug_example"; // String | 
     String filterName = "filterName_example"; // String | 
+    String filterExternalId = "filterExternalId_example"; // String | 
+    String filterManagedBy = "filterManagedBy_example"; // String | 
     String filterCreatedAtGt = "filterCreatedAtGt_example"; // String | 
     String filterCreatedAtGte = "filterCreatedAtGte_example"; // String | 
     String filterCreatedAtLt = "filterCreatedAtLt_example"; // String | 
     String filterCreatedAtLte = "filterCreatedAtLte_example"; // String | 
+    String filterSlugEq = "filterSlugEq_example"; // String | 
+    String filterSlugNotEq = "filterSlugNotEq_example"; // String | 
+    String filterSlugIn = "filterSlugIn_example"; // String | 
+    String filterSlugNotIn = "filterSlugNotIn_example"; // String | 
+    String filterNameEq = "filterNameEq_example"; // String | 
+    String filterNameNotEq = "filterNameNotEq_example"; // String | 
+    String filterNameIn = "filterNameIn_example"; // String | 
+    String filterNameNotIn = "filterNameNotIn_example"; // String | 
+    String filterManagedByEq = "filterManagedByEq_example"; // String | 
+    String filterManagedByNotEq = "filterManagedByNotEq_example"; // String | 
+    String filterManagedByIn = "filterManagedByIn_example"; // String | 
+    String filterManagedByNotIn = "filterManagedByNotIn_example"; // String | 
     try {
-      CatalogList result = apiInstance.listCatalogs(include, sort, pageNumber, pageSize, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
+      CatalogList result = apiInstance.listCatalogs(include, sort, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterExternalId, filterManagedBy, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterManagedByEq, filterManagedByNotEq, filterManagedByIn, filterManagedByNotIn);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CatalogsApi#listCatalogs");
@@ -276,12 +291,27 @@ public class Example {
 | **sort** | **String**| comma separated if needed. eg: created_at,updated_at | [optional] [enum: created_at, -created_at, updated_at, -updated_at, position, -position] |
 | **pageNumber** | **Integer**|  | [optional] |
 | **pageSize** | **Integer**|  | [optional] |
+| **filterSearch** | **String**|  | [optional] |
 | **filterSlug** | **String**|  | [optional] |
 | **filterName** | **String**|  | [optional] |
+| **filterExternalId** | **String**|  | [optional] |
+| **filterManagedBy** | **String**|  | [optional] |
 | **filterCreatedAtGt** | **String**|  | [optional] |
 | **filterCreatedAtGte** | **String**|  | [optional] |
 | **filterCreatedAtLt** | **String**|  | [optional] |
 | **filterCreatedAtLte** | **String**|  | [optional] |
+| **filterSlugEq** | **String**|  | [optional] |
+| **filterSlugNotEq** | **String**|  | [optional] |
+| **filterSlugIn** | **String**|  | [optional] |
+| **filterSlugNotIn** | **String**|  | [optional] |
+| **filterNameEq** | **String**|  | [optional] |
+| **filterNameNotEq** | **String**|  | [optional] |
+| **filterNameIn** | **String**|  | [optional] |
+| **filterNameNotIn** | **String**|  | [optional] |
+| **filterManagedByEq** | **String**|  | [optional] |
+| **filterManagedByNotEq** | **String**|  | [optional] |
+| **filterManagedByIn** | **String**|  | [optional] |
+| **filterManagedByNotIn** | **String**|  | [optional] |
 
 ### Return type
 

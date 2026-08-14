@@ -488,6 +488,22 @@ public class SeveritiesApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
+     * @param filterSeverityEq  (optional)
+     * @param filterSeverityNotEq  (optional)
+     * @param filterSeverityIn  (optional)
+     * @param filterSeverityNotIn  (optional)
+     * @param filterColorEq  (optional)
+     * @param filterColorNotEq  (optional)
+     * @param filterColorIn  (optional)
+     * @param filterColorNotIn  (optional)
      * @param sort  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -499,7 +515,7 @@ public class SeveritiesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listSeveritiesCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSeverity, @jakarta.annotation.Nullable String filterColor, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listSeveritiesCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSeverity, @jakarta.annotation.Nullable String filterColor, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterSeverityEq, @jakarta.annotation.Nullable String filterSeverityNotEq, @jakarta.annotation.Nullable String filterSeverityIn, @jakarta.annotation.Nullable String filterSeverityNotIn, @jakarta.annotation.Nullable String filterColorEq, @jakarta.annotation.Nullable String filterColorNotEq, @jakarta.annotation.Nullable String filterColorIn, @jakarta.annotation.Nullable String filterColorNotIn, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -572,6 +588,70 @@ public class SeveritiesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[created_at][lte]", filterCreatedAtLte));
         }
 
+        if (filterSlugEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][eq]", filterSlugEq));
+        }
+
+        if (filterSlugNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][not_eq]", filterSlugNotEq));
+        }
+
+        if (filterSlugIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][in]", filterSlugIn));
+        }
+
+        if (filterSlugNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][not_in]", filterSlugNotIn));
+        }
+
+        if (filterNameEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][eq]", filterNameEq));
+        }
+
+        if (filterNameNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][not_eq]", filterNameNotEq));
+        }
+
+        if (filterNameIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][in]", filterNameIn));
+        }
+
+        if (filterNameNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][not_in]", filterNameNotIn));
+        }
+
+        if (filterSeverityEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[severity][eq]", filterSeverityEq));
+        }
+
+        if (filterSeverityNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[severity][not_eq]", filterSeverityNotEq));
+        }
+
+        if (filterSeverityIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[severity][in]", filterSeverityIn));
+        }
+
+        if (filterSeverityNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[severity][not_in]", filterSeverityNotIn));
+        }
+
+        if (filterColorEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[color][eq]", filterColorEq));
+        }
+
+        if (filterColorNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[color][not_eq]", filterColorNotEq));
+        }
+
+        if (filterColorIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[color][in]", filterColorIn));
+        }
+
+        if (filterColorNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[color][not_in]", filterColorNotIn));
+        }
+
         if (sort != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort", sort));
         }
@@ -596,8 +676,8 @@ public class SeveritiesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listSeveritiesValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSeverity, @jakarta.annotation.Nullable String filterColor, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
-        return listSeveritiesCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterSeverity, filterColor, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
+    private okhttp3.Call listSeveritiesValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSeverity, @jakarta.annotation.Nullable String filterColor, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterSeverityEq, @jakarta.annotation.Nullable String filterSeverityNotEq, @jakarta.annotation.Nullable String filterSeverityIn, @jakarta.annotation.Nullable String filterSeverityNotIn, @jakarta.annotation.Nullable String filterColorEq, @jakarta.annotation.Nullable String filterColorNotEq, @jakarta.annotation.Nullable String filterColorIn, @jakarta.annotation.Nullable String filterColorNotIn, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+        return listSeveritiesCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterSeverity, filterColor, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterSeverityEq, filterSeverityNotEq, filterSeverityIn, filterSeverityNotIn, filterColorEq, filterColorNotEq, filterColorIn, filterColorNotIn, sort, _callback);
 
     }
 
@@ -616,6 +696,22 @@ public class SeveritiesApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
+     * @param filterSeverityEq  (optional)
+     * @param filterSeverityNotEq  (optional)
+     * @param filterSeverityIn  (optional)
+     * @param filterSeverityNotIn  (optional)
+     * @param filterColorEq  (optional)
+     * @param filterColorNotEq  (optional)
+     * @param filterColorIn  (optional)
+     * @param filterColorNotIn  (optional)
      * @param sort  (optional)
      * @return SeverityList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -626,8 +722,8 @@ public class SeveritiesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public SeverityList listSeverities(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSeverity, @jakarta.annotation.Nullable String filterColor, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
-        ApiResponse<SeverityList> localVarResp = listSeveritiesWithHttpInfo(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterSeverity, filterColor, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
+    public SeverityList listSeverities(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSeverity, @jakarta.annotation.Nullable String filterColor, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterSeverityEq, @jakarta.annotation.Nullable String filterSeverityNotEq, @jakarta.annotation.Nullable String filterSeverityIn, @jakarta.annotation.Nullable String filterSeverityNotIn, @jakarta.annotation.Nullable String filterColorEq, @jakarta.annotation.Nullable String filterColorNotEq, @jakarta.annotation.Nullable String filterColorIn, @jakarta.annotation.Nullable String filterColorNotIn, @jakarta.annotation.Nullable String sort) throws ApiException {
+        ApiResponse<SeverityList> localVarResp = listSeveritiesWithHttpInfo(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterSeverity, filterColor, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterSeverityEq, filterSeverityNotEq, filterSeverityIn, filterSeverityNotIn, filterColorEq, filterColorNotEq, filterColorIn, filterColorNotIn, sort);
         return localVarResp.getData();
     }
 
@@ -646,6 +742,22 @@ public class SeveritiesApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
+     * @param filterSeverityEq  (optional)
+     * @param filterSeverityNotEq  (optional)
+     * @param filterSeverityIn  (optional)
+     * @param filterSeverityNotIn  (optional)
+     * @param filterColorEq  (optional)
+     * @param filterColorNotEq  (optional)
+     * @param filterColorIn  (optional)
+     * @param filterColorNotIn  (optional)
      * @param sort  (optional)
      * @return ApiResponse&lt;SeverityList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -656,8 +768,8 @@ public class SeveritiesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SeverityList> listSeveritiesWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSeverity, @jakarta.annotation.Nullable String filterColor, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
-        okhttp3.Call localVarCall = listSeveritiesValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterSeverity, filterColor, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, null);
+    public ApiResponse<SeverityList> listSeveritiesWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSeverity, @jakarta.annotation.Nullable String filterColor, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterSeverityEq, @jakarta.annotation.Nullable String filterSeverityNotEq, @jakarta.annotation.Nullable String filterSeverityIn, @jakarta.annotation.Nullable String filterSeverityNotIn, @jakarta.annotation.Nullable String filterColorEq, @jakarta.annotation.Nullable String filterColorNotEq, @jakarta.annotation.Nullable String filterColorIn, @jakarta.annotation.Nullable String filterColorNotIn, @jakarta.annotation.Nullable String sort) throws ApiException {
+        okhttp3.Call localVarCall = listSeveritiesValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterSeverity, filterColor, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterSeverityEq, filterSeverityNotEq, filterSeverityIn, filterSeverityNotIn, filterColorEq, filterColorNotEq, filterColorIn, filterColorNotIn, sort, null);
         Type localVarReturnType = new TypeToken<SeverityList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -677,6 +789,22 @@ public class SeveritiesApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
+     * @param filterSeverityEq  (optional)
+     * @param filterSeverityNotEq  (optional)
+     * @param filterSeverityIn  (optional)
+     * @param filterSeverityNotIn  (optional)
+     * @param filterColorEq  (optional)
+     * @param filterColorNotEq  (optional)
+     * @param filterColorIn  (optional)
+     * @param filterColorNotIn  (optional)
      * @param sort  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -688,9 +816,9 @@ public class SeveritiesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listSeveritiesAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSeverity, @jakarta.annotation.Nullable String filterColor, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback<SeverityList> _callback) throws ApiException {
+    public okhttp3.Call listSeveritiesAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSeverity, @jakarta.annotation.Nullable String filterColor, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterSeverityEq, @jakarta.annotation.Nullable String filterSeverityNotEq, @jakarta.annotation.Nullable String filterSeverityIn, @jakarta.annotation.Nullable String filterSeverityNotIn, @jakarta.annotation.Nullable String filterColorEq, @jakarta.annotation.Nullable String filterColorNotEq, @jakarta.annotation.Nullable String filterColorIn, @jakarta.annotation.Nullable String filterColorNotIn, @jakarta.annotation.Nullable String sort, final ApiCallback<SeverityList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listSeveritiesValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterSeverity, filterColor, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
+        okhttp3.Call localVarCall = listSeveritiesValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterSeverity, filterColor, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterSeverityEq, filterSeverityNotEq, filterSeverityIn, filterSeverityNotIn, filterColorEq, filterColorNotEq, filterColorIn, filterColorNotIn, sort, _callback);
         Type localVarReturnType = new TypeToken<SeverityList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

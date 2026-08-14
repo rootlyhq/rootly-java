@@ -49,17 +49,17 @@ import com.rootly.client.JSON;
 /**
  * SnoozeAlert
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SnoozeAlert {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private SnoozeAlertData data;
 
   public SnoozeAlert() {
   }
 
-  public SnoozeAlert data(@javax.annotation.Nonnull SnoozeAlertData data) {
+  public SnoozeAlert data(@jakarta.annotation.Nonnull SnoozeAlertData data) {
     this.data = data;
     return this;
   }
@@ -68,12 +68,12 @@ public class SnoozeAlert {
    * Get data
    * @return data
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public SnoozeAlertData getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nonnull SnoozeAlertData data) {
+  public void setData(@jakarta.annotation.Nonnull SnoozeAlertData data) {
     this.data = data;
   }
 

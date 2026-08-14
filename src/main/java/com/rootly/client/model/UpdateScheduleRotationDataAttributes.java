@@ -23,6 +23,7 @@ import com.rootly.client.model.NewScheduleRotationDataAttributesActiveTimeAttrib
 import com.rootly.client.model.NewScheduleRotationDataAttributesScheduleRotationMembersInner;
 import com.rootly.client.model.NewScheduleRotationDataAttributesScheduleRotationableAttributes;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -54,7 +55,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateScheduleRotationDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateScheduleRotationDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -278,12 +279,12 @@ public class UpdateScheduleRotationDataAttributes {
   public static final String SERIALIZED_NAME_START_TIME = "start_time";
   @SerializedName(SERIALIZED_NAME_START_TIME)
   @jakarta.annotation.Nullable
-  private String startTime;
+  private OffsetDateTime startTime;
 
   public static final String SERIALIZED_NAME_END_TIME = "end_time";
   @SerializedName(SERIALIZED_NAME_END_TIME)
   @jakarta.annotation.Nullable
-  private String endTime;
+  private OffsetDateTime endTime;
 
   public static final String SERIALIZED_NAME_SCHEDULE_ROTATION_MEMBERS = "schedule_rotation_members";
   @SerializedName(SERIALIZED_NAME_SCHEDULE_ROTATION_MEMBERS)
@@ -488,40 +489,40 @@ public class UpdateScheduleRotationDataAttributes {
   }
 
 
-  public UpdateScheduleRotationDataAttributes startTime(@jakarta.annotation.Nullable String startTime) {
+  public UpdateScheduleRotationDataAttributes startTime(@jakarta.annotation.Nullable OffsetDateTime startTime) {
     this.startTime = startTime;
     return this;
   }
 
   /**
-   * ISO8601 date and time when rotation starts. Shifts will only be created after this time.
+   * RFC3339 date-time when rotation starts. Shifts will only be created after this time.
    * @return startTime
    */
   @jakarta.annotation.Nullable
-  public String getStartTime() {
+  public OffsetDateTime getStartTime() {
     return startTime;
   }
 
-  public void setStartTime(@jakarta.annotation.Nullable String startTime) {
+  public void setStartTime(@jakarta.annotation.Nullable OffsetDateTime startTime) {
     this.startTime = startTime;
   }
 
 
-  public UpdateScheduleRotationDataAttributes endTime(@jakarta.annotation.Nullable String endTime) {
+  public UpdateScheduleRotationDataAttributes endTime(@jakarta.annotation.Nullable OffsetDateTime endTime) {
     this.endTime = endTime;
     return this;
   }
 
   /**
-   * ISO8601 date and time when rotation ends. Shifts will only be created before this time.
+   * RFC3339 date-time when rotation ends. Shifts will only be created before this time.
    * @return endTime
    */
   @jakarta.annotation.Nullable
-  public String getEndTime() {
+  public OffsetDateTime getEndTime() {
     return endTime;
   }
 
-  public void setEndTime(@jakarta.annotation.Nullable String endTime) {
+  public void setEndTime(@jakarta.annotation.Nullable OffsetDateTime endTime) {
     this.endTime = endTime;
   }
 
@@ -713,12 +714,6 @@ public class UpdateScheduleRotationDataAttributes {
       // validate the optional field `schedule_rotationable_attributes`
       if (jsonObj.get("schedule_rotationable_attributes") != null && !jsonObj.get("schedule_rotationable_attributes").isJsonNull()) {
         NewScheduleRotationDataAttributesScheduleRotationableAttributes.validateJsonElement(jsonObj.get("schedule_rotationable_attributes"));
-      }
-      if ((jsonObj.get("start_time") != null && !jsonObj.get("start_time").isJsonNull()) && !jsonObj.get("start_time").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `start_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("start_time").toString()));
-      }
-      if ((jsonObj.get("end_time") != null && !jsonObj.get("end_time").isJsonNull()) && !jsonObj.get("end_time").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `end_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("end_time").toString()));
       }
       if (jsonObj.get("schedule_rotation_members") != null && !jsonObj.get("schedule_rotation_members").isJsonNull()) {
         JsonArray jsonArrayscheduleRotationMembers = jsonObj.getAsJsonArray("schedule_rotation_members");

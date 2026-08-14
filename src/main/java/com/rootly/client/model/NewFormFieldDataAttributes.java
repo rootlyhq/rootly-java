@@ -51,8 +51,14 @@ import com.rootly.client.JSON;
 /**
  * NewFormFieldDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewFormFieldDataAttributes {
+  public static final String SERIALIZED_NAME_SLUG = "slug";
+  @Deprecated
+  @SerializedName(SERIALIZED_NAME_SLUG)
+  @jakarta.annotation.Nullable
+  private String slug;
+
   /**
    * The kind of the form field
    */
@@ -81,6 +87,8 @@ public class NewFormFieldDataAttributes {
     FUNCTIONALITIES("functionalities"),
     
     TEAMS("teams"),
+    
+    STATUS("status"),
     
     VISIBILITY("visibility"),
     
@@ -254,7 +262,13 @@ public class NewFormFieldDataAttributes {
     
     USER("user"),
     
-    CATALOG_ENTITY("catalog_entity");
+    CATALOG_ENTITY("catalog_entity"),
+    
+    ENVIRONMENT("environment"),
+    
+    CAUSE("cause"),
+    
+    INCIDENT_TYPE("incident_type");
 
     private String value;
 
@@ -344,8 +358,36 @@ public class NewFormFieldDataAttributes {
   @jakarta.annotation.Nullable
   private List<String> defaultValues = new ArrayList<>();
 
+  public static final String SERIALIZED_NAME_AUTO_SET_BY_CATALOG_PROPERTY_ID = "auto_set_by_catalog_property_id";
+  @SerializedName(SERIALIZED_NAME_AUTO_SET_BY_CATALOG_PROPERTY_ID)
+  @jakarta.annotation.Nullable
+  private String autoSetByCatalogPropertyId;
+
   public NewFormFieldDataAttributes() {
   }
+
+  @Deprecated
+  public NewFormFieldDataAttributes slug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+    return this;
+  }
+
+  /**
+   * Deprecated. &#x60;slug&#x60; is derived from &#x60;name&#x60;; any submitted value is ignored. This property will be removed from the request schema in a future version.
+   * @return slug
+   * @deprecated
+   */
+  @Deprecated
+  @jakarta.annotation.Nullable
+  public String getSlug() {
+    return slug;
+  }
+
+  @Deprecated
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+  }
+
 
   public NewFormFieldDataAttributes kind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
@@ -580,6 +622,25 @@ public class NewFormFieldDataAttributes {
   }
 
 
+  public NewFormFieldDataAttributes autoSetByCatalogPropertyId(@jakarta.annotation.Nullable String autoSetByCatalogPropertyId) {
+    this.autoSetByCatalogPropertyId = autoSetByCatalogPropertyId;
+    return this;
+  }
+
+  /**
+   * Catalog property ID to auto-set this form field. Only reference-kind catalog properties are supported.
+   * @return autoSetByCatalogPropertyId
+   */
+  @jakarta.annotation.Nullable
+  public String getAutoSetByCatalogPropertyId() {
+    return autoSetByCatalogPropertyId;
+  }
+
+  public void setAutoSetByCatalogPropertyId(@jakarta.annotation.Nullable String autoSetByCatalogPropertyId) {
+    this.autoSetByCatalogPropertyId = autoSetByCatalogPropertyId;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -590,7 +651,8 @@ public class NewFormFieldDataAttributes {
       return false;
     }
     NewFormFieldDataAttributes newFormFieldDataAttributes = (NewFormFieldDataAttributes) o;
-    return Objects.equals(this.kind, newFormFieldDataAttributes.kind) &&
+    return Objects.equals(this.slug, newFormFieldDataAttributes.slug) &&
+        Objects.equals(this.kind, newFormFieldDataAttributes.kind) &&
         Objects.equals(this.inputKind, newFormFieldDataAttributes.inputKind) &&
         Objects.equals(this.valueKind, newFormFieldDataAttributes.valueKind) &&
         Objects.equals(this.valueKindCatalogId, newFormFieldDataAttributes.valueKindCatalogId) &&
@@ -600,7 +662,8 @@ public class NewFormFieldDataAttributes {
         Objects.equals(this.required, newFormFieldDataAttributes.required) &&
         Objects.equals(this.showOnIncidentDetails, newFormFieldDataAttributes.showOnIncidentDetails) &&
         Objects.equals(this.enabled, newFormFieldDataAttributes.enabled) &&
-        Objects.equals(this.defaultValues, newFormFieldDataAttributes.defaultValues);
+        Objects.equals(this.defaultValues, newFormFieldDataAttributes.defaultValues) &&
+        Objects.equals(this.autoSetByCatalogPropertyId, newFormFieldDataAttributes.autoSetByCatalogPropertyId);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -609,7 +672,7 @@ public class NewFormFieldDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(kind, inputKind, valueKind, valueKindCatalogId, name, description, shown, required, showOnIncidentDetails, enabled, defaultValues);
+    return Objects.hash(slug, kind, inputKind, valueKind, valueKindCatalogId, name, description, shown, required, showOnIncidentDetails, enabled, defaultValues, autoSetByCatalogPropertyId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -623,6 +686,7 @@ public class NewFormFieldDataAttributes {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class NewFormFieldDataAttributes {\n");
+    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
     sb.append("    inputKind: ").append(toIndentedString(inputKind)).append("\n");
     sb.append("    valueKind: ").append(toIndentedString(valueKind)).append("\n");
@@ -634,6 +698,7 @@ public class NewFormFieldDataAttributes {
     sb.append("    showOnIncidentDetails: ").append(toIndentedString(showOnIncidentDetails)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    defaultValues: ").append(toIndentedString(defaultValues)).append("\n");
+    sb.append("    autoSetByCatalogPropertyId: ").append(toIndentedString(autoSetByCatalogPropertyId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -656,6 +721,7 @@ public class NewFormFieldDataAttributes {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("slug");
     openapiFields.add("kind");
     openapiFields.add("input_kind");
     openapiFields.add("value_kind");
@@ -667,6 +733,7 @@ public class NewFormFieldDataAttributes {
     openapiFields.add("show_on_incident_details");
     openapiFields.add("enabled");
     openapiFields.add("default_values");
+    openapiFields.add("auto_set_by_catalog_property_id");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -702,6 +769,9 @@ public class NewFormFieldDataAttributes {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
+      }
       if (!jsonObj.get("kind").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
       }
@@ -741,6 +811,9 @@ public class NewFormFieldDataAttributes {
       // ensure the optional json data is an array if present
       if (jsonObj.get("default_values") != null && !jsonObj.get("default_values").isJsonNull() && !jsonObj.get("default_values").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `default_values` to be an array in the JSON string but got `%s`", jsonObj.get("default_values").toString()));
+      }
+      if ((jsonObj.get("auto_set_by_catalog_property_id") != null && !jsonObj.get("auto_set_by_catalog_property_id").isJsonNull()) && !jsonObj.get("auto_set_by_catalog_property_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `auto_set_by_catalog_property_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("auto_set_by_catalog_property_id").toString()));
       }
   }
 

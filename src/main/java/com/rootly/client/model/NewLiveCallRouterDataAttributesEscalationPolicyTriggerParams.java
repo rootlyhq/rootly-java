@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * NewLiveCallRouterDataAttributesEscalationPolicyTriggerParams
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewLiveCallRouterDataAttributesEscalationPolicyTriggerParams {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -56,7 +56,7 @@ public class NewLiveCallRouterDataAttributesEscalationPolicyTriggerParams {
   private String id;
 
   /**
-   * The type of the notification target
+   * The type of the notification target. Please contact support if you encounter issues using &#x60;functionality&#x60; as a target type.
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
@@ -64,7 +64,9 @@ public class NewLiveCallRouterDataAttributesEscalationPolicyTriggerParams {
     
     GROUP("group"),
     
-    ESCALATION_POLICY("escalation_policy");
+    ESCALATION_POLICY("escalation_policy"),
+    
+    FUNCTIONALITY("functionality");
 
     private String value;
 
@@ -142,7 +144,7 @@ public class NewLiveCallRouterDataAttributesEscalationPolicyTriggerParams {
   }
 
   /**
-   * The type of the notification target
+   * The type of the notification target. Please contact support if you encounter issues using &#x60;functionality&#x60; as a target type.
    * @return type
    */
   @jakarta.annotation.Nonnull

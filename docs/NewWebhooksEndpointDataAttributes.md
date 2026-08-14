@@ -7,11 +7,13 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**slug** | **String** | Deprecated. &#x60;slug&#x60; is derived from &#x60;name&#x60;; any submitted value is ignored. This property will be removed from the request schema in a future version. |  [optional] |
 |**name** | **String** | The name of the endpoint |  |
 |**url** | **String** | The URL of the endpoint. |  |
 |**secret** | **String** | The webhook signing secret used to verify webhook requests. |  [optional] |
 |**eventTypes** | [**List&lt;EventTypesEnum&gt;**](#List&lt;EventTypesEnum&gt;) |  |  [optional] |
 |**enabled** | **Boolean** |  |  [optional] |
+|**customHeaders** | [**List&lt;NewWebhooksEndpointDataAttributesCustomHeadersInner&gt;**](NewWebhooksEndpointDataAttributesCustomHeadersInner.md) | Custom HTTP headers sent with each delivery. Max 10. Reserved names (Content-Type, X-Rootly-Signature, Host, etc.) are rejected. |  [optional] |
 
 
 
@@ -42,12 +44,15 @@
 | INCIDENT_EVENT_UPDATED | &quot;incident_event.updated&quot; |
 | INCIDENT_EVENT_DELETED | &quot;incident_event.deleted&quot; |
 | ALERT_CREATED | &quot;alert.created&quot; |
+| ALERT_UPDATED | &quot;alert.updated&quot; |
 | PULSE_CREATED | &quot;pulse.created&quot; |
+| SHIFT_STARTED | &quot;shift.started&quot; |
 | GENIUS_WORKFLOW_RUN_QUEUED | &quot;genius_workflow_run.queued&quot; |
 | GENIUS_WORKFLOW_RUN_STARTED | &quot;genius_workflow_run.started&quot; |
 | GENIUS_WORKFLOW_RUN_COMPLETED | &quot;genius_workflow_run.completed&quot; |
 | GENIUS_WORKFLOW_RUN_FAILED | &quot;genius_workflow_run.failed&quot; |
 | GENIUS_WORKFLOW_RUN_CANCELED | &quot;genius_workflow_run.canceled&quot; |
+| AUDIT_LOG_CREATED | &quot;audit_log.created&quot; |
 
 
 

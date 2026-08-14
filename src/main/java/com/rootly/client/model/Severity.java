@@ -53,7 +53,7 @@ import com.rootly.client.JSON;
 /**
  * Severity
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Severity {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -169,6 +169,13 @@ public class Severity {
   public Severity() {
   }
 
+  public Severity(
+     String slug
+  ) {
+    this();
+    this.slug = slug;
+  }
+
   public Severity name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
@@ -188,11 +195,6 @@ public class Severity {
   }
 
 
-  public Severity slug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
-    return this;
-  }
-
   /**
    * The slug of the severity
    * @return slug
@@ -202,9 +204,6 @@ public class Severity {
     return slug;
   }
 
-  public void setSlug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
-  }
 
 
   public Severity description(@jakarta.annotation.Nullable String description) {

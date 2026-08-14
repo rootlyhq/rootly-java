@@ -18,6 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewCauseDataAttributesPropertiesInner;
 import com.rootly.client.model.NewEnvironmentDataAttributesSlackAliasesInner;
 import com.rootly.client.model.NewEnvironmentDataAttributesSlackChannelsInner;
 import com.rootly.client.model.NewServiceDataAttributesAlertBroadcastChannel;
@@ -42,6 +43,14 @@ public class NewServiceDataAttributesTest {
     @Test
     public void testNewServiceDataAttributes() {
         // TODO: test NewServiceDataAttributes
+    }
+
+    /**
+     * Test the property 'slug'
+     */
+    @Test
+    public void slugTest() {
+        // TODO: test slug
     }
 
     /**
@@ -306,6 +315,14 @@ public class NewServiceDataAttributesTest {
     @Test
     public void incidentBroadcastChannelTest() {
         // TODO: test incidentBroadcastChannel
+    }
+
+    /**
+     * Test the property 'properties'
+     */
+    @Test
+    public void propertiesTest() {
+        // TODO: test properties
     }
 
 }

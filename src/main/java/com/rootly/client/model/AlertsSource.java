@@ -19,11 +19,11 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.AlertsSourceSourceableAttributes;
 import com.rootly.client.model.NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner;
 import com.rootly.client.model.NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner;
 import com.rootly.client.model.NewAlertsSourceDataAttributesAlertTemplateAttributes;
 import com.rootly.client.model.NewAlertsSourceDataAttributesResolutionRuleAttributes;
-import com.rootly.client.model.NewAlertsSourceDataAttributesSourceableAttributes;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -56,12 +56,17 @@ import com.rootly.client.JSON;
 /**
  * AlertsSource
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AlertsSource {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @jakarta.annotation.Nonnull
   private String name;
+
+  public static final String SERIALIZED_NAME_ENABLED = "enabled";
+  @SerializedName(SERIALIZED_NAME_ENABLED)
+  @jakarta.annotation.Nullable
+  private Boolean enabled;
 
   /**
    * The alert source type
@@ -74,7 +79,11 @@ public class AlertsSource {
     
     CATCHPOINT("catchpoint"),
     
+    CLOUDFLARE("cloudflare"),
+    
     DATADOG("datadog"),
+    
+    DYNATRACE("dynatrace"),
     
     ALERTMANAGER("alertmanager"),
     
@@ -87,6 +96,8 @@ public class AlertsSource {
     GENERIC_WEBHOOK("generic_webhook"),
     
     CLOUD_WATCH("cloud_watch"),
+    
+    AWS_SNS("aws_sns"),
     
     CHECKLY("checkly"),
     
@@ -251,7 +262,7 @@ public class AlertsSource {
   public static final String SERIALIZED_NAME_SOURCEABLE_ATTRIBUTES = "sourceable_attributes";
   @SerializedName(SERIALIZED_NAME_SOURCEABLE_ATTRIBUTES)
   @jakarta.annotation.Nullable
-  private NewAlertsSourceDataAttributesSourceableAttributes sourceableAttributes;
+  private AlertsSourceSourceableAttributes sourceableAttributes;
 
   public static final String SERIALIZED_NAME_RESOLUTION_RULE_ATTRIBUTES = "resolution_rule_attributes";
   @SerializedName(SERIALIZED_NAME_RESOLUTION_RULE_ATTRIBUTES)
@@ -366,6 +377,25 @@ public class AlertsSource {
 
   public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
+  }
+
+
+  public AlertsSource enabled(@jakarta.annotation.Nullable Boolean enabled) {
+    this.enabled = enabled;
+    return this;
+  }
+
+  /**
+   * Whether the alert source is enabled. Disabled sources do not create alerts from incoming events.
+   * @return enabled
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getEnabled() {
+    return enabled;
+  }
+
+  public void setEnabled(@jakarta.annotation.Nullable Boolean enabled) {
+    this.enabled = enabled;
   }
 
 
@@ -556,7 +586,7 @@ public class AlertsSource {
   }
 
 
-  public AlertsSource sourceableAttributes(@jakarta.annotation.Nullable NewAlertsSourceDataAttributesSourceableAttributes sourceableAttributes) {
+  public AlertsSource sourceableAttributes(@jakarta.annotation.Nullable AlertsSourceSourceableAttributes sourceableAttributes) {
     this.sourceableAttributes = sourceableAttributes;
     return this;
   }
@@ -566,11 +596,11 @@ public class AlertsSource {
    * @return sourceableAttributes
    */
   @jakarta.annotation.Nullable
-  public NewAlertsSourceDataAttributesSourceableAttributes getSourceableAttributes() {
+  public AlertsSourceSourceableAttributes getSourceableAttributes() {
     return sourceableAttributes;
   }
 
-  public void setSourceableAttributes(@jakarta.annotation.Nullable NewAlertsSourceDataAttributesSourceableAttributes sourceableAttributes) {
+  public void setSourceableAttributes(@jakarta.annotation.Nullable AlertsSourceSourceableAttributes sourceableAttributes) {
     this.sourceableAttributes = sourceableAttributes;
   }
 
@@ -746,6 +776,7 @@ public class AlertsSource {
     }
     AlertsSource alertsSource = (AlertsSource) o;
     return Objects.equals(this.name, alertsSource.name) &&
+        Objects.equals(this.enabled, alertsSource.enabled) &&
         Objects.equals(this.sourceType, alertsSource.sourceType) &&
         Objects.equals(this.alertUrgencyId, alertsSource.alertUrgencyId) &&
         Objects.equals(this.deduplicateAlertsByKey, alertsSource.deduplicateAlertsByKey) &&
@@ -772,7 +803,7 @@ public class AlertsSource {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, sourceType, alertUrgencyId, deduplicateAlertsByKey, deduplicationKeyKind, deduplicationKeyPath, deduplicationKeyRegexp, ownerGroupIds, alertTemplateAttributes, alertSourceUrgencyRulesAttributes, sourceableAttributes, resolutionRuleAttributes, alertSourceFieldsAttributes, status, secret, email, webhookEndpoint, createdAt, updatedAt);
+    return Objects.hash(name, enabled, sourceType, alertUrgencyId, deduplicateAlertsByKey, deduplicationKeyKind, deduplicationKeyPath, deduplicationKeyRegexp, ownerGroupIds, alertTemplateAttributes, alertSourceUrgencyRulesAttributes, sourceableAttributes, resolutionRuleAttributes, alertSourceFieldsAttributes, status, secret, email, webhookEndpoint, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -787,6 +818,7 @@ public class AlertsSource {
     StringBuilder sb = new StringBuilder();
     sb.append("class AlertsSource {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    sourceType: ").append(toIndentedString(sourceType)).append("\n");
     sb.append("    alertUrgencyId: ").append(toIndentedString(alertUrgencyId)).append("\n");
     sb.append("    deduplicateAlertsByKey: ").append(toIndentedString(deduplicateAlertsByKey)).append("\n");
@@ -828,6 +860,7 @@ public class AlertsSource {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("name");
+    openapiFields.add("enabled");
     openapiFields.add("source_type");
     openapiFields.add("alert_urgency_id");
     openapiFields.add("deduplicate_alerts_by_key");
@@ -934,7 +967,7 @@ public class AlertsSource {
       }
       // validate the optional field `sourceable_attributes`
       if (jsonObj.get("sourceable_attributes") != null && !jsonObj.get("sourceable_attributes").isJsonNull()) {
-        NewAlertsSourceDataAttributesSourceableAttributes.validateJsonElement(jsonObj.get("sourceable_attributes"));
+        AlertsSourceSourceableAttributes.validateJsonElement(jsonObj.get("sourceable_attributes"));
       }
       // validate the optional field `resolution_rule_attributes`
       if (jsonObj.get("resolution_rule_attributes") != null && !jsonObj.get("resolution_rule_attributes").isJsonNull()) {

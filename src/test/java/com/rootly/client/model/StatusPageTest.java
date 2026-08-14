@@ -21,7 +21,9 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -201,6 +203,14 @@ public class StatusPageTest {
     }
 
     /**
+     * Test the property 'sectionOrder'
+     */
+    @Test
+    public void sectionOrderTest() {
+        // TODO: test sectionOrder
+    }
+
+    /**
      * Test the property 'websiteUrl'
      */
     @Test
@@ -270,6 +280,14 @@ public class StatusPageTest {
     @Test
     public void externalDomainNamesTest() {
         // TODO: test externalDomainNames
+    }
+
+    /**
+     * Test the property 'cnameRecords'
+     */
+    @Test
+    public void cnameRecordsTest() {
+        // TODO: test cnameRecords
     }
 
     /**

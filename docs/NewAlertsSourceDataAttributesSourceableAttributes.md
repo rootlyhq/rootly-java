@@ -2,7 +2,7 @@
 
 # NewAlertsSourceDataAttributesSourceableAttributes
 
-Provide additional attributes for generic_webhook alerts source
+Provide additional attributes for the underlying source. `auto_resolve`, `resolve_state` and `field_mappings_attributes` apply to generic_webhook sources; `accept_threaded_emails` applies to email sources.
 
 ## Properties
 

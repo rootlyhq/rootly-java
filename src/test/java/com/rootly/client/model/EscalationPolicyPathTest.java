@@ -18,7 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.rootly.client.model.EscalationPolicyPathRulesInner;
+import com.rootly.client.model.UpdateEscalationPolicyPathDataAttributesRulesInner;
 import com.rootly.client.model.UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -67,11 +67,35 @@ public class EscalationPolicyPathTest {
     }
 
     /**
+     * Test the property 'pathType'
+     */
+    @Test
+    public void pathTypeTest() {
+        // TODO: test pathType
+    }
+
+    /**
      * Test the property 'escalationPolicyId'
      */
     @Test
     public void escalationPolicyIdTest() {
         // TODO: test escalationPolicyId
+    }
+
+    /**
+     * Test the property 'afterDeferralBehavior'
+     */
+    @Test
+    public void afterDeferralBehaviorTest() {
+        // TODO: test afterDeferralBehavior
+    }
+
+    /**
+     * Test the property 'afterDeferralPathId'
+     */
+    @Test
+    public void afterDeferralPathIdTest() {
+        // TODO: test afterDeferralPathId
     }
 
     /**
@@ -112,6 +136,14 @@ public class EscalationPolicyPathTest {
     @Test
     public void initialDelayTest() {
         // TODO: test initialDelay
+    }
+
+    /**
+     * Test the property 'retriggerTimeoutMinutes'
+     */
+    @Test
+    public void retriggerTimeoutMinutesTest() {
+        // TODO: test retriggerTimeoutMinutes
     }
 
     /**

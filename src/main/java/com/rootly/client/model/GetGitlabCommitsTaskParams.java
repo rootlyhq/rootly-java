@@ -19,485 +19,251 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.GetGithubCommitsTaskParamsAnyOf;
+import com.rootly.client.model.GetGitlabCommitsTaskParamsAnyOf;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.TypeAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
 
-import java.util.HashMap;
+
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonParseException;
 
 import com.rootly.client.JSON;
 
-/**
- * GetGitlabCommitsTaskParams
- */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
-public class GetGitlabCommitsTaskParams {
-  /**
-   * Gets or Sets taskType
-   */
-  @JsonAdapter(TaskTypeEnum.Adapter.class)
-  public enum TaskTypeEnum {
-    GET_GITLAB_COMMITS("get_gitlab_commits");
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+public class GetGitlabCommitsTaskParams extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(GetGitlabCommitsTaskParams.class.getName());
 
-    private String value;
+    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+        @SuppressWarnings("unchecked")
+        @Override
+        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+            if (!GetGitlabCommitsTaskParams.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'GetGitlabCommitsTaskParams' and its subtypes
+            }
+            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<GetGithubCommitsTaskParamsAnyOf> adapterGetGithubCommitsTaskParamsAnyOf = gson.getDelegateAdapter(this, TypeToken.get(GetGithubCommitsTaskParamsAnyOf.class));
+            final TypeAdapter<GetGitlabCommitsTaskParamsAnyOf> adapterGetGitlabCommitsTaskParamsAnyOf = gson.getDelegateAdapter(this, TypeToken.get(GetGitlabCommitsTaskParamsAnyOf.class));
 
-    TaskTypeEnum(String value) {
-      this.value = value;
+            return (TypeAdapter<T>) new TypeAdapter<GetGitlabCommitsTaskParams>() {
+                @Override
+                public void write(JsonWriter out, GetGitlabCommitsTaskParams value) throws IOException {
+                    if (value == null || value.getActualInstance() == null) {
+                        elementAdapter.write(out, null);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetGithubCommitsTaskParamsAnyOf`
+                    if (value.getActualInstance() instanceof GetGithubCommitsTaskParamsAnyOf) {
+                        JsonElement element = adapterGetGithubCommitsTaskParamsAnyOf.toJsonTree((GetGithubCommitsTaskParamsAnyOf)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `GetGitlabCommitsTaskParamsAnyOf`
+                    if (value.getActualInstance() instanceof GetGitlabCommitsTaskParamsAnyOf) {
+                        JsonElement element = adapterGetGitlabCommitsTaskParamsAnyOf.toJsonTree((GetGitlabCommitsTaskParamsAnyOf)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    throw new IOException("Failed to serialize as the type doesn't match anyOf schemas: GetGithubCommitsTaskParamsAnyOf, GetGitlabCommitsTaskParamsAnyOf");
+                }
+
+                @Override
+                public GetGitlabCommitsTaskParams read(JsonReader in) throws IOException {
+                    Object deserialized = null;
+                    JsonElement jsonElement = elementAdapter.read(in);
+
+                    ArrayList<String> errorMessages = new ArrayList<>();
+                    TypeAdapter actualAdapter = elementAdapter;
+
+                    // deserialize GetGithubCommitsTaskParamsAnyOf
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetGithubCommitsTaskParamsAnyOf.validateJsonElement(jsonElement);
+                        actualAdapter = adapterGetGithubCommitsTaskParamsAnyOf;
+                        GetGitlabCommitsTaskParams ret = new GetGitlabCommitsTaskParams();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
+                        return ret;
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetGithubCommitsTaskParamsAnyOf failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'GetGithubCommitsTaskParamsAnyOf'", e);
+                    }
+                    // deserialize GetGitlabCommitsTaskParamsAnyOf
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetGitlabCommitsTaskParamsAnyOf.validateJsonElement(jsonElement);
+                        actualAdapter = adapterGetGitlabCommitsTaskParamsAnyOf;
+                        GetGitlabCommitsTaskParams ret = new GetGitlabCommitsTaskParams();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
+                        return ret;
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetGitlabCommitsTaskParamsAnyOf failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'GetGitlabCommitsTaskParamsAnyOf'", e);
+                    }
+
+                    throw new IOException(String.format("Failed deserialization for GetGitlabCommitsTaskParams: no class matches result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
+                }
+            }.nullSafe();
+        }
     }
 
-    public String getValue() {
-      return value;
+    // store a list of schema names defined in anyOf
+    public static final Map<String, Class<?>> schemas = new HashMap<String, Class<?>>();
+
+    public GetGitlabCommitsTaskParams() {
+        super("anyOf", Boolean.FALSE);
+    }
+
+    public GetGitlabCommitsTaskParams(Object o) {
+        super("anyOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    static {
+        schemas.put("GetGithubCommitsTaskParamsAnyOf", GetGithubCommitsTaskParamsAnyOf.class);
+        schemas.put("GetGitlabCommitsTaskParamsAnyOf", GetGitlabCommitsTaskParamsAnyOf.class);
     }
 
     @Override
-    public String toString() {
-      return String.valueOf(value);
+    public Map<String, Class<?>> getSchemas() {
+        return GetGitlabCommitsTaskParams.schemas;
     }
 
-    public static TaskTypeEnum fromValue(String value) {
-      for (TaskTypeEnum b : TaskTypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
+    /**
+     * Set the instance that matches the anyOf child schema, check
+     * the instance parameter is valid against the anyOf child schemas:
+     * GetGithubCommitsTaskParamsAnyOf, GetGitlabCommitsTaskParamsAnyOf
+     *
+     * It could be an instance of the 'anyOf' schemas.
+     */
+    @Override
+    public void setActualInstance(Object instance) {
+        if (instance instanceof GetGithubCommitsTaskParamsAnyOf) {
+            super.setActualInstance(instance);
+            return;
         }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
 
-    public static class Adapter extends TypeAdapter<TaskTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final TaskTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public TaskTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return TaskTypeEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      TaskTypeEnum.fromValue(value);
-    }
-  }
-
-  public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
-  @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @jakarta.annotation.Nullable
-  private TaskTypeEnum taskType;
-
-  public static final String SERIALIZED_NAME_SERVICE_IDS = "service_ids";
-  @SerializedName(SERIALIZED_NAME_SERVICE_IDS)
-  @jakarta.annotation.Nullable
-  private List<String> serviceIds = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_GITLAB_REPOSITORY_NAMES = "gitlab_repository_names";
-  @SerializedName(SERIALIZED_NAME_GITLAB_REPOSITORY_NAMES)
-  @jakarta.annotation.Nullable
-  private List<String> gitlabRepositoryNames = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_BRANCH = "branch";
-  @SerializedName(SERIALIZED_NAME_BRANCH)
-  @jakarta.annotation.Nonnull
-  private String branch;
-
-  public static final String SERIALIZED_NAME_PAST_DURATION = "past_duration";
-  @SerializedName(SERIALIZED_NAME_PAST_DURATION)
-  @jakarta.annotation.Nonnull
-  private String pastDuration;
-
-  public static final String SERIALIZED_NAME_SERVICES_IMPACTED_BY_INCIDENT = "services_impacted_by_incident";
-  @SerializedName(SERIALIZED_NAME_SERVICES_IMPACTED_BY_INCIDENT)
-  @jakarta.annotation.Nullable
-  private Boolean servicesImpactedByIncident;
-
-  public static final String SERIALIZED_NAME_POST_TO_INCIDENT_TIMELINE = "post_to_incident_timeline";
-  @SerializedName(SERIALIZED_NAME_POST_TO_INCIDENT_TIMELINE)
-  @jakarta.annotation.Nullable
-  private Boolean postToIncidentTimeline;
-
-  public static final String SERIALIZED_NAME_POST_TO_SLACK_CHANNELS = "post_to_slack_channels";
-  @SerializedName(SERIALIZED_NAME_POST_TO_SLACK_CHANNELS)
-  @jakarta.annotation.Nullable
-  private List<Object> postToSlackChannels = new ArrayList<>();
-
-  public GetGitlabCommitsTaskParams() {
-  }
-
-  public GetGitlabCommitsTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
-    this.taskType = taskType;
-    return this;
-  }
-
-  /**
-   * Get taskType
-   * @return taskType
-   */
-  @jakarta.annotation.Nullable
-  public TaskTypeEnum getTaskType() {
-    return taskType;
-  }
-
-  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
-    this.taskType = taskType;
-  }
-
-
-  public GetGitlabCommitsTaskParams serviceIds(@jakarta.annotation.Nullable List<String> serviceIds) {
-    this.serviceIds = serviceIds;
-    return this;
-  }
-
-  public GetGitlabCommitsTaskParams addServiceIdsItem(String serviceIdsItem) {
-    if (this.serviceIds == null) {
-      this.serviceIds = new ArrayList<>();
-    }
-    this.serviceIds.add(serviceIdsItem);
-    return this;
-  }
-
-  /**
-   * Get serviceIds
-   * @return serviceIds
-   */
-  @jakarta.annotation.Nullable
-  public List<String> getServiceIds() {
-    return serviceIds;
-  }
-
-  public void setServiceIds(@jakarta.annotation.Nullable List<String> serviceIds) {
-    this.serviceIds = serviceIds;
-  }
-
-
-  public GetGitlabCommitsTaskParams gitlabRepositoryNames(@jakarta.annotation.Nullable List<String> gitlabRepositoryNames) {
-    this.gitlabRepositoryNames = gitlabRepositoryNames;
-    return this;
-  }
-
-  public GetGitlabCommitsTaskParams addGitlabRepositoryNamesItem(String gitlabRepositoryNamesItem) {
-    if (this.gitlabRepositoryNames == null) {
-      this.gitlabRepositoryNames = new ArrayList<>();
-    }
-    this.gitlabRepositoryNames.add(gitlabRepositoryNamesItem);
-    return this;
-  }
-
-  /**
-   * Get gitlabRepositoryNames
-   * @return gitlabRepositoryNames
-   */
-  @jakarta.annotation.Nullable
-  public List<String> getGitlabRepositoryNames() {
-    return gitlabRepositoryNames;
-  }
-
-  public void setGitlabRepositoryNames(@jakarta.annotation.Nullable List<String> gitlabRepositoryNames) {
-    this.gitlabRepositoryNames = gitlabRepositoryNames;
-  }
-
-
-  public GetGitlabCommitsTaskParams branch(@jakarta.annotation.Nonnull String branch) {
-    this.branch = branch;
-    return this;
-  }
-
-  /**
-   * The branch
-   * @return branch
-   */
-  @jakarta.annotation.Nonnull
-  public String getBranch() {
-    return branch;
-  }
-
-  public void setBranch(@jakarta.annotation.Nonnull String branch) {
-    this.branch = branch;
-  }
-
-
-  public GetGitlabCommitsTaskParams pastDuration(@jakarta.annotation.Nonnull String pastDuration) {
-    this.pastDuration = pastDuration;
-    return this;
-  }
-
-  /**
-   * How far back to fetch commits (in format &#39;1 minute&#39;, &#39;30 days&#39;, &#39;3 months&#39;, etc.)
-   * @return pastDuration
-   */
-  @jakarta.annotation.Nonnull
-  public String getPastDuration() {
-    return pastDuration;
-  }
-
-  public void setPastDuration(@jakarta.annotation.Nonnull String pastDuration) {
-    this.pastDuration = pastDuration;
-  }
-
-
-  public GetGitlabCommitsTaskParams servicesImpactedByIncident(@jakarta.annotation.Nullable Boolean servicesImpactedByIncident) {
-    this.servicesImpactedByIncident = servicesImpactedByIncident;
-    return this;
-  }
-
-  /**
-   * Get servicesImpactedByIncident
-   * @return servicesImpactedByIncident
-   */
-  @jakarta.annotation.Nullable
-  public Boolean getServicesImpactedByIncident() {
-    return servicesImpactedByIncident;
-  }
-
-  public void setServicesImpactedByIncident(@jakarta.annotation.Nullable Boolean servicesImpactedByIncident) {
-    this.servicesImpactedByIncident = servicesImpactedByIncident;
-  }
-
-
-  public GetGitlabCommitsTaskParams postToIncidentTimeline(@jakarta.annotation.Nullable Boolean postToIncidentTimeline) {
-    this.postToIncidentTimeline = postToIncidentTimeline;
-    return this;
-  }
-
-  /**
-   * Get postToIncidentTimeline
-   * @return postToIncidentTimeline
-   */
-  @jakarta.annotation.Nullable
-  public Boolean getPostToIncidentTimeline() {
-    return postToIncidentTimeline;
-  }
-
-  public void setPostToIncidentTimeline(@jakarta.annotation.Nullable Boolean postToIncidentTimeline) {
-    this.postToIncidentTimeline = postToIncidentTimeline;
-  }
-
-
-  public GetGitlabCommitsTaskParams postToSlackChannels(@jakarta.annotation.Nullable List<Object> postToSlackChannels) {
-    this.postToSlackChannels = postToSlackChannels;
-    return this;
-  }
-
-  public GetGitlabCommitsTaskParams addPostToSlackChannelsItem(Object postToSlackChannelsItem) {
-    if (this.postToSlackChannels == null) {
-      this.postToSlackChannels = new ArrayList<>();
-    }
-    this.postToSlackChannels.add(postToSlackChannelsItem);
-    return this;
-  }
-
-  /**
-   * Get postToSlackChannels
-   * @return postToSlackChannels
-   */
-  @jakarta.annotation.Nullable
-  public List<Object> getPostToSlackChannels() {
-    return postToSlackChannels;
-  }
-
-  public void setPostToSlackChannels(@jakarta.annotation.Nullable List<Object> postToSlackChannels) {
-    this.postToSlackChannels = postToSlackChannels;
-  }
-
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    GetGitlabCommitsTaskParams getGitlabCommitsTaskParams = (GetGitlabCommitsTaskParams) o;
-    return Objects.equals(this.taskType, getGitlabCommitsTaskParams.taskType) &&
-        Objects.equals(this.serviceIds, getGitlabCommitsTaskParams.serviceIds) &&
-        Objects.equals(this.gitlabRepositoryNames, getGitlabCommitsTaskParams.gitlabRepositoryNames) &&
-        Objects.equals(this.branch, getGitlabCommitsTaskParams.branch) &&
-        Objects.equals(this.pastDuration, getGitlabCommitsTaskParams.pastDuration) &&
-        Objects.equals(this.servicesImpactedByIncident, getGitlabCommitsTaskParams.servicesImpactedByIncident) &&
-        Objects.equals(this.postToIncidentTimeline, getGitlabCommitsTaskParams.postToIncidentTimeline) &&
-        Objects.equals(this.postToSlackChannels, getGitlabCommitsTaskParams.postToSlackChannels);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(taskType, serviceIds, gitlabRepositoryNames, branch, pastDuration, servicesImpactedByIncident, postToIncidentTimeline, postToSlackChannels);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class GetGitlabCommitsTaskParams {\n");
-    sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
-    sb.append("    serviceIds: ").append(toIndentedString(serviceIds)).append("\n");
-    sb.append("    gitlabRepositoryNames: ").append(toIndentedString(gitlabRepositoryNames)).append("\n");
-    sb.append("    branch: ").append(toIndentedString(branch)).append("\n");
-    sb.append("    pastDuration: ").append(toIndentedString(pastDuration)).append("\n");
-    sb.append("    servicesImpactedByIncident: ").append(toIndentedString(servicesImpactedByIncident)).append("\n");
-    sb.append("    postToIncidentTimeline: ").append(toIndentedString(postToIncidentTimeline)).append("\n");
-    sb.append("    postToSlackChannels: ").append(toIndentedString(postToSlackChannels)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("branch");
-    openapiRequiredFields.add("past_duration");
-  }
-
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to GetGitlabCommitsTaskParams
-   */
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      if (jsonElement == null) {
-        if (!GetGitlabCommitsTaskParams.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in GetGitlabCommitsTaskParams is not found in the empty JSON string", GetGitlabCommitsTaskParams.openapiRequiredFields.toString()));
+        if (instance instanceof GetGitlabCommitsTaskParamsAnyOf) {
+            super.setActualInstance(instance);
+            return;
         }
-      }
 
-      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!GetGitlabCommitsTaskParams.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GetGitlabCommitsTaskParams` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
-        }
-      }
+        throw new RuntimeException("Invalid instance type. Must be GetGithubCommitsTaskParamsAnyOf, GetGitlabCommitsTaskParamsAnyOf");
+    }
 
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : GetGitlabCommitsTaskParams.openapiRequiredFields) {
-        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
-        }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("task_type") != null && !jsonObj.get("task_type").isJsonNull()) && !jsonObj.get("task_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `task_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("task_type").toString()));
-      }
-      // validate the optional field `task_type`
-      if (jsonObj.get("task_type") != null && !jsonObj.get("task_type").isJsonNull()) {
-        TaskTypeEnum.validateJsonElement(jsonObj.get("task_type"));
-      }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("service_ids") != null && !jsonObj.get("service_ids").isJsonNull() && !jsonObj.get("service_ids").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `service_ids` to be an array in the JSON string but got `%s`", jsonObj.get("service_ids").toString()));
-      }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("gitlab_repository_names") != null && !jsonObj.get("gitlab_repository_names").isJsonNull() && !jsonObj.get("gitlab_repository_names").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `gitlab_repository_names` to be an array in the JSON string but got `%s`", jsonObj.get("gitlab_repository_names").toString()));
-      }
-      if (!jsonObj.get("branch").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `branch` to be a primitive type in the JSON string but got `%s`", jsonObj.get("branch").toString()));
-      }
-      if (!jsonObj.get("past_duration").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `past_duration` to be a primitive type in the JSON string but got `%s`", jsonObj.get("past_duration").toString()));
-      }
-      if (jsonObj.get("post_to_slack_channels") != null && !jsonObj.get("post_to_slack_channels").isJsonNull()) {
-        JsonArray jsonArraypostToSlackChannels = jsonObj.getAsJsonArray("post_to_slack_channels");
-        if (jsonArraypostToSlackChannels != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("post_to_slack_channels").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `post_to_slack_channels` to be an array in the JSON string but got `%s`", jsonObj.get("post_to_slack_channels").toString()));
-          }
-
-          // validate the optional field `post_to_slack_channels` (array)
-          for (int i = 0; i < jsonArraypostToSlackChannels.size(); i++) {
-          };
-        }
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    /**
+     * Get the actual instance, which can be the following:
+     * GetGithubCommitsTaskParamsAnyOf, GetGitlabCommitsTaskParamsAnyOf
+     *
+     * @return The actual instance (GetGithubCommitsTaskParamsAnyOf, GetGitlabCommitsTaskParamsAnyOf)
+     */
     @SuppressWarnings("unchecked")
     @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!GetGitlabCommitsTaskParams.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'GetGitlabCommitsTaskParams' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<GetGitlabCommitsTaskParams> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(GetGitlabCommitsTaskParams.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<GetGitlabCommitsTaskParams>() {
-           @Override
-           public void write(JsonWriter out, GetGitlabCommitsTaskParams value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public GetGitlabCommitsTaskParams read(JsonReader in) throws IOException {
-             JsonElement jsonElement = elementAdapter.read(in);
-             validateJsonElement(jsonElement);
-             return thisAdapter.fromJsonTree(jsonElement);
-           }
-
-       }.nullSafe();
+    public Object getActualInstance() {
+        return super.getActualInstance();
     }
-  }
 
-  /**
-   * Create an instance of GetGitlabCommitsTaskParams given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of GetGitlabCommitsTaskParams
-   * @throws IOException if the JSON string is invalid with respect to GetGitlabCommitsTaskParams
-   */
-  public static GetGitlabCommitsTaskParams fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, GetGitlabCommitsTaskParams.class);
-  }
+    /**
+     * Get the actual instance of `GetGithubCommitsTaskParamsAnyOf`. If the actual instance is not `GetGithubCommitsTaskParamsAnyOf`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetGithubCommitsTaskParamsAnyOf`
+     * @throws ClassCastException if the instance is not `GetGithubCommitsTaskParamsAnyOf`
+     */
+    public GetGithubCommitsTaskParamsAnyOf getGetGithubCommitsTaskParamsAnyOf() throws ClassCastException {
+        return (GetGithubCommitsTaskParamsAnyOf)super.getActualInstance();
+    }
 
-  /**
-   * Convert an instance of GetGitlabCommitsTaskParams to an JSON string
-   *
-   * @return JSON string
-   */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
+    /**
+     * Get the actual instance of `GetGitlabCommitsTaskParamsAnyOf`. If the actual instance is not `GetGitlabCommitsTaskParamsAnyOf`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetGitlabCommitsTaskParamsAnyOf`
+     * @throws ClassCastException if the instance is not `GetGitlabCommitsTaskParamsAnyOf`
+     */
+    public GetGitlabCommitsTaskParamsAnyOf getGetGitlabCommitsTaskParamsAnyOf() throws ClassCastException {
+        return (GetGitlabCommitsTaskParamsAnyOf)super.getActualInstance();
+    }
+
+    /**
+     * Validates the JSON Element and throws an exception if issues found
+     *
+     * @param jsonElement JSON Element
+     * @throws IOException if the JSON Element is invalid with respect to GetGitlabCommitsTaskParams
+     */
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+        // validate anyOf schemas one by one
+        ArrayList<String> errorMessages = new ArrayList<>();
+        // validate the json string with GetGithubCommitsTaskParamsAnyOf
+        try {
+            GetGithubCommitsTaskParamsAnyOf.validateJsonElement(jsonElement);
+            return;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for GetGithubCommitsTaskParamsAnyOf failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with GetGitlabCommitsTaskParamsAnyOf
+        try {
+            GetGitlabCommitsTaskParamsAnyOf.validateJsonElement(jsonElement);
+            return;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for GetGitlabCommitsTaskParamsAnyOf failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        throw new IOException(String.format("The JSON string is invalid for GetGitlabCommitsTaskParams with anyOf schemas: GetGithubCommitsTaskParamsAnyOf, GetGitlabCommitsTaskParamsAnyOf. no class match the result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
+    }
+
+    /**
+     * Create an instance of GetGitlabCommitsTaskParams given an JSON string
+     *
+     * @param jsonString JSON string
+     * @return An instance of GetGitlabCommitsTaskParams
+     * @throws IOException if the JSON string is invalid with respect to GetGitlabCommitsTaskParams
+     */
+    public static GetGitlabCommitsTaskParams fromJson(String jsonString) throws IOException {
+        return JSON.getGson().fromJson(jsonString, GetGitlabCommitsTaskParams.class);
+    }
+
+    /**
+     * Convert an instance of GetGitlabCommitsTaskParams to an JSON string
+     *
+     * @return JSON string
+     */
+    public String toJson() {
+        return JSON.getGson().toJson(this);
+    }
 }
 

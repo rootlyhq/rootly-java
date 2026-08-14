@@ -19,566 +19,250 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.AddActionItemTaskParamsPostToSlackChannelsInner;
+import com.rootly.client.model.CreateShortcutStoryTaskParamsAnyOf;
+import com.rootly.client.model.CreateShortcutStoryTaskParamsAnyOf1;
 import java.io.IOException;
 import java.util.Arrays;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.TypeAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
 
-import java.util.HashMap;
+
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonParseException;
 
 import com.rootly.client.JSON;
 
-/**
- * CreateShortcutStoryTaskParams
- */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
-public class CreateShortcutStoryTaskParams {
-  /**
-   * Gets or Sets taskType
-   */
-  @JsonAdapter(TaskTypeEnum.Adapter.class)
-  public enum TaskTypeEnum {
-    CREATE_SHORTCUT_STORY("create_shortcut_story");
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+public class CreateShortcutStoryTaskParams extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(CreateShortcutStoryTaskParams.class.getName());
 
-    private String value;
+    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+        @SuppressWarnings("unchecked")
+        @Override
+        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+            if (!CreateShortcutStoryTaskParams.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'CreateShortcutStoryTaskParams' and its subtypes
+            }
+            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<CreateShortcutStoryTaskParamsAnyOf> adapterCreateShortcutStoryTaskParamsAnyOf = gson.getDelegateAdapter(this, TypeToken.get(CreateShortcutStoryTaskParamsAnyOf.class));
+            final TypeAdapter<CreateShortcutStoryTaskParamsAnyOf1> adapterCreateShortcutStoryTaskParamsAnyOf1 = gson.getDelegateAdapter(this, TypeToken.get(CreateShortcutStoryTaskParamsAnyOf1.class));
 
-    TaskTypeEnum(String value) {
-      this.value = value;
+            return (TypeAdapter<T>) new TypeAdapter<CreateShortcutStoryTaskParams>() {
+                @Override
+                public void write(JsonWriter out, CreateShortcutStoryTaskParams value) throws IOException {
+                    if (value == null || value.getActualInstance() == null) {
+                        elementAdapter.write(out, null);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `CreateShortcutStoryTaskParamsAnyOf`
+                    if (value.getActualInstance() instanceof CreateShortcutStoryTaskParamsAnyOf) {
+                        JsonElement element = adapterCreateShortcutStoryTaskParamsAnyOf.toJsonTree((CreateShortcutStoryTaskParamsAnyOf)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    // check if the actual instance is of the type `CreateShortcutStoryTaskParamsAnyOf1`
+                    if (value.getActualInstance() instanceof CreateShortcutStoryTaskParamsAnyOf1) {
+                        JsonElement element = adapterCreateShortcutStoryTaskParamsAnyOf1.toJsonTree((CreateShortcutStoryTaskParamsAnyOf1)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    throw new IOException("Failed to serialize as the type doesn't match anyOf schemas: CreateShortcutStoryTaskParamsAnyOf, CreateShortcutStoryTaskParamsAnyOf1");
+                }
+
+                @Override
+                public CreateShortcutStoryTaskParams read(JsonReader in) throws IOException {
+                    Object deserialized = null;
+                    JsonElement jsonElement = elementAdapter.read(in);
+
+                    ArrayList<String> errorMessages = new ArrayList<>();
+                    TypeAdapter actualAdapter = elementAdapter;
+
+                    // deserialize CreateShortcutStoryTaskParamsAnyOf
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        CreateShortcutStoryTaskParamsAnyOf.validateJsonElement(jsonElement);
+                        actualAdapter = adapterCreateShortcutStoryTaskParamsAnyOf;
+                        CreateShortcutStoryTaskParams ret = new CreateShortcutStoryTaskParams();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
+                        return ret;
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for CreateShortcutStoryTaskParamsAnyOf failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'CreateShortcutStoryTaskParamsAnyOf'", e);
+                    }
+                    // deserialize CreateShortcutStoryTaskParamsAnyOf1
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        CreateShortcutStoryTaskParamsAnyOf1.validateJsonElement(jsonElement);
+                        actualAdapter = adapterCreateShortcutStoryTaskParamsAnyOf1;
+                        CreateShortcutStoryTaskParams ret = new CreateShortcutStoryTaskParams();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
+                        return ret;
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for CreateShortcutStoryTaskParamsAnyOf1 failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'CreateShortcutStoryTaskParamsAnyOf1'", e);
+                    }
+
+                    throw new IOException(String.format("Failed deserialization for CreateShortcutStoryTaskParams: no class matches result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
+                }
+            }.nullSafe();
+        }
     }
 
-    public String getValue() {
-      return value;
+    // store a list of schema names defined in anyOf
+    public static final Map<String, Class<?>> schemas = new HashMap<String, Class<?>>();
+
+    public CreateShortcutStoryTaskParams() {
+        super("anyOf", Boolean.FALSE);
+    }
+
+    public CreateShortcutStoryTaskParams(Object o) {
+        super("anyOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    static {
+        schemas.put("CreateShortcutStoryTaskParamsAnyOf", CreateShortcutStoryTaskParamsAnyOf.class);
+        schemas.put("CreateShortcutStoryTaskParamsAnyOf1", CreateShortcutStoryTaskParamsAnyOf1.class);
     }
 
     @Override
-    public String toString() {
-      return String.valueOf(value);
+    public Map<String, Class<?>> getSchemas() {
+        return CreateShortcutStoryTaskParams.schemas;
     }
 
-    public static TaskTypeEnum fromValue(String value) {
-      for (TaskTypeEnum b : TaskTypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<TaskTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final TaskTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public TaskTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return TaskTypeEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      TaskTypeEnum.fromValue(value);
-    }
-  }
-
-  public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
-  @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @jakarta.annotation.Nullable
-  private TaskTypeEnum taskType;
-
-  public static final String SERIALIZED_NAME_TITLE = "title";
-  @SerializedName(SERIALIZED_NAME_TITLE)
-  @jakarta.annotation.Nonnull
-  private String title;
-
-  /**
-   * Gets or Sets kind
-   */
-  @JsonAdapter(KindEnum.Adapter.class)
-  public enum KindEnum {
-    BUG("bug"),
-    
-    CHORE("chore"),
-    
-    FEATURE("feature");
-
-    private String value;
-
-    KindEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
+    /**
+     * Set the instance that matches the anyOf child schema, check
+     * the instance parameter is valid against the anyOf child schemas:
+     * CreateShortcutStoryTaskParamsAnyOf, CreateShortcutStoryTaskParamsAnyOf1
+     *
+     * It could be an instance of the 'anyOf' schemas.
+     */
     @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static KindEnum fromValue(String value) {
-      for (KindEnum b : KindEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
+    public void setActualInstance(Object instance) {
+        if (instance instanceof CreateShortcutStoryTaskParamsAnyOf) {
+            super.setActualInstance(instance);
+            return;
         }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
 
-    public static class Adapter extends TypeAdapter<KindEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final KindEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public KindEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return KindEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      KindEnum.fromValue(value);
-    }
-  }
-
-  public static final String SERIALIZED_NAME_KIND = "kind";
-  @SerializedName(SERIALIZED_NAME_KIND)
-  @jakarta.annotation.Nonnull
-  private KindEnum kind;
-
-  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
-  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @jakarta.annotation.Nullable
-  private String description;
-
-  public static final String SERIALIZED_NAME_LABELS = "labels";
-  @SerializedName(SERIALIZED_NAME_LABELS)
-  @jakarta.annotation.Nullable
-  private String labels;
-
-  public static final String SERIALIZED_NAME_DUE_DATE = "due_date";
-  @SerializedName(SERIALIZED_NAME_DUE_DATE)
-  @jakarta.annotation.Nullable
-  private String dueDate;
-
-  public static final String SERIALIZED_NAME_ARCHIVATION = "archivation";
-  @SerializedName(SERIALIZED_NAME_ARCHIVATION)
-  @jakarta.annotation.Nonnull
-  private Object archivation;
-
-  public static final String SERIALIZED_NAME_GROUP = "group";
-  @SerializedName(SERIALIZED_NAME_GROUP)
-  @jakarta.annotation.Nullable
-  private Object group;
-
-  public static final String SERIALIZED_NAME_PROJECT = "project";
-  @SerializedName(SERIALIZED_NAME_PROJECT)
-  @jakarta.annotation.Nullable
-  private Object project;
-
-  public static final String SERIALIZED_NAME_WORKFLOW_STATE = "workflow_state";
-  @SerializedName(SERIALIZED_NAME_WORKFLOW_STATE)
-  @jakarta.annotation.Nullable
-  private Object workflowState;
-
-  public CreateShortcutStoryTaskParams() {
-  }
-
-  public CreateShortcutStoryTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
-    this.taskType = taskType;
-    return this;
-  }
-
-  /**
-   * Get taskType
-   * @return taskType
-   */
-  @jakarta.annotation.Nullable
-  public TaskTypeEnum getTaskType() {
-    return taskType;
-  }
-
-  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
-    this.taskType = taskType;
-  }
-
-
-  public CreateShortcutStoryTaskParams title(@jakarta.annotation.Nonnull String title) {
-    this.title = title;
-    return this;
-  }
-
-  /**
-   * The incident title
-   * @return title
-   */
-  @jakarta.annotation.Nonnull
-  public String getTitle() {
-    return title;
-  }
-
-  public void setTitle(@jakarta.annotation.Nonnull String title) {
-    this.title = title;
-  }
-
-
-  public CreateShortcutStoryTaskParams kind(@jakarta.annotation.Nonnull KindEnum kind) {
-    this.kind = kind;
-    return this;
-  }
-
-  /**
-   * Get kind
-   * @return kind
-   */
-  @jakarta.annotation.Nonnull
-  public KindEnum getKind() {
-    return kind;
-  }
-
-  public void setKind(@jakarta.annotation.Nonnull KindEnum kind) {
-    this.kind = kind;
-  }
-
-
-  public CreateShortcutStoryTaskParams description(@jakarta.annotation.Nullable String description) {
-    this.description = description;
-    return this;
-  }
-
-  /**
-   * The incident description
-   * @return description
-   */
-  @jakarta.annotation.Nullable
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(@jakarta.annotation.Nullable String description) {
-    this.description = description;
-  }
-
-
-  public CreateShortcutStoryTaskParams labels(@jakarta.annotation.Nullable String labels) {
-    this.labels = labels;
-    return this;
-  }
-
-  /**
-   * The story labels
-   * @return labels
-   */
-  @jakarta.annotation.Nullable
-  public String getLabels() {
-    return labels;
-  }
-
-  public void setLabels(@jakarta.annotation.Nullable String labels) {
-    this.labels = labels;
-  }
-
-
-  public CreateShortcutStoryTaskParams dueDate(@jakarta.annotation.Nullable String dueDate) {
-    this.dueDate = dueDate;
-    return this;
-  }
-
-  /**
-   * The due date
-   * @return dueDate
-   */
-  @jakarta.annotation.Nullable
-  public String getDueDate() {
-    return dueDate;
-  }
-
-  public void setDueDate(@jakarta.annotation.Nullable String dueDate) {
-    this.dueDate = dueDate;
-  }
-
-
-  public CreateShortcutStoryTaskParams archivation(@jakarta.annotation.Nonnull Object archivation) {
-    this.archivation = archivation;
-    return this;
-  }
-
-  /**
-   * The archivation id and display name
-   * @return archivation
-   */
-  @jakarta.annotation.Nonnull
-  public Object getArchivation() {
-    return archivation;
-  }
-
-  public void setArchivation(@jakarta.annotation.Nonnull Object archivation) {
-    this.archivation = archivation;
-  }
-
-
-  public CreateShortcutStoryTaskParams group(@jakarta.annotation.Nullable Object group) {
-    this.group = group;
-    return this;
-  }
-
-  /**
-   * The group id and display name
-   * @return group
-   */
-  @jakarta.annotation.Nullable
-  public Object getGroup() {
-    return group;
-  }
-
-  public void setGroup(@jakarta.annotation.Nullable Object group) {
-    this.group = group;
-  }
-
-
-  public CreateShortcutStoryTaskParams project(@jakarta.annotation.Nullable Object project) {
-    this.project = project;
-    return this;
-  }
-
-  /**
-   * The project id and display name
-   * @return project
-   */
-  @jakarta.annotation.Nullable
-  public Object getProject() {
-    return project;
-  }
-
-  public void setProject(@jakarta.annotation.Nullable Object project) {
-    this.project = project;
-  }
-
-
-  public CreateShortcutStoryTaskParams workflowState(@jakarta.annotation.Nullable Object workflowState) {
-    this.workflowState = workflowState;
-    return this;
-  }
-
-  /**
-   * The workflow state id workflow state name
-   * @return workflowState
-   */
-  @jakarta.annotation.Nullable
-  public Object getWorkflowState() {
-    return workflowState;
-  }
-
-  public void setWorkflowState(@jakarta.annotation.Nullable Object workflowState) {
-    this.workflowState = workflowState;
-  }
-
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    CreateShortcutStoryTaskParams createShortcutStoryTaskParams = (CreateShortcutStoryTaskParams) o;
-    return Objects.equals(this.taskType, createShortcutStoryTaskParams.taskType) &&
-        Objects.equals(this.title, createShortcutStoryTaskParams.title) &&
-        Objects.equals(this.kind, createShortcutStoryTaskParams.kind) &&
-        Objects.equals(this.description, createShortcutStoryTaskParams.description) &&
-        Objects.equals(this.labels, createShortcutStoryTaskParams.labels) &&
-        Objects.equals(this.dueDate, createShortcutStoryTaskParams.dueDate) &&
-        Objects.equals(this.archivation, createShortcutStoryTaskParams.archivation) &&
-        Objects.equals(this.group, createShortcutStoryTaskParams.group) &&
-        Objects.equals(this.project, createShortcutStoryTaskParams.project) &&
-        Objects.equals(this.workflowState, createShortcutStoryTaskParams.workflowState);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(taskType, title, kind, description, labels, dueDate, archivation, group, project, workflowState);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class CreateShortcutStoryTaskParams {\n");
-    sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
-    sb.append("    title: ").append(toIndentedString(title)).append("\n");
-    sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
-    sb.append("    dueDate: ").append(toIndentedString(dueDate)).append("\n");
-    sb.append("    archivation: ").append(toIndentedString(archivation)).append("\n");
-    sb.append("    group: ").append(toIndentedString(group)).append("\n");
-    sb.append("    project: ").append(toIndentedString(project)).append("\n");
-    sb.append("    workflowState: ").append(toIndentedString(workflowState)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("title");
-    openapiRequiredFields.add("kind");
-    openapiRequiredFields.add("archivation");
-  }
-
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to CreateShortcutStoryTaskParams
-   */
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      if (jsonElement == null) {
-        if (!CreateShortcutStoryTaskParams.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in CreateShortcutStoryTaskParams is not found in the empty JSON string", CreateShortcutStoryTaskParams.openapiRequiredFields.toString()));
+        if (instance instanceof CreateShortcutStoryTaskParamsAnyOf1) {
+            super.setActualInstance(instance);
+            return;
         }
-      }
 
-      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!CreateShortcutStoryTaskParams.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CreateShortcutStoryTaskParams` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
-        }
-      }
+        throw new RuntimeException("Invalid instance type. Must be CreateShortcutStoryTaskParamsAnyOf, CreateShortcutStoryTaskParamsAnyOf1");
+    }
 
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : CreateShortcutStoryTaskParams.openapiRequiredFields) {
-        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
-        }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("task_type") != null && !jsonObj.get("task_type").isJsonNull()) && !jsonObj.get("task_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `task_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("task_type").toString()));
-      }
-      // validate the optional field `task_type`
-      if (jsonObj.get("task_type") != null && !jsonObj.get("task_type").isJsonNull()) {
-        TaskTypeEnum.validateJsonElement(jsonObj.get("task_type"));
-      }
-      if (!jsonObj.get("title").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
-      }
-      if (!jsonObj.get("kind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
-      }
-      // validate the required field `kind`
-      KindEnum.validateJsonElement(jsonObj.get("kind"));
-      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
-      }
-      if ((jsonObj.get("labels") != null && !jsonObj.get("labels").isJsonNull()) && !jsonObj.get("labels").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `labels` to be a primitive type in the JSON string but got `%s`", jsonObj.get("labels").toString()));
-      }
-      if ((jsonObj.get("due_date") != null && !jsonObj.get("due_date").isJsonNull()) && !jsonObj.get("due_date").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `due_date` to be a primitive type in the JSON string but got `%s`", jsonObj.get("due_date").toString()));
-      }
-      // validate the required field `archivation`
-      // validate the optional field `group`
-      if (jsonObj.get("group") != null && !jsonObj.get("group").isJsonNull()) {
-      }
-      // validate the optional field `project`
-      if (jsonObj.get("project") != null && !jsonObj.get("project").isJsonNull()) {
-      }
-      // validate the optional field `workflow_state`
-      if (jsonObj.get("workflow_state") != null && !jsonObj.get("workflow_state").isJsonNull()) {
-      }
-  }
-
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    /**
+     * Get the actual instance, which can be the following:
+     * CreateShortcutStoryTaskParamsAnyOf, CreateShortcutStoryTaskParamsAnyOf1
+     *
+     * @return The actual instance (CreateShortcutStoryTaskParamsAnyOf, CreateShortcutStoryTaskParamsAnyOf1)
+     */
     @SuppressWarnings("unchecked")
     @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!CreateShortcutStoryTaskParams.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'CreateShortcutStoryTaskParams' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<CreateShortcutStoryTaskParams> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(CreateShortcutStoryTaskParams.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<CreateShortcutStoryTaskParams>() {
-           @Override
-           public void write(JsonWriter out, CreateShortcutStoryTaskParams value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public CreateShortcutStoryTaskParams read(JsonReader in) throws IOException {
-             JsonElement jsonElement = elementAdapter.read(in);
-             validateJsonElement(jsonElement);
-             return thisAdapter.fromJsonTree(jsonElement);
-           }
-
-       }.nullSafe();
+    public Object getActualInstance() {
+        return super.getActualInstance();
     }
-  }
 
-  /**
-   * Create an instance of CreateShortcutStoryTaskParams given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of CreateShortcutStoryTaskParams
-   * @throws IOException if the JSON string is invalid with respect to CreateShortcutStoryTaskParams
-   */
-  public static CreateShortcutStoryTaskParams fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, CreateShortcutStoryTaskParams.class);
-  }
+    /**
+     * Get the actual instance of `CreateShortcutStoryTaskParamsAnyOf`. If the actual instance is not `CreateShortcutStoryTaskParamsAnyOf`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `CreateShortcutStoryTaskParamsAnyOf`
+     * @throws ClassCastException if the instance is not `CreateShortcutStoryTaskParamsAnyOf`
+     */
+    public CreateShortcutStoryTaskParamsAnyOf getCreateShortcutStoryTaskParamsAnyOf() throws ClassCastException {
+        return (CreateShortcutStoryTaskParamsAnyOf)super.getActualInstance();
+    }
 
-  /**
-   * Convert an instance of CreateShortcutStoryTaskParams to an JSON string
-   *
-   * @return JSON string
-   */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
+    /**
+     * Get the actual instance of `CreateShortcutStoryTaskParamsAnyOf1`. If the actual instance is not `CreateShortcutStoryTaskParamsAnyOf1`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `CreateShortcutStoryTaskParamsAnyOf1`
+     * @throws ClassCastException if the instance is not `CreateShortcutStoryTaskParamsAnyOf1`
+     */
+    public CreateShortcutStoryTaskParamsAnyOf1 getCreateShortcutStoryTaskParamsAnyOf1() throws ClassCastException {
+        return (CreateShortcutStoryTaskParamsAnyOf1)super.getActualInstance();
+    }
+
+    /**
+     * Validates the JSON Element and throws an exception if issues found
+     *
+     * @param jsonElement JSON Element
+     * @throws IOException if the JSON Element is invalid with respect to CreateShortcutStoryTaskParams
+     */
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+        // validate anyOf schemas one by one
+        ArrayList<String> errorMessages = new ArrayList<>();
+        // validate the json string with CreateShortcutStoryTaskParamsAnyOf
+        try {
+            CreateShortcutStoryTaskParamsAnyOf.validateJsonElement(jsonElement);
+            return;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for CreateShortcutStoryTaskParamsAnyOf failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        // validate the json string with CreateShortcutStoryTaskParamsAnyOf1
+        try {
+            CreateShortcutStoryTaskParamsAnyOf1.validateJsonElement(jsonElement);
+            return;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for CreateShortcutStoryTaskParamsAnyOf1 failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        throw new IOException(String.format("The JSON string is invalid for CreateShortcutStoryTaskParams with anyOf schemas: CreateShortcutStoryTaskParamsAnyOf, CreateShortcutStoryTaskParamsAnyOf1. no class match the result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
+    }
+
+    /**
+     * Create an instance of CreateShortcutStoryTaskParams given an JSON string
+     *
+     * @param jsonString JSON string
+     * @return An instance of CreateShortcutStoryTaskParams
+     * @throws IOException if the JSON string is invalid with respect to CreateShortcutStoryTaskParams
+     */
+    public static CreateShortcutStoryTaskParams fromJson(String jsonString) throws IOException {
+        return JSON.getGson().fromJson(jsonString, CreateShortcutStoryTaskParams.class);
+    }
+
+    /**
+     * Convert an instance of CreateShortcutStoryTaskParams to an JSON string
+     *
+     * @return JSON string
+     */
+    public String toJson() {
+        return JSON.getGson().toJson(this);
+    }
 }
 

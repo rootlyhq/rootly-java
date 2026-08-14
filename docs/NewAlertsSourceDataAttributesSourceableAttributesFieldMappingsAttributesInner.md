@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**field** | [**FieldEnum**](#FieldEnum) | Select the field on which the condition to be evaluated |  [optional] |
-|**jsonPath** | **String** | JSON path expression to extract a specific value from the alert&#39;s payload for evaluation |  [optional] |
+|**jsonPath** | **String** | JSON path expression to extract a specific value from the alert&#39;s payload for evaluation. For &#x60;notification_target_id&#x60; only: if your account has opted in to Dynamic Notification Targets, this may also be a Liquid template that resolves to a notification target id at routing time. |  [optional] |
 
 
 

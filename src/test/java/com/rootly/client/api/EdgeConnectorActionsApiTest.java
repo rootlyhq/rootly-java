@@ -14,9 +14,9 @@
 package com.rootly.client.api;
 
 import com.rootly.client.ApiException;
+import com.rootly.client.model.CreateEdgeConnectorActionRequest;
 import com.rootly.client.model.GetAlertFieldIdParameter;
-import com.rootly.client.model.V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest;
-import com.rootly.client.model.V1EdgeConnectorsEdgeConnectorIdActionsPostRequest;
+import com.rootly.client.model.UpdateEdgeConnectorActionRequest;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -34,14 +34,15 @@ public class EdgeConnectorActionsApiTest {
     private final EdgeConnectorActionsApi api = new EdgeConnectorActionsApi();
 
     /**
-     * List edge connector actions
+     * Create edge connector action
      *
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void v1EdgeConnectorsEdgeConnectorIdActionsGetTest() throws ApiException {
+    public void createEdgeConnectorActionTest() throws ApiException {
         String edgeConnectorId = null;
-        api.v1EdgeConnectorsEdgeConnectorIdActionsGet(edgeConnectorId);
+        CreateEdgeConnectorActionRequest createEdgeConnectorActionRequest = null;
+        api.createEdgeConnectorAction(edgeConnectorId, createEdgeConnectorActionRequest);
         // TODO: test validations
     }
 
@@ -51,10 +52,10 @@ public class EdgeConnectorActionsApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void v1EdgeConnectorsEdgeConnectorIdActionsIdDeleteTest() throws ApiException {
+    public void deleteEdgeConnectorActionTest() throws ApiException {
         String edgeConnectorId = null;
         GetAlertFieldIdParameter id = null;
-        api.v1EdgeConnectorsEdgeConnectorIdActionsIdDelete(edgeConnectorId, id);
+        api.deleteEdgeConnectorAction(edgeConnectorId, id);
         // TODO: test validations
     }
 
@@ -64,10 +65,22 @@ public class EdgeConnectorActionsApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void v1EdgeConnectorsEdgeConnectorIdActionsIdGetTest() throws ApiException {
+    public void getEdgeConnectorActionTest() throws ApiException {
         String edgeConnectorId = null;
         GetAlertFieldIdParameter id = null;
-        api.v1EdgeConnectorsEdgeConnectorIdActionsIdGet(edgeConnectorId, id);
+        api.getEdgeConnectorAction(edgeConnectorId, id);
+        // TODO: test validations
+    }
+
+    /**
+     * List edge connector actions
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void listEdgeConnectorActionsTest() throws ApiException {
+        String edgeConnectorId = null;
+        api.listEdgeConnectorActions(edgeConnectorId);
         // TODO: test validations
     }
 
@@ -77,24 +90,11 @@ public class EdgeConnectorActionsApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void v1EdgeConnectorsEdgeConnectorIdActionsIdPatchTest() throws ApiException {
+    public void updateEdgeConnectorActionTest() throws ApiException {
         String edgeConnectorId = null;
         GetAlertFieldIdParameter id = null;
-        V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest v1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest = null;
-        api.v1EdgeConnectorsEdgeConnectorIdActionsIdPatch(edgeConnectorId, id, v1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest);
-        // TODO: test validations
-    }
-
-    /**
-     * Create edge connector action
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void v1EdgeConnectorsEdgeConnectorIdActionsPostTest() throws ApiException {
-        String edgeConnectorId = null;
-        V1EdgeConnectorsEdgeConnectorIdActionsPostRequest v1EdgeConnectorsEdgeConnectorIdActionsPostRequest = null;
-        api.v1EdgeConnectorsEdgeConnectorIdActionsPost(edgeConnectorId, v1EdgeConnectorsEdgeConnectorIdActionsPostRequest);
+        UpdateEdgeConnectorActionRequest updateEdgeConnectorActionRequest = null;
+        api.updateEdgeConnectorAction(edgeConnectorId, id, updateEdgeConnectorActionRequest);
         // TODO: test validations
     }
 

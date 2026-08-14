@@ -4,18 +4,18 @@ All URIs are relative to *https://api.rootly.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**v1EdgeConnectorsEdgeConnectorIdActionsGet**](EdgeConnectorActionsApi.md#v1EdgeConnectorsEdgeConnectorIdActionsGet) | **GET** /v1/edge_connectors/{edge_connector_id}/actions | List edge connector actions |
-| [**v1EdgeConnectorsEdgeConnectorIdActionsIdDelete**](EdgeConnectorActionsApi.md#v1EdgeConnectorsEdgeConnectorIdActionsIdDelete) | **DELETE** /v1/edge_connectors/{edge_connector_id}/actions/{id} | Delete edge connector action |
-| [**v1EdgeConnectorsEdgeConnectorIdActionsIdGet**](EdgeConnectorActionsApi.md#v1EdgeConnectorsEdgeConnectorIdActionsIdGet) | **GET** /v1/edge_connectors/{edge_connector_id}/actions/{id} | Show edge connector action |
-| [**v1EdgeConnectorsEdgeConnectorIdActionsIdPatch**](EdgeConnectorActionsApi.md#v1EdgeConnectorsEdgeConnectorIdActionsIdPatch) | **PATCH** /v1/edge_connectors/{edge_connector_id}/actions/{id} | Update edge connector action |
-| [**v1EdgeConnectorsEdgeConnectorIdActionsPost**](EdgeConnectorActionsApi.md#v1EdgeConnectorsEdgeConnectorIdActionsPost) | **POST** /v1/edge_connectors/{edge_connector_id}/actions | Create edge connector action |
+| [**createEdgeConnectorAction**](EdgeConnectorActionsApi.md#createEdgeConnectorAction) | **POST** /v1/edge_connectors/{edge_connector_id}/actions | Create edge connector action |
+| [**deleteEdgeConnectorAction**](EdgeConnectorActionsApi.md#deleteEdgeConnectorAction) | **DELETE** /v1/edge_connectors/{edge_connector_id}/actions/{id} | Delete edge connector action |
+| [**getEdgeConnectorAction**](EdgeConnectorActionsApi.md#getEdgeConnectorAction) | **GET** /v1/edge_connectors/{edge_connector_id}/actions/{id} | Show edge connector action |
+| [**listEdgeConnectorActions**](EdgeConnectorActionsApi.md#listEdgeConnectorActions) | **GET** /v1/edge_connectors/{edge_connector_id}/actions | List edge connector actions |
+| [**updateEdgeConnectorAction**](EdgeConnectorActionsApi.md#updateEdgeConnectorAction) | **PATCH** /v1/edge_connectors/{edge_connector_id}/actions/{id} | Update edge connector action |
 
 
-<a id="v1EdgeConnectorsEdgeConnectorIdActionsGet"></a>
-# **v1EdgeConnectorsEdgeConnectorIdActionsGet**
-> v1EdgeConnectorsEdgeConnectorIdActionsGet(edgeConnectorId)
+<a id="createEdgeConnectorAction"></a>
+# **createEdgeConnectorAction**
+> createEdgeConnectorAction(edgeConnectorId, createEdgeConnectorActionRequest)
 
-List edge connector actions
+Create edge connector action
 
 ### Example
 ```java
@@ -38,10 +38,11 @@ public class Example {
 
     EdgeConnectorActionsApi apiInstance = new EdgeConnectorActionsApi(defaultClient);
     String edgeConnectorId = "edgeConnectorId_example"; // String | Edge connector ID
+    CreateEdgeConnectorActionRequest createEdgeConnectorActionRequest = new CreateEdgeConnectorActionRequest(); // CreateEdgeConnectorActionRequest | 
     try {
-      apiInstance.v1EdgeConnectorsEdgeConnectorIdActionsGet(edgeConnectorId);
+      apiInstance.createEdgeConnectorAction(edgeConnectorId, createEdgeConnectorActionRequest);
     } catch (ApiException e) {
-      System.err.println("Exception when calling EdgeConnectorActionsApi#v1EdgeConnectorsEdgeConnectorIdActionsGet");
+      System.err.println("Exception when calling EdgeConnectorActionsApi#createEdgeConnectorAction");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -56,6 +57,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **edgeConnectorId** | **String**| Edge connector ID | |
+| **createEdgeConnectorActionRequest** | [**CreateEdgeConnectorActionRequest**](CreateEdgeConnectorActionRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -67,18 +69,18 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/vnd.api+json
  - **Accept**: Not defined
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Returns list of actions |  -  |
-| **404** | Edge connector not found |  -  |
+| **201** | Action created |  -  |
+| **422** | Invalid parameters |  -  |
 
-<a id="v1EdgeConnectorsEdgeConnectorIdActionsIdDelete"></a>
-# **v1EdgeConnectorsEdgeConnectorIdActionsIdDelete**
-> v1EdgeConnectorsEdgeConnectorIdActionsIdDelete(edgeConnectorId, id)
+<a id="deleteEdgeConnectorAction"></a>
+# **deleteEdgeConnectorAction**
+> deleteEdgeConnectorAction(edgeConnectorId, id)
 
 Delete edge connector action
 
@@ -105,9 +107,9 @@ public class Example {
     String edgeConnectorId = "edgeConnectorId_example"; // String | Edge connector ID
     GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
-      apiInstance.v1EdgeConnectorsEdgeConnectorIdActionsIdDelete(edgeConnectorId, id);
+      apiInstance.deleteEdgeConnectorAction(edgeConnectorId, id);
     } catch (ApiException e) {
-      System.err.println("Exception when calling EdgeConnectorActionsApi#v1EdgeConnectorsEdgeConnectorIdActionsIdDelete");
+      System.err.println("Exception when calling EdgeConnectorActionsApi#deleteEdgeConnectorAction");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -142,9 +144,9 @@ null (empty response body)
 |-------------|-------------|------------------|
 | **200** | Action deleted |  -  |
 
-<a id="v1EdgeConnectorsEdgeConnectorIdActionsIdGet"></a>
-# **v1EdgeConnectorsEdgeConnectorIdActionsIdGet**
-> v1EdgeConnectorsEdgeConnectorIdActionsIdGet(edgeConnectorId, id)
+<a id="getEdgeConnectorAction"></a>
+# **getEdgeConnectorAction**
+> getEdgeConnectorAction(edgeConnectorId, id)
 
 Show edge connector action
 
@@ -171,9 +173,9 @@ public class Example {
     String edgeConnectorId = "edgeConnectorId_example"; // String | Edge connector ID
     GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
     try {
-      apiInstance.v1EdgeConnectorsEdgeConnectorIdActionsIdGet(edgeConnectorId, id);
+      apiInstance.getEdgeConnectorAction(edgeConnectorId, id);
     } catch (ApiException e) {
-      System.err.println("Exception when calling EdgeConnectorActionsApi#v1EdgeConnectorsEdgeConnectorIdActionsIdGet");
+      System.err.println("Exception when calling EdgeConnectorActionsApi#getEdgeConnectorAction");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -209,9 +211,74 @@ null (empty response body)
 | **200** | Returns action details |  -  |
 | **404** | Action not found |  -  |
 
-<a id="v1EdgeConnectorsEdgeConnectorIdActionsIdPatch"></a>
-# **v1EdgeConnectorsEdgeConnectorIdActionsIdPatch**
-> v1EdgeConnectorsEdgeConnectorIdActionsIdPatch(edgeConnectorId, id, v1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest)
+<a id="listEdgeConnectorActions"></a>
+# **listEdgeConnectorActions**
+> listEdgeConnectorActions(edgeConnectorId)
+
+List edge connector actions
+
+### Example
+```java
+// Import classes:
+import com.rootly.client.ApiClient;
+import com.rootly.client.ApiException;
+import com.rootly.client.Configuration;
+import com.rootly.client.auth.*;
+import com.rootly.client.models.*;
+import com.rootly.client.api.EdgeConnectorActionsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.rootly.com");
+    
+    // Configure HTTP bearer authorization: bearer_auth
+    HttpBearerAuth bearer_auth = (HttpBearerAuth) defaultClient.getAuthentication("bearer_auth");
+    bearer_auth.setBearerToken("BEARER TOKEN");
+
+    EdgeConnectorActionsApi apiInstance = new EdgeConnectorActionsApi(defaultClient);
+    String edgeConnectorId = "edgeConnectorId_example"; // String | Edge connector ID
+    try {
+      apiInstance.listEdgeConnectorActions(edgeConnectorId);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling EdgeConnectorActionsApi#listEdgeConnectorActions");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **edgeConnectorId** | **String**| Edge connector ID | |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Returns list of actions |  -  |
+| **404** | Edge connector not found |  -  |
+
+<a id="updateEdgeConnectorAction"></a>
+# **updateEdgeConnectorAction**
+> updateEdgeConnectorAction(edgeConnectorId, id, updateEdgeConnectorActionRequest)
 
 Update edge connector action
 
@@ -237,11 +304,11 @@ public class Example {
     EdgeConnectorActionsApi apiInstance = new EdgeConnectorActionsApi(defaultClient);
     String edgeConnectorId = "edgeConnectorId_example"; // String | Edge connector ID
     GetAlertFieldIdParameter id = new GetAlertFieldIdParameter(); // GetAlertFieldIdParameter | 
-    V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest v1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest = new V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest(); // V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest | 
+    UpdateEdgeConnectorActionRequest updateEdgeConnectorActionRequest = new UpdateEdgeConnectorActionRequest(); // UpdateEdgeConnectorActionRequest | 
     try {
-      apiInstance.v1EdgeConnectorsEdgeConnectorIdActionsIdPatch(edgeConnectorId, id, v1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest);
+      apiInstance.updateEdgeConnectorAction(edgeConnectorId, id, updateEdgeConnectorActionRequest);
     } catch (ApiException e) {
-      System.err.println("Exception when calling EdgeConnectorActionsApi#v1EdgeConnectorsEdgeConnectorIdActionsIdPatch");
+      System.err.println("Exception when calling EdgeConnectorActionsApi#updateEdgeConnectorAction");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -257,7 +324,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **edgeConnectorId** | **String**| Edge connector ID | |
 | **id** | [**GetAlertFieldIdParameter**](.md)|  | |
-| **v1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest** | [**V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest**](V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequest.md)|  | [optional] |
+| **updateEdgeConnectorActionRequest** | [**UpdateEdgeConnectorActionRequest**](UpdateEdgeConnectorActionRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -276,71 +343,4 @@ null (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Action updated |  -  |
-
-<a id="v1EdgeConnectorsEdgeConnectorIdActionsPost"></a>
-# **v1EdgeConnectorsEdgeConnectorIdActionsPost**
-> v1EdgeConnectorsEdgeConnectorIdActionsPost(edgeConnectorId, v1EdgeConnectorsEdgeConnectorIdActionsPostRequest)
-
-Create edge connector action
-
-### Example
-```java
-// Import classes:
-import com.rootly.client.ApiClient;
-import com.rootly.client.ApiException;
-import com.rootly.client.Configuration;
-import com.rootly.client.auth.*;
-import com.rootly.client.models.*;
-import com.rootly.client.api.EdgeConnectorActionsApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.rootly.com");
-    
-    // Configure HTTP bearer authorization: bearer_auth
-    HttpBearerAuth bearer_auth = (HttpBearerAuth) defaultClient.getAuthentication("bearer_auth");
-    bearer_auth.setBearerToken("BEARER TOKEN");
-
-    EdgeConnectorActionsApi apiInstance = new EdgeConnectorActionsApi(defaultClient);
-    String edgeConnectorId = "edgeConnectorId_example"; // String | Edge connector ID
-    V1EdgeConnectorsEdgeConnectorIdActionsPostRequest v1EdgeConnectorsEdgeConnectorIdActionsPostRequest = new V1EdgeConnectorsEdgeConnectorIdActionsPostRequest(); // V1EdgeConnectorsEdgeConnectorIdActionsPostRequest | 
-    try {
-      apiInstance.v1EdgeConnectorsEdgeConnectorIdActionsPost(edgeConnectorId, v1EdgeConnectorsEdgeConnectorIdActionsPostRequest);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling EdgeConnectorActionsApi#v1EdgeConnectorsEdgeConnectorIdActionsPost");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **edgeConnectorId** | **String**| Edge connector ID | |
-| **v1EdgeConnectorsEdgeConnectorIdActionsPostRequest** | [**V1EdgeConnectorsEdgeConnectorIdActionsPostRequest**](V1EdgeConnectorsEdgeConnectorIdActionsPostRequest.md)|  | [optional] |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[bearer_auth](../README.md#bearer_auth)
-
-### HTTP request headers
-
- - **Content-Type**: application/vnd.api+json
- - **Accept**: Not defined
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **201** | Action created |  -  |
-| **422** | Invalid parameters |  -  |
 

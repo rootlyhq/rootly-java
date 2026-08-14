@@ -19,8 +19,15 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.AlertEventEscalationTarget;
+import com.rootly.client.model.AlertEventIncident;
+import com.rootly.client.model.AlertEventSchedule;
+import com.rootly.client.model.AlertEventUser;
+import com.rootly.client.model.SlackChannel;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -49,8 +56,13 @@ import com.rootly.client.JSON;
 /**
  * AlertEvent
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AlertEvent {
+  public static final String SERIALIZED_NAME_ALERT_ID = "alert_id";
+  @SerializedName(SERIALIZED_NAME_ALERT_ID)
+  @jakarta.annotation.Nonnull
+  private String alertId;
+
   /**
    * Gets or Sets kind
    */
@@ -76,7 +88,9 @@ public class AlertEvent {
     
     NOISE("noise"),
     
-    MAINTENANCE("maintenance");
+    MAINTENANCE("maintenance"),
+    
+    DEFERRAL("deferral");
 
     private String value;
 
@@ -137,9 +151,17 @@ public class AlertEvent {
     
     IGNORED_ALERT_REQUEST("ignored_alert_request"),
     
+    CALL_LIFECYCLE("call_lifecycle"),
+    
+    LEVEL_SKIPPED("level_skipped"),
+    
     EMAILED("emailed"),
     
     SLACKED("slacked"),
+    
+    MS_TEAMS_MESSAGED("ms_teams_messaged"),
+    
+    GOOGLE_CHAT_MESSAGED("google_chat_messaged"),
     
     CALLED("called"),
     
@@ -152,6 +174,8 @@ public class AlertEvent {
     OPENED("opened"),
     
     RETRIGGERED("retriggered"),
+    
+    ACK_TIMEOUT_RETRIGGERED("ack_timeout_retriggered"),
     
     ANSWERED("answered"),
     
@@ -167,7 +191,11 @@ public class AlertEvent {
     
     SNOOZED("snoozed"),
     
+    RETRIGGER_SUPPRESSED("retrigger_suppressed"),
+    
     TRIGGERED("triggered"),
+    
+    OPEN("open"),
     
     UPDATED("updated"),
     
@@ -179,7 +207,11 @@ public class AlertEvent {
     
     NOT_MARKED("not_marked"),
     
-    MUTED("muted");
+    CLEARED("cleared"),
+    
+    MUTED("muted"),
+    
+    DEFERRED("deferred");
 
     private String value;
 
@@ -244,6 +276,46 @@ public class AlertEvent {
   @jakarta.annotation.Nullable
   private String details;
 
+  public static final String SERIALIZED_NAME_USER = "user";
+  @SerializedName(SERIALIZED_NAME_USER)
+  @jakarta.annotation.Nullable
+  private AlertEventUser user;
+
+  public static final String SERIALIZED_NAME_INCIDENT = "incident";
+  @SerializedName(SERIALIZED_NAME_INCIDENT)
+  @jakarta.annotation.Nullable
+  private AlertEventIncident incident;
+
+  public static final String SERIALIZED_NAME_SCHEDULE = "schedule";
+  @SerializedName(SERIALIZED_NAME_SCHEDULE)
+  @jakarta.annotation.Nullable
+  private AlertEventSchedule schedule;
+
+  public static final String SERIALIZED_NAME_ESCALATION_LEVEL = "escalation_level";
+  @SerializedName(SERIALIZED_NAME_ESCALATION_LEVEL)
+  @jakarta.annotation.Nullable
+  private Integer escalationLevel;
+
+  public static final String SERIALIZED_NAME_ESCALATION_TARGET_TYPE = "escalation_target_type";
+  @SerializedName(SERIALIZED_NAME_ESCALATION_TARGET_TYPE)
+  @jakarta.annotation.Nullable
+  private String escalationTargetType;
+
+  public static final String SERIALIZED_NAME_ESCALATION_TARGET = "escalation_target";
+  @SerializedName(SERIALIZED_NAME_ESCALATION_TARGET)
+  @jakarta.annotation.Nullable
+  private AlertEventEscalationTarget escalationTarget;
+
+  public static final String SERIALIZED_NAME_SLACK_CHANNEL = "slack_channel";
+  @SerializedName(SERIALIZED_NAME_SLACK_CHANNEL)
+  @jakarta.annotation.Nullable
+  private SlackChannel slackChannel;
+
+  public static final String SERIALIZED_NAME_INCIDENT_IDS = "incident_ids";
+  @SerializedName(SERIALIZED_NAME_INCIDENT_IDS)
+  @jakarta.annotation.Nullable
+  private List<String> incidentIds;
+
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   @jakarta.annotation.Nonnull
@@ -256,6 +328,25 @@ public class AlertEvent {
 
   public AlertEvent() {
   }
+
+  public AlertEvent alertId(@jakarta.annotation.Nonnull String alertId) {
+    this.alertId = alertId;
+    return this;
+  }
+
+  /**
+   * ID of the alert this event belongs to.
+   * @return alertId
+   */
+  @jakarta.annotation.Nonnull
+  public String getAlertId() {
+    return alertId;
+  }
+
+  public void setAlertId(@jakarta.annotation.Nonnull String alertId) {
+    this.alertId = alertId;
+  }
+
 
   public AlertEvent kind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
@@ -352,6 +443,166 @@ public class AlertEvent {
   }
 
 
+  public AlertEvent user(@jakarta.annotation.Nullable AlertEventUser user) {
+    this.user = user;
+    return this;
+  }
+
+  /**
+   * Get user
+   * @return user
+   */
+  @jakarta.annotation.Nullable
+  public AlertEventUser getUser() {
+    return user;
+  }
+
+  public void setUser(@jakarta.annotation.Nullable AlertEventUser user) {
+    this.user = user;
+  }
+
+
+  public AlertEvent incident(@jakarta.annotation.Nullable AlertEventIncident incident) {
+    this.incident = incident;
+    return this;
+  }
+
+  /**
+   * Get incident
+   * @return incident
+   */
+  @jakarta.annotation.Nullable
+  public AlertEventIncident getIncident() {
+    return incident;
+  }
+
+  public void setIncident(@jakarta.annotation.Nullable AlertEventIncident incident) {
+    this.incident = incident;
+  }
+
+
+  public AlertEvent schedule(@jakarta.annotation.Nullable AlertEventSchedule schedule) {
+    this.schedule = schedule;
+    return this;
+  }
+
+  /**
+   * Get schedule
+   * @return schedule
+   */
+  @jakarta.annotation.Nullable
+  public AlertEventSchedule getSchedule() {
+    return schedule;
+  }
+
+  public void setSchedule(@jakarta.annotation.Nullable AlertEventSchedule schedule) {
+    this.schedule = schedule;
+  }
+
+
+  public AlertEvent escalationLevel(@jakarta.annotation.Nullable Integer escalationLevel) {
+    this.escalationLevel = escalationLevel;
+    return this;
+  }
+
+  /**
+   * Get escalationLevel
+   * @return escalationLevel
+   */
+  @jakarta.annotation.Nullable
+  public Integer getEscalationLevel() {
+    return escalationLevel;
+  }
+
+  public void setEscalationLevel(@jakarta.annotation.Nullable Integer escalationLevel) {
+    this.escalationLevel = escalationLevel;
+  }
+
+
+  public AlertEvent escalationTargetType(@jakarta.annotation.Nullable String escalationTargetType) {
+    this.escalationTargetType = escalationTargetType;
+    return this;
+  }
+
+  /**
+   * e.g. EscalationPolicy, User.
+   * @return escalationTargetType
+   */
+  @jakarta.annotation.Nullable
+  public String getEscalationTargetType() {
+    return escalationTargetType;
+  }
+
+  public void setEscalationTargetType(@jakarta.annotation.Nullable String escalationTargetType) {
+    this.escalationTargetType = escalationTargetType;
+  }
+
+
+  public AlertEvent escalationTarget(@jakarta.annotation.Nullable AlertEventEscalationTarget escalationTarget) {
+    this.escalationTarget = escalationTarget;
+    return this;
+  }
+
+  /**
+   * Get escalationTarget
+   * @return escalationTarget
+   */
+  @jakarta.annotation.Nullable
+  public AlertEventEscalationTarget getEscalationTarget() {
+    return escalationTarget;
+  }
+
+  public void setEscalationTarget(@jakarta.annotation.Nullable AlertEventEscalationTarget escalationTarget) {
+    this.escalationTarget = escalationTarget;
+  }
+
+
+  public AlertEvent slackChannel(@jakarta.annotation.Nullable SlackChannel slackChannel) {
+    this.slackChannel = slackChannel;
+    return this;
+  }
+
+  /**
+   * Get slackChannel
+   * @return slackChannel
+   */
+  @jakarta.annotation.Nullable
+  public SlackChannel getSlackChannel() {
+    return slackChannel;
+  }
+
+  public void setSlackChannel(@jakarta.annotation.Nullable SlackChannel slackChannel) {
+    this.slackChannel = slackChannel;
+  }
+
+
+  public AlertEvent incidentIds(@jakarta.annotation.Nullable List<String> incidentIds) {
+    this.incidentIds = incidentIds;
+    return this;
+  }
+
+  public AlertEvent addIncidentIdsItem(String incidentIdsItem) {
+    if (this.incidentIds == null) {
+      this.incidentIds = new ArrayList<>();
+    }
+    this.incidentIds.add(incidentIdsItem);
+    return this;
+  }
+
+  /**
+   * Get incidentIds
+   * @return incidentIds
+   */
+  @jakarta.annotation.Nullable
+  public List<String> getIncidentIds() {
+    return incidentIds;
+  }
+
+  public void setIncidentIds(@jakarta.annotation.Nullable List<String> incidentIds) {
+    this.incidentIds = incidentIds;
+  }
+
+
   public AlertEvent createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
@@ -400,11 +651,20 @@ public class AlertEvent {
       return false;
     }
     AlertEvent alertEvent = (AlertEvent) o;
-    return Objects.equals(this.kind, alertEvent.kind) &&
+    return Objects.equals(this.alertId, alertEvent.alertId) &&
+        Objects.equals(this.kind, alertEvent.kind) &&
         Objects.equals(this.action, alertEvent.action) &&
         Objects.equals(this.source, alertEvent.source) &&
         Objects.equals(this.userId, alertEvent.userId) &&
         Objects.equals(this.details, alertEvent.details) &&
+        Objects.equals(this.user, alertEvent.user) &&
+        Objects.equals(this.incident, alertEvent.incident) &&
+        Objects.equals(this.schedule, alertEvent.schedule) &&
+        Objects.equals(this.escalationLevel, alertEvent.escalationLevel) &&
+        Objects.equals(this.escalationTargetType, alertEvent.escalationTargetType) &&
+        Objects.equals(this.escalationTarget, alertEvent.escalationTarget) &&
+        Objects.equals(this.slackChannel, alertEvent.slackChannel) &&
+        Objects.equals(this.incidentIds, alertEvent.incidentIds) &&
         Objects.equals(this.createdAt, alertEvent.createdAt) &&
         Objects.equals(this.updatedAt, alertEvent.updatedAt);
   }
@@ -415,7 +675,7 @@ public class AlertEvent {
 
   @Override
   public int hashCode() {
-    return Objects.hash(kind, action, source, userId, details, createdAt, updatedAt);
+    return Objects.hash(alertId, kind, action, source, userId, details, user, incident, schedule, escalationLevel, escalationTargetType, escalationTarget, slackChannel, incidentIds, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -429,11 +689,20 @@ public class AlertEvent {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AlertEvent {\n");
+    sb.append("    alertId: ").append(toIndentedString(alertId)).append("\n");
     sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
     sb.append("    source: ").append(toIndentedString(source)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    details: ").append(toIndentedString(details)).append("\n");
+    sb.append("    user: ").append(toIndentedString(user)).append("\n");
+    sb.append("    incident: ").append(toIndentedString(incident)).append("\n");
+    sb.append("    schedule: ").append(toIndentedString(schedule)).append("\n");
+    sb.append("    escalationLevel: ").append(toIndentedString(escalationLevel)).append("\n");
+    sb.append("    escalationTargetType: ").append(toIndentedString(escalationTargetType)).append("\n");
+    sb.append("    escalationTarget: ").append(toIndentedString(escalationTarget)).append("\n");
+    sb.append("    slackChannel: ").append(toIndentedString(slackChannel)).append("\n");
+    sb.append("    incidentIds: ").append(toIndentedString(incidentIds)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -458,16 +727,26 @@ public class AlertEvent {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("alert_id");
     openapiFields.add("kind");
     openapiFields.add("action");
     openapiFields.add("source");
     openapiFields.add("user_id");
     openapiFields.add("details");
+    openapiFields.add("user");
+    openapiFields.add("incident");
+    openapiFields.add("schedule");
+    openapiFields.add("escalation_level");
+    openapiFields.add("escalation_target_type");
+    openapiFields.add("escalation_target");
+    openapiFields.add("slack_channel");
+    openapiFields.add("incident_ids");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("alert_id");
     openapiRequiredFields.add("kind");
     openapiRequiredFields.add("action");
     openapiRequiredFields.add("source");
@@ -503,6 +782,9 @@ public class AlertEvent {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if (!jsonObj.get("alert_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `alert_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("alert_id").toString()));
+      }
       if (!jsonObj.get("kind").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
       }
@@ -518,6 +800,33 @@ public class AlertEvent {
       }
       if ((jsonObj.get("details") != null && !jsonObj.get("details").isJsonNull()) && !jsonObj.get("details").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `details` to be a primitive type in the JSON string but got `%s`", jsonObj.get("details").toString()));
+      }
+      // validate the optional field `user`
+      if (jsonObj.get("user") != null && !jsonObj.get("user").isJsonNull()) {
+        AlertEventUser.validateJsonElement(jsonObj.get("user"));
+      }
+      // validate the optional field `incident`
+      if (jsonObj.get("incident") != null && !jsonObj.get("incident").isJsonNull()) {
+        AlertEventIncident.validateJsonElement(jsonObj.get("incident"));
+      }
+      // validate the optional field `schedule`
+      if (jsonObj.get("schedule") != null && !jsonObj.get("schedule").isJsonNull()) {
+        AlertEventSchedule.validateJsonElement(jsonObj.get("schedule"));
+      }
+      if ((jsonObj.get("escalation_target_type") != null && !jsonObj.get("escalation_target_type").isJsonNull()) && !jsonObj.get("escalation_target_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `escalation_target_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("escalation_target_type").toString()));
+      }
+      // validate the optional field `escalation_target`
+      if (jsonObj.get("escalation_target") != null && !jsonObj.get("escalation_target").isJsonNull()) {
+        AlertEventEscalationTarget.validateJsonElement(jsonObj.get("escalation_target"));
+      }
+      // validate the optional field `slack_channel`
+      if (jsonObj.get("slack_channel") != null && !jsonObj.get("slack_channel").isJsonNull()) {
+        SlackChannel.validateJsonElement(jsonObj.get("slack_channel"));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("incident_ids") != null && !jsonObj.get("incident_ids").isJsonNull() && !jsonObj.get("incident_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `incident_ids` to be an array in the JSON string but got `%s`", jsonObj.get("incident_ids").toString()));
       }
       if (!jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));

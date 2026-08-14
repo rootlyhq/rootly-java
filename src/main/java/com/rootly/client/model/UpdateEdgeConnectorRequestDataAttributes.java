@@ -50,16 +50,16 @@ import com.rootly.client.JSON;
 /**
  * UpdateEdgeConnectorRequestDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateEdgeConnectorRequestDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   /**
@@ -116,18 +116,23 @@ public class UpdateEdgeConnectorRequestDataAttributes {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private StatusEnum status;
 
   public static final String SERIALIZED_NAME_SUBSCRIPTIONS = "subscriptions";
   @SerializedName(SERIALIZED_NAME_SUBSCRIPTIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> subscriptions = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_FILTERS = "filters";
+  @SerializedName(SERIALIZED_NAME_FILTERS)
+  @jakarta.annotation.Nullable
+  private Object filters;
 
   public UpdateEdgeConnectorRequestDataAttributes() {
   }
 
-  public UpdateEdgeConnectorRequestDataAttributes name(@javax.annotation.Nullable String name) {
+  public UpdateEdgeConnectorRequestDataAttributes name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -136,17 +141,17 @@ public class UpdateEdgeConnectorRequestDataAttributes {
    * Get name
    * @return name
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public UpdateEdgeConnectorRequestDataAttributes description(@javax.annotation.Nullable String description) {
+  public UpdateEdgeConnectorRequestDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -155,17 +160,17 @@ public class UpdateEdgeConnectorRequestDataAttributes {
    * Get description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UpdateEdgeConnectorRequestDataAttributes status(@javax.annotation.Nullable StatusEnum status) {
+  public UpdateEdgeConnectorRequestDataAttributes status(@jakarta.annotation.Nullable StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -174,17 +179,17 @@ public class UpdateEdgeConnectorRequestDataAttributes {
    * Get status
    * @return status
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nullable StatusEnum status) {
+  public void setStatus(@jakarta.annotation.Nullable StatusEnum status) {
     this.status = status;
   }
 
 
-  public UpdateEdgeConnectorRequestDataAttributes subscriptions(@javax.annotation.Nullable List<String> subscriptions) {
+  public UpdateEdgeConnectorRequestDataAttributes subscriptions(@jakarta.annotation.Nullable List<String> subscriptions) {
     this.subscriptions = subscriptions;
     return this;
   }
@@ -201,13 +206,32 @@ public class UpdateEdgeConnectorRequestDataAttributes {
    * Get subscriptions
    * @return subscriptions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getSubscriptions() {
     return subscriptions;
   }
 
-  public void setSubscriptions(@javax.annotation.Nullable List<String> subscriptions) {
+  public void setSubscriptions(@jakarta.annotation.Nullable List<String> subscriptions) {
     this.subscriptions = subscriptions;
+  }
+
+
+  public UpdateEdgeConnectorRequestDataAttributes filters(@jakarta.annotation.Nullable Object filters) {
+    this.filters = filters;
+    return this;
+  }
+
+  /**
+   * Event filters
+   * @return filters
+   */
+  @jakarta.annotation.Nullable
+  public Object getFilters() {
+    return filters;
+  }
+
+  public void setFilters(@jakarta.annotation.Nullable Object filters) {
+    this.filters = filters;
   }
 
 
@@ -224,12 +248,13 @@ public class UpdateEdgeConnectorRequestDataAttributes {
     return Objects.equals(this.name, updateEdgeConnectorRequestDataAttributes.name) &&
         Objects.equals(this.description, updateEdgeConnectorRequestDataAttributes.description) &&
         Objects.equals(this.status, updateEdgeConnectorRequestDataAttributes.status) &&
-        Objects.equals(this.subscriptions, updateEdgeConnectorRequestDataAttributes.subscriptions);
+        Objects.equals(this.subscriptions, updateEdgeConnectorRequestDataAttributes.subscriptions) &&
+        Objects.equals(this.filters, updateEdgeConnectorRequestDataAttributes.filters);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, status, subscriptions);
+    return Objects.hash(name, description, status, subscriptions, filters);
   }
 
   @Override
@@ -240,6 +265,7 @@ public class UpdateEdgeConnectorRequestDataAttributes {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    subscriptions: ").append(toIndentedString(subscriptions)).append("\n");
+    sb.append("    filters: ").append(toIndentedString(filters)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -266,6 +292,7 @@ public class UpdateEdgeConnectorRequestDataAttributes {
     openapiFields.add("description");
     openapiFields.add("status");
     openapiFields.add("subscriptions");
+    openapiFields.add("filters");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

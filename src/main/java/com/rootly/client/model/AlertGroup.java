@@ -53,7 +53,7 @@ import com.rootly.client.JSON;
 /**
  * AlertGroup
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AlertGroup {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -67,7 +67,7 @@ public class AlertGroup {
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
-  @jakarta.annotation.Nonnull
+  @jakarta.annotation.Nullable
   private String slug;
 
   public static final String SERIALIZED_NAME_CONDITION_TYPE = "condition_type";
@@ -126,6 +126,13 @@ public class AlertGroup {
   public AlertGroup() {
   }
 
+  public AlertGroup(
+     String slug
+  ) {
+    this();
+    this.slug = slug;
+  }
+
   public AlertGroup name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
@@ -164,23 +171,15 @@ public class AlertGroup {
   }
 
 
-  public AlertGroup slug(@jakarta.annotation.Nonnull String slug) {
-    this.slug = slug;
-    return this;
-  }
-
   /**
    * The slug of the alert group
    * @return slug
    */
-  @jakarta.annotation.Nonnull
+  @jakarta.annotation.Nullable
   public String getSlug() {
     return slug;
   }
 
-  public void setSlug(@jakarta.annotation.Nonnull String slug) {
-    this.slug = slug;
-  }
 
 
   public AlertGroup conditionType(@jakarta.annotation.Nonnull String conditionType) {
@@ -496,7 +495,6 @@ public class AlertGroup {
     openapiRequiredFields = new HashSet<String>();
     openapiRequiredFields.add("name");
     openapiRequiredFields.add("description");
-    openapiRequiredFields.add("slug");
     openapiRequiredFields.add("condition_type");
     openapiRequiredFields.add("time_window");
     openapiRequiredFields.add("created_at");
@@ -538,7 +536,7 @@ public class AlertGroup {
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
-      if (!jsonObj.get("slug").isJsonPrimitive()) {
+      if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
       }
       if (!jsonObj.get("condition_type").isJsonPrimitive()) {

@@ -13,6 +13,9 @@
 |**content** | **String** | The Google Doc content |  [optional] |
 |**postMortemTemplateId** | **String** | Retrospective template to use when updating page, if desired |  [optional] |
 |**templateId** | **String** | The Google Doc file ID to use as a template. |  [optional] |
+|**includeOverview** | **Boolean** |  |  [optional] |
+|**includeTimeline** | **Boolean** |  |  [optional] |
+|**includeFollowUps** | **Boolean** |  |  [optional] |
 
 
 

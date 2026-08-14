@@ -146,7 +146,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | custom alert field deleted successfully |  -  |
-| **422** | cannot delete alert field with associated records |  -  |
+| **422** | cannot delete alert field referenced by escalation path field rules |  -  |
 | **404** | resource not found |  -  |
 
 <a id="getAlertField"></a>
@@ -219,7 +219,7 @@ public class Example {
 
 <a id="listAlertFields"></a>
 # **listAlertFields**
-> AlertFieldList listAlertFields(include, pageNumber, pageSize, filterSearch, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort)
+> AlertFieldList listAlertFields(include, pageNumber, pageSize, filterSearch, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterKindEq, filterKindNotEq, filterKindIn, filterKindNotIn, sort)
 
 List alert fields
 
@@ -255,9 +255,17 @@ public class Example {
     String filterCreatedAtGte = "filterCreatedAtGte_example"; // String | 
     String filterCreatedAtLt = "filterCreatedAtLt_example"; // String | 
     String filterCreatedAtLte = "filterCreatedAtLte_example"; // String | 
+    String filterNameEq = "filterNameEq_example"; // String | 
+    String filterNameNotEq = "filterNameNotEq_example"; // String | 
+    String filterNameIn = "filterNameIn_example"; // String | 
+    String filterNameNotIn = "filterNameNotIn_example"; // String | 
+    String filterKindEq = "filterKindEq_example"; // String | 
+    String filterKindNotEq = "filterKindNotEq_example"; // String | 
+    String filterKindIn = "filterKindIn_example"; // String | 
+    String filterKindNotIn = "filterKindNotIn_example"; // String | 
     String sort = "sort_example"; // String | 
     try {
-      AlertFieldList result = apiInstance.listAlertFields(include, pageNumber, pageSize, filterSearch, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
+      AlertFieldList result = apiInstance.listAlertFields(include, pageNumber, pageSize, filterSearch, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterKindEq, filterKindNotEq, filterKindIn, filterKindNotIn, sort);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AlertFieldsApi#listAlertFields");
@@ -284,6 +292,14 @@ public class Example {
 | **filterCreatedAtGte** | **String**|  | [optional] |
 | **filterCreatedAtLt** | **String**|  | [optional] |
 | **filterCreatedAtLte** | **String**|  | [optional] |
+| **filterNameEq** | **String**|  | [optional] |
+| **filterNameNotEq** | **String**|  | [optional] |
+| **filterNameIn** | **String**|  | [optional] |
+| **filterNameNotIn** | **String**|  | [optional] |
+| **filterKindEq** | **String**|  | [optional] |
+| **filterKindNotEq** | **String**|  | [optional] |
+| **filterKindIn** | **String**|  | [optional] |
+| **filterKindNotIn** | **String**|  | [optional] |
 | **sort** | **String**|  | [optional] |
 
 ### Return type

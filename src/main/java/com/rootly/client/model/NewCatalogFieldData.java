@@ -49,14 +49,14 @@ import com.rootly.client.JSON;
 /**
  * NewCatalogFieldData
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewCatalogFieldData {
   /**
    * Gets or Sets type
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    CATALOG_FIELDS("catalog_fields");
+    CATALOG_PROPERTIES("catalog_properties");
 
     private String value;
 

@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**taskType** | [**TaskTypeEnum**](#TaskTypeEnum) |  |  [optional] |
 |**kind** | [**KindEnum**](#KindEnum) |  |  |
-|**attributeToQueryBy** | [**AttributeToQueryByEnum**](#AttributeToQueryByEnum) | [\&quot;(incident) kind can only match [:id, :slug, :sequential_id, :pagerduty_incident_id, :opsgenie_incident_id, :victor_ops_incident_id, :jira_issue_id, :asana_task_id, :shortcut_task_id, :linear_issue_id, :zendesk_ticket_id, :motion_task_id, :trello_card_id, :airtable_record_id, :shortcut_story_id, :github_issue_id, :freshservice_ticket_id, :freshservice_task_id, :clickup_task_id]\&quot;, \&quot;(post_mortem) kind can only match [:id]\&quot;, \&quot;(action_item) kind can only match [:id, :jira_issue_id, :asana_task_id, :shortcut_task_id, :linear_issue_id, :zendesk_ticket_id, :motion_task_id, :trello_card_id, :airtable_record_id, :shortcut_story_id, :github_issue_id, :freshservice_ticket_id, :freshservice_task_id, :clickup_task_id]\&quot;, \&quot;(pulse) kind can only match [:id]\&quot;, \&quot;(alert) kind can only match [:id]\&quot;] |  |
+|**attributeToQueryBy** | [**AttributeToQueryByEnum**](#AttributeToQueryByEnum) | [\&quot;(incident) kind can only match [:id, :slug, :sequential_id, :pagerduty_incident_id, :opsgenie_incident_id, :victor_ops_incident_id, :jira_issue_id, :asana_task_id, :shortcut_task_id, :linear_issue_id, :zendesk_ticket_id, :motion_task_id, :trello_card_id, :airtable_record_id, :shortcut_story_id, :github_issue_id, :freshservice_ticket_id, :freshservice_task_id, :clickup_task_id]\&quot;, \&quot;(action_item) kind can only match [:id, :jira_issue_id, :asana_task_id, :shortcut_task_id, :linear_issue_id, :zendesk_ticket_id, :motion_task_id, :trello_card_id, :airtable_record_id, :shortcut_story_id, :github_issue_id, :freshservice_ticket_id, :freshservice_task_id, :clickup_task_id]\&quot;, \&quot;(post_mortem) kind can only match [:id]\&quot;, \&quot;(pulse) kind can only match [:id]\&quot;, \&quot;(alert) kind can only match [:id]\&quot;] |  |
 |**resource** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
 |**workflow** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
 |**checkWorkflowConditions** | **Boolean** |  |  [optional] |
@@ -29,8 +29,8 @@
 | Name | Value |
 |---- | -----|
 | INCIDENT | &quot;incident&quot; |
-| POST_MORTEM | &quot;post_mortem&quot; |
 | ACTION_ITEM | &quot;action_item&quot; |
+| POST_MORTEM | &quot;post_mortem&quot; |
 | PULSE | &quot;pulse&quot; |
 | ALERT | &quot;alert&quot; |
 

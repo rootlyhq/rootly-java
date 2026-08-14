@@ -85,6 +85,22 @@ public class AuditsApi {
      * @param filterApiKeyId  (optional)
      * @param filterSource  (optional)
      * @param filterItemType  (optional)
+     * @param filterUserIdEq  (optional)
+     * @param filterUserIdNotEq  (optional)
+     * @param filterUserIdIn  (optional)
+     * @param filterUserIdNotIn  (optional)
+     * @param filterApiKeyIdEq  (optional)
+     * @param filterApiKeyIdNotEq  (optional)
+     * @param filterApiKeyIdIn  (optional)
+     * @param filterApiKeyIdNotIn  (optional)
+     * @param filterSourceEq  (optional)
+     * @param filterSourceNotEq  (optional)
+     * @param filterSourceIn  (optional)
+     * @param filterSourceNotIn  (optional)
+     * @param filterItemTypeEq  (optional)
+     * @param filterItemTypeNotEq  (optional)
+     * @param filterItemTypeIn  (optional)
+     * @param filterItemTypeNotIn  (optional)
      * @param sort  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -96,7 +112,7 @@ public class AuditsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAuditsCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUserId, @jakarta.annotation.Nullable String filterApiKeyId, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterItemType, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listAuditsCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUserId, @jakarta.annotation.Nullable String filterApiKeyId, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterItemType, @jakarta.annotation.Nullable String filterUserIdEq, @jakarta.annotation.Nullable String filterUserIdNotEq, @jakarta.annotation.Nullable String filterUserIdIn, @jakarta.annotation.Nullable String filterUserIdNotIn, @jakarta.annotation.Nullable String filterApiKeyIdEq, @jakarta.annotation.Nullable String filterApiKeyIdNotEq, @jakarta.annotation.Nullable String filterApiKeyIdIn, @jakarta.annotation.Nullable String filterApiKeyIdNotIn, @jakarta.annotation.Nullable String filterSourceEq, @jakarta.annotation.Nullable String filterSourceNotEq, @jakarta.annotation.Nullable String filterSourceIn, @jakarta.annotation.Nullable String filterSourceNotIn, @jakarta.annotation.Nullable String filterItemTypeEq, @jakarta.annotation.Nullable String filterItemTypeNotEq, @jakarta.annotation.Nullable String filterItemTypeIn, @jakarta.annotation.Nullable String filterItemTypeNotIn, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -165,6 +181,70 @@ public class AuditsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[item_type]", filterItemType));
         }
 
+        if (filterUserIdEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[user_id][eq]", filterUserIdEq));
+        }
+
+        if (filterUserIdNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[user_id][not_eq]", filterUserIdNotEq));
+        }
+
+        if (filterUserIdIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[user_id][in]", filterUserIdIn));
+        }
+
+        if (filterUserIdNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[user_id][not_in]", filterUserIdNotIn));
+        }
+
+        if (filterApiKeyIdEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[api_key_id][eq]", filterApiKeyIdEq));
+        }
+
+        if (filterApiKeyIdNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[api_key_id][not_eq]", filterApiKeyIdNotEq));
+        }
+
+        if (filterApiKeyIdIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[api_key_id][in]", filterApiKeyIdIn));
+        }
+
+        if (filterApiKeyIdNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[api_key_id][not_in]", filterApiKeyIdNotIn));
+        }
+
+        if (filterSourceEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[source][eq]", filterSourceEq));
+        }
+
+        if (filterSourceNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[source][not_eq]", filterSourceNotEq));
+        }
+
+        if (filterSourceIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[source][in]", filterSourceIn));
+        }
+
+        if (filterSourceNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[source][not_in]", filterSourceNotIn));
+        }
+
+        if (filterItemTypeEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[item_type][eq]", filterItemTypeEq));
+        }
+
+        if (filterItemTypeNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[item_type][not_eq]", filterItemTypeNotEq));
+        }
+
+        if (filterItemTypeIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[item_type][in]", filterItemTypeIn));
+        }
+
+        if (filterItemTypeNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[item_type][not_in]", filterItemTypeNotIn));
+        }
+
         if (sort != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort", sort));
         }
@@ -189,8 +269,8 @@ public class AuditsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listAuditsValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUserId, @jakarta.annotation.Nullable String filterApiKeyId, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterItemType, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
-        return listAuditsCall(include, pageNumber, pageSize, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUserId, filterApiKeyId, filterSource, filterItemType, sort, _callback);
+    private okhttp3.Call listAuditsValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUserId, @jakarta.annotation.Nullable String filterApiKeyId, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterItemType, @jakarta.annotation.Nullable String filterUserIdEq, @jakarta.annotation.Nullable String filterUserIdNotEq, @jakarta.annotation.Nullable String filterUserIdIn, @jakarta.annotation.Nullable String filterUserIdNotIn, @jakarta.annotation.Nullable String filterApiKeyIdEq, @jakarta.annotation.Nullable String filterApiKeyIdNotEq, @jakarta.annotation.Nullable String filterApiKeyIdIn, @jakarta.annotation.Nullable String filterApiKeyIdNotIn, @jakarta.annotation.Nullable String filterSourceEq, @jakarta.annotation.Nullable String filterSourceNotEq, @jakarta.annotation.Nullable String filterSourceIn, @jakarta.annotation.Nullable String filterSourceNotIn, @jakarta.annotation.Nullable String filterItemTypeEq, @jakarta.annotation.Nullable String filterItemTypeNotEq, @jakarta.annotation.Nullable String filterItemTypeIn, @jakarta.annotation.Nullable String filterItemTypeNotIn, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+        return listAuditsCall(include, pageNumber, pageSize, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUserId, filterApiKeyId, filterSource, filterItemType, filterUserIdEq, filterUserIdNotEq, filterUserIdIn, filterUserIdNotIn, filterApiKeyIdEq, filterApiKeyIdNotEq, filterApiKeyIdIn, filterApiKeyIdNotIn, filterSourceEq, filterSourceNotEq, filterSourceIn, filterSourceNotIn, filterItemTypeEq, filterItemTypeNotEq, filterItemTypeIn, filterItemTypeNotIn, sort, _callback);
 
     }
 
@@ -208,6 +288,22 @@ public class AuditsApi {
      * @param filterApiKeyId  (optional)
      * @param filterSource  (optional)
      * @param filterItemType  (optional)
+     * @param filterUserIdEq  (optional)
+     * @param filterUserIdNotEq  (optional)
+     * @param filterUserIdIn  (optional)
+     * @param filterUserIdNotIn  (optional)
+     * @param filterApiKeyIdEq  (optional)
+     * @param filterApiKeyIdNotEq  (optional)
+     * @param filterApiKeyIdIn  (optional)
+     * @param filterApiKeyIdNotIn  (optional)
+     * @param filterSourceEq  (optional)
+     * @param filterSourceNotEq  (optional)
+     * @param filterSourceIn  (optional)
+     * @param filterSourceNotIn  (optional)
+     * @param filterItemTypeEq  (optional)
+     * @param filterItemTypeNotEq  (optional)
+     * @param filterItemTypeIn  (optional)
+     * @param filterItemTypeNotIn  (optional)
      * @param sort  (optional)
      * @return AuditsList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -218,8 +314,8 @@ public class AuditsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public AuditsList listAudits(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUserId, @jakarta.annotation.Nullable String filterApiKeyId, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterItemType, @jakarta.annotation.Nullable String sort) throws ApiException {
-        ApiResponse<AuditsList> localVarResp = listAuditsWithHttpInfo(include, pageNumber, pageSize, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUserId, filterApiKeyId, filterSource, filterItemType, sort);
+    public AuditsList listAudits(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUserId, @jakarta.annotation.Nullable String filterApiKeyId, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterItemType, @jakarta.annotation.Nullable String filterUserIdEq, @jakarta.annotation.Nullable String filterUserIdNotEq, @jakarta.annotation.Nullable String filterUserIdIn, @jakarta.annotation.Nullable String filterUserIdNotIn, @jakarta.annotation.Nullable String filterApiKeyIdEq, @jakarta.annotation.Nullable String filterApiKeyIdNotEq, @jakarta.annotation.Nullable String filterApiKeyIdIn, @jakarta.annotation.Nullable String filterApiKeyIdNotIn, @jakarta.annotation.Nullable String filterSourceEq, @jakarta.annotation.Nullable String filterSourceNotEq, @jakarta.annotation.Nullable String filterSourceIn, @jakarta.annotation.Nullable String filterSourceNotIn, @jakarta.annotation.Nullable String filterItemTypeEq, @jakarta.annotation.Nullable String filterItemTypeNotEq, @jakarta.annotation.Nullable String filterItemTypeIn, @jakarta.annotation.Nullable String filterItemTypeNotIn, @jakarta.annotation.Nullable String sort) throws ApiException {
+        ApiResponse<AuditsList> localVarResp = listAuditsWithHttpInfo(include, pageNumber, pageSize, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUserId, filterApiKeyId, filterSource, filterItemType, filterUserIdEq, filterUserIdNotEq, filterUserIdIn, filterUserIdNotIn, filterApiKeyIdEq, filterApiKeyIdNotEq, filterApiKeyIdIn, filterApiKeyIdNotIn, filterSourceEq, filterSourceNotEq, filterSourceIn, filterSourceNotIn, filterItemTypeEq, filterItemTypeNotEq, filterItemTypeIn, filterItemTypeNotIn, sort);
         return localVarResp.getData();
     }
 
@@ -237,6 +333,22 @@ public class AuditsApi {
      * @param filterApiKeyId  (optional)
      * @param filterSource  (optional)
      * @param filterItemType  (optional)
+     * @param filterUserIdEq  (optional)
+     * @param filterUserIdNotEq  (optional)
+     * @param filterUserIdIn  (optional)
+     * @param filterUserIdNotIn  (optional)
+     * @param filterApiKeyIdEq  (optional)
+     * @param filterApiKeyIdNotEq  (optional)
+     * @param filterApiKeyIdIn  (optional)
+     * @param filterApiKeyIdNotIn  (optional)
+     * @param filterSourceEq  (optional)
+     * @param filterSourceNotEq  (optional)
+     * @param filterSourceIn  (optional)
+     * @param filterSourceNotIn  (optional)
+     * @param filterItemTypeEq  (optional)
+     * @param filterItemTypeNotEq  (optional)
+     * @param filterItemTypeIn  (optional)
+     * @param filterItemTypeNotIn  (optional)
      * @param sort  (optional)
      * @return ApiResponse&lt;AuditsList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -247,8 +359,8 @@ public class AuditsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AuditsList> listAuditsWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUserId, @jakarta.annotation.Nullable String filterApiKeyId, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterItemType, @jakarta.annotation.Nullable String sort) throws ApiException {
-        okhttp3.Call localVarCall = listAuditsValidateBeforeCall(include, pageNumber, pageSize, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUserId, filterApiKeyId, filterSource, filterItemType, sort, null);
+    public ApiResponse<AuditsList> listAuditsWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUserId, @jakarta.annotation.Nullable String filterApiKeyId, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterItemType, @jakarta.annotation.Nullable String filterUserIdEq, @jakarta.annotation.Nullable String filterUserIdNotEq, @jakarta.annotation.Nullable String filterUserIdIn, @jakarta.annotation.Nullable String filterUserIdNotIn, @jakarta.annotation.Nullable String filterApiKeyIdEq, @jakarta.annotation.Nullable String filterApiKeyIdNotEq, @jakarta.annotation.Nullable String filterApiKeyIdIn, @jakarta.annotation.Nullable String filterApiKeyIdNotIn, @jakarta.annotation.Nullable String filterSourceEq, @jakarta.annotation.Nullable String filterSourceNotEq, @jakarta.annotation.Nullable String filterSourceIn, @jakarta.annotation.Nullable String filterSourceNotIn, @jakarta.annotation.Nullable String filterItemTypeEq, @jakarta.annotation.Nullable String filterItemTypeNotEq, @jakarta.annotation.Nullable String filterItemTypeIn, @jakarta.annotation.Nullable String filterItemTypeNotIn, @jakarta.annotation.Nullable String sort) throws ApiException {
+        okhttp3.Call localVarCall = listAuditsValidateBeforeCall(include, pageNumber, pageSize, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUserId, filterApiKeyId, filterSource, filterItemType, filterUserIdEq, filterUserIdNotEq, filterUserIdIn, filterUserIdNotIn, filterApiKeyIdEq, filterApiKeyIdNotEq, filterApiKeyIdIn, filterApiKeyIdNotIn, filterSourceEq, filterSourceNotEq, filterSourceIn, filterSourceNotIn, filterItemTypeEq, filterItemTypeNotEq, filterItemTypeIn, filterItemTypeNotIn, sort, null);
         Type localVarReturnType = new TypeToken<AuditsList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -267,6 +379,22 @@ public class AuditsApi {
      * @param filterApiKeyId  (optional)
      * @param filterSource  (optional)
      * @param filterItemType  (optional)
+     * @param filterUserIdEq  (optional)
+     * @param filterUserIdNotEq  (optional)
+     * @param filterUserIdIn  (optional)
+     * @param filterUserIdNotIn  (optional)
+     * @param filterApiKeyIdEq  (optional)
+     * @param filterApiKeyIdNotEq  (optional)
+     * @param filterApiKeyIdIn  (optional)
+     * @param filterApiKeyIdNotIn  (optional)
+     * @param filterSourceEq  (optional)
+     * @param filterSourceNotEq  (optional)
+     * @param filterSourceIn  (optional)
+     * @param filterSourceNotIn  (optional)
+     * @param filterItemTypeEq  (optional)
+     * @param filterItemTypeNotEq  (optional)
+     * @param filterItemTypeIn  (optional)
+     * @param filterItemTypeNotIn  (optional)
      * @param sort  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -278,9 +406,9 @@ public class AuditsApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAuditsAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUserId, @jakarta.annotation.Nullable String filterApiKeyId, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterItemType, @jakarta.annotation.Nullable String sort, final ApiCallback<AuditsList> _callback) throws ApiException {
+    public okhttp3.Call listAuditsAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterUserId, @jakarta.annotation.Nullable String filterApiKeyId, @jakarta.annotation.Nullable String filterSource, @jakarta.annotation.Nullable String filterItemType, @jakarta.annotation.Nullable String filterUserIdEq, @jakarta.annotation.Nullable String filterUserIdNotEq, @jakarta.annotation.Nullable String filterUserIdIn, @jakarta.annotation.Nullable String filterUserIdNotIn, @jakarta.annotation.Nullable String filterApiKeyIdEq, @jakarta.annotation.Nullable String filterApiKeyIdNotEq, @jakarta.annotation.Nullable String filterApiKeyIdIn, @jakarta.annotation.Nullable String filterApiKeyIdNotIn, @jakarta.annotation.Nullable String filterSourceEq, @jakarta.annotation.Nullable String filterSourceNotEq, @jakarta.annotation.Nullable String filterSourceIn, @jakarta.annotation.Nullable String filterSourceNotIn, @jakarta.annotation.Nullable String filterItemTypeEq, @jakarta.annotation.Nullable String filterItemTypeNotEq, @jakarta.annotation.Nullable String filterItemTypeIn, @jakarta.annotation.Nullable String filterItemTypeNotIn, @jakarta.annotation.Nullable String sort, final ApiCallback<AuditsList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listAuditsValidateBeforeCall(include, pageNumber, pageSize, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUserId, filterApiKeyId, filterSource, filterItemType, sort, _callback);
+        okhttp3.Call localVarCall = listAuditsValidateBeforeCall(include, pageNumber, pageSize, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUserId, filterApiKeyId, filterSource, filterItemType, filterUserIdEq, filterUserIdNotEq, filterUserIdIn, filterUserIdNotIn, filterApiKeyIdEq, filterApiKeyIdNotEq, filterApiKeyIdIn, filterApiKeyIdNotIn, filterSourceEq, filterSourceNotEq, filterSourceIn, filterSourceNotIn, filterItemTypeEq, filterItemTypeNotEq, filterItemTypeIn, filterItemTypeNotIn, sort, _callback);
         Type localVarReturnType = new TypeToken<AuditsList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

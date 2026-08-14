@@ -86,7 +86,7 @@ public class WebhooksEndpointsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> webhooks_endpoint created </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> webhooks_endpoint created with custom_headers </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
@@ -157,7 +157,7 @@ public class WebhooksEndpointsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> webhooks_endpoint created </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> webhooks_endpoint created with custom_headers </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
@@ -177,7 +177,7 @@ public class WebhooksEndpointsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> webhooks_endpoint created </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> webhooks_endpoint created with custom_headers </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
@@ -199,7 +199,7 @@ public class WebhooksEndpointsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> webhooks_endpoint created </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> webhooks_endpoint created with custom_headers </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
@@ -641,7 +641,7 @@ public class WebhooksEndpointsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> webhooks_endpoint updated </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> webhooks_endpoint custom_headers cleared with empty array </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> hidden endpoint not accessible </td><td>  -  </td></tr>
      </table>
      */
@@ -718,7 +718,7 @@ public class WebhooksEndpointsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> webhooks_endpoint updated </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> webhooks_endpoint custom_headers cleared with empty array </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> hidden endpoint not accessible </td><td>  -  </td></tr>
      </table>
      */
@@ -738,7 +738,7 @@ public class WebhooksEndpointsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> webhooks_endpoint updated </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> webhooks_endpoint custom_headers cleared with empty array </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> hidden endpoint not accessible </td><td>  -  </td></tr>
      </table>
      */
@@ -760,7 +760,7 @@ public class WebhooksEndpointsApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> webhooks_endpoint updated </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> webhooks_endpoint custom_headers cleared with empty array </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> hidden endpoint not accessible </td><td>  -  </td></tr>
      </table>
      */

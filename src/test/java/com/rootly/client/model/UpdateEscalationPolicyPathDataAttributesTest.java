@@ -59,6 +59,30 @@ public class UpdateEscalationPolicyPathDataAttributesTest {
     }
 
     /**
+     * Test the property 'pathType'
+     */
+    @Test
+    public void pathTypeTest() {
+        // TODO: test pathType
+    }
+
+    /**
+     * Test the property 'afterDeferralBehavior'
+     */
+    @Test
+    public void afterDeferralBehaviorTest() {
+        // TODO: test afterDeferralBehavior
+    }
+
+    /**
+     * Test the property 'afterDeferralPathId'
+     */
+    @Test
+    public void afterDeferralPathIdTest() {
+        // TODO: test afterDeferralPathId
+    }
+
+    /**
      * Test the property '_default'
      */
     @Test
@@ -104,6 +128,14 @@ public class UpdateEscalationPolicyPathDataAttributesTest {
     @Test
     public void initialDelayTest() {
         // TODO: test initialDelay
+    }
+
+    /**
+     * Test the property 'retriggerTimeoutMinutes'
+     */
+    @Test
+    public void retriggerTimeoutMinutesTest() {
+        // TODO: test retriggerTimeoutMinutes
     }
 
     /**

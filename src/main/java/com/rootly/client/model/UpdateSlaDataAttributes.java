@@ -54,21 +54,27 @@ import com.rootly.client.JSON;
 /**
  * UpdateSlaDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateSlaDataAttributes {
+  public static final String SERIALIZED_NAME_SLUG = "slug";
+  @Deprecated
+  @SerializedName(SERIALIZED_NAME_SLUG)
+  @jakarta.annotation.Nullable
+  private String slug;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   /**
@@ -125,17 +131,17 @@ public class UpdateSlaDataAttributes {
 
   public static final String SERIALIZED_NAME_CONDITION_MATCH_TYPE = "condition_match_type";
   @SerializedName(SERIALIZED_NAME_CONDITION_MATCH_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ConditionMatchTypeEnum conditionMatchType;
 
   public static final String SERIALIZED_NAME_MANAGER_ROLE_ID = "manager_role_id";
   @SerializedName(SERIALIZED_NAME_MANAGER_ROLE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private UUID managerRoleId;
 
   public static final String SERIALIZED_NAME_MANAGER_USER_ID = "manager_user_id";
   @SerializedName(SERIALIZED_NAME_MANAGER_USER_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer managerUserId;
 
   /**
@@ -208,7 +214,7 @@ public class UpdateSlaDataAttributes {
 
   public static final String SERIALIZED_NAME_ASSIGNMENT_DEADLINE_DAYS = "assignment_deadline_days";
   @SerializedName(SERIALIZED_NAME_ASSIGNMENT_DEADLINE_DAYS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AssignmentDeadlineDaysEnum assignmentDeadlineDays;
 
   /**
@@ -273,17 +279,17 @@ public class UpdateSlaDataAttributes {
 
   public static final String SERIALIZED_NAME_ASSIGNMENT_DEADLINE_PARENT_STATUS = "assignment_deadline_parent_status";
   @SerializedName(SERIALIZED_NAME_ASSIGNMENT_DEADLINE_PARENT_STATUS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AssignmentDeadlineParentStatusEnum assignmentDeadlineParentStatus;
 
   public static final String SERIALIZED_NAME_ASSIGNMENT_DEADLINE_SUB_STATUS_ID = "assignment_deadline_sub_status_id";
   @SerializedName(SERIALIZED_NAME_ASSIGNMENT_DEADLINE_SUB_STATUS_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private UUID assignmentDeadlineSubStatusId;
 
   public static final String SERIALIZED_NAME_ASSIGNMENT_SKIP_WEEKENDS = "assignment_skip_weekends";
   @SerializedName(SERIALIZED_NAME_ASSIGNMENT_SKIP_WEEKENDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean assignmentSkipWeekends;
 
   /**
@@ -356,7 +362,7 @@ public class UpdateSlaDataAttributes {
 
   public static final String SERIALIZED_NAME_COMPLETION_DEADLINE_DAYS = "completion_deadline_days";
   @SerializedName(SERIALIZED_NAME_COMPLETION_DEADLINE_DAYS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CompletionDeadlineDaysEnum completionDeadlineDays;
 
   /**
@@ -421,33 +427,56 @@ public class UpdateSlaDataAttributes {
 
   public static final String SERIALIZED_NAME_COMPLETION_DEADLINE_PARENT_STATUS = "completion_deadline_parent_status";
   @SerializedName(SERIALIZED_NAME_COMPLETION_DEADLINE_PARENT_STATUS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CompletionDeadlineParentStatusEnum completionDeadlineParentStatus;
 
   public static final String SERIALIZED_NAME_COMPLETION_DEADLINE_SUB_STATUS_ID = "completion_deadline_sub_status_id";
   @SerializedName(SERIALIZED_NAME_COMPLETION_DEADLINE_SUB_STATUS_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private UUID completionDeadlineSubStatusId;
 
   public static final String SERIALIZED_NAME_COMPLETION_SKIP_WEEKENDS = "completion_skip_weekends";
   @SerializedName(SERIALIZED_NAME_COMPLETION_SKIP_WEEKENDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean completionSkipWeekends;
 
   public static final String SERIALIZED_NAME_CONDITIONS = "conditions";
   @SerializedName(SERIALIZED_NAME_CONDITIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewSlaDataAttributesConditionsInner> conditions = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NOTIFICATION_CONFIGURATIONS = "notification_configurations";
   @SerializedName(SERIALIZED_NAME_NOTIFICATION_CONFIGURATIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<NewSlaDataAttributesNotificationConfigurationsInner> notificationConfigurations = new ArrayList<>();
 
   public UpdateSlaDataAttributes() {
   }
 
-  public UpdateSlaDataAttributes name(@javax.annotation.Nullable String name) {
+  @Deprecated
+  public UpdateSlaDataAttributes slug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+    return this;
+  }
+
+  /**
+   * Deprecated. &#x60;slug&#x60; is derived from &#x60;name&#x60;; any submitted value is ignored. This property will be removed from the request schema in a future version.
+   * @return slug
+   * @deprecated
+   */
+  @Deprecated
+  @jakarta.annotation.Nullable
+  public String getSlug() {
+    return slug;
+  }
+
+  @Deprecated
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+  }
+
+
+  public UpdateSlaDataAttributes name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -456,17 +485,17 @@ public class UpdateSlaDataAttributes {
    * The name of the SLA
    * @return name
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public UpdateSlaDataAttributes description(@javax.annotation.Nullable String description) {
+  public UpdateSlaDataAttributes description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -475,17 +504,17 @@ public class UpdateSlaDataAttributes {
    * A description of the SLA
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UpdateSlaDataAttributes position(@javax.annotation.Nullable Integer position) {
+  public UpdateSlaDataAttributes position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -494,17 +523,17 @@ public class UpdateSlaDataAttributes {
    * Position of the SLA for ordering
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 
 
-  public UpdateSlaDataAttributes conditionMatchType(@javax.annotation.Nullable ConditionMatchTypeEnum conditionMatchType) {
+  public UpdateSlaDataAttributes conditionMatchType(@jakarta.annotation.Nullable ConditionMatchTypeEnum conditionMatchType) {
     this.conditionMatchType = conditionMatchType;
     return this;
   }
@@ -513,17 +542,17 @@ public class UpdateSlaDataAttributes {
    * Whether all or any conditions must match
    * @return conditionMatchType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ConditionMatchTypeEnum getConditionMatchType() {
     return conditionMatchType;
   }
 
-  public void setConditionMatchType(@javax.annotation.Nullable ConditionMatchTypeEnum conditionMatchType) {
+  public void setConditionMatchType(@jakarta.annotation.Nullable ConditionMatchTypeEnum conditionMatchType) {
     this.conditionMatchType = conditionMatchType;
   }
 
 
-  public UpdateSlaDataAttributes managerRoleId(@javax.annotation.Nullable UUID managerRoleId) {
+  public UpdateSlaDataAttributes managerRoleId(@jakarta.annotation.Nullable UUID managerRoleId) {
     this.managerRoleId = managerRoleId;
     return this;
   }
@@ -532,17 +561,17 @@ public class UpdateSlaDataAttributes {
    * The ID of the incident role responsible for this SLA. Exactly one of &#x60;manager_role_id&#x60; or &#x60;manager_user_id&#x60; must be provided.
    * @return managerRoleId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public UUID getManagerRoleId() {
     return managerRoleId;
   }
 
-  public void setManagerRoleId(@javax.annotation.Nullable UUID managerRoleId) {
+  public void setManagerRoleId(@jakarta.annotation.Nullable UUID managerRoleId) {
     this.managerRoleId = managerRoleId;
   }
 
 
-  public UpdateSlaDataAttributes managerUserId(@javax.annotation.Nullable Integer managerUserId) {
+  public UpdateSlaDataAttributes managerUserId(@jakarta.annotation.Nullable Integer managerUserId) {
     this.managerUserId = managerUserId;
     return this;
   }
@@ -551,17 +580,17 @@ public class UpdateSlaDataAttributes {
    * The ID of the user responsible for this SLA. Exactly one of &#x60;manager_role_id&#x60; or &#x60;manager_user_id&#x60; must be provided.
    * @return managerUserId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getManagerUserId() {
     return managerUserId;
   }
 
-  public void setManagerUserId(@javax.annotation.Nullable Integer managerUserId) {
+  public void setManagerUserId(@jakarta.annotation.Nullable Integer managerUserId) {
     this.managerUserId = managerUserId;
   }
 
 
-  public UpdateSlaDataAttributes assignmentDeadlineDays(@javax.annotation.Nullable AssignmentDeadlineDaysEnum assignmentDeadlineDays) {
+  public UpdateSlaDataAttributes assignmentDeadlineDays(@jakarta.annotation.Nullable AssignmentDeadlineDaysEnum assignmentDeadlineDays) {
     this.assignmentDeadlineDays = assignmentDeadlineDays;
     return this;
   }
@@ -570,17 +599,17 @@ public class UpdateSlaDataAttributes {
    * Number of days for the assignment deadline
    * @return assignmentDeadlineDays
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AssignmentDeadlineDaysEnum getAssignmentDeadlineDays() {
     return assignmentDeadlineDays;
   }
 
-  public void setAssignmentDeadlineDays(@javax.annotation.Nullable AssignmentDeadlineDaysEnum assignmentDeadlineDays) {
+  public void setAssignmentDeadlineDays(@jakarta.annotation.Nullable AssignmentDeadlineDaysEnum assignmentDeadlineDays) {
     this.assignmentDeadlineDays = assignmentDeadlineDays;
   }
 
 
-  public UpdateSlaDataAttributes assignmentDeadlineParentStatus(@javax.annotation.Nullable AssignmentDeadlineParentStatusEnum assignmentDeadlineParentStatus) {
+  public UpdateSlaDataAttributes assignmentDeadlineParentStatus(@jakarta.annotation.Nullable AssignmentDeadlineParentStatusEnum assignmentDeadlineParentStatus) {
     this.assignmentDeadlineParentStatus = assignmentDeadlineParentStatus;
     return this;
   }
@@ -589,17 +618,17 @@ public class UpdateSlaDataAttributes {
    * The incident parent status that triggers the assignment deadline
    * @return assignmentDeadlineParentStatus
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AssignmentDeadlineParentStatusEnum getAssignmentDeadlineParentStatus() {
     return assignmentDeadlineParentStatus;
   }
 
-  public void setAssignmentDeadlineParentStatus(@javax.annotation.Nullable AssignmentDeadlineParentStatusEnum assignmentDeadlineParentStatus) {
+  public void setAssignmentDeadlineParentStatus(@jakarta.annotation.Nullable AssignmentDeadlineParentStatusEnum assignmentDeadlineParentStatus) {
     this.assignmentDeadlineParentStatus = assignmentDeadlineParentStatus;
   }
 
 
-  public UpdateSlaDataAttributes assignmentDeadlineSubStatusId(@javax.annotation.Nullable UUID assignmentDeadlineSubStatusId) {
+  public UpdateSlaDataAttributes assignmentDeadlineSubStatusId(@jakarta.annotation.Nullable UUID assignmentDeadlineSubStatusId) {
     this.assignmentDeadlineSubStatusId = assignmentDeadlineSubStatusId;
     return this;
   }
@@ -608,17 +637,17 @@ public class UpdateSlaDataAttributes {
    * Sub-status for the assignment deadline. Required when custom lifecycle statuses are enabled on the team.
    * @return assignmentDeadlineSubStatusId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public UUID getAssignmentDeadlineSubStatusId() {
     return assignmentDeadlineSubStatusId;
   }
 
-  public void setAssignmentDeadlineSubStatusId(@javax.annotation.Nullable UUID assignmentDeadlineSubStatusId) {
+  public void setAssignmentDeadlineSubStatusId(@jakarta.annotation.Nullable UUID assignmentDeadlineSubStatusId) {
     this.assignmentDeadlineSubStatusId = assignmentDeadlineSubStatusId;
   }
 
 
-  public UpdateSlaDataAttributes assignmentSkipWeekends(@javax.annotation.Nullable Boolean assignmentSkipWeekends) {
+  public UpdateSlaDataAttributes assignmentSkipWeekends(@jakarta.annotation.Nullable Boolean assignmentSkipWeekends) {
     this.assignmentSkipWeekends = assignmentSkipWeekends;
     return this;
   }
@@ -627,17 +656,17 @@ public class UpdateSlaDataAttributes {
    * Whether to skip weekends when calculating the assignment deadline
    * @return assignmentSkipWeekends
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getAssignmentSkipWeekends() {
     return assignmentSkipWeekends;
   }
 
-  public void setAssignmentSkipWeekends(@javax.annotation.Nullable Boolean assignmentSkipWeekends) {
+  public void setAssignmentSkipWeekends(@jakarta.annotation.Nullable Boolean assignmentSkipWeekends) {
     this.assignmentSkipWeekends = assignmentSkipWeekends;
   }
 
 
-  public UpdateSlaDataAttributes completionDeadlineDays(@javax.annotation.Nullable CompletionDeadlineDaysEnum completionDeadlineDays) {
+  public UpdateSlaDataAttributes completionDeadlineDays(@jakarta.annotation.Nullable CompletionDeadlineDaysEnum completionDeadlineDays) {
     this.completionDeadlineDays = completionDeadlineDays;
     return this;
   }
@@ -646,17 +675,17 @@ public class UpdateSlaDataAttributes {
    * Number of days for the completion deadline
    * @return completionDeadlineDays
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CompletionDeadlineDaysEnum getCompletionDeadlineDays() {
     return completionDeadlineDays;
   }
 
-  public void setCompletionDeadlineDays(@javax.annotation.Nullable CompletionDeadlineDaysEnum completionDeadlineDays) {
+  public void setCompletionDeadlineDays(@jakarta.annotation.Nullable CompletionDeadlineDaysEnum completionDeadlineDays) {
     this.completionDeadlineDays = completionDeadlineDays;
   }
 
 
-  public UpdateSlaDataAttributes completionDeadlineParentStatus(@javax.annotation.Nullable CompletionDeadlineParentStatusEnum completionDeadlineParentStatus) {
+  public UpdateSlaDataAttributes completionDeadlineParentStatus(@jakarta.annotation.Nullable CompletionDeadlineParentStatusEnum completionDeadlineParentStatus) {
     this.completionDeadlineParentStatus = completionDeadlineParentStatus;
     return this;
   }
@@ -665,17 +694,17 @@ public class UpdateSlaDataAttributes {
    * The incident parent status that triggers the completion deadline
    * @return completionDeadlineParentStatus
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CompletionDeadlineParentStatusEnum getCompletionDeadlineParentStatus() {
     return completionDeadlineParentStatus;
   }
 
-  public void setCompletionDeadlineParentStatus(@javax.annotation.Nullable CompletionDeadlineParentStatusEnum completionDeadlineParentStatus) {
+  public void setCompletionDeadlineParentStatus(@jakarta.annotation.Nullable CompletionDeadlineParentStatusEnum completionDeadlineParentStatus) {
     this.completionDeadlineParentStatus = completionDeadlineParentStatus;
   }
 
 
-  public UpdateSlaDataAttributes completionDeadlineSubStatusId(@javax.annotation.Nullable UUID completionDeadlineSubStatusId) {
+  public UpdateSlaDataAttributes completionDeadlineSubStatusId(@jakarta.annotation.Nullable UUID completionDeadlineSubStatusId) {
     this.completionDeadlineSubStatusId = completionDeadlineSubStatusId;
     return this;
   }
@@ -684,17 +713,17 @@ public class UpdateSlaDataAttributes {
    * Sub-status for the completion deadline. Required when custom lifecycle statuses are enabled on the team.
    * @return completionDeadlineSubStatusId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public UUID getCompletionDeadlineSubStatusId() {
     return completionDeadlineSubStatusId;
   }
 
-  public void setCompletionDeadlineSubStatusId(@javax.annotation.Nullable UUID completionDeadlineSubStatusId) {
+  public void setCompletionDeadlineSubStatusId(@jakarta.annotation.Nullable UUID completionDeadlineSubStatusId) {
     this.completionDeadlineSubStatusId = completionDeadlineSubStatusId;
   }
 
 
-  public UpdateSlaDataAttributes completionSkipWeekends(@javax.annotation.Nullable Boolean completionSkipWeekends) {
+  public UpdateSlaDataAttributes completionSkipWeekends(@jakarta.annotation.Nullable Boolean completionSkipWeekends) {
     this.completionSkipWeekends = completionSkipWeekends;
     return this;
   }
@@ -703,17 +732,17 @@ public class UpdateSlaDataAttributes {
    * Whether to skip weekends when calculating the completion deadline
    * @return completionSkipWeekends
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getCompletionSkipWeekends() {
     return completionSkipWeekends;
   }
 
-  public void setCompletionSkipWeekends(@javax.annotation.Nullable Boolean completionSkipWeekends) {
+  public void setCompletionSkipWeekends(@jakarta.annotation.Nullable Boolean completionSkipWeekends) {
     this.completionSkipWeekends = completionSkipWeekends;
   }
 
 
-  public UpdateSlaDataAttributes conditions(@javax.annotation.Nullable List<NewSlaDataAttributesConditionsInner> conditions) {
+  public UpdateSlaDataAttributes conditions(@jakarta.annotation.Nullable List<NewSlaDataAttributesConditionsInner> conditions) {
     this.conditions = conditions;
     return this;
   }
@@ -730,17 +759,17 @@ public class UpdateSlaDataAttributes {
    * Conditions that determine which incidents this SLA applies to. Replaces all existing conditions.
    * @return conditions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewSlaDataAttributesConditionsInner> getConditions() {
     return conditions;
   }
 
-  public void setConditions(@javax.annotation.Nullable List<NewSlaDataAttributesConditionsInner> conditions) {
+  public void setConditions(@jakarta.annotation.Nullable List<NewSlaDataAttributesConditionsInner> conditions) {
     this.conditions = conditions;
   }
 
 
-  public UpdateSlaDataAttributes notificationConfigurations(@javax.annotation.Nullable List<NewSlaDataAttributesNotificationConfigurationsInner> notificationConfigurations) {
+  public UpdateSlaDataAttributes notificationConfigurations(@jakarta.annotation.Nullable List<NewSlaDataAttributesNotificationConfigurationsInner> notificationConfigurations) {
     this.notificationConfigurations = notificationConfigurations;
     return this;
   }
@@ -757,12 +786,12 @@ public class UpdateSlaDataAttributes {
    * Notification timing configurations. Replaces all existing configurations.
    * @return notificationConfigurations
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<NewSlaDataAttributesNotificationConfigurationsInner> getNotificationConfigurations() {
     return notificationConfigurations;
   }
 
-  public void setNotificationConfigurations(@javax.annotation.Nullable List<NewSlaDataAttributesNotificationConfigurationsInner> notificationConfigurations) {
+  public void setNotificationConfigurations(@jakarta.annotation.Nullable List<NewSlaDataAttributesNotificationConfigurationsInner> notificationConfigurations) {
     this.notificationConfigurations = notificationConfigurations;
   }
 
@@ -777,7 +806,8 @@ public class UpdateSlaDataAttributes {
       return false;
     }
     UpdateSlaDataAttributes updateSlaDataAttributes = (UpdateSlaDataAttributes) o;
-    return Objects.equals(this.name, updateSlaDataAttributes.name) &&
+    return Objects.equals(this.slug, updateSlaDataAttributes.slug) &&
+        Objects.equals(this.name, updateSlaDataAttributes.name) &&
         Objects.equals(this.description, updateSlaDataAttributes.description) &&
         Objects.equals(this.position, updateSlaDataAttributes.position) &&
         Objects.equals(this.conditionMatchType, updateSlaDataAttributes.conditionMatchType) &&
@@ -801,7 +831,7 @@ public class UpdateSlaDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, position, conditionMatchType, managerRoleId, managerUserId, assignmentDeadlineDays, assignmentDeadlineParentStatus, assignmentDeadlineSubStatusId, assignmentSkipWeekends, completionDeadlineDays, completionDeadlineParentStatus, completionDeadlineSubStatusId, completionSkipWeekends, conditions, notificationConfigurations);
+    return Objects.hash(slug, name, description, position, conditionMatchType, managerRoleId, managerUserId, assignmentDeadlineDays, assignmentDeadlineParentStatus, assignmentDeadlineSubStatusId, assignmentSkipWeekends, completionDeadlineDays, completionDeadlineParentStatus, completionDeadlineSubStatusId, completionSkipWeekends, conditions, notificationConfigurations);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -815,6 +845,7 @@ public class UpdateSlaDataAttributes {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdateSlaDataAttributes {\n");
+    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    position: ").append(toIndentedString(position)).append("\n");
@@ -853,6 +884,7 @@ public class UpdateSlaDataAttributes {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("slug");
     openapiFields.add("name");
     openapiFields.add("description");
     openapiFields.add("position");
@@ -895,6 +927,9 @@ public class UpdateSlaDataAttributes {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
+      }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }

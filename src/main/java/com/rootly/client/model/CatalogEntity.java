@@ -19,8 +19,11 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewCatalogEntityDataAttributesPropertiesInner;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -49,22 +52,109 @@ import com.rootly.client.JSON;
 /**
  * CatalogEntity
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CatalogEntity {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @jakarta.annotation.Nonnull
   private String name;
 
+  public static final String SERIALIZED_NAME_SLUG = "slug";
+  @SerializedName(SERIALIZED_NAME_SLUG)
+  @jakarta.annotation.Nullable
+  private String slug;
+
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   @jakarta.annotation.Nullable
   private String description;
 
+  public static final String SERIALIZED_NAME_PUBLIC_DESCRIPTION = "public_description";
+  @SerializedName(SERIALIZED_NAME_PUBLIC_DESCRIPTION)
+  @jakarta.annotation.Nullable
+  private String publicDescription;
+
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
   @jakarta.annotation.Nullable
   private Integer position;
+
+  public static final String SERIALIZED_NAME_BACKSTAGE_ID = "backstage_id";
+  @SerializedName(SERIALIZED_NAME_BACKSTAGE_ID)
+  @jakarta.annotation.Nullable
+  private String backstageId;
+
+  public static final String SERIALIZED_NAME_EXTERNAL_ID = "external_id";
+  @SerializedName(SERIALIZED_NAME_EXTERNAL_ID)
+  @jakarta.annotation.Nullable
+  private String externalId;
+
+  /**
+   * Which source manages this resource (read-only).
+   */
+  @JsonAdapter(ManagedByEnum.Adapter.class)
+  public enum ManagedByEnum {
+    WEB("web"),
+    
+    ADMIN_WEB("admin_web"),
+    
+    API("api"),
+    
+    TERRAFORM("terraform"),
+    
+    PULUMI("pulumi"),
+    
+    BACKSTAGE("backstage"),
+    
+    CATALOG_SYNC("catalog_sync");
+
+    private String value;
+
+    ManagedByEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static ManagedByEnum fromValue(String value) {
+      for (ManagedByEnum b : ManagedByEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<ManagedByEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ManagedByEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ManagedByEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return ManagedByEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      ManagedByEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_MANAGED_BY = "managed_by";
+  @SerializedName(SERIALIZED_NAME_MANAGED_BY)
+  @jakarta.annotation.Nullable
+  private ManagedByEnum managedBy;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -76,7 +166,19 @@ public class CatalogEntity {
   @jakarta.annotation.Nonnull
   private String updatedAt;
 
+  public static final String SERIALIZED_NAME_PROPERTIES = "properties";
+  @SerializedName(SERIALIZED_NAME_PROPERTIES)
+  @jakarta.annotation.Nullable
+  private List<NewCatalogEntityDataAttributesPropertiesInner> properties = new ArrayList<>();
+
   public CatalogEntity() {
+  }
+
+  public CatalogEntity(
+     String slug
+  ) {
+    this();
+    this.slug = slug;
   }
 
   public CatalogEntity name(@jakarta.annotation.Nonnull String name) {
@@ -98,6 +200,17 @@ public class CatalogEntity {
   }
 
 
+  /**
+   * The slug of the catalog entity. Derived from &#x60;name&#x60;.
+   * @return slug
+   */
+  @jakarta.annotation.Nullable
+  public String getSlug() {
+    return slug;
+  }
+
+
+
   public CatalogEntity description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
@@ -117,6 +230,25 @@ public class CatalogEntity {
   }
 
 
+  public CatalogEntity publicDescription(@jakarta.annotation.Nullable String publicDescription) {
+    this.publicDescription = publicDescription;
+    return this;
+  }
+
+  /**
+   * The status page description of the catalog entity
+   * @return publicDescription
+   */
+  @jakarta.annotation.Nullable
+  public String getPublicDescription() {
+    return publicDescription;
+  }
+
+  public void setPublicDescription(@jakarta.annotation.Nullable String publicDescription) {
+    this.publicDescription = publicDescription;
+  }
+
+
   public CatalogEntity position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
@@ -133,6 +265,63 @@ public class CatalogEntity {
 
   public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
+  }
+
+
+  public CatalogEntity backstageId(@jakarta.annotation.Nullable String backstageId) {
+    this.backstageId = backstageId;
+    return this;
+  }
+
+  /**
+   * The Backstage entity ID this catalog entity is linked to.
+   * @return backstageId
+   */
+  @jakarta.annotation.Nullable
+  public String getBackstageId() {
+    return backstageId;
+  }
+
+  public void setBackstageId(@jakarta.annotation.Nullable String backstageId) {
+    this.backstageId = backstageId;
+  }
+
+
+  public CatalogEntity externalId(@jakarta.annotation.Nullable String externalId) {
+    this.externalId = externalId;
+    return this;
+  }
+
+  /**
+   * An external identifier for this catalog entity. Must be unique within the catalog.
+   * @return externalId
+   */
+  @jakarta.annotation.Nullable
+  public String getExternalId() {
+    return externalId;
+  }
+
+  public void setExternalId(@jakarta.annotation.Nullable String externalId) {
+    this.externalId = externalId;
+  }
+
+
+  public CatalogEntity managedBy(@jakarta.annotation.Nullable ManagedByEnum managedBy) {
+    this.managedBy = managedBy;
+    return this;
+  }
+
+  /**
+   * Which source manages this resource (read-only).
+   * @return managedBy
+   */
+  @jakarta.annotation.Nullable
+  public ManagedByEnum getManagedBy() {
+    return managedBy;
+  }
+
+  public void setManagedBy(@jakarta.annotation.Nullable ManagedByEnum managedBy) {
+    this.managedBy = managedBy;
   }
 
 
@@ -174,6 +363,33 @@ public class CatalogEntity {
   }
 
 
+  public CatalogEntity properties(@jakarta.annotation.Nullable List<NewCatalogEntityDataAttributesPropertiesInner> properties) {
+    this.properties = properties;
+    return this;
+  }
+
+  public CatalogEntity addPropertiesItem(NewCatalogEntityDataAttributesPropertiesInner propertiesItem) {
+    if (this.properties == null) {
+      this.properties = new ArrayList<>();
+    }
+    this.properties.add(propertiesItem);
+    return this;
+  }
+
+  /**
+   * Array of property values for this catalog entity
+   * @return properties
+   */
+  @jakarta.annotation.Nullable
+  public List<NewCatalogEntityDataAttributesPropertiesInner> getProperties() {
+    return properties;
+  }
+
+  public void setProperties(@jakarta.annotation.Nullable List<NewCatalogEntityDataAttributesPropertiesInner> properties) {
+    this.properties = properties;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -185,10 +401,16 @@ public class CatalogEntity {
     }
     CatalogEntity catalogEntity = (CatalogEntity) o;
     return Objects.equals(this.name, catalogEntity.name) &&
+        Objects.equals(this.slug, catalogEntity.slug) &&
         Objects.equals(this.description, catalogEntity.description) &&
+        Objects.equals(this.publicDescription, catalogEntity.publicDescription) &&
         Objects.equals(this.position, catalogEntity.position) &&
+        Objects.equals(this.backstageId, catalogEntity.backstageId) &&
+        Objects.equals(this.externalId, catalogEntity.externalId) &&
+        Objects.equals(this.managedBy, catalogEntity.managedBy) &&
         Objects.equals(this.createdAt, catalogEntity.createdAt) &&
-        Objects.equals(this.updatedAt, catalogEntity.updatedAt);
+        Objects.equals(this.updatedAt, catalogEntity.updatedAt) &&
+        Objects.equals(this.properties, catalogEntity.properties);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -197,7 +419,7 @@ public class CatalogEntity {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, position, createdAt, updatedAt);
+    return Objects.hash(name, slug, description, publicDescription, position, backstageId, externalId, managedBy, createdAt, updatedAt, properties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -212,10 +434,16 @@ public class CatalogEntity {
     StringBuilder sb = new StringBuilder();
     sb.append("class CatalogEntity {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    publicDescription: ").append(toIndentedString(publicDescription)).append("\n");
     sb.append("    position: ").append(toIndentedString(position)).append("\n");
+    sb.append("    backstageId: ").append(toIndentedString(backstageId)).append("\n");
+    sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
+    sb.append("    managedBy: ").append(toIndentedString(managedBy)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+    sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -239,10 +467,16 @@ public class CatalogEntity {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("name");
+    openapiFields.add("slug");
     openapiFields.add("description");
+    openapiFields.add("public_description");
     openapiFields.add("position");
+    openapiFields.add("backstage_id");
+    openapiFields.add("external_id");
+    openapiFields.add("managed_by");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
+    openapiFields.add("properties");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -283,14 +517,47 @@ public class CatalogEntity {
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
+      if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
+      }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
+      if ((jsonObj.get("public_description") != null && !jsonObj.get("public_description").isJsonNull()) && !jsonObj.get("public_description").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `public_description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("public_description").toString()));
+      }
+      if ((jsonObj.get("backstage_id") != null && !jsonObj.get("backstage_id").isJsonNull()) && !jsonObj.get("backstage_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `backstage_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backstage_id").toString()));
+      }
+      if ((jsonObj.get("external_id") != null && !jsonObj.get("external_id").isJsonNull()) && !jsonObj.get("external_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `external_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("external_id").toString()));
+      }
+      if ((jsonObj.get("managed_by") != null && !jsonObj.get("managed_by").isJsonNull()) && !jsonObj.get("managed_by").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `managed_by` to be a primitive type in the JSON string but got `%s`", jsonObj.get("managed_by").toString()));
+      }
+      // validate the optional field `managed_by`
+      if (jsonObj.get("managed_by") != null && !jsonObj.get("managed_by").isJsonNull()) {
+        ManagedByEnum.validateJsonElement(jsonObj.get("managed_by"));
       }
       if (!jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));
       }
       if (!jsonObj.get("updated_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `updated_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updated_at").toString()));
+      }
+      if (jsonObj.get("properties") != null && !jsonObj.get("properties").isJsonNull()) {
+        JsonArray jsonArrayproperties = jsonObj.getAsJsonArray("properties");
+        if (jsonArrayproperties != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("properties").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `properties` to be an array in the JSON string but got `%s`", jsonObj.get("properties").toString()));
+          }
+
+          // validate the optional field `properties` (array)
+          for (int i = 0; i < jsonArrayproperties.size(); i++) {
+            NewCatalogEntityDataAttributesPropertiesInner.validateJsonElement(jsonArrayproperties.get(i));
+          };
+        }
       }
   }
 

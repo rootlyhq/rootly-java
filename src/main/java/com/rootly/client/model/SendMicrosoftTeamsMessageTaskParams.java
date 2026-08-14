@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.AddActionItemTaskParamsPostToSlackChannelsInner;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -50,101 +51,22 @@ import com.rootly.client.JSON;
 /**
  * SendMicrosoftTeamsMessageTaskParams
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SendMicrosoftTeamsMessageTaskParams {
-  /**
-   * Gets or Sets taskType
-   */
-  @JsonAdapter(TaskTypeEnum.Adapter.class)
-  public enum TaskTypeEnum {
-    SEND_MICROSOFT_TEAMS_MESSAGE("send_microsoft_teams_message");
-
-    private String value;
-
-    TaskTypeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static TaskTypeEnum fromValue(String value) {
-      for (TaskTypeEnum b : TaskTypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<TaskTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final TaskTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public TaskTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return TaskTypeEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      TaskTypeEnum.fromValue(value);
-    }
-  }
-
-  public static final String SERIALIZED_NAME_TASK_TYPE = "task_type";
-  @SerializedName(SERIALIZED_NAME_TASK_TYPE)
-  @jakarta.annotation.Nullable
-  private TaskTypeEnum taskType;
-
   public static final String SERIALIZED_NAME_CHANNELS = "channels";
   @SerializedName(SERIALIZED_NAME_CHANNELS)
-  @jakarta.annotation.Nullable
-  private List<Object> channels = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_TEXT = "text";
-  @SerializedName(SERIALIZED_NAME_TEXT)
   @jakarta.annotation.Nonnull
-  private String text;
+  private List<AddActionItemTaskParamsPostToSlackChannelsInner> channels = new ArrayList<>();
 
   public SendMicrosoftTeamsMessageTaskParams() {
   }
 
-  public SendMicrosoftTeamsMessageTaskParams taskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
-    this.taskType = taskType;
-    return this;
-  }
-
-  /**
-   * Get taskType
-   * @return taskType
-   */
-  @jakarta.annotation.Nullable
-  public TaskTypeEnum getTaskType() {
-    return taskType;
-  }
-
-  public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
-    this.taskType = taskType;
-  }
-
-
-  public SendMicrosoftTeamsMessageTaskParams channels(@jakarta.annotation.Nullable List<Object> channels) {
+  public SendMicrosoftTeamsMessageTaskParams channels(@jakarta.annotation.Nonnull List<AddActionItemTaskParamsPostToSlackChannelsInner> channels) {
     this.channels = channels;
     return this;
   }
 
-  public SendMicrosoftTeamsMessageTaskParams addChannelsItem(Object channelsItem) {
+  public SendMicrosoftTeamsMessageTaskParams addChannelsItem(AddActionItemTaskParamsPostToSlackChannelsInner channelsItem) {
     if (this.channels == null) {
       this.channels = new ArrayList<>();
     }
@@ -156,32 +78,13 @@ public class SendMicrosoftTeamsMessageTaskParams {
    * Get channels
    * @return channels
    */
-  @jakarta.annotation.Nullable
-  public List<Object> getChannels() {
+  @jakarta.annotation.Nonnull
+  public List<AddActionItemTaskParamsPostToSlackChannelsInner> getChannels() {
     return channels;
   }
 
-  public void setChannels(@jakarta.annotation.Nullable List<Object> channels) {
+  public void setChannels(@jakarta.annotation.Nonnull List<AddActionItemTaskParamsPostToSlackChannelsInner> channels) {
     this.channels = channels;
-  }
-
-
-  public SendMicrosoftTeamsMessageTaskParams text(@jakarta.annotation.Nonnull String text) {
-    this.text = text;
-    return this;
-  }
-
-  /**
-   * The message text
-   * @return text
-   */
-  @jakarta.annotation.Nonnull
-  public String getText() {
-    return text;
-  }
-
-  public void setText(@jakarta.annotation.Nonnull String text) {
-    this.text = text;
   }
 
 
@@ -195,23 +98,19 @@ public class SendMicrosoftTeamsMessageTaskParams {
       return false;
     }
     SendMicrosoftTeamsMessageTaskParams sendMicrosoftTeamsMessageTaskParams = (SendMicrosoftTeamsMessageTaskParams) o;
-    return Objects.equals(this.taskType, sendMicrosoftTeamsMessageTaskParams.taskType) &&
-        Objects.equals(this.channels, sendMicrosoftTeamsMessageTaskParams.channels) &&
-        Objects.equals(this.text, sendMicrosoftTeamsMessageTaskParams.text);
+    return Objects.equals(this.channels, sendMicrosoftTeamsMessageTaskParams.channels);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(taskType, channels, text);
+    return Objects.hash(channels);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SendMicrosoftTeamsMessageTaskParams {\n");
-    sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
     sb.append("    channels: ").append(toIndentedString(channels)).append("\n");
-    sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -234,10 +133,11 @@ public class SendMicrosoftTeamsMessageTaskParams {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("channels");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("text");
+    openapiRequiredFields.add("channels");
   }
 
   /**
@@ -268,29 +168,16 @@ public class SendMicrosoftTeamsMessageTaskParams {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("task_type") != null && !jsonObj.get("task_type").isJsonNull()) && !jsonObj.get("task_type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `task_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("task_type").toString()));
+      // ensure the json data is an array
+      if (!jsonObj.get("channels").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `channels` to be an array in the JSON string but got `%s`", jsonObj.get("channels").toString()));
       }
-      // validate the optional field `task_type`
-      if (jsonObj.get("task_type") != null && !jsonObj.get("task_type").isJsonNull()) {
-        TaskTypeEnum.validateJsonElement(jsonObj.get("task_type"));
-      }
-      if (jsonObj.get("channels") != null && !jsonObj.get("channels").isJsonNull()) {
-        JsonArray jsonArraychannels = jsonObj.getAsJsonArray("channels");
-        if (jsonArraychannels != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("channels").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `channels` to be an array in the JSON string but got `%s`", jsonObj.get("channels").toString()));
-          }
 
-          // validate the optional field `channels` (array)
-          for (int i = 0; i < jsonArraychannels.size(); i++) {
-          };
-        }
-      }
-      if (!jsonObj.get("text").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `text` to be a primitive type in the JSON string but got `%s`", jsonObj.get("text").toString()));
-      }
+      JsonArray jsonArraychannels = jsonObj.getAsJsonArray("channels");
+      // validate the required field `channels` (array)
+      for (int i = 0; i < jsonArraychannels.size(); i++) {
+        AddActionItemTaskParamsPostToSlackChannelsInner.validateJsonElement(jsonArraychannels.get(i));
+      };
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

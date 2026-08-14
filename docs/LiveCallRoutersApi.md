@@ -77,7 +77,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | live_call_router created with multiple notification targets |  -  |
+| **201** | live_call_router created with multiple targets without calling_tree_enabled (backward compat) |  -  |
 | **422** | invalid request |  -  |
 | **401** | responds with unauthorized for invalid token |  -  |
 
@@ -196,7 +196,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **countryCode** | **String**|  | [enum: AU, CA, DE, NL, NZ, GB, US] |
+| **countryCode** | **String**|  | [enum: AU, CA, DE, NL, NZ, SE, CH, GB, US] |
 | **phoneType** | **String**|  | [enum: local, toll_free, mobile] |
 
 ### Return type
@@ -440,6 +440,6 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | live_call_router updated |  -  |
+| **200** | live_call_router multichannel notification fields updated |  -  |
 | **404** | resource not found |  -  |
 

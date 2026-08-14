@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.CreateConfluencePageTaskParamsIntegration;
 import com.rootly.client.model.UpdateConfluencePageTaskParamsTemplate;
 import java.io.IOException;
 import java.util.Arrays;
@@ -49,7 +50,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateConfluencePageTaskParams
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateConfluencePageTaskParams {
   /**
    * Gets or Sets taskType
@@ -106,6 +107,11 @@ public class UpdateConfluencePageTaskParams {
   @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
 
+  public static final String SERIALIZED_NAME_INTEGRATION = "integration";
+  @SerializedName(SERIALIZED_NAME_INTEGRATION)
+  @jakarta.annotation.Nullable
+  private CreateConfluencePageTaskParamsIntegration integration;
+
   public static final String SERIALIZED_NAME_FILE_ID = "file_id";
   @SerializedName(SERIALIZED_NAME_FILE_ID)
   @jakarta.annotation.Nonnull
@@ -131,6 +137,21 @@ public class UpdateConfluencePageTaskParams {
   @jakarta.annotation.Nullable
   private UpdateConfluencePageTaskParamsTemplate template;
 
+  public static final String SERIALIZED_NAME_INCLUDE_OVERVIEW = "include_overview";
+  @SerializedName(SERIALIZED_NAME_INCLUDE_OVERVIEW)
+  @jakarta.annotation.Nullable
+  private Boolean includeOverview = true;
+
+  public static final String SERIALIZED_NAME_INCLUDE_TIMELINE = "include_timeline";
+  @SerializedName(SERIALIZED_NAME_INCLUDE_TIMELINE)
+  @jakarta.annotation.Nullable
+  private Boolean includeTimeline = true;
+
+  public static final String SERIALIZED_NAME_INCLUDE_FOLLOW_UPS = "include_follow_ups";
+  @SerializedName(SERIALIZED_NAME_INCLUDE_FOLLOW_UPS)
+  @jakarta.annotation.Nullable
+  private Boolean includeFollowUps = true;
+
   public UpdateConfluencePageTaskParams() {
   }
 
@@ -150,6 +171,25 @@ public class UpdateConfluencePageTaskParams {
 
   public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
+  }
+
+
+  public UpdateConfluencePageTaskParams integration(@jakarta.annotation.Nullable CreateConfluencePageTaskParamsIntegration integration) {
+    this.integration = integration;
+    return this;
+  }
+
+  /**
+   * Get integration
+   * @return integration
+   */
+  @jakarta.annotation.Nullable
+  public CreateConfluencePageTaskParamsIntegration getIntegration() {
+    return integration;
+  }
+
+  public void setIntegration(@jakarta.annotation.Nullable CreateConfluencePageTaskParamsIntegration integration) {
+    this.integration = integration;
   }
 
 
@@ -248,6 +288,63 @@ public class UpdateConfluencePageTaskParams {
   }
 
 
+  public UpdateConfluencePageTaskParams includeOverview(@jakarta.annotation.Nullable Boolean includeOverview) {
+    this.includeOverview = includeOverview;
+    return this;
+  }
+
+  /**
+   * Get includeOverview
+   * @return includeOverview
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getIncludeOverview() {
+    return includeOverview;
+  }
+
+  public void setIncludeOverview(@jakarta.annotation.Nullable Boolean includeOverview) {
+    this.includeOverview = includeOverview;
+  }
+
+
+  public UpdateConfluencePageTaskParams includeTimeline(@jakarta.annotation.Nullable Boolean includeTimeline) {
+    this.includeTimeline = includeTimeline;
+    return this;
+  }
+
+  /**
+   * Get includeTimeline
+   * @return includeTimeline
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getIncludeTimeline() {
+    return includeTimeline;
+  }
+
+  public void setIncludeTimeline(@jakarta.annotation.Nullable Boolean includeTimeline) {
+    this.includeTimeline = includeTimeline;
+  }
+
+
+  public UpdateConfluencePageTaskParams includeFollowUps(@jakarta.annotation.Nullable Boolean includeFollowUps) {
+    this.includeFollowUps = includeFollowUps;
+    return this;
+  }
+
+  /**
+   * Get includeFollowUps
+   * @return includeFollowUps
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getIncludeFollowUps() {
+    return includeFollowUps;
+  }
+
+  public void setIncludeFollowUps(@jakarta.annotation.Nullable Boolean includeFollowUps) {
+    this.includeFollowUps = includeFollowUps;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -259,16 +356,20 @@ public class UpdateConfluencePageTaskParams {
     }
     UpdateConfluencePageTaskParams updateConfluencePageTaskParams = (UpdateConfluencePageTaskParams) o;
     return Objects.equals(this.taskType, updateConfluencePageTaskParams.taskType) &&
+        Objects.equals(this.integration, updateConfluencePageTaskParams.integration) &&
         Objects.equals(this.fileId, updateConfluencePageTaskParams.fileId) &&
         Objects.equals(this.title, updateConfluencePageTaskParams.title) &&
         Objects.equals(this.content, updateConfluencePageTaskParams.content) &&
         Objects.equals(this.postMortemTemplateId, updateConfluencePageTaskParams.postMortemTemplateId) &&
-        Objects.equals(this.template, updateConfluencePageTaskParams.template);
+        Objects.equals(this.template, updateConfluencePageTaskParams.template) &&
+        Objects.equals(this.includeOverview, updateConfluencePageTaskParams.includeOverview) &&
+        Objects.equals(this.includeTimeline, updateConfluencePageTaskParams.includeTimeline) &&
+        Objects.equals(this.includeFollowUps, updateConfluencePageTaskParams.includeFollowUps);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(taskType, fileId, title, content, postMortemTemplateId, template);
+    return Objects.hash(taskType, integration, fileId, title, content, postMortemTemplateId, template, includeOverview, includeTimeline, includeFollowUps);
   }
 
   @Override
@@ -276,11 +377,15 @@ public class UpdateConfluencePageTaskParams {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdateConfluencePageTaskParams {\n");
     sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
+    sb.append("    integration: ").append(toIndentedString(integration)).append("\n");
     sb.append("    fileId: ").append(toIndentedString(fileId)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    content: ").append(toIndentedString(content)).append("\n");
     sb.append("    postMortemTemplateId: ").append(toIndentedString(postMortemTemplateId)).append("\n");
     sb.append("    template: ").append(toIndentedString(template)).append("\n");
+    sb.append("    includeOverview: ").append(toIndentedString(includeOverview)).append("\n");
+    sb.append("    includeTimeline: ").append(toIndentedString(includeTimeline)).append("\n");
+    sb.append("    includeFollowUps: ").append(toIndentedString(includeFollowUps)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -304,11 +409,15 @@ public class UpdateConfluencePageTaskParams {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("task_type");
+    openapiFields.add("integration");
     openapiFields.add("file_id");
     openapiFields.add("title");
     openapiFields.add("content");
     openapiFields.add("post_mortem_template_id");
     openapiFields.add("template");
+    openapiFields.add("include_overview");
+    openapiFields.add("include_timeline");
+    openapiFields.add("include_follow_ups");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -349,6 +458,10 @@ public class UpdateConfluencePageTaskParams {
       // validate the optional field `task_type`
       if (jsonObj.get("task_type") != null && !jsonObj.get("task_type").isJsonNull()) {
         TaskTypeEnum.validateJsonElement(jsonObj.get("task_type"));
+      }
+      // validate the optional field `integration`
+      if (jsonObj.get("integration") != null && !jsonObj.get("integration").isJsonNull()) {
+        CreateConfluencePageTaskParamsIntegration.validateJsonElement(jsonObj.get("integration"));
       }
       if (!jsonObj.get("file_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `file_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("file_id").toString()));

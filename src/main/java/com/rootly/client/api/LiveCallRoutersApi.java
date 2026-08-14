@@ -86,7 +86,7 @@ public class LiveCallRoutersApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> live_call_router created with multiple notification targets </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> live_call_router created with multiple targets without calling_tree_enabled (backward compat) </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
@@ -157,7 +157,7 @@ public class LiveCallRoutersApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> live_call_router created with multiple notification targets </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> live_call_router created with multiple targets without calling_tree_enabled (backward compat) </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
@@ -177,7 +177,7 @@ public class LiveCallRoutersApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> live_call_router created with multiple notification targets </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> live_call_router created with multiple targets without calling_tree_enabled (backward compat) </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
@@ -199,7 +199,7 @@ public class LiveCallRoutersApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> live_call_router created with multiple notification targets </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> live_call_router created with multiple targets without calling_tree_enabled (backward compat) </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
@@ -832,7 +832,7 @@ public class LiveCallRoutersApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> live_call_router updated </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> live_call_router multichannel notification fields updated </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
@@ -909,7 +909,7 @@ public class LiveCallRoutersApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> live_call_router updated </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> live_call_router multichannel notification fields updated </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
@@ -929,7 +929,7 @@ public class LiveCallRoutersApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> live_call_router updated </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> live_call_router multichannel notification fields updated </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
@@ -951,7 +951,7 @@ public class LiveCallRoutersApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> live_call_router updated </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> live_call_router multichannel notification fields updated </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */

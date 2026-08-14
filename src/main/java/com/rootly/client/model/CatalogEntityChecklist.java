@@ -53,11 +53,11 @@ import com.rootly.client.JSON;
 /**
  * CatalogEntityChecklist
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CatalogEntityChecklist {
   public static final String SERIALIZED_NAME_CATALOG_CHECKLIST_TEMPLATE_ID = "catalog_checklist_template_id";
   @SerializedName(SERIALIZED_NAME_CATALOG_CHECKLIST_TEMPLATE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String catalogChecklistTemplateId;
 
   /**
@@ -124,12 +124,12 @@ public class CatalogEntityChecklist {
 
   public static final String SERIALIZED_NAME_AUDITABLE_TYPE = "auditable_type";
   @SerializedName(SERIALIZED_NAME_AUDITABLE_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private AuditableTypeEnum auditableType;
 
   public static final String SERIALIZED_NAME_AUDITABLE_ID = "auditable_id";
   @SerializedName(SERIALIZED_NAME_AUDITABLE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String auditableId;
 
   /**
@@ -190,48 +190,48 @@ public class CatalogEntityChecklist {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private StatusEnum status;
 
   public static final String SERIALIZED_NAME_STARTED_AT = "started_at";
   @SerializedName(SERIALIZED_NAME_STARTED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String startedAt;
 
   public static final String SERIALIZED_NAME_COMPLETED_AT = "completed_at";
   @SerializedName(SERIALIZED_NAME_COMPLETED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String completedAt;
 
   public static final String SERIALIZED_NAME_COMPLETED_BY_USER_ID = "completed_by_user_id";
   @SerializedName(SERIALIZED_NAME_COMPLETED_BY_USER_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String completedByUserId;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updatedAt;
 
   public static final String SERIALIZED_NAME_CHECKLIST_FIELDS = "checklist_fields";
   @SerializedName(SERIALIZED_NAME_CHECKLIST_FIELDS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<CatalogEntityChecklistChecklistFieldsInner> checklistFields;
 
   public static final String SERIALIZED_NAME_CHECKLIST_OWNERS = "checklist_owners";
   @SerializedName(SERIALIZED_NAME_CHECKLIST_OWNERS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<CatalogEntityChecklistChecklistOwnersInner> checklistOwners;
 
   public CatalogEntityChecklist() {
   }
 
-  public CatalogEntityChecklist catalogChecklistTemplateId(@javax.annotation.Nonnull String catalogChecklistTemplateId) {
+  public CatalogEntityChecklist catalogChecklistTemplateId(@jakarta.annotation.Nonnull String catalogChecklistTemplateId) {
     this.catalogChecklistTemplateId = catalogChecklistTemplateId;
     return this;
   }
@@ -240,17 +240,17 @@ public class CatalogEntityChecklist {
    * The ID of the checklist template
    * @return catalogChecklistTemplateId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCatalogChecklistTemplateId() {
     return catalogChecklistTemplateId;
   }
 
-  public void setCatalogChecklistTemplateId(@javax.annotation.Nonnull String catalogChecklistTemplateId) {
+  public void setCatalogChecklistTemplateId(@jakarta.annotation.Nonnull String catalogChecklistTemplateId) {
     this.catalogChecklistTemplateId = catalogChecklistTemplateId;
   }
 
 
-  public CatalogEntityChecklist auditableType(@javax.annotation.Nonnull AuditableTypeEnum auditableType) {
+  public CatalogEntityChecklist auditableType(@jakarta.annotation.Nonnull AuditableTypeEnum auditableType) {
     this.auditableType = auditableType;
     return this;
   }
@@ -259,17 +259,17 @@ public class CatalogEntityChecklist {
    * The type of the auditable entity
    * @return auditableType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public AuditableTypeEnum getAuditableType() {
     return auditableType;
   }
 
-  public void setAuditableType(@javax.annotation.Nonnull AuditableTypeEnum auditableType) {
+  public void setAuditableType(@jakarta.annotation.Nonnull AuditableTypeEnum auditableType) {
     this.auditableType = auditableType;
   }
 
 
-  public CatalogEntityChecklist auditableId(@javax.annotation.Nonnull String auditableId) {
+  public CatalogEntityChecklist auditableId(@jakarta.annotation.Nonnull String auditableId) {
     this.auditableId = auditableId;
     return this;
   }
@@ -278,17 +278,17 @@ public class CatalogEntityChecklist {
    * The ID of the auditable entity
    * @return auditableId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getAuditableId() {
     return auditableId;
   }
 
-  public void setAuditableId(@javax.annotation.Nonnull String auditableId) {
+  public void setAuditableId(@jakarta.annotation.Nonnull String auditableId) {
     this.auditableId = auditableId;
   }
 
 
-  public CatalogEntityChecklist status(@javax.annotation.Nonnull StatusEnum status) {
+  public CatalogEntityChecklist status(@jakarta.annotation.Nonnull StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -297,17 +297,17 @@ public class CatalogEntityChecklist {
    * The status of the checklist
    * @return status
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public StatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nonnull StatusEnum status) {
+  public void setStatus(@jakarta.annotation.Nonnull StatusEnum status) {
     this.status = status;
   }
 
 
-  public CatalogEntityChecklist startedAt(@javax.annotation.Nullable String startedAt) {
+  public CatalogEntityChecklist startedAt(@jakarta.annotation.Nullable String startedAt) {
     this.startedAt = startedAt;
     return this;
   }
@@ -316,17 +316,17 @@ public class CatalogEntityChecklist {
    * When the checklist was started
    * @return startedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getStartedAt() {
     return startedAt;
   }
 
-  public void setStartedAt(@javax.annotation.Nullable String startedAt) {
+  public void setStartedAt(@jakarta.annotation.Nullable String startedAt) {
     this.startedAt = startedAt;
   }
 
 
-  public CatalogEntityChecklist completedAt(@javax.annotation.Nullable String completedAt) {
+  public CatalogEntityChecklist completedAt(@jakarta.annotation.Nullable String completedAt) {
     this.completedAt = completedAt;
     return this;
   }
@@ -335,17 +335,17 @@ public class CatalogEntityChecklist {
    * When the checklist was completed
    * @return completedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCompletedAt() {
     return completedAt;
   }
 
-  public void setCompletedAt(@javax.annotation.Nullable String completedAt) {
+  public void setCompletedAt(@jakarta.annotation.Nullable String completedAt) {
     this.completedAt = completedAt;
   }
 
 
-  public CatalogEntityChecklist completedByUserId(@javax.annotation.Nullable String completedByUserId) {
+  public CatalogEntityChecklist completedByUserId(@jakarta.annotation.Nullable String completedByUserId) {
     this.completedByUserId = completedByUserId;
     return this;
   }
@@ -354,17 +354,17 @@ public class CatalogEntityChecklist {
    * The ID of the user who completed the checklist
    * @return completedByUserId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCompletedByUserId() {
     return completedByUserId;
   }
 
-  public void setCompletedByUserId(@javax.annotation.Nullable String completedByUserId) {
+  public void setCompletedByUserId(@jakarta.annotation.Nullable String completedByUserId) {
     this.completedByUserId = completedByUserId;
   }
 
 
-  public CatalogEntityChecklist createdAt(@javax.annotation.Nonnull String createdAt) {
+  public CatalogEntityChecklist createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -373,17 +373,17 @@ public class CatalogEntityChecklist {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public CatalogEntityChecklist updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public CatalogEntityChecklist updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -392,17 +392,17 @@ public class CatalogEntityChecklist {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
     this.updatedAt = updatedAt;
   }
 
 
-  public CatalogEntityChecklist checklistFields(@javax.annotation.Nullable List<CatalogEntityChecklistChecklistFieldsInner> checklistFields) {
+  public CatalogEntityChecklist checklistFields(@jakarta.annotation.Nullable List<CatalogEntityChecklistChecklistFieldsInner> checklistFields) {
     this.checklistFields = checklistFields;
     return this;
   }
@@ -419,17 +419,17 @@ public class CatalogEntityChecklist {
    * Checklist fields
    * @return checklistFields
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<CatalogEntityChecklistChecklistFieldsInner> getChecklistFields() {
     return checklistFields;
   }
 
-  public void setChecklistFields(@javax.annotation.Nullable List<CatalogEntityChecklistChecklistFieldsInner> checklistFields) {
+  public void setChecklistFields(@jakarta.annotation.Nullable List<CatalogEntityChecklistChecklistFieldsInner> checklistFields) {
     this.checklistFields = checklistFields;
   }
 
 
-  public CatalogEntityChecklist checklistOwners(@javax.annotation.Nullable List<CatalogEntityChecklistChecklistOwnersInner> checklistOwners) {
+  public CatalogEntityChecklist checklistOwners(@jakarta.annotation.Nullable List<CatalogEntityChecklistChecklistOwnersInner> checklistOwners) {
     this.checklistOwners = checklistOwners;
     return this;
   }
@@ -446,12 +446,12 @@ public class CatalogEntityChecklist {
    * Checklist owners
    * @return checklistOwners
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<CatalogEntityChecklistChecklistOwnersInner> getChecklistOwners() {
     return checklistOwners;
   }
 
-  public void setChecklistOwners(@javax.annotation.Nullable List<CatalogEntityChecklistChecklistOwnersInner> checklistOwners) {
+  public void setChecklistOwners(@jakarta.annotation.Nullable List<CatalogEntityChecklistChecklistOwnersInner> checklistOwners) {
     this.checklistOwners = checklistOwners;
   }
 

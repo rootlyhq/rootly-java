@@ -95,6 +95,38 @@ public class CatalogFieldTest {
     }
 
     /**
+     * Test the property 'required'
+     */
+    @Test
+    public void requiredTest() {
+        // TODO: test required
+    }
+
+    /**
+     * Test the property 'catalogType'
+     */
+    @Test
+    public void catalogTypeTest() {
+        // TODO: test catalogType
+    }
+
+    /**
+     * Test the property 'externalId'
+     */
+    @Test
+    public void externalIdTest() {
+        // TODO: test externalId
+    }
+
+    /**
+     * Test the property 'managedBy'
+     */
+    @Test
+    public void managedByTest() {
+        // TODO: test managedBy
+    }
+
+    /**
      * Test the property 'createdAt'
      */
     @Test

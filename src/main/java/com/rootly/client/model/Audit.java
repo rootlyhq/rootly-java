@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * Audit
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Audit {
   public static final String SERIALIZED_NAME_EVENT = "event";
   @SerializedName(SERIALIZED_NAME_EVENT)
@@ -61,7 +61,21 @@ public class Audit {
    */
   @JsonAdapter(ItemTypeEnum.Adapter.class)
   public enum ItemTypeEnum {
+    ALERT_ROUTE("AlertRoute"),
+    
+    ALERT_ROUTING_RULE("AlertRoutingRule"),
+    
+    ALERTS_SOURCE("Alerts::Source"),
+    
     API_KEY("ApiKey"),
+    
+    CATALOG("Catalog"),
+    
+    CATALOG_ENTITY("CatalogEntity"),
+    
+    CATALOG_ENTITY_PROPERTY("CatalogEntityProperty"),
+    
+    CATALOG_FIELD("CatalogField"),
     
     CAUSE("Cause"),
     
@@ -97,6 +111,8 @@ public class Audit {
     
     GROUP("Group"),
     
+    GROUP_USER("GroupUser"),
+    
     HEARTBEAT("Heartbeat"),
     
     INCIDENT("Incident"),
@@ -108,6 +124,8 @@ public class Audit {
     INCIDENT_FORM_FIELD_SELECTION("IncidentFormFieldSelection"),
     
     INCIDENT_FORM_FIELD_SELECTION_USER("IncidentFormFieldSelectionUser"),
+    
+    INCIDENT_PERMISSION_SET("IncidentPermissionSet"),
     
     INCIDENT_POST_MORTEM("IncidentPostMortem"),
     
@@ -121,7 +139,37 @@ public class Audit {
     
     INCIDENT_TYPE("IncidentType"),
     
+    INTEGRATIONS_DATADOG_ACCOUNT("Integrations::DatadogAccount"),
+    
+    INTEGRATIONS_GITHUB_ACCOUNT("Integrations::GithubAccount"),
+    
+    INTEGRATIONS_GOOGLE_MEET_ACCOUNT("Integrations::GoogleMeetAccount"),
+    
+    INTEGRATIONS_JIRA_ACCOUNT("Integrations::JiraAccount"),
+    
+    INTEGRATIONS_MICROSOFT_TEAMS_ACCOUNT("Integrations::MicrosoftTeamsAccount"),
+    
+    INTEGRATIONS_NOTION_ACCOUNT("Integrations::NotionAccount"),
+    
+    INTEGRATIONS_OPSGENIE_ACCOUNT("Integrations::OpsgenieAccount"),
+    
+    INTEGRATIONS_PAGERDUTY_ACCOUNT("Integrations::PagerdutyAccount"),
+    
+    INTEGRATIONS_SERVICE_NOW_ACCOUNT("Integrations::ServiceNowAccount"),
+    
+    INTEGRATIONS_SLACK_ACCOUNT("Integrations::SlackAccount"),
+    
+    INTEGRATIONS_STATUS_PAGE_IO_ACCOUNT("Integrations::StatusPageIoAccount"),
+    
+    INTEGRATIONS_ZENDESK_ACCOUNT("Integrations::ZendeskAccount"),
+    
+    INTEGRATIONS_ZOOM_ACCOUNT("Integrations::ZoomAccount"),
+    
     LIVE_CALL_ROUTER("LiveCallRouter"),
+    
+    LOGIN_ACTIVITY("LoginActivity"),
+    
+    MEMBERSHIP("Membership"),
     
     ON_CALL_ROLE("OnCallRole"),
     
@@ -132,6 +180,8 @@ public class Audit {
     ROLE("Role"),
     
     SCHEDULE("Schedule"),
+    
+    SECRET("Secret"),
     
     SERVICE("Service"),
     
@@ -187,6 +237,11 @@ public class Audit {
   @jakarta.annotation.Nullable
   private ItemTypeEnum itemType;
 
+  public static final String SERIALIZED_NAME_ITEM_TYPE_DISPLAY = "item_type_display";
+  @SerializedName(SERIALIZED_NAME_ITEM_TYPE_DISPLAY)
+  @jakarta.annotation.Nullable
+  private String itemTypeDisplay;
+
   public static final String SERIALIZED_NAME_OBJECT = "object";
   @SerializedName(SERIALIZED_NAME_OBJECT)
   @jakarta.annotation.Nullable
@@ -201,6 +256,36 @@ public class Audit {
   @SerializedName(SERIALIZED_NAME_USER_ID)
   @jakarta.annotation.Nullable
   private Integer userId;
+
+  public static final String SERIALIZED_NAME_USER_NAME = "user_name";
+  @SerializedName(SERIALIZED_NAME_USER_NAME)
+  @jakarta.annotation.Nullable
+  private String userName;
+
+  public static final String SERIALIZED_NAME_USER_EMAIL = "user_email";
+  @SerializedName(SERIALIZED_NAME_USER_EMAIL)
+  @jakarta.annotation.Nullable
+  private String userEmail;
+
+  public static final String SERIALIZED_NAME_IP_ADDRESS = "ip_address";
+  @SerializedName(SERIALIZED_NAME_IP_ADDRESS)
+  @jakarta.annotation.Nullable
+  private String ipAddress;
+
+  public static final String SERIALIZED_NAME_USER_AGENT = "user_agent";
+  @SerializedName(SERIALIZED_NAME_USER_AGENT)
+  @jakarta.annotation.Nullable
+  private String userAgent;
+
+  public static final String SERIALIZED_NAME_REQUEST_ID = "request_id";
+  @SerializedName(SERIALIZED_NAME_REQUEST_ID)
+  @jakarta.annotation.Nullable
+  private String requestId;
+
+  public static final String SERIALIZED_NAME_SESSION_ID = "session_id";
+  @SerializedName(SERIALIZED_NAME_SESSION_ID)
+  @jakarta.annotation.Nullable
+  private String sessionId;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -258,6 +343,25 @@ public class Audit {
   }
 
 
+  public Audit itemTypeDisplay(@jakarta.annotation.Nullable String itemTypeDisplay) {
+    this.itemTypeDisplay = itemTypeDisplay;
+    return this;
+  }
+
+  /**
+   * Human-friendly display name for the item type
+   * @return itemTypeDisplay
+   */
+  @jakarta.annotation.Nullable
+  public String getItemTypeDisplay() {
+    return itemTypeDisplay;
+  }
+
+  public void setItemTypeDisplay(@jakarta.annotation.Nullable String itemTypeDisplay) {
+    this.itemTypeDisplay = itemTypeDisplay;
+  }
+
+
   public Audit _object(@jakarta.annotation.Nullable Object _object) {
     this._object = _object;
     return this;
@@ -312,6 +416,120 @@ public class Audit {
 
   public void setUserId(@jakarta.annotation.Nullable Integer userId) {
     this.userId = userId;
+  }
+
+
+  public Audit userName(@jakarta.annotation.Nullable String userName) {
+    this.userName = userName;
+    return this;
+  }
+
+  /**
+   * Display name of the user who performed the action
+   * @return userName
+   */
+  @jakarta.annotation.Nullable
+  public String getUserName() {
+    return userName;
+  }
+
+  public void setUserName(@jakarta.annotation.Nullable String userName) {
+    this.userName = userName;
+  }
+
+
+  public Audit userEmail(@jakarta.annotation.Nullable String userEmail) {
+    this.userEmail = userEmail;
+    return this;
+  }
+
+  /**
+   * Email address of the user who performed the action
+   * @return userEmail
+   */
+  @jakarta.annotation.Nullable
+  public String getUserEmail() {
+    return userEmail;
+  }
+
+  public void setUserEmail(@jakarta.annotation.Nullable String userEmail) {
+    this.userEmail = userEmail;
+  }
+
+
+  public Audit ipAddress(@jakarta.annotation.Nullable String ipAddress) {
+    this.ipAddress = ipAddress;
+    return this;
+  }
+
+  /**
+   * IP address of the client that performed the action
+   * @return ipAddress
+   */
+  @jakarta.annotation.Nullable
+  public String getIpAddress() {
+    return ipAddress;
+  }
+
+  public void setIpAddress(@jakarta.annotation.Nullable String ipAddress) {
+    this.ipAddress = ipAddress;
+  }
+
+
+  public Audit userAgent(@jakarta.annotation.Nullable String userAgent) {
+    this.userAgent = userAgent;
+    return this;
+  }
+
+  /**
+   * User-Agent header of the client that performed the action
+   * @return userAgent
+   */
+  @jakarta.annotation.Nullable
+  public String getUserAgent() {
+    return userAgent;
+  }
+
+  public void setUserAgent(@jakarta.annotation.Nullable String userAgent) {
+    this.userAgent = userAgent;
+  }
+
+
+  public Audit requestId(@jakarta.annotation.Nullable String requestId) {
+    this.requestId = requestId;
+    return this;
+  }
+
+  /**
+   * Unique request ID (UUID) for the HTTP request that triggered the action
+   * @return requestId
+   */
+  @jakarta.annotation.Nullable
+  public String getRequestId() {
+    return requestId;
+  }
+
+  public void setRequestId(@jakarta.annotation.Nullable String requestId) {
+    this.requestId = requestId;
+  }
+
+
+  public Audit sessionId(@jakarta.annotation.Nullable String sessionId) {
+    this.sessionId = sessionId;
+    return this;
+  }
+
+  /**
+   * SHA-256 fingerprint of the web session for correlating multiple actions within the same browser session
+   * @return sessionId
+   */
+  @jakarta.annotation.Nullable
+  public String getSessionId() {
+    return sessionId;
+  }
+
+  public void setSessionId(@jakarta.annotation.Nullable String sessionId) {
+    this.sessionId = sessionId;
   }
 
 
@@ -384,9 +602,16 @@ public class Audit {
     Audit audit = (Audit) o;
     return Objects.equals(this.event, audit.event) &&
         Objects.equals(this.itemType, audit.itemType) &&
+        Objects.equals(this.itemTypeDisplay, audit.itemTypeDisplay) &&
         Objects.equals(this._object, audit._object) &&
         Objects.equals(this.objectChanges, audit.objectChanges) &&
         Objects.equals(this.userId, audit.userId) &&
+        Objects.equals(this.userName, audit.userName) &&
+        Objects.equals(this.userEmail, audit.userEmail) &&
+        Objects.equals(this.ipAddress, audit.ipAddress) &&
+        Objects.equals(this.userAgent, audit.userAgent) &&
+        Objects.equals(this.requestId, audit.requestId) &&
+        Objects.equals(this.sessionId, audit.sessionId) &&
         Objects.equals(this.createdAt, audit.createdAt) &&
         Objects.equals(this.itemId, audit.itemId) &&
         Objects.equals(this.id, audit.id);
@@ -398,7 +623,7 @@ public class Audit {
 
   @Override
   public int hashCode() {
-    return Objects.hash(event, itemType, _object, objectChanges, userId, createdAt, itemId, id);
+    return Objects.hash(event, itemType, itemTypeDisplay, _object, objectChanges, userId, userName, userEmail, ipAddress, userAgent, requestId, sessionId, createdAt, itemId, id);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -414,9 +639,16 @@ public class Audit {
     sb.append("class Audit {\n");
     sb.append("    event: ").append(toIndentedString(event)).append("\n");
     sb.append("    itemType: ").append(toIndentedString(itemType)).append("\n");
+    sb.append("    itemTypeDisplay: ").append(toIndentedString(itemTypeDisplay)).append("\n");
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
     sb.append("    objectChanges: ").append(toIndentedString(objectChanges)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+    sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+    sb.append("    userEmail: ").append(toIndentedString(userEmail)).append("\n");
+    sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
+    sb.append("    userAgent: ").append(toIndentedString(userAgent)).append("\n");
+    sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+    sb.append("    sessionId: ").append(toIndentedString(sessionId)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    itemId: ").append(toIndentedString(itemId)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
@@ -444,9 +676,16 @@ public class Audit {
     openapiFields = new HashSet<String>();
     openapiFields.add("event");
     openapiFields.add("item_type");
+    openapiFields.add("item_type_display");
     openapiFields.add("object");
     openapiFields.add("object_changes");
     openapiFields.add("user_id");
+    openapiFields.add("user_name");
+    openapiFields.add("user_email");
+    openapiFields.add("ip_address");
+    openapiFields.add("user_agent");
+    openapiFields.add("request_id");
+    openapiFields.add("session_id");
     openapiFields.add("created_at");
     openapiFields.add("item_id");
     openapiFields.add("id");
@@ -494,6 +733,27 @@ public class Audit {
       // validate the optional field `item_type`
       if (jsonObj.get("item_type") != null && !jsonObj.get("item_type").isJsonNull()) {
         ItemTypeEnum.validateJsonElement(jsonObj.get("item_type"));
+      }
+      if ((jsonObj.get("item_type_display") != null && !jsonObj.get("item_type_display").isJsonNull()) && !jsonObj.get("item_type_display").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `item_type_display` to be a primitive type in the JSON string but got `%s`", jsonObj.get("item_type_display").toString()));
+      }
+      if ((jsonObj.get("user_name") != null && !jsonObj.get("user_name").isJsonNull()) && !jsonObj.get("user_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `user_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("user_name").toString()));
+      }
+      if ((jsonObj.get("user_email") != null && !jsonObj.get("user_email").isJsonNull()) && !jsonObj.get("user_email").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `user_email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("user_email").toString()));
+      }
+      if ((jsonObj.get("ip_address") != null && !jsonObj.get("ip_address").isJsonNull()) && !jsonObj.get("ip_address").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `ip_address` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ip_address").toString()));
+      }
+      if ((jsonObj.get("user_agent") != null && !jsonObj.get("user_agent").isJsonNull()) && !jsonObj.get("user_agent").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `user_agent` to be a primitive type in the JSON string but got `%s`", jsonObj.get("user_agent").toString()));
+      }
+      if ((jsonObj.get("request_id") != null && !jsonObj.get("request_id").isJsonNull()) && !jsonObj.get("request_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `request_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("request_id").toString()));
+      }
+      if ((jsonObj.get("session_id") != null && !jsonObj.get("session_id").isJsonNull()) && !jsonObj.get("session_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `session_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("session_id").toString()));
       }
       if (!jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));

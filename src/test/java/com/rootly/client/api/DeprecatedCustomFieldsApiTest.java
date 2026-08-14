@@ -99,7 +99,23 @@ public class DeprecatedCustomFieldsApiTest {
         String filterCreatedAtGte = null;
         String filterCreatedAtLt = null;
         String filterCreatedAtLte = null;
-        CustomFieldList response = api.listCustomFields(include, sort, pageNumber, pageSize, filterSlug, filterLabel, filterKind, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
+        String filterSlugEq = null;
+        String filterSlugNotEq = null;
+        String filterSlugIn = null;
+        String filterSlugNotIn = null;
+        String filterLabelEq = null;
+        String filterLabelNotEq = null;
+        String filterLabelIn = null;
+        String filterLabelNotIn = null;
+        String filterKindEq = null;
+        String filterKindNotEq = null;
+        String filterKindIn = null;
+        String filterKindNotIn = null;
+        String filterEnabledEq = null;
+        String filterEnabledNotEq = null;
+        String filterEnabledIn = null;
+        String filterEnabledNotIn = null;
+        CustomFieldList response = api.listCustomFields(include, sort, pageNumber, pageSize, filterSlug, filterLabel, filterKind, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterLabelEq, filterLabelNotEq, filterLabelIn, filterLabelNotIn, filterKindEq, filterKindNotEq, filterKindIn, filterKindNotIn, filterEnabledEq, filterEnabledNotEq, filterEnabledIn, filterEnabledNotIn);
         // TODO: test validations
     }
 

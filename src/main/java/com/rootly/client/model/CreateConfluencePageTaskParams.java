@@ -50,7 +50,7 @@ import com.rootly.client.JSON;
 /**
  * CreateConfluencePageTaskParams
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateConfluencePageTaskParams {
   /**
    * Gets or Sets taskType
@@ -146,6 +146,26 @@ public class CreateConfluencePageTaskParams {
   @SerializedName(SERIALIZED_NAME_MARK_POST_MORTEM_AS_PUBLISHED)
   @jakarta.annotation.Nullable
   private Boolean markPostMortemAsPublished = true;
+
+  public static final String SERIALIZED_NAME_INCLUDE_OVERVIEW = "include_overview";
+  @SerializedName(SERIALIZED_NAME_INCLUDE_OVERVIEW)
+  @jakarta.annotation.Nullable
+  private Boolean includeOverview = true;
+
+  public static final String SERIALIZED_NAME_INCLUDE_TIMELINE = "include_timeline";
+  @SerializedName(SERIALIZED_NAME_INCLUDE_TIMELINE)
+  @jakarta.annotation.Nullable
+  private Boolean includeTimeline = true;
+
+  public static final String SERIALIZED_NAME_INCLUDE_FOLLOW_UPS = "include_follow_ups";
+  @SerializedName(SERIALIZED_NAME_INCLUDE_FOLLOW_UPS)
+  @jakarta.annotation.Nullable
+  private Boolean includeFollowUps = true;
+
+  public static final String SERIALIZED_NAME_CREATE_AS_LIVE_DOC = "create_as_live_doc";
+  @SerializedName(SERIALIZED_NAME_CREATE_AS_LIVE_DOC)
+  @jakarta.annotation.Nullable
+  private Boolean createAsLiveDoc = false;
 
   public CreateConfluencePageTaskParams() {
   }
@@ -321,6 +341,82 @@ public class CreateConfluencePageTaskParams {
   }
 
 
+  public CreateConfluencePageTaskParams includeOverview(@jakarta.annotation.Nullable Boolean includeOverview) {
+    this.includeOverview = includeOverview;
+    return this;
+  }
+
+  /**
+   * Get includeOverview
+   * @return includeOverview
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getIncludeOverview() {
+    return includeOverview;
+  }
+
+  public void setIncludeOverview(@jakarta.annotation.Nullable Boolean includeOverview) {
+    this.includeOverview = includeOverview;
+  }
+
+
+  public CreateConfluencePageTaskParams includeTimeline(@jakarta.annotation.Nullable Boolean includeTimeline) {
+    this.includeTimeline = includeTimeline;
+    return this;
+  }
+
+  /**
+   * Get includeTimeline
+   * @return includeTimeline
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getIncludeTimeline() {
+    return includeTimeline;
+  }
+
+  public void setIncludeTimeline(@jakarta.annotation.Nullable Boolean includeTimeline) {
+    this.includeTimeline = includeTimeline;
+  }
+
+
+  public CreateConfluencePageTaskParams includeFollowUps(@jakarta.annotation.Nullable Boolean includeFollowUps) {
+    this.includeFollowUps = includeFollowUps;
+    return this;
+  }
+
+  /**
+   * Get includeFollowUps
+   * @return includeFollowUps
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getIncludeFollowUps() {
+    return includeFollowUps;
+  }
+
+  public void setIncludeFollowUps(@jakarta.annotation.Nullable Boolean includeFollowUps) {
+    this.includeFollowUps = includeFollowUps;
+  }
+
+
+  public CreateConfluencePageTaskParams createAsLiveDoc(@jakarta.annotation.Nullable Boolean createAsLiveDoc) {
+    this.createAsLiveDoc = createAsLiveDoc;
+    return this;
+  }
+
+  /**
+   * Get createAsLiveDoc
+   * @return createAsLiveDoc
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getCreateAsLiveDoc() {
+    return createAsLiveDoc;
+  }
+
+  public void setCreateAsLiveDoc(@jakarta.annotation.Nullable Boolean createAsLiveDoc) {
+    this.createAsLiveDoc = createAsLiveDoc;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -339,12 +435,16 @@ public class CreateConfluencePageTaskParams {
         Objects.equals(this.title, createConfluencePageTaskParams.title) &&
         Objects.equals(this.content, createConfluencePageTaskParams.content) &&
         Objects.equals(this.postMortemTemplateId, createConfluencePageTaskParams.postMortemTemplateId) &&
-        Objects.equals(this.markPostMortemAsPublished, createConfluencePageTaskParams.markPostMortemAsPublished);
+        Objects.equals(this.markPostMortemAsPublished, createConfluencePageTaskParams.markPostMortemAsPublished) &&
+        Objects.equals(this.includeOverview, createConfluencePageTaskParams.includeOverview) &&
+        Objects.equals(this.includeTimeline, createConfluencePageTaskParams.includeTimeline) &&
+        Objects.equals(this.includeFollowUps, createConfluencePageTaskParams.includeFollowUps) &&
+        Objects.equals(this.createAsLiveDoc, createConfluencePageTaskParams.createAsLiveDoc);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(taskType, integration, space, ancestor, template, title, content, postMortemTemplateId, markPostMortemAsPublished);
+    return Objects.hash(taskType, integration, space, ancestor, template, title, content, postMortemTemplateId, markPostMortemAsPublished, includeOverview, includeTimeline, includeFollowUps, createAsLiveDoc);
   }
 
   @Override
@@ -360,6 +460,10 @@ public class CreateConfluencePageTaskParams {
     sb.append("    content: ").append(toIndentedString(content)).append("\n");
     sb.append("    postMortemTemplateId: ").append(toIndentedString(postMortemTemplateId)).append("\n");
     sb.append("    markPostMortemAsPublished: ").append(toIndentedString(markPostMortemAsPublished)).append("\n");
+    sb.append("    includeOverview: ").append(toIndentedString(includeOverview)).append("\n");
+    sb.append("    includeTimeline: ").append(toIndentedString(includeTimeline)).append("\n");
+    sb.append("    includeFollowUps: ").append(toIndentedString(includeFollowUps)).append("\n");
+    sb.append("    createAsLiveDoc: ").append(toIndentedString(createAsLiveDoc)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -391,6 +495,10 @@ public class CreateConfluencePageTaskParams {
     openapiFields.add("content");
     openapiFields.add("post_mortem_template_id");
     openapiFields.add("mark_post_mortem_as_published");
+    openapiFields.add("include_overview");
+    openapiFields.add("include_timeline");
+    openapiFields.add("include_follow_ups");
+    openapiFields.add("create_as_live_doc");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

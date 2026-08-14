@@ -119,6 +119,20 @@ public class IncidentsApiTest {
     }
 
     /**
+     * Detach an incident from its parent
+     *
+     * Detach a sub-incident from its parent incident
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void detachFromParentIncidentTest() throws ApiException {
+        GetAlertFieldIdParameter id = null;
+        IncidentResponse response = api.detachFromParentIncident(id);
+        // TODO: test validations
+    }
+
+    /**
      * Retrieves an incident
      *
      * Retrieves a specific incident by id
@@ -142,6 +156,7 @@ public class IncidentsApiTest {
      */
     @Test
     public void listIncidentsTest() throws ApiException {
+        String pageAfter = null;
         Integer pageNumber = null;
         Integer pageSize = null;
         String filterSearch = null;
@@ -158,13 +173,18 @@ public class IncidentsApiTest {
         String filterEnvironmentIds = null;
         String filterFunctionalities = null;
         String filterFunctionalityIds = null;
+        String filterFunctionalityNames = null;
         String filterServices = null;
         String filterServiceIds = null;
+        String filterServiceNames = null;
         String filterTeams = null;
         String filterTeamIds = null;
+        String filterTeamNames = null;
         String filterCause = null;
         String filterCauseIds = null;
         String filterCustomFieldSelectedOptionIds = null;
+        String filterSlackChannelId = null;
+        String filterSequentialId = null;
         String filterCreatedAtGt = null;
         String filterCreatedAtGte = null;
         String filterCreatedAtLt = null;
@@ -201,9 +221,105 @@ public class IncidentsApiTest {
         String filterInTriageAtGte = null;
         String filterInTriageAtLt = null;
         String filterInTriageAtLte = null;
+        String filterKindEq = null;
+        String filterKindNotEq = null;
+        String filterKindIn = null;
+        String filterKindNotIn = null;
+        String filterStatusEq = null;
+        String filterStatusNotEq = null;
+        String filterStatusIn = null;
+        String filterStatusNotIn = null;
+        String filterPrivateEq = null;
+        String filterPrivateNotEq = null;
+        String filterPrivateIn = null;
+        String filterPrivateNotIn = null;
+        String filterUserIdEq = null;
+        String filterUserIdNotEq = null;
+        String filterUserIdIn = null;
+        String filterUserIdNotIn = null;
+        String filterSeverityEq = null;
+        String filterSeverityNotEq = null;
+        String filterSeverityIn = null;
+        String filterSeverityNotIn = null;
+        String filterSeverityIdEq = null;
+        String filterSeverityIdNotEq = null;
+        String filterSeverityIdIn = null;
+        String filterSeverityIdNotIn = null;
+        String filterLabelsEq = null;
+        String filterLabelsNotEq = null;
+        String filterLabelsIn = null;
+        String filterLabelsNotIn = null;
+        String filterZendeskTicketIdEq = null;
+        String filterZendeskTicketIdNotEq = null;
+        String filterZendeskTicketIdIn = null;
+        String filterZendeskTicketIdNotIn = null;
+        String filterSequentialIdEq = null;
+        String filterSequentialIdNotEq = null;
+        String filterSequentialIdIn = null;
+        String filterSequentialIdNotIn = null;
+        String filterTypesEq = null;
+        String filterTypesNotEq = null;
+        String filterTypesIn = null;
+        String filterTypesNotIn = null;
+        String filterTypeIdsEq = null;
+        String filterTypeIdsNotEq = null;
+        String filterTypeIdsIn = null;
+        String filterTypeIdsNotIn = null;
+        String filterEnvironmentsEq = null;
+        String filterEnvironmentsNotEq = null;
+        String filterEnvironmentsIn = null;
+        String filterEnvironmentsNotIn = null;
+        String filterEnvironmentIdsEq = null;
+        String filterEnvironmentIdsNotEq = null;
+        String filterEnvironmentIdsIn = null;
+        String filterEnvironmentIdsNotIn = null;
+        String filterServicesEq = null;
+        String filterServicesNotEq = null;
+        String filterServicesIn = null;
+        String filterServicesNotIn = null;
+        String filterServiceIdsEq = null;
+        String filterServiceIdsNotEq = null;
+        String filterServiceIdsIn = null;
+        String filterServiceIdsNotIn = null;
+        String filterServiceNamesEq = null;
+        String filterServiceNamesNotEq = null;
+        String filterServiceNamesIn = null;
+        String filterServiceNamesNotIn = null;
+        String filterFunctionalitiesEq = null;
+        String filterFunctionalitiesNotEq = null;
+        String filterFunctionalitiesIn = null;
+        String filterFunctionalitiesNotIn = null;
+        String filterFunctionalityIdsEq = null;
+        String filterFunctionalityIdsNotEq = null;
+        String filterFunctionalityIdsIn = null;
+        String filterFunctionalityIdsNotIn = null;
+        String filterFunctionalityNamesEq = null;
+        String filterFunctionalityNamesNotEq = null;
+        String filterFunctionalityNamesIn = null;
+        String filterFunctionalityNamesNotIn = null;
+        String filterCausesEq = null;
+        String filterCausesNotEq = null;
+        String filterCausesIn = null;
+        String filterCausesNotIn = null;
+        String filterCauseIdsEq = null;
+        String filterCauseIdsNotEq = null;
+        String filterCauseIdsIn = null;
+        String filterCauseIdsNotIn = null;
+        String filterTeamsEq = null;
+        String filterTeamsNotEq = null;
+        String filterTeamsIn = null;
+        String filterTeamsNotIn = null;
+        String filterTeamIdsEq = null;
+        String filterTeamIdsNotEq = null;
+        String filterTeamIdsIn = null;
+        String filterTeamIdsNotIn = null;
+        String filterTeamNamesEq = null;
+        String filterTeamNamesNotEq = null;
+        String filterTeamNamesIn = null;
+        String filterTeamNamesNotIn = null;
         String sort = null;
         String include = null;
-        IncidentList response = api.listIncidents(pageNumber, pageSize, filterSearch, filterKind, filterStatus, filterPrivate, filterUserId, filterSeverity, filterSeverityId, filterLabels, filterTypes, filterTypeIds, filterEnvironments, filterEnvironmentIds, filterFunctionalities, filterFunctionalityIds, filterServices, filterServiceIds, filterTeams, filterTeamIds, filterCause, filterCauseIds, filterCustomFieldSelectedOptionIds, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUpdatedAtGt, filterUpdatedAtGte, filterUpdatedAtLt, filterUpdatedAtLte, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterDetectedAtGt, filterDetectedAtGte, filterDetectedAtLt, filterDetectedAtLte, filterAcknowledgedAtGt, filterAcknowledgedAtGte, filterAcknowledgedAtLt, filterAcknowledgedAtLte, filterMitigatedAtGt, filterMitigatedAtGte, filterMitigatedAtLt, filterMitigatedAtLte, filterResolvedAtGt, filterResolvedAtGte, filterResolvedAtLt, filterResolvedAtLte, filterClosedAtGt, filterClosedAtGte, filterClosedAtLt, filterClosedAtLte, filterInTriageAtGt, filterInTriageAtGte, filterInTriageAtLt, filterInTriageAtLte, sort, include);
+        IncidentList response = api.listIncidents(pageAfter, pageNumber, pageSize, filterSearch, filterKind, filterStatus, filterPrivate, filterUserId, filterSeverity, filterSeverityId, filterLabels, filterTypes, filterTypeIds, filterEnvironments, filterEnvironmentIds, filterFunctionalities, filterFunctionalityIds, filterFunctionalityNames, filterServices, filterServiceIds, filterServiceNames, filterTeams, filterTeamIds, filterTeamNames, filterCause, filterCauseIds, filterCustomFieldSelectedOptionIds, filterSlackChannelId, filterSequentialId, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterUpdatedAtGt, filterUpdatedAtGte, filterUpdatedAtLt, filterUpdatedAtLte, filterStartedAtGt, filterStartedAtGte, filterStartedAtLt, filterStartedAtLte, filterDetectedAtGt, filterDetectedAtGte, filterDetectedAtLt, filterDetectedAtLte, filterAcknowledgedAtGt, filterAcknowledgedAtGte, filterAcknowledgedAtLt, filterAcknowledgedAtLte, filterMitigatedAtGt, filterMitigatedAtGte, filterMitigatedAtLt, filterMitigatedAtLte, filterResolvedAtGt, filterResolvedAtGte, filterResolvedAtLt, filterResolvedAtLte, filterClosedAtGt, filterClosedAtGte, filterClosedAtLt, filterClosedAtLte, filterInTriageAtGt, filterInTriageAtGte, filterInTriageAtLt, filterInTriageAtLte, filterKindEq, filterKindNotEq, filterKindIn, filterKindNotIn, filterStatusEq, filterStatusNotEq, filterStatusIn, filterStatusNotIn, filterPrivateEq, filterPrivateNotEq, filterPrivateIn, filterPrivateNotIn, filterUserIdEq, filterUserIdNotEq, filterUserIdIn, filterUserIdNotIn, filterSeverityEq, filterSeverityNotEq, filterSeverityIn, filterSeverityNotIn, filterSeverityIdEq, filterSeverityIdNotEq, filterSeverityIdIn, filterSeverityIdNotIn, filterLabelsEq, filterLabelsNotEq, filterLabelsIn, filterLabelsNotIn, filterZendeskTicketIdEq, filterZendeskTicketIdNotEq, filterZendeskTicketIdIn, filterZendeskTicketIdNotIn, filterSequentialIdEq, filterSequentialIdNotEq, filterSequentialIdIn, filterSequentialIdNotIn, filterTypesEq, filterTypesNotEq, filterTypesIn, filterTypesNotIn, filterTypeIdsEq, filterTypeIdsNotEq, filterTypeIdsIn, filterTypeIdsNotIn, filterEnvironmentsEq, filterEnvironmentsNotEq, filterEnvironmentsIn, filterEnvironmentsNotIn, filterEnvironmentIdsEq, filterEnvironmentIdsNotEq, filterEnvironmentIdsIn, filterEnvironmentIdsNotIn, filterServicesEq, filterServicesNotEq, filterServicesIn, filterServicesNotIn, filterServiceIdsEq, filterServiceIdsNotEq, filterServiceIdsIn, filterServiceIdsNotIn, filterServiceNamesEq, filterServiceNamesNotEq, filterServiceNamesIn, filterServiceNamesNotIn, filterFunctionalitiesEq, filterFunctionalitiesNotEq, filterFunctionalitiesIn, filterFunctionalitiesNotIn, filterFunctionalityIdsEq, filterFunctionalityIdsNotEq, filterFunctionalityIdsIn, filterFunctionalityIdsNotIn, filterFunctionalityNamesEq, filterFunctionalityNamesNotEq, filterFunctionalityNamesIn, filterFunctionalityNamesNotIn, filterCausesEq, filterCausesNotEq, filterCausesIn, filterCausesNotIn, filterCauseIdsEq, filterCauseIdsNotEq, filterCauseIdsIn, filterCauseIdsNotIn, filterTeamsEq, filterTeamsNotEq, filterTeamsIn, filterTeamsNotIn, filterTeamIdsEq, filterTeamIdsNotEq, filterTeamIdsIn, filterTeamIdsNotIn, filterTeamNamesEq, filterTeamNamesNotEq, filterTeamNamesIn, filterTeamNamesNotIn, sort, include);
         // TODO: test validations
     }
 
@@ -309,6 +425,20 @@ public class IncidentsApiTest {
         GetAlertFieldIdParameter id = null;
         InTriageIncident inTriageIncident = null;
         IncidentResponse response = api.triageIncident(id, inTriageIncident);
+        // TODO: test validations
+    }
+
+    /**
+     * Remove duplicate marking from an incident
+     *
+     * Remove the duplicate marking from an incident
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void unmarkAsDuplicateIncidentTest() throws ApiException {
+        GetAlertFieldIdParameter id = null;
+        IncidentResponse response = api.unmarkAsDuplicateIncident(id);
         // TODO: test validations
     }
 

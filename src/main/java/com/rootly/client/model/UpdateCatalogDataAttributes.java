@@ -49,8 +49,14 @@ import com.rootly.client.JSON;
 /**
  * UpdateCatalogDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateCatalogDataAttributes {
+  public static final String SERIALIZED_NAME_SLUG = "slug";
+  @Deprecated
+  @SerializedName(SERIALIZED_NAME_SLUG)
+  @jakarta.annotation.Nullable
+  private String slug;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @jakarta.annotation.Nullable
@@ -135,8 +141,36 @@ public class UpdateCatalogDataAttributes {
   @jakarta.annotation.Nullable
   private Integer position;
 
+  public static final String SERIALIZED_NAME_EXTERNAL_ID = "external_id";
+  @SerializedName(SERIALIZED_NAME_EXTERNAL_ID)
+  @jakarta.annotation.Nullable
+  private String externalId;
+
   public UpdateCatalogDataAttributes() {
   }
+
+  @Deprecated
+  public UpdateCatalogDataAttributes slug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+    return this;
+  }
+
+  /**
+   * Deprecated. &#x60;slug&#x60; is derived from &#x60;name&#x60;; any submitted value is ignored. This property will be removed from the request schema in a future version.
+   * @return slug
+   * @deprecated
+   */
+  @Deprecated
+  @jakarta.annotation.Nullable
+  public String getSlug() {
+    return slug;
+  }
+
+  @Deprecated
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+  }
+
 
   public UpdateCatalogDataAttributes name(@jakarta.annotation.Nullable String name) {
     this.name = name;
@@ -214,6 +248,25 @@ public class UpdateCatalogDataAttributes {
   }
 
 
+  public UpdateCatalogDataAttributes externalId(@jakarta.annotation.Nullable String externalId) {
+    this.externalId = externalId;
+    return this;
+  }
+
+  /**
+   * An external identifier for this catalog. Must be unique within the team.
+   * @return externalId
+   */
+  @jakarta.annotation.Nullable
+  public String getExternalId() {
+    return externalId;
+  }
+
+  public void setExternalId(@jakarta.annotation.Nullable String externalId) {
+    this.externalId = externalId;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -224,10 +277,12 @@ public class UpdateCatalogDataAttributes {
       return false;
     }
     UpdateCatalogDataAttributes updateCatalogDataAttributes = (UpdateCatalogDataAttributes) o;
-    return Objects.equals(this.name, updateCatalogDataAttributes.name) &&
+    return Objects.equals(this.slug, updateCatalogDataAttributes.slug) &&
+        Objects.equals(this.name, updateCatalogDataAttributes.name) &&
         Objects.equals(this.description, updateCatalogDataAttributes.description) &&
         Objects.equals(this.icon, updateCatalogDataAttributes.icon) &&
-        Objects.equals(this.position, updateCatalogDataAttributes.position);
+        Objects.equals(this.position, updateCatalogDataAttributes.position) &&
+        Objects.equals(this.externalId, updateCatalogDataAttributes.externalId);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -236,7 +291,7 @@ public class UpdateCatalogDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, icon, position);
+    return Objects.hash(slug, name, description, icon, position, externalId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -250,10 +305,12 @@ public class UpdateCatalogDataAttributes {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdateCatalogDataAttributes {\n");
+    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    icon: ").append(toIndentedString(icon)).append("\n");
     sb.append("    position: ").append(toIndentedString(position)).append("\n");
+    sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -276,10 +333,12 @@ public class UpdateCatalogDataAttributes {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("slug");
     openapiFields.add("name");
     openapiFields.add("description");
     openapiFields.add("icon");
     openapiFields.add("position");
+    openapiFields.add("external_id");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -306,6 +365,9 @@ public class UpdateCatalogDataAttributes {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
+      }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
@@ -318,6 +380,9 @@ public class UpdateCatalogDataAttributes {
       // validate the optional field `icon`
       if (jsonObj.get("icon") != null && !jsonObj.get("icon").isJsonNull()) {
         IconEnum.validateJsonElement(jsonObj.get("icon"));
+      }
+      if ((jsonObj.get("external_id") != null && !jsonObj.get("external_id").isJsonNull()) && !jsonObj.get("external_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `external_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("external_id").toString()));
       }
   }
 

@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.rootly.client.model.V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequestAction;
+import com.rootly.client.model.UpdateEdgeConnectorActionRequestAction;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -49,17 +49,17 @@ import com.rootly.client.JSON;
 /**
  * UpdateEdgeConnectorAction
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateEdgeConnectorAction {
   public static final String SERIALIZED_NAME_ACTION = "action";
   @SerializedName(SERIALIZED_NAME_ACTION)
   @jakarta.annotation.Nonnull
-  private V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequestAction action;
+  private UpdateEdgeConnectorActionRequestAction action;
 
   public UpdateEdgeConnectorAction() {
   }
 
-  public UpdateEdgeConnectorAction action(@jakarta.annotation.Nonnull V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequestAction action) {
+  public UpdateEdgeConnectorAction action(@jakarta.annotation.Nonnull UpdateEdgeConnectorActionRequestAction action) {
     this.action = action;
     return this;
   }
@@ -69,11 +69,11 @@ public class UpdateEdgeConnectorAction {
    * @return action
    */
   @jakarta.annotation.Nonnull
-  public V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequestAction getAction() {
+  public UpdateEdgeConnectorActionRequestAction getAction() {
     return action;
   }
 
-  public void setAction(@jakarta.annotation.Nonnull V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequestAction action) {
+  public void setAction(@jakarta.annotation.Nonnull UpdateEdgeConnectorActionRequestAction action) {
     this.action = action;
   }
 
@@ -159,7 +159,7 @@ public class UpdateEdgeConnectorAction {
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the required field `action`
-      V1EdgeConnectorsEdgeConnectorIdActionsIdPatchRequestAction.validateJsonElement(jsonObj.get("action"));
+      UpdateEdgeConnectorActionRequestAction.validateJsonElement(jsonObj.get("action"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

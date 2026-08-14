@@ -91,7 +91,7 @@ public class SlasApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createSLACall(@javax.annotation.Nonnull NewSla newSla, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createSLACall(@jakarta.annotation.Nonnull NewSla newSla, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -137,7 +137,7 @@ public class SlasApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createSLAValidateBeforeCall(@javax.annotation.Nonnull NewSla newSla, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createSLAValidateBeforeCall(@jakarta.annotation.Nonnull NewSla newSla, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'newSla' is set
         if (newSla == null) {
             throw new ApiException("Missing the required parameter 'newSla' when calling createSLA(Async)");
@@ -162,7 +162,7 @@ public class SlasApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public SlaResponse createSLA(@javax.annotation.Nonnull NewSla newSla) throws ApiException {
+    public SlaResponse createSLA(@jakarta.annotation.Nonnull NewSla newSla) throws ApiException {
         ApiResponse<SlaResponse> localVarResp = createSLAWithHttpInfo(newSla);
         return localVarResp.getData();
     }
@@ -182,7 +182,7 @@ public class SlasApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SlaResponse> createSLAWithHttpInfo(@javax.annotation.Nonnull NewSla newSla) throws ApiException {
+    public ApiResponse<SlaResponse> createSLAWithHttpInfo(@jakarta.annotation.Nonnull NewSla newSla) throws ApiException {
         okhttp3.Call localVarCall = createSLAValidateBeforeCall(newSla, null);
         Type localVarReturnType = new TypeToken<SlaResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -204,7 +204,7 @@ public class SlasApi {
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createSLAAsync(@javax.annotation.Nonnull NewSla newSla, final ApiCallback<SlaResponse> _callback) throws ApiException {
+    public okhttp3.Call createSLAAsync(@jakarta.annotation.Nonnull NewSla newSla, final ApiCallback<SlaResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createSLAValidateBeforeCall(newSla, _callback);
         Type localVarReturnType = new TypeToken<SlaResponse>(){}.getType();
@@ -225,7 +225,7 @@ public class SlasApi {
         <tr><td> 404 </td><td> resource not found for another team </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteSLACall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteSLACall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -271,7 +271,7 @@ public class SlasApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteSLAValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteSLAValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling deleteSLA(Async)");
@@ -295,7 +295,7 @@ public class SlasApi {
         <tr><td> 404 </td><td> resource not found for another team </td><td>  -  </td></tr>
      </table>
      */
-    public SlaResponse deleteSLA(@javax.annotation.Nonnull String id) throws ApiException {
+    public SlaResponse deleteSLA(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<SlaResponse> localVarResp = deleteSLAWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -314,7 +314,7 @@ public class SlasApi {
         <tr><td> 404 </td><td> resource not found for another team </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SlaResponse> deleteSLAWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<SlaResponse> deleteSLAWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = deleteSLAValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<SlaResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -335,7 +335,7 @@ public class SlasApi {
         <tr><td> 404 </td><td> resource not found for another team </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteSLAAsync(@javax.annotation.Nonnull String id, final ApiCallback<SlaResponse> _callback) throws ApiException {
+    public okhttp3.Call deleteSLAAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<SlaResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteSLAValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<SlaResponse>(){}.getType();
@@ -356,7 +356,7 @@ public class SlasApi {
         <tr><td> 404 </td><td> resource not found for another team </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSLACall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getSLACall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -402,7 +402,7 @@ public class SlasApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSLAValidateBeforeCall(@javax.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getSLAValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling getSLA(Async)");
@@ -426,7 +426,7 @@ public class SlasApi {
         <tr><td> 404 </td><td> resource not found for another team </td><td>  -  </td></tr>
      </table>
      */
-    public SlaResponse getSLA(@javax.annotation.Nonnull String id) throws ApiException {
+    public SlaResponse getSLA(@jakarta.annotation.Nonnull String id) throws ApiException {
         ApiResponse<SlaResponse> localVarResp = getSLAWithHttpInfo(id);
         return localVarResp.getData();
     }
@@ -445,7 +445,7 @@ public class SlasApi {
         <tr><td> 404 </td><td> resource not found for another team </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SlaResponse> getSLAWithHttpInfo(@javax.annotation.Nonnull String id) throws ApiException {
+    public ApiResponse<SlaResponse> getSLAWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
         okhttp3.Call localVarCall = getSLAValidateBeforeCall(id, null);
         Type localVarReturnType = new TypeToken<SlaResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -466,7 +466,7 @@ public class SlasApi {
         <tr><td> 404 </td><td> resource not found for another team </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSLAAsync(@javax.annotation.Nonnull String id, final ApiCallback<SlaResponse> _callback) throws ApiException {
+    public okhttp3.Call getSLAAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<SlaResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getSLAValidateBeforeCall(id, _callback);
         Type localVarReturnType = new TypeToken<SlaResponse>(){}.getType();
@@ -484,6 +484,14 @@ public class SlasApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
      * @param sort  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -495,7 +503,7 @@ public class SlasApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listSLAsCall(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listSLAsCall(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -556,6 +564,38 @@ public class SlasApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[created_at][lte]", filterCreatedAtLte));
         }
 
+        if (filterSlugEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][eq]", filterSlugEq));
+        }
+
+        if (filterSlugNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][not_eq]", filterSlugNotEq));
+        }
+
+        if (filterSlugIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][in]", filterSlugIn));
+        }
+
+        if (filterSlugNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][not_in]", filterSlugNotIn));
+        }
+
+        if (filterNameEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][eq]", filterNameEq));
+        }
+
+        if (filterNameNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][not_eq]", filterNameNotEq));
+        }
+
+        if (filterNameIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][in]", filterNameIn));
+        }
+
+        if (filterNameNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][not_in]", filterNameNotIn));
+        }
+
         if (sort != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort", sort));
         }
@@ -580,8 +620,8 @@ public class SlasApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listSLAsValidateBeforeCall(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
-        return listSLAsCall(pageNumber, pageSize, filterSearch, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
+    private okhttp3.Call listSLAsValidateBeforeCall(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+        return listSLAsCall(pageNumber, pageSize, filterSearch, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, sort, _callback);
 
     }
 
@@ -597,6 +637,14 @@ public class SlasApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
      * @param sort  (optional)
      * @return SlaList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -607,8 +655,8 @@ public class SlasApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public SlaList listSLAs(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
-        ApiResponse<SlaList> localVarResp = listSLAsWithHttpInfo(pageNumber, pageSize, filterSearch, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
+    public SlaList listSLAs(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String sort) throws ApiException {
+        ApiResponse<SlaList> localVarResp = listSLAsWithHttpInfo(pageNumber, pageSize, filterSearch, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, sort);
         return localVarResp.getData();
     }
 
@@ -624,6 +672,14 @@ public class SlasApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
      * @param sort  (optional)
      * @return ApiResponse&lt;SlaList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -634,8 +690,8 @@ public class SlasApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SlaList> listSLAsWithHttpInfo(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort) throws ApiException {
-        okhttp3.Call localVarCall = listSLAsValidateBeforeCall(pageNumber, pageSize, filterSearch, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, null);
+    public ApiResponse<SlaList> listSLAsWithHttpInfo(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String sort) throws ApiException {
+        okhttp3.Call localVarCall = listSLAsValidateBeforeCall(pageNumber, pageSize, filterSearch, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, sort, null);
         Type localVarReturnType = new TypeToken<SlaList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -652,6 +708,14 @@ public class SlasApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
      * @param sort  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -663,9 +727,9 @@ public class SlasApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listSLAsAsync(@javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, @javax.annotation.Nullable String filterSearch, @javax.annotation.Nullable String filterSlug, @javax.annotation.Nullable String filterName, @javax.annotation.Nullable String filterCreatedAtGt, @javax.annotation.Nullable String filterCreatedAtGte, @javax.annotation.Nullable String filterCreatedAtLt, @javax.annotation.Nullable String filterCreatedAtLte, @javax.annotation.Nullable String sort, final ApiCallback<SlaList> _callback) throws ApiException {
+    public okhttp3.Call listSLAsAsync(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String sort, final ApiCallback<SlaList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listSLAsValidateBeforeCall(pageNumber, pageSize, filterSearch, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
+        okhttp3.Call localVarCall = listSLAsValidateBeforeCall(pageNumber, pageSize, filterSearch, filterSlug, filterName, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, sort, _callback);
         Type localVarReturnType = new TypeToken<SlaList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -685,7 +749,7 @@ public class SlasApi {
         <tr><td> 404 </td><td> resource not found for another team </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateSLACall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateSla updateSla, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateSLACall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateSla updateSla, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -732,7 +796,7 @@ public class SlasApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateSLAValidateBeforeCall(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateSla updateSla, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateSLAValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateSla updateSla, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling updateSLA(Async)");
@@ -762,7 +826,7 @@ public class SlasApi {
         <tr><td> 404 </td><td> resource not found for another team </td><td>  -  </td></tr>
      </table>
      */
-    public SlaResponse updateSLA(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateSla updateSla) throws ApiException {
+    public SlaResponse updateSLA(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateSla updateSla) throws ApiException {
         ApiResponse<SlaResponse> localVarResp = updateSLAWithHttpInfo(id, updateSla);
         return localVarResp.getData();
     }
@@ -782,7 +846,7 @@ public class SlasApi {
         <tr><td> 404 </td><td> resource not found for another team </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SlaResponse> updateSLAWithHttpInfo(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateSla updateSla) throws ApiException {
+    public ApiResponse<SlaResponse> updateSLAWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateSla updateSla) throws ApiException {
         okhttp3.Call localVarCall = updateSLAValidateBeforeCall(id, updateSla, null);
         Type localVarReturnType = new TypeToken<SlaResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -804,7 +868,7 @@ public class SlasApi {
         <tr><td> 404 </td><td> resource not found for another team </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateSLAAsync(@javax.annotation.Nonnull String id, @javax.annotation.Nonnull UpdateSla updateSla, final ApiCallback<SlaResponse> _callback) throws ApiException {
+    public okhttp3.Call updateSLAAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateSla updateSla, final ApiCallback<SlaResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateSLAValidateBeforeCall(id, updateSla, _callback);
         Type localVarReturnType = new TypeToken<SlaResponse>(){}.getType();

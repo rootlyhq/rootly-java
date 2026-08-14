@@ -56,12 +56,17 @@ import com.rootly.client.JSON;
 /**
  * UpdateAlertsSourceDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateAlertsSourceDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @jakarta.annotation.Nullable
   private String name;
+
+  public static final String SERIALIZED_NAME_ENABLED = "enabled";
+  @SerializedName(SERIALIZED_NAME_ENABLED)
+  @jakarta.annotation.Nullable
+  private Boolean enabled;
 
   /**
    * The alert source type
@@ -74,7 +79,11 @@ public class UpdateAlertsSourceDataAttributes {
     
     CATCHPOINT("catchpoint"),
     
+    CLOUDFLARE("cloudflare"),
+    
     DATADOG("datadog"),
+    
+    DYNATRACE("dynatrace"),
     
     ALERTMANAGER("alertmanager"),
     
@@ -87,6 +96,8 @@ public class UpdateAlertsSourceDataAttributes {
     GENERIC_WEBHOOK("generic_webhook"),
     
     CLOUD_WATCH("cloud_watch"),
+    
+    AWS_SNS("aws_sns"),
     
     CHECKLY("checkly"),
     
@@ -282,6 +293,25 @@ public class UpdateAlertsSourceDataAttributes {
 
   public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
+  }
+
+
+  public UpdateAlertsSourceDataAttributes enabled(@jakarta.annotation.Nullable Boolean enabled) {
+    this.enabled = enabled;
+    return this;
+  }
+
+  /**
+   * Whether the alert source is enabled. Disabled sources do not create alerts from incoming events.
+   * @return enabled
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getEnabled() {
+    return enabled;
+  }
+
+  public void setEnabled(@jakarta.annotation.Nullable Boolean enabled) {
+    this.enabled = enabled;
   }
 
 
@@ -548,6 +578,7 @@ public class UpdateAlertsSourceDataAttributes {
     }
     UpdateAlertsSourceDataAttributes updateAlertsSourceDataAttributes = (UpdateAlertsSourceDataAttributes) o;
     return Objects.equals(this.name, updateAlertsSourceDataAttributes.name) &&
+        Objects.equals(this.enabled, updateAlertsSourceDataAttributes.enabled) &&
         Objects.equals(this.sourceType, updateAlertsSourceDataAttributes.sourceType) &&
         Objects.equals(this.alertUrgencyId, updateAlertsSourceDataAttributes.alertUrgencyId) &&
         Objects.equals(this.deduplicateAlertsByKey, updateAlertsSourceDataAttributes.deduplicateAlertsByKey) &&
@@ -568,7 +599,7 @@ public class UpdateAlertsSourceDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, sourceType, alertUrgencyId, deduplicateAlertsByKey, deduplicationKeyKind, deduplicationKeyPath, deduplicationKeyRegexp, ownerGroupIds, alertTemplateAttributes, alertSourceUrgencyRulesAttributes, sourceableAttributes, resolutionRuleAttributes, alertSourceFieldsAttributes);
+    return Objects.hash(name, enabled, sourceType, alertUrgencyId, deduplicateAlertsByKey, deduplicationKeyKind, deduplicationKeyPath, deduplicationKeyRegexp, ownerGroupIds, alertTemplateAttributes, alertSourceUrgencyRulesAttributes, sourceableAttributes, resolutionRuleAttributes, alertSourceFieldsAttributes);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -583,6 +614,7 @@ public class UpdateAlertsSourceDataAttributes {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdateAlertsSourceDataAttributes {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    sourceType: ").append(toIndentedString(sourceType)).append("\n");
     sb.append("    alertUrgencyId: ").append(toIndentedString(alertUrgencyId)).append("\n");
     sb.append("    deduplicateAlertsByKey: ").append(toIndentedString(deduplicateAlertsByKey)).append("\n");
@@ -618,6 +650,7 @@ public class UpdateAlertsSourceDataAttributes {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("name");
+    openapiFields.add("enabled");
     openapiFields.add("source_type");
     openapiFields.add("alert_urgency_id");
     openapiFields.add("deduplicate_alerts_by_key");

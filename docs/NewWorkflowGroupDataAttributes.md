@@ -7,6 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**slug** | **String** | Deprecated. &#x60;slug&#x60; is derived from &#x60;name&#x60; and &#x60;kind&#x60;; any submitted value is ignored. This property will be removed from the request schema in a future version. |  [optional] |
 |**kind** | [**KindEnum**](#KindEnum) | The kind of the workflow group |  [optional] |
 |**name** | **String** | The name of the workflow group. |  |
 |**description** | **String** | A description of the workflow group. |  [optional] |

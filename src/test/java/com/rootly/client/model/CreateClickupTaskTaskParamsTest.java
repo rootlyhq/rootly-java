@@ -18,6 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.AddActionItemTaskParamsPostToSlackChannelsInner;
 import com.rootly.client.model.CreateJiraIssueTaskParamsPriority;
 import java.io.IOException;
 import java.util.Arrays;
@@ -61,6 +62,14 @@ public class CreateClickupTaskTaskParamsTest {
     @Test
     public void descriptionTest() {
         // TODO: test description
+    }
+
+    /**
+     * Test the property '_list'
+     */
+    @Test
+    public void _listTest() {
+        // TODO: test _list
     }
 
     /**

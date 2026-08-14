@@ -19,9 +19,9 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.OncallRelationshipsUser;
 import com.rootly.client.model.ShiftRelationshipsAssignee;
 import com.rootly.client.model.ShiftRelationshipsShiftOverride;
-import com.rootly.client.model.ShiftRelationshipsUser;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * ShiftRelationships
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ShiftRelationships {
   public static final String SERIALIZED_NAME_SHIFT_OVERRIDE = "shift_override";
   @SerializedName(SERIALIZED_NAME_SHIFT_OVERRIDE)
@@ -61,7 +61,7 @@ public class ShiftRelationships {
   public static final String SERIALIZED_NAME_USER = "user";
   @SerializedName(SERIALIZED_NAME_USER)
   @jakarta.annotation.Nullable
-  private ShiftRelationshipsUser user;
+  private OncallRelationshipsUser user;
 
   public static final String SERIALIZED_NAME_ASSIGNEE = "assignee";
   @SerializedName(SERIALIZED_NAME_ASSIGNEE)
@@ -90,7 +90,7 @@ public class ShiftRelationships {
   }
 
 
-  public ShiftRelationships user(@jakarta.annotation.Nullable ShiftRelationshipsUser user) {
+  public ShiftRelationships user(@jakarta.annotation.Nullable OncallRelationshipsUser user) {
     this.user = user;
     return this;
   }
@@ -100,11 +100,11 @@ public class ShiftRelationships {
    * @return user
    */
   @jakarta.annotation.Nullable
-  public ShiftRelationshipsUser getUser() {
+  public OncallRelationshipsUser getUser() {
     return user;
   }
 
-  public void setUser(@jakarta.annotation.Nullable ShiftRelationshipsUser user) {
+  public void setUser(@jakarta.annotation.Nullable OncallRelationshipsUser user) {
     this.user = user;
   }
 
@@ -212,7 +212,7 @@ public class ShiftRelationships {
       }
       // validate the optional field `user`
       if (jsonObj.get("user") != null && !jsonObj.get("user").isJsonNull()) {
-        ShiftRelationshipsUser.validateJsonElement(jsonObj.get("user"));
+        OncallRelationshipsUser.validateJsonElement(jsonObj.get("user"));
       }
       // validate the optional field `assignee`
       if (jsonObj.get("assignee") != null && !jsonObj.get("assignee").isJsonNull()) {

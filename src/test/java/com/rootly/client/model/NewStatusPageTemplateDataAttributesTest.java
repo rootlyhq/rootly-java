@@ -55,6 +55,14 @@ public class NewStatusPageTemplateDataAttributesTest {
     }
 
     /**
+     * Test the property 'updateTitle'
+     */
+    @Test
+    public void updateTitleTest() {
+        // TODO: test updateTitle
+    }
+
+    /**
      * Test the property 'body'
      */
     @Test

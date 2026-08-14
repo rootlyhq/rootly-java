@@ -50,22 +50,22 @@ import com.rootly.client.JSON;
 /**
  * RotateApiKeyDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class RotateApiKeyDataAttributes {
   public static final String SERIALIZED_NAME_EXPIRES_AT = "expires_at";
   @SerializedName(SERIALIZED_NAME_EXPIRES_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private OffsetDateTime expiresAt;
 
   public static final String SERIALIZED_NAME_GRACE_PERIOD_MINUTES = "grace_period_minutes";
   @SerializedName(SERIALIZED_NAME_GRACE_PERIOD_MINUTES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer gracePeriodMinutes = 30;
 
   public RotateApiKeyDataAttributes() {
   }
 
-  public RotateApiKeyDataAttributes expiresAt(@javax.annotation.Nullable OffsetDateTime expiresAt) {
+  public RotateApiKeyDataAttributes expiresAt(@jakarta.annotation.Nullable OffsetDateTime expiresAt) {
     this.expiresAt = expiresAt;
     return this;
   }
@@ -74,17 +74,17 @@ public class RotateApiKeyDataAttributes {
    * The new expiration date after rotation (ISO 8601)
    * @return expiresAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public OffsetDateTime getExpiresAt() {
     return expiresAt;
   }
 
-  public void setExpiresAt(@javax.annotation.Nullable OffsetDateTime expiresAt) {
+  public void setExpiresAt(@jakarta.annotation.Nullable OffsetDateTime expiresAt) {
     this.expiresAt = expiresAt;
   }
 
 
-  public RotateApiKeyDataAttributes gracePeriodMinutes(@javax.annotation.Nullable Integer gracePeriodMinutes) {
+  public RotateApiKeyDataAttributes gracePeriodMinutes(@jakarta.annotation.Nullable Integer gracePeriodMinutes) {
     this.gracePeriodMinutes = gracePeriodMinutes;
     return this;
   }
@@ -95,12 +95,12 @@ public class RotateApiKeyDataAttributes {
    * maximum: 1440
    * @return gracePeriodMinutes
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getGracePeriodMinutes() {
     return gracePeriodMinutes;
   }
 
-  public void setGracePeriodMinutes(@javax.annotation.Nullable Integer gracePeriodMinutes) {
+  public void setGracePeriodMinutes(@jakarta.annotation.Nullable Integer gracePeriodMinutes) {
     this.gracePeriodMinutes = gracePeriodMinutes;
   }
 

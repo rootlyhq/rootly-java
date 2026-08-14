@@ -27,12 +27,23 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import com.rootly.client.model.BulkDeleteServices422Response;
+import com.rootly.client.model.BulkDestroyServices;
+import com.rootly.client.model.BulkDestroyServicesResponse;
+import com.rootly.client.model.BulkUpsertServices;
+import com.rootly.client.model.BulkUpsertServices422Response;
+import com.rootly.client.model.BulkUpsertServicesResponse;
+import com.rootly.client.model.CatalogPropertyList;
+import com.rootly.client.model.CatalogPropertyResponse;
 import com.rootly.client.model.ErrorsList;
 import com.rootly.client.model.GetAlertFieldIdParameter;
+import com.rootly.client.model.IncidentsChartResponse;
+import com.rootly.client.model.NewCatalogProperty;
 import com.rootly.client.model.NewService;
 import com.rootly.client.model.ServiceList;
 import com.rootly.client.model.ServiceResponse;
 import com.rootly.client.model.UpdateService;
+import com.rootly.client.model.UptimeChartResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -77,6 +88,276 @@ public class ServicesApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
+    /**
+     * Build call for bulkDeleteServices
+     * @param bulkDestroyServices  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> records deleted successfully </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> validation or partial-failure error </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call bulkDeleteServicesCall(@jakarta.annotation.Nonnull BulkDestroyServices bulkDestroyServices, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = bulkDestroyServices;
+
+        // create path and map variables
+        String localVarPath = "/v1/services/bulk_delete";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/vnd.api+json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/vnd.api+json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "bearer_auth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call bulkDeleteServicesValidateBeforeCall(@jakarta.annotation.Nonnull BulkDestroyServices bulkDestroyServices, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'bulkDestroyServices' is set
+        if (bulkDestroyServices == null) {
+            throw new ApiException("Missing the required parameter 'bulkDestroyServices' when calling bulkDeleteServices(Async)");
+        }
+
+        return bulkDeleteServicesCall(bulkDestroyServices, _callback);
+
+    }
+
+    /**
+     * Bulk delete Services
+     * Delete services by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+     * @param bulkDestroyServices  (required)
+     * @return BulkDestroyServicesResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> records deleted successfully </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> validation or partial-failure error </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
+     </table>
+     */
+    public BulkDestroyServicesResponse bulkDeleteServices(@jakarta.annotation.Nonnull BulkDestroyServices bulkDestroyServices) throws ApiException {
+        ApiResponse<BulkDestroyServicesResponse> localVarResp = bulkDeleteServicesWithHttpInfo(bulkDestroyServices);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Bulk delete Services
+     * Delete services by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+     * @param bulkDestroyServices  (required)
+     * @return ApiResponse&lt;BulkDestroyServicesResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> records deleted successfully </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> validation or partial-failure error </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<BulkDestroyServicesResponse> bulkDeleteServicesWithHttpInfo(@jakarta.annotation.Nonnull BulkDestroyServices bulkDestroyServices) throws ApiException {
+        okhttp3.Call localVarCall = bulkDeleteServicesValidateBeforeCall(bulkDestroyServices, null);
+        Type localVarReturnType = new TypeToken<BulkDestroyServicesResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Bulk delete Services (asynchronously)
+     * Delete services by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+     * @param bulkDestroyServices  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> records deleted successfully </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> validation or partial-failure error </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call bulkDeleteServicesAsync(@jakarta.annotation.Nonnull BulkDestroyServices bulkDestroyServices, final ApiCallback<BulkDestroyServicesResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = bulkDeleteServicesValidateBeforeCall(bulkDestroyServices, _callback);
+        Type localVarReturnType = new TypeToken<BulkDestroyServicesResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for bulkUpsertServices
+     * @param bulkUpsertServices  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> records upserted successfully </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> validation or record-level error </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call bulkUpsertServicesCall(@jakarta.annotation.Nonnull BulkUpsertServices bulkUpsertServices, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = bulkUpsertServices;
+
+        // create path and map variables
+        String localVarPath = "/v1/services/bulk_upsert";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/vnd.api+json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/vnd.api+json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "bearer_auth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call bulkUpsertServicesValidateBeforeCall(@jakarta.annotation.Nonnull BulkUpsertServices bulkUpsertServices, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'bulkUpsertServices' is set
+        if (bulkUpsertServices == null) {
+            throw new ApiException("Missing the required parameter 'bulkUpsertServices' when calling bulkUpsertServices(Async)");
+        }
+
+        return bulkUpsertServicesCall(bulkUpsertServices, _callback);
+
+    }
+
+    /**
+     * Bulk upsert Services
+     * Create or update multiple services by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+     * @param bulkUpsertServices  (required)
+     * @return BulkUpsertServicesResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> records upserted successfully </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> validation or record-level error </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
+     </table>
+     */
+    public BulkUpsertServicesResponse bulkUpsertServices(@jakarta.annotation.Nonnull BulkUpsertServices bulkUpsertServices) throws ApiException {
+        ApiResponse<BulkUpsertServicesResponse> localVarResp = bulkUpsertServicesWithHttpInfo(bulkUpsertServices);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Bulk upsert Services
+     * Create or update multiple services by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+     * @param bulkUpsertServices  (required)
+     * @return ApiResponse&lt;BulkUpsertServicesResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> records upserted successfully </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> validation or record-level error </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<BulkUpsertServicesResponse> bulkUpsertServicesWithHttpInfo(@jakarta.annotation.Nonnull BulkUpsertServices bulkUpsertServices) throws ApiException {
+        okhttp3.Call localVarCall = bulkUpsertServicesValidateBeforeCall(bulkUpsertServices, null);
+        Type localVarReturnType = new TypeToken<BulkUpsertServicesResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Bulk upsert Services (asynchronously)
+     * Create or update multiple services by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+     * @param bulkUpsertServices  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> records upserted successfully </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> validation or record-level error </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call bulkUpsertServicesAsync(@jakarta.annotation.Nonnull BulkUpsertServices bulkUpsertServices, final ApiCallback<BulkUpsertServicesResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = bulkUpsertServicesValidateBeforeCall(bulkUpsertServices, _callback);
+        Type localVarReturnType = new TypeToken<BulkUpsertServicesResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
     /**
      * Build call for createService
      * @param newService  (required)
@@ -209,6 +490,141 @@ public class ServicesApi {
 
         okhttp3.Call localVarCall = createServiceValidateBeforeCall(newService, _callback);
         Type localVarReturnType = new TypeToken<ServiceResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for createServiceCatalogProperty
+     * @param newCatalogProperty  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> catalog_property created ignores wrong catalog_type attribute </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> exceeds max fields per catalog </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call createServiceCatalogPropertyCall(@jakarta.annotation.Nonnull NewCatalogProperty newCatalogProperty, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = newCatalogProperty;
+
+        // create path and map variables
+        String localVarPath = "/v1/services/properties";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/vnd.api+json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/vnd.api+json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "bearer_auth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call createServiceCatalogPropertyValidateBeforeCall(@jakarta.annotation.Nonnull NewCatalogProperty newCatalogProperty, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'newCatalogProperty' is set
+        if (newCatalogProperty == null) {
+            throw new ApiException("Missing the required parameter 'newCatalogProperty' when calling createServiceCatalogProperty(Async)");
+        }
+
+        return createServiceCatalogPropertyCall(newCatalogProperty, _callback);
+
+    }
+
+    /**
+     * Creates a Catalog Property
+     * Creates a new Catalog Property from provided data
+     * @param newCatalogProperty  (required)
+     * @return CatalogPropertyResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> catalog_property created ignores wrong catalog_type attribute </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> exceeds max fields per catalog </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
+     </table>
+     */
+    public CatalogPropertyResponse createServiceCatalogProperty(@jakarta.annotation.Nonnull NewCatalogProperty newCatalogProperty) throws ApiException {
+        ApiResponse<CatalogPropertyResponse> localVarResp = createServiceCatalogPropertyWithHttpInfo(newCatalogProperty);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Creates a Catalog Property
+     * Creates a new Catalog Property from provided data
+     * @param newCatalogProperty  (required)
+     * @return ApiResponse&lt;CatalogPropertyResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> catalog_property created ignores wrong catalog_type attribute </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> exceeds max fields per catalog </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<CatalogPropertyResponse> createServiceCatalogPropertyWithHttpInfo(@jakarta.annotation.Nonnull NewCatalogProperty newCatalogProperty) throws ApiException {
+        okhttp3.Call localVarCall = createServiceCatalogPropertyValidateBeforeCall(newCatalogProperty, null);
+        Type localVarReturnType = new TypeToken<CatalogPropertyResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Creates a Catalog Property (asynchronously)
+     * Creates a new Catalog Property from provided data
+     * @param newCatalogProperty  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> catalog_property created ignores wrong catalog_type attribute </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> exceeds max fields per catalog </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call createServiceCatalogPropertyAsync(@jakarta.annotation.Nonnull NewCatalogProperty newCatalogProperty, final ApiCallback<CatalogPropertyResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = createServiceCatalogPropertyValidateBeforeCall(newCatalogProperty, _callback);
+        Type localVarReturnType = new TypeToken<CatalogPropertyResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -559,7 +975,7 @@ public class ServicesApi {
      * Get service incidents chart
      * @param id  (required)
      * @param period  (required)
-     * @return Object
+     * @return IncidentsChartResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -569,8 +985,8 @@ public class ServicesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public Object getServiceIncidentsChart(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull String period) throws ApiException {
-        ApiResponse<Object> localVarResp = getServiceIncidentsChartWithHttpInfo(id, period);
+    public IncidentsChartResponse getServiceIncidentsChart(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull String period) throws ApiException {
+        ApiResponse<IncidentsChartResponse> localVarResp = getServiceIncidentsChartWithHttpInfo(id, period);
         return localVarResp.getData();
     }
 
@@ -579,7 +995,7 @@ public class ServicesApi {
      * Get service incidents chart
      * @param id  (required)
      * @param period  (required)
-     * @return ApiResponse&lt;Object&gt;
+     * @return ApiResponse&lt;IncidentsChartResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -589,9 +1005,9 @@ public class ServicesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getServiceIncidentsChartWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull String period) throws ApiException {
+    public ApiResponse<IncidentsChartResponse> getServiceIncidentsChartWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull String period) throws ApiException {
         okhttp3.Call localVarCall = getServiceIncidentsChartValidateBeforeCall(id, period, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<IncidentsChartResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -611,10 +1027,10 @@ public class ServicesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getServiceIncidentsChartAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull String period, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getServiceIncidentsChartAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull String period, final ApiCallback<IncidentsChartResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getServiceIncidentsChartValidateBeforeCall(id, period, _callback);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<IncidentsChartResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -698,7 +1114,7 @@ public class ServicesApi {
      * Get service uptime chart
      * @param id  (required)
      * @param period  (optional)
-     * @return Object
+     * @return UptimeChartResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -708,8 +1124,8 @@ public class ServicesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public Object getServiceUptimeChart(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nullable String period) throws ApiException {
-        ApiResponse<Object> localVarResp = getServiceUptimeChartWithHttpInfo(id, period);
+    public UptimeChartResponse getServiceUptimeChart(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nullable String period) throws ApiException {
+        ApiResponse<UptimeChartResponse> localVarResp = getServiceUptimeChartWithHttpInfo(id, period);
         return localVarResp.getData();
     }
 
@@ -718,7 +1134,7 @@ public class ServicesApi {
      * Get service uptime chart
      * @param id  (required)
      * @param period  (optional)
-     * @return ApiResponse&lt;Object&gt;
+     * @return ApiResponse&lt;UptimeChartResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -728,9 +1144,9 @@ public class ServicesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getServiceUptimeChartWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nullable String period) throws ApiException {
+    public ApiResponse<UptimeChartResponse> getServiceUptimeChartWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nullable String period) throws ApiException {
         okhttp3.Call localVarCall = getServiceUptimeChartValidateBeforeCall(id, period, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<UptimeChartResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -750,10 +1166,215 @@ public class ServicesApi {
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getServiceUptimeChartAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nullable String period, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getServiceUptimeChartAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nullable String period, final ApiCallback<UptimeChartResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getServiceUptimeChartValidateBeforeCall(id, period, _callback);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<UptimeChartResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for listServiceCatalogProperties
+     * @param include comma separated if needed. eg: catalog (optional)
+     * @param sort comma separated if needed. eg: created_at,updated_at (optional)
+     * @param pageNumber  (optional)
+     * @param pageSize  (optional)
+     * @param filterSlug  (optional)
+     * @param filterName  (optional)
+     * @param filterKind  (optional)
+     * @param filterCreatedAtGt  (optional)
+     * @param filterCreatedAtGte  (optional)
+     * @param filterCreatedAtLt  (optional)
+     * @param filterCreatedAtLte  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listServiceCatalogPropertiesCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v1/services/properties";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (include != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("include", include));
+        }
+
+        if (sort != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort", sort));
+        }
+
+        if (pageNumber != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page[number]", pageNumber));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page[size]", pageSize));
+        }
+
+        if (filterSlug != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug]", filterSlug));
+        }
+
+        if (filterName != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name]", filterName));
+        }
+
+        if (filterKind != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[kind]", filterKind));
+        }
+
+        if (filterCreatedAtGt != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[created_at][gt]", filterCreatedAtGt));
+        }
+
+        if (filterCreatedAtGte != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[created_at][gte]", filterCreatedAtGte));
+        }
+
+        if (filterCreatedAtLt != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[created_at][lt]", filterCreatedAtLt));
+        }
+
+        if (filterCreatedAtLte != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[created_at][lte]", filterCreatedAtLte));
+        }
+
+        final String[] localVarAccepts = {
+            "application/vnd.api+json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "bearer_auth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listServiceCatalogPropertiesValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback _callback) throws ApiException {
+        return listServiceCatalogPropertiesCall(include, sort, pageNumber, pageSize, filterSlug, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, _callback);
+
+    }
+
+    /**
+     * List Catalog Properties
+     * List Service Catalog Properties
+     * @param include comma separated if needed. eg: catalog (optional)
+     * @param sort comma separated if needed. eg: created_at,updated_at (optional)
+     * @param pageNumber  (optional)
+     * @param pageSize  (optional)
+     * @param filterSlug  (optional)
+     * @param filterName  (optional)
+     * @param filterKind  (optional)
+     * @param filterCreatedAtGt  (optional)
+     * @param filterCreatedAtGte  (optional)
+     * @param filterCreatedAtLt  (optional)
+     * @param filterCreatedAtLte  (optional)
+     * @return CatalogPropertyList
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
+     </table>
+     */
+    public CatalogPropertyList listServiceCatalogProperties(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte) throws ApiException {
+        ApiResponse<CatalogPropertyList> localVarResp = listServiceCatalogPropertiesWithHttpInfo(include, sort, pageNumber, pageSize, filterSlug, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List Catalog Properties
+     * List Service Catalog Properties
+     * @param include comma separated if needed. eg: catalog (optional)
+     * @param sort comma separated if needed. eg: created_at,updated_at (optional)
+     * @param pageNumber  (optional)
+     * @param pageSize  (optional)
+     * @param filterSlug  (optional)
+     * @param filterName  (optional)
+     * @param filterKind  (optional)
+     * @param filterCreatedAtGt  (optional)
+     * @param filterCreatedAtGte  (optional)
+     * @param filterCreatedAtLt  (optional)
+     * @param filterCreatedAtLte  (optional)
+     * @return ApiResponse&lt;CatalogPropertyList&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<CatalogPropertyList> listServiceCatalogPropertiesWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte) throws ApiException {
+        okhttp3.Call localVarCall = listServiceCatalogPropertiesValidateBeforeCall(include, sort, pageNumber, pageSize, filterSlug, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, null);
+        Type localVarReturnType = new TypeToken<CatalogPropertyList>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List Catalog Properties (asynchronously)
+     * List Service Catalog Properties
+     * @param include comma separated if needed. eg: catalog (optional)
+     * @param sort comma separated if needed. eg: created_at,updated_at (optional)
+     * @param pageNumber  (optional)
+     * @param pageSize  (optional)
+     * @param filterSlug  (optional)
+     * @param filterName  (optional)
+     * @param filterKind  (optional)
+     * @param filterCreatedAtGt  (optional)
+     * @param filterCreatedAtGte  (optional)
+     * @param filterCreatedAtLt  (optional)
+     * @param filterCreatedAtLte  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listServiceCatalogPropertiesAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable String sort, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterKind, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, final ApiCallback<CatalogPropertyList> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listServiceCatalogPropertiesValidateBeforeCall(include, sort, pageNumber, pageSize, filterSlug, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, _callback);
+        Type localVarReturnType = new TypeToken<CatalogPropertyList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -775,6 +1396,22 @@ public class ServicesApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterAlertBroadcastEnabledEq  (optional)
+     * @param filterAlertBroadcastEnabledNotEq  (optional)
+     * @param filterAlertBroadcastEnabledIn  (optional)
+     * @param filterAlertBroadcastEnabledNotIn  (optional)
+     * @param filterIncidentBroadcastEnabledEq  (optional)
+     * @param filterIncidentBroadcastEnabledNotEq  (optional)
+     * @param filterIncidentBroadcastEnabledIn  (optional)
+     * @param filterIncidentBroadcastEnabledNotIn  (optional)
      * @param sort  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -786,7 +1423,7 @@ public class ServicesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listServicesCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterBackstageId, @jakarta.annotation.Nullable String filterCortexId, @jakarta.annotation.Nullable String filterOpslevelId, @jakarta.annotation.Nullable String filterExternalId, @jakarta.annotation.Nullable Boolean filterAlertBroadcastEnabled, @jakarta.annotation.Nullable Boolean filterIncidentBroadcastEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listServicesCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterBackstageId, @jakarta.annotation.Nullable String filterCortexId, @jakarta.annotation.Nullable String filterOpslevelId, @jakarta.annotation.Nullable String filterExternalId, @jakarta.annotation.Nullable Boolean filterAlertBroadcastEnabled, @jakarta.annotation.Nullable Boolean filterIncidentBroadcastEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterAlertBroadcastEnabledEq, @jakarta.annotation.Nullable String filterAlertBroadcastEnabledNotEq, @jakarta.annotation.Nullable String filterAlertBroadcastEnabledIn, @jakarta.annotation.Nullable String filterAlertBroadcastEnabledNotIn, @jakarta.annotation.Nullable String filterIncidentBroadcastEnabledEq, @jakarta.annotation.Nullable String filterIncidentBroadcastEnabledNotEq, @jakarta.annotation.Nullable String filterIncidentBroadcastEnabledIn, @jakarta.annotation.Nullable String filterIncidentBroadcastEnabledNotIn, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -875,6 +1512,70 @@ public class ServicesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[created_at][lte]", filterCreatedAtLte));
         }
 
+        if (filterNameEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][eq]", filterNameEq));
+        }
+
+        if (filterNameNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][not_eq]", filterNameNotEq));
+        }
+
+        if (filterNameIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][in]", filterNameIn));
+        }
+
+        if (filterNameNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][not_in]", filterNameNotIn));
+        }
+
+        if (filterSlugEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][eq]", filterSlugEq));
+        }
+
+        if (filterSlugNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][not_eq]", filterSlugNotEq));
+        }
+
+        if (filterSlugIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][in]", filterSlugIn));
+        }
+
+        if (filterSlugNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][not_in]", filterSlugNotIn));
+        }
+
+        if (filterAlertBroadcastEnabledEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[alert_broadcast_enabled][eq]", filterAlertBroadcastEnabledEq));
+        }
+
+        if (filterAlertBroadcastEnabledNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[alert_broadcast_enabled][not_eq]", filterAlertBroadcastEnabledNotEq));
+        }
+
+        if (filterAlertBroadcastEnabledIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[alert_broadcast_enabled][in]", filterAlertBroadcastEnabledIn));
+        }
+
+        if (filterAlertBroadcastEnabledNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[alert_broadcast_enabled][not_in]", filterAlertBroadcastEnabledNotIn));
+        }
+
+        if (filterIncidentBroadcastEnabledEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[incident_broadcast_enabled][eq]", filterIncidentBroadcastEnabledEq));
+        }
+
+        if (filterIncidentBroadcastEnabledNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[incident_broadcast_enabled][not_eq]", filterIncidentBroadcastEnabledNotEq));
+        }
+
+        if (filterIncidentBroadcastEnabledIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[incident_broadcast_enabled][in]", filterIncidentBroadcastEnabledIn));
+        }
+
+        if (filterIncidentBroadcastEnabledNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[incident_broadcast_enabled][not_in]", filterIncidentBroadcastEnabledNotIn));
+        }
+
         if (sort != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort", sort));
         }
@@ -899,8 +1600,8 @@ public class ServicesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listServicesValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterBackstageId, @jakarta.annotation.Nullable String filterCortexId, @jakarta.annotation.Nullable String filterOpslevelId, @jakarta.annotation.Nullable String filterExternalId, @jakarta.annotation.Nullable Boolean filterAlertBroadcastEnabled, @jakarta.annotation.Nullable Boolean filterIncidentBroadcastEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
-        return listServicesCall(include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterAlertBroadcastEnabled, filterIncidentBroadcastEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
+    private okhttp3.Call listServicesValidateBeforeCall(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterBackstageId, @jakarta.annotation.Nullable String filterCortexId, @jakarta.annotation.Nullable String filterOpslevelId, @jakarta.annotation.Nullable String filterExternalId, @jakarta.annotation.Nullable Boolean filterAlertBroadcastEnabled, @jakarta.annotation.Nullable Boolean filterIncidentBroadcastEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterAlertBroadcastEnabledEq, @jakarta.annotation.Nullable String filterAlertBroadcastEnabledNotEq, @jakarta.annotation.Nullable String filterAlertBroadcastEnabledIn, @jakarta.annotation.Nullable String filterAlertBroadcastEnabledNotIn, @jakarta.annotation.Nullable String filterIncidentBroadcastEnabledEq, @jakarta.annotation.Nullable String filterIncidentBroadcastEnabledNotEq, @jakarta.annotation.Nullable String filterIncidentBroadcastEnabledIn, @jakarta.annotation.Nullable String filterIncidentBroadcastEnabledNotIn, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+        return listServicesCall(include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterAlertBroadcastEnabled, filterIncidentBroadcastEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterAlertBroadcastEnabledEq, filterAlertBroadcastEnabledNotEq, filterAlertBroadcastEnabledIn, filterAlertBroadcastEnabledNotIn, filterIncidentBroadcastEnabledEq, filterIncidentBroadcastEnabledNotEq, filterIncidentBroadcastEnabledIn, filterIncidentBroadcastEnabledNotIn, sort, _callback);
 
     }
 
@@ -923,6 +1624,22 @@ public class ServicesApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterAlertBroadcastEnabledEq  (optional)
+     * @param filterAlertBroadcastEnabledNotEq  (optional)
+     * @param filterAlertBroadcastEnabledIn  (optional)
+     * @param filterAlertBroadcastEnabledNotIn  (optional)
+     * @param filterIncidentBroadcastEnabledEq  (optional)
+     * @param filterIncidentBroadcastEnabledNotEq  (optional)
+     * @param filterIncidentBroadcastEnabledIn  (optional)
+     * @param filterIncidentBroadcastEnabledNotIn  (optional)
      * @param sort  (optional)
      * @return ServiceList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -933,8 +1650,8 @@ public class ServicesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ServiceList listServices(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterBackstageId, @jakarta.annotation.Nullable String filterCortexId, @jakarta.annotation.Nullable String filterOpslevelId, @jakarta.annotation.Nullable String filterExternalId, @jakarta.annotation.Nullable Boolean filterAlertBroadcastEnabled, @jakarta.annotation.Nullable Boolean filterIncidentBroadcastEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
-        ApiResponse<ServiceList> localVarResp = listServicesWithHttpInfo(include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterAlertBroadcastEnabled, filterIncidentBroadcastEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
+    public ServiceList listServices(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterBackstageId, @jakarta.annotation.Nullable String filterCortexId, @jakarta.annotation.Nullable String filterOpslevelId, @jakarta.annotation.Nullable String filterExternalId, @jakarta.annotation.Nullable Boolean filterAlertBroadcastEnabled, @jakarta.annotation.Nullable Boolean filterIncidentBroadcastEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterAlertBroadcastEnabledEq, @jakarta.annotation.Nullable String filterAlertBroadcastEnabledNotEq, @jakarta.annotation.Nullable String filterAlertBroadcastEnabledIn, @jakarta.annotation.Nullable String filterAlertBroadcastEnabledNotIn, @jakarta.annotation.Nullable String filterIncidentBroadcastEnabledEq, @jakarta.annotation.Nullable String filterIncidentBroadcastEnabledNotEq, @jakarta.annotation.Nullable String filterIncidentBroadcastEnabledIn, @jakarta.annotation.Nullable String filterIncidentBroadcastEnabledNotIn, @jakarta.annotation.Nullable String sort) throws ApiException {
+        ApiResponse<ServiceList> localVarResp = listServicesWithHttpInfo(include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterAlertBroadcastEnabled, filterIncidentBroadcastEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterAlertBroadcastEnabledEq, filterAlertBroadcastEnabledNotEq, filterAlertBroadcastEnabledIn, filterAlertBroadcastEnabledNotIn, filterIncidentBroadcastEnabledEq, filterIncidentBroadcastEnabledNotEq, filterIncidentBroadcastEnabledIn, filterIncidentBroadcastEnabledNotIn, sort);
         return localVarResp.getData();
     }
 
@@ -957,6 +1674,22 @@ public class ServicesApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterAlertBroadcastEnabledEq  (optional)
+     * @param filterAlertBroadcastEnabledNotEq  (optional)
+     * @param filterAlertBroadcastEnabledIn  (optional)
+     * @param filterAlertBroadcastEnabledNotIn  (optional)
+     * @param filterIncidentBroadcastEnabledEq  (optional)
+     * @param filterIncidentBroadcastEnabledNotEq  (optional)
+     * @param filterIncidentBroadcastEnabledIn  (optional)
+     * @param filterIncidentBroadcastEnabledNotIn  (optional)
      * @param sort  (optional)
      * @return ApiResponse&lt;ServiceList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -967,8 +1700,8 @@ public class ServicesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ServiceList> listServicesWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterBackstageId, @jakarta.annotation.Nullable String filterCortexId, @jakarta.annotation.Nullable String filterOpslevelId, @jakarta.annotation.Nullable String filterExternalId, @jakarta.annotation.Nullable Boolean filterAlertBroadcastEnabled, @jakarta.annotation.Nullable Boolean filterIncidentBroadcastEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort) throws ApiException {
-        okhttp3.Call localVarCall = listServicesValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterAlertBroadcastEnabled, filterIncidentBroadcastEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, null);
+    public ApiResponse<ServiceList> listServicesWithHttpInfo(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterBackstageId, @jakarta.annotation.Nullable String filterCortexId, @jakarta.annotation.Nullable String filterOpslevelId, @jakarta.annotation.Nullable String filterExternalId, @jakarta.annotation.Nullable Boolean filterAlertBroadcastEnabled, @jakarta.annotation.Nullable Boolean filterIncidentBroadcastEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterAlertBroadcastEnabledEq, @jakarta.annotation.Nullable String filterAlertBroadcastEnabledNotEq, @jakarta.annotation.Nullable String filterAlertBroadcastEnabledIn, @jakarta.annotation.Nullable String filterAlertBroadcastEnabledNotIn, @jakarta.annotation.Nullable String filterIncidentBroadcastEnabledEq, @jakarta.annotation.Nullable String filterIncidentBroadcastEnabledNotEq, @jakarta.annotation.Nullable String filterIncidentBroadcastEnabledIn, @jakarta.annotation.Nullable String filterIncidentBroadcastEnabledNotIn, @jakarta.annotation.Nullable String sort) throws ApiException {
+        okhttp3.Call localVarCall = listServicesValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterAlertBroadcastEnabled, filterIncidentBroadcastEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterAlertBroadcastEnabledEq, filterAlertBroadcastEnabledNotEq, filterAlertBroadcastEnabledIn, filterAlertBroadcastEnabledNotIn, filterIncidentBroadcastEnabledEq, filterIncidentBroadcastEnabledNotEq, filterIncidentBroadcastEnabledIn, filterIncidentBroadcastEnabledNotIn, sort, null);
         Type localVarReturnType = new TypeToken<ServiceList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -992,6 +1725,22 @@ public class ServicesApi {
      * @param filterCreatedAtGte  (optional)
      * @param filterCreatedAtLt  (optional)
      * @param filterCreatedAtLte  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterAlertBroadcastEnabledEq  (optional)
+     * @param filterAlertBroadcastEnabledNotEq  (optional)
+     * @param filterAlertBroadcastEnabledIn  (optional)
+     * @param filterAlertBroadcastEnabledNotIn  (optional)
+     * @param filterIncidentBroadcastEnabledEq  (optional)
+     * @param filterIncidentBroadcastEnabledNotEq  (optional)
+     * @param filterIncidentBroadcastEnabledIn  (optional)
+     * @param filterIncidentBroadcastEnabledNotIn  (optional)
      * @param sort  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1003,9 +1752,9 @@ public class ServicesApi {
         <tr><td> 200 </td><td> success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listServicesAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterBackstageId, @jakarta.annotation.Nullable String filterCortexId, @jakarta.annotation.Nullable String filterOpslevelId, @jakarta.annotation.Nullable String filterExternalId, @jakarta.annotation.Nullable Boolean filterAlertBroadcastEnabled, @jakarta.annotation.Nullable Boolean filterIncidentBroadcastEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String sort, final ApiCallback<ServiceList> _callback) throws ApiException {
+    public okhttp3.Call listServicesAsync(@jakarta.annotation.Nullable String include, @jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlug, @jakarta.annotation.Nullable String filterBackstageId, @jakarta.annotation.Nullable String filterCortexId, @jakarta.annotation.Nullable String filterOpslevelId, @jakarta.annotation.Nullable String filterExternalId, @jakarta.annotation.Nullable Boolean filterAlertBroadcastEnabled, @jakarta.annotation.Nullable Boolean filterIncidentBroadcastEnabled, @jakarta.annotation.Nullable String filterCreatedAtGt, @jakarta.annotation.Nullable String filterCreatedAtGte, @jakarta.annotation.Nullable String filterCreatedAtLt, @jakarta.annotation.Nullable String filterCreatedAtLte, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterAlertBroadcastEnabledEq, @jakarta.annotation.Nullable String filterAlertBroadcastEnabledNotEq, @jakarta.annotation.Nullable String filterAlertBroadcastEnabledIn, @jakarta.annotation.Nullable String filterAlertBroadcastEnabledNotIn, @jakarta.annotation.Nullable String filterIncidentBroadcastEnabledEq, @jakarta.annotation.Nullable String filterIncidentBroadcastEnabledNotEq, @jakarta.annotation.Nullable String filterIncidentBroadcastEnabledIn, @jakarta.annotation.Nullable String filterIncidentBroadcastEnabledNotIn, @jakarta.annotation.Nullable String sort, final ApiCallback<ServiceList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listServicesValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterAlertBroadcastEnabled, filterIncidentBroadcastEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort, _callback);
+        okhttp3.Call localVarCall = listServicesValidateBeforeCall(include, pageNumber, pageSize, filterSearch, filterName, filterSlug, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterAlertBroadcastEnabled, filterIncidentBroadcastEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterAlertBroadcastEnabledEq, filterAlertBroadcastEnabledNotEq, filterAlertBroadcastEnabledIn, filterAlertBroadcastEnabledNotIn, filterIncidentBroadcastEnabledEq, filterIncidentBroadcastEnabledNotEq, filterIncidentBroadcastEnabledIn, filterIncidentBroadcastEnabledNotIn, sort, _callback);
         Type localVarReturnType = new TypeToken<ServiceList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

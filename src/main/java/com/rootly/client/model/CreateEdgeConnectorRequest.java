@@ -49,17 +49,17 @@ import com.rootly.client.JSON;
 /**
  * CreateEdgeConnectorRequest
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateEdgeConnectorRequest {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private CreateEdgeConnectorRequestData data;
 
   public CreateEdgeConnectorRequest() {
   }
 
-  public CreateEdgeConnectorRequest data(@javax.annotation.Nonnull CreateEdgeConnectorRequestData data) {
+  public CreateEdgeConnectorRequest data(@jakarta.annotation.Nonnull CreateEdgeConnectorRequestData data) {
     this.data = data;
     return this;
   }
@@ -68,12 +68,12 @@ public class CreateEdgeConnectorRequest {
    * Get data
    * @return data
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public CreateEdgeConnectorRequestData getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nonnull CreateEdgeConnectorRequestData data) {
+  public void setData(@jakarta.annotation.Nonnull CreateEdgeConnectorRequestData data) {
     this.data = data;
   }
 

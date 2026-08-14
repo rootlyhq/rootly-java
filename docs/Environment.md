@@ -8,15 +8,33 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**name** | **String** | The name of the environment |  |
-|**slug** | **String** | The slug of the environment |  [optional] |
+|**slug** | **String** | The slug of the environment |  [optional] [readonly] |
+|**managedBy** | [**ManagedByEnum**](#ManagedByEnum) | How this environment is managed (provenance): web, api, terraform, etc. Read-only. |  [optional] |
+|**externalId** | **String** | The external id associated to this environment |  [optional] |
 |**description** | **String** | The description of the environment |  [optional] |
+|**publicDescription** | **String** | The status page description of the environment |  [optional] |
 |**notifyEmails** | **List&lt;String&gt;** | Emails attached to the environment |  [optional] |
 |**color** | **String** | The hex color of the environment |  [optional] |
 |**position** | **Integer** | Position of the environment |  [optional] |
 |**slackChannels** | [**List&lt;NewEnvironmentDataAttributesSlackChannelsInner&gt;**](NewEnvironmentDataAttributesSlackChannelsInner.md) | Slack Channels associated with this environment |  [optional] |
 |**slackAliases** | [**List&lt;NewEnvironmentDataAttributesSlackAliasesInner&gt;**](NewEnvironmentDataAttributesSlackAliasesInner.md) | Slack Aliases associated with this environment |  [optional] |
+|**properties** | [**List&lt;NewCauseDataAttributesPropertiesInner&gt;**](NewCauseDataAttributesPropertiesInner.md) | Array of property values for this environment. |  [optional] |
 |**createdAt** | **String** | Date of creation |  |
 |**updatedAt** | **String** | Date of last update |  |
+
+
+
+## Enum: ManagedByEnum
+
+| Name | Value |
+|---- | -----|
+| WEB | &quot;web&quot; |
+| ADMIN_WEB | &quot;admin_web&quot; |
+| API | &quot;api&quot; |
+| TERRAFORM | &quot;terraform&quot; |
+| PULUMI | &quot;pulumi&quot; |
+| BACKSTAGE | &quot;backstage&quot; |
+| CATALOG_SYNC | &quot;catalog_sync&quot; |
 
 
 

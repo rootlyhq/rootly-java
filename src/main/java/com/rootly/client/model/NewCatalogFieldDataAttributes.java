@@ -49,8 +49,14 @@ import com.rootly.client.JSON;
 /**
  * NewCatalogFieldDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewCatalogFieldDataAttributes {
+  public static final String SERIALIZED_NAME_SLUG = "slug";
+  @Deprecated
+  @SerializedName(SERIALIZED_NAME_SLUG)
+  @jakarta.annotation.Nullable
+  private String slug;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @jakarta.annotation.Nonnull
@@ -63,7 +69,23 @@ public class NewCatalogFieldDataAttributes {
   public enum KindEnum {
     TEXT("text"),
     
-    REFERENCE("reference");
+    REFERENCE("reference"),
+    
+    BOOLEAN("boolean"),
+    
+    SERVICE("service"),
+    
+    FUNCTIONALITY("functionality"),
+    
+    ENVIRONMENT("environment"),
+    
+    GROUP("group"),
+    
+    CAUSE("cause"),
+    
+    INCIDENT_TYPE("incident_type"),
+    
+    USER("user");
 
     private String value;
 
@@ -128,8 +150,108 @@ public class NewCatalogFieldDataAttributes {
   @jakarta.annotation.Nullable
   private Integer position;
 
+  public static final String SERIALIZED_NAME_REQUIRED = "required";
+  @SerializedName(SERIALIZED_NAME_REQUIRED)
+  @jakarta.annotation.Nullable
+  private Boolean required;
+
+  /**
+   * The type of catalog the field belongs to.
+   */
+  @JsonAdapter(CatalogTypeEnum.Adapter.class)
+  public enum CatalogTypeEnum {
+    CATALOG("catalog"),
+    
+    CAUSE("cause"),
+    
+    ENVIRONMENT("environment"),
+    
+    FUNCTIONALITY("functionality"),
+    
+    INCIDENT_TYPE("incident_type"),
+    
+    SERVICE("service"),
+    
+    TEAM("team");
+
+    private String value;
+
+    CatalogTypeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static CatalogTypeEnum fromValue(String value) {
+      for (CatalogTypeEnum b : CatalogTypeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<CatalogTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final CatalogTypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public CatalogTypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return CatalogTypeEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      CatalogTypeEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_CATALOG_TYPE = "catalog_type";
+  @SerializedName(SERIALIZED_NAME_CATALOG_TYPE)
+  @jakarta.annotation.Nullable
+  private CatalogTypeEnum catalogType;
+
+  public static final String SERIALIZED_NAME_EXTERNAL_ID = "external_id";
+  @SerializedName(SERIALIZED_NAME_EXTERNAL_ID)
+  @jakarta.annotation.Nullable
+  private String externalId;
+
   public NewCatalogFieldDataAttributes() {
   }
+
+  @Deprecated
+  public NewCatalogFieldDataAttributes slug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+    return this;
+  }
+
+  /**
+   * Deprecated. &#x60;slug&#x60; is derived from &#x60;name&#x60;; any submitted value is ignored. This property will be removed from the request schema in a future version.
+   * @return slug
+   * @deprecated
+   */
+  @Deprecated
+  @jakarta.annotation.Nullable
+  public String getSlug() {
+    return slug;
+  }
+
+  @Deprecated
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+  }
+
 
   public NewCatalogFieldDataAttributes name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
@@ -226,6 +348,63 @@ public class NewCatalogFieldDataAttributes {
   }
 
 
+  public NewCatalogFieldDataAttributes required(@jakarta.annotation.Nullable Boolean required) {
+    this.required = required;
+    return this;
+  }
+
+  /**
+   * Whether the field is required.
+   * @return required
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getRequired() {
+    return required;
+  }
+
+  public void setRequired(@jakarta.annotation.Nullable Boolean required) {
+    this.required = required;
+  }
+
+
+  public NewCatalogFieldDataAttributes catalogType(@jakarta.annotation.Nullable CatalogTypeEnum catalogType) {
+    this.catalogType = catalogType;
+    return this;
+  }
+
+  /**
+   * The type of catalog the field belongs to.
+   * @return catalogType
+   */
+  @jakarta.annotation.Nullable
+  public CatalogTypeEnum getCatalogType() {
+    return catalogType;
+  }
+
+  public void setCatalogType(@jakarta.annotation.Nullable CatalogTypeEnum catalogType) {
+    this.catalogType = catalogType;
+  }
+
+
+  public NewCatalogFieldDataAttributes externalId(@jakarta.annotation.Nullable String externalId) {
+    this.externalId = externalId;
+    return this;
+  }
+
+  /**
+   * An external identifier for this catalog field. Must be unique within the scope.
+   * @return externalId
+   */
+  @jakarta.annotation.Nullable
+  public String getExternalId() {
+    return externalId;
+  }
+
+  public void setExternalId(@jakarta.annotation.Nullable String externalId) {
+    this.externalId = externalId;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -236,11 +415,15 @@ public class NewCatalogFieldDataAttributes {
       return false;
     }
     NewCatalogFieldDataAttributes newCatalogFieldDataAttributes = (NewCatalogFieldDataAttributes) o;
-    return Objects.equals(this.name, newCatalogFieldDataAttributes.name) &&
+    return Objects.equals(this.slug, newCatalogFieldDataAttributes.slug) &&
+        Objects.equals(this.name, newCatalogFieldDataAttributes.name) &&
         Objects.equals(this.kind, newCatalogFieldDataAttributes.kind) &&
         Objects.equals(this.kindCatalogId, newCatalogFieldDataAttributes.kindCatalogId) &&
         Objects.equals(this.multiple, newCatalogFieldDataAttributes.multiple) &&
-        Objects.equals(this.position, newCatalogFieldDataAttributes.position);
+        Objects.equals(this.position, newCatalogFieldDataAttributes.position) &&
+        Objects.equals(this.required, newCatalogFieldDataAttributes.required) &&
+        Objects.equals(this.catalogType, newCatalogFieldDataAttributes.catalogType) &&
+        Objects.equals(this.externalId, newCatalogFieldDataAttributes.externalId);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -249,7 +432,7 @@ public class NewCatalogFieldDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, kind, kindCatalogId, multiple, position);
+    return Objects.hash(slug, name, kind, kindCatalogId, multiple, position, required, catalogType, externalId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -263,11 +446,15 @@ public class NewCatalogFieldDataAttributes {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class NewCatalogFieldDataAttributes {\n");
+    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
     sb.append("    kindCatalogId: ").append(toIndentedString(kindCatalogId)).append("\n");
     sb.append("    multiple: ").append(toIndentedString(multiple)).append("\n");
     sb.append("    position: ").append(toIndentedString(position)).append("\n");
+    sb.append("    required: ").append(toIndentedString(required)).append("\n");
+    sb.append("    catalogType: ").append(toIndentedString(catalogType)).append("\n");
+    sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -290,11 +477,15 @@ public class NewCatalogFieldDataAttributes {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("slug");
     openapiFields.add("name");
     openapiFields.add("kind");
     openapiFields.add("kind_catalog_id");
     openapiFields.add("multiple");
     openapiFields.add("position");
+    openapiFields.add("required");
+    openapiFields.add("catalog_type");
+    openapiFields.add("external_id");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -330,6 +521,9 @@ public class NewCatalogFieldDataAttributes {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
+      }
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
@@ -340,6 +534,16 @@ public class NewCatalogFieldDataAttributes {
       KindEnum.validateJsonElement(jsonObj.get("kind"));
       if ((jsonObj.get("kind_catalog_id") != null && !jsonObj.get("kind_catalog_id").isJsonNull()) && !jsonObj.get("kind_catalog_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `kind_catalog_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind_catalog_id").toString()));
+      }
+      if ((jsonObj.get("catalog_type") != null && !jsonObj.get("catalog_type").isJsonNull()) && !jsonObj.get("catalog_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `catalog_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("catalog_type").toString()));
+      }
+      // validate the optional field `catalog_type`
+      if (jsonObj.get("catalog_type") != null && !jsonObj.get("catalog_type").isJsonNull()) {
+        CatalogTypeEnum.validateJsonElement(jsonObj.get("catalog_type"));
+      }
+      if ((jsonObj.get("external_id") != null && !jsonObj.get("external_id").isJsonNull()) && !jsonObj.get("external_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `external_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("external_id").toString()));
       }
   }
 

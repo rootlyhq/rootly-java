@@ -111,6 +111,22 @@ public class CatalogPropertyTest {
     }
 
     /**
+     * Test the property 'externalId'
+     */
+    @Test
+    public void externalIdTest() {
+        // TODO: test externalId
+    }
+
+    /**
+     * Test the property 'managedBy'
+     */
+    @Test
+    public void managedByTest() {
+        // TODO: test managedBy
+    }
+
+    /**
      * Test the property 'createdAt'
      */
     @Test

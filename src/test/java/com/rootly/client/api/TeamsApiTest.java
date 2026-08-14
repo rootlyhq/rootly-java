@@ -14,8 +14,18 @@
 package com.rootly.client.api;
 
 import com.rootly.client.ApiException;
+import com.rootly.client.model.BulkDeleteGroups422Response;
+import com.rootly.client.model.BulkDestroyTeams;
+import com.rootly.client.model.BulkDestroyTeamsResponse;
+import com.rootly.client.model.BulkUpsertGroups422Response;
+import com.rootly.client.model.BulkUpsertTeams;
+import com.rootly.client.model.BulkUpsertTeamsResponse;
+import com.rootly.client.model.CatalogPropertyList;
+import com.rootly.client.model.CatalogPropertyResponse;
 import com.rootly.client.model.ErrorsList;
 import com.rootly.client.model.GetTeamIdParameter;
+import com.rootly.client.model.IncidentsChartResponse;
+import com.rootly.client.model.NewCatalogProperty;
 import com.rootly.client.model.NewTeam;
 import com.rootly.client.model.TeamList;
 import com.rootly.client.model.TeamResponse;
@@ -35,6 +45,48 @@ import java.util.Map;
 public class TeamsApiTest {
 
     private final TeamsApi api = new TeamsApi();
+
+    /**
+     * Bulk delete Teams
+     *
+     * Delete teams by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void bulkDeleteGroupsTest() throws ApiException {
+        BulkDestroyTeams bulkDestroyTeams = null;
+        BulkDestroyTeamsResponse response = api.bulkDeleteGroups(bulkDestroyTeams);
+        // TODO: test validations
+    }
+
+    /**
+     * Bulk upsert Teams
+     *
+     * Create or update multiple teams by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void bulkUpsertGroupsTest() throws ApiException {
+        BulkUpsertTeams bulkUpsertTeams = null;
+        BulkUpsertTeamsResponse response = api.bulkUpsertGroups(bulkUpsertTeams);
+        // TODO: test validations
+    }
+
+    /**
+     * Creates a Catalog Property
+     *
+     * Creates a new Catalog Property from provided data
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void createGroupCatalogPropertyTest() throws ApiException {
+        NewCatalogProperty newCatalogProperty = null;
+        CatalogPropertyResponse response = api.createGroupCatalogProperty(newCatalogProperty);
+        // TODO: test validations
+    }
 
     /**
      * Creates a team
@@ -90,7 +142,31 @@ public class TeamsApiTest {
     public void getTeamIncidentsChartTest() throws ApiException {
         String id = null;
         String period = null;
-        Object response = api.getTeamIncidentsChart(id, period);
+        IncidentsChartResponse response = api.getTeamIncidentsChart(id, period);
+        // TODO: test validations
+    }
+
+    /**
+     * List Catalog Properties
+     *
+     * List Group Catalog Properties
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void listGroupCatalogPropertiesTest() throws ApiException {
+        String include = null;
+        String sort = null;
+        Integer pageNumber = null;
+        Integer pageSize = null;
+        String filterSlug = null;
+        String filterName = null;
+        String filterKind = null;
+        String filterCreatedAtGt = null;
+        String filterCreatedAtGte = null;
+        String filterCreatedAtLt = null;
+        String filterCreatedAtLte = null;
+        CatalogPropertyList response = api.listGroupCatalogProperties(include, sort, pageNumber, pageSize, filterSlug, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
         // TODO: test validations
     }
 
@@ -120,8 +196,28 @@ public class TeamsApiTest {
         String filterCreatedAtGte = null;
         String filterCreatedAtLt = null;
         String filterCreatedAtLte = null;
+        String filterSlugEq = null;
+        String filterSlugNotEq = null;
+        String filterSlugIn = null;
+        String filterSlugNotIn = null;
+        String filterNameEq = null;
+        String filterNameNotEq = null;
+        String filterNameIn = null;
+        String filterNameNotIn = null;
+        String filterColorEq = null;
+        String filterColorNotEq = null;
+        String filterColorIn = null;
+        String filterColorNotIn = null;
+        String filterAlertBroadcastEnabledEq = null;
+        String filterAlertBroadcastEnabledNotEq = null;
+        String filterAlertBroadcastEnabledIn = null;
+        String filterAlertBroadcastEnabledNotIn = null;
+        String filterIncidentBroadcastEnabledEq = null;
+        String filterIncidentBroadcastEnabledNotEq = null;
+        String filterIncidentBroadcastEnabledIn = null;
+        String filterIncidentBroadcastEnabledNotIn = null;
         String sort = null;
-        TeamList response = api.listTeams(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterColor, filterAlertBroadcastEnabled, filterIncidentBroadcastEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
+        TeamList response = api.listTeams(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterColor, filterAlertBroadcastEnabled, filterIncidentBroadcastEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterColorEq, filterColorNotEq, filterColorIn, filterColorNotIn, filterAlertBroadcastEnabledEq, filterAlertBroadcastEnabledNotEq, filterAlertBroadcastEnabledIn, filterAlertBroadcastEnabledNotIn, filterIncidentBroadcastEnabledEq, filterIncidentBroadcastEnabledNotEq, filterIncidentBroadcastEnabledIn, filterIncidentBroadcastEnabledNotIn, sort);
         // TODO: test validations
     }
 

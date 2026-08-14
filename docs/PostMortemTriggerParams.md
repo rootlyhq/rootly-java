@@ -26,6 +26,9 @@
 |**incidentConditionFunctionality** | [**IncidentConditionFunctionalityEnum**](#IncidentConditionFunctionalityEnum) |  |  [optional] |
 |**incidentConditionGroup** | [**IncidentConditionGroupEnum**](#IncidentConditionGroupEnum) |  |  [optional] |
 |**incidentConditionCause** | [**IncidentConditionCauseEnum**](#IncidentConditionCauseEnum) |  |  [optional] |
+|**incidentConditionLabel** | [**IncidentConditionLabelEnum**](#IncidentConditionLabelEnum) |  |  [optional] |
+|**incidentConditionLabelUseRegexp** | **Boolean** |  |  [optional] |
+|**incidentLabels** | **List&lt;String&gt;** |  |  [optional] |
 |**incidentPostMortemConditionCause** | [**IncidentPostMortemConditionCauseEnum**](#IncidentPostMortemConditionCauseEnum) | [DEPRECATED] Use incident_condition_cause instead |  [optional] |
 |**incidentConditionSummary** | [**IncidentConditionSummaryEnum**](#IncidentConditionSummaryEnum) |  |  [optional] |
 |**incidentConditionStartedAt** | [**IncidentConditionStartedAtEnum**](#IncidentConditionStartedAtEnum) |  |  [optional] |
@@ -269,6 +272,22 @@
 
 
 ## Enum: IncidentConditionCauseEnum
+
+| Name | Value |
+|---- | -----|
+| IS | &quot;IS&quot; |
+| IS_NOT | &quot;IS NOT&quot; |
+| ANY | &quot;ANY&quot; |
+| CONTAINS | &quot;CONTAINS&quot; |
+| CONTAINS_ALL | &quot;CONTAINS_ALL&quot; |
+| CONTAINS_NONE | &quot;CONTAINS_NONE&quot; |
+| NONE | &quot;NONE&quot; |
+| SET | &quot;SET&quot; |
+| UNSET | &quot;UNSET&quot; |
+
+
+
+## Enum: IncidentConditionLabelEnum
 
 | Name | Value |
 |---- | -----|

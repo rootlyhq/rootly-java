@@ -18,8 +18,11 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewCauseDataAttributesPropertiesInner;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -63,11 +66,27 @@ public class CauseTest {
     }
 
     /**
+     * Test the property 'publicDescription'
+     */
+    @Test
+    public void publicDescriptionTest() {
+        // TODO: test publicDescription
+    }
+
+    /**
      * Test the property 'position'
      */
     @Test
     public void positionTest() {
         // TODO: test position
+    }
+
+    /**
+     * Test the property 'properties'
+     */
+    @Test
+    public void propertiesTest() {
+        // TODO: test properties
     }
 
     /**

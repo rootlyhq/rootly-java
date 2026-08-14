@@ -19,6 +19,7 @@ import com.rootly.client.model.AlertRouteResponse;
 import com.rootly.client.model.DeleteAlertRoute200Response;
 import com.rootly.client.model.ErrorsList;
 import com.rootly.client.model.NewAlertRoute;
+import com.rootly.client.model.PatchAlertRoute;
 import com.rootly.client.model.UpdateAlertRoute;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -67,7 +68,7 @@ public class AlertRoutesApiTest {
     /**
      * Get an alert route
      *
-     * Get a specific alert route by id. **Note: This endpoint requires access to Advanced Alert Routing. If you&#39;re unsure whether you have access to this feature, please contact Rootly customer support.**
+     * Get a specific alert route by id. **Note: This endpoint requires access to Advanced Alert Routing. If you&#39;re unsure whether you have access to this feature, please contact Rootly customer support.**  ## Optional Parameters  - **show_nested_ids** (query parameter): When set to &#x60;true&#x60;, the response will include IDs for all nested resources (destinations, condition_groups, conditions). This is useful when you need to reference these nested resources for updates or deletions via PATCH requests.  Example: &#x60;GET /v1/alert_routes/{id}?show_nested_ids&#x3D;true&#x60;
      *
      * @throws ApiException if the Api call fails
      */
@@ -91,15 +92,38 @@ public class AlertRoutesApiTest {
         Integer pageSize = null;
         String filterSearch = null;
         String filterName = null;
+        String filterSlugEq = null;
+        String filterSlugNotEq = null;
+        String filterSlugIn = null;
+        String filterSlugNotIn = null;
+        String filterNameEq = null;
+        String filterNameNotEq = null;
+        String filterNameIn = null;
+        String filterNameNotIn = null;
         String sort = null;
-        AlertRouteList response = api.listAlertRoutes(pageNumber, pageSize, filterSearch, filterName, sort);
+        AlertRouteList response = api.listAlertRoutes(pageNumber, pageSize, filterSearch, filterName, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, sort);
         // TODO: test validations
     }
 
     /**
      * Update an alert route
      *
-     * Update a specific alert route by id. **Note: This endpoint requires access to Advanced Alert Routing. If you&#39;re unsure whether you have access to this feature, please contact Rootly customer support.**  ## Asynchronous Rule Creation  For organizations with large numbers of routing rules, Rootly supports asynchronous rule processing to improve performance. When enabled, rule updates happen in the background.  **Important**: When async processing is enabled, the rules list in the API response will not be up-to-date immediately after update. You should refetch the alert route after a few minutes to get the updated rules.  If you experience slow operations when managing alert routes with many rules, contact Rootly customer support to enable asynchronous rule processing for your organization.
+     * Updates an alert route. **Note: This endpoint requires access to Advanced Alert Routing. If you&#39;re unsure whether you have access to this feature, please contact Rootly customer support.**
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void patchAlertRouteTest() throws ApiException {
+        String id = null;
+        PatchAlertRoute patchAlertRoute = null;
+        AlertRouteResponse response = api.patchAlertRoute(id, patchAlertRoute);
+        // TODO: test validations
+    }
+
+    /**
+     * Update an alert route
+     *
+     * Update a specific alert route by id. **Note: This endpoint requires access to Advanced Alert Routing. If you&#39;re unsure whether you have access to this feature, please contact Rootly customer support.**  ### Asynchronous Rule Creation  For organizations with large numbers of routing rules, Rootly supports asynchronous rule processing to improve performance. When enabled, rule updates happen in the background.  **Important**: When async processing is enabled, the rules list in the API response will not be up-to-date immediately after update. You should refetch the alert route after a few minutes to get the updated rules.  If you experience slow operations when managing alert routes with many rules, contact Rootly customer support to enable asynchronous rule processing for your organization.
      *
      * @throws ApiException if the Api call fails
      */

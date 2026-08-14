@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * CatalogChecklistTemplateFieldsInner
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CatalogChecklistTemplateFieldsInner {
   /**
    * Source of the field
@@ -105,23 +105,23 @@ public class CatalogChecklistTemplateFieldsInner {
 
   public static final String SERIALIZED_NAME_FIELD_SOURCE = "field_source";
   @SerializedName(SERIALIZED_NAME_FIELD_SOURCE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private FieldSourceEnum fieldSource;
 
   public static final String SERIALIZED_NAME_FIELD_KEY = "field_key";
   @SerializedName(SERIALIZED_NAME_FIELD_KEY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String fieldKey;
 
   public static final String SERIALIZED_NAME_CATALOG_PROPERTY_ID = "catalog_property_id";
   @SerializedName(SERIALIZED_NAME_CATALOG_PROPERTY_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String catalogPropertyId;
 
   public CatalogChecklistTemplateFieldsInner() {
   }
 
-  public CatalogChecklistTemplateFieldsInner fieldSource(@javax.annotation.Nullable FieldSourceEnum fieldSource) {
+  public CatalogChecklistTemplateFieldsInner fieldSource(@jakarta.annotation.Nullable FieldSourceEnum fieldSource) {
     this.fieldSource = fieldSource;
     return this;
   }
@@ -130,17 +130,17 @@ public class CatalogChecklistTemplateFieldsInner {
    * Source of the field
    * @return fieldSource
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public FieldSourceEnum getFieldSource() {
     return fieldSource;
   }
 
-  public void setFieldSource(@javax.annotation.Nullable FieldSourceEnum fieldSource) {
+  public void setFieldSource(@jakarta.annotation.Nullable FieldSourceEnum fieldSource) {
     this.fieldSource = fieldSource;
   }
 
 
-  public CatalogChecklistTemplateFieldsInner fieldKey(@javax.annotation.Nullable String fieldKey) {
+  public CatalogChecklistTemplateFieldsInner fieldKey(@jakarta.annotation.Nullable String fieldKey) {
     this.fieldKey = fieldKey;
     return this;
   }
@@ -149,17 +149,17 @@ public class CatalogChecklistTemplateFieldsInner {
    * Key identifying the field
    * @return fieldKey
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getFieldKey() {
     return fieldKey;
   }
 
-  public void setFieldKey(@javax.annotation.Nullable String fieldKey) {
+  public void setFieldKey(@jakarta.annotation.Nullable String fieldKey) {
     this.fieldKey = fieldKey;
   }
 
 
-  public CatalogChecklistTemplateFieldsInner catalogPropertyId(@javax.annotation.Nullable String catalogPropertyId) {
+  public CatalogChecklistTemplateFieldsInner catalogPropertyId(@jakarta.annotation.Nullable String catalogPropertyId) {
     this.catalogPropertyId = catalogPropertyId;
     return this;
   }
@@ -168,12 +168,12 @@ public class CatalogChecklistTemplateFieldsInner {
    * ID of the catalog property for custom fields
    * @return catalogPropertyId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCatalogPropertyId() {
     return catalogPropertyId;
   }
 
-  public void setCatalogPropertyId(@javax.annotation.Nullable String catalogPropertyId) {
+  public void setCatalogPropertyId(@jakarta.annotation.Nullable String catalogPropertyId) {
     this.catalogPropertyId = catalogPropertyId;
   }
 

@@ -79,6 +79,14 @@ public class PageRootlyOnCallRespondersTaskParamsTest {
     }
 
     /**
+     * Test the property 'functionalityTarget'
+     */
+    @Test
+    public void functionalityTargetTest() {
+        // TODO: test functionalityTarget
+    }
+
+    /**
      * Test the property 'alertUrgencyId'
      */
     @Test
@@ -108,6 +116,14 @@ public class PageRootlyOnCallRespondersTaskParamsTest {
     @Test
     public void escalationNoteTest() {
         // TODO: test escalationNote
+    }
+
+    /**
+     * Test the property 'createNewAlert'
+     */
+    @Test
+    public void createNewAlertTest() {
+        // TODO: test createNewAlert
     }
 
 }

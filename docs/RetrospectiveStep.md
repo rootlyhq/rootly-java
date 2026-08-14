@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**retrospectiveProcessId** | **String** |  |  |
 |**title** | **String** | The name of the step |  |
-|**slug** | **String** | The slug of the step |  [optional] |
+|**slug** | **String** | The slug of the step |  [optional] [readonly] |
 |**description** | **String** | The description of the step |  [optional] |
 |**incidentRoleId** | **String** | Users assigned to the selected incident role will be the default owners for this step |  [optional] |
 |**dueAfterDays** | **Integer** | Due date in days |  [optional] |

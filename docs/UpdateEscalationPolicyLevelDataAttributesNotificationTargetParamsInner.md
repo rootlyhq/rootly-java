@@ -21,6 +21,7 @@
 | USER | &quot;user&quot; |
 | SCHEDULE | &quot;schedule&quot; |
 | SLACK_CHANNEL | &quot;slack_channel&quot; |
+| MICROSOFT_TEAMS_CHANNEL | &quot;microsoft_teams_channel&quot; |
 | SERVICE | &quot;service&quot; |
 
 

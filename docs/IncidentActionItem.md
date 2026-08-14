@@ -18,6 +18,7 @@
 |**jiraIssueId** | **String** | The Jira issue ID. |  [optional] |
 |**jiraIssueKey** | **String** | The Jira issue key. |  [optional] |
 |**jiraIssueUrl** | **String** | The Jira issue URL. |  [optional] |
+|**createdBy** | [**UserFlatResponse**](UserFlatResponse.md) | User who created this action item |  [optional] |
 |**createdAt** | **String** | Date of creation |  |
 |**updatedAt** | **String** | Date of last update |  |
 

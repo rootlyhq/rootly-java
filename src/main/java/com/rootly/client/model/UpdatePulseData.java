@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * UpdatePulseData
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdatePulseData {
   /**
    * Gets or Sets type
@@ -103,7 +103,7 @@ public class UpdatePulseData {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @jakarta.annotation.Nullable
+  @jakarta.annotation.Nonnull
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_ATTRIBUTES = "attributes";
@@ -114,7 +114,7 @@ public class UpdatePulseData {
   public UpdatePulseData() {
   }
 
-  public UpdatePulseData type(@jakarta.annotation.Nullable TypeEnum type) {
+  public UpdatePulseData type(@jakarta.annotation.Nonnull TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -123,12 +123,12 @@ public class UpdatePulseData {
    * Get type
    * @return type
    */
-  @jakarta.annotation.Nullable
+  @jakarta.annotation.Nonnull
   public TypeEnum getType() {
     return type;
   }
 
-  public void setType(@jakarta.annotation.Nullable TypeEnum type) {
+  public void setType(@jakarta.annotation.Nonnull TypeEnum type) {
     this.type = type;
   }
 
@@ -204,6 +204,7 @@ public class UpdatePulseData {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("type");
     openapiRequiredFields.add("attributes");
   }
 
@@ -235,13 +236,11 @@ public class UpdatePulseData {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
+      if (!jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
-      // validate the optional field `type`
-      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) {
-        TypeEnum.validateJsonElement(jsonObj.get("type"));
-      }
+      // validate the required field `type`
+      TypeEnum.validateJsonElement(jsonObj.get("type"));
       // validate the required field `attributes`
       UpdatePulseDataAttributes.validateJsonElement(jsonObj.get("attributes"));
   }

@@ -19,10 +19,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -41,91 +38,27 @@ public class CustomFieldTest {
     }
 
     /**
-     * Test the property 'label'
+     * Test the property 'fieldSource'
      */
     @Test
-    public void labelTest() {
-        // TODO: test label
+    public void fieldSourceTest() {
+        // TODO: test fieldSource
     }
 
     /**
-     * Test the property 'kind'
+     * Test the property 'catalogPropertyId'
      */
     @Test
-    public void kindTest() {
-        // TODO: test kind
+    public void catalogPropertyIdTest() {
+        // TODO: test catalogPropertyId
     }
 
     /**
-     * Test the property 'enabled'
+     * Test the property 'fieldKey'
      */
     @Test
-    public void enabledTest() {
-        // TODO: test enabled
-    }
-
-    /**
-     * Test the property 'slug'
-     */
-    @Test
-    public void slugTest() {
-        // TODO: test slug
-    }
-
-    /**
-     * Test the property 'description'
-     */
-    @Test
-    public void descriptionTest() {
-        // TODO: test description
-    }
-
-    /**
-     * Test the property 'shown'
-     */
-    @Test
-    public void shownTest() {
-        // TODO: test shown
-    }
-
-    /**
-     * Test the property 'required'
-     */
-    @Test
-    public void requiredTest() {
-        // TODO: test required
-    }
-
-    /**
-     * Test the property '_default'
-     */
-    @Test
-    public void _defaultTest() {
-        // TODO: test _default
-    }
-
-    /**
-     * Test the property 'position'
-     */
-    @Test
-    public void positionTest() {
-        // TODO: test position
-    }
-
-    /**
-     * Test the property 'createdAt'
-     */
-    @Test
-    public void createdAtTest() {
-        // TODO: test createdAt
-    }
-
-    /**
-     * Test the property 'updatedAt'
-     */
-    @Test
-    public void updatedAtTest() {
-        // TODO: test updatedAt
+    public void fieldKeyTest() {
+        // TODO: test fieldKey
     }
 
 }

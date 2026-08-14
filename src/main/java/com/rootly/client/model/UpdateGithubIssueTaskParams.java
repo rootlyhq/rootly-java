@@ -20,8 +20,13 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.rootly.client.model.AddActionItemTaskParamsPostToSlackChannelsInner;
+import com.rootly.client.model.CreateGithubIssueTaskParamsIssueType;
+import com.rootly.client.model.UpdateGithubIssueTaskParamsRepository;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,7 +54,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateGithubIssueTaskParams
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateGithubIssueTaskParams {
   /**
    * Gets or Sets taskType
@@ -111,6 +116,11 @@ public class UpdateGithubIssueTaskParams {
   @jakarta.annotation.Nonnull
   private String issueId;
 
+  public static final String SERIALIZED_NAME_REPOSITORY = "repository";
+  @SerializedName(SERIALIZED_NAME_REPOSITORY)
+  @jakarta.annotation.Nullable
+  private UpdateGithubIssueTaskParamsRepository repository;
+
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
   @jakarta.annotation.Nullable
@@ -121,10 +131,82 @@ public class UpdateGithubIssueTaskParams {
   @jakarta.annotation.Nullable
   private String body;
 
+  public static final String SERIALIZED_NAME_LABELS = "labels";
+  @SerializedName(SERIALIZED_NAME_LABELS)
+  @jakarta.annotation.Nullable
+  private List<AddActionItemTaskParamsPostToSlackChannelsInner> labels = new ArrayList<>();
+
+  /**
+   * How to apply labels. &#39;replace&#39; (default) overwrites all existing labels. &#39;append&#39; adds to existing labels without removing them.
+   */
+  @JsonAdapter(LabelsModeEnum.Adapter.class)
+  public enum LabelsModeEnum {
+    REPLACE("replace"),
+    
+    APPEND("append");
+
+    private String value;
+
+    LabelsModeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static LabelsModeEnum fromValue(String value) {
+      for (LabelsModeEnum b : LabelsModeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<LabelsModeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final LabelsModeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public LabelsModeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return LabelsModeEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      LabelsModeEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_LABELS_MODE = "labels_mode";
+  @SerializedName(SERIALIZED_NAME_LABELS_MODE)
+  @jakarta.annotation.Nullable
+  private LabelsModeEnum labelsMode = LabelsModeEnum.REPLACE;
+
+  public static final String SERIALIZED_NAME_ISSUE_TYPE = "issue_type";
+  @SerializedName(SERIALIZED_NAME_ISSUE_TYPE)
+  @jakarta.annotation.Nullable
+  private CreateGithubIssueTaskParamsIssueType issueType;
+
   public static final String SERIALIZED_NAME_COMPLETION = "completion";
   @SerializedName(SERIALIZED_NAME_COMPLETION)
   @jakarta.annotation.Nonnull
   private AddActionItemTaskParamsPostToSlackChannelsInner completion;
+
+  public static final String SERIALIZED_NAME_CUSTOM_FIELDS_MAPPING = "custom_fields_mapping";
+  @SerializedName(SERIALIZED_NAME_CUSTOM_FIELDS_MAPPING)
+  @jakarta.annotation.Nullable
+  private String customFieldsMapping;
 
   public UpdateGithubIssueTaskParams() {
   }
@@ -167,6 +249,25 @@ public class UpdateGithubIssueTaskParams {
   }
 
 
+  public UpdateGithubIssueTaskParams repository(@jakarta.annotation.Nullable UpdateGithubIssueTaskParamsRepository repository) {
+    this.repository = repository;
+    return this;
+  }
+
+  /**
+   * Get repository
+   * @return repository
+   */
+  @jakarta.annotation.Nullable
+  public UpdateGithubIssueTaskParamsRepository getRepository() {
+    return repository;
+  }
+
+  public void setRepository(@jakarta.annotation.Nullable UpdateGithubIssueTaskParamsRepository repository) {
+    this.repository = repository;
+  }
+
+
   public UpdateGithubIssueTaskParams title(@jakarta.annotation.Nullable String title) {
     this.title = title;
     return this;
@@ -205,6 +306,71 @@ public class UpdateGithubIssueTaskParams {
   }
 
 
+  public UpdateGithubIssueTaskParams labels(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> labels) {
+    this.labels = labels;
+    return this;
+  }
+
+  public UpdateGithubIssueTaskParams addLabelsItem(AddActionItemTaskParamsPostToSlackChannelsInner labelsItem) {
+    if (this.labels == null) {
+      this.labels = new ArrayList<>();
+    }
+    this.labels.add(labelsItem);
+    return this;
+  }
+
+  /**
+   * The issue labels
+   * @return labels
+   */
+  @jakarta.annotation.Nullable
+  public List<AddActionItemTaskParamsPostToSlackChannelsInner> getLabels() {
+    return labels;
+  }
+
+  public void setLabels(@jakarta.annotation.Nullable List<AddActionItemTaskParamsPostToSlackChannelsInner> labels) {
+    this.labels = labels;
+  }
+
+
+  public UpdateGithubIssueTaskParams labelsMode(@jakarta.annotation.Nullable LabelsModeEnum labelsMode) {
+    this.labelsMode = labelsMode;
+    return this;
+  }
+
+  /**
+   * How to apply labels. &#39;replace&#39; (default) overwrites all existing labels. &#39;append&#39; adds to existing labels without removing them.
+   * @return labelsMode
+   */
+  @jakarta.annotation.Nullable
+  public LabelsModeEnum getLabelsMode() {
+    return labelsMode;
+  }
+
+  public void setLabelsMode(@jakarta.annotation.Nullable LabelsModeEnum labelsMode) {
+    this.labelsMode = labelsMode;
+  }
+
+
+  public UpdateGithubIssueTaskParams issueType(@jakarta.annotation.Nullable CreateGithubIssueTaskParamsIssueType issueType) {
+    this.issueType = issueType;
+    return this;
+  }
+
+  /**
+   * Get issueType
+   * @return issueType
+   */
+  @jakarta.annotation.Nullable
+  public CreateGithubIssueTaskParamsIssueType getIssueType() {
+    return issueType;
+  }
+
+  public void setIssueType(@jakarta.annotation.Nullable CreateGithubIssueTaskParamsIssueType issueType) {
+    this.issueType = issueType;
+  }
+
+
   public UpdateGithubIssueTaskParams completion(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner completion) {
     this.completion = completion;
     return this;
@@ -224,6 +390,25 @@ public class UpdateGithubIssueTaskParams {
   }
 
 
+  public UpdateGithubIssueTaskParams customFieldsMapping(@jakarta.annotation.Nullable String customFieldsMapping) {
+    this.customFieldsMapping = customFieldsMapping;
+    return this;
+  }
+
+  /**
+   * Custom field mappings. Can contain liquid markup and need to be valid JSON
+   * @return customFieldsMapping
+   */
+  @jakarta.annotation.Nullable
+  public String getCustomFieldsMapping() {
+    return customFieldsMapping;
+  }
+
+  public void setCustomFieldsMapping(@jakarta.annotation.Nullable String customFieldsMapping) {
+    this.customFieldsMapping = customFieldsMapping;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -236,14 +421,30 @@ public class UpdateGithubIssueTaskParams {
     UpdateGithubIssueTaskParams updateGithubIssueTaskParams = (UpdateGithubIssueTaskParams) o;
     return Objects.equals(this.taskType, updateGithubIssueTaskParams.taskType) &&
         Objects.equals(this.issueId, updateGithubIssueTaskParams.issueId) &&
+        Objects.equals(this.repository, updateGithubIssueTaskParams.repository) &&
         Objects.equals(this.title, updateGithubIssueTaskParams.title) &&
         Objects.equals(this.body, updateGithubIssueTaskParams.body) &&
-        Objects.equals(this.completion, updateGithubIssueTaskParams.completion);
+        Objects.equals(this.labels, updateGithubIssueTaskParams.labels) &&
+        Objects.equals(this.labelsMode, updateGithubIssueTaskParams.labelsMode) &&
+        Objects.equals(this.issueType, updateGithubIssueTaskParams.issueType) &&
+        Objects.equals(this.completion, updateGithubIssueTaskParams.completion) &&
+        Objects.equals(this.customFieldsMapping, updateGithubIssueTaskParams.customFieldsMapping);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(taskType, issueId, title, body, completion);
+    return Objects.hash(taskType, issueId, repository, title, body, labels, labelsMode, issueType, completion, customFieldsMapping);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -252,9 +453,14 @@ public class UpdateGithubIssueTaskParams {
     sb.append("class UpdateGithubIssueTaskParams {\n");
     sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
     sb.append("    issueId: ").append(toIndentedString(issueId)).append("\n");
+    sb.append("    repository: ").append(toIndentedString(repository)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    body: ").append(toIndentedString(body)).append("\n");
+    sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
+    sb.append("    labelsMode: ").append(toIndentedString(labelsMode)).append("\n");
+    sb.append("    issueType: ").append(toIndentedString(issueType)).append("\n");
     sb.append("    completion: ").append(toIndentedString(completion)).append("\n");
+    sb.append("    customFieldsMapping: ").append(toIndentedString(customFieldsMapping)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -279,9 +485,14 @@ public class UpdateGithubIssueTaskParams {
     openapiFields = new HashSet<String>();
     openapiFields.add("task_type");
     openapiFields.add("issue_id");
+    openapiFields.add("repository");
     openapiFields.add("title");
     openapiFields.add("body");
+    openapiFields.add("labels");
+    openapiFields.add("labels_mode");
+    openapiFields.add("issue_type");
     openapiFields.add("completion");
+    openapiFields.add("custom_fields_mapping");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -327,14 +538,46 @@ public class UpdateGithubIssueTaskParams {
       if (!jsonObj.get("issue_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `issue_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("issue_id").toString()));
       }
+      // validate the optional field `repository`
+      if (jsonObj.get("repository") != null && !jsonObj.get("repository").isJsonNull()) {
+        UpdateGithubIssueTaskParamsRepository.validateJsonElement(jsonObj.get("repository"));
+      }
       if ((jsonObj.get("title") != null && !jsonObj.get("title").isJsonNull()) && !jsonObj.get("title").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
       }
       if ((jsonObj.get("body") != null && !jsonObj.get("body").isJsonNull()) && !jsonObj.get("body").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `body` to be a primitive type in the JSON string but got `%s`", jsonObj.get("body").toString()));
       }
+      if (jsonObj.get("labels") != null && !jsonObj.get("labels").isJsonNull()) {
+        JsonArray jsonArraylabels = jsonObj.getAsJsonArray("labels");
+        if (jsonArraylabels != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("labels").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `labels` to be an array in the JSON string but got `%s`", jsonObj.get("labels").toString()));
+          }
+
+          // validate the optional field `labels` (array)
+          for (int i = 0; i < jsonArraylabels.size(); i++) {
+            AddActionItemTaskParamsPostToSlackChannelsInner.validateJsonElement(jsonArraylabels.get(i));
+          };
+        }
+      }
+      if ((jsonObj.get("labels_mode") != null && !jsonObj.get("labels_mode").isJsonNull()) && !jsonObj.get("labels_mode").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `labels_mode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("labels_mode").toString()));
+      }
+      // validate the optional field `labels_mode`
+      if (jsonObj.get("labels_mode") != null && !jsonObj.get("labels_mode").isJsonNull()) {
+        LabelsModeEnum.validateJsonElement(jsonObj.get("labels_mode"));
+      }
+      // validate the optional field `issue_type`
+      if (jsonObj.get("issue_type") != null && !jsonObj.get("issue_type").isJsonNull()) {
+        CreateGithubIssueTaskParamsIssueType.validateJsonElement(jsonObj.get("issue_type"));
+      }
       // validate the required field `completion`
       AddActionItemTaskParamsPostToSlackChannelsInner.validateJsonElement(jsonObj.get("completion"));
+      if ((jsonObj.get("custom_fields_mapping") != null && !jsonObj.get("custom_fields_mapping").isJsonNull()) && !jsonObj.get("custom_fields_mapping").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `custom_fields_mapping` to be a primitive type in the JSON string but got `%s`", jsonObj.get("custom_fields_mapping").toString()));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

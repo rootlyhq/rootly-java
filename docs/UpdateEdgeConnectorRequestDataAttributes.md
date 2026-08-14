@@ -11,6 +11,7 @@
 |**description** | **String** |  |  [optional] |
 |**status** | [**StatusEnum**](#StatusEnum) |  |  [optional] |
 |**subscriptions** | **List&lt;String&gt;** |  |  [optional] |
+|**filters** | **Object** | Event filters |  [optional] |
 
 
 

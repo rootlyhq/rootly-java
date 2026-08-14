@@ -224,6 +224,14 @@ public class OnCallRoleTest {
     }
 
     /**
+     * Test the property 'functionalitiesPermissions'
+     */
+    @Test
+    public void functionalitiesPermissionsTest() {
+        // TODO: test functionalitiesPermissions
+    }
+
+    /**
      * Test the property 'webhooksPermissions'
      */
     @Test
@@ -237,6 +245,14 @@ public class OnCallRoleTest {
     @Test
     public void workflowsPermissionsTest() {
         // TODO: test workflowsPermissions
+    }
+
+    /**
+     * Test the property 'catalogsPermissions'
+     */
+    @Test
+    public void catalogsPermissionsTest() {
+        // TODO: test catalogsPermissions
     }
 
     /**

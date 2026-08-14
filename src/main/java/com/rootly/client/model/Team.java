@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewCauseDataAttributesPropertiesInner;
 import com.rootly.client.model.NewEnvironmentDataAttributesSlackAliasesInner;
 import com.rootly.client.model.NewEnvironmentDataAttributesSlackChannelsInner;
 import com.rootly.client.model.ServiceAlertBroadcastChannel;
@@ -55,7 +56,7 @@ import com.rootly.client.JSON;
 /**
  * Team
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Team {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -67,10 +68,82 @@ public class Team {
   @jakarta.annotation.Nullable
   private String slug;
 
+  /**
+   * How this team is managed (provenance): web, api, terraform, etc. Read-only.
+   */
+  @JsonAdapter(ManagedByEnum.Adapter.class)
+  public enum ManagedByEnum {
+    WEB("web"),
+    
+    ADMIN_WEB("admin_web"),
+    
+    API("api"),
+    
+    TERRAFORM("terraform"),
+    
+    PULUMI("pulumi"),
+    
+    BACKSTAGE("backstage"),
+    
+    CATALOG_SYNC("catalog_sync");
+
+    private String value;
+
+    ManagedByEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static ManagedByEnum fromValue(String value) {
+      for (ManagedByEnum b : ManagedByEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<ManagedByEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ManagedByEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ManagedByEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return ManagedByEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      ManagedByEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_MANAGED_BY = "managed_by";
+  @SerializedName(SERIALIZED_NAME_MANAGED_BY)
+  @jakarta.annotation.Nullable
+  private ManagedByEnum managedBy;
+
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   @jakarta.annotation.Nullable
   private String description;
+
+  public static final String SERIALIZED_NAME_PUBLIC_DESCRIPTION = "public_description";
+  @SerializedName(SERIALIZED_NAME_PUBLIC_DESCRIPTION)
+  @jakarta.annotation.Nullable
+  private String publicDescription;
 
   public static final String SERIALIZED_NAME_NOTIFY_EMAILS = "notify_emails";
   @SerializedName(SERIALIZED_NAME_NOTIFY_EMAILS)
@@ -192,6 +265,72 @@ public class Team {
   @jakarta.annotation.Nullable
   private Boolean autoAddMembersWhenAttached;
 
+  /**
+   * Visibility-scoped auto-add behavior. Only present when the &#x60;enable_scoped_incident_channel_auto_add&#x60; feature flag is on for the organization. When set, it overrides &#x60;auto_add_members_when_attached&#x60;.
+   */
+  @JsonAdapter(AutoAddMembersScopeEnum.Adapter.class)
+  public enum AutoAddMembersScopeEnum {
+    OFF("off"),
+    
+    PUBLIC_ONLY("public_only"),
+    
+    PUBLIC_AND_TEST("public_and_test"),
+    
+    ALL("all");
+
+    private String value;
+
+    AutoAddMembersScopeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static AutoAddMembersScopeEnum fromValue(String value) {
+      for (AutoAddMembersScopeEnum b : AutoAddMembersScopeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<AutoAddMembersScopeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final AutoAddMembersScopeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public AutoAddMembersScopeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return AutoAddMembersScopeEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      AutoAddMembersScopeEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_AUTO_ADD_MEMBERS_SCOPE = "auto_add_members_scope";
+  @SerializedName(SERIALIZED_NAME_AUTO_ADD_MEMBERS_SCOPE)
+  @jakarta.annotation.Nullable
+  private AutoAddMembersScopeEnum autoAddMembersScope;
+
+  public static final String SERIALIZED_NAME_PROPERTIES = "properties";
+  @SerializedName(SERIALIZED_NAME_PROPERTIES)
+  @jakarta.annotation.Nullable
+  private List<NewCauseDataAttributesPropertiesInner> properties;
+
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   @jakarta.annotation.Nonnull
@@ -203,6 +342,13 @@ public class Team {
   private String updatedAt;
 
   public Team() {
+  }
+
+  public Team(
+     String slug
+  ) {
+    this();
+    this.slug = slug;
   }
 
   public Team name(@jakarta.annotation.Nonnull String name) {
@@ -224,11 +370,6 @@ public class Team {
   }
 
 
-  public Team slug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
-    return this;
-  }
-
   /**
    * Get slug
    * @return slug
@@ -238,8 +379,24 @@ public class Team {
     return slug;
   }
 
-  public void setSlug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
+
+
+  public Team managedBy(@jakarta.annotation.Nullable ManagedByEnum managedBy) {
+    this.managedBy = managedBy;
+    return this;
+  }
+
+  /**
+   * How this team is managed (provenance): web, api, terraform, etc. Read-only.
+   * @return managedBy
+   */
+  @jakarta.annotation.Nullable
+  public ManagedByEnum getManagedBy() {
+    return managedBy;
+  }
+
+  public void setManagedBy(@jakarta.annotation.Nullable ManagedByEnum managedBy) {
+    this.managedBy = managedBy;
   }
 
 
@@ -259,6 +416,25 @@ public class Team {
 
   public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
+  }
+
+
+  public Team publicDescription(@jakarta.annotation.Nullable String publicDescription) {
+    this.publicDescription = publicDescription;
+    return this;
+  }
+
+  /**
+   * The status page description of the team
+   * @return publicDescription
+   */
+  @jakarta.annotation.Nullable
+  public String getPublicDescription() {
+    return publicDescription;
+  }
+
+  public void setPublicDescription(@jakarta.annotation.Nullable String publicDescription) {
+    this.publicDescription = publicDescription;
   }
 
 
@@ -758,6 +934,52 @@ public class Team {
   }
 
 
+  public Team autoAddMembersScope(@jakarta.annotation.Nullable AutoAddMembersScopeEnum autoAddMembersScope) {
+    this.autoAddMembersScope = autoAddMembersScope;
+    return this;
+  }
+
+  /**
+   * Visibility-scoped auto-add behavior. Only present when the &#x60;enable_scoped_incident_channel_auto_add&#x60; feature flag is on for the organization. When set, it overrides &#x60;auto_add_members_when_attached&#x60;.
+   * @return autoAddMembersScope
+   */
+  @jakarta.annotation.Nullable
+  public AutoAddMembersScopeEnum getAutoAddMembersScope() {
+    return autoAddMembersScope;
+  }
+
+  public void setAutoAddMembersScope(@jakarta.annotation.Nullable AutoAddMembersScopeEnum autoAddMembersScope) {
+    this.autoAddMembersScope = autoAddMembersScope;
+  }
+
+
+  public Team properties(@jakarta.annotation.Nullable List<NewCauseDataAttributesPropertiesInner> properties) {
+    this.properties = properties;
+    return this;
+  }
+
+  public Team addPropertiesItem(NewCauseDataAttributesPropertiesInner propertiesItem) {
+    if (this.properties == null) {
+      this.properties = new ArrayList<>();
+    }
+    this.properties.add(propertiesItem);
+    return this;
+  }
+
+  /**
+   * Array of property values for this team.
+   * @return properties
+   */
+  @jakarta.annotation.Nullable
+  public List<NewCauseDataAttributesPropertiesInner> getProperties() {
+    return properties;
+  }
+
+  public void setProperties(@jakarta.annotation.Nullable List<NewCauseDataAttributesPropertiesInner> properties) {
+    this.properties = properties;
+  }
+
+
   public Team createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
@@ -808,7 +1030,9 @@ public class Team {
     Team team = (Team) o;
     return Objects.equals(this.name, team.name) &&
         Objects.equals(this.slug, team.slug) &&
+        Objects.equals(this.managedBy, team.managedBy) &&
         Objects.equals(this.description, team.description) &&
+        Objects.equals(this.publicDescription, team.publicDescription) &&
         Objects.equals(this.notifyEmails, team.notifyEmails) &&
         Objects.equals(this.color, team.color) &&
         Objects.equals(this.position, team.position) &&
@@ -833,6 +1057,8 @@ public class Team {
         Objects.equals(this.incidentBroadcastEnabled, team.incidentBroadcastEnabled) &&
         Objects.equals(this.incidentBroadcastChannel, team.incidentBroadcastChannel) &&
         Objects.equals(this.autoAddMembersWhenAttached, team.autoAddMembersWhenAttached) &&
+        Objects.equals(this.autoAddMembersScope, team.autoAddMembersScope) &&
+        Objects.equals(this.properties, team.properties) &&
         Objects.equals(this.createdAt, team.createdAt) &&
         Objects.equals(this.updatedAt, team.updatedAt);
   }
@@ -843,7 +1069,7 @@ public class Team {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, slug, description, notifyEmails, color, position, backstageId, externalId, pagerdutyId, pagerdutyServiceId, opsgenieId, victorOpsId, pagertreeId, cortexId, serviceNowCiSysId, userIds, adminIds, alertsEmailEnabled, alertsEmailAddress, alertUrgencyId, slackChannels, slackAliases, alertBroadcastEnabled, alertBroadcastChannel, incidentBroadcastEnabled, incidentBroadcastChannel, autoAddMembersWhenAttached, createdAt, updatedAt);
+    return Objects.hash(name, slug, managedBy, description, publicDescription, notifyEmails, color, position, backstageId, externalId, pagerdutyId, pagerdutyServiceId, opsgenieId, victorOpsId, pagertreeId, cortexId, serviceNowCiSysId, userIds, adminIds, alertsEmailEnabled, alertsEmailAddress, alertUrgencyId, slackChannels, slackAliases, alertBroadcastEnabled, alertBroadcastChannel, incidentBroadcastEnabled, incidentBroadcastChannel, autoAddMembersWhenAttached, autoAddMembersScope, properties, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -859,7 +1085,9 @@ public class Team {
     sb.append("class Team {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
+    sb.append("    managedBy: ").append(toIndentedString(managedBy)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    publicDescription: ").append(toIndentedString(publicDescription)).append("\n");
     sb.append("    notifyEmails: ").append(toIndentedString(notifyEmails)).append("\n");
     sb.append("    color: ").append(toIndentedString(color)).append("\n");
     sb.append("    position: ").append(toIndentedString(position)).append("\n");
@@ -884,6 +1112,8 @@ public class Team {
     sb.append("    incidentBroadcastEnabled: ").append(toIndentedString(incidentBroadcastEnabled)).append("\n");
     sb.append("    incidentBroadcastChannel: ").append(toIndentedString(incidentBroadcastChannel)).append("\n");
     sb.append("    autoAddMembersWhenAttached: ").append(toIndentedString(autoAddMembersWhenAttached)).append("\n");
+    sb.append("    autoAddMembersScope: ").append(toIndentedString(autoAddMembersScope)).append("\n");
+    sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -910,7 +1140,9 @@ public class Team {
     openapiFields = new HashSet<String>();
     openapiFields.add("name");
     openapiFields.add("slug");
+    openapiFields.add("managed_by");
     openapiFields.add("description");
+    openapiFields.add("public_description");
     openapiFields.add("notify_emails");
     openapiFields.add("color");
     openapiFields.add("position");
@@ -935,6 +1167,8 @@ public class Team {
     openapiFields.add("incident_broadcast_enabled");
     openapiFields.add("incident_broadcast_channel");
     openapiFields.add("auto_add_members_when_attached");
+    openapiFields.add("auto_add_members_scope");
+    openapiFields.add("properties");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
 
@@ -979,8 +1213,18 @@ public class Team {
       if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
       }
+      if ((jsonObj.get("managed_by") != null && !jsonObj.get("managed_by").isJsonNull()) && !jsonObj.get("managed_by").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `managed_by` to be a primitive type in the JSON string but got `%s`", jsonObj.get("managed_by").toString()));
+      }
+      // validate the optional field `managed_by`
+      if (jsonObj.get("managed_by") != null && !jsonObj.get("managed_by").isJsonNull()) {
+        ManagedByEnum.validateJsonElement(jsonObj.get("managed_by"));
+      }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
+      if ((jsonObj.get("public_description") != null && !jsonObj.get("public_description").isJsonNull()) && !jsonObj.get("public_description").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `public_description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("public_description").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("notify_emails") != null && !jsonObj.get("notify_emails").isJsonNull() && !jsonObj.get("notify_emails").isJsonArray()) {
@@ -1065,6 +1309,27 @@ public class Team {
       // validate the optional field `incident_broadcast_channel`
       if (jsonObj.get("incident_broadcast_channel") != null && !jsonObj.get("incident_broadcast_channel").isJsonNull()) {
         ServiceIncidentBroadcastChannel.validateJsonElement(jsonObj.get("incident_broadcast_channel"));
+      }
+      if ((jsonObj.get("auto_add_members_scope") != null && !jsonObj.get("auto_add_members_scope").isJsonNull()) && !jsonObj.get("auto_add_members_scope").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `auto_add_members_scope` to be a primitive type in the JSON string but got `%s`", jsonObj.get("auto_add_members_scope").toString()));
+      }
+      // validate the optional field `auto_add_members_scope`
+      if (jsonObj.get("auto_add_members_scope") != null && !jsonObj.get("auto_add_members_scope").isJsonNull()) {
+        AutoAddMembersScopeEnum.validateJsonElement(jsonObj.get("auto_add_members_scope"));
+      }
+      if (jsonObj.get("properties") != null && !jsonObj.get("properties").isJsonNull()) {
+        JsonArray jsonArrayproperties = jsonObj.getAsJsonArray("properties");
+        if (jsonArrayproperties != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("properties").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `properties` to be an array in the JSON string but got `%s`", jsonObj.get("properties").toString()));
+          }
+
+          // validate the optional field `properties` (array)
+          for (int i = 0; i < jsonArrayproperties.size(); i++) {
+            NewCauseDataAttributesPropertiesInner.validateJsonElement(jsonArrayproperties.get(i));
+          };
+        }
       }
       if (!jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));

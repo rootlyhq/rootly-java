@@ -52,16 +52,16 @@ import com.rootly.client.JSON;
 /**
  * SlaConditionsInner
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SlaConditionsInner {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private UUID id;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   /**
@@ -118,33 +118,33 @@ public class SlaConditionsInner {
 
   public static final String SERIALIZED_NAME_CONDITIONABLE_TYPE = "conditionable_type";
   @SerializedName(SERIALIZED_NAME_CONDITIONABLE_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ConditionableTypeEnum conditionableType;
 
   public static final String SERIALIZED_NAME_PROPERTY = "property";
   @SerializedName(SERIALIZED_NAME_PROPERTY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String property;
 
   public static final String SERIALIZED_NAME_OPERATOR = "operator";
   @SerializedName(SERIALIZED_NAME_OPERATOR)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String operator;
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> values;
 
   public static final String SERIALIZED_NAME_FORM_FIELD_ID = "form_field_id";
   @SerializedName(SERIALIZED_NAME_FORM_FIELD_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private UUID formFieldId;
 
   public SlaConditionsInner() {
   }
 
-  public SlaConditionsInner id(@javax.annotation.Nullable UUID id) {
+  public SlaConditionsInner id(@jakarta.annotation.Nullable UUID id) {
     this.id = id;
     return this;
   }
@@ -153,17 +153,17 @@ public class SlaConditionsInner {
    * Unique ID of the condition
    * @return id
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public UUID getId() {
     return id;
   }
 
-  public void setId(@javax.annotation.Nullable UUID id) {
+  public void setId(@jakarta.annotation.Nullable UUID id) {
     this.id = id;
   }
 
 
-  public SlaConditionsInner position(@javax.annotation.Nullable Integer position) {
+  public SlaConditionsInner position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -172,17 +172,17 @@ public class SlaConditionsInner {
    * The position of the condition
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 
 
-  public SlaConditionsInner conditionableType(@javax.annotation.Nullable ConditionableTypeEnum conditionableType) {
+  public SlaConditionsInner conditionableType(@jakarta.annotation.Nullable ConditionableTypeEnum conditionableType) {
     this.conditionableType = conditionableType;
     return this;
   }
@@ -191,17 +191,17 @@ public class SlaConditionsInner {
    * The type of condition
    * @return conditionableType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ConditionableTypeEnum getConditionableType() {
     return conditionableType;
   }
 
-  public void setConditionableType(@javax.annotation.Nullable ConditionableTypeEnum conditionableType) {
+  public void setConditionableType(@jakarta.annotation.Nullable ConditionableTypeEnum conditionableType) {
     this.conditionableType = conditionableType;
   }
 
 
-  public SlaConditionsInner property(@javax.annotation.Nullable String property) {
+  public SlaConditionsInner property(@jakarta.annotation.Nullable String property) {
     this.property = property;
     return this;
   }
@@ -210,17 +210,17 @@ public class SlaConditionsInner {
    * The property to evaluate (for built-in field conditions)
    * @return property
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getProperty() {
     return property;
   }
 
-  public void setProperty(@javax.annotation.Nullable String property) {
+  public void setProperty(@jakarta.annotation.Nullable String property) {
     this.property = property;
   }
 
 
-  public SlaConditionsInner operator(@javax.annotation.Nullable String operator) {
+  public SlaConditionsInner operator(@jakarta.annotation.Nullable String operator) {
     this.operator = operator;
     return this;
   }
@@ -229,17 +229,17 @@ public class SlaConditionsInner {
    * The comparison operator
    * @return operator
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getOperator() {
     return operator;
   }
 
-  public void setOperator(@javax.annotation.Nullable String operator) {
+  public void setOperator(@jakarta.annotation.Nullable String operator) {
     this.operator = operator;
   }
 
 
-  public SlaConditionsInner values(@javax.annotation.Nullable List<String> values) {
+  public SlaConditionsInner values(@jakarta.annotation.Nullable List<String> values) {
     this.values = values;
     return this;
   }
@@ -256,17 +256,17 @@ public class SlaConditionsInner {
    * The values to compare against
    * @return values
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getValues() {
     return values;
   }
 
-  public void setValues(@javax.annotation.Nullable List<String> values) {
+  public void setValues(@jakarta.annotation.Nullable List<String> values) {
     this.values = values;
   }
 
 
-  public SlaConditionsInner formFieldId(@javax.annotation.Nullable UUID formFieldId) {
+  public SlaConditionsInner formFieldId(@jakarta.annotation.Nullable UUID formFieldId) {
     this.formFieldId = formFieldId;
     return this;
   }
@@ -275,12 +275,12 @@ public class SlaConditionsInner {
    * The ID of the form field (for custom field conditions)
    * @return formFieldId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public UUID getFormFieldId() {
     return formFieldId;
   }
 
-  public void setFormFieldId(@javax.annotation.Nullable UUID formFieldId) {
+  public void setFormFieldId(@jakarta.annotation.Nullable UUID formFieldId) {
     this.formFieldId = formFieldId;
   }
 

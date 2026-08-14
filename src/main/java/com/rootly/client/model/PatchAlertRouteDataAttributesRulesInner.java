@@ -53,47 +53,47 @@ import com.rootly.client.JSON;
 /**
  * PatchAlertRouteDataAttributesRulesInner
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class PatchAlertRouteDataAttributesRulesInner {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private UUID id;
 
   public static final String SERIALIZED_NAME_DESTROY = "_destroy";
   @SerializedName(SERIALIZED_NAME_DESTROY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean destroy;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_POSITION = "position";
   @SerializedName(SERIALIZED_NAME_POSITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer position;
 
   public static final String SERIALIZED_NAME_FALLBACK_RULE = "fallback_rule";
   @SerializedName(SERIALIZED_NAME_FALLBACK_RULE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean fallbackRule = false;
 
   public static final String SERIALIZED_NAME_DESTINATIONS = "destinations";
   @SerializedName(SERIALIZED_NAME_DESTINATIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<PatchAlertRouteDataAttributesRulesInnerDestinationsInner> destinations = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CONDITION_GROUPS = "condition_groups";
   @SerializedName(SERIALIZED_NAME_CONDITION_GROUPS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<PatchAlertRouteDataAttributesRulesInnerConditionGroupsInner> conditionGroups = new ArrayList<>();
 
   public PatchAlertRouteDataAttributesRulesInner() {
   }
 
-  public PatchAlertRouteDataAttributesRulesInner id(@javax.annotation.Nullable UUID id) {
+  public PatchAlertRouteDataAttributesRulesInner id(@jakarta.annotation.Nullable UUID id) {
     this.id = id;
     return this;
   }
@@ -102,17 +102,17 @@ public class PatchAlertRouteDataAttributesRulesInner {
    * The ID of the alert routing rule. Required for updating or deleting existing rules.
    * @return id
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public UUID getId() {
     return id;
   }
 
-  public void setId(@javax.annotation.Nullable UUID id) {
+  public void setId(@jakarta.annotation.Nullable UUID id) {
     this.id = id;
   }
 
 
-  public PatchAlertRouteDataAttributesRulesInner destroy(@javax.annotation.Nullable Boolean destroy) {
+  public PatchAlertRouteDataAttributesRulesInner destroy(@jakarta.annotation.Nullable Boolean destroy) {
     this.destroy = destroy;
     return this;
   }
@@ -121,17 +121,17 @@ public class PatchAlertRouteDataAttributesRulesInner {
    * Set to true to delete this rule. When true, only the id field is required.
    * @return destroy
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getDestroy() {
     return destroy;
   }
 
-  public void setDestroy(@javax.annotation.Nullable Boolean destroy) {
+  public void setDestroy(@jakarta.annotation.Nullable Boolean destroy) {
     this.destroy = destroy;
   }
 
 
-  public PatchAlertRouteDataAttributesRulesInner name(@javax.annotation.Nullable String name) {
+  public PatchAlertRouteDataAttributesRulesInner name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -140,17 +140,17 @@ public class PatchAlertRouteDataAttributesRulesInner {
    * The name of the alert routing rule
    * @return name
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public PatchAlertRouteDataAttributesRulesInner position(@javax.annotation.Nullable Integer position) {
+  public PatchAlertRouteDataAttributesRulesInner position(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
     return this;
   }
@@ -159,17 +159,17 @@ public class PatchAlertRouteDataAttributesRulesInner {
    * The position of the alert routing rule for ordering evaluation
    * @return position
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getPosition() {
     return position;
   }
 
-  public void setPosition(@javax.annotation.Nullable Integer position) {
+  public void setPosition(@jakarta.annotation.Nullable Integer position) {
     this.position = position;
   }
 
 
-  public PatchAlertRouteDataAttributesRulesInner fallbackRule(@javax.annotation.Nullable Boolean fallbackRule) {
+  public PatchAlertRouteDataAttributesRulesInner fallbackRule(@jakarta.annotation.Nullable Boolean fallbackRule) {
     this.fallbackRule = fallbackRule;
     return this;
   }
@@ -178,17 +178,17 @@ public class PatchAlertRouteDataAttributesRulesInner {
    * Whether this is a fallback rule
    * @return fallbackRule
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getFallbackRule() {
     return fallbackRule;
   }
 
-  public void setFallbackRule(@javax.annotation.Nullable Boolean fallbackRule) {
+  public void setFallbackRule(@jakarta.annotation.Nullable Boolean fallbackRule) {
     this.fallbackRule = fallbackRule;
   }
 
 
-  public PatchAlertRouteDataAttributesRulesInner destinations(@javax.annotation.Nullable List<PatchAlertRouteDataAttributesRulesInnerDestinationsInner> destinations) {
+  public PatchAlertRouteDataAttributesRulesInner destinations(@jakarta.annotation.Nullable List<PatchAlertRouteDataAttributesRulesInnerDestinationsInner> destinations) {
     this.destinations = destinations;
     return this;
   }
@@ -205,17 +205,17 @@ public class PatchAlertRouteDataAttributesRulesInner {
    * Get destinations
    * @return destinations
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<PatchAlertRouteDataAttributesRulesInnerDestinationsInner> getDestinations() {
     return destinations;
   }
 
-  public void setDestinations(@javax.annotation.Nullable List<PatchAlertRouteDataAttributesRulesInnerDestinationsInner> destinations) {
+  public void setDestinations(@jakarta.annotation.Nullable List<PatchAlertRouteDataAttributesRulesInnerDestinationsInner> destinations) {
     this.destinations = destinations;
   }
 
 
-  public PatchAlertRouteDataAttributesRulesInner conditionGroups(@javax.annotation.Nullable List<PatchAlertRouteDataAttributesRulesInnerConditionGroupsInner> conditionGroups) {
+  public PatchAlertRouteDataAttributesRulesInner conditionGroups(@jakarta.annotation.Nullable List<PatchAlertRouteDataAttributesRulesInnerConditionGroupsInner> conditionGroups) {
     this.conditionGroups = conditionGroups;
     return this;
   }
@@ -232,12 +232,12 @@ public class PatchAlertRouteDataAttributesRulesInner {
    * Get conditionGroups
    * @return conditionGroups
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<PatchAlertRouteDataAttributesRulesInnerConditionGroupsInner> getConditionGroups() {
     return conditionGroups;
   }
 
-  public void setConditionGroups(@javax.annotation.Nullable List<PatchAlertRouteDataAttributesRulesInnerConditionGroupsInner> conditionGroups) {
+  public void setConditionGroups(@jakarta.annotation.Nullable List<PatchAlertRouteDataAttributesRulesInnerConditionGroupsInner> conditionGroups) {
     this.conditionGroups = conditionGroups;
   }
 

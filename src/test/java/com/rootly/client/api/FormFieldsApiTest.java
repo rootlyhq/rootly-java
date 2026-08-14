@@ -100,7 +100,23 @@ public class FormFieldsApiTest {
         String filterCreatedAtGte = null;
         String filterCreatedAtLt = null;
         String filterCreatedAtLte = null;
-        FormFieldList response = api.listFormFields(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterKind, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
+        String filterSlugEq = null;
+        String filterSlugNotEq = null;
+        String filterSlugIn = null;
+        String filterSlugNotIn = null;
+        String filterNameEq = null;
+        String filterNameNotEq = null;
+        String filterNameIn = null;
+        String filterNameNotIn = null;
+        String filterKindEq = null;
+        String filterKindNotEq = null;
+        String filterKindIn = null;
+        String filterKindNotIn = null;
+        String filterEnabledEq = null;
+        String filterEnabledNotEq = null;
+        String filterEnabledIn = null;
+        String filterEnabledNotIn = null;
+        FormFieldList response = api.listFormFields(include, pageNumber, pageSize, filterSearch, filterSlug, filterName, filterKind, filterEnabled, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterKindEq, filterKindNotEq, filterKindIn, filterKindNotIn, filterEnabledEq, filterEnabledNotEq, filterEnabledIn, filterEnabledNotIn);
         // TODO: test validations
     }
 

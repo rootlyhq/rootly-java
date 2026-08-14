@@ -99,6 +99,70 @@ public class ScheduleTest {
     }
 
     /**
+     * Test the property 'syncLinearEnabled'
+     */
+    @Test
+    public void syncLinearEnabledTest() {
+        // TODO: test syncLinearEnabled
+    }
+
+    /**
+     * Test the property 'includeShadowsInSlackNotifications'
+     */
+    @Test
+    public void includeShadowsInSlackNotificationsTest() {
+        // TODO: test includeShadowsInSlackNotifications
+    }
+
+    /**
+     * Test the property 'shiftStartNotificationsEnabled'
+     */
+    @Test
+    public void shiftStartNotificationsEnabledTest() {
+        // TODO: test shiftStartNotificationsEnabled
+    }
+
+    /**
+     * Test the property 'shiftUpdateNotificationsEnabled'
+     */
+    @Test
+    public void shiftUpdateNotificationsEnabledTest() {
+        // TODO: test shiftUpdateNotificationsEnabled
+    }
+
+    /**
+     * Test the property 'shiftReportEnabled'
+     */
+    @Test
+    public void shiftReportEnabledTest() {
+        // TODO: test shiftReportEnabled
+    }
+
+    /**
+     * Test the property 'shiftReportDayOfWeek'
+     */
+    @Test
+    public void shiftReportDayOfWeekTest() {
+        // TODO: test shiftReportDayOfWeek
+    }
+
+    /**
+     * Test the property 'shiftReportTimeOfDay'
+     */
+    @Test
+    public void shiftReportTimeOfDayTest() {
+        // TODO: test shiftReportTimeOfDay
+    }
+
+    /**
+     * Test the property 'shiftReportTimeZone'
+     */
+    @Test
+    public void shiftReportTimeZoneTest() {
+        // TODO: test shiftReportTimeZone
+    }
+
+    /**
      * Test the property 'createdAt'
      */
     @Test

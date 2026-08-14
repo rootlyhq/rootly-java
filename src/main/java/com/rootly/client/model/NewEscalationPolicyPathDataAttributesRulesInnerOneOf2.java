@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * NewEscalationPolicyPathDataAttributesRulesInnerOneOf2
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf2 {
   /**
    * The type of the escalation path rule
@@ -105,12 +105,12 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf2 {
 
   public static final String SERIALIZED_NAME_RULE_TYPE = "rule_type";
   @SerializedName(SERIALIZED_NAME_RULE_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private RuleTypeEnum ruleType;
 
   public static final String SERIALIZED_NAME_JSON_PATH = "json_path";
   @SerializedName(SERIALIZED_NAME_JSON_PATH)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String jsonPath;
 
   /**
@@ -125,6 +125,18 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf2 {
     CONTAINS("contains"),
     
     DOES_NOT_CONTAIN("does_not_contain"),
+    
+    CONTAINS_KEY("contains_key"),
+    
+    DOES_NOT_CONTAIN_KEY("does_not_contain_key"),
+    
+    STARTS_WITH("starts_with"),
+    
+    DOES_NOT_START_WITH("does_not_start_with"),
+    
+    MATCHES("matches"),
+    
+    DOES_NOT_MATCH("does_not_match"),
     
     IS_ONE_OF("is_one_of"),
     
@@ -179,23 +191,23 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf2 {
 
   public static final String SERIALIZED_NAME_OPERATOR = "operator";
   @SerializedName(SERIALIZED_NAME_OPERATOR)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private OperatorEnum operator;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String value;
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> values = new ArrayList<>();
 
   public NewEscalationPolicyPathDataAttributesRulesInnerOneOf2() {
   }
 
-  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf2 ruleType(@javax.annotation.Nonnull RuleTypeEnum ruleType) {
+  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf2 ruleType(@jakarta.annotation.Nonnull RuleTypeEnum ruleType) {
     this.ruleType = ruleType;
     return this;
   }
@@ -204,17 +216,17 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf2 {
    * The type of the escalation path rule
    * @return ruleType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public RuleTypeEnum getRuleType() {
     return ruleType;
   }
 
-  public void setRuleType(@javax.annotation.Nonnull RuleTypeEnum ruleType) {
+  public void setRuleType(@jakarta.annotation.Nonnull RuleTypeEnum ruleType) {
     this.ruleType = ruleType;
   }
 
 
-  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf2 jsonPath(@javax.annotation.Nonnull String jsonPath) {
+  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf2 jsonPath(@jakarta.annotation.Nonnull String jsonPath) {
     this.jsonPath = jsonPath;
     return this;
   }
@@ -223,17 +235,17 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf2 {
    * JSON path to extract value from payload
    * @return jsonPath
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getJsonPath() {
     return jsonPath;
   }
 
-  public void setJsonPath(@javax.annotation.Nonnull String jsonPath) {
+  public void setJsonPath(@jakarta.annotation.Nonnull String jsonPath) {
     this.jsonPath = jsonPath;
   }
 
 
-  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf2 operator(@javax.annotation.Nonnull OperatorEnum operator) {
+  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf2 operator(@jakarta.annotation.Nonnull OperatorEnum operator) {
     this.operator = operator;
     return this;
   }
@@ -242,17 +254,17 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf2 {
    * How JSON path value should be matched
    * @return operator
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public OperatorEnum getOperator() {
     return operator;
   }
 
-  public void setOperator(@javax.annotation.Nonnull OperatorEnum operator) {
+  public void setOperator(@jakarta.annotation.Nonnull OperatorEnum operator) {
     this.operator = operator;
   }
 
 
-  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf2 value(@javax.annotation.Nullable String value) {
+  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf2 value(@jakarta.annotation.Nullable String value) {
     this.value = value;
     return this;
   }
@@ -261,17 +273,17 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf2 {
    * Value with which JSON path value should be matched
    * @return value
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getValue() {
     return value;
   }
 
-  public void setValue(@javax.annotation.Nullable String value) {
+  public void setValue(@jakarta.annotation.Nullable String value) {
     this.value = value;
   }
 
 
-  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf2 values(@javax.annotation.Nullable List<String> values) {
+  public NewEscalationPolicyPathDataAttributesRulesInnerOneOf2 values(@jakarta.annotation.Nullable List<String> values) {
     this.values = values;
     return this;
   }
@@ -288,12 +300,12 @@ public class NewEscalationPolicyPathDataAttributesRulesInnerOneOf2 {
    * Values to match against (for is_one_of / is_not_one_of operators)
    * @return values
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getValues() {
     return values;
   }
 
-  public void setValues(@javax.annotation.Nullable List<String> values) {
+  public void setValues(@jakarta.annotation.Nullable List<String> values) {
     this.values = values;
   }
 

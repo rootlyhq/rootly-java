@@ -19,8 +19,11 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.IncidentStatusPageEventStatusPageComponentsInner;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * IncidentStatusPageEvent
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class IncidentStatusPageEvent {
   public static final String SERIALIZED_NAME_EVENT = "event";
   @SerializedName(SERIALIZED_NAME_EVENT)
@@ -136,6 +139,11 @@ public class IncidentStatusPageEvent {
   @SerializedName(SERIALIZED_NAME_SHOULD_TWEET)
   @jakarta.annotation.Nullable
   private Boolean shouldTweet;
+
+  public static final String SERIALIZED_NAME_STATUS_PAGE_COMPONENTS = "status_page_components";
+  @SerializedName(SERIALIZED_NAME_STATUS_PAGE_COMPONENTS)
+  @jakarta.annotation.Nullable
+  private List<IncidentStatusPageEventStatusPageComponentsInner> statusPageComponents = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_STARTED_AT = "started_at";
   @SerializedName(SERIALIZED_NAME_STARTED_AT)
@@ -250,6 +258,33 @@ public class IncidentStatusPageEvent {
   }
 
 
+  public IncidentStatusPageEvent statusPageComponents(@jakarta.annotation.Nullable List<IncidentStatusPageEventStatusPageComponentsInner> statusPageComponents) {
+    this.statusPageComponents = statusPageComponents;
+    return this;
+  }
+
+  public IncidentStatusPageEvent addStatusPageComponentsItem(IncidentStatusPageEventStatusPageComponentsInner statusPageComponentsItem) {
+    if (this.statusPageComponents == null) {
+      this.statusPageComponents = new ArrayList<>();
+    }
+    this.statusPageComponents.add(statusPageComponentsItem);
+    return this;
+  }
+
+  /**
+   * Affected status page components recorded on the event and their statuses
+   * @return statusPageComponents
+   */
+  @jakarta.annotation.Nullable
+  public List<IncidentStatusPageEventStatusPageComponentsInner> getStatusPageComponents() {
+    return statusPageComponents;
+  }
+
+  public void setStatusPageComponents(@jakarta.annotation.Nullable List<IncidentStatusPageEventStatusPageComponentsInner> statusPageComponents) {
+    this.statusPageComponents = statusPageComponents;
+  }
+
+
   public IncidentStatusPageEvent startedAt(@jakarta.annotation.Nonnull String startedAt) {
     this.startedAt = startedAt;
     return this;
@@ -322,6 +357,7 @@ public class IncidentStatusPageEvent {
         Objects.equals(this.status, incidentStatusPageEvent.status) &&
         Objects.equals(this.notifySubscribers, incidentStatusPageEvent.notifySubscribers) &&
         Objects.equals(this.shouldTweet, incidentStatusPageEvent.shouldTweet) &&
+        Objects.equals(this.statusPageComponents, incidentStatusPageEvent.statusPageComponents) &&
         Objects.equals(this.startedAt, incidentStatusPageEvent.startedAt) &&
         Objects.equals(this.createdAt, incidentStatusPageEvent.createdAt) &&
         Objects.equals(this.updatedAt, incidentStatusPageEvent.updatedAt);
@@ -329,7 +365,7 @@ public class IncidentStatusPageEvent {
 
   @Override
   public int hashCode() {
-    return Objects.hash(event, statusPageId, status, notifySubscribers, shouldTweet, startedAt, createdAt, updatedAt);
+    return Objects.hash(event, statusPageId, status, notifySubscribers, shouldTweet, statusPageComponents, startedAt, createdAt, updatedAt);
   }
 
   @Override
@@ -341,6 +377,7 @@ public class IncidentStatusPageEvent {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    notifySubscribers: ").append(toIndentedString(notifySubscribers)).append("\n");
     sb.append("    shouldTweet: ").append(toIndentedString(shouldTweet)).append("\n");
+    sb.append("    statusPageComponents: ").append(toIndentedString(statusPageComponents)).append("\n");
     sb.append("    startedAt: ").append(toIndentedString(startedAt)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
@@ -371,6 +408,7 @@ public class IncidentStatusPageEvent {
     openapiFields.add("status");
     openapiFields.add("notify_subscribers");
     openapiFields.add("should_tweet");
+    openapiFields.add("status_page_components");
     openapiFields.add("started_at");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
@@ -423,6 +461,20 @@ public class IncidentStatusPageEvent {
       // validate the optional field `status`
       if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) {
         StatusEnum.validateJsonElement(jsonObj.get("status"));
+      }
+      if (jsonObj.get("status_page_components") != null && !jsonObj.get("status_page_components").isJsonNull()) {
+        JsonArray jsonArraystatusPageComponents = jsonObj.getAsJsonArray("status_page_components");
+        if (jsonArraystatusPageComponents != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("status_page_components").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `status_page_components` to be an array in the JSON string but got `%s`", jsonObj.get("status_page_components").toString()));
+          }
+
+          // validate the optional field `status_page_components` (array)
+          for (int i = 0; i < jsonArraystatusPageComponents.size(); i++) {
+            IncidentStatusPageEventStatusPageComponentsInner.validateJsonElement(jsonArraystatusPageComponents.get(i));
+          };
+        }
       }
       if (!jsonObj.get("started_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `started_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("started_at").toString()));

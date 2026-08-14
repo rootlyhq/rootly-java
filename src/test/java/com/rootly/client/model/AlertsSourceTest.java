@@ -18,11 +18,11 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.AlertsSourceSourceableAttributes;
 import com.rootly.client.model.NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner;
 import com.rootly.client.model.NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner;
 import com.rootly.client.model.NewAlertsSourceDataAttributesAlertTemplateAttributes;
 import com.rootly.client.model.NewAlertsSourceDataAttributesResolutionRuleAttributes;
-import com.rootly.client.model.NewAlertsSourceDataAttributesSourceableAttributes;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -51,6 +51,14 @@ public class AlertsSourceTest {
     @Test
     public void nameTest() {
         // TODO: test name
+    }
+
+    /**
+     * Test the property 'enabled'
+     */
+    @Test
+    public void enabledTest() {
+        // TODO: test enabled
     }
 
     /**

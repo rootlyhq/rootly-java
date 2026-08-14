@@ -14,12 +14,23 @@
 package com.rootly.client.api;
 
 import com.rootly.client.ApiException;
+import com.rootly.client.model.BulkDeleteFunctionalities422Response;
+import com.rootly.client.model.BulkDestroyFunctionalities;
+import com.rootly.client.model.BulkDestroyFunctionalitiesResponse;
+import com.rootly.client.model.BulkUpsertFunctionalities;
+import com.rootly.client.model.BulkUpsertFunctionalities422Response;
+import com.rootly.client.model.BulkUpsertFunctionalitiesResponse;
+import com.rootly.client.model.CatalogPropertyList;
+import com.rootly.client.model.CatalogPropertyResponse;
 import com.rootly.client.model.ErrorsList;
 import com.rootly.client.model.FunctionalityList;
 import com.rootly.client.model.FunctionalityResponse;
 import com.rootly.client.model.GetAlertFieldIdParameter;
+import com.rootly.client.model.IncidentsChartResponse;
+import com.rootly.client.model.NewCatalogProperty;
 import com.rootly.client.model.NewFunctionality;
 import com.rootly.client.model.UpdateFunctionality;
+import com.rootly.client.model.UptimeChartResponse;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -37,6 +48,34 @@ public class FunctionalitiesApiTest {
     private final FunctionalitiesApi api = new FunctionalitiesApi();
 
     /**
+     * Bulk delete Functionalities
+     *
+     * Delete functionalities by external_id list, or prune by managed_by source. Two mutually exclusive modes.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void bulkDeleteFunctionalitiesTest() throws ApiException {
+        BulkDestroyFunctionalities bulkDestroyFunctionalities = null;
+        BulkDestroyFunctionalitiesResponse response = api.bulkDeleteFunctionalities(bulkDestroyFunctionalities);
+        // TODO: test validations
+    }
+
+    /**
+     * Bulk upsert Functionalities
+     *
+     * Create or update multiple functionalities by external_id. Only attributes present in the payload are written (managed-fields semantics). Transactional: all succeed or all fail. Requires an API key with both create and update capability across the resource scope (team/org-scoped); record-scoped principals cannot use this endpoint (they receive 404), which also prevents the create-vs-update branch from leaking whether an external_id exists.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void bulkUpsertFunctionalitiesTest() throws ApiException {
+        BulkUpsertFunctionalities bulkUpsertFunctionalities = null;
+        BulkUpsertFunctionalitiesResponse response = api.bulkUpsertFunctionalities(bulkUpsertFunctionalities);
+        // TODO: test validations
+    }
+
+    /**
      * Creates a functionality
      *
      * Creates a new functionality from provided data
@@ -47,6 +86,20 @@ public class FunctionalitiesApiTest {
     public void createFunctionalityTest() throws ApiException {
         NewFunctionality newFunctionality = null;
         FunctionalityResponse response = api.createFunctionality(newFunctionality);
+        // TODO: test validations
+    }
+
+    /**
+     * Creates a Catalog Property
+     *
+     * Creates a new Catalog Property from provided data
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void createFunctionalityCatalogPropertyTest() throws ApiException {
+        NewCatalogProperty newCatalogProperty = null;
+        CatalogPropertyResponse response = api.createFunctionalityCatalogProperty(newCatalogProperty);
         // TODO: test validations
     }
 
@@ -89,7 +142,7 @@ public class FunctionalitiesApiTest {
     public void getFunctionalityIncidentsChartTest() throws ApiException {
         GetAlertFieldIdParameter id = null;
         String period = null;
-        Object response = api.getFunctionalityIncidentsChart(id, period);
+        IncidentsChartResponse response = api.getFunctionalityIncidentsChart(id, period);
         // TODO: test validations
     }
 
@@ -104,7 +157,7 @@ public class FunctionalitiesApiTest {
     public void getFunctionalityUptimeChartTest() throws ApiException {
         GetAlertFieldIdParameter id = null;
         String period = null;
-        Object response = api.getFunctionalityUptimeChart(id, period);
+        UptimeChartResponse response = api.getFunctionalityUptimeChart(id, period);
         // TODO: test validations
     }
 
@@ -131,8 +184,40 @@ public class FunctionalitiesApiTest {
         String filterCreatedAtGte = null;
         String filterCreatedAtLt = null;
         String filterCreatedAtLte = null;
+        String filterNameEq = null;
+        String filterNameNotEq = null;
+        String filterNameIn = null;
+        String filterNameNotIn = null;
+        String filterSlugEq = null;
+        String filterSlugNotEq = null;
+        String filterSlugIn = null;
+        String filterSlugNotIn = null;
         String sort = null;
-        FunctionalityList response = api.listFunctionalities(include, pageNumber, pageSize, filterSearch, filterName, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterSlug, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
+        FunctionalityList response = api.listFunctionalities(include, pageNumber, pageSize, filterSearch, filterName, filterBackstageId, filterCortexId, filterOpslevelId, filterExternalId, filterSlug, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, sort);
+        // TODO: test validations
+    }
+
+    /**
+     * List Catalog Properties
+     *
+     * List Functionality Catalog Properties
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void listFunctionalityCatalogPropertiesTest() throws ApiException {
+        String include = null;
+        String sort = null;
+        Integer pageNumber = null;
+        Integer pageSize = null;
+        String filterSlug = null;
+        String filterName = null;
+        String filterKind = null;
+        String filterCreatedAtGt = null;
+        String filterCreatedAtGte = null;
+        String filterCreatedAtLt = null;
+        String filterCreatedAtLte = null;
+        CatalogPropertyList response = api.listFunctionalityCatalogProperties(include, sort, pageNumber, pageSize, filterSlug, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte);
         // TODO: test validations
     }
 

@@ -32,6 +32,7 @@ import com.rootly.client.model.AlertRouteResponse;
 import com.rootly.client.model.DeleteAlertRoute200Response;
 import com.rootly.client.model.ErrorsList;
 import com.rootly.client.model.NewAlertRoute;
+import com.rootly.client.model.PatchAlertRoute;
 import com.rootly.client.model.UpdateAlertRoute;
 
 import java.lang.reflect.Type;
@@ -424,7 +425,7 @@ public class AlertRoutesApi {
 
     /**
      * Get an alert route
-     * Get a specific alert route by id. **Note: This endpoint requires access to Advanced Alert Routing. If you&#39;re unsure whether you have access to this feature, please contact Rootly customer support.**
+     * Get a specific alert route by id. **Note: This endpoint requires access to Advanced Alert Routing. If you&#39;re unsure whether you have access to this feature, please contact Rootly customer support.**  ## Optional Parameters  - **show_nested_ids** (query parameter): When set to &#x60;true&#x60;, the response will include IDs for all nested resources (destinations, condition_groups, conditions). This is useful when you need to reference these nested resources for updates or deletions via PATCH requests.  Example: &#x60;GET /v1/alert_routes/{id}?show_nested_ids&#x3D;true&#x60;
      * @param id  (required)
      * @return AlertRouteResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -444,7 +445,7 @@ public class AlertRoutesApi {
 
     /**
      * Get an alert route
-     * Get a specific alert route by id. **Note: This endpoint requires access to Advanced Alert Routing. If you&#39;re unsure whether you have access to this feature, please contact Rootly customer support.**
+     * Get a specific alert route by id. **Note: This endpoint requires access to Advanced Alert Routing. If you&#39;re unsure whether you have access to this feature, please contact Rootly customer support.**  ## Optional Parameters  - **show_nested_ids** (query parameter): When set to &#x60;true&#x60;, the response will include IDs for all nested resources (destinations, condition_groups, conditions). This is useful when you need to reference these nested resources for updates or deletions via PATCH requests.  Example: &#x60;GET /v1/alert_routes/{id}?show_nested_ids&#x3D;true&#x60;
      * @param id  (required)
      * @return ApiResponse&lt;AlertRouteResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -465,7 +466,7 @@ public class AlertRoutesApi {
 
     /**
      * Get an alert route (asynchronously)
-     * Get a specific alert route by id. **Note: This endpoint requires access to Advanced Alert Routing. If you&#39;re unsure whether you have access to this feature, please contact Rootly customer support.**
+     * Get a specific alert route by id. **Note: This endpoint requires access to Advanced Alert Routing. If you&#39;re unsure whether you have access to this feature, please contact Rootly customer support.**  ## Optional Parameters  - **show_nested_ids** (query parameter): When set to &#x60;true&#x60;, the response will include IDs for all nested resources (destinations, condition_groups, conditions). This is useful when you need to reference these nested resources for updates or deletions via PATCH requests.  Example: &#x60;GET /v1/alert_routes/{id}?show_nested_ids&#x3D;true&#x60;
      * @param id  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -492,6 +493,14 @@ public class AlertRoutesApi {
      * @param pageSize  (optional)
      * @param filterSearch  (optional)
      * @param filterName  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
      * @param sort  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -504,7 +513,7 @@ public class AlertRoutesApi {
         <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAlertRoutesCall(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listAlertRoutesCall(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -545,6 +554,38 @@ public class AlertRoutesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name]", filterName));
         }
 
+        if (filterSlugEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][eq]", filterSlugEq));
+        }
+
+        if (filterSlugNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][not_eq]", filterSlugNotEq));
+        }
+
+        if (filterSlugIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][in]", filterSlugIn));
+        }
+
+        if (filterSlugNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[slug][not_in]", filterSlugNotIn));
+        }
+
+        if (filterNameEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][eq]", filterNameEq));
+        }
+
+        if (filterNameNotEq != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][not_eq]", filterNameNotEq));
+        }
+
+        if (filterNameIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][in]", filterNameIn));
+        }
+
+        if (filterNameNotIn != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter[name][not_in]", filterNameNotIn));
+        }
+
         if (sort != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("sort", sort));
         }
@@ -569,8 +610,8 @@ public class AlertRoutesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listAlertRoutesValidateBeforeCall(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
-        return listAlertRoutesCall(pageNumber, pageSize, filterSearch, filterName, sort, _callback);
+    private okhttp3.Call listAlertRoutesValidateBeforeCall(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String sort, final ApiCallback _callback) throws ApiException {
+        return listAlertRoutesCall(pageNumber, pageSize, filterSearch, filterName, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, sort, _callback);
 
     }
 
@@ -581,6 +622,14 @@ public class AlertRoutesApi {
      * @param pageSize  (optional)
      * @param filterSearch  (optional)
      * @param filterName  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
      * @param sort  (optional)
      * @return AlertRouteList
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -592,8 +641,8 @@ public class AlertRoutesApi {
         <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
      </table>
      */
-    public AlertRouteList listAlertRoutes(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String sort) throws ApiException {
-        ApiResponse<AlertRouteList> localVarResp = listAlertRoutesWithHttpInfo(pageNumber, pageSize, filterSearch, filterName, sort);
+    public AlertRouteList listAlertRoutes(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String sort) throws ApiException {
+        ApiResponse<AlertRouteList> localVarResp = listAlertRoutesWithHttpInfo(pageNumber, pageSize, filterSearch, filterName, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, sort);
         return localVarResp.getData();
     }
 
@@ -604,6 +653,14 @@ public class AlertRoutesApi {
      * @param pageSize  (optional)
      * @param filterSearch  (optional)
      * @param filterName  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
      * @param sort  (optional)
      * @return ApiResponse&lt;AlertRouteList&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -615,8 +672,8 @@ public class AlertRoutesApi {
         <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertRouteList> listAlertRoutesWithHttpInfo(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String sort) throws ApiException {
-        okhttp3.Call localVarCall = listAlertRoutesValidateBeforeCall(pageNumber, pageSize, filterSearch, filterName, sort, null);
+    public ApiResponse<AlertRouteList> listAlertRoutesWithHttpInfo(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String sort) throws ApiException {
+        okhttp3.Call localVarCall = listAlertRoutesValidateBeforeCall(pageNumber, pageSize, filterSearch, filterName, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, sort, null);
         Type localVarReturnType = new TypeToken<AlertRouteList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -628,6 +685,14 @@ public class AlertRoutesApi {
      * @param pageSize  (optional)
      * @param filterSearch  (optional)
      * @param filterName  (optional)
+     * @param filterSlugEq  (optional)
+     * @param filterSlugNotEq  (optional)
+     * @param filterSlugIn  (optional)
+     * @param filterSlugNotIn  (optional)
+     * @param filterNameEq  (optional)
+     * @param filterNameNotEq  (optional)
+     * @param filterNameIn  (optional)
+     * @param filterNameNotIn  (optional)
      * @param sort  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -640,10 +705,159 @@ public class AlertRoutesApi {
         <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAlertRoutesAsync(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String sort, final ApiCallback<AlertRouteList> _callback) throws ApiException {
+    public okhttp3.Call listAlertRoutesAsync(@jakarta.annotation.Nullable Integer pageNumber, @jakarta.annotation.Nullable Integer pageSize, @jakarta.annotation.Nullable String filterSearch, @jakarta.annotation.Nullable String filterName, @jakarta.annotation.Nullable String filterSlugEq, @jakarta.annotation.Nullable String filterSlugNotEq, @jakarta.annotation.Nullable String filterSlugIn, @jakarta.annotation.Nullable String filterSlugNotIn, @jakarta.annotation.Nullable String filterNameEq, @jakarta.annotation.Nullable String filterNameNotEq, @jakarta.annotation.Nullable String filterNameIn, @jakarta.annotation.Nullable String filterNameNotIn, @jakarta.annotation.Nullable String sort, final ApiCallback<AlertRouteList> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listAlertRoutesValidateBeforeCall(pageNumber, pageSize, filterSearch, filterName, sort, _callback);
+        okhttp3.Call localVarCall = listAlertRoutesValidateBeforeCall(pageNumber, pageSize, filterSearch, filterName, filterSlugEq, filterSlugNotEq, filterSlugIn, filterSlugNotIn, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, sort, _callback);
         Type localVarReturnType = new TypeToken<AlertRouteList>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for patchAlertRoute
+     * @param id  (required)
+     * @param patchAlertRoute  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> delete existing rule by id with _destroy </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> cross-team access denied </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call patchAlertRouteCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull PatchAlertRoute patchAlertRoute, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = patchAlertRoute;
+
+        // create path and map variables
+        String localVarPath = "/v1/alert_routes/{id}"
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/vnd.api+json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/vnd.api+json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "bearer_auth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call patchAlertRouteValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull PatchAlertRoute patchAlertRoute, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling patchAlertRoute(Async)");
+        }
+
+        // verify the required parameter 'patchAlertRoute' is set
+        if (patchAlertRoute == null) {
+            throw new ApiException("Missing the required parameter 'patchAlertRoute' when calling patchAlertRoute(Async)");
+        }
+
+        return patchAlertRouteCall(id, patchAlertRoute, _callback);
+
+    }
+
+    /**
+     * Update an alert route
+     * Updates an alert route. **Note: This endpoint requires access to Advanced Alert Routing. If you&#39;re unsure whether you have access to this feature, please contact Rootly customer support.**
+     * @param id  (required)
+     * @param patchAlertRoute  (required)
+     * @return AlertRouteResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> delete existing rule by id with _destroy </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> cross-team access denied </td><td>  -  </td></tr>
+     </table>
+     */
+    public AlertRouteResponse patchAlertRoute(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull PatchAlertRoute patchAlertRoute) throws ApiException {
+        ApiResponse<AlertRouteResponse> localVarResp = patchAlertRouteWithHttpInfo(id, patchAlertRoute);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Update an alert route
+     * Updates an alert route. **Note: This endpoint requires access to Advanced Alert Routing. If you&#39;re unsure whether you have access to this feature, please contact Rootly customer support.**
+     * @param id  (required)
+     * @param patchAlertRoute  (required)
+     * @return ApiResponse&lt;AlertRouteResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> delete existing rule by id with _destroy </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> cross-team access denied </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<AlertRouteResponse> patchAlertRouteWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull PatchAlertRoute patchAlertRoute) throws ApiException {
+        okhttp3.Call localVarCall = patchAlertRouteValidateBeforeCall(id, patchAlertRoute, null);
+        Type localVarReturnType = new TypeToken<AlertRouteResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Update an alert route (asynchronously)
+     * Updates an alert route. **Note: This endpoint requires access to Advanced Alert Routing. If you&#39;re unsure whether you have access to this feature, please contact Rootly customer support.**
+     * @param id  (required)
+     * @param patchAlertRoute  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> delete existing rule by id with _destroy </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> invalid request </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> cross-team access denied </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call patchAlertRouteAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull PatchAlertRoute patchAlertRoute, final ApiCallback<AlertRouteResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = patchAlertRouteValidateBeforeCall(id, patchAlertRoute, _callback);
+        Type localVarReturnType = new TypeToken<AlertRouteResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -727,7 +941,7 @@ public class AlertRoutesApi {
 
     /**
      * Update an alert route
-     * Update a specific alert route by id. **Note: This endpoint requires access to Advanced Alert Routing. If you&#39;re unsure whether you have access to this feature, please contact Rootly customer support.**  ## Asynchronous Rule Creation  For organizations with large numbers of routing rules, Rootly supports asynchronous rule processing to improve performance. When enabled, rule updates happen in the background.  **Important**: When async processing is enabled, the rules list in the API response will not be up-to-date immediately after update. You should refetch the alert route after a few minutes to get the updated rules.  If you experience slow operations when managing alert routes with many rules, contact Rootly customer support to enable asynchronous rule processing for your organization.
+     * Update a specific alert route by id. **Note: This endpoint requires access to Advanced Alert Routing. If you&#39;re unsure whether you have access to this feature, please contact Rootly customer support.**  ### Asynchronous Rule Creation  For organizations with large numbers of routing rules, Rootly supports asynchronous rule processing to improve performance. When enabled, rule updates happen in the background.  **Important**: When async processing is enabled, the rules list in the API response will not be up-to-date immediately after update. You should refetch the alert route after a few minutes to get the updated rules.  If you experience slow operations when managing alert routes with many rules, contact Rootly customer support to enable asynchronous rule processing for your organization.
      * @param id  (required)
      * @param updateAlertRoute  (required)
      * @return AlertRouteResponse
@@ -748,7 +962,7 @@ public class AlertRoutesApi {
 
     /**
      * Update an alert route
-     * Update a specific alert route by id. **Note: This endpoint requires access to Advanced Alert Routing. If you&#39;re unsure whether you have access to this feature, please contact Rootly customer support.**  ## Asynchronous Rule Creation  For organizations with large numbers of routing rules, Rootly supports asynchronous rule processing to improve performance. When enabled, rule updates happen in the background.  **Important**: When async processing is enabled, the rules list in the API response will not be up-to-date immediately after update. You should refetch the alert route after a few minutes to get the updated rules.  If you experience slow operations when managing alert routes with many rules, contact Rootly customer support to enable asynchronous rule processing for your organization.
+     * Update a specific alert route by id. **Note: This endpoint requires access to Advanced Alert Routing. If you&#39;re unsure whether you have access to this feature, please contact Rootly customer support.**  ### Asynchronous Rule Creation  For organizations with large numbers of routing rules, Rootly supports asynchronous rule processing to improve performance. When enabled, rule updates happen in the background.  **Important**: When async processing is enabled, the rules list in the API response will not be up-to-date immediately after update. You should refetch the alert route after a few minutes to get the updated rules.  If you experience slow operations when managing alert routes with many rules, contact Rootly customer support to enable asynchronous rule processing for your organization.
      * @param id  (required)
      * @param updateAlertRoute  (required)
      * @return ApiResponse&lt;AlertRouteResponse&gt;
@@ -770,7 +984,7 @@ public class AlertRoutesApi {
 
     /**
      * Update an alert route (asynchronously)
-     * Update a specific alert route by id. **Note: This endpoint requires access to Advanced Alert Routing. If you&#39;re unsure whether you have access to this feature, please contact Rootly customer support.**  ## Asynchronous Rule Creation  For organizations with large numbers of routing rules, Rootly supports asynchronous rule processing to improve performance. When enabled, rule updates happen in the background.  **Important**: When async processing is enabled, the rules list in the API response will not be up-to-date immediately after update. You should refetch the alert route after a few minutes to get the updated rules.  If you experience slow operations when managing alert routes with many rules, contact Rootly customer support to enable asynchronous rule processing for your organization.
+     * Update a specific alert route by id. **Note: This endpoint requires access to Advanced Alert Routing. If you&#39;re unsure whether you have access to this feature, please contact Rootly customer support.**  ### Asynchronous Rule Creation  For organizations with large numbers of routing rules, Rootly supports asynchronous rule processing to improve performance. When enabled, rule updates happen in the background.  **Important**: When async processing is enabled, the rules list in the API response will not be up-to-date immediately after update. You should refetch the alert route after a few minutes to get the updated rules.  If you experience slow operations when managing alert routes with many rules, contact Rootly customer support to enable asynchronous rule processing for your organization.
      * @param id  (required)
      * @param updateAlertRoute  (required)
      * @param _callback The callback to be executed when the API call finishes

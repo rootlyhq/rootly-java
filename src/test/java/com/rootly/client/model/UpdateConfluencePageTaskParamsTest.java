@@ -18,6 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.CreateConfluencePageTaskParamsIntegration;
 import com.rootly.client.model.UpdateConfluencePageTaskParamsTemplate;
 import java.io.IOException;
 import java.util.Arrays;
@@ -44,6 +45,14 @@ public class UpdateConfluencePageTaskParamsTest {
     @Test
     public void taskTypeTest() {
         // TODO: test taskType
+    }
+
+    /**
+     * Test the property 'integration'
+     */
+    @Test
+    public void integrationTest() {
+        // TODO: test integration
     }
 
     /**
@@ -84,6 +93,30 @@ public class UpdateConfluencePageTaskParamsTest {
     @Test
     public void templateTest() {
         // TODO: test template
+    }
+
+    /**
+     * Test the property 'includeOverview'
+     */
+    @Test
+    public void includeOverviewTest() {
+        // TODO: test includeOverview
+    }
+
+    /**
+     * Test the property 'includeTimeline'
+     */
+    @Test
+    public void includeTimelineTest() {
+        // TODO: test includeTimeline
+    }
+
+    /**
+     * Test the property 'includeFollowUps'
+     */
+    @Test
+    public void includeFollowUpsTest() {
+        // TODO: test includeFollowUps
     }
 
 }

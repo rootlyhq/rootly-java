@@ -49,16 +49,16 @@ import com.rootly.client.JSON;
 /**
  * PatchAlertRouteDataAttributesRulesInnerDestinationsInner
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class PatchAlertRouteDataAttributesRulesInnerDestinationsInner {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private UUID id;
 
   public static final String SERIALIZED_NAME_DESTROY = "_destroy";
   @SerializedName(SERIALIZED_NAME_DESTROY)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean destroy;
 
   /**
@@ -119,18 +119,18 @@ public class PatchAlertRouteDataAttributesRulesInnerDestinationsInner {
 
   public static final String SERIALIZED_NAME_TARGET_TYPE = "target_type";
   @SerializedName(SERIALIZED_NAME_TARGET_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TargetTypeEnum targetType;
 
   public static final String SERIALIZED_NAME_TARGET_ID = "target_id";
   @SerializedName(SERIALIZED_NAME_TARGET_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private UUID targetId;
 
   public PatchAlertRouteDataAttributesRulesInnerDestinationsInner() {
   }
 
-  public PatchAlertRouteDataAttributesRulesInnerDestinationsInner id(@javax.annotation.Nullable UUID id) {
+  public PatchAlertRouteDataAttributesRulesInnerDestinationsInner id(@jakarta.annotation.Nullable UUID id) {
     this.id = id;
     return this;
   }
@@ -139,17 +139,17 @@ public class PatchAlertRouteDataAttributesRulesInnerDestinationsInner {
    * The ID of the destination. Required for updating or deleting existing destinations.
    * @return id
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public UUID getId() {
     return id;
   }
 
-  public void setId(@javax.annotation.Nullable UUID id) {
+  public void setId(@jakarta.annotation.Nullable UUID id) {
     this.id = id;
   }
 
 
-  public PatchAlertRouteDataAttributesRulesInnerDestinationsInner destroy(@javax.annotation.Nullable Boolean destroy) {
+  public PatchAlertRouteDataAttributesRulesInnerDestinationsInner destroy(@jakarta.annotation.Nullable Boolean destroy) {
     this.destroy = destroy;
     return this;
   }
@@ -158,17 +158,17 @@ public class PatchAlertRouteDataAttributesRulesInnerDestinationsInner {
    * Set to true to delete this destination
    * @return destroy
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getDestroy() {
     return destroy;
   }
 
-  public void setDestroy(@javax.annotation.Nullable Boolean destroy) {
+  public void setDestroy(@jakarta.annotation.Nullable Boolean destroy) {
     this.destroy = destroy;
   }
 
 
-  public PatchAlertRouteDataAttributesRulesInnerDestinationsInner targetType(@javax.annotation.Nullable TargetTypeEnum targetType) {
+  public PatchAlertRouteDataAttributesRulesInnerDestinationsInner targetType(@jakarta.annotation.Nullable TargetTypeEnum targetType) {
     this.targetType = targetType;
     return this;
   }
@@ -177,17 +177,17 @@ public class PatchAlertRouteDataAttributesRulesInnerDestinationsInner {
    * The type of the target. Please contact support if you encounter issues using &#x60;Functionality&#x60; as a target type.
    * @return targetType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TargetTypeEnum getTargetType() {
     return targetType;
   }
 
-  public void setTargetType(@javax.annotation.Nullable TargetTypeEnum targetType) {
+  public void setTargetType(@jakarta.annotation.Nullable TargetTypeEnum targetType) {
     this.targetType = targetType;
   }
 
 
-  public PatchAlertRouteDataAttributesRulesInnerDestinationsInner targetId(@javax.annotation.Nullable UUID targetId) {
+  public PatchAlertRouteDataAttributesRulesInnerDestinationsInner targetId(@jakarta.annotation.Nullable UUID targetId) {
     this.targetId = targetId;
     return this;
   }
@@ -196,12 +196,12 @@ public class PatchAlertRouteDataAttributesRulesInnerDestinationsInner {
    * The ID of the target
    * @return targetId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public UUID getTargetId() {
     return targetId;
   }
 
-  public void setTargetId(@javax.annotation.Nullable UUID targetId) {
+  public void setTargetId(@jakarta.annotation.Nullable UUID targetId) {
     this.targetId = targetId;
   }
 

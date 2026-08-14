@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.CreateJiraIssueTaskParamsIntegration;
 import com.rootly.client.model.CreateJiraIssueTaskParamsPriority;
 import com.rootly.client.model.CreateJiraIssueTaskParamsStatus;
 import java.io.IOException;
@@ -51,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateJiraIssueTaskParams
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateJiraIssueTaskParams {
   /**
    * Gets or Sets taskType
@@ -107,6 +108,11 @@ public class UpdateJiraIssueTaskParams {
   @SerializedName(SERIALIZED_NAME_TASK_TYPE)
   @jakarta.annotation.Nullable
   private TaskTypeEnum taskType;
+
+  public static final String SERIALIZED_NAME_INTEGRATION = "integration";
+  @SerializedName(SERIALIZED_NAME_INTEGRATION)
+  @jakarta.annotation.Nullable
+  private CreateJiraIssueTaskParamsIntegration integration;
 
   public static final String SERIALIZED_NAME_ISSUE_ID = "issue_id";
   @SerializedName(SERIALIZED_NAME_ISSUE_ID)
@@ -168,6 +174,16 @@ public class UpdateJiraIssueTaskParams {
   @jakarta.annotation.Nullable
   private String updatePayload;
 
+  public static final String SERIALIZED_NAME_RETRY_COUNT = "retry_count";
+  @SerializedName(SERIALIZED_NAME_RETRY_COUNT)
+  @jakarta.annotation.Nullable
+  private Integer retryCount = 0;
+
+  public static final String SERIALIZED_NAME_RETRY_WAIT_TIME = "retry_wait_time";
+  @SerializedName(SERIALIZED_NAME_RETRY_WAIT_TIME)
+  @jakarta.annotation.Nullable
+  private Integer retryWaitTime = 1;
+
   public UpdateJiraIssueTaskParams() {
   }
 
@@ -187,6 +203,25 @@ public class UpdateJiraIssueTaskParams {
 
   public void setTaskType(@jakarta.annotation.Nullable TaskTypeEnum taskType) {
     this.taskType = taskType;
+  }
+
+
+  public UpdateJiraIssueTaskParams integration(@jakarta.annotation.Nullable CreateJiraIssueTaskParamsIntegration integration) {
+    this.integration = integration;
+    return this;
+  }
+
+  /**
+   * Get integration
+   * @return integration
+   */
+  @jakarta.annotation.Nullable
+  public CreateJiraIssueTaskParamsIntegration getIntegration() {
+    return integration;
+  }
+
+  public void setIntegration(@jakarta.annotation.Nullable CreateJiraIssueTaskParamsIntegration integration) {
+    this.integration = integration;
   }
 
 
@@ -418,6 +453,44 @@ public class UpdateJiraIssueTaskParams {
   }
 
 
+  public UpdateJiraIssueTaskParams retryCount(@jakarta.annotation.Nullable Integer retryCount) {
+    this.retryCount = retryCount;
+    return this;
+  }
+
+  /**
+   * Number of times to retry on rate-limit (HTTP 429) responses (0-4). 0 disables retry.
+   * @return retryCount
+   */
+  @jakarta.annotation.Nullable
+  public Integer getRetryCount() {
+    return retryCount;
+  }
+
+  public void setRetryCount(@jakarta.annotation.Nullable Integer retryCount) {
+    this.retryCount = retryCount;
+  }
+
+
+  public UpdateJiraIssueTaskParams retryWaitTime(@jakarta.annotation.Nullable Integer retryWaitTime) {
+    this.retryWaitTime = retryWaitTime;
+    return this;
+  }
+
+  /**
+   * Seconds to wait before each retry (1-15). Retry-After header is honored when present and &lt;&#x3D; 90s, taking the larger of retry_wait_time and the header value.
+   * @return retryWaitTime
+   */
+  @jakarta.annotation.Nullable
+  public Integer getRetryWaitTime() {
+    return retryWaitTime;
+  }
+
+  public void setRetryWaitTime(@jakarta.annotation.Nullable Integer retryWaitTime) {
+    this.retryWaitTime = retryWaitTime;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -429,6 +502,7 @@ public class UpdateJiraIssueTaskParams {
     }
     UpdateJiraIssueTaskParams updateJiraIssueTaskParams = (UpdateJiraIssueTaskParams) o;
     return Objects.equals(this.taskType, updateJiraIssueTaskParams.taskType) &&
+        Objects.equals(this.integration, updateJiraIssueTaskParams.integration) &&
         Objects.equals(this.issueId, updateJiraIssueTaskParams.issueId) &&
         Objects.equals(this.title, updateJiraIssueTaskParams.title) &&
         Objects.equals(this.description, updateJiraIssueTaskParams.description) &&
@@ -440,7 +514,9 @@ public class UpdateJiraIssueTaskParams {
         Objects.equals(this.priority, updateJiraIssueTaskParams.priority) &&
         Objects.equals(this.status, updateJiraIssueTaskParams.status) &&
         Objects.equals(this.customFieldsMapping, updateJiraIssueTaskParams.customFieldsMapping) &&
-        Objects.equals(this.updatePayload, updateJiraIssueTaskParams.updatePayload);
+        Objects.equals(this.updatePayload, updateJiraIssueTaskParams.updatePayload) &&
+        Objects.equals(this.retryCount, updateJiraIssueTaskParams.retryCount) &&
+        Objects.equals(this.retryWaitTime, updateJiraIssueTaskParams.retryWaitTime);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -449,7 +525,7 @@ public class UpdateJiraIssueTaskParams {
 
   @Override
   public int hashCode() {
-    return Objects.hash(taskType, issueId, title, description, labels, assignUserEmail, reporterUserEmail, projectKey, dueDate, priority, status, customFieldsMapping, updatePayload);
+    return Objects.hash(taskType, integration, issueId, title, description, labels, assignUserEmail, reporterUserEmail, projectKey, dueDate, priority, status, customFieldsMapping, updatePayload, retryCount, retryWaitTime);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -464,6 +540,7 @@ public class UpdateJiraIssueTaskParams {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdateJiraIssueTaskParams {\n");
     sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
+    sb.append("    integration: ").append(toIndentedString(integration)).append("\n");
     sb.append("    issueId: ").append(toIndentedString(issueId)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
@@ -476,6 +553,8 @@ public class UpdateJiraIssueTaskParams {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    customFieldsMapping: ").append(toIndentedString(customFieldsMapping)).append("\n");
     sb.append("    updatePayload: ").append(toIndentedString(updatePayload)).append("\n");
+    sb.append("    retryCount: ").append(toIndentedString(retryCount)).append("\n");
+    sb.append("    retryWaitTime: ").append(toIndentedString(retryWaitTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -499,6 +578,7 @@ public class UpdateJiraIssueTaskParams {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("task_type");
+    openapiFields.add("integration");
     openapiFields.add("issue_id");
     openapiFields.add("title");
     openapiFields.add("description");
@@ -511,6 +591,8 @@ public class UpdateJiraIssueTaskParams {
     openapiFields.add("status");
     openapiFields.add("custom_fields_mapping");
     openapiFields.add("update_payload");
+    openapiFields.add("retry_count");
+    openapiFields.add("retry_wait_time");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -552,6 +634,10 @@ public class UpdateJiraIssueTaskParams {
       // validate the optional field `task_type`
       if (jsonObj.get("task_type") != null && !jsonObj.get("task_type").isJsonNull()) {
         TaskTypeEnum.validateJsonElement(jsonObj.get("task_type"));
+      }
+      // validate the optional field `integration`
+      if (jsonObj.get("integration") != null && !jsonObj.get("integration").isJsonNull()) {
+        CreateJiraIssueTaskParamsIntegration.validateJsonElement(jsonObj.get("integration"));
       }
       if (!jsonObj.get("issue_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `issue_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("issue_id").toString()));

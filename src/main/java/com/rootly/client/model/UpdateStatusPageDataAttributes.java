@@ -51,8 +51,14 @@ import com.rootly.client.JSON;
 /**
  * UpdateStatusPageDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateStatusPageDataAttributes {
+  public static final String SERIALIZED_NAME_SLUG = "slug";
+  @Deprecated
+  @SerializedName(SERIALIZED_NAME_SLUG)
+  @jakarta.annotation.Nullable
+  private String slug;
+
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
   @jakarta.annotation.Nullable
@@ -308,6 +314,70 @@ public class UpdateStatusPageDataAttributes {
   @jakarta.annotation.Nullable
   private SamlNameIdentifierFormatEnum samlNameIdentifierFormat;
 
+  /**
+   * Gets or Sets sectionOrder
+   */
+  @JsonAdapter(SectionOrderEnum.Adapter.class)
+  public enum SectionOrderEnum {
+    MAINTENANCE("maintenance"),
+    
+    SYSTEM_STATUS("system_status"),
+    
+    INCIDENTS("incidents");
+
+    private String value;
+
+    SectionOrderEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static SectionOrderEnum fromValue(String value) {
+      for (SectionOrderEnum b : SectionOrderEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<SectionOrderEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final SectionOrderEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public SectionOrderEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return SectionOrderEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      SectionOrderEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_SECTION_ORDER = "section_order";
+  @SerializedName(SERIALIZED_NAME_SECTION_ORDER)
+  @jakarta.annotation.Nullable
+  private List<SectionOrderEnum> sectionOrder;
+
+  public static final String SERIALIZED_NAME_EXTERNAL_DOMAIN_NAMES = "external_domain_names";
+  @SerializedName(SERIALIZED_NAME_EXTERNAL_DOMAIN_NAMES)
+  @jakarta.annotation.Nullable
+  private List<String> externalDomainNames;
+
   public static final String SERIALIZED_NAME_WEBSITE_URL = "website_url";
   @SerializedName(SERIALIZED_NAME_WEBSITE_URL)
   @jakarta.annotation.Nullable
@@ -355,6 +425,29 @@ public class UpdateStatusPageDataAttributes {
 
   public UpdateStatusPageDataAttributes() {
   }
+
+  @Deprecated
+  public UpdateStatusPageDataAttributes slug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+    return this;
+  }
+
+  /**
+   * Deprecated. &#x60;slug&#x60; is derived from &#x60;title&#x60;; any submitted value is ignored. This property will be removed from the request schema in a future version.
+   * @return slug
+   * @deprecated
+   */
+  @Deprecated
+  @jakarta.annotation.Nullable
+  public String getSlug() {
+    return slug;
+  }
+
+  @Deprecated
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+  }
+
 
   public UpdateStatusPageDataAttributes title(@jakarta.annotation.Nullable String title) {
     this.title = title;
@@ -702,6 +795,60 @@ public class UpdateStatusPageDataAttributes {
   }
 
 
+  public UpdateStatusPageDataAttributes sectionOrder(@jakarta.annotation.Nullable List<SectionOrderEnum> sectionOrder) {
+    this.sectionOrder = sectionOrder;
+    return this;
+  }
+
+  public UpdateStatusPageDataAttributes addSectionOrderItem(SectionOrderEnum sectionOrderItem) {
+    if (this.sectionOrder == null) {
+      this.sectionOrder = new ArrayList<>();
+    }
+    this.sectionOrder.add(sectionOrderItem);
+    return this;
+  }
+
+  /**
+   * Order of sections on the status page
+   * @return sectionOrder
+   */
+  @jakarta.annotation.Nullable
+  public List<SectionOrderEnum> getSectionOrder() {
+    return sectionOrder;
+  }
+
+  public void setSectionOrder(@jakarta.annotation.Nullable List<SectionOrderEnum> sectionOrder) {
+    this.sectionOrder = sectionOrder;
+  }
+
+
+  public UpdateStatusPageDataAttributes externalDomainNames(@jakarta.annotation.Nullable List<String> externalDomainNames) {
+    this.externalDomainNames = externalDomainNames;
+    return this;
+  }
+
+  public UpdateStatusPageDataAttributes addExternalDomainNamesItem(String externalDomainNamesItem) {
+    if (this.externalDomainNames == null) {
+      this.externalDomainNames = new ArrayList<>();
+    }
+    this.externalDomainNames.add(externalDomainNamesItem);
+    return this;
+  }
+
+  /**
+   * External domain names attached to the status page
+   * @return externalDomainNames
+   */
+  @jakarta.annotation.Nullable
+  public List<String> getExternalDomainNames() {
+    return externalDomainNames;
+  }
+
+  public void setExternalDomainNames(@jakarta.annotation.Nullable List<String> externalDomainNames) {
+    this.externalDomainNames = externalDomainNames;
+  }
+
+
   public UpdateStatusPageDataAttributes websiteUrl(@jakarta.annotation.Nullable String websiteUrl) {
     this.websiteUrl = websiteUrl;
     return this;
@@ -899,7 +1046,8 @@ public class UpdateStatusPageDataAttributes {
       return false;
     }
     UpdateStatusPageDataAttributes updateStatusPageDataAttributes = (UpdateStatusPageDataAttributes) o;
-    return Objects.equals(this.title, updateStatusPageDataAttributes.title) &&
+    return Objects.equals(this.slug, updateStatusPageDataAttributes.slug) &&
+        Objects.equals(this.title, updateStatusPageDataAttributes.title) &&
         Objects.equals(this.publicTitle, updateStatusPageDataAttributes.publicTitle) &&
         Objects.equals(this.description, updateStatusPageDataAttributes.description) &&
         Objects.equals(this.publicDescription, updateStatusPageDataAttributes.publicDescription) &&
@@ -917,6 +1065,8 @@ public class UpdateStatusPageDataAttributes {
         Objects.equals(this.samlIdpSloServiceUrl, updateStatusPageDataAttributes.samlIdpSloServiceUrl) &&
         Objects.equals(this.samlIdpCert, updateStatusPageDataAttributes.samlIdpCert) &&
         Objects.equals(this.samlNameIdentifierFormat, updateStatusPageDataAttributes.samlNameIdentifierFormat) &&
+        Objects.equals(this.sectionOrder, updateStatusPageDataAttributes.sectionOrder) &&
+        Objects.equals(this.externalDomainNames, updateStatusPageDataAttributes.externalDomainNames) &&
         Objects.equals(this.websiteUrl, updateStatusPageDataAttributes.websiteUrl) &&
         Objects.equals(this.websitePrivacyUrl, updateStatusPageDataAttributes.websitePrivacyUrl) &&
         Objects.equals(this.websiteSupportUrl, updateStatusPageDataAttributes.websiteSupportUrl) &&
@@ -934,7 +1084,7 @@ public class UpdateStatusPageDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, publicTitle, description, publicDescription, headerColor, footerColor, allowSearchEngineIndex, showUptime, showUptimeLastDays, successMessage, failureMessage, authenticationMethod, authenticationEnabled, authenticationPassword, samlIdpSsoServiceUrl, samlIdpSloServiceUrl, samlIdpCert, samlNameIdentifierFormat, websiteUrl, websitePrivacyUrl, websiteSupportUrl, gaTrackingId, timeZone, _public, serviceIds, functionalityIds, enabled);
+    return Objects.hash(slug, title, publicTitle, description, publicDescription, headerColor, footerColor, allowSearchEngineIndex, showUptime, showUptimeLastDays, successMessage, failureMessage, authenticationMethod, authenticationEnabled, authenticationPassword, samlIdpSsoServiceUrl, samlIdpSloServiceUrl, samlIdpCert, samlNameIdentifierFormat, sectionOrder, externalDomainNames, websiteUrl, websitePrivacyUrl, websiteSupportUrl, gaTrackingId, timeZone, _public, serviceIds, functionalityIds, enabled);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -948,6 +1098,7 @@ public class UpdateStatusPageDataAttributes {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdateStatusPageDataAttributes {\n");
+    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    publicTitle: ").append(toIndentedString(publicTitle)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
@@ -966,6 +1117,8 @@ public class UpdateStatusPageDataAttributes {
     sb.append("    samlIdpSloServiceUrl: ").append(toIndentedString(samlIdpSloServiceUrl)).append("\n");
     sb.append("    samlIdpCert: ").append(toIndentedString(samlIdpCert)).append("\n");
     sb.append("    samlNameIdentifierFormat: ").append(toIndentedString(samlNameIdentifierFormat)).append("\n");
+    sb.append("    sectionOrder: ").append(toIndentedString(sectionOrder)).append("\n");
+    sb.append("    externalDomainNames: ").append(toIndentedString(externalDomainNames)).append("\n");
     sb.append("    websiteUrl: ").append(toIndentedString(websiteUrl)).append("\n");
     sb.append("    websitePrivacyUrl: ").append(toIndentedString(websitePrivacyUrl)).append("\n");
     sb.append("    websiteSupportUrl: ").append(toIndentedString(websiteSupportUrl)).append("\n");
@@ -997,6 +1150,7 @@ public class UpdateStatusPageDataAttributes {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("slug");
     openapiFields.add("title");
     openapiFields.add("public_title");
     openapiFields.add("description");
@@ -1015,6 +1169,8 @@ public class UpdateStatusPageDataAttributes {
     openapiFields.add("saml_idp_slo_service_url");
     openapiFields.add("saml_idp_cert");
     openapiFields.add("saml_name_identifier_format");
+    openapiFields.add("section_order");
+    openapiFields.add("external_domain_names");
     openapiFields.add("website_url");
     openapiFields.add("website_privacy_url");
     openapiFields.add("website_support_url");
@@ -1050,6 +1206,9 @@ public class UpdateStatusPageDataAttributes {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
+      }
       if ((jsonObj.get("title") != null && !jsonObj.get("title").isJsonNull()) && !jsonObj.get("title").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
       }
@@ -1103,6 +1262,14 @@ public class UpdateStatusPageDataAttributes {
       // validate the optional field `saml_name_identifier_format`
       if (jsonObj.get("saml_name_identifier_format") != null && !jsonObj.get("saml_name_identifier_format").isJsonNull()) {
         SamlNameIdentifierFormatEnum.validateJsonElement(jsonObj.get("saml_name_identifier_format"));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("section_order") != null && !jsonObj.get("section_order").isJsonNull() && !jsonObj.get("section_order").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `section_order` to be an array in the JSON string but got `%s`", jsonObj.get("section_order").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("external_domain_names") != null && !jsonObj.get("external_domain_names").isJsonNull() && !jsonObj.get("external_domain_names").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `external_domain_names` to be an array in the JSON string but got `%s`", jsonObj.get("external_domain_names").toString()));
       }
       if ((jsonObj.get("website_url") != null && !jsonObj.get("website_url").isJsonNull()) && !jsonObj.get("website_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `website_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("website_url").toString()));

@@ -39,6 +39,14 @@ public class UpdateCatalogPropertyDataAttributesTest {
     }
 
     /**
+     * Test the property 'slug'
+     */
+    @Test
+    public void slugTest() {
+        // TODO: test slug
+    }
+
+    /**
      * Test the property 'name'
      */
     @Test
@@ -84,6 +92,14 @@ public class UpdateCatalogPropertyDataAttributesTest {
     @Test
     public void catalogTypeTest() {
         // TODO: test catalogType
+    }
+
+    /**
+     * Test the property 'externalId'
+     */
+    @Test
+    public void externalIdTest() {
+        // TODO: test externalId
     }
 
 }

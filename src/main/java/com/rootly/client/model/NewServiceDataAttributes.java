@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewCauseDataAttributesPropertiesInner;
 import com.rootly.client.model.NewEnvironmentDataAttributesSlackAliasesInner;
 import com.rootly.client.model.NewEnvironmentDataAttributesSlackChannelsInner;
 import com.rootly.client.model.NewServiceDataAttributesAlertBroadcastChannel;
@@ -55,8 +56,14 @@ import com.rootly.client.JSON;
 /**
  * NewServiceDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewServiceDataAttributes {
+  public static final String SERIALIZED_NAME_SLUG = "slug";
+  @Deprecated
+  @SerializedName(SERIALIZED_NAME_SLUG)
+  @jakarta.annotation.Nullable
+  private String slug;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @jakarta.annotation.Nonnull
@@ -276,8 +283,36 @@ public class NewServiceDataAttributes {
   @jakarta.annotation.Nullable
   private NewServiceDataAttributesIncidentBroadcastChannel incidentBroadcastChannel;
 
+  public static final String SERIALIZED_NAME_PROPERTIES = "properties";
+  @SerializedName(SERIALIZED_NAME_PROPERTIES)
+  @jakarta.annotation.Nullable
+  private List<NewCauseDataAttributesPropertiesInner> properties = new ArrayList<>();
+
   public NewServiceDataAttributes() {
   }
+
+  @Deprecated
+  public NewServiceDataAttributes slug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+    return this;
+  }
+
+  /**
+   * Deprecated. &#x60;slug&#x60; is derived from &#x60;name&#x60;; any submitted value is ignored. This property will be removed from the request schema in a future version.
+   * @return slug
+   * @deprecated
+   */
+  @Deprecated
+  @jakarta.annotation.Nullable
+  public String getSlug() {
+    return slug;
+  }
+
+  @Deprecated
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+  }
+
 
   public NewServiceDataAttributes name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
@@ -323,7 +358,7 @@ public class NewServiceDataAttributes {
   }
 
   /**
-   * The public description of the service
+   * The status page description of the service
    * @return publicDescription
    */
   @jakarta.annotation.Nullable
@@ -962,6 +997,33 @@ public class NewServiceDataAttributes {
   }
 
 
+  public NewServiceDataAttributes properties(@jakarta.annotation.Nullable List<NewCauseDataAttributesPropertiesInner> properties) {
+    this.properties = properties;
+    return this;
+  }
+
+  public NewServiceDataAttributes addPropertiesItem(NewCauseDataAttributesPropertiesInner propertiesItem) {
+    if (this.properties == null) {
+      this.properties = new ArrayList<>();
+    }
+    this.properties.add(propertiesItem);
+    return this;
+  }
+
+  /**
+   * Array of property values for this service.
+   * @return properties
+   */
+  @jakarta.annotation.Nullable
+  public List<NewCauseDataAttributesPropertiesInner> getProperties() {
+    return properties;
+  }
+
+  public void setProperties(@jakarta.annotation.Nullable List<NewCauseDataAttributesPropertiesInner> properties) {
+    this.properties = properties;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -972,7 +1034,8 @@ public class NewServiceDataAttributes {
       return false;
     }
     NewServiceDataAttributes newServiceDataAttributes = (NewServiceDataAttributes) o;
-    return Objects.equals(this.name, newServiceDataAttributes.name) &&
+    return Objects.equals(this.slug, newServiceDataAttributes.slug) &&
+        Objects.equals(this.name, newServiceDataAttributes.name) &&
         Objects.equals(this.description, newServiceDataAttributes.description) &&
         Objects.equals(this.publicDescription, newServiceDataAttributes.publicDescription) &&
         Objects.equals(this.notifyEmails, newServiceDataAttributes.notifyEmails) &&
@@ -1004,7 +1067,8 @@ public class NewServiceDataAttributes {
         Objects.equals(this.alertBroadcastEnabled, newServiceDataAttributes.alertBroadcastEnabled) &&
         Objects.equals(this.alertBroadcastChannel, newServiceDataAttributes.alertBroadcastChannel) &&
         Objects.equals(this.incidentBroadcastEnabled, newServiceDataAttributes.incidentBroadcastEnabled) &&
-        Objects.equals(this.incidentBroadcastChannel, newServiceDataAttributes.incidentBroadcastChannel);
+        Objects.equals(this.incidentBroadcastChannel, newServiceDataAttributes.incidentBroadcastChannel) &&
+        Objects.equals(this.properties, newServiceDataAttributes.properties);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -1013,7 +1077,7 @@ public class NewServiceDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, publicDescription, notifyEmails, color, position, showUptime, showUptimeLastDays, backstageId, pagerdutyId, externalId, opsgenieId, opsgenieTeamId, cortexId, serviceNowCiSysId, githubRepositoryName, githubRepositoryBranch, gitlabRepositoryName, gitlabRepositoryBranch, environmentIds, serviceIds, ownerGroupIds, ownerUserIds, kubernetesDeploymentName, alertsEmailEnabled, alertUrgencyId, escalationPolicyId, slackChannels, slackAliases, alertBroadcastEnabled, alertBroadcastChannel, incidentBroadcastEnabled, incidentBroadcastChannel);
+    return Objects.hash(slug, name, description, publicDescription, notifyEmails, color, position, showUptime, showUptimeLastDays, backstageId, pagerdutyId, externalId, opsgenieId, opsgenieTeamId, cortexId, serviceNowCiSysId, githubRepositoryName, githubRepositoryBranch, gitlabRepositoryName, gitlabRepositoryBranch, environmentIds, serviceIds, ownerGroupIds, ownerUserIds, kubernetesDeploymentName, alertsEmailEnabled, alertUrgencyId, escalationPolicyId, slackChannels, slackAliases, alertBroadcastEnabled, alertBroadcastChannel, incidentBroadcastEnabled, incidentBroadcastChannel, properties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1027,6 +1091,7 @@ public class NewServiceDataAttributes {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class NewServiceDataAttributes {\n");
+    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    publicDescription: ").append(toIndentedString(publicDescription)).append("\n");
@@ -1060,6 +1125,7 @@ public class NewServiceDataAttributes {
     sb.append("    alertBroadcastChannel: ").append(toIndentedString(alertBroadcastChannel)).append("\n");
     sb.append("    incidentBroadcastEnabled: ").append(toIndentedString(incidentBroadcastEnabled)).append("\n");
     sb.append("    incidentBroadcastChannel: ").append(toIndentedString(incidentBroadcastChannel)).append("\n");
+    sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -1082,6 +1148,7 @@ public class NewServiceDataAttributes {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("slug");
     openapiFields.add("name");
     openapiFields.add("description");
     openapiFields.add("public_description");
@@ -1115,6 +1182,7 @@ public class NewServiceDataAttributes {
     openapiFields.add("alert_broadcast_channel");
     openapiFields.add("incident_broadcast_enabled");
     openapiFields.add("incident_broadcast_channel");
+    openapiFields.add("properties");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -1149,6 +1217,9 @@ public class NewServiceDataAttributes {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
+      }
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
@@ -1262,6 +1333,20 @@ public class NewServiceDataAttributes {
       // validate the optional field `incident_broadcast_channel`
       if (jsonObj.get("incident_broadcast_channel") != null && !jsonObj.get("incident_broadcast_channel").isJsonNull()) {
         NewServiceDataAttributesIncidentBroadcastChannel.validateJsonElement(jsonObj.get("incident_broadcast_channel"));
+      }
+      if (jsonObj.get("properties") != null && !jsonObj.get("properties").isJsonNull()) {
+        JsonArray jsonArrayproperties = jsonObj.getAsJsonArray("properties");
+        if (jsonArrayproperties != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("properties").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `properties` to be an array in the JSON string but got `%s`", jsonObj.get("properties").toString()));
+          }
+
+          // validate the optional field `properties` (array)
+          for (int i = 0; i < jsonArrayproperties.size(); i++) {
+            NewCauseDataAttributesPropertiesInner.validateJsonElement(jsonArrayproperties.get(i));
+          };
+        }
       }
   }
 

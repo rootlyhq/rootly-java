@@ -49,11 +49,11 @@ import com.rootly.client.JSON;
 /**
  * CreateEdgeConnectorActionRequestAction
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateEdgeConnectorActionRequestAction {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   /**
@@ -110,18 +110,18 @@ public class CreateEdgeConnectorActionRequestAction {
 
   public static final String SERIALIZED_NAME_ACTION_TYPE = "action_type";
   @SerializedName(SERIALIZED_NAME_ACTION_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private ActionTypeEnum actionType;
 
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CreateEdgeConnectorActionRequestActionMetadata metadata;
 
   public CreateEdgeConnectorActionRequestAction() {
   }
 
-  public CreateEdgeConnectorActionRequestAction name(@javax.annotation.Nonnull String name) {
+  public CreateEdgeConnectorActionRequestAction name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -130,17 +130,17 @@ public class CreateEdgeConnectorActionRequestAction {
    * Action name
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public CreateEdgeConnectorActionRequestAction actionType(@javax.annotation.Nonnull ActionTypeEnum actionType) {
+  public CreateEdgeConnectorActionRequestAction actionType(@jakarta.annotation.Nonnull ActionTypeEnum actionType) {
     this.actionType = actionType;
     return this;
   }
@@ -149,17 +149,17 @@ public class CreateEdgeConnectorActionRequestAction {
    * Action type
    * @return actionType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public ActionTypeEnum getActionType() {
     return actionType;
   }
 
-  public void setActionType(@javax.annotation.Nonnull ActionTypeEnum actionType) {
+  public void setActionType(@jakarta.annotation.Nonnull ActionTypeEnum actionType) {
     this.actionType = actionType;
   }
 
 
-  public CreateEdgeConnectorActionRequestAction metadata(@javax.annotation.Nullable CreateEdgeConnectorActionRequestActionMetadata metadata) {
+  public CreateEdgeConnectorActionRequestAction metadata(@jakarta.annotation.Nullable CreateEdgeConnectorActionRequestActionMetadata metadata) {
     this.metadata = metadata;
     return this;
   }
@@ -168,12 +168,12 @@ public class CreateEdgeConnectorActionRequestAction {
    * Get metadata
    * @return metadata
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CreateEdgeConnectorActionRequestActionMetadata getMetadata() {
     return metadata;
   }
 
-  public void setMetadata(@javax.annotation.Nullable CreateEdgeConnectorActionRequestActionMetadata metadata) {
+  public void setMetadata(@jakarta.annotation.Nullable CreateEdgeConnectorActionRequestActionMetadata metadata) {
     this.metadata = metadata;
   }
 

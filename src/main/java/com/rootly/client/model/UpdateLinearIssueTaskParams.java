@@ -55,7 +55,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateLinearIssueTaskParams
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateLinearIssueTaskParams {
   /**
    * Gets or Sets taskType
@@ -151,6 +151,11 @@ public class UpdateLinearIssueTaskParams {
   @SerializedName(SERIALIZED_NAME_ASSIGN_USER_EMAIL)
   @jakarta.annotation.Nullable
   private String assignUserEmail;
+
+  public static final String SERIALIZED_NAME_CUSTOM_FIELDS_MAPPING = "custom_fields_mapping";
+  @SerializedName(SERIALIZED_NAME_CUSTOM_FIELDS_MAPPING)
+  @jakarta.annotation.Nullable
+  private String customFieldsMapping;
 
   public UpdateLinearIssueTaskParams() {
   }
@@ -334,6 +339,25 @@ public class UpdateLinearIssueTaskParams {
   }
 
 
+  public UpdateLinearIssueTaskParams customFieldsMapping(@jakarta.annotation.Nullable String customFieldsMapping) {
+    this.customFieldsMapping = customFieldsMapping;
+    return this;
+  }
+
+  /**
+   * Custom field mappings. Can contain liquid markup and need to be valid JSON
+   * @return customFieldsMapping
+   */
+  @jakarta.annotation.Nullable
+  public String getCustomFieldsMapping() {
+    return customFieldsMapping;
+  }
+
+  public void setCustomFieldsMapping(@jakarta.annotation.Nullable String customFieldsMapping) {
+    this.customFieldsMapping = customFieldsMapping;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -352,7 +376,8 @@ public class UpdateLinearIssueTaskParams {
         Objects.equals(this.project, updateLinearIssueTaskParams.project) &&
         Objects.equals(this.labels, updateLinearIssueTaskParams.labels) &&
         Objects.equals(this.priority, updateLinearIssueTaskParams.priority) &&
-        Objects.equals(this.assignUserEmail, updateLinearIssueTaskParams.assignUserEmail);
+        Objects.equals(this.assignUserEmail, updateLinearIssueTaskParams.assignUserEmail) &&
+        Objects.equals(this.customFieldsMapping, updateLinearIssueTaskParams.customFieldsMapping);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -361,7 +386,7 @@ public class UpdateLinearIssueTaskParams {
 
   @Override
   public int hashCode() {
-    return Objects.hash(taskType, issueId, title, description, state, project, labels, priority, assignUserEmail);
+    return Objects.hash(taskType, issueId, title, description, state, project, labels, priority, assignUserEmail, customFieldsMapping);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -384,6 +409,7 @@ public class UpdateLinearIssueTaskParams {
     sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
     sb.append("    assignUserEmail: ").append(toIndentedString(assignUserEmail)).append("\n");
+    sb.append("    customFieldsMapping: ").append(toIndentedString(customFieldsMapping)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -415,6 +441,7 @@ public class UpdateLinearIssueTaskParams {
     openapiFields.add("labels");
     openapiFields.add("priority");
     openapiFields.add("assign_user_email");
+    openapiFields.add("custom_fields_mapping");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -493,6 +520,9 @@ public class UpdateLinearIssueTaskParams {
       }
       if ((jsonObj.get("assign_user_email") != null && !jsonObj.get("assign_user_email").isJsonNull()) && !jsonObj.get("assign_user_email").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `assign_user_email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("assign_user_email").toString()));
+      }
+      if ((jsonObj.get("custom_fields_mapping") != null && !jsonObj.get("custom_fields_mapping").isJsonNull()) && !jsonObj.get("custom_fields_mapping").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `custom_fields_mapping` to be a primitive type in the JSON string but got `%s`", jsonObj.get("custom_fields_mapping").toString()));
       }
   }
 

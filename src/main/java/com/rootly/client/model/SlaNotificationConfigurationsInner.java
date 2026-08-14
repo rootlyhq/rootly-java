@@ -49,11 +49,11 @@ import com.rootly.client.JSON;
 /**
  * SlaNotificationConfigurationsInner
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SlaNotificationConfigurationsInner {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private UUID id;
 
   /**
@@ -112,28 +112,28 @@ public class SlaNotificationConfigurationsInner {
 
   public static final String SERIALIZED_NAME_OFFSET_TYPE = "offset_type";
   @SerializedName(SERIALIZED_NAME_OFFSET_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private OffsetTypeEnum offsetType;
 
   public static final String SERIALIZED_NAME_OFFSET_DAYS = "offset_days";
   @SerializedName(SERIALIZED_NAME_OFFSET_DAYS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer offsetDays;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String updatedAt;
 
   public SlaNotificationConfigurationsInner() {
   }
 
-  public SlaNotificationConfigurationsInner id(@javax.annotation.Nullable UUID id) {
+  public SlaNotificationConfigurationsInner id(@jakarta.annotation.Nullable UUID id) {
     this.id = id;
     return this;
   }
@@ -142,17 +142,17 @@ public class SlaNotificationConfigurationsInner {
    * Unique ID of the notification configuration
    * @return id
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public UUID getId() {
     return id;
   }
 
-  public void setId(@javax.annotation.Nullable UUID id) {
+  public void setId(@jakarta.annotation.Nullable UUID id) {
     this.id = id;
   }
 
 
-  public SlaNotificationConfigurationsInner offsetType(@javax.annotation.Nullable OffsetTypeEnum offsetType) {
+  public SlaNotificationConfigurationsInner offsetType(@jakarta.annotation.Nullable OffsetTypeEnum offsetType) {
     this.offsetType = offsetType;
     return this;
   }
@@ -161,17 +161,17 @@ public class SlaNotificationConfigurationsInner {
    * When to send the notification relative to the deadline
    * @return offsetType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public OffsetTypeEnum getOffsetType() {
     return offsetType;
   }
 
-  public void setOffsetType(@javax.annotation.Nullable OffsetTypeEnum offsetType) {
+  public void setOffsetType(@jakarta.annotation.Nullable OffsetTypeEnum offsetType) {
     this.offsetType = offsetType;
   }
 
 
-  public SlaNotificationConfigurationsInner offsetDays(@javax.annotation.Nullable Integer offsetDays) {
+  public SlaNotificationConfigurationsInner offsetDays(@jakarta.annotation.Nullable Integer offsetDays) {
     this.offsetDays = offsetDays;
     return this;
   }
@@ -180,17 +180,17 @@ public class SlaNotificationConfigurationsInner {
    * Number of days offset from the deadline
    * @return offsetDays
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getOffsetDays() {
     return offsetDays;
   }
 
-  public void setOffsetDays(@javax.annotation.Nullable Integer offsetDays) {
+  public void setOffsetDays(@jakarta.annotation.Nullable Integer offsetDays) {
     this.offsetDays = offsetDays;
   }
 
 
-  public SlaNotificationConfigurationsInner createdAt(@javax.annotation.Nullable String createdAt) {
+  public SlaNotificationConfigurationsInner createdAt(@jakarta.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -199,17 +199,17 @@ public class SlaNotificationConfigurationsInner {
    * Date of creation
    * @return createdAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nullable String createdAt) {
+  public void setCreatedAt(@jakarta.annotation.Nullable String createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public SlaNotificationConfigurationsInner updatedAt(@javax.annotation.Nullable String updatedAt) {
+  public SlaNotificationConfigurationsInner updatedAt(@jakarta.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -218,12 +218,12 @@ public class SlaNotificationConfigurationsInner {
    * Date of last update
    * @return updatedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nullable String updatedAt) {
+  public void setUpdatedAt(@jakarta.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
   }
 

@@ -10,6 +10,7 @@
 |**data** | [**List&lt;StatusResponseData&gt;**](StatusResponseData.md) |  |  |
 |**links** | [**Links**](Links.md) |  |  |
 |**meta** | [**Meta**](Meta.md) |  |  |
+|**included** | [**List&lt;JsonapiIncludedResource&gt;**](JsonapiIncludedResource.md) |  |  [optional] |
 
 
 

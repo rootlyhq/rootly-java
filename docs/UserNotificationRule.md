@@ -15,6 +15,7 @@
 |**userSmsNumberId** | **String** | User sms number to which notification to be sent |  [optional] |
 |**userDeviceId** | **String** | User device to which notification to be sent |  [optional] |
 |**enabledContactTypes** | [**List&lt;EnabledContactTypesEnum&gt;**](#List&lt;EnabledContactTypesEnum&gt;) | Contact types for which notification needs to be enabled |  [optional] |
+|**notificationType** | [**NotificationTypeEnum**](#NotificationTypeEnum) | Type of notification rule (audible or quiet). Audible notifications use sound/vibration to alert users, while quiet notifications are silent. |  [optional] |
 |**createdAt** | **String** | Date of creation |  [optional] |
 |**updatedAt** | **String** | Date of last update |  [optional] |
 
@@ -30,6 +31,17 @@
 | DEVICE | &quot;device&quot; |
 | NON_CRITICAL_DEVICE | &quot;non_critical_device&quot; |
 | SLACK | &quot;slack&quot; |
+| GOOGLE_CHAT | &quot;google_chat&quot; |
+| MICROSOFT_TEAMS | &quot;microsoft_teams&quot; |
+
+
+
+## Enum: NotificationTypeEnum
+
+| Name | Value |
+|---- | -----|
+| AUDIBLE | &quot;audible&quot; |
+| QUIET | &quot;quiet&quot; |
 
 
 

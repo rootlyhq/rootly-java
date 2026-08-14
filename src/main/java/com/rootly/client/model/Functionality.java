@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewCauseDataAttributesPropertiesInner;
 import com.rootly.client.model.NewEnvironmentDataAttributesSlackAliasesInner;
 import com.rootly.client.model.NewEnvironmentDataAttributesSlackChannelsInner;
 import java.io.IOException;
@@ -53,7 +54,7 @@ import com.rootly.client.JSON;
 /**
  * Functionality
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Functionality {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -64,6 +65,73 @@ public class Functionality {
   @SerializedName(SERIALIZED_NAME_SLUG)
   @jakarta.annotation.Nullable
   private String slug;
+
+  /**
+   * How this functionality is managed (provenance): web, api, terraform, etc. Read-only.
+   */
+  @JsonAdapter(ManagedByEnum.Adapter.class)
+  public enum ManagedByEnum {
+    WEB("web"),
+    
+    ADMIN_WEB("admin_web"),
+    
+    API("api"),
+    
+    TERRAFORM("terraform"),
+    
+    PULUMI("pulumi"),
+    
+    BACKSTAGE("backstage"),
+    
+    CATALOG_SYNC("catalog_sync");
+
+    private String value;
+
+    ManagedByEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static ManagedByEnum fromValue(String value) {
+      for (ManagedByEnum b : ManagedByEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<ManagedByEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ManagedByEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ManagedByEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return ManagedByEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      ManagedByEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_MANAGED_BY = "managed_by";
+  @SerializedName(SERIALIZED_NAME_MANAGED_BY)
+  @jakarta.annotation.Nullable
+  private ManagedByEnum managedBy;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -145,6 +213,11 @@ public class Functionality {
   @jakarta.annotation.Nullable
   private List<Integer> ownerUserIds;
 
+  public static final String SERIALIZED_NAME_ESCALATION_POLICY_ID = "escalation_policy_id";
+  @SerializedName(SERIALIZED_NAME_ESCALATION_POLICY_ID)
+  @jakarta.annotation.Nullable
+  private String escalationPolicyId;
+
   public static final String SERIALIZED_NAME_SLACK_CHANNELS = "slack_channels";
   @SerializedName(SERIALIZED_NAME_SLACK_CHANNELS)
   @jakarta.annotation.Nullable
@@ -154,6 +227,11 @@ public class Functionality {
   @SerializedName(SERIALIZED_NAME_SLACK_ALIASES)
   @jakarta.annotation.Nullable
   private List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases;
+
+  public static final String SERIALIZED_NAME_PROPERTIES = "properties";
+  @SerializedName(SERIALIZED_NAME_PROPERTIES)
+  @jakarta.annotation.Nullable
+  private List<NewCauseDataAttributesPropertiesInner> properties;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -166,6 +244,13 @@ public class Functionality {
   private String updatedAt;
 
   public Functionality() {
+  }
+
+  public Functionality(
+     String slug
+  ) {
+    this();
+    this.slug = slug;
   }
 
   public Functionality name(@jakarta.annotation.Nonnull String name) {
@@ -187,11 +272,6 @@ public class Functionality {
   }
 
 
-  public Functionality slug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
-    return this;
-  }
-
   /**
    * The slug of the functionality
    * @return slug
@@ -201,8 +281,24 @@ public class Functionality {
     return slug;
   }
 
-  public void setSlug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
+
+
+  public Functionality managedBy(@jakarta.annotation.Nullable ManagedByEnum managedBy) {
+    this.managedBy = managedBy;
+    return this;
+  }
+
+  /**
+   * How this functionality is managed (provenance): web, api, terraform, etc. Read-only.
+   * @return managedBy
+   */
+  @jakarta.annotation.Nullable
+  public ManagedByEnum getManagedBy() {
+    return managedBy;
+  }
+
+  public void setManagedBy(@jakarta.annotation.Nullable ManagedByEnum managedBy) {
+    this.managedBy = managedBy;
   }
 
 
@@ -231,7 +327,7 @@ public class Functionality {
   }
 
   /**
-   * The public description of the functionality
+   * The status page description of the functionality
    * @return publicDescription
    */
   @jakarta.annotation.Nullable
@@ -550,6 +646,25 @@ public class Functionality {
   }
 
 
+  public Functionality escalationPolicyId(@jakarta.annotation.Nullable String escalationPolicyId) {
+    this.escalationPolicyId = escalationPolicyId;
+    return this;
+  }
+
+  /**
+   * The escalation policy id of the functionality
+   * @return escalationPolicyId
+   */
+  @jakarta.annotation.Nullable
+  public String getEscalationPolicyId() {
+    return escalationPolicyId;
+  }
+
+  public void setEscalationPolicyId(@jakarta.annotation.Nullable String escalationPolicyId) {
+    this.escalationPolicyId = escalationPolicyId;
+  }
+
+
   public Functionality slackChannels(@jakarta.annotation.Nullable List<NewEnvironmentDataAttributesSlackChannelsInner> slackChannels) {
     this.slackChannels = slackChannels;
     return this;
@@ -604,6 +719,33 @@ public class Functionality {
   }
 
 
+  public Functionality properties(@jakarta.annotation.Nullable List<NewCauseDataAttributesPropertiesInner> properties) {
+    this.properties = properties;
+    return this;
+  }
+
+  public Functionality addPropertiesItem(NewCauseDataAttributesPropertiesInner propertiesItem) {
+    if (this.properties == null) {
+      this.properties = new ArrayList<>();
+    }
+    this.properties.add(propertiesItem);
+    return this;
+  }
+
+  /**
+   * Array of property values for this functionality.
+   * @return properties
+   */
+  @jakarta.annotation.Nullable
+  public List<NewCauseDataAttributesPropertiesInner> getProperties() {
+    return properties;
+  }
+
+  public void setProperties(@jakarta.annotation.Nullable List<NewCauseDataAttributesPropertiesInner> properties) {
+    this.properties = properties;
+  }
+
+
   public Functionality createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
@@ -654,6 +796,7 @@ public class Functionality {
     Functionality functionality = (Functionality) o;
     return Objects.equals(this.name, functionality.name) &&
         Objects.equals(this.slug, functionality.slug) &&
+        Objects.equals(this.managedBy, functionality.managedBy) &&
         Objects.equals(this.description, functionality.description) &&
         Objects.equals(this.publicDescription, functionality.publicDescription) &&
         Objects.equals(this.notifyEmails, functionality.notifyEmails) &&
@@ -670,8 +813,10 @@ public class Functionality {
         Objects.equals(this.serviceIds, functionality.serviceIds) &&
         Objects.equals(this.ownerGroupIds, functionality.ownerGroupIds) &&
         Objects.equals(this.ownerUserIds, functionality.ownerUserIds) &&
+        Objects.equals(this.escalationPolicyId, functionality.escalationPolicyId) &&
         Objects.equals(this.slackChannels, functionality.slackChannels) &&
         Objects.equals(this.slackAliases, functionality.slackAliases) &&
+        Objects.equals(this.properties, functionality.properties) &&
         Objects.equals(this.createdAt, functionality.createdAt) &&
         Objects.equals(this.updatedAt, functionality.updatedAt);
   }
@@ -682,7 +827,7 @@ public class Functionality {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, slug, description, publicDescription, notifyEmails, color, backstageId, externalId, pagerdutyId, opsgenieId, opsgenieTeamId, cortexId, serviceNowCiSysId, position, environmentIds, serviceIds, ownerGroupIds, ownerUserIds, slackChannels, slackAliases, createdAt, updatedAt);
+    return Objects.hash(name, slug, managedBy, description, publicDescription, notifyEmails, color, backstageId, externalId, pagerdutyId, opsgenieId, opsgenieTeamId, cortexId, serviceNowCiSysId, position, environmentIds, serviceIds, ownerGroupIds, ownerUserIds, escalationPolicyId, slackChannels, slackAliases, properties, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -698,6 +843,7 @@ public class Functionality {
     sb.append("class Functionality {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
+    sb.append("    managedBy: ").append(toIndentedString(managedBy)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    publicDescription: ").append(toIndentedString(publicDescription)).append("\n");
     sb.append("    notifyEmails: ").append(toIndentedString(notifyEmails)).append("\n");
@@ -714,8 +860,10 @@ public class Functionality {
     sb.append("    serviceIds: ").append(toIndentedString(serviceIds)).append("\n");
     sb.append("    ownerGroupIds: ").append(toIndentedString(ownerGroupIds)).append("\n");
     sb.append("    ownerUserIds: ").append(toIndentedString(ownerUserIds)).append("\n");
+    sb.append("    escalationPolicyId: ").append(toIndentedString(escalationPolicyId)).append("\n");
     sb.append("    slackChannels: ").append(toIndentedString(slackChannels)).append("\n");
     sb.append("    slackAliases: ").append(toIndentedString(slackAliases)).append("\n");
+    sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -742,6 +890,7 @@ public class Functionality {
     openapiFields = new HashSet<String>();
     openapiFields.add("name");
     openapiFields.add("slug");
+    openapiFields.add("managed_by");
     openapiFields.add("description");
     openapiFields.add("public_description");
     openapiFields.add("notify_emails");
@@ -758,8 +907,10 @@ public class Functionality {
     openapiFields.add("service_ids");
     openapiFields.add("owner_group_ids");
     openapiFields.add("owner_user_ids");
+    openapiFields.add("escalation_policy_id");
     openapiFields.add("slack_channels");
     openapiFields.add("slack_aliases");
+    openapiFields.add("properties");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
 
@@ -803,6 +954,13 @@ public class Functionality {
       }
       if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
+      }
+      if ((jsonObj.get("managed_by") != null && !jsonObj.get("managed_by").isJsonNull()) && !jsonObj.get("managed_by").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `managed_by` to be a primitive type in the JSON string but got `%s`", jsonObj.get("managed_by").toString()));
+      }
+      // validate the optional field `managed_by`
+      if (jsonObj.get("managed_by") != null && !jsonObj.get("managed_by").isJsonNull()) {
+        ManagedByEnum.validateJsonElement(jsonObj.get("managed_by"));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
@@ -854,6 +1012,9 @@ public class Functionality {
       if (jsonObj.get("owner_user_ids") != null && !jsonObj.get("owner_user_ids").isJsonNull() && !jsonObj.get("owner_user_ids").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `owner_user_ids` to be an array in the JSON string but got `%s`", jsonObj.get("owner_user_ids").toString()));
       }
+      if ((jsonObj.get("escalation_policy_id") != null && !jsonObj.get("escalation_policy_id").isJsonNull()) && !jsonObj.get("escalation_policy_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `escalation_policy_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("escalation_policy_id").toString()));
+      }
       if (jsonObj.get("slack_channels") != null && !jsonObj.get("slack_channels").isJsonNull()) {
         JsonArray jsonArrayslackChannels = jsonObj.getAsJsonArray("slack_channels");
         if (jsonArrayslackChannels != null) {
@@ -879,6 +1040,20 @@ public class Functionality {
           // validate the optional field `slack_aliases` (array)
           for (int i = 0; i < jsonArrayslackAliases.size(); i++) {
             NewEnvironmentDataAttributesSlackAliasesInner.validateJsonElement(jsonArrayslackAliases.get(i));
+          };
+        }
+      }
+      if (jsonObj.get("properties") != null && !jsonObj.get("properties").isJsonNull()) {
+        JsonArray jsonArrayproperties = jsonObj.getAsJsonArray("properties");
+        if (jsonArrayproperties != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("properties").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `properties` to be an array in the JSON string but got `%s`", jsonObj.get("properties").toString()));
+          }
+
+          // validate the optional field `properties` (array)
+          for (int i = 0; i < jsonArrayproperties.size(); i++) {
+            NewCauseDataAttributesPropertiesInner.validateJsonElement(jsonArrayproperties.get(i));
           };
         }
       }

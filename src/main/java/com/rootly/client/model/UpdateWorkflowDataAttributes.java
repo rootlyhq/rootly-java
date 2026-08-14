@@ -52,17 +52,18 @@ import com.rootly.client.JSON;
 /**
  * UpdateWorkflowDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateWorkflowDataAttributes {
+  public static final String SERIALIZED_NAME_SLUG = "slug";
+  @Deprecated
+  @SerializedName(SERIALIZED_NAME_SLUG)
+  @jakarta.annotation.Nullable
+  private String slug;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @jakarta.annotation.Nullable
   private String name;
-
-  public static final String SERIALIZED_NAME_SLUG = "slug";
-  @SerializedName(SERIALIZED_NAME_SLUG)
-  @jakarta.annotation.Nullable
-  private String slug;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -177,6 +178,29 @@ public class UpdateWorkflowDataAttributes {
   public UpdateWorkflowDataAttributes() {
   }
 
+  @Deprecated
+  public UpdateWorkflowDataAttributes slug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+    return this;
+  }
+
+  /**
+   * Deprecated. &#x60;slug&#x60; is derived from &#x60;name&#x60;; any submitted value is ignored. This property will be removed from the request schema in a future version.
+   * @return slug
+   * @deprecated
+   */
+  @Deprecated
+  @jakarta.annotation.Nullable
+  public String getSlug() {
+    return slug;
+  }
+
+  @Deprecated
+  public void setSlug(@jakarta.annotation.Nullable String slug) {
+    this.slug = slug;
+  }
+
+
   public UpdateWorkflowDataAttributes name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
@@ -193,25 +217,6 @@ public class UpdateWorkflowDataAttributes {
 
   public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
-  }
-
-
-  public UpdateWorkflowDataAttributes slug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
-    return this;
-  }
-
-  /**
-   * The slug of the workflow
-   * @return slug
-   */
-  @jakarta.annotation.Nullable
-  public String getSlug() {
-    return slug;
-  }
-
-  public void setSlug(@jakarta.annotation.Nullable String slug) {
-    this.slug = slug;
   }
 
 
@@ -715,8 +720,8 @@ public class UpdateWorkflowDataAttributes {
       return false;
     }
     UpdateWorkflowDataAttributes updateWorkflowDataAttributes = (UpdateWorkflowDataAttributes) o;
-    return Objects.equals(this.name, updateWorkflowDataAttributes.name) &&
-        Objects.equals(this.slug, updateWorkflowDataAttributes.slug) &&
+    return Objects.equals(this.slug, updateWorkflowDataAttributes.slug) &&
+        Objects.equals(this.name, updateWorkflowDataAttributes.name) &&
         Objects.equals(this.description, updateWorkflowDataAttributes.description) &&
         Objects.equals(this.command, updateWorkflowDataAttributes.command) &&
         Objects.equals(this.commandFeedbackEnabled, updateWorkflowDataAttributes.commandFeedbackEnabled) &&
@@ -747,7 +752,7 @@ public class UpdateWorkflowDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, slug, description, command, commandFeedbackEnabled, wait, repeatEveryDuration, repeatConditionDurationSinceFirstRun, repeatConditionNumberOfRepeats, continuouslyRepeat, enabled, locked, position, workflowGroupId, triggerParams, environmentIds, severityIds, incidentTypeIds, incidentRoleIds, serviceIds, functionalityIds, groupIds, causeIds, subStatusIds);
+    return Objects.hash(slug, name, description, command, commandFeedbackEnabled, wait, repeatEveryDuration, repeatConditionDurationSinceFirstRun, repeatConditionNumberOfRepeats, continuouslyRepeat, enabled, locked, position, workflowGroupId, triggerParams, environmentIds, severityIds, incidentTypeIds, incidentRoleIds, serviceIds, functionalityIds, groupIds, causeIds, subStatusIds);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -761,8 +766,8 @@ public class UpdateWorkflowDataAttributes {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdateWorkflowDataAttributes {\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    command: ").append(toIndentedString(command)).append("\n");
     sb.append("    commandFeedbackEnabled: ").append(toIndentedString(commandFeedbackEnabled)).append("\n");
@@ -807,8 +812,8 @@ public class UpdateWorkflowDataAttributes {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("name");
     openapiFields.add("slug");
+    openapiFields.add("name");
     openapiFields.add("description");
     openapiFields.add("command");
     openapiFields.add("command_feedback_enabled");
@@ -857,11 +862,11 @@ public class UpdateWorkflowDataAttributes {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
       if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
+      }
+      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));

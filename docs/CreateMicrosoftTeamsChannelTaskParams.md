@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**taskType** | [**TaskTypeEnum**](#TaskTypeEnum) |  |  [optional] |
-|**team** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
+|**team** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
 |**title** | **String** | Microsoft Team channel title |  |
 |**description** | **String** | Microsoft Team channel description |  [optional] |
 |**_private** | [**PrivateEnum**](#PrivateEnum) |  |  [optional] |

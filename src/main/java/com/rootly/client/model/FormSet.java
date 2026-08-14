@@ -50,7 +50,7 @@ import com.rootly.client.JSON;
 /**
  * FormSet
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class FormSet {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -59,7 +59,7 @@ public class FormSet {
 
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @SerializedName(SERIALIZED_NAME_SLUG)
-  @jakarta.annotation.Nonnull
+  @jakarta.annotation.Nullable
   private String slug;
 
   public static final String SERIALIZED_NAME_IS_DEFAULT = "is_default";
@@ -85,6 +85,13 @@ public class FormSet {
   public FormSet() {
   }
 
+  public FormSet(
+     String slug
+  ) {
+    this();
+    this.slug = slug;
+  }
+
   public FormSet name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
@@ -104,23 +111,15 @@ public class FormSet {
   }
 
 
-  public FormSet slug(@jakarta.annotation.Nonnull String slug) {
-    this.slug = slug;
-    return this;
-  }
-
   /**
    * The slug of the form set
    * @return slug
    */
-  @jakarta.annotation.Nonnull
+  @jakarta.annotation.Nullable
   public String getSlug() {
     return slug;
   }
 
-  public void setSlug(@jakarta.annotation.Nonnull String slug) {
-    this.slug = slug;
-  }
 
 
   public FormSet isDefault(@jakarta.annotation.Nonnull Boolean isDefault) {
@@ -156,7 +155,7 @@ public class FormSet {
   }
 
   /**
-   * The forms included in the form set. Add custom forms using the custom form&#39;s &#x60;slug&#x60; field. Or choose a built-in form: &#x60;web_new_incident_form&#x60;, &#x60;web_update_incident_form&#x60;, &#x60;web_incident_post_mortem_form&#x60;, &#x60;web_incident_mitigation_form&#x60;, &#x60;web_incident_resolution_form&#x60;, &#x60;web_incident_cancellation_form&#x60;, &#x60;web_scheduled_incident_form&#x60;, &#x60;web_update_scheduled_incident_form&#x60;, &#x60;slack_new_incident_form&#x60;, &#x60;slack_update_incident_form&#x60;, &#x60;slack_update_incident_status_form&#x60;, &#x60;slack_incident_mitigation_form&#x60;, &#x60;slack_incident_resolution_form&#x60;, &#x60;slack_incident_cancellation_form&#x60;, &#x60;slack_scheduled_incident_form&#x60;, &#x60;slack_update_scheduled_incident_form&#x60;
+   * The forms included in the form set. Add custom forms using the custom form&#39;s &#x60;slug&#x60; field. Or choose a built-in form: &#x60;web_new_incident_form&#x60;, &#x60;web_update_incident_form&#x60;, &#x60;web_incident_post_mortem_form&#x60;, &#x60;web_incident_mitigation_form&#x60;, &#x60;web_incident_resolution_form&#x60;, &#x60;web_incident_cancellation_form&#x60;, &#x60;web_scheduled_incident_form&#x60;, &#x60;web_update_scheduled_incident_form&#x60;, &#x60;slack_new_incident_form&#x60;, &#x60;slack_update_incident_form&#x60;, &#x60;slack_update_incident_status_form&#x60;, &#x60;slack_incident_mitigation_form&#x60;, &#x60;slack_incident_resolution_form&#x60;, &#x60;slack_incident_cancellation_form&#x60;, &#x60;slack_scheduled_incident_form&#x60;, &#x60;slack_update_scheduled_incident_form&#x60;, &#x60;google_chat_new_incident_form&#x60;, &#x60;google_chat_update_incident_form&#x60;, &#x60;microsoft_teams_new_incident_form&#x60;
    * @return forms
    */
   @jakarta.annotation.Nonnull
@@ -272,7 +271,6 @@ public class FormSet {
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
     openapiRequiredFields.add("name");
-    openapiRequiredFields.add("slug");
     openapiRequiredFields.add("is_default");
     openapiRequiredFields.add("forms");
     openapiRequiredFields.add("created_at");
@@ -310,7 +308,7 @@ public class FormSet {
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
-      if (!jsonObj.get("slug").isJsonPrimitive()) {
+      if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
       }
       // ensure the required json array is present

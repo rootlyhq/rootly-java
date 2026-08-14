@@ -18,6 +18,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.AddSlackBookmarkTaskParamsAnyOf;
+import com.rootly.client.model.AddSlackBookmarkTaskParamsAnyOf1;
 import java.io.IOException;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -36,6 +38,30 @@ public class AddMicrosoftTeamsTabTaskParamsTest {
     @Test
     public void testAddMicrosoftTeamsTabTaskParams() {
         // TODO: test AddMicrosoftTeamsTabTaskParams
+    }
+
+    /**
+     * Test the property 'title'
+     */
+    @Test
+    public void titleTest() {
+        // TODO: test title
+    }
+
+    /**
+     * Test the property 'link'
+     */
+    @Test
+    public void linkTest() {
+        // TODO: test link
+    }
+
+    /**
+     * Test the property 'playbookId'
+     */
+    @Test
+    public void playbookIdTest() {
+        // TODO: test playbookId
     }
 
 }

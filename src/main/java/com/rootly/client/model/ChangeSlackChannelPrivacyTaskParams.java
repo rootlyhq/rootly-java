@@ -49,14 +49,14 @@ import com.rootly.client.JSON;
 /**
  * ChangeSlackChannelPrivacyTaskParams
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ChangeSlackChannelPrivacyTaskParams {
   /**
    * Gets or Sets taskType
    */
   @JsonAdapter(TaskTypeEnum.Adapter.class)
   public enum TaskTypeEnum {
-    RENAME_SLACK_CHANNEL("rename_slack_channel");
+    CHANGE_SLACK_CHANNEL_PRIVACY("change_slack_channel_privacy");
 
     private String value;
 
@@ -108,7 +108,7 @@ public class ChangeSlackChannelPrivacyTaskParams {
 
   public static final String SERIALIZED_NAME_CHANNEL = "channel";
   @SerializedName(SERIALIZED_NAME_CHANNEL)
-  @jakarta.annotation.Nullable
+  @jakarta.annotation.Nonnull
   private AddActionItemTaskParamsPostToSlackChannelsInner channel;
 
   /**
@@ -190,7 +190,7 @@ public class ChangeSlackChannelPrivacyTaskParams {
   }
 
 
-  public ChangeSlackChannelPrivacyTaskParams channel(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner channel) {
+  public ChangeSlackChannelPrivacyTaskParams channel(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner channel) {
     this.channel = channel;
     return this;
   }
@@ -199,12 +199,12 @@ public class ChangeSlackChannelPrivacyTaskParams {
    * Get channel
    * @return channel
    */
-  @jakarta.annotation.Nullable
+  @jakarta.annotation.Nonnull
   public AddActionItemTaskParamsPostToSlackChannelsInner getChannel() {
     return channel;
   }
 
-  public void setChannel(@jakarta.annotation.Nullable AddActionItemTaskParamsPostToSlackChannelsInner channel) {
+  public void setChannel(@jakarta.annotation.Nonnull AddActionItemTaskParamsPostToSlackChannelsInner channel) {
     this.channel = channel;
   }
 
@@ -283,6 +283,7 @@ public class ChangeSlackChannelPrivacyTaskParams {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("channel");
     openapiRequiredFields.add("privacy");
   }
 
@@ -321,10 +322,8 @@ public class ChangeSlackChannelPrivacyTaskParams {
       if (jsonObj.get("task_type") != null && !jsonObj.get("task_type").isJsonNull()) {
         TaskTypeEnum.validateJsonElement(jsonObj.get("task_type"));
       }
-      // validate the optional field `channel`
-      if (jsonObj.get("channel") != null && !jsonObj.get("channel").isJsonNull()) {
-        AddActionItemTaskParamsPostToSlackChannelsInner.validateJsonElement(jsonObj.get("channel"));
-      }
+      // validate the required field `channel`
+      AddActionItemTaskParamsPostToSlackChannelsInner.validateJsonElement(jsonObj.get("channel"));
       if (!jsonObj.get("privacy").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `privacy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("privacy").toString()));
       }

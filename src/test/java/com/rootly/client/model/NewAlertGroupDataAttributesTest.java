@@ -44,6 +44,14 @@ public class NewAlertGroupDataAttributesTest {
     }
 
     /**
+     * Test the property 'slug'
+     */
+    @Test
+    public void slugTest() {
+        // TODO: test slug
+    }
+
+    /**
      * Test the property 'name'
      */
     @Test

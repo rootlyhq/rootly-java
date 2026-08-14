@@ -12,10 +12,12 @@
 |**serviceTarget** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
 |**userTarget** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
 |**groupTarget** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
-|**alertUrgencyId** | **String** | Alert urgency ID |  [optional] |
+|**functionalityTarget** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
+|**alertUrgencyId** | **String** | Alert urgency ID |  |
 |**summary** | **String** | Alert title |  |
 |**description** | **String** | Alert description |  [optional] |
 |**escalationNote** | **String** |  |  [optional] |
+|**createNewAlert** | **Boolean** | When true, always create a new alert instead of re-paging the alert that triggered the workflow |  [optional] |
 
 
 

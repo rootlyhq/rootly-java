@@ -54,6 +54,22 @@ public class WebhooksDeliveryTest {
     }
 
     /**
+     * Test the property 'status'
+     */
+    @Test
+    public void statusTest() {
+        // TODO: test status
+    }
+
+    /**
+     * Test the property 'responseStatus'
+     */
+    @Test
+    public void responseStatusTest() {
+        // TODO: test responseStatus
+    }
+
+    /**
      * Test the property 'deliveredAt'
      */
     @Test

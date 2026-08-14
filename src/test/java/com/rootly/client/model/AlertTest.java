@@ -18,12 +18,18 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.AlertAlertFieldValuesInner;
+import com.rootly.client.model.AlertAlertingTargetsInner;
+import com.rootly.client.model.AlertUrgency;
 import com.rootly.client.model.Environment;
-import com.rootly.client.model.NewAlertDataAttributesAlertFieldValuesAttributesInner;
+import com.rootly.client.model.Functionality;
 import com.rootly.client.model.NewAlertDataAttributesLabelsInner;
 import com.rootly.client.model.Service;
 import com.rootly.client.model.Team;
+import com.rootly.client.model.User;
+import com.rootly.client.model.UserFlatResponse;
 import java.io.IOException;
+import java.net.URI;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -111,6 +117,14 @@ public class AlertTest {
     }
 
     /**
+     * Test the property 'functionalities'
+     */
+    @Test
+    public void functionalitiesTest() {
+        // TODO: test functionalities
+    }
+
+    /**
      * Test the property 'environments'
      */
     @Test
@@ -132,6 +146,14 @@ public class AlertTest {
     @Test
     public void groupIdsTest() {
         // TODO: test groupIds
+    }
+
+    /**
+     * Test the property 'functionalityIds'
+     */
+    @Test
+    public void functionalityIdsTest() {
+        // TODO: test functionalityIds
     }
 
     /**
@@ -167,6 +189,14 @@ public class AlertTest {
     }
 
     /**
+     * Test the property 'alertUrgency'
+     */
+    @Test
+    public void alertUrgencyTest() {
+        // TODO: test alertUrgency
+    }
+
+    /**
      * Test the property 'groupLeaderAlertId'
      */
     @Test
@@ -199,6 +229,22 @@ public class AlertTest {
     }
 
     /**
+     * Test the property 'notificationTargetType'
+     */
+    @Test
+    public void notificationTargetTypeTest() {
+        // TODO: test notificationTargetType
+    }
+
+    /**
+     * Test the property 'notificationTargetId'
+     */
+    @Test
+    public void notificationTargetIdTest() {
+        // TODO: test notificationTargetId
+    }
+
+    /**
      * Test the property 'deduplicationKey'
      */
     @Test
@@ -207,11 +253,43 @@ public class AlertTest {
     }
 
     /**
-     * Test the property 'alertFieldValuesAttributes'
+     * Test the property 'alertFieldValues'
      */
     @Test
-    public void alertFieldValuesAttributesTest() {
-        // TODO: test alertFieldValuesAttributes
+    public void alertFieldValuesTest() {
+        // TODO: test alertFieldValues
+    }
+
+    /**
+     * Test the property 'responders'
+     */
+    @Test
+    public void respondersTest() {
+        // TODO: test responders
+    }
+
+    /**
+     * Test the property 'notifiedUsers'
+     */
+    @Test
+    public void notifiedUsersTest() {
+        // TODO: test notifiedUsers
+    }
+
+    /**
+     * Test the property 'alertingTargets'
+     */
+    @Test
+    public void alertingTargetsTest() {
+        // TODO: test alertingTargets
+    }
+
+    /**
+     * Test the property 'url'
+     */
+    @Test
+    public void urlTest() {
+        // TODO: test url
     }
 
     /**

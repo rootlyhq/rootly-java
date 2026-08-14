@@ -12,6 +12,7 @@
 |**status** | [**StatusEnum**](#StatusEnum) | The status of the incident event |  [optional] |
 |**notifySubscribers** | **Boolean** | Notify all status pages subscribers |  [optional] |
 |**shouldTweet** | **Boolean** | For Statuspage.io integrated pages auto publishes a tweet for your update |  [optional] |
+|**startedAt** | **OffsetDateTime** | When the event started. |  [optional] |
 
 
 

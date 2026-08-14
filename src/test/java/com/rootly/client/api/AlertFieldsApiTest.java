@@ -97,8 +97,16 @@ public class AlertFieldsApiTest {
         String filterCreatedAtGte = null;
         String filterCreatedAtLt = null;
         String filterCreatedAtLte = null;
+        String filterNameEq = null;
+        String filterNameNotEq = null;
+        String filterNameIn = null;
+        String filterNameNotIn = null;
+        String filterKindEq = null;
+        String filterKindNotEq = null;
+        String filterKindIn = null;
+        String filterKindNotIn = null;
         String sort = null;
-        AlertFieldList response = api.listAlertFields(include, pageNumber, pageSize, filterSearch, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, sort);
+        AlertFieldList response = api.listAlertFields(include, pageNumber, pageSize, filterSearch, filterName, filterKind, filterCreatedAtGt, filterCreatedAtGte, filterCreatedAtLt, filterCreatedAtLte, filterNameEq, filterNameNotEq, filterNameIn, filterNameNotIn, filterKindEq, filterKindNotEq, filterKindIn, filterKindNotIn, sort);
         // TODO: test validations
     }
 

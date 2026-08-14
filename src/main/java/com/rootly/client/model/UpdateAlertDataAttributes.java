@@ -54,7 +54,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateAlertDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateAlertDataAttributes {
   /**
    * Whether the alert is marked as noise
@@ -113,144 +113,11 @@ public class UpdateAlertDataAttributes {
   @jakarta.annotation.Nullable
   private NoiseEnum noise;
 
-  /**
-   * The source of the alert
-   */
-  @JsonAdapter(SourceEnum.Adapter.class)
-  public enum SourceEnum {
-    ROOTLY("rootly"),
-    
-    MANUAL("manual"),
-    
-    API("api"),
-    
-    HEARTBEAT("heartbeat"),
-    
-    WEB("web"),
-    
-    SLACK("slack"),
-    
-    EMAIL("email"),
-    
-    WORKFLOW("workflow"),
-    
-    LIVE_CALL_ROUTING("live_call_routing"),
-    
-    MOBILE("mobile"),
-    
-    PAGERDUTY("pagerduty"),
-    
-    OPSGENIE("opsgenie"),
-    
-    VICTOROPS("victorops"),
-    
-    PAGERTREE("pagertree"),
-    
-    DATADOG("datadog"),
-    
-    NOBL9("nobl9"),
-    
-    ZENDESK("zendesk"),
-    
-    ASANA("asana"),
-    
-    CLICKUP("clickup"),
-    
-    SENTRY("sentry"),
-    
-    ROLLBAR("rollbar"),
-    
-    JIRA("jira"),
-    
-    HONEYCOMB("honeycomb"),
-    
-    SERVICE_NOW("service_now"),
-    
-    LINEAR("linear"),
-    
-    GRAFANA("grafana"),
-    
-    ALERTMANAGER("alertmanager"),
-    
-    GOOGLE_CLOUD("google_cloud"),
-    
-    GENERIC_WEBHOOK("generic_webhook"),
-    
-    CLOUD_WATCH("cloud_watch"),
-    
-    AZURE("azure"),
-    
-    SPLUNK("splunk"),
-    
-    CHRONOSPHERE("chronosphere"),
-    
-    APP_OPTICS("app_optics"),
-    
-    BUG_SNAG("bug_snag"),
-    
-    MONTE_CARLO("monte_carlo"),
-    
-    NAGIOS("nagios"),
-    
-    PRTG("prtg"),
-    
-    CATCHPOINT("catchpoint"),
-    
-    APP_DYNAMICS("app_dynamics"),
-    
-    CHECKLY("checkly"),
-    
-    NEW_RELIC("new_relic"),
-    
-    GITLAB("gitlab");
-
-    private String value;
-
-    SourceEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static SourceEnum fromValue(String value) {
-      for (SourceEnum b : SourceEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<SourceEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final SourceEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public SourceEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return SourceEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      SourceEnum.fromValue(value);
-    }
-  }
-
   public static final String SERIALIZED_NAME_SOURCE = "source";
+  @Deprecated
   @SerializedName(SERIALIZED_NAME_SOURCE)
   @jakarta.annotation.Nullable
-  private SourceEnum source;
+  private String source;
 
   public static final String SERIALIZED_NAME_SUMMARY = "summary";
   @SerializedName(SERIALIZED_NAME_SUMMARY)
@@ -271,6 +138,11 @@ public class UpdateAlertDataAttributes {
   @SerializedName(SERIALIZED_NAME_GROUP_IDS)
   @jakarta.annotation.Nullable
   private List<String> groupIds;
+
+  public static final String SERIALIZED_NAME_FUNCTIONALITY_IDS = "functionality_ids";
+  @SerializedName(SERIALIZED_NAME_FUNCTIONALITY_IDS)
+  @jakarta.annotation.Nullable
+  private List<String> functionalityIds;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_IDS = "environment_ids";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_IDS)
@@ -344,21 +216,25 @@ public class UpdateAlertDataAttributes {
   }
 
 
-  public UpdateAlertDataAttributes source(@jakarta.annotation.Nullable SourceEnum source) {
+  @Deprecated
+  public UpdateAlertDataAttributes source(@jakarta.annotation.Nullable String source) {
     this.source = source;
     return this;
   }
 
   /**
-   * The source of the alert
+   * Deprecated. Accepted for backwards compatibility; new clients should omit. Defaults to &#x60;api&#x60;.
    * @return source
+   * @deprecated
    */
+  @Deprecated
   @jakarta.annotation.Nullable
-  public SourceEnum getSource() {
+  public String getSource() {
     return source;
   }
 
-  public void setSource(@jakarta.annotation.Nullable SourceEnum source) {
+  @Deprecated
+  public void setSource(@jakarta.annotation.Nullable String source) {
     this.source = source;
   }
 
@@ -452,6 +328,33 @@ public class UpdateAlertDataAttributes {
 
   public void setGroupIds(@jakarta.annotation.Nullable List<String> groupIds) {
     this.groupIds = groupIds;
+  }
+
+
+  public UpdateAlertDataAttributes functionalityIds(@jakarta.annotation.Nullable List<String> functionalityIds) {
+    this.functionalityIds = functionalityIds;
+    return this;
+  }
+
+  public UpdateAlertDataAttributes addFunctionalityIdsItem(String functionalityIdsItem) {
+    if (this.functionalityIds == null) {
+      this.functionalityIds = new ArrayList<>();
+    }
+    this.functionalityIds.add(functionalityIdsItem);
+    return this;
+  }
+
+  /**
+   * The Functionality IDs to attach to the alert
+   * @return functionalityIds
+   */
+  @jakarta.annotation.Nullable
+  public List<String> getFunctionalityIds() {
+    return functionalityIds;
+  }
+
+  public void setFunctionalityIds(@jakarta.annotation.Nullable List<String> functionalityIds) {
+    this.functionalityIds = functionalityIds;
   }
 
 
@@ -685,6 +588,7 @@ public class UpdateAlertDataAttributes {
         Objects.equals(this.description, updateAlertDataAttributes.description) &&
         Objects.equals(this.serviceIds, updateAlertDataAttributes.serviceIds) &&
         Objects.equals(this.groupIds, updateAlertDataAttributes.groupIds) &&
+        Objects.equals(this.functionalityIds, updateAlertDataAttributes.functionalityIds) &&
         Objects.equals(this.environmentIds, updateAlertDataAttributes.environmentIds) &&
         Objects.equals(this.startedAt, updateAlertDataAttributes.startedAt) &&
         Objects.equals(this.endedAt, updateAlertDataAttributes.endedAt) &&
@@ -703,7 +607,7 @@ public class UpdateAlertDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(noise, source, summary, description, serviceIds, groupIds, environmentIds, startedAt, endedAt, externalId, externalUrl, alertUrgencyId, labels, data, deduplicationKey, alertFieldValuesAttributes);
+    return Objects.hash(noise, source, summary, description, serviceIds, groupIds, functionalityIds, environmentIds, startedAt, endedAt, externalId, externalUrl, alertUrgencyId, labels, data, deduplicationKey, alertFieldValuesAttributes);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -723,6 +627,7 @@ public class UpdateAlertDataAttributes {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    serviceIds: ").append(toIndentedString(serviceIds)).append("\n");
     sb.append("    groupIds: ").append(toIndentedString(groupIds)).append("\n");
+    sb.append("    functionalityIds: ").append(toIndentedString(functionalityIds)).append("\n");
     sb.append("    environmentIds: ").append(toIndentedString(environmentIds)).append("\n");
     sb.append("    startedAt: ").append(toIndentedString(startedAt)).append("\n");
     sb.append("    endedAt: ").append(toIndentedString(endedAt)).append("\n");
@@ -761,6 +666,7 @@ public class UpdateAlertDataAttributes {
     openapiFields.add("description");
     openapiFields.add("service_ids");
     openapiFields.add("group_ids");
+    openapiFields.add("functionality_ids");
     openapiFields.add("environment_ids");
     openapiFields.add("started_at");
     openapiFields.add("ended_at");
@@ -807,10 +713,6 @@ public class UpdateAlertDataAttributes {
       if ((jsonObj.get("source") != null && !jsonObj.get("source").isJsonNull()) && !jsonObj.get("source").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `source` to be a primitive type in the JSON string but got `%s`", jsonObj.get("source").toString()));
       }
-      // validate the optional field `source`
-      if (jsonObj.get("source") != null && !jsonObj.get("source").isJsonNull()) {
-        SourceEnum.validateJsonElement(jsonObj.get("source"));
-      }
       if ((jsonObj.get("summary") != null && !jsonObj.get("summary").isJsonNull()) && !jsonObj.get("summary").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `summary` to be a primitive type in the JSON string but got `%s`", jsonObj.get("summary").toString()));
       }
@@ -824,6 +726,10 @@ public class UpdateAlertDataAttributes {
       // ensure the optional json data is an array if present
       if (jsonObj.get("group_ids") != null && !jsonObj.get("group_ids").isJsonNull() && !jsonObj.get("group_ids").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `group_ids` to be an array in the JSON string but got `%s`", jsonObj.get("group_ids").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("functionality_ids") != null && !jsonObj.get("functionality_ids").isJsonNull() && !jsonObj.get("functionality_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `functionality_ids` to be an array in the JSON string but got `%s`", jsonObj.get("functionality_ids").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("environment_ids") != null && !jsonObj.get("environment_ids").isJsonNull() && !jsonObj.get("environment_ids").isJsonArray()) {

@@ -50,11 +50,11 @@ import com.rootly.client.JSON;
 /**
  * CreateEdgeConnectorActionRequestActionMetadataParametersInner
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T08:36:28.586343560Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateEdgeConnectorActionRequestActionMetadataParametersInner {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String name;
 
   /**
@@ -113,28 +113,28 @@ public class CreateEdgeConnectorActionRequestActionMetadataParametersInner {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_REQUIRED = "required";
   @SerializedName(SERIALIZED_NAME_REQUIRED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean required;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_OPTIONS = "options";
   @SerializedName(SERIALIZED_NAME_OPTIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> options = new ArrayList<>();
 
   public CreateEdgeConnectorActionRequestActionMetadataParametersInner() {
   }
 
-  public CreateEdgeConnectorActionRequestActionMetadataParametersInner name(@javax.annotation.Nullable String name) {
+  public CreateEdgeConnectorActionRequestActionMetadataParametersInner name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -143,17 +143,17 @@ public class CreateEdgeConnectorActionRequestActionMetadataParametersInner {
    * Get name
    * @return name
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public CreateEdgeConnectorActionRequestActionMetadataParametersInner type(@javax.annotation.Nullable TypeEnum type) {
+  public CreateEdgeConnectorActionRequestActionMetadataParametersInner type(@jakarta.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -162,17 +162,17 @@ public class CreateEdgeConnectorActionRequestActionMetadataParametersInner {
    * Get type
    * @return type
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TypeEnum getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nullable TypeEnum type) {
+  public void setType(@jakarta.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
 
-  public CreateEdgeConnectorActionRequestActionMetadataParametersInner required(@javax.annotation.Nullable Boolean required) {
+  public CreateEdgeConnectorActionRequestActionMetadataParametersInner required(@jakarta.annotation.Nullable Boolean required) {
     this.required = required;
     return this;
   }
@@ -181,17 +181,17 @@ public class CreateEdgeConnectorActionRequestActionMetadataParametersInner {
    * Get required
    * @return required
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getRequired() {
     return required;
   }
 
-  public void setRequired(@javax.annotation.Nullable Boolean required) {
+  public void setRequired(@jakarta.annotation.Nullable Boolean required) {
     this.required = required;
   }
 
 
-  public CreateEdgeConnectorActionRequestActionMetadataParametersInner description(@javax.annotation.Nullable String description) {
+  public CreateEdgeConnectorActionRequestActionMetadataParametersInner description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -200,17 +200,17 @@ public class CreateEdgeConnectorActionRequestActionMetadataParametersInner {
    * Get description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public CreateEdgeConnectorActionRequestActionMetadataParametersInner options(@javax.annotation.Nullable List<String> options) {
+  public CreateEdgeConnectorActionRequestActionMetadataParametersInner options(@jakarta.annotation.Nullable List<String> options) {
     this.options = options;
     return this;
   }
@@ -227,12 +227,12 @@ public class CreateEdgeConnectorActionRequestActionMetadataParametersInner {
    * Get options
    * @return options
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getOptions() {
     return options;
   }
 
-  public void setOptions(@javax.annotation.Nullable List<String> options) {
+  public void setOptions(@jakarta.annotation.Nullable List<String> options) {
     this.options = options;
   }
 

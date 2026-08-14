@@ -47,11 +47,35 @@ public class UserFlatResponseTest {
     }
 
     /**
+     * Test the property 'name'
+     */
+    @Test
+    public void nameTest() {
+        // TODO: test name
+    }
+
+    /**
      * Test the property 'email'
      */
     @Test
     public void emailTest() {
         // TODO: test email
+    }
+
+    /**
+     * Test the property 'phone'
+     */
+    @Test
+    public void phoneTest() {
+        // TODO: test phone
+    }
+
+    /**
+     * Test the property 'phone2'
+     */
+    @Test
+    public void phone2Test() {
+        // TODO: test phone2
     }
 
     /**
@@ -71,6 +95,14 @@ public class UserFlatResponseTest {
     }
 
     /**
+     * Test the property 'preferredName'
+     */
+    @Test
+    public void preferredNameTest() {
+        // TODO: test preferredName
+    }
+
+    /**
      * Test the property 'fullName'
      */
     @Test
@@ -84,6 +116,14 @@ public class UserFlatResponseTest {
     @Test
     public void fullNameWithTeamTest() {
         // TODO: test fullNameWithTeam
+    }
+
+    /**
+     * Test the property 'slackId'
+     */
+    @Test
+    public void slackIdTest() {
+        // TODO: test slackId
     }
 
     /**

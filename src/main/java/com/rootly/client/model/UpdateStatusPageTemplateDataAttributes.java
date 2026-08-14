@@ -49,12 +49,17 @@ import com.rootly.client.JSON;
 /**
  * UpdateStatusPageTemplateDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateStatusPageTemplateDataAttributes {
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
   @jakarta.annotation.Nonnull
   private String title;
+
+  public static final String SERIALIZED_NAME_UPDATE_TITLE = "update_title";
+  @SerializedName(SERIALIZED_NAME_UPDATE_TITLE)
+  @jakarta.annotation.Nullable
+  private String updateTitle;
 
   public static final String SERIALIZED_NAME_BODY = "body";
   @SerializedName(SERIALIZED_NAME_BODY)
@@ -222,6 +227,25 @@ public class UpdateStatusPageTemplateDataAttributes {
   }
 
 
+  public UpdateStatusPageTemplateDataAttributes updateTitle(@jakarta.annotation.Nullable String updateTitle) {
+    this.updateTitle = updateTitle;
+    return this;
+  }
+
+  /**
+   * Title that will be used for the status page update
+   * @return updateTitle
+   */
+  @jakarta.annotation.Nullable
+  public String getUpdateTitle() {
+    return updateTitle;
+  }
+
+  public void setUpdateTitle(@jakarta.annotation.Nullable String updateTitle) {
+    this.updateTitle = updateTitle;
+  }
+
+
   public UpdateStatusPageTemplateDataAttributes body(@jakarta.annotation.Nonnull String body) {
     this.body = body;
     return this;
@@ -347,6 +371,7 @@ public class UpdateStatusPageTemplateDataAttributes {
     }
     UpdateStatusPageTemplateDataAttributes updateStatusPageTemplateDataAttributes = (UpdateStatusPageTemplateDataAttributes) o;
     return Objects.equals(this.title, updateStatusPageTemplateDataAttributes.title) &&
+        Objects.equals(this.updateTitle, updateStatusPageTemplateDataAttributes.updateTitle) &&
         Objects.equals(this.body, updateStatusPageTemplateDataAttributes.body) &&
         Objects.equals(this.updateStatus, updateStatusPageTemplateDataAttributes.updateStatus) &&
         Objects.equals(this.kind, updateStatusPageTemplateDataAttributes.kind) &&
@@ -361,7 +386,7 @@ public class UpdateStatusPageTemplateDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, body, updateStatus, kind, shouldNotifySubscribers, position, enabled);
+    return Objects.hash(title, updateTitle, body, updateStatus, kind, shouldNotifySubscribers, position, enabled);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -376,6 +401,7 @@ public class UpdateStatusPageTemplateDataAttributes {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdateStatusPageTemplateDataAttributes {\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
+    sb.append("    updateTitle: ").append(toIndentedString(updateTitle)).append("\n");
     sb.append("    body: ").append(toIndentedString(body)).append("\n");
     sb.append("    updateStatus: ").append(toIndentedString(updateStatus)).append("\n");
     sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
@@ -405,6 +431,7 @@ public class UpdateStatusPageTemplateDataAttributes {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("title");
+    openapiFields.add("update_title");
     openapiFields.add("body");
     openapiFields.add("update_status");
     openapiFields.add("kind");
@@ -448,6 +475,9 @@ public class UpdateStatusPageTemplateDataAttributes {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("title").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
+      }
+      if ((jsonObj.get("update_title") != null && !jsonObj.get("update_title").isJsonNull()) && !jsonObj.get("update_title").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `update_title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("update_title").toString()));
       }
       if (!jsonObj.get("body").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `body` to be a primitive type in the JSON string but got `%s`", jsonObj.get("body").toString()));

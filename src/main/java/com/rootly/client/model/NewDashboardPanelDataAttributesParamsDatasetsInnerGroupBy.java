@@ -58,7 +58,7 @@ import com.google.gson.JsonParseException;
 
 import com.rootly.client.JSON;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-20T18:42:42.907690594Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewDashboardPanelDataAttributesParamsDatasetsInnerGroupBy extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(NewDashboardPanelDataAttributesParamsDatasetsInnerGroupBy.class.getName());
 
@@ -148,11 +148,11 @@ public class NewDashboardPanelDataAttributesParamsDatasetsInnerGroupBy extends A
     public static final Map<String, Class<?>> schemas = new HashMap<String, Class<?>>();
 
     public NewDashboardPanelDataAttributesParamsDatasetsInnerGroupBy() {
-        super("oneOf", Boolean.TRUE);
+        super("oneOf", Boolean.FALSE);
     }
 
     public NewDashboardPanelDataAttributesParamsDatasetsInnerGroupBy(Object o) {
-        super("oneOf", Boolean.TRUE);
+        super("oneOf", Boolean.FALSE);
         setActualInstance(o);
     }
 
@@ -175,11 +175,6 @@ public class NewDashboardPanelDataAttributesParamsDatasetsInnerGroupBy extends A
      */
     @Override
     public void setActualInstance(Object instance) {
-        if (instance == null) {
-           super.setActualInstance(instance);
-           return;
-        }
-
         if (instance instanceof String) {
             super.setActualInstance(instance);
             return;
