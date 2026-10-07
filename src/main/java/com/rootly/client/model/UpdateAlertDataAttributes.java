@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewAlertDataAttributesActor;
 import com.rootly.client.model.NewAlertDataAttributesAlertFieldValuesAttributesInner;
 import com.rootly.client.model.NewAlertDataAttributesLabelsInner;
 import java.io.IOException;
@@ -54,8 +55,13 @@ import com.rootly.client.JSON;
 /**
  * UpdateAlertDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateAlertDataAttributes {
+  public static final String SERIALIZED_NAME_ACTOR = "actor";
+  @SerializedName(SERIALIZED_NAME_ACTOR)
+  @jakarta.annotation.Nullable
+  private NewAlertDataAttributesActor actor;
+
   /**
    * Whether the alert is marked as noise
    */
@@ -196,6 +202,25 @@ public class UpdateAlertDataAttributes {
 
   public UpdateAlertDataAttributes() {
   }
+
+  public UpdateAlertDataAttributes actor(@jakarta.annotation.Nullable NewAlertDataAttributesActor actor) {
+    this.actor = actor;
+    return this;
+  }
+
+  /**
+   * Get actor
+   * @return actor
+   */
+  @jakarta.annotation.Nullable
+  public NewAlertDataAttributesActor getActor() {
+    return actor;
+  }
+
+  public void setActor(@jakarta.annotation.Nullable NewAlertDataAttributesActor actor) {
+    this.actor = actor;
+  }
+
 
   public UpdateAlertDataAttributes noise(@jakarta.annotation.Nullable NoiseEnum noise) {
     this.noise = noise;
@@ -582,7 +607,8 @@ public class UpdateAlertDataAttributes {
       return false;
     }
     UpdateAlertDataAttributes updateAlertDataAttributes = (UpdateAlertDataAttributes) o;
-    return Objects.equals(this.noise, updateAlertDataAttributes.noise) &&
+    return Objects.equals(this.actor, updateAlertDataAttributes.actor) &&
+        Objects.equals(this.noise, updateAlertDataAttributes.noise) &&
         Objects.equals(this.source, updateAlertDataAttributes.source) &&
         Objects.equals(this.summary, updateAlertDataAttributes.summary) &&
         Objects.equals(this.description, updateAlertDataAttributes.description) &&
@@ -607,7 +633,7 @@ public class UpdateAlertDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(noise, source, summary, description, serviceIds, groupIds, functionalityIds, environmentIds, startedAt, endedAt, externalId, externalUrl, alertUrgencyId, labels, data, deduplicationKey, alertFieldValuesAttributes);
+    return Objects.hash(actor, noise, source, summary, description, serviceIds, groupIds, functionalityIds, environmentIds, startedAt, endedAt, externalId, externalUrl, alertUrgencyId, labels, data, deduplicationKey, alertFieldValuesAttributes);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -621,6 +647,7 @@ public class UpdateAlertDataAttributes {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdateAlertDataAttributes {\n");
+    sb.append("    actor: ").append(toIndentedString(actor)).append("\n");
     sb.append("    noise: ").append(toIndentedString(noise)).append("\n");
     sb.append("    source: ").append(toIndentedString(source)).append("\n");
     sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
@@ -660,6 +687,7 @@ public class UpdateAlertDataAttributes {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("actor");
     openapiFields.add("noise");
     openapiFields.add("source");
     openapiFields.add("summary");
@@ -703,6 +731,10 @@ public class UpdateAlertDataAttributes {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `actor`
+      if (jsonObj.get("actor") != null && !jsonObj.get("actor").isJsonNull()) {
+        NewAlertDataAttributesActor.validateJsonElement(jsonObj.get("actor"));
+      }
       if ((jsonObj.get("noise") != null && !jsonObj.get("noise").isJsonNull()) && !jsonObj.get("noise").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `noise` to be a primitive type in the JSON string but got `%s`", jsonObj.get("noise").toString()));
       }

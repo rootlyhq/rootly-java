@@ -36,6 +36,8 @@
 |**incidentConditionAcknowledgedAt** | [**IncidentConditionAcknowledgedAtEnum**](#IncidentConditionAcknowledgedAtEnum) |  |  [optional] |
 |**incidentConditionMitigatedAt** | [**IncidentConditionMitigatedAtEnum**](#IncidentConditionMitigatedAtEnum) |  |  [optional] |
 |**incidentConditionResolvedAt** | [**IncidentConditionResolvedAtEnum**](#IncidentConditionResolvedAtEnum) |  |  [optional] |
+|**incidentConditionScheduledFor** | [**IncidentConditionScheduledForEnum**](#IncidentConditionScheduledForEnum) |  |  [optional] |
+|**incidentConditionScheduledUntil** | [**IncidentConditionScheduledUntilEnum**](#IncidentConditionScheduledUntilEnum) |  |  [optional] |
 |**incidentConditionalInactivity** | [**IncidentConditionalInactivityEnum**](#IncidentConditionalInactivityEnum) |  |  [optional] |
 |**incidentActionItemCondition** | [**IncidentActionItemConditionEnum**](#IncidentActionItemConditionEnum) |  |  [optional] |
 |**incidentActionItemConditionKind** | [**IncidentActionItemConditionKindEnum**](#IncidentActionItemConditionKindEnum) |  |  [optional] |
@@ -408,6 +410,24 @@
 
 
 ## Enum: IncidentConditionResolvedAtEnum
+
+| Name | Value |
+|---- | -----|
+| SET | &quot;SET&quot; |
+| UNSET | &quot;UNSET&quot; |
+
+
+
+## Enum: IncidentConditionScheduledForEnum
+
+| Name | Value |
+|---- | -----|
+| SET | &quot;SET&quot; |
+| UNSET | &quot;UNSET&quot; |
+
+
+
+## Enum: IncidentConditionScheduledUntilEnum
 
 | Name | Value |
 |---- | -----|

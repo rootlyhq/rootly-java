@@ -10,6 +10,7 @@
 |**name** | **String** | The name of the API key |  |
 |**description** | **String** | A description of the API key |  [optional] |
 |**kind** | [**KindEnum**](#KindEnum) | The kind of the API key |  |
+|**groupId** | **String** | The group (team) ID for team API keys. Keys created via the API have exactly one group; for keys with multiple groups this is the first group. |  [optional] |
 |**roleId** | **String** | The role ID |  [optional] |
 |**onCallRoleId** | **String** | The on-call role ID |  [optional] |
 |**createdAt** | **String** | Date of creation |  |

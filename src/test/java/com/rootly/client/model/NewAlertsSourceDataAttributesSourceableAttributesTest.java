@@ -66,6 +66,22 @@ public class NewAlertsSourceDataAttributesSourceableAttributesTest {
     }
 
     /**
+     * Test the property 'notificationTargetType'
+     */
+    @Test
+    public void notificationTargetTypeTest() {
+        // TODO: test notificationTargetType
+    }
+
+    /**
+     * Test the property 'notificationTargetId'
+     */
+    @Test
+    public void notificationTargetIdTest() {
+        // TODO: test notificationTargetId
+    }
+
+    /**
      * Test the property 'fieldMappingsAttributes'
      */
     @Test

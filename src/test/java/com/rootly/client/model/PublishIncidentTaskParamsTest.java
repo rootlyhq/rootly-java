@@ -22,7 +22,9 @@ import com.rootly.client.model.AddActionItemTaskParamsPostToSlackChannelsInner;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -119,6 +121,38 @@ public class PublishIncidentTaskParamsTest {
     @Test
     public void statusPageIdsTest() {
         // TODO: test statusPageIds
+    }
+
+    /**
+     * Test the property 'selectedComponentKeys'
+     */
+    @Test
+    public void selectedComponentKeysTest() {
+        // TODO: test selectedComponentKeys
+    }
+
+    /**
+     * Test the property 'selectedComponentStatuses'
+     */
+    @Test
+    public void selectedComponentStatusesTest() {
+        // TODO: test selectedComponentStatuses
+    }
+
+    /**
+     * Test the property 'syncIncidentComponents'
+     */
+    @Test
+    public void syncIncidentComponentsTest() {
+        // TODO: test syncIncidentComponents
+    }
+
+    /**
+     * Test the property 'syncedComponentStatus'
+     */
+    @Test
+    public void syncedComponentStatusTest() {
+        // TODO: test syncedComponentStatus
     }
 
     /**

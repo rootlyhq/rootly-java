@@ -19,6 +19,8 @@ import com.rootly.client.model.NewUserPhoneNumber;
 import com.rootly.client.model.UpdateUserPhoneNumber;
 import com.rootly.client.model.UserPhoneNumberList;
 import com.rootly.client.model.UserPhoneNumberResponse;
+import com.rootly.client.model.VerifyUserPhoneNumber200Response;
+import com.rootly.client.model.VerifyUserPhoneNumber429Response;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -79,6 +81,20 @@ public class UserPhoneNumbersApiTest {
     }
 
     /**
+     * Resend verification code
+     *
+     * Resends a verification code to the phone number. SMS sends are limited per recipient to 3 per hour and 5 per day. An application rate-limit 429 response includes Retry-After with the remaining wait in seconds.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void resendVerificationUserPhoneNumberTest() throws ApiException {
+        String id = null;
+        VerifyUserPhoneNumber200Response response = api.resendVerificationUserPhoneNumber(id);
+        // TODO: test validations
+    }
+
+    /**
      * Show user phone number
      *
      * Retrieves a specific user phone number
@@ -104,6 +120,20 @@ public class UserPhoneNumbersApiTest {
         String id = null;
         UpdateUserPhoneNumber updateUserPhoneNumber = null;
         UserPhoneNumberResponse response = api.updateUserPhoneNumber(id, updateUserPhoneNumber);
+        // TODO: test validations
+    }
+
+    /**
+     * Send verification code
+     *
+     * Sends a verification code to the phone number. SMS sends are limited per recipient to 3 per hour and 5 per day. An application rate-limit 429 response includes Retry-After with the remaining wait in seconds.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void verifyUserPhoneNumberTest() throws ApiException {
+        String id = null;
+        VerifyUserPhoneNumber200Response response = api.verifyUserPhoneNumber(id);
         // TODO: test validations
     }
 

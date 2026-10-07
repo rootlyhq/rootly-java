@@ -19,8 +19,11 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.OverriddenShift;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -49,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * Shift
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Shift {
   public static final String SERIALIZED_NAME_SCHEDULE_ID = "schedule_id";
   @SerializedName(SERIALIZED_NAME_SCHEDULE_ID)
@@ -85,6 +88,11 @@ public class Shift {
   @SerializedName(SERIALIZED_NAME_USER_ID)
   @jakarta.annotation.Nullable
   private Integer userId;
+
+  public static final String SERIALIZED_NAME_OVERRIDDEN_SHIFTS = "overridden_shifts";
+  @SerializedName(SERIALIZED_NAME_OVERRIDDEN_SHIFTS)
+  @jakarta.annotation.Nullable
+  private List<OverriddenShift> overriddenShifts;
 
   public Shift() {
   }
@@ -222,6 +230,33 @@ public class Shift {
   }
 
 
+  public Shift overriddenShifts(@jakarta.annotation.Nullable List<OverriddenShift> overriddenShifts) {
+    this.overriddenShifts = overriddenShifts;
+    return this;
+  }
+
+  public Shift addOverriddenShiftsItem(OverriddenShift overriddenShiftsItem) {
+    if (this.overriddenShifts == null) {
+      this.overriddenShifts = new ArrayList<>();
+    }
+    this.overriddenShifts.add(overriddenShiftsItem);
+    return this;
+  }
+
+  /**
+   * For override shifts, the portions of the regular shifts this override replaces, clipped to the override window. Null for non-override shifts. Available when overridden shifts are enabled for the organization.
+   * @return overriddenShifts
+   */
+  @jakarta.annotation.Nullable
+  public List<OverriddenShift> getOverriddenShifts() {
+    return overriddenShifts;
+  }
+
+  public void setOverriddenShifts(@jakarta.annotation.Nullable List<OverriddenShift> overriddenShifts) {
+    this.overriddenShifts = overriddenShifts;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -238,7 +273,8 @@ public class Shift {
         Objects.equals(this.endsAt, shift.endsAt) &&
         Objects.equals(this.isOverride, shift.isOverride) &&
         Objects.equals(this.isShadow, shift.isShadow) &&
-        Objects.equals(this.userId, shift.userId);
+        Objects.equals(this.userId, shift.userId) &&
+        Objects.equals(this.overriddenShifts, shift.overriddenShifts);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -247,7 +283,7 @@ public class Shift {
 
   @Override
   public int hashCode() {
-    return Objects.hash(scheduleId, rotationId, startsAt, endsAt, isOverride, isShadow, userId);
+    return Objects.hash(scheduleId, rotationId, startsAt, endsAt, isOverride, isShadow, userId, overriddenShifts);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -268,6 +304,7 @@ public class Shift {
     sb.append("    isOverride: ").append(toIndentedString(isOverride)).append("\n");
     sb.append("    isShadow: ").append(toIndentedString(isShadow)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+    sb.append("    overriddenShifts: ").append(toIndentedString(overriddenShifts)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -297,6 +334,7 @@ public class Shift {
     openapiFields.add("is_override");
     openapiFields.add("is_shadow");
     openapiFields.add("user_id");
+    openapiFields.add("overridden_shifts");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -347,6 +385,20 @@ public class Shift {
       }
       if (!jsonObj.get("ends_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `ends_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ends_at").toString()));
+      }
+      if (jsonObj.get("overridden_shifts") != null && !jsonObj.get("overridden_shifts").isJsonNull()) {
+        JsonArray jsonArrayoverriddenShifts = jsonObj.getAsJsonArray("overridden_shifts");
+        if (jsonArrayoverriddenShifts != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("overridden_shifts").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `overridden_shifts` to be an array in the JSON string but got `%s`", jsonObj.get("overridden_shifts").toString()));
+          }
+
+          // validate the optional field `overridden_shifts` (array)
+          for (int i = 0; i < jsonArrayoverriddenShifts.size(); i++) {
+            OverriddenShift.validateJsonElement(jsonArrayoverriddenShifts.get(i));
+          };
+        }
       }
   }
 

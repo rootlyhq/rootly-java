@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewWorkflowDataAttributesFailureNotificationChannelsInner;
 import com.rootly.client.model.NewWorkflowDataAttributesTriggerParams;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -52,7 +53,7 @@ import com.rootly.client.JSON;
 /**
  * Workflow
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Workflow {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -103,6 +104,11 @@ public class Workflow {
   @SerializedName(SERIALIZED_NAME_CONTINUOUSLY_REPEAT)
   @jakarta.annotation.Nullable
   private Boolean continuouslyRepeat;
+
+  public static final String SERIALIZED_NAME_RUN_ONCE_PER_RESOURCE = "run_once_per_resource";
+  @SerializedName(SERIALIZED_NAME_RUN_ONCE_PER_RESOURCE)
+  @jakarta.annotation.Nullable
+  private Boolean runOncePerResource;
 
   /**
    * Repeat on weekdays
@@ -231,6 +237,11 @@ public class Workflow {
   @jakarta.annotation.Nullable
   private List<String> groupIds = new ArrayList<>();
 
+  public static final String SERIALIZED_NAME_GROUP_ASSIGNMENT_IDS = "group_assignment_ids";
+  @SerializedName(SERIALIZED_NAME_GROUP_ASSIGNMENT_IDS)
+  @jakarta.annotation.Nullable
+  private List<String> groupAssignmentIds = new ArrayList<>();
+
   public static final String SERIALIZED_NAME_CAUSE_IDS = "cause_ids";
   @SerializedName(SERIALIZED_NAME_CAUSE_IDS)
   @jakarta.annotation.Nullable
@@ -240,6 +251,70 @@ public class Workflow {
   @SerializedName(SERIALIZED_NAME_SUB_STATUS_IDS)
   @jakarta.annotation.Nullable
   private List<String> subStatusIds = new ArrayList<>();
+
+  /**
+   * Where failure notifications for this workflow are sent. &#x60;inherit&#x60; uses the account default channel, &#x60;custom&#x60; uses &#x60;failure_notification_channels&#x60;, &#x60;off&#x60; suppresses them.
+   */
+  @JsonAdapter(FailureNotificationModeEnum.Adapter.class)
+  public enum FailureNotificationModeEnum {
+    INHERIT("inherit"),
+    
+    CUSTOM("custom"),
+    
+    OFF("off");
+
+    private String value;
+
+    FailureNotificationModeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static FailureNotificationModeEnum fromValue(String value) {
+      for (FailureNotificationModeEnum b : FailureNotificationModeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<FailureNotificationModeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final FailureNotificationModeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public FailureNotificationModeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return FailureNotificationModeEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      FailureNotificationModeEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_FAILURE_NOTIFICATION_MODE = "failure_notification_mode";
+  @SerializedName(SERIALIZED_NAME_FAILURE_NOTIFICATION_MODE)
+  @jakarta.annotation.Nullable
+  private FailureNotificationModeEnum failureNotificationMode;
+
+  public static final String SERIALIZED_NAME_FAILURE_NOTIFICATION_CHANNELS = "failure_notification_channels";
+  @SerializedName(SERIALIZED_NAME_FAILURE_NOTIFICATION_CHANNELS)
+  @jakarta.annotation.Nullable
+  private List<NewWorkflowDataAttributesFailureNotificationChannelsInner> failureNotificationChannels = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -440,6 +515,25 @@ public class Workflow {
 
   public void setContinuouslyRepeat(@jakarta.annotation.Nullable Boolean continuouslyRepeat) {
     this.continuouslyRepeat = continuouslyRepeat;
+  }
+
+
+  public Workflow runOncePerResource(@jakarta.annotation.Nullable Boolean runOncePerResource) {
+    this.runOncePerResource = runOncePerResource;
+    return this;
+  }
+
+  /**
+   * When true, the workflow runs at most once per incident. Later triggers on the same incident create a canceled run instead. Manual runs and repeats are not affected. Only applies to incident workflows.
+   * @return runOncePerResource
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getRunOncePerResource() {
+    return runOncePerResource;
+  }
+
+  public void setRunOncePerResource(@jakarta.annotation.Nullable Boolean runOncePerResource) {
+    this.runOncePerResource = runOncePerResource;
   }
 
 
@@ -754,6 +848,33 @@ public class Workflow {
   }
 
 
+  public Workflow groupAssignmentIds(@jakarta.annotation.Nullable List<String> groupAssignmentIds) {
+    this.groupAssignmentIds = groupAssignmentIds;
+    return this;
+  }
+
+  public Workflow addGroupAssignmentIdsItem(String groupAssignmentIdsItem) {
+    if (this.groupAssignmentIds == null) {
+      this.groupAssignmentIds = new ArrayList<>();
+    }
+    this.groupAssignmentIds.add(groupAssignmentIdsItem);
+    return this;
+  }
+
+  /**
+   * Owning team IDs. Requires team-scoped workflows.
+   * @return groupAssignmentIds
+   */
+  @jakarta.annotation.Nullable
+  public List<String> getGroupAssignmentIds() {
+    return groupAssignmentIds;
+  }
+
+  public void setGroupAssignmentIds(@jakarta.annotation.Nullable List<String> groupAssignmentIds) {
+    this.groupAssignmentIds = groupAssignmentIds;
+  }
+
+
   public Workflow causeIds(@jakarta.annotation.Nullable List<String> causeIds) {
     this.causeIds = causeIds;
     return this;
@@ -805,6 +926,52 @@ public class Workflow {
 
   public void setSubStatusIds(@jakarta.annotation.Nullable List<String> subStatusIds) {
     this.subStatusIds = subStatusIds;
+  }
+
+
+  public Workflow failureNotificationMode(@jakarta.annotation.Nullable FailureNotificationModeEnum failureNotificationMode) {
+    this.failureNotificationMode = failureNotificationMode;
+    return this;
+  }
+
+  /**
+   * Where failure notifications for this workflow are sent. &#x60;inherit&#x60; uses the account default channel, &#x60;custom&#x60; uses &#x60;failure_notification_channels&#x60;, &#x60;off&#x60; suppresses them.
+   * @return failureNotificationMode
+   */
+  @jakarta.annotation.Nullable
+  public FailureNotificationModeEnum getFailureNotificationMode() {
+    return failureNotificationMode;
+  }
+
+  public void setFailureNotificationMode(@jakarta.annotation.Nullable FailureNotificationModeEnum failureNotificationMode) {
+    this.failureNotificationMode = failureNotificationMode;
+  }
+
+
+  public Workflow failureNotificationChannels(@jakarta.annotation.Nullable List<NewWorkflowDataAttributesFailureNotificationChannelsInner> failureNotificationChannels) {
+    this.failureNotificationChannels = failureNotificationChannels;
+    return this;
+  }
+
+  public Workflow addFailureNotificationChannelsItem(NewWorkflowDataAttributesFailureNotificationChannelsInner failureNotificationChannelsItem) {
+    if (this.failureNotificationChannels == null) {
+      this.failureNotificationChannels = new ArrayList<>();
+    }
+    this.failureNotificationChannels.add(failureNotificationChannelsItem);
+    return this;
+  }
+
+  /**
+   * Slack channels notified when a run of this workflow fails. Used when &#x60;failure_notification_mode&#x60; is &#x60;custom&#x60;.
+   * @return failureNotificationChannels
+   */
+  @jakarta.annotation.Nullable
+  public List<NewWorkflowDataAttributesFailureNotificationChannelsInner> getFailureNotificationChannels() {
+    return failureNotificationChannels;
+  }
+
+  public void setFailureNotificationChannels(@jakarta.annotation.Nullable List<NewWorkflowDataAttributesFailureNotificationChannelsInner> failureNotificationChannels) {
+    this.failureNotificationChannels = failureNotificationChannels;
   }
 
 
@@ -866,6 +1033,7 @@ public class Workflow {
         Objects.equals(this.repeatConditionDurationSinceFirstRun, workflow.repeatConditionDurationSinceFirstRun) &&
         Objects.equals(this.repeatConditionNumberOfRepeats, workflow.repeatConditionNumberOfRepeats) &&
         Objects.equals(this.continuouslyRepeat, workflow.continuouslyRepeat) &&
+        Objects.equals(this.runOncePerResource, workflow.runOncePerResource) &&
         Objects.equals(this.repeatOn, workflow.repeatOn) &&
         Objects.equals(this.enabled, workflow.enabled) &&
         Objects.equals(this.locked, workflow.locked) &&
@@ -879,8 +1047,11 @@ public class Workflow {
         Objects.equals(this.serviceIds, workflow.serviceIds) &&
         Objects.equals(this.functionalityIds, workflow.functionalityIds) &&
         Objects.equals(this.groupIds, workflow.groupIds) &&
+        Objects.equals(this.groupAssignmentIds, workflow.groupAssignmentIds) &&
         Objects.equals(this.causeIds, workflow.causeIds) &&
         Objects.equals(this.subStatusIds, workflow.subStatusIds) &&
+        Objects.equals(this.failureNotificationMode, workflow.failureNotificationMode) &&
+        Objects.equals(this.failureNotificationChannels, workflow.failureNotificationChannels) &&
         Objects.equals(this.createdAt, workflow.createdAt) &&
         Objects.equals(this.updatedAt, workflow.updatedAt);
   }
@@ -891,7 +1062,7 @@ public class Workflow {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, slug, description, command, commandFeedbackEnabled, wait, repeatEveryDuration, repeatConditionDurationSinceFirstRun, repeatConditionNumberOfRepeats, continuouslyRepeat, repeatOn, enabled, locked, position, workflowGroupId, triggerParams, environmentIds, severityIds, incidentTypeIds, incidentRoleIds, serviceIds, functionalityIds, groupIds, causeIds, subStatusIds, createdAt, updatedAt);
+    return Objects.hash(name, slug, description, command, commandFeedbackEnabled, wait, repeatEveryDuration, repeatConditionDurationSinceFirstRun, repeatConditionNumberOfRepeats, continuouslyRepeat, runOncePerResource, repeatOn, enabled, locked, position, workflowGroupId, triggerParams, environmentIds, severityIds, incidentTypeIds, incidentRoleIds, serviceIds, functionalityIds, groupIds, groupAssignmentIds, causeIds, subStatusIds, failureNotificationMode, failureNotificationChannels, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -915,6 +1086,7 @@ public class Workflow {
     sb.append("    repeatConditionDurationSinceFirstRun: ").append(toIndentedString(repeatConditionDurationSinceFirstRun)).append("\n");
     sb.append("    repeatConditionNumberOfRepeats: ").append(toIndentedString(repeatConditionNumberOfRepeats)).append("\n");
     sb.append("    continuouslyRepeat: ").append(toIndentedString(continuouslyRepeat)).append("\n");
+    sb.append("    runOncePerResource: ").append(toIndentedString(runOncePerResource)).append("\n");
     sb.append("    repeatOn: ").append(toIndentedString(repeatOn)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    locked: ").append(toIndentedString(locked)).append("\n");
@@ -928,8 +1100,11 @@ public class Workflow {
     sb.append("    serviceIds: ").append(toIndentedString(serviceIds)).append("\n");
     sb.append("    functionalityIds: ").append(toIndentedString(functionalityIds)).append("\n");
     sb.append("    groupIds: ").append(toIndentedString(groupIds)).append("\n");
+    sb.append("    groupAssignmentIds: ").append(toIndentedString(groupAssignmentIds)).append("\n");
     sb.append("    causeIds: ").append(toIndentedString(causeIds)).append("\n");
     sb.append("    subStatusIds: ").append(toIndentedString(subStatusIds)).append("\n");
+    sb.append("    failureNotificationMode: ").append(toIndentedString(failureNotificationMode)).append("\n");
+    sb.append("    failureNotificationChannels: ").append(toIndentedString(failureNotificationChannels)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -964,6 +1139,7 @@ public class Workflow {
     openapiFields.add("repeat_condition_duration_since_first_run");
     openapiFields.add("repeat_condition_number_of_repeats");
     openapiFields.add("continuously_repeat");
+    openapiFields.add("run_once_per_resource");
     openapiFields.add("repeat_on");
     openapiFields.add("enabled");
     openapiFields.add("locked");
@@ -977,8 +1153,11 @@ public class Workflow {
     openapiFields.add("service_ids");
     openapiFields.add("functionality_ids");
     openapiFields.add("group_ids");
+    openapiFields.add("group_assignment_ids");
     openapiFields.add("cause_ids");
     openapiFields.add("sub_status_ids");
+    openapiFields.add("failure_notification_mode");
+    openapiFields.add("failure_notification_channels");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
 
@@ -1078,12 +1257,37 @@ public class Workflow {
         throw new IllegalArgumentException(String.format("Expected the field `group_ids` to be an array in the JSON string but got `%s`", jsonObj.get("group_ids").toString()));
       }
       // ensure the optional json data is an array if present
+      if (jsonObj.get("group_assignment_ids") != null && !jsonObj.get("group_assignment_ids").isJsonNull() && !jsonObj.get("group_assignment_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `group_assignment_ids` to be an array in the JSON string but got `%s`", jsonObj.get("group_assignment_ids").toString()));
+      }
+      // ensure the optional json data is an array if present
       if (jsonObj.get("cause_ids") != null && !jsonObj.get("cause_ids").isJsonNull() && !jsonObj.get("cause_ids").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `cause_ids` to be an array in the JSON string but got `%s`", jsonObj.get("cause_ids").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("sub_status_ids") != null && !jsonObj.get("sub_status_ids").isJsonNull() && !jsonObj.get("sub_status_ids").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `sub_status_ids` to be an array in the JSON string but got `%s`", jsonObj.get("sub_status_ids").toString()));
+      }
+      if ((jsonObj.get("failure_notification_mode") != null && !jsonObj.get("failure_notification_mode").isJsonNull()) && !jsonObj.get("failure_notification_mode").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `failure_notification_mode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("failure_notification_mode").toString()));
+      }
+      // validate the optional field `failure_notification_mode`
+      if (jsonObj.get("failure_notification_mode") != null && !jsonObj.get("failure_notification_mode").isJsonNull()) {
+        FailureNotificationModeEnum.validateJsonElement(jsonObj.get("failure_notification_mode"));
+      }
+      if (jsonObj.get("failure_notification_channels") != null && !jsonObj.get("failure_notification_channels").isJsonNull()) {
+        JsonArray jsonArrayfailureNotificationChannels = jsonObj.getAsJsonArray("failure_notification_channels");
+        if (jsonArrayfailureNotificationChannels != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("failure_notification_channels").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `failure_notification_channels` to be an array in the JSON string but got `%s`", jsonObj.get("failure_notification_channels").toString()));
+          }
+
+          // validate the optional field `failure_notification_channels` (array)
+          for (int i = 0; i < jsonArrayfailureNotificationChannels.size(); i++) {
+            NewWorkflowDataAttributesFailureNotificationChannelsInner.validateJsonElement(jsonArrayfailureNotificationChannels.get(i));
+          };
+        }
       }
       if (!jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));

@@ -148,6 +148,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | form_field_placement deleted |  -  |
+| **422** | fixed problem gate placement rejected |  -  |
 | **404** | resource not found |  -  |
 
 <a id="getFormFieldPlacement"></a>

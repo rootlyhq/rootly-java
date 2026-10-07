@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.rootly.client.model.UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsInner;
+import com.rootly.client.model.EscalationPolicyLevelNotificationTargetParamsInner;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -52,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * EscalationPolicyLevel
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class EscalationPolicyLevel {
   public static final String SERIALIZED_NAME_ESCALATION_POLICY_ID = "escalation_policy_id";
   @SerializedName(SERIALIZED_NAME_ESCALATION_POLICY_ID)
@@ -329,7 +329,7 @@ public class EscalationPolicyLevel {
   public static final String SERIALIZED_NAME_NOTIFICATION_TARGET_PARAMS = "notification_target_params";
   @SerializedName(SERIALIZED_NAME_NOTIFICATION_TARGET_PARAMS)
   @jakarta.annotation.Nonnull
-  private List<UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsInner> notificationTargetParams = new ArrayList<>();
+  private List<EscalationPolicyLevelNotificationTargetParamsInner> notificationTargetParams = new ArrayList<>();
 
   public EscalationPolicyLevel() {
   }
@@ -562,12 +562,12 @@ public class EscalationPolicyLevel {
   }
 
 
-  public EscalationPolicyLevel notificationTargetParams(@jakarta.annotation.Nonnull List<UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsInner> notificationTargetParams) {
+  public EscalationPolicyLevel notificationTargetParams(@jakarta.annotation.Nonnull List<EscalationPolicyLevelNotificationTargetParamsInner> notificationTargetParams) {
     this.notificationTargetParams = notificationTargetParams;
     return this;
   }
 
-  public EscalationPolicyLevel addNotificationTargetParamsItem(UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsInner notificationTargetParamsItem) {
+  public EscalationPolicyLevel addNotificationTargetParamsItem(EscalationPolicyLevelNotificationTargetParamsInner notificationTargetParamsItem) {
     if (this.notificationTargetParams == null) {
       this.notificationTargetParams = new ArrayList<>();
     }
@@ -580,11 +580,11 @@ public class EscalationPolicyLevel {
    * @return notificationTargetParams
    */
   @jakarta.annotation.Nonnull
-  public List<UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsInner> getNotificationTargetParams() {
+  public List<EscalationPolicyLevelNotificationTargetParamsInner> getNotificationTargetParams() {
     return notificationTargetParams;
   }
 
-  public void setNotificationTargetParams(@jakarta.annotation.Nonnull List<UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsInner> notificationTargetParams) {
+  public void setNotificationTargetParams(@jakarta.annotation.Nonnull List<EscalationPolicyLevelNotificationTargetParamsInner> notificationTargetParams) {
     this.notificationTargetParams = notificationTargetParams;
   }
 
@@ -767,7 +767,7 @@ public class EscalationPolicyLevel {
       JsonArray jsonArraynotificationTargetParams = jsonObj.getAsJsonArray("notification_target_params");
       // validate the required field `notification_target_params` (array)
       for (int i = 0; i < jsonArraynotificationTargetParams.size(); i++) {
-        UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsInner.validateJsonElement(jsonArraynotificationTargetParams.get(i));
+        EscalationPolicyLevelNotificationTargetParamsInner.validateJsonElement(jsonArraynotificationTargetParams.get(i));
       };
   }
 

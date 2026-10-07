@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * ArchiveSlackChannelsTaskParams
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ArchiveSlackChannelsTaskParams {
   /**
    * Gets or Sets taskType
@@ -113,6 +113,16 @@ public class ArchiveSlackChannelsTaskParams {
   @jakarta.annotation.Nonnull
   private List<AddActionItemTaskParamsPostToSlackChannelsInner> channels = new ArrayList<>();
 
+  public static final String SERIALIZED_NAME_RETRY_COUNT = "retry_count";
+  @SerializedName(SERIALIZED_NAME_RETRY_COUNT)
+  @jakarta.annotation.Nullable
+  private Integer retryCount = 0;
+
+  public static final String SERIALIZED_NAME_RETRY_WAIT_TIME = "retry_wait_time";
+  @SerializedName(SERIALIZED_NAME_RETRY_WAIT_TIME)
+  @jakarta.annotation.Nullable
+  private Integer retryWaitTime = 1;
+
   public ArchiveSlackChannelsTaskParams() {
   }
 
@@ -162,6 +172,44 @@ public class ArchiveSlackChannelsTaskParams {
   }
 
 
+  public ArchiveSlackChannelsTaskParams retryCount(@jakarta.annotation.Nullable Integer retryCount) {
+    this.retryCount = retryCount;
+    return this;
+  }
+
+  /**
+   * Number of times to retry on rate-limit (HTTP 429) responses (0-4). 0 disables retry.
+   * @return retryCount
+   */
+  @jakarta.annotation.Nullable
+  public Integer getRetryCount() {
+    return retryCount;
+  }
+
+  public void setRetryCount(@jakarta.annotation.Nullable Integer retryCount) {
+    this.retryCount = retryCount;
+  }
+
+
+  public ArchiveSlackChannelsTaskParams retryWaitTime(@jakarta.annotation.Nullable Integer retryWaitTime) {
+    this.retryWaitTime = retryWaitTime;
+    return this;
+  }
+
+  /**
+   * Seconds to wait before each retry (1-15). Retry-After header is honored when present and &lt;&#x3D; 90s, taking the larger of retry_wait_time and the header value.
+   * @return retryWaitTime
+   */
+  @jakarta.annotation.Nullable
+  public Integer getRetryWaitTime() {
+    return retryWaitTime;
+  }
+
+  public void setRetryWaitTime(@jakarta.annotation.Nullable Integer retryWaitTime) {
+    this.retryWaitTime = retryWaitTime;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -173,12 +221,14 @@ public class ArchiveSlackChannelsTaskParams {
     }
     ArchiveSlackChannelsTaskParams archiveSlackChannelsTaskParams = (ArchiveSlackChannelsTaskParams) o;
     return Objects.equals(this.taskType, archiveSlackChannelsTaskParams.taskType) &&
-        Objects.equals(this.channels, archiveSlackChannelsTaskParams.channels);
+        Objects.equals(this.channels, archiveSlackChannelsTaskParams.channels) &&
+        Objects.equals(this.retryCount, archiveSlackChannelsTaskParams.retryCount) &&
+        Objects.equals(this.retryWaitTime, archiveSlackChannelsTaskParams.retryWaitTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(taskType, channels);
+    return Objects.hash(taskType, channels, retryCount, retryWaitTime);
   }
 
   @Override
@@ -187,6 +237,8 @@ public class ArchiveSlackChannelsTaskParams {
     sb.append("class ArchiveSlackChannelsTaskParams {\n");
     sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
     sb.append("    channels: ").append(toIndentedString(channels)).append("\n");
+    sb.append("    retryCount: ").append(toIndentedString(retryCount)).append("\n");
+    sb.append("    retryWaitTime: ").append(toIndentedString(retryWaitTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -211,6 +263,8 @@ public class ArchiveSlackChannelsTaskParams {
     openapiFields = new HashSet<String>();
     openapiFields.add("task_type");
     openapiFields.add("channels");
+    openapiFields.add("retry_count");
+    openapiFields.add("retry_wait_time");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

@@ -51,12 +51,17 @@ import com.rootly.client.JSON;
 /**
  * UpdateIncidentPostMortemDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateIncidentPostMortemDataAttributes {
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
   @jakarta.annotation.Nullable
   private String title;
+
+  public static final String SERIALIZED_NAME_CONTENT = "content";
+  @SerializedName(SERIALIZED_NAME_CONTENT)
+  @jakarta.annotation.Nullable
+  private String content;
 
   /**
    * The status of the incident retrospective
@@ -204,6 +209,25 @@ public class UpdateIncidentPostMortemDataAttributes {
 
   public void setTitle(@jakarta.annotation.Nullable String title) {
     this.title = title;
+  }
+
+
+  public UpdateIncidentPostMortemDataAttributes content(@jakarta.annotation.Nullable String content) {
+    this.content = content;
+    return this;
+  }
+
+  /**
+   * The content (body) of the incident retrospective, as HTML. Rejected with a 409 once the retrospective has been opened in the collaborative editor.
+   * @return content
+   */
+  @jakarta.annotation.Nullable
+  public String getContent() {
+    return content;
+  }
+
+  public void setContent(@jakarta.annotation.Nullable String content) {
+    this.content = content;
   }
 
 
@@ -511,6 +535,7 @@ public class UpdateIncidentPostMortemDataAttributes {
     }
     UpdateIncidentPostMortemDataAttributes updateIncidentPostMortemDataAttributes = (UpdateIncidentPostMortemDataAttributes) o;
     return Objects.equals(this.title, updateIncidentPostMortemDataAttributes.title) &&
+        Objects.equals(this.content, updateIncidentPostMortemDataAttributes.content) &&
         Objects.equals(this.status, updateIncidentPostMortemDataAttributes.status) &&
         Objects.equals(this.startedAt, updateIncidentPostMortemDataAttributes.startedAt) &&
         Objects.equals(this.mitigatedAt, updateIncidentPostMortemDataAttributes.mitigatedAt) &&
@@ -534,7 +559,7 @@ public class UpdateIncidentPostMortemDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, status, startedAt, mitigatedAt, resolvedAt, showTimeline, showTimelineTrail, showTimelineGenius, showTimelineTasks, showTimelineActionItems, showServicesImpacted, showFunctionalitiesImpacted, showGroupsImpacted, showAlertsAttached, showActionItems, causeIds);
+    return Objects.hash(title, content, status, startedAt, mitigatedAt, resolvedAt, showTimeline, showTimelineTrail, showTimelineGenius, showTimelineTasks, showTimelineActionItems, showServicesImpacted, showFunctionalitiesImpacted, showGroupsImpacted, showAlertsAttached, showActionItems, causeIds);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -549,6 +574,7 @@ public class UpdateIncidentPostMortemDataAttributes {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdateIncidentPostMortemDataAttributes {\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
+    sb.append("    content: ").append(toIndentedString(content)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    startedAt: ").append(toIndentedString(startedAt)).append("\n");
     sb.append("    mitigatedAt: ").append(toIndentedString(mitigatedAt)).append("\n");
@@ -587,6 +613,7 @@ public class UpdateIncidentPostMortemDataAttributes {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("title");
+    openapiFields.add("content");
     openapiFields.add("status");
     openapiFields.add("started_at");
     openapiFields.add("mitigated_at");
@@ -630,6 +657,9 @@ public class UpdateIncidentPostMortemDataAttributes {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("title") != null && !jsonObj.get("title").isJsonNull()) && !jsonObj.get("title").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `title` to be a primitive type in the JSON string but got `%s`", jsonObj.get("title").toString()));
+      }
+      if ((jsonObj.get("content") != null && !jsonObj.get("content").isJsonNull()) && !jsonObj.get("content").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `content` to be a primitive type in the JSON string but got `%s`", jsonObj.get("content").toString()));
       }
       if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));

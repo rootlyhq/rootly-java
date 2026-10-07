@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * ApiKey
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ApiKey {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -119,6 +119,11 @@ public class ApiKey {
   @SerializedName(SERIALIZED_NAME_KIND)
   @jakarta.annotation.Nonnull
   private KindEnum kind;
+
+  public static final String SERIALIZED_NAME_GROUP_ID = "group_id";
+  @SerializedName(SERIALIZED_NAME_GROUP_ID)
+  @jakarta.annotation.Nullable
+  private String groupId;
 
   public static final String SERIALIZED_NAME_ROLE_ID = "role_id";
   @SerializedName(SERIALIZED_NAME_ROLE_ID)
@@ -212,6 +217,25 @@ public class ApiKey {
 
   public void setKind(@jakarta.annotation.Nonnull KindEnum kind) {
     this.kind = kind;
+  }
+
+
+  public ApiKey groupId(@jakarta.annotation.Nullable String groupId) {
+    this.groupId = groupId;
+    return this;
+  }
+
+  /**
+   * The group (team) ID for team API keys. Keys created via the API have exactly one group; for keys with multiple groups this is the first group.
+   * @return groupId
+   */
+  @jakarta.annotation.Nullable
+  public String getGroupId() {
+    return groupId;
+  }
+
+  public void setGroupId(@jakarta.annotation.Nullable String groupId) {
+    this.groupId = groupId;
   }
 
 
@@ -361,6 +385,7 @@ public class ApiKey {
     return Objects.equals(this.name, apiKey.name) &&
         Objects.equals(this.description, apiKey.description) &&
         Objects.equals(this.kind, apiKey.kind) &&
+        Objects.equals(this.groupId, apiKey.groupId) &&
         Objects.equals(this.roleId, apiKey.roleId) &&
         Objects.equals(this.onCallRoleId, apiKey.onCallRoleId) &&
         Objects.equals(this.createdAt, apiKey.createdAt) &&
@@ -376,7 +401,7 @@ public class ApiKey {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, kind, roleId, onCallRoleId, createdAt, updatedAt, expiresAt, lastUsedAt, gracePeriodEndsAt);
+    return Objects.hash(name, description, kind, groupId, roleId, onCallRoleId, createdAt, updatedAt, expiresAt, lastUsedAt, gracePeriodEndsAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -393,6 +418,7 @@ public class ApiKey {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
+    sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
     sb.append("    roleId: ").append(toIndentedString(roleId)).append("\n");
     sb.append("    onCallRoleId: ").append(toIndentedString(onCallRoleId)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
@@ -425,6 +451,7 @@ public class ApiKey {
     openapiFields.add("name");
     openapiFields.add("description");
     openapiFields.add("kind");
+    openapiFields.add("group_id");
     openapiFields.add("role_id");
     openapiFields.add("on_call_role_id");
     openapiFields.add("created_at");
@@ -480,6 +507,9 @@ public class ApiKey {
       }
       // validate the required field `kind`
       KindEnum.validateJsonElement(jsonObj.get("kind"));
+      if ((jsonObj.get("group_id") != null && !jsonObj.get("group_id").isJsonNull()) && !jsonObj.get("group_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `group_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("group_id").toString()));
+      }
       if ((jsonObj.get("role_id") != null && !jsonObj.get("role_id").isJsonNull()) && !jsonObj.get("role_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `role_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role_id").toString()));
       }

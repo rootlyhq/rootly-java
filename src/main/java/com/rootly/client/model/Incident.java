@@ -23,8 +23,8 @@ import com.rootly.client.model.EnvironmentResponse;
 import com.rootly.client.model.FunctionalityResponse;
 import com.rootly.client.model.IncidentTypeResponse;
 import com.rootly.client.model.IncidentZoomMeetingGlobalDialInNumbersInner;
+import com.rootly.client.model.NullableSeverityResponse;
 import com.rootly.client.model.ServiceResponse;
-import com.rootly.client.model.SeverityResponse;
 import com.rootly.client.model.TeamResponse;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -58,7 +58,7 @@ import com.rootly.client.JSON;
 /**
  * Incident
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Incident {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -138,7 +138,7 @@ public class Incident {
   public static final String SERIALIZED_NAME_SEVERITY = "severity";
   @SerializedName(SERIALIZED_NAME_SEVERITY)
   @jakarta.annotation.Nullable
-  private SeverityResponse severity;
+  private NullableSeverityResponse severity;
 
   public static final String SERIALIZED_NAME_ENVIRONMENTS = "environments";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENTS)
@@ -394,6 +394,11 @@ public class Incident {
   @SerializedName(SERIALIZED_NAME_ASANA_TASK_URL)
   @jakarta.annotation.Nullable
   private String asanaTaskUrl;
+
+  public static final String SERIALIZED_NAME_LINEAR_ISSUE_KEY = "linear_issue_key";
+  @SerializedName(SERIALIZED_NAME_LINEAR_ISSUE_KEY)
+  @jakarta.annotation.Nullable
+  private String linearIssueKey;
 
   public static final String SERIALIZED_NAME_LINEAR_ISSUE_ID = "linear_issue_id";
   @SerializedName(SERIALIZED_NAME_LINEAR_ISSUE_ID)
@@ -1078,21 +1083,21 @@ public class Incident {
   }
 
 
-  public Incident severity(@jakarta.annotation.Nullable SeverityResponse severity) {
+  public Incident severity(@jakarta.annotation.Nullable NullableSeverityResponse severity) {
     this.severity = severity;
     return this;
   }
 
   /**
-   * The Severity of the incident
+   * Get severity
    * @return severity
    */
   @jakarta.annotation.Nullable
-  public SeverityResponse getSeverity() {
+  public NullableSeverityResponse getSeverity() {
     return severity;
   }
 
-  public void setSeverity(@jakarta.annotation.Nullable SeverityResponse severity) {
+  public void setSeverity(@jakarta.annotation.Nullable NullableSeverityResponse severity) {
     this.severity = severity;
   }
 
@@ -2111,6 +2116,25 @@ public class Incident {
 
   public void setAsanaTaskUrl(@jakarta.annotation.Nullable String asanaTaskUrl) {
     this.asanaTaskUrl = asanaTaskUrl;
+  }
+
+
+  public Incident linearIssueKey(@jakarta.annotation.Nullable String linearIssueKey) {
+    this.linearIssueKey = linearIssueKey;
+    return this;
+  }
+
+  /**
+   * Linear issue key
+   * @return linearIssueKey
+   */
+  @jakarta.annotation.Nullable
+  public String getLinearIssueKey() {
+    return linearIssueKey;
+  }
+
+  public void setLinearIssueKey(@jakarta.annotation.Nullable String linearIssueKey) {
+    this.linearIssueKey = linearIssueKey;
   }
 
 
@@ -3491,6 +3515,7 @@ public class Incident {
         Objects.equals(this.gitlabIssueUrl, incident.gitlabIssueUrl) &&
         Objects.equals(this.asanaTaskId, incident.asanaTaskId) &&
         Objects.equals(this.asanaTaskUrl, incident.asanaTaskUrl) &&
+        Objects.equals(this.linearIssueKey, incident.linearIssueKey) &&
         Objects.equals(this.linearIssueId, incident.linearIssueId) &&
         Objects.equals(this.linearIssueUrl, incident.linearIssueUrl) &&
         Objects.equals(this.trelloCardId, incident.trelloCardId) &&
@@ -3567,7 +3592,7 @@ public class Incident {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, sequentialId, title, kind, slug, parentIncidentId, duplicateIncidentId, summary, _private, source, status, url, shortUrl, publicTitle, user, severity, environments, incidentTypes, services, functionalities, groups, labels, slackChannelId, slackChannelName, slackChannelUrl, slackChannelShortUrl, slackChannelDeepLink, slackChannelArchived, slackLastMessageTs, zoomMeetingId, zoomMeetingStartUrl, zoomMeetingJoinUrl, zoomMeetingPassword, zoomMeetingPstnPassword, zoomMeetingH323Password, zoomMeetingGlobalDialInNumbers, googleDriveId, googleDriveParentId, googleDriveUrl, googleMeetingId, googleMeetingUrl, microsoftTeamsMeetingId, microsoftTeamsMeetingUrl, microsoftTeamsChannelId, microsoftTeamsChannelName, microsoftTeamsChannelUrl, microsoftTeamsChannelShortUrl, microsoftTeamsChatId, microsoftTeamsChatUrl, microsoftTeamsTeamId, googleChatSpaceId, googleChatSpaceName, googleChatSpaceUrl, googleChatSpaceShortUrl, googleChatSpaceArchived, googleChatSpaceDomainId, webexMeetingId, webexMeetingUrl, jiraIssueKey, jiraIssueId, jiraIssueUrl, githubIssueId, githubIssueUrl, gitlabIssueId, gitlabIssueUrl, asanaTaskId, asanaTaskUrl, linearIssueId, linearIssueUrl, trelloCardId, trelloCardUrl, zendeskTicketId, zendeskTicketUrl, pagerdutyIncidentId, pagerdutyIncidentNumber, pagerdutyIncidentUrl, opsgenieIncidentId, opsgenieIncidentUrl, opsgenieAlertId, opsgenieAlertUrl, serviceNowIncidentId, serviceNowIncidentKey, serviceNowIncidentUrl, mattermostChannelId, mattermostChannelName, mattermostChannelUrl, confluencePageId, confluencePageUrl, datadogNotebookId, datadogNotebookUrl, shortcutStoryId, shortcutStoryUrl, shortcutTaskId, shortcutTaskUrl, motionTaskId, motionTaskUrl, clickupTaskId, clickupTaskUrl, victorOpsIncidentId, victorOpsIncidentUrl, quipPageId, quipPageUrl, sharepointPageId, sharepointPageUrl, airtableBaseKey, airtableTableName, airtableRecordId, airtableRecordUrl, freshserviceTicketId, freshserviceTicketUrl, freshserviceTaskId, freshserviceTaskUrl, mitigationMessage, resolutionMessage, cancellationMessage, scheduledFor, scheduledUntil, mutedServiceIds, retrospectiveProgressStatus, inTriageBy, startedBy, mitigatedBy, resolvedBy, closedBy, cancelledBy, inTriageAt, startedAt, detectedAt, acknowledgedAt, mitigatedAt, resolvedAt, closedAt, cancelledAt, createdAt, updatedAt);
+    return Objects.hash(id, sequentialId, title, kind, slug, parentIncidentId, duplicateIncidentId, summary, _private, source, status, url, shortUrl, publicTitle, user, severity, environments, incidentTypes, services, functionalities, groups, labels, slackChannelId, slackChannelName, slackChannelUrl, slackChannelShortUrl, slackChannelDeepLink, slackChannelArchived, slackLastMessageTs, zoomMeetingId, zoomMeetingStartUrl, zoomMeetingJoinUrl, zoomMeetingPassword, zoomMeetingPstnPassword, zoomMeetingH323Password, zoomMeetingGlobalDialInNumbers, googleDriveId, googleDriveParentId, googleDriveUrl, googleMeetingId, googleMeetingUrl, microsoftTeamsMeetingId, microsoftTeamsMeetingUrl, microsoftTeamsChannelId, microsoftTeamsChannelName, microsoftTeamsChannelUrl, microsoftTeamsChannelShortUrl, microsoftTeamsChatId, microsoftTeamsChatUrl, microsoftTeamsTeamId, googleChatSpaceId, googleChatSpaceName, googleChatSpaceUrl, googleChatSpaceShortUrl, googleChatSpaceArchived, googleChatSpaceDomainId, webexMeetingId, webexMeetingUrl, jiraIssueKey, jiraIssueId, jiraIssueUrl, githubIssueId, githubIssueUrl, gitlabIssueId, gitlabIssueUrl, asanaTaskId, asanaTaskUrl, linearIssueKey, linearIssueId, linearIssueUrl, trelloCardId, trelloCardUrl, zendeskTicketId, zendeskTicketUrl, pagerdutyIncidentId, pagerdutyIncidentNumber, pagerdutyIncidentUrl, opsgenieIncidentId, opsgenieIncidentUrl, opsgenieAlertId, opsgenieAlertUrl, serviceNowIncidentId, serviceNowIncidentKey, serviceNowIncidentUrl, mattermostChannelId, mattermostChannelName, mattermostChannelUrl, confluencePageId, confluencePageUrl, datadogNotebookId, datadogNotebookUrl, shortcutStoryId, shortcutStoryUrl, shortcutTaskId, shortcutTaskUrl, motionTaskId, motionTaskUrl, clickupTaskId, clickupTaskUrl, victorOpsIncidentId, victorOpsIncidentUrl, quipPageId, quipPageUrl, sharepointPageId, sharepointPageUrl, airtableBaseKey, airtableTableName, airtableRecordId, airtableRecordUrl, freshserviceTicketId, freshserviceTicketUrl, freshserviceTaskId, freshserviceTaskUrl, mitigationMessage, resolutionMessage, cancellationMessage, scheduledFor, scheduledUntil, mutedServiceIds, retrospectiveProgressStatus, inTriageBy, startedBy, mitigatedBy, resolvedBy, closedBy, cancelledBy, inTriageAt, startedAt, detectedAt, acknowledgedAt, mitigatedAt, resolvedAt, closedAt, cancelledAt, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -3648,6 +3673,7 @@ public class Incident {
     sb.append("    gitlabIssueUrl: ").append(toIndentedString(gitlabIssueUrl)).append("\n");
     sb.append("    asanaTaskId: ").append(toIndentedString(asanaTaskId)).append("\n");
     sb.append("    asanaTaskUrl: ").append(toIndentedString(asanaTaskUrl)).append("\n");
+    sb.append("    linearIssueKey: ").append(toIndentedString(linearIssueKey)).append("\n");
     sb.append("    linearIssueId: ").append(toIndentedString(linearIssueId)).append("\n");
     sb.append("    linearIssueUrl: ").append(toIndentedString(linearIssueUrl)).append("\n");
     sb.append("    trelloCardId: ").append(toIndentedString(trelloCardId)).append("\n");
@@ -3805,6 +3831,7 @@ public class Incident {
     openapiFields.add("gitlab_issue_url");
     openapiFields.add("asana_task_id");
     openapiFields.add("asana_task_url");
+    openapiFields.add("linear_issue_key");
     openapiFields.add("linear_issue_id");
     openapiFields.add("linear_issue_url");
     openapiFields.add("trello_card_id");
@@ -3947,7 +3974,7 @@ public class Incident {
       }
       // validate the optional field `severity`
       if (jsonObj.get("severity") != null && !jsonObj.get("severity").isJsonNull()) {
-        SeverityResponse.validateJsonElement(jsonObj.get("severity"));
+        NullableSeverityResponse.validateJsonElement(jsonObj.get("severity"));
       }
       if (jsonObj.get("environments") != null && !jsonObj.get("environments").isJsonNull()) {
         JsonArray jsonArrayenvironments = jsonObj.getAsJsonArray("environments");
@@ -4158,6 +4185,9 @@ public class Incident {
       }
       if ((jsonObj.get("asana_task_url") != null && !jsonObj.get("asana_task_url").isJsonNull()) && !jsonObj.get("asana_task_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `asana_task_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("asana_task_url").toString()));
+      }
+      if ((jsonObj.get("linear_issue_key") != null && !jsonObj.get("linear_issue_key").isJsonNull()) && !jsonObj.get("linear_issue_key").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `linear_issue_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("linear_issue_key").toString()));
       }
       if ((jsonObj.get("linear_issue_id") != null && !jsonObj.get("linear_issue_id").isJsonNull()) && !jsonObj.get("linear_issue_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `linear_issue_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("linear_issue_id").toString()));

@@ -151,6 +151,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | records upserted successfully |  -  |
+| **403** | feature not enabled for the organization |  -  |
 | **422** | validation or record-level error |  -  |
 | **401** | unauthorized |  -  |
 
@@ -289,6 +290,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | team created |  -  |
+| **403** | feature not enabled for the organization |  -  |
 | **422** | invalid association |  -  |
 | **401** | responds with unauthorized for invalid token |  -  |
 
@@ -796,5 +798,6 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | team updated |  -  |
+| **403** | feature not enabled for the organization |  -  |
 | **404** | resource not found |  -  |
 

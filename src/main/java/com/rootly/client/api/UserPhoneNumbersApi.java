@@ -32,6 +32,8 @@ import com.rootly.client.model.NewUserPhoneNumber;
 import com.rootly.client.model.UpdateUserPhoneNumber;
 import com.rootly.client.model.UserPhoneNumberList;
 import com.rootly.client.model.UserPhoneNumberResponse;
+import com.rootly.client.model.VerifyUserPhoneNumber200Response;
+import com.rootly.client.model.VerifyUserPhoneNumber429Response;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -500,6 +502,137 @@ public class UserPhoneNumbersApi {
         return localVarCall;
     }
     /**
+     * Build call for resendVerificationUserPhoneNumber
+     * @param id  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> verification code resent </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> application resend rate limit </td><td>  * Retry-After - Seconds until the recipient can request another SMS verification code <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call resendVerificationUserPhoneNumberCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v1/phone_numbers/{id}/resend_verification"
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "bearer_auth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call resendVerificationUserPhoneNumberValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling resendVerificationUserPhoneNumber(Async)");
+        }
+
+        return resendVerificationUserPhoneNumberCall(id, _callback);
+
+    }
+
+    /**
+     * Resend verification code
+     * Resends a verification code to the phone number. SMS sends are limited per recipient to 3 per hour and 5 per day. An application rate-limit 429 response includes Retry-After with the remaining wait in seconds.
+     * @param id  (required)
+     * @return VerifyUserPhoneNumber200Response
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> verification code resent </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> application resend rate limit </td><td>  * Retry-After - Seconds until the recipient can request another SMS verification code <br>  </td></tr>
+     </table>
+     */
+    public VerifyUserPhoneNumber200Response resendVerificationUserPhoneNumber(@jakarta.annotation.Nonnull String id) throws ApiException {
+        ApiResponse<VerifyUserPhoneNumber200Response> localVarResp = resendVerificationUserPhoneNumberWithHttpInfo(id);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Resend verification code
+     * Resends a verification code to the phone number. SMS sends are limited per recipient to 3 per hour and 5 per day. An application rate-limit 429 response includes Retry-After with the remaining wait in seconds.
+     * @param id  (required)
+     * @return ApiResponse&lt;VerifyUserPhoneNumber200Response&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> verification code resent </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> application resend rate limit </td><td>  * Retry-After - Seconds until the recipient can request another SMS verification code <br>  </td></tr>
+     </table>
+     */
+    public ApiResponse<VerifyUserPhoneNumber200Response> resendVerificationUserPhoneNumberWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
+        okhttp3.Call localVarCall = resendVerificationUserPhoneNumberValidateBeforeCall(id, null);
+        Type localVarReturnType = new TypeToken<VerifyUserPhoneNumber200Response>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Resend verification code (asynchronously)
+     * Resends a verification code to the phone number. SMS sends are limited per recipient to 3 per hour and 5 per day. An application rate-limit 429 response includes Retry-After with the remaining wait in seconds.
+     * @param id  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> verification code resent </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> application resend rate limit </td><td>  * Retry-After - Seconds until the recipient can request another SMS verification code <br>  </td></tr>
+     </table>
+     */
+    public okhttp3.Call resendVerificationUserPhoneNumberAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<VerifyUserPhoneNumber200Response> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = resendVerificationUserPhoneNumberValidateBeforeCall(id, _callback);
+        Type localVarReturnType = new TypeToken<VerifyUserPhoneNumber200Response>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for showUserPhoneNumber
      * @param id  (required)
      * @param _callback Callback for upload/download progress
@@ -780,6 +913,141 @@ public class UserPhoneNumbersApi {
 
         okhttp3.Call localVarCall = updateUserPhoneNumberValidateBeforeCall(id, updateUserPhoneNumber, _callback);
         Type localVarReturnType = new TypeToken<UserPhoneNumberResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for verifyUserPhoneNumber
+     * @param id  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> verification code sent </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> application verification rate limit </td><td>  * Retry-After - Seconds until the recipient can request another SMS verification code <br>  </td></tr>
+        <tr><td> 503 </td><td> verification rate limiter unavailable </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call verifyUserPhoneNumberCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v1/phone_numbers/{id}/verify"
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "bearer_auth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call verifyUserPhoneNumberValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling verifyUserPhoneNumber(Async)");
+        }
+
+        return verifyUserPhoneNumberCall(id, _callback);
+
+    }
+
+    /**
+     * Send verification code
+     * Sends a verification code to the phone number. SMS sends are limited per recipient to 3 per hour and 5 per day. An application rate-limit 429 response includes Retry-After with the remaining wait in seconds.
+     * @param id  (required)
+     * @return VerifyUserPhoneNumber200Response
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> verification code sent </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> application verification rate limit </td><td>  * Retry-After - Seconds until the recipient can request another SMS verification code <br>  </td></tr>
+        <tr><td> 503 </td><td> verification rate limiter unavailable </td><td>  -  </td></tr>
+     </table>
+     */
+    public VerifyUserPhoneNumber200Response verifyUserPhoneNumber(@jakarta.annotation.Nonnull String id) throws ApiException {
+        ApiResponse<VerifyUserPhoneNumber200Response> localVarResp = verifyUserPhoneNumberWithHttpInfo(id);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Send verification code
+     * Sends a verification code to the phone number. SMS sends are limited per recipient to 3 per hour and 5 per day. An application rate-limit 429 response includes Retry-After with the remaining wait in seconds.
+     * @param id  (required)
+     * @return ApiResponse&lt;VerifyUserPhoneNumber200Response&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> verification code sent </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> application verification rate limit </td><td>  * Retry-After - Seconds until the recipient can request another SMS verification code <br>  </td></tr>
+        <tr><td> 503 </td><td> verification rate limiter unavailable </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<VerifyUserPhoneNumber200Response> verifyUserPhoneNumberWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
+        okhttp3.Call localVarCall = verifyUserPhoneNumberValidateBeforeCall(id, null);
+        Type localVarReturnType = new TypeToken<VerifyUserPhoneNumber200Response>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Send verification code (asynchronously)
+     * Sends a verification code to the phone number. SMS sends are limited per recipient to 3 per hour and 5 per day. An application rate-limit 429 response includes Retry-After with the remaining wait in seconds.
+     * @param id  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> verification code sent </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> application verification rate limit </td><td>  * Retry-After - Seconds until the recipient can request another SMS verification code <br>  </td></tr>
+        <tr><td> 503 </td><td> verification rate limiter unavailable </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call verifyUserPhoneNumberAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<VerifyUserPhoneNumber200Response> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = verifyUserPhoneNumberValidateBeforeCall(id, _callback);
+        Type localVarReturnType = new TypeToken<VerifyUserPhoneNumber200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

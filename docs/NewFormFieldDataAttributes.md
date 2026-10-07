@@ -32,6 +32,7 @@
 | SUMMARY | &quot;summary&quot; |
 | MITIGATION_MESSAGE | &quot;mitigation_message&quot; |
 | RESOLUTION_MESSAGE | &quot;resolution_message&quot; |
+| CANCELLATION_MESSAGE | &quot;cancellation_message&quot; |
 | SEVERITY | &quot;severity&quot; |
 | ENVIRONMENTS | &quot;environments&quot; |
 | TYPES | &quot;types&quot; |

@@ -23,7 +23,9 @@ import com.rootly.client.model.AddActionItemTaskParamsPostToSlackChannelsInner;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -52,7 +54,7 @@ import com.rootly.client.JSON;
 /**
  * PublishIncidentTaskParams
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class PublishIncidentTaskParams {
   /**
    * Gets or Sets taskType
@@ -215,6 +217,138 @@ public class PublishIncidentTaskParams {
   @SerializedName(SERIALIZED_NAME_STATUS_PAGE_IDS)
   @jakarta.annotation.Nullable
   private List<String> statusPageIds = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_SELECTED_COMPONENT_KEYS = "selected_component_keys";
+  @SerializedName(SERIALIZED_NAME_SELECTED_COMPONENT_KEYS)
+  @jakarta.annotation.Nullable
+  private List<String> selectedComponentKeys = new ArrayList<>();
+
+  /**
+   * Gets or Sets inner
+   */
+  @JsonAdapter(InnerEnum.Adapter.class)
+  public enum InnerEnum {
+    OPERATIONAL("operational"),
+    
+    DEGRADED_PERFORMANCE("degraded_performance"),
+    
+    PARTIAL_OUTAGE("partial_outage"),
+    
+    MAJOR_OUTAGE("major_outage");
+
+    private String value;
+
+    InnerEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static InnerEnum fromValue(String value) {
+      for (InnerEnum b : InnerEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<InnerEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final InnerEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public InnerEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return InnerEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      InnerEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_SELECTED_COMPONENT_STATUSES = "selected_component_statuses";
+  @SerializedName(SERIALIZED_NAME_SELECTED_COMPONENT_STATUSES)
+  @jakarta.annotation.Nullable
+  private Map<String, InnerEnum> selectedComponentStatuses = new HashMap<>();
+
+  public static final String SERIALIZED_NAME_SYNC_INCIDENT_COMPONENTS = "sync_incident_components";
+  @SerializedName(SERIALIZED_NAME_SYNC_INCIDENT_COMPONENTS)
+  @jakarta.annotation.Nullable
+  private Boolean syncIncidentComponents;
+
+  /**
+   * Impact status published for components synced from the incident. Defaults to degraded_performance. A component also listed in selected_component_keys keeps its selected_component_statuses entry.
+   */
+  @JsonAdapter(SyncedComponentStatusEnum.Adapter.class)
+  public enum SyncedComponentStatusEnum {
+    OPERATIONAL("operational"),
+    
+    DEGRADED_PERFORMANCE("degraded_performance"),
+    
+    PARTIAL_OUTAGE("partial_outage"),
+    
+    MAJOR_OUTAGE("major_outage");
+
+    private String value;
+
+    SyncedComponentStatusEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static SyncedComponentStatusEnum fromValue(String value) {
+      for (SyncedComponentStatusEnum b : SyncedComponentStatusEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<SyncedComponentStatusEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final SyncedComponentStatusEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public SyncedComponentStatusEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return SyncedComponentStatusEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      SyncedComponentStatusEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_SYNCED_COMPONENT_STATUS = "synced_component_status";
+  @SerializedName(SERIALIZED_NAME_SYNCED_COMPONENT_STATUS)
+  @jakarta.annotation.Nullable
+  private SyncedComponentStatusEnum syncedComponentStatus;
 
   public static final String SERIALIZED_NAME_INTEGRATION_PAYLOAD = "integration_payload";
   @SerializedName(SERIALIZED_NAME_INTEGRATION_PAYLOAD)
@@ -409,7 +543,7 @@ public class PublishIncidentTaskParams {
   }
 
   /**
-   * Publishes the update to every listed status page (requires the status-page-v3-limited-bulk-publish feature). When set, it takes precedence over status_page_id and the first entry becomes status_page_id.
+   * Publishes the update to every listed status page. This field is in limited Early Access; contact Rootly Support to request access. When set, it takes precedence over status_page_id and the first entry becomes status_page_id.
    * @return statusPageIds
    */
   @jakarta.annotation.Nullable
@@ -419,6 +553,98 @@ public class PublishIncidentTaskParams {
 
   public void setStatusPageIds(@jakarta.annotation.Nullable List<String> statusPageIds) {
     this.statusPageIds = statusPageIds;
+  }
+
+
+  public PublishIncidentTaskParams selectedComponentKeys(@jakarta.annotation.Nullable List<String> selectedComponentKeys) {
+    this.selectedComponentKeys = selectedComponentKeys;
+    return this;
+  }
+
+  public PublishIncidentTaskParams addSelectedComponentKeysItem(String selectedComponentKeysItem) {
+    if (this.selectedComponentKeys == null) {
+      this.selectedComponentKeys = new ArrayList<>();
+    }
+    this.selectedComponentKeys.add(selectedComponentKeysItem);
+    return this;
+  }
+
+  /**
+   * Composite \&quot;SourceType:&lt;id&gt;\&quot; keys of the status page components affected by the publish. This field is in Early Access and is not generally available; contact Rootly Support to request access.
+   * @return selectedComponentKeys
+   */
+  @jakarta.annotation.Nullable
+  public List<String> getSelectedComponentKeys() {
+    return selectedComponentKeys;
+  }
+
+  public void setSelectedComponentKeys(@jakarta.annotation.Nullable List<String> selectedComponentKeys) {
+    this.selectedComponentKeys = selectedComponentKeys;
+  }
+
+
+  public PublishIncidentTaskParams selectedComponentStatuses(@jakarta.annotation.Nullable Map<String, InnerEnum> selectedComponentStatuses) {
+    this.selectedComponentStatuses = selectedComponentStatuses;
+    return this;
+  }
+
+  public PublishIncidentTaskParams putSelectedComponentStatusesItem(String key, InnerEnum selectedComponentStatusesItem) {
+    if (this.selectedComponentStatuses == null) {
+      this.selectedComponentStatuses = new HashMap<>();
+    }
+    this.selectedComponentStatuses.put(key, selectedComponentStatusesItem);
+    return this;
+  }
+
+  /**
+   * Impact status to publish for each selected component key. Keys must match selected_component_keys entries.
+   * @return selectedComponentStatuses
+   */
+  @jakarta.annotation.Nullable
+  public Map<String, InnerEnum> getSelectedComponentStatuses() {
+    return selectedComponentStatuses;
+  }
+
+  public void setSelectedComponentStatuses(@jakarta.annotation.Nullable Map<String, InnerEnum> selectedComponentStatuses) {
+    this.selectedComponentStatuses = selectedComponentStatuses;
+  }
+
+
+  public PublishIncidentTaskParams syncIncidentComponents(@jakarta.annotation.Nullable Boolean syncIncidentComponents) {
+    this.syncIncidentComponents = syncIncidentComponents;
+    return this;
+  }
+
+  /**
+   * When true, every run also publishes the incident&#39;s tagged services and functionalities that are components on the target page. Defaults to true when selected_component_keys is empty. This field is in Early Access and is not generally available; contact Rootly Support to request access.
+   * @return syncIncidentComponents
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getSyncIncidentComponents() {
+    return syncIncidentComponents;
+  }
+
+  public void setSyncIncidentComponents(@jakarta.annotation.Nullable Boolean syncIncidentComponents) {
+    this.syncIncidentComponents = syncIncidentComponents;
+  }
+
+
+  public PublishIncidentTaskParams syncedComponentStatus(@jakarta.annotation.Nullable SyncedComponentStatusEnum syncedComponentStatus) {
+    this.syncedComponentStatus = syncedComponentStatus;
+    return this;
+  }
+
+  /**
+   * Impact status published for components synced from the incident. Defaults to degraded_performance. A component also listed in selected_component_keys keeps its selected_component_statuses entry.
+   * @return syncedComponentStatus
+   */
+  @jakarta.annotation.Nullable
+  public SyncedComponentStatusEnum getSyncedComponentStatus() {
+    return syncedComponentStatus;
+  }
+
+  public void setSyncedComponentStatus(@jakarta.annotation.Nullable SyncedComponentStatusEnum syncedComponentStatus) {
+    this.syncedComponentStatus = syncedComponentStatus;
   }
 
 
@@ -461,6 +687,10 @@ public class PublishIncidentTaskParams {
         Objects.equals(this.statusPageTemplate, publishIncidentTaskParams.statusPageTemplate) &&
         Objects.equals(this.statusPageId, publishIncidentTaskParams.statusPageId) &&
         Objects.equals(this.statusPageIds, publishIncidentTaskParams.statusPageIds) &&
+        Objects.equals(this.selectedComponentKeys, publishIncidentTaskParams.selectedComponentKeys) &&
+        Objects.equals(this.selectedComponentStatuses, publishIncidentTaskParams.selectedComponentStatuses) &&
+        Objects.equals(this.syncIncidentComponents, publishIncidentTaskParams.syncIncidentComponents) &&
+        Objects.equals(this.syncedComponentStatus, publishIncidentTaskParams.syncedComponentStatus) &&
         Objects.equals(this.integrationPayload, publishIncidentTaskParams.integrationPayload);
   }
 
@@ -470,7 +700,7 @@ public class PublishIncidentTaskParams {
 
   @Override
   public int hashCode() {
-    return Objects.hash(taskType, incident, publicTitle, event, status, notifySubscribers, shouldTweet, statusPageTemplate, statusPageId, statusPageIds, integrationPayload);
+    return Objects.hash(taskType, incident, publicTitle, event, status, notifySubscribers, shouldTweet, statusPageTemplate, statusPageId, statusPageIds, selectedComponentKeys, selectedComponentStatuses, syncIncidentComponents, syncedComponentStatus, integrationPayload);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -494,6 +724,10 @@ public class PublishIncidentTaskParams {
     sb.append("    statusPageTemplate: ").append(toIndentedString(statusPageTemplate)).append("\n");
     sb.append("    statusPageId: ").append(toIndentedString(statusPageId)).append("\n");
     sb.append("    statusPageIds: ").append(toIndentedString(statusPageIds)).append("\n");
+    sb.append("    selectedComponentKeys: ").append(toIndentedString(selectedComponentKeys)).append("\n");
+    sb.append("    selectedComponentStatuses: ").append(toIndentedString(selectedComponentStatuses)).append("\n");
+    sb.append("    syncIncidentComponents: ").append(toIndentedString(syncIncidentComponents)).append("\n");
+    sb.append("    syncedComponentStatus: ").append(toIndentedString(syncedComponentStatus)).append("\n");
     sb.append("    integrationPayload: ").append(toIndentedString(integrationPayload)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -527,6 +761,10 @@ public class PublishIncidentTaskParams {
     openapiFields.add("status_page_template");
     openapiFields.add("status_page_id");
     openapiFields.add("status_page_ids");
+    openapiFields.add("selected_component_keys");
+    openapiFields.add("selected_component_statuses");
+    openapiFields.add("sync_incident_components");
+    openapiFields.add("synced_component_status");
     openapiFields.add("integration_payload");
 
     // a set of required properties/fields (JSON key names)
@@ -595,6 +833,17 @@ public class PublishIncidentTaskParams {
       // ensure the optional json data is an array if present
       if (jsonObj.get("status_page_ids") != null && !jsonObj.get("status_page_ids").isJsonNull() && !jsonObj.get("status_page_ids").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `status_page_ids` to be an array in the JSON string but got `%s`", jsonObj.get("status_page_ids").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("selected_component_keys") != null && !jsonObj.get("selected_component_keys").isJsonNull() && !jsonObj.get("selected_component_keys").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `selected_component_keys` to be an array in the JSON string but got `%s`", jsonObj.get("selected_component_keys").toString()));
+      }
+      if ((jsonObj.get("synced_component_status") != null && !jsonObj.get("synced_component_status").isJsonNull()) && !jsonObj.get("synced_component_status").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `synced_component_status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("synced_component_status").toString()));
+      }
+      // validate the optional field `synced_component_status`
+      if (jsonObj.get("synced_component_status") != null && !jsonObj.get("synced_component_status").isJsonNull()) {
+        SyncedComponentStatusEnum.validateJsonElement(jsonObj.get("synced_component_status"));
       }
       if ((jsonObj.get("integration_payload") != null && !jsonObj.get("integration_payload").isJsonNull()) && !jsonObj.get("integration_payload").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `integration_payload` to be a primitive type in the JSON string but got `%s`", jsonObj.get("integration_payload").toString()));

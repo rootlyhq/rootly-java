@@ -13,7 +13,7 @@
 |**notifySubscribers** | **Boolean** | Notify all status pages subscribers |  [optional] |
 |**shouldTweet** | **Boolean** | For Statuspage.io integrated pages auto publishes a tweet for your update |  [optional] |
 |**startedAt** | **OffsetDateTime** | When the event started. Defaults to the time of creation. |  [optional] |
-|**statusPageComponents** | [**List&lt;NewIncidentStatusPageEventDataAttributesStatusPageComponentsInner&gt;**](NewIncidentStatusPageEventDataAttributesStatusPageComponentsInner.md) | Affected status page components and their statuses. Requires the status-page-v3-phase-1 feature. Ignored for terminal event statuses (resolved, completed), which clear component impact. A status is required per component except for scheduled maintenance incidents. |  [optional] |
+|**statusPageComponents** | [**List&lt;NewIncidentStatusPageEventDataAttributesStatusPageComponentsInner&gt;**](NewIncidentStatusPageEventDataAttributesStatusPageComponentsInner.md) | Affected status page components and their statuses. This field is in Early Access and is not generally available; contact Rootly Support to request access. Ignored for terminal event statuses (resolved, completed), which clear component impact. A status is required per component except for scheduled maintenance incidents. |  [optional] |
 
 
 

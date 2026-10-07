@@ -45,6 +45,7 @@
 | ALERT_UPDATED | &quot;alert.updated&quot; |
 | PULSE_CREATED | &quot;pulse.created&quot; |
 | SHIFT_STARTED | &quot;shift.started&quot; |
+| SHIFT_ENDED | &quot;shift.ended&quot; |
 | GENIUS_WORKFLOW_RUN_QUEUED | &quot;genius_workflow_run.queued&quot; |
 | GENIUS_WORKFLOW_RUN_STARTED | &quot;genius_workflow_run.started&quot; |
 | GENIUS_WORKFLOW_RUN_COMPLETED | &quot;genius_workflow_run.completed&quot; |

@@ -19,11 +19,11 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.rootly.client.model.NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner;
 import com.rootly.client.model.NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner;
 import com.rootly.client.model.NewAlertsSourceDataAttributesAlertTemplateAttributes;
 import com.rootly.client.model.NewAlertsSourceDataAttributesResolutionRuleAttributes;
 import com.rootly.client.model.NewAlertsSourceDataAttributesSourceableAttributes;
+import com.rootly.client.model.UpdateAlertsSourceDataAttributesAlertSourceFieldsAttributesInner;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -56,7 +56,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateAlertsSourceDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateAlertsSourceDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -272,7 +272,7 @@ public class UpdateAlertsSourceDataAttributes {
   public static final String SERIALIZED_NAME_ALERT_SOURCE_FIELDS_ATTRIBUTES = "alert_source_fields_attributes";
   @SerializedName(SERIALIZED_NAME_ALERT_SOURCE_FIELDS_ATTRIBUTES)
   @jakarta.annotation.Nullable
-  private List<NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner> alertSourceFieldsAttributes = new ArrayList<>();
+  private List<UpdateAlertsSourceDataAttributesAlertSourceFieldsAttributesInner> alertSourceFieldsAttributes = new ArrayList<>();
 
   public UpdateAlertsSourceDataAttributes() {
   }
@@ -540,12 +540,12 @@ public class UpdateAlertsSourceDataAttributes {
   }
 
 
-  public UpdateAlertsSourceDataAttributes alertSourceFieldsAttributes(@jakarta.annotation.Nullable List<NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner> alertSourceFieldsAttributes) {
+  public UpdateAlertsSourceDataAttributes alertSourceFieldsAttributes(@jakarta.annotation.Nullable List<UpdateAlertsSourceDataAttributesAlertSourceFieldsAttributesInner> alertSourceFieldsAttributes) {
     this.alertSourceFieldsAttributes = alertSourceFieldsAttributes;
     return this;
   }
 
-  public UpdateAlertsSourceDataAttributes addAlertSourceFieldsAttributesItem(NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner alertSourceFieldsAttributesItem) {
+  public UpdateAlertsSourceDataAttributes addAlertSourceFieldsAttributesItem(UpdateAlertsSourceDataAttributesAlertSourceFieldsAttributesInner alertSourceFieldsAttributesItem) {
     if (this.alertSourceFieldsAttributes == null) {
       this.alertSourceFieldsAttributes = new ArrayList<>();
     }
@@ -558,11 +558,11 @@ public class UpdateAlertsSourceDataAttributes {
    * @return alertSourceFieldsAttributes
    */
   @jakarta.annotation.Nullable
-  public List<NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner> getAlertSourceFieldsAttributes() {
+  public List<UpdateAlertsSourceDataAttributesAlertSourceFieldsAttributesInner> getAlertSourceFieldsAttributes() {
     return alertSourceFieldsAttributes;
   }
 
-  public void setAlertSourceFieldsAttributes(@jakarta.annotation.Nullable List<NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner> alertSourceFieldsAttributes) {
+  public void setAlertSourceFieldsAttributes(@jakarta.annotation.Nullable List<UpdateAlertsSourceDataAttributesAlertSourceFieldsAttributesInner> alertSourceFieldsAttributes) {
     this.alertSourceFieldsAttributes = alertSourceFieldsAttributes;
   }
 
@@ -755,7 +755,7 @@ public class UpdateAlertsSourceDataAttributes {
 
           // validate the optional field `alert_source_fields_attributes` (array)
           for (int i = 0; i < jsonArrayalertSourceFieldsAttributes.size(); i++) {
-            NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner.validateJsonElement(jsonArrayalertSourceFieldsAttributes.get(i));
+            UpdateAlertsSourceDataAttributesAlertSourceFieldsAttributesInner.validateJsonElement(jsonArrayalertSourceFieldsAttributes.get(i));
           };
         }
       }

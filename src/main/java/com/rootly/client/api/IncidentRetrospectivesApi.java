@@ -633,6 +633,8 @@ public class IncidentRetrospectivesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> incident_post_mortem updated </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> retrospective body owned by the collaborative editor </td><td>  -  </td></tr>
+        <tr><td> 503 </td><td> collaborative document state could not be verified </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateIncidentPostmortemCall(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateIncidentPostMortem updateIncidentPostMortem, final ApiCallback _callback) throws ApiException {
@@ -699,7 +701,7 @@ public class IncidentRetrospectivesApi {
 
     /**
      * Update an incident retrospective
-     * Update a specific incident retrospective by id
+     * Update a specific incident retrospective by id. The body may be written as &#x60;content&#x60; (or its alias &#x60;smart_content&#x60;) and is sanitized to the tags the retrospective editor supports. When no &#x60;title&#x60; is sent and the body opens with an &#x60;&lt;h1&gt;&#x60;, that heading becomes the retrospective title, matching the editor. Once a retrospective has been opened in the collaborative editor that editor owns the body, and body writes are rejected with a 409.
      * @param id  (required)
      * @param updateIncidentPostMortem  (required)
      * @return IncidentPostMortemResponse
@@ -710,6 +712,8 @@ public class IncidentRetrospectivesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> incident_post_mortem updated </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> retrospective body owned by the collaborative editor </td><td>  -  </td></tr>
+        <tr><td> 503 </td><td> collaborative document state could not be verified </td><td>  -  </td></tr>
      </table>
      */
     public IncidentPostMortemResponse updateIncidentPostmortem(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateIncidentPostMortem updateIncidentPostMortem) throws ApiException {
@@ -719,7 +723,7 @@ public class IncidentRetrospectivesApi {
 
     /**
      * Update an incident retrospective
-     * Update a specific incident retrospective by id
+     * Update a specific incident retrospective by id. The body may be written as &#x60;content&#x60; (or its alias &#x60;smart_content&#x60;) and is sanitized to the tags the retrospective editor supports. When no &#x60;title&#x60; is sent and the body opens with an &#x60;&lt;h1&gt;&#x60;, that heading becomes the retrospective title, matching the editor. Once a retrospective has been opened in the collaborative editor that editor owns the body, and body writes are rejected with a 409.
      * @param id  (required)
      * @param updateIncidentPostMortem  (required)
      * @return ApiResponse&lt;IncidentPostMortemResponse&gt;
@@ -730,6 +734,8 @@ public class IncidentRetrospectivesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> incident_post_mortem updated </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> retrospective body owned by the collaborative editor </td><td>  -  </td></tr>
+        <tr><td> 503 </td><td> collaborative document state could not be verified </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<IncidentPostMortemResponse> updateIncidentPostmortemWithHttpInfo(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateIncidentPostMortem updateIncidentPostMortem) throws ApiException {
@@ -740,7 +746,7 @@ public class IncidentRetrospectivesApi {
 
     /**
      * Update an incident retrospective (asynchronously)
-     * Update a specific incident retrospective by id
+     * Update a specific incident retrospective by id. The body may be written as &#x60;content&#x60; (or its alias &#x60;smart_content&#x60;) and is sanitized to the tags the retrospective editor supports. When no &#x60;title&#x60; is sent and the body opens with an &#x60;&lt;h1&gt;&#x60;, that heading becomes the retrospective title, matching the editor. Once a retrospective has been opened in the collaborative editor that editor owns the body, and body writes are rejected with a 409.
      * @param id  (required)
      * @param updateIncidentPostMortem  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -752,6 +758,8 @@ public class IncidentRetrospectivesApi {
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> incident_post_mortem updated </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> retrospective body owned by the collaborative editor </td><td>  -  </td></tr>
+        <tr><td> 503 </td><td> collaborative document state could not be verified </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateIncidentPostmortemAsync(@jakarta.annotation.Nonnull GetAlertFieldIdParameter id, @jakarta.annotation.Nonnull UpdateIncidentPostMortem updateIncidentPostMortem, final ApiCallback<IncidentPostMortemResponse> _callback) throws ApiException {

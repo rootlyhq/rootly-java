@@ -55,7 +55,7 @@ import com.rootly.client.JSON;
 /**
  * NewScheduleRotationDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewScheduleRotationDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -457,7 +457,7 @@ public class NewScheduleRotationDataAttributes {
   }
 
   /**
-   * A valid IANA time zone name.
+   * A valid IANA time zone name. Organizations with one timezone per schedule manage this on the schedule; a value differing from the schedule&#39;s is rejected.
    * @return timeZone
    */
   @jakarta.annotation.Nullable

@@ -62,4 +62,20 @@ public class UpdateSlackChannelTopicTaskParamsTest {
         // TODO: test topic
     }
 
+    /**
+     * Test the property 'retryCount'
+     */
+    @Test
+    public void retryCountTest() {
+        // TODO: test retryCount
+    }
+
+    /**
+     * Test the property 'retryWaitTime'
+     */
+    @Test
+    public void retryWaitTimeTest() {
+        // TODO: test retryWaitTime
+    }
+
 }

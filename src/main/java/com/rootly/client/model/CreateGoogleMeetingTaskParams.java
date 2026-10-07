@@ -52,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * CreateGoogleMeetingTaskParams
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateGoogleMeetingTaskParams {
   /**
    * Gets or Sets taskType
@@ -256,6 +256,16 @@ public class CreateGoogleMeetingTaskParams {
   @jakarta.annotation.Nullable
   private List<AddActionItemTaskParamsPostToSlackChannelsInner> postToSlackChannels = new ArrayList<>();
 
+  public static final String SERIALIZED_NAME_RETRY_COUNT = "retry_count";
+  @SerializedName(SERIALIZED_NAME_RETRY_COUNT)
+  @jakarta.annotation.Nullable
+  private Integer retryCount = 0;
+
+  public static final String SERIALIZED_NAME_RETRY_WAIT_TIME = "retry_wait_time";
+  @SerializedName(SERIALIZED_NAME_RETRY_WAIT_TIME)
+  @jakarta.annotation.Nullable
+  private Integer retryWaitTime = 1;
+
   public CreateGoogleMeetingTaskParams() {
   }
 
@@ -419,6 +429,44 @@ public class CreateGoogleMeetingTaskParams {
   }
 
 
+  public CreateGoogleMeetingTaskParams retryCount(@jakarta.annotation.Nullable Integer retryCount) {
+    this.retryCount = retryCount;
+    return this;
+  }
+
+  /**
+   * Number of times to retry on rate-limit (HTTP 429) responses (0-4). 0 disables retry.
+   * @return retryCount
+   */
+  @jakarta.annotation.Nullable
+  public Integer getRetryCount() {
+    return retryCount;
+  }
+
+  public void setRetryCount(@jakarta.annotation.Nullable Integer retryCount) {
+    this.retryCount = retryCount;
+  }
+
+
+  public CreateGoogleMeetingTaskParams retryWaitTime(@jakarta.annotation.Nullable Integer retryWaitTime) {
+    this.retryWaitTime = retryWaitTime;
+    return this;
+  }
+
+  /**
+   * Seconds to wait before each retry (1-15). Retry-After header is honored when present and &lt;&#x3D; 90s, taking the larger of retry_wait_time and the header value.
+   * @return retryWaitTime
+   */
+  @jakarta.annotation.Nullable
+  public Integer getRetryWaitTime() {
+    return retryWaitTime;
+  }
+
+  public void setRetryWaitTime(@jakarta.annotation.Nullable Integer retryWaitTime) {
+    this.retryWaitTime = retryWaitTime;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -436,7 +484,9 @@ public class CreateGoogleMeetingTaskParams {
         Objects.equals(this.recordMeeting, createGoogleMeetingTaskParams.recordMeeting) &&
         Objects.equals(this.recordingMode, createGoogleMeetingTaskParams.recordingMode) &&
         Objects.equals(this.postToIncidentTimeline, createGoogleMeetingTaskParams.postToIncidentTimeline) &&
-        Objects.equals(this.postToSlackChannels, createGoogleMeetingTaskParams.postToSlackChannels);
+        Objects.equals(this.postToSlackChannels, createGoogleMeetingTaskParams.postToSlackChannels) &&
+        Objects.equals(this.retryCount, createGoogleMeetingTaskParams.retryCount) &&
+        Objects.equals(this.retryWaitTime, createGoogleMeetingTaskParams.retryWaitTime);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -445,7 +495,7 @@ public class CreateGoogleMeetingTaskParams {
 
   @Override
   public int hashCode() {
-    return Objects.hash(taskType, summary, description, conferenceSolutionKey, recordMeeting, recordingMode, postToIncidentTimeline, postToSlackChannels);
+    return Objects.hash(taskType, summary, description, conferenceSolutionKey, recordMeeting, recordingMode, postToIncidentTimeline, postToSlackChannels, retryCount, retryWaitTime);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -467,6 +517,8 @@ public class CreateGoogleMeetingTaskParams {
     sb.append("    recordingMode: ").append(toIndentedString(recordingMode)).append("\n");
     sb.append("    postToIncidentTimeline: ").append(toIndentedString(postToIncidentTimeline)).append("\n");
     sb.append("    postToSlackChannels: ").append(toIndentedString(postToSlackChannels)).append("\n");
+    sb.append("    retryCount: ").append(toIndentedString(retryCount)).append("\n");
+    sb.append("    retryWaitTime: ").append(toIndentedString(retryWaitTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -497,6 +549,8 @@ public class CreateGoogleMeetingTaskParams {
     openapiFields.add("recording_mode");
     openapiFields.add("post_to_incident_timeline");
     openapiFields.add("post_to_slack_channels");
+    openapiFields.add("retry_count");
+    openapiFields.add("retry_wait_time");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

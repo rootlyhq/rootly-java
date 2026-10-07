@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateIncidentDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateIncidentDataAttributes {
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
@@ -323,6 +323,21 @@ public class UpdateIncidentDataAttributes {
   @SerializedName(SERIALIZED_NAME_JIRA_ISSUE_URL)
   @jakarta.annotation.Nullable
   private String jiraIssueUrl;
+
+  public static final String SERIALIZED_NAME_LINEAR_ISSUE_KEY = "linear_issue_key";
+  @SerializedName(SERIALIZED_NAME_LINEAR_ISSUE_KEY)
+  @jakarta.annotation.Nullable
+  private String linearIssueKey;
+
+  public static final String SERIALIZED_NAME_LINEAR_ISSUE_ID = "linear_issue_id";
+  @SerializedName(SERIALIZED_NAME_LINEAR_ISSUE_ID)
+  @jakarta.annotation.Nullable
+  private String linearIssueId;
+
+  public static final String SERIALIZED_NAME_LINEAR_ISSUE_URL = "linear_issue_url";
+  @SerializedName(SERIALIZED_NAME_LINEAR_ISSUE_URL)
+  @jakarta.annotation.Nullable
+  private String linearIssueUrl;
 
   public static final String SERIALIZED_NAME_SCHEDULED_FOR = "scheduled_for";
   @SerializedName(SERIALIZED_NAME_SCHEDULED_FOR)
@@ -969,6 +984,63 @@ public class UpdateIncidentDataAttributes {
   }
 
 
+  public UpdateIncidentDataAttributes linearIssueKey(@jakarta.annotation.Nullable String linearIssueKey) {
+    this.linearIssueKey = linearIssueKey;
+    return this;
+  }
+
+  /**
+   * Linear issue key
+   * @return linearIssueKey
+   */
+  @jakarta.annotation.Nullable
+  public String getLinearIssueKey() {
+    return linearIssueKey;
+  }
+
+  public void setLinearIssueKey(@jakarta.annotation.Nullable String linearIssueKey) {
+    this.linearIssueKey = linearIssueKey;
+  }
+
+
+  public UpdateIncidentDataAttributes linearIssueId(@jakarta.annotation.Nullable String linearIssueId) {
+    this.linearIssueId = linearIssueId;
+    return this;
+  }
+
+  /**
+   * Linear issue ID
+   * @return linearIssueId
+   */
+  @jakarta.annotation.Nullable
+  public String getLinearIssueId() {
+    return linearIssueId;
+  }
+
+  public void setLinearIssueId(@jakarta.annotation.Nullable String linearIssueId) {
+    this.linearIssueId = linearIssueId;
+  }
+
+
+  public UpdateIncidentDataAttributes linearIssueUrl(@jakarta.annotation.Nullable String linearIssueUrl) {
+    this.linearIssueUrl = linearIssueUrl;
+    return this;
+  }
+
+  /**
+   * Linear issue URL
+   * @return linearIssueUrl
+   */
+  @jakarta.annotation.Nullable
+  public String getLinearIssueUrl() {
+    return linearIssueUrl;
+  }
+
+  public void setLinearIssueUrl(@jakarta.annotation.Nullable String linearIssueUrl) {
+    this.linearIssueUrl = linearIssueUrl;
+  }
+
+
   public UpdateIncidentDataAttributes scheduledFor(@jakarta.annotation.Nullable String scheduledFor) {
     this.scheduledFor = scheduledFor;
     return this;
@@ -1253,6 +1325,9 @@ public class UpdateIncidentDataAttributes {
         Objects.equals(this.jiraIssueKey, updateIncidentDataAttributes.jiraIssueKey) &&
         Objects.equals(this.jiraIssueId, updateIncidentDataAttributes.jiraIssueId) &&
         Objects.equals(this.jiraIssueUrl, updateIncidentDataAttributes.jiraIssueUrl) &&
+        Objects.equals(this.linearIssueKey, updateIncidentDataAttributes.linearIssueKey) &&
+        Objects.equals(this.linearIssueId, updateIncidentDataAttributes.linearIssueId) &&
+        Objects.equals(this.linearIssueUrl, updateIncidentDataAttributes.linearIssueUrl) &&
         Objects.equals(this.scheduledFor, updateIncidentDataAttributes.scheduledFor) &&
         Objects.equals(this.scheduledUntil, updateIncidentDataAttributes.scheduledUntil) &&
         Objects.equals(this.inTriageAt, updateIncidentDataAttributes.inTriageAt) &&
@@ -1274,7 +1349,7 @@ public class UpdateIncidentDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, kind, parentIncidentId, duplicateIncidentId, summary, status, _private, severityId, publicTitle, alertIds, environmentIds, incidentTypeIds, serviceIds, functionalityIds, mutedServiceIds, groupIds, causeIds, labels, slackChannelId, slackChannelName, slackChannelUrl, slackChannelArchived, googleDriveParentId, googleDriveUrl, jiraIssueKey, jiraIssueId, jiraIssueUrl, scheduledFor, scheduledUntil, inTriageAt, startedAt, detectedAt, acknowledgedAt, mitigatedAt, resolvedAt, closedAt, cancelledAt, mitigationMessage, resolutionMessage, cancellationMessage);
+    return Objects.hash(title, kind, parentIncidentId, duplicateIncidentId, summary, status, _private, severityId, publicTitle, alertIds, environmentIds, incidentTypeIds, serviceIds, functionalityIds, mutedServiceIds, groupIds, causeIds, labels, slackChannelId, slackChannelName, slackChannelUrl, slackChannelArchived, googleDriveParentId, googleDriveUrl, jiraIssueKey, jiraIssueId, jiraIssueUrl, linearIssueKey, linearIssueId, linearIssueUrl, scheduledFor, scheduledUntil, inTriageAt, startedAt, detectedAt, acknowledgedAt, mitigatedAt, resolvedAt, closedAt, cancelledAt, mitigationMessage, resolutionMessage, cancellationMessage);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1315,6 +1390,9 @@ public class UpdateIncidentDataAttributes {
     sb.append("    jiraIssueKey: ").append(toIndentedString(jiraIssueKey)).append("\n");
     sb.append("    jiraIssueId: ").append(toIndentedString(jiraIssueId)).append("\n");
     sb.append("    jiraIssueUrl: ").append(toIndentedString(jiraIssueUrl)).append("\n");
+    sb.append("    linearIssueKey: ").append(toIndentedString(linearIssueKey)).append("\n");
+    sb.append("    linearIssueId: ").append(toIndentedString(linearIssueId)).append("\n");
+    sb.append("    linearIssueUrl: ").append(toIndentedString(linearIssueUrl)).append("\n");
     sb.append("    scheduledFor: ").append(toIndentedString(scheduledFor)).append("\n");
     sb.append("    scheduledUntil: ").append(toIndentedString(scheduledUntil)).append("\n");
     sb.append("    inTriageAt: ").append(toIndentedString(inTriageAt)).append("\n");
@@ -1377,6 +1455,9 @@ public class UpdateIncidentDataAttributes {
     openapiFields.add("jira_issue_key");
     openapiFields.add("jira_issue_id");
     openapiFields.add("jira_issue_url");
+    openapiFields.add("linear_issue_key");
+    openapiFields.add("linear_issue_id");
+    openapiFields.add("linear_issue_url");
     openapiFields.add("scheduled_for");
     openapiFields.add("scheduled_until");
     openapiFields.add("in_triage_at");
@@ -1503,6 +1584,15 @@ public class UpdateIncidentDataAttributes {
       }
       if ((jsonObj.get("jira_issue_url") != null && !jsonObj.get("jira_issue_url").isJsonNull()) && !jsonObj.get("jira_issue_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `jira_issue_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("jira_issue_url").toString()));
+      }
+      if ((jsonObj.get("linear_issue_key") != null && !jsonObj.get("linear_issue_key").isJsonNull()) && !jsonObj.get("linear_issue_key").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `linear_issue_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("linear_issue_key").toString()));
+      }
+      if ((jsonObj.get("linear_issue_id") != null && !jsonObj.get("linear_issue_id").isJsonNull()) && !jsonObj.get("linear_issue_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `linear_issue_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("linear_issue_id").toString()));
+      }
+      if ((jsonObj.get("linear_issue_url") != null && !jsonObj.get("linear_issue_url").isJsonNull()) && !jsonObj.get("linear_issue_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `linear_issue_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("linear_issue_url").toString()));
       }
       if ((jsonObj.get("scheduled_for") != null && !jsonObj.get("scheduled_for").isJsonNull()) && !jsonObj.get("scheduled_for").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `scheduled_for` to be a primitive type in the JSON string but got `%s`", jsonObj.get("scheduled_for").toString()));

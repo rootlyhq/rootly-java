@@ -20,7 +20,9 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -60,6 +62,14 @@ public class NewShiftCoverageRequestDataAttributesTest {
     @Test
     public void userIdTest() {
         // TODO: test userId
+    }
+
+    /**
+     * Test the property 'recipientUserIds'
+     */
+    @Test
+    public void recipientUserIdsTest() {
+        // TODO: test recipientUserIds
     }
 
 }

@@ -34,6 +34,9 @@
 |**jiraIssueKey** | **String** | Jira issue key |  [optional] |
 |**jiraIssueId** | **String** | Jira issue ID |  [optional] |
 |**jiraIssueUrl** | **String** | Jira issue URL |  [optional] |
+|**linearIssueKey** | **String** | Linear issue key |  [optional] |
+|**linearIssueId** | **String** | Linear issue ID |  [optional] |
+|**linearIssueUrl** | **String** | Linear issue URL |  [optional] |
 |**notifyEmails** | **List&lt;String&gt;** | Emails you want to notify |  [optional] |
 |**status** | [**StatusEnum**](#StatusEnum) | The status of the incident |  [optional] |
 |**url** | **String** | The url to the incident |  [optional] |

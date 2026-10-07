@@ -20,8 +20,8 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.rootly.client.model.Environment;
-import com.rootly.client.model.NewPulseDataAttributesLabelsInner;
-import com.rootly.client.model.NewPulseDataAttributesRefsInner;
+import com.rootly.client.model.PulseLabelsInner;
+import com.rootly.client.model.PulseRefsInner;
 import com.rootly.client.model.Service;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -55,7 +55,7 @@ import com.rootly.client.JSON;
 /**
  * Pulse
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Pulse {
   public static final String SERIALIZED_NAME_SOURCE = "source";
   @SerializedName(SERIALIZED_NAME_SOURCE)
@@ -85,12 +85,12 @@ public class Pulse {
   public static final String SERIALIZED_NAME_LABELS = "labels";
   @SerializedName(SERIALIZED_NAME_LABELS)
   @jakarta.annotation.Nullable
-  private List<NewPulseDataAttributesLabelsInner> labels = new ArrayList<>();
+  private List<PulseLabelsInner> labels = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_REFS = "refs";
   @SerializedName(SERIALIZED_NAME_REFS)
   @jakarta.annotation.Nullable
-  private List<NewPulseDataAttributesRefsInner> refs = new ArrayList<>();
+  private List<PulseRefsInner> refs = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
@@ -221,12 +221,12 @@ public class Pulse {
   }
 
 
-  public Pulse labels(@jakarta.annotation.Nullable List<NewPulseDataAttributesLabelsInner> labels) {
+  public Pulse labels(@jakarta.annotation.Nullable List<PulseLabelsInner> labels) {
     this.labels = labels;
     return this;
   }
 
-  public Pulse addLabelsItem(NewPulseDataAttributesLabelsInner labelsItem) {
+  public Pulse addLabelsItem(PulseLabelsInner labelsItem) {
     if (this.labels == null) {
       this.labels = new ArrayList<>();
     }
@@ -239,21 +239,21 @@ public class Pulse {
    * @return labels
    */
   @jakarta.annotation.Nullable
-  public List<NewPulseDataAttributesLabelsInner> getLabels() {
+  public List<PulseLabelsInner> getLabels() {
     return labels;
   }
 
-  public void setLabels(@jakarta.annotation.Nullable List<NewPulseDataAttributesLabelsInner> labels) {
+  public void setLabels(@jakarta.annotation.Nullable List<PulseLabelsInner> labels) {
     this.labels = labels;
   }
 
 
-  public Pulse refs(@jakarta.annotation.Nullable List<NewPulseDataAttributesRefsInner> refs) {
+  public Pulse refs(@jakarta.annotation.Nullable List<PulseRefsInner> refs) {
     this.refs = refs;
     return this;
   }
 
-  public Pulse addRefsItem(NewPulseDataAttributesRefsInner refsItem) {
+  public Pulse addRefsItem(PulseRefsInner refsItem) {
     if (this.refs == null) {
       this.refs = new ArrayList<>();
     }
@@ -266,11 +266,11 @@ public class Pulse {
    * @return refs
    */
   @jakarta.annotation.Nullable
-  public List<NewPulseDataAttributesRefsInner> getRefs() {
+  public List<PulseRefsInner> getRefs() {
     return refs;
   }
 
-  public void setRefs(@jakarta.annotation.Nullable List<NewPulseDataAttributesRefsInner> refs) {
+  public void setRefs(@jakarta.annotation.Nullable List<PulseRefsInner> refs) {
     this.refs = refs;
   }
 
@@ -499,7 +499,7 @@ public class Pulse {
 
           // validate the optional field `labels` (array)
           for (int i = 0; i < jsonArraylabels.size(); i++) {
-            NewPulseDataAttributesLabelsInner.validateJsonElement(jsonArraylabels.get(i));
+            PulseLabelsInner.validateJsonElement(jsonArraylabels.get(i));
           };
         }
       }
@@ -513,7 +513,7 @@ public class Pulse {
 
           // validate the optional field `refs` (array)
           for (int i = 0; i < jsonArrayrefs.size(); i++) {
-            NewPulseDataAttributesRefsInner.validateJsonElement(jsonArrayrefs.get(i));
+            PulseRefsInner.validateJsonElement(jsonArrayrefs.get(i));
           };
         }
       }

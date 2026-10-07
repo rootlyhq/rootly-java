@@ -17,7 +17,7 @@
 |**emailChannel** | **Boolean** | Email channel enabled |  |
 |**createdAt** | **String** | Date of creation |  |
 |**updatedAt** | **String** | Date of last update |  |
-|**communicationGroupConditions** | [**List&lt;NewCommunicationsGroupDataAttributesCommunicationGroupConditionsInner&gt;**](NewCommunicationsGroupDataAttributesCommunicationGroupConditionsInner.md) | Group conditions attributes |  [optional] |
+|**communicationGroupConditions** | [**List&lt;CommunicationsGroupCommunicationGroupConditionsInner&gt;**](CommunicationsGroupCommunicationGroupConditionsInner.md) | Group conditions attributes |  [optional] |
 |**memberIds** | **List&lt;Integer&gt;** | Array of member user IDs |  [optional] |
 |**slackChannelIds** | **List&lt;String&gt;** | Array of Slack channel IDs |  [optional] |
 |**communicationExternalGroupMembers** | [**List&lt;CommunicationsGroupCommunicationExternalGroupMembersInner&gt;**](CommunicationsGroupCommunicationExternalGroupMembersInner.md) | External group members |  [optional] |

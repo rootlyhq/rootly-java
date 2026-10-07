@@ -24,8 +24,8 @@
 |**lastGeneratedAt** | **OffsetDateTime** | When the report was last generated. |  [optional] |
 |**timeZone** | **String** | The IANA timezone used to compute day and weekend boundaries for this report. Defaults to the team&#39;s timezone. |  [optional] |
 |**useRespondersTimeZone** | **Boolean** | When true, each responder&#39;s personal timezone is used for their pay calculation; otherwise the report-wide time_zone is used. |  [optional] |
-|**csvFileUrl** | **URI** | Download URL for the generated CSV report. Null until the report is generated. |  [optional] |
-|**xlsxFileUrl** | **URI** | Download URL for the generated XLSX report. Null until the report is generated. |  [optional] |
+|**csvFileUrl** | **URI** | Short-lived, presigned download URL for the generated CSV report. Fetch the report again if the URL expires. Null until the report is generated. |  [optional] |
+|**xlsxFileUrl** | **URI** | Short-lived, presigned download URL for the generated XLSX report. Fetch the report again if the URL expires. Null until the report is generated. |  [optional] |
 |**createdAt** | **OffsetDateTime** |  |  |
 |**updatedAt** | **OffsetDateTime** |  |  |
 

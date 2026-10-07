@@ -281,6 +281,22 @@ public class NewWorkflowDataAttributesTriggerParamsTest {
     }
 
     /**
+     * Test the property 'incidentConditionScheduledFor'
+     */
+    @Test
+    public void incidentConditionScheduledForTest() {
+        // TODO: test incidentConditionScheduledFor
+    }
+
+    /**
+     * Test the property 'incidentConditionScheduledUntil'
+     */
+    @Test
+    public void incidentConditionScheduledUntilTest() {
+        // TODO: test incidentConditionScheduledUntil
+    }
+
+    /**
      * Test the property 'incidentConditionalInactivity'
      */
     @Test

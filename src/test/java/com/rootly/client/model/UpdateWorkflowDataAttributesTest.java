@@ -18,6 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewWorkflowDataAttributesFailureNotificationChannelsInner;
 import com.rootly.client.model.NewWorkflowDataAttributesTriggerParams;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -122,6 +123,14 @@ public class UpdateWorkflowDataAttributesTest {
     }
 
     /**
+     * Test the property 'runOncePerResource'
+     */
+    @Test
+    public void runOncePerResourceTest() {
+        // TODO: test runOncePerResource
+    }
+
+    /**
      * Test the property 'enabled'
      */
     @Test
@@ -218,6 +227,14 @@ public class UpdateWorkflowDataAttributesTest {
     }
 
     /**
+     * Test the property 'groupAssignmentIds'
+     */
+    @Test
+    public void groupAssignmentIdsTest() {
+        // TODO: test groupAssignmentIds
+    }
+
+    /**
      * Test the property 'causeIds'
      */
     @Test
@@ -231,6 +248,22 @@ public class UpdateWorkflowDataAttributesTest {
     @Test
     public void subStatusIdsTest() {
         // TODO: test subStatusIds
+    }
+
+    /**
+     * Test the property 'failureNotificationMode'
+     */
+    @Test
+    public void failureNotificationModeTest() {
+        // TODO: test failureNotificationMode
+    }
+
+    /**
+     * Test the property 'failureNotificationChannels'
+     */
+    @Test
+    public void failureNotificationChannelsTest() {
+        // TODO: test failureNotificationChannels
     }
 
 }

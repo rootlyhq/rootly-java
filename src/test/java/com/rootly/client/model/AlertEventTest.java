@@ -70,6 +70,30 @@ public class AlertEventTest {
     }
 
     /**
+     * Test the property 'pageReason'
+     */
+    @Test
+    public void pageReasonTest() {
+        // TODO: test pageReason
+    }
+
+    /**
+     * Test the property 'slackMessageTs'
+     */
+    @Test
+    public void slackMessageTsTest() {
+        // TODO: test slackMessageTs
+    }
+
+    /**
+     * Test the property 'slackMessagePermalink'
+     */
+    @Test
+    public void slackMessagePermalinkTest() {
+        // TODO: test slackMessagePermalink
+    }
+
+    /**
      * Test the property 'source'
      */
     @Test

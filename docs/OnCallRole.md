@@ -27,6 +27,7 @@
 |**integrationsPermissions** | [**List&lt;IntegrationsPermissionsEnum&gt;**](#List&lt;IntegrationsPermissionsEnum&gt;) |  |  [optional] |
 |**invitationsPermissions** | [**List&lt;InvitationsPermissionsEnum&gt;**](#List&lt;InvitationsPermissionsEnum&gt;) |  |  [optional] |
 |**liveCallRoutingPermissions** | [**List&lt;LiveCallRoutingPermissionsEnum&gt;**](#List&lt;LiveCallRoutingPermissionsEnum&gt;) |  |  [optional] |
+|**membersPermissions** | [**List&lt;MembersPermissionsEnum&gt;**](#List&lt;MembersPermissionsEnum&gt;) |  |  [optional] |
 |**scheduleOverridePermissions** | [**List&lt;ScheduleOverridePermissionsEnum&gt;**](#List&lt;ScheduleOverridePermissionsEnum&gt;) |  |  [optional] |
 |**schedulesPermissions** | [**List&lt;SchedulesPermissionsEnum&gt;**](#List&lt;SchedulesPermissionsEnum&gt;) |  |  [optional] |
 |**servicesPermissions** | [**List&lt;ServicesPermissionsEnum&gt;**](#List&lt;ServicesPermissionsEnum&gt;) |  |  [optional] |
@@ -226,6 +227,16 @@
 | Name | Value |
 |---- | -----|
 | CREATE | &quot;create&quot; |
+| READ | &quot;read&quot; |
+| UPDATE | &quot;update&quot; |
+| DELETE | &quot;delete&quot; |
+
+
+
+## Enum: List&lt;MembersPermissionsEnum&gt;
+
+| Name | Value |
+|---- | -----|
 | READ | &quot;read&quot; |
 | UPDATE | &quot;update&quot; |
 | DELETE | &quot;delete&quot; |

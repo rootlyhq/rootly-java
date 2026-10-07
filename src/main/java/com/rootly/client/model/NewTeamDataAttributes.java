@@ -56,7 +56,7 @@ import com.rootly.client.JSON;
 /**
  * NewTeamDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewTeamDataAttributes {
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @Deprecated
@@ -143,6 +143,16 @@ public class NewTeamDataAttributes {
   @SerializedName(SERIALIZED_NAME_SERVICE_NOW_CI_SYS_ID)
   @jakarta.annotation.Nullable
   private String serviceNowCiSysId;
+
+  public static final String SERIALIZED_NAME_SCIM_GROUP_ID = "scim_group_id";
+  @SerializedName(SERIALIZED_NAME_SCIM_GROUP_ID)
+  @jakarta.annotation.Nullable
+  private String scimGroupId;
+
+  public static final String SERIALIZED_NAME_SCIM_GROUP_EXTERNAL_ID = "scim_group_external_id";
+  @SerializedName(SERIALIZED_NAME_SCIM_GROUP_EXTERNAL_ID)
+  @jakarta.annotation.Nullable
+  private String scimGroupExternalId;
 
   public static final String SERIALIZED_NAME_USER_IDS = "user_ids";
   @SerializedName(SERIALIZED_NAME_USER_IDS)
@@ -259,6 +269,65 @@ public class NewTeamDataAttributes {
   @SerializedName(SERIALIZED_NAME_AUTO_ADD_MEMBERS_SCOPE)
   @jakarta.annotation.Nullable
   private AutoAddMembersScopeEnum autoAddMembersScope;
+
+  /**
+   * Who can create and update overrides for schedules owned by this team: &#x60;everyone&#x60; in the organization, only team &#x60;members&#x60;, or only team &#x60;admins&#x60;. Users still need override permission from their on-call role. Only available when the team-level schedule override policy feature is enabled for the organization. Requests that set it while that feature is disabled are rejected.
+   */
+  @JsonAdapter(ScheduleOverridePolicyEnum.Adapter.class)
+  public enum ScheduleOverridePolicyEnum {
+    EVERYONE("everyone"),
+    
+    MEMBERS("members"),
+    
+    ADMINS("admins");
+
+    private String value;
+
+    ScheduleOverridePolicyEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static ScheduleOverridePolicyEnum fromValue(String value) {
+      for (ScheduleOverridePolicyEnum b : ScheduleOverridePolicyEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<ScheduleOverridePolicyEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ScheduleOverridePolicyEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ScheduleOverridePolicyEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return ScheduleOverridePolicyEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      ScheduleOverridePolicyEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_SCHEDULE_OVERRIDE_POLICY = "schedule_override_policy";
+  @SerializedName(SERIALIZED_NAME_SCHEDULE_OVERRIDE_POLICY)
+  @jakarta.annotation.Nullable
+  private ScheduleOverridePolicyEnum scheduleOverridePolicy;
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
@@ -603,6 +672,44 @@ public class NewTeamDataAttributes {
   }
 
 
+  public NewTeamDataAttributes scimGroupId(@jakarta.annotation.Nullable String scimGroupId) {
+    this.scimGroupId = scimGroupId;
+    return this;
+  }
+
+  /**
+   * The SCIM group id linked to this team. Membership syncs from the SCIM group while the team keeps its own name.
+   * @return scimGroupId
+   */
+  @jakarta.annotation.Nullable
+  public String getScimGroupId() {
+    return scimGroupId;
+  }
+
+  public void setScimGroupId(@jakarta.annotation.Nullable String scimGroupId) {
+    this.scimGroupId = scimGroupId;
+  }
+
+
+  public NewTeamDataAttributes scimGroupExternalId(@jakarta.annotation.Nullable String scimGroupExternalId) {
+    this.scimGroupExternalId = scimGroupExternalId;
+    return this;
+  }
+
+  /**
+   * Link by the SCIM group&#39;s externalId from your identity provider instead of scim_group_id. Write-only. Rejected when it names a different SCIM group than scim_group_id.
+   * @return scimGroupExternalId
+   */
+  @jakarta.annotation.Nullable
+  public String getScimGroupExternalId() {
+    return scimGroupExternalId;
+  }
+
+  public void setScimGroupExternalId(@jakarta.annotation.Nullable String scimGroupExternalId) {
+    this.scimGroupExternalId = scimGroupExternalId;
+  }
+
+
   public NewTeamDataAttributes userIds(@jakarta.annotation.Nullable List<Integer> userIds) {
     this.userIds = userIds;
     return this;
@@ -863,6 +970,25 @@ public class NewTeamDataAttributes {
   }
 
 
+  public NewTeamDataAttributes scheduleOverridePolicy(@jakarta.annotation.Nullable ScheduleOverridePolicyEnum scheduleOverridePolicy) {
+    this.scheduleOverridePolicy = scheduleOverridePolicy;
+    return this;
+  }
+
+  /**
+   * Who can create and update overrides for schedules owned by this team: &#x60;everyone&#x60; in the organization, only team &#x60;members&#x60;, or only team &#x60;admins&#x60;. Users still need override permission from their on-call role. Only available when the team-level schedule override policy feature is enabled for the organization. Requests that set it while that feature is disabled are rejected.
+   * @return scheduleOverridePolicy
+   */
+  @jakarta.annotation.Nullable
+  public ScheduleOverridePolicyEnum getScheduleOverridePolicy() {
+    return scheduleOverridePolicy;
+  }
+
+  public void setScheduleOverridePolicy(@jakarta.annotation.Nullable ScheduleOverridePolicyEnum scheduleOverridePolicy) {
+    this.scheduleOverridePolicy = scheduleOverridePolicy;
+  }
+
+
   public NewTeamDataAttributes properties(@jakarta.annotation.Nullable List<NewCauseDataAttributesPropertiesInner> properties) {
     this.properties = properties;
     return this;
@@ -917,6 +1043,8 @@ public class NewTeamDataAttributes {
         Objects.equals(this.pagertreeId, newTeamDataAttributes.pagertreeId) &&
         Objects.equals(this.cortexId, newTeamDataAttributes.cortexId) &&
         Objects.equals(this.serviceNowCiSysId, newTeamDataAttributes.serviceNowCiSysId) &&
+        Objects.equals(this.scimGroupId, newTeamDataAttributes.scimGroupId) &&
+        Objects.equals(this.scimGroupExternalId, newTeamDataAttributes.scimGroupExternalId) &&
         Objects.equals(this.userIds, newTeamDataAttributes.userIds) &&
         Objects.equals(this.adminIds, newTeamDataAttributes.adminIds) &&
         Objects.equals(this.alertsEmailEnabled, newTeamDataAttributes.alertsEmailEnabled) &&
@@ -929,6 +1057,7 @@ public class NewTeamDataAttributes {
         Objects.equals(this.incidentBroadcastChannel, newTeamDataAttributes.incidentBroadcastChannel) &&
         Objects.equals(this.autoAddMembersWhenAttached, newTeamDataAttributes.autoAddMembersWhenAttached) &&
         Objects.equals(this.autoAddMembersScope, newTeamDataAttributes.autoAddMembersScope) &&
+        Objects.equals(this.scheduleOverridePolicy, newTeamDataAttributes.scheduleOverridePolicy) &&
         Objects.equals(this.properties, newTeamDataAttributes.properties);
   }
 
@@ -938,7 +1067,7 @@ public class NewTeamDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(slug, name, description, publicDescription, notifyEmails, color, position, backstageId, externalId, pagerdutyId, pagerdutyServiceId, opsgenieId, opsgenieTeamId, victorOpsId, pagertreeId, cortexId, serviceNowCiSysId, userIds, adminIds, alertsEmailEnabled, alertUrgencyId, slackChannels, slackAliases, alertBroadcastEnabled, alertBroadcastChannel, incidentBroadcastEnabled, incidentBroadcastChannel, autoAddMembersWhenAttached, autoAddMembersScope, properties);
+    return Objects.hash(slug, name, description, publicDescription, notifyEmails, color, position, backstageId, externalId, pagerdutyId, pagerdutyServiceId, opsgenieId, opsgenieTeamId, victorOpsId, pagertreeId, cortexId, serviceNowCiSysId, scimGroupId, scimGroupExternalId, userIds, adminIds, alertsEmailEnabled, alertUrgencyId, slackChannels, slackAliases, alertBroadcastEnabled, alertBroadcastChannel, incidentBroadcastEnabled, incidentBroadcastChannel, autoAddMembersWhenAttached, autoAddMembersScope, scheduleOverridePolicy, properties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -969,6 +1098,8 @@ public class NewTeamDataAttributes {
     sb.append("    pagertreeId: ").append(toIndentedString(pagertreeId)).append("\n");
     sb.append("    cortexId: ").append(toIndentedString(cortexId)).append("\n");
     sb.append("    serviceNowCiSysId: ").append(toIndentedString(serviceNowCiSysId)).append("\n");
+    sb.append("    scimGroupId: ").append(toIndentedString(scimGroupId)).append("\n");
+    sb.append("    scimGroupExternalId: ").append(toIndentedString(scimGroupExternalId)).append("\n");
     sb.append("    userIds: ").append(toIndentedString(userIds)).append("\n");
     sb.append("    adminIds: ").append(toIndentedString(adminIds)).append("\n");
     sb.append("    alertsEmailEnabled: ").append(toIndentedString(alertsEmailEnabled)).append("\n");
@@ -981,6 +1112,7 @@ public class NewTeamDataAttributes {
     sb.append("    incidentBroadcastChannel: ").append(toIndentedString(incidentBroadcastChannel)).append("\n");
     sb.append("    autoAddMembersWhenAttached: ").append(toIndentedString(autoAddMembersWhenAttached)).append("\n");
     sb.append("    autoAddMembersScope: ").append(toIndentedString(autoAddMembersScope)).append("\n");
+    sb.append("    scheduleOverridePolicy: ").append(toIndentedString(scheduleOverridePolicy)).append("\n");
     sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -1021,6 +1153,8 @@ public class NewTeamDataAttributes {
     openapiFields.add("pagertree_id");
     openapiFields.add("cortex_id");
     openapiFields.add("service_now_ci_sys_id");
+    openapiFields.add("scim_group_id");
+    openapiFields.add("scim_group_external_id");
     openapiFields.add("user_ids");
     openapiFields.add("admin_ids");
     openapiFields.add("alerts_email_enabled");
@@ -1033,6 +1167,7 @@ public class NewTeamDataAttributes {
     openapiFields.add("incident_broadcast_channel");
     openapiFields.add("auto_add_members_when_attached");
     openapiFields.add("auto_add_members_scope");
+    openapiFields.add("schedule_override_policy");
     openapiFields.add("properties");
 
     // a set of required properties/fields (JSON key names)
@@ -1117,6 +1252,12 @@ public class NewTeamDataAttributes {
       if ((jsonObj.get("service_now_ci_sys_id") != null && !jsonObj.get("service_now_ci_sys_id").isJsonNull()) && !jsonObj.get("service_now_ci_sys_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `service_now_ci_sys_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("service_now_ci_sys_id").toString()));
       }
+      if ((jsonObj.get("scim_group_id") != null && !jsonObj.get("scim_group_id").isJsonNull()) && !jsonObj.get("scim_group_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `scim_group_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("scim_group_id").toString()));
+      }
+      if ((jsonObj.get("scim_group_external_id") != null && !jsonObj.get("scim_group_external_id").isJsonNull()) && !jsonObj.get("scim_group_external_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `scim_group_external_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("scim_group_external_id").toString()));
+      }
       // ensure the optional json data is an array if present
       if (jsonObj.get("user_ids") != null && !jsonObj.get("user_ids").isJsonNull() && !jsonObj.get("user_ids").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `user_ids` to be an array in the JSON string but got `%s`", jsonObj.get("user_ids").toString()));
@@ -1170,6 +1311,13 @@ public class NewTeamDataAttributes {
       // validate the optional field `auto_add_members_scope`
       if (jsonObj.get("auto_add_members_scope") != null && !jsonObj.get("auto_add_members_scope").isJsonNull()) {
         AutoAddMembersScopeEnum.validateJsonElement(jsonObj.get("auto_add_members_scope"));
+      }
+      if ((jsonObj.get("schedule_override_policy") != null && !jsonObj.get("schedule_override_policy").isJsonNull()) && !jsonObj.get("schedule_override_policy").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `schedule_override_policy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("schedule_override_policy").toString()));
+      }
+      // validate the optional field `schedule_override_policy`
+      if (jsonObj.get("schedule_override_policy") != null && !jsonObj.get("schedule_override_policy").isJsonNull()) {
+        ScheduleOverridePolicyEnum.validateJsonElement(jsonObj.get("schedule_override_policy"));
       }
       if (jsonObj.get("properties") != null && !jsonObj.get("properties").isJsonNull()) {
         JsonArray jsonArrayproperties = jsonObj.getAsJsonArray("properties");

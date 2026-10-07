@@ -11,6 +11,7 @@
 |**name** | **String** | The name of the alert group |  [optional] |
 |**description** | **String** | The description of the alert group |  [optional] |
 |**timeWindow** | **Integer** | The length of time an Alert Group should stay open and accept new alerts |  [optional] |
+|**ownerGroupIds** | **List&lt;UUID&gt;** | Teams that own this alert group. Admins of an owning team can manage it, and an owned alert group can only target destinations that belong to its owning teams. Only available when owning teams for alert groups are enabled for the organization. |  [optional] |
 |**targets** | [**List&lt;NewAlertGroupDataAttributesTargetsInner&gt;**](NewAlertGroupDataAttributesTargetsInner.md) |  |  [optional] |
 |**attributes** | [**List&lt;NewAlertGroupDataAttributesAttributesInner&gt;**](NewAlertGroupDataAttributesAttributesInner.md) | This field is deprecated. Please use the &#x60;conditions&#x60; field instead, &#x60;attributes&#x60; will be removed in the future. |  [optional] |
 |**groupByAlertTitle** | [**GroupByAlertTitleEnum**](#GroupByAlertTitleEnum) | [DEPRECATED] Whether the alerts should be grouped by titles. This field is deprecated. Please use the &#x60;conditions&#x60; field with advanced alert grouping instead. |  [optional] |

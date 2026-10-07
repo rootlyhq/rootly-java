@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewScheduleDataAttributesBusinessHours;
 import com.rootly.client.model.NewScheduleDataAttributesSlackChannel;
 import com.rootly.client.model.NewScheduleDataAttributesSlackUserGroup;
 import java.io.IOException;
@@ -53,7 +54,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateScheduleDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateScheduleDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -69,6 +70,11 @@ public class UpdateScheduleDataAttributes {
   @SerializedName(SERIALIZED_NAME_ALL_TIME_COVERAGE)
   @jakarta.annotation.Nullable
   private Boolean allTimeCoverage;
+
+  public static final String SERIALIZED_NAME_TIME_ZONE = "time_zone";
+  @SerializedName(SERIALIZED_NAME_TIME_ZONE)
+  @jakarta.annotation.Nullable
+  private String timeZone;
 
   public static final String SERIALIZED_NAME_SLACK_USER_GROUP = "slack_user_group";
   @SerializedName(SERIALIZED_NAME_SLACK_USER_GROUP)
@@ -192,6 +198,11 @@ public class UpdateScheduleDataAttributes {
   @jakarta.annotation.Nullable
   private String shiftReportTimeZone;
 
+  public static final String SERIALIZED_NAME_BUSINESS_HOURS = "business_hours";
+  @SerializedName(SERIALIZED_NAME_BUSINESS_HOURS)
+  @jakarta.annotation.Nullable
+  private NewScheduleDataAttributesBusinessHours businessHours;
+
   public UpdateScheduleDataAttributes() {
   }
 
@@ -249,6 +260,25 @@ public class UpdateScheduleDataAttributes {
 
   public void setAllTimeCoverage(@jakarta.annotation.Nullable Boolean allTimeCoverage) {
     this.allTimeCoverage = allTimeCoverage;
+  }
+
+
+  public UpdateScheduleDataAttributes timeZone(@jakarta.annotation.Nullable String timeZone) {
+    this.timeZone = timeZone;
+    return this;
+  }
+
+  /**
+   * IANA time zone the schedule&#39;s rotations are rendered in. Only writable for organizations configured with one timezone per schedule; otherwise it is derived from the rotations.
+   * @return timeZone
+   */
+  @jakarta.annotation.Nullable
+  public String getTimeZone() {
+    return timeZone;
+  }
+
+  public void setTimeZone(@jakarta.annotation.Nullable String timeZone) {
+    this.timeZone = timeZone;
   }
 
 
@@ -488,6 +518,25 @@ public class UpdateScheduleDataAttributes {
   }
 
 
+  public UpdateScheduleDataAttributes businessHours(@jakarta.annotation.Nullable NewScheduleDataAttributesBusinessHours businessHours) {
+    this.businessHours = businessHours;
+    return this;
+  }
+
+  /**
+   * Get businessHours
+   * @return businessHours
+   */
+  @jakarta.annotation.Nullable
+  public NewScheduleDataAttributesBusinessHours getBusinessHours() {
+    return businessHours;
+  }
+
+  public void setBusinessHours(@jakarta.annotation.Nullable NewScheduleDataAttributesBusinessHours businessHours) {
+    this.businessHours = businessHours;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -501,6 +550,7 @@ public class UpdateScheduleDataAttributes {
     return Objects.equals(this.name, updateScheduleDataAttributes.name) &&
         Objects.equals(this.description, updateScheduleDataAttributes.description) &&
         Objects.equals(this.allTimeCoverage, updateScheduleDataAttributes.allTimeCoverage) &&
+        Objects.equals(this.timeZone, updateScheduleDataAttributes.timeZone) &&
         Objects.equals(this.slackUserGroup, updateScheduleDataAttributes.slackUserGroup) &&
         Objects.equals(this.slackChannel, updateScheduleDataAttributes.slackChannel) &&
         Objects.equals(this.ownerGroupIds, updateScheduleDataAttributes.ownerGroupIds) &&
@@ -512,7 +562,8 @@ public class UpdateScheduleDataAttributes {
         Objects.equals(this.shiftReportEnabled, updateScheduleDataAttributes.shiftReportEnabled) &&
         Objects.equals(this.shiftReportDayOfWeek, updateScheduleDataAttributes.shiftReportDayOfWeek) &&
         Objects.equals(this.shiftReportTimeOfDay, updateScheduleDataAttributes.shiftReportTimeOfDay) &&
-        Objects.equals(this.shiftReportTimeZone, updateScheduleDataAttributes.shiftReportTimeZone);
+        Objects.equals(this.shiftReportTimeZone, updateScheduleDataAttributes.shiftReportTimeZone) &&
+        Objects.equals(this.businessHours, updateScheduleDataAttributes.businessHours);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -521,7 +572,7 @@ public class UpdateScheduleDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, allTimeCoverage, slackUserGroup, slackChannel, ownerGroupIds, ownerUserId, syncLinearEnabled, includeShadowsInSlackNotifications, shiftStartNotificationsEnabled, shiftUpdateNotificationsEnabled, shiftReportEnabled, shiftReportDayOfWeek, shiftReportTimeOfDay, shiftReportTimeZone);
+    return Objects.hash(name, description, allTimeCoverage, timeZone, slackUserGroup, slackChannel, ownerGroupIds, ownerUserId, syncLinearEnabled, includeShadowsInSlackNotifications, shiftStartNotificationsEnabled, shiftUpdateNotificationsEnabled, shiftReportEnabled, shiftReportDayOfWeek, shiftReportTimeOfDay, shiftReportTimeZone, businessHours);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -538,6 +589,7 @@ public class UpdateScheduleDataAttributes {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    allTimeCoverage: ").append(toIndentedString(allTimeCoverage)).append("\n");
+    sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
     sb.append("    slackUserGroup: ").append(toIndentedString(slackUserGroup)).append("\n");
     sb.append("    slackChannel: ").append(toIndentedString(slackChannel)).append("\n");
     sb.append("    ownerGroupIds: ").append(toIndentedString(ownerGroupIds)).append("\n");
@@ -550,6 +602,7 @@ public class UpdateScheduleDataAttributes {
     sb.append("    shiftReportDayOfWeek: ").append(toIndentedString(shiftReportDayOfWeek)).append("\n");
     sb.append("    shiftReportTimeOfDay: ").append(toIndentedString(shiftReportTimeOfDay)).append("\n");
     sb.append("    shiftReportTimeZone: ").append(toIndentedString(shiftReportTimeZone)).append("\n");
+    sb.append("    businessHours: ").append(toIndentedString(businessHours)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -575,6 +628,7 @@ public class UpdateScheduleDataAttributes {
     openapiFields.add("name");
     openapiFields.add("description");
     openapiFields.add("all_time_coverage");
+    openapiFields.add("time_zone");
     openapiFields.add("slack_user_group");
     openapiFields.add("slack_channel");
     openapiFields.add("owner_group_ids");
@@ -587,6 +641,7 @@ public class UpdateScheduleDataAttributes {
     openapiFields.add("shift_report_day_of_week");
     openapiFields.add("shift_report_time_of_day");
     openapiFields.add("shift_report_time_zone");
+    openapiFields.add("business_hours");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -619,6 +674,9 @@ public class UpdateScheduleDataAttributes {
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
+      if ((jsonObj.get("time_zone") != null && !jsonObj.get("time_zone").isJsonNull()) && !jsonObj.get("time_zone").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `time_zone` to be a primitive type in the JSON string but got `%s`", jsonObj.get("time_zone").toString()));
+      }
       // validate the optional field `slack_user_group`
       if (jsonObj.get("slack_user_group") != null && !jsonObj.get("slack_user_group").isJsonNull()) {
         NewScheduleDataAttributesSlackUserGroup.validateJsonElement(jsonObj.get("slack_user_group"));
@@ -643,6 +701,10 @@ public class UpdateScheduleDataAttributes {
       }
       if ((jsonObj.get("shift_report_time_zone") != null && !jsonObj.get("shift_report_time_zone").isJsonNull()) && !jsonObj.get("shift_report_time_zone").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `shift_report_time_zone` to be a primitive type in the JSON string but got `%s`", jsonObj.get("shift_report_time_zone").toString()));
+      }
+      // validate the optional field `business_hours`
+      if (jsonObj.get("business_hours") != null && !jsonObj.get("business_hours").isJsonNull()) {
+        NewScheduleDataAttributesBusinessHours.validateJsonElement(jsonObj.get("business_hours"));
       }
   }
 

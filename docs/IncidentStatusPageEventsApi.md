@@ -359,5 +359,6 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | incident_status_page_event started_at updated |  -  |
+| **422** | moving a private incident&#39;s event to a public status page is rejected |  -  |
 | **404** | resource not found |  -  |
 

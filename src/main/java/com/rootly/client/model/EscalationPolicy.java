@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.rootly.client.model.NewEscalationPolicyDataAttributesBusinessHours;
+import com.rootly.client.model.EscalationPolicyBusinessHours;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -52,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * EscalationPolicy
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class EscalationPolicy {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -93,7 +93,7 @@ public class EscalationPolicy {
   @Deprecated
   @SerializedName(SERIALIZED_NAME_BUSINESS_HOURS)
   @jakarta.annotation.Nullable
-  private NewEscalationPolicyDataAttributesBusinessHours businessHours;
+  private EscalationPolicyBusinessHours businessHours;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -258,7 +258,7 @@ public class EscalationPolicy {
 
 
   @Deprecated
-  public EscalationPolicy businessHours(@jakarta.annotation.Nullable NewEscalationPolicyDataAttributesBusinessHours businessHours) {
+  public EscalationPolicy businessHours(@jakarta.annotation.Nullable EscalationPolicyBusinessHours businessHours) {
     this.businessHours = businessHours;
     return this;
   }
@@ -270,12 +270,12 @@ public class EscalationPolicy {
    */
   @Deprecated
   @jakarta.annotation.Nullable
-  public NewEscalationPolicyDataAttributesBusinessHours getBusinessHours() {
+  public EscalationPolicyBusinessHours getBusinessHours() {
     return businessHours;
   }
 
   @Deprecated
-  public void setBusinessHours(@jakarta.annotation.Nullable NewEscalationPolicyDataAttributesBusinessHours businessHours) {
+  public void setBusinessHours(@jakarta.annotation.Nullable EscalationPolicyBusinessHours businessHours) {
     this.businessHours = businessHours;
   }
 
@@ -454,7 +454,7 @@ public class EscalationPolicy {
       }
       // validate the optional field `business_hours`
       if (jsonObj.get("business_hours") != null && !jsonObj.get("business_hours").isJsonNull()) {
-        NewEscalationPolicyDataAttributesBusinessHours.validateJsonElement(jsonObj.get("business_hours"));
+        EscalationPolicyBusinessHours.validateJsonElement(jsonObj.get("business_hours"));
       }
       if ((jsonObj.get("created_at") != null && !jsonObj.get("created_at").isJsonNull()) && !jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));

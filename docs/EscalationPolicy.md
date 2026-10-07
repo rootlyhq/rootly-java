@@ -14,7 +14,7 @@
 |**lastUpdatedByUserId** | **Integer** | User who updated the escalation policy |  [optional] |
 |**groupIds** | **List&lt;String&gt;** | Associated groups (alerting the group will trigger escalation policy) |  [optional] |
 |**serviceIds** | **List&lt;String&gt;** | Associated services (alerting the service will trigger escalation policy) |  [optional] |
-|**businessHours** | [**NewEscalationPolicyDataAttributesBusinessHours**](NewEscalationPolicyDataAttributesBusinessHours.md) |  |  [optional] |
+|**businessHours** | [**EscalationPolicyBusinessHours**](EscalationPolicyBusinessHours.md) |  |  [optional] |
 |**createdAt** | **String** | Date of creation |  [optional] |
 |**updatedAt** | **String** | Date of last update |  [optional] |
 

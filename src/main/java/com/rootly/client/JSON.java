@@ -61,6 +61,25 @@ public class JSON {
     @SuppressWarnings("unchecked")
     public static GsonBuilder createGson() {
         GsonFireBuilder fireBuilder = new GsonFireBuilder()
+                .registerTypeSelector(com.rootly.client.model.NewWorkflowDataAttributesTriggerParams.class, new TypeSelector<com.rootly.client.model.NewWorkflowDataAttributesTriggerParams>() {
+                    @Override
+                    public Class<? extends com.rootly.client.model.NewWorkflowDataAttributesTriggerParams> getClassForElement(JsonElement readElement) {
+                        Map<String, Class> classByDiscriminatorValue = new HashMap<String, Class>();
+                        classByDiscriminatorValue.put("action_item", com.rootly.client.model.ActionItemTriggerParams.class);
+                        classByDiscriminatorValue.put("alert", com.rootly.client.model.AlertTriggerParams.class);
+                        classByDiscriminatorValue.put("incident", com.rootly.client.model.IncidentTriggerParams.class);
+                        classByDiscriminatorValue.put("pulse", com.rootly.client.model.PulseTriggerParams.class);
+                        classByDiscriminatorValue.put("simple", com.rootly.client.model.SimpleTriggerParams.class);
+                        classByDiscriminatorValue.put("action_item_trigger_params", com.rootly.client.model.ActionItemTriggerParams.class);
+                        classByDiscriminatorValue.put("alert_trigger_params", com.rootly.client.model.AlertTriggerParams.class);
+                        classByDiscriminatorValue.put("incident_trigger_params", com.rootly.client.model.IncidentTriggerParams.class);
+                        classByDiscriminatorValue.put("pulse_trigger_params", com.rootly.client.model.PulseTriggerParams.class);
+                        classByDiscriminatorValue.put("simple_trigger_params", com.rootly.client.model.SimpleTriggerParams.class);
+                        classByDiscriminatorValue.put("new_workflow_data_attributes_trigger_params", com.rootly.client.model.NewWorkflowDataAttributesTriggerParams.class);
+                        return getClassByDiscriminator(classByDiscriminatorValue,
+                                getDiscriminatorValue(readElement, "trigger_type"));
+                    }
+          })
         ;
         GsonBuilder builder = fireBuilder.createGsonBuilder();
         return builder;
@@ -96,6 +115,9 @@ public class JSON {
         gsonBuilder.registerTypeAdapter(OffsetDateTime.class, offsetDateTimeTypeAdapter);
         gsonBuilder.registerTypeAdapter(LocalDate.class, localDateTypeAdapter);
         gsonBuilder.registerTypeAdapter(byte[].class, byteArrayAdapter);
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AcknowledgeAlert.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AcknowledgeAlertData.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AcknowledgeAlertDataAttributes.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.ActionItemTriggerParams.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AddActionItemTaskParams.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AddActionItemTaskParamsAssignedToUser.CustomTypeAdapterFactory());
@@ -120,6 +142,9 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.Alert.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertAlertFieldValuesInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertAlertingTargetsInner.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertConfiguration.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertConfigurationResponse.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertConfigurationResponseData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertEvent.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertEventEscalationTarget.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertEventEscalationTargetData.CustomTypeAdapterFactory());
@@ -138,23 +163,25 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertFieldResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertFieldResponseData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertGroup.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertGroupAttributesInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertGroupConditionsInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertGroupConditionsInnerValuesInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertGroupList.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertGroupResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertGroupResponseData.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertGroupTargetsInner.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertLabelsInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertList.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertResponseData.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertRetriggerRule.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertRetriggerRuleConditionsInner.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertRetriggerRuleList.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertRetriggerRuleResponse.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertRetriggerRuleResponseData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertRoute.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertRouteList.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertRouteResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertRouteResponseData.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertRouteRulesInner.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertRouteRulesInnerConditionGroupsInner.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertRouteRulesInnerConditionGroupsInnerConditionsInner.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertRouteRulesInnerDestinationsInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertRoutingRule.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertRoutingRuleCondition.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertRoutingRuleConditionGroup.CustomTypeAdapterFactory());
@@ -166,6 +193,8 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertRoutingRuleResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertRoutingRuleResponseData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertRoutingRuleTarget.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertSlackNotificationsInner.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertSource.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertTriggerParams.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertTriggerParamsAlertFieldConditionsInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertTriggerParamsAlertPayloadConditions.CustomTypeAdapterFactory());
@@ -175,10 +204,16 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertUrgencyResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertUrgencyResponseData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertsSource.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertsSourceAlertSourceFieldsAttributesInner.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertsSourceAlertSourceUrgencyRulesAttributesInner.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertsSourceAlertTemplateAttributes.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertsSourceList.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertsSourceResolutionRuleAttributes.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertsSourceResolutionRuleAttributesConditionsAttributesInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertsSourceResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertsSourceResponseData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertsSourceSourceableAttributes.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.AlertsSourceSourceableAttributesFieldMappingsAttributesInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.ApiKey.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.ApiKeyList.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.ApiKeyResponse.CustomTypeAdapterFactory());
@@ -317,6 +352,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.ChangeSlackChannelPrivacyTaskParams.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.CommunicationsGroup.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.CommunicationsGroupCommunicationExternalGroupMembersInner.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.CommunicationsGroupCommunicationGroupConditionsInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.CommunicationsGroupResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.CommunicationsGroupResponseData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.CommunicationsGroupsResponse.CustomTypeAdapterFactory());
@@ -409,6 +445,8 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.CreateShortcutStoryTaskParamsAnyOf.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.CreateShortcutStoryTaskParamsAnyOf1.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.CreateShortcutTaskTaskParams.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.CreateSlackCanvasTaskParams.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.CreateSlackCanvasTaskParamsChannel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.CreateSlackChannelTaskParams.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.CreateSubIncidentTaskParams.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.CreateTrelloCardTaskParams.CustomTypeAdapterFactory());
@@ -441,6 +479,8 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.DashboardPanelResponseData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.DashboardResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.DashboardResponseData.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.DeferralWindow.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.DeferralWindowTimeBlocksInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.DeleteAlertRoute200Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.DeleteAlertRoute200ResponseData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.DeleteAlertRoute200ResponseDataAttributes.CustomTypeAdapterFactory());
@@ -458,15 +498,19 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.EnvironmentList.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.EnvironmentResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.EnvironmentResponseData.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.EnvironmentSlackAliasesInner.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.EnvironmentSlackChannelsInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.ErrorsList.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.ErrorsListErrorsInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.EscalateAlert.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.EscalateAlertData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.EscalateAlertDataAttributes.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.EscalationPolicy.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.EscalationPolicyBusinessHours.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.EscalationPolicyLevel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.EscalationPolicyLevelList.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.EscalationPolicyLevelListDataInner.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.EscalationPolicyLevelNotificationTargetParamsInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.EscalationPolicyLevelResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.EscalationPolicyLevelResponseData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.EscalationPolicyList.CustomTypeAdapterFactory());
@@ -475,6 +519,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.EscalationPolicyPathListDataInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.EscalationPolicyPathResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.EscalationPolicyPathResponseData.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.EscalationPolicyPathTimeRestrictionsInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.EscalationPolicyResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.EscalationPolicyResponseData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.FormField.CustomTypeAdapterFactory());
@@ -616,10 +661,16 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.IpRanges.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.IpRangesResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.IpRangesResponseData.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.JSONPath.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.JsonapiIncludedResource.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.LinkIncidents.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.LinkIncidentsData.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.LinkIncidentsDataAttributes.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.Links.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.LiveCallRouter.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.LiveCallRouterEscalationPolicyTriggerParams.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.LiveCallRouterList.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.LiveCallRouterPagingTargetsInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.LiveCallRouterResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.LiveCallRouterResponseData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.MeetingRecording.CustomTypeAdapterFactory());
@@ -639,6 +690,9 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewAlert.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewAlertData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewAlertDataAttributes.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewAlertDataAttributesActor.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewAlertDataAttributesActorOneOf.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewAlertDataAttributesActorOneOf1.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewAlertDataAttributesAlertFieldValuesAttributesInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewAlertDataAttributesLabelsInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewAlertDataAttributesLabelsInnerValue.CustomTypeAdapterFactory());
@@ -655,10 +709,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewAlertGroupDataAttributesAttributesInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewAlertGroupDataAttributesConditionsInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewAlertGroupDataAttributesTargetsInner.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewAlertRetriggerRule.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewAlertRetriggerRuleData.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewAlertRetriggerRuleDataAttributes.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewAlertRetriggerRuleDataAttributesConditionsInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewAlertRoute.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewAlertRouteData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewAlertRouteDataAttributes.CustomTypeAdapterFactory());
@@ -775,16 +825,8 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewEscalationPolicyPath.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewEscalationPolicyPathData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewEscalationPolicyPathDataAttributes.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewEscalationPolicyPathDataAttributesNotificationTypeRulesInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInner.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf1.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf2.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf3.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf4.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf5.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf6.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf7.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewEscalationPolicyPathDataAttributesTimeRestrictionsInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewFormField.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewFormFieldData.CustomTypeAdapterFactory());
@@ -891,6 +933,12 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewPostMortemTemplate.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewPostMortemTemplateData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewPostMortemTemplateDataAttributes.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewProblem.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewProblemActionItem.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewProblemActionItemData.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewProblemActionItemDataAttributes.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewProblemData.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewProblemDataAttributes.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewPulse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewPulseData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewPulseDataAttributes.CustomTypeAdapterFactory());
@@ -918,6 +966,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewSchedule.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewScheduleData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewScheduleDataAttributes.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewScheduleDataAttributesBusinessHours.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewScheduleDataAttributesSlackChannel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewScheduleDataAttributesSlackUserGroup.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewScheduleRotation.CustomTypeAdapterFactory());
@@ -968,6 +1017,9 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewStatusPageComponentGroupDataAttributes.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewStatusPageData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewStatusPageDataAttributes.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewStatusPageTeam.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewStatusPageTeamData.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewStatusPageTeamDataAttributes.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewStatusPageTemplate.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewStatusPageTemplateData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewStatusPageTemplateDataAttributes.CustomTypeAdapterFactory());
@@ -1002,6 +1054,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewWorkflowCustomFieldSelectionDataAttributes.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewWorkflowData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewWorkflowDataAttributes.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewWorkflowDataAttributesFailureNotificationChannelsInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewWorkflowDataAttributesTriggerParams.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewWorkflowFormFieldCondition.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewWorkflowFormFieldConditionData.CustomTypeAdapterFactory());
@@ -1022,6 +1075,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewWorkflowTaskData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewWorkflowTaskDataAttributes.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NewWorkflowTaskDataAttributesTaskParams.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.NullableSeverityResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.OnCallPayReport.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.OnCallPayReportList.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.OnCallPayReportResponse.CustomTypeAdapterFactory());
@@ -1047,6 +1101,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.OncallRelationshipsScheduleData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.OncallRelationshipsUser.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.OncallRelationshipsUserData.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.OverriddenShift.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.OverrideShift.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.OverrideShiftList.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.OverrideShiftResponse.CustomTypeAdapterFactory());
@@ -1080,14 +1135,42 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.PostMortemTemplateResponseData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.PostMortemTriggerParams.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.PrintTaskParams.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.PrivateAgent.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.PrivateAgentAttributes.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.PrivateAgentAttributesProvidersInner.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.PrivateAgentAttributesProvidersInnerCapabilitiesInner.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.PrivateAgentAttributesProvidersInnerHealth.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.PrivateAgentAttributesProvidersInnerPolicy.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.PrivateAgentEnrollmentTokenResponse.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.PrivateAgentEnrollmentTokenResponseData.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.PrivateAgentEnrollmentTokenResponseDataAttributes.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.PrivateAgentList.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.PrivateAgentResponse.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.PrivateAgentSummary.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.PrivateAgentSummaryAttributes.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.PrivateAgentUpdate.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.PrivateAgentUpdateData.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.PrivateAgentUpdateDataAttributes.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.Problem.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.ProblemActionItem.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.ProblemActionItemList.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.ProblemActionItemResponse.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.ProblemActionItemResponseData.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.ProblemList.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.ProblemResponse.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.ProblemResponseData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.PublishIncidentTaskParams.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.Pulse.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.PulseLabelsInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.PulseList.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.PulseRefsInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.PulseResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.PulseResponseData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.PulseTriggerParams.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.Receipt.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.RedisClientTaskParams.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.RelatedIncidents.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.RemoveFromSlackChannelTaskParams.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.RemoveGoogleDocsPermissionsTaskParams.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.RemoveSubscribers.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.RemoveSubscribersData.CustomTypeAdapterFactory());
@@ -1136,16 +1219,19 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.RotateApiKeyDataAttributes.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.RunCommandHerokuTaskParams.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.Schedule.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.ScheduleBusinessHours.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.ScheduleList.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.ScheduleListDataInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.ScheduleResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.ScheduleResponseData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.ScheduleRotation.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.ScheduleRotationActiveDay.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.ScheduleRotationActiveDayActiveTimeAttributesInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.ScheduleRotationActiveDayList.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.ScheduleRotationActiveDayListDataInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.ScheduleRotationActiveDayResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.ScheduleRotationActiveDayResponseData.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.ScheduleRotationActiveTimeAttributesInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.ScheduleRotationList.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.ScheduleRotationResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.ScheduleRotationResponseData.CustomTypeAdapterFactory());
@@ -1232,6 +1318,10 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.StatusPageList.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.StatusPageResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.StatusPageResponseData.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.StatusPageTeam.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.StatusPageTeamList.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.StatusPageTeamResponse.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.StatusPageTeamResponseData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.StatusPageTemplate.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.StatusPageTemplateList.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.StatusPageTemplateListDataInner.CustomTypeAdapterFactory());
@@ -1258,6 +1348,11 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateActionItemTaskParams.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateAirtableTableRecordTaskParams.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateAlert.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateAlertConfiguration.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateAlertConfigurationData.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateAlertConfigurationDataAttributes.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateAlertConfigurationDataAttributesAlertAcknowledgment.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateAlertConfigurationDataAttributesDefaultUserNotificationSettings.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateAlertData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateAlertDataAttributes.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateAlertEvent.CustomTypeAdapterFactory());
@@ -1269,9 +1364,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateAlertGroup.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateAlertGroupData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateAlertGroupDataAttributes.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateAlertRetriggerRule.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateAlertRetriggerRuleData.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateAlertRetriggerRuleDataAttributes.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateAlertRoute.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateAlertRouteData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateAlertRouteDataAttributes.CustomTypeAdapterFactory());
@@ -1286,6 +1378,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateAlertsSource.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateAlertsSourceData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateAlertsSourceDataAttributes.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateAlertsSourceDataAttributesAlertSourceFieldsAttributesInner.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateApiKey.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateApiKeyData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateApiKeyDataAttributes.CustomTypeAdapterFactory());
@@ -1500,6 +1593,12 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdatePostMortemTemplate.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdatePostMortemTemplateData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdatePostMortemTemplateDataAttributes.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateProblem.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateProblemActionItem.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateProblemActionItemData.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateProblemActionItemDataAttributes.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateProblemData.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateProblemDataAttributes.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdatePulse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdatePulseData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdatePulseDataAttributes.CustomTypeAdapterFactory());
@@ -1550,6 +1649,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateSla.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateSlaData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateSlaDataAttributes.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateSlackCanvasTaskParams.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateSlackChannelTopicTaskParams.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateStatusPage.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateStatusPageAnnouncement.CustomTypeAdapterFactory());
@@ -1563,6 +1663,9 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateStatusPageComponentGroupDataAttributes.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateStatusPageData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateStatusPageDataAttributes.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateStatusPageTeam.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateStatusPageTeamData.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateStatusPageTeamDataAttributes.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateStatusPageTemplate.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateStatusPageTemplateData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.UpdateStatusPageTemplateDataAttributes.CustomTypeAdapterFactory());
@@ -1634,6 +1737,8 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.VerifiedDomainResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.VerifiedDomainResponseData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.VerifyPhoneNumberRequest.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.VerifyUserPhoneNumber200Response.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.VerifyUserPhoneNumber429Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.WebhooksDelivery.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.WebhooksDeliveryList.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.WebhooksDeliveryResponse.CustomTypeAdapterFactory());
@@ -1670,6 +1775,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.WorkflowTaskList.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.WorkflowTaskResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.WorkflowTaskResponseData.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.rootly.client.model.WorkingHours.CustomTypeAdapterFactory());
         gson = gsonBuilder.create();
     }
 

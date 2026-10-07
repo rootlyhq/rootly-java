@@ -100,7 +100,8 @@ public class IncidentsApiTest {
     @Test
     public void createIncidentTest() throws ApiException {
         NewIncident newIncident = null;
-        IncidentResponse response = api.createIncident(newIncident);
+        String idempotencyKey = null;
+        IncidentResponse response = api.createIncident(newIncident, idempotencyKey);
         // TODO: test validations
     }
 

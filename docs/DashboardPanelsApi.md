@@ -80,6 +80,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | dashboard panel created |  -  |
+| **422** | rejects a group_by on a field that cannot be grouped |  -  |
 | **401** | responds with unauthorized for invalid token |  -  |
 
 <a id="deleteDashboardPanel"></a>

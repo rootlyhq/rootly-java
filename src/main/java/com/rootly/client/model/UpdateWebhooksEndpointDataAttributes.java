@@ -52,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateWebhooksEndpointDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateWebhooksEndpointDataAttributes {
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @Deprecated
@@ -121,6 +121,8 @@ public class UpdateWebhooksEndpointDataAttributes {
     PULSE_CREATED("pulse.created"),
     
     SHIFT_STARTED("shift.started"),
+    
+    SHIFT_ENDED("shift.ended"),
     
     GENIUS_WORKFLOW_RUN_QUEUED("genius_workflow_run.queued"),
     

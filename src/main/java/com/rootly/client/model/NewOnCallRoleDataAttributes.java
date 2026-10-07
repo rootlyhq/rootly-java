@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * NewOnCallRoleDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewOnCallRoleDataAttributes {
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @Deprecated
@@ -1153,6 +1153,65 @@ public class NewOnCallRoleDataAttributes {
   private List<LiveCallRoutingPermissionsEnum> liveCallRoutingPermissions = new ArrayList<>();
 
   /**
+   * Gets or Sets membersPermissions
+   */
+  @JsonAdapter(MembersPermissionsEnum.Adapter.class)
+  public enum MembersPermissionsEnum {
+    READ("read"),
+    
+    UPDATE("update"),
+    
+    DELETE("delete");
+
+    private String value;
+
+    MembersPermissionsEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static MembersPermissionsEnum fromValue(String value) {
+      for (MembersPermissionsEnum b : MembersPermissionsEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<MembersPermissionsEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final MembersPermissionsEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public MembersPermissionsEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return MembersPermissionsEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      MembersPermissionsEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_MEMBERS_PERMISSIONS = "members_permissions";
+  @SerializedName(SERIALIZED_NAME_MEMBERS_PERMISSIONS)
+  @jakarta.annotation.Nullable
+  private List<MembersPermissionsEnum> membersPermissions = new ArrayList<>();
+
+  /**
    * Gets or Sets scheduleOverridePermissions
    */
   @JsonAdapter(ScheduleOverridePermissionsEnum.Adapter.class)
@@ -2106,6 +2165,33 @@ public class NewOnCallRoleDataAttributes {
   }
 
 
+  public NewOnCallRoleDataAttributes membersPermissions(@jakarta.annotation.Nullable List<MembersPermissionsEnum> membersPermissions) {
+    this.membersPermissions = membersPermissions;
+    return this;
+  }
+
+  public NewOnCallRoleDataAttributes addMembersPermissionsItem(MembersPermissionsEnum membersPermissionsItem) {
+    if (this.membersPermissions == null) {
+      this.membersPermissions = new ArrayList<>();
+    }
+    this.membersPermissions.add(membersPermissionsItem);
+    return this;
+  }
+
+  /**
+   * Get membersPermissions
+   * @return membersPermissions
+   */
+  @jakarta.annotation.Nullable
+  public List<MembersPermissionsEnum> getMembersPermissions() {
+    return membersPermissions;
+  }
+
+  public void setMembersPermissions(@jakarta.annotation.Nullable List<MembersPermissionsEnum> membersPermissions) {
+    this.membersPermissions = membersPermissions;
+  }
+
+
   public NewOnCallRoleDataAttributes scheduleOverridePermissions(@jakarta.annotation.Nullable List<ScheduleOverridePermissionsEnum> scheduleOverridePermissions) {
     this.scheduleOverridePermissions = scheduleOverridePermissions;
     return this;
@@ -2325,6 +2411,7 @@ public class NewOnCallRoleDataAttributes {
         Objects.equals(this.integrationsPermissions, newOnCallRoleDataAttributes.integrationsPermissions) &&
         Objects.equals(this.invitationsPermissions, newOnCallRoleDataAttributes.invitationsPermissions) &&
         Objects.equals(this.liveCallRoutingPermissions, newOnCallRoleDataAttributes.liveCallRoutingPermissions) &&
+        Objects.equals(this.membersPermissions, newOnCallRoleDataAttributes.membersPermissions) &&
         Objects.equals(this.scheduleOverridePermissions, newOnCallRoleDataAttributes.scheduleOverridePermissions) &&
         Objects.equals(this.schedulesPermissions, newOnCallRoleDataAttributes.schedulesPermissions) &&
         Objects.equals(this.servicesPermissions, newOnCallRoleDataAttributes.servicesPermissions) &&
@@ -2340,7 +2427,7 @@ public class NewOnCallRoleDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(slug, name, systemRole, alertFieldsPermissions, alertGroupsPermissions, alertRoutingRulesPermissions, onCallReadinessReportPermissions, onCallRolesPermissions, alertSourcesPermissions, alertUrgencyPermissions, alertsPermissions, apiKeysPermissions, auditsPermissions, contactsPermissions, escalationPoliciesPermissions, groupsPermissions, heartbeatsPermissions, integrationsPermissions, invitationsPermissions, liveCallRoutingPermissions, scheduleOverridePermissions, schedulesPermissions, servicesPermissions, functionalitiesPermissions, webhooksPermissions, workflowsPermissions, catalogsPermissions);
+    return Objects.hash(slug, name, systemRole, alertFieldsPermissions, alertGroupsPermissions, alertRoutingRulesPermissions, onCallReadinessReportPermissions, onCallRolesPermissions, alertSourcesPermissions, alertUrgencyPermissions, alertsPermissions, apiKeysPermissions, auditsPermissions, contactsPermissions, escalationPoliciesPermissions, groupsPermissions, heartbeatsPermissions, integrationsPermissions, invitationsPermissions, liveCallRoutingPermissions, membersPermissions, scheduleOverridePermissions, schedulesPermissions, servicesPermissions, functionalitiesPermissions, webhooksPermissions, workflowsPermissions, catalogsPermissions);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -2374,6 +2461,7 @@ public class NewOnCallRoleDataAttributes {
     sb.append("    integrationsPermissions: ").append(toIndentedString(integrationsPermissions)).append("\n");
     sb.append("    invitationsPermissions: ").append(toIndentedString(invitationsPermissions)).append("\n");
     sb.append("    liveCallRoutingPermissions: ").append(toIndentedString(liveCallRoutingPermissions)).append("\n");
+    sb.append("    membersPermissions: ").append(toIndentedString(membersPermissions)).append("\n");
     sb.append("    scheduleOverridePermissions: ").append(toIndentedString(scheduleOverridePermissions)).append("\n");
     sb.append("    schedulesPermissions: ").append(toIndentedString(schedulesPermissions)).append("\n");
     sb.append("    servicesPermissions: ").append(toIndentedString(servicesPermissions)).append("\n");
@@ -2423,6 +2511,7 @@ public class NewOnCallRoleDataAttributes {
     openapiFields.add("integrations_permissions");
     openapiFields.add("invitations_permissions");
     openapiFields.add("live_call_routing_permissions");
+    openapiFields.add("members_permissions");
     openapiFields.add("schedule_override_permissions");
     openapiFields.add("schedules_permissions");
     openapiFields.add("services_permissions");
@@ -2541,6 +2630,10 @@ public class NewOnCallRoleDataAttributes {
       // ensure the optional json data is an array if present
       if (jsonObj.get("live_call_routing_permissions") != null && !jsonObj.get("live_call_routing_permissions").isJsonNull() && !jsonObj.get("live_call_routing_permissions").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `live_call_routing_permissions` to be an array in the JSON string but got `%s`", jsonObj.get("live_call_routing_permissions").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("members_permissions") != null && !jsonObj.get("members_permissions").isJsonNull() && !jsonObj.get("members_permissions").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `members_permissions` to be an array in the JSON string but got `%s`", jsonObj.get("members_permissions").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("schedule_override_permissions") != null && !jsonObj.get("schedule_override_permissions").isJsonNull() && !jsonObj.get("schedule_override_permissions").isJsonArray()) {

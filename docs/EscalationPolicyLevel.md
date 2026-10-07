@@ -19,7 +19,7 @@
 |**position** | **Integer** | Position of the escalation policy level |  |
 |**createdAt** | **String** | Date of creation |  [optional] |
 |**updatedAt** | **String** | Date of last update |  [optional] |
-|**notificationTargetParams** | [**List&lt;UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsInner&gt;**](UpdateEscalationPolicyLevelDataAttributesNotificationTargetParamsInner.md) | Escalation level&#39;s notification targets |  |
+|**notificationTargetParams** | [**List&lt;EscalationPolicyLevelNotificationTargetParamsInner&gt;**](EscalationPolicyLevelNotificationTargetParamsInner.md) | Escalation level&#39;s notification targets |  |
 
 
 

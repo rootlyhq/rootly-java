@@ -27,8 +27,8 @@
 |**ownerGroupIds** | **List&lt;String&gt;** | Owner Teams associated with this functionality |  [optional] |
 |**ownerUserIds** | **List&lt;Integer&gt;** | Owner Users associated with this functionality |  [optional] |
 |**escalationPolicyId** | **String** | The escalation policy id of the functionality |  [optional] |
-|**slackChannels** | [**List&lt;NewEnvironmentDataAttributesSlackChannelsInner&gt;**](NewEnvironmentDataAttributesSlackChannelsInner.md) | Slack Channels associated with this functionality |  [optional] |
-|**slackAliases** | [**List&lt;NewEnvironmentDataAttributesSlackAliasesInner&gt;**](NewEnvironmentDataAttributesSlackAliasesInner.md) | Slack Aliases associated with this functionality |  [optional] |
+|**slackChannels** | [**List&lt;EnvironmentSlackChannelsInner&gt;**](EnvironmentSlackChannelsInner.md) | Slack Channels associated with this functionality |  [optional] |
+|**slackAliases** | [**List&lt;EnvironmentSlackAliasesInner&gt;**](EnvironmentSlackAliasesInner.md) | Slack Aliases associated with this functionality |  [optional] |
 |**properties** | [**List&lt;NewCauseDataAttributesPropertiesInner&gt;**](NewCauseDataAttributesPropertiesInner.md) | Array of property values for this functionality. |  [optional] |
 |**createdAt** | **String** | Date of creation |  |
 |**updatedAt** | **String** | Date of last update |  |

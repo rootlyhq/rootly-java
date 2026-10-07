@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -54,7 +55,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateAlertGroupDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateAlertGroupDataAttributes {
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @Deprecated
@@ -76,6 +77,11 @@ public class UpdateAlertGroupDataAttributes {
   @SerializedName(SERIALIZED_NAME_TIME_WINDOW)
   @jakarta.annotation.Nullable
   private Integer timeWindow;
+
+  public static final String SERIALIZED_NAME_OWNER_GROUP_IDS = "owner_group_ids";
+  @SerializedName(SERIALIZED_NAME_OWNER_GROUP_IDS)
+  @jakarta.annotation.Nullable
+  private List<UUID> ownerGroupIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TARGETS = "targets";
   @SerializedName(SERIALIZED_NAME_TARGETS)
@@ -349,6 +355,33 @@ public class UpdateAlertGroupDataAttributes {
   }
 
 
+  public UpdateAlertGroupDataAttributes ownerGroupIds(@jakarta.annotation.Nullable List<UUID> ownerGroupIds) {
+    this.ownerGroupIds = ownerGroupIds;
+    return this;
+  }
+
+  public UpdateAlertGroupDataAttributes addOwnerGroupIdsItem(UUID ownerGroupIdsItem) {
+    if (this.ownerGroupIds == null) {
+      this.ownerGroupIds = new ArrayList<>();
+    }
+    this.ownerGroupIds.add(ownerGroupIdsItem);
+    return this;
+  }
+
+  /**
+   * Teams that own this alert group. Admins of an owning team can manage it, and an owned alert group can only target destinations that belong to its owning teams. Only available when owning teams for alert groups are enabled for the organization.
+   * @return ownerGroupIds
+   */
+  @jakarta.annotation.Nullable
+  public List<UUID> getOwnerGroupIds() {
+    return ownerGroupIds;
+  }
+
+  public void setOwnerGroupIds(@jakarta.annotation.Nullable List<UUID> ownerGroupIds) {
+    this.ownerGroupIds = ownerGroupIds;
+  }
+
+
   public UpdateAlertGroupDataAttributes targets(@jakarta.annotation.Nullable List<NewAlertGroupDataAttributesTargetsInner> targets) {
     this.targets = targets;
     return this;
@@ -513,6 +546,7 @@ public class UpdateAlertGroupDataAttributes {
         Objects.equals(this.name, updateAlertGroupDataAttributes.name) &&
         Objects.equals(this.description, updateAlertGroupDataAttributes.description) &&
         Objects.equals(this.timeWindow, updateAlertGroupDataAttributes.timeWindow) &&
+        Objects.equals(this.ownerGroupIds, updateAlertGroupDataAttributes.ownerGroupIds) &&
         Objects.equals(this.targets, updateAlertGroupDataAttributes.targets) &&
         Objects.equals(this.attributes, updateAlertGroupDataAttributes.attributes) &&
         Objects.equals(this.groupByAlertTitle, updateAlertGroupDataAttributes.groupByAlertTitle) &&
@@ -527,7 +561,7 @@ public class UpdateAlertGroupDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(slug, name, description, timeWindow, targets, attributes, groupByAlertTitle, groupByAlertUrgency, conditionType, conditions);
+    return Objects.hash(slug, name, description, timeWindow, ownerGroupIds, targets, attributes, groupByAlertTitle, groupByAlertUrgency, conditionType, conditions);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -545,6 +579,7 @@ public class UpdateAlertGroupDataAttributes {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    timeWindow: ").append(toIndentedString(timeWindow)).append("\n");
+    sb.append("    ownerGroupIds: ").append(toIndentedString(ownerGroupIds)).append("\n");
     sb.append("    targets: ").append(toIndentedString(targets)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    groupByAlertTitle: ").append(toIndentedString(groupByAlertTitle)).append("\n");
@@ -577,6 +612,7 @@ public class UpdateAlertGroupDataAttributes {
     openapiFields.add("name");
     openapiFields.add("description");
     openapiFields.add("time_window");
+    openapiFields.add("owner_group_ids");
     openapiFields.add("targets");
     openapiFields.add("attributes");
     openapiFields.add("group_by_alert_title");
@@ -617,6 +653,10 @@ public class UpdateAlertGroupDataAttributes {
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("owner_group_ids") != null && !jsonObj.get("owner_group_ids").isJsonNull() && !jsonObj.get("owner_group_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `owner_group_ids` to be an array in the JSON string but got `%s`", jsonObj.get("owner_group_ids").toString()));
       }
       if (jsonObj.get("targets") != null && !jsonObj.get("targets").isJsonNull()) {
         JsonArray jsonArraytargets = jsonObj.getAsJsonArray("targets");

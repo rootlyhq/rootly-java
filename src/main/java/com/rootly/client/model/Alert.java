@@ -21,10 +21,11 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.rootly.client.model.AlertAlertFieldValuesInner;
 import com.rootly.client.model.AlertAlertingTargetsInner;
+import com.rootly.client.model.AlertLabelsInner;
+import com.rootly.client.model.AlertSlackNotificationsInner;
 import com.rootly.client.model.AlertUrgency;
 import com.rootly.client.model.Environment;
 import com.rootly.client.model.Functionality;
-import com.rootly.client.model.NewAlertDataAttributesLabelsInner;
 import com.rootly.client.model.Service;
 import com.rootly.client.model.Team;
 import com.rootly.client.model.User;
@@ -63,7 +64,7 @@ import com.rootly.client.JSON;
 /**
  * Alert
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Alert {
   public static final String SERIALIZED_NAME_SHORT_ID = "short_id";
   @SerializedName(SERIALIZED_NAME_SHORT_ID)
@@ -278,7 +279,7 @@ public class Alert {
   public static final String SERIALIZED_NAME_LABELS = "labels";
   @SerializedName(SERIALIZED_NAME_LABELS)
   @jakarta.annotation.Nullable
-  private List<NewAlertDataAttributesLabelsInner> labels = new ArrayList<>();
+  private List<AlertLabelsInner> labels = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
@@ -378,6 +379,11 @@ public class Alert {
   @jakarta.annotation.Nullable
   private List<AlertAlertingTargetsInner> alertingTargets;
 
+  public static final String SERIALIZED_NAME_SLACK_NOTIFICATIONS = "slack_notifications";
+  @SerializedName(SERIALIZED_NAME_SLACK_NOTIFICATIONS)
+  @jakarta.annotation.Nullable
+  private List<AlertSlackNotificationsInner> slackNotifications;
+
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
   @jakarta.annotation.Nullable
@@ -392,6 +398,16 @@ public class Alert {
   @SerializedName(SERIALIZED_NAME_ENDED_AT)
   @jakarta.annotation.Nullable
   private OffsetDateTime endedAt;
+
+  public static final String SERIALIZED_NAME_ACKNOWLEDGED_AT = "acknowledged_at";
+  @SerializedName(SERIALIZED_NAME_ACKNOWLEDGED_AT)
+  @jakarta.annotation.Nullable
+  private OffsetDateTime acknowledgedAt;
+
+  public static final String SERIALIZED_NAME_RESOLVED_AT = "resolved_at";
+  @SerializedName(SERIALIZED_NAME_RESOLVED_AT)
+  @jakarta.annotation.Nullable
+  private OffsetDateTime resolvedAt;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -850,12 +866,12 @@ public class Alert {
   }
 
 
-  public Alert labels(@jakarta.annotation.Nullable List<NewAlertDataAttributesLabelsInner> labels) {
+  public Alert labels(@jakarta.annotation.Nullable List<AlertLabelsInner> labels) {
     this.labels = labels;
     return this;
   }
 
-  public Alert addLabelsItem(NewAlertDataAttributesLabelsInner labelsItem) {
+  public Alert addLabelsItem(AlertLabelsInner labelsItem) {
     if (this.labels == null) {
       this.labels = new ArrayList<>();
     }
@@ -868,11 +884,11 @@ public class Alert {
    * @return labels
    */
   @jakarta.annotation.Nullable
-  public List<NewAlertDataAttributesLabelsInner> getLabels() {
+  public List<AlertLabelsInner> getLabels() {
     return labels;
   }
 
-  public void setLabels(@jakarta.annotation.Nullable List<NewAlertDataAttributesLabelsInner> labels) {
+  public void setLabels(@jakarta.annotation.Nullable List<AlertLabelsInner> labels) {
     this.labels = labels;
   }
 
@@ -1061,6 +1077,33 @@ public class Alert {
   }
 
 
+  public Alert slackNotifications(@jakarta.annotation.Nullable List<AlertSlackNotificationsInner> slackNotifications) {
+    this.slackNotifications = slackNotifications;
+    return this;
+  }
+
+  public Alert addSlackNotificationsItem(AlertSlackNotificationsInner slackNotificationsItem) {
+    if (this.slackNotifications == null) {
+      this.slackNotifications = new ArrayList<>();
+    }
+    this.slackNotifications.add(slackNotificationsItem);
+    return this;
+  }
+
+  /**
+   * Slack channel and root thread ts of each announcement Rootly posted for the alert. Only present when the alert-slack-message-references feature flag is enabled for the team.
+   * @return slackNotifications
+   */
+  @jakarta.annotation.Nullable
+  public List<AlertSlackNotificationsInner> getSlackNotifications() {
+    return slackNotifications;
+  }
+
+  public void setSlackNotifications(@jakarta.annotation.Nullable List<AlertSlackNotificationsInner> slackNotifications) {
+    this.slackNotifications = slackNotifications;
+  }
+
+
   public Alert url(@jakarta.annotation.Nullable URI url) {
     this.url = url;
     return this;
@@ -1115,6 +1158,44 @@ public class Alert {
 
   public void setEndedAt(@jakarta.annotation.Nullable OffsetDateTime endedAt) {
     this.endedAt = endedAt;
+  }
+
+
+  public Alert acknowledgedAt(@jakarta.annotation.Nullable OffsetDateTime acknowledgedAt) {
+    this.acknowledgedAt = acknowledgedAt;
+    return this;
+  }
+
+  /**
+   * When the alert was first acknowledged. Null if it has never been acknowledged. An alert that is retriggered and acknowledged again keeps its original acknowledgement timestamp.
+   * @return acknowledgedAt
+   */
+  @jakarta.annotation.Nullable
+  public OffsetDateTime getAcknowledgedAt() {
+    return acknowledgedAt;
+  }
+
+  public void setAcknowledgedAt(@jakarta.annotation.Nullable OffsetDateTime acknowledgedAt) {
+    this.acknowledgedAt = acknowledgedAt;
+  }
+
+
+  public Alert resolvedAt(@jakarta.annotation.Nullable OffsetDateTime resolvedAt) {
+    this.resolvedAt = resolvedAt;
+    return this;
+  }
+
+  /**
+   * When the alert was first resolved. Null if it has never been resolved. Like &#x60;acknowledged_at&#x60;, an alert that is retriggered and resolved again keeps its original resolution timestamp; use &#x60;ended_at&#x60; for the current resolution state.
+   * @return resolvedAt
+   */
+  @jakarta.annotation.Nullable
+  public OffsetDateTime getResolvedAt() {
+    return resolvedAt;
+  }
+
+  public void setResolvedAt(@jakarta.annotation.Nullable OffsetDateTime resolvedAt) {
+    this.resolvedAt = resolvedAt;
   }
 
 
@@ -1195,9 +1276,12 @@ public class Alert {
         Objects.equals(this.responders, alert.responders) &&
         Objects.equals(this.notifiedUsers, alert.notifiedUsers) &&
         Objects.equals(this.alertingTargets, alert.alertingTargets) &&
+        Objects.equals(this.slackNotifications, alert.slackNotifications) &&
         Objects.equals(this.url, alert.url) &&
         Objects.equals(this.startedAt, alert.startedAt) &&
         Objects.equals(this.endedAt, alert.endedAt) &&
+        Objects.equals(this.acknowledgedAt, alert.acknowledgedAt) &&
+        Objects.equals(this.resolvedAt, alert.resolvedAt) &&
         Objects.equals(this.createdAt, alert.createdAt) &&
         Objects.equals(this.updatedAt, alert.updatedAt);
   }
@@ -1208,7 +1292,7 @@ public class Alert {
 
   @Override
   public int hashCode() {
-    return Objects.hash(shortId, noise, source, status, summary, description, services, groups, functionalities, environments, serviceIds, groupIds, functionalityIds, environmentIds, externalId, externalUrl, alertUrgencyId, alertUrgency, groupLeaderAlertId, isGroupLeaderAlert, labels, data, notificationTargetType, notificationTargetId, deduplicationKey, alertFieldValues, responders, notifiedUsers, alertingTargets, url, startedAt, endedAt, createdAt, updatedAt);
+    return Objects.hash(shortId, noise, source, status, summary, description, services, groups, functionalities, environments, serviceIds, groupIds, functionalityIds, environmentIds, externalId, externalUrl, alertUrgencyId, alertUrgency, groupLeaderAlertId, isGroupLeaderAlert, labels, data, notificationTargetType, notificationTargetId, deduplicationKey, alertFieldValues, responders, notifiedUsers, alertingTargets, slackNotifications, url, startedAt, endedAt, acknowledgedAt, resolvedAt, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1251,9 +1335,12 @@ public class Alert {
     sb.append("    responders: ").append(toIndentedString(responders)).append("\n");
     sb.append("    notifiedUsers: ").append(toIndentedString(notifiedUsers)).append("\n");
     sb.append("    alertingTargets: ").append(toIndentedString(alertingTargets)).append("\n");
+    sb.append("    slackNotifications: ").append(toIndentedString(slackNotifications)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    startedAt: ").append(toIndentedString(startedAt)).append("\n");
     sb.append("    endedAt: ").append(toIndentedString(endedAt)).append("\n");
+    sb.append("    acknowledgedAt: ").append(toIndentedString(acknowledgedAt)).append("\n");
+    sb.append("    resolvedAt: ").append(toIndentedString(resolvedAt)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -1307,9 +1394,12 @@ public class Alert {
     openapiFields.add("responders");
     openapiFields.add("notified_users");
     openapiFields.add("alerting_targets");
+    openapiFields.add("slack_notifications");
     openapiFields.add("url");
     openapiFields.add("started_at");
     openapiFields.add("ended_at");
+    openapiFields.add("acknowledged_at");
+    openapiFields.add("resolved_at");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
 
@@ -1474,7 +1564,7 @@ public class Alert {
 
           // validate the optional field `labels` (array)
           for (int i = 0; i < jsonArraylabels.size(); i++) {
-            NewAlertDataAttributesLabelsInner.validateJsonElement(jsonArraylabels.get(i));
+            AlertLabelsInner.validateJsonElement(jsonArraylabels.get(i));
           };
         }
       }
@@ -1544,6 +1634,20 @@ public class Alert {
           // validate the optional field `alerting_targets` (array)
           for (int i = 0; i < jsonArrayalertingTargets.size(); i++) {
             AlertAlertingTargetsInner.validateJsonElement(jsonArrayalertingTargets.get(i));
+          };
+        }
+      }
+      if (jsonObj.get("slack_notifications") != null && !jsonObj.get("slack_notifications").isJsonNull()) {
+        JsonArray jsonArrayslackNotifications = jsonObj.getAsJsonArray("slack_notifications");
+        if (jsonArrayslackNotifications != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("slack_notifications").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `slack_notifications` to be an array in the JSON string but got `%s`", jsonObj.get("slack_notifications").toString()));
+          }
+
+          // validate the optional field `slack_notifications` (array)
+          for (int i = 0; i < jsonArrayslackNotifications.size(); i++) {
+            AlertSlackNotificationsInner.validateJsonElement(jsonArrayslackNotifications.get(i));
           };
         }
       }

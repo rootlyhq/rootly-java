@@ -18,15 +18,15 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf;
-import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf1;
-import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf2;
-import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf3;
-import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf4;
-import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf5;
-import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner;
-import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf6;
-import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInnerOneOf7;
+import com.rootly.client.model.AlertField;
+import com.rootly.client.model.AlertSource;
+import com.rootly.client.model.AlertUrgency;
+import com.rootly.client.model.DeferralWindow;
+import com.rootly.client.model.DeferralWindowTimeBlocksInner;
+import com.rootly.client.model.JSONPath;
+import com.rootly.client.model.RelatedIncidents;
+import com.rootly.client.model.Service;
+import com.rootly.client.model.WorkingHours;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -66,6 +66,14 @@ public class UpdateEscalationPolicyPathDataAttributesRulesInnerTest {
     }
 
     /**
+     * Test the property 'operator'
+     */
+    @Test
+    public void operatorTest() {
+        // TODO: test operator
+    }
+
+    /**
      * Test the property 'withinWorkingHour'
      */
     @Test
@@ -79,14 +87,6 @@ public class UpdateEscalationPolicyPathDataAttributesRulesInnerTest {
     @Test
     public void jsonPathTest() {
         // TODO: test jsonPath
-    }
-
-    /**
-     * Test the property 'operator'
-     */
-    @Test
-    public void operatorTest() {
-        // TODO: test operator
     }
 
     /**

@@ -57,6 +57,22 @@ public class NewPlaybookDataAttributesTest {
     }
 
     /**
+     * Test the property 'kind'
+     */
+    @Test
+    public void kindTest() {
+        // TODO: test kind
+    }
+
+    /**
+     * Test the property 'content'
+     */
+    @Test
+    public void contentTest() {
+        // TODO: test content
+    }
+
+    /**
      * Test the property 'externalUrl'
      */
     @Test
@@ -110,6 +126,14 @@ public class NewPlaybookDataAttributesTest {
     @Test
     public void incidentTypeIdsTest() {
         // TODO: test incidentTypeIds
+    }
+
+    /**
+     * Test the property 'causeIds'
+     */
+    @Test
+    public void causeIdsTest() {
+        // TODO: test causeIds
     }
 
 }

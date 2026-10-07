@@ -20,10 +20,11 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.rootly.client.model.AlertAlertFieldValuesInner;
 import com.rootly.client.model.AlertAlertingTargetsInner;
+import com.rootly.client.model.AlertLabelsInner;
+import com.rootly.client.model.AlertSlackNotificationsInner;
 import com.rootly.client.model.AlertUrgency;
 import com.rootly.client.model.Environment;
 import com.rootly.client.model.Functionality;
-import com.rootly.client.model.NewAlertDataAttributesLabelsInner;
 import com.rootly.client.model.Service;
 import com.rootly.client.model.Team;
 import com.rootly.client.model.User;
@@ -285,6 +286,14 @@ public class AlertTest {
     }
 
     /**
+     * Test the property 'slackNotifications'
+     */
+    @Test
+    public void slackNotificationsTest() {
+        // TODO: test slackNotifications
+    }
+
+    /**
      * Test the property 'url'
      */
     @Test
@@ -306,6 +315,22 @@ public class AlertTest {
     @Test
     public void endedAtTest() {
         // TODO: test endedAt
+    }
+
+    /**
+     * Test the property 'acknowledgedAt'
+     */
+    @Test
+    public void acknowledgedAtTest() {
+        // TODO: test acknowledgedAt
+    }
+
+    /**
+     * Test the property 'resolvedAt'
+     */
+    @Test
+    public void resolvedAtTest() {
+        // TODO: test resolvedAt
     }
 
     /**

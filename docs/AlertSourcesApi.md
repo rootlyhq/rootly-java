@@ -366,6 +366,7 @@ public class Example {
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | preserves existing alert source field ids |  -  |
 | **404** | resource not found |  -  |
+| **422** | built-in alert fields cannot be unbound |  -  |
+| **200** | preserves existing alert source field ids |  -  |
 

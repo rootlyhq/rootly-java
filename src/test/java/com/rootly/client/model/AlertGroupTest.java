@@ -18,13 +18,14 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.AlertGroupAttributesInner;
 import com.rootly.client.model.AlertGroupConditionsInner;
-import com.rootly.client.model.NewAlertGroupDataAttributesAttributesInner;
-import com.rootly.client.model.NewAlertGroupDataAttributesTargetsInner;
+import com.rootly.client.model.AlertGroupTargetsInner;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -96,6 +97,14 @@ public class AlertGroupTest {
     @Test
     public void groupByAlertUrgencyTest() {
         // TODO: test groupByAlertUrgency
+    }
+
+    /**
+     * Test the property 'ownerGroupIds'
+     */
+    @Test
+    public void ownerGroupIdsTest() {
+        // TODO: test ownerGroupIds
     }
 
     /**

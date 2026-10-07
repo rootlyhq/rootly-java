@@ -19,8 +19,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.rootly.client.model.NewLiveCallRouterDataAttributesPagingTargetsInner;
-import com.rootly.client.model.UpdateLiveCallRouterDataAttributesEscalationPolicyTriggerParams;
+import com.rootly.client.model.LiveCallRouterEscalationPolicyTriggerParams;
+import com.rootly.client.model.LiveCallRouterPagingTargetsInner;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -53,7 +53,7 @@ import com.rootly.client.JSON;
 /**
  * LiveCallRouter
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class LiveCallRouter {
   /**
    * The kind of the live_call_router
@@ -387,12 +387,12 @@ public class LiveCallRouter {
   public static final String SERIALIZED_NAME_PAGING_TARGETS = "paging_targets";
   @SerializedName(SERIALIZED_NAME_PAGING_TARGETS)
   @jakarta.annotation.Nullable
-  private List<NewLiveCallRouterDataAttributesPagingTargetsInner> pagingTargets = new ArrayList<>();
+  private List<LiveCallRouterPagingTargetsInner> pagingTargets = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ESCALATION_POLICY_TRIGGER_PARAMS = "escalation_policy_trigger_params";
   @SerializedName(SERIALIZED_NAME_ESCALATION_POLICY_TRIGGER_PARAMS)
   @jakarta.annotation.Nullable
-  private UpdateLiveCallRouterDataAttributesEscalationPolicyTriggerParams escalationPolicyTriggerParams;
+  private LiveCallRouterEscalationPolicyTriggerParams escalationPolicyTriggerParams;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -768,12 +768,12 @@ public class LiveCallRouter {
   }
 
 
-  public LiveCallRouter pagingTargets(@jakarta.annotation.Nullable List<NewLiveCallRouterDataAttributesPagingTargetsInner> pagingTargets) {
+  public LiveCallRouter pagingTargets(@jakarta.annotation.Nullable List<LiveCallRouterPagingTargetsInner> pagingTargets) {
     this.pagingTargets = pagingTargets;
     return this;
   }
 
-  public LiveCallRouter addPagingTargetsItem(NewLiveCallRouterDataAttributesPagingTargetsInner pagingTargetsItem) {
+  public LiveCallRouter addPagingTargetsItem(LiveCallRouterPagingTargetsInner pagingTargetsItem) {
     if (this.pagingTargets == null) {
       this.pagingTargets = new ArrayList<>();
     }
@@ -786,16 +786,16 @@ public class LiveCallRouter {
    * @return pagingTargets
    */
   @jakarta.annotation.Nullable
-  public List<NewLiveCallRouterDataAttributesPagingTargetsInner> getPagingTargets() {
+  public List<LiveCallRouterPagingTargetsInner> getPagingTargets() {
     return pagingTargets;
   }
 
-  public void setPagingTargets(@jakarta.annotation.Nullable List<NewLiveCallRouterDataAttributesPagingTargetsInner> pagingTargets) {
+  public void setPagingTargets(@jakarta.annotation.Nullable List<LiveCallRouterPagingTargetsInner> pagingTargets) {
     this.pagingTargets = pagingTargets;
   }
 
 
-  public LiveCallRouter escalationPolicyTriggerParams(@jakarta.annotation.Nullable UpdateLiveCallRouterDataAttributesEscalationPolicyTriggerParams escalationPolicyTriggerParams) {
+  public LiveCallRouter escalationPolicyTriggerParams(@jakarta.annotation.Nullable LiveCallRouterEscalationPolicyTriggerParams escalationPolicyTriggerParams) {
     this.escalationPolicyTriggerParams = escalationPolicyTriggerParams;
     return this;
   }
@@ -805,11 +805,11 @@ public class LiveCallRouter {
    * @return escalationPolicyTriggerParams
    */
   @jakarta.annotation.Nullable
-  public UpdateLiveCallRouterDataAttributesEscalationPolicyTriggerParams getEscalationPolicyTriggerParams() {
+  public LiveCallRouterEscalationPolicyTriggerParams getEscalationPolicyTriggerParams() {
     return escalationPolicyTriggerParams;
   }
 
-  public void setEscalationPolicyTriggerParams(@jakarta.annotation.Nullable UpdateLiveCallRouterDataAttributesEscalationPolicyTriggerParams escalationPolicyTriggerParams) {
+  public void setEscalationPolicyTriggerParams(@jakarta.annotation.Nullable LiveCallRouterEscalationPolicyTriggerParams escalationPolicyTriggerParams) {
     this.escalationPolicyTriggerParams = escalationPolicyTriggerParams;
   }
 
@@ -1073,13 +1073,13 @@ public class LiveCallRouter {
 
           // validate the optional field `paging_targets` (array)
           for (int i = 0; i < jsonArraypagingTargets.size(); i++) {
-            NewLiveCallRouterDataAttributesPagingTargetsInner.validateJsonElement(jsonArraypagingTargets.get(i));
+            LiveCallRouterPagingTargetsInner.validateJsonElement(jsonArraypagingTargets.get(i));
           };
         }
       }
       // validate the optional field `escalation_policy_trigger_params`
       if (jsonObj.get("escalation_policy_trigger_params") != null && !jsonObj.get("escalation_policy_trigger_params").isJsonNull()) {
-        UpdateLiveCallRouterDataAttributesEscalationPolicyTriggerParams.validateJsonElement(jsonObj.get("escalation_policy_trigger_params"));
+        LiveCallRouterEscalationPolicyTriggerParams.validateJsonElement(jsonObj.get("escalation_policy_trigger_params"));
       }
       if (!jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));

@@ -48,7 +48,7 @@ import com.rootly.client.JSON;
 /**
  * CatalogEntityChecklistChecklistOwnersInnerDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CatalogEntityChecklistChecklistOwnersInnerDataAttributes {
   public static final String SERIALIZED_NAME_CATALOG_ENTITY_CHECKLIST_ID = "catalog_entity_checklist_id";
   @SerializedName(SERIALIZED_NAME_CATALOG_ENTITY_CHECKLIST_ID)

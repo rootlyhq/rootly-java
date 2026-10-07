@@ -232,6 +232,7 @@ public class FormFieldPlacementsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> form_field_placement deleted </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> fixed problem gate placement rejected </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
@@ -302,6 +303,7 @@ public class FormFieldPlacementsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> form_field_placement deleted </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> fixed problem gate placement rejected </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
@@ -321,6 +323,7 @@ public class FormFieldPlacementsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> form_field_placement deleted </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> fixed problem gate placement rejected </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
@@ -342,6 +345,7 @@ public class FormFieldPlacementsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> form_field_placement deleted </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> fixed problem gate placement rejected </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */

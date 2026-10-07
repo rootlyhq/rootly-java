@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewAlertDataAttributesActor;
 import java.io.IOException;
 import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -49,7 +50,7 @@ import com.rootly.client.JSON;
 /**
  * ResolveAlertDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ResolveAlertDataAttributes {
   public static final String SERIALIZED_NAME_RESOLUTION_MESSAGE = "resolution_message";
   @SerializedName(SERIALIZED_NAME_RESOLUTION_MESSAGE)
@@ -60,6 +61,11 @@ public class ResolveAlertDataAttributes {
   @SerializedName(SERIALIZED_NAME_RESOLVE_RELATED_INCIDENTS)
   @jakarta.annotation.Nullable
   private Boolean resolveRelatedIncidents;
+
+  public static final String SERIALIZED_NAME_ACTOR = "actor";
+  @SerializedName(SERIALIZED_NAME_ACTOR)
+  @jakarta.annotation.Nullable
+  private NewAlertDataAttributesActor actor;
 
   public ResolveAlertDataAttributes() {
   }
@@ -102,6 +108,25 @@ public class ResolveAlertDataAttributes {
   }
 
 
+  public ResolveAlertDataAttributes actor(@jakarta.annotation.Nullable NewAlertDataAttributesActor actor) {
+    this.actor = actor;
+    return this;
+  }
+
+  /**
+   * Get actor
+   * @return actor
+   */
+  @jakarta.annotation.Nullable
+  public NewAlertDataAttributesActor getActor() {
+    return actor;
+  }
+
+  public void setActor(@jakarta.annotation.Nullable NewAlertDataAttributesActor actor) {
+    this.actor = actor;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -113,7 +138,8 @@ public class ResolveAlertDataAttributes {
     }
     ResolveAlertDataAttributes resolveAlertDataAttributes = (ResolveAlertDataAttributes) o;
     return Objects.equals(this.resolutionMessage, resolveAlertDataAttributes.resolutionMessage) &&
-        Objects.equals(this.resolveRelatedIncidents, resolveAlertDataAttributes.resolveRelatedIncidents);
+        Objects.equals(this.resolveRelatedIncidents, resolveAlertDataAttributes.resolveRelatedIncidents) &&
+        Objects.equals(this.actor, resolveAlertDataAttributes.actor);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -122,7 +148,7 @@ public class ResolveAlertDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(resolutionMessage, resolveRelatedIncidents);
+    return Objects.hash(resolutionMessage, resolveRelatedIncidents, actor);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -138,6 +164,7 @@ public class ResolveAlertDataAttributes {
     sb.append("class ResolveAlertDataAttributes {\n");
     sb.append("    resolutionMessage: ").append(toIndentedString(resolutionMessage)).append("\n");
     sb.append("    resolveRelatedIncidents: ").append(toIndentedString(resolveRelatedIncidents)).append("\n");
+    sb.append("    actor: ").append(toIndentedString(actor)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -162,6 +189,7 @@ public class ResolveAlertDataAttributes {
     openapiFields = new HashSet<String>();
     openapiFields.add("resolution_message");
     openapiFields.add("resolve_related_incidents");
+    openapiFields.add("actor");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -190,6 +218,10 @@ public class ResolveAlertDataAttributes {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("resolution_message") != null && !jsonObj.get("resolution_message").isJsonNull()) && !jsonObj.get("resolution_message").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `resolution_message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resolution_message").toString()));
+      }
+      // validate the optional field `actor`
+      if (jsonObj.get("actor") != null && !jsonObj.get("actor").isJsonNull()) {
+        NewAlertDataAttributesActor.validateJsonElement(jsonObj.get("actor"));
       }
   }
 

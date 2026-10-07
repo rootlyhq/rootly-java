@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewEscalationPolicyPathDataAttributesNotificationTypeRulesInner;
 import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInner;
 import com.rootly.client.model.NewEscalationPolicyPathDataAttributesTimeRestrictionsInner;
 import java.io.IOException;
@@ -53,7 +54,7 @@ import com.rootly.client.JSON;
 /**
  * NewEscalationPolicyPathDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewEscalationPolicyPathDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -318,15 +319,155 @@ public class NewEscalationPolicyPathDataAttributes {
   @jakarta.annotation.Nullable
   private Integer initialDelay;
 
+  /**
+   * Re-trigger acknowledged alerts on this path after N minutes; null inherits the urgency/workspace default, -1 &#x3D; never.
+   */
+  @JsonAdapter(RetriggerTimeoutMinutesEnum.Adapter.class)
+  public enum RetriggerTimeoutMinutesEnum {
+    NUMBER_MINUS_1(-1),
+    
+    NUMBER_10(10),
+    
+    NUMBER_20(20),
+    
+    NUMBER_30(30),
+    
+    NUMBER_40(40),
+    
+    NUMBER_50(50),
+    
+    NUMBER_60(60),
+    
+    NUMBER_90(90),
+    
+    NUMBER_120(120),
+    
+    NUMBER_180(180),
+    
+    NUMBER_240(240),
+    
+    NUMBER_300(300),
+    
+    NUMBER_360(360),
+    
+    NUMBER_720(720),
+    
+    NUMBER_1440(1440);
+
+    private Integer value;
+
+    RetriggerTimeoutMinutesEnum(Integer value) {
+      this.value = value;
+    }
+
+    public Integer getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static RetriggerTimeoutMinutesEnum fromValue(Integer value) {
+      for (RetriggerTimeoutMinutesEnum b : RetriggerTimeoutMinutesEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<RetriggerTimeoutMinutesEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final RetriggerTimeoutMinutesEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public RetriggerTimeoutMinutesEnum read(final JsonReader jsonReader) throws IOException {
+        Integer value =  jsonReader.nextInt();
+        return RetriggerTimeoutMinutesEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      Integer value = jsonElement.getAsInt();
+      RetriggerTimeoutMinutesEnum.fromValue(value);
+    }
+  }
+
   public static final String SERIALIZED_NAME_RETRIGGER_TIMEOUT_MINUTES = "retrigger_timeout_minutes";
   @SerializedName(SERIALIZED_NAME_RETRIGGER_TIMEOUT_MINUTES)
   @jakarta.annotation.Nullable
-  private Integer retriggerTimeoutMinutes;
+  private RetriggerTimeoutMinutesEnum retriggerTimeoutMinutes;
 
   public static final String SERIALIZED_NAME_RULES = "rules";
   @SerializedName(SERIALIZED_NAME_RULES)
   @jakarta.annotation.Nullable
   private List<NewEscalationPolicyPathDataAttributesRulesInner> rules = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_NOTIFICATION_TYPE_RULES = "notification_type_rules";
+  @SerializedName(SERIALIZED_NAME_NOTIFICATION_TYPE_RULES)
+  @jakarta.annotation.Nullable
+  private List<NewEscalationPolicyPathDataAttributesNotificationTypeRulesInner> notificationTypeRules = new ArrayList<>();
+
+  /**
+   * Paged when no notification type rule matches. Considered only when notification_type_rules are present — the path&#39;s notification_type is aligned to it; without rules it is aligned to notification_type instead. Only available when notification type conditions are enabled for the team.
+   */
+  @JsonAdapter(NotificationTypeFallbackEnum.Adapter.class)
+  public enum NotificationTypeFallbackEnum {
+    AUDIBLE("audible"),
+    
+    QUIET("quiet");
+
+    private String value;
+
+    NotificationTypeFallbackEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static NotificationTypeFallbackEnum fromValue(String value) {
+      for (NotificationTypeFallbackEnum b : NotificationTypeFallbackEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<NotificationTypeFallbackEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final NotificationTypeFallbackEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public NotificationTypeFallbackEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return NotificationTypeFallbackEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      NotificationTypeFallbackEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_NOTIFICATION_TYPE_FALLBACK = "notification_type_fallback";
+  @SerializedName(SERIALIZED_NAME_NOTIFICATION_TYPE_FALLBACK)
+  @jakarta.annotation.Nullable
+  private NotificationTypeFallbackEnum notificationTypeFallback = NotificationTypeFallbackEnum.AUDIBLE;
 
   /**
    * Time zone used for time restrictions.
@@ -477,6 +618,10 @@ public class NewEscalationPolicyPathDataAttributes {
     
     ATLANTIC_CAPE_VERDE("Atlantic/Cape_Verde"),
     
+    CASABLANCA("Casablanca"),
+    
+    AFRICA_CASABLANCA("Africa/Casablanca"),
+    
     EDINBURGH("Edinburgh"),
     
     EUROPE_LONDON("Europe/London"),
@@ -522,10 +667,6 @@ public class NewEscalationPolicyPathDataAttributes {
     BUDAPEST("Budapest"),
     
     EUROPE_BUDAPEST("Europe/Budapest"),
-    
-    CASABLANCA("Casablanca"),
-    
-    AFRICA_CASABLANCA("Africa/Casablanca"),
     
     COPENHAGEN("Copenhagen"),
     
@@ -615,7 +756,7 @@ public class NewEscalationPolicyPathDataAttributes {
     
     KYIV("Kyiv"),
     
-    EUROPE_KIEV("Europe/Kiev"),
+    EUROPE_KYIV("Europe/Kyiv"),
     
     PRETORIA("Pretoria"),
     
@@ -749,7 +890,7 @@ public class NewEscalationPolicyPathDataAttributes {
     
     RANGOON("Rangoon"),
     
-    ASIA_RANGOON("Asia/Rangoon"),
+    ASIA_YANGON("Asia/Yangon"),
     
     BANGKOK("Bangkok"),
     
@@ -941,7 +1082,11 @@ public class NewEscalationPolicyPathDataAttributes {
     
     PACIFIC_KIRITIMATI("Pacific/Kiritimati"),
     
-    PACIFIC_NORFOLK("Pacific/Norfolk");
+    PACIFIC_NORFOLK("Pacific/Norfolk"),
+    
+    ASIA_RANGOON("Asia/Rangoon"),
+    
+    EUROPE_KIEV("Europe/Kiev");
 
     private String value;
 
@@ -1208,21 +1353,21 @@ public class NewEscalationPolicyPathDataAttributes {
   }
 
 
-  public NewEscalationPolicyPathDataAttributes retriggerTimeoutMinutes(@jakarta.annotation.Nullable Integer retriggerTimeoutMinutes) {
+  public NewEscalationPolicyPathDataAttributes retriggerTimeoutMinutes(@jakarta.annotation.Nullable RetriggerTimeoutMinutesEnum retriggerTimeoutMinutes) {
     this.retriggerTimeoutMinutes = retriggerTimeoutMinutes;
     return this;
   }
 
   /**
-   * Re-trigger acknowledged alerts on this path after N minutes; null inherits the urgency/workspace default, negative &#x3D; never.
+   * Re-trigger acknowledged alerts on this path after N minutes; null inherits the urgency/workspace default, -1 &#x3D; never.
    * @return retriggerTimeoutMinutes
    */
   @jakarta.annotation.Nullable
-  public Integer getRetriggerTimeoutMinutes() {
+  public RetriggerTimeoutMinutesEnum getRetriggerTimeoutMinutes() {
     return retriggerTimeoutMinutes;
   }
 
-  public void setRetriggerTimeoutMinutes(@jakarta.annotation.Nullable Integer retriggerTimeoutMinutes) {
+  public void setRetriggerTimeoutMinutes(@jakarta.annotation.Nullable RetriggerTimeoutMinutesEnum retriggerTimeoutMinutes) {
     this.retriggerTimeoutMinutes = retriggerTimeoutMinutes;
   }
 
@@ -1251,6 +1396,52 @@ public class NewEscalationPolicyPathDataAttributes {
 
   public void setRules(@jakarta.annotation.Nullable List<NewEscalationPolicyPathDataAttributesRulesInner> rules) {
     this.rules = rules;
+  }
+
+
+  public NewEscalationPolicyPathDataAttributes notificationTypeRules(@jakarta.annotation.Nullable List<NewEscalationPolicyPathDataAttributesNotificationTypeRulesInner> notificationTypeRules) {
+    this.notificationTypeRules = notificationTypeRules;
+    return this;
+  }
+
+  public NewEscalationPolicyPathDataAttributes addNotificationTypeRulesItem(NewEscalationPolicyPathDataAttributesNotificationTypeRulesInner notificationTypeRulesItem) {
+    if (this.notificationTypeRules == null) {
+      this.notificationTypeRules = new ArrayList<>();
+    }
+    this.notificationTypeRules.add(notificationTypeRulesItem);
+    return this;
+  }
+
+  /**
+   * Rules deciding whether an alert pages audible or quiet, evaluated in order — the first matching rule&#39;s notification_type wins, otherwise notification_type_fallback applies. When present, the path&#39;s notification_type is aligned to notification_type_fallback. Only available when notification type conditions are enabled for the team.
+   * @return notificationTypeRules
+   */
+  @jakarta.annotation.Nullable
+  public List<NewEscalationPolicyPathDataAttributesNotificationTypeRulesInner> getNotificationTypeRules() {
+    return notificationTypeRules;
+  }
+
+  public void setNotificationTypeRules(@jakarta.annotation.Nullable List<NewEscalationPolicyPathDataAttributesNotificationTypeRulesInner> notificationTypeRules) {
+    this.notificationTypeRules = notificationTypeRules;
+  }
+
+
+  public NewEscalationPolicyPathDataAttributes notificationTypeFallback(@jakarta.annotation.Nullable NotificationTypeFallbackEnum notificationTypeFallback) {
+    this.notificationTypeFallback = notificationTypeFallback;
+    return this;
+  }
+
+  /**
+   * Paged when no notification type rule matches. Considered only when notification_type_rules are present — the path&#39;s notification_type is aligned to it; without rules it is aligned to notification_type instead. Only available when notification type conditions are enabled for the team.
+   * @return notificationTypeFallback
+   */
+  @jakarta.annotation.Nullable
+  public NotificationTypeFallbackEnum getNotificationTypeFallback() {
+    return notificationTypeFallback;
+  }
+
+  public void setNotificationTypeFallback(@jakarta.annotation.Nullable NotificationTypeFallbackEnum notificationTypeFallback) {
+    this.notificationTypeFallback = notificationTypeFallback;
   }
 
 
@@ -1323,6 +1514,8 @@ public class NewEscalationPolicyPathDataAttributes {
         Objects.equals(this.initialDelay, newEscalationPolicyPathDataAttributes.initialDelay) &&
         Objects.equals(this.retriggerTimeoutMinutes, newEscalationPolicyPathDataAttributes.retriggerTimeoutMinutes) &&
         Objects.equals(this.rules, newEscalationPolicyPathDataAttributes.rules) &&
+        Objects.equals(this.notificationTypeRules, newEscalationPolicyPathDataAttributes.notificationTypeRules) &&
+        Objects.equals(this.notificationTypeFallback, newEscalationPolicyPathDataAttributes.notificationTypeFallback) &&
         Objects.equals(this.timeRestrictionTimeZone, newEscalationPolicyPathDataAttributes.timeRestrictionTimeZone) &&
         Objects.equals(this.timeRestrictions, newEscalationPolicyPathDataAttributes.timeRestrictions);
   }
@@ -1333,7 +1526,7 @@ public class NewEscalationPolicyPathDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, notificationType, pathType, afterDeferralBehavior, afterDeferralPathId, _default, matchMode, position, repeat, repeatCount, initialDelay, retriggerTimeoutMinutes, rules, timeRestrictionTimeZone, timeRestrictions);
+    return Objects.hash(name, notificationType, pathType, afterDeferralBehavior, afterDeferralPathId, _default, matchMode, position, repeat, repeatCount, initialDelay, retriggerTimeoutMinutes, rules, notificationTypeRules, notificationTypeFallback, timeRestrictionTimeZone, timeRestrictions);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1360,6 +1553,8 @@ public class NewEscalationPolicyPathDataAttributes {
     sb.append("    initialDelay: ").append(toIndentedString(initialDelay)).append("\n");
     sb.append("    retriggerTimeoutMinutes: ").append(toIndentedString(retriggerTimeoutMinutes)).append("\n");
     sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
+    sb.append("    notificationTypeRules: ").append(toIndentedString(notificationTypeRules)).append("\n");
+    sb.append("    notificationTypeFallback: ").append(toIndentedString(notificationTypeFallback)).append("\n");
     sb.append("    timeRestrictionTimeZone: ").append(toIndentedString(timeRestrictionTimeZone)).append("\n");
     sb.append("    timeRestrictions: ").append(toIndentedString(timeRestrictions)).append("\n");
     sb.append("}");
@@ -1397,6 +1592,8 @@ public class NewEscalationPolicyPathDataAttributes {
     openapiFields.add("initial_delay");
     openapiFields.add("retrigger_timeout_minutes");
     openapiFields.add("rules");
+    openapiFields.add("notification_type_rules");
+    openapiFields.add("notification_type_fallback");
     openapiFields.add("time_restriction_time_zone");
     openapiFields.add("time_restrictions");
 
@@ -1467,6 +1664,10 @@ public class NewEscalationPolicyPathDataAttributes {
       if (jsonObj.get("match_mode") != null && !jsonObj.get("match_mode").isJsonNull()) {
         MatchModeEnum.validateJsonElement(jsonObj.get("match_mode"));
       }
+      // validate the optional field `retrigger_timeout_minutes`
+      if (jsonObj.get("retrigger_timeout_minutes") != null && !jsonObj.get("retrigger_timeout_minutes").isJsonNull()) {
+        RetriggerTimeoutMinutesEnum.validateJsonElement(jsonObj.get("retrigger_timeout_minutes"));
+      }
       if (jsonObj.get("rules") != null && !jsonObj.get("rules").isJsonNull()) {
         JsonArray jsonArrayrules = jsonObj.getAsJsonArray("rules");
         if (jsonArrayrules != null) {
@@ -1480,6 +1681,27 @@ public class NewEscalationPolicyPathDataAttributes {
             NewEscalationPolicyPathDataAttributesRulesInner.validateJsonElement(jsonArrayrules.get(i));
           };
         }
+      }
+      if (jsonObj.get("notification_type_rules") != null && !jsonObj.get("notification_type_rules").isJsonNull()) {
+        JsonArray jsonArraynotificationTypeRules = jsonObj.getAsJsonArray("notification_type_rules");
+        if (jsonArraynotificationTypeRules != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("notification_type_rules").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `notification_type_rules` to be an array in the JSON string but got `%s`", jsonObj.get("notification_type_rules").toString()));
+          }
+
+          // validate the optional field `notification_type_rules` (array)
+          for (int i = 0; i < jsonArraynotificationTypeRules.size(); i++) {
+            NewEscalationPolicyPathDataAttributesNotificationTypeRulesInner.validateJsonElement(jsonArraynotificationTypeRules.get(i));
+          };
+        }
+      }
+      if ((jsonObj.get("notification_type_fallback") != null && !jsonObj.get("notification_type_fallback").isJsonNull()) && !jsonObj.get("notification_type_fallback").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `notification_type_fallback` to be a primitive type in the JSON string but got `%s`", jsonObj.get("notification_type_fallback").toString()));
+      }
+      // validate the optional field `notification_type_fallback`
+      if (jsonObj.get("notification_type_fallback") != null && !jsonObj.get("notification_type_fallback").isJsonNull()) {
+        NotificationTypeFallbackEnum.validateJsonElement(jsonObj.get("notification_type_fallback"));
       }
       if ((jsonObj.get("time_restriction_time_zone") != null && !jsonObj.get("time_restriction_time_zone").isJsonNull()) && !jsonObj.get("time_restriction_time_zone").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `time_restriction_time_zone` to be a primitive type in the JSON string but got `%s`", jsonObj.get("time_restriction_time_zone").toString()));

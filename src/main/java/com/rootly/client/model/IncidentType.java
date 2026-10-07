@@ -19,9 +19,9 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.EnvironmentSlackAliasesInner;
+import com.rootly.client.model.EnvironmentSlackChannelsInner;
 import com.rootly.client.model.NewCauseDataAttributesPropertiesInner;
-import com.rootly.client.model.NewEnvironmentDataAttributesSlackAliasesInner;
-import com.rootly.client.model.NewEnvironmentDataAttributesSlackChannelsInner;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -54,7 +54,7 @@ import com.rootly.client.JSON;
 /**
  * IncidentType
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class IncidentType {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -94,12 +94,12 @@ public class IncidentType {
   public static final String SERIALIZED_NAME_SLACK_CHANNELS = "slack_channels";
   @SerializedName(SERIALIZED_NAME_SLACK_CHANNELS)
   @jakarta.annotation.Nullable
-  private List<NewEnvironmentDataAttributesSlackChannelsInner> slackChannels;
+  private List<EnvironmentSlackChannelsInner> slackChannels;
 
   public static final String SERIALIZED_NAME_SLACK_ALIASES = "slack_aliases";
   @SerializedName(SERIALIZED_NAME_SLACK_ALIASES)
   @jakarta.annotation.Nullable
-  private List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases;
+  private List<EnvironmentSlackAliasesInner> slackAliases;
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
@@ -259,12 +259,12 @@ public class IncidentType {
   }
 
 
-  public IncidentType slackChannels(@jakarta.annotation.Nullable List<NewEnvironmentDataAttributesSlackChannelsInner> slackChannels) {
+  public IncidentType slackChannels(@jakarta.annotation.Nullable List<EnvironmentSlackChannelsInner> slackChannels) {
     this.slackChannels = slackChannels;
     return this;
   }
 
-  public IncidentType addSlackChannelsItem(NewEnvironmentDataAttributesSlackChannelsInner slackChannelsItem) {
+  public IncidentType addSlackChannelsItem(EnvironmentSlackChannelsInner slackChannelsItem) {
     if (this.slackChannels == null) {
       this.slackChannels = new ArrayList<>();
     }
@@ -277,21 +277,21 @@ public class IncidentType {
    * @return slackChannels
    */
   @jakarta.annotation.Nullable
-  public List<NewEnvironmentDataAttributesSlackChannelsInner> getSlackChannels() {
+  public List<EnvironmentSlackChannelsInner> getSlackChannels() {
     return slackChannels;
   }
 
-  public void setSlackChannels(@jakarta.annotation.Nullable List<NewEnvironmentDataAttributesSlackChannelsInner> slackChannels) {
+  public void setSlackChannels(@jakarta.annotation.Nullable List<EnvironmentSlackChannelsInner> slackChannels) {
     this.slackChannels = slackChannels;
   }
 
 
-  public IncidentType slackAliases(@jakarta.annotation.Nullable List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases) {
+  public IncidentType slackAliases(@jakarta.annotation.Nullable List<EnvironmentSlackAliasesInner> slackAliases) {
     this.slackAliases = slackAliases;
     return this;
   }
 
-  public IncidentType addSlackAliasesItem(NewEnvironmentDataAttributesSlackAliasesInner slackAliasesItem) {
+  public IncidentType addSlackAliasesItem(EnvironmentSlackAliasesInner slackAliasesItem) {
     if (this.slackAliases == null) {
       this.slackAliases = new ArrayList<>();
     }
@@ -304,11 +304,11 @@ public class IncidentType {
    * @return slackAliases
    */
   @jakarta.annotation.Nullable
-  public List<NewEnvironmentDataAttributesSlackAliasesInner> getSlackAliases() {
+  public List<EnvironmentSlackAliasesInner> getSlackAliases() {
     return slackAliases;
   }
 
-  public void setSlackAliases(@jakarta.annotation.Nullable List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases) {
+  public void setSlackAliases(@jakarta.annotation.Nullable List<EnvironmentSlackAliasesInner> slackAliases) {
     this.slackAliases = slackAliases;
   }
 
@@ -533,7 +533,7 @@ public class IncidentType {
 
           // validate the optional field `slack_channels` (array)
           for (int i = 0; i < jsonArrayslackChannels.size(); i++) {
-            NewEnvironmentDataAttributesSlackChannelsInner.validateJsonElement(jsonArrayslackChannels.get(i));
+            EnvironmentSlackChannelsInner.validateJsonElement(jsonArrayslackChannels.get(i));
           };
         }
       }
@@ -547,7 +547,7 @@ public class IncidentType {
 
           // validate the optional field `slack_aliases` (array)
           for (int i = 0; i < jsonArrayslackAliases.size(); i++) {
-            NewEnvironmentDataAttributesSlackAliasesInner.validateJsonElement(jsonArrayslackAliases.get(i));
+            EnvironmentSlackAliasesInner.validateJsonElement(jsonArrayslackAliases.get(i));
           };
         }
       }

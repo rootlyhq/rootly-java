@@ -49,8 +49,13 @@ import com.rootly.client.JSON;
 /**
  * UpdateCatalogFieldData
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateCatalogFieldData {
+  public static final String SERIALIZED_NAME_ID = "id";
+  @SerializedName(SERIALIZED_NAME_ID)
+  @jakarta.annotation.Nullable
+  private String id;
+
   /**
    * Gets or Sets type
    */
@@ -114,6 +119,25 @@ public class UpdateCatalogFieldData {
   public UpdateCatalogFieldData() {
   }
 
+  public UpdateCatalogFieldData id(@jakarta.annotation.Nullable String id) {
+    this.id = id;
+    return this;
+  }
+
+  /**
+   * Accepted for JSON:API client compatibility, but ignored. The resource to update is identified by the id in the path.
+   * @return id
+   */
+  @jakarta.annotation.Nullable
+  public String getId() {
+    return id;
+  }
+
+  public void setId(@jakarta.annotation.Nullable String id) {
+    this.id = id;
+  }
+
+
   public UpdateCatalogFieldData type(@jakarta.annotation.Nonnull TypeEnum type) {
     this.type = type;
     return this;
@@ -162,19 +186,21 @@ public class UpdateCatalogFieldData {
       return false;
     }
     UpdateCatalogFieldData updateCatalogFieldData = (UpdateCatalogFieldData) o;
-    return Objects.equals(this.type, updateCatalogFieldData.type) &&
+    return Objects.equals(this.id, updateCatalogFieldData.id) &&
+        Objects.equals(this.type, updateCatalogFieldData.type) &&
         Objects.equals(this.attributes, updateCatalogFieldData.attributes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, attributes);
+    return Objects.hash(id, type, attributes);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdateCatalogFieldData {\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("}");
@@ -199,6 +225,7 @@ public class UpdateCatalogFieldData {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("id");
     openapiFields.add("type");
     openapiFields.add("attributes");
 
@@ -236,6 +263,9 @@ public class UpdateCatalogFieldData {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+      }
       if (!jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }

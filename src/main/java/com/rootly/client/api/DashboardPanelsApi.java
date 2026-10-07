@@ -88,6 +88,7 @@ public class DashboardPanelsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> dashboard panel created </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> rejects a group_by on a field that cannot be grouped </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
@@ -165,6 +166,7 @@ public class DashboardPanelsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> dashboard panel created </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> rejects a group_by on a field that cannot be grouped </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
@@ -185,6 +187,7 @@ public class DashboardPanelsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> dashboard panel created </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> rejects a group_by on a field that cannot be grouped </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
@@ -207,6 +210,7 @@ public class DashboardPanelsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> dashboard panel created </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> rejects a group_by on a field that cannot be grouped </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */

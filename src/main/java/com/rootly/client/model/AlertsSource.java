@@ -19,11 +19,11 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.AlertsSourceAlertSourceFieldsAttributesInner;
+import com.rootly.client.model.AlertsSourceAlertSourceUrgencyRulesAttributesInner;
+import com.rootly.client.model.AlertsSourceAlertTemplateAttributes;
+import com.rootly.client.model.AlertsSourceResolutionRuleAttributes;
 import com.rootly.client.model.AlertsSourceSourceableAttributes;
-import com.rootly.client.model.NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner;
-import com.rootly.client.model.NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner;
-import com.rootly.client.model.NewAlertsSourceDataAttributesAlertTemplateAttributes;
-import com.rootly.client.model.NewAlertsSourceDataAttributesResolutionRuleAttributes;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -56,7 +56,7 @@ import com.rootly.client.JSON;
 /**
  * AlertsSource
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AlertsSource {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -252,12 +252,12 @@ public class AlertsSource {
   public static final String SERIALIZED_NAME_ALERT_TEMPLATE_ATTRIBUTES = "alert_template_attributes";
   @SerializedName(SERIALIZED_NAME_ALERT_TEMPLATE_ATTRIBUTES)
   @jakarta.annotation.Nullable
-  private NewAlertsSourceDataAttributesAlertTemplateAttributes alertTemplateAttributes;
+  private AlertsSourceAlertTemplateAttributes alertTemplateAttributes;
 
   public static final String SERIALIZED_NAME_ALERT_SOURCE_URGENCY_RULES_ATTRIBUTES = "alert_source_urgency_rules_attributes";
   @SerializedName(SERIALIZED_NAME_ALERT_SOURCE_URGENCY_RULES_ATTRIBUTES)
   @jakarta.annotation.Nullable
-  private List<NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner> alertSourceUrgencyRulesAttributes = new ArrayList<>();
+  private List<AlertsSourceAlertSourceUrgencyRulesAttributesInner> alertSourceUrgencyRulesAttributes = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SOURCEABLE_ATTRIBUTES = "sourceable_attributes";
   @SerializedName(SERIALIZED_NAME_SOURCEABLE_ATTRIBUTES)
@@ -267,12 +267,12 @@ public class AlertsSource {
   public static final String SERIALIZED_NAME_RESOLUTION_RULE_ATTRIBUTES = "resolution_rule_attributes";
   @SerializedName(SERIALIZED_NAME_RESOLUTION_RULE_ATTRIBUTES)
   @jakarta.annotation.Nullable
-  private NewAlertsSourceDataAttributesResolutionRuleAttributes resolutionRuleAttributes;
+  private AlertsSourceResolutionRuleAttributes resolutionRuleAttributes;
 
   public static final String SERIALIZED_NAME_ALERT_SOURCE_FIELDS_ATTRIBUTES = "alert_source_fields_attributes";
   @SerializedName(SERIALIZED_NAME_ALERT_SOURCE_FIELDS_ATTRIBUTES)
   @jakarta.annotation.Nullable
-  private List<NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner> alertSourceFieldsAttributes = new ArrayList<>();
+  private List<AlertsSourceAlertSourceFieldsAttributesInner> alertSourceFieldsAttributes = new ArrayList<>();
 
   /**
    * The status of the alert source
@@ -540,7 +540,7 @@ public class AlertsSource {
   }
 
 
-  public AlertsSource alertTemplateAttributes(@jakarta.annotation.Nullable NewAlertsSourceDataAttributesAlertTemplateAttributes alertTemplateAttributes) {
+  public AlertsSource alertTemplateAttributes(@jakarta.annotation.Nullable AlertsSourceAlertTemplateAttributes alertTemplateAttributes) {
     this.alertTemplateAttributes = alertTemplateAttributes;
     return this;
   }
@@ -550,21 +550,21 @@ public class AlertsSource {
    * @return alertTemplateAttributes
    */
   @jakarta.annotation.Nullable
-  public NewAlertsSourceDataAttributesAlertTemplateAttributes getAlertTemplateAttributes() {
+  public AlertsSourceAlertTemplateAttributes getAlertTemplateAttributes() {
     return alertTemplateAttributes;
   }
 
-  public void setAlertTemplateAttributes(@jakarta.annotation.Nullable NewAlertsSourceDataAttributesAlertTemplateAttributes alertTemplateAttributes) {
+  public void setAlertTemplateAttributes(@jakarta.annotation.Nullable AlertsSourceAlertTemplateAttributes alertTemplateAttributes) {
     this.alertTemplateAttributes = alertTemplateAttributes;
   }
 
 
-  public AlertsSource alertSourceUrgencyRulesAttributes(@jakarta.annotation.Nullable List<NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner> alertSourceUrgencyRulesAttributes) {
+  public AlertsSource alertSourceUrgencyRulesAttributes(@jakarta.annotation.Nullable List<AlertsSourceAlertSourceUrgencyRulesAttributesInner> alertSourceUrgencyRulesAttributes) {
     this.alertSourceUrgencyRulesAttributes = alertSourceUrgencyRulesAttributes;
     return this;
   }
 
-  public AlertsSource addAlertSourceUrgencyRulesAttributesItem(NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner alertSourceUrgencyRulesAttributesItem) {
+  public AlertsSource addAlertSourceUrgencyRulesAttributesItem(AlertsSourceAlertSourceUrgencyRulesAttributesInner alertSourceUrgencyRulesAttributesItem) {
     if (this.alertSourceUrgencyRulesAttributes == null) {
       this.alertSourceUrgencyRulesAttributes = new ArrayList<>();
     }
@@ -577,11 +577,11 @@ public class AlertsSource {
    * @return alertSourceUrgencyRulesAttributes
    */
   @jakarta.annotation.Nullable
-  public List<NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner> getAlertSourceUrgencyRulesAttributes() {
+  public List<AlertsSourceAlertSourceUrgencyRulesAttributesInner> getAlertSourceUrgencyRulesAttributes() {
     return alertSourceUrgencyRulesAttributes;
   }
 
-  public void setAlertSourceUrgencyRulesAttributes(@jakarta.annotation.Nullable List<NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner> alertSourceUrgencyRulesAttributes) {
+  public void setAlertSourceUrgencyRulesAttributes(@jakarta.annotation.Nullable List<AlertsSourceAlertSourceUrgencyRulesAttributesInner> alertSourceUrgencyRulesAttributes) {
     this.alertSourceUrgencyRulesAttributes = alertSourceUrgencyRulesAttributes;
   }
 
@@ -605,7 +605,7 @@ public class AlertsSource {
   }
 
 
-  public AlertsSource resolutionRuleAttributes(@jakarta.annotation.Nullable NewAlertsSourceDataAttributesResolutionRuleAttributes resolutionRuleAttributes) {
+  public AlertsSource resolutionRuleAttributes(@jakarta.annotation.Nullable AlertsSourceResolutionRuleAttributes resolutionRuleAttributes) {
     this.resolutionRuleAttributes = resolutionRuleAttributes;
     return this;
   }
@@ -615,21 +615,21 @@ public class AlertsSource {
    * @return resolutionRuleAttributes
    */
   @jakarta.annotation.Nullable
-  public NewAlertsSourceDataAttributesResolutionRuleAttributes getResolutionRuleAttributes() {
+  public AlertsSourceResolutionRuleAttributes getResolutionRuleAttributes() {
     return resolutionRuleAttributes;
   }
 
-  public void setResolutionRuleAttributes(@jakarta.annotation.Nullable NewAlertsSourceDataAttributesResolutionRuleAttributes resolutionRuleAttributes) {
+  public void setResolutionRuleAttributes(@jakarta.annotation.Nullable AlertsSourceResolutionRuleAttributes resolutionRuleAttributes) {
     this.resolutionRuleAttributes = resolutionRuleAttributes;
   }
 
 
-  public AlertsSource alertSourceFieldsAttributes(@jakarta.annotation.Nullable List<NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner> alertSourceFieldsAttributes) {
+  public AlertsSource alertSourceFieldsAttributes(@jakarta.annotation.Nullable List<AlertsSourceAlertSourceFieldsAttributesInner> alertSourceFieldsAttributes) {
     this.alertSourceFieldsAttributes = alertSourceFieldsAttributes;
     return this;
   }
 
-  public AlertsSource addAlertSourceFieldsAttributesItem(NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner alertSourceFieldsAttributesItem) {
+  public AlertsSource addAlertSourceFieldsAttributesItem(AlertsSourceAlertSourceFieldsAttributesInner alertSourceFieldsAttributesItem) {
     if (this.alertSourceFieldsAttributes == null) {
       this.alertSourceFieldsAttributes = new ArrayList<>();
     }
@@ -642,11 +642,11 @@ public class AlertsSource {
    * @return alertSourceFieldsAttributes
    */
   @jakarta.annotation.Nullable
-  public List<NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner> getAlertSourceFieldsAttributes() {
+  public List<AlertsSourceAlertSourceFieldsAttributesInner> getAlertSourceFieldsAttributes() {
     return alertSourceFieldsAttributes;
   }
 
-  public void setAlertSourceFieldsAttributes(@jakarta.annotation.Nullable List<NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner> alertSourceFieldsAttributes) {
+  public void setAlertSourceFieldsAttributes(@jakarta.annotation.Nullable List<AlertsSourceAlertSourceFieldsAttributesInner> alertSourceFieldsAttributes) {
     this.alertSourceFieldsAttributes = alertSourceFieldsAttributes;
   }
 
@@ -949,7 +949,7 @@ public class AlertsSource {
       }
       // validate the optional field `alert_template_attributes`
       if (jsonObj.get("alert_template_attributes") != null && !jsonObj.get("alert_template_attributes").isJsonNull()) {
-        NewAlertsSourceDataAttributesAlertTemplateAttributes.validateJsonElement(jsonObj.get("alert_template_attributes"));
+        AlertsSourceAlertTemplateAttributes.validateJsonElement(jsonObj.get("alert_template_attributes"));
       }
       if (jsonObj.get("alert_source_urgency_rules_attributes") != null && !jsonObj.get("alert_source_urgency_rules_attributes").isJsonNull()) {
         JsonArray jsonArrayalertSourceUrgencyRulesAttributes = jsonObj.getAsJsonArray("alert_source_urgency_rules_attributes");
@@ -961,7 +961,7 @@ public class AlertsSource {
 
           // validate the optional field `alert_source_urgency_rules_attributes` (array)
           for (int i = 0; i < jsonArrayalertSourceUrgencyRulesAttributes.size(); i++) {
-            NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner.validateJsonElement(jsonArrayalertSourceUrgencyRulesAttributes.get(i));
+            AlertsSourceAlertSourceUrgencyRulesAttributesInner.validateJsonElement(jsonArrayalertSourceUrgencyRulesAttributes.get(i));
           };
         }
       }
@@ -971,7 +971,7 @@ public class AlertsSource {
       }
       // validate the optional field `resolution_rule_attributes`
       if (jsonObj.get("resolution_rule_attributes") != null && !jsonObj.get("resolution_rule_attributes").isJsonNull()) {
-        NewAlertsSourceDataAttributesResolutionRuleAttributes.validateJsonElement(jsonObj.get("resolution_rule_attributes"));
+        AlertsSourceResolutionRuleAttributes.validateJsonElement(jsonObj.get("resolution_rule_attributes"));
       }
       if (jsonObj.get("alert_source_fields_attributes") != null && !jsonObj.get("alert_source_fields_attributes").isJsonNull()) {
         JsonArray jsonArrayalertSourceFieldsAttributes = jsonObj.getAsJsonArray("alert_source_fields_attributes");
@@ -983,7 +983,7 @@ public class AlertsSource {
 
           // validate the optional field `alert_source_fields_attributes` (array)
           for (int i = 0; i < jsonArrayalertSourceFieldsAttributes.size(); i++) {
-            NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner.validateJsonElement(jsonArrayalertSourceFieldsAttributes.get(i));
+            AlertsSourceAlertSourceFieldsAttributesInner.validateJsonElement(jsonArrayalertSourceFieldsAttributes.get(i));
           };
         }
       }

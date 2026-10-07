@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * Cursor-pagination meta. &#x60;total_count&#x60; and &#x60;total_pages&#x60; are nullable because the feed does not run a COUNT query.
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AlertEventFeedMeta {
   public static final String SERIALIZED_NAME_NEXT_CURSOR = "next_cursor";
   @SerializedName(SERIALIZED_NAME_NEXT_CURSOR)

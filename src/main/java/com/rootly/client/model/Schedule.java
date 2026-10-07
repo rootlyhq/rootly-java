@@ -19,6 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.ScheduleBusinessHours;
 import com.rootly.client.model.ScheduleSlackChannel;
 import com.rootly.client.model.ScheduleSlackUserGroup;
 import java.io.IOException;
@@ -53,7 +54,7 @@ import com.rootly.client.JSON;
 /**
  * Schedule
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Schedule {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -69,6 +70,11 @@ public class Schedule {
   @SerializedName(SERIALIZED_NAME_ALL_TIME_COVERAGE)
   @jakarta.annotation.Nullable
   private Boolean allTimeCoverage;
+
+  public static final String SERIALIZED_NAME_TIME_ZONE = "time_zone";
+  @SerializedName(SERIALIZED_NAME_TIME_ZONE)
+  @jakarta.annotation.Nullable
+  private String timeZone;
 
   public static final String SERIALIZED_NAME_SLACK_USER_GROUP = "slack_user_group";
   @SerializedName(SERIALIZED_NAME_SLACK_USER_GROUP)
@@ -192,6 +198,11 @@ public class Schedule {
   @jakarta.annotation.Nullable
   private String shiftReportTimeZone;
 
+  public static final String SERIALIZED_NAME_BUSINESS_HOURS = "business_hours";
+  @SerializedName(SERIALIZED_NAME_BUSINESS_HOURS)
+  @jakarta.annotation.Nullable
+  private ScheduleBusinessHours businessHours;
+
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
   @jakarta.annotation.Nonnull
@@ -259,6 +270,25 @@ public class Schedule {
 
   public void setAllTimeCoverage(@jakarta.annotation.Nullable Boolean allTimeCoverage) {
     this.allTimeCoverage = allTimeCoverage;
+  }
+
+
+  public Schedule timeZone(@jakarta.annotation.Nullable String timeZone) {
+    this.timeZone = timeZone;
+    return this;
+  }
+
+  /**
+   * IANA time zone the schedule&#39;s rotations are rendered in
+   * @return timeZone
+   */
+  @jakarta.annotation.Nullable
+  public String getTimeZone() {
+    return timeZone;
+  }
+
+  public void setTimeZone(@jakarta.annotation.Nullable String timeZone) {
+    this.timeZone = timeZone;
   }
 
 
@@ -498,6 +528,25 @@ public class Schedule {
   }
 
 
+  public Schedule businessHours(@jakarta.annotation.Nullable ScheduleBusinessHours businessHours) {
+    this.businessHours = businessHours;
+    return this;
+  }
+
+  /**
+   * Get businessHours
+   * @return businessHours
+   */
+  @jakarta.annotation.Nullable
+  public ScheduleBusinessHours getBusinessHours() {
+    return businessHours;
+  }
+
+  public void setBusinessHours(@jakarta.annotation.Nullable ScheduleBusinessHours businessHours) {
+    this.businessHours = businessHours;
+  }
+
+
   public Schedule createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
@@ -549,6 +598,7 @@ public class Schedule {
     return Objects.equals(this.name, schedule.name) &&
         Objects.equals(this.description, schedule.description) &&
         Objects.equals(this.allTimeCoverage, schedule.allTimeCoverage) &&
+        Objects.equals(this.timeZone, schedule.timeZone) &&
         Objects.equals(this.slackUserGroup, schedule.slackUserGroup) &&
         Objects.equals(this.slackChannel, schedule.slackChannel) &&
         Objects.equals(this.ownerGroupIds, schedule.ownerGroupIds) &&
@@ -561,6 +611,7 @@ public class Schedule {
         Objects.equals(this.shiftReportDayOfWeek, schedule.shiftReportDayOfWeek) &&
         Objects.equals(this.shiftReportTimeOfDay, schedule.shiftReportTimeOfDay) &&
         Objects.equals(this.shiftReportTimeZone, schedule.shiftReportTimeZone) &&
+        Objects.equals(this.businessHours, schedule.businessHours) &&
         Objects.equals(this.createdAt, schedule.createdAt) &&
         Objects.equals(this.updatedAt, schedule.updatedAt);
   }
@@ -571,7 +622,7 @@ public class Schedule {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, allTimeCoverage, slackUserGroup, slackChannel, ownerGroupIds, ownerUserId, syncLinearEnabled, includeShadowsInSlackNotifications, shiftStartNotificationsEnabled, shiftUpdateNotificationsEnabled, shiftReportEnabled, shiftReportDayOfWeek, shiftReportTimeOfDay, shiftReportTimeZone, createdAt, updatedAt);
+    return Objects.hash(name, description, allTimeCoverage, timeZone, slackUserGroup, slackChannel, ownerGroupIds, ownerUserId, syncLinearEnabled, includeShadowsInSlackNotifications, shiftStartNotificationsEnabled, shiftUpdateNotificationsEnabled, shiftReportEnabled, shiftReportDayOfWeek, shiftReportTimeOfDay, shiftReportTimeZone, businessHours, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -588,6 +639,7 @@ public class Schedule {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    allTimeCoverage: ").append(toIndentedString(allTimeCoverage)).append("\n");
+    sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
     sb.append("    slackUserGroup: ").append(toIndentedString(slackUserGroup)).append("\n");
     sb.append("    slackChannel: ").append(toIndentedString(slackChannel)).append("\n");
     sb.append("    ownerGroupIds: ").append(toIndentedString(ownerGroupIds)).append("\n");
@@ -600,6 +652,7 @@ public class Schedule {
     sb.append("    shiftReportDayOfWeek: ").append(toIndentedString(shiftReportDayOfWeek)).append("\n");
     sb.append("    shiftReportTimeOfDay: ").append(toIndentedString(shiftReportTimeOfDay)).append("\n");
     sb.append("    shiftReportTimeZone: ").append(toIndentedString(shiftReportTimeZone)).append("\n");
+    sb.append("    businessHours: ").append(toIndentedString(businessHours)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -627,6 +680,7 @@ public class Schedule {
     openapiFields.add("name");
     openapiFields.add("description");
     openapiFields.add("all_time_coverage");
+    openapiFields.add("time_zone");
     openapiFields.add("slack_user_group");
     openapiFields.add("slack_channel");
     openapiFields.add("owner_group_ids");
@@ -639,6 +693,7 @@ public class Schedule {
     openapiFields.add("shift_report_day_of_week");
     openapiFields.add("shift_report_time_of_day");
     openapiFields.add("shift_report_time_zone");
+    openapiFields.add("business_hours");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
 
@@ -684,6 +739,9 @@ public class Schedule {
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
+      if ((jsonObj.get("time_zone") != null && !jsonObj.get("time_zone").isJsonNull()) && !jsonObj.get("time_zone").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `time_zone` to be a primitive type in the JSON string but got `%s`", jsonObj.get("time_zone").toString()));
+      }
       // validate the optional field `slack_user_group`
       if (jsonObj.get("slack_user_group") != null && !jsonObj.get("slack_user_group").isJsonNull()) {
         ScheduleSlackUserGroup.validateJsonElement(jsonObj.get("slack_user_group"));
@@ -708,6 +766,10 @@ public class Schedule {
       }
       if ((jsonObj.get("shift_report_time_zone") != null && !jsonObj.get("shift_report_time_zone").isJsonNull()) && !jsonObj.get("shift_report_time_zone").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `shift_report_time_zone` to be a primitive type in the JSON string but got `%s`", jsonObj.get("shift_report_time_zone").toString()));
+      }
+      // validate the optional field `business_hours`
+      if (jsonObj.get("business_hours") != null && !jsonObj.get("business_hours").isJsonNull()) {
+        ScheduleBusinessHours.validateJsonElement(jsonObj.get("business_hours"));
       }
       if (!jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));

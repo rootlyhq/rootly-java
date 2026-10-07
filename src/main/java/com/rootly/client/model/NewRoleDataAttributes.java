@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * NewRoleDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewRoleDataAttributes {
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @Deprecated
@@ -1528,6 +1528,67 @@ public class NewRoleDataAttributes {
   private List<StatusPagesPermissionsEnum> statusPagesPermissions = new ArrayList<>();
 
   /**
+   * Gets or Sets statusPageUpdatesPermissions
+   */
+  @JsonAdapter(StatusPageUpdatesPermissionsEnum.Adapter.class)
+  public enum StatusPageUpdatesPermissionsEnum {
+    CREATE("create"),
+    
+    READ("read"),
+    
+    UPDATE("update"),
+    
+    DELETE("delete");
+
+    private String value;
+
+    StatusPageUpdatesPermissionsEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static StatusPageUpdatesPermissionsEnum fromValue(String value) {
+      for (StatusPageUpdatesPermissionsEnum b : StatusPageUpdatesPermissionsEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<StatusPageUpdatesPermissionsEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final StatusPageUpdatesPermissionsEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public StatusPageUpdatesPermissionsEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return StatusPageUpdatesPermissionsEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      StatusPageUpdatesPermissionsEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_STATUS_PAGE_UPDATES_PERMISSIONS = "status_page_updates_permissions";
+  @SerializedName(SERIALIZED_NAME_STATUS_PAGE_UPDATES_PERMISSIONS)
+  @jakarta.annotation.Nullable
+  private List<StatusPageUpdatesPermissionsEnum> statusPageUpdatesPermissions;
+
+  /**
    * Gets or Sets webhooksPermissions
    */
   @JsonAdapter(WebhooksPermissionsEnum.Adapter.class)
@@ -1831,6 +1892,67 @@ public class NewRoleDataAttributes {
   @SerializedName(SERIALIZED_NAME_EDGE_CONNECTOR_PERMISSIONS)
   @jakarta.annotation.Nullable
   private List<EdgeConnectorPermissionsEnum> edgeConnectorPermissions = new ArrayList<>();
+
+  /**
+   * Gets or Sets privateAgentPermissions
+   */
+  @JsonAdapter(PrivateAgentPermissionsEnum.Adapter.class)
+  public enum PrivateAgentPermissionsEnum {
+    CREATE("create"),
+    
+    READ("read"),
+    
+    UPDATE("update"),
+    
+    DELETE("delete");
+
+    private String value;
+
+    PrivateAgentPermissionsEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static PrivateAgentPermissionsEnum fromValue(String value) {
+      for (PrivateAgentPermissionsEnum b : PrivateAgentPermissionsEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<PrivateAgentPermissionsEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final PrivateAgentPermissionsEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public PrivateAgentPermissionsEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return PrivateAgentPermissionsEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      PrivateAgentPermissionsEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_PRIVATE_AGENT_PERMISSIONS = "private_agent_permissions";
+  @SerializedName(SERIALIZED_NAME_PRIVATE_AGENT_PERMISSIONS)
+  @jakarta.annotation.Nullable
+  private List<PrivateAgentPermissionsEnum> privateAgentPermissions = new ArrayList<>();
 
   /**
    * Gets or Sets slasPermissions
@@ -2790,6 +2912,33 @@ public class NewRoleDataAttributes {
   }
 
 
+  public NewRoleDataAttributes statusPageUpdatesPermissions(@jakarta.annotation.Nullable List<StatusPageUpdatesPermissionsEnum> statusPageUpdatesPermissions) {
+    this.statusPageUpdatesPermissions = statusPageUpdatesPermissions;
+    return this;
+  }
+
+  public NewRoleDataAttributes addStatusPageUpdatesPermissionsItem(StatusPageUpdatesPermissionsEnum statusPageUpdatesPermissionsItem) {
+    if (this.statusPageUpdatesPermissions == null) {
+      this.statusPageUpdatesPermissions = new ArrayList<>();
+    }
+    this.statusPageUpdatesPermissions.add(statusPageUpdatesPermissionsItem);
+    return this;
+  }
+
+  /**
+   * Get statusPageUpdatesPermissions
+   * @return statusPageUpdatesPermissions
+   */
+  @jakarta.annotation.Nullable
+  public List<StatusPageUpdatesPermissionsEnum> getStatusPageUpdatesPermissions() {
+    return statusPageUpdatesPermissions;
+  }
+
+  public void setStatusPageUpdatesPermissions(@jakarta.annotation.Nullable List<StatusPageUpdatesPermissionsEnum> statusPageUpdatesPermissions) {
+    this.statusPageUpdatesPermissions = statusPageUpdatesPermissions;
+  }
+
+
   public NewRoleDataAttributes webhooksPermissions(@jakarta.annotation.Nullable List<WebhooksPermissionsEnum> webhooksPermissions) {
     this.webhooksPermissions = webhooksPermissions;
     return this;
@@ -2922,6 +3071,33 @@ public class NewRoleDataAttributes {
 
   public void setEdgeConnectorPermissions(@jakarta.annotation.Nullable List<EdgeConnectorPermissionsEnum> edgeConnectorPermissions) {
     this.edgeConnectorPermissions = edgeConnectorPermissions;
+  }
+
+
+  public NewRoleDataAttributes privateAgentPermissions(@jakarta.annotation.Nullable List<PrivateAgentPermissionsEnum> privateAgentPermissions) {
+    this.privateAgentPermissions = privateAgentPermissions;
+    return this;
+  }
+
+  public NewRoleDataAttributes addPrivateAgentPermissionsItem(PrivateAgentPermissionsEnum privateAgentPermissionsItem) {
+    if (this.privateAgentPermissions == null) {
+      this.privateAgentPermissions = new ArrayList<>();
+    }
+    this.privateAgentPermissions.add(privateAgentPermissionsItem);
+    return this;
+  }
+
+  /**
+   * Private Agent management permissions: create issues enrollment tokens, read views agent inventory and details, and delete revokes agent credentials. Create and delete can be used independently through the API; browser inventory requires read.
+   * @return privateAgentPermissions
+   */
+  @jakarta.annotation.Nullable
+  public List<PrivateAgentPermissionsEnum> getPrivateAgentPermissions() {
+    return privateAgentPermissions;
+  }
+
+  public void setPrivateAgentPermissions(@jakarta.annotation.Nullable List<PrivateAgentPermissionsEnum> privateAgentPermissions) {
+    this.privateAgentPermissions = privateAgentPermissions;
   }
 
 
@@ -3070,11 +3246,13 @@ public class NewRoleDataAttributes {
         Objects.equals(this.servicesPermissions, newRoleDataAttributes.servicesPermissions) &&
         Objects.equals(this.severitiesPermissions, newRoleDataAttributes.severitiesPermissions) &&
         Objects.equals(this.statusPagesPermissions, newRoleDataAttributes.statusPagesPermissions) &&
+        Objects.equals(this.statusPageUpdatesPermissions, newRoleDataAttributes.statusPageUpdatesPermissions) &&
         Objects.equals(this.webhooksPermissions, newRoleDataAttributes.webhooksPermissions) &&
         Objects.equals(this.workflowsPermissions, newRoleDataAttributes.workflowsPermissions) &&
         Objects.equals(this.catalogsPermissions, newRoleDataAttributes.catalogsPermissions) &&
         Objects.equals(this.subStatusesPermissions, newRoleDataAttributes.subStatusesPermissions) &&
         Objects.equals(this.edgeConnectorPermissions, newRoleDataAttributes.edgeConnectorPermissions) &&
+        Objects.equals(this.privateAgentPermissions, newRoleDataAttributes.privateAgentPermissions) &&
         Objects.equals(this.slasPermissions, newRoleDataAttributes.slasPermissions) &&
         Objects.equals(this.pagingPermissions, newRoleDataAttributes.pagingPermissions) &&
         Objects.equals(this.incidentCommunicationPermissions, newRoleDataAttributes.incidentCommunicationPermissions) &&
@@ -3087,7 +3265,7 @@ public class NewRoleDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(slug, name, incidentPermissionSetId, alertsPermissions, apiKeysPermissions, auditsPermissions, billingPermissions, environmentsPermissions, formFieldsPermissions, functionalitiesPermissions, groupsPermissions, incidentCausesPermissions, incidentFeedbacksPermissions, incidentRolesPermissions, incidentTypesPermissions, incidentsPermissions, integrationsPermissions, invitationsPermissions, playbooksPermissions, privateIncidentsPermissions, pulsesPermissions, retrospectivePermissions, rolesPermissions, secretsPermissions, servicesPermissions, severitiesPermissions, statusPagesPermissions, webhooksPermissions, workflowsPermissions, catalogsPermissions, subStatusesPermissions, edgeConnectorPermissions, slasPermissions, pagingPermissions, incidentCommunicationPermissions, communicationPermissions);
+    return Objects.hash(slug, name, incidentPermissionSetId, alertsPermissions, apiKeysPermissions, auditsPermissions, billingPermissions, environmentsPermissions, formFieldsPermissions, functionalitiesPermissions, groupsPermissions, incidentCausesPermissions, incidentFeedbacksPermissions, incidentRolesPermissions, incidentTypesPermissions, incidentsPermissions, integrationsPermissions, invitationsPermissions, playbooksPermissions, privateIncidentsPermissions, pulsesPermissions, retrospectivePermissions, rolesPermissions, secretsPermissions, servicesPermissions, severitiesPermissions, statusPagesPermissions, statusPageUpdatesPermissions, webhooksPermissions, workflowsPermissions, catalogsPermissions, subStatusesPermissions, edgeConnectorPermissions, privateAgentPermissions, slasPermissions, pagingPermissions, incidentCommunicationPermissions, communicationPermissions);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -3128,11 +3306,13 @@ public class NewRoleDataAttributes {
     sb.append("    servicesPermissions: ").append(toIndentedString(servicesPermissions)).append("\n");
     sb.append("    severitiesPermissions: ").append(toIndentedString(severitiesPermissions)).append("\n");
     sb.append("    statusPagesPermissions: ").append(toIndentedString(statusPagesPermissions)).append("\n");
+    sb.append("    statusPageUpdatesPermissions: ").append(toIndentedString(statusPageUpdatesPermissions)).append("\n");
     sb.append("    webhooksPermissions: ").append(toIndentedString(webhooksPermissions)).append("\n");
     sb.append("    workflowsPermissions: ").append(toIndentedString(workflowsPermissions)).append("\n");
     sb.append("    catalogsPermissions: ").append(toIndentedString(catalogsPermissions)).append("\n");
     sb.append("    subStatusesPermissions: ").append(toIndentedString(subStatusesPermissions)).append("\n");
     sb.append("    edgeConnectorPermissions: ").append(toIndentedString(edgeConnectorPermissions)).append("\n");
+    sb.append("    privateAgentPermissions: ").append(toIndentedString(privateAgentPermissions)).append("\n");
     sb.append("    slasPermissions: ").append(toIndentedString(slasPermissions)).append("\n");
     sb.append("    pagingPermissions: ").append(toIndentedString(pagingPermissions)).append("\n");
     sb.append("    incidentCommunicationPermissions: ").append(toIndentedString(incidentCommunicationPermissions)).append("\n");
@@ -3186,11 +3366,13 @@ public class NewRoleDataAttributes {
     openapiFields.add("services_permissions");
     openapiFields.add("severities_permissions");
     openapiFields.add("status_pages_permissions");
+    openapiFields.add("status_page_updates_permissions");
     openapiFields.add("webhooks_permissions");
     openapiFields.add("workflows_permissions");
     openapiFields.add("catalogs_permissions");
     openapiFields.add("sub_statuses_permissions");
     openapiFields.add("edge_connector_permissions");
+    openapiFields.add("private_agent_permissions");
     openapiFields.add("slas_permissions");
     openapiFields.add("paging_permissions");
     openapiFields.add("incident_communication_permissions");
@@ -3335,6 +3517,10 @@ public class NewRoleDataAttributes {
         throw new IllegalArgumentException(String.format("Expected the field `status_pages_permissions` to be an array in the JSON string but got `%s`", jsonObj.get("status_pages_permissions").toString()));
       }
       // ensure the optional json data is an array if present
+      if (jsonObj.get("status_page_updates_permissions") != null && !jsonObj.get("status_page_updates_permissions").isJsonNull() && !jsonObj.get("status_page_updates_permissions").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `status_page_updates_permissions` to be an array in the JSON string but got `%s`", jsonObj.get("status_page_updates_permissions").toString()));
+      }
+      // ensure the optional json data is an array if present
       if (jsonObj.get("webhooks_permissions") != null && !jsonObj.get("webhooks_permissions").isJsonNull() && !jsonObj.get("webhooks_permissions").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `webhooks_permissions` to be an array in the JSON string but got `%s`", jsonObj.get("webhooks_permissions").toString()));
       }
@@ -3353,6 +3539,10 @@ public class NewRoleDataAttributes {
       // ensure the optional json data is an array if present
       if (jsonObj.get("edge_connector_permissions") != null && !jsonObj.get("edge_connector_permissions").isJsonNull() && !jsonObj.get("edge_connector_permissions").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `edge_connector_permissions` to be an array in the JSON string but got `%s`", jsonObj.get("edge_connector_permissions").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("private_agent_permissions") != null && !jsonObj.get("private_agent_permissions").isJsonNull() && !jsonObj.get("private_agent_permissions").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `private_agent_permissions` to be an array in the JSON string but got `%s`", jsonObj.get("private_agent_permissions").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("slas_permissions") != null && !jsonObj.get("slas_permissions").isJsonNull() && !jsonObj.get("slas_permissions").isJsonArray()) {

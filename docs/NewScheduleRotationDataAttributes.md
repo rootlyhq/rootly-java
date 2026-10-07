@@ -14,7 +14,7 @@
 |**activeDays** | [**List&lt;ActiveDaysEnum&gt;**](#List&lt;ActiveDaysEnum&gt;) |  |  [optional] |
 |**activeTimeType** | [**List&lt;ActiveTimeTypeEnum&gt;**](#List&lt;ActiveTimeTypeEnum&gt;) |  |  [optional] |
 |**activeTimeAttributes** | [**List&lt;NewScheduleRotationDataAttributesActiveTimeAttributesInner&gt;**](NewScheduleRotationDataAttributesActiveTimeAttributesInner.md) | Schedule rotation&#39;s active times |  [optional] |
-|**timeZone** | **String** | A valid IANA time zone name. |  [optional] |
+|**timeZone** | **String** | A valid IANA time zone name. Organizations with one timezone per schedule manage this on the schedule; a value differing from the schedule&#39;s is rejected. |  [optional] |
 |**scheduleRotationableAttributes** | [**NewScheduleRotationDataAttributesScheduleRotationableAttributes**](NewScheduleRotationDataAttributesScheduleRotationableAttributes.md) |  |  |
 |**startTime** | **OffsetDateTime** | RFC3339 date-time when rotation starts. Shifts will only be created after this time. |  [optional] |
 |**endTime** | **OffsetDateTime** | RFC3339 date-time when rotation ends. Shifts will only be created before this time. |  [optional] |

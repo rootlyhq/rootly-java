@@ -7,7 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**event** | **String** | Describes the action that was taken. |  |
+|**event** | **String** | The raw stored action that was taken. Rows written before IR-6875 may carry a trailing &#x60;!&#x60; for status transitions (e.g. &#x60;mark_as_resolved!&#x60;); prefer &#x60;event_display&#x60; for presentation. |  |
+|**eventDisplay** | **String** | Human-friendly display name for the action, normalized so a status change reads the same regardless of the surface it came from |  [optional] |
 |**itemType** | [**ItemTypeEnum**](#ItemTypeEnum) | Describes the object in which the action was taken on |  [optional] |
 |**itemTypeDisplay** | **String** | Human-friendly display name for the item type |  [optional] |
 |**_object** | **Object** | The object in which the action was taken on |  [optional] |
@@ -33,6 +34,7 @@
 | ALERT_ROUTING_RULE | &quot;AlertRoutingRule&quot; |
 | ALERTS_SOURCE | &quot;Alerts::Source&quot; |
 | API_KEY | &quot;ApiKey&quot; |
+| BROWSER_IP_POLICY | &quot;BrowserIpPolicy&quot; |
 | CATALOG | &quot;Catalog&quot; |
 | CATALOG_ENTITY | &quot;CatalogEntity&quot; |
 | CATALOG_ENTITY_PROPERTY | &quot;CatalogEntityProperty&quot; |
@@ -84,6 +86,7 @@
 | LIVE_CALL_ROUTER | &quot;LiveCallRouter&quot; |
 | LOGIN_ACTIVITY | &quot;LoginActivity&quot; |
 | MEMBERSHIP | &quot;Membership&quot; |
+| OAUTH_APPLICATION | &quot;OauthApplication&quot; |
 | ON_CALL_ROLE | &quot;OnCallRole&quot; |
 | PLAYBOOK | &quot;Playbook&quot; |
 | PLAYBOOK_TASK | &quot;PlaybookTask&quot; |

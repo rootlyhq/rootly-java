@@ -18,6 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewScheduleDataAttributesBusinessHours;
 import com.rootly.client.model.NewScheduleDataAttributesSlackChannel;
 import com.rootly.client.model.NewScheduleDataAttributesSlackUserGroup;
 import java.io.IOException;
@@ -64,6 +65,14 @@ public class NewScheduleDataAttributesTest {
     @Test
     public void allTimeCoverageTest() {
         // TODO: test allTimeCoverage
+    }
+
+    /**
+     * Test the property 'timeZone'
+     */
+    @Test
+    public void timeZoneTest() {
+        // TODO: test timeZone
     }
 
     /**
@@ -160,6 +169,14 @@ public class NewScheduleDataAttributesTest {
     @Test
     public void shiftReportTimeZoneTest() {
         // TODO: test shiftReportTimeZone
+    }
+
+    /**
+     * Test the property 'businessHours'
+     */
+    @Test
+    public void businessHoursTest() {
+        // TODO: test businessHours
     }
 
 }

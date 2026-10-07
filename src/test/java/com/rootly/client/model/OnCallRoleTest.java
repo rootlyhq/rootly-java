@@ -200,6 +200,14 @@ public class OnCallRoleTest {
     }
 
     /**
+     * Test the property 'membersPermissions'
+     */
+    @Test
+    public void membersPermissionsTest() {
+        // TODO: test membersPermissions
+    }
+
+    /**
      * Test the property 'scheduleOverridePermissions'
      */
     @Test

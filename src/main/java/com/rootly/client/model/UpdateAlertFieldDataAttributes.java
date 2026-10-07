@@ -20,7 +20,9 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -49,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateAlertFieldDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateAlertFieldDataAttributes {
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @Deprecated
@@ -61,6 +63,11 @@ public class UpdateAlertFieldDataAttributes {
   @SerializedName(SERIALIZED_NAME_NAME)
   @jakarta.annotation.Nullable
   private String name;
+
+  public static final String SERIALIZED_NAME_OWNER_GROUP_IDS = "owner_group_ids";
+  @SerializedName(SERIALIZED_NAME_OWNER_GROUP_IDS)
+  @jakarta.annotation.Nullable
+  private List<String> ownerGroupIds;
 
   public UpdateAlertFieldDataAttributes() {
   }
@@ -107,6 +114,33 @@ public class UpdateAlertFieldDataAttributes {
   }
 
 
+  public UpdateAlertFieldDataAttributes ownerGroupIds(@jakarta.annotation.Nullable List<String> ownerGroupIds) {
+    this.ownerGroupIds = ownerGroupIds;
+    return this;
+  }
+
+  public UpdateAlertFieldDataAttributes addOwnerGroupIdsItem(String ownerGroupIdsItem) {
+    if (this.ownerGroupIds == null) {
+      this.ownerGroupIds = new ArrayList<>();
+    }
+    this.ownerGroupIds.add(ownerGroupIdsItem);
+    return this;
+  }
+
+  /**
+   * IDs of the teams that own the alert field. Callers with org-wide alert field permissions replace the full set. Callers without them may only add teams they administer, must leave at least one owner, and owners they do not administer are preserved.
+   * @return ownerGroupIds
+   */
+  @jakarta.annotation.Nullable
+  public List<String> getOwnerGroupIds() {
+    return ownerGroupIds;
+  }
+
+  public void setOwnerGroupIds(@jakarta.annotation.Nullable List<String> ownerGroupIds) {
+    this.ownerGroupIds = ownerGroupIds;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -118,7 +152,8 @@ public class UpdateAlertFieldDataAttributes {
     }
     UpdateAlertFieldDataAttributes updateAlertFieldDataAttributes = (UpdateAlertFieldDataAttributes) o;
     return Objects.equals(this.slug, updateAlertFieldDataAttributes.slug) &&
-        Objects.equals(this.name, updateAlertFieldDataAttributes.name);
+        Objects.equals(this.name, updateAlertFieldDataAttributes.name) &&
+        Objects.equals(this.ownerGroupIds, updateAlertFieldDataAttributes.ownerGroupIds);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -127,7 +162,7 @@ public class UpdateAlertFieldDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(slug, name);
+    return Objects.hash(slug, name, ownerGroupIds);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -143,6 +178,7 @@ public class UpdateAlertFieldDataAttributes {
     sb.append("class UpdateAlertFieldDataAttributes {\n");
     sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    ownerGroupIds: ").append(toIndentedString(ownerGroupIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -167,6 +203,7 @@ public class UpdateAlertFieldDataAttributes {
     openapiFields = new HashSet<String>();
     openapiFields.add("slug");
     openapiFields.add("name");
+    openapiFields.add("owner_group_ids");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -198,6 +235,10 @@ public class UpdateAlertFieldDataAttributes {
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("owner_group_ids") != null && !jsonObj.get("owner_group_ids").isJsonNull() && !jsonObj.get("owner_group_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `owner_group_ids` to be an array in the JSON string but got `%s`", jsonObj.get("owner_group_ids").toString()));
       }
   }
 

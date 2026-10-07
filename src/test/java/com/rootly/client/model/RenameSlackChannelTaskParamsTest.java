@@ -62,4 +62,20 @@ public class RenameSlackChannelTaskParamsTest {
         // TODO: test title
     }
 
+    /**
+     * Test the property 'retryCount'
+     */
+    @Test
+    public void retryCountTest() {
+        // TODO: test retryCount
+    }
+
+    /**
+     * Test the property 'retryWaitTime'
+     */
+    @Test
+    public void retryWaitTimeTest() {
+        // TODO: test retryWaitTime
+    }
+
 }

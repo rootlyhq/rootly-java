@@ -235,7 +235,7 @@ public class Example {
 
 <a id="createIncident"></a>
 # **createIncident**
-> IncidentResponse createIncident(newIncident)
+> IncidentResponse createIncident(newIncident, idempotencyKey)
 
 Creates an incident
 
@@ -262,8 +262,9 @@ public class Example {
 
     IncidentsApi apiInstance = new IncidentsApi(defaultClient);
     NewIncident newIncident = new NewIncident(); // NewIncident | 
+    String idempotencyKey = "idempotencyKey_example"; // String | Optional client-generated key that makes creation safe to retry. Within 24 hours, a repeat request carrying the same key returns the incident created by the first request with status 200 instead of creating a duplicate. Keys are scoped to the team. Keys longer than 255 characters are rejected with 422.
     try {
-      IncidentResponse result = apiInstance.createIncident(newIncident);
+      IncidentResponse result = apiInstance.createIncident(newIncident, idempotencyKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling IncidentsApi#createIncident");
@@ -281,6 +282,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **newIncident** | [**NewIncident**](NewIncident.md)|  | |
+| **idempotencyKey** | **String**| Optional client-generated key that makes creation safe to retry. Within 24 hours, a repeat request carrying the same key returns the incident created by the first request with status 200 instead of creating a duplicate. Keys are scoped to the team. Keys longer than 255 characters are rejected with 422. | [optional] |
 
 ### Return type
 
@@ -299,6 +301,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | incident created |  -  |
+| **200** | incident already created for this Idempotency-Key |  -  |
 | **422** | invalid causes association |  -  |
 | **401** | responds with unauthorized for invalid token |  -  |
 

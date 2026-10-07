@@ -20,7 +20,9 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,127 +50,262 @@ import com.rootly.client.JSON;
 /**
  * AlertField
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AlertField {
-  public static final String SERIALIZED_NAME_SLUG = "slug";
-  @SerializedName(SERIALIZED_NAME_SLUG)
+  /**
+   * The type of the escalation path rule
+   */
+  @JsonAdapter(RuleTypeEnum.Adapter.class)
+  public enum RuleTypeEnum {
+    FIELD("field");
+
+    private String value;
+
+    RuleTypeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static RuleTypeEnum fromValue(String value) {
+      for (RuleTypeEnum b : RuleTypeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<RuleTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final RuleTypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public RuleTypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return RuleTypeEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      RuleTypeEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_RULE_TYPE = "rule_type";
+  @SerializedName(SERIALIZED_NAME_RULE_TYPE)
+  @jakarta.annotation.Nonnull
+  private RuleTypeEnum ruleType;
+
+  public static final String SERIALIZED_NAME_FIELDABLE_TYPE = "fieldable_type";
+  @SerializedName(SERIALIZED_NAME_FIELDABLE_TYPE)
+  @jakarta.annotation.Nonnull
+  private String fieldableType;
+
+  public static final String SERIALIZED_NAME_FIELDABLE_ID = "fieldable_id";
+  @SerializedName(SERIALIZED_NAME_FIELDABLE_ID)
+  @jakarta.annotation.Nonnull
+  private String fieldableId;
+
+  /**
+   * How the alert field value should be matched
+   */
+  @JsonAdapter(OperatorEnum.Adapter.class)
+  public enum OperatorEnum {
+    IS("is"),
+    
+    IS_NOT("is_not"),
+    
+    IS_ONE_OF("is_one_of"),
+    
+    IS_NOT_ONE_OF("is_not_one_of"),
+    
+    CONTAINS("contains"),
+    
+    DOES_NOT_CONTAIN("does_not_contain"),
+    
+    IS_EMPTY("is_empty"),
+    
+    IS_NOT_EMPTY("is_not_empty"),
+    
+    CONTAINS_KEY("contains_key"),
+    
+    DOES_NOT_CONTAIN_KEY("does_not_contain_key"),
+    
+    STARTS_WITH("starts_with"),
+    
+    DOES_NOT_START_WITH("does_not_start_with"),
+    
+    MATCHES("matches"),
+    
+    DOES_NOT_MATCH("does_not_match");
+
+    private String value;
+
+    OperatorEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static OperatorEnum fromValue(String value) {
+      for (OperatorEnum b : OperatorEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<OperatorEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final OperatorEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public OperatorEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return OperatorEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      OperatorEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_OPERATOR = "operator";
+  @SerializedName(SERIALIZED_NAME_OPERATOR)
+  @jakarta.annotation.Nonnull
+  private OperatorEnum operator;
+
+  public static final String SERIALIZED_NAME_VALUES = "values";
+  @SerializedName(SERIALIZED_NAME_VALUES)
   @jakarta.annotation.Nullable
-  private String slug;
-
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  @jakarta.annotation.Nonnull
-  private String name;
-
-  public static final String SERIALIZED_NAME_KIND = "kind";
-  @SerializedName(SERIALIZED_NAME_KIND)
-  @jakarta.annotation.Nonnull
-  private String kind;
-
-  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
-  @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @jakarta.annotation.Nonnull
-  private String createdAt;
-
-  public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
-  @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @jakarta.annotation.Nonnull
-  private String updatedAt;
+  private List<String> values = new ArrayList<>();
 
   public AlertField() {
   }
 
-  public AlertField(
-     String slug
-  ) {
-    this();
-    this.slug = slug;
+  public AlertField ruleType(@jakarta.annotation.Nonnull RuleTypeEnum ruleType) {
+    this.ruleType = ruleType;
+    return this;
   }
 
   /**
-   * The slug of the alert field
-   * @return slug
+   * The type of the escalation path rule
+   * @return ruleType
+   */
+  @jakarta.annotation.Nonnull
+  public RuleTypeEnum getRuleType() {
+    return ruleType;
+  }
+
+  public void setRuleType(@jakarta.annotation.Nonnull RuleTypeEnum ruleType) {
+    this.ruleType = ruleType;
+  }
+
+
+  public AlertField fieldableType(@jakarta.annotation.Nonnull String fieldableType) {
+    this.fieldableType = fieldableType;
+    return this;
+  }
+
+  /**
+   * The type of the fieldable (e.g., AlertField)
+   * @return fieldableType
+   */
+  @jakarta.annotation.Nonnull
+  public String getFieldableType() {
+    return fieldableType;
+  }
+
+  public void setFieldableType(@jakarta.annotation.Nonnull String fieldableType) {
+    this.fieldableType = fieldableType;
+  }
+
+
+  public AlertField fieldableId(@jakarta.annotation.Nonnull String fieldableId) {
+    this.fieldableId = fieldableId;
+    return this;
+  }
+
+  /**
+   * The ID of the alert field
+   * @return fieldableId
+   */
+  @jakarta.annotation.Nonnull
+  public String getFieldableId() {
+    return fieldableId;
+  }
+
+  public void setFieldableId(@jakarta.annotation.Nonnull String fieldableId) {
+    this.fieldableId = fieldableId;
+  }
+
+
+  public AlertField operator(@jakarta.annotation.Nonnull OperatorEnum operator) {
+    this.operator = operator;
+    return this;
+  }
+
+  /**
+   * How the alert field value should be matched
+   * @return operator
+   */
+  @jakarta.annotation.Nonnull
+  public OperatorEnum getOperator() {
+    return operator;
+  }
+
+  public void setOperator(@jakarta.annotation.Nonnull OperatorEnum operator) {
+    this.operator = operator;
+  }
+
+
+  public AlertField values(@jakarta.annotation.Nullable List<String> values) {
+    this.values = values;
+    return this;
+  }
+
+  public AlertField addValuesItem(String valuesItem) {
+    if (this.values == null) {
+      this.values = new ArrayList<>();
+    }
+    this.values.add(valuesItem);
+    return this;
+  }
+
+  /**
+   * Values to match against
+   * @return values
    */
   @jakarta.annotation.Nullable
-  public String getSlug() {
-    return slug;
+  public List<String> getValues() {
+    return values;
   }
 
-
-
-  public AlertField name(@jakarta.annotation.Nonnull String name) {
-    this.name = name;
-    return this;
-  }
-
-  /**
-   * The name of the alert field
-   * @return name
-   */
-  @jakarta.annotation.Nonnull
-  public String getName() {
-    return name;
-  }
-
-  public void setName(@jakarta.annotation.Nonnull String name) {
-    this.name = name;
-  }
-
-
-  public AlertField kind(@jakarta.annotation.Nonnull String kind) {
-    this.kind = kind;
-    return this;
-  }
-
-  /**
-   * The kind of alert field
-   * @return kind
-   */
-  @jakarta.annotation.Nonnull
-  public String getKind() {
-    return kind;
-  }
-
-  public void setKind(@jakarta.annotation.Nonnull String kind) {
-    this.kind = kind;
-  }
-
-
-  public AlertField createdAt(@jakarta.annotation.Nonnull String createdAt) {
-    this.createdAt = createdAt;
-    return this;
-  }
-
-  /**
-   * Date of creation
-   * @return createdAt
-   */
-  @jakarta.annotation.Nonnull
-  public String getCreatedAt() {
-    return createdAt;
-  }
-
-  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
-    this.createdAt = createdAt;
-  }
-
-
-  public AlertField updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
-    this.updatedAt = updatedAt;
-    return this;
-  }
-
-  /**
-   * Date of last update
-   * @return updatedAt
-   */
-  @jakarta.annotation.Nonnull
-  public String getUpdatedAt() {
-    return updatedAt;
-  }
-
-  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
-    this.updatedAt = updatedAt;
+  public void setValues(@jakarta.annotation.Nullable List<String> values) {
+    this.values = values;
   }
 
 
@@ -182,27 +319,27 @@ public class AlertField {
       return false;
     }
     AlertField alertField = (AlertField) o;
-    return Objects.equals(this.slug, alertField.slug) &&
-        Objects.equals(this.name, alertField.name) &&
-        Objects.equals(this.kind, alertField.kind) &&
-        Objects.equals(this.createdAt, alertField.createdAt) &&
-        Objects.equals(this.updatedAt, alertField.updatedAt);
+    return Objects.equals(this.ruleType, alertField.ruleType) &&
+        Objects.equals(this.fieldableType, alertField.fieldableType) &&
+        Objects.equals(this.fieldableId, alertField.fieldableId) &&
+        Objects.equals(this.operator, alertField.operator) &&
+        Objects.equals(this.values, alertField.values);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(slug, name, kind, createdAt, updatedAt);
+    return Objects.hash(ruleType, fieldableType, fieldableId, operator, values);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AlertField {\n");
-    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
-    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-    sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+    sb.append("    ruleType: ").append(toIndentedString(ruleType)).append("\n");
+    sb.append("    fieldableType: ").append(toIndentedString(fieldableType)).append("\n");
+    sb.append("    fieldableId: ").append(toIndentedString(fieldableId)).append("\n");
+    sb.append("    operator: ").append(toIndentedString(operator)).append("\n");
+    sb.append("    values: ").append(toIndentedString(values)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -225,18 +362,18 @@ public class AlertField {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("slug");
-    openapiFields.add("name");
-    openapiFields.add("kind");
-    openapiFields.add("created_at");
-    openapiFields.add("updated_at");
+    openapiFields.add("rule_type");
+    openapiFields.add("fieldable_type");
+    openapiFields.add("fieldable_id");
+    openapiFields.add("operator");
+    openapiFields.add("values");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("kind");
-    openapiRequiredFields.add("created_at");
-    openapiRequiredFields.add("updated_at");
+    openapiRequiredFields.add("rule_type");
+    openapiRequiredFields.add("fieldable_type");
+    openapiRequiredFields.add("fieldable_id");
+    openapiRequiredFields.add("operator");
   }
 
   /**
@@ -267,20 +404,25 @@ public class AlertField {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
+      if (!jsonObj.get("rule_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `rule_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("rule_type").toString()));
       }
-      if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      // validate the required field `rule_type`
+      RuleTypeEnum.validateJsonElement(jsonObj.get("rule_type"));
+      if (!jsonObj.get("fieldable_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `fieldable_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("fieldable_type").toString()));
       }
-      if (!jsonObj.get("kind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
+      if (!jsonObj.get("fieldable_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `fieldable_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("fieldable_id").toString()));
       }
-      if (!jsonObj.get("created_at").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));
+      if (!jsonObj.get("operator").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `operator` to be a primitive type in the JSON string but got `%s`", jsonObj.get("operator").toString()));
       }
-      if (!jsonObj.get("updated_at").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `updated_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updated_at").toString()));
+      // validate the required field `operator`
+      OperatorEnum.validateJsonElement(jsonObj.get("operator"));
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("values") != null && !jsonObj.get("values").isJsonNull() && !jsonObj.get("values").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `values` to be an array in the JSON string but got `%s`", jsonObj.get("values").toString()));
       }
   }
 

@@ -9,16 +9,16 @@
 |------------ | ------------- | ------------- | -------------|
 |**ruleType** | [**RuleTypeEnum**](#RuleTypeEnum) | The type of the escalation path rule |  |
 |**urgencyIds** | **List&lt;String&gt;** | Alert urgency ids for which this escalation path should be used |  |
+|**operator** | [**OperatorEnum**](#OperatorEnum) | Whether the alert must (or must not) have related incidents |  |
 |**withinWorkingHour** | **Boolean** | Whether the escalation path should be used within working hours |  |
 |**jsonPath** | **String** | JSON path to extract value from payload |  |
-|**operator** | [**OperatorEnum**](#OperatorEnum) | Whether the alert must (or must not) have related incidents |  |
 |**value** | **String** | Value with which JSON path value should be matched |  [optional] |
 |**values** | **List&lt;String&gt;** | Alert source values to match against (e.g., manual, datadog) |  |
 |**fieldableType** | **String** | The type of the fieldable (e.g., AlertField) |  |
 |**fieldableId** | **String** | The ID of the alert field |  |
 |**serviceIds** | **List&lt;String&gt;** | Service ids for which this escalation path should be used |  |
 |**timeZone** | [**TimeZoneEnum**](#TimeZoneEnum) | Time zone for the deferral window |  |
-|**timeBlocks** | [**List&lt;NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner&gt;**](NewEscalationPolicyPathDataAttributesRulesInnerOneOf5TimeBlocksInner.md) | Time windows during which alerts are deferred |  |
+|**timeBlocks** | [**List&lt;DeferralWindowTimeBlocksInner&gt;**](DeferralWindowTimeBlocksInner.md) | Time windows during which alerts are deferred |  |
 
 
 
@@ -115,6 +115,8 @@
 | ATLANTIC_AZORES | &quot;Atlantic/Azores&quot; |
 | CAPE_VERDE_IS_ | &quot;Cape Verde Is.&quot; |
 | ATLANTIC_CAPE_VERDE | &quot;Atlantic/Cape_Verde&quot; |
+| CASABLANCA | &quot;Casablanca&quot; |
+| AFRICA_CASABLANCA | &quot;Africa/Casablanca&quot; |
 | EDINBURGH | &quot;Edinburgh&quot; |
 | EUROPE_LONDON | &quot;Europe/London&quot; |
 | LISBON | &quot;Lisbon&quot; |
@@ -138,8 +140,6 @@
 | EUROPE_BRUSSELS | &quot;Europe/Brussels&quot; |
 | BUDAPEST | &quot;Budapest&quot; |
 | EUROPE_BUDAPEST | &quot;Europe/Budapest&quot; |
-| CASABLANCA | &quot;Casablanca&quot; |
-| AFRICA_CASABLANCA | &quot;Africa/Casablanca&quot; |
 | COPENHAGEN | &quot;Copenhagen&quot; |
 | EUROPE_COPENHAGEN | &quot;Europe/Copenhagen&quot; |
 | DUBLIN | &quot;Dublin&quot; |
@@ -184,7 +184,7 @@
 | KALININGRAD | &quot;Kaliningrad&quot; |
 | EUROPE_KALININGRAD | &quot;Europe/Kaliningrad&quot; |
 | KYIV | &quot;Kyiv&quot; |
-| EUROPE_KIEV | &quot;Europe/Kiev&quot; |
+| EUROPE_KYIV | &quot;Europe/Kyiv&quot; |
 | PRETORIA | &quot;Pretoria&quot; |
 | AFRICA_JOHANNESBURG | &quot;Africa/Johannesburg&quot; |
 | RIGA | &quot;Riga&quot; |
@@ -251,7 +251,7 @@
 | URUMQI | &quot;Urumqi&quot; |
 | ASIA_URUMQI | &quot;Asia/Urumqi&quot; |
 | RANGOON | &quot;Rangoon&quot; |
-| ASIA_RANGOON | &quot;Asia/Rangoon&quot; |
+| ASIA_YANGON | &quot;Asia/Yangon&quot; |
 | BANGKOK | &quot;Bangkok&quot; |
 | ASIA_BANGKOK | &quot;Asia/Bangkok&quot; |
 | HANOI | &quot;Hanoi&quot; |
@@ -348,6 +348,8 @@
 | PACIFIC_MARQUESAS | &quot;Pacific/Marquesas&quot; |
 | PACIFIC_KIRITIMATI | &quot;Pacific/Kiritimati&quot; |
 | PACIFIC_NORFOLK | &quot;Pacific/Norfolk&quot; |
+| ASIA_RANGOON | &quot;Asia/Rangoon&quot; |
+| EUROPE_KIEV | &quot;Europe/Kiev&quot; |
 
 
 

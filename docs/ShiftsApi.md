@@ -109,8 +109,8 @@ public class Example {
 
     ShiftsApi apiInstance = new ShiftsApi(defaultClient);
     String include = "shift_override"; // String | comma separated if needed. eg: shift_override,user. Note: `user` is deprecated, use `assignee` instead.
-    String from = "from_example"; // String | Start range for shifts in ISO-8601 format (e.g., 2025-01-01T00:00:00Z or 2025-01-01T00:00:00+00:00)
-    String to = "to_example"; // String | End range for shifts in ISO-8601 format (e.g., 2025-01-01T00:00:00Z or 2025-01-01T00:00:00+00:00)
+    String from = "from_example"; // String | Start range for shifts in ISO-8601 format. When omitted with `to`, defaults to `to` for a point-in-time lookup; when both bounds are omitted, defaults to the current time through one month ahead.
+    String to = "to_example"; // String | End range for shifts in ISO-8601 format. When omitted with `from`, defaults to `from`; when both bounds are omitted, defaults to the current time through one month ahead.
     List<Integer> userIds = Arrays.asList(); // List<Integer> | 
     List<String> scheduleIds = Arrays.asList(); // List<String> | 
     Integer pageNumber = 56; // Integer | Page number (defaults to 1)
@@ -134,8 +134,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **include** | **String**| comma separated if needed. eg: shift_override,user. Note: &#x60;user&#x60; is deprecated, use &#x60;assignee&#x60; instead. | [optional] [enum: shift_override, user, assignee, shift_shadow] |
-| **from** | **String**| Start range for shifts in ISO-8601 format (e.g., 2025-01-01T00:00:00Z or 2025-01-01T00:00:00+00:00) | [optional] |
-| **to** | **String**| End range for shifts in ISO-8601 format (e.g., 2025-01-01T00:00:00Z or 2025-01-01T00:00:00+00:00) | [optional] |
+| **from** | **String**| Start range for shifts in ISO-8601 format. When omitted with &#x60;to&#x60;, defaults to &#x60;to&#x60; for a point-in-time lookup; when both bounds are omitted, defaults to the current time through one month ahead. | [optional] |
+| **to** | **String**| End range for shifts in ISO-8601 format. When omitted with &#x60;from&#x60;, defaults to &#x60;from&#x60;; when both bounds are omitted, defaults to the current time through one month ahead. | [optional] |
 | **userIds** | [**List&lt;Integer&gt;**](Integer.md)|  | [optional] |
 | **scheduleIds** | [**List&lt;String&gt;**](String.md)|  | [optional] |
 | **pageNumber** | **Integer**| Page number (defaults to 1) | [optional] |

@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.rootly.client.model.NewScheduleRotationActiveDayDataAttributesActiveTimeAttributesInner;
+import com.rootly.client.model.ScheduleRotationActiveDayActiveTimeAttributesInner;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * ScheduleRotationActiveDay
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ScheduleRotationActiveDay {
   public static final String SERIALIZED_NAME_SCHEDULE_ROTATION_ID = "schedule_rotation_id";
   @SerializedName(SERIALIZED_NAME_SCHEDULE_ROTATION_ID)
@@ -128,7 +128,7 @@ public class ScheduleRotationActiveDay {
   public static final String SERIALIZED_NAME_ACTIVE_TIME_ATTRIBUTES = "active_time_attributes";
   @SerializedName(SERIALIZED_NAME_ACTIVE_TIME_ATTRIBUTES)
   @jakarta.annotation.Nonnull
-  private List<NewScheduleRotationActiveDayDataAttributesActiveTimeAttributesInner> activeTimeAttributes = new ArrayList<>();
+  private List<ScheduleRotationActiveDayActiveTimeAttributesInner> activeTimeAttributes = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -181,12 +181,12 @@ public class ScheduleRotationActiveDay {
   }
 
 
-  public ScheduleRotationActiveDay activeTimeAttributes(@jakarta.annotation.Nonnull List<NewScheduleRotationActiveDayDataAttributesActiveTimeAttributesInner> activeTimeAttributes) {
+  public ScheduleRotationActiveDay activeTimeAttributes(@jakarta.annotation.Nonnull List<ScheduleRotationActiveDayActiveTimeAttributesInner> activeTimeAttributes) {
     this.activeTimeAttributes = activeTimeAttributes;
     return this;
   }
 
-  public ScheduleRotationActiveDay addActiveTimeAttributesItem(NewScheduleRotationActiveDayDataAttributesActiveTimeAttributesInner activeTimeAttributesItem) {
+  public ScheduleRotationActiveDay addActiveTimeAttributesItem(ScheduleRotationActiveDayActiveTimeAttributesInner activeTimeAttributesItem) {
     if (this.activeTimeAttributes == null) {
       this.activeTimeAttributes = new ArrayList<>();
     }
@@ -199,11 +199,11 @@ public class ScheduleRotationActiveDay {
    * @return activeTimeAttributes
    */
   @jakarta.annotation.Nonnull
-  public List<NewScheduleRotationActiveDayDataAttributesActiveTimeAttributesInner> getActiveTimeAttributes() {
+  public List<ScheduleRotationActiveDayActiveTimeAttributesInner> getActiveTimeAttributes() {
     return activeTimeAttributes;
   }
 
-  public void setActiveTimeAttributes(@jakarta.annotation.Nonnull List<NewScheduleRotationActiveDayDataAttributesActiveTimeAttributesInner> activeTimeAttributes) {
+  public void setActiveTimeAttributes(@jakarta.annotation.Nonnull List<ScheduleRotationActiveDayActiveTimeAttributesInner> activeTimeAttributes) {
     this.activeTimeAttributes = activeTimeAttributes;
   }
 
@@ -358,7 +358,7 @@ public class ScheduleRotationActiveDay {
       JsonArray jsonArrayactiveTimeAttributes = jsonObj.getAsJsonArray("active_time_attributes");
       // validate the required field `active_time_attributes` (array)
       for (int i = 0; i < jsonArrayactiveTimeAttributes.size(); i++) {
-        NewScheduleRotationActiveDayDataAttributesActiveTimeAttributesInner.validateJsonElement(jsonArrayactiveTimeAttributes.get(i));
+        ScheduleRotationActiveDayActiveTimeAttributesInner.validateJsonElement(jsonArrayactiveTimeAttributes.get(i));
       };
       if (!jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));

@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -51,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * NewEdgeConnectorEdgeConnector
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewEdgeConnectorEdgeConnector {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -124,6 +125,11 @@ public class NewEdgeConnectorEdgeConnector {
   @SerializedName(SERIALIZED_NAME_SUBSCRIPTIONS)
   @jakarta.annotation.Nullable
   private List<String> subscriptions = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_OWNER_GROUP_IDS = "owner_group_ids";
+  @SerializedName(SERIALIZED_NAME_OWNER_GROUP_IDS)
+  @jakarta.annotation.Nullable
+  private List<UUID> ownerGroupIds = new ArrayList<>();
 
   public NewEdgeConnectorEdgeConnector() {
   }
@@ -212,6 +218,33 @@ public class NewEdgeConnectorEdgeConnector {
   }
 
 
+  public NewEdgeConnectorEdgeConnector ownerGroupIds(@jakarta.annotation.Nullable List<UUID> ownerGroupIds) {
+    this.ownerGroupIds = ownerGroupIds;
+    return this;
+  }
+
+  public NewEdgeConnectorEdgeConnector addOwnerGroupIdsItem(UUID ownerGroupIdsItem) {
+    if (this.ownerGroupIds == null) {
+      this.ownerGroupIds = new ArrayList<>();
+    }
+    this.ownerGroupIds.add(ownerGroupIdsItem);
+    return this;
+  }
+
+  /**
+   * IDs of the teams (groups) that own this connector. Required when the caller is a team admin without tenant-wide edge connector permissions
+   * @return ownerGroupIds
+   */
+  @jakarta.annotation.Nullable
+  public List<UUID> getOwnerGroupIds() {
+    return ownerGroupIds;
+  }
+
+  public void setOwnerGroupIds(@jakarta.annotation.Nullable List<UUID> ownerGroupIds) {
+    this.ownerGroupIds = ownerGroupIds;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -225,7 +258,8 @@ public class NewEdgeConnectorEdgeConnector {
     return Objects.equals(this.name, newEdgeConnectorEdgeConnector.name) &&
         Objects.equals(this.description, newEdgeConnectorEdgeConnector.description) &&
         Objects.equals(this.status, newEdgeConnectorEdgeConnector.status) &&
-        Objects.equals(this.subscriptions, newEdgeConnectorEdgeConnector.subscriptions);
+        Objects.equals(this.subscriptions, newEdgeConnectorEdgeConnector.subscriptions) &&
+        Objects.equals(this.ownerGroupIds, newEdgeConnectorEdgeConnector.ownerGroupIds);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -234,7 +268,7 @@ public class NewEdgeConnectorEdgeConnector {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, status, subscriptions);
+    return Objects.hash(name, description, status, subscriptions, ownerGroupIds);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -252,6 +286,7 @@ public class NewEdgeConnectorEdgeConnector {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    subscriptions: ").append(toIndentedString(subscriptions)).append("\n");
+    sb.append("    ownerGroupIds: ").append(toIndentedString(ownerGroupIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -278,6 +313,7 @@ public class NewEdgeConnectorEdgeConnector {
     openapiFields.add("description");
     openapiFields.add("status");
     openapiFields.add("subscriptions");
+    openapiFields.add("owner_group_ids");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -328,6 +364,10 @@ public class NewEdgeConnectorEdgeConnector {
       // ensure the optional json data is an array if present
       if (jsonObj.get("subscriptions") != null && !jsonObj.get("subscriptions").isJsonNull() && !jsonObj.get("subscriptions").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `subscriptions` to be an array in the JSON string but got `%s`", jsonObj.get("subscriptions").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("owner_group_ids") != null && !jsonObj.get("owner_group_ids").isJsonNull() && !jsonObj.get("owner_group_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `owner_group_ids` to be an array in the JSON string but got `%s`", jsonObj.get("owner_group_ids").toString()));
       }
   }
 

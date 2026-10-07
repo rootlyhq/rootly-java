@@ -56,7 +56,7 @@ import com.rootly.client.JSON;
 /**
  * AlertEvent
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AlertEvent {
   public static final String SERIALIZED_NAME_ALERT_ID = "alert_id";
   @SerializedName(SERIALIZED_NAME_ALERT_ID)
@@ -155,6 +155,10 @@ public class AlertEvent {
     
     LEVEL_SKIPPED("level_skipped"),
     
+    TEAM_ATTACHED_FROM_PAYLOAD("team_attached_from_payload"),
+    
+    USER_PAGED("user_paged"),
+    
     EMAILED("emailed"),
     
     SLACKED("slacked"),
@@ -192,6 +196,8 @@ public class AlertEvent {
     SNOOZED("snoozed"),
     
     RETRIGGER_SUPPRESSED("retrigger_suppressed"),
+    
+    RETRIGGER_CANCELLED("retrigger_cancelled"),
     
     TRIGGERED("triggered"),
     
@@ -260,6 +266,71 @@ public class AlertEvent {
   @SerializedName(SERIALIZED_NAME_ACTION)
   @jakarta.annotation.Nonnull
   private ActionEnum action;
+
+  /**
+   * Present on paged events when a user explicitly reassigns the alert to another notification target.
+   */
+  @JsonAdapter(PageReasonEnum.Adapter.class)
+  public enum PageReasonEnum {
+    MANUAL_REASSIGNMENT("manual_reassignment");
+
+    private String value;
+
+    PageReasonEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static PageReasonEnum fromValue(String value) {
+      for (PageReasonEnum b : PageReasonEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<PageReasonEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final PageReasonEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public PageReasonEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return PageReasonEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      PageReasonEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_PAGE_REASON = "page_reason";
+  @SerializedName(SERIALIZED_NAME_PAGE_REASON)
+  @jakarta.annotation.Nullable
+  private PageReasonEnum pageReason;
+
+  public static final String SERIALIZED_NAME_SLACK_MESSAGE_TS = "slack_message_ts";
+  @SerializedName(SERIALIZED_NAME_SLACK_MESSAGE_TS)
+  @jakarta.annotation.Nullable
+  private String slackMessageTs;
+
+  public static final String SERIALIZED_NAME_SLACK_MESSAGE_PERMALINK = "slack_message_permalink";
+  @SerializedName(SERIALIZED_NAME_SLACK_MESSAGE_PERMALINK)
+  @jakarta.annotation.Nullable
+  private String slackMessagePermalink;
 
   public static final String SERIALIZED_NAME_SOURCE = "source";
   @SerializedName(SERIALIZED_NAME_SOURCE)
@@ -383,6 +454,63 @@ public class AlertEvent {
 
   public void setAction(@jakarta.annotation.Nonnull ActionEnum action) {
     this.action = action;
+  }
+
+
+  public AlertEvent pageReason(@jakarta.annotation.Nullable PageReasonEnum pageReason) {
+    this.pageReason = pageReason;
+    return this;
+  }
+
+  /**
+   * Present on paged events when a user explicitly reassigns the alert to another notification target.
+   * @return pageReason
+   */
+  @jakarta.annotation.Nullable
+  public PageReasonEnum getPageReason() {
+    return pageReason;
+  }
+
+  public void setPageReason(@jakarta.annotation.Nullable PageReasonEnum pageReason) {
+    this.pageReason = pageReason;
+  }
+
+
+  public AlertEvent slackMessageTs(@jakarta.annotation.Nullable String slackMessageTs) {
+    this.slackMessageTs = slackMessageTs;
+    return this;
+  }
+
+  /**
+   * Slack thread ts of the message Rootly posted for this event, when present.
+   * @return slackMessageTs
+   */
+  @jakarta.annotation.Nullable
+  public String getSlackMessageTs() {
+    return slackMessageTs;
+  }
+
+  public void setSlackMessageTs(@jakarta.annotation.Nullable String slackMessageTs) {
+    this.slackMessageTs = slackMessageTs;
+  }
+
+
+  public AlertEvent slackMessagePermalink(@jakarta.annotation.Nullable String slackMessagePermalink) {
+    this.slackMessagePermalink = slackMessagePermalink;
+    return this;
+  }
+
+  /**
+   * Permalink to the Slack message Rootly posted for this event, when present.
+   * @return slackMessagePermalink
+   */
+  @jakarta.annotation.Nullable
+  public String getSlackMessagePermalink() {
+    return slackMessagePermalink;
+  }
+
+  public void setSlackMessagePermalink(@jakarta.annotation.Nullable String slackMessagePermalink) {
+    this.slackMessagePermalink = slackMessagePermalink;
   }
 
 
@@ -654,6 +782,9 @@ public class AlertEvent {
     return Objects.equals(this.alertId, alertEvent.alertId) &&
         Objects.equals(this.kind, alertEvent.kind) &&
         Objects.equals(this.action, alertEvent.action) &&
+        Objects.equals(this.pageReason, alertEvent.pageReason) &&
+        Objects.equals(this.slackMessageTs, alertEvent.slackMessageTs) &&
+        Objects.equals(this.slackMessagePermalink, alertEvent.slackMessagePermalink) &&
         Objects.equals(this.source, alertEvent.source) &&
         Objects.equals(this.userId, alertEvent.userId) &&
         Objects.equals(this.details, alertEvent.details) &&
@@ -675,7 +806,7 @@ public class AlertEvent {
 
   @Override
   public int hashCode() {
-    return Objects.hash(alertId, kind, action, source, userId, details, user, incident, schedule, escalationLevel, escalationTargetType, escalationTarget, slackChannel, incidentIds, createdAt, updatedAt);
+    return Objects.hash(alertId, kind, action, pageReason, slackMessageTs, slackMessagePermalink, source, userId, details, user, incident, schedule, escalationLevel, escalationTargetType, escalationTarget, slackChannel, incidentIds, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -692,6 +823,9 @@ public class AlertEvent {
     sb.append("    alertId: ").append(toIndentedString(alertId)).append("\n");
     sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
+    sb.append("    pageReason: ").append(toIndentedString(pageReason)).append("\n");
+    sb.append("    slackMessageTs: ").append(toIndentedString(slackMessageTs)).append("\n");
+    sb.append("    slackMessagePermalink: ").append(toIndentedString(slackMessagePermalink)).append("\n");
     sb.append("    source: ").append(toIndentedString(source)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    details: ").append(toIndentedString(details)).append("\n");
@@ -730,6 +864,9 @@ public class AlertEvent {
     openapiFields.add("alert_id");
     openapiFields.add("kind");
     openapiFields.add("action");
+    openapiFields.add("page_reason");
+    openapiFields.add("slack_message_ts");
+    openapiFields.add("slack_message_permalink");
     openapiFields.add("source");
     openapiFields.add("user_id");
     openapiFields.add("details");
@@ -795,6 +932,19 @@ public class AlertEvent {
       }
       // validate the required field `action`
       ActionEnum.validateJsonElement(jsonObj.get("action"));
+      if ((jsonObj.get("page_reason") != null && !jsonObj.get("page_reason").isJsonNull()) && !jsonObj.get("page_reason").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `page_reason` to be a primitive type in the JSON string but got `%s`", jsonObj.get("page_reason").toString()));
+      }
+      // validate the optional field `page_reason`
+      if (jsonObj.get("page_reason") != null && !jsonObj.get("page_reason").isJsonNull()) {
+        PageReasonEnum.validateJsonElement(jsonObj.get("page_reason"));
+      }
+      if ((jsonObj.get("slack_message_ts") != null && !jsonObj.get("slack_message_ts").isJsonNull()) && !jsonObj.get("slack_message_ts").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `slack_message_ts` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slack_message_ts").toString()));
+      }
+      if ((jsonObj.get("slack_message_permalink") != null && !jsonObj.get("slack_message_permalink").isJsonNull()) && !jsonObj.get("slack_message_permalink").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `slack_message_permalink` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slack_message_permalink").toString()));
+      }
       if (!jsonObj.get("source").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `source` to be a primitive type in the JSON string but got `%s`", jsonObj.get("source").toString()));
       }

@@ -18,6 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewAlertDataAttributesActor;
 import com.rootly.client.model.NewAlertDataAttributesAlertFieldValuesAttributesInner;
 import com.rootly.client.model.NewAlertDataAttributesLabelsInner;
 import com.rootly.client.model.NewAlertDataAttributesNotificationTargetsInner;
@@ -42,6 +43,14 @@ public class NewAlertDataAttributesTest {
     @Test
     public void testNewAlertDataAttributes() {
         // TODO: test NewAlertDataAttributes
+    }
+
+    /**
+     * Test the property 'actor'
+     */
+    @Test
+    public void actorTest() {
+        // TODO: test actor
     }
 
     /**

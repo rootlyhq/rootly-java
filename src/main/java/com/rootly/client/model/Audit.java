@@ -49,12 +49,17 @@ import com.rootly.client.JSON;
 /**
  * Audit
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Audit {
   public static final String SERIALIZED_NAME_EVENT = "event";
   @SerializedName(SERIALIZED_NAME_EVENT)
   @jakarta.annotation.Nonnull
   private String event;
+
+  public static final String SERIALIZED_NAME_EVENT_DISPLAY = "event_display";
+  @SerializedName(SERIALIZED_NAME_EVENT_DISPLAY)
+  @jakarta.annotation.Nullable
+  private String eventDisplay;
 
   /**
    * Describes the object in which the action was taken on
@@ -68,6 +73,8 @@ public class Audit {
     ALERTS_SOURCE("Alerts::Source"),
     
     API_KEY("ApiKey"),
+    
+    BROWSER_IP_POLICY("BrowserIpPolicy"),
     
     CATALOG("Catalog"),
     
@@ -170,6 +177,8 @@ public class Audit {
     LOGIN_ACTIVITY("LoginActivity"),
     
     MEMBERSHIP("Membership"),
+    
+    OAUTH_APPLICATION("OauthApplication"),
     
     ON_CALL_ROLE("OnCallRole"),
     
@@ -311,7 +320,7 @@ public class Audit {
   }
 
   /**
-   * Describes the action that was taken.
+   * The raw stored action that was taken. Rows written before IR-6875 may carry a trailing &#x60;!&#x60; for status transitions (e.g. &#x60;mark_as_resolved!&#x60;); prefer &#x60;event_display&#x60; for presentation.
    * @return event
    */
   @jakarta.annotation.Nonnull
@@ -321,6 +330,25 @@ public class Audit {
 
   public void setEvent(@jakarta.annotation.Nonnull String event) {
     this.event = event;
+  }
+
+
+  public Audit eventDisplay(@jakarta.annotation.Nullable String eventDisplay) {
+    this.eventDisplay = eventDisplay;
+    return this;
+  }
+
+  /**
+   * Human-friendly display name for the action, normalized so a status change reads the same regardless of the surface it came from
+   * @return eventDisplay
+   */
+  @jakarta.annotation.Nullable
+  public String getEventDisplay() {
+    return eventDisplay;
+  }
+
+  public void setEventDisplay(@jakarta.annotation.Nullable String eventDisplay) {
+    this.eventDisplay = eventDisplay;
   }
 
 
@@ -601,6 +629,7 @@ public class Audit {
     }
     Audit audit = (Audit) o;
     return Objects.equals(this.event, audit.event) &&
+        Objects.equals(this.eventDisplay, audit.eventDisplay) &&
         Objects.equals(this.itemType, audit.itemType) &&
         Objects.equals(this.itemTypeDisplay, audit.itemTypeDisplay) &&
         Objects.equals(this._object, audit._object) &&
@@ -623,7 +652,7 @@ public class Audit {
 
   @Override
   public int hashCode() {
-    return Objects.hash(event, itemType, itemTypeDisplay, _object, objectChanges, userId, userName, userEmail, ipAddress, userAgent, requestId, sessionId, createdAt, itemId, id);
+    return Objects.hash(event, eventDisplay, itemType, itemTypeDisplay, _object, objectChanges, userId, userName, userEmail, ipAddress, userAgent, requestId, sessionId, createdAt, itemId, id);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -638,6 +667,7 @@ public class Audit {
     StringBuilder sb = new StringBuilder();
     sb.append("class Audit {\n");
     sb.append("    event: ").append(toIndentedString(event)).append("\n");
+    sb.append("    eventDisplay: ").append(toIndentedString(eventDisplay)).append("\n");
     sb.append("    itemType: ").append(toIndentedString(itemType)).append("\n");
     sb.append("    itemTypeDisplay: ").append(toIndentedString(itemTypeDisplay)).append("\n");
     sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
@@ -675,6 +705,7 @@ public class Audit {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("event");
+    openapiFields.add("event_display");
     openapiFields.add("item_type");
     openapiFields.add("item_type_display");
     openapiFields.add("object");
@@ -726,6 +757,9 @@ public class Audit {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("event").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `event` to be a primitive type in the JSON string but got `%s`", jsonObj.get("event").toString()));
+      }
+      if ((jsonObj.get("event_display") != null && !jsonObj.get("event_display").isJsonNull()) && !jsonObj.get("event_display").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `event_display` to be a primitive type in the JSON string but got `%s`", jsonObj.get("event_display").toString()));
       }
       if ((jsonObj.get("item_type") != null && !jsonObj.get("item_type").isJsonNull()) && !jsonObj.get("item_type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `item_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("item_type").toString()));

@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * TriggerWorkflowTaskParams
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class TriggerWorkflowTaskParams {
   /**
    * Gets or Sets taskType
@@ -119,7 +119,9 @@ public class TriggerWorkflowTaskParams {
     
     PULSE("pulse"),
     
-    ALERT("alert");
+    ALERT("alert"),
+    
+    PROBLEM("problem");
 
     private String value;
 
@@ -170,7 +172,7 @@ public class TriggerWorkflowTaskParams {
   private KindEnum kind = KindEnum.INCIDENT;
 
   /**
-   * [\&quot;(incident) kind can only match [:id, :slug, :sequential_id, :pagerduty_incident_id, :opsgenie_incident_id, :victor_ops_incident_id, :jira_issue_id, :asana_task_id, :shortcut_task_id, :linear_issue_id, :zendesk_ticket_id, :motion_task_id, :trello_card_id, :airtable_record_id, :shortcut_story_id, :github_issue_id, :freshservice_ticket_id, :freshservice_task_id, :clickup_task_id]\&quot;, \&quot;(action_item) kind can only match [:id, :jira_issue_id, :asana_task_id, :shortcut_task_id, :linear_issue_id, :zendesk_ticket_id, :motion_task_id, :trello_card_id, :airtable_record_id, :shortcut_story_id, :github_issue_id, :freshservice_ticket_id, :freshservice_task_id, :clickup_task_id]\&quot;, \&quot;(post_mortem) kind can only match [:id]\&quot;, \&quot;(pulse) kind can only match [:id]\&quot;, \&quot;(alert) kind can only match [:id]\&quot;]
+   * [\&quot;(incident) kind can only match [:id, :slug, :sequential_id, :pagerduty_incident_id, :opsgenie_incident_id, :victor_ops_incident_id, :jira_issue_id, :asana_task_id, :shortcut_task_id, :linear_issue_id, :zendesk_ticket_id, :motion_task_id, :trello_card_id, :airtable_record_id, :shortcut_story_id, :github_issue_id, :freshservice_ticket_id, :freshservice_task_id, :clickup_task_id]\&quot;, \&quot;(action_item) kind can only match [:id, :jira_issue_id, :asana_task_id, :shortcut_task_id, :linear_issue_id, :zendesk_ticket_id, :motion_task_id, :trello_card_id, :airtable_record_id, :shortcut_story_id, :github_issue_id, :freshservice_ticket_id, :freshservice_task_id, :clickup_task_id]\&quot;, \&quot;(post_mortem) kind can only match [:id]\&quot;, \&quot;(pulse) kind can only match [:id]\&quot;, \&quot;(alert) kind can only match [:id]\&quot;, \&quot;(problem) kind can only match [:id]\&quot;]
    */
   @JsonAdapter(AttributeToQueryByEnum.Adapter.class)
   public enum AttributeToQueryByEnum {
@@ -322,7 +324,7 @@ public class TriggerWorkflowTaskParams {
   }
 
   /**
-   * [\&quot;(incident) kind can only match [:id, :slug, :sequential_id, :pagerduty_incident_id, :opsgenie_incident_id, :victor_ops_incident_id, :jira_issue_id, :asana_task_id, :shortcut_task_id, :linear_issue_id, :zendesk_ticket_id, :motion_task_id, :trello_card_id, :airtable_record_id, :shortcut_story_id, :github_issue_id, :freshservice_ticket_id, :freshservice_task_id, :clickup_task_id]\&quot;, \&quot;(action_item) kind can only match [:id, :jira_issue_id, :asana_task_id, :shortcut_task_id, :linear_issue_id, :zendesk_ticket_id, :motion_task_id, :trello_card_id, :airtable_record_id, :shortcut_story_id, :github_issue_id, :freshservice_ticket_id, :freshservice_task_id, :clickup_task_id]\&quot;, \&quot;(post_mortem) kind can only match [:id]\&quot;, \&quot;(pulse) kind can only match [:id]\&quot;, \&quot;(alert) kind can only match [:id]\&quot;]
+   * [\&quot;(incident) kind can only match [:id, :slug, :sequential_id, :pagerduty_incident_id, :opsgenie_incident_id, :victor_ops_incident_id, :jira_issue_id, :asana_task_id, :shortcut_task_id, :linear_issue_id, :zendesk_ticket_id, :motion_task_id, :trello_card_id, :airtable_record_id, :shortcut_story_id, :github_issue_id, :freshservice_ticket_id, :freshservice_task_id, :clickup_task_id]\&quot;, \&quot;(action_item) kind can only match [:id, :jira_issue_id, :asana_task_id, :shortcut_task_id, :linear_issue_id, :zendesk_ticket_id, :motion_task_id, :trello_card_id, :airtable_record_id, :shortcut_story_id, :github_issue_id, :freshservice_ticket_id, :freshservice_task_id, :clickup_task_id]\&quot;, \&quot;(post_mortem) kind can only match [:id]\&quot;, \&quot;(pulse) kind can only match [:id]\&quot;, \&quot;(alert) kind can only match [:id]\&quot;, \&quot;(problem) kind can only match [:id]\&quot;]
    * @return attributeToQueryBy
    */
   @jakarta.annotation.Nonnull

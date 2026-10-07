@@ -14,8 +14,8 @@
 |**color** | **String** | The hex color of the severity |  [optional] |
 |**position** | **Integer** | Position of the severity |  [optional] |
 |**notifyEmails** | **List&lt;String&gt;** | Emails to attach to the severity |  [optional] |
-|**slackChannels** | [**List&lt;NewEnvironmentDataAttributesSlackChannelsInner&gt;**](NewEnvironmentDataAttributesSlackChannelsInner.md) | Slack Channels associated with this severity |  [optional] |
-|**slackAliases** | [**List&lt;NewEnvironmentDataAttributesSlackAliasesInner&gt;**](NewEnvironmentDataAttributesSlackAliasesInner.md) | Slack Aliases associated with this severity |  [optional] |
+|**slackChannels** | [**List&lt;EnvironmentSlackChannelsInner&gt;**](EnvironmentSlackChannelsInner.md) | Slack Channels associated with this severity |  [optional] |
+|**slackAliases** | [**List&lt;EnvironmentSlackAliasesInner&gt;**](EnvironmentSlackAliasesInner.md) | Slack Aliases associated with this severity |  [optional] |
 |**createdAt** | **String** | Date of creation |  |
 |**updatedAt** | **String** | Date of last update |  |
 

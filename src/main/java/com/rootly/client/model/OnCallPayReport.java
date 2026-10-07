@@ -52,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * OnCallPayReport
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class OnCallPayReport {
   /**
    * The current status of the report.
@@ -597,7 +597,7 @@ public class OnCallPayReport {
   }
 
   /**
-   * Download URL for the generated CSV report. Null until the report is generated.
+   * Short-lived, presigned download URL for the generated CSV report. Fetch the report again if the URL expires. Null until the report is generated.
    * @return csvFileUrl
    */
   @jakarta.annotation.Nullable
@@ -616,7 +616,7 @@ public class OnCallPayReport {
   }
 
   /**
-   * Download URL for the generated XLSX report. Null until the report is generated.
+   * Short-lived, presigned download URL for the generated XLSX report. Fetch the report again if the URL expires. Null until the report is generated.
    * @return xlsxFileUrl
    */
   @jakarta.annotation.Nullable

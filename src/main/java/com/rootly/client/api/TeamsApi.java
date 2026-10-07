@@ -233,6 +233,7 @@ public class TeamsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> records upserted successfully </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> feature not enabled for the organization </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> validation or record-level error </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
      </table>
@@ -304,6 +305,7 @@ public class TeamsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> records upserted successfully </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> feature not enabled for the organization </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> validation or record-level error </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
      </table>
@@ -324,6 +326,7 @@ public class TeamsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> records upserted successfully </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> feature not enabled for the organization </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> validation or record-level error </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
      </table>
@@ -346,6 +349,7 @@ public class TeamsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> records upserted successfully </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> feature not enabled for the organization </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> validation or record-level error </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> unauthorized </td><td>  -  </td></tr>
      </table>
@@ -503,6 +507,7 @@ public class TeamsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> team created </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> feature not enabled for the organization </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> invalid association </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
@@ -574,6 +579,7 @@ public class TeamsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> team created </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> feature not enabled for the organization </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> invalid association </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
@@ -594,6 +600,7 @@ public class TeamsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> team created </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> feature not enabled for the organization </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> invalid association </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
@@ -616,6 +623,7 @@ public class TeamsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> team created </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> feature not enabled for the organization </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> invalid association </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
@@ -1679,6 +1687,7 @@ public class TeamsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> team updated </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> feature not enabled for the organization </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
@@ -1756,6 +1765,7 @@ public class TeamsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> team updated </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> feature not enabled for the organization </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
@@ -1776,6 +1786,7 @@ public class TeamsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> team updated </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> feature not enabled for the organization </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
@@ -1798,6 +1809,7 @@ public class TeamsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> team updated </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> feature not enabled for the organization </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */

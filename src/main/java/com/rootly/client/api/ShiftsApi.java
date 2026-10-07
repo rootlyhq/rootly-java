@@ -223,8 +223,8 @@ public class ShiftsApi {
     /**
      * Build call for listShifts
      * @param include comma separated if needed. eg: shift_override,user. Note: &#x60;user&#x60; is deprecated, use &#x60;assignee&#x60; instead. (optional)
-     * @param from Start range for shifts in ISO-8601 format (e.g., 2025-01-01T00:00:00Z or 2025-01-01T00:00:00+00:00) (optional)
-     * @param to End range for shifts in ISO-8601 format (e.g., 2025-01-01T00:00:00Z or 2025-01-01T00:00:00+00:00) (optional)
+     * @param from Start range for shifts in ISO-8601 format. When omitted with &#x60;to&#x60;, defaults to &#x60;to&#x60; for a point-in-time lookup; when both bounds are omitted, defaults to the current time through one month ahead. (optional)
+     * @param to End range for shifts in ISO-8601 format. When omitted with &#x60;from&#x60;, defaults to &#x60;from&#x60;; when both bounds are omitted, defaults to the current time through one month ahead. (optional)
      * @param userIds  (optional)
      * @param scheduleIds  (optional)
      * @param pageNumber Page number (defaults to 1) (optional)
@@ -322,8 +322,8 @@ public class ShiftsApi {
      * List shifts
      * List shifts
      * @param include comma separated if needed. eg: shift_override,user. Note: &#x60;user&#x60; is deprecated, use &#x60;assignee&#x60; instead. (optional)
-     * @param from Start range for shifts in ISO-8601 format (e.g., 2025-01-01T00:00:00Z or 2025-01-01T00:00:00+00:00) (optional)
-     * @param to End range for shifts in ISO-8601 format (e.g., 2025-01-01T00:00:00Z or 2025-01-01T00:00:00+00:00) (optional)
+     * @param from Start range for shifts in ISO-8601 format. When omitted with &#x60;to&#x60;, defaults to &#x60;to&#x60; for a point-in-time lookup; when both bounds are omitted, defaults to the current time through one month ahead. (optional)
+     * @param to End range for shifts in ISO-8601 format. When omitted with &#x60;from&#x60;, defaults to &#x60;from&#x60;; when both bounds are omitted, defaults to the current time through one month ahead. (optional)
      * @param userIds  (optional)
      * @param scheduleIds  (optional)
      * @param pageNumber Page number (defaults to 1) (optional)
@@ -347,8 +347,8 @@ public class ShiftsApi {
      * List shifts
      * List shifts
      * @param include comma separated if needed. eg: shift_override,user. Note: &#x60;user&#x60; is deprecated, use &#x60;assignee&#x60; instead. (optional)
-     * @param from Start range for shifts in ISO-8601 format (e.g., 2025-01-01T00:00:00Z or 2025-01-01T00:00:00+00:00) (optional)
-     * @param to End range for shifts in ISO-8601 format (e.g., 2025-01-01T00:00:00Z or 2025-01-01T00:00:00+00:00) (optional)
+     * @param from Start range for shifts in ISO-8601 format. When omitted with &#x60;to&#x60;, defaults to &#x60;to&#x60; for a point-in-time lookup; when both bounds are omitted, defaults to the current time through one month ahead. (optional)
+     * @param to End range for shifts in ISO-8601 format. When omitted with &#x60;from&#x60;, defaults to &#x60;from&#x60;; when both bounds are omitted, defaults to the current time through one month ahead. (optional)
      * @param userIds  (optional)
      * @param scheduleIds  (optional)
      * @param pageNumber Page number (defaults to 1) (optional)
@@ -373,8 +373,8 @@ public class ShiftsApi {
      * List shifts (asynchronously)
      * List shifts
      * @param include comma separated if needed. eg: shift_override,user. Note: &#x60;user&#x60; is deprecated, use &#x60;assignee&#x60; instead. (optional)
-     * @param from Start range for shifts in ISO-8601 format (e.g., 2025-01-01T00:00:00Z or 2025-01-01T00:00:00+00:00) (optional)
-     * @param to End range for shifts in ISO-8601 format (e.g., 2025-01-01T00:00:00Z or 2025-01-01T00:00:00+00:00) (optional)
+     * @param from Start range for shifts in ISO-8601 format. When omitted with &#x60;to&#x60;, defaults to &#x60;to&#x60; for a point-in-time lookup; when both bounds are omitted, defaults to the current time through one month ahead. (optional)
+     * @param to End range for shifts in ISO-8601 format. When omitted with &#x60;from&#x60;, defaults to &#x60;from&#x60;; when both bounds are omitted, defaults to the current time through one month ahead. (optional)
      * @param userIds  (optional)
      * @param scheduleIds  (optional)
      * @param pageNumber Page number (defaults to 1) (optional)
