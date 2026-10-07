@@ -1,6 +1,6 @@
 # Configuration for Release Drafter: https://github.com/release-drafter/release-drafter
-name-template: $NEXT_PATCH_VERSION
-tag-template: $NEXT_PATCH_VERSION
+name-template: v$RESOLVED_VERSION
+tag-template: v$RESOLVED_VERSION
 
 template: |
   $CHANGES
@@ -10,6 +10,16 @@ template: |
   <!-- OPENAPI_DIFF -->
 
 categories:
+  - type: version-resolver
+    semver-increment: major
+    when:
+      label: breaking
+  - type: version-resolver
+    semver-increment: minor
+    when:
+      label: enhancement
+  - type: version-resolver
+    semver-increment: patch
   - title: 🚀 New features and improvements
     labels:
       - enhancement
@@ -43,22 +53,3 @@ autolabeler:
   - label: documentation
     files:
       - "*.md"
-
-version-resolver:
-  major:
-    labels:
-      - major
-      - breaking
-  minor:
-    labels:
-      - minor
-      - enhancement
-  patch:
-    labels:
-      - patch
-      - bug
-      - chore
-      - maintenance
-      - dependencies
-      - documentation
-  default: patch

@@ -83,7 +83,7 @@ rm gpg-key.txt
 
 ## Publishing Process
 
-The publish workflow runs automatically when you push a version tag.
+The publish workflow runs automatically when you push a version tag. Release Drafter maintains a draft with merged pull request notes and an OpenAPI diff; review the draft before tagging. Use the `breaking` and `enhancement` labels for major and minor version resolution.
 
 ### Step 1: Update Version and Create Tag
 
@@ -108,7 +108,7 @@ make push-tag
 3. ✅ Deploy to Maven Central Portal
 4. ✅ Auto-publish to Maven Central (no manual UI steps needed!)
 5. ✅ Deploy to GitHub Packages
-6. ✅ Create GitHub release with changelog notes
+6. ✅ Publish the matching Release Drafter draft with its OpenAPI diff, or create a release with GitHub-generated notes
 
 ### One-Command Release (Recommended)
 
@@ -125,11 +125,11 @@ The **publish.yml** workflow runs automatically on tag push and performs these s
 1. Runs all tests
 2. Publishes to Maven Central (with GPG signing)
 3. Publishes to GitHub Packages
-4. Creates GitHub release with changelog notes (only if steps 1-3 succeed)
+4. Publishes the matching Release Drafter draft, including its OpenAPI diff, or creates a release with generated notes if no matching draft exists (only if steps 1-3 succeed)
 
 Check the Actions tab: https://github.com/rootlyhq/rootly-java/actions
 
-**Important:** The GitHub release is only created after successful publishing to both registries, ensuring atomic releases.
+**Important:** The Release Drafter draft is published only after successful publishing to both registries.
 
 ### Step 4: Verify Publication
 

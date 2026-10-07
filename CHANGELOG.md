@@ -1,24 +1,10 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+Release notes for every version are published on [GitHub Releases](https://github.com/rootlyhq/rootly-java/releases). They are drafted automatically by Release Drafter from merged pull requests and include an OpenAPI diff against the previous release.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+## Older releases
 
-## [Unreleased]
-
-### Added
-- Alert configuration endpoints to retrieve and update team alert configuration
-- Private agent endpoints for enrollment tokens, listing, retrieval, updates, and revocation
-- Problem and problem action item endpoints for listing, creating, retrieving, updating, deleting, and linking or unlinking incidents
-- Status page team endpoints to list, add, retrieve, update, and remove teams
-- Phone number verification and resend-verification endpoints
-
-### Removed
-- **BREAKING**: Alert re-trigger rule endpoints (`GET`/`POST /v1/alert_retrigger_rules` and `GET`/`PUT`/`DELETE /v1/alert_retrigger_rules/{id}`) and their models
-
-### Dependencies
-- Regenerated with OpenAPI Generator 7.13.0; runtime dependency versions unchanged
+_Entries below predate GitHub Releases and are no longer updated._
 
 ## [0.0.4] - 2026-01-22
 
