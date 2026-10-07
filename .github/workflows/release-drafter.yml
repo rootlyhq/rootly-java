@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - master
-    tags:
-      - "v*"
   workflow_dispatch: {}
 
 permissions:
@@ -71,11 +69,6 @@ jobs:
 
       - id: release_drafter
         uses: release-drafter/release-drafter@72967cdc98ddd3160f1fc3dff619de365e137dd0 # v7.9.0
-        with:
-          name: ${{ github.ref_type == 'tag' && github.ref_name || 'next' }}
-          tag: ${{ github.ref_type == 'tag' && github.ref_name || 'next' }}
-          version: ${{ github.ref_type == 'tag' && github.ref_name || 'next' }}
-          publish: ${{ github.ref_type == 'tag' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
