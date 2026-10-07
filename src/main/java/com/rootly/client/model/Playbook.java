@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * Playbook
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Playbook {
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
@@ -62,6 +62,68 @@ public class Playbook {
   @SerializedName(SERIALIZED_NAME_SUMMARY)
   @jakarta.annotation.Nullable
   private String summary;
+
+  /**
+   * Whether the playbook body lives in Rootly (&#x60;internal_document&#x60;) or at an external link (&#x60;external_url&#x60;).
+   */
+  @JsonAdapter(KindEnum.Adapter.class)
+  public enum KindEnum {
+    INTERNAL_DOCUMENT("internal_document"),
+    
+    EXTERNAL_URL("external_url");
+
+    private String value;
+
+    KindEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static KindEnum fromValue(String value) {
+      for (KindEnum b : KindEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<KindEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final KindEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public KindEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return KindEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      KindEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_KIND = "kind";
+  @SerializedName(SERIALIZED_NAME_KIND)
+  @jakarta.annotation.Nullable
+  private KindEnum kind;
+
+  public static final String SERIALIZED_NAME_CONTENT = "content";
+  @SerializedName(SERIALIZED_NAME_CONTENT)
+  @jakarta.annotation.Nullable
+  private String content;
 
   public static final String SERIALIZED_NAME_EXTERNAL_URL = "external_url";
   @SerializedName(SERIALIZED_NAME_EXTERNAL_URL)
@@ -97,6 +159,11 @@ public class Playbook {
   @SerializedName(SERIALIZED_NAME_INCIDENT_TYPE_IDS)
   @jakarta.annotation.Nullable
   private List<String> incidentTypeIds;
+
+  public static final String SERIALIZED_NAME_CAUSE_IDS = "cause_ids";
+  @SerializedName(SERIALIZED_NAME_CAUSE_IDS)
+  @jakarta.annotation.Nullable
+  private List<String> causeIds;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -146,6 +213,44 @@ public class Playbook {
 
   public void setSummary(@jakarta.annotation.Nullable String summary) {
     this.summary = summary;
+  }
+
+
+  public Playbook kind(@jakarta.annotation.Nullable KindEnum kind) {
+    this.kind = kind;
+    return this;
+  }
+
+  /**
+   * Whether the playbook body lives in Rootly (&#x60;internal_document&#x60;) or at an external link (&#x60;external_url&#x60;).
+   * @return kind
+   */
+  @jakarta.annotation.Nullable
+  public KindEnum getKind() {
+    return kind;
+  }
+
+  public void setKind(@jakarta.annotation.Nullable KindEnum kind) {
+    this.kind = kind;
+  }
+
+
+  public Playbook content(@jakarta.annotation.Nullable String content) {
+    this.content = content;
+    return this;
+  }
+
+  /**
+   * Sanitized HTML instructions. Still returned when &#x60;kind&#x60; is &#x60;external_url&#x60;, where the body may be stale — branch on &#x60;kind&#x60;, not on &#x60;content&#x60; being present.
+   * @return content
+   */
+  @jakarta.annotation.Nullable
+  public String getContent() {
+    return content;
+  }
+
+  public void setContent(@jakarta.annotation.Nullable String content) {
+    this.content = content;
   }
 
 
@@ -330,6 +435,33 @@ public class Playbook {
   }
 
 
+  public Playbook causeIds(@jakarta.annotation.Nullable List<String> causeIds) {
+    this.causeIds = causeIds;
+    return this;
+  }
+
+  public Playbook addCauseIdsItem(String causeIdsItem) {
+    if (this.causeIds == null) {
+      this.causeIds = new ArrayList<>();
+    }
+    this.causeIds.add(causeIdsItem);
+    return this;
+  }
+
+  /**
+   * The Cause IDs to attach to the incident
+   * @return causeIds
+   */
+  @jakarta.annotation.Nullable
+  public List<String> getCauseIds() {
+    return causeIds;
+  }
+
+  public void setCauseIds(@jakarta.annotation.Nullable List<String> causeIds) {
+    this.causeIds = causeIds;
+  }
+
+
   public Playbook createdAt(@jakarta.annotation.Nonnull String createdAt) {
     this.createdAt = createdAt;
     return this;
@@ -380,6 +512,8 @@ public class Playbook {
     Playbook playbook = (Playbook) o;
     return Objects.equals(this.title, playbook.title) &&
         Objects.equals(this.summary, playbook.summary) &&
+        Objects.equals(this.kind, playbook.kind) &&
+        Objects.equals(this.content, playbook.content) &&
         Objects.equals(this.externalUrl, playbook.externalUrl) &&
         Objects.equals(this.severityIds, playbook.severityIds) &&
         Objects.equals(this.environmentIds, playbook.environmentIds) &&
@@ -387,6 +521,7 @@ public class Playbook {
         Objects.equals(this.serviceIds, playbook.serviceIds) &&
         Objects.equals(this.groupIds, playbook.groupIds) &&
         Objects.equals(this.incidentTypeIds, playbook.incidentTypeIds) &&
+        Objects.equals(this.causeIds, playbook.causeIds) &&
         Objects.equals(this.createdAt, playbook.createdAt) &&
         Objects.equals(this.updatedAt, playbook.updatedAt);
   }
@@ -397,7 +532,7 @@ public class Playbook {
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, summary, externalUrl, severityIds, environmentIds, functionalityIds, serviceIds, groupIds, incidentTypeIds, createdAt, updatedAt);
+    return Objects.hash(title, summary, kind, content, externalUrl, severityIds, environmentIds, functionalityIds, serviceIds, groupIds, incidentTypeIds, causeIds, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -413,6 +548,8 @@ public class Playbook {
     sb.append("class Playbook {\n");
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
+    sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
+    sb.append("    content: ").append(toIndentedString(content)).append("\n");
     sb.append("    externalUrl: ").append(toIndentedString(externalUrl)).append("\n");
     sb.append("    severityIds: ").append(toIndentedString(severityIds)).append("\n");
     sb.append("    environmentIds: ").append(toIndentedString(environmentIds)).append("\n");
@@ -420,6 +557,7 @@ public class Playbook {
     sb.append("    serviceIds: ").append(toIndentedString(serviceIds)).append("\n");
     sb.append("    groupIds: ").append(toIndentedString(groupIds)).append("\n");
     sb.append("    incidentTypeIds: ").append(toIndentedString(incidentTypeIds)).append("\n");
+    sb.append("    causeIds: ").append(toIndentedString(causeIds)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -446,6 +584,8 @@ public class Playbook {
     openapiFields = new HashSet<String>();
     openapiFields.add("title");
     openapiFields.add("summary");
+    openapiFields.add("kind");
+    openapiFields.add("content");
     openapiFields.add("external_url");
     openapiFields.add("severity_ids");
     openapiFields.add("environment_ids");
@@ -453,6 +593,7 @@ public class Playbook {
     openapiFields.add("service_ids");
     openapiFields.add("group_ids");
     openapiFields.add("incident_type_ids");
+    openapiFields.add("cause_ids");
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
 
@@ -497,6 +638,16 @@ public class Playbook {
       if ((jsonObj.get("summary") != null && !jsonObj.get("summary").isJsonNull()) && !jsonObj.get("summary").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `summary` to be a primitive type in the JSON string but got `%s`", jsonObj.get("summary").toString()));
       }
+      if ((jsonObj.get("kind") != null && !jsonObj.get("kind").isJsonNull()) && !jsonObj.get("kind").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
+      }
+      // validate the optional field `kind`
+      if (jsonObj.get("kind") != null && !jsonObj.get("kind").isJsonNull()) {
+        KindEnum.validateJsonElement(jsonObj.get("kind"));
+      }
+      if ((jsonObj.get("content") != null && !jsonObj.get("content").isJsonNull()) && !jsonObj.get("content").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `content` to be a primitive type in the JSON string but got `%s`", jsonObj.get("content").toString()));
+      }
       if ((jsonObj.get("external_url") != null && !jsonObj.get("external_url").isJsonNull()) && !jsonObj.get("external_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `external_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("external_url").toString()));
       }
@@ -523,6 +674,10 @@ public class Playbook {
       // ensure the optional json data is an array if present
       if (jsonObj.get("incident_type_ids") != null && !jsonObj.get("incident_type_ids").isJsonNull() && !jsonObj.get("incident_type_ids").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `incident_type_ids` to be an array in the JSON string but got `%s`", jsonObj.get("incident_type_ids").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("cause_ids") != null && !jsonObj.get("cause_ids").isJsonNull() && !jsonObj.get("cause_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `cause_ids` to be an array in the JSON string but got `%s`", jsonObj.get("cause_ids").toString()));
       }
       if (!jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));

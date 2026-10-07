@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * IncidentTriggerParams
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class IncidentTriggerParams {
   /**
    * Gets or Sets triggerType
@@ -1675,6 +1675,120 @@ public class IncidentTriggerParams {
   private IncidentConditionResolvedAtEnum incidentConditionResolvedAt;
 
   /**
+   * Gets or Sets incidentConditionScheduledFor
+   */
+  @JsonAdapter(IncidentConditionScheduledForEnum.Adapter.class)
+  public enum IncidentConditionScheduledForEnum {
+    SET("SET"),
+    
+    UNSET("UNSET");
+
+    private String value;
+
+    IncidentConditionScheduledForEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static IncidentConditionScheduledForEnum fromValue(String value) {
+      for (IncidentConditionScheduledForEnum b : IncidentConditionScheduledForEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<IncidentConditionScheduledForEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final IncidentConditionScheduledForEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public IncidentConditionScheduledForEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return IncidentConditionScheduledForEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      IncidentConditionScheduledForEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_INCIDENT_CONDITION_SCHEDULED_FOR = "incident_condition_scheduled_for";
+  @SerializedName(SERIALIZED_NAME_INCIDENT_CONDITION_SCHEDULED_FOR)
+  @jakarta.annotation.Nullable
+  private IncidentConditionScheduledForEnum incidentConditionScheduledFor;
+
+  /**
+   * Gets or Sets incidentConditionScheduledUntil
+   */
+  @JsonAdapter(IncidentConditionScheduledUntilEnum.Adapter.class)
+  public enum IncidentConditionScheduledUntilEnum {
+    SET("SET"),
+    
+    UNSET("UNSET");
+
+    private String value;
+
+    IncidentConditionScheduledUntilEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static IncidentConditionScheduledUntilEnum fromValue(String value) {
+      for (IncidentConditionScheduledUntilEnum b : IncidentConditionScheduledUntilEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<IncidentConditionScheduledUntilEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final IncidentConditionScheduledUntilEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public IncidentConditionScheduledUntilEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return IncidentConditionScheduledUntilEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      IncidentConditionScheduledUntilEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_INCIDENT_CONDITION_SCHEDULED_UNTIL = "incident_condition_scheduled_until";
+  @SerializedName(SERIALIZED_NAME_INCIDENT_CONDITION_SCHEDULED_UNTIL)
+  @jakarta.annotation.Nullable
+  private IncidentConditionScheduledUntilEnum incidentConditionScheduledUntil;
+
+  /**
    * Gets or Sets incidentConditionalInactivity
    */
   @JsonAdapter(IncidentConditionalInactivityEnum.Adapter.class)
@@ -2323,6 +2437,44 @@ public class IncidentTriggerParams {
   }
 
 
+  public IncidentTriggerParams incidentConditionScheduledFor(@jakarta.annotation.Nullable IncidentConditionScheduledForEnum incidentConditionScheduledFor) {
+    this.incidentConditionScheduledFor = incidentConditionScheduledFor;
+    return this;
+  }
+
+  /**
+   * Get incidentConditionScheduledFor
+   * @return incidentConditionScheduledFor
+   */
+  @jakarta.annotation.Nullable
+  public IncidentConditionScheduledForEnum getIncidentConditionScheduledFor() {
+    return incidentConditionScheduledFor;
+  }
+
+  public void setIncidentConditionScheduledFor(@jakarta.annotation.Nullable IncidentConditionScheduledForEnum incidentConditionScheduledFor) {
+    this.incidentConditionScheduledFor = incidentConditionScheduledFor;
+  }
+
+
+  public IncidentTriggerParams incidentConditionScheduledUntil(@jakarta.annotation.Nullable IncidentConditionScheduledUntilEnum incidentConditionScheduledUntil) {
+    this.incidentConditionScheduledUntil = incidentConditionScheduledUntil;
+    return this;
+  }
+
+  /**
+   * Get incidentConditionScheduledUntil
+   * @return incidentConditionScheduledUntil
+   */
+  @jakarta.annotation.Nullable
+  public IncidentConditionScheduledUntilEnum getIncidentConditionScheduledUntil() {
+    return incidentConditionScheduledUntil;
+  }
+
+  public void setIncidentConditionScheduledUntil(@jakarta.annotation.Nullable IncidentConditionScheduledUntilEnum incidentConditionScheduledUntil) {
+    this.incidentConditionScheduledUntil = incidentConditionScheduledUntil;
+  }
+
+
   public IncidentTriggerParams incidentConditionalInactivity(@jakarta.annotation.Nullable IncidentConditionalInactivityEnum incidentConditionalInactivity) {
     this.incidentConditionalInactivity = incidentConditionalInactivity;
     return this;
@@ -2381,6 +2533,8 @@ public class IncidentTriggerParams {
         Objects.equals(this.incidentConditionAcknowledgedAt, incidentTriggerParams.incidentConditionAcknowledgedAt) &&
         Objects.equals(this.incidentConditionMitigatedAt, incidentTriggerParams.incidentConditionMitigatedAt) &&
         Objects.equals(this.incidentConditionResolvedAt, incidentTriggerParams.incidentConditionResolvedAt) &&
+        Objects.equals(this.incidentConditionScheduledFor, incidentTriggerParams.incidentConditionScheduledFor) &&
+        Objects.equals(this.incidentConditionScheduledUntil, incidentTriggerParams.incidentConditionScheduledUntil) &&
         Objects.equals(this.incidentConditionalInactivity, incidentTriggerParams.incidentConditionalInactivity);
   }
 
@@ -2390,7 +2544,7 @@ public class IncidentTriggerParams {
 
   @Override
   public int hashCode() {
-    return Objects.hash(triggerType, triggers, incidentVisibilities, incidentKinds, incidentStatuses, incidentInactivityDuration, incidentCondition, incidentConditionVisibility, incidentConditionKind, incidentConditionStatus, incidentConditionSubStatus, incidentConditionEnvironment, incidentConditionSeverity, incidentConditionIncidentType, incidentConditionIncidentRoles, incidentConditionService, incidentConditionFunctionality, incidentConditionGroup, incidentConditionCause, incidentConditionLabel, incidentConditionLabelUseRegexp, incidentLabels, incidentPostMortemConditionCause, incidentConditionSummary, incidentConditionStartedAt, incidentConditionDetectedAt, incidentConditionAcknowledgedAt, incidentConditionMitigatedAt, incidentConditionResolvedAt, incidentConditionalInactivity);
+    return Objects.hash(triggerType, triggers, incidentVisibilities, incidentKinds, incidentStatuses, incidentInactivityDuration, incidentCondition, incidentConditionVisibility, incidentConditionKind, incidentConditionStatus, incidentConditionSubStatus, incidentConditionEnvironment, incidentConditionSeverity, incidentConditionIncidentType, incidentConditionIncidentRoles, incidentConditionService, incidentConditionFunctionality, incidentConditionGroup, incidentConditionCause, incidentConditionLabel, incidentConditionLabelUseRegexp, incidentLabels, incidentPostMortemConditionCause, incidentConditionSummary, incidentConditionStartedAt, incidentConditionDetectedAt, incidentConditionAcknowledgedAt, incidentConditionMitigatedAt, incidentConditionResolvedAt, incidentConditionScheduledFor, incidentConditionScheduledUntil, incidentConditionalInactivity);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -2433,6 +2587,8 @@ public class IncidentTriggerParams {
     sb.append("    incidentConditionAcknowledgedAt: ").append(toIndentedString(incidentConditionAcknowledgedAt)).append("\n");
     sb.append("    incidentConditionMitigatedAt: ").append(toIndentedString(incidentConditionMitigatedAt)).append("\n");
     sb.append("    incidentConditionResolvedAt: ").append(toIndentedString(incidentConditionResolvedAt)).append("\n");
+    sb.append("    incidentConditionScheduledFor: ").append(toIndentedString(incidentConditionScheduledFor)).append("\n");
+    sb.append("    incidentConditionScheduledUntil: ").append(toIndentedString(incidentConditionScheduledUntil)).append("\n");
     sb.append("    incidentConditionalInactivity: ").append(toIndentedString(incidentConditionalInactivity)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -2485,6 +2641,8 @@ public class IncidentTriggerParams {
     openapiFields.add("incident_condition_acknowledged_at");
     openapiFields.add("incident_condition_mitigated_at");
     openapiFields.add("incident_condition_resolved_at");
+    openapiFields.add("incident_condition_scheduled_for");
+    openapiFields.add("incident_condition_scheduled_until");
     openapiFields.add("incident_conditional_inactivity");
 
     // a set of required properties/fields (JSON key names)
@@ -2694,6 +2852,20 @@ public class IncidentTriggerParams {
       // validate the optional field `incident_condition_resolved_at`
       if (jsonObj.get("incident_condition_resolved_at") != null && !jsonObj.get("incident_condition_resolved_at").isJsonNull()) {
         IncidentConditionResolvedAtEnum.validateJsonElement(jsonObj.get("incident_condition_resolved_at"));
+      }
+      if ((jsonObj.get("incident_condition_scheduled_for") != null && !jsonObj.get("incident_condition_scheduled_for").isJsonNull()) && !jsonObj.get("incident_condition_scheduled_for").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `incident_condition_scheduled_for` to be a primitive type in the JSON string but got `%s`", jsonObj.get("incident_condition_scheduled_for").toString()));
+      }
+      // validate the optional field `incident_condition_scheduled_for`
+      if (jsonObj.get("incident_condition_scheduled_for") != null && !jsonObj.get("incident_condition_scheduled_for").isJsonNull()) {
+        IncidentConditionScheduledForEnum.validateJsonElement(jsonObj.get("incident_condition_scheduled_for"));
+      }
+      if ((jsonObj.get("incident_condition_scheduled_until") != null && !jsonObj.get("incident_condition_scheduled_until").isJsonNull()) && !jsonObj.get("incident_condition_scheduled_until").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `incident_condition_scheduled_until` to be a primitive type in the JSON string but got `%s`", jsonObj.get("incident_condition_scheduled_until").toString()));
+      }
+      // validate the optional field `incident_condition_scheduled_until`
+      if (jsonObj.get("incident_condition_scheduled_until") != null && !jsonObj.get("incident_condition_scheduled_until").isJsonNull()) {
+        IncidentConditionScheduledUntilEnum.validateJsonElement(jsonObj.get("incident_condition_scheduled_until"));
       }
       if ((jsonObj.get("incident_conditional_inactivity") != null && !jsonObj.get("incident_conditional_inactivity").isJsonNull()) && !jsonObj.get("incident_conditional_inactivity").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `incident_conditional_inactivity` to be a primitive type in the JSON string but got `%s`", jsonObj.get("incident_conditional_inactivity").toString()));

@@ -19,7 +19,9 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -76,6 +78,14 @@ public class SecretTest {
     @Test
     public void hashicorpVaultVersionTest() {
         // TODO: test hashicorpVaultVersion
+    }
+
+    /**
+     * Test the property 'ownerGroupIds'
+     */
+    @Test
+    public void ownerGroupIdsTest() {
+        // TODO: test ownerGroupIds
     }
 
     /**

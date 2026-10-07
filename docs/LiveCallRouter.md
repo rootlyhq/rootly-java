@@ -26,8 +26,8 @@
 |**informationalNotificationMessage** | **String** | Optional message included in the SMS/push notification. Supports variables such as {{ alert.url }}, {{ alert.data.* }}, and {{ alert.alert_urgency.name }}. |  [optional] |
 |**alertUrgencyId** | **String** | This is used in escalation paths to determine who to page |  [optional] |
 |**callingTreePrompt** | **String** | The audio instructions callers will hear when they call this number, prompting them to select from available options to route their call |  [optional] |
-|**pagingTargets** | [**List&lt;NewLiveCallRouterDataAttributesPagingTargetsInner&gt;**](NewLiveCallRouterDataAttributesPagingTargetsInner.md) | Paging targets that callers can select from when this live call router is configured as a phone tree. |  [optional] |
-|**escalationPolicyTriggerParams** | [**UpdateLiveCallRouterDataAttributesEscalationPolicyTriggerParams**](UpdateLiveCallRouterDataAttributesEscalationPolicyTriggerParams.md) |  |  [optional] |
+|**pagingTargets** | [**List&lt;LiveCallRouterPagingTargetsInner&gt;**](LiveCallRouterPagingTargetsInner.md) | Paging targets that callers can select from when this live call router is configured as a phone tree. |  [optional] |
+|**escalationPolicyTriggerParams** | [**LiveCallRouterEscalationPolicyTriggerParams**](LiveCallRouterEscalationPolicyTriggerParams.md) |  |  [optional] |
 |**createdAt** | **String** | Date of creation |  |
 |**updatedAt** | **String** | Date of last update |  |
 

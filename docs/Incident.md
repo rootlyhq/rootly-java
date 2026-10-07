@@ -22,7 +22,7 @@
 |**shortUrl** | **String** | The short url to the incident |  [optional] |
 |**publicTitle** | **String** | The public title of the incident |  [optional] |
 |**user** | **Object** | The user who created the incident |  [optional] |
-|**severity** | [**SeverityResponse**](SeverityResponse.md) | The Severity of the incident |  [optional] |
+|**severity** | [**NullableSeverityResponse**](NullableSeverityResponse.md) |  |  [optional] |
 |**environments** | [**List&lt;EnvironmentResponse&gt;**](EnvironmentResponse.md) | The Environments of the incident |  [optional] |
 |**incidentTypes** | [**List&lt;IncidentTypeResponse&gt;**](IncidentTypeResponse.md) | The Incident Types of the incident |  [optional] |
 |**services** | [**List&lt;ServiceResponse&gt;**](ServiceResponse.md) | The Services of the incident |  [optional] |
@@ -74,6 +74,7 @@
 |**gitlabIssueUrl** | **String** | GitLab issue URL |  [optional] |
 |**asanaTaskId** | **String** | Asana task ID |  [optional] |
 |**asanaTaskUrl** | **String** | Asana task URL |  [optional] |
+|**linearIssueKey** | **String** | Linear issue key |  [optional] |
 |**linearIssueId** | **String** | Linear issue ID |  [optional] |
 |**linearIssueUrl** | **String** | Linear issue URL |  [optional] |
 |**trelloCardId** | **String** | Trello card ID |  [optional] |

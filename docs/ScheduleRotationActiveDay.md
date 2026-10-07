@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**scheduleRotationId** | **String** |  |  |
 |**dayName** | [**DayNameEnum**](#DayNameEnum) | Schedule rotation day name for which active times to be created |  |
-|**activeTimeAttributes** | [**List&lt;NewScheduleRotationActiveDayDataAttributesActiveTimeAttributesInner&gt;**](NewScheduleRotationActiveDayDataAttributesActiveTimeAttributesInner.md) | Schedule rotation active times per day |  |
+|**activeTimeAttributes** | [**List&lt;ScheduleRotationActiveDayActiveTimeAttributesInner&gt;**](ScheduleRotationActiveDayActiveTimeAttributesInner.md) | Schedule rotation active times per day |  |
 |**createdAt** | **String** | Date of creation |  |
 |**updatedAt** | **String** | Date of last update |  |
 

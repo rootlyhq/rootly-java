@@ -50,7 +50,7 @@ import com.rootly.client.JSON;
 /**
  * Event filters. OR within dimension, AND across dimensions.
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CreateEdgeConnectorRequestDataAttributesFilters {
   public static final String SERIALIZED_NAME_GROUP_IDS = "group_ids";
   @SerializedName(SERIALIZED_NAME_GROUP_IDS)

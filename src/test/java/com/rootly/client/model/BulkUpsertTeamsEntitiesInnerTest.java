@@ -74,6 +74,14 @@ public class BulkUpsertTeamsEntitiesInnerTest {
     }
 
     /**
+     * Test the property 'scheduleOverridePolicy'
+     */
+    @Test
+    public void scheduleOverridePolicyTest() {
+        // TODO: test scheduleOverridePolicy
+    }
+
+    /**
      * Test the property 'color'
      */
     @Test

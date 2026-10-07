@@ -16,7 +16,7 @@ All URIs are relative to *https://api.rootly.com*
 
 creates shift coverage requests
 
-Creates coverage requests for the shifts overlapping the requested time range. A range can span multiple consecutive shifts (e.g. across a handoff), so one or more coverage requests may be created; the response is always a list. A coverage request broadcasts to schedule members so someone can volunteer to cover the shift.
+Creates coverage requests for the shifts overlapping the requested time range. A range can span multiple consecutive shifts (e.g. across a handoff), so one or more coverage requests may be created; the response is always a list. A coverage request broadcasts to schedule members so someone can volunteer to cover the shift, or targets recipient_user_ids when targeted-shift-coverage is enabled.
 
 ### Example
 ```java

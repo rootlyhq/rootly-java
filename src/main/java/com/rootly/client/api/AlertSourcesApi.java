@@ -673,8 +673,9 @@ public class AlertSourcesApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> preserves existing alert source field ids </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> built-in alert fields cannot be unbound </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> preserves existing alert source field ids </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateAlertsSourceCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateAlertsSource updateAlertsSource, final ApiCallback _callback) throws ApiException {
@@ -750,8 +751,9 @@ public class AlertSourcesApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> preserves existing alert source field ids </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> built-in alert fields cannot be unbound </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> preserves existing alert source field ids </td><td>  -  </td></tr>
      </table>
      */
     public AlertsSourceResponse updateAlertsSource(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateAlertsSource updateAlertsSource) throws ApiException {
@@ -770,8 +772,9 @@ public class AlertSourcesApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> preserves existing alert source field ids </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> built-in alert fields cannot be unbound </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> preserves existing alert source field ids </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<AlertsSourceResponse> updateAlertsSourceWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateAlertsSource updateAlertsSource) throws ApiException {
@@ -792,8 +795,9 @@ public class AlertSourcesApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> preserves existing alert source field ids </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> built-in alert fields cannot be unbound </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> preserves existing alert source field ids </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call updateAlertsSourceAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nonnull UpdateAlertsSource updateAlertsSource, final ApiCallback<AlertsSourceResponse> _callback) throws ApiException {

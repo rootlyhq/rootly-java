@@ -63,6 +63,14 @@ public class ApiKeyTest {
     }
 
     /**
+     * Test the property 'groupId'
+     */
+    @Test
+    public void groupIdTest() {
+        // TODO: test groupId
+    }
+
+    /**
      * Test the property 'roleId'
      */
     @Test

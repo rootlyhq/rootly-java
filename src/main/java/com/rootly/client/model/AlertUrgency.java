@@ -20,8 +20,9 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
-import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,272 +50,194 @@ import com.rootly.client.JSON;
 /**
  * AlertUrgency
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AlertUrgency {
-  public static final String SERIALIZED_NAME_ID = "id";
-  @SerializedName(SERIALIZED_NAME_ID)
-  @jakarta.annotation.Nullable
-  private String id;
+  /**
+   * The type of the escalation path rule
+   */
+  @JsonAdapter(RuleTypeEnum.Adapter.class)
+  public enum RuleTypeEnum {
+    ALERT_URGENCY("alert_urgency");
 
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
+    private String value;
+
+    RuleTypeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static RuleTypeEnum fromValue(String value) {
+      for (RuleTypeEnum b : RuleTypeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<RuleTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final RuleTypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public RuleTypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return RuleTypeEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      RuleTypeEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_RULE_TYPE = "rule_type";
+  @SerializedName(SERIALIZED_NAME_RULE_TYPE)
   @jakarta.annotation.Nonnull
-  private String name;
+  private RuleTypeEnum ruleType;
 
-  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
-  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  public static final String SERIALIZED_NAME_URGENCY_IDS = "urgency_ids";
+  @SerializedName(SERIALIZED_NAME_URGENCY_IDS)
   @jakarta.annotation.Nonnull
-  private String description;
+  private List<String> urgencyIds = new ArrayList<>();
 
-  public static final String SERIALIZED_NAME_POSITION = "position";
-  @SerializedName(SERIALIZED_NAME_POSITION)
-  @jakarta.annotation.Nonnull
-  private Integer position;
+  /**
+   * How the alert&#39;s urgency should be matched. is and is_not take exactly one id
+   */
+  @JsonAdapter(OperatorEnum.Adapter.class)
+  public enum OperatorEnum {
+    IS("is"),
+    
+    IS_NOT("is_not"),
+    
+    IS_ONE_OF("is_one_of"),
+    
+    IS_NOT_ONE_OF("is_not_one_of");
 
-  public static final String SERIALIZED_NAME_RETRIGGER_TIMEOUT_MINUTES = "retrigger_timeout_minutes";
-  @SerializedName(SERIALIZED_NAME_RETRIGGER_TIMEOUT_MINUTES)
+    private String value;
+
+    OperatorEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static OperatorEnum fromValue(String value) {
+      for (OperatorEnum b : OperatorEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<OperatorEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final OperatorEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public OperatorEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return OperatorEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      OperatorEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_OPERATOR = "operator";
+  @SerializedName(SERIALIZED_NAME_OPERATOR)
   @jakarta.annotation.Nullable
-  private Integer retriggerTimeoutMinutes;
-
-  public static final String SERIALIZED_NAME_URGENCY = "urgency";
-  @SerializedName(SERIALIZED_NAME_URGENCY)
-  @jakarta.annotation.Nullable
-  private String urgency;
-
-  public static final String SERIALIZED_NAME_COLOR = "color";
-  @SerializedName(SERIALIZED_NAME_COLOR)
-  @jakarta.annotation.Nullable
-  private String color;
-
-  public static final String SERIALIZED_NAME_TEAM_ID = "team_id";
-  @SerializedName(SERIALIZED_NAME_TEAM_ID)
-  @jakarta.annotation.Nullable
-  private Integer teamId;
-
-  public static final String SERIALIZED_NAME_DELETED_AT = "deleted_at";
-  @SerializedName(SERIALIZED_NAME_DELETED_AT)
-  @jakarta.annotation.Nullable
-  private String deletedAt;
-
-  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
-  @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @jakarta.annotation.Nonnull
-  private String createdAt;
-
-  public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
-  @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @jakarta.annotation.Nonnull
-  private String updatedAt;
+  private OperatorEnum operator = OperatorEnum.IS_ONE_OF;
 
   public AlertUrgency() {
   }
 
-  public AlertUrgency id(@jakarta.annotation.Nullable String id) {
-    this.id = id;
+  public AlertUrgency ruleType(@jakarta.annotation.Nonnull RuleTypeEnum ruleType) {
+    this.ruleType = ruleType;
     return this;
   }
 
   /**
-   * Unique ID of the alert urgency
-   * @return id
-   */
-  @jakarta.annotation.Nullable
-  public String getId() {
-    return id;
-  }
-
-  public void setId(@jakarta.annotation.Nullable String id) {
-    this.id = id;
-  }
-
-
-  public AlertUrgency name(@jakarta.annotation.Nonnull String name) {
-    this.name = name;
-    return this;
-  }
-
-  /**
-   * The name of the alert urgency
-   * @return name
+   * The type of the escalation path rule
+   * @return ruleType
    */
   @jakarta.annotation.Nonnull
-  public String getName() {
-    return name;
+  public RuleTypeEnum getRuleType() {
+    return ruleType;
   }
 
-  public void setName(@jakarta.annotation.Nonnull String name) {
-    this.name = name;
+  public void setRuleType(@jakarta.annotation.Nonnull RuleTypeEnum ruleType) {
+    this.ruleType = ruleType;
   }
 
 
-  public AlertUrgency description(@jakarta.annotation.Nonnull String description) {
-    this.description = description;
+  public AlertUrgency urgencyIds(@jakarta.annotation.Nonnull List<String> urgencyIds) {
+    this.urgencyIds = urgencyIds;
+    return this;
+  }
+
+  public AlertUrgency addUrgencyIdsItem(String urgencyIdsItem) {
+    if (this.urgencyIds == null) {
+      this.urgencyIds = new ArrayList<>();
+    }
+    this.urgencyIds.add(urgencyIdsItem);
     return this;
   }
 
   /**
-   * The description of the alert urgency
-   * @return description
+   * Alert urgency ids for which this escalation path should be used
+   * @return urgencyIds
    */
   @jakarta.annotation.Nonnull
-  public String getDescription() {
-    return description;
+  public List<String> getUrgencyIds() {
+    return urgencyIds;
   }
 
-  public void setDescription(@jakarta.annotation.Nonnull String description) {
-    this.description = description;
+  public void setUrgencyIds(@jakarta.annotation.Nonnull List<String> urgencyIds) {
+    this.urgencyIds = urgencyIds;
   }
 
 
-  public AlertUrgency position(@jakarta.annotation.Nonnull Integer position) {
-    this.position = position;
+  public AlertUrgency operator(@jakarta.annotation.Nullable OperatorEnum operator) {
+    this.operator = operator;
     return this;
   }
 
   /**
-   * Position of the alert urgency
-   * @return position
-   */
-  @jakarta.annotation.Nonnull
-  public Integer getPosition() {
-    return position;
-  }
-
-  public void setPosition(@jakarta.annotation.Nonnull Integer position) {
-    this.position = position;
-  }
-
-
-  public AlertUrgency retriggerTimeoutMinutes(@jakarta.annotation.Nullable Integer retriggerTimeoutMinutes) {
-    this.retriggerTimeoutMinutes = retriggerTimeoutMinutes;
-    return this;
-  }
-
-  /**
-   * Re-trigger acknowledged alerts of this urgency after N minutes; null inherits the workspace default, negative &#x3D; never.
-   * @return retriggerTimeoutMinutes
+   * How the alert&#39;s urgency should be matched. is and is_not take exactly one id
+   * @return operator
    */
   @jakarta.annotation.Nullable
-  public Integer getRetriggerTimeoutMinutes() {
-    return retriggerTimeoutMinutes;
+  public OperatorEnum getOperator() {
+    return operator;
   }
 
-  public void setRetriggerTimeoutMinutes(@jakarta.annotation.Nullable Integer retriggerTimeoutMinutes) {
-    this.retriggerTimeoutMinutes = retriggerTimeoutMinutes;
-  }
-
-
-  public AlertUrgency urgency(@jakarta.annotation.Nullable String urgency) {
-    this.urgency = urgency;
-    return this;
-  }
-
-  /**
-   * The urgency level
-   * @return urgency
-   */
-  @jakarta.annotation.Nullable
-  public String getUrgency() {
-    return urgency;
-  }
-
-  public void setUrgency(@jakarta.annotation.Nullable String urgency) {
-    this.urgency = urgency;
-  }
-
-
-  public AlertUrgency color(@jakarta.annotation.Nullable String color) {
-    this.color = color;
-    return this;
-  }
-
-  /**
-   * The color associated with this urgency level
-   * @return color
-   */
-  @jakarta.annotation.Nullable
-  public String getColor() {
-    return color;
-  }
-
-  public void setColor(@jakarta.annotation.Nullable String color) {
-    this.color = color;
-  }
-
-
-  public AlertUrgency teamId(@jakarta.annotation.Nullable Integer teamId) {
-    this.teamId = teamId;
-    return this;
-  }
-
-  /**
-   * The ID of the team this urgency belongs to
-   * @return teamId
-   */
-  @jakarta.annotation.Nullable
-  public Integer getTeamId() {
-    return teamId;
-  }
-
-  public void setTeamId(@jakarta.annotation.Nullable Integer teamId) {
-    this.teamId = teamId;
-  }
-
-
-  public AlertUrgency deletedAt(@jakarta.annotation.Nullable String deletedAt) {
-    this.deletedAt = deletedAt;
-    return this;
-  }
-
-  /**
-   * Date of deletion
-   * @return deletedAt
-   */
-  @jakarta.annotation.Nullable
-  public String getDeletedAt() {
-    return deletedAt;
-  }
-
-  public void setDeletedAt(@jakarta.annotation.Nullable String deletedAt) {
-    this.deletedAt = deletedAt;
-  }
-
-
-  public AlertUrgency createdAt(@jakarta.annotation.Nonnull String createdAt) {
-    this.createdAt = createdAt;
-    return this;
-  }
-
-  /**
-   * Date of creation
-   * @return createdAt
-   */
-  @jakarta.annotation.Nonnull
-  public String getCreatedAt() {
-    return createdAt;
-  }
-
-  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
-    this.createdAt = createdAt;
-  }
-
-
-  public AlertUrgency updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
-    this.updatedAt = updatedAt;
-    return this;
-  }
-
-  /**
-   * Date of last update
-   * @return updatedAt
-   */
-  @jakarta.annotation.Nonnull
-  public String getUpdatedAt() {
-    return updatedAt;
-  }
-
-  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
-    this.updatedAt = updatedAt;
+  public void setOperator(@jakarta.annotation.Nullable OperatorEnum operator) {
+    this.operator = operator;
   }
 
 
@@ -328,50 +251,23 @@ public class AlertUrgency {
       return false;
     }
     AlertUrgency alertUrgency = (AlertUrgency) o;
-    return Objects.equals(this.id, alertUrgency.id) &&
-        Objects.equals(this.name, alertUrgency.name) &&
-        Objects.equals(this.description, alertUrgency.description) &&
-        Objects.equals(this.position, alertUrgency.position) &&
-        Objects.equals(this.retriggerTimeoutMinutes, alertUrgency.retriggerTimeoutMinutes) &&
-        Objects.equals(this.urgency, alertUrgency.urgency) &&
-        Objects.equals(this.color, alertUrgency.color) &&
-        Objects.equals(this.teamId, alertUrgency.teamId) &&
-        Objects.equals(this.deletedAt, alertUrgency.deletedAt) &&
-        Objects.equals(this.createdAt, alertUrgency.createdAt) &&
-        Objects.equals(this.updatedAt, alertUrgency.updatedAt);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+    return Objects.equals(this.ruleType, alertUrgency.ruleType) &&
+        Objects.equals(this.urgencyIds, alertUrgency.urgencyIds) &&
+        Objects.equals(this.operator, alertUrgency.operator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, position, retriggerTimeoutMinutes, urgency, color, teamId, deletedAt, createdAt, updatedAt);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(ruleType, urgencyIds, operator);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AlertUrgency {\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    position: ").append(toIndentedString(position)).append("\n");
-    sb.append("    retriggerTimeoutMinutes: ").append(toIndentedString(retriggerTimeoutMinutes)).append("\n");
-    sb.append("    urgency: ").append(toIndentedString(urgency)).append("\n");
-    sb.append("    color: ").append(toIndentedString(color)).append("\n");
-    sb.append("    teamId: ").append(toIndentedString(teamId)).append("\n");
-    sb.append("    deletedAt: ").append(toIndentedString(deletedAt)).append("\n");
-    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-    sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+    sb.append("    ruleType: ").append(toIndentedString(ruleType)).append("\n");
+    sb.append("    urgencyIds: ").append(toIndentedString(urgencyIds)).append("\n");
+    sb.append("    operator: ").append(toIndentedString(operator)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -394,25 +290,14 @@ public class AlertUrgency {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("id");
-    openapiFields.add("name");
-    openapiFields.add("description");
-    openapiFields.add("position");
-    openapiFields.add("retrigger_timeout_minutes");
-    openapiFields.add("urgency");
-    openapiFields.add("color");
-    openapiFields.add("team_id");
-    openapiFields.add("deleted_at");
-    openapiFields.add("created_at");
-    openapiFields.add("updated_at");
+    openapiFields.add("rule_type");
+    openapiFields.add("urgency_ids");
+    openapiFields.add("operator");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("description");
-    openapiRequiredFields.add("position");
-    openapiRequiredFields.add("created_at");
-    openapiRequiredFields.add("updated_at");
+    openapiRequiredFields.add("rule_type");
+    openapiRequiredFields.add("urgency_ids");
   }
 
   /**
@@ -443,29 +328,23 @@ public class AlertUrgency {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
+      if (!jsonObj.get("rule_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `rule_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("rule_type").toString()));
       }
-      if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      // validate the required field `rule_type`
+      RuleTypeEnum.validateJsonElement(jsonObj.get("rule_type"));
+      // ensure the required json array is present
+      if (jsonObj.get("urgency_ids") == null) {
+        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
+      } else if (!jsonObj.get("urgency_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `urgency_ids` to be an array in the JSON string but got `%s`", jsonObj.get("urgency_ids").toString()));
       }
-      if (!jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      if ((jsonObj.get("operator") != null && !jsonObj.get("operator").isJsonNull()) && !jsonObj.get("operator").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `operator` to be a primitive type in the JSON string but got `%s`", jsonObj.get("operator").toString()));
       }
-      if ((jsonObj.get("urgency") != null && !jsonObj.get("urgency").isJsonNull()) && !jsonObj.get("urgency").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `urgency` to be a primitive type in the JSON string but got `%s`", jsonObj.get("urgency").toString()));
-      }
-      if ((jsonObj.get("color") != null && !jsonObj.get("color").isJsonNull()) && !jsonObj.get("color").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `color` to be a primitive type in the JSON string but got `%s`", jsonObj.get("color").toString()));
-      }
-      if ((jsonObj.get("deleted_at") != null && !jsonObj.get("deleted_at").isJsonNull()) && !jsonObj.get("deleted_at").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `deleted_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("deleted_at").toString()));
-      }
-      if (!jsonObj.get("created_at").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));
-      }
-      if (!jsonObj.get("updated_at").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `updated_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updated_at").toString()));
+      // validate the optional field `operator`
+      if (jsonObj.get("operator") != null && !jsonObj.get("operator").isJsonNull()) {
+        OperatorEnum.validateJsonElement(jsonObj.get("operator"));
       }
   }
 

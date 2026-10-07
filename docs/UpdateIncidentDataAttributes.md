@@ -34,6 +34,9 @@
 |**jiraIssueKey** | **String** | Jira issue key |  [optional] |
 |**jiraIssueId** | **String** | Jira issue ID |  [optional] |
 |**jiraIssueUrl** | **String** | Jira issue URL |  [optional] |
+|**linearIssueKey** | **String** | Linear issue key |  [optional] |
+|**linearIssueId** | **String** | Linear issue ID |  [optional] |
+|**linearIssueUrl** | **String** | Linear issue URL |  [optional] |
 |**scheduledFor** | **String** | Date of when the maintenance begins |  [optional] |
 |**scheduledUntil** | **String** | Date of when the maintenance ends |  [optional] |
 |**inTriageAt** | **String** | Date of triage |  [optional] |

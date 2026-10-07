@@ -11,6 +11,7 @@
 |**description** | **String** |  |  [optional] |
 |**status** | [**StatusEnum**](#StatusEnum) |  |  [optional] |
 |**subscriptions** | **List&lt;String&gt;** |  |  [optional] |
+|**ownerGroupIds** | **List&lt;UUID&gt;** | IDs of the teams (groups) that own this connector |  [optional] |
 |**filters** | **Object** | Event filters |  [optional] |
 
 

@@ -182,6 +182,22 @@ public class NewTeamDataAttributesTest {
     }
 
     /**
+     * Test the property 'scimGroupId'
+     */
+    @Test
+    public void scimGroupIdTest() {
+        // TODO: test scimGroupId
+    }
+
+    /**
+     * Test the property 'scimGroupExternalId'
+     */
+    @Test
+    public void scimGroupExternalIdTest() {
+        // TODO: test scimGroupExternalId
+    }
+
+    /**
      * Test the property 'userIds'
      */
     @Test
@@ -275,6 +291,14 @@ public class NewTeamDataAttributesTest {
     @Test
     public void autoAddMembersScopeTest() {
         // TODO: test autoAddMembersScope
+    }
+
+    /**
+     * Test the property 'scheduleOverridePolicy'
+     */
+    @Test
+    public void scheduleOverridePolicyTest() {
+        // TODO: test scheduleOverridePolicy
     }
 
     /**

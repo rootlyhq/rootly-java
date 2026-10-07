@@ -1574,7 +1574,7 @@ public class MeetingRecordingsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> session created </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> invalid platform </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Scribe is disabled for the organization </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call startRecordingSessionCall(@jakarta.annotation.Nullable StartSessionRequest startSessionRequest, final ApiCallback _callback) throws ApiException {
@@ -1639,7 +1639,7 @@ public class MeetingRecordingsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> session created </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> invalid platform </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Scribe is disabled for the organization </td><td>  -  </td></tr>
      </table>
      */
     public StartSessionResponse startRecordingSession(@jakarta.annotation.Nullable StartSessionRequest startSessionRequest) throws ApiException {
@@ -1658,7 +1658,7 @@ public class MeetingRecordingsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> session created </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> invalid platform </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Scribe is disabled for the organization </td><td>  -  </td></tr>
      </table>
      */
     public ApiResponse<StartSessionResponse> startRecordingSessionWithHttpInfo(@jakarta.annotation.Nullable StartSessionRequest startSessionRequest) throws ApiException {
@@ -1679,7 +1679,7 @@ public class MeetingRecordingsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> session created </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> invalid platform </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Scribe is disabled for the organization </td><td>  -  </td></tr>
      </table>
      */
     public okhttp3.Call startRecordingSessionAsync(@jakarta.annotation.Nullable StartSessionRequest startSessionRequest, final ApiCallback<StartSessionResponse> _callback) throws ApiException {

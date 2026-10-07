@@ -19,8 +19,10 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewAlertDataAttributesActor;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,12 +50,17 @@ import com.rootly.client.JSON;
 /**
  * SnoozeAlertDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class SnoozeAlertDataAttributes {
   public static final String SERIALIZED_NAME_DELAY_MINUTES = "delay_minutes";
   @SerializedName(SERIALIZED_NAME_DELAY_MINUTES)
   @jakarta.annotation.Nonnull
   private Integer delayMinutes;
+
+  public static final String SERIALIZED_NAME_ACTOR = "actor";
+  @SerializedName(SERIALIZED_NAME_ACTOR)
+  @jakarta.annotation.Nullable
+  private NewAlertDataAttributesActor actor;
 
   public SnoozeAlertDataAttributes() {
   }
@@ -79,6 +86,25 @@ public class SnoozeAlertDataAttributes {
   }
 
 
+  public SnoozeAlertDataAttributes actor(@jakarta.annotation.Nullable NewAlertDataAttributesActor actor) {
+    this.actor = actor;
+    return this;
+  }
+
+  /**
+   * Get actor
+   * @return actor
+   */
+  @jakarta.annotation.Nullable
+  public NewAlertDataAttributesActor getActor() {
+    return actor;
+  }
+
+  public void setActor(@jakarta.annotation.Nullable NewAlertDataAttributesActor actor) {
+    this.actor = actor;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -89,12 +115,24 @@ public class SnoozeAlertDataAttributes {
       return false;
     }
     SnoozeAlertDataAttributes snoozeAlertDataAttributes = (SnoozeAlertDataAttributes) o;
-    return Objects.equals(this.delayMinutes, snoozeAlertDataAttributes.delayMinutes);
+    return Objects.equals(this.delayMinutes, snoozeAlertDataAttributes.delayMinutes) &&
+        Objects.equals(this.actor, snoozeAlertDataAttributes.actor);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(delayMinutes);
+    return Objects.hash(delayMinutes, actor);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -102,6 +140,7 @@ public class SnoozeAlertDataAttributes {
     StringBuilder sb = new StringBuilder();
     sb.append("class SnoozeAlertDataAttributes {\n");
     sb.append("    delayMinutes: ").append(toIndentedString(delayMinutes)).append("\n");
+    sb.append("    actor: ").append(toIndentedString(actor)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -125,6 +164,7 @@ public class SnoozeAlertDataAttributes {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("delay_minutes");
+    openapiFields.add("actor");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -159,6 +199,10 @@ public class SnoozeAlertDataAttributes {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `actor`
+      if (jsonObj.get("actor") != null && !jsonObj.get("actor").isJsonNull()) {
+        NewAlertDataAttributesActor.validateJsonElement(jsonObj.get("actor"));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

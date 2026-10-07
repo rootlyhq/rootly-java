@@ -27,6 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import com.rootly.client.model.AcknowledgeAlert;
 import com.rootly.client.model.AlertList;
 import com.rootly.client.model.AlertResponse;
 import com.rootly.client.model.AttachAlert;
@@ -84,6 +85,7 @@ public class AlertsApi {
     /**
      * Build call for acknowledgeAlert
      * @param id  (required)
+     * @param acknowledgeAlert  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -92,11 +94,13 @@ public class AlertsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> alert acknowledged </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> actor not supported for this API key </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> actor could not be resolved </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> cannot acknowledge open alert </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call acknowledgeAlertCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call acknowledgeAlertCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable AcknowledgeAlert acknowledgeAlert, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -110,7 +114,7 @@ public class AlertsApi {
             basePath = null;
         }
 
-        Object localVarPostBody = null;
+        Object localVarPostBody = acknowledgeAlert;
 
         // create path and map variables
         String localVarPath = "/v1/alerts/{id}/acknowledge"
@@ -131,6 +135,7 @@ public class AlertsApi {
         }
 
         final String[] localVarContentTypes = {
+            "application/vnd.api+json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -142,13 +147,13 @@ public class AlertsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call acknowledgeAlertValidateBeforeCall(@jakarta.annotation.Nonnull String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call acknowledgeAlertValidateBeforeCall(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable AcknowledgeAlert acknowledgeAlert, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling acknowledgeAlert(Async)");
         }
 
-        return acknowledgeAlertCall(id, _callback);
+        return acknowledgeAlertCall(id, acknowledgeAlert, _callback);
 
     }
 
@@ -156,6 +161,7 @@ public class AlertsApi {
      * Acknowledges an alert
      * Acknowledges a specific alert by id
      * @param id  (required)
+     * @param acknowledgeAlert  (optional)
      * @return AlertResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -163,12 +169,14 @@ public class AlertsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> alert acknowledged </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> actor not supported for this API key </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> actor could not be resolved </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> cannot acknowledge open alert </td><td>  -  </td></tr>
      </table>
      */
-    public AlertResponse acknowledgeAlert(@jakarta.annotation.Nonnull String id) throws ApiException {
-        ApiResponse<AlertResponse> localVarResp = acknowledgeAlertWithHttpInfo(id);
+    public AlertResponse acknowledgeAlert(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable AcknowledgeAlert acknowledgeAlert) throws ApiException {
+        ApiResponse<AlertResponse> localVarResp = acknowledgeAlertWithHttpInfo(id, acknowledgeAlert);
         return localVarResp.getData();
     }
 
@@ -176,6 +184,7 @@ public class AlertsApi {
      * Acknowledges an alert
      * Acknowledges a specific alert by id
      * @param id  (required)
+     * @param acknowledgeAlert  (optional)
      * @return ApiResponse&lt;AlertResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -183,12 +192,14 @@ public class AlertsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> alert acknowledged </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> actor not supported for this API key </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> actor could not be resolved </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> cannot acknowledge open alert </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AlertResponse> acknowledgeAlertWithHttpInfo(@jakarta.annotation.Nonnull String id) throws ApiException {
-        okhttp3.Call localVarCall = acknowledgeAlertValidateBeforeCall(id, null);
+    public ApiResponse<AlertResponse> acknowledgeAlertWithHttpInfo(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable AcknowledgeAlert acknowledgeAlert) throws ApiException {
+        okhttp3.Call localVarCall = acknowledgeAlertValidateBeforeCall(id, acknowledgeAlert, null);
         Type localVarReturnType = new TypeToken<AlertResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -197,6 +208,7 @@ public class AlertsApi {
      * Acknowledges an alert (asynchronously)
      * Acknowledges a specific alert by id
      * @param id  (required)
+     * @param acknowledgeAlert  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -205,13 +217,15 @@ public class AlertsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> alert acknowledged </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> actor not supported for this API key </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> actor could not be resolved </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> cannot acknowledge open alert </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call acknowledgeAlertAsync(@jakarta.annotation.Nonnull String id, final ApiCallback<AlertResponse> _callback) throws ApiException {
+    public okhttp3.Call acknowledgeAlertAsync(@jakarta.annotation.Nonnull String id, @jakarta.annotation.Nullable AcknowledgeAlert acknowledgeAlert, final ApiCallback<AlertResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = acknowledgeAlertValidateBeforeCall(id, _callback);
+        okhttp3.Call localVarCall = acknowledgeAlertValidateBeforeCall(id, acknowledgeAlert, _callback);
         Type localVarReturnType = new TypeToken<AlertResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

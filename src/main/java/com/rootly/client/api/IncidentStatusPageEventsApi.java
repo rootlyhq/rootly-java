@@ -646,6 +646,7 @@ public class IncidentStatusPageEventsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> incident_status_page_event started_at updated </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> moving a private incident&#39;s event to a public status page is rejected </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
@@ -723,6 +724,7 @@ public class IncidentStatusPageEventsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> incident_status_page_event started_at updated </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> moving a private incident&#39;s event to a public status page is rejected </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
@@ -743,6 +745,7 @@ public class IncidentStatusPageEventsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> incident_status_page_event started_at updated </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> moving a private incident&#39;s event to a public status page is rejected </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */
@@ -765,6 +768,7 @@ public class IncidentStatusPageEventsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> incident_status_page_event started_at updated </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> moving a private incident&#39;s event to a public status page is rejected </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> resource not found </td><td>  -  </td></tr>
      </table>
      */

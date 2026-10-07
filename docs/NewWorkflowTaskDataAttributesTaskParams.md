@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**taskType** | [**TaskTypeEnum**](#TaskTypeEnum) |  |  [optional] |
-|**attributeToQueryBy** | [**AttributeToQueryByEnum**](#AttributeToQueryByEnum) | [\&quot;(incident) kind can only match [:id, :slug, :sequential_id, :pagerduty_incident_id, :opsgenie_incident_id, :victor_ops_incident_id, :jira_issue_id, :asana_task_id, :shortcut_task_id, :linear_issue_id, :zendesk_ticket_id, :motion_task_id, :trello_card_id, :airtable_record_id, :shortcut_story_id, :github_issue_id, :freshservice_ticket_id, :freshservice_task_id, :clickup_task_id]\&quot;, \&quot;(action_item) kind can only match [:id, :jira_issue_id, :asana_task_id, :shortcut_task_id, :linear_issue_id, :zendesk_ticket_id, :motion_task_id, :trello_card_id, :airtable_record_id, :shortcut_story_id, :github_issue_id, :freshservice_ticket_id, :freshservice_task_id, :clickup_task_id]\&quot;, \&quot;(post_mortem) kind can only match [:id]\&quot;, \&quot;(pulse) kind can only match [:id]\&quot;, \&quot;(alert) kind can only match [:id]\&quot;] |  |
+|**attributeToQueryBy** | [**AttributeToQueryByEnum**](#AttributeToQueryByEnum) | [\&quot;(incident) kind can only match [:id, :slug, :sequential_id, :pagerduty_incident_id, :opsgenie_incident_id, :victor_ops_incident_id, :jira_issue_id, :asana_task_id, :shortcut_task_id, :linear_issue_id, :zendesk_ticket_id, :motion_task_id, :trello_card_id, :airtable_record_id, :shortcut_story_id, :github_issue_id, :freshservice_ticket_id, :freshservice_task_id, :clickup_task_id]\&quot;, \&quot;(action_item) kind can only match [:id, :jira_issue_id, :asana_task_id, :shortcut_task_id, :linear_issue_id, :zendesk_ticket_id, :motion_task_id, :trello_card_id, :airtable_record_id, :shortcut_story_id, :github_issue_id, :freshservice_ticket_id, :freshservice_task_id, :clickup_task_id]\&quot;, \&quot;(post_mortem) kind can only match [:id]\&quot;, \&quot;(pulse) kind can only match [:id]\&quot;, \&quot;(alert) kind can only match [:id]\&quot;, \&quot;(problem) kind can only match [:id]\&quot;] |  |
 |**queryValue** | **String** | Value that attribute_to_query_by to uses to match against |  |
 |**incidentRoleId** | **String** | The role id |  |
 |**assignedToUserId** | **String** | [DEPRECATED] Use assigned_to_user attribute instead. The user id this role is assigned to |  [optional] |
@@ -23,10 +23,12 @@
 |**postToSlackChannels** | [**List&lt;AddActionItemTaskParamsPostToSlackChannelsInner&gt;**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
 |**groupIds** | **List&lt;String&gt;** | Array of group/team UUIDs |  [optional] |
 |**playbookId** | **String** |  |  |
-|**channel** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
+|**channel** | [**CreateSlackCanvasTaskParamsChannel**](CreateSlackCanvasTaskParamsChannel.md) |  |  |
 |**title** | **String** | The task title |  |
 |**link** | **String** | The tab link |  |
 |**emoji** | **String** | The bookmark emoji |  [optional] |
+|**retryCount** | **Integer** | Number of times to retry on rate-limit (HTTP 429) responses (0-4). 0 disables retry. |  [optional] |
+|**retryWaitTime** | **Integer** | Seconds to wait before each retry (1-15). Retry-After header is honored when present and &lt;&#x3D; 90s, taking the larger of retry_wait_time and the header value. |  [optional] |
 |**groupId** | **String** | The team id |  |
 |**event** | **String** | Incident event description |  |
 |**url** | **String** |  |  |
@@ -53,7 +55,7 @@
 |**team** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
 |**phoneNumbers** | **List&lt;String&gt;** |  |  |
 |**name** | **String** | The name |  |
-|**content** | **String** | The WhatsApp message |  |
+|**content** | **String** | The canvas content in Markdown. Supports Liquid variables. |  |
 |**base** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
 |**table** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
 |**parentTaskId** | **String** | The parent task id |  |
@@ -128,8 +130,6 @@
 |**reporterUserEmail** | **String** | The reporter user&#39;s email |  [optional] |
 |**projectKey** | **String** | The project key |  |
 |**updatePayload** | **String** | Update payload. Can contain liquid markup and need to be valid JSON |  [optional] |
-|**retryCount** | **Integer** | Number of times to retry on rate-limit (HTTP 429) responses (0-4). 0 disables retry. |  [optional] |
-|**retryWaitTime** | **Integer** | Seconds to wait before each retry (1-15). Retry-After header is honored when present and &lt;&#x3D; 90s, taking the larger of retry_wait_time and the header value. |  [optional] |
 |**parentIssueId** | **String** | The parent issue |  |
 |**subtaskIssueType** | [**CreateJiraIssueTaskParamsIssueType**](CreateJiraIssueTaskParamsIssueType.md) |  |  |
 |**issueId** | **String** | The issue id |  |
@@ -185,6 +185,8 @@
 |**eventMessage** | **String** |  |  [optional] |
 |**method** | [**MethodEnum**](#MethodEnum) | HTTP method |  [optional] |
 |**succeedOnStatus** | **String** | HTTP status code expected. Can be a regular expression. Eg: 200, 200|203, 20[0-3] |  |
+|**expectedResponseHeaders** | **Map&lt;String, String&gt;** | Map of valid HTTP header names to regexp patterns. Header names must use HTTP token characters. Task fails if any header value does not match its pattern (case-insensitive). Leave empty to skip validation. |  [optional] |
+|**followRedirects** | **Boolean** | Whether to follow HTTP 3xx redirects. Defaults to true. Set to false to treat redirect responses as-is. |  [optional] |
 |**slackUsers** | [**List&lt;AddActionItemTaskParamsPostToSlackChannelsInner&gt;**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
 |**slackUserGroups** | [**List&lt;AddActionItemTaskParamsPostToSlackChannelsInner&gt;**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  |
 |**slackEmails** | **String** |  |  |
@@ -206,9 +208,15 @@
 |**shouldTweet** | **Boolean** | For Statuspage.io integrated pages auto publishes a tweet for your update |  [optional] |
 |**statusPageTemplate** | [**AddActionItemTaskParamsPostToSlackChannelsInner**](AddActionItemTaskParamsPostToSlackChannelsInner.md) |  |  [optional] |
 |**statusPageId** | **String** |  |  |
-|**statusPageIds** | **List&lt;String&gt;** | Publishes the update to every listed status page (requires the status-page-v3-limited-bulk-publish feature). When set, it takes precedence over status_page_id and the first entry becomes status_page_id. |  [optional] |
+|**statusPageIds** | **List&lt;String&gt;** | Publishes the update to every listed status page. This field is in limited Early Access; contact Rootly Support to request access. When set, it takes precedence over status_page_id and the first entry becomes status_page_id. |  [optional] |
+|**selectedComponentKeys** | **List&lt;String&gt;** | Composite \&quot;SourceType:&lt;id&gt;\&quot; keys of the status page components affected by the publish. This field is in Early Access and is not generally available; contact Rootly Support to request access. |  [optional] |
+|**selectedComponentStatuses** | [**Map&lt;String, InnerEnum&gt;**](#Map&lt;String, InnerEnum&gt;) | Impact status to publish for each selected component key. Keys must match selected_component_keys entries. |  [optional] |
+|**syncIncidentComponents** | **Boolean** | When true, every run also publishes the incident&#39;s tagged services and functionalities that are components on the target page. Defaults to true when selected_component_keys is empty. This field is in Early Access and is not generally available; contact Rootly Support to request access. |  [optional] |
+|**syncedComponentStatus** | [**SyncedComponentStatusEnum**](#SyncedComponentStatusEnum) | Impact status published for components synced from the incident. Defaults to degraded_performance. A component also listed in selected_component_keys keeps its selected_component_statuses entry. |  [optional] |
 |**integrationPayload** | **String** | Additional API Payload you can pass to statuspage.io for example. Can contain liquid markup and need to be valid JSON |  [optional] |
 |**commands** | **String** |  |  |
+|**targetKind** | [**TargetKindEnum**](#TargetKindEnum) |  |  [optional] |
+|**dryRun** | **Boolean** |  |  [optional] |
 |**privacy** | [**PrivacyEnum**](#PrivacyEnum) |  |  |
 |**command** | **String** |  |  |
 |**appName** | **String** |  |  |
@@ -230,6 +238,7 @@
 |**updateParentMessage** | **Boolean** |  |  [optional] |
 |**threadTs** | **String** | The thread to send the message into |  [optional] |
 |**sendOnlyAsThreadedMessage** | **Boolean** | When set to true, if the parent for this threaded message cannot be found the message will be skipped. |  [optional] |
+|**allowCrossWorkflowThreading** | **Boolean** | When set to true, allows workflows from different sources (e.g. different incidents or alerts) to thread together on the same parent message. |  [optional] |
 |**metricQueries** | **List&lt;String&gt;** |  |  [optional] |
 |**metricQuery** | **String** |  |  |
 |**metricType** | [**MetricTypeEnum**](#MetricTypeEnum) |  |  |
@@ -245,6 +254,8 @@
 |**resolvedAt** | **String** |  |  [optional] |
 |**postmortemId** | **String** | UUID of the retrospective that needs to be updated |  |
 |**storyId** | **String** | The story id |  |
+|**operation** | [**OperationEnum**](#OperationEnum) | Append content or replace the selected table or entire canvas. |  [optional] |
+|**sectionName** | **String** | With replace, target the single table containing this label. Include the label in the replacement table. Blank replaces the entire canvas. Supports Liquid. |  [optional] |
 |**inactivityTimeout** | **String** | In format &#39;1 hour&#39;, &#39;1 day&#39;, etc |  [optional] |
 |**subStatusId** | **String** | Sub-status to update timestamp for |  |
 |**assignedAt** | **String** | Timestamp of when the sub-status was assigned |  |
@@ -308,6 +319,7 @@
 | POST_MORTEM | &quot;post_mortem&quot; |
 | PULSE | &quot;pulse&quot; |
 | ALERT | &quot;alert&quot; |
+| PROBLEM | &quot;problem&quot; |
 
 
 
@@ -427,6 +439,36 @@
 
 
 
+## Enum: Map&lt;String, InnerEnum&gt;
+
+| Name | Value |
+|---- | -----|
+| OPERATIONAL | &quot;operational&quot; |
+| DEGRADED_PERFORMANCE | &quot;degraded_performance&quot; |
+| PARTIAL_OUTAGE | &quot;partial_outage&quot; |
+| MAJOR_OUTAGE | &quot;major_outage&quot; |
+
+
+
+## Enum: SyncedComponentStatusEnum
+
+| Name | Value |
+|---- | -----|
+| OPERATIONAL | &quot;operational&quot; |
+| DEGRADED_PERFORMANCE | &quot;degraded_performance&quot; |
+| PARTIAL_OUTAGE | &quot;partial_outage&quot; |
+| MAJOR_OUTAGE | &quot;major_outage&quot; |
+
+
+
+## Enum: TargetKindEnum
+
+| Name | Value |
+|---- | -----|
+| USERS_WITHOUT_PRIVATE_INCIDENT_ACCESS | &quot;users_without_private_incident_access&quot; |
+
+
+
 ## Enum: PrivacyEnum
 
 | Name | Value |
@@ -500,6 +542,15 @@
 |---- | -----|
 | REPLACE | &quot;replace&quot; |
 | APPEND | &quot;append&quot; |
+
+
+
+## Enum: OperationEnum
+
+| Name | Value |
+|---- | -----|
+| INSERT_AT_END | &quot;insert_at_end&quot; |
+| REPLACE | &quot;replace&quot; |
 
 
 

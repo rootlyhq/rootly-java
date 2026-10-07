@@ -19,7 +19,7 @@ All URIs are relative to *https://api.rootly.com*
 
 <a id="acknowledgeAlert"></a>
 # **acknowledgeAlert**
-> AlertResponse acknowledgeAlert(id)
+> AlertResponse acknowledgeAlert(id, acknowledgeAlert)
 
 Acknowledges an alert
 
@@ -46,8 +46,9 @@ public class Example {
 
     AlertsApi apiInstance = new AlertsApi(defaultClient);
     String id = "id_example"; // String | 
+    AcknowledgeAlert acknowledgeAlert = new AcknowledgeAlert(); // AcknowledgeAlert | 
     try {
-      AlertResponse result = apiInstance.acknowledgeAlert(id);
+      AlertResponse result = apiInstance.acknowledgeAlert(id, acknowledgeAlert);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AlertsApi#acknowledgeAlert");
@@ -65,6 +66,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | **String**|  | |
+| **acknowledgeAlert** | [**AcknowledgeAlert**](AcknowledgeAlert.md)|  | [optional] |
 
 ### Return type
 
@@ -76,13 +78,15 @@ public class Example {
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/vnd.api+json
  - **Accept**: application/vnd.api+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | alert acknowledged |  -  |
+| **403** | actor not supported for this API key |  -  |
+| **422** | actor could not be resolved |  -  |
 | **404** | resource not found |  -  |
 | **400** | cannot acknowledge open alert |  -  |
 

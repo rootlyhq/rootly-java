@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateAlertRoutingRuleDataAttributesDestination
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateAlertRoutingRuleDataAttributesDestination {
   /**
    * The type of the target. Please contact support if you encounter issues using &#x60;Functionality&#x60; as a target type.

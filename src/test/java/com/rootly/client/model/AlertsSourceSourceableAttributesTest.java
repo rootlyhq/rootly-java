@@ -18,7 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.rootly.client.model.NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesInner;
+import com.rootly.client.model.AlertsSourceSourceableAttributesFieldMappingsAttributesInner;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -72,6 +72,22 @@ public class AlertsSourceSourceableAttributesTest {
     @Test
     public void acceptThreadedEmailsTest() {
         // TODO: test acceptThreadedEmails
+    }
+
+    /**
+     * Test the property 'notificationTargetType'
+     */
+    @Test
+    public void notificationTargetTypeTest() {
+        // TODO: test notificationTargetType
+    }
+
+    /**
+     * Test the property 'notificationTargetId'
+     */
+    @Test
+    public void notificationTargetIdTest() {
+        // TODO: test notificationTargetId
     }
 
     /**

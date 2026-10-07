@@ -36,11 +36,13 @@
 |**servicesPermissions** | [**List&lt;ServicesPermissionsEnum&gt;**](#List&lt;ServicesPermissionsEnum&gt;) |  |  [optional] |
 |**severitiesPermissions** | [**List&lt;SeveritiesPermissionsEnum&gt;**](#List&lt;SeveritiesPermissionsEnum&gt;) |  |  [optional] |
 |**statusPagesPermissions** | [**List&lt;StatusPagesPermissionsEnum&gt;**](#List&lt;StatusPagesPermissionsEnum&gt;) |  |  [optional] |
+|**statusPageUpdatesPermissions** | [**List&lt;StatusPageUpdatesPermissionsEnum&gt;**](#List&lt;StatusPageUpdatesPermissionsEnum&gt;) |  |  [optional] |
 |**webhooksPermissions** | [**List&lt;WebhooksPermissionsEnum&gt;**](#List&lt;WebhooksPermissionsEnum&gt;) |  |  [optional] |
 |**workflowsPermissions** | [**List&lt;WorkflowsPermissionsEnum&gt;**](#List&lt;WorkflowsPermissionsEnum&gt;) |  |  [optional] |
 |**catalogsPermissions** | [**List&lt;CatalogsPermissionsEnum&gt;**](#List&lt;CatalogsPermissionsEnum&gt;) |  |  [optional] |
 |**subStatusesPermissions** | [**List&lt;SubStatusesPermissionsEnum&gt;**](#List&lt;SubStatusesPermissionsEnum&gt;) |  |  [optional] |
 |**edgeConnectorPermissions** | [**List&lt;EdgeConnectorPermissionsEnum&gt;**](#List&lt;EdgeConnectorPermissionsEnum&gt;) |  |  [optional] |
+|**privateAgentPermissions** | [**List&lt;PrivateAgentPermissionsEnum&gt;**](#List&lt;PrivateAgentPermissionsEnum&gt;) | Private Agent management permissions: create issues enrollment tokens, read views agent inventory and details, and delete revokes agent credentials. Create and delete can be used independently through the API; browser inventory requires read. |  [optional] |
 |**slasPermissions** | [**List&lt;SlasPermissionsEnum&gt;**](#List&lt;SlasPermissionsEnum&gt;) |  |  [optional] |
 |**pagingPermissions** | [**List&lt;PagingPermissionsEnum&gt;**](#List&lt;PagingPermissionsEnum&gt;) |  |  [optional] |
 |**incidentCommunicationPermissions** | [**List&lt;IncidentCommunicationPermissionsEnum&gt;**](#List&lt;IncidentCommunicationPermissionsEnum&gt;) |  |  [optional] |
@@ -311,6 +313,17 @@
 
 
 
+## Enum: List&lt;StatusPageUpdatesPermissionsEnum&gt;
+
+| Name | Value |
+|---- | -----|
+| CREATE | &quot;create&quot; |
+| READ | &quot;read&quot; |
+| UPDATE | &quot;update&quot; |
+| DELETE | &quot;delete&quot; |
+
+
+
 ## Enum: List&lt;WebhooksPermissionsEnum&gt;
 
 | Name | Value |
@@ -356,6 +369,17 @@
 
 
 ## Enum: List&lt;EdgeConnectorPermissionsEnum&gt;
+
+| Name | Value |
+|---- | -----|
+| CREATE | &quot;create&quot; |
+| READ | &quot;read&quot; |
+| UPDATE | &quot;update&quot; |
+| DELETE | &quot;delete&quot; |
+
+
+
+## Enum: List&lt;PrivateAgentPermissionsEnum&gt;
 
 | Name | Value |
 |---- | -----|

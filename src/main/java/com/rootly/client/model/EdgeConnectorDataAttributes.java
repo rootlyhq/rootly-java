@@ -24,6 +24,7 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -52,7 +53,7 @@ import com.rootly.client.JSON;
 /**
  * EdgeConnectorDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class EdgeConnectorDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -125,6 +126,11 @@ public class EdgeConnectorDataAttributes {
   @SerializedName(SERIALIZED_NAME_SUBSCRIPTIONS)
   @jakarta.annotation.Nullable
   private List<String> subscriptions = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_OWNER_GROUP_IDS = "owner_group_ids";
+  @SerializedName(SERIALIZED_NAME_OWNER_GROUP_IDS)
+  @jakarta.annotation.Nullable
+  private List<UUID> ownerGroupIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_LAST_POLL_AT = "last_poll_at";
   @SerializedName(SERIALIZED_NAME_LAST_POLL_AT)
@@ -255,6 +261,33 @@ public class EdgeConnectorDataAttributes {
 
   public void setSubscriptions(@jakarta.annotation.Nullable List<String> subscriptions) {
     this.subscriptions = subscriptions;
+  }
+
+
+  public EdgeConnectorDataAttributes ownerGroupIds(@jakarta.annotation.Nullable List<UUID> ownerGroupIds) {
+    this.ownerGroupIds = ownerGroupIds;
+    return this;
+  }
+
+  public EdgeConnectorDataAttributes addOwnerGroupIdsItem(UUID ownerGroupIdsItem) {
+    if (this.ownerGroupIds == null) {
+      this.ownerGroupIds = new ArrayList<>();
+    }
+    this.ownerGroupIds.add(ownerGroupIdsItem);
+    return this;
+  }
+
+  /**
+   * IDs of the teams (groups) that own this connector. Empty means the connector is not scoped to a team
+   * @return ownerGroupIds
+   */
+  @jakarta.annotation.Nullable
+  public List<UUID> getOwnerGroupIds() {
+    return ownerGroupIds;
+  }
+
+  public void setOwnerGroupIds(@jakarta.annotation.Nullable List<UUID> ownerGroupIds) {
+    this.ownerGroupIds = ownerGroupIds;
   }
 
 
@@ -443,6 +476,7 @@ public class EdgeConnectorDataAttributes {
         Objects.equals(this.description, edgeConnectorDataAttributes.description) &&
         Objects.equals(this.status, edgeConnectorDataAttributes.status) &&
         Objects.equals(this.subscriptions, edgeConnectorDataAttributes.subscriptions) &&
+        Objects.equals(this.ownerGroupIds, edgeConnectorDataAttributes.ownerGroupIds) &&
         Objects.equals(this.lastPollAt, edgeConnectorDataAttributes.lastPollAt) &&
         Objects.equals(this.online, edgeConnectorDataAttributes.online) &&
         Objects.equals(this.deliveriesCount, edgeConnectorDataAttributes.deliveriesCount) &&
@@ -460,7 +494,7 @@ public class EdgeConnectorDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, status, subscriptions, lastPollAt, online, deliveriesCount, deliveriesQueuedCount, deliveriesRunningCount, deliveriesCompletedCount, deliveriesFailedCount, createdAt, updatedAt);
+    return Objects.hash(name, description, status, subscriptions, ownerGroupIds, lastPollAt, online, deliveriesCount, deliveriesQueuedCount, deliveriesRunningCount, deliveriesCompletedCount, deliveriesFailedCount, createdAt, updatedAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -478,6 +512,7 @@ public class EdgeConnectorDataAttributes {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    subscriptions: ").append(toIndentedString(subscriptions)).append("\n");
+    sb.append("    ownerGroupIds: ").append(toIndentedString(ownerGroupIds)).append("\n");
     sb.append("    lastPollAt: ").append(toIndentedString(lastPollAt)).append("\n");
     sb.append("    online: ").append(toIndentedString(online)).append("\n");
     sb.append("    deliveriesCount: ").append(toIndentedString(deliveriesCount)).append("\n");
@@ -513,6 +548,7 @@ public class EdgeConnectorDataAttributes {
     openapiFields.add("description");
     openapiFields.add("status");
     openapiFields.add("subscriptions");
+    openapiFields.add("owner_group_ids");
     openapiFields.add("last_poll_at");
     openapiFields.add("online");
     openapiFields.add("deliveries_count");
@@ -571,6 +607,10 @@ public class EdgeConnectorDataAttributes {
       // ensure the optional json data is an array if present
       if (jsonObj.get("subscriptions") != null && !jsonObj.get("subscriptions").isJsonNull() && !jsonObj.get("subscriptions").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `subscriptions` to be an array in the JSON string but got `%s`", jsonObj.get("subscriptions").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("owner_group_ids") != null && !jsonObj.get("owner_group_ids").isJsonNull() && !jsonObj.get("owner_group_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `owner_group_ids` to be an array in the JSON string but got `%s`", jsonObj.get("owner_group_ids").toString()));
       }
   }
 

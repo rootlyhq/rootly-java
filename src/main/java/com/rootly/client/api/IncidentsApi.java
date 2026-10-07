@@ -512,6 +512,7 @@ public class IncidentsApi {
     /**
      * Build call for createIncident
      * @param newIncident  (required)
+     * @param idempotencyKey Optional client-generated key that makes creation safe to retry. Within 24 hours, a repeat request carrying the same key returns the incident created by the first request with status 200 instead of creating a duplicate. Keys are scoped to the team. Keys longer than 255 characters are rejected with 422. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -520,11 +521,12 @@ public class IncidentsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> incident created </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> incident already created for this Idempotency-Key </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> invalid causes association </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createIncidentCall(@jakarta.annotation.Nonnull NewIncident newIncident, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createIncidentCall(@jakarta.annotation.Nonnull NewIncident newIncident, @jakarta.annotation.Nullable String idempotencyKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -565,18 +567,23 @@ public class IncidentsApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (idempotencyKey != null) {
+            localVarHeaderParams.put("Idempotency-Key", localVarApiClient.parameterToString(idempotencyKey));
+        }
+
+
         String[] localVarAuthNames = new String[] { "bearer_auth" };
         return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createIncidentValidateBeforeCall(@jakarta.annotation.Nonnull NewIncident newIncident, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createIncidentValidateBeforeCall(@jakarta.annotation.Nonnull NewIncident newIncident, @jakarta.annotation.Nullable String idempotencyKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'newIncident' is set
         if (newIncident == null) {
             throw new ApiException("Missing the required parameter 'newIncident' when calling createIncident(Async)");
         }
 
-        return createIncidentCall(newIncident, _callback);
+        return createIncidentCall(newIncident, idempotencyKey, _callback);
 
     }
 
@@ -584,6 +591,7 @@ public class IncidentsApi {
      * Creates an incident
      * Creates a new incident from provided data
      * @param newIncident  (required)
+     * @param idempotencyKey Optional client-generated key that makes creation safe to retry. Within 24 hours, a repeat request carrying the same key returns the incident created by the first request with status 200 instead of creating a duplicate. Keys are scoped to the team. Keys longer than 255 characters are rejected with 422. (optional)
      * @return IncidentResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -591,12 +599,13 @@ public class IncidentsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> incident created </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> incident already created for this Idempotency-Key </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> invalid causes association </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public IncidentResponse createIncident(@jakarta.annotation.Nonnull NewIncident newIncident) throws ApiException {
-        ApiResponse<IncidentResponse> localVarResp = createIncidentWithHttpInfo(newIncident);
+    public IncidentResponse createIncident(@jakarta.annotation.Nonnull NewIncident newIncident, @jakarta.annotation.Nullable String idempotencyKey) throws ApiException {
+        ApiResponse<IncidentResponse> localVarResp = createIncidentWithHttpInfo(newIncident, idempotencyKey);
         return localVarResp.getData();
     }
 
@@ -604,6 +613,7 @@ public class IncidentsApi {
      * Creates an incident
      * Creates a new incident from provided data
      * @param newIncident  (required)
+     * @param idempotencyKey Optional client-generated key that makes creation safe to retry. Within 24 hours, a repeat request carrying the same key returns the incident created by the first request with status 200 instead of creating a duplicate. Keys are scoped to the team. Keys longer than 255 characters are rejected with 422. (optional)
      * @return ApiResponse&lt;IncidentResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -611,12 +621,13 @@ public class IncidentsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> incident created </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> incident already created for this Idempotency-Key </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> invalid causes association </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IncidentResponse> createIncidentWithHttpInfo(@jakarta.annotation.Nonnull NewIncident newIncident) throws ApiException {
-        okhttp3.Call localVarCall = createIncidentValidateBeforeCall(newIncident, null);
+    public ApiResponse<IncidentResponse> createIncidentWithHttpInfo(@jakarta.annotation.Nonnull NewIncident newIncident, @jakarta.annotation.Nullable String idempotencyKey) throws ApiException {
+        okhttp3.Call localVarCall = createIncidentValidateBeforeCall(newIncident, idempotencyKey, null);
         Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -625,6 +636,7 @@ public class IncidentsApi {
      * Creates an incident (asynchronously)
      * Creates a new incident from provided data
      * @param newIncident  (required)
+     * @param idempotencyKey Optional client-generated key that makes creation safe to retry. Within 24 hours, a repeat request carrying the same key returns the incident created by the first request with status 200 instead of creating a duplicate. Keys are scoped to the team. Keys longer than 255 characters are rejected with 422. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -633,13 +645,14 @@ public class IncidentsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> incident created </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> incident already created for this Idempotency-Key </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> invalid causes association </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> responds with unauthorized for invalid token </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createIncidentAsync(@jakarta.annotation.Nonnull NewIncident newIncident, final ApiCallback<IncidentResponse> _callback) throws ApiException {
+    public okhttp3.Call createIncidentAsync(@jakarta.annotation.Nonnull NewIncident newIncident, @jakarta.annotation.Nullable String idempotencyKey, final ApiCallback<IncidentResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createIncidentValidateBeforeCall(newIncident, _callback);
+        okhttp3.Call localVarCall = createIncidentValidateBeforeCall(newIncident, idempotencyKey, _callback);
         Type localVarReturnType = new TypeToken<IncidentResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

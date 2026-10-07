@@ -49,6 +49,14 @@ public class UpdateIncidentPostMortemDataAttributesTest {
     }
 
     /**
+     * Test the property 'content'
+     */
+    @Test
+    public void contentTest() {
+        // TODO: test content
+    }
+
+    /**
      * Test the property 'status'
      */
     @Test

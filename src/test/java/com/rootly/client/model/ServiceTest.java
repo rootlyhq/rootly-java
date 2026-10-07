@@ -18,16 +18,10 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.rootly.client.model.NewCauseDataAttributesPropertiesInner;
-import com.rootly.client.model.NewEnvironmentDataAttributesSlackAliasesInner;
-import com.rootly.client.model.NewEnvironmentDataAttributesSlackChannelsInner;
-import com.rootly.client.model.ServiceAlertBroadcastChannel;
-import com.rootly.client.model.ServiceIncidentBroadcastChannel;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -46,163 +40,11 @@ public class ServiceTest {
     }
 
     /**
-     * Test the property 'name'
+     * Test the property 'ruleType'
      */
     @Test
-    public void nameTest() {
-        // TODO: test name
-    }
-
-    /**
-     * Test the property 'slug'
-     */
-    @Test
-    public void slugTest() {
-        // TODO: test slug
-    }
-
-    /**
-     * Test the property 'managedBy'
-     */
-    @Test
-    public void managedByTest() {
-        // TODO: test managedBy
-    }
-
-    /**
-     * Test the property 'description'
-     */
-    @Test
-    public void descriptionTest() {
-        // TODO: test description
-    }
-
-    /**
-     * Test the property 'publicDescription'
-     */
-    @Test
-    public void publicDescriptionTest() {
-        // TODO: test publicDescription
-    }
-
-    /**
-     * Test the property 'notifyEmails'
-     */
-    @Test
-    public void notifyEmailsTest() {
-        // TODO: test notifyEmails
-    }
-
-    /**
-     * Test the property 'color'
-     */
-    @Test
-    public void colorTest() {
-        // TODO: test color
-    }
-
-    /**
-     * Test the property 'position'
-     */
-    @Test
-    public void positionTest() {
-        // TODO: test position
-    }
-
-    /**
-     * Test the property 'backstageId'
-     */
-    @Test
-    public void backstageIdTest() {
-        // TODO: test backstageId
-    }
-
-    /**
-     * Test the property 'externalId'
-     */
-    @Test
-    public void externalIdTest() {
-        // TODO: test externalId
-    }
-
-    /**
-     * Test the property 'pagerdutyId'
-     */
-    @Test
-    public void pagerdutyIdTest() {
-        // TODO: test pagerdutyId
-    }
-
-    /**
-     * Test the property 'opsgenieId'
-     */
-    @Test
-    public void opsgenieIdTest() {
-        // TODO: test opsgenieId
-    }
-
-    /**
-     * Test the property 'cortexId'
-     */
-    @Test
-    public void cortexIdTest() {
-        // TODO: test cortexId
-    }
-
-    /**
-     * Test the property 'serviceNowCiSysId'
-     */
-    @Test
-    public void serviceNowCiSysIdTest() {
-        // TODO: test serviceNowCiSysId
-    }
-
-    /**
-     * Test the property 'githubRepositoryName'
-     */
-    @Test
-    public void githubRepositoryNameTest() {
-        // TODO: test githubRepositoryName
-    }
-
-    /**
-     * Test the property 'githubRepositoryBranch'
-     */
-    @Test
-    public void githubRepositoryBranchTest() {
-        // TODO: test githubRepositoryBranch
-    }
-
-    /**
-     * Test the property 'gitlabRepositoryName'
-     */
-    @Test
-    public void gitlabRepositoryNameTest() {
-        // TODO: test gitlabRepositoryName
-    }
-
-    /**
-     * Test the property 'gitlabRepositoryBranch'
-     */
-    @Test
-    public void gitlabRepositoryBranchTest() {
-        // TODO: test gitlabRepositoryBranch
-    }
-
-    /**
-     * Test the property 'kubernetesDeploymentName'
-     */
-    @Test
-    public void kubernetesDeploymentNameTest() {
-        // TODO: test kubernetesDeploymentName
-    }
-
-    /**
-     * Test the property 'environmentIds'
-     */
-    @Test
-    public void environmentIdsTest() {
-        // TODO: test environmentIds
+    public void ruleTypeTest() {
+        // TODO: test ruleType
     }
 
     /**
@@ -214,123 +56,11 @@ public class ServiceTest {
     }
 
     /**
-     * Test the property 'ownerGroupIds'
+     * Test the property 'operator'
      */
     @Test
-    public void ownerGroupIdsTest() {
-        // TODO: test ownerGroupIds
-    }
-
-    /**
-     * Test the property 'ownerUserIds'
-     */
-    @Test
-    public void ownerUserIdsTest() {
-        // TODO: test ownerUserIds
-    }
-
-    /**
-     * Test the property 'alertUrgencyId'
-     */
-    @Test
-    public void alertUrgencyIdTest() {
-        // TODO: test alertUrgencyId
-    }
-
-    /**
-     * Test the property 'escalationPolicyId'
-     */
-    @Test
-    public void escalationPolicyIdTest() {
-        // TODO: test escalationPolicyId
-    }
-
-    /**
-     * Test the property 'alertsEmailEnabled'
-     */
-    @Test
-    public void alertsEmailEnabledTest() {
-        // TODO: test alertsEmailEnabled
-    }
-
-    /**
-     * Test the property 'alertsEmailAddress'
-     */
-    @Test
-    public void alertsEmailAddressTest() {
-        // TODO: test alertsEmailAddress
-    }
-
-    /**
-     * Test the property 'slackChannels'
-     */
-    @Test
-    public void slackChannelsTest() {
-        // TODO: test slackChannels
-    }
-
-    /**
-     * Test the property 'slackAliases'
-     */
-    @Test
-    public void slackAliasesTest() {
-        // TODO: test slackAliases
-    }
-
-    /**
-     * Test the property 'alertBroadcastEnabled'
-     */
-    @Test
-    public void alertBroadcastEnabledTest() {
-        // TODO: test alertBroadcastEnabled
-    }
-
-    /**
-     * Test the property 'alertBroadcastChannel'
-     */
-    @Test
-    public void alertBroadcastChannelTest() {
-        // TODO: test alertBroadcastChannel
-    }
-
-    /**
-     * Test the property 'incidentBroadcastEnabled'
-     */
-    @Test
-    public void incidentBroadcastEnabledTest() {
-        // TODO: test incidentBroadcastEnabled
-    }
-
-    /**
-     * Test the property 'incidentBroadcastChannel'
-     */
-    @Test
-    public void incidentBroadcastChannelTest() {
-        // TODO: test incidentBroadcastChannel
-    }
-
-    /**
-     * Test the property 'properties'
-     */
-    @Test
-    public void propertiesTest() {
-        // TODO: test properties
-    }
-
-    /**
-     * Test the property 'createdAt'
-     */
-    @Test
-    public void createdAtTest() {
-        // TODO: test createdAt
-    }
-
-    /**
-     * Test the property 'updatedAt'
-     */
-    @Test
-    public void updatedAtTest() {
-        // TODO: test updatedAt
+    public void operatorTest() {
+        // TODO: test operator
     }
 
 }

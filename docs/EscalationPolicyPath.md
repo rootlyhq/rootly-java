@@ -19,12 +19,14 @@
 |**repeat** | **Boolean** | Whether this path should be repeated until someone acknowledges the alert |  |
 |**repeatCount** | **Integer** | The number of times this path will be executed until someone acknowledges the alert |  |
 |**initialDelay** | **Integer** | Initial delay for escalation path in minutes. Maximum 1 week (10080). |  [optional] |
-|**retriggerTimeoutMinutes** | **Integer** | Re-trigger acknowledged alerts on this path after N minutes; null inherits the urgency/workspace default, negative &#x3D; never. |  [optional] |
+|**retriggerTimeoutMinutes** | **Integer** | Re-trigger acknowledged alerts on this path after N minutes; null inherits the urgency/workspace default, -1 &#x3D; never. |  [optional] |
 |**createdAt** | **String** | Date of creation |  [optional] |
 |**updatedAt** | **String** | Date of last update |  [optional] |
 |**rules** | [**List&lt;UpdateEscalationPolicyPathDataAttributesRulesInner&gt;**](UpdateEscalationPolicyPathDataAttributesRulesInner.md) | Escalation path rules |  [optional] |
+|**notificationTypeRules** | [**List&lt;NewEscalationPolicyPathDataAttributesNotificationTypeRulesInner&gt;**](NewEscalationPolicyPathDataAttributesNotificationTypeRulesInner.md) | Rules deciding whether an alert pages audible or quiet, evaluated in order — the first matching rule&#39;s notification_type wins, otherwise notification_type_fallback applies. When present, the path&#39;s notification_type is aligned to notification_type_fallback. Only available when notification type conditions are enabled for the team. |  [optional] |
+|**notificationTypeFallback** | [**NotificationTypeFallbackEnum**](#NotificationTypeFallbackEnum) | Paged when no notification type rule matches. Considered only when notification_type_rules are present — the path&#39;s notification_type is aligned to it; without rules it is aligned to notification_type instead. Only available when notification type conditions are enabled for the team. |  [optional] |
 |**timeRestrictionTimeZone** | [**TimeRestrictionTimeZoneEnum**](#TimeRestrictionTimeZoneEnum) | Time zone used for time restrictions. |  [optional] |
-|**timeRestrictions** | [**List&lt;UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner&gt;**](UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner.md) | If time restrictions are set, alerts will follow this path when they arrive within the specified time ranges and meet the rules. |  [optional] |
+|**timeRestrictions** | [**List&lt;EscalationPolicyPathTimeRestrictionsInner&gt;**](EscalationPolicyPathTimeRestrictionsInner.md) | If time restrictions are set, alerts will follow this path when they arrive within the specified time ranges and meet the rules. |  [optional] |
 
 
 
@@ -52,6 +54,15 @@
 |---- | -----|
 | MATCH_ALL_RULES | &quot;match-all-rules&quot; |
 | MATCH_ANY_RULE | &quot;match-any-rule&quot; |
+
+
+
+## Enum: NotificationTypeFallbackEnum
+
+| Name | Value |
+|---- | -----|
+| AUDIBLE | &quot;audible&quot; |
+| QUIET | &quot;quiet&quot; |
 
 
 
@@ -131,6 +142,8 @@
 | ATLANTIC_AZORES | &quot;Atlantic/Azores&quot; |
 | CAPE_VERDE_IS_ | &quot;Cape Verde Is.&quot; |
 | ATLANTIC_CAPE_VERDE | &quot;Atlantic/Cape_Verde&quot; |
+| CASABLANCA | &quot;Casablanca&quot; |
+| AFRICA_CASABLANCA | &quot;Africa/Casablanca&quot; |
 | EDINBURGH | &quot;Edinburgh&quot; |
 | EUROPE_LONDON | &quot;Europe/London&quot; |
 | LISBON | &quot;Lisbon&quot; |
@@ -154,8 +167,6 @@
 | EUROPE_BRUSSELS | &quot;Europe/Brussels&quot; |
 | BUDAPEST | &quot;Budapest&quot; |
 | EUROPE_BUDAPEST | &quot;Europe/Budapest&quot; |
-| CASABLANCA | &quot;Casablanca&quot; |
-| AFRICA_CASABLANCA | &quot;Africa/Casablanca&quot; |
 | COPENHAGEN | &quot;Copenhagen&quot; |
 | EUROPE_COPENHAGEN | &quot;Europe/Copenhagen&quot; |
 | DUBLIN | &quot;Dublin&quot; |
@@ -200,7 +211,7 @@
 | KALININGRAD | &quot;Kaliningrad&quot; |
 | EUROPE_KALININGRAD | &quot;Europe/Kaliningrad&quot; |
 | KYIV | &quot;Kyiv&quot; |
-| EUROPE_KIEV | &quot;Europe/Kiev&quot; |
+| EUROPE_KYIV | &quot;Europe/Kyiv&quot; |
 | PRETORIA | &quot;Pretoria&quot; |
 | AFRICA_JOHANNESBURG | &quot;Africa/Johannesburg&quot; |
 | RIGA | &quot;Riga&quot; |
@@ -267,7 +278,7 @@
 | URUMQI | &quot;Urumqi&quot; |
 | ASIA_URUMQI | &quot;Asia/Urumqi&quot; |
 | RANGOON | &quot;Rangoon&quot; |
-| ASIA_RANGOON | &quot;Asia/Rangoon&quot; |
+| ASIA_YANGON | &quot;Asia/Yangon&quot; |
 | BANGKOK | &quot;Bangkok&quot; |
 | ASIA_BANGKOK | &quot;Asia/Bangkok&quot; |
 | HANOI | &quot;Hanoi&quot; |
@@ -364,6 +375,8 @@
 | PACIFIC_MARQUESAS | &quot;Pacific/Marquesas&quot; |
 | PACIFIC_KIRITIMATI | &quot;Pacific/Kiritimati&quot; |
 | PACIFIC_NORFOLK | &quot;Pacific/Norfolk&quot; |
+| ASIA_RANGOON | &quot;Asia/Rangoon&quot; |
+| EUROPE_KIEV | &quot;Europe/Kiev&quot; |
 
 
 

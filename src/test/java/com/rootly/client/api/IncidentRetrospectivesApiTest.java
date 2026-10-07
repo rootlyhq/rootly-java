@@ -102,7 +102,7 @@ public class IncidentRetrospectivesApiTest {
     /**
      * Update an incident retrospective
      *
-     * Update a specific incident retrospective by id
+     * Update a specific incident retrospective by id. The body may be written as &#x60;content&#x60; (or its alias &#x60;smart_content&#x60;) and is sanitized to the tags the retrospective editor supports. When no &#x60;title&#x60; is sent and the body opens with an &#x60;&lt;h1&gt;&#x60;, that heading becomes the retrospective title, matching the editor. Once a retrospective has been opened in the collaborative editor that editor owns the body, and body writes are rejected with a 409.
      *
      * @throws ApiException if the Api call fails
      */

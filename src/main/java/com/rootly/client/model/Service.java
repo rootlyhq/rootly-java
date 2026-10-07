@@ -19,16 +19,10 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.rootly.client.model.NewCauseDataAttributesPropertiesInner;
-import com.rootly.client.model.NewEnvironmentDataAttributesSlackAliasesInner;
-import com.rootly.client.model.NewEnvironmentDataAttributesSlackChannelsInner;
-import com.rootly.client.model.ServiceAlertBroadcastChannel;
-import com.rootly.client.model.ServiceIncidentBroadcastChannel;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -56,40 +50,18 @@ import com.rootly.client.JSON;
 /**
  * Service
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class Service {
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  @jakarta.annotation.Nonnull
-  private String name;
-
-  public static final String SERIALIZED_NAME_SLUG = "slug";
-  @SerializedName(SERIALIZED_NAME_SLUG)
-  @jakarta.annotation.Nullable
-  private String slug;
-
   /**
-   * How this service is managed (provenance): web, api, terraform, etc. Read-only.
+   * The type of the escalation path rule
    */
-  @JsonAdapter(ManagedByEnum.Adapter.class)
-  public enum ManagedByEnum {
-    WEB("web"),
-    
-    ADMIN_WEB("admin_web"),
-    
-    API("api"),
-    
-    TERRAFORM("terraform"),
-    
-    PULUMI("pulumi"),
-    
-    BACKSTAGE("backstage"),
-    
-    CATALOG_SYNC("catalog_sync");
+  @JsonAdapter(RuleTypeEnum.Adapter.class)
+  public enum RuleTypeEnum {
+    SERVICE("service");
 
     private String value;
 
-    ManagedByEnum(String value) {
+    RuleTypeEnum(String value) {
       this.value = value;
     }
 
@@ -102,8 +74,8 @@ public class Service {
       return String.valueOf(value);
     }
 
-    public static ManagedByEnum fromValue(String value) {
-      for (ManagedByEnum b : ManagedByEnum.values()) {
+    public static RuleTypeEnum fromValue(String value) {
+      for (RuleTypeEnum b : RuleTypeEnum.values()) {
         if (b.value.equals(value)) {
           return b;
         }
@@ -111,594 +83,119 @@ public class Service {
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
-    public static class Adapter extends TypeAdapter<ManagedByEnum> {
+    public static class Adapter extends TypeAdapter<RuleTypeEnum> {
       @Override
-      public void write(final JsonWriter jsonWriter, final ManagedByEnum enumeration) throws IOException {
+      public void write(final JsonWriter jsonWriter, final RuleTypeEnum enumeration) throws IOException {
         jsonWriter.value(enumeration.getValue());
       }
 
       @Override
-      public ManagedByEnum read(final JsonReader jsonReader) throws IOException {
+      public RuleTypeEnum read(final JsonReader jsonReader) throws IOException {
         String value =  jsonReader.nextString();
-        return ManagedByEnum.fromValue(value);
+        return RuleTypeEnum.fromValue(value);
       }
     }
 
     public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       String value = jsonElement.getAsString();
-      ManagedByEnum.fromValue(value);
+      RuleTypeEnum.fromValue(value);
     }
   }
 
-  public static final String SERIALIZED_NAME_MANAGED_BY = "managed_by";
-  @SerializedName(SERIALIZED_NAME_MANAGED_BY)
-  @jakarta.annotation.Nullable
-  private ManagedByEnum managedBy;
-
-  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
-  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @jakarta.annotation.Nullable
-  private String description;
-
-  public static final String SERIALIZED_NAME_PUBLIC_DESCRIPTION = "public_description";
-  @SerializedName(SERIALIZED_NAME_PUBLIC_DESCRIPTION)
-  @jakarta.annotation.Nullable
-  private String publicDescription;
-
-  public static final String SERIALIZED_NAME_NOTIFY_EMAILS = "notify_emails";
-  @SerializedName(SERIALIZED_NAME_NOTIFY_EMAILS)
-  @jakarta.annotation.Nullable
-  private List<String> notifyEmails;
-
-  public static final String SERIALIZED_NAME_COLOR = "color";
-  @SerializedName(SERIALIZED_NAME_COLOR)
-  @jakarta.annotation.Nullable
-  private String color;
-
-  public static final String SERIALIZED_NAME_POSITION = "position";
-  @SerializedName(SERIALIZED_NAME_POSITION)
-  @jakarta.annotation.Nullable
-  private Integer position;
-
-  public static final String SERIALIZED_NAME_BACKSTAGE_ID = "backstage_id";
-  @SerializedName(SERIALIZED_NAME_BACKSTAGE_ID)
-  @jakarta.annotation.Nullable
-  private String backstageId;
-
-  public static final String SERIALIZED_NAME_EXTERNAL_ID = "external_id";
-  @SerializedName(SERIALIZED_NAME_EXTERNAL_ID)
-  @jakarta.annotation.Nullable
-  private String externalId;
-
-  public static final String SERIALIZED_NAME_PAGERDUTY_ID = "pagerduty_id";
-  @SerializedName(SERIALIZED_NAME_PAGERDUTY_ID)
-  @jakarta.annotation.Nullable
-  private String pagerdutyId;
-
-  public static final String SERIALIZED_NAME_OPSGENIE_ID = "opsgenie_id";
-  @SerializedName(SERIALIZED_NAME_OPSGENIE_ID)
-  @jakarta.annotation.Nullable
-  private String opsgenieId;
-
-  public static final String SERIALIZED_NAME_CORTEX_ID = "cortex_id";
-  @SerializedName(SERIALIZED_NAME_CORTEX_ID)
-  @jakarta.annotation.Nullable
-  private String cortexId;
-
-  public static final String SERIALIZED_NAME_SERVICE_NOW_CI_SYS_ID = "service_now_ci_sys_id";
-  @SerializedName(SERIALIZED_NAME_SERVICE_NOW_CI_SYS_ID)
-  @jakarta.annotation.Nullable
-  private String serviceNowCiSysId;
-
-  public static final String SERIALIZED_NAME_GITHUB_REPOSITORY_NAME = "github_repository_name";
-  @SerializedName(SERIALIZED_NAME_GITHUB_REPOSITORY_NAME)
-  @jakarta.annotation.Nullable
-  private String githubRepositoryName;
-
-  public static final String SERIALIZED_NAME_GITHUB_REPOSITORY_BRANCH = "github_repository_branch";
-  @SerializedName(SERIALIZED_NAME_GITHUB_REPOSITORY_BRANCH)
-  @jakarta.annotation.Nullable
-  private String githubRepositoryBranch;
-
-  public static final String SERIALIZED_NAME_GITLAB_REPOSITORY_NAME = "gitlab_repository_name";
-  @SerializedName(SERIALIZED_NAME_GITLAB_REPOSITORY_NAME)
-  @jakarta.annotation.Nullable
-  private String gitlabRepositoryName;
-
-  public static final String SERIALIZED_NAME_GITLAB_REPOSITORY_BRANCH = "gitlab_repository_branch";
-  @SerializedName(SERIALIZED_NAME_GITLAB_REPOSITORY_BRANCH)
-  @jakarta.annotation.Nullable
-  private String gitlabRepositoryBranch;
-
-  public static final String SERIALIZED_NAME_KUBERNETES_DEPLOYMENT_NAME = "kubernetes_deployment_name";
-  @SerializedName(SERIALIZED_NAME_KUBERNETES_DEPLOYMENT_NAME)
-  @jakarta.annotation.Nullable
-  private String kubernetesDeploymentName;
-
-  public static final String SERIALIZED_NAME_ENVIRONMENT_IDS = "environment_ids";
-  @SerializedName(SERIALIZED_NAME_ENVIRONMENT_IDS)
-  @jakarta.annotation.Nullable
-  private List<String> environmentIds;
+  public static final String SERIALIZED_NAME_RULE_TYPE = "rule_type";
+  @SerializedName(SERIALIZED_NAME_RULE_TYPE)
+  @jakarta.annotation.Nonnull
+  private RuleTypeEnum ruleType;
 
   public static final String SERIALIZED_NAME_SERVICE_IDS = "service_ids";
   @SerializedName(SERIALIZED_NAME_SERVICE_IDS)
-  @jakarta.annotation.Nullable
-  private List<String> serviceIds;
-
-  public static final String SERIALIZED_NAME_OWNER_GROUP_IDS = "owner_group_ids";
-  @SerializedName(SERIALIZED_NAME_OWNER_GROUP_IDS)
-  @jakarta.annotation.Nullable
-  private List<String> ownerGroupIds;
-
-  public static final String SERIALIZED_NAME_OWNER_USER_IDS = "owner_user_ids";
-  @SerializedName(SERIALIZED_NAME_OWNER_USER_IDS)
-  @jakarta.annotation.Nullable
-  private List<Integer> ownerUserIds;
-
-  public static final String SERIALIZED_NAME_ALERT_URGENCY_ID = "alert_urgency_id";
-  @SerializedName(SERIALIZED_NAME_ALERT_URGENCY_ID)
-  @jakarta.annotation.Nullable
-  private String alertUrgencyId;
-
-  public static final String SERIALIZED_NAME_ESCALATION_POLICY_ID = "escalation_policy_id";
-  @SerializedName(SERIALIZED_NAME_ESCALATION_POLICY_ID)
-  @jakarta.annotation.Nullable
-  private String escalationPolicyId;
-
-  public static final String SERIALIZED_NAME_ALERTS_EMAIL_ENABLED = "alerts_email_enabled";
-  @SerializedName(SERIALIZED_NAME_ALERTS_EMAIL_ENABLED)
-  @jakarta.annotation.Nullable
-  private Boolean alertsEmailEnabled;
-
-  public static final String SERIALIZED_NAME_ALERTS_EMAIL_ADDRESS = "alerts_email_address";
-  @SerializedName(SERIALIZED_NAME_ALERTS_EMAIL_ADDRESS)
-  @jakarta.annotation.Nullable
-  private String alertsEmailAddress;
-
-  public static final String SERIALIZED_NAME_SLACK_CHANNELS = "slack_channels";
-  @SerializedName(SERIALIZED_NAME_SLACK_CHANNELS)
-  @jakarta.annotation.Nullable
-  private List<NewEnvironmentDataAttributesSlackChannelsInner> slackChannels;
-
-  public static final String SERIALIZED_NAME_SLACK_ALIASES = "slack_aliases";
-  @SerializedName(SERIALIZED_NAME_SLACK_ALIASES)
-  @jakarta.annotation.Nullable
-  private List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases;
-
-  public static final String SERIALIZED_NAME_ALERT_BROADCAST_ENABLED = "alert_broadcast_enabled";
-  @SerializedName(SERIALIZED_NAME_ALERT_BROADCAST_ENABLED)
-  @jakarta.annotation.Nullable
-  private Boolean alertBroadcastEnabled;
-
-  public static final String SERIALIZED_NAME_ALERT_BROADCAST_CHANNEL = "alert_broadcast_channel";
-  @SerializedName(SERIALIZED_NAME_ALERT_BROADCAST_CHANNEL)
-  @jakarta.annotation.Nullable
-  private ServiceAlertBroadcastChannel alertBroadcastChannel;
-
-  public static final String SERIALIZED_NAME_INCIDENT_BROADCAST_ENABLED = "incident_broadcast_enabled";
-  @SerializedName(SERIALIZED_NAME_INCIDENT_BROADCAST_ENABLED)
-  @jakarta.annotation.Nullable
-  private Boolean incidentBroadcastEnabled;
-
-  public static final String SERIALIZED_NAME_INCIDENT_BROADCAST_CHANNEL = "incident_broadcast_channel";
-  @SerializedName(SERIALIZED_NAME_INCIDENT_BROADCAST_CHANNEL)
-  @jakarta.annotation.Nullable
-  private ServiceIncidentBroadcastChannel incidentBroadcastChannel;
-
-  public static final String SERIALIZED_NAME_PROPERTIES = "properties";
-  @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  @jakarta.annotation.Nullable
-  private List<NewCauseDataAttributesPropertiesInner> properties;
-
-  public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
-  @SerializedName(SERIALIZED_NAME_CREATED_AT)
   @jakarta.annotation.Nonnull
-  private String createdAt;
+  private List<String> serviceIds = new ArrayList<>();
 
-  public static final String SERIALIZED_NAME_UPDATED_AT = "updated_at";
-  @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @jakarta.annotation.Nonnull
-  private String updatedAt;
+  /**
+   * How the alert&#39;s services should be matched. is and is_not take exactly one id
+   */
+  @JsonAdapter(OperatorEnum.Adapter.class)
+  public enum OperatorEnum {
+    IS("is"),
+    
+    IS_NOT("is_not"),
+    
+    IS_ONE_OF("is_one_of"),
+    
+    IS_NOT_ONE_OF("is_not_one_of");
+
+    private String value;
+
+    OperatorEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static OperatorEnum fromValue(String value) {
+      for (OperatorEnum b : OperatorEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<OperatorEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final OperatorEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public OperatorEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return OperatorEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      OperatorEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_OPERATOR = "operator";
+  @SerializedName(SERIALIZED_NAME_OPERATOR)
+  @jakarta.annotation.Nullable
+  private OperatorEnum operator = OperatorEnum.IS_ONE_OF;
 
   public Service() {
   }
 
-  public Service(
-     String slug
-  ) {
-    this();
-    this.slug = slug;
-  }
-
-  public Service name(@jakarta.annotation.Nonnull String name) {
-    this.name = name;
+  public Service ruleType(@jakarta.annotation.Nonnull RuleTypeEnum ruleType) {
+    this.ruleType = ruleType;
     return this;
   }
 
   /**
-   * The name of the service
-   * @return name
+   * The type of the escalation path rule
+   * @return ruleType
    */
   @jakarta.annotation.Nonnull
-  public String getName() {
-    return name;
+  public RuleTypeEnum getRuleType() {
+    return ruleType;
   }
 
-  public void setName(@jakarta.annotation.Nonnull String name) {
-    this.name = name;
-  }
-
-
-  /**
-   * The slug of the service
-   * @return slug
-   */
-  @jakarta.annotation.Nullable
-  public String getSlug() {
-    return slug;
+  public void setRuleType(@jakarta.annotation.Nonnull RuleTypeEnum ruleType) {
+    this.ruleType = ruleType;
   }
 
 
-
-  public Service managedBy(@jakarta.annotation.Nullable ManagedByEnum managedBy) {
-    this.managedBy = managedBy;
-    return this;
-  }
-
-  /**
-   * How this service is managed (provenance): web, api, terraform, etc. Read-only.
-   * @return managedBy
-   */
-  @jakarta.annotation.Nullable
-  public ManagedByEnum getManagedBy() {
-    return managedBy;
-  }
-
-  public void setManagedBy(@jakarta.annotation.Nullable ManagedByEnum managedBy) {
-    this.managedBy = managedBy;
-  }
-
-
-  public Service description(@jakarta.annotation.Nullable String description) {
-    this.description = description;
-    return this;
-  }
-
-  /**
-   * The description of the service
-   * @return description
-   */
-  @jakarta.annotation.Nullable
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(@jakarta.annotation.Nullable String description) {
-    this.description = description;
-  }
-
-
-  public Service publicDescription(@jakarta.annotation.Nullable String publicDescription) {
-    this.publicDescription = publicDescription;
-    return this;
-  }
-
-  /**
-   * The status page description of the service
-   * @return publicDescription
-   */
-  @jakarta.annotation.Nullable
-  public String getPublicDescription() {
-    return publicDescription;
-  }
-
-  public void setPublicDescription(@jakarta.annotation.Nullable String publicDescription) {
-    this.publicDescription = publicDescription;
-  }
-
-
-  public Service notifyEmails(@jakarta.annotation.Nullable List<String> notifyEmails) {
-    this.notifyEmails = notifyEmails;
-    return this;
-  }
-
-  public Service addNotifyEmailsItem(String notifyEmailsItem) {
-    if (this.notifyEmails == null) {
-      this.notifyEmails = new ArrayList<>();
-    }
-    this.notifyEmails.add(notifyEmailsItem);
-    return this;
-  }
-
-  /**
-   * Emails attached to the service
-   * @return notifyEmails
-   */
-  @jakarta.annotation.Nullable
-  public List<String> getNotifyEmails() {
-    return notifyEmails;
-  }
-
-  public void setNotifyEmails(@jakarta.annotation.Nullable List<String> notifyEmails) {
-    this.notifyEmails = notifyEmails;
-  }
-
-
-  public Service color(@jakarta.annotation.Nullable String color) {
-    this.color = color;
-    return this;
-  }
-
-  /**
-   * The hex color of the service
-   * @return color
-   */
-  @jakarta.annotation.Nullable
-  public String getColor() {
-    return color;
-  }
-
-  public void setColor(@jakarta.annotation.Nullable String color) {
-    this.color = color;
-  }
-
-
-  public Service position(@jakarta.annotation.Nullable Integer position) {
-    this.position = position;
-    return this;
-  }
-
-  /**
-   * Position of the service
-   * @return position
-   */
-  @jakarta.annotation.Nullable
-  public Integer getPosition() {
-    return position;
-  }
-
-  public void setPosition(@jakarta.annotation.Nullable Integer position) {
-    this.position = position;
-  }
-
-
-  public Service backstageId(@jakarta.annotation.Nullable String backstageId) {
-    this.backstageId = backstageId;
-    return this;
-  }
-
-  /**
-   * The Backstage entity id associated to this service. eg: :namespace/:kind/:entity_name
-   * @return backstageId
-   */
-  @jakarta.annotation.Nullable
-  public String getBackstageId() {
-    return backstageId;
-  }
-
-  public void setBackstageId(@jakarta.annotation.Nullable String backstageId) {
-    this.backstageId = backstageId;
-  }
-
-
-  public Service externalId(@jakarta.annotation.Nullable String externalId) {
-    this.externalId = externalId;
-    return this;
-  }
-
-  /**
-   * The external id associated to this service
-   * @return externalId
-   */
-  @jakarta.annotation.Nullable
-  public String getExternalId() {
-    return externalId;
-  }
-
-  public void setExternalId(@jakarta.annotation.Nullable String externalId) {
-    this.externalId = externalId;
-  }
-
-
-  public Service pagerdutyId(@jakarta.annotation.Nullable String pagerdutyId) {
-    this.pagerdutyId = pagerdutyId;
-    return this;
-  }
-
-  /**
-   * The PagerDuty service id associated to this service
-   * @return pagerdutyId
-   */
-  @jakarta.annotation.Nullable
-  public String getPagerdutyId() {
-    return pagerdutyId;
-  }
-
-  public void setPagerdutyId(@jakarta.annotation.Nullable String pagerdutyId) {
-    this.pagerdutyId = pagerdutyId;
-  }
-
-
-  public Service opsgenieId(@jakarta.annotation.Nullable String opsgenieId) {
-    this.opsgenieId = opsgenieId;
-    return this;
-  }
-
-  /**
-   * The Opsgenie service id associated to this service
-   * @return opsgenieId
-   */
-  @jakarta.annotation.Nullable
-  public String getOpsgenieId() {
-    return opsgenieId;
-  }
-
-  public void setOpsgenieId(@jakarta.annotation.Nullable String opsgenieId) {
-    this.opsgenieId = opsgenieId;
-  }
-
-
-  public Service cortexId(@jakarta.annotation.Nullable String cortexId) {
-    this.cortexId = cortexId;
-    return this;
-  }
-
-  /**
-   * The Cortex group id associated to this service
-   * @return cortexId
-   */
-  @jakarta.annotation.Nullable
-  public String getCortexId() {
-    return cortexId;
-  }
-
-  public void setCortexId(@jakarta.annotation.Nullable String cortexId) {
-    this.cortexId = cortexId;
-  }
-
-
-  public Service serviceNowCiSysId(@jakarta.annotation.Nullable String serviceNowCiSysId) {
-    this.serviceNowCiSysId = serviceNowCiSysId;
-    return this;
-  }
-
-  /**
-   * The Service Now CI sys id associated to this service
-   * @return serviceNowCiSysId
-   */
-  @jakarta.annotation.Nullable
-  public String getServiceNowCiSysId() {
-    return serviceNowCiSysId;
-  }
-
-  public void setServiceNowCiSysId(@jakarta.annotation.Nullable String serviceNowCiSysId) {
-    this.serviceNowCiSysId = serviceNowCiSysId;
-  }
-
-
-  public Service githubRepositoryName(@jakarta.annotation.Nullable String githubRepositoryName) {
-    this.githubRepositoryName = githubRepositoryName;
-    return this;
-  }
-
-  /**
-   * The GitHub repository name associated to this service. eg: rootlyhq/my-service
-   * @return githubRepositoryName
-   */
-  @jakarta.annotation.Nullable
-  public String getGithubRepositoryName() {
-    return githubRepositoryName;
-  }
-
-  public void setGithubRepositoryName(@jakarta.annotation.Nullable String githubRepositoryName) {
-    this.githubRepositoryName = githubRepositoryName;
-  }
-
-
-  public Service githubRepositoryBranch(@jakarta.annotation.Nullable String githubRepositoryBranch) {
-    this.githubRepositoryBranch = githubRepositoryBranch;
-    return this;
-  }
-
-  /**
-   * The GitHub repository branch associated to this service. eg: main
-   * @return githubRepositoryBranch
-   */
-  @jakarta.annotation.Nullable
-  public String getGithubRepositoryBranch() {
-    return githubRepositoryBranch;
-  }
-
-  public void setGithubRepositoryBranch(@jakarta.annotation.Nullable String githubRepositoryBranch) {
-    this.githubRepositoryBranch = githubRepositoryBranch;
-  }
-
-
-  public Service gitlabRepositoryName(@jakarta.annotation.Nullable String gitlabRepositoryName) {
-    this.gitlabRepositoryName = gitlabRepositoryName;
-    return this;
-  }
-
-  /**
-   * The GitLab repository name associated to this service. eg: rootlyhq/my-service
-   * @return gitlabRepositoryName
-   */
-  @jakarta.annotation.Nullable
-  public String getGitlabRepositoryName() {
-    return gitlabRepositoryName;
-  }
-
-  public void setGitlabRepositoryName(@jakarta.annotation.Nullable String gitlabRepositoryName) {
-    this.gitlabRepositoryName = gitlabRepositoryName;
-  }
-
-
-  public Service gitlabRepositoryBranch(@jakarta.annotation.Nullable String gitlabRepositoryBranch) {
-    this.gitlabRepositoryBranch = gitlabRepositoryBranch;
-    return this;
-  }
-
-  /**
-   * The GitLab repository branch associated to this service. eg: main
-   * @return gitlabRepositoryBranch
-   */
-  @jakarta.annotation.Nullable
-  public String getGitlabRepositoryBranch() {
-    return gitlabRepositoryBranch;
-  }
-
-  public void setGitlabRepositoryBranch(@jakarta.annotation.Nullable String gitlabRepositoryBranch) {
-    this.gitlabRepositoryBranch = gitlabRepositoryBranch;
-  }
-
-
-  public Service kubernetesDeploymentName(@jakarta.annotation.Nullable String kubernetesDeploymentName) {
-    this.kubernetesDeploymentName = kubernetesDeploymentName;
-    return this;
-  }
-
-  /**
-   * The Kubernetes deployment name associated to this service. eg: namespace/deployment-name
-   * @return kubernetesDeploymentName
-   */
-  @jakarta.annotation.Nullable
-  public String getKubernetesDeploymentName() {
-    return kubernetesDeploymentName;
-  }
-
-  public void setKubernetesDeploymentName(@jakarta.annotation.Nullable String kubernetesDeploymentName) {
-    this.kubernetesDeploymentName = kubernetesDeploymentName;
-  }
-
-
-  public Service environmentIds(@jakarta.annotation.Nullable List<String> environmentIds) {
-    this.environmentIds = environmentIds;
-    return this;
-  }
-
-  public Service addEnvironmentIdsItem(String environmentIdsItem) {
-    if (this.environmentIds == null) {
-      this.environmentIds = new ArrayList<>();
-    }
-    this.environmentIds.add(environmentIdsItem);
-    return this;
-  }
-
-  /**
-   * Environments associated with this service
-   * @return environmentIds
-   */
-  @jakarta.annotation.Nullable
-  public List<String> getEnvironmentIds() {
-    return environmentIds;
-  }
-
-  public void setEnvironmentIds(@jakarta.annotation.Nullable List<String> environmentIds) {
-    this.environmentIds = environmentIds;
-  }
-
-
-  public Service serviceIds(@jakarta.annotation.Nullable List<String> serviceIds) {
+  public Service serviceIds(@jakarta.annotation.Nonnull List<String> serviceIds) {
     this.serviceIds = serviceIds;
     return this;
   }
@@ -712,341 +209,35 @@ public class Service {
   }
 
   /**
-   * Services dependent on this service
+   * Service ids for which this escalation path should be used
    * @return serviceIds
    */
-  @jakarta.annotation.Nullable
+  @jakarta.annotation.Nonnull
   public List<String> getServiceIds() {
     return serviceIds;
   }
 
-  public void setServiceIds(@jakarta.annotation.Nullable List<String> serviceIds) {
+  public void setServiceIds(@jakarta.annotation.Nonnull List<String> serviceIds) {
     this.serviceIds = serviceIds;
   }
 
 
-  public Service ownerGroupIds(@jakarta.annotation.Nullable List<String> ownerGroupIds) {
-    this.ownerGroupIds = ownerGroupIds;
-    return this;
-  }
-
-  public Service addOwnerGroupIdsItem(String ownerGroupIdsItem) {
-    if (this.ownerGroupIds == null) {
-      this.ownerGroupIds = new ArrayList<>();
-    }
-    this.ownerGroupIds.add(ownerGroupIdsItem);
+  public Service operator(@jakarta.annotation.Nullable OperatorEnum operator) {
+    this.operator = operator;
     return this;
   }
 
   /**
-   * Owner Teams associated with this service
-   * @return ownerGroupIds
+   * How the alert&#39;s services should be matched. is and is_not take exactly one id
+   * @return operator
    */
   @jakarta.annotation.Nullable
-  public List<String> getOwnerGroupIds() {
-    return ownerGroupIds;
+  public OperatorEnum getOperator() {
+    return operator;
   }
 
-  public void setOwnerGroupIds(@jakarta.annotation.Nullable List<String> ownerGroupIds) {
-    this.ownerGroupIds = ownerGroupIds;
-  }
-
-
-  public Service ownerUserIds(@jakarta.annotation.Nullable List<Integer> ownerUserIds) {
-    this.ownerUserIds = ownerUserIds;
-    return this;
-  }
-
-  public Service addOwnerUserIdsItem(Integer ownerUserIdsItem) {
-    if (this.ownerUserIds == null) {
-      this.ownerUserIds = new ArrayList<>();
-    }
-    this.ownerUserIds.add(ownerUserIdsItem);
-    return this;
-  }
-
-  /**
-   * Owner Users associated with this service
-   * @return ownerUserIds
-   */
-  @jakarta.annotation.Nullable
-  public List<Integer> getOwnerUserIds() {
-    return ownerUserIds;
-  }
-
-  public void setOwnerUserIds(@jakarta.annotation.Nullable List<Integer> ownerUserIds) {
-    this.ownerUserIds = ownerUserIds;
-  }
-
-
-  public Service alertUrgencyId(@jakarta.annotation.Nullable String alertUrgencyId) {
-    this.alertUrgencyId = alertUrgencyId;
-    return this;
-  }
-
-  /**
-   * The alert urgency id of the service
-   * @return alertUrgencyId
-   */
-  @jakarta.annotation.Nullable
-  public String getAlertUrgencyId() {
-    return alertUrgencyId;
-  }
-
-  public void setAlertUrgencyId(@jakarta.annotation.Nullable String alertUrgencyId) {
-    this.alertUrgencyId = alertUrgencyId;
-  }
-
-
-  public Service escalationPolicyId(@jakarta.annotation.Nullable String escalationPolicyId) {
-    this.escalationPolicyId = escalationPolicyId;
-    return this;
-  }
-
-  /**
-   * The escalation policy id of the service
-   * @return escalationPolicyId
-   */
-  @jakarta.annotation.Nullable
-  public String getEscalationPolicyId() {
-    return escalationPolicyId;
-  }
-
-  public void setEscalationPolicyId(@jakarta.annotation.Nullable String escalationPolicyId) {
-    this.escalationPolicyId = escalationPolicyId;
-  }
-
-
-  public Service alertsEmailEnabled(@jakarta.annotation.Nullable Boolean alertsEmailEnabled) {
-    this.alertsEmailEnabled = alertsEmailEnabled;
-    return this;
-  }
-
-  /**
-   * Enable alerts through email
-   * @return alertsEmailEnabled
-   */
-  @jakarta.annotation.Nullable
-  public Boolean getAlertsEmailEnabled() {
-    return alertsEmailEnabled;
-  }
-
-  public void setAlertsEmailEnabled(@jakarta.annotation.Nullable Boolean alertsEmailEnabled) {
-    this.alertsEmailEnabled = alertsEmailEnabled;
-  }
-
-
-  public Service alertsEmailAddress(@jakarta.annotation.Nullable String alertsEmailAddress) {
-    this.alertsEmailAddress = alertsEmailAddress;
-    return this;
-  }
-
-  /**
-   * Email generated to send alerts to
-   * @return alertsEmailAddress
-   */
-  @jakarta.annotation.Nullable
-  public String getAlertsEmailAddress() {
-    return alertsEmailAddress;
-  }
-
-  public void setAlertsEmailAddress(@jakarta.annotation.Nullable String alertsEmailAddress) {
-    this.alertsEmailAddress = alertsEmailAddress;
-  }
-
-
-  public Service slackChannels(@jakarta.annotation.Nullable List<NewEnvironmentDataAttributesSlackChannelsInner> slackChannels) {
-    this.slackChannels = slackChannels;
-    return this;
-  }
-
-  public Service addSlackChannelsItem(NewEnvironmentDataAttributesSlackChannelsInner slackChannelsItem) {
-    if (this.slackChannels == null) {
-      this.slackChannels = new ArrayList<>();
-    }
-    this.slackChannels.add(slackChannelsItem);
-    return this;
-  }
-
-  /**
-   * Slack Channels associated with this service
-   * @return slackChannels
-   */
-  @jakarta.annotation.Nullable
-  public List<NewEnvironmentDataAttributesSlackChannelsInner> getSlackChannels() {
-    return slackChannels;
-  }
-
-  public void setSlackChannels(@jakarta.annotation.Nullable List<NewEnvironmentDataAttributesSlackChannelsInner> slackChannels) {
-    this.slackChannels = slackChannels;
-  }
-
-
-  public Service slackAliases(@jakarta.annotation.Nullable List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases) {
-    this.slackAliases = slackAliases;
-    return this;
-  }
-
-  public Service addSlackAliasesItem(NewEnvironmentDataAttributesSlackAliasesInner slackAliasesItem) {
-    if (this.slackAliases == null) {
-      this.slackAliases = new ArrayList<>();
-    }
-    this.slackAliases.add(slackAliasesItem);
-    return this;
-  }
-
-  /**
-   * Slack Aliases associated with this service
-   * @return slackAliases
-   */
-  @jakarta.annotation.Nullable
-  public List<NewEnvironmentDataAttributesSlackAliasesInner> getSlackAliases() {
-    return slackAliases;
-  }
-
-  public void setSlackAliases(@jakarta.annotation.Nullable List<NewEnvironmentDataAttributesSlackAliasesInner> slackAliases) {
-    this.slackAliases = slackAliases;
-  }
-
-
-  public Service alertBroadcastEnabled(@jakarta.annotation.Nullable Boolean alertBroadcastEnabled) {
-    this.alertBroadcastEnabled = alertBroadcastEnabled;
-    return this;
-  }
-
-  /**
-   * Enable alerts to be broadcasted to a specific channel
-   * @return alertBroadcastEnabled
-   */
-  @jakarta.annotation.Nullable
-  public Boolean getAlertBroadcastEnabled() {
-    return alertBroadcastEnabled;
-  }
-
-  public void setAlertBroadcastEnabled(@jakarta.annotation.Nullable Boolean alertBroadcastEnabled) {
-    this.alertBroadcastEnabled = alertBroadcastEnabled;
-  }
-
-
-  public Service alertBroadcastChannel(@jakarta.annotation.Nullable ServiceAlertBroadcastChannel alertBroadcastChannel) {
-    this.alertBroadcastChannel = alertBroadcastChannel;
-    return this;
-  }
-
-  /**
-   * Get alertBroadcastChannel
-   * @return alertBroadcastChannel
-   */
-  @jakarta.annotation.Nullable
-  public ServiceAlertBroadcastChannel getAlertBroadcastChannel() {
-    return alertBroadcastChannel;
-  }
-
-  public void setAlertBroadcastChannel(@jakarta.annotation.Nullable ServiceAlertBroadcastChannel alertBroadcastChannel) {
-    this.alertBroadcastChannel = alertBroadcastChannel;
-  }
-
-
-  public Service incidentBroadcastEnabled(@jakarta.annotation.Nullable Boolean incidentBroadcastEnabled) {
-    this.incidentBroadcastEnabled = incidentBroadcastEnabled;
-    return this;
-  }
-
-  /**
-   * Enable incidents to be broadcasted to a specific channel
-   * @return incidentBroadcastEnabled
-   */
-  @jakarta.annotation.Nullable
-  public Boolean getIncidentBroadcastEnabled() {
-    return incidentBroadcastEnabled;
-  }
-
-  public void setIncidentBroadcastEnabled(@jakarta.annotation.Nullable Boolean incidentBroadcastEnabled) {
-    this.incidentBroadcastEnabled = incidentBroadcastEnabled;
-  }
-
-
-  public Service incidentBroadcastChannel(@jakarta.annotation.Nullable ServiceIncidentBroadcastChannel incidentBroadcastChannel) {
-    this.incidentBroadcastChannel = incidentBroadcastChannel;
-    return this;
-  }
-
-  /**
-   * Get incidentBroadcastChannel
-   * @return incidentBroadcastChannel
-   */
-  @jakarta.annotation.Nullable
-  public ServiceIncidentBroadcastChannel getIncidentBroadcastChannel() {
-    return incidentBroadcastChannel;
-  }
-
-  public void setIncidentBroadcastChannel(@jakarta.annotation.Nullable ServiceIncidentBroadcastChannel incidentBroadcastChannel) {
-    this.incidentBroadcastChannel = incidentBroadcastChannel;
-  }
-
-
-  public Service properties(@jakarta.annotation.Nullable List<NewCauseDataAttributesPropertiesInner> properties) {
-    this.properties = properties;
-    return this;
-  }
-
-  public Service addPropertiesItem(NewCauseDataAttributesPropertiesInner propertiesItem) {
-    if (this.properties == null) {
-      this.properties = new ArrayList<>();
-    }
-    this.properties.add(propertiesItem);
-    return this;
-  }
-
-  /**
-   * Array of property values for this service.
-   * @return properties
-   */
-  @jakarta.annotation.Nullable
-  public List<NewCauseDataAttributesPropertiesInner> getProperties() {
-    return properties;
-  }
-
-  public void setProperties(@jakarta.annotation.Nullable List<NewCauseDataAttributesPropertiesInner> properties) {
-    this.properties = properties;
-  }
-
-
-  public Service createdAt(@jakarta.annotation.Nonnull String createdAt) {
-    this.createdAt = createdAt;
-    return this;
-  }
-
-  /**
-   * Date of creation
-   * @return createdAt
-   */
-  @jakarta.annotation.Nonnull
-  public String getCreatedAt() {
-    return createdAt;
-  }
-
-  public void setCreatedAt(@jakarta.annotation.Nonnull String createdAt) {
-    this.createdAt = createdAt;
-  }
-
-
-  public Service updatedAt(@jakarta.annotation.Nonnull String updatedAt) {
-    this.updatedAt = updatedAt;
-    return this;
-  }
-
-  /**
-   * Date of last update
-   * @return updatedAt
-   */
-  @jakarta.annotation.Nonnull
-  public String getUpdatedAt() {
-    return updatedAt;
-  }
-
-  public void setUpdatedAt(@jakarta.annotation.Nonnull String updatedAt) {
-    this.updatedAt = updatedAt;
+  public void setOperator(@jakarta.annotation.Nullable OperatorEnum operator) {
+    this.operator = operator;
   }
 
 
@@ -1060,100 +251,23 @@ public class Service {
       return false;
     }
     Service service = (Service) o;
-    return Objects.equals(this.name, service.name) &&
-        Objects.equals(this.slug, service.slug) &&
-        Objects.equals(this.managedBy, service.managedBy) &&
-        Objects.equals(this.description, service.description) &&
-        Objects.equals(this.publicDescription, service.publicDescription) &&
-        Objects.equals(this.notifyEmails, service.notifyEmails) &&
-        Objects.equals(this.color, service.color) &&
-        Objects.equals(this.position, service.position) &&
-        Objects.equals(this.backstageId, service.backstageId) &&
-        Objects.equals(this.externalId, service.externalId) &&
-        Objects.equals(this.pagerdutyId, service.pagerdutyId) &&
-        Objects.equals(this.opsgenieId, service.opsgenieId) &&
-        Objects.equals(this.cortexId, service.cortexId) &&
-        Objects.equals(this.serviceNowCiSysId, service.serviceNowCiSysId) &&
-        Objects.equals(this.githubRepositoryName, service.githubRepositoryName) &&
-        Objects.equals(this.githubRepositoryBranch, service.githubRepositoryBranch) &&
-        Objects.equals(this.gitlabRepositoryName, service.gitlabRepositoryName) &&
-        Objects.equals(this.gitlabRepositoryBranch, service.gitlabRepositoryBranch) &&
-        Objects.equals(this.kubernetesDeploymentName, service.kubernetesDeploymentName) &&
-        Objects.equals(this.environmentIds, service.environmentIds) &&
+    return Objects.equals(this.ruleType, service.ruleType) &&
         Objects.equals(this.serviceIds, service.serviceIds) &&
-        Objects.equals(this.ownerGroupIds, service.ownerGroupIds) &&
-        Objects.equals(this.ownerUserIds, service.ownerUserIds) &&
-        Objects.equals(this.alertUrgencyId, service.alertUrgencyId) &&
-        Objects.equals(this.escalationPolicyId, service.escalationPolicyId) &&
-        Objects.equals(this.alertsEmailEnabled, service.alertsEmailEnabled) &&
-        Objects.equals(this.alertsEmailAddress, service.alertsEmailAddress) &&
-        Objects.equals(this.slackChannels, service.slackChannels) &&
-        Objects.equals(this.slackAliases, service.slackAliases) &&
-        Objects.equals(this.alertBroadcastEnabled, service.alertBroadcastEnabled) &&
-        Objects.equals(this.alertBroadcastChannel, service.alertBroadcastChannel) &&
-        Objects.equals(this.incidentBroadcastEnabled, service.incidentBroadcastEnabled) &&
-        Objects.equals(this.incidentBroadcastChannel, service.incidentBroadcastChannel) &&
-        Objects.equals(this.properties, service.properties) &&
-        Objects.equals(this.createdAt, service.createdAt) &&
-        Objects.equals(this.updatedAt, service.updatedAt);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+        Objects.equals(this.operator, service.operator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, slug, managedBy, description, publicDescription, notifyEmails, color, position, backstageId, externalId, pagerdutyId, opsgenieId, cortexId, serviceNowCiSysId, githubRepositoryName, githubRepositoryBranch, gitlabRepositoryName, gitlabRepositoryBranch, kubernetesDeploymentName, environmentIds, serviceIds, ownerGroupIds, ownerUserIds, alertUrgencyId, escalationPolicyId, alertsEmailEnabled, alertsEmailAddress, slackChannels, slackAliases, alertBroadcastEnabled, alertBroadcastChannel, incidentBroadcastEnabled, incidentBroadcastChannel, properties, createdAt, updatedAt);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(ruleType, serviceIds, operator);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Service {\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
-    sb.append("    managedBy: ").append(toIndentedString(managedBy)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    publicDescription: ").append(toIndentedString(publicDescription)).append("\n");
-    sb.append("    notifyEmails: ").append(toIndentedString(notifyEmails)).append("\n");
-    sb.append("    color: ").append(toIndentedString(color)).append("\n");
-    sb.append("    position: ").append(toIndentedString(position)).append("\n");
-    sb.append("    backstageId: ").append(toIndentedString(backstageId)).append("\n");
-    sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
-    sb.append("    pagerdutyId: ").append(toIndentedString(pagerdutyId)).append("\n");
-    sb.append("    opsgenieId: ").append(toIndentedString(opsgenieId)).append("\n");
-    sb.append("    cortexId: ").append(toIndentedString(cortexId)).append("\n");
-    sb.append("    serviceNowCiSysId: ").append(toIndentedString(serviceNowCiSysId)).append("\n");
-    sb.append("    githubRepositoryName: ").append(toIndentedString(githubRepositoryName)).append("\n");
-    sb.append("    githubRepositoryBranch: ").append(toIndentedString(githubRepositoryBranch)).append("\n");
-    sb.append("    gitlabRepositoryName: ").append(toIndentedString(gitlabRepositoryName)).append("\n");
-    sb.append("    gitlabRepositoryBranch: ").append(toIndentedString(gitlabRepositoryBranch)).append("\n");
-    sb.append("    kubernetesDeploymentName: ").append(toIndentedString(kubernetesDeploymentName)).append("\n");
-    sb.append("    environmentIds: ").append(toIndentedString(environmentIds)).append("\n");
+    sb.append("    ruleType: ").append(toIndentedString(ruleType)).append("\n");
     sb.append("    serviceIds: ").append(toIndentedString(serviceIds)).append("\n");
-    sb.append("    ownerGroupIds: ").append(toIndentedString(ownerGroupIds)).append("\n");
-    sb.append("    ownerUserIds: ").append(toIndentedString(ownerUserIds)).append("\n");
-    sb.append("    alertUrgencyId: ").append(toIndentedString(alertUrgencyId)).append("\n");
-    sb.append("    escalationPolicyId: ").append(toIndentedString(escalationPolicyId)).append("\n");
-    sb.append("    alertsEmailEnabled: ").append(toIndentedString(alertsEmailEnabled)).append("\n");
-    sb.append("    alertsEmailAddress: ").append(toIndentedString(alertsEmailAddress)).append("\n");
-    sb.append("    slackChannels: ").append(toIndentedString(slackChannels)).append("\n");
-    sb.append("    slackAliases: ").append(toIndentedString(slackAliases)).append("\n");
-    sb.append("    alertBroadcastEnabled: ").append(toIndentedString(alertBroadcastEnabled)).append("\n");
-    sb.append("    alertBroadcastChannel: ").append(toIndentedString(alertBroadcastChannel)).append("\n");
-    sb.append("    incidentBroadcastEnabled: ").append(toIndentedString(incidentBroadcastEnabled)).append("\n");
-    sb.append("    incidentBroadcastChannel: ").append(toIndentedString(incidentBroadcastChannel)).append("\n");
-    sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
-    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-    sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+    sb.append("    operator: ").append(toIndentedString(operator)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -1176,48 +290,14 @@ public class Service {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("slug");
-    openapiFields.add("managed_by");
-    openapiFields.add("description");
-    openapiFields.add("public_description");
-    openapiFields.add("notify_emails");
-    openapiFields.add("color");
-    openapiFields.add("position");
-    openapiFields.add("backstage_id");
-    openapiFields.add("external_id");
-    openapiFields.add("pagerduty_id");
-    openapiFields.add("opsgenie_id");
-    openapiFields.add("cortex_id");
-    openapiFields.add("service_now_ci_sys_id");
-    openapiFields.add("github_repository_name");
-    openapiFields.add("github_repository_branch");
-    openapiFields.add("gitlab_repository_name");
-    openapiFields.add("gitlab_repository_branch");
-    openapiFields.add("kubernetes_deployment_name");
-    openapiFields.add("environment_ids");
+    openapiFields.add("rule_type");
     openapiFields.add("service_ids");
-    openapiFields.add("owner_group_ids");
-    openapiFields.add("owner_user_ids");
-    openapiFields.add("alert_urgency_id");
-    openapiFields.add("escalation_policy_id");
-    openapiFields.add("alerts_email_enabled");
-    openapiFields.add("alerts_email_address");
-    openapiFields.add("slack_channels");
-    openapiFields.add("slack_aliases");
-    openapiFields.add("alert_broadcast_enabled");
-    openapiFields.add("alert_broadcast_channel");
-    openapiFields.add("incident_broadcast_enabled");
-    openapiFields.add("incident_broadcast_channel");
-    openapiFields.add("properties");
-    openapiFields.add("created_at");
-    openapiFields.add("updated_at");
+    openapiFields.add("operator");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("created_at");
-    openapiRequiredFields.add("updated_at");
+    openapiRequiredFields.add("rule_type");
+    openapiRequiredFields.add("service_ids");
   }
 
   /**
@@ -1248,145 +328,23 @@ public class Service {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      if (!jsonObj.get("rule_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `rule_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("rule_type").toString()));
       }
-      if ((jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonNull()) && !jsonObj.get("slug").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
-      }
-      if ((jsonObj.get("managed_by") != null && !jsonObj.get("managed_by").isJsonNull()) && !jsonObj.get("managed_by").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `managed_by` to be a primitive type in the JSON string but got `%s`", jsonObj.get("managed_by").toString()));
-      }
-      // validate the optional field `managed_by`
-      if (jsonObj.get("managed_by") != null && !jsonObj.get("managed_by").isJsonNull()) {
-        ManagedByEnum.validateJsonElement(jsonObj.get("managed_by"));
-      }
-      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
-      }
-      if ((jsonObj.get("public_description") != null && !jsonObj.get("public_description").isJsonNull()) && !jsonObj.get("public_description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `public_description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("public_description").toString()));
-      }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("notify_emails") != null && !jsonObj.get("notify_emails").isJsonNull() && !jsonObj.get("notify_emails").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `notify_emails` to be an array in the JSON string but got `%s`", jsonObj.get("notify_emails").toString()));
-      }
-      if ((jsonObj.get("color") != null && !jsonObj.get("color").isJsonNull()) && !jsonObj.get("color").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `color` to be a primitive type in the JSON string but got `%s`", jsonObj.get("color").toString()));
-      }
-      if ((jsonObj.get("backstage_id") != null && !jsonObj.get("backstage_id").isJsonNull()) && !jsonObj.get("backstage_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `backstage_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("backstage_id").toString()));
-      }
-      if ((jsonObj.get("external_id") != null && !jsonObj.get("external_id").isJsonNull()) && !jsonObj.get("external_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `external_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("external_id").toString()));
-      }
-      if ((jsonObj.get("pagerduty_id") != null && !jsonObj.get("pagerduty_id").isJsonNull()) && !jsonObj.get("pagerduty_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `pagerduty_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pagerduty_id").toString()));
-      }
-      if ((jsonObj.get("opsgenie_id") != null && !jsonObj.get("opsgenie_id").isJsonNull()) && !jsonObj.get("opsgenie_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `opsgenie_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("opsgenie_id").toString()));
-      }
-      if ((jsonObj.get("cortex_id") != null && !jsonObj.get("cortex_id").isJsonNull()) && !jsonObj.get("cortex_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `cortex_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("cortex_id").toString()));
-      }
-      if ((jsonObj.get("service_now_ci_sys_id") != null && !jsonObj.get("service_now_ci_sys_id").isJsonNull()) && !jsonObj.get("service_now_ci_sys_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `service_now_ci_sys_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("service_now_ci_sys_id").toString()));
-      }
-      if ((jsonObj.get("github_repository_name") != null && !jsonObj.get("github_repository_name").isJsonNull()) && !jsonObj.get("github_repository_name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `github_repository_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("github_repository_name").toString()));
-      }
-      if ((jsonObj.get("github_repository_branch") != null && !jsonObj.get("github_repository_branch").isJsonNull()) && !jsonObj.get("github_repository_branch").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `github_repository_branch` to be a primitive type in the JSON string but got `%s`", jsonObj.get("github_repository_branch").toString()));
-      }
-      if ((jsonObj.get("gitlab_repository_name") != null && !jsonObj.get("gitlab_repository_name").isJsonNull()) && !jsonObj.get("gitlab_repository_name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `gitlab_repository_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gitlab_repository_name").toString()));
-      }
-      if ((jsonObj.get("gitlab_repository_branch") != null && !jsonObj.get("gitlab_repository_branch").isJsonNull()) && !jsonObj.get("gitlab_repository_branch").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `gitlab_repository_branch` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gitlab_repository_branch").toString()));
-      }
-      if ((jsonObj.get("kubernetes_deployment_name") != null && !jsonObj.get("kubernetes_deployment_name").isJsonNull()) && !jsonObj.get("kubernetes_deployment_name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `kubernetes_deployment_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kubernetes_deployment_name").toString()));
-      }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("environment_ids") != null && !jsonObj.get("environment_ids").isJsonNull() && !jsonObj.get("environment_ids").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environment_ids` to be an array in the JSON string but got `%s`", jsonObj.get("environment_ids").toString()));
-      }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("service_ids") != null && !jsonObj.get("service_ids").isJsonNull() && !jsonObj.get("service_ids").isJsonArray()) {
+      // validate the required field `rule_type`
+      RuleTypeEnum.validateJsonElement(jsonObj.get("rule_type"));
+      // ensure the required json array is present
+      if (jsonObj.get("service_ids") == null) {
+        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
+      } else if (!jsonObj.get("service_ids").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `service_ids` to be an array in the JSON string but got `%s`", jsonObj.get("service_ids").toString()));
       }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("owner_group_ids") != null && !jsonObj.get("owner_group_ids").isJsonNull() && !jsonObj.get("owner_group_ids").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `owner_group_ids` to be an array in the JSON string but got `%s`", jsonObj.get("owner_group_ids").toString()));
+      if ((jsonObj.get("operator") != null && !jsonObj.get("operator").isJsonNull()) && !jsonObj.get("operator").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `operator` to be a primitive type in the JSON string but got `%s`", jsonObj.get("operator").toString()));
       }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("owner_user_ids") != null && !jsonObj.get("owner_user_ids").isJsonNull() && !jsonObj.get("owner_user_ids").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `owner_user_ids` to be an array in the JSON string but got `%s`", jsonObj.get("owner_user_ids").toString()));
-      }
-      if ((jsonObj.get("alert_urgency_id") != null && !jsonObj.get("alert_urgency_id").isJsonNull()) && !jsonObj.get("alert_urgency_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `alert_urgency_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("alert_urgency_id").toString()));
-      }
-      if ((jsonObj.get("escalation_policy_id") != null && !jsonObj.get("escalation_policy_id").isJsonNull()) && !jsonObj.get("escalation_policy_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `escalation_policy_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("escalation_policy_id").toString()));
-      }
-      if ((jsonObj.get("alerts_email_address") != null && !jsonObj.get("alerts_email_address").isJsonNull()) && !jsonObj.get("alerts_email_address").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `alerts_email_address` to be a primitive type in the JSON string but got `%s`", jsonObj.get("alerts_email_address").toString()));
-      }
-      if (jsonObj.get("slack_channels") != null && !jsonObj.get("slack_channels").isJsonNull()) {
-        JsonArray jsonArrayslackChannels = jsonObj.getAsJsonArray("slack_channels");
-        if (jsonArrayslackChannels != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("slack_channels").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `slack_channels` to be an array in the JSON string but got `%s`", jsonObj.get("slack_channels").toString()));
-          }
-
-          // validate the optional field `slack_channels` (array)
-          for (int i = 0; i < jsonArrayslackChannels.size(); i++) {
-            NewEnvironmentDataAttributesSlackChannelsInner.validateJsonElement(jsonArrayslackChannels.get(i));
-          };
-        }
-      }
-      if (jsonObj.get("slack_aliases") != null && !jsonObj.get("slack_aliases").isJsonNull()) {
-        JsonArray jsonArrayslackAliases = jsonObj.getAsJsonArray("slack_aliases");
-        if (jsonArrayslackAliases != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("slack_aliases").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `slack_aliases` to be an array in the JSON string but got `%s`", jsonObj.get("slack_aliases").toString()));
-          }
-
-          // validate the optional field `slack_aliases` (array)
-          for (int i = 0; i < jsonArrayslackAliases.size(); i++) {
-            NewEnvironmentDataAttributesSlackAliasesInner.validateJsonElement(jsonArrayslackAliases.get(i));
-          };
-        }
-      }
-      // validate the optional field `alert_broadcast_channel`
-      if (jsonObj.get("alert_broadcast_channel") != null && !jsonObj.get("alert_broadcast_channel").isJsonNull()) {
-        ServiceAlertBroadcastChannel.validateJsonElement(jsonObj.get("alert_broadcast_channel"));
-      }
-      // validate the optional field `incident_broadcast_channel`
-      if (jsonObj.get("incident_broadcast_channel") != null && !jsonObj.get("incident_broadcast_channel").isJsonNull()) {
-        ServiceIncidentBroadcastChannel.validateJsonElement(jsonObj.get("incident_broadcast_channel"));
-      }
-      if (jsonObj.get("properties") != null && !jsonObj.get("properties").isJsonNull()) {
-        JsonArray jsonArrayproperties = jsonObj.getAsJsonArray("properties");
-        if (jsonArrayproperties != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("properties").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `properties` to be an array in the JSON string but got `%s`", jsonObj.get("properties").toString()));
-          }
-
-          // validate the optional field `properties` (array)
-          for (int i = 0; i < jsonArrayproperties.size(); i++) {
-            NewCauseDataAttributesPropertiesInner.validateJsonElement(jsonArrayproperties.get(i));
-          };
-        }
-      }
-      if (!jsonObj.get("created_at").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));
-      }
-      if (!jsonObj.get("updated_at").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `updated_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updated_at").toString()));
+      // validate the optional field `operator`
+      if (jsonObj.get("operator") != null && !jsonObj.get("operator").isJsonNull()) {
+        OperatorEnum.validateJsonElement(jsonObj.get("operator"));
       }
   }
 

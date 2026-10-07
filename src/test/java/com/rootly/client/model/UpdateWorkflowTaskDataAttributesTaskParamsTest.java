@@ -91,6 +91,8 @@ import com.rootly.client.model.CreateServiceNowIncidentTaskParamsCompletion;
 import com.rootly.client.model.CreateSharepointPageTaskParams;
 import com.rootly.client.model.CreateShortcutStoryTaskParams;
 import com.rootly.client.model.CreateShortcutTaskTaskParams;
+import com.rootly.client.model.CreateSlackCanvasTaskParams;
+import com.rootly.client.model.CreateSlackCanvasTaskParamsChannel;
 import com.rootly.client.model.CreateSlackChannelTaskParams;
 import com.rootly.client.model.CreateSubIncidentTaskParams;
 import com.rootly.client.model.CreateTrelloCardTaskParams;
@@ -123,6 +125,7 @@ import com.rootly.client.model.PageVictorOpsOnCallRespondersTaskParams;
 import com.rootly.client.model.PrintTaskParams;
 import com.rootly.client.model.PublishIncidentTaskParams;
 import com.rootly.client.model.RedisClientTaskParams;
+import com.rootly.client.model.RemoveFromSlackChannelTaskParams;
 import com.rootly.client.model.RemoveGoogleDocsPermissionsTaskParams;
 import com.rootly.client.model.RenameGoogleChatSpaceTaskParams;
 import com.rootly.client.model.RenameMicrosoftTeamsChannelTaskParams;
@@ -178,6 +181,7 @@ import com.rootly.client.model.UpdateServiceNowIncidentTaskParams;
 import com.rootly.client.model.UpdateSharepointPageTaskParams;
 import com.rootly.client.model.UpdateShortcutStoryTaskParams;
 import com.rootly.client.model.UpdateShortcutTaskTaskParams;
+import com.rootly.client.model.UpdateSlackCanvasTaskParams;
 import com.rootly.client.model.UpdateSlackChannelTopicTaskParams;
 import com.rootly.client.model.UpdateStatusTaskParams;
 import com.rootly.client.model.UpdateTrelloCardTaskParams;
@@ -187,7 +191,9 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -364,6 +370,22 @@ public class UpdateWorkflowTaskDataAttributesTaskParamsTest {
     @Test
     public void emojiTest() {
         // TODO: test emoji
+    }
+
+    /**
+     * Test the property 'retryCount'
+     */
+    @Test
+    public void retryCountTest() {
+        // TODO: test retryCount
+    }
+
+    /**
+     * Test the property 'retryWaitTime'
+     */
+    @Test
+    public void retryWaitTimeTest() {
+        // TODO: test retryWaitTime
     }
 
     /**
@@ -1175,22 +1197,6 @@ public class UpdateWorkflowTaskDataAttributesTaskParamsTest {
     }
 
     /**
-     * Test the property 'retryCount'
-     */
-    @Test
-    public void retryCountTest() {
-        // TODO: test retryCount
-    }
-
-    /**
-     * Test the property 'retryWaitTime'
-     */
-    @Test
-    public void retryWaitTimeTest() {
-        // TODO: test retryWaitTime
-    }
-
-    /**
      * Test the property 'parentIssueId'
      */
     @Test
@@ -1631,6 +1637,22 @@ public class UpdateWorkflowTaskDataAttributesTaskParamsTest {
     }
 
     /**
+     * Test the property 'expectedResponseHeaders'
+     */
+    @Test
+    public void expectedResponseHeadersTest() {
+        // TODO: test expectedResponseHeaders
+    }
+
+    /**
+     * Test the property 'followRedirects'
+     */
+    @Test
+    public void followRedirectsTest() {
+        // TODO: test followRedirects
+    }
+
+    /**
      * Test the property 'slackUsers'
      */
     @Test
@@ -1807,6 +1829,38 @@ public class UpdateWorkflowTaskDataAttributesTaskParamsTest {
     }
 
     /**
+     * Test the property 'selectedComponentKeys'
+     */
+    @Test
+    public void selectedComponentKeysTest() {
+        // TODO: test selectedComponentKeys
+    }
+
+    /**
+     * Test the property 'selectedComponentStatuses'
+     */
+    @Test
+    public void selectedComponentStatusesTest() {
+        // TODO: test selectedComponentStatuses
+    }
+
+    /**
+     * Test the property 'syncIncidentComponents'
+     */
+    @Test
+    public void syncIncidentComponentsTest() {
+        // TODO: test syncIncidentComponents
+    }
+
+    /**
+     * Test the property 'syncedComponentStatus'
+     */
+    @Test
+    public void syncedComponentStatusTest() {
+        // TODO: test syncedComponentStatus
+    }
+
+    /**
      * Test the property 'integrationPayload'
      */
     @Test
@@ -1820,6 +1874,22 @@ public class UpdateWorkflowTaskDataAttributesTaskParamsTest {
     @Test
     public void commandsTest() {
         // TODO: test commands
+    }
+
+    /**
+     * Test the property 'targetKind'
+     */
+    @Test
+    public void targetKindTest() {
+        // TODO: test targetKind
+    }
+
+    /**
+     * Test the property 'dryRun'
+     */
+    @Test
+    public void dryRunTest() {
+        // TODO: test dryRun
     }
 
     /**
@@ -1991,6 +2061,14 @@ public class UpdateWorkflowTaskDataAttributesTaskParamsTest {
     }
 
     /**
+     * Test the property 'allowCrossWorkflowThreading'
+     */
+    @Test
+    public void allowCrossWorkflowThreadingTest() {
+        // TODO: test allowCrossWorkflowThreading
+    }
+
+    /**
      * Test the property 'metricQueries'
      */
     @Test
@@ -2108,6 +2186,22 @@ public class UpdateWorkflowTaskDataAttributesTaskParamsTest {
     @Test
     public void storyIdTest() {
         // TODO: test storyId
+    }
+
+    /**
+     * Test the property 'operation'
+     */
+    @Test
+    public void operationTest() {
+        // TODO: test operation
+    }
+
+    /**
+     * Test the property 'sectionName'
+     */
+    @Test
+    public void sectionNameTest() {
+        // TODO: test sectionName
     }
 
     /**

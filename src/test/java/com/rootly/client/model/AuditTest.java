@@ -47,6 +47,14 @@ public class AuditTest {
     }
 
     /**
+     * Test the property 'eventDisplay'
+     */
+    @Test
+    public void eventDisplayTest() {
+        // TODO: test eventDisplay
+    }
+
+    /**
      * Test the property 'itemType'
      */
     @Test

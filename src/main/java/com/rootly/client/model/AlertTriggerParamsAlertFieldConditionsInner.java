@@ -50,7 +50,7 @@ import com.rootly.client.JSON;
 /**
  * AlertTriggerParamsAlertFieldConditionsInner
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AlertTriggerParamsAlertFieldConditionsInner {
   public static final String SERIALIZED_NAME_ALERT_FIELD_ID = "alert_field_id";
   @SerializedName(SERIALIZED_NAME_ALERT_FIELD_ID)

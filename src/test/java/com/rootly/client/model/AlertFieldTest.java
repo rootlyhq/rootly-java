@@ -19,7 +19,9 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -38,43 +40,43 @@ public class AlertFieldTest {
     }
 
     /**
-     * Test the property 'slug'
+     * Test the property 'ruleType'
      */
     @Test
-    public void slugTest() {
-        // TODO: test slug
+    public void ruleTypeTest() {
+        // TODO: test ruleType
     }
 
     /**
-     * Test the property 'name'
+     * Test the property 'fieldableType'
      */
     @Test
-    public void nameTest() {
-        // TODO: test name
+    public void fieldableTypeTest() {
+        // TODO: test fieldableType
     }
 
     /**
-     * Test the property 'kind'
+     * Test the property 'fieldableId'
      */
     @Test
-    public void kindTest() {
-        // TODO: test kind
+    public void fieldableIdTest() {
+        // TODO: test fieldableId
     }
 
     /**
-     * Test the property 'createdAt'
+     * Test the property 'operator'
      */
     @Test
-    public void createdAtTest() {
-        // TODO: test createdAt
+    public void operatorTest() {
+        // TODO: test operator
     }
 
     /**
-     * Test the property 'updatedAt'
+     * Test the property 'values'
      */
     @Test
-    public void updatedAtTest() {
-        // TODO: test updatedAt
+    public void valuesTest() {
+        // TODO: test values
     }
 
 }

@@ -10,6 +10,9 @@
 |**alertId** | **String** | ID of the alert this event belongs to. |  |
 |**kind** | [**KindEnum**](#KindEnum) |  |  |
 |**action** | [**ActionEnum**](#ActionEnum) |  |  |
+|**pageReason** | [**PageReasonEnum**](#PageReasonEnum) | Present on paged events when a user explicitly reassigns the alert to another notification target. |  [optional] |
+|**slackMessageTs** | **String** | Slack thread ts of the message Rootly posted for this event, when present. |  [optional] |
+|**slackMessagePermalink** | **String** | Permalink to the Slack message Rootly posted for this event, when present. |  [optional] |
 |**source** | **String** |  |  |
 |**userId** | **Integer** | Author of the note. |  [optional] |
 |**details** | **String** | Note message. |  [optional] |
@@ -54,6 +57,8 @@
 | IGNORED_ALERT_REQUEST | &quot;ignored_alert_request&quot; |
 | CALL_LIFECYCLE | &quot;call_lifecycle&quot; |
 | LEVEL_SKIPPED | &quot;level_skipped&quot; |
+| TEAM_ATTACHED_FROM_PAYLOAD | &quot;team_attached_from_payload&quot; |
+| USER_PAGED | &quot;user_paged&quot; |
 | EMAILED | &quot;emailed&quot; |
 | SLACKED | &quot;slacked&quot; |
 | MS_TEAMS_MESSAGED | &quot;ms_teams_messaged&quot; |
@@ -73,6 +78,7 @@
 | ATTACHED | &quot;attached&quot; |
 | SNOOZED | &quot;snoozed&quot; |
 | RETRIGGER_SUPPRESSED | &quot;retrigger_suppressed&quot; |
+| RETRIGGER_CANCELLED | &quot;retrigger_cancelled&quot; |
 | TRIGGERED | &quot;triggered&quot; |
 | OPEN | &quot;open&quot; |
 | UPDATED | &quot;updated&quot; |
@@ -83,6 +89,14 @@
 | CLEARED | &quot;cleared&quot; |
 | MUTED | &quot;muted&quot; |
 | DEFERRED | &quot;deferred&quot; |
+
+
+
+## Enum: PageReasonEnum
+
+| Name | Value |
+|---- | -----|
+| MANUAL_REASSIGNMENT | &quot;manual_reassignment&quot; |
 
 
 

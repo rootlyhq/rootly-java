@@ -26,6 +26,7 @@
 | POST_MORTEM | &quot;post_mortem&quot; |
 | ACTION_ITEM | &quot;action_item&quot; |
 | PULSE | &quot;pulse&quot; |
+| PROBLEM | &quot;problem&quot; |
 | ALERT | &quot;alert&quot; |
 
 

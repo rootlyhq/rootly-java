@@ -20,7 +20,9 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -49,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * NewSecretDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewSecretDataAttributes {
   /**
    * The kind of the secret
@@ -132,6 +134,11 @@ public class NewSecretDataAttributes {
   @SerializedName(SERIALIZED_NAME_HASHICORP_VAULT_VERSION)
   @jakarta.annotation.Nullable
   private String hashicorpVaultVersion = "0";
+
+  public static final String SERIALIZED_NAME_OWNER_GROUP_IDS = "owner_group_ids";
+  @SerializedName(SERIALIZED_NAME_OWNER_GROUP_IDS)
+  @jakarta.annotation.Nullable
+  private List<String> ownerGroupIds;
 
   public NewSecretDataAttributes() {
   }
@@ -250,6 +257,33 @@ public class NewSecretDataAttributes {
   }
 
 
+  public NewSecretDataAttributes ownerGroupIds(@jakarta.annotation.Nullable List<String> ownerGroupIds) {
+    this.ownerGroupIds = ownerGroupIds;
+    return this;
+  }
+
+  public NewSecretDataAttributes addOwnerGroupIdsItem(String ownerGroupIdsItem) {
+    if (this.ownerGroupIds == null) {
+      this.ownerGroupIds = new ArrayList<>();
+    }
+    this.ownerGroupIds.add(ownerGroupIdsItem);
+    return this;
+  }
+
+  /**
+   * IDs of the teams whose members can see and pick this secret; their team admins can manage it. Empty means only users with the org Secrets permission can. Ignored unless team scoping is enabled for the organization.
+   * @return ownerGroupIds
+   */
+  @jakarta.annotation.Nullable
+  public List<String> getOwnerGroupIds() {
+    return ownerGroupIds;
+  }
+
+  public void setOwnerGroupIds(@jakarta.annotation.Nullable List<String> ownerGroupIds) {
+    this.ownerGroupIds = ownerGroupIds;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -265,7 +299,8 @@ public class NewSecretDataAttributes {
         Objects.equals(this.secret, newSecretDataAttributes.secret) &&
         Objects.equals(this.hashicorpVaultMount, newSecretDataAttributes.hashicorpVaultMount) &&
         Objects.equals(this.hashicorpVaultPath, newSecretDataAttributes.hashicorpVaultPath) &&
-        Objects.equals(this.hashicorpVaultVersion, newSecretDataAttributes.hashicorpVaultVersion);
+        Objects.equals(this.hashicorpVaultVersion, newSecretDataAttributes.hashicorpVaultVersion) &&
+        Objects.equals(this.ownerGroupIds, newSecretDataAttributes.ownerGroupIds);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -274,7 +309,7 @@ public class NewSecretDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(kind, name, secret, hashicorpVaultMount, hashicorpVaultPath, hashicorpVaultVersion);
+    return Objects.hash(kind, name, secret, hashicorpVaultMount, hashicorpVaultPath, hashicorpVaultVersion, ownerGroupIds);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -294,6 +329,7 @@ public class NewSecretDataAttributes {
     sb.append("    hashicorpVaultMount: ").append(toIndentedString(hashicorpVaultMount)).append("\n");
     sb.append("    hashicorpVaultPath: ").append(toIndentedString(hashicorpVaultPath)).append("\n");
     sb.append("    hashicorpVaultVersion: ").append(toIndentedString(hashicorpVaultVersion)).append("\n");
+    sb.append("    ownerGroupIds: ").append(toIndentedString(ownerGroupIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -322,6 +358,7 @@ public class NewSecretDataAttributes {
     openapiFields.add("hashicorp_vault_mount");
     openapiFields.add("hashicorp_vault_path");
     openapiFields.add("hashicorp_vault_version");
+    openapiFields.add("owner_group_ids");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -378,6 +415,10 @@ public class NewSecretDataAttributes {
       }
       if ((jsonObj.get("hashicorp_vault_version") != null && !jsonObj.get("hashicorp_vault_version").isJsonNull()) && !jsonObj.get("hashicorp_vault_version").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `hashicorp_vault_version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hashicorp_vault_version").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("owner_group_ids") != null && !jsonObj.get("owner_group_ids").isJsonNull() && !jsonObj.get("owner_group_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `owner_group_ids` to be an array in the JSON string but got `%s`", jsonObj.get("owner_group_ids").toString()));
       }
   }
 

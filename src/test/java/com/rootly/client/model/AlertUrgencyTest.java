@@ -19,8 +19,9 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
-import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.List;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -39,91 +40,27 @@ public class AlertUrgencyTest {
     }
 
     /**
-     * Test the property 'id'
+     * Test the property 'ruleType'
      */
     @Test
-    public void idTest() {
-        // TODO: test id
+    public void ruleTypeTest() {
+        // TODO: test ruleType
     }
 
     /**
-     * Test the property 'name'
+     * Test the property 'urgencyIds'
      */
     @Test
-    public void nameTest() {
-        // TODO: test name
+    public void urgencyIdsTest() {
+        // TODO: test urgencyIds
     }
 
     /**
-     * Test the property 'description'
+     * Test the property 'operator'
      */
     @Test
-    public void descriptionTest() {
-        // TODO: test description
-    }
-
-    /**
-     * Test the property 'position'
-     */
-    @Test
-    public void positionTest() {
-        // TODO: test position
-    }
-
-    /**
-     * Test the property 'retriggerTimeoutMinutes'
-     */
-    @Test
-    public void retriggerTimeoutMinutesTest() {
-        // TODO: test retriggerTimeoutMinutes
-    }
-
-    /**
-     * Test the property 'urgency'
-     */
-    @Test
-    public void urgencyTest() {
-        // TODO: test urgency
-    }
-
-    /**
-     * Test the property 'color'
-     */
-    @Test
-    public void colorTest() {
-        // TODO: test color
-    }
-
-    /**
-     * Test the property 'teamId'
-     */
-    @Test
-    public void teamIdTest() {
-        // TODO: test teamId
-    }
-
-    /**
-     * Test the property 'deletedAt'
-     */
-    @Test
-    public void deletedAtTest() {
-        // TODO: test deletedAt
-    }
-
-    /**
-     * Test the property 'createdAt'
-     */
-    @Test
-    public void createdAtTest() {
-        // TODO: test createdAt
-    }
-
-    /**
-     * Test the property 'updatedAt'
-     */
-    @Test
-    public void updatedAtTest() {
-        // TODO: test updatedAt
+    public void operatorTest() {
+        // TODO: test operator
     }
 
 }

@@ -16,11 +16,11 @@
 |**deduplicationKeyPath** | **String** | Path to deduplication key. This is a JSON Path to extract the deduplication key from the request body. |  [optional] |
 |**deduplicationKeyRegexp** | **String** | Regular expression to extract key from value found at key path. |  [optional] |
 |**ownerGroupIds** | **List&lt;String&gt;** | List of team IDs that will own the alert source |  [optional] |
-|**alertTemplateAttributes** | [**NewAlertsSourceDataAttributesAlertTemplateAttributes**](NewAlertsSourceDataAttributesAlertTemplateAttributes.md) |  |  [optional] |
-|**alertSourceUrgencyRulesAttributes** | [**List&lt;NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner&gt;**](NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner.md) | List of rules that define the conditions under which the alert urgency will be set automatically based on the alert payload |  [optional] |
+|**alertTemplateAttributes** | [**AlertsSourceAlertTemplateAttributes**](AlertsSourceAlertTemplateAttributes.md) |  |  [optional] |
+|**alertSourceUrgencyRulesAttributes** | [**List&lt;AlertsSourceAlertSourceUrgencyRulesAttributesInner&gt;**](AlertsSourceAlertSourceUrgencyRulesAttributesInner.md) | List of rules that define the conditions under which the alert urgency will be set automatically based on the alert payload |  [optional] |
 |**sourceableAttributes** | [**AlertsSourceSourceableAttributes**](AlertsSourceSourceableAttributes.md) |  |  [optional] |
-|**resolutionRuleAttributes** | [**NewAlertsSourceDataAttributesResolutionRuleAttributes**](NewAlertsSourceDataAttributesResolutionRuleAttributes.md) |  |  [optional] |
-|**alertSourceFieldsAttributes** | [**List&lt;NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner&gt;**](NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner.md) | List of alert fields to be added to the alert source. Note: This attribute requires the alert field feature to be enabled on your account. Contact Rootly customer support if you need assistance with this feature. |  [optional] |
+|**resolutionRuleAttributes** | [**AlertsSourceResolutionRuleAttributes**](AlertsSourceResolutionRuleAttributes.md) |  |  [optional] |
+|**alertSourceFieldsAttributes** | [**List&lt;AlertsSourceAlertSourceFieldsAttributesInner&gt;**](AlertsSourceAlertSourceFieldsAttributesInner.md) | List of alert fields to be added to the alert source. Note: This attribute requires the alert field feature to be enabled on your account. Contact Rootly customer support if you need assistance with this feature. |  [optional] |
 |**status** | [**StatusEnum**](#StatusEnum) | The status of the alert source |  |
 |**secret** | **String** | The secret used to authenticate non-email alert sources |  |
 |**email** | **String** | The email generated for email alert sources |  [optional] |

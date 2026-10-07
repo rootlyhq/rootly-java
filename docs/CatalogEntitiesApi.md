@@ -439,7 +439,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **catalogId** | **String**|  | |
 | **include** | **String**| comma separated if needed. eg: catalog,properties | [optional] [enum: catalog, properties] |
-| **sort** | **String**| comma separated if needed. eg: created_at,updated_at | [optional] [enum: created_at, -created_at, updated_at, -updated_at, position, -position] |
+| **sort** | **String**| comma separated if needed. eg: created_at,updated_at | [optional] [enum: created_at, -created_at, updated_at, -updated_at, position, -position, name, -name] |
 | **pageNumber** | **Integer**|  | [optional] |
 | **pageSize** | **Integer**|  | [optional] |
 | **filterSearch** | **String**|  | [optional] |

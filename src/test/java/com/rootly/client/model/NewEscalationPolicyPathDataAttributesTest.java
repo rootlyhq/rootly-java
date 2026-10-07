@@ -18,6 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewEscalationPolicyPathDataAttributesNotificationTypeRulesInner;
 import com.rootly.client.model.NewEscalationPolicyPathDataAttributesRulesInner;
 import com.rootly.client.model.NewEscalationPolicyPathDataAttributesTimeRestrictionsInner;
 import java.io.IOException;
@@ -144,6 +145,22 @@ public class NewEscalationPolicyPathDataAttributesTest {
     @Test
     public void rulesTest() {
         // TODO: test rules
+    }
+
+    /**
+     * Test the property 'notificationTypeRules'
+     */
+    @Test
+    public void notificationTypeRulesTest() {
+        // TODO: test notificationTypeRules
+    }
+
+    /**
+     * Test the property 'notificationTypeFallback'
+     */
+    @Test
+    public void notificationTypeFallbackTest() {
+        // TODO: test notificationTypeFallback
     }
 
     /**

@@ -19,8 +19,10 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.NewAlertDataAttributesActor;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,7 +50,7 @@ import com.rootly.client.JSON;
 /**
  * EscalateAlertDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class EscalateAlertDataAttributes {
   public static final String SERIALIZED_NAME_ESCALATION_POLICY_ID = "escalation_policy_id";
   @SerializedName(SERIALIZED_NAME_ESCALATION_POLICY_ID)
@@ -59,6 +61,11 @@ public class EscalateAlertDataAttributes {
   @SerializedName(SERIALIZED_NAME_ESCALATION_POLICY_LEVEL)
   @jakarta.annotation.Nullable
   private Integer escalationPolicyLevel;
+
+  public static final String SERIALIZED_NAME_ACTOR = "actor";
+  @SerializedName(SERIALIZED_NAME_ACTOR)
+  @jakarta.annotation.Nullable
+  private NewAlertDataAttributesActor actor;
 
   public EscalateAlertDataAttributes() {
   }
@@ -102,6 +109,25 @@ public class EscalateAlertDataAttributes {
   }
 
 
+  public EscalateAlertDataAttributes actor(@jakarta.annotation.Nullable NewAlertDataAttributesActor actor) {
+    this.actor = actor;
+    return this;
+  }
+
+  /**
+   * Get actor
+   * @return actor
+   */
+  @jakarta.annotation.Nullable
+  public NewAlertDataAttributesActor getActor() {
+    return actor;
+  }
+
+  public void setActor(@jakarta.annotation.Nullable NewAlertDataAttributesActor actor) {
+    this.actor = actor;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -113,12 +139,24 @@ public class EscalateAlertDataAttributes {
     }
     EscalateAlertDataAttributes escalateAlertDataAttributes = (EscalateAlertDataAttributes) o;
     return Objects.equals(this.escalationPolicyId, escalateAlertDataAttributes.escalationPolicyId) &&
-        Objects.equals(this.escalationPolicyLevel, escalateAlertDataAttributes.escalationPolicyLevel);
+        Objects.equals(this.escalationPolicyLevel, escalateAlertDataAttributes.escalationPolicyLevel) &&
+        Objects.equals(this.actor, escalateAlertDataAttributes.actor);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(escalationPolicyId, escalationPolicyLevel);
+    return Objects.hash(escalationPolicyId, escalationPolicyLevel, actor);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -127,6 +165,7 @@ public class EscalateAlertDataAttributes {
     sb.append("class EscalateAlertDataAttributes {\n");
     sb.append("    escalationPolicyId: ").append(toIndentedString(escalationPolicyId)).append("\n");
     sb.append("    escalationPolicyLevel: ").append(toIndentedString(escalationPolicyLevel)).append("\n");
+    sb.append("    actor: ").append(toIndentedString(actor)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -151,6 +190,7 @@ public class EscalateAlertDataAttributes {
     openapiFields = new HashSet<String>();
     openapiFields.add("escalation_policy_id");
     openapiFields.add("escalation_policy_level");
+    openapiFields.add("actor");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -179,6 +219,10 @@ public class EscalateAlertDataAttributes {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("escalation_policy_id") != null && !jsonObj.get("escalation_policy_id").isJsonNull()) && !jsonObj.get("escalation_policy_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `escalation_policy_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("escalation_policy_id").toString()));
+      }
+      // validate the optional field `actor`
+      if (jsonObj.get("actor") != null && !jsonObj.get("actor").isJsonNull()) {
+        NewAlertDataAttributesActor.validateJsonElement(jsonObj.get("actor"));
       }
   }
 

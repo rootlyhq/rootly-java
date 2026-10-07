@@ -846,7 +846,7 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | session created |  -  |
-| **422** | invalid platform |  -  |
+| **422** | Scribe is disabled for the organization |  -  |
 
 <a id="stopMeetingRecording"></a>
 # **stopMeetingRecording**

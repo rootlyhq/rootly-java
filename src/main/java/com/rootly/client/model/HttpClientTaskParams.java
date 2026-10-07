@@ -23,7 +23,9 @@ import com.rootly.client.model.AddActionItemTaskParamsPostToSlackChannelsInner;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,7 +53,7 @@ import com.rootly.client.JSON;
 /**
  * HttpClientTaskParams
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class HttpClientTaskParams {
   /**
    * Gets or Sets taskType
@@ -227,6 +229,16 @@ public class HttpClientTaskParams {
   @SerializedName(SERIALIZED_NAME_RETRY_WAIT_TIME)
   @jakarta.annotation.Nullable
   private Integer retryWaitTime = 1;
+
+  public static final String SERIALIZED_NAME_EXPECTED_RESPONSE_HEADERS = "expected_response_headers";
+  @SerializedName(SERIALIZED_NAME_EXPECTED_RESPONSE_HEADERS)
+  @jakarta.annotation.Nullable
+  private Map<String, String> expectedResponseHeaders = new HashMap<>();
+
+  public static final String SERIALIZED_NAME_FOLLOW_REDIRECTS = "follow_redirects";
+  @SerializedName(SERIALIZED_NAME_FOLLOW_REDIRECTS)
+  @jakarta.annotation.Nullable
+  private Boolean followRedirects = true;
 
   public HttpClientTaskParams() {
   }
@@ -486,6 +498,52 @@ public class HttpClientTaskParams {
   }
 
 
+  public HttpClientTaskParams expectedResponseHeaders(@jakarta.annotation.Nullable Map<String, String> expectedResponseHeaders) {
+    this.expectedResponseHeaders = expectedResponseHeaders;
+    return this;
+  }
+
+  public HttpClientTaskParams putExpectedResponseHeadersItem(String key, String expectedResponseHeadersItem) {
+    if (this.expectedResponseHeaders == null) {
+      this.expectedResponseHeaders = new HashMap<>();
+    }
+    this.expectedResponseHeaders.put(key, expectedResponseHeadersItem);
+    return this;
+  }
+
+  /**
+   * Map of valid HTTP header names to regexp patterns. Header names must use HTTP token characters. Task fails if any header value does not match its pattern (case-insensitive). Leave empty to skip validation.
+   * @return expectedResponseHeaders
+   */
+  @jakarta.annotation.Nullable
+  public Map<String, String> getExpectedResponseHeaders() {
+    return expectedResponseHeaders;
+  }
+
+  public void setExpectedResponseHeaders(@jakarta.annotation.Nullable Map<String, String> expectedResponseHeaders) {
+    this.expectedResponseHeaders = expectedResponseHeaders;
+  }
+
+
+  public HttpClientTaskParams followRedirects(@jakarta.annotation.Nullable Boolean followRedirects) {
+    this.followRedirects = followRedirects;
+    return this;
+  }
+
+  /**
+   * Whether to follow HTTP 3xx redirects. Defaults to true. Set to false to treat redirect responses as-is.
+   * @return followRedirects
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getFollowRedirects() {
+    return followRedirects;
+  }
+
+  public void setFollowRedirects(@jakarta.annotation.Nullable Boolean followRedirects) {
+    this.followRedirects = followRedirects;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -508,12 +566,14 @@ public class HttpClientTaskParams {
         Objects.equals(this.postToIncidentTimeline, httpClientTaskParams.postToIncidentTimeline) &&
         Objects.equals(this.postToSlackChannels, httpClientTaskParams.postToSlackChannels) &&
         Objects.equals(this.retryCount, httpClientTaskParams.retryCount) &&
-        Objects.equals(this.retryWaitTime, httpClientTaskParams.retryWaitTime);
+        Objects.equals(this.retryWaitTime, httpClientTaskParams.retryWaitTime) &&
+        Objects.equals(this.expectedResponseHeaders, httpClientTaskParams.expectedResponseHeaders) &&
+        Objects.equals(this.followRedirects, httpClientTaskParams.followRedirects);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(taskType, headers, params, body, url, eventUrl, eventMessage, method, succeedOnStatus, postToIncidentTimeline, postToSlackChannels, retryCount, retryWaitTime);
+    return Objects.hash(taskType, headers, params, body, url, eventUrl, eventMessage, method, succeedOnStatus, postToIncidentTimeline, postToSlackChannels, retryCount, retryWaitTime, expectedResponseHeaders, followRedirects);
   }
 
   @Override
@@ -533,6 +593,8 @@ public class HttpClientTaskParams {
     sb.append("    postToSlackChannels: ").append(toIndentedString(postToSlackChannels)).append("\n");
     sb.append("    retryCount: ").append(toIndentedString(retryCount)).append("\n");
     sb.append("    retryWaitTime: ").append(toIndentedString(retryWaitTime)).append("\n");
+    sb.append("    expectedResponseHeaders: ").append(toIndentedString(expectedResponseHeaders)).append("\n");
+    sb.append("    followRedirects: ").append(toIndentedString(followRedirects)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -568,6 +630,8 @@ public class HttpClientTaskParams {
     openapiFields.add("post_to_slack_channels");
     openapiFields.add("retry_count");
     openapiFields.add("retry_wait_time");
+    openapiFields.add("expected_response_headers");
+    openapiFields.add("follow_redirects");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

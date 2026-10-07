@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * NewIncidentDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewIncidentDataAttributes {
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
@@ -253,6 +253,21 @@ public class NewIncidentDataAttributes {
   @SerializedName(SERIALIZED_NAME_JIRA_ISSUE_URL)
   @jakarta.annotation.Nullable
   private String jiraIssueUrl;
+
+  public static final String SERIALIZED_NAME_LINEAR_ISSUE_KEY = "linear_issue_key";
+  @SerializedName(SERIALIZED_NAME_LINEAR_ISSUE_KEY)
+  @jakarta.annotation.Nullable
+  private String linearIssueKey;
+
+  public static final String SERIALIZED_NAME_LINEAR_ISSUE_ID = "linear_issue_id";
+  @SerializedName(SERIALIZED_NAME_LINEAR_ISSUE_ID)
+  @jakarta.annotation.Nullable
+  private String linearIssueId;
+
+  public static final String SERIALIZED_NAME_LINEAR_ISSUE_URL = "linear_issue_url";
+  @SerializedName(SERIALIZED_NAME_LINEAR_ISSUE_URL)
+  @jakarta.annotation.Nullable
+  private String linearIssueUrl;
 
   public static final String SERIALIZED_NAME_NOTIFY_EMAILS = "notify_emails";
   @SerializedName(SERIALIZED_NAME_NOTIFY_EMAILS)
@@ -969,6 +984,63 @@ public class NewIncidentDataAttributes {
   }
 
 
+  public NewIncidentDataAttributes linearIssueKey(@jakarta.annotation.Nullable String linearIssueKey) {
+    this.linearIssueKey = linearIssueKey;
+    return this;
+  }
+
+  /**
+   * Linear issue key
+   * @return linearIssueKey
+   */
+  @jakarta.annotation.Nullable
+  public String getLinearIssueKey() {
+    return linearIssueKey;
+  }
+
+  public void setLinearIssueKey(@jakarta.annotation.Nullable String linearIssueKey) {
+    this.linearIssueKey = linearIssueKey;
+  }
+
+
+  public NewIncidentDataAttributes linearIssueId(@jakarta.annotation.Nullable String linearIssueId) {
+    this.linearIssueId = linearIssueId;
+    return this;
+  }
+
+  /**
+   * Linear issue ID
+   * @return linearIssueId
+   */
+  @jakarta.annotation.Nullable
+  public String getLinearIssueId() {
+    return linearIssueId;
+  }
+
+  public void setLinearIssueId(@jakarta.annotation.Nullable String linearIssueId) {
+    this.linearIssueId = linearIssueId;
+  }
+
+
+  public NewIncidentDataAttributes linearIssueUrl(@jakarta.annotation.Nullable String linearIssueUrl) {
+    this.linearIssueUrl = linearIssueUrl;
+    return this;
+  }
+
+  /**
+   * Linear issue URL
+   * @return linearIssueUrl
+   */
+  @jakarta.annotation.Nullable
+  public String getLinearIssueUrl() {
+    return linearIssueUrl;
+  }
+
+  public void setLinearIssueUrl(@jakarta.annotation.Nullable String linearIssueUrl) {
+    this.linearIssueUrl = linearIssueUrl;
+  }
+
+
   public NewIncidentDataAttributes notifyEmails(@jakarta.annotation.Nullable List<String> notifyEmails) {
     this.notifyEmails = notifyEmails;
     return this;
@@ -1261,6 +1333,9 @@ public class NewIncidentDataAttributes {
         Objects.equals(this.jiraIssueKey, newIncidentDataAttributes.jiraIssueKey) &&
         Objects.equals(this.jiraIssueId, newIncidentDataAttributes.jiraIssueId) &&
         Objects.equals(this.jiraIssueUrl, newIncidentDataAttributes.jiraIssueUrl) &&
+        Objects.equals(this.linearIssueKey, newIncidentDataAttributes.linearIssueKey) &&
+        Objects.equals(this.linearIssueId, newIncidentDataAttributes.linearIssueId) &&
+        Objects.equals(this.linearIssueUrl, newIncidentDataAttributes.linearIssueUrl) &&
         Objects.equals(this.notifyEmails, newIncidentDataAttributes.notifyEmails) &&
         Objects.equals(this.status, newIncidentDataAttributes.status) &&
         Objects.equals(this.url, newIncidentDataAttributes.url) &&
@@ -1282,7 +1357,7 @@ public class NewIncidentDataAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, kind, parentIncidentId, duplicateIncidentId, _private, summary, userId, severityId, publicTitle, alertIds, environmentIds, incidentTypeIds, serviceIds, functionalityIds, groupIds, causeIds, mutedServiceIds, labels, slackChannelName, slackChannelId, slackChannelUrl, slackChannelArchived, googleDriveParentId, googleDriveUrl, jiraIssueKey, jiraIssueId, jiraIssueUrl, notifyEmails, status, url, scheduledFor, scheduledUntil, inTriageAt, startedAt, detectedAt, acknowledgedAt, mitigatedAt, resolvedAt, closedAt, cancelledAt);
+    return Objects.hash(title, kind, parentIncidentId, duplicateIncidentId, _private, summary, userId, severityId, publicTitle, alertIds, environmentIds, incidentTypeIds, serviceIds, functionalityIds, groupIds, causeIds, mutedServiceIds, labels, slackChannelName, slackChannelId, slackChannelUrl, slackChannelArchived, googleDriveParentId, googleDriveUrl, jiraIssueKey, jiraIssueId, jiraIssueUrl, linearIssueKey, linearIssueId, linearIssueUrl, notifyEmails, status, url, scheduledFor, scheduledUntil, inTriageAt, startedAt, detectedAt, acknowledgedAt, mitigatedAt, resolvedAt, closedAt, cancelledAt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1323,6 +1398,9 @@ public class NewIncidentDataAttributes {
     sb.append("    jiraIssueKey: ").append(toIndentedString(jiraIssueKey)).append("\n");
     sb.append("    jiraIssueId: ").append(toIndentedString(jiraIssueId)).append("\n");
     sb.append("    jiraIssueUrl: ").append(toIndentedString(jiraIssueUrl)).append("\n");
+    sb.append("    linearIssueKey: ").append(toIndentedString(linearIssueKey)).append("\n");
+    sb.append("    linearIssueId: ").append(toIndentedString(linearIssueId)).append("\n");
+    sb.append("    linearIssueUrl: ").append(toIndentedString(linearIssueUrl)).append("\n");
     sb.append("    notifyEmails: ").append(toIndentedString(notifyEmails)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
@@ -1385,6 +1463,9 @@ public class NewIncidentDataAttributes {
     openapiFields.add("jira_issue_key");
     openapiFields.add("jira_issue_id");
     openapiFields.add("jira_issue_url");
+    openapiFields.add("linear_issue_key");
+    openapiFields.add("linear_issue_id");
+    openapiFields.add("linear_issue_url");
     openapiFields.add("notify_emails");
     openapiFields.add("status");
     openapiFields.add("url");
@@ -1507,6 +1588,15 @@ public class NewIncidentDataAttributes {
       }
       if ((jsonObj.get("jira_issue_url") != null && !jsonObj.get("jira_issue_url").isJsonNull()) && !jsonObj.get("jira_issue_url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `jira_issue_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("jira_issue_url").toString()));
+      }
+      if ((jsonObj.get("linear_issue_key") != null && !jsonObj.get("linear_issue_key").isJsonNull()) && !jsonObj.get("linear_issue_key").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `linear_issue_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("linear_issue_key").toString()));
+      }
+      if ((jsonObj.get("linear_issue_id") != null && !jsonObj.get("linear_issue_id").isJsonNull()) && !jsonObj.get("linear_issue_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `linear_issue_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("linear_issue_id").toString()));
+      }
+      if ((jsonObj.get("linear_issue_url") != null && !jsonObj.get("linear_issue_url").isJsonNull()) && !jsonObj.get("linear_issue_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `linear_issue_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("linear_issue_url").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("notify_emails") != null && !jsonObj.get("notify_emails").isJsonNull() && !jsonObj.get("notify_emails").isJsonArray()) {

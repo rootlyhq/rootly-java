@@ -22,7 +22,9 @@ import com.rootly.client.model.AddActionItemTaskParamsPostToSlackChannelsInner;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -142,6 +144,22 @@ public class HttpClientTaskParamsTest {
     @Test
     public void retryWaitTimeTest() {
         // TODO: test retryWaitTime
+    }
+
+    /**
+     * Test the property 'expectedResponseHeaders'
+     */
+    @Test
+    public void expectedResponseHeadersTest() {
+        // TODO: test expectedResponseHeaders
+    }
+
+    /**
+     * Test the property 'followRedirects'
+     */
+    @Test
+    public void followRedirectsTest() {
+        // TODO: test followRedirects
     }
 
 }

@@ -10,6 +10,7 @@
 |**name** | **String** | The name of the schedule |  |
 |**description** | **String** | The description of the schedule |  [optional] |
 |**allTimeCoverage** | **Boolean** | 24/7 coverage of the schedule |  [optional] |
+|**timeZone** | **String** | IANA time zone the schedule&#39;s rotations are rendered in. Only writable for organizations configured with one timezone per schedule; otherwise it is derived from the rotations. |  [optional] |
 |**slackUserGroup** | [**NewScheduleDataAttributesSlackUserGroup**](NewScheduleDataAttributesSlackUserGroup.md) |  |  [optional] |
 |**slackChannel** | [**NewScheduleDataAttributesSlackChannel**](NewScheduleDataAttributesSlackChannel.md) |  |  [optional] |
 |**ownerGroupIds** | **List&lt;String&gt;** | Owning teams. |  [optional] |
@@ -22,6 +23,7 @@
 |**shiftReportDayOfWeek** | [**ShiftReportDayOfWeekEnum**](#ShiftReportDayOfWeekEnum) | Day of week the weekly shift summary is sent |  [optional] |
 |**shiftReportTimeOfDay** | **String** | Time of day the weekly shift summary is sent, in HH:MM 24-hour format |  [optional] |
 |**shiftReportTimeZone** | **String** | IANA time zone used for the weekly shift summary |  [optional] |
+|**businessHours** | [**NewScheduleDataAttributesBusinessHours**](NewScheduleDataAttributesBusinessHours.md) |  |  [optional] |
 
 
 

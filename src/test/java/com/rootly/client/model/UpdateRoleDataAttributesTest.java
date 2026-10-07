@@ -257,6 +257,14 @@ public class UpdateRoleDataAttributesTest {
     }
 
     /**
+     * Test the property 'statusPageUpdatesPermissions'
+     */
+    @Test
+    public void statusPageUpdatesPermissionsTest() {
+        // TODO: test statusPageUpdatesPermissions
+    }
+
+    /**
      * Test the property 'webhooksPermissions'
      */
     @Test
@@ -294,6 +302,14 @@ public class UpdateRoleDataAttributesTest {
     @Test
     public void edgeConnectorPermissionsTest() {
         // TODO: test edgeConnectorPermissions
+    }
+
+    /**
+     * Test the property 'privateAgentPermissions'
+     */
+    @Test
+    public void privateAgentPermissionsTest() {
+        // TODO: test privateAgentPermissions
     }
 
     /**

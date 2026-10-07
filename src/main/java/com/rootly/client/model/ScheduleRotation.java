@@ -19,8 +19,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.rootly.client.model.NewScheduleRotationDataAttributesActiveTimeAttributesInner;
 import com.rootly.client.model.NewScheduleRotationDataAttributesScheduleRotationableAttributes;
+import com.rootly.client.model.ScheduleRotationActiveTimeAttributesInner;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -54,7 +54,7 @@ import com.rootly.client.JSON;
 /**
  * ScheduleRotation
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class ScheduleRotation {
   public static final String SERIALIZED_NAME_SCHEDULE_ID = "schedule_id";
   @SerializedName(SERIALIZED_NAME_SCHEDULE_ID)
@@ -268,7 +268,7 @@ public class ScheduleRotation {
   public static final String SERIALIZED_NAME_ACTIVE_TIME_ATTRIBUTES = "active_time_attributes";
   @SerializedName(SERIALIZED_NAME_ACTIVE_TIME_ATTRIBUTES)
   @jakarta.annotation.Nullable
-  private List<NewScheduleRotationDataAttributesActiveTimeAttributesInner> activeTimeAttributes = new ArrayList<>();
+  private List<ScheduleRotationActiveTimeAttributesInner> activeTimeAttributes = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TIME_ZONE = "time_zone";
   @SerializedName(SERIALIZED_NAME_TIME_ZONE)
@@ -442,12 +442,12 @@ public class ScheduleRotation {
   }
 
 
-  public ScheduleRotation activeTimeAttributes(@jakarta.annotation.Nullable List<NewScheduleRotationDataAttributesActiveTimeAttributesInner> activeTimeAttributes) {
+  public ScheduleRotation activeTimeAttributes(@jakarta.annotation.Nullable List<ScheduleRotationActiveTimeAttributesInner> activeTimeAttributes) {
     this.activeTimeAttributes = activeTimeAttributes;
     return this;
   }
 
-  public ScheduleRotation addActiveTimeAttributesItem(NewScheduleRotationDataAttributesActiveTimeAttributesInner activeTimeAttributesItem) {
+  public ScheduleRotation addActiveTimeAttributesItem(ScheduleRotationActiveTimeAttributesInner activeTimeAttributesItem) {
     if (this.activeTimeAttributes == null) {
       this.activeTimeAttributes = new ArrayList<>();
     }
@@ -460,11 +460,11 @@ public class ScheduleRotation {
    * @return activeTimeAttributes
    */
   @jakarta.annotation.Nullable
-  public List<NewScheduleRotationDataAttributesActiveTimeAttributesInner> getActiveTimeAttributes() {
+  public List<ScheduleRotationActiveTimeAttributesInner> getActiveTimeAttributes() {
     return activeTimeAttributes;
   }
 
-  public void setActiveTimeAttributes(@jakarta.annotation.Nullable List<NewScheduleRotationDataAttributesActiveTimeAttributesInner> activeTimeAttributes) {
+  public void setActiveTimeAttributes(@jakarta.annotation.Nullable List<ScheduleRotationActiveTimeAttributesInner> activeTimeAttributes) {
     this.activeTimeAttributes = activeTimeAttributes;
   }
 
@@ -475,7 +475,7 @@ public class ScheduleRotation {
   }
 
   /**
-   * A valid IANA time zone name.
+   * A valid IANA time zone name. Organizations with one timezone per schedule manage this on the schedule; a value differing from the schedule&#39;s is rejected.
    * @return timeZone
    */
   @jakarta.annotation.Nullable
@@ -701,7 +701,7 @@ public class ScheduleRotation {
 
           // validate the optional field `active_time_attributes` (array)
           for (int i = 0; i < jsonArrayactiveTimeAttributes.size(); i++) {
-            NewScheduleRotationDataAttributesActiveTimeAttributesInner.validateJsonElement(jsonArrayactiveTimeAttributes.get(i));
+            ScheduleRotationActiveTimeAttributesInner.validateJsonElement(jsonArrayactiveTimeAttributes.get(i));
           };
         }
       }

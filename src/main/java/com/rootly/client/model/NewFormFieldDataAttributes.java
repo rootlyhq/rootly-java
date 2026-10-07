@@ -51,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * NewFormFieldDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewFormFieldDataAttributes {
   public static final String SERIALIZED_NAME_SLUG = "slug";
   @Deprecated
@@ -73,6 +73,8 @@ public class NewFormFieldDataAttributes {
     MITIGATION_MESSAGE("mitigation_message"),
     
     RESOLUTION_MESSAGE("resolution_message"),
+    
+    CANCELLATION_MESSAGE("cancellation_message"),
     
     SEVERITY("severity"),
     

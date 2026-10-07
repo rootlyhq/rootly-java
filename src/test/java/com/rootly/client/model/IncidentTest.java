@@ -22,8 +22,8 @@ import com.rootly.client.model.EnvironmentResponse;
 import com.rootly.client.model.FunctionalityResponse;
 import com.rootly.client.model.IncidentTypeResponse;
 import com.rootly.client.model.IncidentZoomMeetingGlobalDialInNumbersInner;
+import com.rootly.client.model.NullableSeverityResponse;
 import com.rootly.client.model.ServiceResponse;
-import com.rootly.client.model.SeverityResponse;
 import com.rootly.client.model.TeamResponse;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -581,6 +581,14 @@ public class IncidentTest {
     @Test
     public void asanaTaskUrlTest() {
         // TODO: test asanaTaskUrl
+    }
+
+    /**
+     * Test the property 'linearIssueKey'
+     */
+    @Test
+    public void linearIssueKeyTest() {
+        // TODO: test linearIssueKey
     }
 
     /**

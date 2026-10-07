@@ -53,7 +53,7 @@ import com.rootly.client.JSON;
  * @deprecated
  */
 @Deprecated
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewEscalationPolicyDataAttributesBusinessHours {
   /**
    * Time zone for business hours
@@ -204,6 +204,10 @@ public class NewEscalationPolicyDataAttributesBusinessHours {
     
     ATLANTIC_CAPE_VERDE("Atlantic/Cape_Verde"),
     
+    CASABLANCA("Casablanca"),
+    
+    AFRICA_CASABLANCA("Africa/Casablanca"),
+    
     EDINBURGH("Edinburgh"),
     
     EUROPE_LONDON("Europe/London"),
@@ -249,10 +253,6 @@ public class NewEscalationPolicyDataAttributesBusinessHours {
     BUDAPEST("Budapest"),
     
     EUROPE_BUDAPEST("Europe/Budapest"),
-    
-    CASABLANCA("Casablanca"),
-    
-    AFRICA_CASABLANCA("Africa/Casablanca"),
     
     COPENHAGEN("Copenhagen"),
     
@@ -342,7 +342,7 @@ public class NewEscalationPolicyDataAttributesBusinessHours {
     
     KYIV("Kyiv"),
     
-    EUROPE_KIEV("Europe/Kiev"),
+    EUROPE_KYIV("Europe/Kyiv"),
     
     PRETORIA("Pretoria"),
     
@@ -476,7 +476,7 @@ public class NewEscalationPolicyDataAttributesBusinessHours {
     
     RANGOON("Rangoon"),
     
-    ASIA_RANGOON("Asia/Rangoon"),
+    ASIA_YANGON("Asia/Yangon"),
     
     BANGKOK("Bangkok"),
     
@@ -668,7 +668,11 @@ public class NewEscalationPolicyDataAttributesBusinessHours {
     
     PACIFIC_KIRITIMATI("Pacific/Kiritimati"),
     
-    PACIFIC_NORFOLK("Pacific/Norfolk");
+    PACIFIC_NORFOLK("Pacific/Norfolk"),
+    
+    ASIA_RANGOON("Asia/Rangoon"),
+    
+    EUROPE_KIEV("Europe/Kiev");
 
     private String value;
 

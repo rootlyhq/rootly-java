@@ -53,7 +53,7 @@ import com.rootly.client.JSON;
 /**
  * NewIncidentStatusPageEventDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewIncidentStatusPageEventDataAttributes {
   public static final String SERIALIZED_NAME_EVENT = "event";
   @SerializedName(SERIALIZED_NAME_EVENT)
@@ -283,7 +283,7 @@ public class NewIncidentStatusPageEventDataAttributes {
   }
 
   /**
-   * Affected status page components and their statuses. Requires the status-page-v3-phase-1 feature. Ignored for terminal event statuses (resolved, completed), which clear component impact. A status is required per component except for scheduled maintenance incidents.
+   * Affected status page components and their statuses. This field is in Early Access and is not generally available; contact Rootly Support to request access. Ignored for terminal event statuses (resolved, completed), which clear component impact. A status is required per component except for scheduled maintenance incidents.
    * @return statusPageComponents
    */
   @jakarta.annotation.Nullable

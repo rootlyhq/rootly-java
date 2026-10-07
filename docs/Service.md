@@ -7,56 +7,28 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**name** | **String** | The name of the service |  |
-|**slug** | **String** | The slug of the service |  [optional] [readonly] |
-|**managedBy** | [**ManagedByEnum**](#ManagedByEnum) | How this service is managed (provenance): web, api, terraform, etc. Read-only. |  [optional] |
-|**description** | **String** | The description of the service |  [optional] |
-|**publicDescription** | **String** | The status page description of the service |  [optional] |
-|**notifyEmails** | **List&lt;String&gt;** | Emails attached to the service |  [optional] |
-|**color** | **String** | The hex color of the service |  [optional] |
-|**position** | **Integer** | Position of the service |  [optional] |
-|**backstageId** | **String** | The Backstage entity id associated to this service. eg: :namespace/:kind/:entity_name |  [optional] |
-|**externalId** | **String** | The external id associated to this service |  [optional] |
-|**pagerdutyId** | **String** | The PagerDuty service id associated to this service |  [optional] |
-|**opsgenieId** | **String** | The Opsgenie service id associated to this service |  [optional] |
-|**cortexId** | **String** | The Cortex group id associated to this service |  [optional] |
-|**serviceNowCiSysId** | **String** | The Service Now CI sys id associated to this service |  [optional] |
-|**githubRepositoryName** | **String** | The GitHub repository name associated to this service. eg: rootlyhq/my-service |  [optional] |
-|**githubRepositoryBranch** | **String** | The GitHub repository branch associated to this service. eg: main |  [optional] |
-|**gitlabRepositoryName** | **String** | The GitLab repository name associated to this service. eg: rootlyhq/my-service |  [optional] |
-|**gitlabRepositoryBranch** | **String** | The GitLab repository branch associated to this service. eg: main |  [optional] |
-|**kubernetesDeploymentName** | **String** | The Kubernetes deployment name associated to this service. eg: namespace/deployment-name |  [optional] |
-|**environmentIds** | **List&lt;String&gt;** | Environments associated with this service |  [optional] |
-|**serviceIds** | **List&lt;String&gt;** | Services dependent on this service |  [optional] |
-|**ownerGroupIds** | **List&lt;String&gt;** | Owner Teams associated with this service |  [optional] |
-|**ownerUserIds** | **List&lt;Integer&gt;** | Owner Users associated with this service |  [optional] |
-|**alertUrgencyId** | **String** | The alert urgency id of the service |  [optional] |
-|**escalationPolicyId** | **String** | The escalation policy id of the service |  [optional] |
-|**alertsEmailEnabled** | **Boolean** | Enable alerts through email |  [optional] |
-|**alertsEmailAddress** | **String** | Email generated to send alerts to |  [optional] |
-|**slackChannels** | [**List&lt;NewEnvironmentDataAttributesSlackChannelsInner&gt;**](NewEnvironmentDataAttributesSlackChannelsInner.md) | Slack Channels associated with this service |  [optional] |
-|**slackAliases** | [**List&lt;NewEnvironmentDataAttributesSlackAliasesInner&gt;**](NewEnvironmentDataAttributesSlackAliasesInner.md) | Slack Aliases associated with this service |  [optional] |
-|**alertBroadcastEnabled** | **Boolean** | Enable alerts to be broadcasted to a specific channel |  [optional] |
-|**alertBroadcastChannel** | [**ServiceAlertBroadcastChannel**](ServiceAlertBroadcastChannel.md) |  |  [optional] |
-|**incidentBroadcastEnabled** | **Boolean** | Enable incidents to be broadcasted to a specific channel |  [optional] |
-|**incidentBroadcastChannel** | [**ServiceIncidentBroadcastChannel**](ServiceIncidentBroadcastChannel.md) |  |  [optional] |
-|**properties** | [**List&lt;NewCauseDataAttributesPropertiesInner&gt;**](NewCauseDataAttributesPropertiesInner.md) | Array of property values for this service. |  [optional] |
-|**createdAt** | **String** | Date of creation |  |
-|**updatedAt** | **String** | Date of last update |  |
+|**ruleType** | [**RuleTypeEnum**](#RuleTypeEnum) | The type of the escalation path rule |  |
+|**serviceIds** | **List&lt;String&gt;** | Service ids for which this escalation path should be used |  |
+|**operator** | [**OperatorEnum**](#OperatorEnum) | How the alert&#39;s services should be matched. is and is_not take exactly one id |  [optional] |
 
 
 
-## Enum: ManagedByEnum
+## Enum: RuleTypeEnum
 
 | Name | Value |
 |---- | -----|
-| WEB | &quot;web&quot; |
-| ADMIN_WEB | &quot;admin_web&quot; |
-| API | &quot;api&quot; |
-| TERRAFORM | &quot;terraform&quot; |
-| PULUMI | &quot;pulumi&quot; |
-| BACKSTAGE | &quot;backstage&quot; |
-| CATALOG_SYNC | &quot;catalog_sync&quot; |
+| SERVICE | &quot;service&quot; |
+
+
+
+## Enum: OperatorEnum
+
+| Name | Value |
+|---- | -----|
+| IS | &quot;is&quot; |
+| IS_NOT | &quot;is_not&quot; |
+| IS_ONE_OF | &quot;is_one_of&quot; |
+| IS_NOT_ONE_OF | &quot;is_not_one_of&quot; |
 
 
 

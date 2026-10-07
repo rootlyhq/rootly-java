@@ -257,6 +257,30 @@ public class UpdateIncidentDataAttributesTest {
     }
 
     /**
+     * Test the property 'linearIssueKey'
+     */
+    @Test
+    public void linearIssueKeyTest() {
+        // TODO: test linearIssueKey
+    }
+
+    /**
+     * Test the property 'linearIssueId'
+     */
+    @Test
+    public void linearIssueIdTest() {
+        // TODO: test linearIssueId
+    }
+
+    /**
+     * Test the property 'linearIssueUrl'
+     */
+    @Test
+    public void linearIssueUrlTest() {
+        // TODO: test linearIssueUrl
+    }
+
+    /**
      * Test the property 'scheduledFor'
      */
     @Test

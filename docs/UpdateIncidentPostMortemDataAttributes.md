@@ -8,6 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**title** | **String** | The title of the incident retrospective |  [optional] |
+|**content** | **String** | The content (body) of the incident retrospective, as HTML. Rejected with a 409 once the retrospective has been opened in the collaborative editor. |  [optional] |
 |**status** | [**StatusEnum**](#StatusEnum) | The status of the incident retrospective |  [optional] |
 |**startedAt** | **String** | Date of started at |  [optional] |
 |**mitigatedAt** | **String** | Date of mitigation |  [optional] |

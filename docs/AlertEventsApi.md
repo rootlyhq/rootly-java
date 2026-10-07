@@ -356,7 +356,7 @@ public class Example {
 | **pageAfter** | **String**| Cursor token from the previous response&#39;s &#x60;meta.next_cursor&#x60;. Pass the same &#x60;sort&#x60; value used to obtain the cursor. | [optional] |
 | **sort** | **String**| Sort by &#x60;created_at&#x60;. Defaults to &#x60;created_at&#x60; (oldest-first). Use &#x60;-created_at&#x60; for newest-first. | [optional] [enum: created_at, -created_at] |
 | **filterKind** | **String**|  | [optional] [enum: informational, notification, action, status_update, recording, alert_grouping, alert_urgency, alert_routing, note, noise, maintenance, deferral] |
-| **filterAction** | **String**|  | [optional] [enum: created, escalation_policy_paged, ignored_alert_request, call_lifecycle, level_skipped, emailed, slacked, ms_teams_messaged, google_chat_messaged, called, texted, notified, skipped, opened, retriggered, ack_timeout_retriggered, answered, acknowledged, escalated, paged, resolved, attached, snoozed, retrigger_suppressed, triggered, open, updated, added, removed, marked, not_marked, cleared, muted, deferred] |
+| **filterAction** | **String**|  | [optional] [enum: created, escalation_policy_paged, ignored_alert_request, call_lifecycle, level_skipped, team_attached_from_payload, user_paged, emailed, slacked, ms_teams_messaged, google_chat_messaged, called, texted, notified, skipped, opened, retriggered, ack_timeout_retriggered, answered, acknowledged, escalated, paged, resolved, attached, snoozed, retrigger_suppressed, retrigger_cancelled, triggered, open, updated, added, removed, marked, not_marked, cleared, muted, deferred] |
 | **filterAlertId** | **String**|  | [optional] |
 | **filterCreatedAtGt** | **String**|  | [optional] |
 | **filterCreatedAtGte** | **String**|  | [optional] |

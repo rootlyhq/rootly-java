@@ -7,8 +7,10 @@ All URIs are relative to *https://api.rootly.com*
 | [**createUserPhoneNumber**](UserPhoneNumbersApi.md#createUserPhoneNumber) | **POST** /v1/users/{user_id}/phone_numbers | Creates a user phone number |
 | [**deleteUserPhoneNumber**](UserPhoneNumbersApi.md#deleteUserPhoneNumber) | **DELETE** /v1/phone_numbers/{id} | Delete user phone number |
 | [**getUserPhoneNumbers**](UserPhoneNumbersApi.md#getUserPhoneNumbers) | **GET** /v1/users/{user_id}/phone_numbers | Retrieves user phone numbers |
+| [**resendVerificationUserPhoneNumber**](UserPhoneNumbersApi.md#resendVerificationUserPhoneNumber) | **POST** /v1/phone_numbers/{id}/resend_verification | Resend verification code |
 | [**showUserPhoneNumber**](UserPhoneNumbersApi.md#showUserPhoneNumber) | **GET** /v1/phone_numbers/{id} | Show user phone number |
 | [**updateUserPhoneNumber**](UserPhoneNumbersApi.md#updateUserPhoneNumber) | **PUT** /v1/phone_numbers/{id} | Update user phone number |
+| [**verifyUserPhoneNumber**](UserPhoneNumbersApi.md#verifyUserPhoneNumber) | **POST** /v1/phone_numbers/{id}/verify | Send verification code |
 
 
 <a id="createUserPhoneNumber"></a>
@@ -222,6 +224,74 @@ public class Example {
 | **401** | responds with unauthorized for invalid token |  -  |
 | **404** | resource not found |  -  |
 
+<a id="resendVerificationUserPhoneNumber"></a>
+# **resendVerificationUserPhoneNumber**
+> VerifyUserPhoneNumber200Response resendVerificationUserPhoneNumber(id)
+
+Resend verification code
+
+Resends a verification code to the phone number. SMS sends are limited per recipient to 3 per hour and 5 per day. An application rate-limit 429 response includes Retry-After with the remaining wait in seconds.
+
+### Example
+```java
+// Import classes:
+import com.rootly.client.ApiClient;
+import com.rootly.client.ApiException;
+import com.rootly.client.Configuration;
+import com.rootly.client.auth.*;
+import com.rootly.client.models.*;
+import com.rootly.client.api.UserPhoneNumbersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.rootly.com");
+    
+    // Configure HTTP bearer authorization: bearer_auth
+    HttpBearerAuth bearer_auth = (HttpBearerAuth) defaultClient.getAuthentication("bearer_auth");
+    bearer_auth.setBearerToken("BEARER TOKEN");
+
+    UserPhoneNumbersApi apiInstance = new UserPhoneNumbersApi(defaultClient);
+    String id = "id_example"; // String | 
+    try {
+      VerifyUserPhoneNumber200Response result = apiInstance.resendVerificationUserPhoneNumber(id);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UserPhoneNumbersApi#resendVerificationUserPhoneNumber");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **String**|  | |
+
+### Return type
+
+[**VerifyUserPhoneNumber200Response**](VerifyUserPhoneNumber200Response.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | verification code resent |  -  |
+| **429** | application resend rate limit |  * Retry-After - Seconds until the recipient can request another SMS verification code <br>  |
+
 <a id="showUserPhoneNumber"></a>
 # **showUserPhoneNumber**
 > UserPhoneNumberResponse showUserPhoneNumber(id)
@@ -362,4 +432,73 @@ public class Example {
 | **422** | invalid request |  -  |
 | **401** | responds with unauthorized for invalid token |  -  |
 | **404** | resource not found |  -  |
+
+<a id="verifyUserPhoneNumber"></a>
+# **verifyUserPhoneNumber**
+> VerifyUserPhoneNumber200Response verifyUserPhoneNumber(id)
+
+Send verification code
+
+Sends a verification code to the phone number. SMS sends are limited per recipient to 3 per hour and 5 per day. An application rate-limit 429 response includes Retry-After with the remaining wait in seconds.
+
+### Example
+```java
+// Import classes:
+import com.rootly.client.ApiClient;
+import com.rootly.client.ApiException;
+import com.rootly.client.Configuration;
+import com.rootly.client.auth.*;
+import com.rootly.client.models.*;
+import com.rootly.client.api.UserPhoneNumbersApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.rootly.com");
+    
+    // Configure HTTP bearer authorization: bearer_auth
+    HttpBearerAuth bearer_auth = (HttpBearerAuth) defaultClient.getAuthentication("bearer_auth");
+    bearer_auth.setBearerToken("BEARER TOKEN");
+
+    UserPhoneNumbersApi apiInstance = new UserPhoneNumbersApi(defaultClient);
+    String id = "id_example"; // String | 
+    try {
+      VerifyUserPhoneNumber200Response result = apiInstance.verifyUserPhoneNumber(id);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UserPhoneNumbersApi#verifyUserPhoneNumber");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **String**|  | |
+
+### Return type
+
+[**VerifyUserPhoneNumber200Response**](VerifyUserPhoneNumber200Response.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | verification code sent |  -  |
+| **429** | application verification rate limit |  * Retry-After - Seconds until the recipient can request another SMS verification code <br>  |
+| **503** | verification rate limiter unavailable |  -  |
 

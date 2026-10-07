@@ -20,7 +20,7 @@
 |**alertSourceUrgencyRulesAttributes** | [**List&lt;NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner&gt;**](NewAlertsSourceDataAttributesAlertSourceUrgencyRulesAttributesInner.md) | List of rules that define the conditions under which the alert urgency will be set automatically based on the alert payload |  [optional] |
 |**sourceableAttributes** | [**NewAlertsSourceDataAttributesSourceableAttributes**](NewAlertsSourceDataAttributesSourceableAttributes.md) |  |  [optional] |
 |**resolutionRuleAttributes** | [**NewAlertsSourceDataAttributesResolutionRuleAttributes**](NewAlertsSourceDataAttributesResolutionRuleAttributes.md) |  |  [optional] |
-|**alertSourceFieldsAttributes** | [**List&lt;NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner&gt;**](NewAlertsSourceDataAttributesAlertSourceFieldsAttributesInner.md) | List of alert fields to be added to the alert source. Note: This attribute requires the alert field feature to be enabled on your account. Contact Rootly customer support if you need assistance with this feature. |  [optional] |
+|**alertSourceFieldsAttributes** | [**List&lt;UpdateAlertsSourceDataAttributesAlertSourceFieldsAttributesInner&gt;**](UpdateAlertsSourceDataAttributesAlertSourceFieldsAttributesInner.md) | List of alert fields to be added to the alert source. Note: This attribute requires the alert field feature to be enabled on your account. Contact Rootly customer support if you need assistance with this feature. |  [optional] |
 
 
 

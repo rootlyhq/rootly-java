@@ -14,6 +14,7 @@
 package com.rootly.client.api;
 
 import com.rootly.client.ApiException;
+import com.rootly.client.model.AcknowledgeAlert;
 import com.rootly.client.model.AlertList;
 import com.rootly.client.model.AlertResponse;
 import com.rootly.client.model.AttachAlert;
@@ -50,7 +51,8 @@ public class AlertsApiTest {
     @Test
     public void acknowledgeAlertTest() throws ApiException {
         String id = null;
-        AlertResponse response = api.acknowledgeAlert(id);
+        AcknowledgeAlert acknowledgeAlert = null;
+        AlertResponse response = api.acknowledgeAlert(id, acknowledgeAlert);
         // TODO: test validations
     }
 

@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.rootly.client.model.NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesInner;
+import com.rootly.client.model.AlertsSourceSourceableAttributesFieldMappingsAttributesInner;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -51,9 +51,9 @@ import java.util.Set;
 import com.rootly.client.JSON;
 
 /**
- * Provide additional attributes for the underlying source. &#x60;auto_resolve&#x60;, &#x60;resolve_state&#x60; and &#x60;field_mappings_attributes&#x60; apply to generic_webhook sources; &#x60;accept_threaded_emails&#x60; applies to email sources.
+ * Provide additional attributes for the underlying source. &#x60;auto_resolve&#x60;, &#x60;resolve_state&#x60; and &#x60;field_mappings_attributes&#x60; apply to generic_webhook sources; &#x60;accept_threaded_emails&#x60;, &#x60;notification_target_type&#x60; and &#x60;notification_target_id&#x60; apply to email sources.
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class AlertsSourceSourceableAttributes {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -75,10 +75,78 @@ public class AlertsSourceSourceableAttributes {
   @jakarta.annotation.Nullable
   private Boolean acceptThreadedEmails;
 
+  /**
+   * Email sources only. The type of the notification target every alert from this source pages directly; While it points to an active, pageable target, Alert Routes are not evaluated. Only used when the &#x60;email-alert-source-notification-target&#x60; feature flag is on for the team.
+   */
+  @JsonAdapter(NotificationTargetTypeEnum.Adapter.class)
+  public enum NotificationTargetTypeEnum {
+    ESCALATION_POLICY("EscalationPolicy"),
+    
+    GROUP("Group"),
+    
+    SERVICE("Service"),
+    
+    FUNCTIONALITY("Functionality"),
+    
+    USER("User");
+
+    private String value;
+
+    NotificationTargetTypeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static NotificationTargetTypeEnum fromValue(String value) {
+      for (NotificationTargetTypeEnum b : NotificationTargetTypeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<NotificationTargetTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final NotificationTargetTypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public NotificationTargetTypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return NotificationTargetTypeEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      NotificationTargetTypeEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_NOTIFICATION_TARGET_TYPE = "notification_target_type";
+  @SerializedName(SERIALIZED_NAME_NOTIFICATION_TARGET_TYPE)
+  @jakarta.annotation.Nullable
+  private NotificationTargetTypeEnum notificationTargetType;
+
+  public static final String SERIALIZED_NAME_NOTIFICATION_TARGET_ID = "notification_target_id";
+  @SerializedName(SERIALIZED_NAME_NOTIFICATION_TARGET_ID)
+  @jakarta.annotation.Nullable
+  private String notificationTargetId;
+
   public static final String SERIALIZED_NAME_FIELD_MAPPINGS_ATTRIBUTES = "field_mappings_attributes";
   @SerializedName(SERIALIZED_NAME_FIELD_MAPPINGS_ATTRIBUTES)
   @jakarta.annotation.Nullable
-  private List<NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesInner> fieldMappingsAttributes = new ArrayList<>();
+  private List<AlertsSourceSourceableAttributesFieldMappingsAttributesInner> fieldMappingsAttributes = new ArrayList<>();
 
   public AlertsSourceSourceableAttributes() {
   }
@@ -159,12 +227,50 @@ public class AlertsSourceSourceableAttributes {
   }
 
 
-  public AlertsSourceSourceableAttributes fieldMappingsAttributes(@jakarta.annotation.Nullable List<NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesInner> fieldMappingsAttributes) {
+  public AlertsSourceSourceableAttributes notificationTargetType(@jakarta.annotation.Nullable NotificationTargetTypeEnum notificationTargetType) {
+    this.notificationTargetType = notificationTargetType;
+    return this;
+  }
+
+  /**
+   * Email sources only. The type of the notification target every alert from this source pages directly; While it points to an active, pageable target, Alert Routes are not evaluated. Only used when the &#x60;email-alert-source-notification-target&#x60; feature flag is on for the team.
+   * @return notificationTargetType
+   */
+  @jakarta.annotation.Nullable
+  public NotificationTargetTypeEnum getNotificationTargetType() {
+    return notificationTargetType;
+  }
+
+  public void setNotificationTargetType(@jakarta.annotation.Nullable NotificationTargetTypeEnum notificationTargetType) {
+    this.notificationTargetType = notificationTargetType;
+  }
+
+
+  public AlertsSourceSourceableAttributes notificationTargetId(@jakarta.annotation.Nullable String notificationTargetId) {
+    this.notificationTargetId = notificationTargetId;
+    return this;
+  }
+
+  /**
+   * Email sources only. The ID of the notification target. Set to null to clear it; this also clears &#x60;notification_target_type&#x60;. Only used when the &#x60;email-alert-source-notification-target&#x60; feature flag is on for the team.
+   * @return notificationTargetId
+   */
+  @jakarta.annotation.Nullable
+  public String getNotificationTargetId() {
+    return notificationTargetId;
+  }
+
+  public void setNotificationTargetId(@jakarta.annotation.Nullable String notificationTargetId) {
+    this.notificationTargetId = notificationTargetId;
+  }
+
+
+  public AlertsSourceSourceableAttributes fieldMappingsAttributes(@jakarta.annotation.Nullable List<AlertsSourceSourceableAttributesFieldMappingsAttributesInner> fieldMappingsAttributes) {
     this.fieldMappingsAttributes = fieldMappingsAttributes;
     return this;
   }
 
-  public AlertsSourceSourceableAttributes addFieldMappingsAttributesItem(NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesInner fieldMappingsAttributesItem) {
+  public AlertsSourceSourceableAttributes addFieldMappingsAttributesItem(AlertsSourceSourceableAttributesFieldMappingsAttributesInner fieldMappingsAttributesItem) {
     if (this.fieldMappingsAttributes == null) {
       this.fieldMappingsAttributes = new ArrayList<>();
     }
@@ -177,11 +283,11 @@ public class AlertsSourceSourceableAttributes {
    * @return fieldMappingsAttributes
    */
   @jakarta.annotation.Nullable
-  public List<NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesInner> getFieldMappingsAttributes() {
+  public List<AlertsSourceSourceableAttributesFieldMappingsAttributesInner> getFieldMappingsAttributes() {
     return fieldMappingsAttributes;
   }
 
-  public void setFieldMappingsAttributes(@jakarta.annotation.Nullable List<NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesInner> fieldMappingsAttributes) {
+  public void setFieldMappingsAttributes(@jakarta.annotation.Nullable List<AlertsSourceSourceableAttributesFieldMappingsAttributesInner> fieldMappingsAttributes) {
     this.fieldMappingsAttributes = fieldMappingsAttributes;
   }
 
@@ -200,6 +306,8 @@ public class AlertsSourceSourceableAttributes {
         Objects.equals(this.autoResolve, alertsSourceSourceableAttributes.autoResolve) &&
         Objects.equals(this.resolveState, alertsSourceSourceableAttributes.resolveState) &&
         Objects.equals(this.acceptThreadedEmails, alertsSourceSourceableAttributes.acceptThreadedEmails) &&
+        Objects.equals(this.notificationTargetType, alertsSourceSourceableAttributes.notificationTargetType) &&
+        Objects.equals(this.notificationTargetId, alertsSourceSourceableAttributes.notificationTargetId) &&
         Objects.equals(this.fieldMappingsAttributes, alertsSourceSourceableAttributes.fieldMappingsAttributes);
   }
 
@@ -209,7 +317,7 @@ public class AlertsSourceSourceableAttributes {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, autoResolve, resolveState, acceptThreadedEmails, fieldMappingsAttributes);
+    return Objects.hash(id, autoResolve, resolveState, acceptThreadedEmails, notificationTargetType, notificationTargetId, fieldMappingsAttributes);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -227,6 +335,8 @@ public class AlertsSourceSourceableAttributes {
     sb.append("    autoResolve: ").append(toIndentedString(autoResolve)).append("\n");
     sb.append("    resolveState: ").append(toIndentedString(resolveState)).append("\n");
     sb.append("    acceptThreadedEmails: ").append(toIndentedString(acceptThreadedEmails)).append("\n");
+    sb.append("    notificationTargetType: ").append(toIndentedString(notificationTargetType)).append("\n");
+    sb.append("    notificationTargetId: ").append(toIndentedString(notificationTargetId)).append("\n");
     sb.append("    fieldMappingsAttributes: ").append(toIndentedString(fieldMappingsAttributes)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -254,6 +364,8 @@ public class AlertsSourceSourceableAttributes {
     openapiFields.add("auto_resolve");
     openapiFields.add("resolve_state");
     openapiFields.add("accept_threaded_emails");
+    openapiFields.add("notification_target_type");
+    openapiFields.add("notification_target_id");
     openapiFields.add("field_mappings_attributes");
 
     // a set of required properties/fields (JSON key names)
@@ -287,6 +399,16 @@ public class AlertsSourceSourceableAttributes {
       if ((jsonObj.get("resolve_state") != null && !jsonObj.get("resolve_state").isJsonNull()) && !jsonObj.get("resolve_state").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `resolve_state` to be a primitive type in the JSON string but got `%s`", jsonObj.get("resolve_state").toString()));
       }
+      if ((jsonObj.get("notification_target_type") != null && !jsonObj.get("notification_target_type").isJsonNull()) && !jsonObj.get("notification_target_type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `notification_target_type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("notification_target_type").toString()));
+      }
+      // validate the optional field `notification_target_type`
+      if (jsonObj.get("notification_target_type") != null && !jsonObj.get("notification_target_type").isJsonNull()) {
+        NotificationTargetTypeEnum.validateJsonElement(jsonObj.get("notification_target_type"));
+      }
+      if ((jsonObj.get("notification_target_id") != null && !jsonObj.get("notification_target_id").isJsonNull()) && !jsonObj.get("notification_target_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `notification_target_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("notification_target_id").toString()));
+      }
       if (jsonObj.get("field_mappings_attributes") != null && !jsonObj.get("field_mappings_attributes").isJsonNull()) {
         JsonArray jsonArrayfieldMappingsAttributes = jsonObj.getAsJsonArray("field_mappings_attributes");
         if (jsonArrayfieldMappingsAttributes != null) {
@@ -297,7 +419,7 @@ public class AlertsSourceSourceableAttributes {
 
           // validate the optional field `field_mappings_attributes` (array)
           for (int i = 0; i < jsonArrayfieldMappingsAttributes.size(); i++) {
-            NewAlertsSourceDataAttributesSourceableAttributesFieldMappingsAttributesInner.validateJsonElement(jsonArrayfieldMappingsAttributes.get(i));
+            AlertsSourceSourceableAttributesFieldMappingsAttributesInner.validateJsonElement(jsonArrayfieldMappingsAttributes.get(i));
           };
         }
       }

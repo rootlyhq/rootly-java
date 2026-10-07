@@ -52,7 +52,7 @@ import com.rootly.client.JSON;
 /**
  * BulkUpsertTeamsEntitiesInner
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class BulkUpsertTeamsEntitiesInner {
   public static final String SERIALIZED_NAME_EXTERNAL_ID = "external_id";
   @SerializedName(SERIALIZED_NAME_EXTERNAL_ID)
@@ -73,6 +73,65 @@ public class BulkUpsertTeamsEntitiesInner {
   @SerializedName(SERIALIZED_NAME_PUBLIC_DESCRIPTION)
   @jakarta.annotation.Nullable
   private String publicDescription;
+
+  /**
+   * Who can create and update overrides for schedules owned by this team: &#x60;everyone&#x60; in the organization, only team &#x60;members&#x60;, or only team &#x60;admins&#x60;. Users still need override permission from their on-call role. Only available when the team-level schedule override policy feature is enabled for the organization. Requests that set it while that feature is disabled are rejected.
+   */
+  @JsonAdapter(ScheduleOverridePolicyEnum.Adapter.class)
+  public enum ScheduleOverridePolicyEnum {
+    EVERYONE("everyone"),
+    
+    MEMBERS("members"),
+    
+    ADMINS("admins");
+
+    private String value;
+
+    ScheduleOverridePolicyEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static ScheduleOverridePolicyEnum fromValue(String value) {
+      for (ScheduleOverridePolicyEnum b : ScheduleOverridePolicyEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<ScheduleOverridePolicyEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ScheduleOverridePolicyEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ScheduleOverridePolicyEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return ScheduleOverridePolicyEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      ScheduleOverridePolicyEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_SCHEDULE_OVERRIDE_POLICY = "schedule_override_policy";
+  @SerializedName(SERIALIZED_NAME_SCHEDULE_OVERRIDE_POLICY)
+  @jakarta.annotation.Nullable
+  private ScheduleOverridePolicyEnum scheduleOverridePolicy;
 
   public static final String SERIALIZED_NAME_COLOR = "color";
   @SerializedName(SERIALIZED_NAME_COLOR)
@@ -220,6 +279,25 @@ public class BulkUpsertTeamsEntitiesInner {
 
   public void setPublicDescription(@jakarta.annotation.Nullable String publicDescription) {
     this.publicDescription = publicDescription;
+  }
+
+
+  public BulkUpsertTeamsEntitiesInner scheduleOverridePolicy(@jakarta.annotation.Nullable ScheduleOverridePolicyEnum scheduleOverridePolicy) {
+    this.scheduleOverridePolicy = scheduleOverridePolicy;
+    return this;
+  }
+
+  /**
+   * Who can create and update overrides for schedules owned by this team: &#x60;everyone&#x60; in the organization, only team &#x60;members&#x60;, or only team &#x60;admins&#x60;. Users still need override permission from their on-call role. Only available when the team-level schedule override policy feature is enabled for the organization. Requests that set it while that feature is disabled are rejected.
+   * @return scheduleOverridePolicy
+   */
+  @jakarta.annotation.Nullable
+  public ScheduleOverridePolicyEnum getScheduleOverridePolicy() {
+    return scheduleOverridePolicy;
+  }
+
+  public void setScheduleOverridePolicy(@jakarta.annotation.Nullable ScheduleOverridePolicyEnum scheduleOverridePolicy) {
+    this.scheduleOverridePolicy = scheduleOverridePolicy;
   }
 
 
@@ -519,6 +597,7 @@ public class BulkUpsertTeamsEntitiesInner {
         Objects.equals(this.name, bulkUpsertTeamsEntitiesInner.name) &&
         Objects.equals(this.description, bulkUpsertTeamsEntitiesInner.description) &&
         Objects.equals(this.publicDescription, bulkUpsertTeamsEntitiesInner.publicDescription) &&
+        Objects.equals(this.scheduleOverridePolicy, bulkUpsertTeamsEntitiesInner.scheduleOverridePolicy) &&
         Objects.equals(this.color, bulkUpsertTeamsEntitiesInner.color) &&
         Objects.equals(this.position, bulkUpsertTeamsEntitiesInner.position) &&
         Objects.equals(this.notifyEmails, bulkUpsertTeamsEntitiesInner.notifyEmails) &&
@@ -541,7 +620,7 @@ public class BulkUpsertTeamsEntitiesInner {
 
   @Override
   public int hashCode() {
-    return Objects.hash(externalId, name, description, publicDescription, color, position, notifyEmails, pagerdutyId, pagerdutyServiceId, opsgenieId, victorOpsId, pagertreeId, backstageId, cortexId, opslevelId, serviceNowCiSysId, alertsEmailEnabled, fields);
+    return Objects.hash(externalId, name, description, publicDescription, scheduleOverridePolicy, color, position, notifyEmails, pagerdutyId, pagerdutyServiceId, opsgenieId, victorOpsId, pagertreeId, backstageId, cortexId, opslevelId, serviceNowCiSysId, alertsEmailEnabled, fields);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -559,6 +638,7 @@ public class BulkUpsertTeamsEntitiesInner {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    publicDescription: ").append(toIndentedString(publicDescription)).append("\n");
+    sb.append("    scheduleOverridePolicy: ").append(toIndentedString(scheduleOverridePolicy)).append("\n");
     sb.append("    color: ").append(toIndentedString(color)).append("\n");
     sb.append("    position: ").append(toIndentedString(position)).append("\n");
     sb.append("    notifyEmails: ").append(toIndentedString(notifyEmails)).append("\n");
@@ -599,6 +679,7 @@ public class BulkUpsertTeamsEntitiesInner {
     openapiFields.add("name");
     openapiFields.add("description");
     openapiFields.add("public_description");
+    openapiFields.add("schedule_override_policy");
     openapiFields.add("color");
     openapiFields.add("position");
     openapiFields.add("notify_emails");
@@ -658,6 +739,13 @@ public class BulkUpsertTeamsEntitiesInner {
       }
       if ((jsonObj.get("public_description") != null && !jsonObj.get("public_description").isJsonNull()) && !jsonObj.get("public_description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `public_description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("public_description").toString()));
+      }
+      if ((jsonObj.get("schedule_override_policy") != null && !jsonObj.get("schedule_override_policy").isJsonNull()) && !jsonObj.get("schedule_override_policy").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `schedule_override_policy` to be a primitive type in the JSON string but got `%s`", jsonObj.get("schedule_override_policy").toString()));
+      }
+      // validate the optional field `schedule_override_policy`
+      if (jsonObj.get("schedule_override_policy") != null && !jsonObj.get("schedule_override_policy").isJsonNull()) {
+        ScheduleOverridePolicyEnum.validateJsonElement(jsonObj.get("schedule_override_policy"));
       }
       if ((jsonObj.get("color") != null && !jsonObj.get("color").isJsonNull()) && !jsonObj.get("color").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `color` to be a primitive type in the JSON string but got `%s`", jsonObj.get("color").toString()));

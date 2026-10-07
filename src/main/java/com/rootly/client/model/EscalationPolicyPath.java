@@ -19,8 +19,9 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.rootly.client.model.EscalationPolicyPathTimeRestrictionsInner;
+import com.rootly.client.model.NewEscalationPolicyPathDataAttributesNotificationTypeRulesInner;
 import com.rootly.client.model.UpdateEscalationPolicyPathDataAttributesRulesInner;
-import com.rootly.client.model.UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -53,7 +54,7 @@ import com.rootly.client.JSON;
 /**
  * EscalationPolicyPath
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class EscalationPolicyPath {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -291,6 +292,68 @@ public class EscalationPolicyPath {
   @jakarta.annotation.Nullable
   private List<UpdateEscalationPolicyPathDataAttributesRulesInner> rules = new ArrayList<>();
 
+  public static final String SERIALIZED_NAME_NOTIFICATION_TYPE_RULES = "notification_type_rules";
+  @SerializedName(SERIALIZED_NAME_NOTIFICATION_TYPE_RULES)
+  @jakarta.annotation.Nullable
+  private List<NewEscalationPolicyPathDataAttributesNotificationTypeRulesInner> notificationTypeRules = new ArrayList<>();
+
+  /**
+   * Paged when no notification type rule matches. Considered only when notification_type_rules are present — the path&#39;s notification_type is aligned to it; without rules it is aligned to notification_type instead. Only available when notification type conditions are enabled for the team.
+   */
+  @JsonAdapter(NotificationTypeFallbackEnum.Adapter.class)
+  public enum NotificationTypeFallbackEnum {
+    AUDIBLE("audible"),
+    
+    QUIET("quiet");
+
+    private String value;
+
+    NotificationTypeFallbackEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static NotificationTypeFallbackEnum fromValue(String value) {
+      for (NotificationTypeFallbackEnum b : NotificationTypeFallbackEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<NotificationTypeFallbackEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final NotificationTypeFallbackEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public NotificationTypeFallbackEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return NotificationTypeFallbackEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      NotificationTypeFallbackEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_NOTIFICATION_TYPE_FALLBACK = "notification_type_fallback";
+  @SerializedName(SERIALIZED_NAME_NOTIFICATION_TYPE_FALLBACK)
+  @jakarta.annotation.Nullable
+  private NotificationTypeFallbackEnum notificationTypeFallback = NotificationTypeFallbackEnum.AUDIBLE;
+
   /**
    * Time zone used for time restrictions.
    */
@@ -440,6 +503,10 @@ public class EscalationPolicyPath {
     
     ATLANTIC_CAPE_VERDE("Atlantic/Cape_Verde"),
     
+    CASABLANCA("Casablanca"),
+    
+    AFRICA_CASABLANCA("Africa/Casablanca"),
+    
     EDINBURGH("Edinburgh"),
     
     EUROPE_LONDON("Europe/London"),
@@ -485,10 +552,6 @@ public class EscalationPolicyPath {
     BUDAPEST("Budapest"),
     
     EUROPE_BUDAPEST("Europe/Budapest"),
-    
-    CASABLANCA("Casablanca"),
-    
-    AFRICA_CASABLANCA("Africa/Casablanca"),
     
     COPENHAGEN("Copenhagen"),
     
@@ -578,7 +641,7 @@ public class EscalationPolicyPath {
     
     KYIV("Kyiv"),
     
-    EUROPE_KIEV("Europe/Kiev"),
+    EUROPE_KYIV("Europe/Kyiv"),
     
     PRETORIA("Pretoria"),
     
@@ -712,7 +775,7 @@ public class EscalationPolicyPath {
     
     RANGOON("Rangoon"),
     
-    ASIA_RANGOON("Asia/Rangoon"),
+    ASIA_YANGON("Asia/Yangon"),
     
     BANGKOK("Bangkok"),
     
@@ -904,7 +967,11 @@ public class EscalationPolicyPath {
     
     PACIFIC_KIRITIMATI("Pacific/Kiritimati"),
     
-    PACIFIC_NORFOLK("Pacific/Norfolk");
+    PACIFIC_NORFOLK("Pacific/Norfolk"),
+    
+    ASIA_RANGOON("Asia/Rangoon"),
+    
+    EUROPE_KIEV("Europe/Kiev");
 
     private String value;
 
@@ -957,7 +1024,7 @@ public class EscalationPolicyPath {
   public static final String SERIALIZED_NAME_TIME_RESTRICTIONS = "time_restrictions";
   @SerializedName(SERIALIZED_NAME_TIME_RESTRICTIONS)
   @jakarta.annotation.Nullable
-  private List<UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner> timeRestrictions = new ArrayList<>();
+  private List<EscalationPolicyPathTimeRestrictionsInner> timeRestrictions = new ArrayList<>();
 
   public EscalationPolicyPath() {
   }
@@ -1196,7 +1263,7 @@ public class EscalationPolicyPath {
   }
 
   /**
-   * Re-trigger acknowledged alerts on this path after N minutes; null inherits the urgency/workspace default, negative &#x3D; never.
+   * Re-trigger acknowledged alerts on this path after N minutes; null inherits the urgency/workspace default, -1 &#x3D; never.
    * @return retriggerTimeoutMinutes
    */
   @jakarta.annotation.Nullable
@@ -1274,6 +1341,52 @@ public class EscalationPolicyPath {
   }
 
 
+  public EscalationPolicyPath notificationTypeRules(@jakarta.annotation.Nullable List<NewEscalationPolicyPathDataAttributesNotificationTypeRulesInner> notificationTypeRules) {
+    this.notificationTypeRules = notificationTypeRules;
+    return this;
+  }
+
+  public EscalationPolicyPath addNotificationTypeRulesItem(NewEscalationPolicyPathDataAttributesNotificationTypeRulesInner notificationTypeRulesItem) {
+    if (this.notificationTypeRules == null) {
+      this.notificationTypeRules = new ArrayList<>();
+    }
+    this.notificationTypeRules.add(notificationTypeRulesItem);
+    return this;
+  }
+
+  /**
+   * Rules deciding whether an alert pages audible or quiet, evaluated in order — the first matching rule&#39;s notification_type wins, otherwise notification_type_fallback applies. When present, the path&#39;s notification_type is aligned to notification_type_fallback. Only available when notification type conditions are enabled for the team.
+   * @return notificationTypeRules
+   */
+  @jakarta.annotation.Nullable
+  public List<NewEscalationPolicyPathDataAttributesNotificationTypeRulesInner> getNotificationTypeRules() {
+    return notificationTypeRules;
+  }
+
+  public void setNotificationTypeRules(@jakarta.annotation.Nullable List<NewEscalationPolicyPathDataAttributesNotificationTypeRulesInner> notificationTypeRules) {
+    this.notificationTypeRules = notificationTypeRules;
+  }
+
+
+  public EscalationPolicyPath notificationTypeFallback(@jakarta.annotation.Nullable NotificationTypeFallbackEnum notificationTypeFallback) {
+    this.notificationTypeFallback = notificationTypeFallback;
+    return this;
+  }
+
+  /**
+   * Paged when no notification type rule matches. Considered only when notification_type_rules are present — the path&#39;s notification_type is aligned to it; without rules it is aligned to notification_type instead. Only available when notification type conditions are enabled for the team.
+   * @return notificationTypeFallback
+   */
+  @jakarta.annotation.Nullable
+  public NotificationTypeFallbackEnum getNotificationTypeFallback() {
+    return notificationTypeFallback;
+  }
+
+  public void setNotificationTypeFallback(@jakarta.annotation.Nullable NotificationTypeFallbackEnum notificationTypeFallback) {
+    this.notificationTypeFallback = notificationTypeFallback;
+  }
+
+
   public EscalationPolicyPath timeRestrictionTimeZone(@jakarta.annotation.Nullable TimeRestrictionTimeZoneEnum timeRestrictionTimeZone) {
     this.timeRestrictionTimeZone = timeRestrictionTimeZone;
     return this;
@@ -1293,12 +1406,12 @@ public class EscalationPolicyPath {
   }
 
 
-  public EscalationPolicyPath timeRestrictions(@jakarta.annotation.Nullable List<UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner> timeRestrictions) {
+  public EscalationPolicyPath timeRestrictions(@jakarta.annotation.Nullable List<EscalationPolicyPathTimeRestrictionsInner> timeRestrictions) {
     this.timeRestrictions = timeRestrictions;
     return this;
   }
 
-  public EscalationPolicyPath addTimeRestrictionsItem(UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner timeRestrictionsItem) {
+  public EscalationPolicyPath addTimeRestrictionsItem(EscalationPolicyPathTimeRestrictionsInner timeRestrictionsItem) {
     if (this.timeRestrictions == null) {
       this.timeRestrictions = new ArrayList<>();
     }
@@ -1311,11 +1424,11 @@ public class EscalationPolicyPath {
    * @return timeRestrictions
    */
   @jakarta.annotation.Nullable
-  public List<UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner> getTimeRestrictions() {
+  public List<EscalationPolicyPathTimeRestrictionsInner> getTimeRestrictions() {
     return timeRestrictions;
   }
 
-  public void setTimeRestrictions(@jakarta.annotation.Nullable List<UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner> timeRestrictions) {
+  public void setTimeRestrictions(@jakarta.annotation.Nullable List<EscalationPolicyPathTimeRestrictionsInner> timeRestrictions) {
     this.timeRestrictions = timeRestrictions;
   }
 
@@ -1346,6 +1459,8 @@ public class EscalationPolicyPath {
         Objects.equals(this.createdAt, escalationPolicyPath.createdAt) &&
         Objects.equals(this.updatedAt, escalationPolicyPath.updatedAt) &&
         Objects.equals(this.rules, escalationPolicyPath.rules) &&
+        Objects.equals(this.notificationTypeRules, escalationPolicyPath.notificationTypeRules) &&
+        Objects.equals(this.notificationTypeFallback, escalationPolicyPath.notificationTypeFallback) &&
         Objects.equals(this.timeRestrictionTimeZone, escalationPolicyPath.timeRestrictionTimeZone) &&
         Objects.equals(this.timeRestrictions, escalationPolicyPath.timeRestrictions);
   }
@@ -1356,7 +1471,7 @@ public class EscalationPolicyPath {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, _default, notificationType, pathType, escalationPolicyId, afterDeferralBehavior, afterDeferralPathId, matchMode, position, repeat, repeatCount, initialDelay, retriggerTimeoutMinutes, createdAt, updatedAt, rules, timeRestrictionTimeZone, timeRestrictions);
+    return Objects.hash(name, _default, notificationType, pathType, escalationPolicyId, afterDeferralBehavior, afterDeferralPathId, matchMode, position, repeat, repeatCount, initialDelay, retriggerTimeoutMinutes, createdAt, updatedAt, rules, notificationTypeRules, notificationTypeFallback, timeRestrictionTimeZone, timeRestrictions);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1386,6 +1501,8 @@ public class EscalationPolicyPath {
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
+    sb.append("    notificationTypeRules: ").append(toIndentedString(notificationTypeRules)).append("\n");
+    sb.append("    notificationTypeFallback: ").append(toIndentedString(notificationTypeFallback)).append("\n");
     sb.append("    timeRestrictionTimeZone: ").append(toIndentedString(timeRestrictionTimeZone)).append("\n");
     sb.append("    timeRestrictions: ").append(toIndentedString(timeRestrictions)).append("\n");
     sb.append("}");
@@ -1426,6 +1543,8 @@ public class EscalationPolicyPath {
     openapiFields.add("created_at");
     openapiFields.add("updated_at");
     openapiFields.add("rules");
+    openapiFields.add("notification_type_rules");
+    openapiFields.add("notification_type_fallback");
     openapiFields.add("time_restriction_time_zone");
     openapiFields.add("time_restrictions");
 
@@ -1520,6 +1639,27 @@ public class EscalationPolicyPath {
           };
         }
       }
+      if (jsonObj.get("notification_type_rules") != null && !jsonObj.get("notification_type_rules").isJsonNull()) {
+        JsonArray jsonArraynotificationTypeRules = jsonObj.getAsJsonArray("notification_type_rules");
+        if (jsonArraynotificationTypeRules != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("notification_type_rules").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `notification_type_rules` to be an array in the JSON string but got `%s`", jsonObj.get("notification_type_rules").toString()));
+          }
+
+          // validate the optional field `notification_type_rules` (array)
+          for (int i = 0; i < jsonArraynotificationTypeRules.size(); i++) {
+            NewEscalationPolicyPathDataAttributesNotificationTypeRulesInner.validateJsonElement(jsonArraynotificationTypeRules.get(i));
+          };
+        }
+      }
+      if ((jsonObj.get("notification_type_fallback") != null && !jsonObj.get("notification_type_fallback").isJsonNull()) && !jsonObj.get("notification_type_fallback").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `notification_type_fallback` to be a primitive type in the JSON string but got `%s`", jsonObj.get("notification_type_fallback").toString()));
+      }
+      // validate the optional field `notification_type_fallback`
+      if (jsonObj.get("notification_type_fallback") != null && !jsonObj.get("notification_type_fallback").isJsonNull()) {
+        NotificationTypeFallbackEnum.validateJsonElement(jsonObj.get("notification_type_fallback"));
+      }
       if ((jsonObj.get("time_restriction_time_zone") != null && !jsonObj.get("time_restriction_time_zone").isJsonNull()) && !jsonObj.get("time_restriction_time_zone").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `time_restriction_time_zone` to be a primitive type in the JSON string but got `%s`", jsonObj.get("time_restriction_time_zone").toString()));
       }
@@ -1537,7 +1677,7 @@ public class EscalationPolicyPath {
 
           // validate the optional field `time_restrictions` (array)
           for (int i = 0; i < jsonArraytimeRestrictions.size(); i++) {
-            UpdateEscalationPolicyPathDataAttributesTimeRestrictionsInner.validateJsonElement(jsonArraytimeRestrictions.get(i));
+            EscalationPolicyPathTimeRestrictionsInner.validateJsonElement(jsonArraytimeRestrictions.get(i));
           };
         }
       }

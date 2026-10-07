@@ -49,7 +49,7 @@ import com.rootly.client.JSON;
 /**
  * UpdateAlertUrgencyDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class UpdateAlertUrgencyDataAttributes {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -66,10 +66,88 @@ public class UpdateAlertUrgencyDataAttributes {
   @jakarta.annotation.Nullable
   private Integer position;
 
+  /**
+   * Re-trigger acknowledged alerts of this urgency after N minutes; null inherits the workspace default, -1 &#x3D; never.
+   */
+  @JsonAdapter(RetriggerTimeoutMinutesEnum.Adapter.class)
+  public enum RetriggerTimeoutMinutesEnum {
+    NUMBER_MINUS_1(-1),
+    
+    NUMBER_10(10),
+    
+    NUMBER_20(20),
+    
+    NUMBER_30(30),
+    
+    NUMBER_40(40),
+    
+    NUMBER_50(50),
+    
+    NUMBER_60(60),
+    
+    NUMBER_90(90),
+    
+    NUMBER_120(120),
+    
+    NUMBER_180(180),
+    
+    NUMBER_240(240),
+    
+    NUMBER_300(300),
+    
+    NUMBER_360(360),
+    
+    NUMBER_720(720),
+    
+    NUMBER_1440(1440);
+
+    private Integer value;
+
+    RetriggerTimeoutMinutesEnum(Integer value) {
+      this.value = value;
+    }
+
+    public Integer getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static RetriggerTimeoutMinutesEnum fromValue(Integer value) {
+      for (RetriggerTimeoutMinutesEnum b : RetriggerTimeoutMinutesEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<RetriggerTimeoutMinutesEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final RetriggerTimeoutMinutesEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public RetriggerTimeoutMinutesEnum read(final JsonReader jsonReader) throws IOException {
+        Integer value =  jsonReader.nextInt();
+        return RetriggerTimeoutMinutesEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      Integer value = jsonElement.getAsInt();
+      RetriggerTimeoutMinutesEnum.fromValue(value);
+    }
+  }
+
   public static final String SERIALIZED_NAME_RETRIGGER_TIMEOUT_MINUTES = "retrigger_timeout_minutes";
   @SerializedName(SERIALIZED_NAME_RETRIGGER_TIMEOUT_MINUTES)
   @jakarta.annotation.Nullable
-  private Integer retriggerTimeoutMinutes;
+  private RetriggerTimeoutMinutesEnum retriggerTimeoutMinutes;
 
   public UpdateAlertUrgencyDataAttributes() {
   }
@@ -131,21 +209,21 @@ public class UpdateAlertUrgencyDataAttributes {
   }
 
 
-  public UpdateAlertUrgencyDataAttributes retriggerTimeoutMinutes(@jakarta.annotation.Nullable Integer retriggerTimeoutMinutes) {
+  public UpdateAlertUrgencyDataAttributes retriggerTimeoutMinutes(@jakarta.annotation.Nullable RetriggerTimeoutMinutesEnum retriggerTimeoutMinutes) {
     this.retriggerTimeoutMinutes = retriggerTimeoutMinutes;
     return this;
   }
 
   /**
-   * Re-trigger acknowledged alerts of this urgency after N minutes; null inherits the workspace default, negative &#x3D; never.
+   * Re-trigger acknowledged alerts of this urgency after N minutes; null inherits the workspace default, -1 &#x3D; never.
    * @return retriggerTimeoutMinutes
    */
   @jakarta.annotation.Nullable
-  public Integer getRetriggerTimeoutMinutes() {
+  public RetriggerTimeoutMinutesEnum getRetriggerTimeoutMinutes() {
     return retriggerTimeoutMinutes;
   }
 
-  public void setRetriggerTimeoutMinutes(@jakarta.annotation.Nullable Integer retriggerTimeoutMinutes) {
+  public void setRetriggerTimeoutMinutes(@jakarta.annotation.Nullable RetriggerTimeoutMinutesEnum retriggerTimeoutMinutes) {
     this.retriggerTimeoutMinutes = retriggerTimeoutMinutes;
   }
 
@@ -247,6 +325,10 @@ public class UpdateAlertUrgencyDataAttributes {
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
+      // validate the optional field `retrigger_timeout_minutes`
+      if (jsonObj.get("retrigger_timeout_minutes") != null && !jsonObj.get("retrigger_timeout_minutes").isJsonNull()) {
+        RetriggerTimeoutMinutesEnum.validateJsonElement(jsonObj.get("retrigger_timeout_minutes"));
       }
   }
 

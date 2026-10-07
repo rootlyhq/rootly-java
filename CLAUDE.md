@@ -160,7 +160,7 @@ The project uses **Spotless** with **Google Java Format (AOSP style)**:
 GitHub Actions workflows:
 - **test.yml** - Runs tests on all branches using JDK 17
 - **maven.yml** - Maven-based build pipeline
-- **publish.yml** - Publishes artifacts to Maven Central and GitHub Packages, then creates GitHub release (triggered on tag push)
+- **publish.yml** - Publishes artifacts to Maven Central and GitHub Packages, then publishes the most recent Release Drafter draft under the pushed tag (triggered on tag push)
 
 ## Publishing & Releases
 
@@ -183,6 +183,8 @@ make bump-major   # 0.0.1 -> 1.0.0
 make push-tag
 ```
 
+Review the Release Drafter draft and its OpenAPI diff before tagging. Label merged pull requests `breaking` for major versions and `enhancement` for minor versions. The tag publishes the most recent draft regardless of its current tag, renames it to the pushed tag, and prepends the annotated tag message under “Highlights”. For custom highlights, use an annotated tag such as `git tag -a vX.Y.Z -m "<highlights>"`.
+
 **Automated workflow (triggered by `make push-tag`):**
 1. `make bump-patch` (or minor/major) - Updates version in both pom.xml and build.gradle, commits, and creates tag locally
 2. `make push-tag` - Pushes the tag to GitHub, which automatically triggers **publish.yml**:
@@ -190,7 +192,7 @@ make push-tag
    - Signs artifacts with GPG
    - Publishes to Maven Central
    - Publishes to GitHub Packages
-   - Creates GitHub release with changelog notes (only if all publishing succeeds)
+   - Publishes the most recent Release Drafter draft, renamed to the pushed tag, with the annotated tag message under “Highlights”; or creates a release with GitHub-generated notes if no draft exists (only if all publishing succeeds)
 
 **One-command releases:**
 ```bash
@@ -205,7 +207,7 @@ make release-major   # Bump major and push tag → triggers publish + release
 - Signs artifacts with GPG
 - Deploys to Maven Central Portal (auto-publishes)
 - Deploys to GitHub Packages
-- Creates GitHub release with changelog notes from CHANGELOG.md
+- Publishes the most recent Release Drafter draft, renamed to the pushed tag, with the annotated tag message under “Highlights”; or creates a release with GitHub-generated notes if no draft exists
 - Available in Maven Central within 30 minutes
 
 **No manual steps needed!** Just run `make release-patch` and everything is automated.

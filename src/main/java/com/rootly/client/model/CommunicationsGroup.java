@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.rootly.client.model.CommunicationsGroupCommunicationExternalGroupMembersInner;
-import com.rootly.client.model.NewCommunicationsGroupDataAttributesCommunicationGroupConditionsInner;
+import com.rootly.client.model.CommunicationsGroupCommunicationGroupConditionsInner;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -53,7 +53,7 @@ import com.rootly.client.JSON;
 /**
  * CommunicationsGroup
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class CommunicationsGroup {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -160,7 +160,7 @@ public class CommunicationsGroup {
   public static final String SERIALIZED_NAME_COMMUNICATION_GROUP_CONDITIONS = "communication_group_conditions";
   @SerializedName(SERIALIZED_NAME_COMMUNICATION_GROUP_CONDITIONS)
   @jakarta.annotation.Nullable
-  private List<NewCommunicationsGroupDataAttributesCommunicationGroupConditionsInner> communicationGroupConditions;
+  private List<CommunicationsGroupCommunicationGroupConditionsInner> communicationGroupConditions;
 
   public static final String SERIALIZED_NAME_MEMBER_IDS = "member_ids";
   @SerializedName(SERIALIZED_NAME_MEMBER_IDS)
@@ -369,12 +369,12 @@ public class CommunicationsGroup {
   }
 
 
-  public CommunicationsGroup communicationGroupConditions(@jakarta.annotation.Nullable List<NewCommunicationsGroupDataAttributesCommunicationGroupConditionsInner> communicationGroupConditions) {
+  public CommunicationsGroup communicationGroupConditions(@jakarta.annotation.Nullable List<CommunicationsGroupCommunicationGroupConditionsInner> communicationGroupConditions) {
     this.communicationGroupConditions = communicationGroupConditions;
     return this;
   }
 
-  public CommunicationsGroup addCommunicationGroupConditionsItem(NewCommunicationsGroupDataAttributesCommunicationGroupConditionsInner communicationGroupConditionsItem) {
+  public CommunicationsGroup addCommunicationGroupConditionsItem(CommunicationsGroupCommunicationGroupConditionsInner communicationGroupConditionsItem) {
     if (this.communicationGroupConditions == null) {
       this.communicationGroupConditions = new ArrayList<>();
     }
@@ -387,11 +387,11 @@ public class CommunicationsGroup {
    * @return communicationGroupConditions
    */
   @jakarta.annotation.Nullable
-  public List<NewCommunicationsGroupDataAttributesCommunicationGroupConditionsInner> getCommunicationGroupConditions() {
+  public List<CommunicationsGroupCommunicationGroupConditionsInner> getCommunicationGroupConditions() {
     return communicationGroupConditions;
   }
 
-  public void setCommunicationGroupConditions(@jakarta.annotation.Nullable List<NewCommunicationsGroupDataAttributesCommunicationGroupConditionsInner> communicationGroupConditions) {
+  public void setCommunicationGroupConditions(@jakarta.annotation.Nullable List<CommunicationsGroupCommunicationGroupConditionsInner> communicationGroupConditions) {
     this.communicationGroupConditions = communicationGroupConditions;
   }
 
@@ -647,7 +647,7 @@ public class CommunicationsGroup {
 
           // validate the optional field `communication_group_conditions` (array)
           for (int i = 0; i < jsonArraycommunicationGroupConditions.size(); i++) {
-            NewCommunicationsGroupDataAttributesCommunicationGroupConditionsInner.validateJsonElement(jsonArraycommunicationGroupConditions.get(i));
+            CommunicationsGroupCommunicationGroupConditionsInner.validateJsonElement(jsonArraycommunicationGroupConditions.get(i));
           };
         }
       }

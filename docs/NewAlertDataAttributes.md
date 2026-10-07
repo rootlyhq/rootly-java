@@ -7,6 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**actor** | [**NewAlertDataAttributesActor**](NewAlertDataAttributesActor.md) |  |  [optional] |
 |**noise** | [**NoiseEnum**](#NoiseEnum) | Whether the alert is marked as noise |  [optional] |
 |**source** | **String** | Deprecated. Accepted for backwards compatibility; new clients should omit. Defaults to &#x60;api&#x60;. |  [optional] |
 |**status** | [**StatusEnum**](#StatusEnum) | Only available for organizations with Rootly On-Call enabled. Can be one of open, triggered. |  [optional] |

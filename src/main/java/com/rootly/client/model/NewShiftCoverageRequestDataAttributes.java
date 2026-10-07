@@ -21,7 +21,9 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,7 +51,7 @@ import com.rootly.client.JSON;
 /**
  * NewShiftCoverageRequestDataAttributes
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-14T16:47:44.247145921Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-07T07:27:00.482815432Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class NewShiftCoverageRequestDataAttributes {
   public static final String SERIALIZED_NAME_STARTS_AT = "starts_at";
   @SerializedName(SERIALIZED_NAME_STARTS_AT)
@@ -65,6 +67,11 @@ public class NewShiftCoverageRequestDataAttributes {
   @SerializedName(SERIALIZED_NAME_USER_ID)
   @jakarta.annotation.Nullable
   private Integer userId;
+
+  public static final String SERIALIZED_NAME_RECIPIENT_USER_IDS = "recipient_user_ids";
+  @SerializedName(SERIALIZED_NAME_RECIPIENT_USER_IDS)
+  @jakarta.annotation.Nullable
+  private List<Integer> recipientUserIds = new ArrayList<>();
 
   public NewShiftCoverageRequestDataAttributes() {
   }
@@ -126,6 +133,33 @@ public class NewShiftCoverageRequestDataAttributes {
   }
 
 
+  public NewShiftCoverageRequestDataAttributes recipientUserIds(@jakarta.annotation.Nullable List<Integer> recipientUserIds) {
+    this.recipientUserIds = recipientUserIds;
+    return this;
+  }
+
+  public NewShiftCoverageRequestDataAttributes addRecipientUserIdsItem(Integer recipientUserIdsItem) {
+    if (this.recipientUserIds == null) {
+      this.recipientUserIds = new ArrayList<>();
+    }
+    this.recipientUserIds.add(recipientUserIdsItem);
+    return this;
+  }
+
+  /**
+   * Optional. Notify selected active schedule members for every covered shift when targeted-shift-coverage is enabled. Recipients must be eligible for each shift. Omitted, empty, or flag-disabled selections broadcast.
+   * @return recipientUserIds
+   */
+  @jakarta.annotation.Nullable
+  public List<Integer> getRecipientUserIds() {
+    return recipientUserIds;
+  }
+
+  public void setRecipientUserIds(@jakarta.annotation.Nullable List<Integer> recipientUserIds) {
+    this.recipientUserIds = recipientUserIds;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -138,12 +172,13 @@ public class NewShiftCoverageRequestDataAttributes {
     NewShiftCoverageRequestDataAttributes newShiftCoverageRequestDataAttributes = (NewShiftCoverageRequestDataAttributes) o;
     return Objects.equals(this.startsAt, newShiftCoverageRequestDataAttributes.startsAt) &&
         Objects.equals(this.endsAt, newShiftCoverageRequestDataAttributes.endsAt) &&
-        Objects.equals(this.userId, newShiftCoverageRequestDataAttributes.userId);
+        Objects.equals(this.userId, newShiftCoverageRequestDataAttributes.userId) &&
+        Objects.equals(this.recipientUserIds, newShiftCoverageRequestDataAttributes.recipientUserIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startsAt, endsAt, userId);
+    return Objects.hash(startsAt, endsAt, userId, recipientUserIds);
   }
 
   @Override
@@ -153,6 +188,7 @@ public class NewShiftCoverageRequestDataAttributes {
     sb.append("    startsAt: ").append(toIndentedString(startsAt)).append("\n");
     sb.append("    endsAt: ").append(toIndentedString(endsAt)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+    sb.append("    recipientUserIds: ").append(toIndentedString(recipientUserIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -178,6 +214,7 @@ public class NewShiftCoverageRequestDataAttributes {
     openapiFields.add("starts_at");
     openapiFields.add("ends_at");
     openapiFields.add("user_id");
+    openapiFields.add("recipient_user_ids");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -213,6 +250,10 @@ public class NewShiftCoverageRequestDataAttributes {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("recipient_user_ids") != null && !jsonObj.get("recipient_user_ids").isJsonNull() && !jsonObj.get("recipient_user_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `recipient_user_ids` to be an array in the JSON string but got `%s`", jsonObj.get("recipient_user_ids").toString()));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
