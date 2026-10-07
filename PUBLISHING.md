@@ -83,7 +83,7 @@ rm gpg-key.txt
 
 ## Publishing Process
 
-The publish workflow runs automatically when you push a version tag. Release Drafter maintains a draft with merged pull request notes and an OpenAPI diff; review the draft before tagging. Use the `breaking` and `enhancement` labels for major and minor version resolution.
+The publish workflow runs automatically when you push a version tag. Release Drafter maintains a draft with merged pull request notes and an OpenAPI diff; review the draft before tagging. Use the `breaking` and `enhancement` labels for major and minor version resolution. The tag publishes the most recent draft regardless of its current tag, renames it to the pushed tag, and prepends the annotated tag message under “Highlights”. Use an annotated tag such as `git tag -a vX.Y.Z -m "<highlights>"` when providing release highlights.
 
 ### Step 1: Update Version and Create Tag
 
@@ -93,7 +93,7 @@ make bump-patch   # 0.0.1 -> 0.0.2
 make bump-minor   # 0.0.1 -> 0.1.0
 make bump-major   # 0.0.1 -> 1.0.0
 
-# This updates pom.xml and build.gradle, commits, and creates a tag locally
+# This updates pom.xml and build.gradle, commits, and creates an annotated tag locally
 ```
 
 ### Step 2: Push Tag (Triggers Everything)
@@ -108,7 +108,7 @@ make push-tag
 3. ✅ Deploy to Maven Central Portal
 4. ✅ Auto-publish to Maven Central (no manual UI steps needed!)
 5. ✅ Deploy to GitHub Packages
-6. ✅ Publish the matching Release Drafter draft with its OpenAPI diff, or create a release with GitHub-generated notes
+6. ✅ Publish the most recent Release Drafter draft, renamed to the pushed tag, with the annotated tag message under “Highlights”; or create a release with GitHub-generated notes if no draft exists
 
 ### One-Command Release (Recommended)
 
@@ -125,7 +125,7 @@ The **publish.yml** workflow runs automatically on tag push and performs these s
 1. Runs all tests
 2. Publishes to Maven Central (with GPG signing)
 3. Publishes to GitHub Packages
-4. Publishes the matching Release Drafter draft, including its OpenAPI diff, or creates a release with generated notes if no matching draft exists (only if steps 1-3 succeed)
+4. Publishes the most recent Release Drafter draft, renamed to the pushed tag, with the annotated tag message under “Highlights”; or creates a release with generated notes if no draft exists (only if steps 1-3 succeed)
 
 Check the Actions tab: https://github.com/rootlyhq/rootly-java/actions
 
