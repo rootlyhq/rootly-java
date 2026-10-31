@@ -83,7 +83,12 @@ rm gpg-key.txt
 
 ## Publishing Process
 
-The publish workflow runs automatically when you push a version tag. Release Drafter maintains a draft with merged pull request notes and an OpenAPI diff; review the draft before tagging. Use the `breaking` and `enhancement` labels for major and minor version resolution. The tag publishes the most recent draft regardless of its current tag, renames it to the pushed tag, and prepends the annotated tag message under “Highlights”. Use an annotated tag such as `git tag -a vX.Y.Z -m "<highlights>"` when providing release highlights.
+Releases are driven by **Release Please**: every merge to `master` updates a
+release PR (conventional commits determine the version bump). Merging the
+release PR tags `vX.Y.Z`, creates the GitHub release, and dispatches
+`publish.yml`. The OpenAPI diff job appends the API changelog to the release.
+
+The manual tag-push path below still works as a fallback.
 
 ### Step 1: Update Version and Create Tag
 
@@ -108,7 +113,7 @@ make push-tag
 3. ✅ Deploy to Maven Central Portal
 4. ✅ Auto-publish to Maven Central (no manual UI steps needed!)
 5. ✅ Deploy to GitHub Packages
-6. ✅ Publish the most recent Release Drafter draft, renamed to the pushed tag, with the annotated tag message under “Highlights”; or create a release with GitHub-generated notes if no draft exists
+6. ✅ Create a GitHub release with generated notes if none exists
 
 ### One-Command Release (Recommended)
 
@@ -125,11 +130,11 @@ The **publish.yml** workflow runs automatically on tag push and performs these s
 1. Runs all tests
 2. Publishes to Maven Central (with GPG signing)
 3. Publishes to GitHub Packages
-4. Publishes the most recent Release Drafter draft, renamed to the pushed tag, with the annotated tag message under “Highlights”; or creates a release with generated notes if no draft exists (only if steps 1-3 succeed)
+4. Creates a GitHub release with generated notes if none exists (only if steps 1-3 succeed); the OpenAPI diff job appends the API changelog
 
 Check the Actions tab: https://github.com/rootlyhq/rootly-java/actions
 
-**Important:** The Release Drafter draft is published only after successful publishing to both registries.
+**Important:** The GitHub release is created only after successful publishing to both registries.
 
 ### Step 4: Verify Publication
 
